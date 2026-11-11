@@ -1,0 +1,11 @@
+.git
+.agents
+.venv
+docs
+skills
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.log
+

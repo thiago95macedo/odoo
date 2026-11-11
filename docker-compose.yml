@@ -1,0 +1,57 @@
+# ==============================================================================
+# WETH DEV ENVIRONMENT — Odoo 20 Development Environment
+# ==============================================================================
+# Implantação local com Python 3.12 / Odoo 20 integrada ao proxy Caddy (weth_proxy_net).
+# Upstream esperado no Caddy: odoo-app:8069
+# Domínio local: https://odoo.test
+# ==============================================================================
+
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: odoo-db
+    restart: "no"
+    environment:
+      POSTGRES_USER: weth
+      POSTGRES_PASSWORD: "1q2w3e4r"
+      POSTGRES_DB: postgres
+    volumes:
+      - /home/arcanus/Workspace/dados/odoo/postgres:/var/lib/postgresql/data
+    networks:
+      - backend_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weth"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    image: weth/odoo:20.0
+    container_name: odoo-app
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/opt/odoo
+      - /home/arcanus/Workspace/dados/odoo/data:/var/lib/odoo
+    environment:
+      HOST: odoo-db
+      PORT: 5432
+      USER: weth
+      PASSWORD: "1q2w3e4r"
+    networks:
+      weth_proxy_net:
+        aliases:
+          - odoo-app
+      backend_net:
+    command: ["/opt/odoo/odoo-bin", "-c", "/opt/odoo/odoo.conf"]
+
+networks:
+  weth_proxy_net:
+    external: true
+  backend_net:
+    name: odoo_backend_net
+    driver: bridge
+
