@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const alert = document.createElement("div");
                         alert.className = "alert alert-info alert-backup-long";
                         alert.textContent =
-                            "The backup is on its way; if your database has a lot of data, you may want to go grab a coffee...";
+                            "O backup está sendo gerado. Se o banco tiver muitos dados, o processo pode levar alguns minutos...";
                         listGroup.parentNode.insertBefore(alert, listGroup);
                     }
                 }

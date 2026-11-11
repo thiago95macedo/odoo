@@ -15,6 +15,12 @@ Este arquivo mantém o histórico e o status das atividades de infraestrutura e 
   - Remoção de scripts e definições de empacotamento Debian (`setup/debinstall.sh`, `package.dfdebian`).
   - Limpeza de referências, argumentos e flags em `setup/package.py`, `setup/requirements-check.py`, `setup.py`, `setup.cfg`, `.gitignore` e `requirements.txt`.
   - Padronização do ambiente voltado estritamente para Ubuntu Server (Noble 24.04).
+- [x] **Tradução e Localização do Gerenciador de Bancos (pt-BR):**
+  - Tradução integral da interface pública de seleção e gerenciamento de bancos (`/web/database/selector` e `/web/database/manager`).
+  - Pré-seleção padrão de idioma para Português (BR) (`pt_BR`) nos formulários de criação.
+  - Pré-seleção padrão de país para Brasil (`br` / Brasil) utilizando o registro oficial existente.
+  - Tradução de labels, formulários, modais (Criar, Restaurar, Duplicar, Excluir, Backup e Senha Mestra), tooltips de validação, alertas e mensagens de erro do backend.
+  - Validação funcional no navegador e testes de validação com códigos HTTP esperados (422 e 403 tratadas).
 - [x] **Implementação do Orquestrador Central (.agents):**
   - Criação do ponto de entrada normativo `AGENTS.md` na raiz do projeto.
   - Links simbólicos para as 5 skills do Odoo (`odoo-git`, `odoo-guidelines`, `odoo-review`, `odoo-security`, `odoo-web-guidelines`) e `weth-agent-coordination`.

@@ -67,6 +67,8 @@ def list_countries():
     for country in root.find('data').findall('record[@model="res.country"]'):
         name = country.find('field[@name="name"]').text
         code = country.find('field[@name="code"]').text
+        if code == 'br':
+            name = 'Brasil'
         list_countries.append((code, name))
     return sorted(list_countries, key=lambda c: c[1])
 
@@ -127,7 +129,23 @@ def _render_template(**d):
 def _render_exception(exception, **d):
     http_status = getattr(exception, 'http_status', 422)
     verb = request.httprequest.path.rpartition('/')[2]  # create, backup, restore, ...
-    error = f"Could not {verb} database. {exception.args[0]}"
+    verb_translations = {
+        'create': 'criar',
+        'backup': 'fazer backup de',
+        'restore': 'restaurar',
+        'duplicate': 'duplicar',
+        'drop': 'excluir',
+        'change_password': 'alterar a senha mestra de',
+        'rename': 'renomear',
+    }
+    action_pt = verb_translations.get(verb, verb)
+    exc_text = str(exception.args[0]) if exception.args else str(exception)
+    error_translations = {
+        "Database management function blocked, bad admin password.": "Senha mestra incorreta.",
+        "Database management functions blocked, admin disabled database listing.": "Gerenciamento de bancos desativado pelo administrador.",
+    }
+    msg_pt = error_translations.get(exc_text, exc_text)
+    error = f"Não foi possível {action_pt} o banco de dados. {msg_pt}"
     http_body = _render_template(error=error, **d)
     return Response(http_body, http_status)
 
@@ -159,7 +177,7 @@ class Database(Controller):
     @route('/web/database/create', type='http', auth="none", methods=['POST'], csrf=False)
     def create(self, master_pwd, name, lang, password, **post):
         if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
-            e = _("Houston, we have a database naming issue! Make sure you only use letters, numbers, underscores, hyphens, or dots in the database name, and you'll be golden.")
+            e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
@@ -188,7 +206,7 @@ class Database(Controller):
     @route('/web/database/duplicate', type='http', auth="none", methods=['POST'], csrf=False)
     def duplicate(self, master_pwd, name, new_name, neutralize_database=False):
         if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
-            e = _("Houston, we have a database naming issue! Make sure you only use letters, numbers, underscores, hyphens, or dots in the database name, and you'll be golden.")
+            e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
@@ -220,7 +238,7 @@ class Database(Controller):
     @route('/web/database/rename', type='http', auth="none", methods=['POST'], csrf=False)
     def rename(self, master_pwd, name, new_name):
         if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
-            e = _("Houston, we have a database naming issue! Make sure you only use letters, numbers, underscores, hyphens, or dots in the database name, and you'll be golden.")
+            e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
