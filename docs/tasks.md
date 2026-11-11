@@ -10,6 +10,11 @@ Este arquivo mantém o histórico e o status das atividades de infraestrutura e 
   - Identificação de SO, ambiente Docker WETH, portas e storage.
 - [x] **Limpeza do Manifesto de Dependências:**
   - Remoção das dependências e flags de Windows do `requirements.txt`.
+- [x] **Remoção de Legados Windows e Debian:**
+  - Exclusão dos scripts e assets de empacotamento para Windows (`setup/win32`, `package.dfwine`).
+  - Remoção de scripts e definições de empacotamento Debian (`setup/debinstall.sh`, `package.dfdebian`).
+  - Limpeza de referências, argumentos e flags em `setup/package.py`, `setup/requirements-check.py`, `setup.py`, `setup.cfg`, `.gitignore` e `requirements.txt`.
+  - Padronização do ambiente voltado estritamente para Ubuntu Server (Noble 24.04).
 - [x] **Implementação do Orquestrador Central (.agents):**
   - Criação do ponto de entrada normativo `AGENTS.md` na raiz do projeto.
   - Links simbólicos para as 5 skills do Odoo (`odoo-git`, `odoo-guidelines`, `odoo-review`, `odoo-security`, `odoo-web-guidelines`) e `weth-agent-coordination`.

@@ -19,7 +19,7 @@ TODO:
 - add meta info on cells (mainly to genearte a better html report)
     - warn/ko reason
     - wheel + link
-    - original debian package name + link
+    - original ubuntu package name + link
     ...
 
 """
@@ -59,13 +59,13 @@ from pip._internal.models.target_python import TargetPython  # noqa: PLC2701
 
 Version = Tuple[int, ...]
 
-# shared beween debian and ubuntu
+# package name mappings for ubuntu
 SPECIAL = {
     'libsass': 'libsass-python',
 }
 SUPPORTED_FORMATS = ('txt', 'ansi', 'svg', 'html', 'json')
-PLATFORM_CODES = ('linux', 'win32', 'darwin')
-PLATFORM_NAMES = ('Linux', 'Win', 'OSX')
+PLATFORM_CODES = ('linux',)
+PLATFORM_NAMES = ('Linux',)
 
 
 def urlopen(url):
@@ -86,13 +86,13 @@ def parse_version(vstring: str) -> Optional[Version]:
         return None
 
 
-def cleanup_debian_version(s: str) -> str:
+def cleanup_distro_version(s: str) -> str:
     """ Try to strip the garbage from the version string, just remove everything
     following the first `+`, `~` or `-`
     """
     return re.match(r'''
-        (?:\d+:)? # debian crud prefix
-        (.*?) # the shit we actually want
+        (?:\d+:)? # distro prefix
+        (.*?) # the version
         (?:~|\+|-|\.dfsg)
         .*
     ''', s, flags=re.VERBOSE)[1]
@@ -121,8 +121,6 @@ class PipPackage:
         platforms = None
         if platform == 'darwin':
             platforms = list(mac_platforms((15, 0), 'x86_64'))
-        elif platform == 'win32':
-            platforms = ['win32', 'win-amd64']
         else:
             assert platform == 'linux'
 
@@ -200,38 +198,6 @@ class Distribution(ABC):
             raise ValueError(msg)
 
 
-class Debian(Distribution):
-    def get_version(self, package):
-        """ Try to find which version of ``package`` is in Debian release {release}
-        """
-        package = SPECIAL.get(package, package)
-        # try the python prefix first: some packages have a native of foreign $X and
-        # either the bindings or a python equivalent at python-X, or just a name
-        # collision
-        prefixes = ['python-', '']
-        if package.startswith('python'):
-            prefixes = ['']
-        for prefix in prefixes:
-            try:
-                res = json.load(urlopen(f'https://sources.debian.org/api/src/{prefix}{package}/'))
-            except HTTPError:
-                return 'failed'
-            if res.get('error') is None:
-                break
-        if res.get('error'):
-            return
-
-        try:
-            return next(
-                parse_version(cleanup_debian_version(distr['version']))
-                for distr in res['versions']
-                if distr['area'] == 'main'
-                if self._release.lower() in distr['suites']
-            )
-        except StopIteration:
-            return
-
-
 class Ubuntu(Distribution):
     """ Ubuntu doesn't have an API, instead it has a huge text file
     """
@@ -257,7 +223,7 @@ class Ubuntu(Distribution):
         for prefix in ['python3-', 'python-', '']:
             v = self._packages.get(f'{prefix}{package}')
             if v:
-                return parse_version(cleanup_debian_version(v))
+                return parse_version(cleanup_distro_version(v))
         return None
 
 
@@ -486,7 +452,7 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         'release', nargs='+',
-        help="Release to check against, should use the format '{distro}:{release}' e.g. 'debian:sid'"
+        help="Release to check against, should use the format '{distro}:{release}' e.g. 'ubuntu:noble'"
     )
     parser.add_argument(
         '-a', '--all', action="store_true",

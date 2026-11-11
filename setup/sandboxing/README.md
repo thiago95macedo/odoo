@@ -43,7 +43,7 @@ An up-to-date `.deb` is provided on the
 [official project repository](https://github.com/netblue30/firejail/releases).
 
 You can also install Firejail with your package manager. Be aware that official
-repositories may contain an outdated Firejail version. To install on Debian/Ubuntu:
+repositories may contain an outdated Firejail version. To install on Ubuntu:
 
 ```sh
 sudo apt install firejail
@@ -116,7 +116,7 @@ outside of those areas. It will also be able to run Python and JavaScript tests.
 
 ### Prerequisites
 
-Install bubblewrap with your package manager. For example, on Debian/Ubuntu:
+Install bubblewrap with your package manager. For example, on Ubuntu:
 
 ```sh
 sudo apt install bubblewrap

@@ -28,7 +28,6 @@ TFULL = time.strftime("%a, %d %b %Y %H:%M:%S %z", time.gmtime())
 # Get some variables from release.py
 version = ...
 version_info = ...
-nt_service_name = ...
 exec(open(os.path.join(ROOTDIR, 'odoo', 'release.py'), 'rb').read())
 VERSION = version.split('-')[0].replace('saas~', '')
 GPGPASSPHRASE = os.getenv('GPGPASSPHRASE')
@@ -85,7 +84,7 @@ def _rpc_count_modules(addr='http://127.0.0.1', port=8069, dbname='mycompany'):
 def publish(args, pub_type, extensions):
     """Publish builded package (move builded files and generate a symlink to the latests)
     :args: parsed program args
-    :pub_type: one of [deb, rpm, src, exe, iot]
+    :pub_type: one of [rpm, tgz]
     :extensions: list of extensions to publish
     :returns: published files
     """
@@ -116,40 +115,6 @@ def publish(args, pub_type, extensions):
 
 
 # ---------------------------------------------------------
-# Generates Packages, Sources and Release files of debian package
-# ---------------------------------------------------------
-def gen_deb_package(args, published_files):
-    # Executes command to produce file_name in path, and moves it to args.pub/deb
-    def _gen_file(args, command, file_name, path):
-        cur_tmp_file_path = os.path.join(path, file_name)
-        with open(cur_tmp_file_path, 'w') as out:
-            subprocess.call(command, stdout=out, cwd=path)
-        shutil.copy(cur_tmp_file_path, os.path.join(args.pub, 'deb', file_name))
-
-    # Copy files to a temp directory (required because the working directory must contain only the
-    # files of the last release)
-    temp_path = tempfile.mkdtemp(suffix='debPackages')
-    for pub_file_path in published_files:
-        shutil.copy(pub_file_path, temp_path)
-
-    commands = [
-        (['dpkg-scanpackages', '--multiversion', '.'], "Packages"),  # Generate Packages file
-        (['dpkg-scansources', '.'], "Sources"),  # Generate Sources file
-        (['apt-ftparchive', 'release', '.'], "Release")  # Generate Release file
-    ]
-    # Generate files
-    for command in commands:
-        _gen_file(args, command[0], command[-1], temp_path)
-    # Remove temp directory
-    shutil.rmtree(temp_path)
-
-    if args.sign:
-        # Generate Release.gpg (= signed Release)
-        # Options -abs: -a (Create ASCII armored output), -b (Make a detach signature), -s (Make a signature)
-        subprocess.call(['gpg', '--default-key', GPGID, '--passphrase', GPGPASSPHRASE, '--yes', '-abs', '--no-tty', '-o', 'Release.gpg', 'Release'], cwd=os.path.join(args.pub, 'deb'))
-
-
-# ---------------------------------------------------------
 # Generates an RPM repo
 # ---------------------------------------------------------
 def rpm_sign(args, file_name):
@@ -161,12 +126,10 @@ def rpm_sign(args, file_name):
     rpmsign.expect(pexpect.EOF)
 
 
-def _prepare_build_dir(args, win32=False, move_addons=True):
+def _prepare_build_dir(args, move_addons=True):
     """Copy files to the build directory"""
     _logger.info('Preparing build dir "%s"', args.build_dir)
     cmd = ['rsync', '-a', '--delete', '--exclude', '.git', '--exclude', '*.pyc', '--exclude', '*.pyo']
-    if win32 is False:
-        cmd += ['--exclude', 'setup/win32']
 
     run_cmd(cmd + ['%s/' % args.odoo_dir, args.build_dir])
     if not move_addons:
@@ -200,9 +163,7 @@ class Docker():
         self.exposed_port = None
         docker_templates = {
             'tgz': os.path.join(args.build_dir, 'setup/docker/package.dfsrc'),
-            'deb': os.path.join(args.build_dir, 'setup/docker/package.dfdebian'),
             'rpm': os.path.join(args.build_dir, 'setup/docker/package.dffedora'),
-            'win': os.path.join(args.build_dir, 'setup/docker/package.dfwine'),
         }
         self.docker_template = Path(docker_templates[self.arch]).read_text(encoding='utf-8').replace('USER odoo', DOCKERUSER)
         self.test_log_file = '/data/src/test-%s.log' % self.arch
@@ -310,39 +271,6 @@ class DockerTgz(Docker):
         _logger.info('Finished testing tgz package')
 
 
-class DockerDeb(Docker):
-    """Docker class to build debian package"""
-
-    arch = 'deb'
-
-    def build(self):
-        _logger.info('Start building debian package')
-        # Generate new debian/changelog
-        # - Append timestamp to version for the .dsc to refer the right .tar.gz
-        # - Write the date into the email line so SOURCE_DATE_EPOCH is set correctly from it
-        changelog = fr"odoo ({VERSION}.{TSTAMP}) stable; urgency=low\n\n  * {VERSION}\n\n -- Odoo Bot <info@odoo.com>  {TFULL}\n"
-        cmds = ["sed -i '1i %s' debian/changelog" % changelog]
-        cmds.append('dpkg-buildpackage -rfakeroot -uc -us -tc')
-        # As the packages are built in the parent of the buildir, we move them back to build_dir
-        cmds.append('mv ../odoo_* ./')
-        self.run(' && '.join(cmds), self.args.build_dir, 'odoo-deb-build-%s' % TSTAMP)
-        _logger.info('Finished building debian package')
-
-    def start_test(self):
-        if not self.args.test:
-            return
-        _logger.info('Start testing debian package')
-        cmds = [
-            'service postgresql start',
-            '/usr/bin/apt-get update -y',
-            f'/usr/bin/apt-get install -y /data/src/odoo_{VERSION}.{TSTAMP}_all.deb',
-            'su odoo -s /bin/bash -c "odoo -d mycompany -i base --pidfile=/data/src/odoo.pid --http-interface 0.0.0.0"',
-        ]
-        self.run(' && '.join(cmds), self.args.build_dir, 'odoo-deb-test-%s' % TSTAMP, user='root', detach=True, exposed_port=8069, timeout=300)
-        self.test_odoo()
-        _logger.info('Finished testing debian package')
-
-
 class DockerRpm(Docker):
     """Docker class to build rpm package"""
 
@@ -401,62 +329,6 @@ class DockerRpm(Docker):
         shutil.rmtree(temp_path)
 
 
-class DockerWine(Docker):
-    """Docker class to build Windows package"""
-
-    arch = 'win'
-
-    def __init__(self, args):
-        super().__init__(args)
-        self.package_name = "windows"
-        self.nsi_filepath = r"c:\odoobuild\server\setup\win32\setup.nsi"
-        self.nt_service_name = nt_service_name
-        self.bundle_po_files = True
-
-    def build(self):
-        _logger.info('Start building %s package', self.package_name)
-        winver = "%s.%s" % (VERSION.replace('~', '_').replace('+', ''), TSTAMP)
-        container_python = '/var/lib/odoo/.wine/drive_c/odoobuild/WinPy64/python-3.12.3.amd64/python.exe'
-        nsis_args = f'/DVERSION={winver} /DMAJOR_VERSION={version_info[0]} /DMINOR_VERSION={version_info[1]} /DSERVICENAME={self.nt_service_name} /DPYTHONVERSION=3.12.3'
-
-        bundle_po_files_cmd = (
-            'cd /data/src && '
-            'find odoo/addons -name "*.po" > .i18n_list.txt && '
-            '7zz a -mx=9 -ms=on i18n_bundle.7z @.i18n_list.txt && '
-            'xargs -a .i18n_list.txt rm && '
-            'rm .i18n_list.txt'
-        )
-
-        cmds = [
-            rf'wine {container_python} -m pip install --upgrade pip',
-            rf'cat /data/src/requirements*.txt  | while read PACKAGE; do wine {container_python} -m pip install "${{PACKAGE%%#*}}" ; done',
-            rf'wine "c:\nsis\makensis.exe" {nsis_args} "{self.nsi_filepath}"',
-            rf'wine {container_python} -m pip list',
-        ]
-
-        if self.bundle_po_files:
-            cmds = [bundle_po_files_cmd, *cmds]
-
-        self.run(' && '.join(cmds), self.args.build_dir, 'odoo-win-build-%s' % TSTAMP)
-        _logger.info('Finished building %s package', self.package_name)
-
-
-class DockerIot(DockerWine):
-    """Docker class to build windows IoT package"""
-
-    def __init__(self, args):
-        super().__init__(args)
-        self.package_name = "IoT"
-        self.nsi_filepath = r"c:\odoobuild\server\setup\win32\setup-iot.nsi"
-        self.nt_service_name = "odoo-iot"
-        self.bundle_po_files = False
-
-    def build_image(self):
-        shutil.copy(os.path.join(self.args.build_dir, 'setup/iot_box_builder/configuration/requirements.txt'), self.docker_dir / 'requirements-iot.txt')
-        self.tag = f'{self.tag}-iot'
-        super().build_image()
-
-
 def parse_args():
     ap = argparse.ArgumentParser()
     build_dir = "%s-%s-%s" % (ROOTDIR, TSEC, TSTAMP)
@@ -465,14 +337,11 @@ def parse_args():
     ap.add_argument("-b", "--build-dir", default=build_dir, help="build directory (%(default)s)", metavar="DIR")
     ap.add_argument("-p", "--pub", default=None, metavar="DIR", help="publish directory; if omitted, packages are only built (use --no-remove to keep the artifacts)")
     ap.add_argument("--logging", action="store", choices=list(log_levels.keys()), default="info", help="Logging level")
-    ap.add_argument("--build-deb", action="store_true")
     ap.add_argument("--build-rpm", action="store_true")
     ap.add_argument("--build-tgz", action="store_true")
-    ap.add_argument("--build-win", action="store_true")
-    ap.add_argument("--build-iot", action="store_true")
 
     ap.add_argument("-t", "--test", action="store_true", default=False, help="Test built packages")
-    ap.add_argument("-s", "--sign", action="store_true", default=False, help="Sign Debian package / generate Rpm repo")
+    ap.add_argument("-s", "--sign", action="store_true", default=False, help="Generate Rpm repo")
     ap.add_argument("--no-remove", action="store_true", help="don't remove build dir")
     ap.add_argument("--blacklist", nargs="*", help="Modules to blacklist in package")
 
@@ -511,35 +380,6 @@ def main(args):
                         docker_rpm.gen_rpm_repo(args, published_files[0])
             except Exception as e:
                 _logger.error("Won't publish the rpm release.\n Exception: %s", e)
-        if args.build_deb:
-            _prepare_build_dir(args, move_addons=False)
-            docker_deb = DockerDeb(args)
-            docker_deb.build()
-            try:
-                docker_deb.start_test()
-                if args.pub:
-                    published_files = publish(args, 'deb', ['deb', 'dsc', 'changes', 'tar.xz'])
-                    gen_deb_package(args, published_files)
-            except Exception as e:
-                _logger.error("Won't publish the deb release.\n Exception: %s", e)
-        if args.build_win:
-            _prepare_build_dir(args, win32=True)
-            docker_wine = DockerWine(args)
-            docker_wine.build()
-            try:
-                if args.pub:
-                    published_files = publish(args, 'windows', ['exe'])
-            except Exception as e:
-                _logger.error("Won't publish the exe release.\n Exception: %s", e)
-        if args.build_iot:
-            _prepare_build_dir(args, win32=True)
-            docker_iot = DockerIot(args)
-            docker_iot.build()
-            try:
-                if args.pub:
-                    published_files = publish(args, 'iot', ['exe'])
-            except Exception as e:
-                _logger.error("Won't publish the iot release.\n Exception: %s", e)
     except Exception as e:
         _logger.error('Something bad happened ! : %s', e)
         traceback.print_exc()

@@ -37,7 +37,7 @@ setup(
         'h11',
         'idna',
         'Jinja2',
-        'lxml',  # windows binary http://www.lfd.uci.edu/~gohlke/pythonlibs/
+        'lxml',
         'lxml_html_clean',
         'libsass',
         'MarkupSafe',
@@ -45,9 +45,9 @@ setup(
         'ofxparse',
         'openpyxl',
         'passlib',
-        'pillow',  # windows binary http://www.lfd.uci.edu/~gohlke/pythonlibs/
+        'pillow',
         'polib',
-        'psutil',  # windows binary code.google.com/p/psutil/downloads/list
+        'psutil',
         'psycopg2 >= 2.2',
         'pyopenssl',
         'pypdf',
@@ -56,7 +56,7 @@ setup(
         'python-stdnum',
         'pyusb >= 1.0.0b1',
         'qrcode',
-        'reportlab',  # windows binary pypi.python.org/pypi/reportlab
+        'reportlab',
         'rjsmin',
         'requests',
         'urllib3',

@@ -58,7 +58,7 @@ fi
 su - postgres -c "createuser -d -R -S $ODOO_USER" 2> /dev/null || true
 # Configuration file
 mkdir -p $ODOO_CONFIGURATION_DIR
-# can't copy debian config-file as addons_path is not the same
+# default config-file as addons_path is not the same
 if [ ! -f $ODOO_CONFIGURATION_FILE ]
 then
     echo "[options]
