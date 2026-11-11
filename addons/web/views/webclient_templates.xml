@@ -277,7 +277,7 @@
     <template id="web.webclient_bootstrap">
         <t t-set="head">
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-            <meta name="theme-color" content="#71639e"/>
+            <meta name="theme-color" content="#05285b"/>
             <link rel="manifest" href="/web/manifest.webmanifest" crossorigin="use-credentials"/>
             <link rel="apple-touch-icon" href="/web/static/img/odoo-icon-ios.png"/>
             <script type="text/javascript">
@@ -348,9 +348,9 @@
                 filter: grayscale(.6);
                 }
                 .card button {
-                background-color: #714B67;
+                background-color: #05285b;
                 color: #FFFFFF;
-                border: 1px solid #714B67;
+                border: 1px solid #05285b;
                 border-radius: .25rem;
                 padding: .5rem 1rem;
                 cursor: pointer;

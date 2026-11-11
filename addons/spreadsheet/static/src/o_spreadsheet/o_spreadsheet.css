@@ -1599,7 +1599,7 @@
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 0.25rem rgba(113, 75, 103, 0.25);
+        box-shadow: 0 0 0 0.25rem rgba(5, 40, 91, 0.25);
         border-color: var(--os-action-color);
       }
     }
@@ -1665,7 +1665,7 @@
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 0.25rem rgba(113, 75, 103, 0.25);
+        box-shadow: 0 0 0 0.25rem rgba(5, 40, 91, 0.25);
         border-color: var(--os-action-color);
       }
     }
