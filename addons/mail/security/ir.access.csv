@@ -119,7 +119,6 @@ mail_message_subtype_rule_public,mail.message.subtype: portal/public: read publi
 access_mail_message_subtype_user,mail.message.subtype.user,mail.message.subtype,base.group_user,r,
 access_mail_message_subtype_system,mail.message.subtype.system,mail.message.subtype,base.group_system,crud,
 access_mail_presence,mail.presence,mail.presence,base.group_system,crud,
-access_publisher_warranty_contract_all,publisher.warranty.contract.all,publisher_warranty.contract,base.group_system,crud,
 access_mail_template,mail.template,mail.template,base.group_user,r,
 mail_template_employee_rule,Employees can only modify templates they have created or been assigned,mail.template,base.group_user,cud,"['|', ('create_uid', '=', user.id), ('user_id', '=', user.id)]"
 access_mail_template_editor,mail.template_editor,mail.template,mail.group_mail_template_editor,r,

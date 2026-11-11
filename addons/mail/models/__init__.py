@@ -71,7 +71,6 @@ from . import res_config_settings
 from . import res_groups
 from . import res_role
 from . import res_users
-from . import update
 
 # after mail specifically as discuss module depends on mail
 from . import mail_call_artifact
