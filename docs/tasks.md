@@ -34,10 +34,17 @@ Este arquivo mantém o histórico e o status das atividades de infraestrutura e 
   - Registro e validação no inventário canônico WETH (`infraestrutura/inventory/projects.yaml`).
   - Testes de conectividade HTTPS via Caddy com resposta HTTP 200/303 no domínio `https://odoo.test`.
 
+- [x] **Criação e Implementação do Módulo Independente `web_main_menu`:**
+  - Desenvolvimento do módulo `addons/web_main_menu` como tela inicial padrão e grade de aplicativos para Odoo Community.
+  - Conformidade estrita com o Owl 3 (`useProps(standardActionServiceProps)`, relógio sincronizado Luxon, busca rápida fuzzy lookup, autofocus e atalhos de teclado).
+  - Adoção integral da paleta corporativa WETH (`#05285b`, `#031b3e`, `#1b4f9b`) com efeito glassmorphism nos tiles e navbar translúcida.
+  - Tradução e localização nativa em Português do Brasil (`pt_BR.po`) para todas as strings do backend, templates e client actions.
+  - Integração com `NavBar` e `WebClient` para redirecionamento transparente e fechamento de gaveta no mobile.
+  - Instalação e validação do módulo no banco de dados `weth` com compilação de assets verificada.
+
 ---
 
 ## 2. Próximas Atividades (Desenvolvimento e Módulos WETH)
 
-- [ ] Criação do banco de dados inicial da aplicação através de `https://odoo.test/web/database/manager`.
-- [ ] Estruturação do diretório de addons customizados da WETH.
-- [ ] Desenvolvimento de funcionalidades orquestradas pelas skills especializadas.
+- [x] Criação do banco de dados inicial da aplicação através de `https://odoo.test/web/database/manager`.
+- [ ] Desenvolvimento de novas funcionalidades e integrações WETH.

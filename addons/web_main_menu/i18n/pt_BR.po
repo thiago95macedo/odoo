@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_main_menu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-11 23:25+0000\n"
+"PO-Revision-Date: 2026-11-11 23:25+0000\n"
+"Last-Translator: WETH Tecnologia\n"
+"Language-Team: WETH Tecnologia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pt_BR\n"
+
+#. module: web_main_menu
+#: model:ir.module.module,description:base.module_web_main_menu
+msgid ""
+"\n"
+"Menu Principal WETH\n"
+"===================\n"
+"\n"
+"Adiciona uma tela inicial moderna ao Odoo Community com grade de aplicativos\n"
+"e saudação personalizada, integrada à paleta corporativa da WETH Tecnologia.\n"
+msgstr ""
+"\n"
+"Menu Principal WETH\n"
+"===================\n"
+"\n"
+"Adiciona uma tela inicial moderna ao Odoo Community com grade de aplicativos\n"
+"e saudação personalizada, integrada à paleta corporativa da WETH Tecnologia.\n"
+
+#. module: web_main_menu
+#: model:ir.module.module,summary:base.module_web_main_menu
+msgid "Grade de aplicativos e tela inicial moderna para Odoo Community."
+msgstr "Grade de aplicativos e tela inicial moderna para Odoo Community."
+
+#. module: web_main_menu
+#: model:ir.model.fields,field_description:web_main_menu.field_res_users_settings__display_name
+msgid "Nome para Exibição"
+msgstr "Nome para Exibição"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
+msgid "Bom dia, %(name)s"
+msgstr "Bom dia, %(name)s"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
+msgid "Boa tarde, %(name)s"
+msgstr "Boa tarde, %(name)s"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
+msgid "Boa noite, %(name)s"
+msgstr "Boa noite, %(name)s"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/navbar/navbar.xml:0
+msgid "Menu Principal"
+msgstr "Menu Principal"
+
+#. module: web_main_menu
+#: model:ir.actions.client,name:web_main_menu.web_main_menu_action
+#: model:ir.module.module,shortdesc:base.module_web_main_menu
+#: model:ir.ui.menu,name:web_main_menu.web_main_menu_root
+msgid "Menu Principal"
+msgstr "Menu Principal"
+
+#. module: web_main_menu
+#: model:ir.model.fields,field_description:web_main_menu.field_res_users_settings__main_menu_layout
+msgid "Layout do Menu Principal"
+msgstr "Layout do Menu Principal"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/main_menu/main_menu_layout.js:0
+msgid "Nova seção"
+msgstr "Nova seção"
+
+#. module: web_main_menu
+#. odoo-javascript
+#: code:addons/web_main_menu/static/src/main_menu/main_menu.xml:0
+msgid "Outros aplicativos"
+msgstr "Outros aplicativos"
+
+#. module: web_main_menu
+#: model:ir.model,name:web_main_menu.model_res_users_settings
+msgid "Configurações do Usuário"
+msgstr "Configurações do Usuário"

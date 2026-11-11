@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="web_main_menu.MainMenu">
+        <div class="o_action o_main_menu" t-attf-class="{{ this.props.className || '' }}">
+            <div class="o_main_menu_body">
+                <header class="o_main_menu_header">
+                    <div class="o_main_menu_date" t-out="this.dayAndTime()"/>
+                    <h1 class="o_main_menu_greeting" t-out="this.greeting()"/>
+                </header>
+                <t t-set="layout" t-value="this.layout()"/>
+                <t t-set="sections" t-value="this.getDisplayedSections(layout)"/>
+                <section
+                    t-foreach="sections"
+                    t-as="section"
+                    t-key="section.id"
+                    class="o_main_menu_section"
+                    t-att-data-section-id="section.id">
+                    <header class="o_main_menu_section_header">
+                        <h2 class="o_main_menu_title o_main_menu_section_name" t-out="section.name"/>
+                    </header>
+                    <div class="o_main_menu_apps o_main_menu_grid" t-att-data-section-id="section.id">
+                        <t t-foreach="section.apps" t-as="app" t-key="app.id">
+                            <t t-call="web_main_menu.MainMenu.App"/>
+                        </t>
+                    </div>
+                </section>
+                <div t-if="layout.apps.length" class="o_main_menu_other">
+                    <header t-if="sections.length" class="o_main_menu_section_header">
+                        <h2 class="o_main_menu_title">Outros aplicativos</h2>
+                    </header>
+                    <div class="o_main_menu_apps o_main_menu_grid" data-section-id="">
+                        <t t-foreach="layout.apps" t-as="app" t-key="app.id">
+                            <t t-call="web_main_menu.MainMenu.App"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="web_main_menu.MainMenu.App">
+        <a
+            class="o_main_menu_app o_app"
+            draggable="false"
+            t-att-data-key="this.getAppKey(app)"
+            t-att-data-menu-xmlid="app.xmlid"
+            t-att-href="app.href"
+            t-on-click.prevent="() => this.openApp(app)">
+            <span class="o_main_menu_tile">
+                <img t-if="app.webIconData" class="o_main_menu_icon" draggable="false" t-att-src="app.webIconData" alt=""/>
+                <i
+                    t-else=""
+                    class="o_main_menu_icon oi"
+                    role="img"
+                    aria-hidden="true"
+                    t-att-data-icon="app.webIcon.icon"
+                    t-attf-style="color: {{ app.webIcon.color }}; background-color: {{ app.webIcon.backgroundColor }};"/>
+            </span>
+            <span class="o_main_menu_label" t-out="app.label"/>
+        </a>
+    </t>
+</templates>

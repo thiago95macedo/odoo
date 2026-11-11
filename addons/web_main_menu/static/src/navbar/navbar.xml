@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="web_main_menu.NavBar" t-inherit="web.NavBar" t-inherit-mode="extension">
+        <xpath expr="//DropdownItem[contains(@class, 'o_menu_brand')]" position="attributes">
+            <attribute name="t-if" add="!this.isMainMenuCurrent" separator=" and "/>
+        </xpath>
+    </t>
+
+    <t t-name="web_main_menu.NavBar.AppsMenu" t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown" position="attributes">
+            <attribute name="t-if">!this.mainMenuApp</attribute>
+        </xpath>
+        <xpath expr="//Dropdown" position="before">
+            <button
+                t-if="this.mainMenuApp and !this.isMainMenuCurrent"
+                class="o_main_menu_toggle o_nav_entry"
+                data-hotkey="h"
+                title="Menu Principal"
+                aria-label="Menu Principal"
+                data-available-offline=""
+                t-on-click="() => this.onAllAppsBtnClick()">
+                <i class="oi" data-icon="apps" role="img" aria-hidden="true"/>
+            </button>
+        </xpath>
+        <xpath expr="//a[contains(@class, 'o_menu_toggle')]" position="attributes">
+            <attribute name="t-if" add="!this.isMainMenuCurrent" separator=" and "/>
+        </xpath>
+    </t>
+
+    <t t-name="web_main_menu.NavBar.AppsMenu.Sidebar" t-inherit="web.NavBar.AppsMenu.Sidebar" t-inherit-mode="extension">
+        <xpath expr="//nav/div[contains(@t-if, 'this.currentApp')]" position="attributes">
+            <attribute name="t-if" add="!this.isMainMenuCurrent" separator=" and "/>
+        </xpath>
+    </t>
+</templates>

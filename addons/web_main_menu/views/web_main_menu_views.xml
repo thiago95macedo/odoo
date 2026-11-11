@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="web_main_menu_action" model="ir.actions.client">
+        <field name="name">Menu Principal</field>
+        <field name="path">menu</field>
+        <field name="tag">web_main_menu.action_open_main_menu</field>
+    </record>
+
+    <menuitem id="web_main_menu_root" name="Menu Principal" action="web_main_menu_action" sequence="0"/>
+</odoo>
+
