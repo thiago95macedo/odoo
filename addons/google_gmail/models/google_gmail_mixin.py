@@ -11,7 +11,6 @@ from werkzeug.urls import url_encode
 from odoo import _, fields, models, tools, release
 from odoo.exceptions import AccessError, UserError
 from odoo.tools.urls import urljoin as url_join
-from odoo.addons.google_gmail.tools import get_iap_error_message
 
 GMAIL_TOKEN_REQUEST_TIMEOUT = 5
 
@@ -30,7 +29,6 @@ class GoogleGmailMixin(models.AbstractModel):
     # The scope `https://mail.google.com/` is needed for SMTP and IMAP
     # https://developers.google.com/workspace/gmail/imap/xoauth2-protocol
     _SERVICE_SCOPE = 'https://mail.google.com/ https://www.googleapis.com/auth/userinfo.email'
-    _DEFAULT_GMAIL_IAP_ENDPOINT = 'https://gmail.api.odoo.com'
 
     active = fields.Boolean(default=True)
 
@@ -87,51 +85,12 @@ class GoogleGmailMixin(models.AbstractModel):
         google_gmail_client_secret = Config.get_str('google_gmail_client_secret')
         is_configured = google_gmail_client_id and google_gmail_client_secret
 
-        if not is_configured:  # use IAP (see '/google_gmail/iap_confirm')
-            if release.version_info[-1] != 'e':
-                raise UserError(_('Please configure your Gmail credentials.'))
-
-            gmail_iap_endpoint = self.env['ir.config_parameter'].sudo().get_str(
-                'mail.server.gmail.iap.endpoint',
-                self._DEFAULT_GMAIL_IAP_ENDPOINT,
-            )
-            db_uuid = self.env['ir.config_parameter'].sudo().get_str('database.uuid')
-
-            # final callback URL that will receive the token from IAP
-            callback_params = url_encode({
-                'model': self._name,
-                'rec_id': self.id,
-                'csrf_token': self._get_gmail_csrf_token(),
-            })
-            callback_url = url_join(self.get_base_url(), f'/google_gmail/iap_confirm?{callback_params}')
-
-            iap_url = url_join(gmail_iap_endpoint, '/api/mail_oauth/1/gmail')
-            try:
-                response = requests.get(
-                    iap_url,
-                    params={'db_uuid': db_uuid, 'callback_url': callback_url},
-                    timeout=GMAIL_TOKEN_REQUEST_TIMEOUT)
-                response.raise_for_status()
-            except requests.exceptions.RequestException as e:
-                _logger.error('Can not contact IAP: %s.', e)
-                raise UserError(_('Oops, we could not authenticate you. Please try again later.'))
-
-            response = response.json()
-            if 'error' in response:
-                self._raise_iap_error(response['error'])
-
-            # URL on IAP that will redirect to Gmail login page
-            google_gmail_uri = response['url']
-
-        else:
-            google_gmail_uri = self.google_gmail_uri
-
-        if not google_gmail_uri:
+        if not is_configured or not self.google_gmail_uri:
             raise UserError(_('Please configure your Gmail credentials.'))
 
         return {
             'type': 'ir.actions.act_url',
-            'url': google_gmail_uri,
+            'url': self.google_gmail_uri,
             'target': 'self',
         }
 
@@ -160,7 +119,7 @@ class GoogleGmailMixin(models.AbstractModel):
         google_gmail_client_id = Config.get_str('google_gmail_client_id')
         google_gmail_client_secret = Config.get_str('google_gmail_client_secret')
         if not google_gmail_client_id or not google_gmail_client_secret:
-            return self._fetch_gmail_access_token_iap(refresh_token)
+            raise UserError(_('Please configure your Gmail credentials.'))
 
         response = self._fetch_gmail_token('refresh_token', refresh_token=refresh_token)
         return (
@@ -198,38 +157,6 @@ class GoogleGmailMixin(models.AbstractModel):
             raise UserError(_('An error occurred when fetching the access token.'))
 
         return response.json()
-
-    def _fetch_gmail_access_token_iap(self, refresh_token):
-        """Fetch the access token using IAP.
-
-        Make a HTTP request to IAP, that will make a HTTP request
-        to the Gmail API and give us the result.
-
-        :return:
-            access_token, access_token_expiration
-        """
-        gmail_iap_endpoint = self.env['ir.config_parameter'].sudo().get_str(
-            'mail.server.gmail.iap.endpoint') or self.env['google.gmail.mixin']._DEFAULT_GMAIL_IAP_ENDPOINT
-        db_uuid = self.env['ir.config_parameter'].sudo().get_str('database.uuid')
-
-        response = requests.get(
-            url_join(gmail_iap_endpoint, '/api/mail_oauth/1/gmail_access_token'),
-            params={'refresh_token': refresh_token, 'db_uuid': db_uuid},
-            timeout=GMAIL_TOKEN_REQUEST_TIMEOUT,
-        )
-
-        if not response.ok:
-            _logger.error('Can not contact IAP: %s.', response.text)
-            raise UserError(_('Oops, we could not authenticate you. Please try again later.'))
-
-        response = response.json()
-        if 'error' in response:
-            self._raise_iap_error(response['error'])
-
-        return response
-
-    def _raise_iap_error(self, error):
-        raise UserError(get_iap_error_message(self.env, error))
 
     def _generate_oauth2_string(self, user, refresh_token):
         """Generate a OAuth2 string which can be used for authentication.

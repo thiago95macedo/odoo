@@ -31,9 +31,9 @@ class SmsSms(models.Model):
     # ------------------------------------------------------------
 
     def _split_by_api(self):
-        # override to handle twilio or IAP choice, which is company dependent
+        # override to handle twilio provider choice, which is company dependent
         # even twilio accounts may differ between companies
-        sms_by_company = defaultdict(lambda: self.env['sms.sms'])  # TODO RIGR: in master, let's be smarter and group by provider/twilio account (e.g.: IAP/twilio1/twilio2)
+        sms_by_company = defaultdict(lambda: self.env['sms.sms'])
         todo_via_super = self.browse()
         for sms in self:
             sms_by_company[sms._get_sms_company()] += sms

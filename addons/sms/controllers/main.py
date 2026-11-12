@@ -14,7 +14,7 @@ class SmsController(Controller):
 
     @route('/sms/status', type='jsonrpc', auth='public')
     def update_sms_status(self, message_statuses):
-        """Receive a batch of delivery reports from IAP
+        """Receive a batch of delivery reports from SMS provider
 
         :param message_statuses:
             [
@@ -29,20 +29,20 @@ class SmsController(Controller):
             ]
         """
         all_uuids = []
-        for uuids, iap_status in ((status['uuids'], status['sms_status']) for status in message_statuses):
-            self._check_status_values(uuids, iap_status, message_statuses)
+        for uuids, provider_status in ((status['uuids'], status['sms_status']) for status in message_statuses):
+            self._check_status_values(uuids, provider_status, message_statuses)
             if sms_trackers_sudo := request.env['sms.tracker'].sudo().search([('sms_uuid', 'in', uuids)]):
-                if state := request.env['sms.sms'].IAP_TO_SMS_STATE_SUCCESS.get(iap_status):
+                if state := request.env['sms.sms'].PROVIDER_TO_SMS_STATE_SUCCESS.get(provider_status):
                     sms_trackers_sudo._action_update_from_sms_state(state)
                 else:
-                    sms_trackers_sudo._action_update_from_provider_error(iap_status)
+                    sms_trackers_sudo._action_update_from_provider_error(provider_status)
             all_uuids += uuids
         return 'OK'
 
     @staticmethod
-    def _check_status_values(uuids, iap_status, message_statuses):
+    def _check_status_values(uuids, provider_status, message_statuses):
         """Basic checks to avoid unnecessary queries and allow debugging."""
-        if (not uuids or not iap_status or not re.match(r'^\w+$', iap_status)
+        if (not uuids or not provider_status or not re.match(r'^\w+$', provider_status)
                 or any(not re.match(r'^[0-9a-f]{32}$', uuid) for uuid in uuids)):
             _logger.warning('Received ill-formatted SMS delivery report event: \n%s', message_statuses)
             raise UserError(_("Bad parameters"), status=400)

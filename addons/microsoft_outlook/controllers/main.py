@@ -52,20 +52,6 @@ class MicrosoftOutlookController(http.Controller):
 
         return self._check_email_and_redirect_to_outlook_record(access_token, expiration, refresh_token, record_sudo)
 
-    @http.route('/microsoft_outlook/iap_confirm', type='http', auth='user')
-    def microsoft_outlook_iap_callback(self, model, rec_id, csrf_token, access_token, refresh_token, expiration):
-        """Receive back the refresh token and access token from IAP.
-
-        The authentication process with IAP is done in 4 steps;
-        1. User database make a request to `<IAP>/api/mail_oauth/1/outlook`
-        2. User browser is redirected to the URL we received from IAP
-        3. User browser is redirected to `<IAP>/api/mail_oauth/1/outlook_callback`
-           with the authorization_code
-        4. User browser is redirected to `<DB>/microsoft_outlook/iap_confirm`
-        """
-        record = self._get_outlook_record(model, rec_id, csrf_token)
-        return self._check_email_and_redirect_to_outlook_record(access_token, expiration, refresh_token, record)
-
     def _get_outlook_record(self, model_name, rec_id, csrf_token):
         """Return the given record after checking the CSRF token."""
         model = request.env[model_name]
@@ -94,7 +80,7 @@ class MicrosoftOutlookController(http.Controller):
             # because it comes from the user's browser redirection, and he could give an id_token of one account
             # and the refresh_token of a different account.
             # So we ask a new token to the outlook API to check the email address
-            # Because we received the JWT token from the API (or from IAP, with a direct HTTP request),
+            # Because we received the JWT token from the API with a direct HTTP request,
             # we don't even need to check the signature
             refresh_token, access_token, id_token, expiration = record._fetch_outlook_access_token(refresh_token)
             id_token_data = id_token.split(".")[1]

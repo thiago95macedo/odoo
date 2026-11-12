@@ -464,7 +464,6 @@
     <record id="feature_page_about_us" model="website.configurator.feature">
         <field name="name">About Us</field>
         <field name="description">Info and stats about your company</field>
-        <field name="iap_page_code">about_us</field>
         <field name="sequence">1</field>
         <field name="page_view_id" ref="aboutus"/>
         <field name="icon">business</field>
@@ -476,7 +475,6 @@
     <record id="feature_page_our_services" model="website.configurator.feature">
         <field name="name">Services</field>
         <field name="description">Description of your services offer</field>
-        <field name="iap_page_code">our_services</field>
         <field name="sequence">3</field>
         <field name="page_view_id" ref="our_services"/>
         <field name="icon">handshake</field>
@@ -487,7 +485,6 @@
     <record id="feature_page_pricing" model="website.configurator.feature">
         <field name="name">Pricing Plan</field>
         <field name="description">Useful if you sell subscriptions</field>
-        <field name="iap_page_code">pricing</field>
         <field name="sequence">4</field>
         <field name="page_view_id" ref="pricing"/>
         <field name="icon">shuffle</field>

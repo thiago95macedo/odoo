@@ -218,7 +218,7 @@ class TestMassSMSInternals(TestMassSMSCommon):
 
     @users('user_marketing')
     def test_mass_sms_processing_with_force_send(self):
-        """Test that a `processing` status returned by IAP is immediately applied to traces and mailing stays sending.
+        """Test that a `processing` status returned by provider is immediately applied to traces and mailing stays sending.
 
         The status update case where the sms are sent via the cron is done in TestSmsController.
         """
@@ -251,7 +251,7 @@ class TestMassSMSInternals(TestMassSMSCommon):
 
     @users('user_marketing')
     def test_mass_sms_error_with_force_send(self):
-        """Test that a failed status returned by IAP is immediately applied to traces."""
+        """Test that a failed status returned by provider is immediately applied to traces."""
         with self.with_user('user_marketing'):
             mailing = self.env['mailing.mailing'].create({
                 'subject': 'Xmas Spam',

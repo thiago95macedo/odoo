@@ -22,11 +22,6 @@
                 "new_base": "addons/account_edi/i18n/account_edi.pot"
             },
             {
-                "name": "account_edi_proxy_client",
-                "filemask": "addons/account_edi_proxy_client/i18n/*.po",
-                "new_base": "addons/account_edi_proxy_client/i18n/account_edi_proxy_client.pot"
-            },
-            {
                 "name": "account_edi_ubl_cii",
                 "filemask": "addons/account_edi_ubl_cii/i18n/*.po",
                 "new_base": "addons/account_edi_ubl_cii/i18n/account_edi_ubl_cii.pot"
@@ -50,11 +45,6 @@
                 "name": "account_payment_interco",
                 "filemask": "addons/account_payment_interco/i18n/*.po",
                 "new_base": "addons/account_payment_interco/i18n/account_payment_interco.pot"
-            },
-            {
-                "name": "account_peppol",
-                "filemask": "addons/account_peppol/i18n/*.po",
-                "new_base": "addons/account_peppol/i18n/account_peppol.pot"
             },
             {
                 "name": "account_qr_code_emv",

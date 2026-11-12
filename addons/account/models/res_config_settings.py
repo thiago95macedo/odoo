@@ -2,7 +2,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import _, api, fields, models
-from odoo.addons.account.models.company import PEPPOL_LIST
 
 
 class ResConfigSettings(models.TransientModel):
@@ -103,7 +102,6 @@ class ResConfigSettings(models.TransientModel):
     module_account_invoice_extract = fields.Boolean("Invoice Digitization", compute='_compute_module_account_invoice_extract', readonly=False, store=True)
     module_account_bank_statement_extract = fields.Boolean("Bank Statement Digitization", compute='_compute_module_account_bank_statement_extract', readonly=False, store=True)
     module_account_loan_extract = fields.Boolean("Loans Digitization", compute='_compute_module_account_loan_extract', readonly=False, store=True)
-    module_account_peppol = fields.Boolean(string='PEPPOL Invoicing')
     module_l10n_eu_account_vies = fields.Boolean(string='VAT number validation with VIES')
     tax_exigibility = fields.Boolean(string='Cash Basis', related='company_id.tax_exigibility', readonly=False)
     tax_cash_basis_journal_id = fields.Many2one(
@@ -211,12 +209,6 @@ class ResConfigSettings(models.TransientModel):
     )
     account_discount_expense_allocation_active = fields.Boolean(related='account_discount_expense_allocation_id.active', string="Customer Invoices Discounts Account Active")
 
-    # PEPPOL
-    is_account_peppol_eligible = fields.Boolean(
-        string='PEPPOL eligible',
-        compute='_compute_is_account_peppol_eligible',
-    ) # technical field used for showing the Peppol settings conditionally
-
     # Audit trail
     restrictive_audit_trail = fields.Boolean(string='Restricted Audit Trail', related='company_id.restrictive_audit_trail', readonly=False)
     force_restrictive_audit_trail = fields.Boolean(string='Forced Audit Trail', related='company_id.force_restrictive_audit_trail', readonly=False)
@@ -239,13 +231,6 @@ class ResConfigSettings(models.TransientModel):
         domain="[('internal_group', '=', 'expense')]",
         readonly=False, check_company=True,
     )
-
-    @api.depends('country_code')
-    def _compute_is_account_peppol_eligible(self):
-        # we want to show Peppol settings only to customers that are eligible for Peppol,
-        # except countries that are not in Europe
-        for config in self:
-            config.is_account_peppol_eligible = config.country_code in PEPPOL_LIST
 
     def set_values(self):
         super().set_values()

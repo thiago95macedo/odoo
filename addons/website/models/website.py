@@ -924,7 +924,7 @@ class Website(models.CachedModel):
                     el[0].attrib['t-value'] = json.dumps(footer_links)
                     view_id.with_context(website_id=website.id).write({'arch_db': etree.tostring(arch_string)})
 
-        # Load suggestions from IAP.
+        # Load industry suggestions.
         industry_id = kwargs['industry_id']
         images = {}
         # Keep the theme visuals untouched for unknown industries.

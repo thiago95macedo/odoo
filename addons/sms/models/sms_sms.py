@@ -21,14 +21,18 @@ class SmsSms(models.Model):
     _order = 'id DESC'
 
     @property
-    def IAP_TO_SMS_STATE_SUCCESS(self):
+    def PROVIDER_TO_SMS_STATE_SUCCESS(self):
         return {
             'processing': 'process',
             'success': 'pending',
-            # These below are not returned in responses from IAP API in _send but are received via webhook events.
+            # Delivered/sent status received via provider webhook events.
             'sent': 'pending',
             'delivered': 'sent',
         }
+
+    @property
+    def IAP_TO_SMS_STATE_SUCCESS(self):
+        return self.PROVIDER_TO_SMS_STATE_SUCCESS
 
     @property
     def BOUNCE_DELIVERY_ERRORS(self):
@@ -62,7 +66,7 @@ class SmsSms(models.Model):
         ('sms_database_non_active', 'Database non active'),
         ('sms_server', 'Server Error'),
         ('sms_acc', 'Unregistered Account'),
-        # mass mode specific codes, generated internally, not returned by IAP.
+        # mass mode specific codes, generated internally.
         ('sms_blacklist', 'Blacklisted'),
         ('sms_duplicate', 'Duplicate'),
         ('sms_optout', 'Opted Out'),
@@ -110,8 +114,8 @@ class SmsSms(models.Model):
         This contacts an external server. If the transaction fails, it may be
         retried which can result in sending multiple SMS messages!
 
-          :param unlink_sent: unlink sent SMS after IAP feedback;
-          :param raise_exception: raise if there is an issue contacting IAP;
+          :param unlink_sent: unlink sent SMS after provider feedback;
+          :param raise_exception: raise if there is an issue contacting SMS provider;
         """
         domain = [('state', '=', 'outgoing'), ('to_delete', '!=', True)]
         to_send = self.try_lock_for_update().filtered_domain(domain)
@@ -213,17 +217,17 @@ class SmsSms(models.Model):
         all_sms_sudo = self.env['sms.sms'].sudo().search([('uuid', 'in', results_uuids)]).with_context(sms_skip_msg_notification=True)
 
         to_delete = {'to_delete': True} if unlink_sent else {}
-        for (iap_state, failure_reason), results_group in tools.groupby(results, key=lambda result: (result['state'], result.get('failure_reason'))):
+        for (provider_state, failure_reason), results_group in tools.groupby(results, key=lambda result: (result['state'], result.get('failure_reason'))):
             sms_sudo = all_sms_sudo.filtered(lambda s: s.uuid in {result['uuid'] for result in results_group})
-            if success_state := self.IAP_TO_SMS_STATE_SUCCESS.get(iap_state):
+            if success_state := self.PROVIDER_TO_SMS_STATE_SUCCESS.get(provider_state):
                 sms_sudo.sms_tracker_id._action_update_from_sms_state(success_state)
                 sms_sudo.write({'state': success_state, 'failure_type': False, **to_delete})
             else:
-                failure_type = sms_api.PROVIDER_TO_SMS_FAILURE_TYPE.get(iap_state, 'unknown')
+                failure_type = sms_api.PROVIDER_TO_SMS_FAILURE_TYPE.get(provider_state, 'unknown')
                 if failure_type != 'unknown':
                     sms_sudo.sms_tracker_id._action_update_from_sms_state('error', failure_type=failure_type, failure_reason=failure_reason)
                 else:
-                    sms_sudo.sms_tracker_id._action_update_from_provider_error(iap_state, failure_reason=failure_reason)
+                    sms_sudo.sms_tracker_id._action_update_from_provider_error(provider_state, failure_reason=failure_reason)
                 sms_sudo.write({'state': 'error', 'failure_type': failure_type, **to_delete})
 
         all_sms_sudo._handle_call_result_hook(results)

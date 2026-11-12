@@ -16,7 +16,6 @@
         'views/mail_plugin_login.xml',
     ],
     'auto_install': True,
-    'iap_paid_service': True,
     'author': 'Odoo S.A.',
     'license': 'LGPL-3',
 }

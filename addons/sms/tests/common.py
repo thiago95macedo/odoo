@@ -121,7 +121,7 @@ class SMSCase(MockSMS):
         return sms
 
     def assertSMSIapSent(self, numbers, content=None):
-        """ Check sent SMS (to IAP, but other providers like twilio should be
+        """ Check sent SMS (providers like twilio should be
         mocked to fill up 'self._sms', allowing tests to pass). Order is not
         checked. Each number should have received the same content. Useful to
         check batch sending.

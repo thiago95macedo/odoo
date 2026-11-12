@@ -454,7 +454,7 @@ Return ONLY a JSON object with:
      * Called each time the autocomplete input's value changes. Only industries
      * having a label or a synonym containing all terms of the input value are
      * kept.
-     * The order received from IAP is kept (expected to be on descending hit
+     * The order of industries is kept (expected to be on descending hit
      * count) unless there are 7 or less matches in which case the results are
      * sorted alphabetically.
      * The result size is limited to 30.
@@ -482,7 +482,7 @@ Return ONLY a JSON object with:
         }
         const terms = Array.from(correctedSet);
         const limit = 30;
-        // `this.state.industries` is already sorted by hit count (from IAP).
+        // `this.state.industries` is already sorted by hit count.
         // That order should be kept after manipulating the recordset.
         let matches = this.state.industries.filter((val, index) =>
             // To match, every term should be contained in the label
@@ -1605,7 +1605,7 @@ export class Configurator extends Component {
     }
 
     async getInitialState() {
-        // Load values from python and iap
+        // Load initial values
         var results = await this.orm.call("website", "configurator_init");
         const r = {
             industries: results.industries,

@@ -19,38 +19,32 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
-"20/website_payment/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-20/website_payment/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : ((n != 0 && n % "
-"1000000 == 0) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : ((n != 0 && n % 1000000 == 0) ? 1 : 2);\n"
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: website_payment
 #: model:ir.module.module,description:base.module_website_payment
 msgid ""
 "\n"
-"This is a bridge module that adds multi-website support for payment "
-"providers.\n"
+"This is a bridge module that adds multi-website support for payment providers.\n"
 msgstr ""
 "\n"
-"Este é um módulo de ponte que adiciona suporte a múltiplos sites para "
-"provedores de pagamento.\n"
+"Este é um módulo de ponte que adiciona suporte a múltiplos sites para provedores de pagamento.\n"
 
 #. module: website_payment
 #: model_terms:ir.ui.view,arch_db:website_payment.res_config_settings_view_form
 msgid ""
 "<span class=\"oe_inline pe-0\">\n"
-"                            Install a payment provider to accept online "
-"payments.\n"
+"                            Install a payment provider to accept online payments.\n"
 "                        </span>"
 msgstr ""
 "<span class=\"oe_inline pe-0\">\n"
-"                            Instale um provedor de pagamento para aceitar "
-"pagamentos online.\n"
+"                            Instale um provedor de pagamento para aceitar pagamentos online.\n"
 "                        </span>"
 
 #. module: website_payment
@@ -190,8 +184,8 @@ msgstr "Ver provedores"
 #. module: website_payment
 #: model_terms:ir.ui.view,arch_db:website_payment.res_config_settings_view_form
 msgid ""
-"Visa, Mastercard, Maestro, UPI, Netbanking, PayNow, Klarna, etc., as well as "
-"recurring charges."
+"Visa, Mastercard, Maestro, UPI, Netbanking, PayNow, Klarna, etc., as well as"
+" recurring charges."
 msgstr ""
 "Visa, Mastercard, Maestro, UPI, Netbanking, PayNow, Klarna, etc., bem como "
 "cobranças recorrentes."
@@ -206,11 +200,11 @@ msgstr "Site"
 msgid "Website Payment"
 msgstr "Site – Pagamento"
 
+#. module: website_payment
 msgid ""
 ".\n"
 "                        <br/>\n"
-"                        We appreciate your support for our organization as "
-"such.\n"
+"                        We appreciate your support for our organization as such.\n"
 "                        <br/>\n"
 "                        Regards."
 msgstr ""
@@ -220,57 +214,69 @@ msgstr ""
 "                        <br/>\n"
 "                        Atenciosamente."
 
+#. module: website_payment
 msgid "<b>Comment:</b>"
 msgstr "<b>Comentário:</b>"
 
+#. module: website_payment
 msgid "<b>Donation Date:</b>"
 msgstr "<b>Data da doação:</b>"
 
+#. module: website_payment
 msgid "<b>Donor Email:</b>"
 msgstr "<b>E-mail do doador:</b>"
 
+#. module: website_payment
 msgid "<b>Donor Name:</b>"
 msgstr "<b>Nome do doador:</b>"
 
+#. module: website_payment
 msgid "<b>Payment ID:</b>"
 msgstr "<b>ID do pagamento:</b>"
 
+#. module: website_payment
 msgid "<b>Payment Method:</b>"
 msgstr "<b>Forma de pagamento:</b>"
 
+#. module: website_payment
 msgid ""
 "<small class=\"text-danger d-none\" id=\"warning_message_id\">Please enter "
 "the amount to donate.</small>"
 msgstr ""
-"<small class=\"text-danger d-none\" id=\"warning_message_id\">Digite o valor "
-"a doar.</small>"
+"<small class=\"text-danger d-none\" id=\"warning_message_id\">Digite o valor"
+" a doar.</small>"
 
+#. module: website_payment
 msgid ""
 "<span class=\"oe_inline pe-0\">\n"
-"                            Enable a payment provider to accept online "
-"payments.\n"
+"                            Enable a payment provider to accept online payments.\n"
 "                        </span>"
 msgstr ""
 "<span class=\"oe_inline pe-0\">\n"
-"                           Habilite um provedor de pagamentos para aceitar "
-"pagamentos online.\n"
+"                           Habilite um provedor de pagamentos para aceitar pagamentos online.\n"
 "                        </span>"
 
+#. module: website_payment
 msgid "<span class=\"s_donation_currency pe-1\">$</span>"
 msgstr "<span class=\"s_donation_currency pe-1\">$</span>"
 
+#. module: website_payment
 msgid "<span class=\"s_donation_currency pe-1\">$</span>10"
 msgstr "<span class=\"s_donation_currency pe-1\">$</span>10"
 
+#. module: website_payment
 msgid "<span class=\"s_donation_currency pe-1\">$</span>100"
 msgstr "<span class=\"s_donation_currency pe-1\">$</span>100"
 
+#. module: website_payment
 msgid "<span class=\"s_donation_currency pe-1\">$</span>25"
 msgstr "<span class=\"s_donation_currency pe-1\">$</span>25"
 
+#. module: website_payment
 msgid "<span class=\"s_donation_currency pe-1\">$</span>50"
 msgstr "<span class=\"s_donation_currency pe-1\">$</span>50"
 
+#. module: website_payment
 msgid ""
 "<span class=\"s_website_form_label_content\">Country</span>\n"
 "                            <span class=\"s_website_form_mark\"> *</span>"
@@ -278,6 +284,7 @@ msgstr ""
 "<span class=\"s_website_form_label_content\">País</span>\n"
 "                            <span class=\"s_website_form_mark\"> *</span>"
 
+#. module: website_payment
 msgid ""
 "<span class=\"s_website_form_label_content\">Email</span>\n"
 "                            <span class=\"s_website_form_mark\"> *</span>"
@@ -285,6 +292,7 @@ msgstr ""
 "<span class=\"s_website_form_label_content\">E-mail</span>\n"
 "                            <span class=\"s_website_form_mark\"> *</span>"
 
+#. module: website_payment
 msgid ""
 "<span class=\"s_website_form_label_content\">Name</span>\n"
 "                            <span class=\"s_website_form_mark\"> *</span>"
@@ -292,187 +300,248 @@ msgstr ""
 "<span class=\"s_website_form_label_content\">Nome</span>\n"
 "                                <span class=\"s_website_form_mark\"> *</span>"
 
+#. module: website_payment
 msgid "<span>Enable a payment provider to accept online payments.</span>"
 msgstr ""
-"<span>Habilite um provedor de pagamento para aceitar pagamentos on-line.</"
-"span>"
+"<span>Habilite um provedor de pagamento para aceitar pagamentos on-"
+"line.</span>"
 
+#. module: website_payment
 msgid "<span>or</span>"
 msgstr "<span>ou</span>"
 
+#. module: website_payment
 msgid "<strong>Warning</strong> The currency is missing or incorrect."
 msgstr "<strong>Aviso:</strong> a moeda está faltando ou é incorreta."
 
+#. module: website_payment
 msgid "A donation has been made on your website"
 msgstr "Uma doação foi feita no seu site"
 
+#. module: website_payment
 msgid "A year of cultural awakening."
 msgstr "Um ano de despertar cultural."
 
+#. module: website_payment
 msgid "Add"
 msgstr "Adicionar"
 
+#. module: website_payment
 msgid "Add a description here"
 msgstr "Adicione uma descrição aqui"
 
+#. module: website_payment
 msgid "Amount"
 msgstr "Valor"
 
+#. module: website_payment
 msgid "Amount ("
 msgstr "Valor ("
 
+#. module: website_payment
 msgid "Amount to donate"
 msgstr "Valor a doar"
 
+#. module: website_payment
 msgid "Amount("
 msgstr "Valor ("
 
+#. module: website_payment
 msgid "Caring for a baby for 1 month."
 msgstr "Cuidar de um bebê por um mês."
 
+#. module: website_payment
 msgid "Choose Your Amount"
 msgstr "Escolha a quantia"
 
+#. module: website_payment
 msgid "Country"
 msgstr "País"
 
+#. module: website_payment
 msgid "Country is required."
 msgstr "É necessário informar o país."
 
+#. module: website_payment
 msgid "Custom Amount"
 msgstr "Outra quantia"
 
+#. module: website_payment
 msgid "Dear"
 msgstr "Prezado(a)"
 
+#. module: website_payment
 msgid "Default Amount"
 msgstr "Quantia padrão"
 
+#. module: website_payment
 msgid "Descriptions"
 msgstr "Descrições"
 
+#. module: website_payment
 msgid "Display Options"
 msgstr "Exibir opções"
 
+#. module: website_payment
 msgid "Donate"
 msgstr "Doar"
 
+#. module: website_payment
 msgid "Donate Now"
 msgstr "Doe agora"
 
+#. module: website_payment
 msgid "Donation"
 msgstr "Doação"
 
+#. module: website_payment
 msgid "Donation Button"
 msgstr "Botão de doação"
 
+#. module: website_payment
 msgid "Donation Log Message"
 msgstr "Mensagem do registro de doações"
 
+#. module: website_payment
 msgid "Donation Payment"
 msgstr "Pagamento de doação"
 
+#. module: website_payment
 msgid "Donation amount must be at least %.2f."
 msgstr "A doação deve ser de no mínimo %.2f."
 
+#. module: website_payment
 msgid "Donation confirmation"
 msgstr "Confirmação de doação"
 
+#. module: website_payment
 msgid "Donation notification"
 msgstr "Notificação de doação"
 
+#. module: website_payment
 msgid "Email"
 msgstr "E-mail"
 
+#. module: website_payment
 msgid "Email is required."
 msgstr "É necessário informar o e-mail."
 
+#. module: website_payment
 msgid "Enter a valid number!"
 msgstr "Digite um número válido!"
 
+#. module: website_payment
 msgid "Input"
 msgstr "Entrada"
 
+#. module: website_payment
 msgid "Is Donation"
 msgstr "É doação"
 
+#. module: website_payment
 msgid "Is donation"
 msgstr "É doação"
 
+#. module: website_payment
 msgid "Make a Donation"
 msgstr "Fazer uma doação"
 
+#. module: website_payment
 msgid "Maximum"
 msgstr "Máximo"
 
+#. module: website_payment
 msgid "Minimum"
 msgstr "Mínimo"
 
+#. module: website_payment
 msgid "Name"
 msgstr "Nome"
 
+#. module: website_payment
 msgid "Name is required."
 msgstr "É necessário informar o nome."
 
+#. module: website_payment
 msgid "None"
 msgstr "Nenhum"
 
+#. module: website_payment
 msgid "One year in elementary school."
 msgstr "Um ano no ensino fundamental."
 
+#. module: website_payment
 msgid "One year in high school."
 msgstr "Um ano no ensino médio."
 
+#. module: website_payment
 msgid "Payment"
 msgstr "Pagamento"
 
+#. module: website_payment
 msgid "Payment Details"
 msgstr "Informações de pagamento"
 
+#. module: website_payment
 msgid "Payment Transaction"
 msgstr "Transação do pagamento"
 
+#. module: website_payment
 msgid "Please enter a valid email address."
 msgstr "Insira um e-mail válido."
 
+#. module: website_payment
 msgid "Please provide a name."
 msgstr "Forneça um nome."
 
+#. module: website_payment
 msgid "Please select or enter an amount"
 msgstr "Selecione ou insira uma quantia"
 
+#. module: website_payment
 msgid "Pre-filled Options"
 msgstr "Opções pré-preenchidas"
 
+#. module: website_payment
 msgid "Recipient Email"
 msgstr "E-mail do destinatário"
 
+#. module: website_payment
 msgid "Slider"
 msgstr "Slider"
 
+#. module: website_payment
 msgid "Small or large, your contribution is essential."
 msgstr "Pequena ou grande, a sua contribuição é essencial."
 
+#. module: website_payment
 msgid "Step"
 msgstr "Passo"
 
+#. module: website_payment
 msgid "Thank you for your donation of"
 msgstr "Agradecemos pela sua doação no valor de"
 
+#. module: website_payment
 msgid "The minimum donation amount is"
 msgstr "O valor mínimo de doação é"
 
+#. module: website_payment
 msgid "The minimum donation amount is %(amount)s"
 msgstr "O valor mínimo de doação é %(amount)s"
 
+#. module: website_payment
 msgid "There is nothing to pay."
 msgstr "Não há nada a pagar."
 
+#. module: website_payment
 msgid "Write us a comment"
 msgstr "Escreva um comentário"
 
+#. module: website_payment
 msgid "Your comment"
 msgstr "Seu comentário"
 
+#. module: website_payment
 msgid "made on"
 msgstr "realizada no dia"

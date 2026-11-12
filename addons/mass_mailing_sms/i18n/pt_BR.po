@@ -120,19 +120,6 @@ msgstr "<span widget=\"statinfo\">Abrir recipiente</span>"
 #: model_terms:ir.ui.view,arch_db:mass_mailing_sms.mailing_mailing_view_form_sms
 msgid ""
 "<strong>\n"
-"                            It appears you don't have enough IAP credits. "
-"Click here to buy credits.\n"
-"                        </strong>"
-msgstr ""
-"<strong>\n"
-"                            Parece que você não tem créditos de IAP "
-"suficientes. Clique aqui para comprar créditos.\n"
-"                        </strong>"
-
-#. module: mass_mailing_sms
-#: model_terms:ir.ui.view,arch_db:mass_mailing_sms.mailing_mailing_view_form_sms
-msgid ""
-"<strong>\n"
 "                            It appears your SMS account is not registered. "
 "Click here to set up your account.\n"
 "                        </strong>"
@@ -534,11 +521,6 @@ msgstr ""
 #: model:ir.model.fields.selection,name:mass_mailing_sms.selection__mailing_trace__failure_type__sms_credit
 msgid "Insufficient Credit"
 msgstr "Créditos insuficientes"
-
-#. module: mass_mailing_sms
-#: model:ir.model.fields,field_description:mass_mailing_sms.field_mailing_mailing__sms_has_insufficient_credit
-msgid "Insufficient IAP credits"
-msgstr "Créditos IAP Insuficientes"
 
 #. module: mass_mailing_sms
 #: model_terms:ir.ui.view,arch_db:mass_mailing_sms.mailing_mailing_view_kanban_sms
@@ -1091,11 +1073,6 @@ msgstr "Mixin do UTM"
 #: model:ir.model.fields.selection,name:mass_mailing_sms.selection__mailing_trace__failure_type__sms_acc
 msgid "Unregistered Account"
 msgstr "Conta não registrada"
-
-#. module: mass_mailing_sms
-#: model:ir.model.fields,field_description:mass_mailing_sms.field_mailing_mailing__sms_has_unregistered_account
-msgid "Unregistered IAP account"
-msgstr "Conta IAP não registrada"
 
 #. module: mass_mailing_sms
 #: model_terms:ir.ui.view,arch_db:mass_mailing_sms.mailing_mailing_view_kanban_sms

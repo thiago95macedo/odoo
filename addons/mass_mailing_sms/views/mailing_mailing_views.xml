@@ -172,18 +172,6 @@
         </field>
     </record>
 
-    <record id="mailing_mailing_view_kanban_sms" model="ir.ui.view">
-        <field name="name">mailing.mailing.view.kanban.inherit.sms</field>
-        <field name="model">mailing.mailing</field>
-        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_kanban"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='active']" position="after">
-                <field name="sms_has_insufficient_credit" invisible="1"/>
-                <field name="sms_has_unregistered_account" invisible="1"/>
-            </xpath>
-        </field>
-    </record>
-
     <record id="mailing_mailing_view_tree_sms" model="ir.ui.view">
         <field name="name">mailing.mailing.view.list.sms</field>
         <field name="model">mailing.mailing</field>
@@ -235,7 +223,7 @@
     <record id="mailing_mailing_action_sms_view_kanban" model="ir.actions.act_window.view">
         <field name="sequence">2</field>
         <field name="view_mode">kanban</field>
-        <field name="view_id" ref="mailing_mailing_view_kanban_sms"/>
+        <field name="view_id" ref="mass_mailing.view_mail_mass_mailing_kanban"/>
         <field name="act_window_id" ref="mailing_mailing_action_sms"/>
     </record>
 

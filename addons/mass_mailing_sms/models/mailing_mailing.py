@@ -43,10 +43,6 @@ class MailingMailing(models.Model):
         'SMS Body', compute='_compute_body_plaintext',
         store=True, readonly=False)
     sms_template_id = fields.Many2one('sms.template', string='SMS Template', ondelete='set null')
-    sms_has_insufficient_credit = fields.Boolean(
-        'Insufficient IAP credits', compute='_compute_sms_has_iap_failure') # used to propose buying IAP credits
-    sms_has_unregistered_account = fields.Boolean(
-        'Unregistered IAP account', compute='_compute_sms_has_iap_failure') # used to propose to Register the SMS IAP account
     sms_force_send = fields.Boolean(
         'Send Directly', help='Immediately send the SMS Mailing instead of queuing up. Use at your own risk.')
     # opt_out_link
@@ -79,21 +75,6 @@ class MailingMailing(models.Model):
         for mailing in self:
             if mailing.mailing_type == 'sms' and mailing.sms_template_id:
                 mailing.body_plaintext = mailing.sms_template_id.body
-
-    @api.depends('mailing_trace_ids.failure_type')
-    def _compute_sms_has_iap_failure(self):
-        self.sms_has_insufficient_credit = self.sms_has_unregistered_account = False
-        traces = self.env['mailing.trace'].sudo()._read_group([
-                    ('mass_mailing_id', 'in', self.ids),
-                    ('trace_type', '=', 'sms'),
-                    ('failure_type', 'in', ['sms_acc', 'sms_credit'])
-        ], ['mass_mailing_id', 'failure_type'])
-
-        for mass_mailing, failure_type in traces:
-            if failure_type == 'sms_credit':
-                mass_mailing.sms_has_insufficient_credit = True
-            elif failure_type == 'sms_acc':
-                mass_mailing.sms_has_unregistered_account = True
 
     # --------------------------------------------------
     # ORM OVERRIDES

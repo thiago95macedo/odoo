@@ -330,7 +330,7 @@ class IrModuleModule(models.Model):
     icon_image = fields.Binary(string='Icon', compute='_get_icon_image')
     icon_flag = fields.Char(string='Flag', compute='_get_icon_image')
     to_buy = fields.Boolean('Odoo Enterprise Module', default=False)
-    iap_paid_service = fields.Boolean("Contains In-App Purchases")
+
 
     _name_uniq = models.Constraint(
         'UNIQUE (name)',
@@ -785,7 +785,7 @@ class IrModuleModule(models.Model):
             'summary': terp.get('summary', ''),
             'url': terp.get('url') or terp.get('live_test_url', ''),
             'to_buy': False,
-            'iap_paid_service': terp.get('iap_paid_service', False),
+
         }
 
     @api.model_create_multi

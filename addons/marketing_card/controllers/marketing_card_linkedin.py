@@ -43,12 +43,12 @@ class MarketingCardLinkedinController(Controller):
 
     @route([_LINKEDIN_SHARE_CALLBACK_PATH], type='http', auth='public', website=True, sitemap=False)
     def linkedin_share_callback(self, state, access_token=None, code=None, error=None, **kwargs):
-        """Expect a response either from IAP or linkedin.
+        """Expect an OAuth response from LinkedIn.
 
-        :param string|None access_token: a linkedin access token provided by IAP
+        :param string|None access_token: a linkedin access token
         :param string|None code: a linkedin authorization code provided by linkedin
-        :param string state: expected to be the id of the card we're posting, provided by both
-        :param string|None error: an error string, provided by both
+        :param string state: expected to be the id of the card we're posting
+        :param string|None error: an error string
         """
         card_id = int(state)  # state is a standard oauth parameter, for now we only store the card_id in it
         card = self.env['card.card'].browse(card_id).exists()

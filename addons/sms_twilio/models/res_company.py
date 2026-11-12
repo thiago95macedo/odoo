@@ -12,10 +12,9 @@ class ResCompany(models.Model):
     sms_provider = fields.Selection(
         string='SMS Provider',
         selection=[
-            ('iap', 'Send via Odoo'),
             ('twilio', 'Send via Twilio'),
         ],
-        default='iap',
+        default='twilio',
     )
     sms_twilio_account_sid = fields.Char("Account SID", groups='base.group_system')
     sms_twilio_auth_token = fields.Char("Auth Token", groups='base.group_system')

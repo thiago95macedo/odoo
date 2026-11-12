@@ -12,9 +12,9 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     @api.model
-    def _iap_replace_location_codes(self, iap_data):
-        country_code, country_name = iap_data.pop('country_code', False), iap_data.pop('country_name', False)
-        state_code, state_name = iap_data.pop('state_code', False), iap_data.pop('state_name', False)
+    def _format_location_codes(self, partner_data):
+        country_code, country_name = partner_data.pop('country_code', False), partner_data.pop('country_name', False)
+        state_code, state_name = partner_data.pop('state_code', False), partner_data.pop('state_name', False)
 
         country, state = None, None
         if country_code:
@@ -33,13 +33,13 @@ class ResPartner(models.Model):
                 ], limit=1)
 
         if country:
-            iap_data['country_id'] = {'id': country.id, 'display_name': country.display_name}
+            partner_data['country_id'] = {'id': country.id, 'display_name': country.display_name}
         if state:
-            iap_data['state_id'] = {'id': state.id, 'display_name': state.display_name}
+            partner_data['state_id'] = {'id': state.id, 'display_name': state.display_name}
 
         # Handle base_address_extended
         if self.env['ir.module.module']._get('base_address_extended').state == 'installed':
-            city_zip, city_name = iap_data.get('zip'), iap_data.get('city')
+            city_zip, city_name = partner_data.get('zip'), partner_data.get('city')
             if (city_zip or city_name) and country and country.enforce_cities:
                 domain = Domain('country_id', '=', country.id)
                 if state:
@@ -50,36 +50,36 @@ class ResPartner(models.Model):
                 if not city and city_name:
                     city = self.env['res.city'].search(domain & Domain('name', '=ilike', city_name), limit=1)
                 if city:
-                    iap_data['city_id'] = {'id': city.id, 'display_name': city.display_name}
-                    iap_data['state_id'] = {'id': city.state_id.id, 'display_name': city.state_id.display_name}
-                    iap_data.pop('city', False)
+                    partner_data['city_id'] = {'id': city.id, 'display_name': city.display_name}
+                    partner_data['state_id'] = {'id': city.state_id.id, 'display_name': city.state_id.display_name}
+                    partner_data.pop('city', False)
 
-        return iap_data
+        return partner_data
 
     @api.model
-    def _iap_replace_industry_code(self, iap_data):
-        if industry_code := iap_data.pop('industry_code', False):
+    def _format_industry_code(self, partner_data):
+        if industry_code := partner_data.pop('industry_code', False):
             if industry := self.env.ref(f'base.res_partner_industry_{industry_code}', raise_if_not_found=False):
-                iap_data['industry_id'] = {'id': industry.id, 'display_name': industry.display_name}
-        return iap_data
+                partner_data['industry_id'] = {'id': industry.id, 'display_name': industry.display_name}
+        return partner_data
 
     @api.model
-    def _iap_replace_language_codes(self, iap_data):
-        if lang := iap_data.pop('preferred_language', False):
+    def _format_language_codes(self, partner_data):
+        if lang := partner_data.pop('preferred_language', False):
             if installed_lang := (
                 self.env['res.lang'].search([('code', '=', lang), ('iso_code', '=', lang)])  # specific lang (e.g.: fr_BE)
                 or
                 self.env['res.lang'].search([('code', 'ilike', lang[:2]), ('iso_code', 'ilike', lang[:2])], limit=1)  # fallback to generic lang (e.g. fr)
             ):
-                iap_data['lang'] = installed_lang.code
-        return iap_data
+                partner_data['lang'] = installed_lang.code
+        return partner_data
 
     @api.model
-    def _format_data_company(self, iap_data):
-        self._iap_replace_location_codes(iap_data)
-        self._iap_replace_industry_code(iap_data)
-        self._iap_replace_language_codes(iap_data)
-        return iap_data
+    def _format_data_company(self, partner_data):
+        self._format_location_codes(partner_data)
+        self._format_industry_code(partner_data)
+        self._format_language_codes(partner_data)
+        return partner_data
 
     @api.model
     def autocomplete_by_field(self, fieldName, query, query_country_id, timeout=15):
@@ -102,7 +102,7 @@ class ResPartner(models.Model):
                 zip_city_record = next(filter(lambda addr: re.match(r'^\d.*', addr), address[1:]), None)
                 zip_city = zip_city_record.split(' ', 1) if zip_city_record else [None, None]
                 street2 = next((addr for addr in filter(lambda addr: addr != zip_city_record, address[1:])), None)
-                return [self._iap_replace_location_codes({
+                return [self._format_location_codes({
                     'name': name,
                     'vat': vat,
                     'street': street,

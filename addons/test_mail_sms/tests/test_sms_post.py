@@ -328,7 +328,7 @@ class TestSMSPostException(SMSCommon, TestSMSRecipients):
             test_record = self.env['mail.test.sms'].browse(self.test_record.id)
             messages = test_record._message_sms(self._test_body, sms_numbers=random_numbers)
 
-        # invalid numbers are still given to IAP currently as they are
+        # invalid numbers are still given to provider currently as they are
         self.assertSMSNotification([{'number': self.random_numbers_san[0]}, {'number': self.random_numbers_san[1]}, {'number': random_numbers[2]}], self._test_body, messages)
 
     def test_message_sms_w_partners_nocountry(self):
@@ -343,7 +343,7 @@ class TestSMSPostException(SMSCommon, TestSMSRecipients):
         self.assertSMSNotification([{'partner': self.test_record.customer_id}], self._test_body, messages)
 
     def test_message_sms_w_partners_falsy(self):
-        # TDE FIXME: currently sent to IAP
+        # TDE FIXME: currently sent to provider
         self.test_record.customer_id.write({
             'phone': 'youpla',
         })

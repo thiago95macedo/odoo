@@ -98,15 +98,7 @@ class TestSmsTwilio(MockSmsTwilio):
             "sms_twilio_account_sid": "AC11111222223333344444555556666677",
             "sms_twilio_auth_token": "skarsnik",
         })
-        company_iap = self.env['res.company'].sudo().create({
-            "name": "Company 3 (IAP)",
-            "sms_provider": "iap",
-        })
-        company_iap_2 = self.env['res.company'].sudo().create({
-            "name": "Company 4 (IAP)",
-            "sms_provider": "iap",
-        })
-        self.env.user.sudo().company_ids |= company_twilio_2 + company_iap + company_iap_2
+        self.env.user.sudo().company_ids |= company_twilio_2
 
         partners_twilio = self.env['res.partner'].create([{
             "name": f"Partner Twilio {i}",
@@ -120,18 +112,6 @@ class TestSmsTwilio(MockSmsTwilio):
             "company_id": company_twilio_2.id
         } for i in range(2)])
 
-        partners_iap = self.env['res.partner'].create([{
-            "name": f"Partner IAP {i}",
-            "phone": f"+1220215433{i}",
-            "company_id": company_iap.id
-        } for i in range(2)])
-
-        partners_iap_2 = self.env['res.partner'].create([{
-            "name": f"Partner IAP2 {i}",
-            "phone": f"+1220215444{i}",
-            "company_id": company_iap_2.id
-        } for i in range(2)])
-
         with (
             self.mockSMSGateway(),
             self.mock_sms_twilio_send(),
@@ -140,14 +120,13 @@ class TestSmsTwilio(MockSmsTwilio):
                 "body": "Mixed SMS",
                 "composition_mode": 'mass',
                 "mass_force_send": True,
-                "res_ids": (partners_twilio + partners_twilio_2 + partners_iap + partners_iap_2).ids,
+                "res_ids": (partners_twilio + partners_twilio_2).ids,
                 "res_model": "res.partner",
             })
             composer_twilio._action_send_sms()
 
-            # should call twilio 4 times (4 partners, one number at a time) and IAP 1 time (batch, even different companies)
+            # should call twilio 4 times (4 partners, one number at a time)
             self.assertEqual(self._sms_twilio_send_mock.call_count, 4)
-            self.assertEqual(self._sms_api_contact_iap_mock.call_count, 1)
 
             # check SMS statuses
             # TDE FIXME: in mass mode without mailing, no sms_tracker are created hence
@@ -170,37 +149,12 @@ class TestSmsTwilio(MockSmsTwilio):
                         "record_company_id": company_twilio_2,
                     },
                 )
-            for partner in partners_iap:
-                self.assertSMS(
-                    partner, partner.phone, "pending",
-                    content="Mixed SMS",
-                    failure_type=False,
-                    fields_values={
-                        "record_company_id": company_iap,
-                    },
-                )
-            for partner in partners_iap_2:
-                self.assertSMS(
-                    partner, partner.phone, "pending",
-                    content="Mixed SMS",
-                    failure_type=False,
-                    fields_values={
-                        "record_company_id": company_iap_2,
-                    },
-                )
             # Ensure SMS Queue Manager _process_queue cron runs in multi company
             self.env['sms.sms'].sudo().create({
                 "body": "Test Cron SMS Twilio",
                 "partner_id": partners_twilio[0].id,
                 "number": "+12202154110",
                 "record_company_id": company_twilio.id,
-                "state": "outgoing"
-            })
-            self.env['sms.sms'].sudo().create({
-                "body": "Test Cron SMS IAP",
-                "partner_id": partners_iap[0].id,
-                "number": "+12202154330",
-                "record_company_id": company_iap.id,
                 "state": "outgoing"
             })
             # patch to prevent self.env['ir.cron']._commit_progress

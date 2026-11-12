@@ -156,8 +156,8 @@ class PaymentProvider(models.Model):
                 self.env._("Set the account country before connecting the account.")
             )
 
-        # Encode the return URL parameters here rather than passing them in the 'state' parameter
-        # from IAP, because Mercado Pago doesn't JSON dumps in that parameter.
+        # Encode the return URL parameters here rather than passing them in the 'state' parameter,
+        # because Mercado Pago doesn't JSON dumps in that parameter.
         return_url_params = {"provider_id": self.id, "csrf_token": request.csrf_token()}
         return_url = urljoin(self.get_base_url(), const.OAUTH_RETURN_ROUTE)
         proxy_url_params = {

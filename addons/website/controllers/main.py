@@ -56,14 +56,13 @@ SITEMAP_CACHE_TIME = datetime.timedelta(hours=12)
 MAX_FONT_FILE_SIZE = 10 * 1024 * 1024
 SUPPORTED_FONT_EXTENSIONS = ['ttf', 'woff', 'woff2', 'otf']
 FORCE_SHOW_FIELDS = ['name', 'search_item_metadata', 'tags']
-API_WEBSITE_IMAGES_URL = 'https://website-image.api.odoo.com/images/'
 CONFIGURATOR_PREVIEW_UNSAFE_URL_CHARS = set('"\'<>()\\ \t\r\n')
 CONFIGURATOR_PREVIEW_CSP = (
     "default-src 'none';"
     " base-uri 'self';"
     " form-action 'none';"
     " sandbox allow-same-origin;"
-    f" img-src 'self' data: {API_WEBSITE_IMAGES_URL};"
+    " img-src 'self' data:;"
     " style-src 'unsafe-inline';"
     " font-src 'self' data: https://fonts.gstatic.com;"
     " frame-ancestors 'self'"
@@ -587,7 +586,7 @@ class Website(Home):
         return None
 
     def _get_configurator_industry_image_url(self, images_map, image_name):
-        """Return the IAP industry image replacing a preview image, if any.
+        """Return the industry image replacing a preview image, if any.
 
         :param dict images_map: industry image replacement mapping
         :param str image_name: original image name or URL segment
@@ -625,8 +624,6 @@ class Website(Home):
             return False
         if set(image_url) & CONFIGURATOR_PREVIEW_UNSAFE_URL_CHARS:
             return False
-        if image_url.startswith(API_WEBSITE_IMAGES_URL):
-            return True
         if not image_url.startswith('/'):
             return False
         module, _, path = image_url[1:].partition('/')
@@ -651,36 +648,30 @@ class Website(Home):
             module, _, shape_filename = shape_file_path.partition('/')
             if not shape_filename:
                 continue
-            if not mapped_image_url.startswith(API_WEBSITE_IMAGES_URL):
-                local_image_path = urllib.parse.unquote(mapped_image_url)
-                if not self._is_safe_configurator_preview_image_url(local_image_path):
-                    continue
-                try:
-                    with file_open(
-                        local_image_path.lstrip('/'),
-                        'rb',
-                        filter_ext=tuple(SUPPORTED_IMAGE_MIMETYPES.values()),
-                    ) as file:
-                        image = file.read()
-                except (FileNotFoundError, ValueError):
-                    continue
-                mimetype = guess_mimetype(image)
-                if mimetype not in SUPPORTED_IMAGE_MIMETYPES:
-                    continue
-                shape_svg = get_shape_svg(module, 'image_shapes', shape_filename)
-                shape_options = dict(urllib.parse.parse_qsl(shape_query.replace('&amp;', '&'), keep_blank_values=True))
-                shape_svg = make_shaped_image(request.env, shape_svg, image, mimetype, shape_options)
-                shape_data_uri = 'data:image/svg+xml;base64,%s' % base64.b64encode(shape_svg.encode()).decode()
-                final_html = final_html.replace(shape_src, shape_data_uri)
+            local_image_path = urllib.parse.unquote(mapped_image_url)
+            if not self._is_safe_configurator_preview_image_url(local_image_path):
                 continue
-            shaped_url = f'/html_editor/image_shape_url/{module}/{shape_filename}'
-            image_query = werkzeug.urls.url_encode({'image_url': mapped_image_url})
-            shaped_url = f'{shaped_url}?{shape_query}&{image_query}' if shape_query else f'{shaped_url}?{image_query}'
-            final_html = final_html.replace(shape_src, shaped_url)
+            try:
+                with file_open(
+                    local_image_path.lstrip('/'),
+                    'rb',
+                    filter_ext=tuple(SUPPORTED_IMAGE_MIMETYPES.values()),
+                ) as file:
+                    image = file.read()
+            except (FileNotFoundError, ValueError):
+                continue
+            mimetype = guess_mimetype(image)
+            if mimetype not in SUPPORTED_IMAGE_MIMETYPES:
+                continue
+            shape_svg = get_shape_svg(module, 'image_shapes', shape_filename)
+            shape_options = dict(urllib.parse.parse_qsl(shape_query.replace('&amp;', '&'), keep_blank_values=True))
+            shape_svg = make_shaped_image(request.env, shape_svg, image, mimetype, shape_options)
+            shape_data_uri = 'data:image/svg+xml;base64,%s' % base64.b64encode(shape_svg.encode()).decode()
+            final_html = final_html.replace(shape_src, shape_data_uri)
 
         # The preview generator keeps theme images local (in src or in a
         # style url()) and stores their attachment key in the
-        # industry_image_key attribute: replace the local image when an IAP
+        # industry_image_key attribute: replace the local image when an
         # industry image matches the key.
         def replace_keyed_image(match):
             el = match.group(0)

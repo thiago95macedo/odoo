@@ -5039,7 +5039,7 @@ class AccountMove(models.Model):
     def _extend_with_attachments(self, files_data, new=False):
         if new:
             # we force an early access token write to prevent edge-cases where the notification
-            # email will fail because the OCR/IAP (async) callback triggers a concurrent update on the same
+            # email will fail because an async callback triggers a concurrent update on the same
             # account move
             self._portal_ensure_token()
             self.flush_recordset(['access_token'])

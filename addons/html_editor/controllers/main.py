@@ -25,9 +25,6 @@ from odoo.addons.mail.tools import link_preview
 from odoo.addons.web.icons import ICONS
 
 DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.odoo.com'
-DEFAULT_OLG_ENDPOINT = 'https://olg.api.odoo.com'
-DEFAULT_OTS_ENDPOINT = 'https://ots.api.odoo.com'
-API_WEBSITE_IMAGES_URL = 'https://website-image.api.odoo.com/images/'
 
 # Regex definitions to apply speed modification in SVG files
 # Note : These regex patterns are duplicated on the server side for
@@ -636,36 +633,6 @@ class HTML_Editor(Controller):
 
         image = stream.read()
         svg = make_shaped_image(request.env, svg, image, record.mimetype, kwargs)
-        return request.make_response(svg, [
-            ('Content-type', 'image/svg+xml'),
-            ('Cache-control', 'max-age=%s' % STATIC_CACHE_LONG),
-        ])
-
-    @route('/html_editor/image_shape_url/<module>/<path:filename>', type='http', auth="user", website=True)
-    def image_shape_url(self, module, filename, image_url=None, **kwargs):
-        """Return a shape SVG filled with the image found at ``image_url``.
-
-        :param str module: module containing the shape SVG
-        :param str filename: shape SVG path inside the module image shapes
-        :param str image_url: URL of an image hosted on the website images API
-        :return: HTTP response containing the generated SVG
-        :rtype: :class:`werkzeug.wrappers.Response`
-        """
-        if not image_url or not image_url.startswith(API_WEBSITE_IMAGES_URL):
-            raise werkzeug.exceptions.BadRequest()
-
-        svg = get_shape_svg(module, 'image_shapes', filename)
-
-        try:
-            response = requests.get(image_url, timeout=10)
-            response.raise_for_status()
-        except requests.RequestException as exc:
-            raise werkzeug.exceptions.NotFound() from exc
-        mimetype = response.headers.get('Content-Type', '')
-        image = response.content
-        if mimetype not in SUPPORTED_IMAGE_MIMETYPES:
-            raise werkzeug.exceptions.BadRequest()
-        svg = make_shaped_image(request.env, svg, image, mimetype, kwargs)
         return request.make_response(svg, [
             ('Content-type', 'image/svg+xml'),
             ('Cache-control', 'max-age=%s' % STATIC_CACHE_LONG),

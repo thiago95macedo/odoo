@@ -117,11 +117,7 @@ export function usePartnerAutocomplete() {
             // Fetch additional company info via Autocomplete Enrichment API
             let isEnrichAccessible = false;
             if (companyData.error) {
-                if (companyData.error_message === "Insufficient Credit") {
-                    notifyNoCredits();
-                } else if (companyData.error_message === "No Account Token") {
-                    notifyAccountToken();
-                } else {
+                if (companyData.error_message) {
                     notification.add(companyData.error_message);
                 }
                 companyData = {
@@ -194,18 +190,5 @@ export function usePartnerAutocomplete() {
         return suggestions;
     }
 
-    /**
-     * @private
-     * @returns {Promise}
-     */
-    async function notifyNoCredits() {
-        const title = _t("Not enough credits for Partner Autocomplete");
-        notification.add(title);
-    }
-
-    async function notifyAccountToken() {
-        const title = _t("IAP Account Token missing");
-        notification.add(title);
-    }
     return { autocomplete, getCreateData, removeUselessFields };
 }

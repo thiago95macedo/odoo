@@ -40,10 +40,10 @@ class MailingTrace(models.Model):
           (sms);
         * void mail / void sms number -> error (mail_missing, sms_number_missing)
         * invalid mail / invalid sms number -> error (RECIPIENT, sms_number_format)
-      * exception: set in  _postprocess_sent_message (_postprocess_iap_sent_sms)
+      * exception: set in  _postprocess_sent_message
         if mail (sms) not sent with failure type, reset if sent;
       * process: (used in sms): set in SmsTracker._update_sms_traces when held back
-        (at IAP) before actual sending to the sms_service.
+        before actual sending to the sms_service.
       * pending: (used in sms): default value for sent sms.
       * sent: set in
         * _postprocess_sent_message if mail

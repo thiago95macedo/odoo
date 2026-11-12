@@ -41,11 +41,6 @@ msgid "Auto-complete partner companies' data"
 msgstr "Preencher automaticamente os dados das empresas parceiras"
 
 #. module: partner_autocomplete
-#: model:iap.service,description:partner_autocomplete.iap_service_partner_autocomplete
-msgid "Automatically enrich your contact base with corporate data."
-msgstr "Enriqueça automaticamente sua base de contatos com dados corporativos."
-
-#. module: partner_autocomplete
 #. odoo-javascript
 #: code:addons/partner_autocomplete/static/src/xml/partner_autocomplete.xml:0
 msgid "Buy"
@@ -97,27 +92,6 @@ msgid "Enrich notification"
 msgstr "Notificação de enriquecimento"
 
 #. module: partner_autocomplete
-#: model:iap.service,unit_name:partner_autocomplete.iap_service_partner_autocomplete
-msgid "Enrichments"
-msgstr "Enriquecimentos"
-
-#. module: partner_autocomplete
-#: model:ir.model,name:partner_autocomplete.model_ir_http
-msgid "HTTP Routing"
-msgstr "Roteamento HTTP"
-
-#. module: partner_autocomplete
-#. odoo-javascript
-#: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_core.js:0
-msgid "IAP Account Token missing"
-msgstr "O token da conta de IAP está ausente"
-
-#. module: partner_autocomplete
-#: model:ir.model,name:partner_autocomplete.model_iap_autocomplete_api
-msgid "IAP Partner Autocomplete API"
-msgstr "API de preenchimento automático do usuário de IAP"
-
-#. module: partner_autocomplete
 #: model:ir.model.fields,field_description:partner_autocomplete.field_iap_autocomplete_api__id
 #: model:ir.model.fields,field_description:partner_autocomplete.field_ir_http__id
 #: model:ir.model.fields,field_description:partner_autocomplete.field_res_company__id
@@ -151,12 +125,6 @@ msgstr "Nenhum token de conta"
 #: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_core.js:0
 msgid "Not enough credits for Partner Autocomplete"
 msgstr "Não há créditos suficientes para o preenchimento automático do usuário"
-
-#. module: partner_autocomplete
-#: model:iap.service,name:partner_autocomplete.iap_service_partner_autocomplete
-#: model:ir.module.module,shortdesc:base.module_partner_autocomplete
-msgid "Partner Autocomplete"
-msgstr "Preenchimento automático de usuário"
 
 #. module: partner_autocomplete
 #. odoo-javascript

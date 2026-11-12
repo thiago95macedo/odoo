@@ -32,24 +32,10 @@ MONTH_SELECTION = [
     ('12', 'December'),
 ]
 
-# List of countries where Peppol should be used by default.
-# !!! KEEP ALIGNED WITH ACCOUNT_PEPPOL MANIFEST -> COUNTRIES
 PEPPOL_DEFAULT_COUNTRIES = [
     'AT', 'BE', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI',
     'FR', 'IE', 'IS', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'SE',
     'SI',
-]
-
-# List of countries where Peppol footnote will be added when sending by mail.
-PEPPOL_MAILING_COUNTRIES = [
-    'BE', 'LU', 'NL', 'SE', 'NO',
-]
-
-# List of countries where Peppol is accessible.
-PEPPOL_LIST = PEPPOL_DEFAULT_COUNTRIES + [
-    'AD', 'AL', 'AX', 'BA', 'BG', 'BL', 'GB', 'GF', 'GP', 'GR', 'HR', 'HU', 'IT', 'LI',
-    'MC', 'ME', 'MF', 'MK', 'MQ', 'NC', 'PF', 'PL', 'PM', 'PT', 'RE', 'RO', 'RS', 'SK',
-    'SM', 'TF', 'TR', 'VA', 'WF', 'YT'
 ]
 
 STORNO_MANDATORY_COUNTRIES = {'BA', 'CN', 'CZ', 'HR', 'PL', 'RO', 'RS', 'RU', 'SI', 'SK', 'UA'}

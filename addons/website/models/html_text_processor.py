@@ -298,8 +298,7 @@ class WebsiteHTMLTextProcessor(models.AbstractModel):
 
         # Note that `get_text_content` here is still needed despite the use
         # of `string()` in the XPath expression above. Indeed, it allows to
-        # strip newlines and double-spaces, which would confuse IAP (without
-        # this, it does not perform any replacement for some reason).
+        # strip newlines and double-spaces.
         result = xml_translate.get_text_content(res.strip())
         updated_processor = updated_processor._update_processing_cache('html_placeholder_cache', {html_string: result})
         return updated_processor, result
