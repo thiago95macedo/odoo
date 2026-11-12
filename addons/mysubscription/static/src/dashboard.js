@@ -3,7 +3,6 @@ import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { PlanSection } from "./plan_section";
 import { DatabaseSection } from "./database_section";
-import { IapSection } from "./iap_section";
 import { MySubscriptionNavBar } from "./components/navbar";
 
 export class MySubscriptionDashboard extends Component {
@@ -12,7 +11,6 @@ export class MySubscriptionDashboard extends Component {
     static components = {
         PlanSection,
         DatabaseSection,
-        IapSection,
         MySubscriptionNavBar,
     };
 
@@ -25,8 +23,6 @@ export class MySubscriptionDashboard extends Component {
             this.baseUrl = data.base_url;
             this.hasSubscription = data.has_subscription;
             this.showDatabaseAction = data.show_database_action;
-
-            this.iapAccounts = await this.loadIap();
         });
     }
 
@@ -35,15 +31,6 @@ export class MySubscriptionDashboard extends Component {
         const configData = await this.orm.call(
             "mysubscription.mysubscription",
             "get_dashboard_data",
-            []
-        );
-        return configData;
-    }
-
-    async loadIap() {
-        const configData = await this.orm.call(
-            "mysubscription.mysubscription",
-            "get_iap_data",
             []
         );
         return configData;

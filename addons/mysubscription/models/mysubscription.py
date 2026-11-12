@@ -31,26 +31,3 @@ class MySubscription(models.AbstractModel):
         expiration_datetime = fields.Datetime.from_string(expiration_date)
         return bool(expiration_datetime) and expiration_datetime > datetime.utcnow()
 
-    @api.model
-    def get_iap_data(self):
-        is_system = self.env.is_system()
-        if not is_system or 'iap.account' not in self.env:
-            return []
-
-        iap_sudo = self.env['iap.account'].sudo()  # noqa: OLS03001
-        accounts = iap_sudo.search([])
-
-        data = []
-        for account in accounts:
-            data.append({
-                'name': account.name or account.service_name,
-                'credit_url': iap_sudo.get_credits_url(
-                    service_name=account.service_name,
-                    account_token=account.account_token
-                ),
-                'balance': account.balance,
-                'service_name': account.service_name,
-                'action': account.action_open_iap_account(),
-                'description': account.description,
-            })
-        return data

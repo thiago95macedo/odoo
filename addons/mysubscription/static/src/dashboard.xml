@@ -8,11 +8,6 @@
 
                 <PlanSection hasSubscription="this.hasSubscription" enterpriseCode="this.enterpriseCode"/>
 
-                <t t-if="this.iapAccounts.length">
-                    <hr class="my-4 text-muted opacity-25"/>
-                    <IapSection accounts="this.iapAccounts"/>
-                </t>
-
                 <t t-if="this.showDatabaseAction">
                     <hr class="my-4 text-muted opacity-25"/>
                     <DatabaseSection hasSubscription="this.hasSubscription" baseUrl="this.baseUrl"/>

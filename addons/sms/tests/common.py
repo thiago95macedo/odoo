@@ -5,7 +5,7 @@ from odoo import exceptions, tools
 from odoo.addons.mail.tests.common import MailCommon
 from odoo.addons.phone_validation.tools import phone_validation
 from odoo.addons.sms.models.sms_sms import SmsSms
-from odoo.addons.sms.tools.sms_api import SmsApi
+from odoo.addons.sms.tools.sms_api import SmsApiBase
 from odoo.tests import common
 
 
@@ -25,64 +25,28 @@ class MockSMS(common.HttpCase):
         sms_create_origin = SmsSms.create
         sms_send_origin = SmsSms._send
 
-        def _contact_iap(local_endpoint, params):
-            # mock single sms sending
-            if local_endpoint == '/iap/message_send':
-                self._sms += [{
-                    'number': number,
-                    'body': params['message'],
-                } for number in params['numbers']]
-                return True  # send_message v0 API returns always True
-            # mock batch sending
-            if local_endpoint == '/iap/sms/2/send':
-                result = []
-                for to_send in params['messages']:
-                    res = {'res_id': to_send['res_id'], 'state': 'delivered' if force_delivered else 'success', 'credit': 1}
-                    error = sim_error or (nbr_t_error and nbr_t_error.get(to_send['number']))
-                    if error and error == 'credit':
-                        res.update(credit=0, state='insufficient_credit')
-                    elif error and error in {'wrong_number_format', 'unregistered', 'server_error'}:
-                        res.update(state=error)
-                    elif error and error == 'jsonrpc_exception':
-                        raise exceptions.AccessError(
-                            'The url that this service requested returned an error. Please contact the author of the app. The url it tried to contact was ' + local_endpoint
-                        )
-                    result.append(res)
-                    if res['state'] == 'success' or res['state'] == 'delivered':
+        def _mock_send_batch(sms_api_self, messages, delivery_reports_url=False):
+            result = []
+            for message in messages:
+                for number in message.get("numbers", []):
+                    error = sim_error or (nbr_t_error and nbr_t_error.get(number['number']))
+                    if error == 'credit':
+                        error = 'insufficient_credit'
+                    res = {
+                        'uuid': number['uuid'],
+                        'state': error or ('delivered' if force_delivered else 'success' if not moderated else 'processing'),
+                        'credit': 1,
+                    }
+                    if error:
+                        res.update(credit=0)
+                    else:
                         self._sms.append({
-                            'number': to_send['number'],
-                            'body': to_send['content'],
-                        })
-                return result
-            elif local_endpoint == '/api/sms/3/send':
-                result = []
-                for message in params['messages']:
-                    for number in message["numbers"]:
-                        error = sim_error or (nbr_t_error and nbr_t_error.get(number['number']))
-                        if error == 'jsonrpc_exception':
-                            raise exceptions.AccessError(
-                                'The url that this service requested returned an error. '
-                                'Please contact the author of the app. '
-                                'The url it tried to contact was ' + local_endpoint
-                            )
-                        elif error == 'credit':
-                            error = 'insufficient_credit'
-                        res = {
+                            'number': number['number'],
+                            'body': message.get('content', ''),
                             'uuid': number['uuid'],
-                            'state': error or ('delivered' if force_delivered else 'success' if not moderated else 'processing'),
-                            'credit': 1,
-                        }
-                        if error:
-                            # credit is only given if the amount is known
-                            res.update(credit=0)
-                        else:
-                            self._sms.append({
-                                'number': number['number'],
-                                'body': message['content'],
-                                'uuid': number['uuid'],
-                            })
-                        result.append(res)
-                return result
+                        })
+                    result.append(res)
+            return result
 
         def _sms_sms_create(model, *args, **kwargs):
             res = sms_create_origin(model, *args, **kwargs)
@@ -94,10 +58,9 @@ class MockSMS(common.HttpCase):
                 return sms_send_origin(records, unlink_sent=unlink_sent, raise_exception=raise_exception)
             return sms_send_origin(records, unlink_sent=False, raise_exception=raise_exception)
 
-        with patch.object(SmsApi, '_contact_iap', side_effect=_contact_iap) as _sms_api_contact_iap_mock, \
+        with patch.object(SmsApiBase, '_send_sms_batch', side_effect=_mock_send_batch), \
                 patch.object(SmsSms, 'create', autospec=True, wraps=SmsSms, side_effect=_sms_sms_create) as sms_create, \
                 patch.object(SmsSms, '_send', autospec=True, wraps=SmsSms, side_effect=_sms_sms_send):
-            self._sms_api_contact_iap_mock = _sms_api_contact_iap_mock
             self._mock_sms_create = sms_create
             yield
 
@@ -118,8 +81,6 @@ class SMSCase(MockSMS):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # This is called to make sure that an iap_account for sms already exists or if not is created.
-        cls.env['iap.account'].get('sms')
 
     def _find_sms_sent(self, partner, number):
         if number is None and partner:

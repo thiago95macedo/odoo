@@ -10,12 +10,11 @@ from zoneinfo import ZoneInfo
 from markupsafe import Markup
 
 from odoo import api, fields, models, modules, tools
-from odoo.addons.iap.tools import iap_tools
 from odoo.addons.phone_validation.tools import phone_validation
 from odoo.exceptions import UserError, AccessError, ValidationError
 from odoo.fields import Domain
 from odoo.tools.translate import _
-from odoo.tools import clean_context, email_normalize_all, is_html_empty, groupby, parse_contact_from_email, SQL
+from odoo.tools import clean_context, email_normalize_all, is_html_empty, groupby, parse_contact_from_email, SQL, mail_prepare_for_domain_search
 from odoo.tools.misc import get_lang
 
 from . import crm_stage
@@ -462,7 +461,7 @@ class CrmLead(models.Model):
     def _compute_email_domain_criterion(self):
         self.email_domain_criterion = False
         for lead in self.filtered('email_normalized'):
-            lead.email_domain_criterion = iap_tools.mail_prepare_for_domain_search(
+            lead.email_domain_criterion = mail_prepare_for_domain_search(
                 lead.email_normalized
             )
 

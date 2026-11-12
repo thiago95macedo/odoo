@@ -1,4 +1,3 @@
-import { TranslatePlugin } from "@html_editor/main/translate/translate_plugin";
 import { SIGNATURE_CLASS } from "@html_editor/main/user_signature_plugin";
 import { childNodes } from "@html_editor/utils/dom_traversal";
 
@@ -32,9 +31,5 @@ patch(Composer.prototype, {
         const container = document.createElement("DIV");
         container.append(...childNodes(fragment));
         return getInnerHtml(container);
-    },
-    get wysiwygConfig() {
-        const config = super.wysiwygConfig;
-        return { ...config, Plugins: [...config.Plugins, TranslatePlugin] };
     },
 });

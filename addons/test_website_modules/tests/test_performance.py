@@ -232,8 +232,6 @@ class TestWebsiteAllPerformance(TestWebsitePerformanceCommon, TestWebsitePriceLi
             'website_page': 2,
             'ir_ui_view': 1,
             'website_menu': 1,
-            # website_crm_iap_reveal _serve_page queries
-            'website_visitor': 1,
             # website_sale pricelist of the header
             'product_pricelist': 3,
         }

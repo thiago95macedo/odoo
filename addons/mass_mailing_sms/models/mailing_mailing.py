@@ -147,13 +147,6 @@ class MailingMailing(models.Model):
                                (self.env.ref('mass_mailing_sms.mailing_trace_view_form_sms').id, 'form')]
         return action
 
-    def action_buy_sms_credits(self):
-        url = self.env['iap.account'].get_credits_url(service_name='sms')
-        return {
-            'type': 'ir.actions.act_url',
-            'url': url,
-        }
-
     # --------------------------------------------------
     # SMS SEND
     # --------------------------------------------------

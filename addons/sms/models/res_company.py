@@ -1,6 +1,6 @@
 from odoo import models
 
-from odoo.addons.sms.tools.sms_api import SmsApi
+from odoo.addons.sms.tools.sms_api import SmsApiBase
 
 
 class ResCompany(models.Model):
@@ -8,4 +8,4 @@ class ResCompany(models.Model):
 
     def _get_sms_api_class(self):
         self.ensure_one()
-        return SmsApi
+        return SmsApiBase

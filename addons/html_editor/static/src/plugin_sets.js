@@ -29,7 +29,6 @@ import { FeffPlugin } from "./main/feff_plugin";
 import { FontSizePlugin } from "./main/font/font_size_plugin";
 import { FontTypePlugin } from "./main/font/font_type_plugin";
 import { FontFamilyPlugin } from "./main/font/font_family_plugin";
-import { TranslatePlugin } from "./main/translate/translate_plugin";
 import { HintPlugin } from "./main/hint_plugin";
 import { InlineCodePlugin } from "./main/inline_code";
 import { LinkPastePlugin } from "./main/link/link_paste_plugin";
@@ -121,7 +120,6 @@ export const MAIN_PLUGINS = [
     SeparatorPlugin,
     ColumnPlugin,
     EmojiPlugin,
-    TranslatePlugin,
     HintPlugin,
     AlignPlugin,
     ListPlugin,

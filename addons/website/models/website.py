@@ -29,7 +29,6 @@ from odoo.addons.website.tools import (
     text_from_html,
 )
 from odoo.addons.portal.controllers.portal import pager
-from odoo.addons.iap.tools import iap_tools
 from odoo.exceptions import AccessError, MissingError, UserError, ValidationError
 from odoo.fields import Domain
 from odoo.http import request
@@ -53,8 +52,6 @@ DEFAULT_CDN_FILTERS = [
     "^/website/image/",
 ]
 
-DEFAULT_WEBSITE_ENDPOINT = 'https://website.api.odoo.com'
-DEFAULT_OLG_ENDPOINT = 'https://olg.api.odoo.com'
 # Same website types than in configurator.js
 WEBSITE_TYPE_MODULES = {
     'ecommerce': 'website_sale',
@@ -562,20 +559,6 @@ class Website(models.CachedModel):
     # Configurator
     # ----------------------------------------------------------
 
-    def _api_rpc(self, route, params, endpoint_param_name, default_endpoint, **kwargs):
-        params['version'] = release.version
-        IrConfigParameter = self.env['ir.config_parameter'].sudo()
-        api_endpoint = IrConfigParameter.get_str(endpoint_param_name) or default_endpoint
-        return iap_tools.iap_jsonrpc(api_endpoint + route, params=params, **kwargs)
-
-    def _website_api_rpc(self, route, params):
-        # For industries, theme suggestions, ...
-        return self._api_rpc(route, params, 'website.website_api_endpoint', DEFAULT_WEBSITE_ENDPOINT)
-
-    def _OLG_api_rpc(self, route, params, **kwargs):
-        # For text content generation
-        return self._api_rpc(route, params, 'website.olg_api_endpoint', DEFAULT_OLG_ENDPOINT, **kwargs)
-
     @api.private
     def get_cta_data(self, website_purpose, website_type):
         return {'cta_btn_text': False, 'cta_btn_href': '/contactus', 'shop_btn_href': '#'}
@@ -754,12 +737,7 @@ class Website(models.CachedModel):
         if not company.uses_default_logo:
             r['logo'] = company.logo.to_base64()
         r['configurator_done'] = current_website.configurator_done
-        try:
-            result = self._website_api_rpc('/api/website/1/configurator/industries', {'lang': self.env.context.get('lang')})
-            r['industries'] = result['industries']
-        except RequestException as e:
-            logger.warning(e.args[0])
-            r['industries'] = []
+        r['industries'] = []
         return r
 
     def _get_configurator_theme_preview_url(self, theme_name):
@@ -788,20 +766,8 @@ class Website(models.CachedModel):
             for theme_name, manifest in manifests.items()
         }
 
-        # Use AI to pick the best themes for this business
-        ai_theme_names = []
-        if not skip_ai:
-            ai_theme_names = self._ai_recommend_themes(
-                theme_catalog, industry_name, website_type, positioning, result_nbr_max
-            )
-
-        # Build the theme list: AI-recommended first, then fill with local themes.
         themes_suggested = []
         selected_theme_names = set()
-        for name in ai_theme_names:
-            if name in manifests and name not in selected_theme_names:
-                themes_suggested.append(name)
-                selected_theme_names.add(name)
         for theme_name in client_themes:
             if len(themes_suggested) >= result_nbr_max:
                 break
@@ -817,43 +783,6 @@ class Website(models.CachedModel):
                 break
         return themes_with_previews
 
-    def _ai_recommend_themes(self, theme_catalog, industry_name, website_type, positioning, count):
-        """Use OLG to pick the best themes for a given business context."""
-        if not industry_name:
-            return []
-        try:
-            catalog_desc = "\n".join(
-                f"- {name}: {description}" for name, description in theme_catalog.items() if description
-            )
-            prompt = (
-                f"I'm building {website_type or 'a'} website for a {industry_name} business "
-                f"with a {positioning or 'general'} positioning.\n"
-                f"Available themes:\n{catalog_desc}\n\n"
-                f"Pick the {count} best-fitting themes. Return ONLY a JSON array of theme names, "
-                f"e.g. [\"theme_clean\", \"theme_cobalt\"]. No explanation."
-            )
-            database_id = self.env['ir.config_parameter'].sudo().get_str('database.uuid')
-            response = self._OLG_api_rpc(
-                route='/api/olg/1/chat',
-                params={
-                    'prompt': prompt,
-                    'conversation_history': [],
-                    'database_id': database_id,
-                },
-                timeout=15,
-            )
-            content = response.get('content', '') if isinstance(response, dict) else ''
-            if isinstance(content, str) and (match := re.search(r'\[[\s\S]*?\]', content)):
-                suggestions = json.loads(match.group())
-                if isinstance(suggestions, list):
-                    return [
-                        theme for theme in suggestions
-                        if isinstance(theme, str) and theme in theme_catalog
-                    ][:count]
-        except (AccessError, iap_tools.InsufficientCreditError, json.JSONDecodeError, RequestException):
-            pass
-        return []
-
     @api.model
     def configurator_skip(self):
         self._check_configurator_access()
@@ -868,37 +797,11 @@ class Website(models.CachedModel):
     @api.model
     def configurator_missing_industry(self, unknown_industry):
         self._check_configurator_access()
-        try:
-            self._website_api_rpc(
-                '/api/website/unknown_industry',
-                {
-                    'unknown_industry': unknown_industry,
-                    'lang': self.env.context.get('lang'),
-                },
-            )
-        except RequestException as e:
-            logger.warning(e.args[0])
 
     @api.model
     def configurator_get_images(self, industry_id, theme=''):
         self._check_configurator_access()
-        if not industry_id or industry_id <= 0:
-            return {}
-        try:
-            custom_resources = self._website_api_rpc(
-                '/api/website/2/configurator/custom_resources/%s' % industry_id,
-                {'theme': theme or ''},
-            )
-        except (AccessError, RequestException) as e:
-            logger.warning(
-                "Failed to fetch configurator images for industry %s: %s",
-                industry_id,
-                e,
-            )
-            return {}
-        if not isinstance(custom_resources, dict):
-            return {}
-        return custom_resources.get('images', {})
+        return {}
 
     @api.model
     def configurator_apply(self, **kwargs):
@@ -1061,28 +964,6 @@ class Website(models.CachedModel):
                 html_text_processor, placeholders = html_text_processor._process_snippet(view_id.arch_db, view_id.arch_db)
                 for placeholder in placeholders:
                     generated_content[placeholder] = ''
-
-        if not skip_ai:
-            translated_ratio = html_text_processor._calculate_translation_ratio(generated_content, translated_content)
-            if translated_ratio > 0.7:
-                try:
-                    database_id = self.env['ir.config_parameter'].sudo().get_str('database.uuid')
-                    response = self._OLG_api_rpc('/api/olg/1/generate_placeholder', {
-                        'placeholders': list(generated_content.keys()),
-                        'lang': website.default_lang_id.name,
-                        'industry': industry,
-                        'database_id': database_id,
-                    }, timeout=30)
-                    name_replace_parser = re.compile(r"XXXX", re.MULTILINE)
-                    website_name = re.escape(website.name)
-                    for key in generated_content:
-                        if response.get(key):
-                            generated_content[key] = (name_replace_parser.sub(website_name, response[key], 0))
-                except RequestException:
-                    # If IAP is broken continue normally (without generating text)
-                    pass
-            else:
-                logger.info("Skip AI text generation because translation coverage is too low (%s%%)", translated_ratio * 100)
 
         # Configure the homepage.
         page_view_id = self.with_context(website_id=website.id).viewref('website.homepage')

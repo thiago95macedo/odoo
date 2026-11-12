@@ -38,15 +38,6 @@ class ResConfigSettings(models.TransientModel):
     crm_auto_assignment_run_datetime = fields.Datetime(
         string="Auto Assignment Next Execution Date", compute='_compute_crm_auto_assignment_data',
         readonly=False, store=True)
-    # IAP
-    module_crm_iap_mine = fields.Boolean("Generate new leads based on their country, industries, size, etc.")
-    module_crm_iap_enrich = fields.Boolean("Enrich your leads automatically with company data based on their email address.")
-    module_website_crm_iap_reveal = fields.Boolean("Create Leads/Opportunities from your website's traffic")
-    lead_enrich_auto = fields.Selection([
-        ('manual', 'Enrich leads on demand only'),
-        ('auto', 'Enrich all leads automatically'),
-    ], string='Enrich lead automatically', default='auto', config_parameter='crm.iap.lead.enrich.setting')
-    lead_mining_in_pipeline = fields.Boolean("Create a lead mining request directly from the opportunity pipeline.", config_parameter='crm.lead_mining_in_pipeline')
     predictive_lead_scoring_start_date = fields.Date(string='Lead Scoring Starting Date', compute="_compute_pls_start_date", inverse="_inverse_pls_start_date_str")
     predictive_lead_scoring_start_date_str = fields.Char(string='Lead Scoring Starting Date in String', config_parameter='crm.pls_start_date')
     predictive_lead_scoring_fields = fields.Many2many('crm.lead.scoring.frequency.field', string='Lead Scoring Frequency Fields', compute="_compute_pls_fields", inverse="_inverse_pls_fields_str")

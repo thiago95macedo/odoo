@@ -145,10 +145,6 @@
                             </setting>
                         </block>
                         <block title="Customer Invoices" id="invoicing_settings">
-                            <setting id="send_invoices_followups" help="Send invoices and payment reminders by post"
-                                documentation="/applications/finance/accounting/receivables/customer_invoices/snailmail.html">
-                                <field name="module_snailmail_account"/>
-                            </setting>
                             <setting id="invoice_delivery_addresses" documentation="/applications/sales/sales/send_quotations/different_addresses.html" help="Select specific invoice and delivery addresses">
                                 <field name="group_sale_delivery_address"/>
                             </setting>

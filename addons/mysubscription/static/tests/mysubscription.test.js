@@ -26,7 +26,6 @@ function mockDashboardData({
     // Required by DatabaseSection's onWillStart.
     patchWithCleanup(user, { hasGroup: () => Promise.resolve(false) });
     onRpc("/web/database/list", () => ["test_db"]);
-    onRpc("mysubscription.mysubscription", "get_iap_data", () => []);
     onRpc("mysubscription.mysubscription", "get_dashboard_data", () => ({
         enterprise_code: enterpriseCode,
         base_url: "http://localhost:8069",

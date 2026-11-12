@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 from uuid import uuid4
 
 from odoo import api, fields, models, tools, _
-from odoo.addons.sms.tools.sms_api import SmsApi
+from odoo.addons.sms.tools.sms_api import SmsApiBase
 from odoo.fields import Domain
 from odoo.tools.urls import urljoin as url_join
 
@@ -124,7 +124,7 @@ class SmsSms(models.Model):
                 )
 
     def _split_by_api(self):
-        yield SmsApi(self.env), self
+        yield self.env.company._get_sms_api_class()(self.env), self
 
     def resend_failed(self):
         sms_to_send = self.filtered(lambda sms: sms.state == 'error' and not sms.to_delete)
@@ -237,12 +237,6 @@ class SmsSms(models.Model):
 
     def _handle_call_result_hook(self, results):
         """Further process SMS sending API results."""
-        for result in results:
-            if result["state"] == "insufficient_credit":
-                self.env["iap.account"]._send_no_credit_notification(
-                    service_name="sms",
-                    title=_("Not enough credits to send SMS"),
-                )
         pass
 
     @api.autovacuum

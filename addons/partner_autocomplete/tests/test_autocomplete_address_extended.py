@@ -1,6 +1,3 @@
-from unittest.mock import patch
-
-from odoo.addons.partner_autocomplete.models.iap_autocomplete_api import IapAutocompleteApi
 from odoo.tests import common, tagged
 
 
@@ -92,38 +89,3 @@ class TestAutocompleteAddressExtended(common.TransactionCase):
         self.assertNotIn('city_id', result)
         self.assertEqual(result.get('zip'), '1000')
         self.assertEqual(result.get('city'), 'Fake city 1')
-
-    def test_enrich_by_domain_resolves_city_id(self):
-        """Full flow: an IAP enrichment response gets its zip/city collapsed into a city_id."""
-        def _contact_iap(local_endpoint, action, params, timeout):
-            return {'data': {
-                'name': 'Fake Company',
-                'country_code': 'YY',
-                'state_code': 'FST',
-                'zip': '1000',
-                'city': 'Fake city 1',
-                'street': 'Fake street 1',
-            }}
-
-        with patch.object(IapAutocompleteApi, '_contact_iap', side_effect=_contact_iap):
-            result = self.env['res.partner'].enrich_by_domain('fake.com')
-
-        self.assertFalse(result.get('error'))
-        self.assertEqual(result.get('name'), 'Fake Company')
-        self.assertEqual(result.get('street'), 'Fake street 1')
-        self.assertEqual(result.get('country_id', {}).get('id'), self.country.id)
-        self.assertEqual(result.get('state_id', {}).get('id'), self.state.id)
-        self.assertEqual(result.get('city_id', {}).get('id'), self.city_1.id)
-        self.assertEqual(result.get('zip'), self.city_1.zipcode)
-        self.assertNotIn('city', result)
-
-        partner = self.env['res.partner'].create({
-            'name': result['name'],
-            'street': result['street'],
-            'country_id': result['country_id']['id'],
-            'state_id': result['state_id']['id'],
-            'city_id': result['city_id']['id'],
-        })
-        self.assertEqual(partner.city_id, self.city_1)
-        self.assertFalse(partner.zip)
-        self.assertFalse(partner.city)

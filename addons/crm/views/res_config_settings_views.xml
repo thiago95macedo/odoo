@@ -80,25 +80,6 @@
                             </div>
                         </setting>
                     </block>
-
-                    <block title="Lead Generation" name="convert_visitor_setting_container">
-                        <setting string="Lead Enrichment" help="Enrich your leads with company data based on their email addresses">
-                            <field name="module_crm_iap_enrich"/>
-                            <div class="mt8" invisible="not module_crm_iap_enrich">
-                                <field name="lead_enrich_auto" class="o_light_label" widget="radio" required="True"/>
-                            </div>
-                        </setting>
-
-                        <setting id="crm_iap_mine_settings" string="Lead Mining" documentation="/applications/sales/crm/acquire_leads/lead_mining.html" help="Generate new leads based on their country, industry, size, etc.">
-                            <field name="module_crm_iap_mine"/>
-                        </setting>
-
-                    </block>
-                    <block name="generate_lead_setting_container">
-                        <setting id="website_crm_iap_reveal_settings" string="Visits to Leads" help="Convert visitors of your website into leads and perform data enrichment based on their IP address">
-                            <field name="module_website_crm_iap_reveal"/>
-                        </setting>
-                    </block>
                 </app>
             </xpath>
         </field>

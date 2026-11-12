@@ -4,11 +4,10 @@
 from datetime import datetime
 
 from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.crm_iap_mine.tests.common import MockIAPReveal  # MockIAPEnrich
 from odoo.addons.website.tests.test_website_visitor import MockVisitor
 
 
-class TestCrmFullCommon(TestCrmCommon, MockIAPReveal, MockVisitor):
+class TestCrmFullCommon(TestCrmCommon, MockVisitor):
 
     @classmethod
     def setUpClass(cls):

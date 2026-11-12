@@ -5078,8 +5078,6 @@ class TestInvisibleField(TransactionCaseWithUserDemo):
             'calendar',
             'crm',
             'crm_helpdesk',
-            'crm_iap_enrich',
-            'crm_iap_mine',
             'data_cleaning',
             'data_recycle',
             'delivery',

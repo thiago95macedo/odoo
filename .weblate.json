@@ -267,16 +267,6 @@
                 "new_base": "addons/crm/i18n/crm.pot"
             },
             {
-                "name": "crm_iap_enrich",
-                "filemask": "addons/crm_iap_enrich/i18n/*.po",
-                "new_base": "addons/crm_iap_enrich/i18n/crm_iap_enrich.pot"
-            },
-            {
-                "name": "crm_iap_mine",
-                "filemask": "addons/crm_iap_mine/i18n/*.po",
-                "new_base": "addons/crm_iap_mine/i18n/crm_iap_mine.pot"
-            },
-            {
                 "name": "crm_livechat",
                 "filemask": "addons/crm_livechat/i18n/*.po",
                 "new_base": "addons/crm_livechat/i18n/crm_livechat.pot"
@@ -530,21 +520,6 @@
                 "name": "http_routing",
                 "filemask": "addons/http_routing/i18n/*.po",
                 "new_base": "addons/http_routing/i18n/http_routing.pot"
-            },
-            {
-                "name": "iap",
-                "filemask": "addons/iap/i18n/*.po",
-                "new_base": "addons/iap/i18n/iap.pot"
-            },
-            {
-                "name": "iap_crm",
-                "filemask": "addons/iap_crm/i18n/*.po",
-                "new_base": "addons/iap_crm/i18n/iap_crm.pot"
-            },
-            {
-                "name": "iap_mail",
-                "filemask": "addons/iap_mail/i18n/*.po",
-                "new_base": "addons/iap_mail/i18n/iap_mail.pot"
             },
             {
                 "name": "im_livechat",
@@ -2981,11 +2956,6 @@
                 "name": "website_crm",
                 "filemask": "addons/website_crm/i18n/*.po",
                 "new_base": "addons/website_crm/i18n/website_crm.pot"
-            },
-            {
-                "name": "website_crm_iap_reveal",
-                "filemask": "addons/website_crm_iap_reveal/i18n/*.po",
-                "new_base": "addons/website_crm_iap_reveal/i18n/website_crm_iap_reveal.pot"
             },
             {
                 "name": "website_crm_livechat",

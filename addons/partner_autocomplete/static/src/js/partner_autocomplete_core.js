@@ -199,29 +199,13 @@ export function usePartnerAutocomplete() {
      * @returns {Promise}
      */
     async function notifyNoCredits() {
-        const url = await orm.call("iap.account", "get_credits_url", ["partner_autocomplete"]);
         const title = _t("Not enough credits for Partner Autocomplete");
-        const content = renderToMarkup("partner_autocomplete.InsufficientCreditNotification", {
-            credits_url: url,
-        });
-        notification.add(content, {
-            title,
-        });
+        notification.add(title);
     }
 
     async function notifyAccountToken() {
-        const url = await orm.call("iap.account", "get_config_account_url", []);
         const title = _t("IAP Account Token missing");
-        if (url) {
-            const content = renderToMarkup("partner_autocomplete.AccountTokenMissingNotification", {
-                account_url: url,
-            });
-            notification.add(content, {
-                title,
-            });
-        } else {
-            notification.add(title);
-        }
+        notification.add(title);
     }
     return { autocomplete, getCreateData, removeUselessFields };
 }

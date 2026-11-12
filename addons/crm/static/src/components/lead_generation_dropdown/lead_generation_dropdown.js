@@ -35,16 +35,6 @@ export class LeadGenerationDropdown extends Component {
         this.state = proxy({
             dropdownContentElements: [
                 {
-                    description: _t("Search in our directory of 580M+ entities"),
-                    hasAccess: user.isAdmin,
-                    icon: "/crm/static/src/img/lead_sourcing.png",
-                    sequence: 10,
-                    moduleName: "crm_iap_mine",
-                    moduleXmlId: "base.module_crm_iap_mine",
-                    status: MODULE_STATUS.NOT_INSTALLED,
-                    title: _t("Lead Sourcing"),
-                },
-                {
                     description: _t("Turn visitors into leads via a form"),
                     hasAccess: user.isAdmin,
                     icon: "/crm/static/src/img/website.png",

@@ -13,24 +13,17 @@ The service is provided by the In App Purchase Odoo platform.
 """,
     'depends': [
         'base',
-        'iap_mail',
         'mail',
         'phone_validation'
     ],
     'data': [
-        'data/iap_service_data.xml',
         'data/ir_cron_data.xml',
-        'wizard/sms_account_code_views.xml',
-        'wizard/sms_account_phone_views.xml',
-        'wizard/sms_account_sender_views.xml',
         'wizard/sms_composer_views.xml',
         'wizard/sms_template_preview_views.xml',
         'wizard/sms_template_reset_views.xml',
         'views/ir_actions_server_views.xml',
         'views/mail_notification_views.xml',
-        'views/res_config_settings_views.xml',
         'views/res_partner_views.xml',
-        'views/iap_account_views.xml',
         'views/sms_sms_views.xml',
         'views/sms_template_views.xml',
         'security/ir.access.csv',
@@ -40,7 +33,6 @@ The service is provided by the In App Purchase Odoo platform.
         'data/mail_demo.xml',
     ],
     'auto_install': True,
-    'iap_paid_service': True,
     'assets': {
         'web.assets_backend': [
             'sms/static/src/**/*',

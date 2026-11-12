@@ -4,9 +4,6 @@ import re
 from stdnum.eu.vat import check_vies
 
 from odoo import api, models, _
-from odoo.fields import Domain
-from odoo.tools.mail import email_domain_extract, url_domain_extract
-from odoo.addons.iap.tools import iap_tools
 
 _logger = logging.getLogger(__name__)
 
@@ -86,152 +83,35 @@ class ResPartner(models.Model):
 
     @api.model
     def autocomplete_by_field(self, fieldName, query, query_country_id, timeout=15):
-        match fieldName:
-            case "name":
-                return self.autocomplete_by_name(query, query_country_id)
-            case "duns":
-                return self.autocomplete_by_duns(query, query_country_id)
-            case _:
-                return self.autocomplete_by_vat(query, query_country_id)
-
-    @api.model
-    def autocomplete_by_name(self, query, query_country_id, timeout=15):
-        if query_country_id is False:  # If it's 0, we purposely do not want to filter on the country
-            query_country_id = self.env.company.country_id.id
-        query_country_code = self.env['res.country'].browse(query_country_id).code
-        response, _ = self.env['iap.autocomplete.api']._request_partner_autocomplete('search_by_name', {
-            'query': query,
-            'query_country_code': query_country_code,
-        }, timeout=timeout)
-        if response and not response.get("error"):
-            results = []
-            for suggestion in response.get("data"):
-                results.append(self._format_data_company(suggestion))
-            return results
-        else:
-            return []
+        if fieldName == "vat":
+            return self.autocomplete_by_vat(query, query_country_id, timeout=timeout)
+        return []
 
     @api.model
     def autocomplete_by_vat(self, vat, query_country_id, timeout=15):
-        query_country_id = query_country_id or self.env.company.country_id.id
-        query_country_code = self.env['res.country'].browse(query_country_id).code
-        response, _ = self.env['iap.autocomplete.api']._request_partner_autocomplete('search_by_vat', {
-            'query': vat,
-            'query_country_code': query_country_code,
-        }, timeout=timeout)
-        if response and not response.get("error"):
-            results = []
-            for suggestion in response.get("data"):
-                results.append(self._format_data_company(suggestion))
-            return results
-        else:
-            vies_result = None
-            try:
-                vies_result = check_vies(vat, timeout=timeout)
-            except Exception:
-                _logger.warning("Failed VIES VAT check.", exc_info=True)
-            if vies_result:
-                name = vies_result['name']
-                if vies_result['valid'] and name != '---':
-                    address = list(filter(bool, vies_result['address'].split('\n')))
-                    street = address[0]
-                    zip_city_record = next(filter(lambda addr: re.match(r'^\d.*', addr), address[1:]), None)
-                    zip_city = zip_city_record.split(' ', 1) if zip_city_record else [None, None]
-                    street2 = next((addr for addr in filter(lambda addr: addr != zip_city_record, address[1:])), None)
-                    return [self._iap_replace_location_codes({
-                        'name': name,
-                        'vat': vat,
-                        'street': street,
-                        'street2': street2,
-                        'city': zip_city[1],
-                        'zip': zip_city[0],
-                        'country_code': vies_result['countryCode'],
-                    })]
-            return []
-
-    @api.model
-    def autocomplete_by_duns(self, duns, query_country_id, timeout=15):
-        query_country_id = query_country_id or self.env.company.country_id.id
-        query_country_code = self.env['res.country'].browse(query_country_id).code
-        response, _ = self.env['iap.autocomplete.api']._request_partner_autocomplete('search_by_duns', {
-            'query': duns,
-            'query_country_code': query_country_code,
-        }, timeout=timeout)
-        if not response or response.get("error"):
-            return []
-
-        results = []
-        for suggestion in response.get("data"):
-            results.append(self._format_data_company(suggestion))
-        return results
-
-    @api.model
-    def _process_enriched_response(self, response, error):
-        if response and response.get('data'):
-            result = self._format_data_company(response.get('data'))
-        else:
-            result = {}
-
-        if response and response.get('credit_error'):
-            result.update({
-                'error': True,
-                'error_message': 'Insufficient Credit'
-            })
-        elif response and response.get('error'):
-            result.update({
-                'error': True,
-                'error_message': _('Unable to enrich company (no credit was consumed).'),
-            })
-        elif error:
-            result.update({
-                'error': True,
-                'error_message': error
-            })
-        return self._validate_partner_autocomplete_response(result)
-
-    @api.model
-    def _validate_partner_autocomplete_response(self, autocomplete_response):
-        if (
-            (vat_number := autocomplete_response.get('vat'))
-            and (enriched_company := self.env.context.get('enriched_company_data'))
-            ):
-            country = self.env['res.country'].browse(enriched_company['country_id']['id']).exists()
-            autocomplete_response['vat'] = self._run_vat_checks(country, vat_number, validation='setnull')[0]
-        if identifiers := autocomplete_response.get('additional_identifiers'):
-            autocomplete_response['additional_identifiers'] = {
-                key: valid_value
-                for key, value in identifiers.items()
-                if (valid_value := self._validate_identifier(key, value, validation='setnull')['value'])
-            }
-        return autocomplete_response
-
-    @api.model
-    def enrich_by_duns(self, duns, timeout=15):
-        response, error = self.env['iap.autocomplete.api']._request_partner_autocomplete('enrich_by_duns', {
-            'duns': duns,
-        }, timeout=timeout)
-        return self._process_enriched_response(response, error)
-
-    @api.model
-    def enrich_by_vat(self, vat, timeout=15):
-        response, error = self.env['iap.autocomplete.api']._request_partner_autocomplete('enrich_by_vat', {
-            'vat': vat,
-        }, timeout=timeout)
-        return self._process_enriched_response(response, error)
-
-    @api.model
-    def enrich_by_gst(self, gst, timeout=15):
-        response, error = self.env['iap.autocomplete.api']._request_partner_autocomplete('enrich_by_gst', {
-            'gst': gst,
-        }, timeout=timeout)
-        return self._process_enriched_response(response, error)
-
-    @api.model
-    def enrich_by_domain(self, domain, timeout=15):
-        response, error = self.env['iap.autocomplete.api']._request_partner_autocomplete('enrich_by_domain', {
-            'domain': domain,
-        }, timeout=timeout)
-        return self._process_enriched_response(response, error)
+        vies_result = None
+        try:
+            vies_result = check_vies(vat, timeout=timeout)
+        except Exception:
+            _logger.warning("Failed VIES VAT check.", exc_info=True)
+        if vies_result:
+            name = vies_result['name']
+            if vies_result['valid'] and name != '---':
+                address = list(filter(bool, vies_result['address'].split('\n')))
+                street = address[0] if address else False
+                zip_city_record = next(filter(lambda addr: re.match(r'^\d.*', addr), address[1:]), None)
+                zip_city = zip_city_record.split(' ', 1) if zip_city_record else [None, None]
+                street2 = next((addr for addr in filter(lambda addr: addr != zip_city_record, address[1:])), None)
+                return [self._iap_replace_location_codes({
+                    'name': name,
+                    'vat': vat,
+                    'street': street,
+                    'street2': street2,
+                    'city': zip_city[1],
+                    'zip': zip_city[0],
+                    'country_code': vies_result['countryCode'],
+                })]
+        return []
 
     @api.model
     def _get_view(self, view_id=None, view_type='form', **options):
@@ -242,139 +122,3 @@ class ResPartner(models.Model):
                 node.set('widget', 'field_partner_autocomplete')
 
         return arch, view
-
-    def enrich_company_message_post(self, data):
-        """
-         Post a chatter note containing company enrichment data received from IAP
-        """
-        template = self.env.ref('iap_mail.enrich_company_by_dnb', raise_if_not_found=False)
-        if not template:
-            return
-        company = {
-            'phone': self.phone,
-            'name': self.name,
-            'email': self.email,
-            'company_type': data.get('entity_type', ''),
-            'vat': self.vat,
-            'website': self.website,
-            'logo': self.image_1920,
-            'street': self.street,
-            'street2': self.street2,
-            'zip_code': self.zip,
-            'city': self.city,
-            'country': self.country_id.name,
-            'state': self.state_id.code,
-            'tags': data.get('unspsc_codes', ''),
-        }
-        self.message_post_with_source(
-            'iap_mail.enrich_company_by_dnb',
-            render_values=company,
-            subtype_xmlid='mail.mt_note',
-        )
-
-    def action_enrich_partner(self):
-        empty_partner_data = []
-        errors = []
-        for partner in self:
-            partner = partner.with_prefetch()
-
-            field_to_check = partner._get_field_to_check()
-            if not field_to_check:
-                continue
-
-            partner_data = {}
-            field_type, value = field_to_check
-            # Allow commiting the partner datas even if the main transaction is rolled back since we don't want to
-            # use credit from the user.
-            with self.env.registry.cursor() as cr:
-                partner = partner.with_env(partner.env(cr=cr))
-
-                if field_type == 'duns':
-                    partner_data = partner.enrich_by_duns(duns=value)
-                elif field_type == 'identifier':
-                    partner_data = partner.enrich_by_vat(vat=value)
-                elif field_type == 'domain':
-                    partner_data = partner.enrich_by_domain(domain=value)
-
-                if partner_data.get("error"):
-                    errors.append(partner_data['error_message'])
-                    if partner_data['error_message'] == 'Insufficient Credit':
-                        # This would break the loop and display the notif of errors
-                        break
-
-                if not partner_data:
-                    empty_partner_data.append(partner.name)
-                    continue
-
-                partner_data = {
-                    field: value for field, value in partner_data.items()
-                    if field in partner._fields and value and (field == 'image_1920' or not partner[field])
-                }
-                partner.write(partner_data)
-
-        if errors:
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': self.env._("Enrich notification"),
-                    'type': 'warning',
-                    'message': self.env._("Some errors occurred during the enrich: %s", ','. join(errors)),
-                    'next': {'type': 'ir.actions.act_window_close'},
-                }
-            }
-
-        if empty_partner_data:
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': self.env._("Enrich notification"),
-                    'type': 'info',
-                    'message': self.env._("It seems that we didn't found some information for the following partners: %s", ','. join(empty_partner_data)),
-                    'next': {'type': 'ir.actions.act_window_close'},
-                }
-            }
-        return {'type': 'ir.actions.act_window_close'}
-
-    def _get_field_to_check(self):
-        self.ensure_one()
-
-        if duns := (self.additional_identifiers or {}).get('DUNS'):
-            return 'duns', duns
-
-        # So that we can put localization identifier here, on the iap side they are treated like vat
-        for field_name in self._get_identifier_fields():
-            if field_name == 'vat' and self.vat and self.vat != '/':
-                return 'identifier', self.vat
-
-            # additional identifiers are dealt like vat number on the iap side
-            if value := (self.additional_identifiers or {}).get(field_name):
-                return 'identifier', value
-
-        if partner_domain := self._get_partner_domain():
-            return 'domain', partner_domain
-
-        return None
-
-    def _get_partner_domain(self):
-        """ Extract the partner domain to be used by IAP services.
-
-        The domain is extracted from the website or the email information.
-
-        >>> partner.email, partner._get_partner_domain()
-        ("info@proximus.be", "proximus.be")
-        >>> partner.website, partner._get_partner_domain()
-        ("www.info.proximus.be", "proximus.be")
-        """
-        self.ensure_one()
-
-        partner_domain = email_domain_extract(self.email) if self.email else False
-        if partner_domain and partner_domain not in iap_tools._MAIL_PROVIDERS:
-            return partner_domain
-
-        partner_domain = url_domain_extract(self.website) if self.website else False
-        if not partner_domain or partner_domain in ['localhost', 'example.com']:
-            return False
-
-        return partner_domain
