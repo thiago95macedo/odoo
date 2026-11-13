@@ -1,41 +1,34 @@
-# Security Policy
+# Política de Segurança
 
-## Supported Versions
+## Versões Suportadas
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 19.0    | :white_check_mark: |
-| 18.0    | :white_check_mark: |
-| 17.0    | :white_check_mark: |
-| 16.0    | :white_check_mark: |
-| <=15.0  | :x:                |
+| Versão | Suportada          |
+| ------ | ------------------ |
+| 20.0 (WETH Core) | :white_check_mark: |
+| 19.0   | :white_check_mark: |
+| 18.0   | :white_check_mark: |
+| 17.0   | :white_check_mark: |
+| 16.0   | :white_check_mark: |
+| <=15.0 | :x:                |
 
-## Reporting a Vulnerability
+## Relatando uma Vulnerabilidade
 
-Please share privately the details of your security vulnerability by contacting our Security Team:
-[Contact Info](https://www.weth.com.br/security-report)
+Por favor, compartilhe em sigilo os detalhes da vulnerabilidade de segurança entrando em contato com a nossa Equipe de Segurança:
+[Informações de Contato](https://www.weth.com.br/security-report)
 
-Make sure to include as much information as possible, with the detailed steps to reproduce the problem,
-the versions that are affected, the expected results and actual results, and any other information that
-might help us react faster and more efficiently.
+Certifique-se de incluir o máximo de informações possível, contendo o passo a passo detalhado para reproduzir o problema, as versões afetadas, o resultado esperado versus o resultado obtido e quaisquer outras informações que nos ajudem a agir com rapidez e eficiência.
 
-We tend to prefer _text-based descriptions_ accompanied with a proof-of-concept script/exploit, rather
-than screenshots and videos.
+Damos preferência a _descrições textuais_ acompanhadas de um script de prova de conceito (PoC/exploit), em vez de capturas de tela e vídeos.
 
-Our [Responsible Disclosure](https://www.weth.com.br/security-report) page gives an overview of the
-process, including:
+Nossa página de [Divulgação Responsável](https://www.weth.com.br/security-report) detalha todo o processo, incluindo:
 
- - Our Incident Response Procedure (what will happen after you report an issue)
- - Our Rules (what you can and cannot do while researching security issues)
- - Guidelines with **DO REPORT** and **DO NOT REPORT** issues
-   (what kind of issues will be accepted/rejected)
+ - Procedimento de Resposta a Incidentes (o que acontecerá após você relatar uma falha)
+ - Regras de Engajamento (o que você pode e não pode fazer ao pesquisar vulnerabilidades)
+ - Diretrizes sobre **O QUE RELATAR** e **O QUE NÃO RELATAR** (critérios de aceite e rejeição de relatórios)
 
 
-## Important note
+## Nota Importante
 
-We receive a majority of security reports that have little to no impact on the security of Odoo or
-the Odoo Cloud, and we ultimately have to reject them. To avoid a disappointing experience when
-contacting us, please try to put together a proof-of-concept attack and take a critical look at
-what's really at risk.
-If the proposed attack scenario turns out unrealistic, your report will probably be rejected.
-Also be sure to review our list of [non-qualifying issues](https://www.weth.com.br/security-report#what).
+Recebemos com frequência relatórios de segurança com impacto mínimo ou nulo na segurança do sistema ou da infraestrutura em nuvem, os quais invariavelmente precisam ser rejeitados. Para evitar uma experiência frustrante ao nos contatar, solicitamos a elaboração de um cenário prático de exploração (prova de conceito) e uma análise crítica sobre o risco real envolvido.
+
+Caso o cenário de ataque proposto se mostre irrealista, seu relatório provavelmente será desconsiderado. Consulte previamente nossa lista de [vulnerabilidades não elegíveis](https://www.weth.com.br/security-report#what).

@@ -18,3 +18,11 @@
   deliberate utility APIs); CSS variables are for contextual DOM adaptation.
   The variable conventions bind *new* code; much of core (plain mixin
   arguments, `--ComponentName-property` CSS variables) predates them.
+- Brand Colors (WETH Core): The platform uses the official WETH color palette defined in
+  `addons/web/static/src/scss/primary_variables.scss`. Never reintroduce legacy purple
+  values (`#714B67` / `#71639e`).
+  - Primary Brand: `$o-brand-primary` / `$o-community-color` (`#05285b`)
+  - Secondary Brand: `$o-brand-secondary` (`#64748b`)
+  - Enterprise / Dark Tone: `$o-enterprise-color` (`#031b3e`)
+  - Action / Accent: `$o-action` / `$o-enterprise-action-color` (`#1b4f9b`)
+  - Links: `$o-main-link-color` (`#13448a`)

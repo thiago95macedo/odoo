@@ -27,6 +27,8 @@ O Antigravity opera neste repositório como o **Orquestrador Especialista no Cor
 8. **Preservar segredos e credenciais:** Jamais versionar senhas, tokens ou dados sensíveis em commits ou arquivos de documentação.
 9. **Não executar operações destrutivas sem autorização:** Não deletar bancos, drops de tabelas, exclusão em massa de dados ou comandos `sudo` sem aprovação humana.
 10. **Isolamento de Produção:** Todo trabalho é restrito ao ambiente de desenvolvimento local. Nenhuma operação de deploy ou conexão de produção é autorizada sem consentimento explícito.
+11. **Nacionalização e Tradução Gradual (PT-BR como Idioma Base):** A tradução de documentações, termos de interface, mensagens de erro, views e comentários para o Português do Brasil (`pt-br`) deve acontecer de forma orgânica e contínua durante todas as intervenções no repositório, até que o PT-BR seja considerado o idioma base natural do sistema.
+12. **Identidade Visual Canônica WETH:** A paleta de cores corporativa WETH é padrão oficial no core (`addons/web/static/src/scss/primary_variables.scss`). Agentes não devem investigar o código para deduzir as cores corporativas; devem utilizar os tokens documentados na Seção 5.
 
 ---
 
@@ -57,7 +59,27 @@ O orquestrador deve aplicar as mudanças arquiteturais da versão 20.0:
 
 ---
 
-## 5. Fluxo Operacional de Execução
+## 5. Identidade Visual e Paleta de Cores Canônica WETH
+
+Os agentes devem adotar diretamente os tokens oficiais da WETH (definidos em `addons/web/static/src/scss/primary_variables.scss`), sem necessidade de re-investigar o código SCSS:
+
+| Papel / Token | Variável SCSS | Hex | Descrição de Uso |
+| :--- | :--- | :---: | :--- |
+| **Primária Oficial** | `$o-brand-primary` / `$o-community-color` | `#05285b` | Azul WETH (Navbar, botões primários, PWA manifest) |
+| **Secundária / Suporte**| `$o-brand-secondary` | `#64748b` | Slate Blue institucional para elementos complementares |
+| **Escura / Enterprise** | `$o-enterprise-color` | `#031b3e` | Azul Profundo para estados ativos escuros e contrastes |
+| **Ação / Destaque** | `$o-action` / `$o-enterprise-action-color` | `#1b4f9b` | Azul Ação vibrante (hover primário, tours, dropzones) |
+| **Links** | `$o-main-link-color` | `#13448a` | Azul de links navegáveis |
+| **Fundo Secundário** | `$o-brand-lightsecondary` | `#f8f9fa` | Cinza Off-White (`$o-gray-100`) |
+| **Sucesso** | `$o-success` | `#28a745` | Feedback positivo (texto: `#008818`) |
+| **Informação** | `$o-info` | `#17a2b8` | Informativo / neutro (texto: `#0180a5`) |
+| **Aviso** | `$o-warning` | `#ffac00` | Alertas / pendências (texto: `#9a6b01`) |
+| **Perigo** | `$o-danger` | `#dc3545` | Falhas / bloqueios (texto: `#d23f3a`) |
+| **Favorito** | `$o-main-favorite-color` | `#f3cc00` | Estrelas e marcações |
+
+---
+
+## 6. Fluxo Operacional de Execução
 
 Ao receber uma demanda, o orquestrador executa o seguinte fluxo mental:
 
@@ -76,7 +98,7 @@ Ao receber uma demanda, o orquestrador executa o seguinte fluxo mental:
 
 ---
 
-## 6. Identidade Git e Commits
+## 7. Identidade Git e Commits
 
 Antes de qualquer operação de commit:
 * Verificar se o autor local do Git está devidamente configurado (`git config user.name` e `git config user.email`).
