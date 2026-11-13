@@ -9,8 +9,8 @@
 # Luis Bispo, 2023
 # Kevilyn Rosa, 2023
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
@@ -21,7 +21,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:42+0000\n"
 "PO-Revision-Date: 2026-10-28 16:46+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/website_blog/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -2189,7 +2189,7 @@ msgid ""
 "Odoo Blog\n"
 "----------\n"
 "\n"
-"Write, Design, Promote and Engage with <a href=\"https://www.odoo.com/app/"
+"Write, Design, Promote and Engage with <a href=\"https://www.weth.com.br/app/"
 "blog\">Odoo Blog</a>.\n"
 "\n"
 "Express yourself with the Odoo enterprise grade blogging platform. Write\n"
@@ -2295,7 +2295,7 @@ msgstr ""
 "Blog Odoo\n"
 "----------\n"
 "\n"
-"Escreva, crie, promova e envolva-se com o <a href=\"https://www.odoo.com/app/"
+"Escreva, crie, promova e envolva-se com o <a href=\"https://www.weth.com.br/app/"
 "blog\">Blog Odoo</a>.\n"
 "\n"
 "Expresse-se com a plataforma de blogs de nível empresarial do Odoo. Escreva "

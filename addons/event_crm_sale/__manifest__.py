@@ -3,7 +3,7 @@
 {
     'name': 'Event CRM Sale',
     'category': 'Marketing/Events',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'description': "Add information of sale order linked to the registration for the creation of the lead.",
     'depends': ['event_crm', 'event_sale'],
     'data': [

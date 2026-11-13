@@ -217,7 +217,7 @@ test("Escape closes a chat bubble preview containing a focused link", async () =
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     pyEnv["mail.message"].create({
         author_id: serverState.partnerId,
-        body: '<a href="https://odoo.com/">https://odoo.com</a>',
+        body: '<a href="https://weth.com.br/">https://weth.com.br</a>',
         model: "discuss.channel",
         res_id: channelId,
     });
@@ -226,7 +226,7 @@ test("Escape closes a chat bubble preview containing a focused link", async () =
     await hover(".o-mail-ChatBubble[name='General']");
     await contains(".o-mail-ChatBubble-preview");
     // Do not focus the anchor automatically, as doing so would show an empty preview for long messages with trailing link
-    await focus('.o-mail-ChatBubble-preview a[href="https://odoo.com/"]:not(:focus)');
+    await focus('.o-mail-ChatBubble-preview a[href="https://weth.com.br/"]:not(:focus)');
     await triggerHotkey("Escape");
     await contains(".o-mail-ChatBubble-preview", { count: 0 });
 });

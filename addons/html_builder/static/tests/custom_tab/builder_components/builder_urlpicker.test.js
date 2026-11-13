@@ -48,10 +48,10 @@ test("BuilderUrlPicker normalizes URL values before committing", async () => {
 
     const testCases = [
         ["x.com", "https://x.com"],
-        ["odoo.com", "https://odoo.com"],
-        ["ftp://odoo.com", "ftp://odoo.com"],
-        ["http://odoo.com", "http://odoo.com"],
-        ["https://odoo.com", "https://odoo.com"],
+        ["weth.com.br", "https://weth.com.br"],
+        ["ftp://weth.com.br", "ftp://weth.com.br"],
+        ["http://weth.com.br", "http://weth.com.br"],
+        ["https://weth.com.br", "https://weth.com.br"],
         ["test@test.com", "mailto:test@test.com"],
         ["mailto:test2@test.com", "mailto:test2@test.com"],
         ["+1555-555-5556", "tel:+1555-555-5556"],
@@ -77,10 +77,10 @@ test("BuilderUrlPicker preserves the current HTTP protocol when committing a bar
         `<a class="test-options-target" href="http://old.example.com">Target</a>`
     );
     await contains(":iframe .test-options-target").click();
-    await contains("[data-action-id='customUrlAction'] input").edit("odoo.com");
+    await contains("[data-action-id='customUrlAction'] input").edit("weth.com.br");
 
-    expect(queryOne(":iframe .test-options-target")).toHaveAttribute("href", "http://odoo.com");
-    expect("[data-action-id='customUrlAction'] input").toHaveValue("http://odoo.com");
+    expect(queryOne(":iframe .test-options-target")).toHaveAttribute("href", "http://weth.com.br");
+    expect("[data-action-id='customUrlAction'] input").toHaveValue("http://weth.com.br");
 });
 
 test("BuilderUrlPicker opens the normalized URL from the preview button", async () => {
@@ -91,8 +91,8 @@ test("BuilderUrlPicker opens the normalized URL from the preview button", async 
 
     await setupHTMLBuilder(`<a class="test-options-target">Target</a>`);
     await contains(":iframe .test-options-target").click();
-    await contains("[data-action-id='customUrlAction'] input").edit("odoo.com");
+    await contains("[data-action-id='customUrlAction'] input").edit("weth.com.br");
     await contains("[data-action-id='customUrlAction'] button").click();
 
-    expect.verifySteps(["https://odoo.com _blank"]);
+    expect.verifySteps(["https://weth.com.br _blank"]);
 });

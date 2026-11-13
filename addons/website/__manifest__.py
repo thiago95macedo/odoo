@@ -6,7 +6,7 @@
     'category': 'Website/Website',
     'sequence': 20,
     'summary': 'Enterprise website builder',
-    'website': 'https://www.odoo.com/app/website',
+    'website': 'https://www.weth.com.br/app/website',
     'depends': [
         'digest',
         'web',

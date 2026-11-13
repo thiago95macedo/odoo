@@ -13,18 +13,18 @@
 # Kevilyn Rosa, 2023
 # Éder Brito <britoederr@gmail.com>, 2023
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
-# MAHAMADASIF ANSARI <maan@odoo.com>, 2026.
+# MAHAMADASIF ANSARI <maan@weth.com.br>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: WETH Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-06 17:49+0000\n"
 "PO-Revision-Date: 2026-10-06 10:33+0000\n"
-"Last-Translator: MAHAMADASIF ANSARI <maan@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: MAHAMADASIF ANSARI <maan@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/base/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -5843,11 +5843,11 @@ msgstr "Vírgula"
 msgid ""
 "Comma-separated list of addresses or domains for which this server can be "
 "used.\n"
-"e.g.: \"notification@odoo.com\" or \"odoo.com\""
+"e.g.: \"notification@weth.com.br\" or \"weth.com.br\""
 msgstr ""
 "Lista de endereços ou domínios separados por vírgulas para os quais esse "
 "servidor pode ser usado.\n"
-"Por exemplo: \"notification@odoo.com\" ou \"odoo.com\""
+"Por exemplo: \"notification@weth.com.br\" ou \"weth.com.br\""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_act_window__view_mode
@@ -22579,8 +22579,8 @@ msgstr "ex., https://maker.ifttt.com/use/..."
 #: model_terms:ir.ui.view,arch_db:base.view_company_form
 #: model_terms:ir.ui.view,arch_db:base.view_partner_address_form
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form
-msgid "e.g. https://www.odoo.com"
-msgstr "ex.: https://www.odoo.com"
+msgid "e.g. https://www.weth.com.br"
+msgstr "ex.: https://www.weth.com.br"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.act_report_xml_view

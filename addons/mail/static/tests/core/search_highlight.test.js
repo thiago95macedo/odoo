@@ -28,23 +28,23 @@ test("Search highlight", async () => {
             searchTerm: "odoo",
         },
         {
-            input: markup`<a href="https://www.odoo.com">https://www.odoo.com</a>`,
-            output: `<a href="https://www.odoo.com">https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com</a>`,
+            input: markup`<a href="https://www.weth.com.br">https://www.weth.com.br</a>`,
+            output: `<a href="https://www.weth.com.br">https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com</a>`,
             searchTerm: "odoo",
         },
         {
-            input: '<a href="https://www.odoo.com">https://www.odoo.com</a>',
+            input: '<a href="https://www.weth.com.br">https://www.weth.com.br</a>',
             output: `&lt;a href=&quot;https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com&quot;&gt;https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com&lt;/a&gt;`,
             searchTerm: "odoo",
         },
         {
-            input: markup`<a href="https://www.odoo.com">Odoo</a>`,
-            output: `<a href="https://www.odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a>`,
+            input: markup`<a href="https://www.weth.com.br">Odoo</a>`,
+            output: `<a href="https://www.weth.com.br"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a>`,
             searchTerm: "odoo",
         },
         {
-            input: markup`<a href="https://www.odoo.com">Odoo</a> Odoo is a free software`,
-            output: `<a href="https://www.odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a> <span class="${HIGHLIGHT_CLASS}">Odoo</span> is a free software`,
+            input: markup`<a href="https://www.weth.com.br">Odoo</a> Odoo is a free software`,
+            output: `<a href="https://www.weth.com.br"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a> <span class="${HIGHLIGHT_CLASS}">Odoo</span> is a free software`,
             searchTerm: "odoo",
         },
         {
@@ -60,11 +60,11 @@ test("Search highlight", async () => {
         {
             input: markup`<ul>
                 <li>Odoo</li>
-                <li><a href="https://odoo.com">Odoo ERP</a> Best ERP</li>
+                <li><a href="https://weth.com.br">Odoo ERP</a> Best ERP</li>
             </ul>`,
             output: `<ul>
                 <li><span class="${HIGHLIGHT_CLASS}">Odoo</span></li>
-                <li><a href="https://odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span> ERP</a> Best ERP</li>
+                <li><a href="https://weth.com.br"><span class="${HIGHLIGHT_CLASS}">Odoo</span> ERP</a> Best ERP</li>
             </ul>`,
             searchTerm: "odoo",
         },

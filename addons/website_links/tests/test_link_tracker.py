@@ -17,12 +17,12 @@ class TestLinkTracker(TransactionCase):
         cls.website_1, cls.website_2 = cls.env['website'].create([
             {
                 'name': 'website 1',
-                'domain': 'https://maincompany.odoo.com',
+                'domain': 'https://maincompany.weth.com.br',
                 'company_id': cls.company_1.id
             },
             {
                 'name': 'Website 2',
-                'domain': 'https://secondarycompany.odoo.com',
+                'domain': 'https://secondarycompany.weth.com.br',
                 'company_id': cls.company_2.id
             }
         ])
@@ -70,7 +70,7 @@ class TestLinkTracker(TransactionCase):
         """Each website of a company gets its own domain, not the company's first one."""
         website_3 = self.env['website'].sudo().create({
             'name': 'website 3',
-            'domain': 'https://maincompany-second-site.odoo.com',
+            'domain': 'https://maincompany-second-site.weth.com.br',
             'company_id': self.company_1.id,
         })
         self.company_1.sudo().website_id = self.website_1

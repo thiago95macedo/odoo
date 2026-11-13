@@ -60,7 +60,7 @@ export function isAbsoluteURLInCurrentDomain(url, env = null) {
         // its Odoo instance domain. We just suppose it should be a relative
         // URL (if unexpected behavior, the user can just not enter its Odoo
         // instance domain but its real domain, or opt-out from the domain
-        // stripping). Mentioning an .odoo.com domain, especially its own
+        // stripping). Mentioning an .weth.com.br domain, especially its own
         // one, is always a bad practice anyway.
         ODOO_DOMAIN_REGEX.test(urlObj.origin)
     );

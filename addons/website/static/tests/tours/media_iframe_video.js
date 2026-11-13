@@ -25,7 +25,7 @@ registerWebsitePreviewTour(
         {
             content: "Enter the url",
             trigger: "input[placeholder='e.g. /page or URL']",
-            run: "edit odoo.com",
+            run: "edit weth.com.br",
         },
         {
             content: "Click on replace media",

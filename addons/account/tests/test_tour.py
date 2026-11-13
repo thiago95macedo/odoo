@@ -100,7 +100,7 @@ class TestUi(AccountTestInvoicingHttpCommon):
 
     def test_deductible_percentage_column(self):
         self.assertFalse(self.env.user.has_group('account.group_partial_purchase_deductibility'))
-        partner = self.env['res.partner'].create({'name': "Test Partner", 'email': "test@test.odoo.com"})
+        partner = self.env['res.partner'].create({'name': "Test Partner", 'email': "test@test.weth.com.br"})
         move = self.env['account.move'].create({
             'move_type': 'in_invoice',
             'partner_id': partner.id,

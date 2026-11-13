@@ -42,7 +42,7 @@ class TestPortalAddresses(BaseCommon, HttpCase):
         cls.account_b = cls._create_new_portal_user(login='portal_b')
         cls.company_partner = cls.env['res.partner'].create({
             'name': 'Test Odoo SA',
-            'email': 'odoo@odoo.com',
+            'email': 'odoo@weth.com.br',
             'street': 'Chau. de Namur 40',
             'city': 'Ramillies',
             'zip': '1367',

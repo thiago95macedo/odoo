@@ -140,8 +140,8 @@ test("should log notification when channel/thread is renamed", async () => {
     await contains(".o-mail-DiscussContent-threadName:value(special)");
     await contains(
         ".o-mail-NotificationMessage:has(:text('" +
-            `${serverState.partnerName} changed the channel name to special` +
-            "'))"
+        `${serverState.partnerName} changed the channel name to special` +
+        "'))"
     );
 
     await click(".o-mail-NotificationItem:has(:text('test'))");
@@ -154,8 +154,8 @@ test("should log notification when channel/thread is renamed", async () => {
     await contains(".o-mail-DiscussContent-threadName:value(specialThread)");
     await contains(
         ".o-mail-NotificationMessage:has(:text('" +
-            `${serverState.partnerName} changed the thread name to specialThread` +
-            "'))"
+        `${serverState.partnerName} changed the thread name to specialThread` +
+        "'))"
     );
 });
 
@@ -250,9 +250,9 @@ test("Posting message should transform links.", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "test https://www.odoo.com/");
+    await insertText(".o-mail-Composer-input", "test https://www.weth.com.br/");
     await press("Enter");
-    await contains(".o-mail-Message a[href='https://www.odoo.com/']");
+    await contains(".o-mail-Message a[href='https://www.weth.com.br/']");
 });
 
 test("[text composer] Posting message should transform relevant data to emoji.", async () => {
@@ -1956,7 +1956,7 @@ test("mark channel as seen if last message is visible when switching channels wh
 test("warning on send with shortcut when attempting to post message with still-uploading attachments", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
-    onRpcBefore("/mail/attachment/upload", () => new Promise(() => {})); // simulates an attachment upload that never completes
+    onRpcBefore("/mail/attachment/upload", () => new Promise(() => { })); // simulates an attachment upload that never completes
     await start();
     await openDiscuss(channelId);
     await contains(".o-mail-Composer input[type=file]");
@@ -1974,7 +1974,7 @@ test("warning on send with shortcut when attempting to post message with still-u
 test("[text composer] Can post message with only attachment", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
-    onRpcBefore("/mail/message/post", () => new Promise(() => {}));
+    onRpcBefore("/mail/message/post", () => new Promise(() => { }));
     await start();
     await openDiscuss(channelId);
     await contains(".o-mail-Composer input[type=file]");
@@ -1993,7 +1993,7 @@ test.tags("html composer");
 test("Can post message with only attachment", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
-    onRpcBefore("/mail/message/post", () => new Promise(() => {}));
+    onRpcBefore("/mail/message/post", () => new Promise(() => { }));
     await start();
     const composerService = getService("mail.composer");
     composerService.setHtmlComposer();
@@ -2959,7 +2959,7 @@ test("Prevent link interactions in message preview", async () => {
         channel_type: "chat",
     });
     const messageId = pyEnv["mail.message"].create({
-        body: "<a href='https://www.odoo.com'>https://www.odoo.com</a>",
+        body: "<a href='https://www.weth.com.br'>https://www.weth.com.br</a>",
         model: "discuss.channel",
         res_id: channelId,
         message_type: "comment",
@@ -2974,5 +2974,5 @@ test("Prevent link interactions in message preview", async () => {
     await contains("h4:text('No conversation selected.')");
     await click(".o-mail-NotificationItem-text a");
     expect(".o-mail-NotificationItem-text").toHaveStyle({ pointerEvents: "none" });
-    await contains(".o-mail-Message:has(:text('https://www.odoo.com'))");
+    await contains(".o-mail-Message:has(:text('https://www.weth.com.br'))");
 });

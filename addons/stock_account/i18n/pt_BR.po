@@ -8,8 +8,8 @@
 # Nikole Torrezam, 2022
 # Martin Trigaux, 2022
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
@@ -20,7 +20,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/stock_account/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

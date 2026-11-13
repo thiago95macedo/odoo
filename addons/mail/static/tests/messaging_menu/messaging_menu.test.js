@@ -101,8 +101,7 @@ test("rendering with chat push notification default permissions", async () => {
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
     await contains(".o-mail-NotificationItem");
     await contains(
-        `.o-mail-NotificationItem img[data-src='${getOrigin()}/web/image/res.partner/${
-            serverState.odoobotId
+        `.o-mail-NotificationItem img[data-src='${getOrigin()}/web/image/res.partner/${serverState.odoobotId
         }/avatar_128?unique=${deserializeDateTime(odoobot.write_date).ts}']`
     );
     await contains(".o-mail-NotificationItem-name:text('Turn on notifications')");
@@ -623,7 +622,7 @@ test("chat preview should not display correspondent name in body", async () => {
     // DM chat with demo, the conversation is named "Demo" and body is simply message content
     // not prefix like "Demo:"
     const pyEnv = await startServer();
-    const partnerId = pyEnv["res.partner"].create({ name: "Demo", email: "demo@odoo.com" });
+    const partnerId = pyEnv["res.partner"].create({ name: "Demo", email: "demo@weth.com.br" });
     const userId = pyEnv["res.users"].create({ partner_id: partnerId });
     const channelId = pyEnv["discuss.channel"].create({
         channel_type: "chat",
@@ -1277,13 +1276,13 @@ test("preserve message link formatting in messaging menu", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     pyEnv["mail.message"].create({
         model: "discuss.channel",
-        body: `<a href="https://odoo.com/">https://odoo.com/</a>`,
+        body: `<a href="https://weth.com.br/">https://weth.com.br/</a>`,
         author_id: serverState.partnerId,
         res_id: channelId,
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(`.o-mail-NotificationItem-text a[href="https://odoo.com/"]`);
+    await contains(`.o-mail-NotificationItem-text a[href="https://weth.com.br/"]`);
 });
 
 test("allow tab navigation in messaging menu", async () => {

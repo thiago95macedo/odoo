@@ -5,18 +5,18 @@
 # Translators:
 # Fernando Colus <fcolus1@gmail.com>, 2022
 # Martin Trigaux, 2022
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2026.
-# MAHAMADASIF ANSARI <maan@odoo.com>, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2026.
+# MAHAMADASIF ANSARI <maan@weth.com.br>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: WETH Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-06 17:39+0000\n"
 "PO-Revision-Date: 2026-10-15 06:59+0000\n"
-"Last-Translator: MAHAMADASIF ANSARI <maan@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Last-Translator: MAHAMADASIF ANSARI <maan@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/delivery/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

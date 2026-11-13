@@ -2,7 +2,7 @@
 # This file contains the translation of the following modules:
 # * api_doc
 #
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 msgid ""
 msgstr ""
@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-11 13:54+0000\n"
 "PO-Revision-Date: 2026-03-07 14:30+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "s19-2/api_doc/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

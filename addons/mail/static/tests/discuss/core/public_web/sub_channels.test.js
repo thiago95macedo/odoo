@@ -121,8 +121,8 @@ test("should allow creating a thread from an existing thread", async () => {
     await click(".o-mail-NotificationItem:has(.o-mail-NotificationItem-name:text('General'))");
     await contains(
         ".o-mail-NotificationMessage:text('" +
-            serverState.partnerName +
-            " started a thread: hello alex. 1:00 PM')"
+        serverState.partnerName +
+        " started a thread: hello alex. 1:00 PM')"
     );
 });
 
@@ -308,8 +308,8 @@ test("mention suggestions in thread match channel restrictions", async () => {
     });
     pyEnv["res.users"].write(serverState.userId, { group_ids: [Command.link(groupId)] });
     const [partnerId_1, partnerId_2] = pyEnv["res.partner"].create([
-        { email: "p1@odoo.com", name: "p1" },
-        { email: "p2@odoo.com", name: "p2" },
+        { email: "p1@weth.com.br", name: "p1" },
+        { email: "p2@weth.com.br", name: "p2" },
     ]);
     pyEnv["res.users"].create([
         { partner_id: partnerId_1, group_ids: [Command.link(groupId)] },

@@ -1500,7 +1500,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
 
         cls.link_previews = cls.env["mail.link.preview"].create(
             [
-                {"source_url": "https://www.odoo.com"},
+                {"source_url": "https://www.weth.com.br"},
                 {"source_url": "https://www.example.com"},
             ]
         )

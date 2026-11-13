@@ -322,7 +322,7 @@
                 </div>
                 <t t-if="entries" t-out="entries"/>
                 <div class="d-none d-lg-block mt-4 small text-center text-muted">
-                    Powered by <a target="_blank" href="http://www.odoo.com?utm_source=db&amp;utm_medium=portal" title="odoo"><img src="/web/static/img/logo.png" alt="Odoo Logo" height="15"/></a>
+                    Powered by <a target="_blank" href="http://www.weth.com.br?utm_source=db&amp;utm_medium=portal" title="odoo"><img src="/web/static/img/logo.png" alt="Odoo Logo" height="15"/></a>
                 </div>
             </div>
         </div>
@@ -562,7 +562,7 @@
             <section t-if="debug and allow_api_keys">
                 <h4>
                 Developer API Keys
-                    <a href="https://www.odoo.com/documentation/latest/developer/reference/external_api.html#api-key" target="_blank">
+                    <a href="https://www.weth.com.br/documentation/latest/developer/reference/external_api.html#api-key" target="_blank">
                         <i title="Documentation" class="oi oi-fw o_button_icon" data-icon="info"></i>
                     </a>
                 </h4>

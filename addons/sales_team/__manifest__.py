@@ -9,7 +9,7 @@
 Using this application you can manage Sales Teams with CRM and/or Sales
 =======================================================================
  """,
-    'website': 'https://www.odoo.com/app/crm',
+    'website': 'https://www.weth.com.br/app/crm',
     'depends': ['base', 'mail'],
     'data': [
         'security/sales_team_security.xml',

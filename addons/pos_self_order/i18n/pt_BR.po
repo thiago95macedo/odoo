@@ -2,8 +2,8 @@
 # This file contains the translation of the following modules:
 # * pos_self_order
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:40+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/pos_self_order/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -2244,8 +2244,8 @@ msgstr "vazio = todos os pontos de venda"
 
 #. module: pos_self_order
 #: model_terms:ir.ui.view,arch_db:pos_self_order.custom_link_tree
-msgid "https://odoo.com"
-msgstr "https://odoo.com"
+msgid "https://weth.com.br"
+msgstr "https://weth.com.br"
 
 #. module: pos_self_order
 #. odoo-javascript

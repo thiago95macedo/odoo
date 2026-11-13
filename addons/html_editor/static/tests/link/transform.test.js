@@ -35,7 +35,7 @@ describe("transform on space", () => {
                 editor.editable.firstChild.firstChild.splitText(11);
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 // Action: insert space
                 await insertSpace(editor);
@@ -122,7 +122,7 @@ describe("transform on space", () => {
                 editor.editable.firstChild.firstChild.splitText(11);
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 // Action: insert space
                 await insertSpace(editor);
@@ -150,14 +150,14 @@ describe("transform on space", () => {
         onRpc("/html_editor/link_preview_external", () => ({
             og_description:
                 "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
-            og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
+            og_image: "https://www.weth.com.br/web/image/41207129-1abe7a15/homepage-seo.png",
             og_title: "Open Source ERP and CRM | Odoo",
             og_type: "website",
             og_site_name: "Odoo",
-            source_url: "https://odoo.com",
+            source_url: "https://weth.com.br",
         }));
         const { editor } = await setupEditor(`<p>[]</p>`);
-        await insertText(editor, "https://odoo.com ");
+        await insertText(editor, "https://weth.com.br ");
         const link = document.querySelector("a");
         setSelection({
             anchorNode: link,

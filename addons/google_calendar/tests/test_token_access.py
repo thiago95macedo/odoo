@@ -19,7 +19,7 @@ class TestTokenAccess(TransactionCase):
             user = cls.env['res.users'].create({
                 'name': f'{u}',
                 'login': f'{u}',
-                'email': f'{u}@odoo.com',
+                'email': f'{u}@weth.com.br',
             })
             user.res_users_settings_id.write({
                 'google_calendar_rtoken': f'{u}_rtoken',
@@ -32,7 +32,7 @@ class TestTokenAccess(TransactionCase):
         cls.system_user = cls.env['res.users'].create({
             'name': 'system_user',
             'login': 'system_user',
-            'email': 'system_user@odoo.com',
+            'email': 'system_user@weth.com.br',
             'group_ids': [Command.link(cls.env.ref('base.group_system').id)],
         })
 

@@ -503,7 +503,7 @@ class PosConfig(models.Model):
         }
 
     def get_pos_qr_order_data(self):
-        url_form = "https://www.odoo.com/app/point-of-sale-restaurant-qr-code"
+        url_form = "https://www.weth.com.br/app/point-of-sale-restaurant-qr-code"
         table_data = []
         if self.self_ordering_mode not in ['mobile', 'consultation']:
             return {

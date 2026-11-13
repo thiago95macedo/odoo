@@ -3,7 +3,7 @@
     'sequence': 210,
     'summary': 'Chat with your website visitors',
     'category': 'Website/Live Chat',
-    'website': 'https://www.odoo.com/app/live-chat',
+    'website': 'https://www.weth.com.br/app/live-chat',
     'description':
         """
 Live Chat Support

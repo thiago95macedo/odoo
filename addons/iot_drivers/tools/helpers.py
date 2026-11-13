@@ -408,9 +408,9 @@ def init_sentry(server_url: str = ""):
         host = urlsplit(server_url).hostname
         if host and (
             ip_address(host).is_private
-            or host.endswith(".dev.odoo.com")  # staging dbs
+            or host.endswith(".dev.weth.com.br")  # staging dbs
             or (
-                host.endswith(".odoo.com")
+                host.endswith(".weth.com.br")
                 and re.search(r"\.runbot\d+\.|-support-\d{8}-", host)  # runbot or support dbs
             )
         ):

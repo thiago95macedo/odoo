@@ -57,7 +57,7 @@ class TestPDFQuoteBuilder(SaleManagementCommon, HttpCase):
             "res_id": cls.product.id,
         })
         cls.internal_user = cls._create_new_internal_user(
-            login="internal.user@test.odoo.com", groups="sales_team.group_sale_salesman"
+            login="internal.user@test.weth.com.br", groups="sales_team.group_sale_salesman"
         )
         cls.alt_company = cls.env["res.company"].create({"name": "Backup Company"})
 

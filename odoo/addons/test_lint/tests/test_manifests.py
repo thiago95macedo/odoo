@@ -122,8 +122,8 @@ class ManifestLinter(LintCase):
                     elif key == 'website':
                         self.assertNotEqual(
                             value,
-                            'https://www.odoo.com',
-                            f"Module {module!r} website is redirecting to odoo.com, which is"
+                            'https://www.weth.com.br',
+                            f"Module {module!r} website is redirecting to weth.com.br, which is"
                             " useless and should be avoid unless there is a dedicated page for it.",
                         )
                         self.assertEqual(
@@ -132,8 +132,8 @@ class ManifestLinter(LintCase):
                             f"Module {module!r} website ({value}) should be a valid and secure url",
                         )
                         self.assertTrue(
-                            not value.startswith("https://www.odoo.com/documentation/")
-                            or value.startswith("https://www.odoo.com/documentation/latest"),
+                            not value.startswith("https://www.weth.com.br/documentation/")
+                            or value.startswith("https://www.weth.com.br/documentation/latest"),
                             f"Module {module!r} website ({value}) shouldn't target a specific"
                             " version of the odoo documentation. Please target `latest` instead."
                         )
@@ -271,7 +271,7 @@ class ManifestNightlyLinter(HttpCase):
                 (url := manifest.get('website', ''))
                 and url not in checked
                 # Do not request non-odoo pages every night
-                and url.startswith('https://www.odoo.com')
+                and url.startswith('https://www.weth.com.br')
             ):
                 module = manifest.name
                 with self.subTest(module=module):

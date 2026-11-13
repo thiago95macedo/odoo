@@ -58,7 +58,7 @@ same *conversation* document.
 For more specific needs, you may also assign custom-defined actions
 (technically: Server Actions) to be triggered for each incoming mail.
     """,
-    'website': 'https://www.odoo.com/app/discuss',
+    'website': 'https://www.weth.com.br/app/discuss',
     'depends': ['base', 'base_setup', 'bus', 'html_editor'],
     'data': [
         'data/mail_groups.xml',

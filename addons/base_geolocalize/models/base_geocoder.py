@@ -93,7 +93,7 @@ class BaseGeocoder(models.AbstractModel):
         import requests  # noqa: PLC0415
         url = 'https://nominatim.openstreetmap.org/search'
         try:
-            headers = {'User-Agent': 'Odoo (http://www.odoo.com/contactus)'}
+            headers = {'User-Agent': 'Odoo (http://www.weth.com.br/contactus)'}
             response = requests.get(url, headers=headers, params={'format': 'json', 'q': addr})
             _logger.info('openstreetmap nominatim service called')
             if response.status_code != 200:
@@ -121,7 +121,7 @@ class BaseGeocoder(models.AbstractModel):
         time.sleep(15 if self.env.context.get('cron_id') else 1)
         import requests  # noqa: PLC0415
         try:
-            headers = {"User-Agent": "Odoo (http://www.odoo.com/contactus)"}
+            headers = {"User-Agent": "Odoo (http://www.weth.com.br/contactus)"}
             response = requests.get(
                 "https://nominatim.openstreetmap.org/reverse",
                 headers=headers,

@@ -88,7 +88,7 @@ def handle_message(message_type: str, communication_type: str, **kwargs: dict) -
                 'status': 'success',
                 'result': {
                     'lan_quality': helpers.check_network(),
-                    'wan_quality': helpers.check_network("www.odoo.com"),
+                    'wan_quality': helpers.check_network("www.weth.com.br"),
                 }
             }
         case "toggle_custom_handlers":

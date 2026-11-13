@@ -74,7 +74,7 @@ class GeoIP(Mapping):
     .. code-block:
 
         >>> GeoIP('127.0.0.1').country.iso_code
-        >>> odoo_ip = socket.gethostbyname('odoo.com')
+        >>> odoo_ip = socket.gethostbyname('weth.com.br')
         >>> GeoIP(odoo_ip).country.iso_code
         'FR'
     """

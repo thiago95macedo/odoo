@@ -335,12 +335,12 @@ export function slugify(value) {
     return !value
         ? ""
         : value
-              .trim()
-              .normalize("NFKC")
-              .toLowerCase()
-              .replace(/[\p{P}\s]+/gu, "-") // Replace punctuation and spaces with hyphens
-              .replace(/[^\p{L}\p{M}\p{N}\w-]+/gu, "") // Remove all non-unicode-word chars
-              .replace(/^-+|-+$/g, ""); // Remove leading and trailing hyphens
+            .trim()
+            .normalize("NFKC")
+            .toLowerCase()
+            .replace(/[\p{P}\s]+/gu, "-") // Replace punctuation and spaces with hyphens
+            .replace(/[^\p{L}\p{M}\p{N}\w-]+/gu, "") // Remove all non-unicode-word chars
+            .replace(/^-+|-+$/g, ""); // Remove leading and trailing hyphens
 }
 
 patch(urlUtils, {
@@ -355,10 +355,10 @@ patch(urlUtils, {
             return false;
         }
 
-        // Make sure that while being on abc.odoo.com, if you edit a link and
+        // Make sure that while being on abc.weth.com.br, if you edit a link and
         // enter an absolute URL using your real domain, it is still considered
         // to be added as relative, preferably.
-        // In the past, you could not edit your website from abc.odoo.com if you
+        // In the past, you could not edit your website from abc.weth.com.br if you
         // properly configured your real domain already.
         let origin;
         try {

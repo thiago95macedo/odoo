@@ -5,8 +5,8 @@
 # Translators:
 # Martin Trigaux, 2022
 #
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/hr_skills_survey/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

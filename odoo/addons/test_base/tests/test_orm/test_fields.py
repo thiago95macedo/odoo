@@ -1487,7 +1487,7 @@ class TestFields(TransactionCaseWithUserDemo, TransactionExpressionCase):
         partner1, partner2 = self.env['test_orm.fields.partner'].create([
             {
                 'name': f'Partner{i}',
-                'email': f'partner{i}@odoo.com',
+                'email': f'partner{i}@weth.com.br',
                 'country_id': self.env['test_orm.fields.country'].create({'name': f'Partner{i} Country'}).id,
             } for i in range(1, 3)
         ])

@@ -585,7 +585,7 @@ class BaseCase(case.TestCase):
     env: api.Environment = None
     cr: Cursor = None
 
-    longMessage = True      # more verbose error message by default: https://www.odoo.com/r/Vmh
+    longMessage = True      # more verbose error message by default: https://www.weth.com.br/r/Vmh
     warm = True             # False during warm-up phase (see :func:`warmup`)
     _python_version = sys.version_info
 

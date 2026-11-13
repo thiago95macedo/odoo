@@ -7,7 +7,7 @@
 Track equipment and maintenance requests""",
     'depends': ['mail'],
     'summary': 'Track equipment and manage maintenance requests',
-    'website': 'https://www.odoo.com/app/maintenance',
+    'website': 'https://www.weth.com.br/app/maintenance',
     'data': [
         'security/maintenance.xml',
         'data/maintenance_data.xml',

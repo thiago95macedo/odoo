@@ -2,7 +2,7 @@
     <data noupdate="1">
         <record model="ir.config_parameter" id="translation_url">
             <field name="key">test_translation_mode.translation_url</field>
-            <field name="value">https://translate.odoo.com/</field>
+            <field name="value">https://translate.weth.com.br/</field>
         </record>
     </data>
 </odoo>

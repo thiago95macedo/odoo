@@ -111,8 +111,8 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
 
     def test_copy_multiple_users(self):
         users = self.env['res.users'].create([
-            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@odoo.com'},
-            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@odoo.com'},
+            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@weth.com.br'},
+            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@weth.com.br'},
         ])
         initial_user_count = self.env['res.users'].search_count([])
         users.copy()
@@ -123,8 +123,8 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
 
     def test_notify_unregistered(self):
         users = self.env['res.users'].create([
-            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@odoo.com'},
-            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@odoo.com'},
+            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@weth.com.br'},
+            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@weth.com.br'},
         ])
         for u in users:
             u.create_date = datetime.now() - timedelta(days=5, minutes=10)

@@ -2,7 +2,7 @@
 # This file contains the translation of the following modules:
 # * website_cf_turnstile
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/website_cf_turnstile/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

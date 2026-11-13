@@ -69,7 +69,7 @@
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>ODOO SA</cbc:Name>
-        <cbc:ElectronicMail>finance@odoo.com</cbc:ElectronicMail>
+        <cbc:ElectronicMail>finance@weth.com.br</cbc:ElectronicMail>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingCustomerParty>

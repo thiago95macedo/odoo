@@ -12010,7 +12010,7 @@ test(`setting : boolean field`, async () => {
     expect(`.o_doc_link`).toHaveCount(1);
     expect(`.o_doc_link`).toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
     expect(`.btn-link[name='buttonName']`).toHaveCount(1);
 });

@@ -6,7 +6,7 @@
     'sequence': 5,
     'summary': 'Integrate your inbox with projects',
     'description': "Turn emails received in your mailbox into tasks and log their content as internal notes.",
-    'website': 'https://www.odoo.com/app/project',
+    'website': 'https://www.weth.com.br/app/project',
     'depends': [
         'project',
         'mail_plugin',

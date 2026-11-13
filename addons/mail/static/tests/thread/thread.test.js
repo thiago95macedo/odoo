@@ -103,7 +103,7 @@ test("messages still render when a reset strands mountedAndLoaded", async () => 
             super.setup();
             thread = this;
         },
-        applyScroll() {},
+        applyScroll() { },
     });
     await start();
     await openDiscuss(channelId);
@@ -595,7 +595,7 @@ test("mention 2 different partners that have the same name", async () => {
 test("Post a message containing an email address followed by a mention on another line", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -607,9 +607,9 @@ test("Post a message containing an email address followed by a mention on anothe
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "email@odoo.com\n@Te");
+    await insertText(".o-mail-Composer-input", "email@weth.com.br\n@Te");
     await click(".o-mail-Composer-suggestion");
-    await contains(".o-mail-Composer-input", { value: "email@odoo.com\n@TestPartner " });
+    await contains(".o-mail-Composer-input", { value: "email@weth.com.br\n@TestPartner " });
     await press("Enter");
     await contains(
         `.o-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId}"][data-oe-model="res.partner"]:text("@TestPartner")`

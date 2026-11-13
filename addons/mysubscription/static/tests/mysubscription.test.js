@@ -43,7 +43,7 @@ test("active subscription: Enterprise plan is current and the upgrade link targe
     expect(".card:eq(1)").toHaveClass("border-primary", { message: "Enterprise plan is current" });
     expect(".card:eq(1) a:contains('My Account')").toHaveCount(1);
     expect(".card:eq(1) button:contains('Subscription')").toHaveCount(1);
-    expect("a:contains('Upgrade')").toHaveAttribute("href", "https://upgrade.odoo.com/#onpremise");
+    expect("a:contains('Upgrade')").toHaveAttribute("href", "https://upgrade.weth.com.br/#onpremise");
 });
 
 test("active subscription without the Enterprise webclient: falls back to the Switch button", async () => {
@@ -63,7 +63,7 @@ test("no subscription: Community plan is current and the upgrade link targets th
     expect(".card:eq(0)").toHaveClass("border-primary", { message: "Community plan is current" });
     expect(".card:eq(1)").not.toHaveClass("border-primary", { message: "Enterprise plan is not current" });
     expect(".card:eq(1) a:contains('Switch')").toHaveCount(1);
-    expect("a:contains('Upgrade')").toHaveAttribute("href", "https://www.odoo.com/pricing");
+    expect("a:contains('Upgrade')").toHaveAttribute("href", "https://www.weth.com.br/pricing");
 });
 
 test("show the database section when show_database_action is true", async () => {

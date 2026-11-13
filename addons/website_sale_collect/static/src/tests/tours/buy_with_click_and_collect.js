@@ -36,7 +36,7 @@ registry.category('web_tour.tours').add(
             ...tourUtils.fillAddressForm({
                 name: "Name",
                 phone: "99999999",
-                email: "test@odoo.com",
+                email: "test@weth.com.br",
                 street: "Test Street",
                 city: "Test City",
                 zip: "10000",

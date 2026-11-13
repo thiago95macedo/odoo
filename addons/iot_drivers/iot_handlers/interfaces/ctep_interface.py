@@ -29,7 +29,7 @@ def _configure_ctep_lib(lib_name: str) -> bool:
     if (unzip_path / lib_name).exists():
         return True
     zip_path = drivers_path / "ctep.zip"
-    helpers.download_from_url(f"https://download.odoo.com/master/posbox/iotbox/{source_zip_name}", zip_path)
+    helpers.download_from_url(f"https://download.weth.com.br/master/posbox/iotbox/{source_zip_name}", zip_path)
     helpers.unzip_file(zip_path, unzip_path)
 
     if IS_WINDOWS:

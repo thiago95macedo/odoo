@@ -2026,7 +2026,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
 
     @patch_api
     def test_partner_order(self):
-        self.private_partner.email = "internal_user@odoo.com"
+        self.private_partner.email = "internal_user@weth.com.br"
         self.private_partner.type = "contact"
         user = self.env['res.users'].create({
             'name': 'Test user Calendar',
@@ -2037,7 +2037,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'internal_user@odoo.com'},
+            'organizer': {'email': 'internal_user@weth.com.br'},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{

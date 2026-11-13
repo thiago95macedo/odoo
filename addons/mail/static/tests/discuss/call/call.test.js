@@ -386,7 +386,7 @@ test("a cancelled recording request does not expire its replacement", async () =
     patchWithCleanup(rtc, {
         serverInfo: undefined,
         sfuClient: undefined,
-        upgradeConnectionDebounce() {},
+        upgradeConnectionDebounce() { },
     });
     await rtc.setRecording({ audio: true, video: true });
     await advanceTime(10_000);
@@ -407,7 +407,7 @@ test("a recording request consumed by the SFU does not expire", async () => {
     patchWithCleanup(rtc, {
         serverInfo: undefined,
         sfuClient: undefined,
-        upgradeConnectionDebounce() {},
+        upgradeConnectionDebounce() { },
     });
     await rtc.setRecording({ audio: true, video: true });
     patchWithCleanup(rtc, {
@@ -432,7 +432,7 @@ test("a recording request consumed by the SFU does not expire", async () => {
 
 async function startCallWithRecordingPermissions() {
     const pyEnv = await startServer();
-    onRpc("/mail/rtc/channel/upgrade_connection", () => {});
+    onRpc("/mail/rtc/channel/upgrade_connection", () => { });
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     pyEnv["discuss.channel.rtc.session"].create({
         channel_member_id: pyEnv["discuss.channel.member"].create({
@@ -1842,7 +1842,7 @@ test("Should not auto-cancel incoming call when camera preview is open", async (
 test("should also invite to the call when inviting to the channel", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });

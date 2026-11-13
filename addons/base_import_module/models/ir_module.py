@@ -27,7 +27,7 @@ from odoo.addons.base.models.ir_asset import is_wildcard_glob
 
 _logger = logging.getLogger(__name__)
 
-APPS_URL = "https://apps.odoo.com"
+APPS_URL = "https://apps.weth.com.br"
 MAX_FILE_SIZE = 100 * 1024 * 1024  # in megabytes
 
 
@@ -43,7 +43,7 @@ class IrModuleModule(models.Model):
         string="Extra lines of Code",
         store=False,  # info is retrieved from the appstore in web_read
         help="Number of lines of code that may be billed under an Enterprise subscription."
-            " For exact pricing details, please contact your account manager or visit odoo.com/pricing.",
+            " For exact pricing details, please contact your account manager or visit weth.com.br/pricing.",
     )
 
     @api.model
@@ -575,7 +575,7 @@ class IrModuleModule(models.Model):
                 description += "- " + module + "\n"
             description += _(
                 "\nYou may need the Enterprise version to install the data module. Please visit "
-                "https://www.odoo.com/pricing-plan for more information.\n"
+                "https://www.weth.com.br/pricing-plan for more information.\n"
                 "If you need Website themes, it can be downloaded from https://github.com/odoo/design-themes.\n"
             )
         else:

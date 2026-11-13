@@ -64,7 +64,7 @@ const addLinkToImage = async (url) => {
     if (url) {
         await waitFor(".o-we-linkpopover");
         await contains(".o-we-linkpopover input.o_we_href_input_link", { timeout: 1500 }).edit(
-            "odoo.com"
+            "weth.com.br"
         );
     }
 };
@@ -98,10 +98,8 @@ const getFigcaptionAttributes = (caption = "") => {
  * @param {string} [captionText]
  */
 const getCaptionSpan = (captionId, captionText = "", focused = false, hasSelection = false) =>
-    `<span class="o_caption_editable${
-        focused ? " o-we-hint" : ""
-    }" contenteditable="true" data-caption-id="${captionId}"${
-        focused ? ` o-we-hint-text="Write a caption..."` : ""
+    `<span class="o_caption_editable${focused ? " o-we-hint" : ""
+    }" contenteditable="true" data-caption-id="${captionId}"${focused ? ` o-we-hint-text="Write a caption..."` : ""
     }>${captionText}${hasSelection ? "[]" : ""}</span>`;
 
 test.tags("focus required");
@@ -688,13 +686,13 @@ test("add a link to an image with a caption", async () => {
             <h1>[]Heading</h1>`
         ),
         stepFunction: async () => {
-            await addLinkToImage("odoo.com");
+            await addLinkToImage("weth.com.br");
             await expectElementCount(".o-we-linkpopover", 1);
             await expectElementCount(".o-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p>
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure>
                         [<img class="img-fluid test-image" src="${base64Img}">]
                         <figcaption>Hello</figcaption>
@@ -711,7 +709,7 @@ test("add a caption to an image with a link", async () => {
     await testEditor({
         config: configWithEmbeddedCaption,
         contentBefore: unformat(
-            `<a href="https://odoo.com">
+            `<a href="https://weth.com.br">
                 <img class="img-fluid test-image" src="${base64Img}">
             </a>
             <h1>[]Heading</h1>`
@@ -728,7 +726,7 @@ test("add a caption to an image with a link", async () => {
         },
         contentAfter: unformat(
             `<div>
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure>
                         <img class="img-fluid test-image" src="${base64Img}">
                         <figcaption></figcaption>
@@ -746,14 +744,14 @@ test("add a caption then a link to an image surrounded by text", async () => {
         contentBefore: `<p>ab<img class="img-fluid test-image" src="${base64Img}">cd</p>`,
         stepFunction: async (editor) => {
             await toggleCaption(editor, "Hello");
-            await addLinkToImage("odoo.com");
+            await addLinkToImage("weth.com.br");
             await expectElementCount(".o-we-linkpopover", 1);
             await expectElementCount(".o-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p>ab</p>
             <p>
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure>
                         [<img class="img-fluid test-image" src="${base64Img}">]
                         <figcaption>Hello</figcaption>
@@ -770,7 +768,7 @@ test("add a link then a caption to an image surrounded by text", async () => {
         config: configWithEmbeddedCaption,
         contentBefore: `<p>ab<img class="img-fluid test-image" src="${base64Img}">cd</p>`,
         stepFunction: async (editor) => {
-            await addLinkToImage("odoo.com");
+            await addLinkToImage("weth.com.br");
             await animationFrame();
             await toggleCaption(editor, "Hello");
             // Blur the span to commit the caption.
@@ -782,7 +780,7 @@ test("add a link then a caption to an image surrounded by text", async () => {
         contentAfter: unformat(
             `<p>ab</p>
             <p>[]
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure>
                         <img class="img-fluid test-image" src="${base64Img}">
                         <figcaption>Hello</figcaption>
@@ -801,7 +799,7 @@ test("remove a link from an image with a caption", async () => {
         config: configWithEmbeddedCaption,
         contentBefore: unformat(
             `<p><br></p>
-            <a href="https://odoo.com">
+            <a href="https://weth.com.br">
                 <figure>
                     <img class="img-fluid test-image" src="${base64Img}">
                     <figcaption>${caption}</figcaption>
@@ -812,7 +810,7 @@ test("remove a link from an image with a caption", async () => {
         contentBeforeEdit: unformat(
             `<p><br></p>
             <div class="o-paragraph">
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure contenteditable="false">
                         <img class="img-fluid test-image o_editable_media" src="${base64Img}" data-caption-id="${captionId}" data-caption="${caption}">
                         <figcaption ${getFigcaptionAttributes(caption)}>
@@ -847,7 +845,7 @@ test("remove a caption from an image with a link", async () => {
         config: configWithEmbeddedCaption,
         contentBefore: unformat(
             `<p><br></p>
-            <a href="https://odoo.com">
+            <a href="https://weth.com.br">
                 <figure>
                     <img class="img-fluid test-image" src="${base64Img}">
                     <figcaption>${caption}</figcaption>
@@ -858,7 +856,7 @@ test("remove a caption from an image with a link", async () => {
         contentBeforeEdit: unformat(
             `<p><br></p>
             <div class="o-paragraph">
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     <figure contenteditable="false">
                         <img class="img-fluid test-image o_editable_media" src="${base64Img}" data-caption-id="${captionId}" data-caption="${caption}">
                         <figcaption ${getFigcaptionAttributes(caption)}>
@@ -877,7 +875,7 @@ test("remove a caption from an image with a link", async () => {
         contentAfter: unformat(
             `<p><br></p>
             <div>
-                <a href="https://odoo.com">
+                <a href="https://weth.com.br">
                     [<img class="img-fluid test-image" src="${base64Img}" data-caption="${caption}">]
                 </a>
             </div>

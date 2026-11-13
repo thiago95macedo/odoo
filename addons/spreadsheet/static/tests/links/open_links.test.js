@@ -31,15 +31,15 @@ test("click a web link", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: "[Odoo](https://odoo.com)" },
+                cells: { A1: "[Odoo](https://weth.com.br)" },
             },
         ],
     };
     const model = new Model(data, { custom: { env: getMockEnv() } });
     const cell = getEvaluatedCell(model, "A1");
-    expect(urlRepresentation(cell.link, model.getters)).toBe("https://odoo.com");
+    expect(urlRepresentation(cell.link, model.getters)).toBe("https://weth.com.br");
     openLink(cell.link, getMockEnv());
-    expect.verifySteps(["https://odoo.com"]);
+    expect.verifySteps(["https://weth.com.br"]);
 });
 
 test("click a menu link", async () => {

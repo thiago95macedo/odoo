@@ -107,7 +107,7 @@ test("documentation_link: relative path", async () => {
     });
     expect(".o_doc_link").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
 });
 
@@ -118,10 +118,10 @@ test("documentation_link: absolute path (http)", async () => {
         arch: /* xml */ `
             <form>
                 <field name="bar"/>
-                <widget name="documentation_link" path="http://www.odoo.com/"/>
+                <widget name="documentation_link" path="http://www.weth.com.br/"/>
             </form>`,
     });
-    expect(".o_doc_link").toHaveAttribute("href", "http://www.odoo.com/");
+    expect(".o_doc_link").toHaveAttribute("href", "http://www.weth.com.br/");
 });
 
 test("documentation_link: absolute path (https)", async () => {
@@ -131,9 +131,9 @@ test("documentation_link: absolute path (https)", async () => {
         arch: /* xml */ `
         <form>
             <field name="bar"/>
-            <widget name="documentation_link" path="https://www.odoo.com/"/>
+            <widget name="documentation_link" path="https://www.weth.com.br/"/>
         </form>`,
     });
 
-    expect(".o_doc_link").toHaveAttribute("href", "https://www.odoo.com/");
+    expect(".o_doc_link").toHaveAttribute("href", "https://www.weth.com.br/");
 });

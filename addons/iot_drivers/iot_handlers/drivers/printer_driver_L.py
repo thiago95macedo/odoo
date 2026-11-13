@@ -169,7 +169,7 @@ class PrinterDriver(PrinterDriverBase):
         wlan = identifier = homepage = pairing_code = mac_address = ""
         iot_status = self._get_iot_status()
 
-        wan_quality = helpers.check_network("www.odoo.com")
+        wan_quality = helpers.check_network("www.weth.com.br")
         to_gateway_quality = helpers.check_network()
         to_printer_quality = helpers.check_network(self.ip) if self.ip else None
 

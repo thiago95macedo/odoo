@@ -10,9 +10,9 @@
 # Martin Trigaux, 2022
 # Kevilyn Rosa, 2023
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -21,8 +21,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-16 17:41+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/mrp/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -4334,7 +4334,7 @@ msgid ""
 "\n"
 "Manage Bill of Materials, plan manufacturing orders, track work orders with "
 "the\n"
-"Odoo <a href=\"https://www.odoo.com/app/manufacturing\">Open Source MRP</a> "
+"Odoo <a href=\"https://www.weth.com.br/app/manufacturing\">Open Source MRP</a> "
 "app.\n"
 "\n"
 "Get all your assembly or manufacturing operations managed by Odoo. Schedule\n"
@@ -4411,7 +4411,7 @@ msgstr ""
 "\n"
 "Gerencie listas de materiais, planeje ordens de produção, rastreie ordens de "
 "trabalho com o \n"
-"aplicativo Odoo de <a href=\"https://www.odoo.com/app/manufacturing\">"
+"aplicativo Odoo de <a href=\"https://www.weth.com.br/app/manufacturing\">"
 "Fabricação de código aberto</a>.\n"
 "\n"
 "Tenha todas as suas operações de montagem ou fabricação gerenciadas pelo "

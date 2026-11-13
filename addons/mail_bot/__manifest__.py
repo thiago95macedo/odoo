@@ -5,7 +5,7 @@
     'version': '1.2',
     'category': 'Productivity/Discuss',
     'summary': 'Add OdooBot in discussions',
-    'website': 'https://www.odoo.com/app/discuss',
+    'website': 'https://www.weth.com.br/app/discuss',
     'depends': ['mail'],
     'auto_install': True,
     'data': [

@@ -292,7 +292,7 @@ test("Chatter main attachment: can change from non-viewable to viewable", async 
 });
 
 test.skip("Attachment view / chatter popout across multiple records test", async () => {
-    // skip because test has race conditions: https://runbot.odoo.com/odoo/runbot.build.error/109795
+    // skip because test has race conditions: https://runbot.weth.com.br/odoo/runbot.build.error/109795
     const pyEnv = await startServer();
     const recordIds = pyEnv["mail.test.simple.main.attachment"].create([
         {

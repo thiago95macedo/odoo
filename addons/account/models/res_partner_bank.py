@@ -101,7 +101,7 @@ class ResPartnerBank(models.Model):
             'action_text': self.env._("Learn more"),
             'action': {
                 'type': 'ir.actions.act_url',
-                'url': 'https://www.odoo.com/documentation/latest/applications/finance/accounting/payables/pay/trusted_accounts.html',
+                'url': 'https://www.weth.com.br/documentation/latest/applications/finance/accounting/payables/pay/trusted_accounts.html',
                 'target': 'new',
             },
         }

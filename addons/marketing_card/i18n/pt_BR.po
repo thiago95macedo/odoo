@@ -2,9 +2,9 @@
 # This file contains the translation of the following modules:
 # * marketing_card
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -13,8 +13,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/marketing_card/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -300,8 +300,8 @@ msgstr "Centro"
 
 #. module: marketing_card
 #: model_terms:card.campaign,reward_message:marketing_card.card_campaign_campaign_1
-msgid "Check out odoo.com for more!"
-msgstr "Confira odoo.com para saber mais!"
+msgid "Check out weth.com.br for more!"
+msgstr "Confira weth.com.br para saber mais!"
 
 #. module: marketing_card
 #: model:card.template,name:marketing_card.card_template_circles

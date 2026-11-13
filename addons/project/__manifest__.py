@@ -3,7 +3,7 @@
 {
     'name': 'Project',
     'version': '1.4',
-    'website': 'https://www.odoo.com/app/project',
+    'website': 'https://www.weth.com.br/app/project',
     'category': 'Services/Project',
     'sequence': 45,
     'summary': 'Manage tasks and collaborate on projects',

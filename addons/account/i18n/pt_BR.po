@@ -20,8 +20,8 @@
 # lucas LucasLc7, 2023
 # Éder Brito <britoederr@gmail.com>, 2023
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:38+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/account/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -23046,8 +23046,8 @@ msgstr "ex.: finance@example.com; accountant@example.com"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_company_form_view_onboarding
-msgid "e.g. https://www.odoo.com"
-msgstr "ex.: https://www.odoo.com"
+msgid "e.g. https://www.weth.com.br"
+msgstr "ex.: https://www.weth.com.br"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_journal_form

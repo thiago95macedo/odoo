@@ -330,7 +330,7 @@ test("chat window: close on ESCAPE (multi)", async () => {
 test("Close composer suggestions in chat window with ESCAPE does not also close the chat window", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
@@ -1221,14 +1221,14 @@ test("preserve link formatting in chat bubble message preview", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     pyEnv["mail.message"].create({
         model: "discuss.channel",
-        body: `<a href="https://odoo.com/">https://odoo.com</a>`,
+        body: `<a href="https://weth.com.br/">https://weth.com.br</a>`,
         author_id: serverState.partnerId,
         res_id: channelId,
     });
     setupChatHub({ folded: [channelId] });
     await start();
     await hover(".o-mail-ChatBubble[name='General']");
-    await contains(`.o-mail-ChatBubble-preview a[href="https://odoo.com/"]`);
+    await contains(`.o-mail-ChatBubble-preview a[href="https://weth.com.br/"]`);
     expect(".o-mail-ChatBubble-preview a").toHaveStyle({ pointerEvents: "none" }); // links in preview should not be clickable
 });
 

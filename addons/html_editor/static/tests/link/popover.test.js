@@ -395,17 +395,17 @@ describe("popover should show link preview", () => {
         onRpc("/html_editor/link_preview_external", () => ({
             og_description:
                 "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
-            og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
+            og_image: "https://www.weth.com.br/web/image/41207129-1abe7a15/homepage-seo.png",
             og_title: "Open Source ERP and CRM | Odoo",
             og_type: "website",
             og_site_name: "Odoo",
-            source_url: "http://odoo.com/",
+            source_url: "http://weth.com.br/",
         }));
         const { editor } = await setupEditor(`<p>[]<br></p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
-        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://weth.com.br/");
         await animationFrame();
         expect(".o_we_replace_title_btn").toHaveCount(1);
         expect(".o_extra_info_card").toHaveCount(1);
@@ -556,18 +556,18 @@ describe("popover should show link preview", () => {
             expect.step("/html_editor/link_preview_external");
             return {
                 og_description: description,
-                og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
+                og_image: "https://www.weth.com.br/web/image/41207129-1abe7a15/homepage-seo.png",
                 og_title: title,
                 og_type: "website",
                 og_site_name: "Odoo",
-                source_url: "http://odoo.com/",
+                source_url: "http://weth.com.br/",
             };
         });
         const { editor } = await setupEditor(`<p>[]<br></p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
-        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://weth.com.br/");
         await animationFrame();
         expect.verifySteps(["/html_editor/link_preview_external"]);
         await waitFor(".o_we_description_link_preview");
@@ -593,17 +593,17 @@ describe("popover should show link preview", () => {
         onRpc("/html_editor/link_preview_external", () => ({
             og_description:
                 "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
-            og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
+            og_image: "https://www.weth.com.br/web/image/41207129-1abe7a15/homepage-seo.png",
             og_title: "Open Source ERP and CRM | Odoo",
             og_type: "website",
             og_site_name: "Odoo",
-            source_url: "http://odoo.com/",
+            source_url: "http://weth.com.br/",
         }));
         const { editor } = await setupEditor(`<p>abc</p><p>[]<br></p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
-        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://weth.com.br/");
         await animationFrame();
         expect("button.o_we_replace_title_btn").toHaveCount(1);
         expect("a.o_we_replace_title_btn").toHaveCount(0);
@@ -1144,12 +1144,12 @@ describe("popover with a valid URL as label", () => {
         expect(cleanLinkArtifacts(getContent(el))).toBe('<p><a href="tel:123">tel:123[]</a></p>');
     });
     test("popover should display href URL even if label is a valid URL and differs from href", async () => {
-        await setupEditor('<p><a href="https://odoo.com/">googl[]e.com</a></p>');
+        await setupEditor('<p><a href="https://weth.com.br/">googl[]e.com</a></p>');
         await waitFor(".o-we-linkpopover", { timeout: 1500 });
-        expect(queryFirst(".o-we-linkpopover a").href).toBe("https://odoo.com/");
+        expect(queryFirst(".o-we-linkpopover a").href).toBe("https://weth.com.br/");
         await click(".o_we_edit_link");
         await waitFor(".o_we_href_input_link");
-        expect("input.o_we_href_input_link").toHaveValue("https://odoo.com/");
+        expect("input.o_we_href_input_link").toHaveValue("https://weth.com.br/");
     });
     test("Focus should be on URL [label] when editing an existing link", async () => {
         await setupEditor(`<p>this is a <a href="http://test.com/">li[]nk</a></p>`);

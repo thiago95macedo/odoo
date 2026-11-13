@@ -4,7 +4,7 @@
     'name': "MRP Subcontracting",
     'version': '0.1',
     'summary': "Subcontract Productions",
-    'website': 'https://www.odoo.com/app/manufacturing',
+    'website': 'https://www.weth.com.br/app/manufacturing',
     'category': 'Supply Chain/Manufacturing',
     'depends': ['mrp'],
     'data': [

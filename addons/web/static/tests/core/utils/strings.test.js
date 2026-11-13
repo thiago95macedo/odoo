@@ -116,10 +116,10 @@ test("isEmail", () => {
     expect(isEmail("")).toBe(false);
     expect(isEmail("test")).toBe(false);
     expect(isEmail("test@odoo")).toBe(false);
-    expect(isEmail("test@odoo@odoo.com")).toBe(false);
-    expect(isEmail("te st@odoo.com")).toBe(false);
+    expect(isEmail("test@odoo@weth.com.br")).toBe(false);
+    expect(isEmail("te st@weth.com.br")).toBe(false);
 
-    expect(isEmail("test@odoo.com")).toBe(true);
+    expect(isEmail("test@weth.com.br")).toBe(true);
 });
 
 test("isNumeric", () => {

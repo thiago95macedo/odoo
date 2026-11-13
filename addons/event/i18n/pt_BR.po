@@ -9,9 +9,9 @@
 # Martin Trigaux, 2022
 # Kevilyn Rosa, 2023
 # Layna Nascimento, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
@@ -19,8 +19,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-06 17:39+0000\n"
 "PO-Revision-Date: 2026-11-04 16:37+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/event/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -3072,11 +3072,11 @@ msgstr "Seguidores (usuários)"
 msgid ""
 "For any additional information, please contact us at <a "
 "class=\"o_translate_inline\" "
-"href=\"mailto:events@odoo.com\">events@odoo.com</a>"
+"href=\"mailto:events@weth.com.br\">events@weth.com.br</a>"
 msgstr ""
 "Para obter informações adicionais, entre em contato conosco em <a "
 "class=\"o_translate_inline\" "
-"href=\"mailto:events@odoo.com\">events@odoo.com</a>"
+"href=\"mailto:events@weth.com.br\">events@weth.com.br</a>"
 
 #. module: event
 #: model_terms:event.event,description:event.event_7
@@ -5611,8 +5611,8 @@ msgstr "ex: \"Promoção\""
 
 #. module: event
 #: model_terms:ir.ui.view,arch_db:event.view_event_form
-msgid "e.g. \"https://www.odoo.com\""
-msgstr "ex.: \"https://www.odoo.com\""
+msgid "e.g. \"https://www.weth.com.br\""
+msgstr "ex.: \"https://www.weth.com.br\""
 
 #. module: event
 #: model_terms:ir.ui.view,arch_db:event.event_event_view_form_quick_create

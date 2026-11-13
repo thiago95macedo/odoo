@@ -517,7 +517,7 @@ test("composer textarea content is retained when changing channel then going bac
 test("add an emoji after a partner mention", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -556,7 +556,7 @@ test("pending mentions are kept when toggling composer", async () => {
 test("composer suggestion should match with input selection", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "Luigi",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -807,7 +807,7 @@ test("quick edit last self-message from UP arrow", async () => {
 test("Select composer suggestion via Enter does not send the message", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "shrek@odoo.com",
+        email: "shrek@weth.com.br",
         name: "Shrek",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
@@ -991,7 +991,7 @@ test("remove an uploading attachment", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
     const text = new File(["hello, world"], "text.txt", { type: "text/plain" });
-    onRpc("/mail/attachment/upload", () => new Promise(() => {})); // simulates uploading indefinitely
+    onRpc("/mail/attachment/upload", () => new Promise(() => { })); // simulates uploading indefinitely
     await start();
     await openDiscuss(channelId);
     await inputFiles(".o-mail-Composer .o_input_file", [text]);
@@ -1005,7 +1005,7 @@ test("Uploading multiple files in the composer create multiple temporary attachm
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
     const text1 = new File(["hello, world"], "text1.txt", { type: "text/plain" });
     const text2 = new File(["hello, world"], "text2.txt", { type: "text/plain" });
-    onRpc("/mail/attachment/upload", () => new Promise(() => {}));
+    onRpc("/mail/attachment/upload", () => new Promise(() => { }));
     await start();
     await openDiscuss(channelId);
     await inputFiles(".o-mail-Composer .o_input_file", [text1, text2]);
@@ -1917,11 +1917,11 @@ test("Post message trims outer whitespaces and newlines", async () => {
 test("discard stale mention when replacing it with a longer partner mention", async () => {
     const pyEnv = await startServer();
     const johnId = pyEnv["res.partner"].create({
-        email: "john@odoo.com",
+        email: "john@weth.com.br",
         name: "John",
     });
     const johnDoeId = pyEnv["res.partner"].create({
-        email: "john.doe@odoo.com",
+        email: "john.doe@weth.com.br",
         name: "John Doe",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -1953,7 +1953,7 @@ test("discard stale mention when replacing it with a longer partner mention", as
 test("mention partner whose name ends with a space at the end of the message", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "zara@odoo.com",
+        email: "zara@weth.com.br",
         name: "Zara Space ",
     });
     const channelId = pyEnv["discuss.channel"].create({

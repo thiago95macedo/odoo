@@ -3,7 +3,7 @@
 {
     'name': 'Website Events CRM',
     'category': 'Website/Website',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'description': "Allow per-order lead creation mode",
     'depends': ['event_crm', 'website_event'],
     'data': [

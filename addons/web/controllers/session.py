@@ -78,7 +78,7 @@ class Session(Controller):
             'state': json.dumps({'d': request.db, 'u': ICP.get_str('web.base.url')}),
             'scope': 'userinfo',
         }
-        return 'https://accounts.odoo.com/oauth2/auth?' + url_encode(params)
+        return 'https://accounts.weth.com.br/oauth2/auth?' + url_encode(params)
 
     @route('/web/session/destroy', type='jsonrpc', auth='user', readonly=True)
     def destroy(self):

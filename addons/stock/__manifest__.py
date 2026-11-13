@@ -4,7 +4,7 @@
     'name': 'Inventory',
     'version': '1.1',
     'summary': 'Manage your stock and logistics activities',
-    'website': 'https://www.odoo.com/app/inventory',
+    'website': 'https://www.weth.com.br/app/inventory',
     'depends': ['product', 'barcodes_gs1_nomenclature', 'digest'],
     'category': 'Supply Chain/Inventory',
     'sequence': 25,

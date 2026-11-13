@@ -3,7 +3,7 @@
 # * website
 #
 # Translators:
-# Keli Brugalli <kbr@odoo.com>, 2022
+# Keli Brugalli <kbr@weth.com.br>, 2022
 # Marcelo at JambuTec <marcelo@jambu.com.br>, 2022
 # Mateus Lopes <mateus1@gmail.com>, 2022
 # Luis Felipe Miléo <mileo@kmee.com.br>, 2022
@@ -19,9 +19,9 @@
 # Layna Nascimento, 2023
 # Éder Brito <britoederr@gmail.com>, 2023
 # Kevilyn Rosa, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:38+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/website/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -14524,9 +14524,9 @@ msgid ""
 "Odoo Website Builder\n"
 "--------------------\n"
 "\n"
-"Get an awesome and <a href=\"https://www.odoo.com/app/website\">free "
+"Get an awesome and <a href=\"https://www.weth.com.br/app/website\">free "
 "website</a>,\n"
-"easily customizable with the Odoo <a href=\"https://www.odoo.com/app/"
+"easily customizable with the Odoo <a href=\"https://www.weth.com.br/app/"
 "website\">website builder</a>.\n"
 "\n"
 "Create enterprise grade website with our super easy builder. Use finely\n"
@@ -14655,9 +14655,9 @@ msgstr ""
 "Construtor de Sites Odoo\n"
 "--------------------\n"
 "\n"
-"Obtenha um <a href=\"https://www.odoo.com/app/website\">site gratuito</a> "
+"Obtenha um <a href=\"https://www.weth.com.br/app/website\">site gratuito</a> "
 "incrível,\n"
-"facilmente personalizável com o <a href=\"https://www.odoo.com/app/"
+"facilmente personalizável com o <a href=\"https://www.weth.com.br/app/"
 "website\">construtor de sites</a> Odoo.\n"
 "\n"
 "Crie sites de nível empresarial com nosso construtor super fácil. Use blocos "
@@ -24119,8 +24119,8 @@ msgstr ""
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
-msgid "https://www.odoo.com"
-msgstr "https://www.odoo.com"
+msgid "https://www.weth.com.br"
+msgstr "https://www.weth.com.br"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_mega_menu_odoo_menu
@@ -24175,10 +24175,10 @@ msgstr "info@suaempresa.exemplo.com"
 #: model_terms:ir.ui.view,arch_db:website.show_website_info
 msgid ""
 "instance of Odoo, the <a class=\"o_translate_inline\" target=\"_blank\" "
-"href=\"https://www.odoo.com\">Open Source ERP</a>."
+"href=\"https://www.weth.com.br\">Open Source ERP</a>."
 msgstr ""
 "instância do Odoo, o <a class=\"o_translate_inline\" target=\"_blank\" "
-"href=\"https://www.odoo.com\">ERP de código aberto</a>."
+"href=\"https://www.weth.com.br\">ERP de código aberto</a>."
 
 #. module: website
 #. odoo-python

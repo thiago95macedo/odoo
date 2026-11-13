@@ -56,7 +56,7 @@ export class ResCompany extends models.Model {
     get_mailing_snippet_info() {
         return {
             has_logo: false,
-            website: "https://www.odoo.com",
+            website: "https://www.weth.com.br",
             email: "admin@example.com",
             contact_address: "Rue des Ursulines, 1000 Bruxelles",
             display_address: "Rue des Ursulines, 1000 Bruxelles",

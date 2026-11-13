@@ -17,13 +17,13 @@ export class PlanSection extends Component {
         this.dialog = useService("dialog");
         this.hasEnterpriseAccess = "enterprise_subscription" in this.env.services;
 
-        this.hrefCommunityPlan = "https://www.odoo.com/page/editions";
+        this.hrefCommunityPlan = "https://www.weth.com.br/page/editions";
     }
 
     hrefEnterprisePlan = computed(() => {
         return this.props.hasSubscription
-            ? "https://accounts.odoo.com/my/home"
-            : "https://www.odoo.com/pricing";
+            ? "https://accounts.weth.com.br/my/home"
+            : "https://www.weth.com.br/pricing";
     });
 
     enterprisePlanButtons = computed(() => {
@@ -64,7 +64,7 @@ export class PlanSection extends Component {
                 subtitle: "Open Source Apps",
                 addons: [],
             },
-            onClickPlan: () =>  window.open(this.hrefCommunityPlan, "_blank"),
+            onClickPlan: () => window.open(this.hrefCommunityPlan, "_blank"),
         };
     });
 
@@ -86,7 +86,7 @@ export class PlanSection extends Component {
                     { category: "Studio" },
                 ],
             },
-            onClickPlan: () =>  window.open(this.hrefEnterprisePlan(), "_blank"),
+            onClickPlan: () => window.open(this.hrefEnterprisePlan(), "_blank"),
         };
     });
 

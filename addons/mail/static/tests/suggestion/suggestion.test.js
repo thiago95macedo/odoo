@@ -47,11 +47,11 @@ beforeEach(() => {
 test('[text composer] display partner mention suggestions on typing "@"', async () => {
     const pyEnv = await startServer();
     const partnerId_1 = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const partnerId_2 = pyEnv["res.partner"].create({
-        email: "testpartner2@odoo.com",
+        email: "testpartner2@weth.com.br",
         name: "TestPartner2",
     });
     pyEnv["res.users"].create({ partner_id: partnerId_1 });
@@ -73,7 +73,7 @@ test.tags("focus required");
 test("suggestion list closed by Escape stays closed when a member starts typing", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const userId = pyEnv["res.users"].create({ partner_id: partnerId });
@@ -106,7 +106,7 @@ test("suggestion list closed by Escape stays closed when a member starts typing"
 
 test("suggestion list closed by Escape stays closed when the mention search answers", async () => {
     const pyEnv = await startServer();
-    pyEnv["res.partner"].create({ email: "testpartner@odoo.com", name: "TestPartner" });
+    pyEnv["res.partner"].create({ email: "testpartner@weth.com.br", name: "TestPartner" });
     const { promise: fetchHeld, resolve: releaseFetch } = Promise.withResolvers();
     onRpc("res.partner", "get_mention_suggestions", async () => {
         expect.step("get_mention_suggestions");
@@ -154,11 +154,11 @@ test.tags("html composer");
 test("display partner mention suggestions on typing '@'", async () => {
     const pyEnv = await startServer();
     const partnerId_1 = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const partnerId_2 = pyEnv["res.partner"].create({
-        email: "testpartner2@odoo.com",
+        email: "testpartner2@weth.com.br",
         name: "TestPartner2",
     });
     pyEnv["res.users"].create({ partner_id: partnerId_1 });
@@ -190,8 +190,8 @@ test("[text composer] can @user in restricted (group_public_id) channels", async
         name: "Custom Channel Group",
     });
     const [partnerId_1, partnerId_2] = pyEnv["res.partner"].create([
-        { email: "testpartner1@odoo.com", name: "TestPartner1" },
-        { email: "testpartner2@odoo.com", name: "TestPartner2" },
+        { email: "testpartner1@weth.com.br", name: "TestPartner1" },
+        { email: "testpartner2@weth.com.br", name: "TestPartner2" },
     ]);
     pyEnv["res.users"].create([
         { partner_id: partnerId_1, group_ids: [Command.link(groupId)] },
@@ -220,8 +220,8 @@ test("can @user in restricted (group_public_id) channels", async () => {
         name: "Custom Channel Group",
     });
     const [partnerId_1, partnerId_2] = pyEnv["res.partner"].create([
-        { email: "testpartner1@odoo.com", name: "TestPartner1" },
-        { email: "testpartner2@odoo.com", name: "TestPartner2" },
+        { email: "testpartner1@weth.com.br", name: "TestPartner1" },
+        { email: "testpartner2@weth.com.br", name: "TestPartner2" },
     ]);
     pyEnv["res.users"].create([
         { partner_id: partnerId_1, group_ids: [Command.link(groupId)] },
@@ -254,11 +254,11 @@ test("can @user in restricted (group_public_id) channels", async () => {
 test("[text composer] post a first message then display partner mention suggestions on typing '@'", async () => {
     const pyEnv = await startServer();
     const partnerId_1 = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const partnerId_2 = pyEnv["res.partner"].create({
-        email: "testpartner2@odoo.com",
+        email: "testpartner2@weth.com.br",
         name: "TestPartner2",
     });
     pyEnv["res.users"].create({ partner_id: partnerId_1 });
@@ -284,11 +284,11 @@ test.tags("html composer");
 test("post a first message then display partner mention suggestions on typing '@'", async () => {
     const pyEnv = await startServer();
     const partnerId_1 = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const partnerId_2 = pyEnv["res.partner"].create({
-        email: "testpartner2@odoo.com",
+        email: "testpartner2@weth.com.br",
         name: "TestPartner2",
     });
     pyEnv["res.users"].create({ partner_id: partnerId_1 });
@@ -393,7 +393,7 @@ test("Do not fetch if search more specific and fetch had no result", async () =>
 test("[text composer] show other channel member in @ mention", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -412,7 +412,7 @@ test("[text composer] show other channel member in @ mention", async () => {
 test("show other channel member in @ mention before the member list is loaded", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -422,7 +422,7 @@ test("show other channel member in @ mention before the member list is loaded", 
             Command.create({ partner_id: partnerId }),
         ],
     });
-    listenStoreFetch("/discuss/channel/members", { onRpc: () => new Promise(() => {}) });
+    listenStoreFetch("/discuss/channel/members", { onRpc: () => new Promise(() => { }) });
     await start();
     await openDiscuss(channelId);
     await insertText(".o-mail-Composer-input", "@Test");
@@ -433,7 +433,7 @@ test.tags("html composer");
 test("show other channel member in @ mention", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -460,7 +460,7 @@ test("show other channel member in @ mention", async () => {
 test("[text composer] select @ mention insert mention text in composer", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -481,7 +481,7 @@ test.tags("html composer");
 test("select @ mention insert mention text in composer", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -509,8 +509,8 @@ test("select @ mention insert mention text in composer", async () => {
 test("select @ mention from the suggestion list being filtered", async () => {
     const pyEnv = await startServer();
     const [partnerId_1, partnerId_2] = pyEnv["res.partner"].create([
-        { email: "aaapartner@odoo.com", name: "AaaPartner" },
-        { email: "testpartner@odoo.com", name: "TestPartner" },
+        { email: "aaapartner@weth.com.br", name: "AaaPartner" },
+        { email: "testpartner@weth.com.br", name: "TestPartner" },
     ]);
     const channelId = pyEnv["discuss.channel"].create({
         name: "general",
@@ -559,7 +559,7 @@ test("select @ mention from the suggestion list being filtered", async () => {
 test("[text composer] select @ mention closes suggestions", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -580,7 +580,7 @@ test.tags("html composer");
 test("select @ mention closes suggestions", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({

@@ -9,12 +9,12 @@ test("HistoryDialog links are clickable and open in new tab", async () => {
     onRpc(({ method }) =>
         method === "read"
             ? [
-                  {
-                      create_date: "2023-01-01 12:00:00",
-                      create_uid: [1, "User"],
-                      description: '<a href="https://odoo.com">Link</a>',
-                  },
-              ]
+                {
+                    create_date: "2023-01-01 12:00:00",
+                    create_uid: [1, "User"],
+                    description: '<a href="https://weth.com.br">Link</a>',
+                },
+            ]
             : ""
     );
 
@@ -23,11 +23,11 @@ test("HistoryDialog links are clickable and open in new tab", async () => {
         recordModel: "res.partner",
         historyMetadata: [],
         versionedFieldName: "description",
-        restoreRequested: () => {},
+        restoreRequested: () => { },
     });
 
     await waitFor(".html-history-loaded");
-    expect(".history-content-view a").toHaveAttribute("href", "https://odoo.com");
+    expect(".history-content-view a").toHaveAttribute("href", "https://weth.com.br");
     expect(".history-content-view a").toHaveAttribute("target", "_blank");
     expect(".history-content-view .pe-none").toHaveCount(0);
 });

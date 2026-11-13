@@ -16,7 +16,7 @@ test("validSelection", async () => {
     const preset = models["pos.preset"].get(1);
     order.preset_id = preset;
     const comp = await mountWithCleanup(PresetInfoPopup, {
-        props: { close: () => {}, getPayload: () => {} },
+        props: { close: () => { }, getPayload: () => { } },
     });
     // none
     preset.identification = "none";
@@ -29,7 +29,7 @@ test("validSelection", async () => {
     // mail
     preset.mail_template_id = 21;
     expect(comp.validSelection).toBeEmpty();
-    comp.state.email = "good.person@odoo.com";
+    comp.state.email = "good.person@weth.com.br";
     expect(Boolean(comp.validSelection)).toBe(true);
     // Partner
     preset.identification = "address";
@@ -52,10 +52,10 @@ test("validated partner keeps the form values locally", async () => {
     preset.identification = "address";
     order.preset_id = preset;
     const comp = await mountWithCleanup(PresetInfoPopup, {
-        props: { close: () => {}, getPayload: () => {} },
+        props: { close: () => { }, getPayload: () => { } },
     });
     comp.state.name = "Demo User";
-    comp.state.email = "demo@odoo.com";
+    comp.state.email = "demo@weth.com.br";
     comp.state.phoneLocal = "2025551234";
     comp.state.street = "Chaussée de Namur 40";
     comp.state.city = "Ramillies";
@@ -70,7 +70,7 @@ test("validated partner keeps the form values locally", async () => {
     const partner = order.partner_id;
     expect(partner.id).toBe(signedPartnerId);
     expect(partner.name).toBe("Demo User");
-    expect(partner.email).toBe("demo@odoo.com");
+    expect(partner.email).toBe("demo@weth.com.br");
     expect(partner.phone).toBe("+12025551234");
     expect(partner.street).toBe("Chaussée de Namur 40");
     expect(partner.city).toBe("Ramillies");
@@ -93,7 +93,7 @@ test("floating_order_name is the entered name, prefixed by the preset when a par
     const preset = models["pos.preset"].get(1);
     order.preset_id = preset;
     const comp = await mountWithCleanup(PresetInfoPopup, {
-        props: { close: () => {}, getPayload: () => {} },
+        props: { close: () => { }, getPayload: () => { } },
     });
 
     // No partner is created for a preset that only asks for a name.

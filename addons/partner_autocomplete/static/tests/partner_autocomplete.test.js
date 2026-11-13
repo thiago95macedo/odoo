@@ -109,10 +109,10 @@ onRpc("res.partner", "enrich_by_duns", ({ args }) => ({
     zip: "1367",
     street: "Chaussée de Namur 40",
     street2: false,
-    email: "hello@odoo.com",
+    email: "hello@weth.com.br",
     phone: "3281813700",
-    website: "www.odoo.com",
-    domain: "odoo.com",
+    website: "www.weth.com.br",
+    domain: "weth.com.br",
     country_id: {
         id: 1,
         name: "Belgium",
@@ -329,18 +329,18 @@ test("Partner autocomplete: select a value, then empty the input and save", asyn
                 <field name="name" widget="field_partner_autocomplete"/>
                 <field name="email"/>
             </form>`,
-        });
+    });
 
     await editAutocomplete("[name=name] .dropdown input", "company");
     expect("[name=name] .o-autocomplete .o-autocomplete--dropdown-item").toHaveCount(4);
     await contains("[name=name] .o-autocomplete ul li").click();
     expect("[name=name] input").toHaveValue("First Company");
-    expect("[name=email] input").toHaveValue("hello@odoo.com");
+    expect("[name=email] input").toHaveValue("hello@weth.com.br");
 
     await contains("[name=name] input").edit("");
     await contains(".o_form_button_save").click();
     expect.verifySteps([{
-        email: "hello@odoo.com",
+        email: "hello@weth.com.br",
         name: false,
     }]);
 });

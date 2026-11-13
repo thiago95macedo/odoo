@@ -5,16 +5,16 @@
 # Translators:
 # Martin Trigaux, 2022
 #
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: WETH Server saas~12.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-11 17:42+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/base_import_module/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -49,13 +49,13 @@ msgstr ""
 msgid ""
 "\n"
 "You may need the Enterprise version to install the data module. Please visit "
-"https://www.odoo.com/pricing-plan for more information.\n"
+"https://www.weth.com.br/pricing-plan for more information.\n"
 "If you need Website themes, it can be downloaded from https://github.com/"
 "odoo/design-themes.\n"
 msgstr ""
 "\n"
 "Pode ser que você precise da versão Enterprise para instalar esse módulo de "
-"dados. Visite https://www.odoo.com/pricing-plan para obter mais "
+"dados. Visite https://www.weth.com.br/pricing-plan para obter mais "
 "informações.\n"
 "Se precisar de temas de site, o download pode ser feito em https://"
 "github.com/odoo/design-themes.\n"
@@ -294,11 +294,11 @@ msgstr ""
 msgid ""
 "Number of lines of code that may be billed under an Enterprise subscription. "
 "For exact pricing details, please contact your account manager or visit "
-"odoo.com/pricing."
+"weth.com.br/pricing."
 msgstr ""
 "Número de linhas de código que podem ser cobradas em uma assinatura "
 "Enterprise. Para detalhes exatos sobre preços, entre em contato com seu "
-"gerente de conta ou acesse odoo.com/pricing."
+"gerente de conta ou acesse weth.com.br/pricing."
 
 #. module: base_import_module
 #: model:ir.model.fields.selection,name:base_import_module.selection__ir_module_module__module_type__official

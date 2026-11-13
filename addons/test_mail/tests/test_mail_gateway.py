@@ -149,8 +149,8 @@ class TestEmailParsing(MailCommon):
     def test_message_parse_eml(self):
         # Test that the parsing of mail with embedded emails as eml(msg) which generates empty attachments, can be processed.
         mail = self.format(test_mail_data.MAIL_EML_ATTACHMENT, email_from='"Sylvie Lelitre" <test.sylvie.lelitre@agrolait.com>', to=f'generic@{self.alias_domain}',
-                           msg_id='<cb7eaf62-58dc-2017-148c-305d0c78892f@odoo.com>',
-                           references='<f3b9f8f8-28fa-2543-cab2-7aa68f679ebb@odoo.com>',
+                           msg_id='<cb7eaf62-58dc-2017-148c-305d0c78892f@weth.com.br>',
+                           references='<f3b9f8f8-28fa-2543-cab2-7aa68f679ebb@weth.com.br>',
                            subject='Re: test attac',
                            )
         self.env['mail.thread'].message_parse(self.from_string(mail))
@@ -182,9 +182,9 @@ class TestEmailParsing(MailCommon):
         })
         incoming_bounce = self.format(
             test_mail_data.MAIL_BOUNCE_QP_RFC822_HEADERS,
-            email_from='MAILER-DAEMON@mailserver.odoo.com (Mail Delivery System)',
-            email_to='bounce@xxx.odoo.com',
-            delivered_to='bounce@xxx.odoo.com'
+            email_from='MAILER-DAEMON@mailserver.weth.com.br (Mail Delivery System)',
+            email_to='bounce@xxx.weth.com.br',
+            delivered_to='bounce@xxx.weth.com.br'
         )
         msg = self.env['mail.thread'].message_parse(self.from_string(incoming_bounce))
         self.assertEqual(msg['bounced_email'], partner.email, "The sender email should be correctly parsed")

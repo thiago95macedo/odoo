@@ -17,7 +17,7 @@ Lots of reporting on time and employee tracking are provided.
 It is completely integrated with the cost accounting module. It allows you to set
 up a management by affair.
     """,
-    'website': 'https://www.odoo.com/app/timesheet',
+    'website': 'https://www.weth.com.br/app/timesheet',
     'depends': ['hr', 'analytic', 'project', 'uom'],
     'data': [
         'security/hr_timesheet_security.xml',

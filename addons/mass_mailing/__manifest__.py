@@ -5,7 +5,7 @@
     'summary': 'Design, send and track emails',
     'version': '2.7',
     'sequence': 60,
-    'website': 'https://www.odoo.com/app/email-marketing',
+    'website': 'https://www.weth.com.br/app/email-marketing',
     'category': 'Marketing/Email Marketing',
     'depends': [
         'contacts',

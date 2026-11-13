@@ -22,7 +22,7 @@ class TestMailingFilter(MassMailCommon):
             },
             {
                 'name': 'Email based',
-                'mailing_domain': [('email', 'ilike', 'info@odoo.com')],
+                'mailing_domain': [('email', 'ilike', 'info@weth.com.br')],
                 'mailing_model_id': res_partner_model_id,
             }
         ])

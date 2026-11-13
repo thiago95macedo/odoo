@@ -5,7 +5,7 @@
     'name': 'Quiz on Live Event Tracks',
     'category': 'Marketing/Events',
     'summary': 'Bridge module to support quiz features during "live" tracks. ',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'depends': [
         'website_event_track_live',
         'website_event_track_quiz',

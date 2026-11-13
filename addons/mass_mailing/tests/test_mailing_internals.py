@@ -257,7 +257,7 @@ class TestMassMailValues(MassMailCommon):
              'mailing_model_id': self.env['ir.model']._get('res.partner').id,
             },
             {'name': 'Email based',
-             'mailing_domain' : [('email', 'ilike', 'info@odoo.com')],
+             'mailing_domain' : [('email', 'ilike', 'info@weth.com.br')],
              'mailing_model_id': self.env['ir.model']._get('res.partner').id,
             }
         ])
@@ -768,14 +768,14 @@ class TestMassMailFeatures(MassMailCommon, CronMixinCase):
             'subject': 'TestShortener',
             'body_html': """<div>
 Hi,
-<t t-set="url" t-value="'www.odoo.com'"/>
+<t t-set="url" t-value="'www.weth.com.br'"/>
 <t t-set="httpurl" t-value="'https://www.odoo.eu'"/>
 Website0: <a id="url0" t-attf-href="https://www.odoo.tz/my/{{object.name}}">https://www.odoo.tz/my/<t t-out="object.name"/></a>
 Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a>
 Website2: <a id="url2" t-attf-href="https://{{url}}">https://<t t-out="url"/></a>
 Website3: <a id="url3" t-att-href="httpurl"><t t-out="httpurl"/></a>
 External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a>
-Email: <a id="url5" href="mailto:test@odoo.com">test@odoo.com</a></div>""",
+Email: <a id="url5" href="mailto:test@weth.com.br">test@weth.com.br</a></div>""",
             'mailing_model_id': self.env['ir.model']._get('mailing.list').id,
             'reply_to_mode': 'new',
             'reply_to': self.email_reply_to,
@@ -802,10 +802,10 @@ Email: <a id="url5" href="mailto:test@odoo.com">test@odoo.com</a></div>""",
             new_mail = self._find_mail_mail_wrecord(contact)
             for link_info in [('url0', 'https://www.odoo.tz/my/%s' % contact.name, True),
                               ('url1', 'https://www.odoo.be', True),
-                              ('url2', 'https://www.odoo.com', True),
+                              ('url2', 'https://www.weth.com.br', True),
                               ('url3', 'https://www.odoo.eu', True),
                               ('url4', 'https://www.example.com/foo/bar?baz=qux', True),
-                              ('url5', 'mailto:test@odoo.com', False)]:
+                              ('url5', 'mailto:test@weth.com.br', False)]:
                 # TDE FIXME: why going to mail message id ? mail.body_html seems to fail, check
                 link_params = {
                     'utm_medium': 'Email',

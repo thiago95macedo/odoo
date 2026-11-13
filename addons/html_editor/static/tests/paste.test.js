@@ -2991,7 +2991,7 @@ describe("pasting within pre", () => {
     });
 });
 
-const url = "https://www.odoo.com";
+const url = "https://www.weth.com.br";
 const imgUrl = "https://download.odoocdn.com/icons/website/static/description/icon.png";
 const videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
@@ -3081,11 +3081,11 @@ describe("link", () => {
             const { el, editor } = await setupEditor(
                 `<p>xy<a href="http://test.test/">\u200B[]</a>z</p>`
             );
-            pasteText(editor, "http://odoo.com");
+            pasteText(editor, "http://weth.com.br");
             await animationFrame();
             await expectElementCount(".o-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
-                `<p>xy<a href="http://odoo.com">http://odoo.com</a>[]z</p>`
+                `<p>xy<a href="http://weth.com.br">http://weth.com.br</a>[]z</p>`
             );
         });
 
@@ -3127,9 +3127,9 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="http://test.test/">[]\u200B</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "abc www.odoo.com xyz");
+                    pasteText(editor, "abc www.weth.com.br xyz");
                 },
-                contentAfter: '<p>abc <a href="https://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                contentAfter: '<p>abc <a href="https://www.weth.com.br">www.weth.com.br</a> xyz[]</p>',
             });
         });
 
@@ -3137,10 +3137,10 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="http://test.test/">[]\u200B</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "odoo.com\ngoogle.com");
+                    pasteText(editor, "weth.com.br\ngoogle.com");
                 },
                 contentAfter:
-                    '<div><a href="https://odoo.com">odoo.com</a></div>' +
+                    '<div><a href="https://weth.com.br">weth.com.br</a></div>' +
                     '<p><a href="https://google.com">google.com</a>[]</p>',
             });
         });
@@ -3151,11 +3151,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="https://www.odoo.com">odoo.com</a><br><a href="https://google.com">google.com</a>'
+                        '<a href="https://www.weth.com.br">weth.com.br</a><br><a href="https://google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="https://www.odoo.com">odoo.com</a></p><p><a href="https://google.com">google.com[]</a></p>',
+                    '<p><a href="https://www.weth.com.br">weth.com.br</a></p><p><a href="https://google.com">google.com[]</a></p>',
             });
         });
         test("should paste html content over an empty link (collapsed) (2)", async () => {
@@ -3164,11 +3164,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="https://www.odoo.com">odoo.com</a><br><a href="https://www.google.com">google.com</a>'
+                        '<a href="https://www.weth.com.br">weth.com.br</a><br><a href="https://www.google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="https://www.odoo.com">odoo.com</a></p><p><a href="https://www.google.com">google.com[]</a></p>',
+                    '<p><a href="https://www.weth.com.br">weth.com.br</a></p><p><a href="https://www.google.com">google.com[]</a></p>',
             });
         });
 
@@ -3425,7 +3425,7 @@ describe("link", () => {
             await testEditor({
                 contentBefore: "<p>[abc]</p>",
                 stepFunction: async (editor) => {
-                    pasteText(editor, "www.odoo.com");
+                    pasteText(editor, "www.weth.com.br");
                     undo(editor);
                 },
                 contentAfter: "<p>[abc]</p>",
@@ -3436,7 +3436,7 @@ describe("link", () => {
             await testEditor({
                 contentBefore: "<p>[abc]</p>",
                 stepFunction: async (editor) => {
-                    pasteText(editor, "def www.odoo.com xyz");
+                    pasteText(editor, "def www.weth.com.br xyz");
                     undo(editor);
                 },
                 contentAfter: "<p>[abc]</p>",
@@ -3449,7 +3449,7 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="https://www.odoo.com">odoo.com</a><br><a href="https://www.google.com">google.com</a>'
+                        '<a href="https://www.weth.com.br">weth.com.br</a><br><a href="https://www.google.com">google.com</a>'
                     );
                     undo(editor);
                 },
@@ -3553,9 +3553,9 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="#">[xyz]</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "www.odoo.com");
+                    pasteText(editor, "www.weth.com.br");
                 },
-                contentAfter: '<p><a href="https://www.odoo.com">xyz</a>[]</p>',
+                contentAfter: '<p><a href="https://www.weth.com.br">xyz</a>[]</p>',
             });
         });
 
@@ -3563,9 +3563,9 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="#">[xyz]</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "abc www.odoo.com xyz");
+                    pasteText(editor, "abc www.weth.com.br xyz");
                 },
-                contentAfter: '<p>abc <a href="https://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                contentAfter: '<p>abc <a href="https://www.weth.com.br">www.weth.com.br</a> xyz[]</p>',
             });
         });
 
@@ -3606,11 +3606,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="https://www.odoo.com">odoo.com</a><br><a href="https://google.com">google.com</a>'
+                        '<a href="https://www.weth.com.br">weth.com.br</a><br><a href="https://google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="https://www.odoo.com">odoo.com</a></p><p><a href="https://google.com">google.com[]</a></p>',
+                    '<p><a href="https://www.weth.com.br">weth.com.br</a></p><p><a href="https://google.com">google.com[]</a></p>',
             });
         });
         test("should paste html content over a link if all of its contents is selected (not collapsed) (2)", async () => {
@@ -3619,11 +3619,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="https://www.odoo.com">odoo.com</a><br><a href="https://www.google.com">google.com</a>'
+                        '<a href="https://www.weth.com.br">weth.com.br</a><br><a href="https://www.google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="https://www.odoo.com">odoo.com</a></p><p><a href="https://www.google.com">google.com[]</a></p>',
+                    '<p><a href="https://www.weth.com.br">weth.com.br</a></p><p><a href="https://www.google.com">google.com[]</a></p>',
             });
         });
         test("should paste URL as label when link with same label and href is selected", async () => {

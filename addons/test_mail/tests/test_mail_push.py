@@ -50,7 +50,7 @@ class TestWebPushNotification(SMSCommon):
         cls.vapid_public_key = cls.env['mail.push.device'].get_web_push_vapid_public_key()
         cls.env['mail.push.device'].sudo().create([
             {
-                'endpoint': f'https://test.odoo.com/webpush/user{(idx + 1)}',
+                'endpoint': f'https://test.weth.com.br/webpush/user{(idx + 1)}',
                 'expiration_time': None,
                 'keys': json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',
@@ -137,7 +137,7 @@ class TestWebPushNotification(SMSCommon):
                     self.assertEqual(payload_value['options']['data']['res_id'], channel.id)
                     self.assertEqual(payload_value['options']['data']['model'], channel._name)
                     self.assertEqual(payload_value['options']['data']['message_id'], message.id)
-                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.odoo.com/webpush/user2')
+                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.weth.com.br/webpush/user2')
                 push_to_end_point.reset_mock()
 
         # Test Direct Message with channel muted -> should skip push notif
@@ -206,7 +206,7 @@ class TestWebPushNotification(SMSCommon):
         self.env["mail.push.device"].sudo().create(
             [
                 {
-                    "endpoint": f"https://test.odoo.com/webpush/user{(idx + 20)}",
+                    "endpoint": f"https://test.weth.com.br/webpush/user{(idx + 20)}",
                     "expiration_time": None,
                     "keys": json.dumps(
                         {
@@ -242,7 +242,7 @@ class TestWebPushNotification(SMSCommon):
         )
         push_to_end_point.assert_called_once()
         # all_test_user should be notified
-        self.assertEqual(push_to_end_point.call_args.kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user20")
+        self.assertEqual(push_to_end_point.call_args.kwargs["device"]["endpoint"], "https://test.weth.com.br/webpush/user20")
         push_to_end_point.reset_mock()
 
         # mention messages in channel
@@ -254,8 +254,8 @@ class TestWebPushNotification(SMSCommon):
         )
         self.assertEqual(push_to_end_point.call_count, 2)
         # all_test_user and mentions_test_user should be notified
-        self.assertEqual(push_to_end_point.call_args_list[0].kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user20")
-        self.assertEqual(push_to_end_point.call_args_list[1].kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user21")
+        self.assertEqual(push_to_end_point.call_args_list[0].kwargs["device"]["endpoint"], "https://test.weth.com.br/webpush/user20")
+        self.assertEqual(push_to_end_point.call_args_list[1].kwargs["device"]["endpoint"], "https://test.weth.com.br/webpush/user21")
         push_to_end_point.reset_mock()
 
         # muted channel
@@ -333,7 +333,7 @@ class TestWebPushNotification(SMSCommon):
                 if has_notification:
                     self.assertPushNotification(
                         mail_push_count=0,
-                        endpoint='https://test.odoo.com/webpush/user2', keys=('vapid_private_key', 'vapid_public_key'),
+                        endpoint='https://test.weth.com.br/webpush/user2', keys=('vapid_private_key', 'vapid_public_key'),
                         title=f'{self.user_admin.name}: {self.record_simple.display_name}',
                         body_content='Test Push Body',
                         options={
@@ -434,7 +434,7 @@ class TestWebPushNotification(SMSCommon):
         # Add 4 more devices to force sending via cron queue
         for index in range(10, 14):
             self.env['mail.push.device'].sudo().create([{
-                'endpoint': 'https://test.odoo.com/webpush/user%d' % index,
+                'endpoint': 'https://test.weth.com.br/webpush/user%d' % index,
                 'expiration_time': None,
                 'keys': json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',
@@ -467,7 +467,7 @@ class TestWebPushNotification(SMSCommon):
         self._assert_notification_count_for_cron(0)
         post.assert_called_once()
         # Test that the unreachable device is deleted from the DB
-        notification_count = self.env['mail.push.device'].search_count([('endpoint', '=', 'https://test.odoo.com/webpush/user2')])
+        notification_count = self.env['mail.push.device'].search_count([('endpoint', '=', 'https://test.weth.com.br/webpush/user2')])
         self.assertEqual(notification_count, 0)
 
     @patch.object(odoo.addons.mail.models.mail_thread.Session, 'post',
@@ -483,7 +483,7 @@ class TestWebPushNotification(SMSCommon):
 
         self._assert_notification_count_for_cron(0)
         post.assert_called_once()
-        self.assertEqual(post.call_args.args[0], 'https://test.odoo.com/webpush/user2')
+        self.assertEqual(post.call_args.args[0], 'https://test.weth.com.br/webpush/user2')
         self.assertIn('headers', post.call_args.kwargs)
         self.assertIn('vapid', post.call_args.kwargs['headers']['Authorization'])
         self.assertIn('t=', post.call_args.kwargs['headers']['Authorization'])
@@ -526,7 +526,7 @@ class TestWebPushNotification(SMSCommon):
         # Add 4 more devices to force sending via cron queue
         for index in range(10, 14):
             self.env['mail.push.device'].sudo().create([{
-                'endpoint': 'https://test.odoo.com/webpush/user%d' % index,
+                'endpoint': 'https://test.weth.com.br/webpush/user%d' % index,
                 'expiration_time': None,
                 'keys': json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',
@@ -558,7 +558,7 @@ class TestWebPushNotification(SMSCommon):
         self.assertNotEqual(self.vapid_public_key, new_vapid_public_key)
         with self.assertRaises(InvalidVapidError):
             self.env['mail.push.device'].register_devices(
-                endpoint='https://test.odoo.com/webpush/user1',
+                endpoint='https://test.weth.com.br/webpush/user1',
                 expiration_time=None,
                 keys=json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',

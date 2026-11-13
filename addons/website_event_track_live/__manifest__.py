@@ -6,7 +6,7 @@
     'category': 'Marketing/Events',
     'sequence': 1006,
     'summary': 'Support live tracks: streaming, participation, youtube',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'depends': [
         'website_event_track',
     ],

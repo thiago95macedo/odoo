@@ -12,11 +12,11 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
-Vendor: WETH Tecnologia <info@odoo.com>
+Vendor: WETH Tecnologia <info@weth.com.br>
 Requires: sassc
 BuildRequires: python3-devel
 BuildRequires: pyproject-rpm-macros
-Url: https://www.odoo.com
+Url: https://www.weth.com.br
 
 %description
 Odoo is a complete ERP and CRM. The main features are accounting (analytic
@@ -111,5 +111,5 @@ EOF
 %exclude %{python3_sitelib}/setup/iot_box_builder/
 
 %changelog
-* %{build_date} Christophe Monniez <moc@odoo.com> - %{version}-%{release}
+* %{build_date} Christophe Monniez <moc@weth.com.br> - %{version}-%{release}
 - Latest updates

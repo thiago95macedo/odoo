@@ -24,7 +24,7 @@ from .svg_utils import get_shape_svg, make_shaped_image, update_svg_colors
 from odoo.addons.mail.tools import link_preview
 from odoo.addons.web.icons import ICONS
 
-DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.odoo.com'
+DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.weth.com.br'
 
 # Regex definitions to apply speed modification in SVG files
 # Note : These regex patterns are duplicated on the server side for
@@ -321,7 +321,7 @@ class HTML_Editor(Controller):
         # cannot know for sure that is an external website (we could try to
         # guess (which we do a bit client-side), but it's not worth it here).
         # The user can have set up a domain for their website which does not
-        # match the current one, or they used a XXXX.odoo.com URL, etc -> so we
+        # match the current one, or they used a XXXX.weth.com.br URL, etc -> so we
         # cannot guess 100% accurately based on the origin. So this is actually
         # the point: most of the time, this route will receive a relative path,
         # so there is no problem. But in the case where we receive something

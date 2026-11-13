@@ -232,10 +232,10 @@ test("Change gallery layout when images have a link", async () => {
     await contains("[data-label='Media'] button[data-action-id='setLink']").click();
 
     await contains("[data-label='Your URL'] [data-action-id='setUrl'] > input").fill(
-        "http://odoo.com",
+        "http://weth.com.br",
         { confirm: "blur" }
     );
-    expect(":iframe section a[href='http://odoo.com'] > img[data-index='1']").toHaveCount(1);
+    expect(":iframe section a[href='http://weth.com.br'] > img[data-index='1']").toHaveCount(1);
 
     await contains("[data-label='Mode'] .dropdown-toggle").click();
     await contains("[data-action-param='grid']").click();

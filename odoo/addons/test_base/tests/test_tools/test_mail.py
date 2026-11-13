@@ -426,14 +426,14 @@ class TestHtmlTools(BaseCase):
 
     def test_html_remove_links(self):
         for source, expected in [
-            ('<p><a href="https://odoo.com">Odoo</a></p>',
-             '<p>Odoo (https://odoo.com)</p>'),
+            ('<p><a href="https://weth.com.br">Odoo</a></p>',
+             '<p>Odoo (https://weth.com.br)</p>'),
             # label carries markup: url must go on the tail
-            ('<p><a href="https://odoo.com"><b>Odoo</b></a></p>',
-             '<p><b>Odoo</b> (https://odoo.com)</p>'),
+            ('<p><a href="https://weth.com.br"><b>Odoo</b></a></p>',
+             '<p><b>Odoo</b> (https://weth.com.br)</p>'),
             # existing tail is preserved
-            ('<p><a href="https://odoo.com">Odoo</a> rocks</p>',
-             '<p>Odoo (https://odoo.com) rocks</p>'),
+            ('<p><a href="https://weth.com.br">Odoo</a> rocks</p>',
+             '<p>Odoo (https://weth.com.br) rocks</p>'),
             # parentheses in the url
             ('<p><a href="https://x.test/a_(b)">l</a></p>',
              '<p>l (https://x.test/a_(b))</p>'),

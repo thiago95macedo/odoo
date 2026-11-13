@@ -94,8 +94,7 @@ test("reply shows correct author avatar", async () => {
     await start();
     await openDiscuss(channelId);
     await contains(
-        `.o-mail-MessageInReply-avatar[data-src='${`${getOrigin()}/web/image/res.partner/${
-            serverState.partnerId
+        `.o-mail-MessageInReply-avatar[data-src='${`${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}`}`
     );
 });
@@ -342,7 +341,7 @@ test("preserve the link formatting for message in reply", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     const messageId = pyEnv["mail.message"].create({
-        body: `<p>Test Message <a href="https://odoo.com/">https://odoo.com/</a></p>`,
+        body: `<p>Test Message <a href="https://weth.com.br/">https://weth.com.br/</a></p>`,
         message_type: "comment",
         model: "discuss.channel",
         res_id: channelId,
@@ -358,6 +357,6 @@ test("preserve the link formatting for message in reply", async () => {
     await start();
     await openDiscuss(channelId);
     await contains(".o-mail-Message", { count: 2 });
-    await contains(`.o-mail-Message-richBody a[href="https://odoo.com/"]`);
-    await contains(`.o-mail-MessageInReply-message a[href="https://odoo.com/"]`);
+    await contains(`.o-mail-Message-richBody a[href="https://weth.com.br/"]`);
+    await contains(`.o-mail-MessageInReply-message a[href="https://weth.com.br/"]`);
 });

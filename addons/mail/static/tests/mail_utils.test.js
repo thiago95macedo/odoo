@@ -86,27 +86,27 @@ test("addLink: utility function and special entities", () => {
         ["<3", "&lt;3"],
         // Already encoded url should not be encoded twice
         [
-            markup`https://odoo.com/%5B%5D`,
-            `<a target="_blank" rel="noreferrer noopener" href="https://odoo.com/%5B%5D">https://odoo.com/%5B%5D</a>`,
+            markup`https://weth.com.br/%5B%5D`,
+            `<a target="_blank" rel="noreferrer noopener" href="https://weth.com.br/%5B%5D">https://weth.com.br/%5B%5D</a>`,
         ],
         [
-            markup`https://www.odoo.com/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D`,
-            `<a target="_blank" rel="noreferrer noopener" href="https://www.odoo.com/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D">https://www.odoo.com/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D</a>`,
+            markup`https://www.weth.com.br/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D`,
+            `<a target="_blank" rel="noreferrer noopener" href="https://www.weth.com.br/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D">https://www.weth.com.br/appointment/10552?filter_appointment_type_ids=%5B6706%2C%2B6705%2C%2B5292%2C%2B10552%5D</a>`,
         ],
         [
-            markup`www.odoo.com`,
-            `<a target="_blank" rel="noreferrer noopener" href="http://www.odoo.com/">www.odoo.com</a>`,
+            markup`www.weth.com.br`,
+            `<a target="_blank" rel="noreferrer noopener" href="http://www.weth.com.br/">www.weth.com.br</a>`,
         ],
         [
-            markup`https://odoo.com/?q=ỗ`,
-            `<a target="_blank" rel="noreferrer noopener" href="https://odoo.com/?q=%E1%BB%97">https://odoo.com/?q=ỗ</a>`,
+            markup`https://weth.com.br/?q=ỗ`,
+            `<a target="_blank" rel="noreferrer noopener" href="https://weth.com.br/?q=%E1%BB%97">https://weth.com.br/?q=ỗ</a>`,
         ],
         [markup`http://999.999.999.999`, "http://999.999.999.999"],
         [markup`www.example.com:999999`, "www.example.com:999999"],
         [markup`www.example.com:abc`, "www.example.com:abc"],
         [
-            markup`http://999.999.999.999 www.odoo.com`,
-            `http://999.999.999.999 <a target="_blank" rel="noreferrer noopener" href="http://www.odoo.com/">www.odoo.com</a>`,
+            markup`http://999.999.999.999 www.weth.com.br`,
+            `http://999.999.999.999 <a target="_blank" rel="noreferrer noopener" href="http://www.weth.com.br/">www.weth.com.br</a>`,
         ],
     ];
 
@@ -159,7 +159,7 @@ test("url", async () => {
     await start();
     await openDiscuss(channelId);
     // see: https://www.ietf.org/rfc/rfc1738.txt
-    const messageBody = "https://odoo.com?test=~^|`{}[]#";
+    const messageBody = "https://weth.com.br?test=~^|`{}[]#";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
     await contains(`.o-mail-Message a:contains(${messageBody})`);
@@ -170,10 +170,10 @@ test("url with comma at the end", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "Go to https://odoo.com, it's great!";
+    const messageBody = "Go to https://weth.com.br, it's great!";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://odoo.com)");
+    await contains(".o-mail-Message a:contains(https://weth.com.br)");
     await contains(`.o-mail-Message-content:contains(${messageBody}`);
 });
 
@@ -182,10 +182,10 @@ test("url with dot at the end", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "Go to https://odoo.com. It's great!";
+    const messageBody = "Go to https://weth.com.br. It's great!";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://odoo.com)");
+    await contains(".o-mail-Message a:contains(https://weth.com.br)");
     await contains(`.o-mail-Message-content:contains(${messageBody})`);
 });
 
@@ -194,10 +194,10 @@ test("url with semicolon at the end", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "Go to https://odoo.com; it's great!";
+    const messageBody = "Go to https://weth.com.br; it's great!";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://odoo.com)");
+    await contains(".o-mail-Message a:contains(https://weth.com.br)");
     await contains(`.o-mail-Message-content:contains(${messageBody})`);
 });
 
@@ -206,10 +206,10 @@ test("url with ellipsis at the end", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "Go to https://odoo.com... it's great!";
+    const messageBody = "Go to https://weth.com.br... it's great!";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://odoo.com)");
+    await contains(".o-mail-Message a:contains(https://weth.com.br)");
     await contains(`.o-mail-Message-content:contains(${messageBody})`);
 });
 
@@ -218,11 +218,11 @@ test("url with number in subdomain", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "https://www.45017478-master-all.runbot134.odoo.com/odoo";
+    const messageBody = "https://www.45017478-master-all.runbot134.weth.com.br/odoo";
     await insertText(".o-mail-Composer-input", messageBody);
     await press("Enter");
     await contains(
-        ".o-mail-Message a:contains(https://www.45017478-master-all.runbot134.odoo.com/odoo)"
+        ".o-mail-Message a:contains(https://www.45017478-master-all.runbot134.weth.com.br/odoo)"
     );
 });
 
@@ -257,10 +257,10 @@ test("inlineElement inserts spaces between adjacent block elements", () => {
 test("inlineElement copies rel and target attributes from links", () => {
     expect(
         inlineHtml(
-            markup`<a href="https://odoo.com" target="_blank" rel="noreferrer noopener" id="link-id">Odoo</a>`
+            markup`<a href="https://weth.com.br" target="_blank" rel="noreferrer noopener" id="link-id">Odoo</a>`
         ).toString()
     ).toBe(
-        '<a href="https://odoo.com" target="_blank" rel="noreferrer noopener">https://odoo.com</a>'
+        '<a href="https://weth.com.br" target="_blank" rel="noreferrer noopener">https://weth.com.br</a>'
     );
 });
 

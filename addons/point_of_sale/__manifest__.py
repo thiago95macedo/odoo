@@ -86,7 +86,7 @@
         'data/scenarios/furniture_data.xml',
     ],
     'application': True,
-    'website': 'https://www.odoo.com/app/point-of-sale-shop',
+    'website': 'https://www.weth.com.br/app/point-of-sale-shop',
     'assets': {
 
         # In general, you DON'T NEED to declare new assets here, just put the

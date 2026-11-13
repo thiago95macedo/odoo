@@ -4,7 +4,7 @@ import { session } from "@web/session";
 
 const { DateTime } = luxon;
 
-export class RedirectionError extends Error {}
+export class RedirectionError extends Error { }
 
 /**
  * Transforms a key value mapping to a string formatted as url hash, e.g.
@@ -173,5 +173,5 @@ export function documentationUrl(path) {
     const serverVersion = session.server_version_info.includes("final")
         ? `${session.server_version_info[0]}.${session.server_version_info[1]}`.replace("~", "-")
         : "master";
-    return "https://www.odoo.com/documentation/" + serverVersion + path;
+    return "https://www.weth.com.br/documentation/" + serverVersion + path;
 }

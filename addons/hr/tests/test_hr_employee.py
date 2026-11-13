@@ -250,18 +250,18 @@ class TestHrEmployee(TestHrCommon):
             {
                 'name': 'Test User',
                 'login': 'test_user',
-                'email': 'test_user@odoo.com',
+                'email': 'test_user@weth.com.br',
             },
             {
                 'name': 'Test User 2',
                 'login': 'test_user_2',
-                'email': 'test_user_2@odoo.com',
+                'email': 'test_user_2@weth.com.br',
                 'create_employee': True,
             },
             {
                 'name': 'Test User 3',
                 'login': 'test_user_3',
-                'email': 'test_user_3@odoo.com',
+                'email': 'test_user_3@weth.com.br',
                 'create_employee_id': employee.id,
             },
         ])
@@ -280,7 +280,7 @@ class TestHrEmployee(TestHrCommon):
         self.env['res.users'].signup({
             'name': 'Test User',
             'login': 'test_user',
-            'email': 'test_user@odoo.com',
+            'email': 'test_user@weth.com.br',
             'password': 'test_user_password',
             'partner_id': partner.id,
         })

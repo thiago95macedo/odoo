@@ -77,27 +77,27 @@ def download_odoo_certificate(retry=0):
         return None
     try:
         response = requests.post(
-            'https://www.odoo.com/odoo-enterprise/iot/x509',
+            'https://www.weth.com.br/odoo-enterprise/iot/x509',
             json={'params': {'db_uuid': db_uuid, 'enterprise_code': enterprise_code}},
             timeout=95,  # let's encrypt library timeout
         )
         response.raise_for_status()
         response_body = response.json()
     except (requests.exceptions.RequestException, ValueError) as e:
-        _logger.warning("An error occurred while trying to reach odoo.com to get a new certificate: %s", e)
+        _logger.warning("An error occurred while trying to reach weth.com.br to get a new certificate: %s", e)
         if retry < 5:
             return download_odoo_certificate(retry=retry + 1)
-        return _logger.exception("Maximum attempt to download the odoo.com certificate reached")
+        return _logger.exception("Maximum attempt to download the weth.com.br certificate reached")
 
     server_error = response_body.get('error')
     if server_error:
-        _logger.error("Server error received from odoo.com while trying to get the certificate: %s", server_error)
+        _logger.error("Server error received from weth.com.br while trying to get the certificate: %s", server_error)
         return None
 
     result = response_body.get('result', {})
     certificate_error = result.get('error')
     if certificate_error:
-        _logger.warning("Error received from odoo.com while trying to get the certificate: %s", certificate_error)
+        _logger.warning("Error received from weth.com.br while trying to get the certificate: %s", certificate_error)
         return None
 
     system.update_conf({'subject': result['subject_cn']})
@@ -105,7 +105,7 @@ def download_odoo_certificate(retry=0):
     certificate = result['x509_pem']
     private_key = result['private_key_pem']
     if not certificate or not private_key:  # ensure not empty strings
-        _logger.error("The certificate received from odoo.com is not valid.")
+        _logger.error("The certificate received from weth.com.br is not valid.")
         return None
 
     if IS_RPI:

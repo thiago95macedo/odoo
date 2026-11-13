@@ -26,7 +26,7 @@ class TestEventCrmHttp(TestEventCrmCommon, HttpCase):
 
         self.env["event.registration"].create({
             "event_id": self.event_0.id,
-            "email": "event_question_answer_email@odoo.com",
+            "email": "event_question_answer_email@weth.com.br",
             "registration_answer_ids": [Command.create({
                 "question_id": question.id,
                 "value_answer_id": answer.id,
@@ -34,6 +34,6 @@ class TestEventCrmHttp(TestEventCrmCommon, HttpCase):
         })
         # Check that the rule generate a lead when the answer is selected by a new registration.
         self.assertEqual(
-            len(self.env["crm.lead"].search([("email_normalized", "=", "event_question_answer_email@odoo.com")])),
+            len(self.env["crm.lead"].search([("email_normalized", "=", "event_question_answer_email@weth.com.br")])),
             1
         )

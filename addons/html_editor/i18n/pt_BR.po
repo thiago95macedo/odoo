@@ -2,8 +2,8 @@
 # This file contains the translation of the following modules:
 # * html_editor
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-30 17:39+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/html_editor/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -2910,8 +2910,8 @@ msgstr "dinâmico"
 #. module: html_editor
 #. odoo-javascript
 #: code:addons/html_editor/static/src/main/link/link_popover.xml:0
-msgid "e.g. https://www.odoo.com"
-msgstr "ex.: https://www.odoo.com"
+msgid "e.g. https://www.weth.com.br"
+msgstr "ex.: https://www.weth.com.br"
 
 #. module: html_editor
 #. odoo-javascript

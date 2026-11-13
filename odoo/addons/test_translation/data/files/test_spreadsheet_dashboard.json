@@ -20,7 +20,7 @@
                     "content": "=_t(\"exported 2\") + _t(\"exported 3\")"
                 },
                 "A4": {
-                    "content": "[link label](https://odoo.com)"
+                    "content": "[link label](https://weth.com.br)"
                 },
                 "A5": {
                     "content": "_t(\"not a formula\")"
@@ -111,7 +111,9 @@
                         "title": "Scorecard chart",
                         "type": "scorecard",
                         "background": "#FFFFFF",
-                        "baselineDescr": { "text": "Scorecard description"},
+                        "baselineDescr": {
+                            "text": "Scorecard description"
+                        },
                         "keyValue": "A6"
                     }
                 },

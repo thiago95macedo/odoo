@@ -70,7 +70,7 @@ class ResConfigSettings extends models.Model {
         default: 1,
     });
 
-    execute() {}
+    execute() { }
 }
 
 class Task extends models.Model {
@@ -122,7 +122,7 @@ test("change setting on nav bar click in base settings on desktop", async () => 
                         </setting>
                     </block>
                     <block title="Title of group Foo">
-                        <setting help="this is foo help" info="this is foo info" documentation="https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
+                        <setting help="this is foo help" info="this is foo info" documentation="https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
                             <field name="foo"/>
                         </setting>
                         <setting string="Personalize setting" help="this is full personalize setting">
@@ -167,11 +167,11 @@ test("change setting on nav bar click in base settings on desktop", async () => 
     expect(".o_setting_box span.oi:eq(1)").toHaveAttribute("title", "this is foo info");
     expect(".o_setting_box a:eq(0)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
     expect(".o_setting_box a:eq(1)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
     );
 
     await editSearch("Hello there");
@@ -302,7 +302,7 @@ test("change setting on nav bar click in base settings on mobile", async () => {
                         </setting>
                     </block>
                     <block title="Title of group Foo">
-                        <setting help="this is foo" info="this is foo info" documentation="https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
+                        <setting help="this is foo" info="this is foo info" documentation="https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
                             <field name="foo"/>
                         </setting>
                         <setting string="Personalize setting" help="this is full personalize setting">
@@ -346,11 +346,11 @@ test("change setting on nav bar click in base settings on mobile", async () => {
     expect(".o_setting_box span.oi:eq(1)").toHaveAttribute("title", "this is foo info");
     expect(".o_setting_box a:eq(0)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
     expect(".o_setting_box a:eq(1)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
+        "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
     );
 
     await editSearch("Hello there");
@@ -2160,7 +2160,7 @@ test("server actions are called with the correct context", async () => {
             active_ids: [1],
             active_model: "res.config.settings",
         });
-        return new Promise(() => {});
+        return new Promise(() => { });
     });
 
     await mountWithCleanup(WebClient);

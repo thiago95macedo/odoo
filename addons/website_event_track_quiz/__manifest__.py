@@ -6,7 +6,7 @@
     'category': 'Marketing/Events',
     'sequence': 1007,
     'summary': 'Quizzes on tracks',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'depends': [
         'website_profile',
         'website_event_track',

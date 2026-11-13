@@ -98,7 +98,7 @@ test("custom debounce delay", async () => {
             debounceDelay: 500,
         },
     };
-    const action = () => {};
+    const action = () => { };
     const provide = () => [
         {
             name: "Command1",
@@ -151,7 +151,7 @@ test("concurrency with custom debounce delay", async () => {
             debounceDelay: 500,
         },
     };
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             namespace: "@",
@@ -264,7 +264,7 @@ test("command with a Custom Component", async () => {
     }
 
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -296,7 +296,7 @@ test("command with a Custom Component", async () => {
 
 test("multi namespace with provider", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -346,7 +346,7 @@ test("multi namespace with provider", async () => {
 
 test("apply a fuzzysearch on the namespace default not on the others", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -402,7 +402,7 @@ test("apply a fuzzysearch on the namespace default not on the others", async () 
 
 test("multi provider with the same namespace", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -488,7 +488,7 @@ test("check the concurrency during a research", async () => {
 
 test("open the command palette with a searchValue already in the searchbar", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -533,7 +533,7 @@ test("open the command palette with a searchValue already in the searchbar", asy
 test.tags("desktop");
 test("command palette keeps the same top position when its content changes", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -583,7 +583,7 @@ test("command palette keeps the same top position when its content changes", asy
 
 test("open the command palette with a namespace already in the searchbar", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -627,7 +627,7 @@ test("open the command palette with a namespace already in the searchbar", async
 
 test("open the command palette with a searchValue with a namespace", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -671,7 +671,7 @@ test("open the command palette with a searchValue with a namespace", async () =>
 
 test("open the command palette with a searchValue without namespace", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -716,7 +716,7 @@ test("open the command palette with a searchValue without namespace", async () =
 
 test("multi provider with categories", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -810,7 +810,7 @@ test("multi provider with categories", async () => {
 
 test("don't display by categories if there is a search value", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -1096,7 +1096,7 @@ test("multi level command", async () => {
         {
             name: "Command1",
             action: () => ({
-                providers: [{ provide: () => [{ name: "Command lvl2", action: () => {} }] }],
+                providers: [{ provide: () => [{ name: "Command lvl2", action: () => { } }] }],
             }),
         },
     ];
@@ -1165,7 +1165,7 @@ test("navigate in the command palette with the arrows", async () => {
     expect.assertions(6);
 
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const commands = [
         {
             name: "Command1",
@@ -1247,7 +1247,7 @@ test("navigate in the command palette with an empty list", async () => {
 
 test("bold the searchValue on the commands", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             namespace: "@",
@@ -1300,7 +1300,7 @@ test("bold the searchValue on the commands", async () => {
 
 test("bold the searchValue on the commands with special char", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             namespace: "/",
@@ -1352,7 +1352,7 @@ test("bold the searchValue on the commands with special char", async () => {
 
 test("bold the searchValue on the commands with accents", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    const action = () => {};
+    const action = () => { };
     const providers = [
         {
             provide: () => [
@@ -1478,11 +1478,11 @@ test("checks that href is correctly used", async () => {
                     action: () => {
                         expect.step("command_with_link_clicked");
                     },
-                    href: "https://www.odoo.com",
+                    href: "https://www.weth.com.br",
                 },
                 {
                     name: "Command without link",
-                    action: () => {},
+                    action: () => { },
                 },
             ],
         },
@@ -1501,11 +1501,11 @@ test("checks that href is correctly used", async () => {
     await edit("@");
     await runAllTimers();
     // Check that command has link inside it
-    expect(".o_command_palette .o_command:eq(0) a").toHaveAttribute("href", "https://www.odoo.com");
+    expect(".o_command_palette .o_command:eq(0) a").toHaveAttribute("href", "https://www.weth.com.br");
     // Check that we get url when doing ctrl+enter on a command having a link inside it
     await press("control+enter");
     await animationFrame();
-    expect.verifySteps(["https://www.odoo.com"]);
+    expect.verifySteps(["https://www.weth.com.br"]);
     // Check that command has no link inside it
     expect(".o_command_palette .o_command:eq(1) a").not.toHaveAttribute("href");
     // Check that clicking on a command having a link inside it triggers the command action
@@ -1527,7 +1527,7 @@ test("searchValue must not change without edition", async () => {
                 return [
                     {
                         name: searchValue,
-                        action: () => {},
+                        action: () => { },
                     },
                 ];
             },

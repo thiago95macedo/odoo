@@ -237,9 +237,9 @@ class TestReplenishWizard(PurchaseTestCommon):
 
     def test_supplier_delay(self):
         vendor1, vendor2 = self.env['res.partner'].create([{
-            'name': 'vendor1', 'email': 'vendor1@odoo.com',
+            'name': 'vendor1', 'email': 'vendor1@weth.com.br',
         }, {
-            'name': 'vendor2', 'email': 'vendor2@odoo.com',
+            'name': 'vendor2', 'email': 'vendor2@weth.com.br',
         }])
         supplier_delay = self.env['product.supplierinfo'].create({
             'partner_id': vendor1.id,
@@ -358,9 +358,9 @@ class TestReplenishWizard(PurchaseTestCommon):
             'name': 'Product',
         })
         vendor1, vendor2 = self.env['res.partner'].create([{
-            'name': 'vendor1', 'email': 'vendor1@odoo.com'
+            'name': 'vendor1', 'email': 'vendor1@weth.com.br'
         }, {
-            'name': 'vendor2', 'email': 'vendor2@odoo.com'
+            'name': 'vendor2', 'email': 'vendor2@weth.com.br'
         }])
         self.env['product.supplierinfo'].create([{
             'partner_id': vendor1.id,

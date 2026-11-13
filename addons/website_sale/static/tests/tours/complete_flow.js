@@ -31,7 +31,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_1', {
             {
                 name: "abcd",
                 phone: "99999999",
-                email: "abc@odoo.com",
+                email: "abc@weth.com.br",
                 street: "SO1 Delivery Street, 33",
                 city: "SO1DeliveryCity",
                 zip: "10000",
@@ -57,7 +57,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_1', {
             {
                 name: "def",
                 phone: "8888888888",
-                email: "abc@odoo.com",
+                email: "abc@weth.com.br",
                 street: "17, SO1 Billing Road",
                 city: "SO1BillingCity",
                 zip: "10000",
@@ -217,7 +217,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_1', {
             run: "click",
             expectUnloadPage: true,
         },
-        ...tourUtils.login({ login: 'abc@odoo.com', password: '1admin@admin' }),
+        ...tourUtils.login({ login: 'abc@weth.com.br', password: '1admin@admin' }),
         {
             content: "Add new delivery address",
             trigger: '#delivery_address_list a[href^="/shop/address"]:contains("Add")',
@@ -251,7 +251,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_1', {
         },
         {
             trigger: `input[name="email"]`,
-            run: "edit ghi@odoo.com",
+            run: "edit ghi@weth.com.br",
         },
         {
             content: "Click on Confirm button to save the address",
@@ -335,7 +335,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_2', {
             expectUnloadPage: true,
         },
         ...tourUtils.login({
-            login: 'abc@odoo.com',
+            login: 'abc@weth.com.br',
             password: '1admin@admin',
             redirectUrl: '/shop?search=Storage Box Test',
         }),

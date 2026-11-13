@@ -18,7 +18,7 @@ const NB_NON_ESSENTIAL_REQUIRED_FIELDS_IN_DEFAULT_FORM = 2;
 const ESSENTIAL_FIELDS_VALID_DATA_FOR_DEFAULT_FORM = [
     {
         name: "email_from",
-        value: "admin@odoo.com",
+        value: "admin@weth.com.br",
     },
     {
         name: "subject",
@@ -194,9 +194,8 @@ const addField = function (
     if (type !== "checkbox" && type !== "radio" && type !== "select") {
         const inputType = type === "textarea" ? type : `input[type="${type}"]`;
         const nameAttribute = isCustom && label ? getQuotesEncodedName(label) : name;
-        testText += `:has(${inputType}[name="${CSS.escape(nameAttribute)}"]${
-            required ? "[required]" : ""
-        })`;
+        testText += `:has(${inputType}[name="${CSS.escape(nameAttribute)}"]${required ? "[required]" : ""
+            })`;
     }
     ret.push({
         content: "Check the resulting field",

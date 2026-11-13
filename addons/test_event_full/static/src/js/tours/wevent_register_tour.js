@@ -23,11 +23,11 @@ const reminderToggleSteps = function (talkName, reminderOn, toggleReminder) {
                 trigger: "i[title='Set Favorite']",
                 run: "click",
             }]);
-            if (session.is_public){
+            if (session.is_public) {
                 steps = steps.concat([{
                     content: "The form of the email reminder modal is filled",
                     trigger: "#o_wetrack_email_reminder_form input[name='email']",
-                    run: "fill visitor@odoo.com",
+                    run: "fill visitor@weth.com.br",
                 },
                 {
                     content: "The form is submit",
@@ -66,7 +66,7 @@ const discoverTalkSteps = function (talkName, fromList, checkToggleReminder, rem
         content: `Check we are on the "${talkName}" talk page`,
         trigger: 'div.o_wesession_track_main',
     }]);
-    if (checkToggleReminder){
+    if (checkToggleReminder) {
         steps = steps.concat(reminderToggleSteps(talkName, reminderOn, toggleReminder));
     }
     return steps;

@@ -3,7 +3,7 @@
 {
     'name': 'Event CRM',
     'category': 'Marketing/Events',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.weth.com.br/app/events',
     'description': "Create leads from event registrations.",
     'depends': ['event', 'crm'],
     'data': [

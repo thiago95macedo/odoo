@@ -31,7 +31,7 @@ class TestUsersHttp(BaseCommon, HttpCase):
         cls.company_user = cls._create_new_portal_user(login='company_portal_user')
         cls.company_partner = cls.env['res.partner'].create({
             'name': 'Test Odoo SA',
-            'email': 'odoo@odoo.com',
+            'email': 'odoo@weth.com.br',
             'street': 'Chau. de Namur 40',
             'city': 'Ramillies',
             'zip': '1367',

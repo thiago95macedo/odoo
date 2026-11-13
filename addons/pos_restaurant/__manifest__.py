@@ -15,7 +15,7 @@ This module adds several features to the Point of Sale that are specific to rest
 
 """,
     'depends': ['point_of_sale'],
-    'website': 'https://www.odoo.com/app/point-of-sale-restaurant',
+    'website': 'https://www.weth.com.br/app/point-of-sale-restaurant',
     'data': [
         'data/scenarios/restaurant_preset.xml',
         'views/pos_category_view.xml',

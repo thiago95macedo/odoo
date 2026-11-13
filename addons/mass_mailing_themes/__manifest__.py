@@ -8,7 +8,7 @@ Design gorgeous mails
     """,
     'version': '1.2',
     'sequence': 110,
-    'website': 'https://www.odoo.com/app/email-marketing',
+    'website': 'https://www.weth.com.br/app/email-marketing',
     'category': 'Marketing/Email Marketing',
     'depends': [
         'mass_mailing',

@@ -2,16 +2,16 @@
 # This file contains the translation of the following modules:
 # * auth_password_policy_portal
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2026.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: WETH Server saas~18.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
-"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/auth_password_policy_portal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

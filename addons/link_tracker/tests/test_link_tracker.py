@@ -12,7 +12,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
 
     def setUp(self):
         super(TestLinkTracker, self).setUp()
-        self._web_base_url = 'https://test.odoo.com'
+        self._web_base_url = 'https://test.weth.com.br'
         self.env['ir.config_parameter'].sudo().set_str('web.base.url', self._web_base_url)
         self.env['link.tracker'].search([]).unlink()
 
@@ -23,7 +23,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         """
         # Creating a link tracker with url having the scheme
         link_tracker = self.env['link.tracker'].create({
-            'url': 'https://odoo.com',
+            'url': 'https://weth.com.br',
             'title': 'Odoo',
         })
         # Validate the absolute url
@@ -37,7 +37,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
     def test_create(self):
         link_trackers = self.env['link.tracker'].create([
             {
-                'url': 'odoo.com',
+                'url': 'weth.com.br',
                 'title': 'Odoo',
             }, {
                 'url': 'example.com',
@@ -50,16 +50,16 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
 
         self.assertEqual(
             link_trackers.mapped('url'),
-            ['http://odoo.com', 'http://example.com', 'http://test.example.com'],
+            ['http://weth.com.br', 'http://example.com', 'http://test.example.com'],
         )
 
         self.assertEqual(len(set(link_trackers.mapped('code'))), 3)
 
     def test_search_or_create(self):
         values_1, values_2, values_3 = [
-            {'url': 'https://odoo.com', 'title': 'Odoo'},
+            {'url': 'https://weth.com.br', 'title': 'Odoo'},
             {'url': 'https://odoo.be', 'title': 'Odoo'},
-            {'url': 'https://odoo.com', 'title': 'Odoo New', 'label': 'New one!'}  # title is not in unique constraint
+            {'url': 'https://weth.com.br', 'title': 'Odoo New', 'label': 'New one!'}  # title is not in unique constraint
         ]
         expected_values_1, expected_values_2, expected_values_3 = [
             {
@@ -68,7 +68,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
                 'title': 'Odoo',
-                'url': 'https://odoo.com',
+                'url': 'https://weth.com.br',
             }, {
                 'campaign_id': self.env['utm.campaign'],
                 'label': False,
@@ -82,7 +82,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
                 'title': 'Odoo New',
-                'url': 'https://odoo.com',
+                'url': 'https://weth.com.br',
             },
         ]
         link_tracker_1 = self.env['link.tracker'].create(values_1)
@@ -120,21 +120,21 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         self.assertListEqual(trackers_3131.ids, (link_tracker_5 + link_tracker_1 + link_tracker_5 + link_tracker_1).ids)
 
         # Also handles duplicates in non-existing records mixed with existing records
-        values_4 = {'url': 'https://odoo.com', 'label': 'A different one'}
+        values_4 = {'url': 'https://weth.com.br', 'label': 'A different one'}
         vals_3434 = [values_3, values_4, values_3, values_4]
         trackers_3434 = self.env['link.tracker'].search_or_create(vals_3434)
         new_tracker = trackers_3434[1]
         self.assertListEqual(trackers_3434.ids, (link_tracker_5 + new_tracker + link_tracker_5 + new_tracker).ids)
 
         # Also if only non-existing records values are passed
-        values_5 = {'url': 'https://odoo.com', 'label': 'Yet another label'}
+        values_5 = {'url': 'https://weth.com.br', 'label': 'Yet another label'}
         expected_values_5 = {
             'campaign_id': self.env['utm.campaign'],
             'label': 'Yet another label',
             'medium_id': self.env['utm.medium'],
             'source_id': self.env['utm.source'],
             'title': 'Test_TITLE',
-            'url': 'https://odoo.com',
+            'url': 'https://weth.com.br',
         }
         vals_55 = [values_5, values_5]
         trackers_55 = self.env['link.tracker'].search_or_create(vals_55)
@@ -149,7 +149,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         utm_source = self.env.ref('utm.utm_source_mailing')
         utm_reference = self.env.user
         values_6 = {
-            'url': 'https://odoo.com/shop/18',
+            'url': 'https://weth.com.br/shop/18',
             'label': 'This time with UTMs',
             'campaign_id': utm_campaign.id,
             'medium_id': utm_medium.id,
@@ -169,7 +169,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         campaign_id = self.env['utm.campaign'].search([], limit=1)
 
         self.env['link.tracker'].create({
-            'url': 'https://odoo.com',
+            'url': 'https://weth.com.br',
             'title': 'Odoo',
         })
 
@@ -182,13 +182,13 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
 
         with self.assertRaises(UserError):
             self.env['link.tracker'].create({
-                'url': 'https://odoo.com',
+                'url': 'https://weth.com.br',
                 'title': 'Odoo',
             })
 
         with self.assertRaises(UserError):
             self.env['link.tracker'].create({
-                'url': 'https://odoo.com',
+                'url': 'https://weth.com.br',
                 'title': 'Odoo',
                 'label': '',
             })

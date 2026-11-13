@@ -25,7 +25,7 @@ class TestMassMailCommon(MassSMSCommon):
             # `+ ""` is for insuring that _prepend_preview rule out that case
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
-<t t-set="url" t-value="'www.odoo.com'"/>
+<t t-set="url" t-value="'www.weth.com.br'"/>
 <t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
 <span>Website0: <a id="url0" t-attf-href="https://www.odoo.tz/my/{{object.name}}">https://www.odoo.tz/my/<t t-out="object.name"/></a></span>
 <span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
@@ -34,7 +34,7 @@ class TestMassMailCommon(MassSMSCommon):
 <span>External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a></span>
 <span>Internal1: <a id="url5" href="/event/dummy-event-0">Internal link</a></span>
 <span>Internal2: <a id="url6" href="/view"/>View link</a></span>
-<span>Email: <a id="url7" href="mailto:test@odoo.com">test@odoo.com</a></span>
+<span>Email: <a id="url7" href="mailto:test@weth.com.br">test@weth.com.br</a></span>
 <p>Stop spam ? <a id="url8" role="button" href="/unsubscribe_from_list">Ok</a></p>
 </div>""",
             'mailing_type': 'mail',
@@ -47,7 +47,7 @@ class TestMassMailCommon(MassSMSCommon):
             # `+ ""` is for insuring that _prepend_preview rule out that case
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
-<t t-set="url" t-value="'www.odoo.com'"/>
+<t t-set="url" t-value="'www.weth.com.br'"/>
 <t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
 <span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
 </div>""",
@@ -60,7 +60,7 @@ class TestMassMailCommon(MassSMSCommon):
             # `+ ""` is for insuring that _prepend_preview rule out that case
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
-<t t-set="url" t-value="'www.odoo.com'"/>
+<t t-set="url" t-value="'www.weth.com.br'"/>
 <t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
 <span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
 </div>""",
@@ -74,7 +74,7 @@ class TestMassMailCommon(MassSMSCommon):
             'mailing_model_id': cls.env['ir.model']._get('mail.test.sms').id,
             'mailing_type': 'sms',
             'mailing_domain': '%s' % repr([('name', 'ilike', 'MassSMSTest')]),
-            'body_plaintext': 'Dear {{object.display_name}} this is a mass SMS with two links http://www.odoo.com/smstest and http://www.odoo.com/smstest/{{object.id}}',
+            'body_plaintext': 'Dear {{object.display_name}} this is a mass SMS with two links http://www.weth.com.br/smstest and http://www.weth.com.br/smstest/{{object.id}}',
             'sms_force_send': True,
             'sms_allow_unsubscribe': True,
         })

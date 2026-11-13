@@ -629,11 +629,11 @@ test("Update the link previews when a message is edited", async () => {
     await openDiscuss(channelId);
     await click(".o-mail-Message [title='Expand']");
     await click(".o-dropdown-item:text('Edit')");
-    await insertText(".o-mail-Message .o-mail-Composer-input", "http://odoo.com", {
+    await insertText(".o-mail-Message .o-mail-Composer-input", "http://weth.com.br", {
         replace: true,
     });
     await click(".o-mail-Message button:text('save')");
-    await contains(".o-mail-Message-body:has(:text('http://odoo.com'))");
+    await contains(".o-mail-Message-body:has(:text('http://weth.com.br'))");
     await expect.waitForSteps(["link_preview"]);
 });
 
@@ -758,7 +758,7 @@ test("mentions and special mentions are kept when editing message", async () => 
 test("can add new mentions when editing message", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -795,17 +795,17 @@ test("edit message with multiple mentions keeps the links", async () => {
     const partnersId = pyEnv["res.partner"].create([
         {
             // id: 123
-            email: "testpartner1@odoo.com",
+            email: "testpartner1@weth.com.br",
             name: "Test Partner",
         },
         {
             // id: 1234
-            email: "testpartner2@odoo.com",
+            email: "testpartner2@weth.com.br",
             name: "Other Partner",
         },
         {
             // id: 125
-            email: "testpartner3@odoo.com",
+            email: "testpartner3@weth.com.br",
             name: "Test Partner Junior",
         },
     ]);
@@ -1266,8 +1266,7 @@ test("basic rendering of message", async () => {
     await contains(".o-mail-Message .o-mail-Message-content:text('body')");
     const partner = pyEnv["res.partner"].search_read([["id", "=", partnerId]])[0];
     await contains(
-        `.o-mail-Message .o-mail-Message-sidebar .o-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${
-            deserializeDateTime(partner.write_date).ts
+        `.o-mail-Message .o-mail-Message-sidebar .o-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
         }']`
     );
     await contains(
@@ -1399,7 +1398,7 @@ test("pending message is squashed while it is being sent", async () => {
             return res;
         },
     });
-    onRpcBefore("/mail/message/post", () => new Promise(() => {}));
+    onRpcBefore("/mail/message/post", () => new Promise(() => { }));
     await start();
     await openDiscuss(channelId);
     await contains(".o-mail-Thread-empty");
@@ -1724,7 +1723,7 @@ test("Notification Error", async () => {
     await contains(".o-mail-Message-notification");
     await contains(".o-mail-Message-notification i");
     expect(".o-mail-Message-notification i:first").toHaveAttribute("data-icon", "cancel");
-    await click(".o-mail-Message-notification").then(() => {});
+    await click(".o-mail-Message-notification").then(() => { });
     await contains(".o-mail-MessageNotificationPopover");
     expect(".o-mail-MessageNotificationPopover i[data-icon='cancel'].text-danger").toHaveCount(1);
 });
@@ -1968,7 +1967,7 @@ test("not highlighting the message if not mentioning the current user inside the
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
         display_name: "testPartner",
-        email: "testPartner@odoo.com",
+        email: "testPartner@weth.com.br",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
     const channelId = pyEnv["discuss.channel"].create({
@@ -2274,7 +2273,7 @@ test("Partner's avatar card should be opened after clicking on their mention", a
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
         name: "Test Partner",
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
     await start();
@@ -2850,7 +2849,7 @@ test("Prettify message links", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "channel1" });
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@weth.com.br",
         name: "TestPartner",
     });
     const messageId_1 = pyEnv["mail.message"].create({
@@ -2900,11 +2899,11 @@ test("should delete link preview along with message", async () => {
         og_title: "Test Link",
         og_description: "Should be removed with the message.",
         og_type: "article",
-        source_url: "https://www.odoo.com",
+        source_url: "https://www.weth.com.br",
     });
     const channelId = pyEnv["discuss.channel"].create({ name: "PreviewTest" });
     pyEnv["mail.message"].create({
-        body: "<a href='https://www.odoo.com'>https://www.odoo.com</a>",
+        body: "<a href='https://www.weth.com.br'>https://www.weth.com.br</a>",
         message_link_preview_ids: [Command.create({ link_preview_id: linkPreviewId })],
         message_type: "comment",
         model: "discuss.channel",

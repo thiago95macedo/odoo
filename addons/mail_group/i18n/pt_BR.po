@@ -2,8 +2,8 @@
 # This file contains the translation of the following modules:
 # * mail_group
 #
-# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Tiffany Chang (tic)" <tic@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/mail_group/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -1439,7 +1439,7 @@ msgstr ""
 #: model:ir.model.fields,help:mail_group.field_mail_group__alias_name
 msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
-"<jobs@example.odoo.com>"
+"<jobs@example.weth.com.br>"
 msgstr ""
 "O nome do alias de e-mail, por exemplo, 'empregos', se desejar receber e-"
 "mails enviados a <empregos@suaempresa.com.br>"

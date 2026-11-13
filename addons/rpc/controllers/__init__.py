@@ -8,7 +8,7 @@ The /xmlrpc, /xmlrpc/2 and /jsonrpc endpoints are deprecated in Odoo 19 \
 and scheduled for removal in Odoo 22. Please report the problem to the \
 client making the request.
 Mute this logger: --log-handler %s:ERROR
-https://www.odoo.com/documentation/latest/developer/reference/external_api.html#migrating-from-xml-rpc-json-rpc"""
+https://www.weth.com.br/documentation/latest/developer/reference/external_api.html#migrating-from-xml-rpc-json-rpc"""
 
 
 def _check_request():

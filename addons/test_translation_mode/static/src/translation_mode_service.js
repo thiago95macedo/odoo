@@ -301,7 +301,7 @@ const IGNORE_SELECTOR = [`[data-translation-highlight]`].join(",");
  * <ORIGIN>/translate/odoo-<VERSION_NUMBER>/<LANGUAGE>/?checksum=<TERM_HASH>
  *
  * Where:
- * - ORIGIN = translate.odoo.com
+ * - ORIGIN = translate.weth.com.br
  * - VERSION_NUMBER = current stable version
  * - LANGUAGE = language code ("en", "fr", etc.)
  * - TERM_HASH = SipHash 2-4 representation of the given term, using {@link WEBLATE_SIPHASH_KEY}

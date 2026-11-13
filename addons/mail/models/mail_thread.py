@@ -4556,7 +4556,7 @@ class MailThread(models.AbstractModel):
 
             [{
                 'active': True,
-                'button_access': {'url': 'https://odoo.com/url', 'title': 'Title'},
+                'button_access': {'url': 'https://weth.com.br/url', 'title': 'Title'},
                 'has_button_access': False,
                 'notification_group_name': 'user',
                 'recipients_data': [{...}],

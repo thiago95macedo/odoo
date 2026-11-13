@@ -102,7 +102,7 @@ export class ServerData {
         /** @type {import("@web/core/orm_plugin").ORM} */
         this.orm = orm;
         /** @type {(promise: Promise<any>) => void} */
-        this.startLoadingCallback = whenDataStartLoading ?? (() => {});
+        this.startLoadingCallback = whenDataStartLoading ?? (() => { });
         /** @type {Record<string, unknown>}*/
         this.cache = {};
         this.batchEndpoints = {};
@@ -153,9 +153,9 @@ export class ServerData {
                 .then((result) => (this.cache[request.key] = result))
                 .catch(
                     (error) =>
-                        (this.cache[request.key] = new EvaluationError(
-                            error.data?.message || error.message
-                        ))
+                    (this.cache[request.key] = new EvaluationError(
+                        error.data?.message || error.message
+                    ))
                 );
             this.startLoadingCallback(promise);
             throw error;
@@ -217,9 +217,9 @@ export class ServerData {
                 this.cache[request.key] = result;
             },
             failureCallback: (request, error) =>
-                (this.cache[request.key] = new EvaluationError(
-                    error.data?.message || error.message
-                )),
+            (this.cache[request.key] = new EvaluationError(
+                error.data?.message || error.message
+            )),
         });
     }
 }
@@ -308,7 +308,7 @@ export class BatchEndpoint {
                 new Error(
                     _t(
                         "Data failed to load due to a server error or a formula issue (possibly in a referenced cell). " +
-                            "Please verify the formula or retry later. Contact odoo.com/help if the problem persists."
+                        "Please verify the formula or retry later. Contact weth.com.br/help if the problem persists."
                     )
                 )
             );

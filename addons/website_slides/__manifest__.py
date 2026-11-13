@@ -3,7 +3,7 @@
     'version': '2.7',
     'sequence': 125,
     'summary': 'Manage and publish an eLearning platform',
-    'website': 'https://www.odoo.com/app/elearning',
+    'website': 'https://www.weth.com.br/app/elearning',
     'category': 'Website/eLearning',
     'description': """
 Create Online Courses

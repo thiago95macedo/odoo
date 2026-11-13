@@ -68,7 +68,7 @@ export class DatabaseSection extends Component {
 
     get upgradeHref() {
         return this.props.hasSubscription
-            ? "https://upgrade.odoo.com/#onpremise"
-            : "https://www.odoo.com/pricing";
+            ? "https://upgrade.weth.com.br/#onpremise"
+            : "https://www.weth.com.br/pricing";
     }
 }

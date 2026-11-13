@@ -10,8 +10,8 @@
 # Martin Trigaux, 2023
 # Kevilyn Rosa, 2023
 # Éder Brito <britoederr@gmail.com>, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
@@ -22,7 +22,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/project/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -3910,7 +3910,7 @@ msgid ""
 "### Infinitely flexible. Incredibly easy to use.\n"
 "\n"
 "\n"
-"Odoo's collaborative and realtime <a href=\"https://www.odoo.com/app/"
+"Odoo's collaborative and realtime <a href=\"https://www.weth.com.br/app/"
 "project\">open source project management</a>\n"
 "helps your team get work done. Keep track of everything, from the big "
 "picture\n"
@@ -3992,7 +3992,7 @@ msgstr ""
 "\n"
 "\n"
 "O gerenciamento de projetos colaborativo, em tempo real <A href=\"https://"
-"www.odoo.com/app/project\">de código aberto do Odoo</A>\n"
+"www.weth.com.br/app/project\">de código aberto do Odoo</A>\n"
 "ajuda sua equipe a realizar o trabalho. Acompanhe tudo, desde o panorama "
 "geral\n"
 "até os mínimos detalhes, desde o contrato com o cliente até o faturamento.\n"
@@ -5575,10 +5575,10 @@ msgstr ""
 #: model:ir.model.fields,help:project.field_project_project__alias_name
 msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
-"<jobs@example.odoo.com>"
+"<jobs@example.weth.com.br>"
 msgstr ""
 "O nome do alias de e-mail, por exemplo, \"empregos\", se desejar receber e-"
-"mails enviados a <empregos@example.odoo.com>"
+"mails enviados a <empregos@example.weth.com.br>"
 
 #. module: project
 #. odoo-python

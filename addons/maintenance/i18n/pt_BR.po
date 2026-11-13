@@ -6,8 +6,8 @@
 # Marcel Savegnago <marcel.savegnago@gmail.com>, 2022
 # Martin Trigaux, 2022
 # Kevilyn Rosa, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
 "20/maintenance/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -1500,7 +1500,7 @@ msgstr ""
 #: model:ir.model.fields,help:maintenance.field_maintenance_team__alias_name
 msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
-"<jobs@example.odoo.com>"
+"<jobs@example.weth.com.br>"
 msgstr ""
 "O nome do alias de e-mail, por exemplo, 'empregos', se desejar receber e-"
 "mails enviados a <empregos@suaempresa.com.br>"

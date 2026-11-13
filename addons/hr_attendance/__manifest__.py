@@ -14,7 +14,7 @@ This module aims to manage employee's attendances.
 Keeps account of the attendances of the employees on the basis of the
 actions(Check in/Check out) performed by them.
        """,
-    'website': 'https://www.odoo.com/app/employees',
+    'website': 'https://www.weth.com.br/app/employees',
     'depends': ['hr', 'hr_work_entry', 'barcodes', 'base_geolocalize'],
     'data': [
         'data/hr_attendance_data.xml',

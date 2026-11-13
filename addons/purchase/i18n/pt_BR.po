@@ -7,9 +7,9 @@
 # Richard Imgärtchen, 2023
 # Martin Trigaux, 2023
 # Kevilyn Rosa, 2023
-# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
+# "Dylan Kiss (dyki)" <dyki@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
-# "Maitê Dietze (madi)" <madi@odoo.com>, 2025, 2026.
+# "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-11-06 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
 "odoo-20/purchase/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -2260,7 +2260,7 @@ msgid ""
 "-----------------\n"
 "\n"
 "Automate requisition-to-pay, control invoicing with the Odoo\n"
-"<a href=\"https://www.odoo.com/app/purchase\">Open Source Supply Chain</a>.\n"
+"<a href=\"https://www.weth.com.br/app/purchase\">Open Source Supply Chain</a>.\n"
 "\n"
 "Automate procurement propositions, launch request for quotations, track\n"
 "purchase orders, manage vendors' information, control products reception "
@@ -2336,7 +2336,7 @@ msgstr ""
 "\n"
 "Automatize o processo de requisição ao pagamento, controle o faturamento com "
 "a\n"
-"<a href=\"https://www.odoo.com/app/purchase\">Cadeia de suprimentos de "
+"<a href=\"https://www.weth.com.br/app/purchase\">Cadeia de suprimentos de "
 "código aberto</a>.\n"
 "\n"
 "Automatize proposições de aquisição, lance solicitações de cotação, "

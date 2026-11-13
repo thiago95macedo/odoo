@@ -765,7 +765,7 @@ test("search messages on the text of their preview and body, not on their markup
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     pyEnv["mail.message"].create({
         author_id: serverState.partnerId,
-        body: '<p>Visit <a href="https://www.odoo.com">our website</a></p>',
+        body: '<p>Visit <a href="https://www.weth.com.br">our website</a></p>',
         bookmarked_partner_ids: [serverState.partnerId],
         model: "discuss.channel",
         res_id: channelId,
@@ -773,20 +773,20 @@ test("search messages on the text of their preview and body, not on their markup
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.BOOKMARK);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.odoo.com')):count(1)"
+        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
     await insertText(".o-mail-DiscussSearch input", "href");
     await animationFrame();
     await waitFor(".o-mail-MessagingMenuEmpty:text('No results for \"href\".'):count(1)");
-    await insertText(".o-mail-DiscussSearch input", "odoo.com", { replace: true });
+    await insertText(".o-mail-DiscussSearch input", "weth.com.br", { replace: true });
     await animationFrame();
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.odoo.com')):count(1)"
+        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
     await insertText(".o-mail-DiscussSearch input", "website", { replace: true });
     await animationFrame();
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.odoo.com')):count(1)"
+        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
 });
 
