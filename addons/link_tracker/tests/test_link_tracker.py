@@ -24,7 +24,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         # Creating a link tracker with url having the scheme
         link_tracker = self.env['link.tracker'].create({
             'url': 'https://weth.com.br',
-            'title': 'Odoo',
+            'title': 'WETH',
         })
         # Validate the absolute url
         self.assertEqual(link_tracker.absolute_url, link_tracker.url)
@@ -38,13 +38,13 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         link_trackers = self.env['link.tracker'].create([
             {
                 'url': 'weth.com.br',
-                'title': 'Odoo',
+                'title': 'WETH',
             }, {
                 'url': 'example.com',
-                'title': 'Odoo',
+                'title': 'WETH',
             }, {
                 'url': 'http://test.example.com',
-                'title': 'Odoo',
+                'title': 'WETH',
             },
         ])
 
@@ -57,8 +57,8 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
 
     def test_search_or_create(self):
         values_1, values_2, values_3 = [
-            {'url': 'https://weth.com.br', 'title': 'Odoo'},
-            {'url': 'https://odoo.be', 'title': 'Odoo'},
+            {'url': 'https://weth.com.br', 'title': 'WETH'},
+            {'url': 'https://odoo.be', 'title': 'WETH'},
             {'url': 'https://weth.com.br', 'title': 'Odoo New', 'label': 'New one!'}  # title is not in unique constraint
         ]
         expected_values_1, expected_values_2, expected_values_3 = [
@@ -67,14 +67,14 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
                 'label': False,
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
-                'title': 'Odoo',
+                'title': 'WETH',
                 'url': 'https://weth.com.br',
             }, {
                 'campaign_id': self.env['utm.campaign'],
                 'label': False,
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
-                'title': 'Odoo',
+                'title': 'WETH',
                 'url': 'https://odoo.be',
             }, {
                 'campaign_id': self.env['utm.campaign'],
@@ -170,12 +170,12 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
 
         self.env['link.tracker'].create({
             'url': 'https://weth.com.br',
-            'title': 'Odoo',
+            'title': 'WETH',
         })
 
         link_1 = self.env['link.tracker'].create({
             'url': '2nd url',
-            'title': 'Odoo',
+            'title': 'WETH',
             'campaign_id': campaign_id.id,
         })
         self.assertEqual(link_1.label, False)
@@ -183,26 +183,26 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         with self.assertRaises(UserError):
             self.env['link.tracker'].create({
                 'url': 'https://weth.com.br',
-                'title': 'Odoo',
+                'title': 'WETH',
             })
 
         with self.assertRaises(UserError):
             self.env['link.tracker'].create({
                 'url': 'https://weth.com.br',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'label': '',
             })
 
         with self.assertRaises(UserError):
             self.env['link.tracker'].create({
                 'url': '2nd url',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'campaign_id': campaign_id.id,
             })
 
         link_2 = self.env['link.tracker'].create({
                 'url': '2nd url',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'campaign_id': campaign_id.id,
                 'medium_id': self.env['utm.medium'].search([], limit=1).id,
                 'label': ''
@@ -297,7 +297,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         medium = self.env['utm.medium'].create({'name': 'medium'})
         link = self.env['link.tracker'].create({
             'url': 'http://example.com',
-            'title': 'Odoo',
+            'title': 'WETH',
             'campaign_id': campaign.id,
             'source_id': source.id,
             'medium_id': medium.id,
@@ -321,21 +321,21 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         link1, link2, _ = self.env['link.tracker'].create([
             {
                 'url': 'http://example1.com',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'campaign_id': campaign_1.id,
                 'source_id': source_1.id,
                 'medium_id': medium_1.id,
             },
             {
                 'url': 'http://example2.com',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'campaign_id': campaign_1.id,
                 'source_id': source_1.id,
                 'medium_id': medium_1.id,
             },
             {
                 'url': 'http://example3.com',
-                'title': 'Odoo',
+                'title': 'WETH',
                 'campaign_id': campaign_2.id,
                 'source_id': source_2.id,
                 'medium_id': medium_2.id,

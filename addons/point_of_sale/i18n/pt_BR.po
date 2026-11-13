@@ -7920,8 +7920,8 @@ msgstr "Desenvolvido por"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_order_receipt_footer
-msgid "Powered by <strong>Odoo</strong>"
-msgstr "Desenvolvido por <strong>Odoo</strong>"
+msgid "Powered by <strong>WETH</strong>"
+msgstr "Desenvolvido por <strong>WETH</strong>"
 
 #. module: point_of_sale
 #: model:ir.model.fields.selection,name:point_of_sale.selection__pos_printer__use_type__preparation

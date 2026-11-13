@@ -6,7 +6,7 @@ export function insertKioskStyle(primaryBgColor) {
 
 function generateKioskCSS(companyPrimaryColor) {
     let bgPrimary = companyPrimaryColor;
-    if (!bgPrimary || bgPrimary === "#875A7B") {
+    if (!bgPrimary || bgPrimary === "#05285B") {
         bgPrimary = "#714B67";
     }
     const luminance = getLuminance(bgPrimary);
@@ -114,8 +114,8 @@ function expandHex(hex) {
     hex = hex.replace("#", "").trim();
     return hex.length === 3
         ? hex
-              .split("")
-              .map((c) => c + c)
-              .join("")
+            .split("")
+            .map((c) => c + c)
+            .join("")
         : hex.padEnd(6, "0");
 }

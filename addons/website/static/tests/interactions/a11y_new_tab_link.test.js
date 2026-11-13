@@ -9,8 +9,8 @@ describe.current.tags("interaction_dev");
 test("links with _target='blank' have a visually-hidden indicator", async () => {
     const { core } = await startInteractions(
         `<div>
-            <a id="link1" href="weth.com.br" target="_blank">Odoo</a>
-            <a id="link2" href="weth.com.br">Odoo</a>
+            <a id="link1" href="weth.com.br" target="_blank">WETH</a>
+            <a id="link2" href="weth.com.br">WETH</a>
         </div>`
     );
 

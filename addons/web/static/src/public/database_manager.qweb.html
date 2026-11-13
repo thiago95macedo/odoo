@@ -1,44 +1,48 @@
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Odoo</title>
+    <title>WETH</title>
     <link rel="shortcut icon" href="/web/static/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/web/static/src/libs/materialsymbols/material_symbols_outlined.css" />
     <link rel="stylesheet" href="/web/static/src/libs/materialsymbols/material_symbols_sharp.css" />
     <link rel="stylesheet" href="/web/static/lib/bootstrap/dist/css/bootstrap.css" />
-    <script src="/web/static/lib/bootstrap/js/dist/util/index.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/dom/data.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/dom/event-handler.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/dom/manipulator.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/dom/selector-engine.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/util/config.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/util/component-functions.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/util/backdrop.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/util/focustrap.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/util/scrollbar.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/base-component.js" ></script>
-    <script src="/web/static/lib/bootstrap/js/dist/modal.js" ></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/index.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/dom/data.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/dom/event-handler.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/dom/manipulator.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/dom/selector-engine.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/config.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/component-functions.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/backdrop.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/focustrap.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/util/scrollbar.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/base-component.js"></script>
+    <script src="/web/static/lib/bootstrap/js/dist/modal.js"></script>
 
-    <script src="/web/static/src/public/database_manager.js" ></script>
+    <script src="/web/static/src/public/database_manager.js"></script>
     <style>
         a {
             text-decoration: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Database List -->
         <div class="row">
             <div class="col-lg-6 offset-lg-3 o_database_list">
-                <img src="/web/static/img/logo2.png" class="img-fluid d-block mx-auto"/>
+                <img src="/web/static/img/logo2.png" class="img-fluid d-block mx-auto" />
                 <t t-if="not list_db">
-                    <div class="alert alert-danger text-center">O gerenciador de bancos foi desativado pelo administrador</div>
+                    <div class="alert alert-danger text-center">O gerenciador de bancos foi desativado pelo
+                        administrador</div>
                 </t>
                 <t t-elif="insecure and databases">
                     <div class="alert alert-warning">
-                        Aviso: o gerenciador de bancos não está protegido.<br/>
-                        Por favor, <a href="#" data-bs-toggle="modal" data-bs-target=".o_database_master">defina uma senha mestra</a> para protegê-lo.
+                        Aviso: o gerenciador de bancos não está protegido.<br />
+                        Por favor, <a href="#" data-bs-toggle="modal" data-bs-target=".o_database_master">defina uma
+                            senha mestra</a> para protegê-lo.
                     </div>
                 </t>
                 <t t-if="error">
@@ -51,19 +55,23 @@
                             <div class="list-group-item d-flex align-items-center">
                                 <a t-attf-href="/odoo?db={{ db }}" class="d-block flex-grow-1">
                                     <t t-if="db in incompatible_databases">
-                                        <i class="icon oi float-end text-warning" data-icon="warning" title="Este banco de dados pode não ser compatível"></i>
+                                        <i class="icon oi float-end text-warning" data-icon="warning"
+                                            title="Este banco de dados pode não ser compatível"></i>
                                     </t>
                                     <t t-out="db" />
                                 </a>
                                 <t t-if="manage">
                                     <div class="btn-group btn-group-sm float-end">
-                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_backup" class="o_database_action btn btn-primary">
+                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_backup"
+                                            class="o_database_action btn btn-primary">
                                             <i class="oi oi-fw" data-icon="save"></i> Backup
                                         </button>
-                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_duplicate" class="o_database_action btn btn-secondary">
+                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_duplicate"
+                                            class="o_database_action btn btn-secondary">
                                             <i class="oi oi-fw" data-icon="content_copy"></i> Duplicar
                                         </button>
-                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_delete" class="o_database_action btn btn-danger">
+                                        <button type="button" t-att-data-db="db" data-bs-target=".o_database_delete"
+                                            class="o_database_action btn btn-danger">
                                             <i class="oi oi-fw" data-icon="delete"></i> Excluir
                                         </button>
                                     </div>
@@ -73,9 +81,12 @@
                     </div>
                     <t t-if="manage">
                         <div class="d-flex mt-2">
-                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_create" class="btn btn-primary flex-grow-1">Criar banco</button>
-                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_restore" class="btn btn-primary flex-grow-1 ms-2">Restaurar banco</button>
-                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_master" class="btn btn-primary flex-grow-1 ms-2">Definir senha mestra</button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_create"
+                                class="btn btn-primary flex-grow-1">Criar banco</button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_restore"
+                                class="btn btn-primary flex-grow-1 ms-2">Restaurar banco</button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target=".o_database_master"
+                                class="btn btn-primary flex-grow-1 ms-2">Definir senha mestra</button>
                         </div>
                     </t>
                     <t t-else="">
@@ -87,9 +98,10 @@
                 <t t-elif="list_db">
                     <form role="form" action="/web/database/create" method="post">
                         <t t-call="create_form" />
-                        <input type="submit" value="Criar banco" class="btn btn-primary float-start"/>
+                        <input type="submit" value="Criar banco" class="btn btn-primary float-start" />
                     </form>
-                    <a role="button" data-bs-toggle="modal" data-bs-target=".o_database_restore" class="btn btn-link">ou restaurar um banco</a>
+                    <a role="button" data-bs-toggle="modal" data-bs-target=".o_database_restore" class="btn btn-link">ou
+                        restaurar um banco</a>
                 </t>
             </div>
         </div>
@@ -101,13 +113,14 @@
                     <form role="form" action="/web/database/create" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Criar banco</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
                         </div>
                         <div class="modal-body">
                             <t t-call="create_form" />
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Continuar" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Continuar" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -122,43 +135,51 @@
                         <h4 class="modal-title">Restaurar banco</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <form id="form_restore_db" role="form" action="/web/database/restore" method="post" enctype="multipart/form-data">
+                    <form id="form_restore_db" role="form" action="/web/database/restore" method="post"
+                        enctype="multipart/form-data">
                         <div class="modal-body">
                             <t t-call="master_input" />
                             <div class="row mb-3">
                                 <label for="backup_file" class="col-md-4 col-form-label">Arquivo</label>
                                 <div class="col-md-8">
-                                    <input id="backup_file" type="file" name="backup_file" class="required"/>
+                                    <input id="backup_file" type="file" name="backup_file" class="required" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="dbname_restore" class="col-md-4 col-form-label">Nome do banco</label>
                                 <div class="col-md-8">
-                                    <input id="dbname_restore" type="text" name="name" class="form-control" required="required" t-att-pattern="pattern" title="Apenas caracteres alfanuméricos, sublinhado, hífen e ponto são permitidos"/>
+                                    <input id="dbname_restore" type="text" name="name" class="form-control"
+                                        required="required" t-att-pattern="pattern"
+                                        title="Apenas caracteres alfanuméricos, sublinhado, hífen e ponto são permitidos" />
                                 </div>
                             </div>
-                              <div class="row mb-3">
-                                  <label for="neutralize_database_restore" class="col-md-4 col-form-label" >Neutralizar</label>
-                                   <div class="col-md-8">
-                                <input id="neutralize_database_restore" type="checkbox" name="neutralize_database" class="form-check-input" />
-                                   </div>
-                              </div>
+                            <div class="row mb-3">
+                                <label for="neutralize_database_restore"
+                                    class="col-md-4 col-form-label">Neutralizar</label>
+                                <div class="col-md-8">
+                                    <input id="neutralize_database_restore" type="checkbox" name="neutralize_database"
+                                        class="form-check-input" />
+                                </div>
+                            </div>
                             <label for="radio_copy_true">Este banco de dados pode ter sido movido ou copiado.</label>
                             <p class="form-text">
-                                Para evitar conflitos entre bancos, é necessário informar se este banco foi movido ou copiado.<br/>
+                                Para evitar conflitos entre bancos, é necessário informar se este banco foi movido ou
+                                copiado.<br />
                                 Se não tiver certeza, selecione "Este banco é uma cópia".
                             </p>
                             <div class="form-check">
-                                <input id="radio_copy_true" name="copy" type="radio" class="form-check-input" value="true" checked="1" />
+                                <input id="radio_copy_true" name="copy" type="radio" class="form-check-input"
+                                    value="true" checked="1" />
                                 <label for="radio_copy_true" class="form-check-label">Este banco é uma cópia</label>
                             </div>
                             <div class="form-check">
-                                <input id="radio_copy_false" name="copy" type="radio" class="form-check-input" value="false" />
+                                <input id="radio_copy_false" name="copy" type="radio" class="form-check-input"
+                                    value="false" />
                                 <label for="radio_copy_false" class="form-check-label">Este banco foi movido</label>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Continuar" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Continuar" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -175,21 +196,24 @@
                     </div>
                     <form id="form_change_pwd" role="form" action="/web/database/change_password" method="post">
                         <div class="modal-body">
-                            <p>A senha mestra é necessária para criar, excluir, fazer backup ou restaurar bancos de dados.</p>
+                            <p>A senha mestra é necessária para criar, excluir, fazer backup ou restaurar bancos de
+                                dados.</p>
                             <t t-set="set_master_pwd" t-value="True" />
                             <t t-call="master_input" />
                             <div class="row mb-3">
                                 <label for="master_pwd_new" class="col-md-5 col-form-label">Nova senha mestra</label>
                                 <div class="col-md-7">
                                     <div class="input-group">
-                                        <input id="master_pwd_new" type="password" name="master_pwd_new" class="form-control" required="required" autocomplete="new-password"/>
-                                        <span class="oi o_little_eye input-group-text" data-icon="visibility" aria-hidden="true" style="cursor: pointer;"></span>
+                                        <input id="master_pwd_new" type="password" name="master_pwd_new"
+                                            class="form-control" required="required" autocomplete="new-password" />
+                                        <span class="oi o_little_eye input-group-text" data-icon="visibility"
+                                            aria-hidden="true" style="cursor: pointer;"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Continuar" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Continuar" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -211,24 +235,28 @@
                             <div class="row mb-3">
                                 <label for="dbname_duplicate" class="col-md-4 col-form-label">Nome do banco</label>
                                 <div class="col-md-8">
-                                    <input id="dbname_duplicate" type="text" name="name" class="form-control" required="required" readonly="readonly"/>
+                                    <input id="dbname_duplicate" type="text" name="name" class="form-control"
+                                        required="required" readonly="readonly" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="new_name" class="col-md-4 col-form-label">Novo nome</label>
                                 <div class="col-md-8">
-                                    <input id="new_name" type="text" name="new_name" class="form-control" required="required" t-att-pattern="pattern" title="Apenas caracteres alfanuméricos, sublinhado, hífen e ponto são permitidos"/>
+                                    <input id="new_name" type="text" name="new_name" class="form-control"
+                                        required="required" t-att-pattern="pattern"
+                                        title="Apenas caracteres alfanuméricos, sublinhado, hífen e ponto são permitidos" />
                                 </div>
                             </div>
-                              <div class="row mb-3">
-                                  <label for="neutralize_database" class="col-md-4 col-form-label" >Neutralizar</label>
-                                   <div class="col-md-8">
-                                <input id="neutralize_database" type="checkbox" name="neutralize_database" class="form-check-input" />
-                                   </div>
-                              </div>
+                            <div class="row mb-3">
+                                <label for="neutralize_database" class="col-md-4 col-form-label">Neutralizar</label>
+                                <div class="col-md-8">
+                                    <input id="neutralize_database" type="checkbox" name="neutralize_database"
+                                        class="form-check-input" />
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Continuar" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Continuar" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -249,12 +277,13 @@
                             <div class="row mb-3">
                                 <label for="dbname_delete" class="col-md-4 col-form-label">Banco</label>
                                 <div class="col-md-8">
-                                    <input id="dbname_delete" type="text" name="name" class="form-control" required="required" readonly="readonly"/>
+                                    <input id="dbname_delete" type="text" name="name" class="form-control"
+                                        required="required" readonly="readonly" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Excluir" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Excluir" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -275,28 +304,31 @@
                             <div class="row mb-3">
                                 <label for="dbname_backup" class="col-md-4 col-form-label">Nome do banco</label>
                                 <div class="col-md-8">
-                                    <input id="dbname_backup" type="text" name="name" class="form-control" required="required" readonly="readonly"/>
+                                    <input id="dbname_backup" type="text" name="name" class="form-control"
+                                        required="required" readonly="readonly" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="backup_format" class="col-md-4 col-form-label">Formato do backup</label>
                                 <div class="col-md-8">
-                                    <select id="backup_format" name="backup_format" class="form-select" required="required">
+                                    <select id="backup_format" name="backup_format" class="form-select"
+                                        required="required">
                                         <option value="zip">zip (com filestore)</option>
                                         <option value="dump">pg_dump (formato personalizado, sem filestore)</option>
                                     </select>
                                 </div>
                             </div>
-                             <div class="row mb-3" id="filestore_div">
+                            <div class="row mb-3" id="filestore_div">
                                 <label for="filestore" class="col-md-4 col-form-label">Incluir filestore</label>
                                 <div class="col-md-8">
-                                     <input id="filestore" type="checkbox" name="filestore" value="1" checked class="form-check-input" />
-                                     <input type="hidden" name="filestore" value="0"/>
+                                    <input id="filestore" type="checkbox" name="filestore" value="1" checked
+                                        class="form-check-input" />
+                                    <input type="hidden" name="filestore" value="0" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Fazer backup" class="btn btn-primary float-end"/>
+                            <input type="submit" value="Fazer backup" class="btn btn-primary float-end" />
                         </div>
                     </form>
                 </div>
@@ -304,4 +336,5 @@
         </div>
     </div>
 </body>
+
 </html>

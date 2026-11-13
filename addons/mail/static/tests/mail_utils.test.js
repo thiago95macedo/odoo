@@ -257,7 +257,7 @@ test("inlineElement inserts spaces between adjacent block elements", () => {
 test("inlineElement copies rel and target attributes from links", () => {
     expect(
         inlineHtml(
-            markup`<a href="https://weth.com.br" target="_blank" rel="noreferrer noopener" id="link-id">Odoo</a>`
+            markup`<a href="https://weth.com.br" target="_blank" rel="noreferrer noopener" id="link-id">WETH</a>`
         ).toString()
     ).toBe(
         '<a href="https://weth.com.br" target="_blank" rel="noreferrer noopener">https://weth.com.br</a>'

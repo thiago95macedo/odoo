@@ -87,14 +87,14 @@ class TestWebRouter(TransactionCase):
 
 class TestOgTitleFromPath(TransactionCase):
     def test_empty(self):
-        self.assertEqual(og_title_from_path(self.env, ''), 'Odoo')
-        self.assertEqual(og_title_from_path(self.env, None), 'Odoo')
+        self.assertEqual(og_title_from_path(self.env, ''), 'WETH')
+        self.assertEqual(og_title_from_path(self.env, None), 'WETH')
 
     def test_unknown_path(self):
-        self.assertEqual(og_title_from_path(self.env, '/42'), 'Odoo')
-        self.assertEqual(og_title_from_path(self.env, '/odoo/42'), 'Odoo')
-        self.assertEqual(og_title_from_path(self.env, '/odoo/action-999999999'), 'Odoo')
-        self.assertEqual(og_title_from_path(self.env, '/odoo/idontexist'), 'Odoo')
+        self.assertEqual(og_title_from_path(self.env, '/42'), 'WETH')
+        self.assertEqual(og_title_from_path(self.env, '/odoo/42'), 'WETH')
+        self.assertEqual(og_title_from_path(self.env, '/odoo/action-999999999'), 'WETH')
+        self.assertEqual(og_title_from_path(self.env, '/odoo/idontexist'), 'WETH')
 
     def test_known_action_by_path(self):
         self.assertEqual(og_title_from_path(self.env, '/odoo/crons'), 'Scheduled Actions')

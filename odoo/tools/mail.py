@@ -555,7 +555,7 @@ def html_keep_url(text):
 def html_remove_links(body):
     """Replace every ``<a>`` by its text content followed by its target.
 
-    ``<a href="https://weth.com.br">Odoo</a>`` becomes ``Odoo (https://weth.com.br)``.
+    ``<a href="https://weth.com.br">WETH</a>`` becomes ``Odoo (https://weth.com.br)``.
 
     Intended for content displayed inertly (e.g. sandboxed previews of files
     uploaded by users).
