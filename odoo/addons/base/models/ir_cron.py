@@ -175,7 +175,7 @@ class IrCron(models.Model):
             e.__cause__ = exception
             error = {
                 'code': 0,  # we don't care of this code
-                'message': "Odoo Server Error",
+                'message': "WETH Server Error",
                 'data': serialize_exception(e),
             }
             return {

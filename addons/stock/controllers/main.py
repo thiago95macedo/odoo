@@ -33,7 +33,7 @@ class StockReportController(Controller):
             se = serialize_exception(e)
             error = {
                 'code': 0,
-                'message': 'Odoo Server Error',
+                'message': 'WETH Server Error',
                 'data': se,
             }
             res = request.make_response(html_escape(json.dumps(error)))

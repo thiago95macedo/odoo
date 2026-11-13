@@ -581,7 +581,7 @@ test("clickbot show rpc error when an error dialog is detected", async () => {
                     <div class="text-bg-100 clearfix mt-2 position-relative o_error_detail pb-2">
                         <button class="btn position-absolute top-0 end-0 pt-2 btn-link link-body-emphasis" data-available-offline=""><span class="oi" data-icon="assignment"></span></button>
                         <div class="ps-1 pt-1 ps-md-3 pt-md-3">
-                            <p class="m-0"><b>Odoo Server Error</b></p>
+                            <p class="m-0"><b>WETH Server Error</b></p>
                             <p class="d-block small text-info">ERROR INFO</p>
                             <code>RPC_ERROR</code>
                             <code class="d-block">This is a server Error, it should be displayed in an error dialog</code>

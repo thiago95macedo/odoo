@@ -385,7 +385,7 @@ class JsonRPCDispatcher(Dispatcher):
         """
         error = {
             'code': 0,  # we don't care of this code
-            'message': "Odoo Server Error",
+            'message': "WETH Server Error",
             'data': serialize_exception(exc),
         }
         if isinstance(exc, NotFound):

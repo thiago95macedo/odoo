@@ -92,19 +92,19 @@ export class ErrorDialog extends Component {
 // -----------------------------------------------------------------------------
 // Client Error Dialog
 // -----------------------------------------------------------------------------
-export class ClientErrorDialog extends ErrorDialog {}
+export class ClientErrorDialog extends ErrorDialog { }
 ClientErrorDialog.title = _t("Odoo Client Error");
 
 // -----------------------------------------------------------------------------
 // Network Error Dialog
 // -----------------------------------------------------------------------------
-export class NetworkErrorDialog extends ErrorDialog {}
+export class NetworkErrorDialog extends ErrorDialog { }
 NetworkErrorDialog.title = _t("Odoo Network Error");
 
 // -----------------------------------------------------------------------------
 // Request Entity Too Large Dialog
 // -----------------------------------------------------------------------------
-export class RequestEntityTooLargeErrorDialog extends ErrorDialog {}
+export class RequestEntityTooLargeErrorDialog extends ErrorDialog { }
 RequestEntityTooLargeErrorDialog.title = _t("The request sent to the server was too large");
 
 // -----------------------------------------------------------------------------
@@ -131,7 +131,7 @@ export class RPCErrorDialog extends ErrorDialog {
         }
         switch (this.props.type) {
             case "server":
-                this.title = _t("Odoo Server Error");
+                this.title = _t("WETH Server Error");
                 break;
             case "script":
                 this.title = _t("Odoo Client Error");
@@ -246,11 +246,11 @@ export class UnlinkBlockedErrorDialog extends Component {
         this.isMulti = resIds.length > 1;
         this.message = this.isMulti
             ? _t("Not possible to delete all the records because some are used in %(model_name)s", {
-                  model_name: modelName,
-              })
+                model_name: modelName,
+            })
             : _t("Not possible to delete the record because it is used in %(model_name)s", {
-                  model_name: modelName,
-              });
+                model_name: modelName,
+            });
     }
 
     get archiveHint() {

@@ -2,7 +2,7 @@
 %global unmangled_version %{version}
 %global __requires_exclude ^.*odoo/addons/mail/static/scripts/odoo-mailgate.py$
 
-Summary: Odoo Server
+Summary: WETH Server
 Name: %{name}
 Version: %{version}
 Release: %{release}

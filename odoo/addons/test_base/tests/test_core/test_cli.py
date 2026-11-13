@@ -177,7 +177,7 @@ class TestCommandUsingDb(TestCommand, TransactionCase):
              "Element '%s' cannot be located in parent view", '', ('odoo-python',)),
         ]
         expected_text = [
-            "# Translation of Odoo Server.",
+            "# Translation of WETH Server.",
             "# This file contains the translation of the following modules:",
             '# \t* base',
             "#",

@@ -520,7 +520,7 @@ test("test display_exception client action", async () => {
         tag: "display_exception",
         params: {
             code: 0,
-            message: "Odoo Server Error",
+            message: "WETH Server Error",
             data: {
                 name: `odoo.exceptions.UserError`,
                 debug: "traceback",

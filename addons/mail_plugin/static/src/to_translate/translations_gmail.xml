@@ -32,7 +32,7 @@
     <string>Show all</string>
     <string>Debug Zone</string>
     <string>Debug zone for development purpose.</string>
-    <string>Odoo Server URL</string>
+    <string>WETH Server URL</string>
     <string>Odoo Access Token</string>
     <string>Clear Translations Cache</string>
 </resources>

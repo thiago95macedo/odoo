@@ -901,7 +901,7 @@ test(`form with o2m having a field with fieldDependencies`, async () => {
     // x2many list view, there's a field with fieldDependencies, and the dependency field
     // (int_field) in our case, isn't in the form view. This test ensures that we can open
     // the form view in this situation.
-    class MyField extends CharField {}
+    class MyField extends CharField { }
     fieldsRegistry.add("my_widget", {
         component: MyField,
         fieldDependencies: [{ name: "int_field", type: "integer" }],
@@ -930,7 +930,7 @@ test(`form with o2m having a field with fieldDependencies`, async () => {
 });
 
 test(`form with o2m having a selection field with fieldDependencies`, async () => {
-    class MyField extends CharField {}
+    class MyField extends CharField { }
     fieldsRegistry.add("my_widget", {
         component: MyField,
         fieldDependencies: [{ name: "selection", type: "selection" }],
@@ -1010,7 +1010,7 @@ test(`form view: widget having a o2m field as fieldDependencies`, async () => {
 });
 
 test(`fieldDependencies are readonly by default`, async () => {
-    class MyField extends CharField {}
+    class MyField extends CharField { }
     fieldsRegistry.add("my_widget", {
         component: MyField,
         fieldDependencies: [
@@ -3304,8 +3304,8 @@ test(`form views in dialogs do not have class o_xxl_form_view`, async () => {
             value: false,
         });
         return {
-            activateElement() {},
-            deactivateElement() {},
+            activateElement() { },
+            deactivateElement() { },
             bus,
             size: SIZES.XXL,
             isSmall: false,
@@ -3570,7 +3570,7 @@ test(`button in form view and long effect`, async () => {
                     expect.step("effect");
                 }
                 if (rpcCount === 1) {
-                    return new Promise(() => {});
+                    return new Promise(() => { });
                 }
             });
         }
@@ -3873,7 +3873,7 @@ test(`onchange send only the present fields to the server`, async () => {
 
 test(`onchange only send present fields value`, async () => {
     Partner._onChanges = {
-        foo: () => {},
+        foo: () => { },
     };
 
     let checkOnchange = false;
@@ -3930,7 +3930,7 @@ test(`onchange send relation parent field values (including readonly)`, async ()
         },
     };
     Partner._onChanges = {
-        float_field: () => {},
+        float_field: () => { },
     };
 
     let checkOnchange = false;
@@ -4048,7 +4048,7 @@ test(`can create a record with default values`, async () => {
 
 test(`default record with a one2many and an onchange on sub field`, async () => {
     Partner._onChanges = {
-        foo: () => {},
+        foo: () => { },
     };
 
     onRpc("onchange", ({ args }) => {
@@ -4079,7 +4079,7 @@ test(`default record with a one2many and an onchange on sub field`, async () => 
 
 test(`remove default value in subviews`, async () => {
     Product._onchanges = {
-        name: () => {},
+        name: () => { },
     };
 
     const defaultContext = {
@@ -4853,7 +4853,7 @@ test(`clicking on stat buttons in edit mode on mobile`, async () => {
 test.tags("desktop");
 test(`clicking on stat buttons save and reload in edit mode on desktop`, async () => {
     mockService("action", {
-        doActionButton() {},
+        doActionButton() { },
     });
 
     onRpc("web_save", ({ args }) => {
@@ -4890,7 +4890,7 @@ test(`clicking on stat buttons save and reload in edit mode on desktop`, async (
 test.tags("mobile");
 test(`clicking on stat buttons save and reload in edit mode on mobile`, async () => {
     mockService("action", {
-        doActionButton() {},
+        doActionButton() { },
     });
 
     onRpc("web_save", ({ args }) => {
@@ -6773,7 +6773,7 @@ test(`can create record even if onchange returns a warning`, async () => {
 
 test(`onchange returns an error`, async () => {
     expect.errors(1);
-    Partner._onChanges = { int_field: () => {} };
+    Partner._onChanges = { int_field: () => { } };
 
     onRpc("onchange", ({ args }) => {
         if (args[1].int_field === 64) {
@@ -7053,8 +7053,8 @@ test(`form with domain widget: opening a many2many form and save should not cras
 
 test(`display_name not sent for onchanges if not in view`, async () => {
     Partner._records[0].type_ids = [12];
-    Partner._onChanges = { foo() {} };
-    PartnerType._onChanges = { name() {} };
+    Partner._onChanges = { foo() { } };
+    PartnerType._onChanges = { name() { } };
 
     onRpc("partner", "web_read", ({ kwargs }) => {
         expect.step(`partner.web_read`);
@@ -7351,7 +7351,7 @@ test(`unchanged relational data is not sent for onchanges`, async () => {
 test(`onchange value are not discarded on o2m edition`, async () => {
     Partner._records[1].child_ids = [4];
     Partner._onChanges = {
-        foo() {},
+        foo() { },
     };
 
     onRpc("onchange", () => ({
@@ -7479,7 +7479,7 @@ test(`args of onchanges in o2m fields are correct (dialog edition)`, async () =>
 
 test(`context of onchanges contains the context of changed fields`, async () => {
     Partner._onChanges = {
-        foo() {},
+        foo() { },
     };
 
     onRpc("onchange", ({ kwargs }) => {
@@ -9566,7 +9566,7 @@ test(`form view is not broken if save operation fails`, async () => {
     await contains(`.o_form_button_save`).click();
     await animationFrame();
     expect(`.o_dialog`).toHaveCount(1);
-    expect.verifyErrors(["RPC_ERROR: Odoo Server Error"]);
+    expect.verifyErrors(["RPC_ERROR: WETH Server Error"]);
     expect.verifySteps(["web_save"]); // write on save (it fails, does not trigger a read)
 
     await contains(`.o_dialog .modal-footer .btn-primary`).click();
@@ -9685,7 +9685,7 @@ test("Redirect Warning full feature: additional context, action_id, leaving whil
     expect.verifySteps(["web_save"]);
 
     await waitFor(".o_error_dialog");
-    expect.verifyErrors(["RPC_ERROR: Odoo Server Error"]);
+    expect.verifyErrors(["RPC_ERROR: WETH Server Error"]);
 
     expect(".o_error_dialog .btn-primary").toHaveCount(1);
     expect(".o_error_dialog .btn-secondary").toHaveCount(1);
@@ -9737,8 +9737,8 @@ test(`readonly fields are not sent when saving`, async () => {
     // define an onchange on name to check that the value of readonly
     // fields is correctly sent for onchanges
     Partner._onChanges = {
-        name() {},
-        child_ids() {},
+        name() { },
+        child_ids() { },
     };
     let checkOnchange = false;
 
@@ -10047,7 +10047,7 @@ test(`x2many field, open form view in new window`, async () => {
             }
             super.doAction(params);
         },
-        loadState() {},
+        loadState() { },
     });
     Partner._records[0].child_ids = [2];
     await mountView({
@@ -10484,7 +10484,7 @@ test(`keep editing after call_button fail`, async () => {
     };
     await contains(`button.child_ids`).click();
     expect.verifySteps(["web_save"]);
-    expect.verifyErrors(["RPC_ERROR: Odoo Server Error"]);
+    expect.verifyErrors(["RPC_ERROR: WETH Server Error"]);
 
     await contains(`.o_form_view .o_field_one2many .o_data_row .o_data_cell:eq(1)`).click();
     await contains(`.o_field_many2one[name="product_id"] input`).click();
@@ -11013,7 +11013,7 @@ test("resequence list lines when previous resequencing crashed", async () => {
                     expect.step("resequence onChange crash");
                     throw makeErrorFromResponse({
                         code: 200,
-                        message: "Odoo Server Error",
+                        message: "WETH Server Error",
                         data: {
                             name: `odoo.exceptions.${"UserError"}`,
                             debug: "traceback",
@@ -11296,8 +11296,8 @@ test(`field "length" with value 0: readonly fields are not sent when saving`, as
     // define an onchange on name to check that the value of readonly
     // fields is correctly sent for onchanges
     Partner._onChanges = {
-        name() {},
-        child_ids() {},
+        name() { },
+        child_ids() { },
     };
 
     onRpc("web_save", ({ args }) => {
@@ -12491,8 +12491,8 @@ test(`only re-render necessary fields after change (with onchange)`, async () =>
 
 test(`widget update several fields including an x2m`, async () => {
     Partner._onChanges = {
-        name() {},
-        child_ids() {},
+        name() { },
+        child_ids() { },
     };
     class TestWidget extends Component {
         props = useProps();
@@ -12548,7 +12548,7 @@ test(`widget update several fields including an x2m`, async () => {
 test(`commitChanges with a field input removed during an update`, async () => {
     Partner._records[1].child_ids = [1, 5];
     Partner._onChanges = {
-        foo() {},
+        foo() { },
     };
 
     const onchangeDeferred = Promise.withResolvers();
@@ -12633,7 +12633,7 @@ test(`multiple views for m2m field after list item edit in form`, async () => {
 test(`custom x2many with relatedFields and list view inline`, async () => {
     fieldsRegistry.add("my_widget", {
         ...x2ManyField,
-        component: class MyField extends X2ManyField {},
+        component: class MyField extends X2ManyField { },
         relatedFields: [
             { name: "parent_id", type: "many2one", relation: "partner" },
             { name: "int_field", type: "integer" },
@@ -12689,7 +12689,7 @@ test(`custom x2many with relatedFields and list view inline`, async () => {
 test(`custom x2many with a m2o in relatedFields and column_invisible`, async () => {
     fieldsRegistry.add("my_widget", {
         ...x2ManyField,
-        component: class MyField extends X2ManyField {},
+        component: class MyField extends X2ManyField { },
         relatedFields: [{ name: "parent_id", type: "many2one", relation: "partner" }],
     });
 
@@ -12741,7 +12741,7 @@ test.tags("desktop");
 test(`custom x2many with relatedFields and list view not inline`, async () => {
     fieldsRegistry.add("my_widget", {
         ...x2ManyField,
-        component: class MyField extends X2ManyField {},
+        component: class MyField extends X2ManyField { },
         relatedFields: [
             { name: "parent_id", type: "many2one", relation: "partner" },
             { name: "int_field", type: "integer" },
@@ -13273,7 +13273,7 @@ test(`statusbar widgets should appear in the CogMenu dropdown`, async () => {
 test.tags("mobile");
 test(`CogMenu dropdown's open/close state shouldn't be modified after 'onchange'`, async () => {
     Partner._onChanges = {
-        name() {},
+        name() { },
     };
     const onchangeDef = Promise.withResolvers();
     onRpc("partner", "onchange", ({ args }) => {
@@ -14025,7 +14025,7 @@ test("twice same many2one, one invisible, one with widget with related field", a
 
 test(`Do not mix dependencies across multiple widgets in multiple views`, async () => {
     onRpc("web_save", () => expect.step("web_save"));
-    class MyField extends CharField {}
+    class MyField extends CharField { }
     fieldsRegistry.add("my_widget", {
         component: MyField,
         fieldDependencies: [{ name: "name", type: "char" }],

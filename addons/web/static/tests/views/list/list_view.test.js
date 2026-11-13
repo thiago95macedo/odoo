@@ -1819,14 +1819,14 @@ test(`list view: press "hotkey" to execute header button action`, async () => {
 test(`column names (noLabel, label, string and default)`, async () => {
     const charField = registry.category("fields").get("char");
 
-    class NoLabelCharField extends charField.component {}
+    class NoLabelCharField extends charField.component { }
     registry.category("fields").add("nolabel_char", {
         ...charField,
         component: NoLabelCharField,
         label: false,
     });
 
-    class LabelCharField extends charField.component {}
+    class LabelCharField extends charField.component { }
     registry.category("fields").add("label_char", {
         ...charField,
         component: LabelCharField,
@@ -6333,7 +6333,7 @@ test(`custom delete confirmation dialog`, async () => {
 
 test(`deleting record which throws UserError should close confirmation dialog`, async () => {
     onRpc("web_unlink", () => {
-        throw makeServerError({ message: "Odoo Server Error" });
+        throw makeServerError({ message: "WETH Server Error" });
     });
 
     await mountView({
@@ -6354,7 +6354,7 @@ test(`deleting record which throws UserError should close confirmation dialog`, 
     await contains(`.modal footer button.btn-danger`).click();
     await waitFor(".modal .modal-title:contains(Invalid Operation)");
 
-    expect.verifyErrors(["Odoo Server Error"]);
+    expect.verifyErrors(["WETH Server Error"]);
 });
 
 test(`deleting a record blocked by a foreign key: the view reloads once archived`, async () => {
@@ -6398,7 +6398,7 @@ test(`deleting a record blocked by a foreign key: the view reloads once archived
     expect.errors(1);
     await contains(`.modal footer button.btn-danger`).click();
     await waitFor(`.modal .modal-title:contains(Oops)`);
-    expect.verifyErrors(["Odoo Server Error"]);
+    expect.verifyErrors(["WETH Server Error"]);
 
     await contains(`.modal-footer .btn-primary`).click();
     expect(`.modal`).toHaveCount(0);
@@ -8908,7 +8908,7 @@ test(`edit button does not trigger fold group`, async () => {
 
 test(`groupby node with subfields, and onchange`, async () => {
     Foo._onChanges = {
-        foo() {},
+        foo() { },
     };
 
     onRpc("onchange", ({ args }) => {
@@ -10769,7 +10769,7 @@ test(`edition, then navigation with tab (with a readonly field and onchange)`, a
         relation: "foo",
     });
     Bar._onChanges = {
-        o2m() {},
+        o2m() { },
     };
     Bar._records[0].o2m = [1, 4];
 
@@ -12313,7 +12313,7 @@ test(`editable list with handle widget with slow network`, async () => {
 
 test(`multiple clicks on Add do not create invalid rows`, async () => {
     Foo._onChanges = {
-        m2o() {},
+        m2o() { },
     };
 
     const deferred = Promise.withResolvers();
@@ -17639,7 +17639,7 @@ test(`edition, then navigation with tab (with a readonly re-evaluated field and 
     // (which will trigger an onchange), the focus of the next activable
     // field will not crash
     Bar._onChanges = {
-        o2m() {},
+        o2m() { },
     };
     Bar._fields.o2m = fields.One2many({ relation: "foo" });
     Bar._records[0].o2m = [1, 4];
@@ -17991,7 +17991,7 @@ test(`editable list correctly saves dirty fields `, async () => {
 
 test(`edit a field with a slow onchange in a new row`, async () => {
     Foo._onChanges = {
-        int_field() {},
+        int_field() { },
     };
     Foo._records = [];
 
@@ -19520,7 +19520,7 @@ test(`restore order from state when using default order`, async () => {
 test(`x2many onchange, check result`, async () => {
     const deferred = Promise.withResolvers();
     Foo._onChanges = {
-        m2m() {},
+        m2m() { },
     };
     Bar._views = {
         list: `<list><field name="name"/></list>`,
@@ -20243,7 +20243,7 @@ test("list views make their control panel available directly", async () => {
 
 test.tags("desktop");
 test("interact with search view while list is loading", async () => {
-    onRpc("web_search_read", () => new Promise(() => {}));
+    onRpc("web_search_read", () => new Promise(() => { }));
     await mountView({
         arch: `<list><field name="foo"/></list>`,
         searchViewArch: `
@@ -20265,7 +20265,7 @@ test("interact with search view while list is loading", async () => {
 });
 
 test("click on New while list is loading", async () => {
-    onRpc("web_search_read", () => new Promise(() => {}));
+    onRpc("web_search_read", () => new Promise(() => { }));
     await mountView({
         arch: `<list><field name="foo"/></list>`,
         resModel: "foo",

@@ -1578,9 +1578,9 @@ test(`render popover`, async () => {
     const popover = document.querySelector(`.o_cw_popover`).getBoundingClientRect();
     expect(
         popover.top >= 0 &&
-            popover.left >= 0 &&
-            popover.bottom <= window.innerHeight &&
-            popover.right <= window.innerWidth
+        popover.left >= 0 &&
+        popover.bottom <= window.innerHeight &&
+        popover.right <= window.innerWidth
     ).toBe(true);
     // Displayed nearby its targeted full calendar event
     const popoverTarget = document
@@ -5201,7 +5201,7 @@ test(`calendar with custom quick create view`, async () => {
     mockService("dialog", {
         add(_, props) {
             expect.step(`add dialog ${props.viewId}`);
-            return () => {};
+            return () => { };
         },
     });
 
@@ -6299,7 +6299,7 @@ test("Revert to the previous state if updateRecord fails (onEventResize)", async
     const oldInsetSize = event.parentElement.style.inset;
     await resizeEventToTime(2, "2016-12-12 17:00:00");
     expect(event.parentElement.style.inset).toEqual(oldInsetSize);
-    expect.verifyErrors(["RPC_ERROR: Odoo Server Error"]);
+    expect.verifyErrors(["RPC_ERROR: WETH Server Error"]);
 });
 
 test("Revert to the previous state if updateRecord fails (onEventDrop)", async () => {
@@ -6320,7 +6320,7 @@ test("Revert to the previous state if updateRecord fails (onEventDrop)", async (
     await moveEventToTime(2, "2016-12-14 11:00:00");
     event = findEvent(2);
     expect(columnEvent.contains(event)).toBe(true, { message: "Event shouldn't move column " });
-    expect.verifyErrors(["RPC_ERROR: Odoo Server Error"]);
+    expect.verifyErrors(["RPC_ERROR: WETH Server Error"]);
 });
 
 test.tags("desktop");

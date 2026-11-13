@@ -106,7 +106,7 @@ export function makeServerError({
             subType,
             message: description || message,
         },
-        message: message || "Odoo Server Error",
+        message: message || "WETH Server Error",
         type: "server",
     });
 }
@@ -118,8 +118,8 @@ export function makeServerError({
 export function safeSplit(value, separator) {
     return value
         ? String(value)
-              .trim()
-              .split(separator || ",")
+            .trim()
+            .split(separator || ",")
         : [];
 }
 

@@ -53,7 +53,7 @@ export class DatabaseDialog extends Component {
     <t t-translation="off">
         <LoadingFullScreen t-if="this.waitRestart()">
             <t t-set-slot="body">
-                Updating Odoo Server information, please wait...
+                Updating WETH Server information, please wait...
             </t>
         </LoadingFullScreen>
 

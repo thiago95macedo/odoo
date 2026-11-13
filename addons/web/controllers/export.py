@@ -538,7 +538,7 @@ class CSVExport(ExportFormat, Controller):
             _logger.exception("Exception during request handling.")
             payload = json.dumps({
                 'code': 0,
-                'message': "Odoo Server Error",
+                'message': "WETH Server Error",
                 'data': serialize_exception(exc)
             })
             raise InternalServerError(payload) from exc
@@ -587,7 +587,7 @@ class ExcelExport(ExportFormat, Controller):
             _logger.exception("Exception during request handling.")
             payload = json.dumps({
                 'code': 0,
-                'message': "Odoo Server Error",
+                'message': "WETH Server Error",
                 'data': serialize_exception(exc),
             })
             raise InternalServerError(payload) from exc
