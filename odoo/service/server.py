@@ -58,7 +58,6 @@ from odoo import api, sql_db
 from odoo.http.server import HTTPSocket
 from odoo.modules.registry import Registry
 from odoo.orm.cache import log_ormcache_stats
-from odoo.release import nt_service_name
 from odoo.tools import OrderedSet, config, gc, osutil, profiler
 from odoo.tools.misc import dumpstacks, mute_logger, stripped_sys_argv
 from odoo.tools.osutil import memory_info
@@ -1444,8 +1443,6 @@ def _reexec(updated_modules=None):
     environments, use a supervisor/subprocess design to respawn the server
     as a subprocess on each reload which matches debugpy's requirements.
     """
-    if osutil.is_running_as_nt_service():
-        subprocess.call(f'net stop {nt_service_name} && net start {nt_service_name}', shell=True)
     exe = os.path.basename(sys.executable)
     args = stripped_sys_argv()
     if updated_modules:
