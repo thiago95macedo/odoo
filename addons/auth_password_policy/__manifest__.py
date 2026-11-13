@@ -18,6 +18,6 @@
             'auth_password_policy/static/src/password_policy.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

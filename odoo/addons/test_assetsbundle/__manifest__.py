@@ -83,6 +83,6 @@
             'test_assetsbundle/static/tests/lazy_component.test.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

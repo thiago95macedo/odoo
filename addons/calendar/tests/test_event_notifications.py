@@ -774,7 +774,7 @@ class TestEventNotifications(CalendarMailCommon):
             'recurrency': True,
             'rrule_type': 'daily',
             'count': 3,
-            'location': 'Odoo S.A.',
+            'location': 'WETH Tecnologia',
             'partner_ids': [(6, 0, self.user_employee_2.partner_id.ids)],
             'privacy': 'public',
             'show_as': 'busy',

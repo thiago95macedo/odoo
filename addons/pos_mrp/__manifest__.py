@@ -19,6 +19,6 @@ This is a link module between Point of Sale and Mrp.
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

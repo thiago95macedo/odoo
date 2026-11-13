@@ -10,6 +10,6 @@ Bridge between HR and Livechat.""",
         'views/im_livechat_report_channel_views.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

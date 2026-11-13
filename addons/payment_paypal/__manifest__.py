@@ -25,6 +25,6 @@
         ],
         "web.assets_backend": ["payment_paypal/static/src/onboarding/**/*"],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

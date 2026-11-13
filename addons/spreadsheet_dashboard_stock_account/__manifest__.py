@@ -9,6 +9,6 @@
         "data/dashboards.xml",
     ],
     'auto_install': ['stock_account'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

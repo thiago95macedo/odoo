@@ -7,6 +7,6 @@ When hiding the timesheets in the portal, this module allows also hiding timeshe
     """,
     'depends': ['website', 'hr_timesheet'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

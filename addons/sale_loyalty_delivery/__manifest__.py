@@ -8,6 +8,6 @@
     "data": ["views/loyalty_reward_views.xml"],
     "depends": ["sale_loyalty", "delivery"],
     "auto_install": True,
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

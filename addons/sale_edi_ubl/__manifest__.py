@@ -14,6 +14,6 @@ File with embedded xml data will allow seller to retrieve Order data from Files.
         'security/ir.access.csv',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

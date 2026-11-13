@@ -19,6 +19,6 @@ You can easily assign grade to members/partners, with a specific pricelist.
         'views/partnership_menu.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

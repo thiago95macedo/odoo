@@ -47,6 +47,6 @@
             'website_hr_recruitment/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

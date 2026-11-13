@@ -11,6 +11,6 @@
             "pos_self_order_pine_labs/static/src/**/*",
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

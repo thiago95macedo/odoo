@@ -15,6 +15,6 @@
             'event_sms/static/src/template_reference_field/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

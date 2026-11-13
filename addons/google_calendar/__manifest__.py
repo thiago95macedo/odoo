@@ -23,6 +23,6 @@
     },
     'post_init_hook': 'enable_primary_calendar_sync',
     'uninstall_hook': 'remove_unimported_calendars',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

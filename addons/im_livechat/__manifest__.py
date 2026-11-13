@@ -139,6 +139,6 @@ Help your customers with this chat, and analyse their feedback.
             ("remove", "im_livechat/static/src/core/common/**/*.scss"),
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

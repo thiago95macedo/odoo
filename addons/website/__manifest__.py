@@ -576,6 +576,6 @@
             '3': ['s_hero_maintenance'],
         },
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

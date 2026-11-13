@@ -33,7 +33,7 @@ class TestCalendarTours(HttpCaseWithUserDemo):
             'start': start.strftime("%Y-%m-%d %H:%M:%S"),
             'stop': stop.strftime("%Y-%m-%d %H:%M:%S"),
             'duration': 3,
-            'location': 'Odoo S.A.',
+            'location': 'WETH Tecnologia',
             'privacy': 'public',
             'show_as': 'busy',
         })
@@ -57,7 +57,7 @@ class TestCalendarTours(HttpCaseWithUserDemo):
             'start': start.strftime("%Y-%m-%d %H:%M:%S"),
             'stop': stop.strftime("%Y-%m-%d %H:%M:%S"),
             'duration': 3,
-            'location': 'Odoo S.A.',
+            'location': 'WETH Tecnologia',
             'privacy': 'public',
             'show_as': 'busy',
         })

@@ -18,6 +18,6 @@ speakers..
         'website_event_track'
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

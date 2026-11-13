@@ -31,7 +31,7 @@ discount to a customer.
             'pos_discount/static/tests/unit/**/*'
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',
 }

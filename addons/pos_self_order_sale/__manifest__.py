@@ -7,6 +7,6 @@
         "views/res_config_settings_views.xml",
         "data/kiosk_sale_team.xml",
     ],
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

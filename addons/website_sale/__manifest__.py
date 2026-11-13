@@ -209,6 +209,6 @@
         ],
         "html_builder.iframe_add_dialog": ["website_sale/static/src/snippets/**/*.preview.scss"],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

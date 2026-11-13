@@ -16,6 +16,6 @@ Partners Geolocation
         'data/ir_cron.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

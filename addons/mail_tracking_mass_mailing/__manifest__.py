@@ -9,7 +9,7 @@
     'data': [
         'views/mail_message_views.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'auto_install': True,
     'license': 'LGPL-3',
 }

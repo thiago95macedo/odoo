@@ -19,6 +19,6 @@ by external providers and will automatically generate purchase orders directed t
         'views/purchase_order_views.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

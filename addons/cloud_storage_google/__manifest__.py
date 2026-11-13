@@ -20,6 +20,6 @@
         ],
     },
     "uninstall_hook": "uninstall_hook",
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

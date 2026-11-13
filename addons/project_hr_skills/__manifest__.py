@@ -13,6 +13,6 @@
         'views/project_task_views.xml',
         'report/project_report_views.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

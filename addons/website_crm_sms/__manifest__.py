@@ -7,6 +7,6 @@
     'description': """Allows to send sms to website visitor if the visitor is linked to a lead.""",
     'depends': ['website_sms', 'crm'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

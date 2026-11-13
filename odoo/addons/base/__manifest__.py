@@ -95,6 +95,6 @@ The kernel of Odoo, needed for all installation.
     },
     'auto_install': True,
     'post_init_hook': 'post_init',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

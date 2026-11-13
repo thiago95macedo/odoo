@@ -126,7 +126,7 @@ class TestClocFields(TransactionCase):
         # Check for existing module in case the test run on an existing database
         if not self.env['ir.module.module'].search([('name', '=', 'studio_customization')]):
             self.env['ir.module.module'].create({
-                'author': 'Odoo S.A.',
+                'author': 'WETH Tecnologia',
                 'imported': True,
                 'latest_version': '13.0.1.0.0',
                 'name': 'studio_customization',
@@ -252,7 +252,7 @@ class TestClocFields(TransactionCase):
 
     def test_count_qweb_imported_module(self):
         self.env['ir.module.module'].create({
-            'author': 'Odoo S.A.',
+            'author': 'WETH Tecnologia',
             'imported': True,
             'latest_version': '15.0.1.0.0',
             'name': 'test_imported_module',
@@ -302,7 +302,7 @@ class TestClocFields(TransactionCase):
                 ]
             },
             'license': 'LGPL-3',
-            'author': 'Odoo S.A.',
+            'author': 'WETH Tecnologia',
         })
 
         stream = BytesIO()
@@ -320,7 +320,7 @@ class TestClocFields(TransactionCase):
 
     def test_exclude_qweb(self):
         self.env['ir.module.module'].create({
-            'author': 'Odoo S.A.',
+            'author': 'WETH Tecnologia',
             'imported': True,
             'latest_version': '15.0.1.0.0',
             'name': 'test_imported_module',
@@ -352,7 +352,7 @@ class TestClocFields(TransactionCase):
                 ]
             },
             'license': 'LGPL-3',
-            'author': 'Odoo S.A.',
+            'author': 'WETH Tecnologia',
         })
 
         stream = BytesIO()
@@ -396,7 +396,7 @@ class TestClocFields(TransactionCase):
                     'data/test.xml',
             ],
             'license': 'LGPL-3',
-            'author': 'Odoo S.A.',
+            'author': 'WETH Tecnologia',
         })
 
         stream = BytesIO()

@@ -18,6 +18,6 @@ Bridge module adding UX requirements to ease SMS marketing o, event attendees.
         'sms',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -34,6 +34,6 @@
             'project_todo/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

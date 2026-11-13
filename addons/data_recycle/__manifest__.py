@@ -23,6 +23,6 @@
             'data_recycle/static/src/views/*.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

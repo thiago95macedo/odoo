@@ -7,6 +7,6 @@ This module adds support for SEPA Credit Transfer QR-code generation.
     'version': '0.1',
     'depends': ['account'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

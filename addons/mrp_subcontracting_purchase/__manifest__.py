@@ -16,6 +16,6 @@ This bridge module adds some smart buttons between Purchase and Subcontracting
         'data/mrp_subcontracting_purchase_demo.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

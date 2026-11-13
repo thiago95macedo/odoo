@@ -28,6 +28,6 @@
             'pos_online_payment_self_order/static/tests/unit/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

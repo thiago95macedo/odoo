@@ -79,6 +79,6 @@ Print product labels with barcode.
             'product/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

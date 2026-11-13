@@ -7,7 +7,7 @@ Html Editor
 This addon provides an extensible, maintainable editor.
     """,
 
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'category': 'Hidden',
     'depends': ['base', 'bus', 'web'],
     'data': [

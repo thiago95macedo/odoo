@@ -23,6 +23,6 @@ Send KPI Digests periodically
         'wizard/digest_test_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

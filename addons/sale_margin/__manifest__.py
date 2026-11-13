@@ -23,6 +23,6 @@ Price and Cost Price.
             "sale_margin/static/src/js/labeled_field_short_labels.js",
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

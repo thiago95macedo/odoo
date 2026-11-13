@@ -15,6 +15,6 @@ This module ensures that the Point of Sale remains independent of Partner Autoco
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

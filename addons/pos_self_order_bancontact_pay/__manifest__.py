@@ -16,6 +16,6 @@
             "pos_self_order_bancontact_pay/static/tests/unit/**/*",
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

@@ -16,7 +16,7 @@ This is especially useful for:
 - Investigating technical issues
 - Supporting accounting or business process audits
 """,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'data': [
         'views/mail_message_views.xml',

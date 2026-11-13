@@ -39,6 +39,6 @@ Manage your mailing lists from Odoo.
             'mail_group/static/src/css/mail_group_backend.scss',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

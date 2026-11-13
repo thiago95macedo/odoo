@@ -46,6 +46,6 @@ The following topics are covered by this module:
             'repair/static/tests/tours/*.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

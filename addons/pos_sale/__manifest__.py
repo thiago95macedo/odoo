@@ -34,6 +34,6 @@ This module adds a custom Sales Team for the Point of Sale. This enables you to 
             'pos_sale/static/tests/unit/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

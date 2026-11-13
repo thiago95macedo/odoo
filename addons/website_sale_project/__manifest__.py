@@ -17,6 +17,6 @@ Bridge module between website_sale and project.
             'website_sale_project/static/src/website_builder/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

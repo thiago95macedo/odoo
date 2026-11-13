@@ -28,6 +28,6 @@ This module allows to manage onboardings and their progress
             'onboarding/static/src/scss/onboarding.variables.scss',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

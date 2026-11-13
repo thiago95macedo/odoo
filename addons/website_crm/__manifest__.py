@@ -37,6 +37,6 @@ This module includes contact phone and mobile numbers validation.""",
             ('remove', 'website_crm/static/src/js/website_crm_editor.*'),
         ]
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

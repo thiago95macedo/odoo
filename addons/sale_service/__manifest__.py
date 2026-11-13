@@ -14,6 +14,6 @@ Additional information is displayed in the name of the SOL when it is used in se
             'sale_service/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

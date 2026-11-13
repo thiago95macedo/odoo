@@ -31,7 +31,7 @@
         ],
     },
     'application': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'other_files': [
         'data/utm_source_data.xml',

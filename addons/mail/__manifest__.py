@@ -354,6 +354,6 @@ For more specific needs, you may also assign custom-defined actions
             'bus/static/tests/mock_*.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

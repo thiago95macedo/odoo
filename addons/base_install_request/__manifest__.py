@@ -16,7 +16,7 @@ Allow internal users requesting a module installation
         'views/ir_module_module_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'post_init_hook': '_auto_install_apps'
 }

@@ -7,6 +7,6 @@
     'description': """Mass mailing sms on sale orders""",
     'depends': ['mass_mailing_sale', 'mass_mailing_sms'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

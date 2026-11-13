@@ -65,6 +65,6 @@ The Dashboard for the Sales Manager will include
     "application": True,
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

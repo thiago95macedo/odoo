@@ -59,7 +59,7 @@ This module adds several features to the Point of Sale that are specific to rest
             'pos_restaurant/static/tests/tours/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',
 }

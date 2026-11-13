@@ -4,6 +4,6 @@
     'category': 'Hidden/Tests',
     'description': """A module to test Odoo code with various linters.""",
     'depends': ['base'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

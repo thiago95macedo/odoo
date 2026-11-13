@@ -29,6 +29,6 @@ This module add completed courses to resume for employees.
             'hr_skills_slides/static/src/fields/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

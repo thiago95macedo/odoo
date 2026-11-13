@@ -19,6 +19,6 @@ from sales order. It adds sales name and sales Reference on production order.
         'security/ir.access.csv',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

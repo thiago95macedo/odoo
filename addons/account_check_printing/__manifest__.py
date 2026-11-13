@@ -19,6 +19,6 @@ The check settings are located in the accounting journals configuration page.
         'security/ir.access.csv',
     ],
     'post_init_hook': 'create_check_sequence_on_bank_journals',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

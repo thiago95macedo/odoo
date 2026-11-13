@@ -25,7 +25,7 @@ Badge received are displayed on the user profile.
             "hr_gamification/static/tests/**/*",
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',
 }

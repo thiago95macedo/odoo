@@ -20,7 +20,7 @@ Publish your customers as business references on your website to attract new pot
         'views/res_partner_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'assets': {
         'website.website_builder_assets': [

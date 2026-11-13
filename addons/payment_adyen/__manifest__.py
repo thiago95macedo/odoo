@@ -19,6 +19,6 @@
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",
     "assets": {"web.assets_frontend": ["payment_adyen/static/src/interactions/payment_form.js"]},
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

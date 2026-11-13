@@ -11,6 +11,6 @@
         'security/ir.access.csv',
     ],
     'depends': ['base_setup'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

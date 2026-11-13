@@ -21,6 +21,6 @@ up their account to start sending SMS messages.
             'sms_twilio/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

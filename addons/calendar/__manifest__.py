@@ -68,7 +68,7 @@ If you need to manage your meetings, you should install the CRM module.
             'calendar/static/src/core/common/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'post_init_hook': 'initialize_primary_calendars',
 }

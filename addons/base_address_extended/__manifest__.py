@@ -20,6 +20,6 @@ It is primarily used for EDIs that might need a special city code.
         'security/ir.access.csv',
     ],
     'depends': ['web'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

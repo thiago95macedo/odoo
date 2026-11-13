@@ -23,6 +23,6 @@ and print the report from Print button in header area.
         'report/report_account_test_templates.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

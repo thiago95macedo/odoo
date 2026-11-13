@@ -6,6 +6,6 @@
     'category': 'Supply Chain/Manufacturing',
     'depends': ['project_mrp_account', 'mrp_landed_costs'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

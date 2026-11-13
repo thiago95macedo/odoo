@@ -15,6 +15,6 @@ It will install some main apps and will try to execute the most important action
             'test_main_flows/static/tests/tours/*.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

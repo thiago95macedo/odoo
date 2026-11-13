@@ -18,6 +18,6 @@ Please refer to Sale Matrix or Purchase Matrix for the use of this module.
             "product_matrix/static/src/xml/**/*",
         ]
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

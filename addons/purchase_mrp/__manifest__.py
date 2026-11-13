@@ -23,6 +23,6 @@ from purchase order.
     ],
     'depends': ['mrp', 'purchase_stock'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -105,6 +105,6 @@ sent mails with personal token for the invitation of the survey.
             'survey/static/tests/fields/*.test.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

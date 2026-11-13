@@ -72,6 +72,6 @@ Key Features
             '/event/static/src/scss/event_full_page_ticket_report_pdf.scss',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

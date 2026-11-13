@@ -40,6 +40,6 @@ Also implements the removal strategy First Expiry First Out (FEFO) widely used, 
             'product_expiry/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

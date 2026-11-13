@@ -32,6 +32,6 @@ Using this application you can manage Sales Teams with CRM and/or Sales
             'sales_team/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

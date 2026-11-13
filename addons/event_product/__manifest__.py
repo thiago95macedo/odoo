@@ -13,6 +13,6 @@
     ],
     'auto_install': True,
     'assets': {},
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

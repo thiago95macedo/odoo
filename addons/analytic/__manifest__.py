@@ -41,6 +41,6 @@ that have no counterpart in the general financial accounts.
             'analytic/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

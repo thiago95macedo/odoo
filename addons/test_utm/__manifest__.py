@@ -14,6 +14,6 @@ tests independently to functional aspects of other models. """,
     'data': [
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

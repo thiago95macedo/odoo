@@ -17,6 +17,6 @@
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",
     "assets": {"web.assets_frontend": ["payment_xendit/static/src/**/*"]},
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

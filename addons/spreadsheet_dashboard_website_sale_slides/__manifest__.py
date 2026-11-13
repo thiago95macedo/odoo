@@ -9,6 +9,6 @@
         "data/dashboards.xml",
     ],
     'auto_install': ['website_sale_slides'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

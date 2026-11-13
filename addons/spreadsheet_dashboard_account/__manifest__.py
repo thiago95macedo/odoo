@@ -9,7 +9,7 @@
         "data/dashboards.xml",
     ],
     'auto_install': ['spreadsheet_account'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     "assets": {
         "spreadsheet.o_spreadsheet": [

@@ -16,6 +16,6 @@ The wizard to launch the report has several options to help you get the data you
         'views/product_product_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

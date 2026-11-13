@@ -15,6 +15,6 @@ backend. """,
         'website_crm_partner_assign',
         'website_crm_livechat',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

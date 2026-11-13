@@ -6277,8 +6277,8 @@ msgstr "Odoo – Erro de conexão"
 #. odoo-javascript
 #: code:addons/web/static/src/core/install_scoped_app/install_scoped_app.xml:0
 #: code:addons/web/static/src/webclient/settings_form_view/widgets/res_config_edition.xml:0
-msgid "Odoo S.A."
-msgstr "Odoo S.A."
+msgid "WETH Tecnologia"
+msgstr "WETH Tecnologia"
 
 #. module: web
 #. odoo-javascript

@@ -20,6 +20,6 @@ Manage the inventory of your Kit products and display their availability status 
             'website_sale_mrp/static/tests/tours/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

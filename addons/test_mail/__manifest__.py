@@ -27,6 +27,6 @@ tests independently to functional aspects of other models. """,
             'test_mail/static/tests/tours/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

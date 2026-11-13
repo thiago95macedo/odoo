@@ -6,6 +6,6 @@
     'category': 'Hidden/Tests',
     'description': """A module to verify the inheritance using _inherits in non-original modules.""",
     'depends': ['test_base'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

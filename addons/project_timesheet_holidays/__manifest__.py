@@ -23,6 +23,6 @@ on leaves. Project and task can be configured company-wide.
     ],
     'auto_install': True,
     'post_init_hook': 'post_init',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

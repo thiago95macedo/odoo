@@ -27,6 +27,6 @@ Features include:
             'pos_dpopay/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

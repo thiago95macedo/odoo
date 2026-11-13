@@ -12,6 +12,6 @@
         "views/res_config_settings.xml",
         'security/ir.access.csv',
     ],
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

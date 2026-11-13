@@ -17,6 +17,6 @@
     'other_files': [
         'data/test_translated_field/test_tools.convert.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

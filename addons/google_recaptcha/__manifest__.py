@@ -17,6 +17,6 @@ This module implements reCaptchaV3 so that you can prevent bot spam on your publ
             'google_recaptcha/static/src/interactions/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

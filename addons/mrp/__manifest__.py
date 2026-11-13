@@ -68,6 +68,6 @@
             "mrp/static/src/scss/mrp_report_mo.scss",
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -21,7 +21,7 @@ class TestKeysCertificates(TransactionCase):
             x509.NameAttribute(x509.oid.NameOID.COUNTRY_NAME, "BE"),
             x509.NameAttribute(x509.oid.NameOID.STATE_OR_PROVINCE_NAME, "Brabant wallon"),
             x509.NameAttribute(x509.oid.NameOID.LOCALITY_NAME, "Grand Rosière"),
-            x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, "Odoo S.A."),
+            x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, "WETH Tecnologia"),
             x509.NameAttribute(x509.oid.NameOID.COMMON_NAME, "odoo.com"),
         ])
 

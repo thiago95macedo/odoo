@@ -142,7 +142,7 @@ You could use this simplified accounting in case you work with an (external) acc
             'account/static/src/css/report_invoice.css',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'kpi_providers': [
         'models.kpi_provider:get_kpi_summary',

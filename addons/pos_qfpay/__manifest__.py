@@ -3,7 +3,7 @@
     'name': 'POS QFPay',
     'category': 'Sales/Point of Sale',
     'sequence': 6,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'summary': 'Integrate your POS with the QFPay terminal in Hong Kong',
     'data': [
         'views/pos_payment_method_views.xml',

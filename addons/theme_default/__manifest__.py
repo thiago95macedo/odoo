@@ -13,6 +13,6 @@
         'static/description/cover.png',
         'static/description/theme_default_screenshot.jpg',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -10,7 +10,7 @@ This module allows the computation of the 'Vendor Bills', 'Other Costs' and 'Oth
     'category': 'Accounting/Accounting',
     'depends': ['account', 'project'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'data': [
         'views/project_project_views.xml',

@@ -48,6 +48,6 @@ the methods over HTTP, with examples in various programming languages.
         ],
     },
     'bootstrap': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

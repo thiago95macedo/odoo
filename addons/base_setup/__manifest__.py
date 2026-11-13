@@ -21,6 +21,6 @@ Shows you a list of applications features to install from.
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

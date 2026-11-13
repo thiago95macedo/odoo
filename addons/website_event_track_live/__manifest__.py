@@ -25,6 +25,6 @@
             'website_event_track_live/static/src/xml/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

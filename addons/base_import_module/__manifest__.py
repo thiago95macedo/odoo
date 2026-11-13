@@ -24,6 +24,6 @@ for customization purpose.
             'base_import_module/static/tests/**/*.test.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

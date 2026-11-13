@@ -20,6 +20,6 @@
             'barcodes_gs1_nomenclature/static/src/js/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

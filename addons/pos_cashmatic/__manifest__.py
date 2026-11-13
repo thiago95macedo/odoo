@@ -19,6 +19,6 @@
             'pos_cashmatic/static/src/cashmatic_service.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

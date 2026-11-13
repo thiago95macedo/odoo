@@ -8,6 +8,6 @@
     "depends": ["account_payment", "payment_custom"],
     "data": ["data/account_payment_method.xml", "data/ir_cron.xml"],
     "auto_install": True,
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

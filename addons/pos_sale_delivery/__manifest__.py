@@ -6,6 +6,6 @@
     "description": "Link module between Point of Sale and Delivery",
     "depends": ["pos_sale", "stock_delivery"],
     "auto_install": True,
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

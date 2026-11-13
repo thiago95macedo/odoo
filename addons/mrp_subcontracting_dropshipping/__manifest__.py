@@ -14,6 +14,6 @@ This bridge module allows to manage subcontracting with the dropshipping module.
         'views/purchase_order_views.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

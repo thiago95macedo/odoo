@@ -62,6 +62,6 @@ Preferences
     },
     'pre_init_hook': '_split_partial_sale_order_lines',
     'post_init_hook': '_create_pickings_for_open_sale_orders',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

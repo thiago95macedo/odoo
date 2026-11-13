@@ -20,6 +20,6 @@ This module allows you to easily add extra costs on pickings and decide the spli
         'views/res_config_settings_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

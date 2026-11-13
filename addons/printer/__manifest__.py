@@ -3,7 +3,7 @@
     "summary": "Base module to manage external printers (e.g. ePOS, ZPL)",
     "version": "0.1",
     "depends": ["base"],
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
     "data": [
         "views/ir_actions_report.xml",

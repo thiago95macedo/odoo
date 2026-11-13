@@ -30,6 +30,6 @@ Enable management of UTM trackers: campaign, medium, source.
             'utm/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -19,6 +19,6 @@ This is the base module for managing Units of measure.
             'uom/static/src/components/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -44,6 +44,6 @@ this event.
             'event_sale/static/tests/tours/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

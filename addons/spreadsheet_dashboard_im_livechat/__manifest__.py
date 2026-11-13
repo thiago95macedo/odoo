@@ -10,6 +10,6 @@
         "data/dashboards.xml",
     ],
     'auto_install': ['im_livechat'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

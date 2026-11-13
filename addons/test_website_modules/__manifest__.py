@@ -21,6 +21,6 @@ installed.""",
             'test_website_modules/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

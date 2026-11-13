@@ -110,6 +110,6 @@ This module contains all the common features of Sales Management and eCommerce.
         "web.report_assets_common": ["sale/static/src/scss/sale_report.scss"],
     },
     "post_init_hook": "_post_init_hook",
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

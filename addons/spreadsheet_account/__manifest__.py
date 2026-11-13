@@ -6,7 +6,7 @@
     'description': 'Spreadsheet Accounting formulas',
     'depends': ['spreadsheet', 'account'],
     'auto_install': ['account'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'assets': {
         'spreadsheet.o_spreadsheet_core': [

@@ -48,6 +48,6 @@ models which only purpose is to run tests.""",
             'test_website/static/tests/builder/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

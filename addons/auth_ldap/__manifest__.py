@@ -16,6 +16,6 @@
             'python-ldap': 'python3-ldap',
         },
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

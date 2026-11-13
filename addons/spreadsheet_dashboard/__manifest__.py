@@ -5,7 +5,7 @@
     "summary": "Spreadsheet",
     "description": "Spreadsheet",
     "depends": ["spreadsheet"],
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
     "data": [
         "security/security.xml",

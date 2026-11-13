@@ -24,6 +24,6 @@
             'pos_adyen/static/tests/unit/data/**/*'
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -15,6 +15,6 @@
         'wizard/account_update_tax_tags_wizard.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

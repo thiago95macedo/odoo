@@ -30,6 +30,6 @@ by sending an email to the target user. This email redirects them to:
             'auth_totp_mail/static/src/services/check_identity/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

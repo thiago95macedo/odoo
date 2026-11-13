@@ -194,6 +194,6 @@
         ],
     },
     'post_init_hook': '_update_demo_data',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

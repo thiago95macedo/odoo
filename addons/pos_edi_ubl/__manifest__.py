@@ -1,6 +1,6 @@
 {
     'name': 'Point of Sale UBL',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'category': 'Sales/Point of Sale',
     'sequence': 6,
     'summary': 'UBL in the Point of Sale ',

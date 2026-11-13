@@ -152,6 +152,6 @@
             'pos_self_order/static/tests/pos/**/*',
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

@@ -31,7 +31,7 @@ respectively. UBL Bis 3 is only available for companies which country is present
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',
 }

@@ -15,5 +15,5 @@
         ],
     },
     'license': 'LGPL-3',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
 }

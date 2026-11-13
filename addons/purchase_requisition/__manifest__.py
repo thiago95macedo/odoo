@@ -22,6 +22,6 @@ are agreements you have with vendors to benefit from a predetermined pricing.
         'report/report_purchaserequisition.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -15,6 +15,6 @@ This is a base module. It holds website-related stuff for Contact model (res.par
         'data/website_partner_data.xml',
     ],
     'demo': ['data/website_partner_demo.xml'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

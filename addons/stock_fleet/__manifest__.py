@@ -18,7 +18,7 @@
         'report/stock_fleet_reports.xml',
         'views/stock_location.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'post_init_hook': '_enable_dispatch_management',
     'assets': {

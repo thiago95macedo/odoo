@@ -7,6 +7,6 @@
     'description': "Manage datas of carriers with kit products",
     'depends': ['mrp', 'stock_delivery'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

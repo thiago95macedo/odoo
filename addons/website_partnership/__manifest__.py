@@ -28,6 +28,6 @@ To publish a member, set a *Level* in their contact form and click the *Publish*
             'website_partnership/static/tests/tours/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

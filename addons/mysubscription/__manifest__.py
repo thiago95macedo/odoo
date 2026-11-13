@@ -3,7 +3,7 @@
     'summary': 'Backend Subscription App',
     'category': 'Sales',
     'license': 'LGPL-3',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'depends': ['base', 'web'],
     'auto_install': True,
     'data': [

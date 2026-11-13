@@ -15,6 +15,6 @@ base modules simple.
     ],
     'post_init_hook': '_post_init_hook',
     'depends': ['web'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

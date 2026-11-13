@@ -102,6 +102,6 @@
             'crm/static/tests/crm_mock_server.js'
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

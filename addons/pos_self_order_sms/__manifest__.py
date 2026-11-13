@@ -14,7 +14,7 @@
             'pos_self_order_sms/static/src/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'auto_install': True,
 }

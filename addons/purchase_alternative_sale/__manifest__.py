@@ -7,6 +7,6 @@
     'sequence': 70,
     'depends': ['purchase_alternative', 'sale_purchase'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

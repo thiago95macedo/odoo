@@ -30,6 +30,6 @@ Do not use it on production databases
     },
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

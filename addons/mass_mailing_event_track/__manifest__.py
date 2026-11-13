@@ -15,6 +15,6 @@ Bridge module adding UX requirements to ease mass mailing of event track speaker
         'views/event_views.xml'
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

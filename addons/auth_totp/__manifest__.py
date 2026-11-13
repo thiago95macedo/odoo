@@ -36,6 +36,6 @@ can setup API keys to replace their main password.
             'auth_totp/static/src/services/check_identity/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -30,6 +30,6 @@ Auto-complete partner companies' data
             'partner_autocomplete/static/tests/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

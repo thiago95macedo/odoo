@@ -32,6 +32,6 @@
             'website_sale_slides/static/src/website_builder/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

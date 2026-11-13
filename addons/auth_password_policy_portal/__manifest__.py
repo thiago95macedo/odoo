@@ -4,6 +4,6 @@
     'category': 'Tools',
     'auto_install': True,
     'data': ['views/templates.xml'],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

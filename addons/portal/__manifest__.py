@@ -132,6 +132,6 @@ a dependency towards website editing and customization capabilities.""",
             "portal/static/src/chatter/portal/scss/portal_chatter.scss",
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

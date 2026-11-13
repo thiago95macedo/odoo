@@ -4,7 +4,7 @@
     'name': 'Purchase Repair',
     'summary': 'Keep track of linked purchase and repair orders',
     'category': 'Supply Chain/Purchase',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'depends': ['repair', 'purchase_stock'],
     'data': [

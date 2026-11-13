@@ -31,6 +31,6 @@ This module Auto complete the address data.
             'google_address_autocomplete/static/tests/**/*.test.js',
         ]
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

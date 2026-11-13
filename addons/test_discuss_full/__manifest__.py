@@ -33,6 +33,6 @@
             "test_discuss_full/static/tests/embed/**/*",
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

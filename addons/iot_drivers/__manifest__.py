@@ -22,6 +22,6 @@ are found in other modules that must be installed separately.
         ],
     },
     'installable': False,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

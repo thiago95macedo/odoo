@@ -13,6 +13,6 @@ Add relation information between Sale Orders and Purchase Orders if Make to Orde
         'views/stock_picking_views.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

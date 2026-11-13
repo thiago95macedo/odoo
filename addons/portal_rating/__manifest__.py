@@ -48,6 +48,6 @@ inclusion of rating directly within the customer portal discuss widget.
             'portal_rating/static/src/scss/portal_rating.scss',
         ]
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

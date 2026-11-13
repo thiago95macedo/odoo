@@ -26,6 +26,6 @@ Sell your event booths and track payments on sale orders.
             'event_booth_sale/static/src/**/*',
         ]
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -16,6 +16,6 @@
             "pos_safaricom/static/tests/unit/**/*",
         ],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     'license': 'LGPL-3',
 }

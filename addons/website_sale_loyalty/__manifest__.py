@@ -29,6 +29,6 @@ Coupon & promotion programs can be edited in the Catalog menu of the Website app
         ],
         "web.assets_tests": ["website_sale_loyalty/static/tests/**/*"],
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

@@ -29,6 +29,6 @@ one vendor and others from another vendor.
             'purchase_alternative/static/src/*/**.xml',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

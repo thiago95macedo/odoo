@@ -6,7 +6,7 @@
     used by the website builder and mass mailing editor.
     """,
 
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
 
     'depends': ['html_editor'],
 

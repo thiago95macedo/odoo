@@ -17,6 +17,6 @@
             'mail_bot/static/src/scss/odoobot_style.scss',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

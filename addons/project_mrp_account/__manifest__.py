@@ -13,6 +13,6 @@
         'data/project_mrp_account_demo.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

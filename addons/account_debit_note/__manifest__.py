@@ -18,6 +18,6 @@ The wizard used is similar as the one for the credit note.
         'views/report_invoice.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

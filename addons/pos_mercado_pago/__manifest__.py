@@ -12,6 +12,6 @@
             'pos_mercado_pago/static/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

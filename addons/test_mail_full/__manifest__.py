@@ -37,6 +37,6 @@ real applications. """,
             'test_mail_full/static/tests/tours/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

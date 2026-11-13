@@ -16,6 +16,6 @@ by choosing product variants quantity through a Grid Entry.
     ],
     "demo": ["data/product_matrix_demo.xml"],
     "assets": {"web.assets_backend": ["sale_product_matrix/static/src/**/*"]},
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

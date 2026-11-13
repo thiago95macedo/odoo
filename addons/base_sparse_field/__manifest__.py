@@ -13,6 +13,6 @@ fields are stored in a "serialized" field in the form of a JSON mapping.
         'views/views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

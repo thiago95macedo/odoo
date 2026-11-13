@@ -16,6 +16,6 @@
             'test_translation/static/src/xml/js_templates.xml',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

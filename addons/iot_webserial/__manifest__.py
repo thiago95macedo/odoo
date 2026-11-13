@@ -8,7 +8,7 @@ This module provides support for interfacing with serial devices locally via the
 Since the browser is used directly no IoT box is required.
 """,
     "depends": ["web"],
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
     "assets": {
         "web.assets_backend": [

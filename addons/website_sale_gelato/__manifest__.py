@@ -6,6 +6,6 @@
     "depends": ["sale_gelato", "website_sale"],
     "data": ["data/delivery_carrier_data.xml", "views/address_templates.xml"],
     "auto_install": True,
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

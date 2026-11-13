@@ -3,7 +3,7 @@
     'version': '0.1',
     'summary': "Test module for Odoo's Populate",
     'description': 'Standalone testing module for Odoo Populate module.',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'category': 'Hidden/Tests',
     'depends': ['populate'],

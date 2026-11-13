@@ -20,6 +20,6 @@ Allow users to login through OAuth2 Provider.
             'auth_oauth/static/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

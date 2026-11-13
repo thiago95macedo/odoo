@@ -27,6 +27,6 @@ This module add completed course events to resume for employees.
             ('remove', 'hr_skills_event/static/tests/tours/**/*'),
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

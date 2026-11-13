@@ -8,6 +8,6 @@
         'views/res_currency_views.xml',
     ],
     'installable': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

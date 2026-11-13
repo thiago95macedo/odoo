@@ -21,6 +21,6 @@ by choosing product variants quantity through a Grid Entry.
             'purchase_product_matrix/static/tests/tours/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

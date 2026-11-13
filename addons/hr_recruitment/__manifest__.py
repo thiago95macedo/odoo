@@ -70,6 +70,6 @@
             "hr_recruitment/static/src/core/common/**/*",
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

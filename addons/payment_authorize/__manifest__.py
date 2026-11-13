@@ -23,6 +23,6 @@
             "payment_authorize/static/src/scss/payment_authorize.scss",
         ]
     },
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

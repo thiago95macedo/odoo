@@ -13,6 +13,6 @@
         'wizard/project_template_create_wizard.xml',
     ],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

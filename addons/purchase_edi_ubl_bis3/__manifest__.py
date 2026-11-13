@@ -8,6 +8,6 @@ receiver to retrieve the PDF with only the xml file.
     """,
     'depends': ['purchase', 'account_edi_ubl_cii'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

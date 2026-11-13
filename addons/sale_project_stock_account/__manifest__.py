@@ -6,6 +6,6 @@
     'category': 'Hidden',
     'depends': ['sale_project', 'project_stock_account'],
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

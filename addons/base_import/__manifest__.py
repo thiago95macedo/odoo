@@ -38,6 +38,6 @@ Re-implement Odoo's file import system:
             'base_import/static/tests/**/*.test.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

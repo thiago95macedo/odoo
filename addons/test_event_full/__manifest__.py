@@ -36,6 +36,6 @@ automatic lead generation, full Online support, ...
             'test_event_full/static/src/js/tests/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

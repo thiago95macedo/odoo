@@ -10,6 +10,6 @@ Show your company address/partner address on Google Maps. Configure an API key i
     'data': [
         'views/google_map_templates.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

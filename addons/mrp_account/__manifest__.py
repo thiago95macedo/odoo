@@ -38,6 +38,6 @@ If the automated inventory valuation is active, the necessary accounting entries
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -9,6 +9,6 @@
     'data': [
         'views/res_users_views.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

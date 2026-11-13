@@ -1,7 +1,7 @@
 # Please note that this Dockerfile is used for testing nightly builds and should
 # not be used to deploy Odoo
 FROM ubuntu:resolute
-LABEL maintainer="Odoo S.A. <info@odoo.com>"
+LABEL maintainer="WETH Tecnologia <info@odoo.com>"
 
 RUN userdel -r ubuntu
 

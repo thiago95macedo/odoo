@@ -47,6 +47,6 @@ The automatic assignment is figured from the weight of partner levels and the ge
             'website_crm_partner_assign/static/src/scss/crm_partner_assign.scss',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

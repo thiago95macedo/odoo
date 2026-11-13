@@ -32,6 +32,6 @@ Allow users to sign up and reset their password
             'auth_signup/static/src/interactions/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

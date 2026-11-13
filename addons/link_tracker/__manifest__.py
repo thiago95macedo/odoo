@@ -13,6 +13,6 @@ Shorten URLs and use them to track clicks and UTMs
         'views/utm_campaign_views.xml',
         'security/ir.access.csv',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

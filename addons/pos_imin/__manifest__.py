@@ -23,6 +23,6 @@ Use iMin ePOS Printers without the IoT Box in the Point of Sale
             'pos_imin/static/src/backend/test_imin/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

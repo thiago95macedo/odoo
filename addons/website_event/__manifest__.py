@@ -78,6 +78,6 @@
             'website_event/static/src/website_builder/**/*',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

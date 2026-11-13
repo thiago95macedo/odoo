@@ -44,6 +44,6 @@ The system is able to add and compute the shipping line.
     },
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",
-    "author": "Odoo S.A.",
+    "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

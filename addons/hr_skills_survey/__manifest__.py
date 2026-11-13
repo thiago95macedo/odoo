@@ -21,6 +21,6 @@ This module adds certification to resume for employees.
     'demo': [
         'data/hr_resume_demo.xml',
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

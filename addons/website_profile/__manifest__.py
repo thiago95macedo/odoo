@@ -33,6 +33,6 @@
             'website_profile/static/tests/tours/tour_website_profile_description.js',
         ],
     },
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

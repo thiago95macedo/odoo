@@ -45,63 +45,65 @@ registerWebsitePreviewTour(
 
 registry.category("web_tour.tours").add('website_crm_tour', {
     steps: () => [{
-    content: "Complete name",
-    trigger: "input[name=contact_name]",
-    run: "edit John Smith",
-}, {
-    content: "Complete phone number",
-    trigger: "input[name=phone]",
-    run: "edit +32 485 118.218",
-}, {
-    content: "Complete Email",
-    trigger: "input[name=email_from]",
-    run: "edit john@smith.com",
-}, {
-    content: "Complete Company",
-    trigger: "input[name=partner_name]",
-    run: "edit Odoo S.A.",
-}, {
-    content: "Complete Subject",
-    trigger: "input[name=name]",
-    run: "edit Useless message",
-}, {
-    content: "Complete Subject",
-    trigger: "textarea[name=description]",
-    run: "edit ### TOUR DATA ###",
-}, {
-    content: "Send the form",
-    trigger: ".s_website_form_send",
-    run: "click",
-    expectUnloadPage: true,
-}, {
-    content: "Check we were redirected to the success page",
-    trigger: "#wrap:has(h1:contains('Thank You!'))",
-}]});
+        content: "Complete name",
+        trigger: "input[name=contact_name]",
+        run: "edit John Smith",
+    }, {
+        content: "Complete phone number",
+        trigger: "input[name=phone]",
+        run: "edit +32 485 118.218",
+    }, {
+        content: "Complete Email",
+        trigger: "input[name=email_from]",
+        run: "edit john@smith.com",
+    }, {
+        content: "Complete Company",
+        trigger: "input[name=partner_name]",
+        run: "edit WETH Tecnologia",
+    }, {
+        content: "Complete Subject",
+        trigger: "input[name=name]",
+        run: "edit Useless message",
+    }, {
+        content: "Complete Subject",
+        trigger: "textarea[name=description]",
+        run: "edit ### TOUR DATA ###",
+    }, {
+        content: "Send the form",
+        trigger: ".s_website_form_send",
+        run: "click",
+        expectUnloadPage: true,
+    }, {
+        content: "Check we were redirected to the success page",
+        trigger: "#wrap:has(h1:contains('Thank You!'))",
+    }]
+});
 
 registry.category("web_tour.tours").add('website_crm_catch_logged_partner_info_tour', {
     steps: () => [
-{
-    content: "Fill Company Name",
-    trigger: "form#contactus_form input[name=partner_name]",
-    run: "edit Useless Company"
-},
-{
-    content: "Complete Subject",
-    trigger: "input[name=name]",
-    run: "edit Useless subject",
-}, {
-    content: "Complete Subject",
-    trigger: "textarea[name=description]",
-    run: "edit ### TOUR DATA PREFILL ###",
-}, {
-    content: "Send the form",
-    trigger: ".s_website_form_send",
-    run: "click",
-    expectUnloadPage: true,
-}, {
-    content: "Check we were redirected to the success page",
-    trigger: "#wrap:has(h1:contains('Thank You!'))",
-}]});
+        {
+            content: "Fill Company Name",
+            trigger: "form#contactus_form input[name=partner_name]",
+            run: "edit Useless Company"
+        },
+        {
+            content: "Complete Subject",
+            trigger: "input[name=name]",
+            run: "edit Useless subject",
+        }, {
+            content: "Complete Subject",
+            trigger: "textarea[name=description]",
+            run: "edit ### TOUR DATA PREFILL ###",
+        }, {
+            content: "Send the form",
+            trigger: ".s_website_form_send",
+            run: "click",
+            expectUnloadPage: true,
+        }, {
+            content: "Check we were redirected to the success page",
+            trigger: "#wrap:has(h1:contains('Thank You!'))",
+        }]
+});
 
 
 registerWebsitePreviewTour(

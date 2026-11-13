@@ -26,6 +26,6 @@ This module allow to reinvoice employee expense, by setting the SO directly on t
         ],
     },
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

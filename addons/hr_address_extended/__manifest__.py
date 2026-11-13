@@ -13,6 +13,6 @@
     'data': [
         'views/hr_employee_views.xml'
     ],
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

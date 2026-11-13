@@ -10,6 +10,6 @@ programmatically access models.
     'depends': ["base"],
     'category': 'Extra Tools',
     'auto_install': True,
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

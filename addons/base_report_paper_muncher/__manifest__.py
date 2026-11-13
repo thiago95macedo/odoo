@@ -14,6 +14,6 @@ https://odoo.github.io/paper-muncher/
         'base_setup',
     ],
     'category': 'Hidden/Tools',
-    'author': 'Odoo S.A.',
+    'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }
