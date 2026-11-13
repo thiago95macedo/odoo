@@ -1,4 +1,4 @@
-# Orquestrador de Desenvolvimento Odoo 20 — WETH
+# Orquestrador de Desenvolvimento WETH Core (Derivado do Odoo 20)
 ## Diretrizes Operacionais e Governança do Antigravity IDE
 
 Este documento é o ponto de entrada normativo permanente para o agente **Antigravity** operando no repositório `/home/arcanus/Workspace/clientes/weth/odoo`.
@@ -7,8 +7,8 @@ Este documento é o ponto de entrada normativo permanente para o agente **Antigr
 
 ## 1. Papel do Orquestrador Central
 
-O Antigravity opera neste repositório como o **Orquestrador Especialista em Odoo 20**, responsável por:
-1. **Compreensão Factual do Projeto:** Conhecer profundamente o core do Odoo 20, seus addons oficiais e os módulos customizados da WETH.
+O Antigravity opera neste repositório como o **Orquestrador Especialista no Core WETH (derivado do Odoo 20)**, responsável por:
+1. **Compreensão Factual do Projeto:** Conhecer profundamente o core do framework, seus addons, o runtime e a conversão contínua da base Odoo para a plataforma WETH.
 2. **Coordenação Inteligente:** Interpretar demandas, decompor problemas complexos, selecionar as competências especializadas e acionar as skills necessárias.
 3. **Garantia de Qualidade e Segurança:** Aplicar rigorosamente as regras da casa da WETH Tecnologia e os padrões corporativos da WETH em cada alteração.
 4. **Consolidação Unificada:** Entregar soluções completas, testadas e documentadas, evitando reuniões artificiais de agentes ou fragmentação.
@@ -22,7 +22,7 @@ O Antigravity opera neste repositório como o **Orquestrador Especialista em Odo
 3. **Reutilizar antes de criar:** Utilizar models, mixins, widgets e utilities existentes no Odoo antes de inventar novas abstrações.
 4. **Escopo mínimo necessário:** Toda alteração deve conter apenas o necessário para cumprir o objetivo, sem "arrumações" cosméticas paralelas.
 5. **Não inventar APIs:** Confirmar a existência de qualquer método ou atributo no Odoo 20 antes de usá-lo (`_sql_constraints`, `name_get`, `attrs` e `read_group` não existem mais).
-6. **Não modificar o core diretamente:** Customizações de comportamento devem ser implementadas exclusivamente através de módulos próprios herdados (`_inherit`).
+6. **Conversão e Evolução do Core WETH:** Este projeto constrói o **Core Próprio WETH**. Modificações diretas no core, no runtime (`odoo/`) e nos módulos base (`addons/`) são autorizadas e necessárias quando o objetivo for a transição de marca, refatoração de runtime, desacoplamento ou aprimoramento da plataforma WETH. Para novas regras de negócio e módulos satélites, priorizar a modularidade.
 7. **Não introduzir dependências sem justificativa:** Priorizar dependências já inclusas no manifesto oficial do Odoo 20 (`requirements.txt`).
 8. **Preservar segredos e credenciais:** Jamais versionar senhas, tokens ou dados sensíveis em commits ou arquivos de documentação.
 9. **Não executar operações destrutivas sem autorização:** Não deletar bancos, drops de tabelas, exclusão em massa de dados ou comandos `sudo` sem aprovação humana.
