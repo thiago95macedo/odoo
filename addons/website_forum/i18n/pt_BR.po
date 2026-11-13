@@ -833,12 +833,6 @@ msgid "<span class=\"text-muted\">There is no activity yet.</span>"
 msgstr "<span class=\"text-muted\">Ainda não há atividade.</span>"
 
 #. module: website_forum
-#: model_terms:web_tour.tour,rainbow_man_message:website_forum.question
-msgid "<span><b>Good job!</b> You went through all steps of this tour.</span>"
-msgstr ""
-"<span><b>Muito bem!</b> Você passou por todas as etapas deste tour.</span>"
-
-#. module: website_forum
 #: model_terms:ir.ui.view,arch_db:website_forum.post_description_full
 msgid "<span>Be the first to answer this question</span>"
 msgstr "<span>Seja o primeiro a responder a esta pergunta</span>"

@@ -14,7 +14,6 @@
         'utm',
         'link_tracker',
         'social_media',
-        'web_tour',
         'digest',
     ],
     'data': [
@@ -29,7 +28,6 @@
         'data/mailing_list_contact.xml',
         'data/mailing_subscription_optout.xml',
         'data/mailing_subscription.xml',
-        'data/mass_mailing_tour.xml',
         'data/portal_entry_data.xml',
         'wizard/mail_compose_message_views.xml',
         'wizard/mailing_contact_import_views.xml',
@@ -172,7 +170,6 @@
             'mass_mailing/static/src/scss/mass_mailing.scss',
             'mass_mailing/static/src/scss/mass_mailing_mobile.scss',
             'mass_mailing/static/src/scss/mass_mailing_mobile_preview.scss',
-            'mass_mailing/static/src/js/tours/**/*',
             # Don't include dark mode files in light mode
             ('remove', 'mass_mailing/static/src/**/*.dark.scss'),
             # Don't include shadowdom specific style
@@ -186,9 +183,6 @@
         ],
         'mass_mailing.assets_mail_themes': [
             'mass_mailing/static/src/scss/themes/**/*',
-        ],
-        'web.assets_frontend': [
-            'mass_mailing/static/src/js/tours/**/*',
         ],
         'web.assets_tests': [
             'mass_mailing/static/tests/tours/**/*',

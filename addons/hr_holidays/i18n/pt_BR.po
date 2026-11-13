@@ -1826,11 +1826,6 @@ msgid "Confirmed and Approved"
 msgstr "Confirmado e aprovado"
 
 #. module: hr_holidays
-#: model_terms:web_tour.tour,rainbow_man_message:hr_holidays.hr_holidays_tour
-msgid "Congrats, we can see that your request has been validated."
-msgstr "Parabéns, podemos ver que sua solicitação foi validada."
-
-#. module: hr_holidays
 #: model:ir.model,name:hr_holidays.model_res_partner
 msgid "Contact"
 msgstr "Contato"

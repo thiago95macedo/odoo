@@ -437,12 +437,6 @@ msgstr ""
 "                <span class=\"text-muted mx-2\">•</span>"
 
 #. module: website_blog
-#: model_terms:web_tour.tour,rainbow_man_message:website_blog.blog
-msgid "<span><b>Good job!</b> You went through all steps of this tour.</span>"
-msgstr ""
-"<span><b>Muito bem!</b> Você passou por todas as etapas deste tour.</span>"
-
-#. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.s_dynamic_snippet_blog_posts_card_preview_data
 #: model_terms:ir.ui.view,arch_db:website_blog.s_dynamic_snippet_blog_posts_horizontal_preview_data
 msgid ""

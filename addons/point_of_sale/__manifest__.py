@@ -23,7 +23,6 @@
         'data/default_barcode_patterns.xml',
         'data/digest_data.xml',
         'data/pos_note_data.xml',
-        'data/point_of_sale_tour.xml',
         'data/mail_template_data.xml',
         'data/ir_config_parameter_data.xml',
         'wizard/pos_details.xml',
@@ -246,9 +245,7 @@
             'point_of_sale/static/src/backend/pos_res_partner_view/*',
             'iot_webserial/static/src/web_serial_*.js',
         ],
-        'point_of_sale.base_tests': [
-            ('include', 'web_tour.assets'),
-        ],
+        'point_of_sale.base_tests': [],
         # Bundle that starts the pos, loaded on /pos/ui
         'point_of_sale.assets_prod': [
             ('include', 'point_of_sale._assets_pos'),

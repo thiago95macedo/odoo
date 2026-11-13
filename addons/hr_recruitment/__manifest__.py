@@ -12,7 +12,6 @@
         'calendar',
         'utm',
         'attachment_indexation',
-        'web_tour',
         'digest',
     ],
     'data': [
@@ -22,7 +21,6 @@
         'data/mail_template_data.xml',
         'data/mail_templates.xml',
         'data/hr_recruitment_data.xml',
-        'data/hr_recruitment_tour.xml',
         'views/hr_recruitment_degree_views.xml',
         'views/hr_recruitment_source_views.xml',
         'views/hr_recruitment_stage_views.xml',
@@ -58,7 +56,6 @@
             'hr_recruitment/static/src/**/*.js',
             'hr_recruitment/static/src/**/*.scss',
             'hr_recruitment/static/src/**/*.xml',
-            'hr_recruitment/static/src/js/tours/hr_recruitment.js',
         ],
         'web.assets_unit_tests': [
             'hr_recruitment/static/tests/**/*',

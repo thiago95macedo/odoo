@@ -13,7 +13,6 @@
         'data/mail_templates.xml',
         'data/website_blog_data.xml',
         'data/blog_snippet_template_data.xml',
-        'data/website_blog_tour.xml',
         'views/website_blog_views.xml',
         'views/website_blog_components.xml',
         'views/website_blog_posts_loop.xml',
@@ -33,9 +32,6 @@
         'data/website_blog_demo.xml'
     ],
     'assets': {
-        'web.assets_backend': [
-            'website_blog/static/src/tours/website_blog.js',
-        ],
         'web.assets_tests': [
             'website_blog/static/tests/tours/**/*',
         ],

@@ -187,10 +187,6 @@ addons/html_editor/static/lib/diff2html/*.js
 web_map/static/src/legacy/**/*
 web_map/static/tests/legacy/**/*
 
-# whitelist web_tour
-!addons/web_tour
-!addons/web_tour/**/*
-
 # whitelist base_setup
 !addons/base_setup
 !addons/base_setup/**/*

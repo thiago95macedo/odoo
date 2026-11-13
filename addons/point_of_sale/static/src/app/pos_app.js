@@ -5,7 +5,6 @@ import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { Component, onMounted, useProps, t, usePlugin } from "@odoo/owl";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { useIdleTimer } from "./utils/use_idle_timer";
-import useTours from "./hooks/use_tours";
 import { init as initDebugFormatters } from "./utils/debug-formatter";
 import { PosRouterPlugin } from "./plugins/pos_router_plugin";
 import { _t } from "@web/core/l10n/translation";
@@ -40,10 +39,6 @@ export class Chrome extends Component {
         const debugMode = usePlugin(DebugModePlugin);
         if (debugMode.isActive()) {
             initDebugFormatters();
-        }
-
-        if (odoo.use_pos_fake_tours) {
-            window.pos_fake_tour = useTours();
         }
 
         if (this.pos.config.iface_big_scrollbars) {

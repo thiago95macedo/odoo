@@ -13,9 +13,3 @@ class TestUiTranslation(odoo.tests.HttpCase):
         constraint = self.env.ref('test_translation.constraint_test_translation_constraint_positive_code')
         message = constraint.with_context(lang='fr_FR').message
         self.assertEqual(message, "Le code doit être une valeur positive !")
-
-        # TODO: make the test work with French translations. As the transaction
-        # is rollbacked at insert and a new cursor is opened, can not test that
-        # the message is translated (_load_module_terms is also) rollbacked.
-        # Test individually the external id and loading of translation.
-        self.start_tour("/odoo/action-test_translation.action_constraint?debug=1", 'sql_constraint', login="admin")

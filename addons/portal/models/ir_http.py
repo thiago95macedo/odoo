@@ -1,7 +1,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, api
-from odoo.http import request
+from odoo import models
 
 
 class IrHttp(models.AbstractModel):
@@ -12,11 +11,3 @@ class IrHttp(models.AbstractModel):
         mods = super()._get_translation_frontend_modules_name()
         return mods + ['portal']
 
-    @api.model
-    def get_frontend_session_info(self):
-        result = super().get_frontend_session_info()
-        if request.session.uid:
-            result["tour_enabled"] = self.env.user.tour_enabled
-            if self.env.user.tour_enabled:
-                result["current_tour"] = self.env["web_tour.tour"].get_current_tour()
-        return result

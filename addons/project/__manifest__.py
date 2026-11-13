@@ -14,7 +14,6 @@
         'portal_rating',
         'resource',
         'web',
-        'web_tour',
         'digest',
     ],
     'data': [
@@ -50,7 +49,6 @@
         'data/mail_message_subtype_data.xml',
         'data/mail_template_data.xml',
         'data/project_data.xml',
-        'data/project_tour.xml',
         'wizard/project_task_type_delete_views.xml',
         'wizard/project_task_share_wizard_views.xml',
         'wizard/project_project_stage_delete_views.xml',
@@ -73,7 +71,6 @@
             'project/static/src/actions/client_actions.js',
             'project/static/src/components/**/*',
             'project/static/src/views/**/*',
-            'project/static/src/js/tours/project.js',
             'project/static/src/scss/project_dashboard.scss',
             'project/static/src/scss/project_form.scss',
             'project/static/src/scss/project_widgets.scss',
@@ -202,10 +199,6 @@
             'web/static/src/views/form/button_box/*.scss',
 
             'bus/static/src/**/*.js',
-
-            # To be able to launch tour js in project sharing
-            ('include', 'web_tour.assets'),
-            'web_tour/static/src/tour_pointer/tour_pointer.scss',
 
             ('include', 'html_editor.assets_editor'),
             'html_editor/static/src/backend/**/*',

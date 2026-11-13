@@ -19,7 +19,6 @@ sent mails with personal token for the invitation of the survey.
         'auth_signup',
         'http_routing',
         'mail',
-        'web_tour',
         'gamification',
         'digest',
     ],
@@ -30,7 +29,6 @@ sent mails with personal token for the invitation of the survey.
         'data/ir_actions_server_data.xml',
         'data/mail_message_subtype_data.xml',
         'data/mail_template_data.xml',
-        'data/survey_tour.xml',
         'security/survey_security.xml',
         'views/digest_views.xml',
         'views/survey_menus.xml',
@@ -95,7 +93,6 @@ sent mails with personal token for the invitation of the survey.
             'survey/static/src/views/**/*.xml',
             'survey/static/src/scss/survey_survey_views.scss',
             'survey/static/src/scss/survey_question_views.scss',
-            'survey/static/src/js/tours/survey_tour.js',
         ],
         "web.assets_web_dark": [
             'survey/static/src/scss/*.dark.scss',
@@ -106,9 +103,6 @@ sent mails with personal token for the invitation of the survey.
         'web.assets_unit_tests': [
             'survey/static/tests/components/*.test.js',
             'survey/static/tests/fields/*.test.js',
-        ],
-        'web.assets_frontend': [
-            'survey/static/src/js/tours/survey_tour.js',
         ],
     },
     'author': 'Odoo S.A.',

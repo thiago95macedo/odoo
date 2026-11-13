@@ -979,12 +979,6 @@ msgid "<span placeholder=\"All products\">All products</span>"
 msgstr "<span placeholder=\"All products\">Todos os produtos</span>"
 
 #. module: website_sale
-#: model_terms:web_tour.tour,rainbow_man_message:website_sale.test_01_admin_shop_tour
-msgid "<span><b>Good job!</b> You went through all steps of this tour.</span>"
-msgstr ""
-"<span><b>Muito bem!</b> Você passou por todas as etapas deste tour.</span>"
-
-#. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.documents
 msgid "<span>Documents</span>"
 msgstr "<span>Documentos</span>"

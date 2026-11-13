@@ -2416,11 +2416,6 @@ msgstr ""
 "isso que você deseja fazer."
 
 #. module: hr_expense
-#: model_terms:web_tour.tour,rainbow_man_message:hr_expense.hr_expense_tour
-msgid "There you go - expense management in a nutshell!"
-msgstr "Aqui vamos nós – gerenciamento de despesas em poucas palavras!"
-
-#. module: hr_expense
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_form
 msgid "This expense exceeds the limit of"
 msgstr "Essa despesa excede o limite de"

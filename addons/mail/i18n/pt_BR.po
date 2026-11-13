@@ -1152,12 +1152,6 @@ msgstr ""
 "                    Plataforma:</span>"
 
 #. module: mail
-#: model_terms:web_tour.tour,rainbow_man_message:mail.discuss_channel_tour
-msgid "<span><b>Good job!</b> You went through all steps of this tour.</span>"
-msgstr ""
-"<span><b>Muito bem!</b> Você passou por todas as etapas deste tour.</span>"
-
-#. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.mail_alias_view_form
 msgid "<span>@</span>"
 msgstr "<span>@</span>"

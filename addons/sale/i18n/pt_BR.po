@@ -893,17 +893,6 @@ msgstr ""
 "class=\"oe_inline\">% </span>"
 
 #. module: sale
-#: model_terms:web_tour.tour,rainbow_man_message:sale.sale_tour
-msgid ""
-"<span><b>Congratulations</b>, your first quotation is sent!<br>Check your "
-"email to validate the quote.\n"
-"        </span>"
-msgstr ""
-"<span><b>Parabéns</b>, a sua primeira cotação foi enviada!<br>Verifique o "
-"seu e-mail para validar a cotação.\n"
-"        </span>"
-
-#. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "<span>Amount</span>"

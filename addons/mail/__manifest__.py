@@ -59,7 +59,7 @@ For more specific needs, you may also assign custom-defined actions
 (technically: Server Actions) to be triggered for each incoming mail.
     """,
     'website': 'https://www.odoo.com/app/discuss',
-    'depends': ['base', 'base_setup', 'bus', 'web_tour', 'html_editor'],
+    'depends': ['base', 'base_setup', 'bus', 'html_editor'],
     'data': [
         'data/mail_groups.xml',
         'wizard/mail_activity_schedule_views.xml',
@@ -125,7 +125,6 @@ For more specific needs, you may also assign custom-defined actions
         "views/mail_scheduled_message_views.xml",
         "data/mail_canned_response_data.xml",
         'data/mail_templates_invite.xml',
-        'data/web_tour_tour.xml',
         'security/ir.access.csv',
     ],
     'demo': [
@@ -230,7 +229,6 @@ For more specific needs, you may also assign custom-defined actions
             "mail/static/src/scss/discuss_print.scss",
         ],
         'mail.assets_discuss_public_test_tours': [
-            ('include', 'web_tour.assets'),
             'mail/static/tests/tours/discuss_channel_public_tour.js',
             'mail/static/tests/tours/discuss_channel_as_guest_tour.js',
             'mail/static/tests/tours/discuss_channel_call_action.js',

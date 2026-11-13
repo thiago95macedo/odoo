@@ -1741,11 +1741,6 @@ msgid "Good"
 msgstr "Bom"
 
 #. module: hr_recruitment
-#: model_terms:web_tour.tour,rainbow_man_message:hr_recruitment.hr_recruitment_tour
-msgid "Great job! You hired a new colleague!"
-msgstr "Ótimo trabalho! Você contratou um novo colega!"
-
-#. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_recruitment_source__has_domain
 msgid "Has Domain"
 msgstr "Tem domínio"
@@ -3750,13 +3745,6 @@ msgstr "Tente adicionar alguns ao banco"
 #: model_terms:digest.tip,tip_description:hr_recruitment.digest_tip_hr_recruitment_0
 msgid "Try sending an email"
 msgstr "Tente enviar um e-mail"
-
-#. module: hr_recruitment
-#: model_terms:web_tour.tour,rainbow_man_message:hr_recruitment.hr_recruitment_tour
-msgid "Try the Website app to publish job opportunities online."
-msgstr ""
-"Experimente o aplicativo Website para publicar oportunidades de emprego "
-"online."
 
 #. module: hr_recruitment
 #: model_terms:ir.actions.act_window,help:hr_recruitment.mail_activity_type_action_config_hr_applicant

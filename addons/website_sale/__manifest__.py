@@ -30,7 +30,6 @@
         "data/ir_cron_data.xml",
         "data/product_attribute_data.xml",
         "data/product_ribbon_data.xml",
-        "data/tour.xml",
         "data/website_checkout_step_data.xml",
         "data/website_snippet_filter_data.xml",
         # Reports
@@ -157,7 +156,6 @@
             "website_sale/static/src/js/tours/tour_utils.js",
             "website_sale/static/src/js/website_sale_video_field_preview.js",
             "website_sale/static/src/scss/website_sale_backend.scss",
-            "website_sale/static/src/js/tours/website_sale_shop.js",
             "website_sale/static/src/js/product_image/**/*",
             "website_sale/static/src/xml/website_sale.xml",
             "website_sale/static/src/scss/kanban_record.scss",

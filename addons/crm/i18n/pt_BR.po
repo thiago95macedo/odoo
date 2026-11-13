@@ -975,11 +975,6 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: crm
-#: model_terms:web_tour.tour,rainbow_man_message:crm.crm_tour
-msgid "Congrats, best of luck catching such big fish! :)"
-msgstr "Parabéns, boa sorte na captura de peixes grandes! :)"
-
-#. module: crm
 #. odoo-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Connect to Gmail or Outlook accounts."

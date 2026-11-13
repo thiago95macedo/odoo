@@ -2073,11 +2073,6 @@ msgid "Configure your social media links."
 msgstr "Configure seus links de rede social."
 
 #. module: mass_mailing
-#: model_terms:web_tour.tour,rainbow_man_message:mass_mailing.mass_mailing_tour
-msgid "Congratulations, I love your first mailing. :)"
-msgstr "Parabéns, amamos o seu primeiro envio :)"
-
-#. module: mass_mailing
 #: model:ir.model.fields.selection,name:mass_mailing.selection__mailing_trace__failure_type__mail_smtp
 msgid "Connection failed (outgoing mail server problem)"
 msgstr "Falha na conexão (problema no servidor de envio de e-mail)"

@@ -3221,11 +3221,6 @@ msgid "Great Reno Ballon Race"
 msgstr "Grande Corrida de Balões de Reno"
 
 #. module: event
-#: model_terms:web_tour.tour,rainbow_man_message:event.event_tour
-msgid "Great! Now all you have to do is wait for your attendees to show up!"
-msgstr "Ótimo! Agora tudo que você precisa fazer é esperar os participantes."
-
-#. module: event
 #. odoo-javascript
 #: code:addons/event/static/src/client_action/event_registration_summary_dialog.xml:0
 msgid "Guest #"

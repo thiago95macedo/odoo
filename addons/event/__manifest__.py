@@ -36,7 +36,6 @@ Key Features
         'data/mail_template_data.xml',
         'data/portal_entry_data.xml',
         'data/event_data.xml',
-        'data/event_tour.xml',
         'views/res_config_settings_views.xml',
         'views/event_templates.xml',
         'views/res_partner_views.xml',
@@ -62,11 +61,7 @@ Key Features
             'event/static/src/icon_selection_field/icon_selection_field.js',
             'event/static/src/icon_selection_field/icon_selection_field.xml',
             'event/static/src/template_reference_field/*',
-            'event/static/src/js/tours/**/*',
             'event/static/src/views/**/*',
-        ],
-        'web.assets_frontend': [
-            'event/static/src/js/tours/**/*',
         ],
         'web.report_assets_common': [
             '/event/static/src/scss/event_badge_report.scss',

@@ -3000,11 +3000,14 @@ class HttpCase(TransactionCase):
 
         def _post_model_setup__(model):
             super(Users, model)._post_model_setup__()
-            Users.tour_enabled = False
+            if hasattr(Users, 'tour_enabled'):
+                Users.tour_enabled = False
 
-        with patch.object(Users, 'tour_enabled', False),\
-                patch.object(Users, '_post_model_setup__', _post_model_setup__),\
-                patch.object(Users, '_compute_tour_enabled', lambda _: None):
+        with ExitStack() as stack:
+            if hasattr(Users, 'tour_enabled'):
+                stack.enter_context(patch.object(Users, 'tour_enabled', False))
+                stack.enter_context(patch.object(Users, '_post_model_setup__', _post_model_setup__))
+                stack.enter_context(patch.object(Users, '_compute_tour_enabled', lambda _: None))
             self.browser_js(url_path=url_path, code=code, ready=ready, timeout=timeout, success_signal="tour succeeded", **kwargs)
 
     def profile(self, **kwargs):

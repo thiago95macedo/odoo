@@ -1365,12 +1365,6 @@ msgid "Conference chair"
 msgstr "Cadeira de reuniões"
 
 #. module: survey
-#: model_terms:web_tour.tour,rainbow_man_message:survey.survey_tour
-msgid "Congratulations! You are now ready to collect feedback like a pro :-)"
-msgstr ""
-"Parabéns! Agora, você está pronto para reunir feedbacks como um expert :-)"
-
-#. module: survey
 #: model_terms:gamification.badge,description:survey.vendor_certification_badge
 msgid "Congratulations, you are now official vendor of MyCompany"
 msgstr "Parabéns! Agora você é um colaborador oficial da MyCompany"

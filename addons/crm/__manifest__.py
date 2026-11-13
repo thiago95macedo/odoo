@@ -16,7 +16,6 @@
         'calendar',
         'resource',
         'utm',
-        'web_tour',
         'contacts',
         'digest',
         'phone_validation',
@@ -34,7 +33,6 @@
         'data/mail_message_subtype_data.xml',
         'data/crm_recurring_plan_data.xml',
         'data/mail_templates.xml',
-        'data/crm_tour.xml',
 
         'wizard/crm_lead_lost_views.xml',
         'wizard/crm_lead_to_opportunity_mass_views.xml',

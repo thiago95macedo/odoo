@@ -2913,11 +2913,6 @@
                 "new_base": "addons/web_hierarchy/i18n/web_hierarchy.pot"
             },
             {
-                "name": "web_tour",
-                "filemask": "addons/web_tour/i18n/*.po",
-                "new_base": "addons/web_tour/i18n/web_tour.pot"
-            },
-            {
                 "name": "web_unsplash",
                 "filemask": "addons/web_unsplash/i18n/*.po",
                 "new_base": "addons/web_unsplash/i18n/web_unsplash.pot"
