@@ -1,9 +1,9 @@
 # Odoo
 
 [![Build Status](https://runbot.weth.com.br/runbot/badge/flat/1/master.svg)](https://runbot.weth.com.br/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.weth.com.br/documentation/master)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.weth.com.br/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.weth.com.br/)
+[![Tech Doc](https://img.shields.io/badge/master-docs-05285B.svg?style=flat&colorA=8F8F8F)](https://www.weth.com.br/documentation/master)
+[![Help](https://img.shields.io/badge/master-help-05285B.svg?style=flat&colorA=8F8F8F)](https://www.weth.com.br/forum/help-1)
+[![Nightly Builds](https://img.shields.io/badge/master-nightly-05285B.svg?style=flat&colorA=8F8F8F)](https://nightly.weth.com.br/)
 
 Odoo is a suite of web based open source business apps.
 

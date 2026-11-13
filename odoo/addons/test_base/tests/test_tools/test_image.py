@@ -18,7 +18,7 @@ class TestImage(TransactionCase):
     """Tests for the different image tools helpers."""
     def setUp(self):
         super().setUp()
-        self.bg_color = (135, 90, 123)
+        self.bg_color = (5, 40, 91)
         self.fill_color = (0, 160, 157)
 
         self.img_1x1_png = PNG_RAW

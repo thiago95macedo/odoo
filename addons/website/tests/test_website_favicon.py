@@ -27,7 +27,7 @@ class TestWebsiteIcons(TransactionCase):
         self.assertEqual(image.format, 'ICO')
 
         # Test setting a JPEG file that is too big, done through write
-        bg_color = (135, 90, 123)
+        bg_color = (5, 40, 91)
         image = Image.new('RGB', (1920, 1080), color=bg_color)
         website.favicon = BinaryBytes(image_apply_opt(image, 'JPEG'))
         image = binary_to_image(website.favicon)
