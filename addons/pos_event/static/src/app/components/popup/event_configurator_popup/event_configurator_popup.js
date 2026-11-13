@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of WETH. See LICENSE file for full copyright and licensing details.
 import { Dialog } from "@web/core/dialog/dialog";
 import { Component, proxy, useProps, t } from "@odoo/owl";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 """
 ================
 IrQweb / ir.qweb
@@ -12,7 +12,7 @@ Technical documentation of the python operation of the rendering QWeb engine.
 Templating
 ==========
 
-QWeb is the primary templating engine used by Odoo. It is an XML templating
+QWeb is the primary templating engine used by WETH. It is an XML templating
 engine and used mostly to generate XML, HTML fragments and pages.
 
 Template directives are specified as XML attributes prefixed with ``t-``,

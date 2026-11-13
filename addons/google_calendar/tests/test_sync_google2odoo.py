@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date, timedelta, UTC
 from unittest.mock import patch
@@ -2450,7 +2450,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         default_privacy_event = {'id': 200, 'privacy': 'default', **sample_event_values}
         self.env['calendar.event']._sync_google2odoo(GoogleEvent([undefined_privacy_event, default_privacy_event]), self.env.user.primary_calendar_id)
 
-        # Ensure that synced events have the correct privacy field in Odoo.
+        # Ensure that synced events have the correct privacy field in WETH.
         undefined_privacy_odoo_event = self.env['calendar.event'].search([('google_id', '=', 1)])
         default_privacy_odoo_event = self.env['calendar.event'].search([('google_id', '=', 2)])
         self.assertFalse(undefined_privacy_odoo_event.privacy, "Event with undefined privacy must have False value in privacy field.")
@@ -2461,7 +2461,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_this_event_option_synced_by_attendee(self, mock_get_events):
         """
         Test accepting a recurring event with the option "This event" on Google Calendar and syncing the attendee's calendar.
-        Ensure that event is accepeted by attendee in Odoo.
+        Ensure that event is accepeted by attendee in WETH.
         """
         recurrence_id = "abcd1"
         recurrence = self.generate_recurring_event(
@@ -2490,7 +2490,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_this_event_option_synced_by_organizer(self, mock_get_events):
         """
         Test accepting a recurring event with the option "This event" on Google Calendar and syncing the organizer's calendar.
-        Ensure that event is accepeted by attendee in Odoo.
+        Ensure that event is accepeted by attendee in WETH.
         """
         recurrence_id = "abcd2"
         recurrence = self.generate_recurring_event(
@@ -2519,7 +2519,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_all_events_option_synced_by_attendee(self, mock_get_events):
         """
         Test accepting a recurring event with the option "All events" on Google Calendar and syncing the attendee's calendar.
-        Ensure that all events are accepeted by attendee in Odoo.
+        Ensure that all events are accepeted by attendee in WETH.
         """
         recurrence_id = "abcd3"
         recurrence = self.generate_recurring_event(
@@ -2548,7 +2548,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_all_events_option_synced_by_organizer(self, mock_get_events):
         """
         Test accepting a recurring event with the option "All events" on Google Calendar and syncing the organizer's calendar.
-        Ensure that all events are accepeted by attendee in Odoo.
+        Ensure that all events are accepeted by attendee in WETH.
         """
         recurrence_id = "abcd4"
         recurrence = self.generate_recurring_event(
@@ -2577,7 +2577,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_following_events_option_synced_by_attendee(self, mock_get_events):
         """
         Test accepting a recurring event with the option "This and following events" on Google Calendar and syncing the attendee's calendar.
-        Ensure that affected events are accepeted by attendee in Odoo.
+        Ensure that affected events are accepeted by attendee in WETH.
         """
         recurrence_id = "abcd5"
         recurrence = self.generate_recurring_event(
@@ -2612,7 +2612,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_accepting_recurrent_event_with_all_following_option_synced_by_organizer(self, mock_get_events):
         """
         Test accepting a recurring event with the option "This and following events" on Google Calendar and syncing the organizer's calendar.
-        Ensure that affected events are accepeted by attendee in Odoo.
+        Ensure that affected events are accepeted by attendee in WETH.
         """
         recurrence_id = "abcd6"
         recurrence = self.generate_recurring_event(

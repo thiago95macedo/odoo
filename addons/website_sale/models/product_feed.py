@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import gzip
 import uuid
@@ -323,7 +323,7 @@ class ProductFeed(models.Model):
                 )
 
         # Note: Google only supports a restricted set of unit and computes the comparison prices
-        # differently than Odoo.
+        # differently than WETH.
         # Ex: product="Pack of wine (6 bottles)", price=$65.00, uom_name="Pack".
         #   - in odoo: base_unit_count=6.0, base_unit_name="750ml"
         #       => displayed: "$10.83 / 750ml"

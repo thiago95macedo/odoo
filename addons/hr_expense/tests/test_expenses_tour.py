@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from odoo.tests import tagged, HttpCase
 from odoo.addons.hr.tests.test_utils import get_admin_employee
 

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -46,7 +46,7 @@ class WebsocketController(Controller):
     @route("/websocket/on_closed", type="jsonrpc", auth="public", cors="*")
     def on_websocket_closed(self):
         """Manually notify the closure of a websocket, useful when implementing custom websocket code.
-        This is mainly used by Odoo.sh."""
+        This is mainly used by WETH.sh."""
         request.env["ir.websocket"]._on_websocket_closed(request.cookies)
 
     @route('/bus/websocket_worker_bundle', type='http', auth='public', cors='*')

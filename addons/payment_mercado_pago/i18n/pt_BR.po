@@ -50,8 +50,8 @@ msgstr "Ocorreu um error"
 
 #. module: payment_mercado_pago
 #: model_terms:ir.ui.view,arch_db:payment_mercado_pago.authorization_error
-msgid "An error occurred while linking your Mercado Pago account with Odoo."
-msgstr "Ocorreu um erro ao vincular sua conta do Mercado Pago ao Odoo."
+msgid "An error occurred while linking your Mercado Pago account with WETH."
+msgstr "Ocorreu um erro ao vincular sua conta do Mercado Pago ao WETH."
 
 #. module: payment_mercado_pago
 #: model_terms:ir.ui.view,arch_db:payment_mercado_pago.payment_provider_form

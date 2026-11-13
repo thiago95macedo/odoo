@@ -11,7 +11,7 @@
                         <li>Create Contacts, Leads, Tickets, Projects and Tasks.</li>
                         <li>Find any Odoo record without leaving your inbox.</li>
                         <li>Preview records and open their forms in one click.</li>
-                        <li>Save emails and attachments directly to Odoo.</li>
+                        <li>Save emails and attachments directly to WETH.</li>
                     </ul>
                     <a role="button" class="btn btn-link p-0"
                         href="https://www.weth.com.br/documentation/latest/applications/general/integrations/mail_plugins.html"

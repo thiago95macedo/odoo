@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 # ruff: noqa: PLW0642
 
 from odoo import SUPERUSER_ID, api, fields, models

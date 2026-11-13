@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import fields, models, _
 from odoo.addons.im_livechat.models.discuss_channel import is_livechat_channel

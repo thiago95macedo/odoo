@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from odoo import api, fields, models
 from odoo.fields import Domain
 from odoo.tools import OrderedSet, groupby

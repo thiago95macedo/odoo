@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 # Mapping of account's country codes to corresponding currency codes.
 # Only 5 countries are supported and for each country the matching currency is required.

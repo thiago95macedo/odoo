@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from odoo.tests import tagged, new_test_user
 from .test_access_rights import TestFleet
 

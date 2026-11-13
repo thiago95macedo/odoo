@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.stock_account.tests.test_lot_valuation import TestLotValuation
 from odoo.tests import tagged, Form

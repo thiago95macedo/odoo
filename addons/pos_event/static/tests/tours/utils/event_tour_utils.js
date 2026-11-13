@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of WETH. See LICENSE file for full copyright and licensing details.
 import * as ProductScreen from "@point_of_sale/../tests/pos/tours/utils/product_screen_util";
 
 export function SettleEventRegistration(n = 1) {

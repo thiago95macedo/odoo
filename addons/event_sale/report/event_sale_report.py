@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import fields, models, tools
 from odoo.addons.sale.models.sale_order import SALE_ORDER_STATE

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import Command
 from odoo.addons.account.tests.test_account_move_line_tax_details import TestAccountTaxDetailsReport

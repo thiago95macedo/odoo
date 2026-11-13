@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user

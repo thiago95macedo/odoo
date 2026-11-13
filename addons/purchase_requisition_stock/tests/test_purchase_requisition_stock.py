@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
 from odoo.tests import tagged

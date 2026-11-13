@@ -131,7 +131,7 @@ class MailCallArtifact(models.Model):
             )
             body = Markup('<h2>%s</h2><p>%s</p><p><a href="%s">%s</a></p>') % (
                 subject,
-                artifact.env._("Your meeting recording is available in Odoo."),
+                artifact.env._("Your meeting recording is available in WETH."),
                 f"{artifact.get_base_url()}/odoo/discuss.call.history/{call.id}",
                 artifact.env._("View recording"),
             )

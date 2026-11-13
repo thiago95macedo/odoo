@@ -4977,7 +4977,7 @@ msgstr "Média geométrica de um conjunto de dados."
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/list/list_functions.js:0
 msgid "Get a dynamic Odoo list function."
-msgstr "Obtenha uma função de lista dinâmica do Odoo."
+msgstr "Obtenha uma função de lista dinâmica do WETH."
 
 #. module: spreadsheet
 #. odoo-javascript

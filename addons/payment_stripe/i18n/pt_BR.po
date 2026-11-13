@@ -214,11 +214,11 @@ msgstr "ID"
 #: model:ir.model.fields,help:payment_stripe.field_payment_provider__stripe_webhook_secret
 msgid ""
 "If a webhook is enabled on your Stripe account, this signing secret must be "
-"set to authenticate the messages sent from Stripe to Odoo."
+"set to authenticate the messages sent from Stripe to WETH."
 msgstr ""
 "Se um webhook estiver ativado em sua conta do Stripe, esse segredo de "
 "assinatura deverá ser definido para autenticar as mensagens enviadas do "
-"Stripe para o Odoo."
+"Stripe para o WETH."
 
 #. module: payment_stripe
 #. odoo-javascript

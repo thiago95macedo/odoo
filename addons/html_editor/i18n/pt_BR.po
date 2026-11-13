@@ -2464,10 +2464,10 @@ msgstr "Esta é a versão atual, não há nada para comparar."
 #: code:addons/html_editor/static/src/main/media/image_crop.js:0
 msgid ""
 "This type of image is not supported for cropping.<br/>If you want to crop "
-"it, please first download it from the original source and upload it in Odoo."
+"it, please first download it from the original source and upload it in WETH."
 msgstr ""
 "O corte deste tipo de imagem não é suportado.<br/>Se você quiser recortá-la, "
-"primeiro faça download da fonte original e carregue-a no Odoo."
+"primeiro faça download da fonte original e carregue-a no WETH."
 
 #. module: html_editor
 #. odoo-javascript

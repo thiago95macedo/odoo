@@ -33,7 +33,8 @@
     // combination and that is the info we want in that case.
     @each $key in ('menu', 'header-sales_one', 'header-sales_two', 'header-sales_three', 'header-sales_four', 'footer', 'breadcrumb', 'copyright', 'portal-card') {
         $-value: map-get($o-color-palette, $key);
-        @if type-of($-value) == 'number' {
+
+        @if type-of($-value)=='number' {
             @include print-variable($key, $-value);
         }
     }
@@ -50,6 +51,7 @@
     $-font-names: map-keys($o-theme-font-configs);
     @include print-variable('number-of-fonts', length($-font-names));
     $i: 1;
+
     @each $font-name in $-font-names {
         @include print-variable('font-number-#{$i}', $font-name);
         $i: $i + 1;
@@ -177,39 +179,51 @@
     @include print-variable('has-customized-colors', $o-has-customized-colors);
 
     // 6) Get list of colorpalette custom colors
-    $custom-colors: ();
-    @each $key, $value in $o-color-palette {
-        $custom-colors: append($custom-colors, $key);
-    }
-    @include print-variable('custom-colors', $custom-colors);
+    $custom-colors: (
+    );
+
+@each $key, $value in $o-color-palette {
+    $custom-colors: append($custom-colors, $key);
+}
+
+@include print-variable('custom-colors', $custom-colors);
 }
 
 @mixin body-image-bg-style() {
     background-image: url("#{str-slice(o-website-value('body-image'), 1)}");
     background-attachment: fixed;
-    @if o-website-value('body-image-type') == 'pattern' {
+
+    @if o-website-value('body-image-type')=='pattern' {
         $pattern-width: o-website-value('body-image-pattern-width');
         $pattern-height: o-website-value('body-image-pattern-height');
         $pattern-size: auto;
 
         @if $pattern-width and $pattern-height {
             $pattern-size: $pattern-width $pattern-height;
-        } @else if $pattern-width {
+        }
+
+        @else if $pattern-width {
             $pattern-size: $pattern-width;
-        } @else if $pattern-height {
+        }
+
+        @else if $pattern-height {
             $pattern-size: auto $pattern-height;
         }
 
         background-size: $pattern-size;
         background-repeat: repeat;
-    } @else {
+    }
+
+    @else {
         background-size: cover;
         background-repeat: no-repeat;
     }
 
     background-position: o-website-value('body-image-background-position') or center;
 
-};
+}
+
+;
 
 // Manage custom offcanvas such as the one used for mobile mega menu nav
 // where a dropdown behaves as offcanvas.
@@ -219,13 +233,15 @@ $o-mega-menu-btn-close-zindex: $o-mega-menu-zindex + 1 !default;
 
 @mixin force-opaque-bg-color($color, $if-necessary, $background: white) {
     $alpha: alpha($color);
+
     @if not $if-necessary or $alpha < 0.999 {
         background-color: mix(change-color($color, $alpha: 1), $background, percentage($alpha));
     }
 }
 
 body {
-    // The color behind the boxed layout is forced by Odoo. The box background
+
+    // The color behind the boxed layout is forced by WETH. The box background
     // color uses the `$body-bg` variable.
     // grep: BOXED_BODY_BG_ODOO
     //
@@ -235,9 +251,11 @@ body {
     // /website/iframefallback route). Indeed, if the website <body> uses a
     // transparent background color, the fallback iframe would be visible on
     // some // browsers (e.g. Chrome).
-    @if o-website-value('layout') != 'full' {
+    @if o-website-value('layout') !='full' {
         @include force-opaque-bg-color(o-color('body'), $if-necessary: false);
-    } @else {
+    }
+
+    @else {
         // Only if necessary as, if already opaque, the background color of the
         // body is already set by Bootstrap. We don't change $body-bg directly
         // as it would impact other Bootstrap components that could take profit
@@ -246,23 +264,44 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    b, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+
+    b,
+    strong {
         font-weight: o-website-value('headings-font-weight-bold') !important;
     }
 }
 
 // Keep display-5/6 covered for Bootstrap/custom markup, even though the editor
 // only exposes display-1 through display-4.
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    b, strong {
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+
+    b,
+    strong {
         font-weight: o-website-value('display-font-weight-bold') !important;
     }
 }
 
 .btn {
-    b, strong {
+
+    b,
+    strong {
         font-weight: o-website-value('btn-font-weight-bold') !important;
     }
 }
@@ -281,14 +320,17 @@ h1, h2, h3, h4, h5, h6,
         @include body-image-bg-style();
     }
 
-    > main:not(.o_breadcrumb_overlay) {
+    >main:not(.o_breadcrumb_overlay) {
         div.o_page_breadcrumb {
             nav {
                 @include o-apply-colors('breadcrumb');
                 @include o-apply-colors('breadcrumb-custom');
                 @include o-add-gradient('breadcrumb-gradient');
             }
-            a, .breadcrumb-item, li::before {
+
+            a,
+            .breadcrumb-item,
+            li::before {
                 color: inherit !important;
             }
         }
@@ -300,14 +342,18 @@ h1, h2, h3, h4, h5, h6,
         width: 100%;
     }
 
-    > main.o_breadcrumb_overlay {
+    >main.o_breadcrumb_overlay {
         div.o_page_breadcrumb {
             @include o-position-absolute(auto, auto, auto, auto);
             z-index: 1 !important;
             width: 100%;
-            a, .breadcrumb-item, li::before {
+
+            a,
+            .breadcrumb-item,
+            li::before {
                 color: inherit !important;
             }
+
             nav {
                 @include o-apply-colors(1);
                 background-color: transparent !important;
@@ -318,9 +364,9 @@ h1, h2, h3, h4, h5, h6,
         }
     }
 
-    @if o-website-value('layout') != 'full' {
-        > main {
-            // The color behind the boxed layout is forced by Odoo. The box
+    @if o-website-value('layout') !='full' {
+        >main {
+            // The color behind the boxed layout is forced by WETH. The box
             // background color uses the `$body-bg` variable.
             // grep: BOXED_BODY_BG_ODOO
             background-color: $body-bg;
@@ -330,97 +376,106 @@ h1, h2, h3, h4, h5, h6,
             padding-right: $grid-gutter-width * 2;
             padding-left: $grid-gutter-width * 2;
 
-            > * {
+            >* {
                 // When the website is visually acting like a container (eg.
                 // boxed layout), increase its maximum size to handle bigger
                 // horizontal paddings.
-                $-max-widths: ();
-                @each $key, $value in $container-max-widths {
-                    $-max-widths: map-merge($-max-widths, (
-                        #{$key}: $value + $grid-gutter-width * 2,
-                    ));
-                }
-                @include make-container(0);
-                @include make-container-max-widths($-max-widths);
+                $-max-widths: (
+                );
+
+            @each $key, $value in $container-max-widths {
+                $-max-widths: map-merge($-max-widths, (#{$key}: $value + $grid-gutter-width * 2,
+                        ));
             }
 
-            > header .container {
-                max-width: 100% !important;
-            }
-
-            // Remove the left/right padding of the header navbar when the
-            // header has no visible separation from the body:
-            // - The header has no background color (transparent)
-            // - The header background color matches the body
-            // - The header has no shadow defined
-            $-menu-color: o-color('menu-custom') or o-color('menu');
-            $-header-template: o-website-value('header-template');
-            @if (
-                (not $-menu-color or ($-menu-color == o-color('body') and o-website-value('body-image') == null))
-                and (o-website-value('menu-box-shadow') == none)
-                and (index(("default", "hamburger", "stretch", "vertical", "search"), $-header-template) != null)
-            ) {
-                > header #o_main_nav {
-                    padding-left: 0;
-                    padding-right: 0;
-
-                    @if ($-header-template == "search") {
-                        & > div,
-                        & > .o_header_hide_on_scroll > .container {
-                            padding-left: 0;
-                            padding-right: 0;
-                        }
-                    }
-                }
-            }
+            @include make-container(0);
+            @include make-container-max-widths($-max-widths);
         }
 
-        @if o-website-value('layout') == 'framed' {
-            @include media-breakpoint-up(md) {
-                padding-top: $grid-gutter-width;
-                padding-bottom: $grid-gutter-width * 1.5;
-            }
-        } @else if o-website-value('layout') == 'postcard' {
-            @include media-breakpoint-up(md) {
-                $-border-radius: $border-radius-lg;
-                // Don't know why (browser rounding mistake?) but the inner
-                // border radius must be 1px lower for this to be visually ok
-                // (despite the fact there is no border or any space)
-                $-inner-border-radius: $-border-radius - 0.0625rem;
-                > * {
-                    margin-bottom: $spacer * 2;
-                }
-                > header {
-                    &, &.o_header_affix {
-                        .navbar {
-                            @include border-bottom-radius($-border-radius);
-                        }
-                    }
-                }
-                > main, > footer {
-                    @include border-radius($-border-radius);
+        >header .container {
+            max-width: 100% !important;
+        }
 
-                    .oe_structure > :first-child {
-                        @include border-top-radius($-inner-border-radius);
+        // Remove the left/right padding of the header navbar when the
+        // header has no visible separation from the body:
+        // - The header has no background color (transparent)
+        // - The header background color matches the body
+        // - The header has no shadow defined
+        $-menu-color: o-color('menu-custom') or o-color('menu');
+        $-header-template: o-website-value('header-template');
+
+        @if ((not $-menu-color or ($-menu-color ==o-color('body') and o-website-value('body-image')==null)) and (o-website-value('menu-box-shadow')==none) and (index(("default", "hamburger", "stretch", "vertical", "search"), $-header-template) !=null)) {
+            >header #o_main_nav {
+                padding-left: 0;
+                padding-right: 0;
+
+                @if ($-header-template =="search") {
+
+                    &>div,
+                    &>.o_header_hide_on_scroll>.container {
+                        padding-left: 0;
+                        padding-right: 0;
                     }
-                }
-                > main .oe_structure > :last-child,
-                .o_footer_copyright {
-                    @include border-bottom-radius($-inner-border-radius);
                 }
             }
         }
     }
 
-    #footer {
-        & + .o_cookie_policy_link_container {
-            margin-top: 1rem;
-        }
-
-        & ~ .o_cookie_policy_link_container:last-of-type {
-            margin-bottom: 1rem;
+    @if o-website-value('layout')=='framed' {
+        @include media-breakpoint-up(md) {
+            padding-top: $grid-gutter-width;
+            padding-bottom: $grid-gutter-width * 1.5;
         }
     }
+
+    @else if o-website-value('layout')=='postcard' {
+        @include media-breakpoint-up(md) {
+            $-border-radius: $border-radius-lg;
+            // Don't know why (browser rounding mistake?) but the inner
+            // border radius must be 1px lower for this to be visually ok
+            // (despite the fact there is no border or any space)
+            $-inner-border-radius: $-border-radius - 0.0625rem;
+
+            >* {
+                margin-bottom: $spacer * 2;
+            }
+
+            >header {
+
+                &,
+                &.o_header_affix {
+                    .navbar {
+                        @include border-bottom-radius($-border-radius);
+                    }
+                }
+            }
+
+            >main,
+            >footer {
+                @include border-radius($-border-radius);
+
+                .oe_structure> :first-child {
+                    @include border-top-radius($-inner-border-radius);
+                }
+            }
+
+            >main .oe_structure> :last-child,
+            .o_footer_copyright {
+                @include border-bottom-radius($-inner-border-radius);
+            }
+        }
+    }
+}
+
+#footer {
+    &+.o_cookie_policy_link_container {
+        margin-top: 1rem;
+    }
+
+    &~.o_cookie_policy_link_container:last-of-type {
+        margin-bottom: 1rem;
+    }
+}
 }
 
 // We don't want the area to be visible in edit mode when we edit the popup that
@@ -444,26 +499,34 @@ h1, h2, h3, h4, h5, h6,
     .navbar-collapse {
         min-width: 0; // Allows it to shrink during loading
     }
+
     .btn {
         // This was a default bootstrap style before but it was removed from
         // the library at some point. It seems important in the header so that
         // the header does not flicker during loading.
         white-space: nowrap;
     }
+
     .o_menu_image_placeholder {
         width: 80px !important;
     }
+
     .top_menu {
         flex-wrap: nowrap !important;
+
         &.o_menu_loading {
             overflow: hidden !important;
             opacity: 0 !important;
         }
     }
 }
-.navbar-brand, .navbar-text, .navbar .nav-link, .navbar a.js_change_lang span,
+
+.navbar-brand,
+.navbar-text,
+.navbar .nav-link,
+.navbar a.js_change_lang span,
 .navbar a.o_add_language {
-    @if $o-theme-navbar-font != $o-theme-font {
+    @if $o-theme-navbar-font !=$o-theme-font {
         font-family: $o-theme-navbar-font;
     }
 }
@@ -476,7 +539,8 @@ h1, h2, h3, h4, h5, h6,
     @include o-apply-colors('menu');
     @include o-apply-colors('menu-custom');
     $-menu-color: o-color('menu-custom') or o-color('menu');
-    @if ($-menu-color and color-contrast($-menu-color) != $color-contrast-dark) {
+
+    @if ($-menu-color and color-contrast($-menu-color) !=$color-contrast-dark) {
         --NavLinkWithBackground-bg-color: #{rgba($navbar-dark-active-color, .1)};
         --NavLinkWithBackground-bg-color--hover: #{rgba($navbar-dark-active-color, .2)};
         --NavStretch-placeholder-color: #{rgba($navbar-dark-active-color, .3)};
@@ -488,22 +552,24 @@ h1, h2, h3, h4, h5, h6,
             filter: $btn-close-white-filter;
         }
     }
+
     // The menu gradient is designed for the full-width header only. Other
     // navbar-light bars (blog, eLearning, recruitment, portal) keep the
     // menu colors but not the gradient.
-    #wrapwrap > header & {
+    #wrapwrap>header & {
         @include o-add-gradient('menu-gradient');
     }
 
     a.nav-link {
         color: var(--#{$variable-prefix}nav-link-color);
+
         &:hover {
             color: var(--#{$variable-prefix}nav-link-hover-color);
         }
     }
 }
 
-#wrapwrap > header .navbar-light .o_navbar_mobile {
+#wrapwrap>header .navbar-light .o_navbar_mobile {
     @include o-add-gradient('menu-gradient');
 }
 
@@ -512,15 +578,22 @@ h1, h2, h3, h4, h5, h6,
     // didn't work) because we don't want the text color of the navbar to
     // change once the fix is applied for users who tried the option when it
     // wasn't working.
-    @return if(str-index(inspect($color), '"') == 1 or str-index(inspect($color), "'") == 1, o-color($color), $color);
+    @return if(str-index(inspect($color), '"')==1 or str-index(inspect($color), "'")==1, o-color($color), $color);
 }
 
 // TODO this should be reviewed. While it allowed to choose a color for the
 // navbar text, there is no :hover effect, the active item is not visible and
 // the selector is probably too specific and should rather be about extending
 // bootstrap if possible.
-#wrapwrap:not(.o_header_overlay) header, header.o_header_is_scrolled, header .o_navbar_mobile {
-    .nav-item > .nav-link > *, .nav-item > .nav-link::after, .js_language_selector span, .badge, .nav-item > .accordion-item * {
+#wrapwrap:not(.o_header_overlay) header,
+header.o_header_is_scrolled,
+header .o_navbar_mobile {
+
+    .nav-item>.nav-link>*,
+    .nav-item>.nav-link::after,
+    .js_language_selector span,
+    .badge,
+    .nav-item>.accordion-item * {
         $header-text-color: o-website-value('header-text-color');
         color: format-color($header-text-color) !important;
     }
@@ -529,12 +602,14 @@ h1, h2, h3, h4, h5, h6,
 .o_navlink_background {
     background: var(--NavLinkWithBackground-bg-color, rgba(var(--#{$variable-prefix}emphasis-color-rgb), .05));
 
-    &:hover, .o_navlink_trigger_hover:hover & {
+    &:hover,
+    .o_navlink_trigger_hover:hover & {
         background: var(--NavLinkWithBackground-bg-color--hover, rgba(var(--#{$variable-prefix}emphasis-color-rgb), .1));
     }
 }
 
-.o_navlink_background, .o_navlink_trigger_hover {
+.o_navlink_background,
+.o_navlink_trigger_hover {
     &:focus-visible {
         --#{$prefix}btn-focus-box-shadow: #{$nav-link-focus-box-shadow};
     }
@@ -548,8 +623,8 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
 
 // Mixin for accordion style in vertical menu (e.g. mobile menu, sidebar header)
 @mixin accordion-style-vertical-menu {
-    .top_menu > .accordion {
-        ul > li > a.nav-link {
+    .top_menu>.accordion {
+        ul>li>a.nav-link {
             &:where(:not(.active)) {
                 // Needed when header is dark
                 background-color: inherit;
@@ -568,7 +643,7 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
             font-size: inherit;
 
             &:not(.collapsed) {
-                @if $-navbar-mobile-bg-color != null {
+                @if $-navbar-mobile-bg-color !=null {
                     background-color: shade-color($-navbar-mobile-bg-color, 5%);
                 }
             }
@@ -585,7 +660,7 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
     }
 
     .top_menu {
-        &.text-end > .accordion .accordion-button {
+        &.text-end>.accordion .accordion-button {
             flex-direction: row-reverse;
 
             &::after {
@@ -594,7 +669,7 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
             }
         }
 
-        &.text-center > .accordion .accordion-button > span {
+        &.text-center>.accordion .accordion-button>span {
             text-align: center;
             flex-grow: 1;
         }
@@ -614,34 +689,42 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
     @include accordion-style-vertical-menu;
 }
 
-@if o-website-value('header-template') == 'sidebar' {
+@if o-website-value('header-template')=='sidebar' {
     @include media-breakpoint-up(lg) {
         @include accordion-style-vertical-menu;
     }
-    .o_header_sidebar > nav:not(.o_header_mobile) {
+
+    .o_header_sidebar>nav:not(.o_header_mobile) {
         overflow-y: auto;
     }
 }
 
 $-header-nav-link-height: $nav-link-height;
+
 @if o-website-value('header-font-size') {
     $-header-nav-link-height: o-website-value('header-font-size') * $line-height-base + $nav-link-padding-y * 2;
+
     header {
         font-size: o-website-value('header-font-size');
 
-        .dropdown-menu, .btn {
+        .dropdown-menu,
+        .btn {
             font-size: inherit !important;
         }
     }
 }
+
 @if $o-theme-navbar-logo-height {
+
     // With default values, this makes it slightly bigger than standard
     // navbar-brand, which is what we want
     header .navbar-brand {
         font-size: $o-theme-navbar-logo-height / $line-height-base;
 
         $-logo-padding-y: max(0, $-header-nav-link-height - $o-theme-navbar-logo-height) / 2;
-        &, &.logo {
+
+        &,
+        &.logo {
             padding-top: $-logo-padding-y;
             padding-bottom: $-logo-padding-y;
         }
@@ -664,94 +747,110 @@ $-header-nav-link-height: $nav-link-height;
 h2 {
     color: map-get($colors, 'o-cc1-h2');
 }
+
 h3 {
     color: map-get($colors, 'o-cc1-h3');
 }
+
 h4 {
     color: map-get($colors, 'o-cc1-h4');
 }
+
 h5 {
     color: map-get($colors, 'o-cc1-h5');
 }
+
 h6 {
     color: map-get($colors, 'o-cc1-h6');
 }
 
-$heading-font-families: () !default;
-$heading-font-families: map-merge((
-    "h2": $h2-font-family,
-    "h3": $h3-font-family,
-    "h4": $h4-font-family,
-    "h5": $h5-font-family,
-    "h6": $h6-font-family,
-    "display-1": $display-1-font-family,
-    "display-2": $display-2-font-family,
-    "display-3": $display-3-font-family,
-    "display-4": $display-4-font-family,
-), $heading-font-families);
-$heading-line-heights: () !default;
-$heading-line-heights: map-merge((
-    "h2": $h2-line-height,
-    "h3": $h3-line-height,
-    "h4": $h4-line-height,
-    "h5": $h5-line-height,
-    "h6": $h6-line-height,
-    "display-1": $display-1-line-height,
-    "display-2": $display-2-line-height,
-    "display-3": $display-3-line-height,
-    "display-4": $display-4-line-height,
-), $heading-line-heights);
-$heading-margin-tops: () !default;
-$heading-margin-tops: map-merge((
-    "h2": $h2-margin-top,
-    "h3": $h3-margin-top,
-    "h4": $h4-margin-top,
-    "h5": $h5-margin-top,
-    "h6": $h6-margin-top,
-    "display-1": $display-1-margin-top,
-    "display-2": $display-2-margin-top,
-    "display-3": $display-3-margin-top,
-    "display-4": $display-4-margin-top,
-), $heading-margin-tops);
-$heading-margin-bottoms: () !default;
-$heading-margin-bottoms: map-merge((
-    "h2": $h2-margin-bottom,
-    "h3": $h3-margin-bottom,
-    "h4": $h4-margin-bottom,
-    "h5": $h5-margin-bottom,
-    "h6": $h6-margin-bottom,
-    "display-1": $display-1-margin-bottom,
-    "display-2": $display-2-margin-bottom,
-    "display-3": $display-3-margin-bottom,
-    "display-4": $display-4-margin-bottom,
-), $heading-margin-bottoms);
+$heading-font-families: (
+    ) !default;
+$heading-font-families: map-merge(("h2": $h2-font-family,
+            "h3": $h3-font-family,
+            "h4": $h4-font-family,
+            "h5": $h5-font-family,
+            "h6": $h6-font-family,
+            "display-1": $display-1-font-family,
+            "display-2": $display-2-font-family,
+            "display-3": $display-3-font-family,
+            "display-4": $display-4-font-family,
+        ), $heading-font-families
+);
+$heading-line-heights: (
+    ) !default;
+$heading-line-heights: map-merge(("h2": $h2-line-height,
+            "h3": $h3-line-height,
+            "h4": $h4-line-height,
+            "h5": $h5-line-height,
+            "h6": $h6-line-height,
+            "display-1": $display-1-line-height,
+            "display-2": $display-2-line-height,
+            "display-3": $display-3-line-height,
+            "display-4": $display-4-line-height,
+        ), $heading-line-heights
+);
+$heading-margin-tops: (
+    ) !default;
+$heading-margin-tops: map-merge(("h2": $h2-margin-top,
+            "h3": $h3-margin-top,
+            "h4": $h4-margin-top,
+            "h5": $h5-margin-top,
+            "h6": $h6-margin-top,
+            "display-1": $display-1-margin-top,
+            "display-2": $display-2-margin-top,
+            "display-3": $display-3-margin-top,
+            "display-4": $display-4-margin-top,
+        ), $heading-margin-tops
+);
+$heading-margin-bottoms: (
+    ) !default;
+$heading-margin-bottoms: map-merge(("h2": $h2-margin-bottom,
+            "h3": $h3-margin-bottom,
+            "h4": $h4-margin-bottom,
+            "h5": $h5-margin-bottom,
+            "h6": $h6-margin-bottom,
+            "display-1": $display-1-margin-bottom,
+            "display-2": $display-2-margin-bottom,
+            "display-3": $display-3-margin-bottom,
+            "display-4": $display-4-margin-bottom,
+        ), $heading-margin-bottoms
+);
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: $headings-line-height;
     margin-top: $headings-margin-top;
     margin-bottom: $headings-margin-bottom;
 }
-@each $selector, $map-key in
-("h2" "h2", "h3" "h3", "h4" "h4", "h5" "h5", "h6" "h6", ".display-1" "display-1",
-".display-2" "display-2", ".display-3" "display-3", ".display-4" "display-4") {
+
+@each $selector, $map-key in ("h2" "h2", "h3" "h3", "h4" "h4", "h5" "h5", "h6" "h6", ".display-1" "display-1",
+    ".display-2" "display-2", ".display-3" "display-3", ".display-4" "display-4") {
     #{$selector} {
-        @if ($headings-font-family != map-get($heading-font-families, $map-key)) {
+        @if ($headings-font-family !=map-get($heading-font-families, $map-key)) {
             font-family: map-get($heading-font-families, $map-key);
         }
-        @if ($headings-line-height != map-get($heading-line-heights, $map-key)) {
+
+        @if ($headings-line-height !=map-get($heading-line-heights, $map-key)) {
             line-height: map-get($heading-line-heights, $map-key);
         }
-        @if ($headings-margin-top != map-get($heading-margin-tops, $map-key)) {
+
+        @if ($headings-margin-top !=map-get($heading-margin-tops, $map-key)) {
             margin-top: map-get($heading-margin-tops, $map-key);
         }
-        @if ($headings-margin-bottom != map-get($heading-margin-bottoms, $map-key)) {
+
+        @if ($headings-margin-bottom !=map-get($heading-margin-bottoms, $map-key)) {
             margin-bottom: map-get($heading-margin-bottoms, $map-key);
         }
     }
 }
 
 .btn {
-    @if ($o-theme-buttons-font != $o-theme-font) {
+    @if ($o-theme-buttons-font !=$o-theme-font) {
         font-family: $o-theme-buttons-font;
     }
 }
@@ -782,8 +881,10 @@ font[class*='bg-'] {
 .social_media_img {
     object-fit: cover;
 }
+
 // Icons
-.oi, .social_media_img {
+.oi,
+.social_media_img {
     $-size: map-get($spacers, 5);
 
     &.rounded-circle,
@@ -799,6 +900,7 @@ font[class*='bg-'] {
         width: $-size;
         height: $-size;
         line-height: $-size;
+
         @for $i from 2 through 5 {
             &.oi-#{$i}x {
                 width: $-size + $i;
@@ -806,19 +908,24 @@ font[class*='bg-'] {
                 line-height: $-size + $i;
             }
         }
+
         // Default, if no color or background-color already selected
         &:where(:not([class*='bg-'])) {
             color: $gray-900;
         }
+
         background-color: $gray-100;
     }
+
     &.img-thumbnail {
         padding: 0;
     }
+
     &.rounded-leaf {
         border-top-left-radius: $-size;
         border-bottom-right-radius: $-size;
     }
+
     &.rounded-empty-circle {
         @extend .rounded-circle;
         border-width: ceil(1.4 * $border-width);
@@ -826,6 +933,7 @@ font[class*='bg-'] {
         color: unset;
         background: transparent;
     }
+
     &.border {
         box-sizing: content-box;
     }
@@ -838,20 +946,40 @@ font[class*='bg-'] {
         letter-spacing: 0.05em;
         text-transform: uppercase;
         @include button-size(0.75rem, 1.5rem, ($font-size-base * .75), 0);
-        &.btn-lg { @include button-size(1rem, 2rem, ($font-size-lg * .75), 0); }
-        &.btn-sm { @include button-size(.5rem, 1rem, ($font-size-sm * .75), 0); }
-        &.btn-xs { @include button-size(.25rem, .5rem, ($font-size-base * .5), 0); }
+
+        &.btn-lg {
+            @include button-size(1rem, 2rem, ($font-size-lg * .75), 0);
+        }
+
+        &.btn-sm {
+            @include button-size(.5rem, 1rem, ($font-size-sm * .75), 0);
+        }
+
+        &.btn-xs {
+            @include button-size(.25rem, .5rem, ($font-size-base * .5), 0);
+        }
     }
+
     &.rounded-circle {
         border-radius: 100px !important;
         @include button-size(0.45rem, 1.35rem, $font-size-base, 30px);
-        &.btn-lg { @include button-size(.6rem, 1.8rem, $font-size-lg, 30px); }
-        &.btn-sm { @include button-size(.3rem, .9rem, $font-size-sm, 30px); }
-        &.btn-xs { @include button-size(.15rem, .45rem, ($font-size-base * .75), 30px); }
+
+        &.btn-lg {
+            @include button-size(.6rem, 1.8rem, $font-size-lg, 30px);
+        }
+
+        &.btn-sm {
+            @include button-size(.3rem, .9rem, $font-size-sm, 30px);
+        }
+
+        &.btn-xs {
+            @include button-size(.15rem, .45rem, ($font-size-base * .75), 30px);
+        }
     }
 }
 
 .btn-close {
+
     // Most components with an integrated .btn-close (o_notification, modals,
     // offcanvas, ...) use $body-bg by default, which is why we check it here.
     @if lightness($body-bg) < 50 {
@@ -860,7 +988,8 @@ font[class*='bg-'] {
 }
 
 // Badges
-.badge, .o_filter_tag {
+.badge,
+.o_filter_tag {
     --badge-color: var(--color);
 
     background: var(--badge-bg, var(--background-color)) !important;
@@ -888,7 +1017,7 @@ font[class*='bg-'] {
         }
     }
 
-    @at-root a.badge:hover, a:not(.dropdown-item):hover > .badge, .o_badge_clickable.badge:hover {
+    @at-root a.badge:hover, a:not(.dropdown-item):hover>.badge, .o_badge_clickable.badge:hover {
         --badge-bg: var(--badge-border-color);
         --badge-color: var(--badge-color-hover);
         text-decoration: none;
@@ -897,9 +1026,9 @@ font[class*='bg-'] {
 
 @for $-size from 1 through length($o-colors) {
     .o_color_#{$-size - 1} {
-       // Compute background-color and text-color values for different uses,
-       // allowing to apply the value from colorfield on desired UI elements.
-       // this set of variables covers all the possible scenarios.
+        // Compute background-color and text-color values for different uses,
+        // allowing to apply the value from colorfield on desired UI elements.
+        // this set of variables covers all the possible scenarios.
 
         $-color: nth($o-colors, $-size);
 
@@ -917,18 +1046,22 @@ font[class*='bg-'] {
 
 // Background Images
 .oe_img_bg {
+
     // Compatibility <= 13.0, TODO remove?
     // -----------------------------------
     &.o_bg_img_opt_contain {
         background-size: contain;
         background-position: center center;
     }
+
     &.o_bg_img_opt_custom {
         background-size: auto;
     }
+
     &.o_bg_img_opt_repeat_x {
         background-repeat: repeat-x;
     }
+
     &.o_bg_img_opt_repeat_y {
         background-repeat: repeat-y;
     }
@@ -961,15 +1094,17 @@ font[class*='bg-'] {
     --o-bg-blur-enhance: 1;
 }
 
-@if o-website-value('header-bg-blur') != 0 {
+@if o-website-value('header-bg-blur') !=0 {
     header {
         $-header-blur-navbar-selector: "nav.navbar";
-        @if o-website-value('header-template') == 'sidebar' {
+
+        @if o-website-value('header-template')=='sidebar' {
             $-header-blur-navbar-selector: "nav.navbar.o_header_mobile";
         }
 
         // Apply the configured header blur to the nav blur layer and mobile navbar.
-        #{$-header-blur-navbar-selector}::before, .o_navbar_mobile {
+        #{$-header-blur-navbar-selector}::before,
+        .o_navbar_mobile {
             --o-bg-blur: #{o-website-value('header-bg-blur')};
         }
 
@@ -993,7 +1128,7 @@ font[class*='bg-'] {
             }
         }
 
-        &.o_header_sidebar > nav.navbar:not(.o_header_mobile) {
+        &.o_header_sidebar>nav.navbar:not(.o_header_mobile) {
             @include media-breakpoint-up(lg) {
                 --o-bg-blur: #{o-website-value('header-bg-blur')};
                 @include o-bg-blur-option;
@@ -1010,10 +1145,12 @@ font[class*='bg-'] {
 .o_bg_video_container {
     @extend %o-we-background-layer;
 }
+
 .o_bg_video_iframe {
     position: relative;
     pointer-events: none !important;
 }
+
 .o_bg_video_file {
     @include o-position-absolute(0, 0, 0, 0);
     width: 100%;
@@ -1021,16 +1158,20 @@ font[class*='bg-'] {
     object-fit: cover;
     pointer-events: none !important;
 }
+
 .o_bg_video_loading {
-    @include o-position-absolute(0, 0 ,0 ,0);
+    @include o-position-absolute(0, 0, 0, 0);
 }
-.o_background_video, .parallax {
+
+.o_background_video,
+.parallax {
     @extend %o-we-background-layer-parent;
 }
 
 // Probably outdated
 // Disable fixed height
 @include media-breakpoint-down(md) {
+
     section,
     .parallax,
     .row,
@@ -1048,6 +1189,7 @@ font[class*='bg-'] {
     word-break: break-all;
     border: 1px solid #dddddd;
 }
+
 .table_heading {
     background-color: #f5f5f5;
     border: 1px solid #dddddd;
@@ -1055,10 +1197,12 @@ font[class*='bg-'] {
     @include font-size(14px);
     padding: 4px;
 }
+
 table.table_desc tr td {
     text-align: left;
     padding: 5px;
     @include font-size(13px);
+
     &:first-child {
         width: 25%;
         font-weight: bold;
@@ -1066,6 +1210,7 @@ table.table_desc tr td {
         border-right: 1px solid #c9c9c9;
         border-left: none;
     }
+
     &:last-child {
         border-bottom: 1px solid #c9c9c9;
     }
@@ -1100,7 +1245,8 @@ table.table_desc tr td {
     left: var(--o-dot-left);
     color: $primary;
 
-    &:before, &:after {
+    &:before,
+    &:after {
         position: absolute;
         border-radius: $border-radius-pill;
         background-color: currentColor;
@@ -1145,7 +1291,10 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             min-width: 0;
             margin: 0;
         }
-        .carousel-control-prev, .carousel-control-next, .o_carousel_pause {
+
+        .carousel-control-prev,
+        .carousel-control-next,
+        .o_carousel_pause {
             position: relative;
             width: auto;
         }
@@ -1161,7 +1310,10 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 
     // Allow clicks to pass through the carousel control's wrapper, while
     // keeping the control buttons/indicators clickable.
-    .carousel-indicators > *, .carousel-control-prev, .carousel-control-next, .o_carousel_pause {
+    .carousel-indicators>*,
+    .carousel-control-prev,
+    .carousel-control-next,
+    .o_carousel_pause {
         pointer-events: auto;
     }
 
@@ -1182,26 +1334,37 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         width: 8%;
         opacity: 1;
     }
+
     @include media-breakpoint-down(md) {
+
         .carousel-control-prev,
         .carousel-control-next {
             display: none; // remove arrows on mobile
         }
     }
-    .carousel-control-prev { justify-content: flex-start; }
-    .carousel-control-next { justify-content: flex-end; }
+
+    .carousel-control-prev {
+        justify-content: flex-start;
+    }
+
+    .carousel-control-next {
+        justify-content: flex-end;
+    }
+
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
         width: auto;
         height: auto;
         background-image: none;
         color: $body-color;
+
         &:before {
             font-family: var(--icon-font-family, "Material Symbols Outlined");
             display: inline-block;
             background-color: #fff;
         }
     }
+
     // Content
     .carousel-inner {
         // Create a new stacking context to ensure that elements like indicators
@@ -1209,31 +1372,43 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         isolation: isolate;
         overflow: hidden;
         height: 100%;
+
         .carousel-item {
             height: 100%;
         }
     }
+
     // Indicators
     .carousel-indicators {
         position: absolute;
 
         li:hover:not(.active) {
-            background-color: rgba(255,255,255,.8);
+            background-color: rgba(255, 255, 255, .8);
         }
     }
 
     // Default
     &.s_carousel_default {
+
         // Controls - chevron
-        .carousel-control-prev-icon:before { content: "chevron_left" #{"/*rtl:'chevron_right'*/"}; margin-left: 1.5rem; }
-        .carousel-control-next-icon:before { content: "chevron_right" #{"/*rtl:'chevron_left'*/"}; margin-right: 1.5rem; }
+        .carousel-control-prev-icon:before {
+            content: "chevron_left"#{"/*rtl:'chevron_right'*/"};
+            margin-left: 1.5rem;
+        }
+
+        .carousel-control-next-icon:before {
+            content: "chevron_right"#{"/*rtl:'chevron_left'*/"};
+            margin-right: 1.5rem;
+        }
+
         .carousel-control-prev-icon:before,
         .carousel-control-next-icon:before {
-            background-color: rgba(0,0,0,0);
+            background-color: rgba(0, 0, 0, 0);
             @include font-size(2rem);
             color: #fff;
             text-shadow: $box-shadow-sm;
         }
+
         // Indicators
         .carousel-indicators li {
             height: .6rem;
@@ -1246,13 +1421,21 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 
     // Border
     &.s_carousel_bordered {
-        border: 2rem solid rgba(0,0,0,0);
+        border: 2rem solid rgba(0, 0, 0, 0);
+
         @include media-breakpoint-down(md) {
-            border: 0.5rem solid rgba(0,0,0,0);
+            border: 0.5rem solid rgba(0, 0, 0, 0);
         }
+
         // Controls - caret
-        .carousel-control-prev-icon:before { content: "arrow_left"; }
-        .carousel-control-next-icon:before { content: "arrow_right"; }
+        .carousel-control-prev-icon:before {
+            content: "arrow_left";
+        }
+
+        .carousel-control-next-icon:before {
+            content: "arrow_right";
+        }
+
         .carousel-control-prev-icon:before,
         .carousel-control-next-icon:before {
             width: 2rem;
@@ -1260,6 +1443,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             line-height: 6rem;
             @include font-size(1.5rem);
         }
+
         // Indicators
         .carousel-indicators li {
             width: 3rem;
@@ -1269,16 +1453,29 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 
     // Circle
     &.s_carousel_rounded {
+
         // Container
         // .carousel-inner {
-            // border-top-left-radius: 10rem;
-            // border-bottom-right-radius: 10rem;
+        // border-top-left-radius: 10rem;
+        // border-bottom-right-radius: 10rem;
         // }
         // Controls - arrow
-        .carousel-control-prev { margin-left: 1.5rem; }
-        .carousel-control-next { margin-right: 1.5rem; }
-        .carousel-control-prev-icon:before { content: "arrow_back"; }
-        .carousel-control-next-icon:before { content: "arrow_forward"; }
+        .carousel-control-prev {
+            margin-left: 1.5rem;
+        }
+
+        .carousel-control-next {
+            margin-right: 1.5rem;
+        }
+
+        .carousel-control-prev-icon:before {
+            content: "arrow_back";
+        }
+
+        .carousel-control-next-icon:before {
+            content: "arrow_forward";
+        }
+
         .carousel-control-prev-icon:before,
         .carousel-control-next-icon:before {
             width: 4rem;
@@ -1287,6 +1484,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             border-radius: 50%;
             @include font-size(1.25rem);
         }
+
         // Indicators
         .carousel-indicators li {
             width: 1rem;
@@ -1299,19 +1497,34 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
     &.s_carousel_boxed {
         @include make-container();
         @include make-container-max-widths();
+
         .carousel-item {
             padding: 0 1rem;
         }
+
         // Controls - angle
         .carousel-control-prev,
         .carousel-control-next {
             align-items: flex-end;
             margin-bottom: 1.25rem;
         }
-        .carousel-control-prev { margin-left: 3rem; }
-        .carousel-control-next { margin-right: 3rem; }
-        .carousel-control-prev-icon:before { content: "keyboard_arrow_left"; }
-        .carousel-control-next-icon:before { content: "keyboard_arrow_right"; }
+
+        .carousel-control-prev {
+            margin-left: 3rem;
+        }
+
+        .carousel-control-next {
+            margin-right: 3rem;
+        }
+
+        .carousel-control-prev-icon:before {
+            content: "keyboard_arrow_left";
+        }
+
+        .carousel-control-next-icon:before {
+            content: "keyboard_arrow_right";
+        }
+
         .carousel-control-prev-icon:before,
         .carousel-control-next-icon:before {
             width: 2rem;
@@ -1319,12 +1532,14 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             line-height: 2rem;
             @include font-size(1.25rem);
         }
+
         // Indicators
         .carousel-indicators li {
             width: 1rem;
             height: 1rem;
+
             &:hover:not(.active) {
-                background-color: rgba(255,255,255,.8);
+                background-color: rgba(255, 255, 255, .8);
             }
         }
     }
@@ -1333,6 +1548,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 // This style is shared by the new versions of carousels
 // 001 for s_carousel & 002 for s_quotes_carousel
 %s_carousel_variants {
+
     // Before media-breakpoint-down so that it's overridden.
     .o_carousel_pause {
         width: $carousel-control-width;
@@ -1341,6 +1557,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 
     // Controllers in Mobile
     @include media-breakpoint-down(md) {
+
         .carousel-control-prev,
         .carousel-control-next,
         .o_carousel_pause {
@@ -1359,6 +1576,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
                 height: auto;
             }
         }
+
         &:not(.o_carousel_pause_btn_hidden, .s_carousel_controllers_indicators_outside),
         &.s_carousel_controllers_indicators_outside:has(.s_carousel_indicators_hidden) {
             .carousel-control-prev {
@@ -1368,17 +1586,21 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 
         $-margin-x: calc(#{map-get($spacers, 3)} * 2 + #{$-o-carousel-controllers-size});
 
-        &:not(.s_carousel_arrows_hidden), &:not(.o_carousel_pause_btn_hidden) {
+        &:not(.s_carousel_arrows_hidden),
+        &:not(.o_carousel_pause_btn_hidden) {
             .carousel-indicators {
                 min-height: $-o-carousel-controllers-size;
             }
         }
+
         &.o_carousel_pause_btn_hidden:not(.s_carousel_arrows_hidden) .carousel-indicators {
             margin: 0 $-margin-x map-get($spacers, 3);
         }
+
         &.s_carousel_arrows_hidden:not(.o_carousel_pause_btn_hidden) .carousel-indicators {
             margin: 0 0 map-get($spacers, 3) $-margin-x;
         }
+
         &:not(.s_carousel_arrows_hidden, .o_carousel_pause_btn_hidden) .carousel-indicators {
             margin: 0 $-margin-x map-get($spacers, 3) calc(#{$-margin-x} + #{map-get($spacers, 5)});
         }
@@ -1391,9 +1613,12 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         position: absolute;
     }
 
-    .carousel-control-prev, .carousel-control-next {
+    .carousel-control-prev,
+    .carousel-control-next {
         &:focus-visible {
-            .carousel-control-prev-icon, .carousel-control-next-icon {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
                 box-shadow: inset 0 0 0 2px white, inset 0 0 0 4px black;
             }
         }
@@ -1406,12 +1631,15 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         opacity: $carousel-control-opacity;
         transition: $carousel-control-transition;
 
-        &:hover, &:focus-visible {
+        &:hover,
+        &:focus-visible {
             opacity: $carousel-control-hover-opacity;
         }
+
         &:focus-visible {
             box-shadow: inset 0 0 0 2px black, inset 0 0 0 4px white;
         }
+
         &:active {
             border-color: transparent;
         }
@@ -1425,17 +1653,21 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
     // keeping the control indicators clickable.
     .carousel-indicators {
         pointer-events: none;
-        > * {
+
+        >* {
             pointer-events: auto;
         }
     }
 
-    .carousel-control-prev-icon, .carousel-control-next-icon, .o_carousel_pause_icon {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon,
+    .o_carousel_pause_icon {
         width: $-o-carousel-controllers-size;
         height: $-o-carousel-controllers-size;
     }
 
-    .carousel-control-prev-icon, .carousel-control-next-icon {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
         background-size: 50%;
     }
 
@@ -1451,14 +1683,19 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             border-radius: 0;
         }
 
-        .carousel-control-prev, .carousel-control-next, .o_carousel_pause {
+        .carousel-control-prev,
+        .carousel-control-next,
+        .o_carousel_pause {
             &:hover {
                 background: rgba($carousel-dark-indicator-active-bg, .2);
             }
         }
 
         &.carousel-dark {
-            .carousel-control-prev, .carousel-control-next, .o_carousel_pause {
+
+            .carousel-control-prev,
+            .carousel-control-next,
+            .o_carousel_pause {
                 &:hover {
                     background: rgba($carousel-indicator-active-bg, .2);
                 }
@@ -1466,8 +1703,11 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         }
     }
 
-    &.s_carousel_boxed, &.s_carousel_rounded {
-        .carousel-control-prev-icon, .carousel-control-next-icon {
+    &.s_carousel_boxed,
+    &.s_carousel_rounded {
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
             border-radius: $border-radius;
             border: $border-width solid $border-color;
             background-color: $carousel-dark-indicator-active-bg;
@@ -1475,20 +1715,27 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         }
 
         &.carousel-dark {
-            .carousel-control-prev-icon, .carousel-control-next-icon {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
                 filter: none;
             }
         }
     }
 
     &.s_carousel_rounded {
-        .carousel-control-prev-icon, .carousel-control-next-icon, .o_carousel_pause_icon {
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon,
+        .o_carousel_pause_icon {
             border-radius: $border-radius-pill;
         }
     }
 
     &.s_carousel_arrows_hidden {
-        .carousel-control-prev, .carousel-control-next {
+
+        .carousel-control-prev,
+        .carousel-control-next {
             display: none;
         }
     }
@@ -1530,7 +1777,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         align-items: center;
         height: $-o-carousel-controllers-size;
 
-        &.s_carousel_indicators_dots > button {
+        &.s_carousel_indicators_dots>button {
             width: $-o-carousel-indicators-dots-size;
             height: $-o-carousel-indicators-dots-size;
             border: 0;
@@ -1568,13 +1815,16 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             &::-webkit-scrollbar {
                 height: 6px;
             }
+
             &::-webkit-scrollbar-thumb {
                 border-radius: $btn-border-radius-sm;
                 background: var(--IndicatorsNumbers__Scrollbar-color, #{rgba($carousel-indicator-active-bg, .15)});
             }
+
             &::-webkit-scrollbar-track {
                 background: transparent;
             }
+
             &:hover {
                 scrollbar-color: var(--IndicatorsNumbers__Scrollbar-color, #{$carousel-indicator-active-bg}) transparent;
 
@@ -1582,6 +1832,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
                     background: var(--IndicatorsNumbers__Scrollbar-color, $carousel-indicator-active-bg);
                 }
             }
+
             button {
                 display: flex;
                 align-items: center;
@@ -1597,10 +1848,12 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
                 &:hover {
                     opacity: 1;
                 }
+
                 &:before {
                     content: counter(numberList);
                     counter-increment: numberList;
                 }
+
                 &:after {
                     display: block;
                     width: 0;
@@ -1609,6 +1862,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
                     transition: width .2s ease-in-out; // $transition-base duration & bezier
                     content: '';
                 }
+
                 &.active:after {
                     width: map-get($spacers, 4);
                 }
@@ -1619,6 +1873,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
                 &:first-child {
                     margin-left: auto;
                 }
+
                 &:last-child {
                     margin-right: auto;
                 }
@@ -1649,7 +1904,9 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
     // Style - Indicators outside
     &.s_carousel_controllers_indicators_outside {
         &:not(:has(.s_carousel_indicators_hidden)) {
-            .carousel-control-prev, .carousel-control-next {
+
+            .carousel-control-prev,
+            .carousel-control-next {
                 margin-bottom: $-o-carousel-controllers-size;
             }
         }
@@ -1682,6 +1939,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             }
 
             &.s_carousel_indicators_numbers {
+
                 // For large screen, use the same size as the margin-bottom of
                 // the prev/next buttons (like other indicators; instead of
                 // "auto"), so that the bottom of the buttons is aligned with
@@ -1705,9 +1963,13 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 // sections. This placeholder is also applied to `s_carousel_intro` and
 // `s_quotes_carousel`.
 %carousel_screen_height {
-    .carousel, .carousel-inner, .carousel-item {
+
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
         min-height: inherit;
     }
+
     .carousel-item {
         align-content: center;
     }
@@ -1718,10 +1980,12 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         max-height: 95%;
         padding: 10px;
     }
-    > .carousel-caption {
+
+    >.carousel-caption {
         @include o-position-absolute($right: 50%, $left: 50%);
         bottom: 20px;
-        > div {
+
+        >div {
             position: absolute;
             text-align: left;
             padding: 20px;
@@ -1729,53 +1993,63 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             bottom: 20px;
         }
     }
-    > .carousel-image {
+
+    >.carousel-image {
         @include o-position-absolute($top: 5%, $bottom: 5%);
         max-height: 90%;
         margin: 0 auto;
     }
+
     .carousel-item.text_image .container {
-        > .carousel-caption {
+        >.carousel-caption {
             left: 10%;
-            > div {
+
+            >div {
                 right: 50%;
                 margin-right: -20%;
                 max-width: 550px;
             }
         }
-        > .carousel-image {
+
+        >.carousel-image {
             right: 10%;
             left: 50%;
         }
     }
+
     .carousel-item.image_text .container {
-        > .carousel-caption {
+        >.carousel-caption {
             right: 10%;
-            > div {
+
+            >div {
                 left: 50%;
                 margin-left: -20%;
                 max-width: 550px;
             }
         }
-        > .carousel-image {
+
+        >.carousel-image {
             right: 50%;
             left: 10%;
         }
     }
+
     .carousel-item.text_only .container {
-        > .carousel-caption {
+        >.carousel-caption {
             left: 10%;
             right: 10%;
             top: 10%;
             bottom: auto;
-            > div {
+
+            >div {
                 text-align: center;
                 background: transparent;
                 bottom: auto;
                 width: 100%;
             }
         }
-        > .carousel-image {
+
+        >.carousel-image {
             display: none !important;
         }
     }
@@ -1796,17 +2070,21 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             .carousel-item.active,
             .carousel-item-end:not(.active),
             .carousel-item-prev:not(.active) {
-                &, ~ .carousel-item {
+
+                &,
+                ~.carousel-item {
                     display: block;
                     flex: 0 0 var(--o-carousel-item-width-percentage);
                     margin-right: 0;
                 }
             }
+
             .carousel-item-prev:not(.carousel-item-end) {
                 transform: translateX(calc(-100% - var(--o-carousel-gap)));
             }
-            .active.carousel-item-end + .carousel-item-prev.carousel-item-end,
-            .carousel-item-prev.carousel-item-end ~ .carousel-item {
+
+            .active.carousel-item-end+.carousel-item-prev.carousel-item-end,
+            .carousel-item-prev.carousel-item-end~.carousel-item {
                 right: calc(var(--o-carousel-item-width-percentage) + var(--o-carousel-gap));
                 transform: translateX(calc(100% + var(--o-carousel-gap)));
                 display: block;
@@ -1816,14 +2094,16 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
             // Slide left animation
             .carousel-item-start.active,
             .carousel-item-start:not(.active),
-            .carousel-item-start:not(.active) ~ .carousel-item {
+            .carousel-item-start:not(.active)~.carousel-item {
                 transform: translateX(calc(-100% - var(--o-carousel-gap)));
             }
+
             .carousel-item.active:not(.carousel-item-start):not(.carousel-item-end),
-            .carousel-item.active:not(.carousel-item-start):not(.carousel-item-end) ~ .carousel-item {
+            .carousel-item.active:not(.carousel-item-start):not(.carousel-item-end)~.carousel-item {
                 transition: none;
                 margin-right: initial;
             }
+
             .carousel-item-next:not(.carousel-item-start) {
                 transform: translateX(0%);
             }
@@ -1834,6 +2114,7 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
 // Parallax
 // ".parallax > .s_parallax_bg" selector are kept for compatibility.
 .parallax {
+
     // Kept for compatibility. Before "s_parallax_bg" was wrapped by an
     // intermediate parent element to clip it ("s_parallax_bg_wrap"), its direct
     // parent was the section with the "parallax" class, which had the CSS rule
@@ -1843,21 +2124,28 @@ $-o-carousel-controllers-size: var(--CarouselControllers-size, #{map-get($spacer
         overflow: hidden;
     }
 
-    > .s_parallax_bg, > .s_parallax_bg_wrap > .s_parallax_bg, > .s_parallax_bg_wrap {
+    >.s_parallax_bg,
+    >.s_parallax_bg_wrap>.s_parallax_bg,
+    >.s_parallax_bg_wrap {
         @extend %o-we-background-layer;
     }
+
     @include media-breakpoint-up(xl) {
+
         // Fixed backgrounds are disabled when using a mobile/tablet device,
         // which is not a big deal but, on some of them (iOS...), defining the
         // background as fixed breaks the background-size/position props.
         // So we enable this only for >= XL devices.
         &.s_parallax_is_fixed {
-            > .s_parallax_bg, > .s_parallax_bg_wrap > .s_parallax_bg {
+
+            >.s_parallax_bg,
+            >.s_parallax_bg_wrap>.s_parallax_bg {
                 background-attachment: fixed;
             }
         }
     }
 }
+
 // Keeps parallax snippet element selectable when Height = auto.
 .s_parallax {
     min-height: 10px;
@@ -1888,10 +2176,13 @@ $-transition-duration: 200ms;
             }
         }
     }
+
     &.o_header_standard.o_header_is_scrolled {
-        @if index(('menu_logo_below', 'logo_menu_below'), o-website-value('header-template')) != null {
+        @if index(('menu_logo_below', 'logo_menu_below'), o-website-value('header-template')) !=null {
             .navbar-brand {
-                &, img {
+
+                &,
+                img {
                     transition: none;
                 }
             }
@@ -1906,12 +2197,13 @@ $-transition-duration: 200ms;
 }
 
 // Navbar
-.navbar .o_extra_menu_items > .show {
-    > li {
-        + li {
+.navbar .o_extra_menu_items>.show {
+    >li {
+        +li {
             border-top: $border-width solid $border-color;
         }
-        > a.dropdown-toggle {
+
+        >a.dropdown-toggle {
             background-color: $body-tertiary-bg;
             pointer-events: none; // hack to prevent clicking on it because dropdown always opened
 
@@ -1919,14 +2211,18 @@ $-transition-duration: 200ms;
                 color: inherit !important;
             }
         }
-        > .dropdown-menu {
+
+        >.dropdown-menu {
             border-radius: 0;
 
             .dropdown-item {
                 padding-left: $dropdown-item-padding-x + map-get($spacers, 2);
             }
         }
-        > ul, > .o_mega_menu { // remove dropdown-menu default style as it is nested in another one
+
+        >ul,
+        >.o_mega_menu {
+            // remove dropdown-menu default style as it is nested in another one
             position: static;
             float: none;
             display: block;
@@ -1936,7 +2232,9 @@ $-transition-duration: 200ms;
             border: none;
             box-shadow: none;
         }
-        > .o_mega_menu .row > div { // remove mega menu col-lg-* style
+
+        >.o_mega_menu .row>div {
+            // remove mega menu col-lg-* style
             width: 100%;
             flex: auto;
         }
@@ -1952,10 +2250,12 @@ header {
         // and above the same elements as the header.
         z-index: $zindex-website-header;
     }
+
     &:not(.o_header_no_transition) {
         .o_main_nav {
             transition: all $-transition-duration, color 0ms;
         }
+
         .navbar-brand {
             transition: margin $-transition-duration, font-size $-transition-duration, opacity $-transition-duration ease-out;
 
@@ -1975,6 +2275,7 @@ header {
             overflow-x: hidden; // Needed because of container in container having 0px padding... TODO improve
         }
     }
+
     // ... but we limit the navbar-collapse height
     .navbar-collapse.show {
         max-height: 80vh;
@@ -1982,14 +2283,17 @@ header {
         overflow-x: hidden; // Needed because of container in container having 0px padding... TODO improve
 
         @include media-breakpoint-down(lg) {
-            .nav-link, .dropdown-item {
+
+            .nav-link,
+            .dropdown-item {
                 white-space: normal;
             }
         }
     }
 
     &:not(.o_header_is_scrolled) {
-        $-is-hamburger: o-website-value('header-template') == 'hamburger';
+        $-is-hamburger: o-website-value('header-template')=='hamburger';
+
         @include media-breakpoint-up(md) {
             @if $-is-hamburger {
                 .o_main_nav {
@@ -2006,6 +2310,7 @@ header {
 
     nav.navbar {
         $-menu-border-width: o-website-value('menu-border-width');
+
         @if $-menu-border-width {
             // When the header should only have a bottom border, only take the
             // first value of the variable 'menu-border-width' to behave as if
@@ -2022,19 +2327,27 @@ header {
             &.o_border_right_only {
                 border-width: 0 $-menu-border-bottom-width 0 0 !important;
             }
+
             &.o_full_border {
                 border-width: $-menu-border-width !important;
             }
         }
+
         border-radius: o-website-value('menu-border-radius') !important;
 
-        @if o-website-value('menu-shadow-class') == 'shadow' {
+        @if o-website-value('menu-shadow-class')=='shadow' {
             box-shadow: var(--box-shadow) !important;
-        } @else if o-website-value('menu-shadow-class') == 'shadow-sm' {
+        }
+
+        @else if o-website-value('menu-shadow-class')=='shadow-sm' {
             box-shadow: var(--box-shadow-sm) !important;
-        } @else if o-website-value('menu-shadow-class') == 'shadow-lg' {
+        }
+
+        @else if o-website-value('menu-shadow-class')=='shadow-lg' {
             box-shadow: var(--box-shadow-lg) !important;
-        } @else if o-website-value('menu-shadow-class') == 'o-shadow-custom' {
+        }
+
+        @else if o-website-value('menu-shadow-class')=='o-shadow-custom' {
             box-shadow: o-website-value('menu-box-shadow-style') !important;
         }
 
@@ -2043,10 +2356,13 @@ header {
             border-radius: 0 !important;
         }
     }
+
     // Prevent the color of the header to impact the color of the nav.
-    &.o_header_is_scrolled, &.o_transitioning.o_header_affixed {
+    &.o_header_is_scrolled,
+    &.o_transitioning.o_header_affixed {
         background-color: transparent !important;
     }
+
     // When the page starts scrolling with the "standard" header, there’s a
     // brief moment where the header has a "translate: transform" applied
     // without being "affixed" yet. This causes the "off-canvas mobile" navbar
@@ -2067,7 +2383,7 @@ header {
     }
 }
 
-@if o-website-value('header-template') == 'sidebar' {
+@if o-website-value('header-template')=='sidebar' {
     @include media-breakpoint-up(lg) {
         #wrapwrap:has(> header) {
             // Two different website options might add padding:
@@ -2076,24 +2392,31 @@ header {
             // We need to combine both using `calc`. The `border` solution does
             // not work on Safari.
             $padding-size: o-website-value('sidebar-width');
-            $-hamburger-right: o-website-value("hamburger-position") == "right";
-            @if o-website-value('layout') != 'full' {
+            $-hamburger-right: o-website-value("hamburger-position")=="right";
+
+            @if o-website-value('layout') !='full' {
                 $padding-size: calc(#{$grid-gutter-width} * 2 + #{$padding-size});
             }
+
             @if $-hamburger-right {
                 padding-right: $padding-size;
-            } @else {
+            }
+
+            @else {
                 padding-left: $padding-size;
             }
 
-            > header {
+            >header {
                 --Offcanvas-horizontal-width: #{o-website-value('sidebar-width')};
 
                 @if $-hamburger-right {
                     inset: 0 0 0 auto;
-                } @else {
+                }
+
+                @else {
                     inset: 0 auto 0 0;
                 }
+
                 position: fixed;
                 z-index: $zindex-fixed;
                 display: flex;
@@ -2109,18 +2432,22 @@ header {
                         max-width: 100%;
                         padding: 0 0 $spacer 0;
                     }
+
                     .o_main_nav {
                         flex-direction: column;
                         align-items: start;
                         padding: 0;
                     }
+
                     .navbar-nav {
                         flex-direction: column;
                     }
+
                     .nav-link,
                     .dropdown-item {
                         white-space: initial;
                     }
+
                     .dropdown-menu {
                         position: static;
                     }
@@ -2128,53 +2455,67 @@ header {
             }
         }
     }
-    #wrapwrap > header .s_headline {
+
+    #wrapwrap>header .s_headline {
         // Hide header disclaimer since it is not compatible with sidebar layout
         display: none;
     }
-} @else if o-website-value('header-template') == 'stretch' {
-    #wrapwrap > header input::placeholder {
+}
+
+@else if o-website-value('header-template')=='stretch' {
+    #wrapwrap>header input::placeholder {
         color: #{var(--NavStretch-placeholder-color, $input-placeholder-color)};
     }
-    #wrapwrap > header .o_extra_menu_items {
+
+    #wrapwrap>header .o_extra_menu_items {
         height: 100%;
         border-left: $border-width solid var(--NavLinkWithBackground-bg-color--hover, rgba(var(--#{$variable-prefix}emphasis-color-rgb), .1));
 
-        > .nav-link {
+        >.nav-link {
             display: flex;
             align-items: center;
             height: 100%;
         }
     }
-} @else if o-website-value('header-template') == 'sales_one' {
+}
+
+@else if o-website-value('header-template')=='sales_one' {
     #wrapwrap .o_header_sales_one_bot {
         @include o-apply-colors('header-sales_one');
         @include o-apply-colors('header-sales_one-custom');
         @include o-add-gradient('menu-secondary-gradient');
     }
-} @else if o-website-value('header-template') == 'sales_two' {
+}
+
+@else if o-website-value('header-template')=='sales_two' {
     #wrapwrap .o_header_sales_two_top {
         @include o-apply-colors('header-sales_two');
         @include o-apply-colors('header-sales_two-custom');
         @include o-add-gradient('menu-secondary-gradient');
     }
-} @else if o-website-value('header-template') == 'sales_three' {
+}
+
+@else if o-website-value('header-template')=='sales_three' {
     #wrapwrap .o_header_sales_three_top {
         @include o-apply-colors('header-sales_three');
         @include o-apply-colors('header-sales_three-custom');
         @include o-add-gradient('menu-secondary-gradient');
     }
+
     #wrapwrap header {
         .o_header_sales_three_small_links {
             // Force small links to be proportional to header font size
             --nav-link-font-size: MAX(12px, .75em);
         }
+
         .ms-auto:has(> .o_header_sales_three_small_links + .top_menu.o_menu_loading) {
             // Fix menu auto hide by preventing parent overflow
             overflow: hidden !important;
         }
     }
-} @else if o-website-value('header-template') == 'sales_four' {
+}
+
+@else if o-website-value('header-template')=='sales_four' {
     #wrapwrap .o_header_sales_four_bot {
         @include o-apply-colors('header-sales_four');
         @include o-apply-colors('header-sales_four-custom');
@@ -2190,7 +2531,7 @@ header {
     grid-template-columns: 1fr 33% 1fr;
 }
 
-.o_header_separator > :not(:last-child)::before {
+.o_header_separator> :not(:last-child)::before {
     content: '';
     position: absolute;
     inset: 0 0 0 100%;
@@ -2217,11 +2558,12 @@ header {
     border: $border-width solid $border-color; // Prevent to see the color of the block behind.
 
     // Needed to space the megamenu on this specific header
-    @if o-website-value('header-template') == 'boxed' {
+    @if o-website-value('header-template')=='boxed' {
         margin-top: $navbar-padding-y !important;
     }
 
-    .container, .container-fluid {
+    .container,
+    .container-fluid {
         // Mega menu layout containers are nested in the navbar's `.container`.
         // Override `%o-double-container-no-padding` from `portal.scss` to keep
         // their grid gutter.
@@ -2232,7 +2574,9 @@ header {
 
 // Offcanvas mega menu on mobile or in sidebar/hamburger header
 .o_mega_menu_is_offcanvas {
-    .o_mega_nav, .o_mega_menu {
+
+    .o_mega_nav,
+    .o_mega_menu {
         @include transition(opacity $offcanvas-transition-duration ease-in-out, visibility $offcanvas-transition-duration ease-in-out);
         z-index: $o-mega-menu-zindex;
         max-width: $offcanvas-horizontal-width !important;
@@ -2244,11 +2588,13 @@ header {
             transform: translateX(5%);
         }
     }
+
     .o_mega_menu_left .o_mega_menu section {
         transform: translateX(-5%);
     }
 
-    .o_mega_menu.show, .o_mega_menu.show ~ .o_mega_nav {
+    .o_mega_menu.show,
+    .o_mega_menu.show~.o_mega_nav {
         @include transition(opacity $offcanvas-transition-duration ease-in-out, visibility $offcanvas-transition-duration ease-in-out);
         visibility: visible !important;
         opacity: 1;
@@ -2337,11 +2683,11 @@ header {
 }
 
 #wrapwrap.o_header_overlay {
-    > header:not(.o_header_affixed):not(.o_header_sidebar) {
+    >header:not(.o_header_affixed):not(.o_header_sidebar) {
         @include o-position-absolute(0, 0, auto, 0);
         z-index: 1000;
 
-        > .navbar {
+        >.navbar {
             // Prevent the nav color/gradient to impact the header color.
             background-color: transparent !important;
             background-image: none !important;
@@ -2349,12 +2695,14 @@ header {
             color: inherit !important;
         }
 
-        &:not(.o_top_menu_collapse_shown) > .navbar {
+        &:not(.o_top_menu_collapse_shown)>.navbar {
             @include o-apply-colors(1); // Reset to default colored components
 
             .nav-item {
-                > .nav-link {
-                    &, &:hover {
+                >.nav-link {
+
+                    &,
+                    &:hover {
                         background-color: transparent;
                         color: inherit;
                     }
@@ -2364,9 +2712,12 @@ header {
                     }
                 }
             }
-            .o_header_mobile_buttons_wrap, .btn[data-bs-toggle="offcanvas"] {
+
+            .o_header_mobile_buttons_wrap,
+            .btn[data-bs-toggle="offcanvas"] {
                 color: inherit;
             }
+
             .navbar-toggler-icon {
                 background-color: currentColor;
                 background-image: none;
@@ -2383,7 +2734,9 @@ header {
 
     @if $header-text-color {
         border-color: format-color($header-text-color);
-    } @else {
+    }
+
+    @else {
         border-color: var(--#{$variable-prefix}nav-active-color);
 
         &:hover {
@@ -2394,6 +2747,7 @@ header {
 
 @if index(('block', 'border-bottom'), o-website-value('header-links-style')) {
     @include media-breakpoint-up(md) {
+
         .navbar,
         .navbar-nav {
             padding-top: 0;
@@ -2408,24 +2762,29 @@ header {
             --#{$prefix}accordion-btn-padding-y: var(--#{$prefix}nav-link-padding-y);
             --#{$prefix}accordion-btn-padding-x: var(--#{$prefix}nav-link-padding-x);
 
-            @if o-website-value('header-links-style') == 'outline' {
+            @if o-website-value('header-links-style')=='outline' {
                 // Need to force the padding in this case so that it stays in mobile
                 padding-right: $navbar-nav-link-padding-x;
                 padding-left: $navbar-nav-link-padding-x;
                 border: $border-width solid transparent;
                 border-radius: $nav-pills-border-radius;
-            } @else if o-website-value('header-links-style') == 'block' {
+            }
+
+            @else if o-website-value('header-links-style')=='block' {
                 // There is no way to control navbar links vertical padding in BS4
                 // independently from nav ones, just double them here instead
                 padding-top: $nav-link-padding-y * 2;
                 padding-bottom: $nav-link-padding-y * 2;
                 @include border-radius(0);
-            } @else if o-website-value('header-links-style') == 'border-bottom' {
+            }
+
+            @else if o-website-value('header-links-style')=='border-bottom' {
                 // There is no way to control navbar links vertical padding in BS4
                 // independently from nav ones, just double them here instead
                 padding-top: $nav-link-padding-y * 2;
                 padding-bottom: $nav-link-padding-y * 2;
                 border-bottom: $nav-link-padding-y solid transparent;
+
                 // Replace horizontal paddings by margins (do this with an extra
                 // class to override .navbar-expand-* paddings priority).
                 .navbar & {
@@ -2436,19 +2795,21 @@ header {
             }
         }
 
-        &.active, .show > & {
+        &.active,
+        .show>& {
             @if index(('outline', 'border-bottom'), o-website-value('header-links-style')) {
                 @include active-link-border-color;
             }
 
-            @if o-website-value('header-links-style') == 'underline' {
+            @if o-website-value('header-links-style')=='underline' {
                 @include active-link-border-color;
+
                 span {
                     border-bottom: 0.125em solid;
                 }
             }
 
-            @if o-website-value('header-links-style') == 'bold' {
+            @if o-website-value('header-links-style')=='bold' {
                 font-weight: bold !important;
             }
         }
@@ -2458,7 +2819,7 @@ header {
 // Vertical headers specific links style tweaks
 :where(header#top.o_header_sidebar, header#top .o_navbar_mobile) {
     @if index(('fill', 'pills', 'outline'), o-website-value('header-links-style')) {
-        $-accordion-link-radius: if(o-website-value('header-links-style') == 'pills', $border-radius-pill, $border-radius-sm);
+        $-accordion-link-radius: if(o-website-value('header-links-style')=='pills', $border-radius-pill, $border-radius-sm);
 
         .nav-item:not(.o_mega_menu *) {
             --border-width: 0;
@@ -2484,20 +2845,20 @@ header {
         }
     }
 
-    @if o-website-value('header-links-style') == 'outline' {
+    @if o-website-value('header-links-style')=='outline' {
         .accordion-item .nav-link.active:not(.o_mega_menu *) {
             border: $border-width solid currentColor !important;
             background-color: transparent !important;
         }
     }
 
-    @if o-website-value('header-links-style') == 'block' {
+    @if o-website-value('header-links-style')=='block' {
         .accordion-item .nav-link.active:not(.o_mega_menu *) {
             --header-link-style-accordion-color: var(--#{$prefix}nav-pills-link-active-color);
         }
     }
 
-    @if o-website-value('header-links-style') == 'border-bottom' {
+    @if o-website-value('header-links-style')=='border-bottom' {
         .nav-item:not(.o_mega_menu *) {
             .nav-link:not(.o_mega_menu *, .o_mega_nav *) {
                 padding-bottom: map-get($spacers, 3) - $nav-link-padding-y !important;
@@ -2522,22 +2883,27 @@ header {
 @if index(('slideout_slide_hover', 'slideout_shadow'), o-website-value('footer-effect')) {
     @include media-breakpoint-up(lg) {
         #wrapwrap.o_footer_effect_enable {
-            > main {
-                @if o-website-value('layout') == 'full' {
+            >main {
+                @if o-website-value('layout')=='full' {
+
                     // Ensure a transparent snippet at the end of the content
                     // still appears with the same background when hovering the
                     // footer during the scroll effect.
                     @if o-website-value('body-image') {
                         @include body-image-bg-style();
-                    } @else {
+                    }
+
+                    @else {
                         background-color: $body-bg;
                     }
                 }
-                @if o-website-value('footer-effect') == 'slideout_shadow' {
+
+                @if o-website-value('footer-effect')=='slideout_shadow' {
                     box-shadow: $box-shadow;
                 }
             }
-            > footer {
+
+            >footer {
                 @include o-position-sticky(auto, 0, 0, 0);
                 z-index: -1;
             }
@@ -2550,10 +2916,12 @@ header {
     .dropdown-menu {
         min-width: 0;
     }
+
     a.list-inline-item {
         padding: 3px 0;
     }
 }
+
 .o_lang_flag {
     width: 1em;
     height: 1em;
@@ -2562,6 +2930,7 @@ header {
     object-fit: cover;
     box-shadow: rgba(0, 0, 0, 0.429) 1px 1px 1px;
 }
+
 span.list-inline-item.o_add_language:last-child {
     display: none !important; // Hide the separator if it is the last list item
 }
@@ -2578,6 +2947,7 @@ span.list-inline-item.o_add_language:last-child {
             margin-bottom: 1rem;
         }
     }
+
     #o_footer_scrolltop {
         $-footer-color: o-color('footer-custom') or o-color('footer') or rgba(0, 0, 0, 0);
         $-footer-color: mix(rgba($-footer-color, 1.0), $body-bg, percentage(alpha($-footer-color)));
@@ -2592,11 +2962,12 @@ span.list-inline-item.o_add_language:last-child {
         @include o-apply-colors($-footer-color, $with-extras: false, $background: $-footer-color);
         text-decoration: none;
 
-        @if $-footer-color == $-copyright-color {
+        @if $-footer-color ==$-copyright-color {
             color: rgba(color-contrast($-footer-color), 0.5);
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             @include o-apply-colors($-copyright-color, $with-extras: false, $background: $-footer-color);
             text-decoration: none;
         }
@@ -2610,11 +2981,13 @@ span.list-inline-item.o_add_language:last-child {
     .figure-img {
         margin-bottom: 0;
     }
+
     .figure-caption {
         @include o-position-absolute(auto, 0, 0, 0);
         @include o-bg-color(rgba(map-get($theme-colors, 'dark'), $o-theme-figcaption-opacity));
         padding: $tooltip-padding-y $tooltip-padding-x;
         font-weight: $font-weight-bold;
+
         a {
             color: inherit;
         }
@@ -2632,7 +3005,7 @@ span.list-inline-item.o_add_language:last-child {
 }
 
 // TODO: Will be handled properly in master/saas-12.2, temp fix for website_event.registration_attendee_details
-.modal-footer > .float-start {
+.modal-footer>.float-start {
     margin-right: auto;
 }
 
@@ -2655,6 +3028,7 @@ span.list-inline-item.o_add_language:last-child {
     display: flex;
     outline: none;
     box-shadow: none;
+
     // Need to update button size based on icon size.
     @for $i from 1 through 5 {
         &:has(i.oi-#{$i}x) {
@@ -2662,11 +3036,13 @@ span.list-inline-item.o_add_language:last-child {
             height: #{$i}em;
         }
     }
-    & > .oi::before {
+
+    &>.oi::before {
         vertical-align: middle;
     }
 
-    &, &:hover {
+    &,
+    &:hover {
         text-decoration: none;
     }
 
@@ -2682,13 +3058,19 @@ span.list-inline-item.o_add_language:last-child {
     &:hover {
         animation-iteration-count: 1;
     }
+
     // Attention keeper for the "scroll down" top-banner button
     @keyframes o-anim-heartbeat {
-        0%, 14%, 35% {
+
+        0%,
+        14%,
+        35% {
             transform: scale(1);
             opacity: 0.8;
         }
-        7%, 21% {
+
+        7%,
+        21% {
             transform: scale(1.3);
             opacity: 1;
         }
@@ -2697,6 +3079,7 @@ span.list-inline-item.o_add_language:last-child {
 
 // Ribbons
 $ribbon-padding: 100px;
+
 .o_ribbon {
     margin: 0;
     @include font-size(1rem);
@@ -2776,20 +3159,25 @@ $ribbon-padding: 100px;
         }
     }
 
-    .oe_search_box:focus, .oe_search_button:focus {
+    .oe_search_box:focus,
+    .oe_search_button:focus {
         z-index: 1;
         box-shadow: none !important;
     }
 
     &.o_keyboard_navigation {
-        .oe_search_box:focus, .oe_search_button:focus {
+
+        .oe_search_box:focus,
+        .oe_search_button:focus {
             outline: $border-width * 2 solid $primary;
             outline-offset: -(map-get($spacers, 2));
         }
     }
 
     &:where(:has(.o_dropdown_menu.show):not(.o_search_radius_pill)) {
-        .oe_search_box, .oe_search_button {
+
+        .oe_search_box,
+        .oe_search_button {
             border-bottom-right-radius: 0 !important; // !important for input-group
             border-bottom-left-radius: 0;
         }
@@ -2807,7 +3195,8 @@ $ribbon-padding: 100px;
 
 
 // Search results
-.o_searchbar_form .o_dropdown_menu, .o_searchbar_result {
+.o_searchbar_form .o_dropdown_menu,
+.o_searchbar_result {
     container-type: inline-size;
     container-name: search-results;
 }
@@ -2864,13 +3253,14 @@ $ribbon-padding: 100px;
     }
 }
 
-ul.o_checklist > li.o_checked::after {
+ul.o_checklist>li.o_checked::after {
     left: - ($o-checklist-margin-left - $o-checklist-checkmark-width) - 1;
     top: 0;
 }
 
 // Bottom fixed element (e.g. livechat button)
-.modal-open .o_bottom_fixed_element, .o_bottom_fixed_element_hidden {
+.modal-open .o_bottom_fixed_element,
+.o_bottom_fixed_element_hidden {
     // Prevent bottom fixed elements from hidding buttons and
     // hide them if a modal is open.
     display: none !important;
@@ -2885,21 +3275,26 @@ ul.o_checklist > li.o_checked::after {
 .o_text_content_invisible {
     color: transparent !important;
 }
+
 [placeholder*="data-oe-translation-source-sha"] {
-    &::-webkit-input-placeholder{ /* WebKit */
+    &::-webkit-input-placeholder {
+        /* WebKit */
         color: transparent;
         opacity: 0;
     }
-    &::-moz-placeholder { /* Firefox */
+
+    &::-moz-placeholder {
+        /* Firefox */
         color: transparent;
         opacity: 0;
     }
 }
+
 input[value*="data-oe-translation-source-sha"] {
     @extend .o_text_content_invisible;
 }
 
-.o_translation_select + select {
+.o_translation_select+select {
     // Hide translatable `<select/>`s since we use `.o_translation_select`
     // elements to handle translations.
     display: none !important;
@@ -2907,9 +3302,12 @@ input[value*="data-oe-translation-source-sha"] {
 
 // Offcanvas menu for in page filters (e.g. product list)
 .o_website_offcanvas .accordion-button {
+
     // Since this nav is visible on mobile only, remove all visual
     // effects related to keyboard/mouse navigation.
-    &, &:focus, &:hover {
+    &,
+    &:focus,
+    &:hover {
         box-shadow: none;
         z-index: 0;
     }
@@ -2930,14 +3328,14 @@ input[value*="data-oe-translation-source-sha"] {
     z-index: 1;
     animation-duration: 1s;
     animation-fill-mode: both;
-    transform: translate3d(0,0,0); // force GPU acceleration
+    transform: translate3d(0, 0, 0); // force GPU acceleration
     backface-visibility: hidden; // avoid flickering
     text-rendering: geometricPrecision; // take care of animated titles
     visibility: hidden;
     --wanim-intensity: 50;
     --wanim-intensity-squared: calc(var(--wanim-intensity) * var(--wanim-intensity));
     --wanim-zoom-out-scale: calc(1 + (var(--wanim-intensity-squared) / 8333.3));
-    --wanim-zoom-in-scale: calc(1.01 - (var(--wanim-intensity) / 100 ));
+    --wanim-zoom-in-scale: calc(1.01 - (var(--wanim-intensity) / 100));
     --wanim-zoom-in-scale-60: calc(var(--wanim-zoom-in-scale) + ((1 - var(--wanim-zoom-in-scale)) / 2));
     --wanim-opacity-adjustment: 0;
 
@@ -2945,10 +3343,13 @@ input[value*="data-oe-translation-source-sha"] {
         transform: none !important;
     }
 }
+
 .o_animate_preview {
     visibility: visible;
 }
+
 .o_wanim_overflow_xy_hidden {
+
     // "overflow-x: clip" is added to the "#wrapwrap" and not to "html" because
     // if it's added to "html", when a popup opens, the page scrolls to the top.
     // It's not added on body because mobile browser ignore overflow-x on it.
@@ -2956,29 +3357,36 @@ input[value*="data-oe-translation-source-sha"] {
         // We use clip instead of hidden to prevent scroll animations to an
         // anchor from stopping working.
         overflow-x: clip !important;
+
         // For supporting browsers not updated since around 2021-2022.
         @supports not (overflow-x: clip) {
             overflow-x: hidden !important;
         }
     }
-    &.o_rtl, .o_rtl {
+
+    &.o_rtl,
+    .o_rtl {
+
         // Fix for Chrome and Edge bug: resolves slow/stuck scrolling during
         // left-overflowing animations on RTL web pages. Note: using overflow on
         // the main element hides animated elements outside of it (e.g. "Framed"
         // page layout). This may not be the ideal solution but could be the
         // best workaround for now.
-        > main {
+        >main {
             overflow-x: hidden;
             overflow-y: hidden;
         }
     }
+
     .o_footer_slideout {
         overflow-y: hidden !important;
     }
 }
+
 .o_animated_text {
     display: inline-block;
 }
+
 .o_animate_on_scroll {
     animation-play-state: paused;
     --wanim-opacity-adjustment: 1;
@@ -2991,13 +3399,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(0, calc(-2% * var(--wanim-intensity)));
     }
+
     10% {
         opacity: 1;
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_slide_in.o_anim_from_top {
     animation-name: o_anim_slide_in_down;
 }
@@ -3007,13 +3418,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(calc(-2% * var(--wanim-intensity)), 0);
     }
+
     10% {
         opacity: 1;
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_slide_in.o_anim_from_left {
     animation-name: o_anim_slide_in_left;
 }
@@ -3023,14 +3437,17 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(calc(2% * var(--wanim-intensity)), 0);
     }
+
     10% {
         opacity: 1;
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
-.o_anim_slide_in.o_anim_from_right{
+
+.o_anim_slide_in.o_anim_from_right {
     animation-name: o_anim_slide_in_right;
 }
 
@@ -3039,13 +3456,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(0, calc(2% * var(--wanim-intensity)));
     }
+
     10% {
         opacity: 1;
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_slide_in.o_anim_from_bottom {
     animation-name: o_anim_slide_in_up;
 }
@@ -3053,150 +3473,216 @@ input[value*="data-oe-translation-source-sha"] {
 // Bounce /////////////////////////////////////////////////////////////////////
 
 @keyframes o_anim_bounce_in {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     0% {
         opacity: 0;
         transform: scale(calc(1 - (var(--wanim-intensity) / 71.4)));
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     20% {
         transform: scale(calc(1 + (var(--wanim-intensity-squared) / 25000)));
     }
+
     40% {
         transform: scale(calc(1 - (var(--wanim-intensity-squared) / 25000)));
     }
+
     60% {
         opacity: 1;
         transform: scale(calc(1 + (var(--wanim-intensity-squared) / 83333.3)));
     }
+
     80% {
         transform: scale(calc(1 - (var(--wanim-intensity-squared) / 83333.3)));
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
     }
 }
+
 .o_anim_bounce_in {
     animation-name: o_anim_bounce_in;
 }
 
 @keyframes o_anim_bounce_in_down {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     0% {
         opacity: 0;
         transform: translate(0, -3000px);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: translate(0, calc(1px * (var(--wanim-intensity-squared) / 100)));
     }
+
     75% {
         transform: translate(0, calc(-1px * (var(--wanim-intensity-squared) / 250)));
     }
+
     90% {
         transform: translate(0, calc(1px * (var(--wanim-intensity-squared) / 500)));
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_bounce_in.o_anim_from_top {
     animation-name: o_anim_bounce_in_down;
 }
 
 @keyframes o_anim_bounce_in_left {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     0% {
         opacity: 0;
         transform: translate(-3000px, 0);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: translate(calc(1px * (var(--wanim-intensity-squared) / 100)), 0);
     }
+
     75% {
         transform: translate(calc(-1px * (var(--wanim-intensity-squared) / 250)), 0);
     }
+
     90% {
         transform: translate(calc(1px * (var(--wanim-intensity-squared) / 500)), 0);
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_bounce_in.o_anim_from_left {
     animation-name: o_anim_bounce_in_left;
 }
 
 @keyframes o_anim_bounce_in_right {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     0% {
         opacity: 0;
         transform: translate(3000px, 0);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: translate(calc(-1px * (var(--wanim-intensity-squared) / 100)), 0);
     }
+
     75% {
         transform: translate(calc(1px * (var(--wanim-intensity-squared) / 250)), 0);
     }
+
     90% {
         transform: translate(calc(-1px * (var(--wanim-intensity-squared) / 500)), 0);
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_bounce_in.o_anim_from_right {
     animation-name: o_anim_bounce_in_right;
 }
 
 @keyframes o_anim_bounce_in_up {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     0% {
         opacity: 0;
         transform: translate(0, 3000px);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: translate(0, calc(-1px * (var(--wanim-intensity-squared) / 100)));
     }
+
     75% {
         transform: translate(0, calc(1px * (var(--wanim-intensity-squared) / 250)));
     }
+
     90% {
         transform: translate(0, calc(-1px * (var(--wanim-intensity-squared) / 500)));
     }
+
     100% {
         transform: translate(0, 0);
     }
 }
+
 .o_anim_bounce_in.o_anim_from_bottom {
     animation-name: o_anim_bounce_in_up;
 }
@@ -3207,10 +3693,12 @@ input[value*="data-oe-translation-source-sha"] {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_fade_in {
     animation-name: o_anim_fade_in;
 }
@@ -3220,11 +3708,13 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(0, calc(-2% * var(--wanim-intensity)));
     }
+
     100% {
         opacity: 1;
         transform: translate(0, 0);
     }
 }
+
 .o_anim_fade_in.o_anim_from_top {
     animation-name: o_anim_fade_in_down;
 }
@@ -3234,11 +3724,13 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(calc(-2% * var(--wanim-intensity)), 0);
     }
+
     100% {
         opacity: 1;
         transform: translate(0, 0);
     }
 }
+
 .o_anim_fade_in.o_anim_from_left {
     animation-name: o_anim_fade_in_left;
 }
@@ -3248,11 +3740,13 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(calc(2% * var(--wanim-intensity)), 0);
     }
+
     100% {
         opacity: 1;
         transform: translate(0, 0);
     }
 }
+
 .o_anim_fade_in.o_anim_from_right {
     animation-name: o_anim_fade_in_right;
 }
@@ -3262,19 +3756,27 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: translate(0, calc(2% * var(--wanim-intensity)));
     }
+
     100% {
         opacity: 1;
         transform: translate(0, 0);
     }
 }
+
 .o_anim_fade_in.o_anim_from_bottom {
     animation-name: o_anim_fade_in_up;
 }
 
 @keyframes o_anim_fade_out {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 .o_anim_fade_out {
     animation-name: o_anim_fade_out;
 }
@@ -3286,14 +3788,17 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: rotate(calc(-1deg * (5 + (var(--wanim-intensity-squared) / 12.82))));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
         transform: rotate(0);
     }
 }
+
 .o_anim_rotate_in {
     animation-name: o_anim_rotate_in;
 }
@@ -3304,15 +3809,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform-origin: left bottom;
         transform: rotate(calc(-1deg * (5 + (var(--wanim-intensity-squared) / 62.5))));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
         transform-origin: left bottom;
         transform: rotate(0);
     }
 }
+
 .o_anim_rotate_in.o_anim_from_bottom_left {
     animation-name: o_anim_rotate_in_down_left;
 }
@@ -3323,15 +3831,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform-origin: right bottom;
         transform: rotate(calc(1deg * (5 + (var(--wanim-intensity-squared) / 62.5))));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
         transform-origin: right bottom;
         transform: rotate(0);
     }
 }
+
 .o_anim_rotate_in.o_anim_from_bottom_right {
     animation-name: o_anim_rotate_in_down_right;
 }
@@ -3342,15 +3853,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform-origin: left top;
         transform: rotate(calc(1deg * (5 + (var(--wanim-intensity-squared) / 62.5))));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
         transform-origin: left top;
         transform: rotate(0);
     }
 }
+
 .o_anim_rotate_in.o_anim_from_top_left {
     animation-name: o_anim_rotate_in_up_left;
 }
@@ -3361,15 +3875,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform-origin: right top;
         transform: rotate(calc(-1deg * (5 + (var(--wanim-intensity-squared) / 62.5))));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
         transform-origin: right top;
         transform: rotate(0);
     }
 }
+
 .o_anim_rotate_in.o_anim_from_top_right {
     animation-name: o_anim_rotate_in_up_right;
 }
@@ -3381,13 +3898,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-out-scale));
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_out {
     animation-name: o_anim_zoom_out;
 }
@@ -3397,13 +3917,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-out-scale)) translate(100%, 0);
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_out.o_anim_from_right {
     animation-name: o_anim_zoom_out_right;
 }
@@ -3413,13 +3936,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-out-scale)) translate(-100%, 0);
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_out.o_anim_from_left {
     animation-name: o_anim_zoom_out_left;
 }
@@ -3429,13 +3955,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-out-scale)) translate(0, 100%);
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_out.o_anim_from_bottom {
     animation-name: o_anim_zoom_out_bottom;
 }
@@ -3445,13 +3974,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-out-scale)) translate(0, -100%);
     }
+
     10% {
         opacity: calc(0.1 + (0.9 * (var(--wanim-opacity-adjustment))));
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_out.o_anim_from_top {
     animation-name: o_anim_zoom_out_top;
 }
@@ -3463,13 +3995,16 @@ input[value*="data-oe-translation-source-sha"] {
         opacity: 0;
         transform: scale(var(--wanim-zoom-in-scale));
     }
+
     10% {
         opacity: calc(0.2 + (0.8 * (var(--wanim-opacity-adjustment))));
     }
+
     50% {
         opacity: 1;
     }
 }
+
 .o_anim_zoom_in {
     animation-name: o_anim_zoom_in;
 }
@@ -3480,15 +4015,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform: scale(var(--wanim-zoom-in-scale)) translate(0, calc(-0.1px * var(--wanim-intensity-squared)));
         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: scale(var(--wanim-zoom-in-scale-60)) translate(0, calc(1px * var(--wanim-intensity)));
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
+
 .o_anim_zoom_in.o_anim_from_top {
     animation-name: o_anim_zoom_in_down;
 }
@@ -3499,15 +4037,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform: scale(var(--wanim-zoom-in-scale)) translate(0, calc(0.1px * var(--wanim-intensity-squared)));
         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: scale(var(--wanim-zoom-in-scale-60)) translate(0, calc(-1px * var(--wanim-intensity)));
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
+
 .o_anim_zoom_in.o_anim_from_bottom {
     animation-name: o_anim_zoom_in_up;
 }
@@ -3518,15 +4059,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform: scale(var(--wanim-zoom-in-scale)) translate(calc(-0.1px * var(--wanim-intensity-squared)), 0);
         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: scale(var(--wanim-zoom-in-scale-60)) translate(calc(0.2px * var(--wanim-intensity)), 0);
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
+
 .o_anim_zoom_in.o_anim_from_left {
     animation-name: o_anim_zoom_in_left;
 }
@@ -3537,15 +4081,18 @@ input[value*="data-oe-translation-source-sha"] {
         transform: scale(var(--wanim-zoom-in-scale)) translate(calc(0.1px * var(--wanim-intensity-squared)), 0);
         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
+
     10% {
         opacity: calc(0.15 + (0.85 * (var(--wanim-opacity-adjustment))));
     }
+
     60% {
         opacity: 1;
         transform: scale(var(--wanim-zoom-in-scale-60)) translate(calc(-0.2px * var(--wanim-intensity)), 0);
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
+
 .o_anim_zoom_in.o_anim_from_right {
     animation-name: o_anim_zoom_in_right;
 }
@@ -3553,13 +4100,19 @@ input[value*="data-oe-translation-source-sha"] {
 // Flash / Pulse / Shake / Tada ///////////////////////////////////////////////
 
 @keyframes o_anim_flash {
-    0%, 50%, 100% {
+
+    0%,
+    50%,
+    100% {
         opacity: 1;
     }
-    25%, 75% {
+
+    25%,
+    75% {
         opacity: calc(1 - (var(--wanim-intensity) / 100));
     }
 }
+
 .o_anim_flash {
     animation-name: o_anim_flash;
 }
@@ -3568,28 +4121,43 @@ input[value*="data-oe-translation-source-sha"] {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(calc(1.01 + (0.000016 * var(--wanim-intensity-squared))));
     }
+
     100% {
         transform: scale(1);
     }
 }
+
 .o_anim_pulse {
     animation-name: o_anim_pulse;
 }
 
 @keyframes o_anim_shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0);
     }
-    10%, 30%, 50%, 70%, 90% {
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
         transform: translate(calc(-1px - (0.0036px * var(--wanim-intensity-squared))), 0);
     }
-    20%, 40%, 60%, 80% {
+
+    20%,
+    40%,
+    60%,
+    80% {
         transform: translate(calc(1px + (0.0036px * var(--wanim-intensity-squared))), 0);
     }
 }
+
 .o_anim_shake {
     animation-name: o_anim_shake;
 }
@@ -3598,19 +4166,30 @@ input[value*="data-oe-translation-source-sha"] {
     0% {
         transform: scale(1);
     }
-    10%, 20% {
+
+    10%,
+    20% {
         transform: scale(calc(1 - (0.00004 * var(--wanim-intensity-squared)))) rotate(calc(-2deg - (0.02deg * var(--wanim-intensity))));
     }
-    30%, 50%, 70%, 90% {
+
+    30%,
+    50%,
+    70%,
+    90% {
         transform: scale(calc(1 + (0.00004 * var(--wanim-intensity-squared)))) rotate(calc(2deg + (0.02deg * var(--wanim-intensity))));
     }
-    40%, 60%, 80% {
+
+    40%,
+    60%,
+    80% {
         transform: scale(calc(1 + (0.00004 * var(--wanim-intensity-squared)))) rotate(calc(-2deg - (0.02deg * var(--wanim-intensity))));
     }
+
     100% {
         transform: scale(1);
     }
 }
+
 .o_anim_tada {
     animation-name: o_anim_tada;
 }
@@ -3622,10 +4201,12 @@ input[value*="data-oe-translation-source-sha"] {
         transform: perspective(1000px) rotateX(calc(1deg * (5 + (var(--wanim-intensity) * 1.7))));
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
 }
+
 .o_anim_flip_in_x {
     backface-visibility: visible;
     animation-name: o_anim_flip_in_x;
@@ -3637,10 +4218,12 @@ input[value*="data-oe-translation-source-sha"] {
         transform: perspective(1000px) rotateY(calc(1deg * (5 + (var(--wanim-intensity) * 1.7))));
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
 }
+
 .o_anim_flip_in_y {
     backface-visibility: visible;
     animation-name: o_anim_flip_in_y;
@@ -3651,30 +4234,39 @@ input[value*="data-oe-translation-source-sha"] {
 .o_anim_dur500 {
     animation-duration: 500ms;
 }
+
 .o_anim_dur1500 {
     animation-duration: 1500ms;
 }
+
 .o_anim_dur2000 {
     animation-duration: 2000ms;
 }
+
 .o_anim_dur2500 {
     animation-duration: 2500ms;
 }
+
 .o_anim_dur3000 {
     animation-duration: 3000ms;
 }
+
 .o_anim_del500 {
     animation-delay: 500ms;
 }
+
 .o_anim_del1000 {
     animation-delay: 1000ms;
 }
+
 .o_anim_del1500 {
     animation-delay: 1500ms;
 }
+
 .o_anim_del2000 {
     animation-delay: 2000ms;
 }
+
 .o_anim_del2500 {
     animation-delay: 2500ms;
 }
@@ -3707,28 +4299,35 @@ input[value*="data-oe-translation-source-sha"] {
     // color to the whole element, otherwise the border color won't match the
     // input border. To fix that, we need to define the color on a child element
     // (eg. <i/> for an icon or <span/> for text).
-    > * {
+    >* {
         color: rgba($input-color, 0.6);
     }
-    .is-invalid ~ &,
+
+    .is-invalid~&,
     &:has(~ .is-invalid) {
         border-color: $form-feedback-invalid-color;
     }
-    .is-invalid ~ & + .input-group-text {
+
+    .is-invalid~&+.input-group-text {
         border-left-color: $form-feedback-invalid-color;
     }
-    .form-control ~ &, .form-select ~ & {
+
+    .form-control~&,
+    .form-select~& {
         padding-left: $input-group-addon-padding-x * .5;
     }
-    &:has(~ .form-control), &:has(~ .form-select) {
+
+    &:has(~ .form-control),
+    &:has(~ .form-select) {
         padding-right: $input-group-addon-padding-x * .5;
     }
-    .form-control:disabled ~ &,
-    .form-control[readonly] ~ &,
+
+    .form-control:disabled~&,
+    .form-control[readonly]~&,
     &:has(~ .form-control:disabled),
     &:has(~ .form-control[readonly]),
-    .form-select:disabled ~ &,
-    .form-select[readonly] ~ &,
+    .form-select:disabled~&,
+    .form-select[readonly]~&,
     &:has(~ .form-select:disabled),
     &:has(~ .form-select[readonly]) {
         background-color: $input-disabled-bg;
@@ -3736,8 +4335,8 @@ input[value*="data-oe-translation-source-sha"] {
     }
 }
 
-.input-group-text-subtle ~ .form-control:not(:focus),
-.input-group-text-subtle ~ .form-select:not(:focus):not(:hover) {
+.input-group-text-subtle~.form-control:not(:focus),
+.input-group-text-subtle~.form-select:not(:focus):not(:hover) {
     border-left-width: 0;
 }
 
@@ -3764,40 +4363,52 @@ input[value*="data-oe-translation-source-sha"] {
     justify-content: center;
 
     div.media_iframe_video {
-      width: 100%;
+        width: 100%;
     }
 }
 
-.s_social_media, .s_share {
+.s_social_media,
+.s_share {
     $-size: map-get($spacers, 5);
+
     a {
-        .oi, .social_media_img {
+
+        .oi,
+        .social_media_img {
             &.o_cc {
                 color: var(--color);
                 background-color: var(--o-cc-bg);
             }
         }
+
         text-decoration: none;
+
         &:hover {
             text-decoration: none;
         }
     }
+
     &[data-icon-underline="hover"] a {
         text-decoration: none;
+
         &:hover {
             text-decoration: underline;
         }
     }
+
     &[data-icon-underline="always"] a {
         text-decoration: underline;
     }
+
     .small_social_icon {
         width: $-size - 1rem;
         height: $-size - 1rem;
         font-size: 0.875em;
     }
+
     a {
         .oi-stack {
+
             /*
             Ensures consistent size and padding around icons when the
             layout is set to "none" and the size is "huge" or "large".
@@ -3817,13 +4428,16 @@ input[value*="data-oe-translation-source-sha"] {
 
     &:not(.no_icon_color) {
         a {
-            .oi, .social_media_img {
+
+            .oi,
+            .social_media_img {
                 // Removes the default color so the icon inherits its parent’s
                 // color, where the icon’s official brand color is defined.
                 color: unset;
             }
         }
     }
+
     &.no_icon_color {
         a {
             // Unless a color is defined on the icon itself, as the icons with a
@@ -3840,6 +4454,7 @@ img.o_image_popup {
 
 .slide:not(.carousel-instant) {
     --transition-duration: 600ms;
+
     .carousel-item {
         transition-duration: var(--transition-duration);
     }

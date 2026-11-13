@@ -1,5 +1,5 @@
 // The goal of this script is to have a shape ready for use with the
-// "Shape on Image" feature of Odoo.
+// "Shape on Image" feature of WETH.
 // Therefor we need to rearrange the file a little.
 // Marks which axis each parameter of a command belongs to, as well as whether
 // It's a positional measurement (x/y), a distance (dx/dy) or none (angles, flags)
@@ -108,8 +108,7 @@ submitButton.addEventListener("click", async (ev) => {
                 svgBackground.setAttributeNS(
                     "http://www.w3.org/2000/svg",
                     "viewBox",
-                    `${bgBbox.x - adj} ${bgBbox.y - adj} ${bgBbox.width + adj * 2} ${
-                        bgBbox.height + adj * 2
+                    `${bgBbox.x - adj} ${bgBbox.y - adj} ${bgBbox.width + adj * 2} ${bgBbox.height + adj * 2
                     }`
                 );
             } else {

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 from psycopg2.errors import UniqueViolation

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 PAYMENT_RETURN_ROUTE = "/payment/iyzico/return"
 WEBHOOK_ROUTE = "/payment/iyzico/webhook"

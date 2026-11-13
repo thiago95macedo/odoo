@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of WETH. See LICENSE file for full copyright and licensing details.
 import { patch } from "@web/core/utils/patch";
 import { useTrackedAsync } from "@point_of_sale/app/hooks/hooks";
 import { useService } from "@web/core/utils/hooks";

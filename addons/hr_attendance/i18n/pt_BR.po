@@ -286,8 +286,8 @@ msgstr "Todos os departamentos"
 
 #. module: hr_attendance
 #: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
-msgid "Allow Users to Check in/out from Odoo."
-msgstr "Permitir que os usuários façam check-in/out no Odoo."
+msgid "Allow Users to Check in/out from WETH."
+msgstr "Permitir que os usuários façam check-in/out no WETH."
 
 #. module: hr_attendance
 #: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import json
 from datetime import datetime
@@ -140,7 +140,7 @@ class PaymentProvider(models.Model):
         return displayed_notification
 
     def _match_paymob_payment_methods(self, paymob_gateways_data):
-        """Filter gateways available in Paymob to match the payment methods enabled in Odoo.
+        """Filter gateways available in Paymob to match the payment methods enabled in WETH.
 
         This method takes the full list of gateways from Paymob, and while avoiding duplicates,
         returns only those that:
@@ -194,7 +194,7 @@ class PaymentProvider(models.Model):
         The integration names acts as the identifier to specify which payment method is to be used
         for every transaction.
 
-        :param list matched_gateways_data: The gateways data matching payment methods in Odoo.
+        :param list matched_gateways_data: The gateways data matching payment methods in WETH.
         :return: None
         """
         for gateway_data in matched_gateways_data:

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 import datetime
 import logging
 from contextlib import contextmanager
@@ -23,7 +23,7 @@ MAX_RECURRENT_EVENT = 720
 # API requests are sent to Microsoft Calendar after the current transaction ends.
 # This ensures changes are sent to Microsoft only if they really happened in the Odoo database.
 # It is particularly important for event creation , otherwise the event might be created
-# twice in Microsoft if the first creation crashed in Odoo.
+# twice in Microsoft if the first creation crashed in WETH.
 def after_commit(func):
     @wraps(func)
     def wrapped(self, *args, **kwargs):
@@ -304,7 +304,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     @api.model
     def _sync_microsoft2odoo(self, microsoft_events: MicrosoftEvent):
         """
-        Synchronize Microsoft recurrences in Odoo.
+        Synchronize Microsoft recurrences in WETH.
         Creates new recurrences, updates existing ones.
         :return: synchronized odoo
         """
@@ -341,7 +341,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
         synced_recurrences |= cancelled_recurrences
         synced_events |= cancelled_events | cancelled_recurrences.calendar_event_ids
 
-        # Get sync lower bound days range for checking if old events must be updated in Odoo.
+        # Get sync lower bound days range for checking if old events must be updated in WETH.
         ICP = self.env['ir.config_parameter'].sudo()
         lower_bound_day_range = ICP.get_int('microsoft_calendar.sync.lower_bound_range')
 

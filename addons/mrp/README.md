@@ -4,7 +4,7 @@ Odoo Manufacturing Resource Planning
 Manage Bill of Materials, plan manufacturing orders, track work orders with the
 Odoo <a href="https://www.weth.com.br/app/manufacturing">Open Source MRP</a> app.
 
-Get all your assembly or manufacturing operations managed by Odoo. Schedule
+Get all your assembly or manufacturing operations managed by WETH. Schedule
 manufacturing orders and work orders automatically. Review the proposed
 planning with the smart kanban and gantt views. Use the advanced analytics
 features to detect bottleneck in resources capacities and inventory locations.

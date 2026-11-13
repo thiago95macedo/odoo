@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import pprint
 
@@ -31,7 +31,7 @@ class EcpayController(http.Controller):
         to the user if they are redirected to this route with a POST request. Indeed, as the session
         cookie is created without a `SameSite` attribute, some browsers that don't implement the
         recommended default `SameSite=Lax` behavior will not include the cookie in the redirection
-        request from the payment provider to Odoo. As the redirection to the '/payment/status' page
+        request from the payment provider to WETH. As the redirection to the '/payment/status' page
         will satisfy any specification of the `SameSite` attribute, the session of the user will be
         retrieved and with it the transaction which will be immediately post-processed.
 

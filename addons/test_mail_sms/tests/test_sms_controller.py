@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import Command
 from odoo.addons.test_mail_sms.tests.test_sms_management import TestSMSActionsCommon

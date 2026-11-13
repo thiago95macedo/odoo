@@ -685,7 +685,7 @@ msgid ""
 "Odoo apps."
 msgstr ""
 "Não é necessário importar listas de distribuição, você pode enviar SMSs para "
-"contatos salvos em outros aplicativos Odoo."
+"contatos salvos em outros aplicativos WETH."
 
 #. module: mass_mailing_sms
 #: model:ir.model.fields.selection,name:mass_mailing_sms.selection__mailing_trace__failure_type__sms_not_allowed

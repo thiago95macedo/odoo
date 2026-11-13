@@ -525,10 +525,10 @@ msgstr "A captura da transação %s falhou."
 #: model_terms:ir.ui.view,arch_db:payment_adyen.payment_capture_wizard_view_form
 msgid ""
 "The capture or void of the transaction might take a few minutes to be\n"
-"                    processed by Adyen and reflected in Odoo."
+"                    processed by Adyen and reflected in WETH."
 msgstr ""
 "A captura ou anulação da transação pode levar alguns minutos para ser\n"
-"                    processada pelo Adyen e refletida no Odoo."
+"                    processada pelo Adyen e refletida no WETH."
 
 #. module: payment_adyen
 #. odoo-python

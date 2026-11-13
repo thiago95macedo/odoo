@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import re
 import time
@@ -293,7 +293,7 @@ class PaymentTransaction(models.Model):
             return super()._send_void_request()
 
         raise UserError(
-            self.env._("Transactions processed by Razorpay can't be manually voided from Odoo.")
+            self.env._("Transactions processed by Razorpay can't be manually voided from WETH.")
         )
 
     @api.model
@@ -320,7 +320,7 @@ class PaymentTransaction(models.Model):
         else:  # 'refund'
             notes = payment_data.get("notes")
             reference = isinstance(notes, dict) and notes.get("reference")
-            if reference:  # The refund was initiated from Odoo.
+            if reference:  # The refund was initiated from WETH.
                 tx = self.search([
                     ("reference", "=", reference),
                     ("provider_code", "=", "razorpay"),

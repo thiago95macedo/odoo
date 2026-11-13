@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.base.tests.test_ir_cron import CronMixinCase
 from odoo.addons.mail.tests.common import MailCommon

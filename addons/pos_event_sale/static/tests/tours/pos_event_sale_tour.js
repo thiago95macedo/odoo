@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of WETH. See LICENSE file for full copyright and licensing details.
 import * as Chrome from "@point_of_sale/../tests/pos/tours/utils/chrome_util";
 import * as ProductScreen from "@point_of_sale/../tests/pos/tours/utils/product_screen_util";
 import * as PaymentScreen from "@point_of_sale/../tests/pos/tours/utils/payment_screen_util";

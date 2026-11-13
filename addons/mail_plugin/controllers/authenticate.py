@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
@@ -21,7 +21,7 @@ class Authenticate(http.Controller):
     @http.route(['/mail_client_extension/auth', '/mail_plugin/auth'], type='http', auth="user", methods=['GET'], website=True)
     def auth(self, **values):
         """
-         Once authenticated this route renders the view that shows an app wants to access Odoo.
+         Once authenticated this route renders the view that shows an app wants to access WETH.
          The user is invited to allow or deny the app. The form posts to `/mail_client_extension/auth/confirm`.
 
          old route name "/mail_client_extension/auth is deprecated as of saas-14.3,it is not needed for newer

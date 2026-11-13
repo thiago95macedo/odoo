@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of WETH. See LICENSE file for full copyright and licensing details.
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dialog } from "@web/core/dialog/dialog";
 import { Component, proxy, useProps, t } from "@odoo/owl";

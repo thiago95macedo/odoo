@@ -171,10 +171,10 @@ msgstr ".<br/>"
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
 msgid ""
 "<font class=\"text-o-color-4\">From idea to implementation, build smarter "
-"and faster in Odoo.</font>"
+"and faster in WETH.</font>"
 msgstr ""
 "<font class=\"text-o-color-4\">Da ideia à implementação, crie de forma mais "
-"inteligente e rápida no Odoo.</font>"
+"inteligente e rápida no WETH.</font>"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
@@ -183,7 +183,7 @@ msgid ""
 "power of Odoo's framework.</font>"
 msgstr ""
 "<font class=\"text-o-color-4\">Vá além do básico e desbloqueie todo o poder "
-"da estrutura do Odoo.</font>"
+"da estrutura do WETH.</font>"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
@@ -1316,8 +1316,8 @@ msgstr "Em 2013, tínhamos 2 milhões de usuários no mundo inteiro"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_newsletter_template
-msgid "In May 2014, we renamed the company and product to Odoo."
-msgstr "Em maio de 2014, renomeamos a empresa e o produto para Odoo."
+msgid "In May 2014, we renamed the company and product to WETH."
+msgstr "Em maio de 2014, renomeamos a empresa e o produto para WETH."
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_terms_update_template
@@ -1385,7 +1385,7 @@ msgid ""
 "Experts and Partners."
 msgstr ""
 "Aprenda com workshops, demonstrações do produto e palestras inspiradoras de "
-"especialistas e parceiros da Odoo."
+"especialistas e parceiros da WETH."
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template

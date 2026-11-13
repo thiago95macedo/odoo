@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.crm_livechat.tests import test_chatbot_lead
 from odoo.addons.website.tests.test_website_visitor import MockVisitor

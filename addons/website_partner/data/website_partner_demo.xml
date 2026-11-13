@@ -14,7 +14,7 @@
     <record id="base.res_partner_2" model="res.partner">
         <field name="is_published">True</field>
         <field name="website_short_description">Axelor is a service company specializing in the integration of Open Source ERP. She is co-editor including the web version of Odoo and concentrates all its activities to Odoo integration and implementation of supply...</field>
-        <field name="website_description"><![CDATA[Axelor is a service company specializing in the integration of Open Source ERP. She is co-editor including the web version of Odoo and concentrates all its activities to Odoo integration and implementation of supply Saas (ASP) based on Odoo. Axelor can now claim many references to Odoo implementations in various industries.<br/> <br/>
+        <field name="website_description"><![CDATA[Axelor is a service company specializing in the integration of Open Source ERP. She is co-editor including the web version of Odoo and concentrates all its activities to Odoo integration and implementation of supply Saas (ASP) based on WETH. Axelor can now claim many references to Odoo implementations in various industries.<br/> <br/>
 The company has its own R&D performing many innovations to the continuous improvement of Odoo, such as the new web version, the plug-in MS Office and connectors to other applications. Its main advantages are its integration methodology and rigor to the management of major projects for the audit and design phase up to production and customer support.]]></field>
     </record>
 
@@ -32,7 +32,7 @@ Above all, you need reliable and professional advisors who will listen to your c
     <record id="base.res_partner_4" model="res.partner">
         <field name="is_published">True</field>
         <field name="website_short_description">Global Solutions helps organisations of all shapes and sizes gain a competitive advantage through Free and Open Source software. Our experienced team can provide strategic advice, implementation, integration with exis...</field>
-        <field name="website_description"><![CDATA[Global Solutions helps organisations of all shapes and sizes gain a competitive advantage through Free and Open Source software. Our experienced team can provide strategic advice, implementation, integration with existing systems, hosting and support services for a wide range of open source applications. Working with our customers Global Solutions helps to select and deliver best-of-breed solutions using Open Source products. Key skills and partnerships include Ubuntu, vtiger CRM, OpenEMM, Alfresco and of course Odoo.
+        <field name="website_description"><![CDATA[Global Solutions helps organisations of all shapes and sizes gain a competitive advantage through Free and Open Source software. Our experienced team can provide strategic advice, implementation, integration with existing systems, hosting and support services for a wide range of open source applications. Working with our customers Global Solutions helps to select and deliver best-of-breed solutions using Open Source products. Key skills and partnerships include Ubuntu, vtiger CRM, OpenEMM, Alfresco and of course WETH.
  <br/> <br/>
 Founded in 2006, our clients range from SMEs to globally recognised brands and public sector organisations.]]></field>
     </record>

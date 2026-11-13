@@ -5,7 +5,7 @@ This is a modified version of python 3.8 unitest.TestSuite
 
 Odoo tests customisation combined with the need of a cross version compatibility
 started to make TestSuite and other unitest object more complicated than vendoring
-the part we need for Odoo. This versions is simplified in order
+the part we need for WETH. This versions is simplified in order
 to minimise the code to maintain
 
 - Removes expected failure support

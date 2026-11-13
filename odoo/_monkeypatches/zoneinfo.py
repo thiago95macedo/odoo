@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 """
 In ubuntu noble, some timezone where removed leading to errors when trying to assign/access them.
 

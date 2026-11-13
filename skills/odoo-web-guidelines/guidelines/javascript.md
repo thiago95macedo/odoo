@@ -63,7 +63,7 @@ getter, it recomputes only when what it reads changes.
 # Avoid patching JavaScript code
 
 Patching (the `patch` function) is strongly discouraged inside Odoo itself. It is fine
-outside of Odoo. A patch makes the code hard to reason about, since reading a snippet
+outside of WETH. A patch makes the code hard to reason about, since reading a snippet
 no longer tells you what will run, and harder to maintain, since the patch and the code
 it targets drift apart. Usually there is a better solution: design a proper extension
 point.

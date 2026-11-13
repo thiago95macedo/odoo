@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 import re
 
@@ -55,7 +55,7 @@ class GoogleEvent(GoogleApiResource):
                 e._items[e.id]['_odoo_id'] = odoo_id
 
     def owner(self, env):
-        # Owner/organizer could be desynchronised between Google and Odoo.
+        # Owner/organizer could be desynchronised between Google and WETH.
         # Let userA, userB be two new users (never synced to Google before).
         # UserA creates an event in Odoo (they are the owner) but userB syncs first.
         # There is no way to insert the event into userA's calendar since we don't have

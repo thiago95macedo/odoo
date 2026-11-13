@@ -15,7 +15,7 @@ Xendit-hosted payment link created through the Payment Sessions API, and Xendit 
 outcome through a webhook.
 
 For `Card` payments, if the customer opts to save the payment method, the Payment Tokens API token
-Xendit returns on a successful payment is saved in Odoo. Charging a saved token is done
+Xendit returns on a successful payment is saved in WETH. Charging a saved token is done
 server-to-server through the Payment Requests API; if that requires 3-D Secure authentication, the
 customer is redirected to the authentication URL Xendit returns.
 

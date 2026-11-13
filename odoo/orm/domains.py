@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 # PLW1641 (eq-without-hash) we don't want domains to be hashable, we raise
 # ruff: noqa: PLW1641
 

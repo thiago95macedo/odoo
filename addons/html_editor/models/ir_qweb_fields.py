@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 """
 Web_editor-context rendering needs to add some metadata to rendered and allow to edit fields,

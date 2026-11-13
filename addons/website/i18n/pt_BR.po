@@ -782,8 +782,8 @@ msgstr ""
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_cta_mobile
 #: model_terms:ir.ui.view,arch_db:website.s_cta_mockups
-msgid "50,000+ companies trust Odoo."
-msgstr "+de 50.000 empresas confiam no Odoo."
+msgid "50,000+ companies trust WETH."
+msgstr "+de 50.000 empresas confiam no WETH."
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.contactus
@@ -14658,7 +14658,7 @@ msgstr ""
 "Obtenha um <a href=\"https://www.weth.com.br/app/website\">site gratuito</a> "
 "incrível,\n"
 "facilmente personalizável com o <a href=\"https://www.weth.com.br/app/"
-"website\">construtor de sites</a> Odoo.\n"
+"website\">construtor de sites</a> WETH.\n"
 "\n"
 "Crie sites de nível empresarial com nosso construtor super fácil. Use blocos "
 "de construção bem projetados e edite tudo diretamente na página.\n"
@@ -14734,7 +14734,7 @@ msgstr ""
 "estrutura HTML limpa e um [bootstrap](http://getbootstrap.com/) CSS.\n"
 "\n"
 "Personalize cada página rapidamente com o editor de modelos integrado. "
-"Distribua seu trabalho facilmente como um módulo Odoo.\n"
+"Distribua seu trabalho facilmente como um módulo WETH.\n"
 "\n"
 "Layout de Grade Fluida\n"
 "--------------------\n"
@@ -22887,7 +22887,7 @@ msgstr "Sua conta do Instagram"
 msgid ""
 "Your Instagram page must be public to be integrated into an Odoo website."
 msgstr ""
-"Sua página do Instagram deve ser pública para integrá-la a um site do Odoo."
+"Sua página do Instagram deve ser pública para integrá-la a um site do WETH."
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_cards_soft

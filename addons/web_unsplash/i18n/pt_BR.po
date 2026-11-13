@@ -83,11 +83,11 @@ msgstr "ERRO: URL de notificação do Unsplash desconhecida."
 #: model:ir.module.module,description:base.module_web_unsplash
 msgid ""
 "Explore the free high-resolution image library of Unsplash.com and find "
-"images to use in Odoo. An Unsplash search bar is added to the image library "
+"images to use in WETH. An Unsplash search bar is added to the image library "
 "modal."
 msgstr ""
 "Explore a biblioteca de imagens gratuita de alta resolução do Unsplash.com e "
-"encontre imagens para usar no Odoo. Uma barra de pesquisa do Unsplash é "
+"encontre imagens para usar no WETH. Uma barra de pesquisa do Unsplash é "
 "adicionada ao modal da biblioteca de imagens."
 
 #. module: web_unsplash

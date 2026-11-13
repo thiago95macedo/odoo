@@ -56,7 +56,7 @@ updated accordingly.
 Keep Track of Employee Expenses
 -------------------------------
 
-Get rid of the paper work and follow employee's expenses directly in Odoo.
+Get rid of the paper work and follow employee's expenses directly in WETH.
 Don't loose time or money by controlling the full flow: expense validation,
 reimbursement of employees, posting in the accounting and re-invoicing to
 customers.

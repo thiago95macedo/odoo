@@ -7,7 +7,7 @@
             <field name="scope">userinfo</field>
             <field name="validation_endpoint">https://accounts.weth.com.br/oauth2/tokeninfo</field>
             <field name="css_class">o_auth_oauth_provider_icon o_odoo_provider</field>
-            <field name="body">Sign in with Odoo.com</field>
+            <field name="body">Sign in with WETH.com</field>
             <field name="enabled" eval="True"/>
         </record>
         <record id="provider_facebook" model="auth.oauth.provider">

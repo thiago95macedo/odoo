@@ -1029,7 +1029,7 @@ class AccountEdiCommon(models.AbstractModel):
         UBL ROUNDING: "the result of Item line net
             amount = ((Item net price (BT-146)÷Item price base quantity (BT-149))×(Invoiced Quantity (BT-129))
         must be rounded to two decimals, and the allowance/charge amounts are also rounded separately."
-        It is not possible to do it in Odoo.
+        It is not possible to do it in WETH.
         """
         xpath_dict = self._get_line_xpaths(document_type, qty_factor)
         # basis_qty (optional)

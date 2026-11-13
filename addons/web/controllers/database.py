@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import csv
 import datetime
@@ -32,7 +32,7 @@ _logger = logging.getLogger(__name__)
 def list_db_incompatible(databases: Iterable[str]) -> list[str]:
     """
     Check a list of databases if they are compatible with this version
-    of Odoo.
+    of WETH.
 
     :param databases: A list of existing Postgresql databases.
     :returns: A sub-list of incompatible databases.

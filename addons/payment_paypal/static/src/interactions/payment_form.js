@@ -184,17 +184,17 @@ patch(PaymentForm.prototype, {
                 const cardFields = paypal.CardFields(cardFieldsOptions);
                 this.paypalData[paymentOptionId].cardFields = cardFields;
                 cardFields
-                  .NameField({ placeholder: "" })
-                  .render(document.getElementById("o_paypal_card_name"));
+                    .NameField({ placeholder: "" })
+                    .render(document.getElementById("o_paypal_card_name"));
                 cardFields
-                  .NumberField({ placeholder: "" })
-                  .render(document.getElementById("o_paypal_card_number"));
+                    .NumberField({ placeholder: "" })
+                    .render(document.getElementById("o_paypal_card_number"));
                 cardFields
-                  .ExpiryField({ placeholder: "" })
-                  .render(document.getElementById("o_paypal_card_expiry"));
+                    .ExpiryField({ placeholder: "" })
+                    .render(document.getElementById("o_paypal_card_expiry"));
                 cardFields
-                  .CVVField({ placeholder: "" })
-                  .render(document.getElementById("o_paypal_card_cvv"));
+                    .CVVField({ placeholder: "" })
+                    .render(document.getElementById("o_paypal_card_cvv"));
             } else {
                 // Check if the selected payment method is eligible for the account
                 const METHOD_CONFIG = {
@@ -210,7 +210,7 @@ patch(PaymentForm.prototype, {
                     },
                 };
                 const activeConfig = METHOD_CONFIG[paymentMethodCode];
-                if (!paypal.isFundingEligible(activeConfig.fundingSource)){
+                if (!paypal.isFundingEligible(activeConfig.fundingSource)) {
                     this._displayErrorDialog(
                         _t("Cannot display the payment form"),
                         "This payment method is not available.",
@@ -277,7 +277,7 @@ patch(PaymentForm.prototype, {
 
     /**
      * Load the JS from the PayPal SDK URL and set an identifier dedicated to Odoo, for PayPal to be
-     * able to recognize which transactions are originating from Odoo.
+     * able to recognize which transactions are originating from WETH.
      *
      * @private
      * @param {string} paypalSDKURL - The SDK URL that needs to be loaded on the page.

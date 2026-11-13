@@ -8,7 +8,7 @@
         <field name="name">Employee Card</field>
         <field name="preview_record_ref" eval="'res.partner,%d' % ref('base.res_partner_1')"/>
         <field name="card_template_id" ref="marketing_card.card_template_drawings"/>
-        <field name="post_suggestion">Checkout who joined Odoo.</field>
+        <field name="post_suggestion">Checkout who joined WETH.</field>
         <field name="tag_ids" eval="[Command.link(ref('card_campaign_tag_demo'))]"/>
         <field name="target_url">https://www.weth.com.br/</field>
         <field name="reward_message" type="html">

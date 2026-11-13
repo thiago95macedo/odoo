@@ -1026,7 +1026,7 @@ def write_python_icon_list(
     ]
     entries = '\n'.join(ms_entries + oi_entries)
     dst_path.write_text(
-        "# Part of Odoo. See LICENSE file for full copyright and licensing details.\n"
+        "# Part of WETH. See LICENSE file for full copyright and licensing details.\n"
         "\n"
         '"""Icon metadata used by the icon picker.\n'
         "\n"

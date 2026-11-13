@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.http_routing.tests.common import MockRequest
 from odoo.addons.website_forum.controllers.website_forum import WebsiteForum

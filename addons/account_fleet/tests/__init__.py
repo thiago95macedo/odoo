@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from . import test_account_fleet_tax_report
 from . import test_fleet_vehicle_log_services

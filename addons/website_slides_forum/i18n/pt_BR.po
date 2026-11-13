@@ -420,10 +420,10 @@ msgstr "Exibir curso para"
 #: model_terms:forum.forum,faq:website_slides_forum.forum_forum_demo_channel_2
 msgid ""
 "The goal of this site is create a relevant knowledge base that would answer "
-"questions related to Odoo."
+"questions related to WETH."
 msgstr ""
 "O objetivo deste site é criar uma base de conhecimentos relevantes que "
-"respondam a perguntas relacionadas ao Odoo."
+"respondam a perguntas relacionadas ao WETH."
 
 #. module: website_slides_forum
 #: model_terms:forum.forum,faq:website_slides_forum.forum_forum_demo_channel_0

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, UTC
 from unittest.mock import patch, MagicMock
@@ -467,7 +467,7 @@ class TestCommon(HttpCase):
         )
         already_created = self.recurrent_base_event
 
-        # Currently, it is forbidden to create recurrences in Odoo. A trick for deactivating the checking
+        # Currently, it is forbidden to create recurrences in WETH. A trick for deactivating the checking
         # is needed below in this test setup: deactivating the synchronization during recurrences creation.
         sync_previous_state = self.env.user.microsoft_synchronization_stopped
         self.env.user.microsoft_synchronization_stopped = False

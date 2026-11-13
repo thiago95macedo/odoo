@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import contextlib
 import inspect
@@ -357,7 +357,7 @@ def check_network(host=None):
 
 
 def toggle_custom_handlers(enable: bool):
-    """Enable or disable custom IoT Box handlers download in Odoo.
+    """Enable or disable custom IoT Box handlers download in WETH.
 
     :param enable: True to enable, False to disable
     """

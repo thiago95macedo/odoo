@@ -78,8 +78,7 @@ export const errorService = {
                         if (shouldLogError()) {
                             uncaughtError.event.preventDefault();
                             console.error(
-                                `@web/core/error_service: handler "${name}" failed with "${
-                                    e.cause || e
+                                `@web/core/error_service: handler "${name}" failed with "${e.cause || e
                                 }" while trying to handle:\n` + uncaughtError.traceback
                             );
                         }
@@ -185,7 +184,7 @@ export const errorService = {
                 }
                 traceback =
                     `Uncaught unknown Error\n` +
-                    `An unknown error occurred. This may be due to a Chrome extension meddling with Odoo.\n` +
+                    `An unknown error occurred. This may be due to a Chrome extension meddling with WETH.\n` +
                     `(Opening your browser console might give you a hint on the error.)`;
             }
             const uncaughtError = new UncaughtPromiseError();

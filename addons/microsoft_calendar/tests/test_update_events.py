@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 from datetime import datetime, timedelta, UTC
 from unittest.mock import patch, ANY
@@ -1686,7 +1686,7 @@ class TestUpdateEvents(TestCommon):
             'stop': datetime.now() - timedelta(days=14) + timedelta(hours=2),
         })
         # Mock the modification time in Microsoft with 10 minutes ahead Odoo event 'write_date'.
-        # Synchronize Microsoft Calendar and ensure that the skipped event was not updated in Odoo.
+        # Synchronize Microsoft Calendar and ensure that the skipped event was not updated in WETH.
         mock_get_events.return_value = (
             MicrosoftEvent([dict(
                 self.simple_event_from_outlook_organizer,

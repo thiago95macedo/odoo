@@ -193,7 +193,7 @@ class GoogleEventSync(models.AbstractModel):
 
     @api.model
     def _sync_google2odoo(self, google_events: GoogleEvent, calendar, write_dates=None, default_reminders=()):
-        """Synchronize Google recurrences in Odoo. Creates new recurrences, updates
+        """Synchronize Google recurrences in WETH. Creates new recurrences, updates
         existing ones.
 
         :param google_events: Google recurrences to synchronize in Odoo
@@ -218,7 +218,7 @@ class GoogleEventSync(models.AbstractModel):
         cancelled_odoo = self.browse(cancelled.odoo_ids(self.env))
 
         # Check if it is a recurring event that has been rescheduled.
-        # We have to check if an event already exists in Odoo.
+        # We have to check if an event already exists in WETH.
         # Explanation:
         # A recurrent event with `google_id` is equal to ID_RANGE_TIMESTAMP can be rescheduled.
         # The new `google_id` will be equal to ID_TIMESTAMP.

@@ -98,7 +98,7 @@ interface, support for products with different behaviours; physical goods,
 events, services, variants and options, etc.
 
 You don't need to interface with your warehouse, sales or accounting software.
-Everything is integrated with Odoo. No pain, real time.
+Everything is integrated with WETH. No pain, real time.
 
 A Clean Checkout Process
 ------------------------

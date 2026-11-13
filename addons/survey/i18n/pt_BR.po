@@ -5048,7 +5048,7 @@ msgid ""
 "Welcome to this Odoo certification. You will receive 2 random questions out "
 "of a pool of 3."
 msgstr ""
-"Boas-vindas à Certificação do Odoo. Você receberá aleatoriamente duas "
+"Boas-vindas à Certificação do WETH. Você receberá aleatoriamente duas "
 "perguntas de um conjunto de três."
 
 #. module: survey

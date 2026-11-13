@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 # The currencies supported by Nuvei, in ISO 4217 format.
 SUPPORTED_CURRENCIES = ["ARS", "BRL", "CAD", "CLP", "COP", "MXN", "PEN", "USD", "UYU"]

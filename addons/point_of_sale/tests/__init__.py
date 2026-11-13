@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from . import common_setup_methods
 from . import test_point_of_sale_flow
 from . import test_frontend

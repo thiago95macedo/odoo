@@ -43,8 +43,8 @@ msgstr "Ocorreu um erro"
 
 #. module: payment_payu
 #: model_terms:ir.ui.view,arch_db:payment_payu.authorization_error
-msgid "An error occurred while linking your PayU account with Odoo."
-msgstr "Ocorreu um erro ao vincular sua conta PayU ao Odoo."
+msgid "An error occurred while linking your PayU account with WETH."
+msgstr "Ocorreu um erro ao vincular sua conta PayU ao WETH."
 
 #. module: payment_payu
 #: model_terms:ir.ui.view,arch_db:payment_payu.payment_provider_form

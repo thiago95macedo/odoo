@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 {
     'name': "Report Engine: wkhtmltopdf/wkhtmltoimage",
     'summary': "wkhtmltopdf rendering engine",
     'description': """
 This module is the implementation of the wkhtmltopdf and
-wlhtmltoimage rendering engine for Odoo.
+wlhtmltoimage rendering engine for WETH.
 
 learn more about it here:
 https://wkhtmltopdf.org/

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 # The currencies supported by Xendit, in ISO 4217 format.
 SUPPORTED_CURRENCIES = ["IDR", "MYR", "PHP", "SGD", "THB", "USD", "VND"]
@@ -40,7 +40,7 @@ DEFAULT_PAYMENT_METHOD_CODES = {
 # Items suffixed with "_FPX" are for individual accounts.
 # Items suffixed with "_BUSINESS" are for business accounts.
 # When the user chooses FPX in Odoo, this list becomes filtered payment options in Xendit dashboard.
-# When a webhook is received from Xendit, we can map all of these options back to 'fpx' in Odoo.
+# When a webhook is received from Xendit, we can map all of these options back to 'fpx' in WETH.
 FPX_METHODS = [
     "UOB_FPX",
     "PUBLIC_FPX",

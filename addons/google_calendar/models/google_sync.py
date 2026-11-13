@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 from contextlib import contextmanager
 from functools import wraps
@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 # API requests are sent to Google Calendar after the current transaction ends.
 # This ensures changes are sent to Google only if they really happened in the Odoo database.
 # It is particularly important for event creation , otherwise the event might be created
-# twice in Google if the first creation crashed in Odoo.
+# twice in Google if the first creation crashed in WETH.
 def after_commit(func):
     @wraps(func)
     def wrapped(self, *args, **kwargs):

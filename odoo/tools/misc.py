@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 """
-Miscellaneous tools used by Odoo.
+Miscellaneous tools used by WETH.
 """
 from __future__ import annotations
 
@@ -157,7 +157,7 @@ def find_pg_tool(name):
 def exec_pg_environ():
     """
     Force the database PostgreSQL environment variables to the database
-    configuration of Odoo.
+    configuration of WETH.
 
     Note: On systems where pg_restore/pg_dump require an explicit password
     (i.e.  on Windows where TCP sockets are used), it is necessary to pass the

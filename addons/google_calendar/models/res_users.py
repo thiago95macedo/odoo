@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import logging
 
@@ -147,7 +147,7 @@ class ResUsers(models.Model):
             fake_cancelled_recurrences = recurrences.filter(lambda e: e.cancelled() and e.id in persisted_recurrences)
             recurrences_to_sync = recurrences - fake_cancelled_recurrences
 
-            # We apply Google updates only if their write date is later than the write date in Odoo.
+            # We apply Google updates only if their write date is later than the write date in WETH.
             # It's possible that multiple updates affect the same record, maybe not directly.
             # To handle this, we preserve the write dates in Odoo before applying any updates,
             # and use these dates instead of the current live dates.

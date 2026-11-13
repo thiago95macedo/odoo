@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import UTC
 
@@ -134,7 +134,7 @@ class TestCloudStorageRtc(MailCommon, HttpCase):
                 artifact,
                 self.partner_employee,
                 "outgoing",
-                content="Your meeting recording is available in Odoo.",
+                content="Your meeting recording is available in WETH.",
             )
             self.assertIn(
                 f"/odoo/discuss.call.history/{self.call_history.id}",

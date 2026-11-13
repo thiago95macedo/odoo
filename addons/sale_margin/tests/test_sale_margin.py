@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
 from odoo.fields import Command
@@ -73,7 +73,7 @@ class TestSaleMargin(SaleCommon):
         cls.sol = cls.so.order_line
 
     def test_sale_margin(self):
-        """Test the sale_margin module in Odoo."""
+        """Test the sale_margin module in WETH."""
         self.product.standard_price = 700.0
         order = self._create_so(
             order_line=[

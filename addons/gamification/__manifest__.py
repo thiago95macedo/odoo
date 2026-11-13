@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Gamification',
     'sequence': 160,
@@ -7,7 +7,7 @@
     'description': """
 Gamification process
 ====================
-The Gamification module provides ways to evaluate and motivate the users of Odoo.
+The Gamification module provides ways to evaluate and motivate the users of WETH.
 
 The users can be evaluated using goals and numerical objectives to reach.
 **Goals** are assigned through **challenges** to evaluate and compare members of a team with each others and through time.

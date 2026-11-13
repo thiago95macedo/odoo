@@ -139,7 +139,7 @@ msgid ""
 msgstr ""
 "<i class=\"oi\" data-icon=\"info\"/> O recuperador de registros de destino "
 "padrão está pronto para uso em qualquer webhook que venha de outra instância "
-"do Odoo."
+"do WETH."
 
 #. module: base_automation
 #: model_terms:ir.ui.view,arch_db:base_automation.view_base_automation_form

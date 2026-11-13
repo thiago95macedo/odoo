@@ -8169,7 +8169,7 @@ msgid ""
 "invoice anytime, from Odoo's portal."
 msgstr ""
 "Imprima informações no recibo para permitir que o cliente acesse facilmente "
-"a fatura a qualquer momento, a partir do portal do Odoo."
+"a fatura a qualquer momento, a partir do portal do WETH."
 
 #. module: point_of_sale
 #: model:ir.model.fields,help:point_of_sale.field_pos_printer__is_split_per_product

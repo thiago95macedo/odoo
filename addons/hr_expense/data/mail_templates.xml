@@ -52,7 +52,7 @@
                             </div>
                             <hr style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;"/>
                             <p>Hi <t t-out="manager_name"/>,</p>
-                            <p>A new expense is waiting for your approval in Odoo.</p>
+                            <p>A new expense is waiting for your approval in WETH.</p>
                             <p>You currently have <strong t-out="expenses_count"/> <strong>expenses</strong> pending approval, from:</p>
                             <ul>
                                 <li t-foreach="employee_breakdown" t-as="employee_item">

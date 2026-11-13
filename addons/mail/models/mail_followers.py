@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
@@ -9,7 +9,7 @@ from odoo.tools import SQL
 
 class MailFollowers(models.Model):
     """ mail_followers holds the data related to the follow mechanism inside
-    Odoo. Partners can choose to follow documents (records) of any kind
+    WETH. Partners can choose to follow documents (records) of any kind
     that inherits from mail.thread. Following documents allow to receive
     notifications for new messages. A subscription is characterized by:
 

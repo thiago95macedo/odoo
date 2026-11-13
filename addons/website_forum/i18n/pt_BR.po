@@ -3593,10 +3593,10 @@ msgstr "A URL relativa completa para acessar o documento através do site."
 #: model_terms:ir.ui.view,arch_db:website_forum.faq_karma
 msgid ""
 "The goal of this site is create a relevant knowledge base that would answer "
-"questions related to Odoo."
+"questions related to WETH."
 msgstr ""
 "O objetivo deste site é criar uma base de conhecimentos relevantes que "
-"respondam a perguntas relacionadas ao Odoo."
+"respondam a perguntas relacionadas ao WETH."
 
 #. module: website_forum
 #: model_terms:ir.ui.view,arch_db:website_forum.post_description_full

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Test Full eLearning Flow',
     'category': 'Hidden/Tests',
     'description': """
-This module will test the main certification flow of Odoo.
+This module will test the main certification flow of WETH.
 It will install the e-learning, survey and e-commerce apps and make a complete
 certification flow including purchase, certification, failure and success.
 """,

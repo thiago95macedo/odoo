@@ -12,7 +12,7 @@ from odoo.fields import Domain
 
 _logger = logging.getLogger(__name__)
 
-# The meaning of 'owner' is different in Google and Odoo. See _get_odoo_access_role for more info.
+# The meaning of 'owner' is different in Google and WETH. See _get_odoo_access_role for more info.
 GOOGLE_TO_ODOO_ACCESS_ROLE = {
     "freeBusyReader": "freeBusyReader",
     "reader": "reader",

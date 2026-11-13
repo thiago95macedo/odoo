@@ -10,7 +10,7 @@
 Chat, mail gateway and private channel.
 =======================================
 
-Communicate with your colleagues/customers/guest within Odoo.
+Communicate with your colleagues/customers/guest within WETH.
 
 Discuss/Chat
 ------------

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch, ANY
 from datetime import datetime, timedelta
@@ -187,7 +187,7 @@ class TestAnswerEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'answer')
     def test_answer_event_with_external_organizer(self, mock_answer, mock_get_single_event):
         """ Answer an event invitation from an outsider user and check if it was patched on Outlook side. """
-        # Simulate an event that came from an external provider: the organizer isn't registered in Odoo.
+        # Simulate an event that came from an external provider: the organizer isn't registered in WETH.
         self.simple_event.write({'user_id': False, 'partner_id': False})
         self.simple_event.attendee_ids.state = 'needsAction'
 

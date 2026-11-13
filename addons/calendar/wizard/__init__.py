@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from . import calendar_event_archive_or_unlink_wizard
 from . import calendar_event_multi_archive_or_unlink_wizard

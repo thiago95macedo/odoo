@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.tests.common import tagged
 from odoo.addons.point_of_sale.tests.test_point_of_sale import TestPointOfSale

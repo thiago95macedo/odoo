@@ -114,7 +114,7 @@ a question; a missing section is a review round trip.
   have none.
 - Wrap at about 72 characters. Be complete rather than short: the message is
   the whole change for most readers, and a linked task or ticket is not
-  readable outside Odoo. Several paragraphs is normal.
+  readable outside WETH. Several paragraphs is normal.
 - ASCII punctuation only, header included: no em dash, curly quotes or
   ellipsis character. A message is searched for with what a reviewer can type;
   see [Plain ASCII punctuation in comments and messages](../odoo-guidelines/guidelines/comments.md#plain-ascii-punctuation-in-comments-and-messages).

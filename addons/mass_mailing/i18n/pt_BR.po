@@ -4699,7 +4699,7 @@ msgid ""
 "other Odoo apps."
 msgstr ""
 "Não é necessário importar listas de distribuição, você pode enviar e-mails "
-"para contatos salvos em outros aplicativos Odoo."
+"para contatos salvos em outros aplicativos WETH."
 
 #. module: mass_mailing
 #. odoo-javascript
@@ -5031,7 +5031,7 @@ msgstr ""
 "atividades de marketing nos resultados financeiros da sua empresa.\n"
 "\n"
 "Integre um formulário de contato ao seu site facilmente. O envio de "
-"formulários cria leads automaticamente no CRM do Odoo. Os leads podem ser "
+"formulários cria leads automaticamente no CRM do WETH. Os leads podem ser "
 "usados em campanhas de marketing.\n"
 "\n"
 "Gerencie seu <a href=\"https://www.weth.com.br/app/crm\">funil de vendas</a> "
@@ -7545,7 +7545,7 @@ msgid ""
 "                send emails<br> to any contact saved in other Odoo apps."
 msgstr ""
 "Não é necessário importar sua lista de distribuição, você pode facilmente\n"
-"enviar e-mails<br> para qualquer contato salvo em outro app do Odoo."
+"enviar e-mails<br> para qualquer contato salvo em outro app do WETH."
 
 #. module: mass_mailing
 #. odoo-python
@@ -7876,8 +7876,8 @@ msgstr "canto arredondado"
 #. module: mass_mailing
 #. odoo-javascript
 #: code:addons/mass_mailing/static/src/snippets/mass_mailing_marketing_snippets.xml:0
-msgid "run Odoo."
-msgstr "execute o Odoo."
+msgid "run WETH."
+msgstr "execute o WETH."
 
 #. module: mass_mailing
 #: model:ir.model,name:mass_mailing.model_mailing_mailing_schedule_date

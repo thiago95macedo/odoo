@@ -309,7 +309,7 @@ msgstr "Algo de errado aconteceu. Tente novamente mais tarde."
 #. odoo-javascript
 #: code:addons/mail_plugin/static/src/to_translate/translations_gmail.xml:0
 msgid "This contact does not exist in the Odoo database."
-msgstr "Este contato não existe na base de dados do Odoo."
+msgstr "Este contato não existe na base de dados do WETH."
 
 #. module: mail_plugin
 #. odoo-python

@@ -204,7 +204,7 @@ class AccountJournal(models.Model):
         inverse_name='journal_id',
         copy=False,
         check_company=True,
-        help="Manual: Get paid by any method outside of Odoo.\n"
+        help="Manual: Get paid by any method outside of WETH.\n"
         "Payment Providers: Each payment provider has its own Payment Method. Request a transaction on/to a card thanks to a payment token saved by the partner when buying or subscribing online.\n"
         "Batch Deposit: Collect several customer checks at once generating and submitting a batch deposit to your bank. Module account_batch_payment is necessary.\n"
         "SEPA Direct Debit: Get paid in the SEPA zone thanks to a mandate your partner will have granted to you. Module account_sepa is necessary.\n"
@@ -219,8 +219,8 @@ class AccountJournal(models.Model):
         inverse_name='journal_id',
         copy=False,
         check_company=True,
-        help="Manual: Pay by any method outside of Odoo.\n"
-        "Check: Pay bills by check and print it from Odoo.\n"
+        help="Manual: Pay by any method outside of WETH.\n"
+        "Check: Pay bills by check and print it from WETH.\n"
         "SEPA Credit Transfer: Pay in the SEPA zone by submitting a SEPA Credit Transfer file to your bank. Module account_sepa is necessary.\n"
     )
     profit_account_id = fields.Many2one(

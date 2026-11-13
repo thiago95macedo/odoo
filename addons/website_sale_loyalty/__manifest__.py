@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 {
     "name": "Coupons, Promotions, Gift Card and Loyalty for eCommerce",

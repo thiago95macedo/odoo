@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import UTC, date, datetime, time, timedelta, timezone
 from functools import partial
 from unittest.mock import patch

@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 {
     'name': "Mail Group",
     'summary': "Manage your mailing lists",
     'description': """
-Manage your mailing lists from Odoo.
+Manage your mailing lists from WETH.
     """,
     'version': '1.1',
     'depends': [

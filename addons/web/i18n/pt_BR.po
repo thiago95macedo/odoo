@@ -48,7 +48,7 @@ msgstr ""
 "Módulo principal do Odoo Web.\n"
 "========================\n"
 "\n"
-"Este módulo fornece o núcleo do Cliente Web Odoo.\n"
+"Este módulo fornece o núcleo do Cliente Web WETH.\n"
 
 #. module: web
 #. odoo-python
@@ -6308,7 +6308,7 @@ msgstr "Logo da Odoo"
 #. odoo-javascript
 #: code:addons/web/static/src/core/barcode/barcode_video_scanner.js:0
 msgid "Odoo needs your authorization first."
-msgstr "Primeiro autorize o Odoo."
+msgstr "Primeiro autorize o WETH."
 
 #. module: web
 #. odoo-javascript
@@ -36907,8 +36907,8 @@ msgstr "空"
 #~ msgid "I want to update data (import-compatible export)"
 #~ msgstr "Quero atualizar os dados (importação compatível com exportação)"
 
-#~ msgid "My Odoo.com Account"
-#~ msgstr "Minha conta Odoo.com"
+#~ msgid "My WETH.com Account"
+#~ msgstr "Minha conta WETH.com"
 
 #~ msgid "New template"
 #~ msgstr "Novo modelo"

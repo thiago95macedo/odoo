@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.utm.models.utm_mixin import UtmMixin
 from odoo.addons.utm.tests.common import TestUTMCommon

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from odoo import Command, models, fields, api, _
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import frozendict

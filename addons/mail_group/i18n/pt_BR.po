@@ -25,10 +25,10 @@ msgstr ""
 #: model:ir.module.module,description:base.module_mail_group
 msgid ""
 "\n"
-"Manage your mailing lists from Odoo.\n"
+"Manage your mailing lists from WETH.\n"
 msgstr ""
 "\n"
-"Gerencie suas listas de e-mail a partir do Odoo.\n"
+"Gerencie suas listas de e-mail a partir do WETH.\n"
 
 #. module: mail_group
 #: model_terms:ir.ui.view,arch_db:mail_group.mail_group_view_list

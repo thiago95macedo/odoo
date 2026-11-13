@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch, call
 from datetime import timedelta, datetime
@@ -123,7 +123,7 @@ class TestCreateEvents(TestCommon):
     def test_create_simple_event_from_outlook_attendee_calendar_where_email_addresses_are_capitalized(self, mock_get_events):
         """
         An event has been created in Outlook and synced in the Odoo attendee calendar.
-        The email addresses of the attendee and the organizer are in different case than in Odoo.
+        The email addresses of the attendee and the organizer are in different case than in WETH.
         """
 
         # arrange
@@ -485,7 +485,7 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_simple_event_from_outlook_without_organizer(self, mock_get_events):
         """
-        Allow creation of an event without organizer in Outlook and sync it in Odoo.
+        Allow creation of an event without organizer in Outlook and sync it in WETH.
         """
 
         # arrange
@@ -513,7 +513,7 @@ class TestCreateEvents(TestCommon):
         default_privacy_event = {'id': 200, 'iCalUId': 4, 'sensitivity': None, **self.simple_event_from_outlook_organizer}
         self.env['calendar.event']._sync_microsoft2odoo(MicrosoftEvent([undefined_privacy_event, default_privacy_event]))
 
-        # Ensure that synced events have the correct privacy field in Odoo.
+        # Ensure that synced events have the correct privacy field in WETH.
         undefined_privacy_odoo_event = self.env['calendar.event'].search([('microsoft_id', '=', 100)])
         default_privacy_odoo_event = self.env['calendar.event'].search([('microsoft_id', '=', 200)])
         self.assertFalse(undefined_privacy_odoo_event.privacy, "Event with undefined privacy must have False value in privacy field.")
@@ -655,7 +655,7 @@ class TestCreateEvents(TestCommon):
             self.simple_event_values['user_id'] = self.organizer_user.id
             self.simple_event_values['partner_ids'] = [Command.set([self.organizer_user.partner_id.id, self.attendee_user.partner_id.id])]
             event = self.env['calendar.event'].with_user(self.organizer_user).create(self.simple_event_values)
-            self.assertTrue(event, "The event for the not synchronized owner must be created in Odoo.")
+            self.assertTrue(event, "The event for the not synchronized owner must be created in WETH.")
 
             # Synchronize the attendee's calendar, then make sure insert was not called.
             event.with_user(self.attendee_user).sudo()._sync_odoo2microsoft()

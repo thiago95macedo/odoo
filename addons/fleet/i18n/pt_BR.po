@@ -1626,15 +1626,15 @@ msgstr ""
 
 #. module: fleet
 #: model_terms:ir.actions.act_window,help:fleet.fleet_costs_reporting_action
-msgid "Manage efficiently your different effective vehicles Costs with Odoo."
+msgid "Manage efficiently your different effective vehicles Costs with WETH."
 msgstr ""
 "Gerencie com eficiência os custos de seus diferentes veículos efetivos com o "
 "Odoo."
 
 #. module: fleet
 #: model_terms:ir.actions.act_window,help:fleet.fleet_vehicle_odometer_reporting_action
-msgid "Manage efficiently your vehicle Odometers with Odoo."
-msgstr "Gerencie os odômetros de seus veículos com eficiência no Odoo."
+msgid "Manage efficiently your vehicle Odometers with WETH."
+msgstr "Gerencie os odômetros de seus veículos com eficiência no WETH."
 
 #. module: fleet
 #: model:ir.module.module,summary:base.module_fleet

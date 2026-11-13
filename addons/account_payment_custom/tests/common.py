@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.account_payment.tests.common import AccountPaymentCommon
 from odoo.addons.payment_custom.tests.common import PaymentCustomCommon

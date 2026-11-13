@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, models, release
 from odoo.tools import format_amount
@@ -89,7 +89,7 @@ class PaymentTransaction(models.Model):
         # 'manual' from events with the capture delay set to 'immediate' or a number of hours. If
         # the merchant account is configured to capture payments with a delay but the provider is
         # not, we force the immediate capture to avoid considering authorized transactions as
-        # captured on Odoo.
+        # captured on WETH.
         if not self.provider_id.capture_manually:
             data.update(captureDelayHours=0)
 

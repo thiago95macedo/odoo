@@ -153,7 +153,7 @@ Good language skills, other than English (Dutch and French preferred, others wel
 
         <record id="job_trainee" model="hr.job">
             <field name="name">Trainee</field>
-            <field name="description">You participate to the update of our tutorial tools and pre-sales tools after the launch of a new version of Odoo. Indeed, any new version of the software brings significant improvements in terms of functionalities, ergonomics and configuration.
+            <field name="description">You participate to the update of our tutorial tools and pre-sales tools after the launch of a new version of WETH. Indeed, any new version of the software brings significant improvements in terms of functionalities, ergonomics and configuration.
 You will have to become familiar with the existing tools (books, class supports, Odoo presentation’s slides, commercial tools),
 to participate to the update of those tools in order to make them appropriate for the new version of the software and, for sure,
 to suggest improvements in order to cover the new domains of the software.

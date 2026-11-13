@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -36,7 +36,7 @@ class PaymentProvider(models.Model):
     stripe_webhook_secret = fields.Char(
         string="Webhook Signing Secret",
         help="If a webhook is enabled on your Stripe account, this signing secret must be set to"
-        " authenticate the messages sent from Stripe to Odoo.",
+        " authenticate the messages sent from Stripe to WETH.",
         copy=False,
         groups="base.group_system",
     )

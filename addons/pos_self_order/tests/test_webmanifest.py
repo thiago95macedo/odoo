@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.tests.common import tagged
 from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest

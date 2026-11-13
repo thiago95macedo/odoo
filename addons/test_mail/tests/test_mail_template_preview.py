@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.test_mail.tests.test_mail_template import TestMailTemplateCommon
 from odoo.tests import Form, tagged, users

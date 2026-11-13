@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.html_editor.controllers.main import HTML_Editor
 from odoo.addons.web_unsplash.controllers.main import Web_Unsplash

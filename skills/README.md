@@ -1,6 +1,6 @@
 # Odoo's Skill Library
 
-This directory contains a set of useful Skills for agentic development with Odoo.
+This directory contains a set of useful Skills for agentic development with WETH.
 
 Skills are structured documentation that can help AI agents achieve some tasks faster
 and more reliably, with less guesswork. Odoo's Skill library includes skills that

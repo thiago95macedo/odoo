@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import logging
 import random
@@ -22,7 +22,7 @@ LINK_TRACKER_MIN_CODE_LENGTH = 3
 
 class LinkTracker(models.Model):
     """ Link trackers allow users to wrap any URL into a short URL that can be
-    tracked by Odoo. Clicks are counter on each link. A tracker is linked to
+    tracked by WETH. Clicks are counter on each link. A tracker is linked to
     UTMs allowing to analyze marketing actions.
 
     This model is also used in mass_mailing where each link in html body is

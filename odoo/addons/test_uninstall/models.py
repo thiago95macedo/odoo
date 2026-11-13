@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import models, fields
 
@@ -7,7 +7,7 @@ from odoo import models, fields
 class Test_UninstallModel(models.Model):
     """
     This model uses different types of columns to make it possible to test
-    the uninstall feature of Odoo.
+    the uninstall feature of WETH.
     """
     _name = 'test_uninstall.model'
     _description = 'Testing Uninstall Model'

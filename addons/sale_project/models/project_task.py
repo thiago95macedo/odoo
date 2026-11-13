@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, fields, models, _
 from odoo.addons.resource.models.utils import extract_comodel_domain

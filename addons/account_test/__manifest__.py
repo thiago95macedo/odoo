@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2011 CCI Connect asbl (http://www.cciconnect.be) All Rights Reserved.
 #                       Philmer <philmer@cciconnect.be>

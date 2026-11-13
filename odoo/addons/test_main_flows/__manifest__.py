@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Test Main Flow',
     'category': 'Hidden/Tests',
     'description': """
-This module will test the main workflow of Odoo.
+This module will test the main workflow of WETH.
 It will install some main apps and will try to execute the most important actions.
 """,
     'depends': ['crm', 'sale_timesheet', 'purchase_stock', 'mrp', 'account'],

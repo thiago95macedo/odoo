@@ -91274,7 +91274,7 @@ stores.inject(MyMetaStore, storeInstance);
 	//#endregion
 	//#region src/index.ts
 	/**
-	* We export here all entities that needs to be accessed publicly by Odoo.
+	* We export here all entities that needs to be accessed publicly by WETH.
 	*
 	* Note that the __info__ key is actually completed by the build process (see
 	* the rollup.config.js file)

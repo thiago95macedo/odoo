@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -750,7 +750,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         self.env.user.sudo().pause_google_synchronization()
         record.unlink()
 
-        # Assert that synchronization is paused, delete wasn't called and record was archived in Odoo.
+        # Assert that synchronization is paused, delete wasn't called and record was archived in WETH.
         self.assertFalse(self.env.user.google_synchronization_stopped)
         self.assertEqual(self.env.user._get_google_sync_status(), "sync_paused")
         self.assertFalse(record.active, "Event must be archived in Odoo after unlinking it")

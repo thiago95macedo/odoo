@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of WETH. See LICENSE file for full copyright and licensing details.
 from stdnum.br import cpf as br_cn
 
 from odoo.tools.translate import LazyTranslate
