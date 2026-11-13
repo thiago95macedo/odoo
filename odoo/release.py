@@ -17,12 +17,14 @@ series = serie = major_version = '.'.join(str(s) for s in version_info[:2])
 version = series + RELEASE_LEVELS_DISPLAY[version_info[3]] + str(version_info[4] or '') + version_info[5]
 
 product_name = 'WETH'
-description = 'WETH Server'
-long_desc = '''WETH is a complete ERP and CRM. The main features are accounting (analytic
-and financial), stock management, sales and purchases management, tasks
-automation, marketing campaigns, help desk, POS, etc. Technical features include
-a distributed server, an object database, a dynamic GUI,
-customizable reports, and XML-RPC interfaces.
+description = 'Servidor WETH'
+long_desc = '''O WETH é uma plataforma integrada de gestão empresarial (ERP) e inteligência
+corporativa (CRM) desenvolvida pela WETH Tecnologia. Projetada para transformar
+operações complexas em fluxos ágeis e automatizados, integra finanças,
+contabilidade analítica, cadeia de suprimentos, estoques, vendas, serviços e atendimento.
+Sua arquitetura moderna combina alta performance, segurança robusta, relatórios
+analíticos avançados e APIs flexíveis para impulsionar a inovação e o crescimento
+estratégico dos negócios.
 '''
 classifiers = """Development Status :: 5 - Production/Stable
 License :: OSI Approved :: GNU Lesser General Public License v3
