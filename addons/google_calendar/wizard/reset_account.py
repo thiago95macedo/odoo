@@ -9,7 +9,7 @@ class GoogleCalendarAccountReset(models.TransientModel):
 
     user_id = fields.Many2one('res.users', required=True)
     delete_events = fields.Boolean(
-        string="Delete synced events from Odoo",
+        string="Delete synced events from Weth",
         help="This will affect events in calendars you own, and any other events you are organizing.")
 
     def reset_account(self):
@@ -26,7 +26,7 @@ class GoogleCalendarAccountReset(models.TransientModel):
 
             # Clear google_id first. unlink() archives (instead of deleting) any event
             # still linked to Google, and archiving propagates the deletion to the remote
-            # calendar. Detaching first lets us delete from Odoo only.
+            # calendar. Detaching first lets us delete from WETH only.
             events.with_context(skip_event_permission=True).google_id = False
             recurrences.with_context(skip_event_permission=True).google_id = False
             events.unlink()

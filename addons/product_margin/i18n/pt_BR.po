@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/product_margin/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -230,7 +230,7 @@ msgid "Product Margin"
 msgstr "Margem do produto"
 
 #. module: product_margin
-#. odoo-python
+#. weth-python
 #: code:addons/product_margin/wizard/product_margin.py:0
 #: model:ir.actions.act_window,name:product_margin.product_margin_act_window
 #: model_terms:ir.ui.view,arch_db:product_margin.view_product_margin_form

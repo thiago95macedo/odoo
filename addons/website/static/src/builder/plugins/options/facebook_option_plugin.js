@@ -53,7 +53,7 @@ export class FacebookOptionPlugin extends Plugin {
             ["social_facebook"]
         );
         if (res) {
-            this.facebookUrl = res[0].social_facebook || "https://www.facebook.com/Odoo";
+            this.facebookUrl = res[0].social_facebook || "https://www.facebook.com/Weth";
 
             // WARNING: the call to ignore is very dangerous,
             // and should be avoided in most cases (if you think you need those, ask html_editor team)
@@ -99,7 +99,7 @@ export class DataAttributeListAction extends BuilderAction {
 export class CheckFacebookLinkAction extends BuilderAction {
     static id = "checkFacebookLink";
     setup() {
-        this.closeNotif = () => {};
+        this.closeNotif = () => { };
     }
     apply({ editingElement, value }) {
         editingElement.dataset.id = "";
@@ -109,7 +109,7 @@ export class CheckFacebookLinkAction extends BuilderAction {
             this.checkFacebookId(id).then((ok) => {
                 this.closeNotif();
                 if (ok) {
-                    this.closeNotif = () => {};
+                    this.closeNotif = () => { };
                 } else {
                     this.closeNotif = this.services.notification.add(
                         _t("We couldn't find the Facebook page"),

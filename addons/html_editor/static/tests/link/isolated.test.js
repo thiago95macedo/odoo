@@ -80,7 +80,7 @@ test("should keep isolated link after a delete and typing", async () => {
 
 test("should delete the content from the link when popover is active", async () => {
     const { editor, el } = await setupEditor('<p><a href="http://test.test/">abc[]abc</a></p>');
-    await expectElementCount(".o-we-linkpopover", 1);
+    await expectElementCount(".w-we-linkpopover", 1);
     deleteBackward(editor);
     deleteBackward(editor);
     deleteBackward(editor);

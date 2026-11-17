@@ -54,7 +54,7 @@ test(`import in cog menu dropdown in list`, async () => {
         },
     });
     await toggleActionMenu();
-    expect(`.o-dropdown--menu`).toHaveCount(1);
+    expect(`.w-dropdown--menu`).toHaveCount(1);
     expect(`.o_import_menu`).toHaveCount(1);
 
     await contains(`.o_import_menu`).click();
@@ -99,7 +99,7 @@ test(`cog menu should open with alt+u shortcut`, async () => {
     });
     await press(["alt", "u"]);
     await animationFrame();
-    expect(`.o-dropdown--menu`).toHaveCount(1);
+    expect(`.w-dropdown--menu`).toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -132,7 +132,7 @@ test(`import in cog menu dropdown in kanban`, async () => {
         },
     });
     await toggleActionMenu();
-    expect(`.o-dropdown--menu`).toHaveCount(1);
+    expect(`.w-dropdown--menu`).toHaveCount(1);
     expect(`.o_import_menu`).toHaveCount(1);
 
     await contains(`.o_import_menu`).click();

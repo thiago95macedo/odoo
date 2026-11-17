@@ -141,7 +141,7 @@ class PaymentProvider(models.Model):
 
         If the provider is already live, close the current window. Otherwise, generate a Stripe
         Connect onboarding link and redirect the user to it. If provided, the menu id is included in
-        the URL the user is redirected to when coming back on Odoo after the onboarding. If the link
+        the URL the user is redirected to when coming back on WETH after the onboarding. If the link
         generation failed, redirect the user to the provider form.
 
         Note: This method serves as a hook for modules that would fully implement Stripe Connect.

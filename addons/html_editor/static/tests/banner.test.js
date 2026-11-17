@@ -27,7 +27,7 @@ test("should insert a banner with focus inside followed by a paragraph", async (
     const { el, editor } = await setupEditor("<p>Test[]</p>");
     await insertText(editor, "/banner");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
 
     await press("enter");
     expect(unformat(getContent(el))).toBe(
@@ -204,8 +204,8 @@ test("Can change an emoji banner", async () => {
     await press("enter");
     expect("i.o_editor_banner_icon").toHaveText("💡");
     await click("i.o_editor_banner_icon");
-    await waitFor(".o-EmojiPicker");
-    await click(".o-EmojiPicker .o-Emoji");
+    await waitFor(".w-EmojiPicker");
+    await click(".w-EmojiPicker .w-Emoji");
     await animationFrame();
     expect("i.o_editor_banner_icon").toHaveText("😀");
     execCommand(editor, "historyUndo");
@@ -222,13 +222,13 @@ test("toolbar should be closed when you open the emojipicker", async () => {
     // Move the selection to open the toolbar
     const textNode = el.querySelector(".test").childNodes[0];
     setSelection({ anchorNode: textNode, anchorOffset: 0, focusNode: textNode, focusOffset: 2 });
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
 
     await click("i.o_editor_banner_icon");
-    await waitFor(".o-EmojiPicker");
+    await waitFor(".w-EmojiPicker");
     await animationFrame();
-    await expectElementCount(".o-EmojiPicker", 1);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-EmojiPicker", 1);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test.tags("desktop", "iframe");
@@ -242,13 +242,13 @@ test("toolbar should be closed when you open the emojipicker (iframe)", async ()
     // Move the selection to open the toolbar
     const textNode = el.querySelector(".test").childNodes[0];
     setSelection({ anchorNode: textNode, anchorOffset: 0, focusNode: textNode, focusOffset: 2 });
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
 
     await click(":iframe i.o_editor_banner_icon");
-    await waitFor(".o-EmojiPicker");
+    await waitFor(".w-EmojiPicker");
     await animationFrame();
-    await expectElementCount(".o-EmojiPicker", 1);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-EmojiPicker", 1);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test("add banner inside empty list", async () => {
@@ -289,7 +289,7 @@ test("should move heading element inside the banner, with paragraph element afte
     const { el, editor } = await setupEditor("<h1>Test[]</h1>");
     await insertText(editor, "/banner");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
 
     await press("enter");
     expect(getContent(el)).toBe(
@@ -306,7 +306,7 @@ test("Inserting a banner should not remove the next sibling block", async () => 
     const { el, editor } = await setupEditor("<p><br>[]</p><p>b</p>");
     await insertText(editor, "/banner");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
     await press("enter");
     expect(getContent(el)).toBe(
         `<p data-selection-placeholder=""><br></p><div class="o_editor_banner user-select-none o-contenteditable-false lh-1 d-flex align-items-center alert alert-info pb-0 pt-3 ps-3 pe-3" data-oe-role="status" contenteditable="false" role="status">
@@ -418,7 +418,7 @@ test("should be able to switch banner type", async () => {
     const { el, editor } = await setupEditor("<p>Test[]</p>");
     await insertText(editor, "/bannerinfo");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
 
     await press("enter");
     expect(unformat(getContent(el))).toBe(
@@ -433,7 +433,7 @@ test("should be able to switch banner type", async () => {
     );
     await insertText(editor, "/bannersuccess");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Success");
+    expect(".active .w-we-command-name").toHaveText("Banner Success");
     await press("enter");
 
     expect(unformat(getContent(el))).toBe(
@@ -452,7 +452,7 @@ test("powerbox should not suggest the active banner type", async () => {
     const { el, editor } = await setupEditor("<p>Test[]</p>");
     await insertText(editor, "/bannerinfo");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
     await press("enter");
     expect(unformat(getContent(el))).toBe(
         unformat(
@@ -466,14 +466,14 @@ test("powerbox should not suggest the active banner type", async () => {
     );
     await insertText(editor, "/banner");
     await animationFrame();
-    expect(".o-we-command-name").not.toHaveText("Banner Info");
+    expect(".w-we-command-name").not.toHaveText("Banner Info");
 });
 
 test("undo restores previous banner style after switching banner type", async () => {
     const { el, editor } = await setupEditor("<p>Test[]</p>");
     await insertText(editor, "/bannerinfo");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Info");
+    expect(".active .w-we-command-name").toHaveText("Banner Info");
 
     await press("enter");
     expect(unformat(getContent(el))).toBe(
@@ -488,7 +488,7 @@ test("undo restores previous banner style after switching banner type", async ()
     );
     await insertText(editor, "/bannersuccess");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Banner Success");
+    expect(".active .w-we-command-name").toHaveText("Banner Success");
     await press("enter");
 
     expect(unformat(getContent(el))).toBe(

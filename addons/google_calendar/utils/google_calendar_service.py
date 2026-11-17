@@ -118,9 +118,9 @@ class GoogleCalendarService:
         events, data, status = self._fetch_paginated_items(url, params, headers, timeout)
         if status == 404:
             # This usually means one of two things:
-            # - the calendar was both deleted in Google Calendar and edited in Odoo before the last sync
-            # - the user connected a different Google account in Odoo
-            # It should be recreated in the Odoo->Google part of the sync.
+            # - the calendar was both deleted in Google Calendar and edited in WETH before the last sync
+            # - the user connected a different Google account in Weth
+            # It should be recreated in the Weth->Google part of the sync.
             calendar.write({'need_sync': True})
             return GoogleEvent([]), None, ()
 

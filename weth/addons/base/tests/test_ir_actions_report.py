@@ -31,7 +31,7 @@ class TestReports(weth.tests.TransactionCase):
             'account.report_original_vendor_bill': [('move_type', 'in', ('in_invoice', 'in_receipt'))],
             'account.report_invoice_with_payments': invoice_domain,
             'account.report_invoice': invoice_domain,
-            'account_edi_ubl_cii.account_invoices_generated_by_odoo': [('move_type', 'in', ('in_invoice', 'in_refund'))],
+            'account_edi_ubl_cii.account_invoices_generated_by_weth': [('move_type', 'in', ('in_invoice', 'in_refund'))],
             'l10n_th.report_commercial_invoice': invoice_domain,
         }
         extra_data_reports = {
@@ -131,10 +131,10 @@ class TestReports(weth.tests.TransactionCase):
         minimal_pdf_content = io.BytesIO(PDF_RAW)
         malformed_pdf_content = io.BytesIO(b'not a pdf')
 
-        with self.assertRaises(UserError, msg="Odoo is unable to merge the generated PDFs."):
+        with self.assertRaises(UserError, msg="WETH is unable to merge the generated PDFs."):
             report._merge_pdfs([malformed_pdf_content])
 
-        with self.assertRaises(UserError, msg="Odoo is unable to merge the generated PDFs."):
+        with self.assertRaises(UserError, msg="WETH is unable to merge the generated PDFs."):
             report._merge_pdfs([minimal_pdf_content, malformed_pdf_content])
 
         failed_streams = []
@@ -149,8 +149,8 @@ class TestReports(weth.tests.TransactionCase):
         self.assertEqual(len(failed_streams), 1, "Expecting one failed stream")
         self.assertEqual(failed_streams[0][1], malformed_pdf_content, "Expecting the failed stream to be the malformed pdf")
 
-        minimal_file = tools.pdf.OdooPdfFileReader(minimal_pdf_content)
-        merged_file = tools.pdf.OdooPdfFileReader(merged_pdf)
+        minimal_file = tools.pdf.WethPdfFileReader(minimal_pdf_content)
+        merged_file = tools.pdf.WethPdfFileReader(merged_pdf)
 
         self.assertEqual(
             len(minimal_file.pages) * 2,

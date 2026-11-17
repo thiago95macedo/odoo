@@ -43,7 +43,7 @@ test("dropdown with accordion keyboard navigation", async () => {
     }
 
     await mountWithCleanup(Parent);
-    await click(".o-dropdown.dropdown-toggle");
+    await click(".w-dropdown.dropdown-toggle");
     await animationFrame();
 
     expect(".dropdown-menu > .focus").toHaveCount(0);

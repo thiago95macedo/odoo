@@ -1,9 +1,9 @@
-.o-mail-PollResult {
+.w-mail-PollResult {
     max-width: 500px;
-    background-color: var(--mail-Poll-bgColor, $o-view-background-color);
+    background-color: var(--mail-Poll-bgColor, $w-view-background-color);
 }
 
-.o-mail-PollResult-emojiWrapper {
+.w-mail-PollResult-emojiWrapper {
     aspect-ratio: 1;
     background-color: rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(0, 0, 0, 0.08);

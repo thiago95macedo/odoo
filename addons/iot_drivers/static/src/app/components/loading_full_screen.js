@@ -12,7 +12,7 @@ export class LoadingFullScreen extends Component {
     store = useStore();
 
     setup() {
-        // We delay the RPC verification to be sure that the Odoo service
+        // We delay the RPC verification to be sure that the WETH service
         // was already restarted
         onMounted(() => {
             setTimeout(() => {
@@ -23,7 +23,7 @@ export class LoadingFullScreen extends Component {
                         });
                         window.location.reload();
                     } catch {
-                        console.warn("Odoo service is probably rebooting.");
+                        console.warn("WETH service is probably rebooting.");
                     }
                 }, 750);
             }, 2000);

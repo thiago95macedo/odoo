@@ -1,10 +1,10 @@
-.o-color-palette-dropdown {
+.w-color-palette-dropdown {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: $o-we-sidebar-width - 30px;
+    width: $w-we-sidebar-width - 30px;
     padding: 0.5rem;
 
-    .o-hb-select-dropdown-item {
+    .w-hb-select-dropdown-item {
         padding: 0.25rem 0.5rem;
         border-bottom: none;
 
@@ -12,20 +12,19 @@
             background-color: inherit !important; // override
         }
 
-        .o-color-palette-card {
+        .w-color-palette-card {
             height: 40px;
         }
 
-        &:is(:hover, :focus-visible, .active) .o-color-palette-card {
-            box-shadow:
-                0 0 0 #{$o-we-border-width} #{$o-we-bg-light},
-                0 0 0 #{$o-we-border-width * 2} var(--o-hb-select-item-active-color, #{$o-we-sidebar-content-field-toggle-active-bg});
+        &:is(:hover, :focus-visible, .active) .w-color-palette-card {
+            box-shadow: 0 0 0 #{$w-we-border-width} #{$w-we-bg-light},
+            0 0 0 #{$w-we-border-width * 2} var(--o-hb-select-item-active-color, #{$w-we-sidebar-content-field-toggle-active-bg});
         }
     }
 
 }
 
-.o-hb-theme-color-slider-btn {
+.w-hb-theme-color-slider-btn {
     position: relative;
     min-height: unset;
     height: 22px;
@@ -42,7 +41,8 @@
     }
 
     &:focus-visible::after {
-        outline: 1px solid var(--o-hb-btn-active-color, $o-we-color-accent);;
+        outline: 1px solid var(--o-hb-btn-active-color, $w-we-color-accent);
+        ;
     }
 }
 

@@ -24,11 +24,11 @@ test("Display notification for media device permission on barcode scanning", asy
     }
 
     await mountWithCleanup(BarcodeScan);
-    await contains("a.o_mobile_barcode").click();
+    await contains("a.w_mobile_barcode").click();
     // first rendering: dialog with BarcodeVideoScanner which throws in onMounted
     // => second rendering: displays "Unable to access camera" in the dialog
     await animationFrame();
     expect(".modal-body").toHaveText(
-        "Unable to access camera\nCould not start scanning. Odoo needs your authorization first."
+        "Unable to access camera\nCould not start scanning. WETH needs your authorization first."
     );
 });

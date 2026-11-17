@@ -1,6 +1,6 @@
 declare module "registries" {
     import { Component } from "@weth/owl";
-    import { OdooEnv } from "@web/env";
+    import { WethEnv } from "@web/env";
 
     interface AccessRights {
         canEditView: boolean;
@@ -10,7 +10,7 @@ declare module "registries" {
 
     interface DebugRegistryItemShapeParams {
         accessRights: AccessRights;
-        env: OdooEnv;
+        env: WethEnv;
         [k: string]: any;
     }
 

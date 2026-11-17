@@ -15,7 +15,7 @@ from weth import tools
 
 @tagged('weth2google')
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
-class TestSyncOdoo2GoogleCommon(TestSyncGoogle):
+class TestSyncWeth2GoogleCommon(TestSyncGoogle):
 
     @classmethod
     def setUpClass(cls):
@@ -41,7 +41,7 @@ class TestSyncOdoo2GoogleCommon(TestSyncGoogle):
 @tagged('calendar_performance', 'is_query_count')
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
 @tagged('at_install', '-post_install')  # LEGACY at_install
-class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
+class TestSyncWeth2Google(TestSyncWeth2GoogleCommon):
 
     @patch_api
     def test_event_creation(self):
@@ -73,9 +73,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'visibility': 'private',
             'guestsCanModify': True,
             'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': alarm.duration_minutes}]},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -183,10 +183,10 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'visibility': 'private',
             'guestsCanModify': True,
             'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': 15}]},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'},
                           {'email': 'phineas@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -210,9 +210,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -272,10 +272,10 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: recurrence.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: recurrence.id}},
             'transparency': 'opaque',
         })
 
@@ -308,10 +308,10 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.recurrence_id.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.recurrence_id.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
@@ -356,9 +356,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.recurrence_id.id}},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.recurrence_id.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=1;BYDAY=WE'],
             'transparency': 'opaque',
@@ -409,7 +409,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
             'organizer': {'email': 'jean-luc@opoo.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
@@ -444,10 +444,10 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: new_recurrence.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: new_recurrence.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
             'transparency': 'opaque',
         }, timeout=3)
@@ -574,9 +574,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'description': event.description,
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'declined'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
             'transparency': 'opaque',
         })
@@ -611,10 +611,10 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: new_recurrence.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: new_recurrence.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
             'transparency': 'opaque',
         }, timeout=3)
@@ -655,9 +655,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event_1.id}},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event_1.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
             'status': 'cancelled',
             'transparency': 'opaque',
@@ -723,14 +723,14 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         # Assert that synchronization is paused, patch wasn't called and record is waiting to be synced.
         self.assertFalse(self.env.user.google_synchronization_stopped)
         self.assertEqual(self.env.user._get_google_sync_status(), "sync_paused")
-        self.assertEqual(record.name, "Updated Event", "Assert that event name was updated in Odoo Calendar")
+        self.assertEqual(record.name, "Updated Event", "Assert that event name was updated in WETH Calendar")
         self.assertTrue(record.need_sync, "Sync variable must be true for updating event when sync re-activates")
         self.assertGoogleEventNotPatched()
 
     @patch_api
     def test_delete_synced_event_with_sync_config_paused(self):
         """
-        Deletes a synced event with synchronization paused, event must be archived in Odoo and
+        Deletes a synced event with synchronization paused, event must be archived in WETH and
         have its field 'need_sync' as True for later synchronizing it with Google Calendar.
         """
         # Set synchronization as active and then pause synchronization.
@@ -753,7 +753,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         # Assert that synchronization is paused, delete wasn't called and record was archived in WETH.
         self.assertFalse(self.env.user.google_synchronization_stopped)
         self.assertEqual(self.env.user._get_google_sync_status(), "sync_paused")
-        self.assertFalse(record.active, "Event must be archived in Odoo after unlinking it")
+        self.assertFalse(record.active, "Event must be archived in WETH after unlinking it")
         self.assertTrue(record.need_sync, "Sync variable must be true for updating event in Google when sync re-activates")
         self.assertGoogleEventNotDeleted()
 
@@ -777,9 +777,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'transparent',
         })
 
@@ -803,9 +803,9 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -851,7 +851,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
                             {'email': self.attendee_user.email, 'responseStatus': 'needsAction'},
                             {'email': self.organizer_user.email, 'responseStatus': 'accepted'}
                          ],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: record.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: record.id}},
         })
 
     @patch_api
@@ -891,7 +891,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'organizer': {'email': self.organizer_user.email, 'self': True},
             'attendees': [{'email': self.organizer_user.email, 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=1;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: recurrence.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: recurrence.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
@@ -901,7 +901,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         """
         Skip the synchro of new events by attendees when the organizer is not synchronized with Google.
         Otherwise, the event ownership will be lost to the attendee and it could generate duplicates in
-        Odoo, as well cause problems in the future the synchronization of that event for the original owner.
+        WETH, as well cause problems in the future the synchronization of that event for the original owner.
         """
         with self.mock_datetime_and_now("2023-01-10"):
             # Stop the synchronization for the organizer and leave the attendee synchronized.
@@ -945,7 +945,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
                                 {'email': self.attendee_user.email, 'responseStatus': 'needsAction'},
                                 {'email': self.organizer_user.email, 'responseStatus': 'accepted'}
                             ],
-                'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: record.id}},
+                'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: record.id}},
             })
 
     @patch_api
@@ -975,7 +975,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         }
         self.assertGoogleEventInsertedMultiTime({
             **event_response_data,
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'attendees': [
                 {'email': self.attendee_user.email, 'responseStatus': 'needsAction'},
                 {'email': self.organizer_user.email, 'responseStatus': 'accepted'}
@@ -987,7 +987,7 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
         event_response_data['description'] = event2.description
         self.assertGoogleEventInsertedMultiTime({
             **event_response_data,
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event2.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event2.id}},
             'attendees': [],  # Attendees are added on an update, not on creation.
         }, timeout=3)
 
@@ -1116,14 +1116,14 @@ class TestSyncOdoo2Google(TestSyncOdoo2GoogleCommon):
             'guestsCanModify': True,
             'organizer': {'email': 'o.o@example.com', 'self': False},
             'attendees': [{'email': 'a.a@example.com', 'responseStatus': 'accepted'}, {'email': 'o.o@example.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
 @tagged('-at_install', 'post_install')
-class TestSyncOdoo2GooglePostInstall(TestSyncOdoo2GoogleCommon):
+class TestSyncWeth2GooglePostInstall(TestSyncWeth2GoogleCommon):
 
     @patch_api
     @users('organizer_user')

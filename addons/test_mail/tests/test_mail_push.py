@@ -70,7 +70,7 @@ class TestWebPushNotification(SMSCommon):
     @patch.object(weth.addons.mail.models.mail_thread, 'push_to_end_point')
     @mute_logger('weth.tests')
     def test_notify_by_push(self, push_to_end_point):
-        """ When posting a comment, notify both inbox and people outside of Odoo
+        """ When posting a comment, notify both inbox and people outside of Weth
         aka email """
         self.record_simple.with_user(self.user_admin).message_post(
             body=Markup('<p>Hello</p>'),
@@ -309,7 +309,7 @@ class TestWebPushNotification(SMSCommon):
                     extra=f'In-Reply-To:\r\n\t{test_record.message_ids[-1].message_id}\n',
                 )
             if has_notif:
-                # user_inbox is notified by Odoo, hence receives a push notification
+                # user_inbox is notified by WETH, hence receives a push notification
                 self.assertPushNotification(
                     mail_push_count=0, title_content=self.user_email.name,
                     body_content='Please call me as soon as possible this afternoon!\n\n--\nSylvie',

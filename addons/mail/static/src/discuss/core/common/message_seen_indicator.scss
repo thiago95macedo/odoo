@@ -1,13 +1,13 @@
-.o-mail-MessageSeenIndicator {
-    &.o-hasEveryoneSeen {
+.w-mail-MessageSeenIndicator {
+    &.w-hasEveryoneSeen {
         color: var(--mail-MessageSeenIndicator-hasEveryoneSeenColor, lighten($primary, 20%));
     }
 
     i {
         // oi icons have a line height of 1 by default which breaks alignment
         line-height: 1.5;
-    
-        &.o-second {
+
+        &.w-second {
             top: -3px;
         }
     }

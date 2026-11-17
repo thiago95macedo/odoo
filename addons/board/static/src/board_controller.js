@@ -32,10 +32,10 @@ export class BoardController extends Component {
         } else {
             useSortable({
                 ref: this.mainRef,
-                elements: ".o-dashboard-action",
-                handle: ".o-dashboard-action-header",
+                elements: ".w-dashboard-action",
+                handle: ".w-dashboard-action-header",
                 cursor: "move",
-                groups: ".o-dashboard-column",
+                groups: ".w-dashboard-column",
                 connectGroups: true,
                 onDrop: ({ element, previous, parent }) => {
                     const fromColIdx = parseInt(element.parentElement.dataset.idx, 10);

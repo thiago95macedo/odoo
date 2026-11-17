@@ -42,7 +42,7 @@ registry.category("form_compilers").add("portal_chatter_compiler", {
 patch(FormCompiler.prototype, {
     compile(node, params) {
         const res = super.compile(node, params);
-        const chatterContainerHookXml = res.querySelector(".o-mail-Form-chatter");
+        const chatterContainerHookXml = res.querySelector(".w-mail-Form-chatter");
         if (!chatterContainerHookXml) {
             return res; // no chatter, keep the result as it is
         }

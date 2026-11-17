@@ -194,7 +194,7 @@ const messagingMenuPatch = {
         return counter;
     },
     /** @override */
-    get odooBotNotificationsTab() {
+    get wethBotNotificationsTab() {
         return this.chatTab;
     },
     /** @override */

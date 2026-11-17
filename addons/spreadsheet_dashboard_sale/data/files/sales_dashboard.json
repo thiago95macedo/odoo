@@ -7,10 +7,14 @@
       "colNumber": 10,
       "rowNumber": 98,
       "rows": {
-        "97": { "size": 22 }
+        "97": {
+          "size": 22
+        }
       },
       "cols": {
-        "0": { "size": 136 }
+        "0": {
+          "size": 136
+        }
       },
       "merges": [],
       "cells": {},
@@ -29,16 +33,25 @@
             "baselineColorDown": "#DC6965",
             "baselineColorUp": "#00A04A",
             "baselineMode": "percentage",
-            "title": { "text": "Quotations", "bold": true, "color": "#01666B" },
+            "title": {
+              "text": "Quotations",
+              "bold": true,
+              "color": "#01666B"
+            },
             "type": "scorecard",
             "background": "",
             "baseline": "Data!E4",
-            "baselineDescr": { "text": "since last period" },
+            "baselineDescr": {
+              "text": "since last period"
+            },
             "keyValue": "Data!D4",
             "humanize": false,
             "chartId": "51823220-f22b-4359-8711-579a249c91bb"
           },
-          "offset": { "x": 0, "y": 9 },
+          "offset": {
+            "x": 0,
+            "y": 9
+          },
           "col": 0,
           "row": 0
         },
@@ -51,16 +64,25 @@
             "baselineColorDown": "#DC6965",
             "baselineColorUp": "#00A04A",
             "baselineMode": "percentage",
-            "title": { "text": "Orders", "color": "#01666B", "bold": true },
+            "title": {
+              "text": "Orders",
+              "color": "#01666B",
+              "bold": true
+            },
             "type": "scorecard",
             "background": "",
             "baseline": "Data!E5",
-            "baselineDescr": { "text": "since last period" },
+            "baselineDescr": {
+              "text": "since last period"
+            },
             "keyValue": "Data!D5",
             "humanize": false,
             "chartId": "9a38934c-b454-4a4b-88aa-17d1b80dbf5f"
           },
-          "offset": { "x": 224, "y": 9 },
+          "offset": {
+            "x": 224,
+            "y": 9
+          },
           "col": 0,
           "row": 0
         },
@@ -73,16 +95,25 @@
             "baselineColorDown": "#DC6965",
             "baselineColorUp": "#00A04A",
             "baselineMode": "percentage",
-            "title": { "text": "Revenue", "color": "#01666B", "bold": true },
+            "title": {
+              "text": "Revenue",
+              "color": "#01666B",
+              "bold": true
+            },
             "type": "scorecard",
             "background": "",
             "baseline": "Data!E7",
-            "baselineDescr": { "text": "since last period" },
+            "baselineDescr": {
+              "text": "since last period"
+            },
             "keyValue": "Data!D7",
             "humanize": false,
             "chartId": "67858d0e-b5ba-4a3c-bf9e-c0fceaeedf65"
           },
-          "offset": { "x": 448, "y": 9 },
+          "offset": {
+            "x": 448,
+            "y": 9
+          },
           "col": 0,
           "row": 0
         },
@@ -95,16 +126,25 @@
             "baselineColorDown": "#DC6965",
             "baselineColorUp": "#00A04A",
             "baselineMode": "percentage",
-            "title": { "text": "Average Order", "color": "#01666B", "bold": true },
+            "title": {
+              "text": "Average Order",
+              "color": "#01666B",
+              "bold": true
+            },
             "type": "scorecard",
             "background": "",
             "baseline": "Data!E8",
-            "baselineDescr": { "text": "since last period" },
+            "baselineDescr": {
+              "text": "since last period"
+            },
             "keyValue": "Data!D8",
             "humanize": false,
             "chartId": "d43375c1-73a6-42a2-8dbd-0f13c285824f"
           },
-          "offset": { "x": 672, "y": 9 },
+          "offset": {
+            "x": 672,
+            "y": 9
+          },
           "col": 0,
           "row": 0
         },
@@ -112,7 +152,10 @@
           "id": "0adf3c8f-fb0d",
           "col": 0,
           "row": 0,
-          "offset": { "x": 0, "y": 547 },
+          "offset": {
+            "x": 0,
+            "y": 547
+          },
           "width": 495,
           "height": 417,
           "tag": "carousel",
@@ -122,13 +165,19 @@
                 "title": {},
                 "legendPosition": "left",
                 "type": "geo",
-                "colorScale": { "minColor": "#f7fbff", "midColor": "#6aaed6", "maxColor": "#08306b" },
+                "colorScale": {
+                  "minColor": "#f7fbff",
+                  "midColor": "#6aaed6",
+                  "maxColor": "#08306b"
+                },
                 "humanize": true,
                 "dataSource": {
-                  "type": "odoo",
+                  "type": "weth",
                   "actionXmlId": "sale.action_order_report_all",
                   "metaData": {
-                    "groupBy": ["country_id"],
+                    "groupBy": [
+                      "country_id"
+                    ],
                     "measure": "price_subtotal",
                     "order": null,
                     "resModel": "sale.report",
@@ -139,7 +188,9 @@
                       "group_by": []
                     },
                     "domain": "[\"&\", (\"state\", \"!=\", \"cancel\"), (\"state\", \"not in\", (\"draft\", \"cancel\", \"sent\"))]",
-                    "groupBy": ["country_id"],
+                    "groupBy": [
+                      "country_id"
+                    ],
                     "orderBy": []
                   }
                 },
@@ -153,27 +204,63 @@
               "color": "#01666B"
             },
             "items": [
-              { "type": "chart", "chartId": "0ce069db-1c2a", "title": "Map" },
+              {
+                "type": "chart",
+                "chartId": "0ce069db-1c2a",
+                "title": "Map"
+              },
               {
                 "type": "carouselDataView",
                 "title": "Top 50",
                 "rangeData": {
                   "_sheetId": "26b16149-38d6",
-                  "_zone": { "top": 0, "left": 0, "bottom": 50, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "bottom": 50,
+                    "right": 2
+                  }
                 }
               }
             ],
             "fieldMatching": {
               "0ce069db-1c2a": {
-                "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime" },
-                "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-                "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-                "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-                "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-                "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-                "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-                "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+                "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+                  "chain": "date",
+                  "type": "datetime"
+                },
+                "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+                  "chain": "country_id",
+                  "type": "many2one"
+                },
+                "dbb716a1-5977-47ee-a53e-ca5716303433": {
+                  "chain": "product_id",
+                  "type": "many2one"
+                },
+                "7d95fe28-fd13-4805-948c-95742e7d6733": {
+                  "chain": "partner_id",
+                  "type": "many2one"
+                },
+                "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+                  "chain": "categ_id",
+                  "type": "many2one"
+                },
+                "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+                  "chain": "team_id",
+                  "type": "many2one"
+                },
+                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+                  "chain": "user_id",
+                  "type": "many2one"
+                },
+                "ec466626-f54a-4955-9611-eaa2719f1afb": {
+                  "chain": "source_id",
+                  "type": "many2one"
+                },
+                "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+                  "chain": "medium_id",
+                  "type": "many2one"
+                }
               }
             }
           }
@@ -182,7 +269,10 @@
           "id": "8ff0e8f4-d779",
           "col": 0,
           "row": 0,
-          "offset": { "x": 505, "y": 974 },
+          "offset": {
+            "x": 505,
+            "y": 974
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -194,10 +284,12 @@
                 "type": "treemap",
                 "humanize": true,
                 "dataSource": {
-                  "type": "odoo",
+                  "type": "weth",
                   "actionXmlId": "sale.action_order_report_all",
                   "metaData": {
-                    "groupBy": ["categ_id"],
+                    "groupBy": [
+                      "categ_id"
+                    ],
                     "measure": "price_subtotal",
                     "order": null,
                     "resModel": "sale.report",
@@ -208,7 +300,9 @@
                       "group_by": []
                     },
                     "domain": "[\"&\", (\"state\", \"!=\", \"cancel\"), (\"state\", \"not in\", (\"draft\", \"cancel\", \"sent\"))]",
-                    "groupBy": ["categ_id"],
+                    "groupBy": [
+                      "categ_id"
+                    ],
                     "orderBy": []
                   }
                 },
@@ -222,26 +316,61 @@
               "color": "#01666B"
             },
             "items": [
-              { "type": "chart", "chartId": "3104b1c2-c3b3" },
+              {
+                "type": "chart",
+                "chartId": "3104b1c2-c3b3"
+              },
               {
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "f1c60588-069d",
-                  "_zone": { "top": 0, "left": 0, "bottom": 50, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "bottom": 50,
+                    "right": 2
+                  }
                 }
               }
             ],
             "fieldMatching": {
               "3104b1c2-c3b3": {
-                "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime" },
-                "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-                "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-                "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-                "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-                "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-                "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-                "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+                "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+                  "chain": "date",
+                  "type": "datetime"
+                },
+                "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+                  "chain": "country_id",
+                  "type": "many2one"
+                },
+                "dbb716a1-5977-47ee-a53e-ca5716303433": {
+                  "chain": "product_id",
+                  "type": "many2one"
+                },
+                "7d95fe28-fd13-4805-948c-95742e7d6733": {
+                  "chain": "partner_id",
+                  "type": "many2one"
+                },
+                "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+                  "chain": "categ_id",
+                  "type": "many2one"
+                },
+                "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+                  "chain": "team_id",
+                  "type": "many2one"
+                },
+                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+                  "chain": "user_id",
+                  "type": "many2one"
+                },
+                "ec466626-f54a-4955-9611-eaa2719f1afb": {
+                  "chain": "source_id",
+                  "type": "many2one"
+                },
+                "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+                  "chain": "medium_id",
+                  "type": "many2one"
+                }
               }
             }
           }
@@ -250,7 +379,10 @@
           "id": "d31b85fc-c207",
           "col": 0,
           "row": 0,
-          "offset": { "x": 505, "y": 547 },
+          "offset": {
+            "x": 505,
+            "y": 547
+          },
           "width": 495,
           "height": 417,
           "tag": "carousel",
@@ -268,7 +400,11 @@
                 "title": "Top 50",
                 "rangeData": {
                   "_sheetId": "af519a43-601e",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -279,7 +415,10 @@
           "id": "4257d03e-f7ce",
           "col": 0,
           "row": 0,
-          "offset": { "x": 0, "y": 974 },
+          "offset": {
+            "x": 0,
+            "y": 974
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -296,7 +435,11 @@
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "22aca884-71c5",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -307,7 +450,10 @@
           "id": "d5683951-5f2f",
           "col": 0,
           "row": 0,
-          "offset": { "x": 0, "y": 1397 },
+          "offset": {
+            "x": 0,
+            "y": 1397
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -324,7 +470,11 @@
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "b1309c3d-acae",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -335,7 +485,10 @@
           "id": "20e2bd56-aeaa",
           "col": 0,
           "row": 0,
-          "offset": { "x": 505, "y": 1397 },
+          "offset": {
+            "x": 505,
+            "y": 1397
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -352,7 +505,11 @@
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "8c22b4b7-445d",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -363,7 +520,10 @@
           "id": "73b0d239-3dda",
           "col": 0,
           "row": 0,
-          "offset": { "x": 0, "y": 1820 },
+          "offset": {
+            "x": 0,
+            "y": 1820
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -380,7 +540,11 @@
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "ef23ed74-d440",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -391,7 +555,10 @@
           "id": "ae70729d-8ccb",
           "col": 0,
           "row": 0,
-          "offset": { "x": 505, "y": 1820 },
+          "offset": {
+            "x": 505,
+            "y": 1820
+          },
           "width": 495,
           "height": 413,
           "tag": "carousel",
@@ -408,7 +575,11 @@
                 "type": "carouselDataView",
                 "rangeData": {
                   "_sheetId": "e8790660-3e7c",
-                  "_zone": { "top": 0, "left": 0, "right": 2 }
+                  "_zone": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 2
+                  }
                 }
               }
             ],
@@ -419,7 +590,10 @@
           "id": "1d73c9be-755c",
           "col": 0,
           "row": 0,
-          "offset": { "x": 0, "y": 120 },
+          "offset": {
+            "x": 0,
+            "y": 120
+          },
           "width": 1000,
           "height": 417,
           "tag": "carousel",
@@ -427,9 +601,11 @@
             "chartDefinitions": {
               "5caa43cd-7146": {
                 "dataSource": {
-                  "type": "odoo",
+                  "type": "weth",
                   "metaData": {
-                    "groupBy": ["date:month"],
+                    "groupBy": [
+                      "date:month"
+                    ],
                     "measure": "price_subtotal",
                     "order": null,
                     "resModel": "sale.report"
@@ -448,14 +624,18 @@
                 "humanize": true,
                 "stacked": true,
                 "fillArea": true,
-                "title": { "text": "" },
+                "title": {
+                  "text": ""
+                },
                 "background": "",
                 "legendPosition": "none",
                 "type": "line",
                 "dataSetStyles": {},
                 "axesDesign": {
                   "y": {
-                    "title": { "text": "Revenue" }
+                    "title": {
+                      "text": "Revenue"
+                    }
                   }
                 }
               }
@@ -467,19 +647,49 @@
               "color": "#01666B"
             },
             "items": [
-              { "type": "chart", "chartId": "5caa43cd-7146" }
+              {
+                "type": "chart",
+                "chartId": "5caa43cd-7146"
+              }
             ],
             "fieldMatching": {
               "5caa43cd-7146": {
-                "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime" },
-                "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-                "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-                "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-                "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-                "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-                "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-                "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+                "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+                  "chain": "date",
+                  "type": "datetime"
+                },
+                "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+                  "chain": "country_id",
+                  "type": "many2one"
+                },
+                "dbb716a1-5977-47ee-a53e-ca5716303433": {
+                  "chain": "product_id",
+                  "type": "many2one"
+                },
+                "7d95fe28-fd13-4805-948c-95742e7d6733": {
+                  "chain": "partner_id",
+                  "type": "many2one"
+                },
+                "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+                  "chain": "categ_id",
+                  "type": "many2one"
+                },
+                "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+                  "chain": "team_id",
+                  "type": "many2one"
+                },
+                "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+                  "chain": "user_id",
+                  "type": "many2one"
+                },
+                "ec466626-f54a-4955-9611-eaa2719f1afb": {
+                  "chain": "source_id",
+                  "type": "many2one"
+                },
+                "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+                  "chain": "medium_id",
+                  "type": "many2one"
+                }
               }
             }
           }
@@ -502,11 +712,21 @@
       "rowNumber": 103,
       "rows": {},
       "cols": {
-        "0": { "size": 160 },
-        "1": { "size": 89 },
-        "2": { "size": 89 },
-        "3": { "size": 89 },
-        "4": { "size": 89 }
+        "0": {
+          "size": 160
+        },
+        "1": {
+          "size": 89
+        },
+        "2": {
+          "size": 89
+        },
+        "3": {
+          "size": 89
+        },
+        "4": {
+          "size": 89
+        }
       },
       "merges": [],
       "cells": {
@@ -522,7 +742,11 @@
         "B2": "=PIVOT.VALUE(11,\"order_reference\",\"state\",\"draft\")",
         "B3": {
           "N": "=",
-          "S": ["=", "=", "sent"]
+          "S": [
+            "=",
+            "=",
+            "sent"
+          ]
         },
         "B4": "=B2+B3",
         "B5": "=PIVOT.VALUE(11,\"order_reference\",\"state\",\"sale\")",
@@ -533,25 +757,39 @@
         "C2": "=PIVOT.VALUE(12,\"order_reference\",\"state\",\"draft\")",
         "C3": {
           "N": "=",
-          "S": ["=", "=", "sent"]
+          "S": [
+            "=",
+            "=",
+            "sent"
+          ]
         },
         "C4": "=C2+C3",
         "C5:C6": "=PIVOT.VALUE(12,\"order_reference\",\"state\",\"sale\")",
         "C7": {
           "N": "=",
-          "S": ["price_subtotal", "=", "="]
+          "S": [
+            "price_subtotal",
+            "=",
+            "="
+          ]
         },
         "C8": "=IFERROR(C7/C6)",
         "D1": "=_t(\"Current\")",
         "D2": "=FORMAT.LARGE.NUMBER(B2)",
-        "D3:D6": { "R": "+R1" },
+        "D3:D6": {
+          "R": "+R1"
+        },
         "D7": "=FORMAT.LARGE.NUMBER(B7)",
         "D8": "=FORMAT.LARGE.NUMBER(B8)",
         "E1": "=_t(\"Previous\")",
         "E2": "=FORMAT.LARGE.NUMBER(C2)",
-        "E3:E8": { "R": "+R1" }
+        "E3:E8": {
+          "R": "+R1"
+        }
       },
-      "styles": { "A1:E1": 1 },
+      "styles": {
+        "A1:E1": 1
+      },
       "formats": {},
       "borders": {},
       "conditionalFormats": [
@@ -560,20 +798,34 @@
           "rule": {
             "type": "CellIsRule",
             "operator": "isGreaterThan",
-            "style": { "fillColor": "", "textColor": "#28A745" },
-            "values": ["0"]
+            "style": {
+              "fillColor": "",
+              "textColor": "#28A745"
+            },
+            "values": [
+              "0"
+            ]
           },
-          "ranges": ["D7"]
+          "ranges": [
+            "D7"
+          ]
         },
         {
           "id": "8d9c8a89-ba2a",
           "rule": {
             "type": "CellIsRule",
             "operator": "isLessThan",
-            "style": { "fillColor": "", "textColor": "#D44C59" },
-            "values": ["0"]
+            "style": {
+              "fillColor": "",
+              "textColor": "#D44C59"
+            },
+            "values": [
+              "0"
+            ]
           },
-          "ranges": ["D7"]
+          "ranges": [
+            "D7"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -593,71 +845,191 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {
-        "0": { "size": 85 }
+        "0": {
+          "size": 85
+        }
       },
       "merges": [],
-      "cells": { "A1": "=PIVOT(5,50,FALSE,FALSE)" },
-      "styles": { "A1": 2, "A2:C3": 3, "A4:A51": 4, "B1:C1": 5, "B4:C51": 6 },
-      "formats": { "A2:A13": 2 },
+      "cells": {
+        "A1": "=PIVOT(5,50,FALSE,FALSE)"
+      },
+      "styles": {
+        "A1": 2,
+        "A2:C3": 3,
+        "A4:A51": 4,
+        "B1:C1": 5,
+        "B4:C51": 6
+      },
+      "formats": {
+        "A2:A13": 2
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "a64c0041-b71d",
-          "rule": { "type": "DataBarRule", "color": 14609659, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14609659,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -666,7 +1038,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -679,73 +1054,197 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {
-        "0": { "size": 287 },
-        "1": { "size": 53 },
-        "2": { "size": 72 }
+        "0": {
+          "size": 287
+        },
+        "1": {
+          "size": 53
+        },
+        "2": {
+          "size": 72
+        }
       },
       "merges": [],
-      "cells": { "A1": "=PIVOT(6,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "A52:C100": 8, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(6,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "A52:C100": 8,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "9f209cfd-2c68",
-          "rule": { "type": "DataBarRule", "color": 14609659, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14609659,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -754,13 +1253,20 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
       },
       "defaultStyle": {
-        "colDefault": { "0": 11, "1": 11, "2": 11 },
+        "colDefault": {
+          "0": 11,
+          "1": 11,
+          "2": 11
+        },
         "rowDefault": {},
         "sheetDefault": 10
       },
@@ -772,71 +1278,190 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {
-        "0": { "size": 216 }
+        "0": {
+          "size": 216
+        }
       },
       "merges": [],
-      "cells": { "A1": "=PIVOT(4,50,false,false)" },
-      "styles": { "A2:D51": 6, "A1": 7, "B1:D1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(4,50,false,false)"
+      },
+      "styles": {
+        "A2:D51": 6,
+        "A1": 7,
+        "B1:D1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "db460a9c-fd9a",
-          "rule": { "type": "DataBarRule", "color": 14740731, "rangeValues": "D2:D51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14740731,
+            "rangeValues": "D2:D51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -845,7 +1470,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -863,71 +1491,190 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {
-        "0": { "size": 121 }
+        "0": {
+          "size": 121
+        }
       },
       "merges": [],
-      "cells": { "A1": "=PIVOT(3,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(3,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "9cd33b6d-93c2",
-          "rule": { "type": "DataBarRule", "color": 14675451, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14675451,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -936,7 +1683,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -954,69 +1704,186 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {},
       "merges": [],
-      "cells": { "A1": "=PIVOT(7,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(7,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "c823febb-83cc",
-          "rule": { "type": "DataBarRule", "color": 14609659, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14609659,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -1025,7 +1892,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -1043,69 +1913,186 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {},
       "merges": [],
-      "cells": { "A1": "=PIVOT(8,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(8,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "ee926844-98a5",
-          "rule": { "type": "DataBarRule", "color": 14675451, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14675451,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -1114,7 +2101,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -1132,69 +2122,186 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {},
       "merges": [],
-      "cells": { "A1": "=PIVOT(9,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(9,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "b3f20fc1-c987",
-          "rule": { "type": "DataBarRule", "color": 14675451, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14675451,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -1203,7 +2310,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -1221,69 +2331,186 @@
       "colNumber": 26,
       "rowNumber": 100,
       "rows": {
-        "0": { "size": 28 },
-        "1": { "size": 28 },
-        "2": { "size": 28 },
-        "3": { "size": 28 },
-        "4": { "size": 28 },
-        "5": { "size": 28 },
-        "6": { "size": 28 },
-        "7": { "size": 28 },
-        "8": { "size": 28 },
-        "9": { "size": 28 },
-        "10": { "size": 28 },
-        "11": { "size": 28 },
-        "12": { "size": 28 },
-        "13": { "size": 28 },
-        "14": { "size": 28 },
-        "15": { "size": 28 },
-        "16": { "size": 28 },
-        "17": { "size": 28 },
-        "18": { "size": 28 },
-        "19": { "size": 28 },
-        "20": { "size": 28 },
-        "21": { "size": 28 },
-        "22": { "size": 28 },
-        "23": { "size": 28 },
-        "24": { "size": 28 },
-        "25": { "size": 28 },
-        "26": { "size": 28 },
-        "27": { "size": 28 },
-        "28": { "size": 28 },
-        "29": { "size": 28 },
-        "30": { "size": 28 },
-        "31": { "size": 28 },
-        "32": { "size": 28 },
-        "33": { "size": 28 },
-        "34": { "size": 28 },
-        "35": { "size": 28 },
-        "36": { "size": 28 },
-        "37": { "size": 28 },
-        "38": { "size": 28 },
-        "39": { "size": 28 },
-        "40": { "size": 28 },
-        "41": { "size": 28 },
-        "42": { "size": 28 },
-        "43": { "size": 28 },
-        "44": { "size": 28 },
-        "45": { "size": 28 },
-        "46": { "size": 28 },
-        "47": { "size": 28 },
-        "48": { "size": 28 },
-        "49": { "size": 28 },
-        "50": { "size": 28 }
+        "0": {
+          "size": 28
+        },
+        "1": {
+          "size": 28
+        },
+        "2": {
+          "size": 28
+        },
+        "3": {
+          "size": 28
+        },
+        "4": {
+          "size": 28
+        },
+        "5": {
+          "size": 28
+        },
+        "6": {
+          "size": 28
+        },
+        "7": {
+          "size": 28
+        },
+        "8": {
+          "size": 28
+        },
+        "9": {
+          "size": 28
+        },
+        "10": {
+          "size": 28
+        },
+        "11": {
+          "size": 28
+        },
+        "12": {
+          "size": 28
+        },
+        "13": {
+          "size": 28
+        },
+        "14": {
+          "size": 28
+        },
+        "15": {
+          "size": 28
+        },
+        "16": {
+          "size": 28
+        },
+        "17": {
+          "size": 28
+        },
+        "18": {
+          "size": 28
+        },
+        "19": {
+          "size": 28
+        },
+        "20": {
+          "size": 28
+        },
+        "21": {
+          "size": 28
+        },
+        "22": {
+          "size": 28
+        },
+        "23": {
+          "size": 28
+        },
+        "24": {
+          "size": 28
+        },
+        "25": {
+          "size": 28
+        },
+        "26": {
+          "size": 28
+        },
+        "27": {
+          "size": 28
+        },
+        "28": {
+          "size": 28
+        },
+        "29": {
+          "size": 28
+        },
+        "30": {
+          "size": 28
+        },
+        "31": {
+          "size": 28
+        },
+        "32": {
+          "size": 28
+        },
+        "33": {
+          "size": 28
+        },
+        "34": {
+          "size": 28
+        },
+        "35": {
+          "size": 28
+        },
+        "36": {
+          "size": 28
+        },
+        "37": {
+          "size": 28
+        },
+        "38": {
+          "size": 28
+        },
+        "39": {
+          "size": 28
+        },
+        "40": {
+          "size": 28
+        },
+        "41": {
+          "size": 28
+        },
+        "42": {
+          "size": 28
+        },
+        "43": {
+          "size": 28
+        },
+        "44": {
+          "size": 28
+        },
+        "45": {
+          "size": 28
+        },
+        "46": {
+          "size": 28
+        },
+        "47": {
+          "size": 28
+        },
+        "48": {
+          "size": 28
+        },
+        "49": {
+          "size": 28
+        },
+        "50": {
+          "size": 28
+        }
       },
       "cols": {},
       "merges": [],
-      "cells": { "A1": "=PIVOT(10,50,false,false)" },
-      "styles": { "A2:C51": 6, "A1": 7, "B1:C1": 9 },
-      "formats": { "A2:A13": 2, "A14:A51": 4 },
+      "cells": {
+        "A1": "=PIVOT(10,50,false,false)"
+      },
+      "styles": {
+        "A2:C51": 6,
+        "A1": 7,
+        "B1:C1": 9
+      },
+      "formats": {
+        "A2:A13": 2,
+        "A14:A51": 4
+      },
       "borders": {},
       "conditionalFormats": [
         {
           "id": "9019fcc0-5335",
-          "rule": { "type": "DataBarRule", "color": 14609659, "rangeValues": "C2:C51" },
-          "ranges": ["A2:A51"]
+          "rule": {
+            "type": "DataBarRule",
+            "color": 14609659,
+            "rangeValues": "C2:C51"
+          },
+          "ranges": [
+            "A2:A51"
+          ]
         }
       ],
       "dataValidationRules": [],
@@ -1292,7 +2519,10 @@
       "areGridLinesVisible": true,
       "isVisible": true,
       "isLocked": false,
-      "panes": { "xSplit": 0, "ySplit": 1 },
+      "panes": {
+        "xSplit": 0,
+        "ySplit": 1
+      },
       "headerGroups": {
         "ROW": [],
         "COL": []
@@ -1306,7 +2536,9 @@
     }
   ],
   "styles": {
-    "1": { "bold": true },
+    "1": {
+      "bold": true
+    },
     "2": {
       "bold": true,
       "align": "left",
@@ -1314,8 +2546,14 @@
       "fontSize": 11,
       "textColor": "#434343"
     },
-    "3": { "verticalAlign": "middle", "textColor": "#434343" },
-    "4": { "textColor": "#01666B", "verticalAlign": "middle" },
+    "3": {
+      "verticalAlign": "middle",
+      "textColor": "#434343"
+    },
+    "4": {
+      "textColor": "#01666B",
+      "verticalAlign": "middle"
+    },
     "5": {
       "bold": true,
       "align": "center",
@@ -1323,9 +2561,18 @@
       "fontSize": 11,
       "textColor": "#434343"
     },
-    "6": { "verticalAlign": "middle" },
-    "7": { "bold": true, "align": "left", "verticalAlign": "top", "fontSize": 11 },
-    "8": { "textColor": "" },
+    "6": {
+      "verticalAlign": "middle"
+    },
+    "7": {
+      "bold": true,
+      "align": "left",
+      "verticalAlign": "top",
+      "fontSize": 11
+    },
+    "8": {
+      "textColor": ""
+    },
     "9": {
       "bold": true,
       "align": "center",
@@ -1333,9 +2580,14 @@
       "fontSize": 11
     },
     "10": {},
-    "11": { "textColor": "#434343" }
+    "11": {
+      "textColor": "#434343"
+    }
   },
-  "formats": { "2": "@", "4": "@* " },
+  "formats": {
+    "2": "@",
+    "4": "@* "
+  },
   "borders": {},
   "revisionId": "START_REVISION",
   "uniqueFigureIds": true,
@@ -1353,17 +2605,45 @@
   },
   "pivots": {
     "3": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "params": {
@@ -1376,11 +2656,19 @@
       },
       "domain": [
         "&",
-        ["categ_id", "!=", false],
+        [
+          "categ_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "3",
@@ -1406,21 +2694,51 @@
       "formulaId": "3",
       "columns": [],
       "rows": [
-        { "fieldName": "categ_id" }
+        {
+          "fieldName": "categ_id"
+        }
       ]
     },
     "4": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "params": {
@@ -1433,11 +2751,19 @@
       },
       "domain": [
         "&",
-        ["partner_id", "!=", false],
+        [
+          "partner_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "4",
@@ -1463,22 +2789,52 @@
       "formulaId": "4",
       "columns": [],
       "rows": [
-        { "fieldName": "partner_id" }
+        {
+          "fieldName": "partner_id"
+        }
       ],
       "filters": []
     },
     "5": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "params": {
@@ -1491,11 +2847,19 @@
       },
       "domain": [
         "&",
-        ["country_id", "!=", false],
+        [
+          "country_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "5",
@@ -1521,21 +2885,51 @@
       "formulaId": "5",
       "columns": [],
       "rows": [
-        { "fieldName": "country_id" }
+        {
+          "fieldName": "country_id"
+        }
       ]
     },
     "6": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "params": {
@@ -1548,11 +2942,19 @@
       },
       "domain": [
         "&",
-        ["product_tmpl_id", "!=", false],
+        [
+          "product_tmpl_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "6",
@@ -1578,33 +2980,71 @@
       "formulaId": "6",
       "columns": [],
       "rows": [
-        { "fieldName": "product_id" }
+        {
+          "fieldName": "product_id"
+        }
       ],
       "filters": []
     },
     "7": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "group_by": []
       },
       "domain": [
         "&",
-        ["team_id", "!=", false],
+        [
+          "team_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "7",
@@ -1630,32 +3070,70 @@
       "formulaId": "7",
       "columns": [],
       "rows": [
-        { "fieldName": "team_id" }
+        {
+          "fieldName": "team_id"
+        }
       ]
     },
     "8": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "group_by": []
       },
       "domain": [
         "&",
-        ["user_id", "!=", false],
+        [
+          "user_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "8",
@@ -1681,32 +3159,70 @@
       "formulaId": "8",
       "columns": [],
       "rows": [
-        { "fieldName": "user_id" }
+        {
+          "fieldName": "user_id"
+        }
       ]
     },
     "9": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "group_by": []
       },
       "domain": [
         "&",
-        ["source_id", "!=", false],
+        [
+          "source_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "9",
@@ -1732,32 +3248,70 @@
       "formulaId": "9",
       "columns": [],
       "rows": [
-        { "fieldName": "source_id" }
+        {
+          "fieldName": "source_id"
+        }
       ]
     },
     "10": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {
         "group_by": []
       },
       "domain": [
         "&",
-        ["medium_id", "!=", false],
+        [
+          "medium_id",
+          "!=",
+          false
+        ],
         [
           "state",
           "not in",
-          ["draft", "sent", "cancel"]
+          [
+            "draft",
+            "sent",
+            "cancel"
+          ]
         ]
       ],
       "id": "10",
@@ -1783,69 +3337,149 @@
       "formulaId": "10",
       "columns": [],
       "rows": [
-        { "fieldName": "medium_id" }
+        {
+          "fieldName": "medium_id"
+        }
       ]
     },
     "11": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": 0 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "partner_id.country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "product_id.categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": 0
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "partner_id.country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "product_id.categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {},
       "domain": [
         [
           "state",
           "in",
-          ["draft", "sent", "sale"]
+          [
+            "draft",
+            "sent",
+            "sale"
+          ]
         ]
       ],
       "id": "11",
       "measures": [
-        { "id": "order_reference", "fieldName": "order_reference" },
-        { "id": "price_subtotal", "fieldName": "price_subtotal" }
+        {
+          "id": "order_reference",
+          "fieldName": "order_reference"
+        },
+        {
+          "id": "price_subtotal",
+          "fieldName": "price_subtotal"
+        }
       ],
       "model": "sale.report",
       "name": "so stats - current",
       "formulaId": "11",
       "columns": [],
       "rows": [
-        { "fieldName": "state" }
+        {
+          "fieldName": "state"
+        }
       ],
       "filters": []
     },
     "12": {
-      "type": "ODOO",
+      "type": "WETH",
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime", "offset": -1 },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "partner_id.country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "product_id.categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime",
+          "offset": -1
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "partner_id.country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "product_id.categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "context": {},
       "domain": [
         [
           "state",
           "in",
-          ["draft", "sent", "sale"]
+          [
+            "draft",
+            "sent",
+            "sale"
+          ]
         ]
       ],
       "id": "12",
       "measures": [
-        { "id": "order_reference", "fieldName": "order_reference" },
-        { "id": "price_subtotal", "fieldName": "price_subtotal" }
+        {
+          "id": "order_reference",
+          "fieldName": "order_reference"
+        },
+        {
+          "id": "price_subtotal",
+          "fieldName": "price_subtotal"
+        }
       ],
       "model": "sale.report",
       "name": "so stats - previous",
@@ -1853,7 +3487,9 @@
       "formulaId": "12",
       "columns": [],
       "rows": [
-        { "fieldName": "state" }
+        {
+          "fieldName": "state"
+        }
       ]
     }
   },
@@ -1929,11 +3565,18 @@
       "model": "sale.report",
       "domain": [
         "&",
-        ["state", "!=", "cancel"],
+        [
+          "state",
+          "!=",
+          "cancel"
+        ],
         [
           "state",
           "in",
-          ["draft", "sent"]
+          [
+            "draft",
+            "sent"
+          ]
         ]
       ],
       "context": {
@@ -1943,25 +3586,76 @@
       "name": "Sales Analysis",
       "actionXmlId": "sale.action_order_report_all",
       "columns": [
-        { "name": "date", "string": "Order Date" },
-        { "name": "order_reference", "string": "Order" },
-        { "name": "partner_id", "string": "Customer" },
-        { "name": "user_id", "string": "Salesperson" },
-        { "name": "company_id", "string": "Company" },
-        { "name": "product_uom_qty", "string": "Qty Ordered" },
-        { "name": "price_unit", "string": "Unit Price" },
-        { "name": "price_total", "string": "Total" }
+        {
+          "name": "date",
+          "string": "Order Date"
+        },
+        {
+          "name": "order_reference",
+          "string": "Order"
+        },
+        {
+          "name": "partner_id",
+          "string": "Customer"
+        },
+        {
+          "name": "user_id",
+          "string": "Salesperson"
+        },
+        {
+          "name": "company_id",
+          "string": "Company"
+        },
+        {
+          "name": "product_uom_qty",
+          "string": "Qty Ordered"
+        },
+        {
+          "name": "price_unit",
+          "string": "Unit Price"
+        },
+        {
+          "name": "price_total",
+          "string": "Total"
+        }
       ],
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime" },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime"
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "translateHeaders": true
     },
@@ -1969,8 +3663,16 @@
       "model": "sale.report",
       "domain": [
         "&",
-        ["state", "!=", "cancel"],
-        ["state", "=", "sale"]
+        [
+          "state",
+          "!=",
+          "cancel"
+        ],
+        [
+          "state",
+          "=",
+          "sale"
+        ]
       ],
       "context": {
         "group_by": []
@@ -1979,31 +3681,82 @@
       "name": "Sales Analysis",
       "actionXmlId": "sale.action_order_report_all",
       "columns": [
-        { "name": "date", "string": "Order Date" },
-        { "name": "order_reference", "string": "Order" },
-        { "name": "partner_id", "string": "Customer" },
-        { "name": "user_id", "string": "Salesperson" },
-        { "name": "company_id", "string": "Company" },
-        { "name": "product_uom_qty", "string": "Qty Ordered" },
-        { "name": "price_unit", "string": "Unit Price" },
-        { "name": "price_total", "string": "Total" }
+        {
+          "name": "date",
+          "string": "Order Date"
+        },
+        {
+          "name": "order_reference",
+          "string": "Order"
+        },
+        {
+          "name": "partner_id",
+          "string": "Customer"
+        },
+        {
+          "name": "user_id",
+          "string": "Salesperson"
+        },
+        {
+          "name": "company_id",
+          "string": "Company"
+        },
+        {
+          "name": "product_uom_qty",
+          "string": "Qty Ordered"
+        },
+        {
+          "name": "price_unit",
+          "string": "Unit Price"
+        },
+        {
+          "name": "price_total",
+          "string": "Total"
+        }
       ],
       "fieldMatching": {
-        "13d30fda-b14d-4a56-b186-25468af3b1e9": { "chain": "date", "type": "datetime" },
-        "e6db018b-19ec-42c3-b29e-11b1e3910916": { "chain": "country_id", "type": "many2one" },
-        "dbb716a1-5977-47ee-a53e-ca5716303433": { "chain": "product_id", "type": "many2one" },
-        "7d95fe28-fd13-4805-948c-95742e7d6733": { "chain": "partner_id", "type": "many2one" },
-        "27e323f4-cd70-4345-82fa-dfc855707bc1": { "chain": "categ_id", "type": "many2one" },
-        "b75963ca-ab5f-4da5-9c90-67526517e5e7": { "chain": "team_id", "type": "many2one" },
-        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": { "chain": "user_id", "type": "many2one" },
-        "ec466626-f54a-4955-9611-eaa2719f1afb": { "chain": "source_id", "type": "many2one" },
-        "85d94827-6ce2-429c-9775-ef646cfddb6b": { "chain": "medium_id", "type": "many2one" }
+        "13d30fda-b14d-4a56-b186-25468af3b1e9": {
+          "chain": "date",
+          "type": "datetime"
+        },
+        "e6db018b-19ec-42c3-b29e-11b1e3910916": {
+          "chain": "country_id",
+          "type": "many2one"
+        },
+        "dbb716a1-5977-47ee-a53e-ca5716303433": {
+          "chain": "product_id",
+          "type": "many2one"
+        },
+        "7d95fe28-fd13-4805-948c-95742e7d6733": {
+          "chain": "partner_id",
+          "type": "many2one"
+        },
+        "27e323f4-cd70-4345-82fa-dfc855707bc1": {
+          "chain": "categ_id",
+          "type": "many2one"
+        },
+        "b75963ca-ab5f-4da5-9c90-67526517e5e7": {
+          "chain": "team_id",
+          "type": "many2one"
+        },
+        "4181e8e3-2e7e-42be-a88b-f24acb7d03e7": {
+          "chain": "user_id",
+          "type": "many2one"
+        },
+        "ec466626-f54a-4955-9611-eaa2719f1afb": {
+          "chain": "source_id",
+          "type": "many2one"
+        },
+        "85d94827-6ce2-429c-9775-ef646cfddb6b": {
+          "chain": "medium_id",
+          "type": "many2one"
+        }
       },
       "translateHeaders": true
     }
   },
   "listNextId": 6,
-  "odooLinkReferences": {
+  "wethLinkReferences": {
     "67858d0e-b5ba-4a3c-bf9e-c0fceaeedf65": {
       "type": "dataSource",
       "dataSourceType": "list",

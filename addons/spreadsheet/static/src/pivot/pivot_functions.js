@@ -12,12 +12,12 @@ const { functionRegistry } = spreadsheet.registries;
 // Spreadsheet functions
 //--------------------------------------------------------------------------
 
-// ODOO.FILTER.VALUE
+// WETH.FILTER.VALUE
 
-const ODOO_FILTER_VALUE = {
+const WETH_FILTER_VALUE = {
     description: _t("Return the current value of a spreadsheet filter."),
     args: [arg("filter_name (string)", _t("The label of the filter whose value to return."))],
-    category: "Odoo",
+    category: "Weth",
     computeArray: function (filterName) {
         const unEscapedFilterName = toString(filterName).replaceAll('\\"', '"');
         const filter = this.getters.getGlobalFilterByName(unEscapedFilterName);
@@ -30,15 +30,15 @@ const ODOO_FILTER_VALUE = {
     },
 };
 
-// ODOO.FILTER.VALUE.V18 / ODOO.FILTER.LABEL
+// WETH.FILTER.VALUE.V18 / WETH.FILTER.LABEL
 
-const ODOO_FILTER_LABEL = {
+const WETH_FILTER_LABEL = {
     description: _t("Return the label of the current value of a spreadsheet filter."),
     args: [arg("filter_name (string)", _t("The label of the filter whose value to return."))],
-    category: "Odoo",
+    category: "Weth",
     compute: function (filterName) {
         const filter = this.getters.getGlobalFilterByName(toString(filterName));
-        const value = createComputeFunction(functionRegistry.get("ODOO.FILTER.VALUE"), 1)(
+        const value = createComputeFunction(functionRegistry.get("WETH.FILTER.VALUE"), 1)(
             this,
             filterName
         );
@@ -49,7 +49,7 @@ const ODOO_FILTER_LABEL = {
                 return value;
             }
             const ids = csvIds.split(",").map((id) => parseInt(id, 10));
-            const result = this.odooDataProvider.serverData.get(
+            const result = this.wethDataProvider.serverData.get(
                 filter.modelName,
                 "web_search_read",
                 [[["id", "in", ids]], { display_name: {} }]
@@ -88,15 +88,15 @@ const ODOO_FILTER_LABEL = {
     },
 };
 
-const ODOO_FILTER_VALUE_V18 = {
-    ...ODOO_FILTER_LABEL,
+const WETH_FILTER_VALUE_V18 = {
+    ...WETH_FILTER_LABEL,
     description: _t(
-        "Compatibility version of ODOO.FILTER.VALUE for v18 spreadsheets. Required for date filters. Optional for others."
+        "Compatibility version of WETH.FILTER.VALUE for v18 spreadsheets. Required for date filters. Optional for others."
     ),
     hidden: true,
 };
 
 functionRegistry
-    .add("ODOO.FILTER.VALUE", ODOO_FILTER_VALUE)
-    .add("ODOO.FILTER.VALUE.V18", ODOO_FILTER_VALUE_V18)
-    .add("ODOO.FILTER.LABEL", ODOO_FILTER_LABEL);
+    .add("WETH.FILTER.VALUE", WETH_FILTER_VALUE)
+    .add("WETH.FILTER.VALUE.V18", WETH_FILTER_VALUE_V18)
+    .add("WETH.FILTER.LABEL", WETH_FILTER_LABEL);

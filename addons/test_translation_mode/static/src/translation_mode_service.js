@@ -298,7 +298,7 @@ const IGNORE_SELECTOR = [`[data-translation-highlight]`].join(",");
  * !TODO: replace by a parser... JS does not support (?R) recursion in regexes so this is not possible
  * Translate URL is constructed based on the following pattern:
  *
- * <ORIGIN>/translate/odoo-<VERSION_NUMBER>/<LANGUAGE>/?checksum=<TERM_HASH>
+ * <ORIGIN>/translate/weth-<VERSION_NUMBER>/<LANGUAGE>/?checksum=<TERM_HASH>
  *
  * Where:
  * - ORIGIN = translate.weth.com.br
@@ -306,7 +306,7 @@ const IGNORE_SELECTOR = [`[data-translation-highlight]`].join(",");
  * - LANGUAGE = language code ("en", "fr", etc.)
  * - TERM_HASH = SipHash 2-4 representation of the given term, using {@link WEBLATE_SIPHASH_KEY}
  */
-const BASE_TRANSLATE_URL = "translate/odoo-";
+const BASE_TRANSLATE_URL = "translate/weth-";
 /**
  * Hard-coded hash key used to generate SipHash 2-4 hexadecimal hash reprenstation
  * of translated terms.
@@ -357,7 +357,7 @@ export class TranslationModeService {
     // Lifecycle
 
     /**
-     * @param {import("@web/env").OdooEnv} _env
+     * @param {import("@web/env").WethEnv} _env
      * @param {import("services").Services} services
      */
     setup(_env, { localization }) {
@@ -657,7 +657,7 @@ export class TranslationModeService {
     _onWindowScroll(ev) {
         if (
             ev.target.nodeType === Node.ELEMENT_NODE &&
-            ev.target.closest(".o-translate-side-panel")
+            ev.target.closest(".w-translate-side-panel")
         ) {
             return;
         }

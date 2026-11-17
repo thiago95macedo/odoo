@@ -61,7 +61,7 @@ test("Toolbar should not overflow scroll container", async () => {
     });
 
     const scrollableElement = queryOne(".o_content");
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".weth-editor-editable");
 
     // Select a paragraph in the middle of the text
     const fifthParagraph = editable.children[5];
@@ -73,7 +73,7 @@ test("Toolbar should not overflow scroll container", async () => {
     });
     const range = document.getSelection().getRangeAt(0);
 
-    const toolbar = await waitFor(".o-we-toolbar");
+    const toolbar = await waitFor(".w-we-toolbar");
 
     // Toolbar should be above the selection
     expect(bottom(toolbar)).toBeLessThan(top(range));
@@ -118,7 +118,7 @@ test("Toolbar should be visible after scroll bar is added", async () => {
     });
 
     // At this point there's no scroll bar around the editable
-    const p = queryOne(".odoo-editor-editable p");
+    const p = queryOne(".weth-editor-editable p");
 
     // Add text: this creates a vertical scroll bar in the editable
     const morePs = parseHTML(document, "<p>more text</p>".repeat(20));
@@ -128,7 +128,7 @@ test("Toolbar should be visible after scroll bar is added", async () => {
     setSelection({ anchorNode: p, anchorOffset: 0, focusNode: p, focusOffset: 1 });
 
     // Toolbar should be visible
-    const toolbar = await waitFor(".o-we-toolbar");
+    const toolbar = await waitFor(".w-we-toolbar");
     expect(toolbar).toBeVisible();
 });
 
@@ -144,7 +144,7 @@ test("Toolbar should not overflow scroll container at the bottom", async () => {
                 <field name="txt" widget="html" options="{'height': 300}"/>
             </form>`,
     });
-    const lastP = queryOne(".odoo-editor-editable p:last-child");
+    const lastP = queryOne(".weth-editor-editable p:last-child");
     // Scroll down to bottom
     lastP.scrollIntoView();
 
@@ -152,7 +152,7 @@ test("Toolbar should not overflow scroll container at the bottom", async () => {
     setSelection({ anchorNode: lastP, anchorOffset: 0, focusNode: lastP, focusOffset: 1 });
 
     // Toolbar should be visible
-    const toolbar = await waitFor(".o-we-toolbar");
+    const toolbar = await waitFor(".w-we-toolbar");
     expect(toolbar).toBeVisible();
 
     // Scroll up so that toolbar overflows the bottom of the editable
@@ -160,7 +160,7 @@ test("Toolbar should not overflow scroll container at the bottom", async () => {
     scrollableElement.scrollTop -= 100;
 
     // Toolbar should be hidden
-    await waitFor(".o-we-toolbar:not(:visible)");
+    await waitFor(".w-we-toolbar:not(:visible)");
     expect(toolbar).not.toBeVisible();
 });
 
@@ -177,7 +177,7 @@ test("Toolbar visibility should be updated when editable is resized", async () =
             </form>`,
     });
 
-    const lastP = queryOne(".odoo-editor-editable p:last-child");
+    const lastP = queryOne(".weth-editor-editable p:last-child");
     // Scroll down to bottom
     lastP.scrollIntoView();
 
@@ -185,15 +185,15 @@ test("Toolbar visibility should be updated when editable is resized", async () =
     setSelection({ anchorNode: lastP, anchorOffset: 0, focusNode: lastP, focusOffset: 1 });
 
     // Toolbar should be visible
-    const toolbar = await waitFor(".o-we-toolbar");
+    const toolbar = await waitFor(".w-we-toolbar");
     expect(toolbar).toBeVisible();
 
     // Resize editable (which is the scroll container)
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".weth-editor-editable");
     editable.style.height = "150px";
 
     // Toolbar now overflows the bottom of the container and should be hidden
-    await waitFor(".o-we-toolbar:not(:visible)");
+    await waitFor(".w-we-toolbar:not(:visible)");
     expect(toolbar).not.toBeVisible();
 });
 
@@ -222,11 +222,11 @@ describe("powerbox", () => {
         });
 
         // Put cursor at end of first paragraph an insert "/"
-        setSelection({ anchorNode: queryOne(".odoo-editor-editable p"), anchorOffset: 1 });
+        setSelection({ anchorNode: queryOne(".weth-editor-editable p"), anchorOffset: 1 });
         insertText(editor, "/");
 
         // Powerbox should be visible
-        const powerbox = await waitFor(".o-we-powerbox");
+        const powerbox = await waitFor(".w-we-powerbox");
         expect(powerbox).toBeVisible();
     });
 
@@ -244,12 +244,12 @@ describe("powerbox", () => {
         });
 
         // Put cursor at end of third paragraph an insert "/"
-        const thirdP = queryOne(".odoo-editor-editable p:nth-child(3)");
+        const thirdP = queryOne(".weth-editor-editable p:nth-child(3)");
         setSelection({ anchorNode: thirdP, anchorOffset: 1 });
         insertText(editor, "/");
 
         // Powerbox should be visible
-        const powerbox = await waitFor(".o-we-powerbox");
+        const powerbox = await waitFor(".w-we-powerbox");
         expect(powerbox).toBeVisible();
     });
 });
@@ -271,9 +271,9 @@ test("Table column control should always be displayed on top of the table", asyn
     });
 
     const scrollableElement = queryOne(".o_content");
-    const table = queryOne(".odoo-editor-editable table");
-    await hover(".odoo-editor-editable td");
-    let columnControl = await waitFor(".o-we-table-menu[data-type='column']");
+    const table = queryOne(".weth-editor-editable table");
+    await hover(".weth-editor-editable td");
+    let columnControl = await waitFor(".w-we-table-menu[data-type='column']");
 
     // Table column control displayed on hover should be above the table
     expect(bottom(columnControl)).toBe(top(table));
@@ -283,8 +283,8 @@ test("Table column control should always be displayed on top of the table", asyn
     scrollableElement.scrollTop += distanceToTop;
     await animationFrame();
 
-    await hover(".odoo-editor-editable td");
-    columnControl = await waitFor(".o-we-table-menu[data-type='column']");
+    await hover(".weth-editor-editable td");
+    columnControl = await waitFor(".w-we-table-menu[data-type='column']");
 
     // Table column control displayed on hover should be above the table
     expect(bottom(columnControl)).toBe(top(table));
@@ -305,20 +305,20 @@ test("Table menu should close on scroll", async () => {
 
     const scrollableElement = queryOne(".o_content");
 
-    await hover(".odoo-editor-editable td");
-    const columnControl = await waitFor(".o-we-table-menu[data-type='column']");
+    await hover(".weth-editor-editable td");
+    const columnControl = await waitFor(".w-we-table-menu[data-type='column']");
     await click(columnControl);
     await animationFrame();
 
     // Column menu should be displayed.
-    expect(".o-dropdown--menu").toBeVisible();
+    expect(".w-dropdown--menu").toBeVisible();
 
     // Scroll down
     scrollableElement.scrollTop += 10;
-    await waitForNone(".o-dropdown--menu");
+    await waitForNone(".w-dropdown--menu");
 
     // Column menu should not be visible.
-    expect(".o-dropdown--menu").not.toHaveCount();
+    expect(".w-dropdown--menu").not.toHaveCount();
 });
 
 test.tags("desktop");
@@ -335,18 +335,18 @@ test("Table menu should only show on contenteditable true tables", async () => {
     });
 
     // check that table menu is visible
-    await hover(".odoo-editor-editable td");
-    await waitFor(".o-we-table-menu[data-type='column']");
-    expect(".o-we-table-menu[data-type='column']").toBeVisible();
+    await hover(".weth-editor-editable td");
+    await waitFor(".w-we-table-menu[data-type='column']");
+    expect(".w-we-table-menu[data-type='column']").toBeVisible();
 
     // hover away set the table as not editable
     await hover(".o_control_panel");
     queryOne("table").setAttribute("contenteditable", "false");
 
     // chack that table menu is now not visible
-    await hover(".odoo-editor-editable td");
-    await waitForNone(".o-we-table-menu[data-type='column']");
-    expect(".o-we-table-menu[data-type='column']").not.toHaveCount();
+    await hover(".weth-editor-editable td");
+    await waitForNone(".w-we-table-menu[data-type='column']");
+    expect(".w-we-table-menu[data-type='column']").not.toHaveCount();
 });
 
 test("Toolbar should keep stable while extending down the selection", async () => {
@@ -364,7 +364,7 @@ test("Toolbar should keep stable while extending down the selection", async () =
             </form>`,
     });
 
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".weth-editor-editable");
 
     // Select inner content of a paragraph in the middle of the text
     const fifthParagraph = editable.children[5];
@@ -375,7 +375,7 @@ test("Toolbar should keep stable while extending down the selection", async () =
         focusNode: textNode,
         focusOffset: textNode.length,
     });
-    const toolbar = await waitFor(".o-we-toolbar");
+    const toolbar = await waitFor(".w-we-toolbar");
     const referenceTop = top(toolbar);
     const referenceLeft = left(toolbar);
 
@@ -666,6 +666,6 @@ test("Overlay should be visible when scroll container has negative value for bot
     // Even though bottom is negative, its contents are still visible. An
     // overlay at this point should also be visible.
     setSelection({ anchorNode: lastP, anchorOffset: 0, focusNode: lastP, focusOffset: 1 });
-    await waitFor(".o-we-toolbar");
-    expect(".o-we-toolbar").toBeVisible();
+    await waitFor(".w-we-toolbar");
+    expect(".w-we-toolbar").toBeVisible();
 });

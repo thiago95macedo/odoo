@@ -132,7 +132,7 @@ export class TableUIPlugin extends Plugin {
             return;
         }
         const targetCell = closestElement(element, isTableCell);
-        const isTableMenuClick = !targetCell && element.closest(".o-we-table-menu");
+        const isTableMenuClick = !targetCell && element.closest(".w-we-table-menu");
 
         if (!isTableMenuClick && this.activeTd !== targetCell) {
             this.setActiveTd(targetCell);
@@ -176,7 +176,7 @@ export class TableUIPlugin extends Plugin {
                 this.setActiveTd(targetCell);
             }
         } else if (this.activeTd) {
-            const isOverlay = target.closest(".o-we-table-menu");
+            const isOverlay = target.closest(".w-we-table-menu");
             if (isOverlay) {
                 return;
             }

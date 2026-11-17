@@ -83,16 +83,16 @@ export const CLIPBOARD_WHITELISTS = {
         "img-thumbnail",
         "rounded",
         "rounded-circle",
-        // Odoo tables
+        // WETH tables
         "o_table",
         "table",
         "table-bordered",
         /^padding-/,
         /^shadow/,
-        // Odoo colors
+        // WETH colors
         /^text-o-/,
         /^bg-o-/,
-        // Odoo lists
+        // WETH lists
         "o_checked",
         "o_checklist",
         "oe-nested",
@@ -218,7 +218,7 @@ export class ClipboardPlugin extends Plugin {
             this.pasteText(ev.clipboardData.getData("text/plain"));
         } else {
             this.handlePasteUnsupportedHtml(selection, ev.clipboardData) ||
-                this.handlePasteOdooEditorHtml(selection, ev.clipboardData) ||
+                this.handlePasteWethEditorHtml(selection, ev.clipboardData) ||
                 this.handlePasteHtml(selection, ev.clipboardData) ||
                 this.handlePasteText(selection, ev.clipboardData);
         }
@@ -244,21 +244,21 @@ export class ClipboardPlugin extends Plugin {
     /**
      * @param {DataTransfer} clipboardData
      */
-    handlePasteOdooEditorHtml(selection, clipboardData) {
-        const odooEditorHtml = clipboardData.getData("application/vnd.odoo.odoo-editor");
+    handlePasteWethEditorHtml(selection, clipboardData) {
+        const wethEditorHtml = clipboardData.getData("application/vnd.weth.weth-editor");
         const textContent = clipboardData.getData("text/plain");
         if (ONLY_LINK_REGEX.test(textContent)) {
             return false;
         }
-        if (odooEditorHtml) {
-            const fragment = parseHTML(this.document, odooEditorHtml);
+        if (wethEditorHtml) {
+            const fragment = parseHTML(this.document, wethEditorHtml);
             this.dependencies.sanitize.sanitize(fragment);
-            if (this.delegateTo("paste_odoo_editor_html_overrides", selection, fragment)) {
+            if (this.delegateTo("paste_weth_editor_html_overrides", selection, fragment)) {
                 return true;
             }
             if (fragment.hasChildNodes()) {
                 const processedFragment = this.processThrough(
-                    "paste_odoo_editor_html_processors",
+                    "paste_weth_editor_html_processors",
                     fragment
                 );
                 this.dependencies.dom.insert(processedFragment);
@@ -282,7 +282,7 @@ export class ClipboardPlugin extends Plugin {
         }
         const fragment = parseHTML(this.document, clipboardHtml);
         this.dependencies.sanitize.sanitize(fragment);
-        if (this.delegateTo("paste_odoo_editor_html_overrides", selection, fragment)) {
+        if (this.delegateTo("paste_weth_editor_html_overrides", selection, fragment)) {
             return true;
         }
         if (files.length || clipboardHtml) {
@@ -687,8 +687,8 @@ export class ClipboardPlugin extends Plugin {
         }
 
         const dataTransfer = (ev.originalEvent || ev).dataTransfer;
-        const odooEditorHtml = ev.dataTransfer.getData("application/vnd.odoo.odoo-editor");
-        const fileTransferItems = !odooEditorHtml && getImageFiles(dataTransfer);
+        const wethEditorHtml = ev.dataTransfer.getData("application/vnd.weth.weth-editor");
+        const fileTransferItems = !wethEditorHtml && getImageFiles(dataTransfer);
         const htmlTransferItem = [...dataTransfer.items].find((item) => item.type === "text/html");
         if (fileTransferItems.length || htmlTransferItem) {
             let dropRange;
@@ -720,8 +720,8 @@ export class ClipboardPlugin extends Plugin {
             this.dependencies.history.commit();
             return;
         }
-        if (odooEditorHtml) {
-            const fragment = parseHTML(this.document, odooEditorHtml);
+        if (wethEditorHtml) {
+            const fragment = parseHTML(this.document, wethEditorHtml);
             this.dependencies.sanitize.sanitize(fragment);
             if (fragment.hasChildNodes()) {
                 this.dependencies.dom.insert(fragment);

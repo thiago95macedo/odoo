@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/spreadsheet_dashboard_hr_expense/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -23,19 +23,19 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Employee"
 msgstr "Funcionário"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Expense"
 msgstr "Despesa"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 #: model:spreadsheet.dashboard,name:spreadsheet_dashboard_hr_expense.spreadsheet_dashboard_expense
@@ -43,43 +43,43 @@ msgid "Expenses"
 msgstr "Despesas"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "KPI - Expenses"
 msgstr "KPI - Despesas"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "KPI - To reimburse"
 msgstr "KPI - A reembolsar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "KPI - To report"
 msgstr "KPI - A reportar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "KPI - To validate"
 msgstr "KPI - A validar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Order"
 msgstr "Pedido"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Period"
 msgstr "Período"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Product"
 msgstr "Produto"
@@ -96,54 +96,54 @@ msgid "Spreadsheet dashboard for expenses"
 msgstr "Painel de planilhas para despesas"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "To reimburse"
 msgstr "A reembolsar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "To report"
 msgstr "A reportar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "To validate"
 msgstr "A validar"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Top 50"
 msgstr "Top 50"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "Top Employees"
 msgstr "Principais funcionários"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "Top Expenses"
 msgstr "Principais despesas"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 msgid "Top Products"
 msgstr "Principais produtos"
 
 #. module: spreadsheet_dashboard_hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_hr_expense/data/files/expense_sample_dashboard.json:0
 msgid "Top Reinvoiced Orders"

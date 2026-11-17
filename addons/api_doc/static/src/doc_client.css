@@ -1,6 +1,6 @@
-.o-doc-client-root {
+.w-doc-client-root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu,
-        "Noto Sans", Arial, "Odoo Unicode Support Noto", sans-serif, "Apple Color Emoji",
+        "Noto Sans", Arial, "WETH Unicode Support Noto", sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.875rem;
     line-height: 1.5;
@@ -21,25 +21,25 @@
     --size-4: 2rem;
 
 
-    --red:rgb(229, 107, 86);
-    --green:rgb(34, 158, 79);
-    --blue:rgb(66, 161, 205);
-    --orange:rgb(216, 99, 36);
+    --red: rgb(229, 107, 86);
+    --green: rgb(34, 158, 79);
+    --blue: rgb(66, 161, 205);
+    --orange: rgb(216, 99, 36);
 
-    --background:rgb(246, 246, 246);
-    --background-1:rgb(239, 239, 239);
-    --background-2:rgb(230, 230, 230);
-    --btn:rgb(225, 223, 225);
-    --btn-primary:rgb(107, 62, 102);
-    --border:rgb(207, 207, 207);
-    --text:rgb(37, 36, 39);
+    --background: rgb(246, 246, 246);
+    --background-1: rgb(239, 239, 239);
+    --background-2: rgb(230, 230, 230);
+    --btn: rgb(225, 223, 225);
+    --btn-primary: rgb(107, 62, 102);
+    --border: rgb(207, 207, 207);
+    --text: rgb(37, 36, 39);
     --text-primary: rgb(179, 95, 169);
-    --text-active:rgb(242, 247, 248);
-    --text-light:rgb(50, 52, 52);
-    --success:rgb(56, 207, 111);
-    --error:rgb(231, 90, 65);
-    --error-background:rgb(241, 219, 215);
-    --error-text:rgb(49, 33, 30);
+    --text-active: rgb(242, 247, 248);
+    --text-light: rgb(50, 52, 52);
+    --success: rgb(56, 207, 111);
+    --error: rgb(231, 90, 65);
+    --error-background: rgb(241, 219, 215);
+    --error-text: rgb(49, 33, 30);
 
     --code-editor: #282c34;
 
@@ -87,7 +87,8 @@
         color: rgb(from var(--text) r g b / 0.8)
     }
 
-    input, select {
+    input,
+    select {
         color: var(--text);
         border-radius: 5px;
         padding: .5rem .75rem;
@@ -98,7 +99,7 @@
         accent-color: var(--text-primary);
         border: none;
         background-color: var(--btn);
-    	outline: none;
+        outline: none;
     }
 
     small {
@@ -110,12 +111,15 @@
         text-decoration: none;
         color: var(--text-primary);
     }
+
     a:hover {
         text-decoration: underline;
     }
+
     a:hover:not(.btn) {
         color: var(--text-primary);
         opacity: 1;
+
         i {
             color: var(--text-primary);
         }
@@ -149,6 +153,7 @@
             border-radius: 0;
         }
     }
+
     /* #endregion */
 
     /* #region ========================== Components ========================== */
@@ -160,6 +165,7 @@
         &.success {
             background-color: var(--success);
         }
+
         &.error {
             background-color: var(--error);
         }
@@ -174,7 +180,8 @@
             background-color: var(--error-background);
             border-radius: 5px;
 
-            h5, i {
+            h5,
+            i {
                 color: var(--error);
             }
         }
@@ -204,7 +211,7 @@
         padding: 5px;
     }
 
-    .o-doc-dynamic-tooltip {
+    .w-doc-dynamic-tooltip {
         position: fixed;
         font-size: .85em;
         z-index: 1000;
@@ -221,7 +228,7 @@
         pointer-events: none;
     }
 
-    .o-doc-docutils {
+    .w-doc-docutils {
         p {
             margin-bottom: 0 !important;
             color: var(--text);
@@ -239,7 +246,8 @@
             margin-bottom: 0.5rem;
         }
 
-        tt, .docutils.literal {
+        tt,
+        .docutils.literal {
             background-color: rgb(from var(--text) r g b / 0.08);
             padding: 0.1rem 0.3rem;
             border-radius: 3px;
@@ -280,11 +288,14 @@
         z-index: 0;
         transition: .05s ease-in-out;
 
-        &:disabled, &[disabled] {
+        &:disabled,
+        &[disabled] {
             opacity: 0.5;
         }
 
-        &:hover, &.active, &.o_active {
+        &:hover,
+        &.active,
+        &.o_active {
             background: var(--btn-primary) !important;
             color: var(--text-active) !important;
             box-shadow: 0px 0px 15px -5px var(--btn-primary);
@@ -306,29 +317,33 @@
         padding-top: .15rem;
         height: fit-content;
     }
+
     .icon-btn i {
         transition: .2s ease-in-out;
         transform: rotate(90deg);
         font-size: 18px;
     }
+
     .icon-btn.o_collapsed i {
         transform: rotate(0deg);
     }
 
     /* Code Viewer */
-    .o-doc-code-editor, .o-doc-code-editor .ace_editor {
+    .w-doc-code-editor,
+    .w-doc-code-editor .ace_editor {
         background-color: var(--code-editor) !important;
     }
 
-    .o-doc-code-editor .ace_active-line {
+    .w-doc-code-editor .ace_active-line {
         background-color: hsl(from var(--code-editor) h s calc(l * 0.8)) !important;
     }
 
-    .o-doc-code-editor button {
+    .w-doc-code-editor button {
         background: none;
         color: #fff;
     }
-    .o-doc-code-editor i {
+
+    .w-doc-code-editor i {
         color: inherit;
         padding: .25rem .5rem;
         font-size: .8em;
@@ -341,7 +356,7 @@
     }
 
     /* Tables */
-    .o-doc-table {
+    .w-doc-table {
         border-collapse: collapse;
 
         tr {
@@ -353,8 +368,10 @@
             }
         }
 
-        td, th {
+        td,
+        th {
             padding: .25rem 1rem;
+
             &:nth-child(1) {
                 padding: .25rem 2rem;
             }
@@ -378,41 +395,39 @@
         }
     }
 
-    .o-doc-sub-table-btn:hover {
+    .w-doc-sub-table-btn:hover {
         color: var(--text-primary);
     }
 
-    .o-doc-sub-table {
+    .w-doc-sub-table {
         max-height: 30vh;
     }
 
     /* Loading Indicators */
-    .o-doc-load-wrapper {
+    .w-doc-load-wrapper {
         z-index: 50;
         overflow: hidden;
     }
 
-    .o-doc-load-activity {
+    .w-doc-load-activity {
         left: -45%;
         width: 45%;
-        background-image: linear-gradient(
-            to left,
-            rgb(from var(--background) r g b / .05),
-            rgb(from var(--background) r g b / .3),
-            rgb(from var(--background) r g b / .6),
-            rgb(from var(--background) r g b / .3),
-            rgb(from var(--background) r g b / .05)
-        );
+        background-image: linear-gradient(to left,
+                rgb(from var(--background) r g b / .05),
+                rgb(from var(--background) r g b / .3),
+                rgb(from var(--background) r g b / .6),
+                rgb(from var(--background) r g b / .3),
+                rgb(from var(--background) r g b / .05));
         animation: doc-loading 1s infinite;
         z-index: 52;
     }
 
-    .o-fade-in {
+    .w-fade-in {
         animation: o-animation-fade-in .25s;
     }
 
     /* Sidebar */
-    .o-doc-sidebar {
+    .w-doc-sidebar {
         --sidebar-pe: 1rem;
         min-width: 20rem;
         max-width: 25rem;
@@ -420,7 +435,7 @@
         padding: 1rem 0 0 1rem;
         height: calc(100vh - var(--header-size));
 
-        > div {
+        >div {
             padding: 0 calc(var(--sidebar-pe) + 1rem) 1.5rem 0;
         }
 
@@ -428,25 +443,25 @@
             scroll-margin: 3rem;
         }
 
-        .o-doc-sidebar-content {
+        .w-doc-sidebar-content {
             flex: 1;
             padding: 0 var(--sidebar-pe) 10rem 0;
             overflow-y: scroll;
         }
 
-        .o-doc-sidebar-header {
+        .w-doc-sidebar-header {
             background-color: var(--background-1);
             z-index: 10;
         }
     }
 
     /* Model */
-    .o-doc-model {
+    .w-doc-model {
         width: 30rem;
         max-width: 100vw;
     }
 
-    .o-doc-model-aside {
+    .w-doc-model-aside {
         top: var(--header-size);
         max-width: 20rem;
         max-height: calc(100vh - var(--header-size));
@@ -456,16 +471,16 @@
             color: var(--text-primary);
         }
 
-        .o-doc-module-checks {
+        .w-doc-module-checks {
             background-color: var(--btn);
         }
     }
 
-    .o-doc-modal-checkbox {
+    .w-doc-modal-checkbox {
         background-color: var(--btn);
     }
 
-    .o-doc-copyable {
+    .w-doc-copyable {
         padding: .5rem .75rem;
         background-color: var(--background);
         border: 1px solid var(--border);
@@ -480,7 +495,7 @@
         }
     }
 
-    .o-doc-copy-btn {
+    .w-doc-copy-btn {
         background: none;
         color: var(--text);
         font-size: .85em;
@@ -490,18 +505,20 @@
         transition: opacity .15s ease-in-out;
     }
 
-    .o-doc-copyable:hover .o-doc-copy-btn, .o-doc-copy-btn:focus-visible, .o-doc-copy-btn.o-doc-copied {
+    .w-doc-copyable:hover .w-doc-copy-btn,
+    .w-doc-copy-btn:focus-visible,
+    .w-doc-copy-btn.w-doc-copied {
         opacity: .6;
     }
 
-    .o-doc-copy-btn:hover {
+    .w-doc-copy-btn:hover {
         opacity: 1 !important;
     }
 
-    .o-doc-method {
+    .w-doc-method {
         scroll-margin-top: 5rem;
 
-        .o-doc-method-header {
+        .w-doc-method-header {
             padding: .75rem 1.5rem .75rem 1rem;
             top: var(--header-size);
             z-index: 10;
@@ -512,14 +529,15 @@
             }
         }
 
-        .o-doc-method-content {
+        .w-doc-method-content {
             gap: var(--size-3);
             padding: var(--size-3);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
 
-        .o-doc-method-doc, .o_doc_request {
+        .w-doc-method-doc,
+        .o_doc_request {
             display: flex;
             flex-direction: column;
             gap: var(--size-3);
@@ -532,8 +550,8 @@
         }
     }
 
-    &.o-doc-small {
-        .o-doc-sidebar {
+    &.w-doc-small {
+        .w-doc-sidebar {
             position: fixed !important;
             top: var(--header-size);
             height: calc(100dvh - var(--header-size));
@@ -544,12 +562,13 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .o-doc-sidebar {
+        .w-doc-sidebar {
             left: 0;
         }
     }
-    &.o-doc-medium {
-        .o-doc-model-aside {
+
+    &.w-doc-medium {
+        .w-doc-model-aside {
             position: fixed !important;
             top: var(--header-size);
             height: calc(100dvh - var(--header-size));
@@ -560,28 +579,29 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .o-doc-model-aside {
+        .w-doc-model-aside {
             right: 0;
         }
     }
 
-    .o-doc-panel-backdrop {
+    .w-doc-panel-backdrop {
         position: fixed;
         inset: var(--header-size) 0 0 0;
         z-index: 60;
         background: rgba(0, 0, 0, 0.3);
     }
 
-    .o-doc-spinner {
+    .w-doc-spinner {
         animation: o-doc-spin 2s linear infinite;
     }
 
 
-    .o-doc-active {
+    .w-doc-active {
         outline: 1px solid var(--btn-primary);
     }
 
-    .o-code-editor i, .o-code-editor span {
+    .w-code-editor i,
+    .w-code-editor span {
         color: #ffffff;
     }
 
@@ -618,33 +638,34 @@
     /* #endregion*/
 }
 
-body[theme="odoo-dark"] .o-doc-client-root {
-    --green:rgb(56, 207, 111);
-    --blue:rgb(102, 197, 242);
-    --orange:rgb(240, 122, 59);
+body[theme="weth-dark"] .w-doc-client-root {
+    --green: rgb(56, 207, 111);
+    --blue: rgb(102, 197, 242);
+    --orange: rgb(240, 122, 59);
 
-    --background:rgb(38, 42, 54);
-    --background-1:rgb(28, 32, 41);
-    --background-2:rgb(14, 16, 22);
-    --btn:#3A3B41;
+    --background: rgb(38, 42, 54);
+    --background-1: rgb(28, 32, 41);
+    --background-2: rgb(14, 16, 22);
+    --btn: #3A3B41;
     --btn-primary: #92427d;
     --border: #3A3B41;
-    --text:rgb(245, 245, 245);
-    --text-active:rgb(246, 239, 248);
-    --text-light:rgb(229, 235, 235);
-    --success:rgb(56, 207, 111);
-    --error:rgb(190, 49, 77);
-    --error-background:rgb(45, 21, 27);
-    --error-text:rgb(241, 229, 230);
+    --text: rgb(245, 245, 245);
+    --text-active: rgb(246, 239, 248);
+    --text-light: rgb(229, 235, 235);
+    --success: rgb(56, 207, 111);
+    --error: rgb(190, 49, 77);
+    --error-background: rgb(45, 21, 27);
+    --error-text: rgb(241, 229, 230);
 
     --bs-border-color: var(--border);
 }
 
 @keyframes doc-loading {
-    0%{
+    0% {
         left: -45%;
     }
-    100%{
+
+    100% {
         left: 100%;
     }
 }
@@ -653,6 +674,7 @@ body[theme="odoo-dark"] .o-doc-client-root {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

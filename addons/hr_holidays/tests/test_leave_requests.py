@@ -2627,7 +2627,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         # This reflects the customization done by customers for the reason explained above.
         self.env['ir.access'].create([
             # Read access on `mail.activity.type` for portal required for
-            # https://github.com/weth/odoo/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L734
+            # https://github.com/weth/weth/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L734
             {
                 'name': 'Portal can read mail.activity.type',
                 'model_id': self.env.ref('mail.model_mail_activity_type').id,
@@ -2635,8 +2635,8 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'operation': 'r',
             },
             # Read access on `mail.activity` for portal required for
-            # https://github.com/weth/odoo/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L786
-            # https://github.com/weth/odoo/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L882
+            # https://github.com/weth/weth/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L786
+            # https://github.com/weth/weth/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L882
             # Restrict portals to their own activities
             # so they cannot read the activities of other users
             {
@@ -2647,7 +2647,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'domain': "['|', ('user_id', '=', user.id), ('create_uid', '=', user.id)]",
             },
             # Read and create acess on `calendar.event` for portal required for
-            # https://github.com/weth/odoo/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/hr_holidays/models/hr_leave.py#L894-L898
+            # https://github.com/weth/weth/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/hr_holidays/models/hr_leave.py#L894-L898
             # Write and unlink added to match the customer customization + out of common sense,
             # if you give create to portal for their own events,
             # you give write and unlink so they can manage their own events
@@ -2659,7 +2659,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'domain': "[('partner_ids', 'in', user.partner_id.id)]",
             },
             # Read and create acess on `calendar.event` for portal required for
-            # https://github.com/weth/odoo/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L760-L768
+            # https://github.com/weth/weth/blob/cc0060e889603eb2e47fa44a8a22a70d7d784185/addons/calendar/models/calendar_event.py#L760-L768
             # Write and unlink added to match the customer customization + out of common sense,
             # if you give create to portal for their own events attendees,
             # you give write and unlink so they can manage their own attendees

@@ -42,6 +42,6 @@ from . import (
     test_sort,
     test_timeit,
     test_transactions,
-    # test_uninstall  # TODO: Cannot be handled by the runbot. Makes Odoo loop forever when done during an installation.
+    # test_uninstall  # TODO: Cannot be handled by the runbot. Makes WETH loop forever when done during an installation.
     test_views,
 )

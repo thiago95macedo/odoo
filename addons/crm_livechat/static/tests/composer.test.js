@@ -26,7 +26,7 @@ test("Can execute lead command", async () => {
         return true;
     });
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "/lead great lead");
-    await click(".o-mail-Composer button[title='Send']:enabled");
+    await insertText(".w-mail-Composer-input", "/lead great lead");
+    await click(".w-mail-Composer button[title='Send']:enabled");
     await expect.waitForSteps([[channelId]]);
 });

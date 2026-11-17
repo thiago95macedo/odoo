@@ -59,7 +59,7 @@ def addons_path(value):
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Script for testing the install / uninstall / reinstall"
-                    " cycle of Odoo modules. Prefer the 'cycle' subcommand to"
+                    " cycle of WETH modules. Prefer the 'cycle' subcommand to"
                     " running this without anything specified (this is the"
                     " default behaviour).")
     parser.set_defaults(
@@ -71,14 +71,14 @@ def parse_args():
     parser.add_argument("--database", "-d", type=str, required=True,
         help="The database to test (/ run the command on)")
     parser.add_argument("--data-dir", "-D", dest="data_dir", type=str,
-        help="Directory where to store Odoo data",
+        help="Directory where to store WETH data",
     )
     parser.add_argument("--skip", "-s", type=str,
         help="Comma-separated list of modules to skip (they will only be installed)")
     parser.add_argument("--resume-at", "-r", type=str,
         help="Skip modules (only install) up to the specified one in topological order")
     parser.add_argument("--addons-path", "-p", type=addons_path,
-        help="Comma-separated list of paths to directories containing extra Odoo modules")
+        help="Comma-separated list of paths to directories containing extra WETH modules")
 
     cmds = parser.add_subparsers(title="subcommands", metavar='')
     cycle = cmds.add_parser(
@@ -234,10 +234,10 @@ if __name__ == '__main__':
     })
 
     prof = contextlib.nullcontext()
-    if os.environ.get('ODOO_PROFILE_PRELOAD'):
-        interval = float(os.environ.get('ODOO_PROFILE_PRELOAD_INTERVAL', '0.1'))
+    if os.environ.get('WETH_PROFILE_PRELOAD'):
+        interval = float(os.environ.get('WETH_PROFILE_PRELOAD_INTERVAL', '0.1'))
         collectors = [profiler.PeriodicCollector(interval=interval)]
-        if os.environ.get('ODOO_PROFILE_PRELOAD_SQL'):
+        if os.environ.get('WETH_PROFILE_PRELOAD_SQL'):
             collectors.append('sql')
         prof = profiler.Profiler(db=args.database, collectors=collectors)
     try:

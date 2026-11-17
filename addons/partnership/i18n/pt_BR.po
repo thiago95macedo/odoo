@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/partnership/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -179,7 +179,7 @@ msgid "Levels"
 msgstr "Níveis"
 
 #. module: partnership
-#. odoo-python
+#. weth-python
 #: code:addons/partnership/models/res_company.py:0
 #: model:ir.ui.menu,name:partnership.crm_menu_partners
 msgid "Members"
@@ -288,7 +288,7 @@ msgid "Silver"
 msgstr "Silver"
 
 #. module: partnership
-#. odoo-python
+#. weth-python
 #: code:addons/partnership/models/res_partner.py:0
 msgid ""
 "You are trying to assign two different pricelists (one directly and one from "
@@ -298,7 +298,7 @@ msgstr ""
 "diretamente e outra a partir do nível (%(grade_name)s))."
 
 #. module: partnership
-#. odoo-python
+#. weth-python
 #: code:addons/partnership/models/sale_order.py:0
 msgid ""
 "You cannot confirm Sale Order %(sale_order_name)s because there are products "

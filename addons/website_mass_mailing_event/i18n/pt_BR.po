@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:46+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_mass_mailing_event/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -44,13 +44,13 @@ msgstr ""
 "instantâneo do evento"
 
 #. module: website_mass_mailing_event
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing_event/static/src/snippets/snippet_categories.xml:0
 msgid "Auto-filled from Event"
 msgstr "Preenchido automaticamente a partir do evento"
 
 #. module: website_mass_mailing_event
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing_event/static/src/builder/options/event_snapshot_snippet_info.js:0
 msgid "Event"
 msgstr "Evento"
@@ -61,13 +61,13 @@ msgid "Mass mailing on website events"
 msgstr "Marketing por e-mail em eventos do site"
 
 #. module: website_mass_mailing_event
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing_event/static/src/builder/options/event_snapshot_fragments.xml:0
 msgid "Register Now"
 msgstr "Registrar agora"
 
 #. module: website_mass_mailing_event
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing_event/static/src/builder/options/event_snapshot_fragments.xml:0
 msgid "at"
 msgstr "em"

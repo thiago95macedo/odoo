@@ -16,7 +16,7 @@ export class ConnectWebSerialScale extends Component {
     checkBrowserCompatibility() {
         if (!window.isSecureContext) {
             this.notification.add(
-                _t("Connecting a scale directly requires you to access Odoo via HTTPS."),
+                _t("Connecting a scale directly requires you to access WETH via HTTPS."),
                 { type: "danger" }
             );
             return false;

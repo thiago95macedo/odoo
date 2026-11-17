@@ -57,7 +57,7 @@ export class ProductImageViewer extends Dialog {
         useListener(document, "click", this.onGlobalClick.bind(this));
         onMounted(() => {
             document
-                .querySelector(".o_wsale_image_viewer_carousel li:last-of-type img")
+                .querySelector(".w_wsale_image_viewer_carousel li:last-of-type img")
                 ?.addEventListener("load", this.updateCarousel.bind(this), { once: true });
         });
 
@@ -121,7 +121,7 @@ export class ProductImageViewer extends Dialog {
      * @private
      */
     _updateCarousel() {
-        const thumbnailList = document.querySelector(".o_wsale_image_viewer_carousel ol");
+        const thumbnailList = document.querySelector(".w_wsale_image_viewer_carousel ol");
         const viewWidth = window.visualViewport.width;
         if (!thumbnailList || thumbnailList.scrollWidth <= viewWidth) {
             return;
@@ -204,7 +204,7 @@ export class ProductImageViewer extends Dialog {
         }
         this.state.touchClientX = touch.clientX;
         if (!this.state.touchmoveStep) {
-            const thumbnail = document.querySelector("img.o_wsale_image_viewer_thumbnail");
+            const thumbnail = document.querySelector("img.w_wsale_image_viewer_thumbnail");
             this.state.touchmoveStep = 0.75 * thumbnail?.clientWidth;
         }
     }

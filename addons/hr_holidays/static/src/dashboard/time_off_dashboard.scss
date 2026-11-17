@@ -3,6 +3,7 @@
     width: fit-content;
     background: none;
     transition: all 0.2s;
+
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
     }
@@ -15,13 +16,14 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: $o-webclient-background-color;
+    background-color: $w-webclient-background-color;
 }
 
 .o_timeoff_dashboard_cards {
     display: flex;
     flex-direction: row;
-    & > * {
+
+    &>* {
         flex: 1;
     }
 }

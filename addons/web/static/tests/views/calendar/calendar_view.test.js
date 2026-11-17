@@ -310,7 +310,7 @@ function expectEventToBeOver(eventSelector, ranges) {
 
 const checkFilterItems = async (amount) => {
     await displayCalendarPanel();
-    expect(`.o_calendar_filter_item`).toHaveCount(amount);
+    expect(`.w_calendar_filter_item`).toHaveCount(amount);
     await hideCalendarPanel();
 };
 
@@ -362,68 +362,68 @@ test(`simple calendar rendering on desktop`, async () => {
     });
 
     // test events in different scale
-    expect(`.o_calendar_renderer .fc-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(0, {
+    expect(`.w_calendar_renderer .fc-view`).toHaveCount(1);
+    expect(`.w_event`).toHaveCount(0, {
         message: "By default, only the events of the current user are displayed (0 in this case)",
     });
 
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event`).toHaveCount(7, {
+    expect(`.w_event`).toHaveCount(7, {
         message:
             "should display 7 events on the week (including one without stop + 1 is_all_day + 1 >24h is_all_day)",
     });
-    expect(`.o_event_oneliner`).toHaveCount(1, {
+    expect(`.w_event_oneliner`).toHaveCount(1, {
         message: "should contain 1 oneliner event (the one we add)",
     });
 
     await changeScale("day");
-    expect(`.o_event`).toHaveCount(2);
-    expect(`.o_calendar_sidepanel .o_datetime_picker .o_selected`).toHaveCount(1);
+    expect(`.w_event`).toHaveCount(2);
+    expect(`.w_calendar_sidepanel .w_datetime_picker .w_selected`).toHaveCount(1);
 
     await changeScale("month");
     await toggleSectionFilter("attendee_ids");
     await toggleFilter("attendee_ids", "1");
     await toggleFilter("attendee_ids", "2");
-    expect(`.o_event`).toHaveCount(9, {
+    expect(`.w_event`).toHaveCount(9, {
         message:
             "should display 9 events on the month (8 events - 1 'event 6' is filtered + 2 week event)",
     });
 
     // test filters
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(2);
-    expect(`.o_calendar_filter:eq(1)`).toBeVisible();
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item`).toHaveCount(3);
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(1)`).toBeVisible();
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item`).toHaveCount(3);
 
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1)`).not.toHaveAttribute(
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1)`).not.toHaveAttribute(
         "data-value"
     );
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1)`).toHaveText("Undefined");
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1) label img`).toHaveCount(0);
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1)`).toHaveText("Undefined");
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1) label img`).toHaveCount(0);
 
-    expect(`.o_calendar_filter:eq(0)`).toBeVisible();
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(2);
-    expect(`.o_calendar_filter:eq(0) .o-autocomplete`).toHaveCount(1);
+    expect(`.w_calendar_filter:eq(0)`).toBeVisible();
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(0) .w-autocomplete`).toHaveCount(1);
 
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event`).toHaveCount(7);
+    expect(`.w_event`).toHaveCount(7);
 
     await toggleFilter("attendee_ids", "2");
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
 
     // test search bar in filter
-    await contains(`.o_calendar_sidepanel input[type=text]`).click();
+    await contains(`.w_calendar_sidepanel input[type=text]`).click();
     expect(`.dropdown-item`).toHaveCount(2);
     expect(queryAllTexts`.dropdown-item`).toEqual(["partner 3", "partner 4"]);
 
     await contains(`.dropdown-item:eq(0)`).click();
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(3);
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(3);
 
-    await contains(`.o_calendar_sidepanel input[type=text]`).click();
+    await contains(`.w_calendar_sidepanel input[type=text]`).click();
     expect(`.dropdown-item`).toHaveCount(1);
     expect(`.dropdown-item`).toHaveText("partner 4");
 
     await removeFilter("attendee_ids", "2");
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(2);
 });
 
 test.tags("mobile");
@@ -465,68 +465,68 @@ test(`simple calendar rendering on mobile`, async () => {
     });
 
     // test events in different scale
-    expect(`.o_calendar_renderer .fc-view`).toHaveCount(3);
-    expect(`.o_calendar_renderer .o_calendar_current`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(0, {
+    expect(`.w_calendar_renderer .fc-view`).toHaveCount(3);
+    expect(`.w_calendar_renderer .w_calendar_current`).toHaveCount(1);
+    expect(`.w_event`).toHaveCount(0, {
         message: "By default, only the events of the current user are displayed (0 in this case)",
     });
     await toggleSectionFilter("attendee_ids");
     await changeScale("week");
-    expect(`.o_event`).toHaveCount(6, {
+    expect(`.w_event`).toHaveCount(6, {
         message: "should display 6 events on the week (4 event + 1 is_all_day + 1 >24h is_all_day)",
     });
-    expect(`.o_event_oneliner`).toHaveCount(1, {
+    expect(`.w_event_oneliner`).toHaveCount(1, {
         message: "should contain 1 oneliner event (the one we add)",
     });
 
     await changeScale("day");
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
     await changeScale("month");
     await toggleSectionFilter("attendee_ids");
     await toggleFilter("attendee_ids", "1");
     await toggleFilter("attendee_ids", "2");
-    expect(`.o_event`).toHaveCount(8, {
+    expect(`.w_event`).toHaveCount(8, {
         message:
             "should display 7 events on the month (6 events + 2 week event - 1 'event 6' is filtered + 1 'Undefined event')",
     });
 
     // test filters
     await displayCalendarPanel();
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(2);
-    expect(`.o_calendar_filter:eq(1)`).toBeVisible();
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item`).toHaveCount(3);
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(1)`).toBeVisible();
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item`).toHaveCount(3);
 
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1)`).not.toHaveAttribute(
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1)`).not.toHaveAttribute(
         "data-value"
     );
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1)`).toHaveText("Undefined");
-    expect(`.o_calendar_filter:eq(1) .o_calendar_filter_item:eq(-1) label img`).toHaveCount(0);
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1)`).toHaveText("Undefined");
+    expect(`.w_calendar_filter:eq(1) .w_calendar_filter_item:eq(-1) label img`).toHaveCount(0);
 
-    expect(`.o_calendar_filter:eq(0)`).toBeVisible();
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(2);
-    expect(`.o_calendar_filter:eq(0) .o-autocomplete`).toHaveCount(1);
+    expect(`.w_calendar_filter:eq(0)`).toBeVisible();
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(0) .w-autocomplete`).toHaveCount(1);
     await hideCalendarPanel();
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event`).toHaveCount(6);
+    expect(`.w_event`).toHaveCount(6);
 
     await toggleFilter("attendee_ids", "2");
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
 
     // test search bar in filter
     await displayCalendarPanel();
-    await contains(`.o_calendar_sidepanel input[type=text]`).click();
+    await contains(`.w_calendar_sidepanel input[type=text]`).click();
     expect(`.dropdown-item`).toHaveCount(2);
     expect(queryAllTexts`.dropdown-item`).toEqual(["partner 3", "partner 4"]);
 
     await contains(`.dropdown-item:eq(0)`).click();
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(3);
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(3);
 
-    await contains(`.o_calendar_sidepanel input[type=text]`).click();
+    await contains(`.w_calendar_sidepanel input[type=text]`).click();
     expect(`.dropdown-item`).toHaveCount(1);
     expect(`.dropdown-item`).toHaveText("partner 4");
 
     await removeFilter("attendee_ids", "2");
-    expect(`.o_calendar_filter:eq(0) .o_calendar_filter_item`).toHaveCount(2);
+    expect(`.w_calendar_filter:eq(0) .w_calendar_filter_item`).toHaveCount(2);
 });
 
 test(`filter panel autocomplete: updates when typing`, async () => {
@@ -540,32 +540,32 @@ test(`filter panel autocomplete: updates when typing`, async () => {
         `,
     });
     await displayCalendarPanel();
-    const root = `.o_calendar_filter[data-name="attendee_ids"]`;
-    expect(`${root} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${root} .o-autocomplete--dropdown-item`).toHaveCount(0);
+    const root = `.w_calendar_filter[data-name="attendee_ids"]`;
+    expect(`${root} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${root} .w-autocomplete--dropdown-item`).toHaveCount(0);
 
-    await contains(`${root} .o-autocomplete--input`).click();
-    expect(`${root} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${root} .o-autocomplete--dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts(`${root} .o-autocomplete--dropdown-item`)).toEqual([
+    await contains(`${root} .w-autocomplete--input`).click();
+    expect(`${root} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${root} .w-autocomplete--dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts(`${root} .w-autocomplete--dropdown-item`)).toEqual([
         "partner 3",
         "partner 4",
     ]);
 
-    await contains(`${root} .o-autocomplete--input`).edit("partner 3", { confirm: false });
+    await contains(`${root} .w-autocomplete--input`).edit("partner 3", { confirm: false });
     await advanceTime(500);
-    expect(`${root} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${root} .o-autocomplete--dropdown-item`).toHaveCount(1);
-    expect(queryAllTexts(`${root} .o-autocomplete--dropdown-item`)).toEqual(["partner 3"]);
+    expect(`${root} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${root} .w-autocomplete--dropdown-item`).toHaveCount(1);
+    expect(queryAllTexts(`${root} .w-autocomplete--dropdown-item`)).toEqual(["partner 3"]);
 
-    await contains(`${root} .o-autocomplete--input`).edit(
+    await contains(`${root} .w-autocomplete--input`).edit(
         "a string that would yield to no result as it is too very much convoluted",
         { confirm: false }
     );
     await advanceTime(500);
-    expect(`${root} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${root} .o-autocomplete--dropdown-item`).toHaveCount(1);
-    expect(queryAllTexts(`${root} .o-autocomplete--dropdown-item`)).toEqual(["No records"]);
+    expect(`${root} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${root} .w-autocomplete--dropdown-item`).toHaveCount(1);
+    expect(queryAllTexts(`${root} .w-autocomplete--dropdown-item`)).toEqual(["No records"]);
 });
 
 test(`check the avatar of the attendee in the calendar filter panel`, async () => {
@@ -595,21 +595,21 @@ test(`check the avatar of the attendee in the calendar filter panel`, async () =
         `,
     });
     await displayCalendarPanel();
-    const section = `.o_calendar_filter[data-name="attendee_ids"]`;
+    const section = `.w_calendar_filter[data-name="attendee_ids"]`;
 
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(1);
-    expect(`.o_calendar_filter:eq(0) .o-autocomplete`).toHaveCount(1);
-    expect(".o_calendar_filter_item:eq(-2)").not.toHaveText("partner 3");
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(1);
+    expect(`.w_calendar_filter:eq(0) .w-autocomplete`).toHaveCount(1);
+    expect(".w_calendar_filter_item:eq(-2)").not.toHaveText("partner 3");
 
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(0);
+    await contains(`${section} .w-autocomplete--input`).click();
     await runAllTimers();
-    expect(".o-autocomplete--dropdown-item:first-child").toHaveText("partner 3");
-    expect(`.o-autocomplete--dropdown-item:first-child .dropdown-item img`).toHaveClass("o_avatar");
+    expect(".w-autocomplete--dropdown-item:first-child").toHaveText("partner 3");
+    expect(`.w-autocomplete--dropdown-item:first-child .dropdown-item img`).toHaveClass("o_avatar");
 
-    await contains(".o-autocomplete--dropdown-item:first-child").click();
-    expect(".o_calendar_filter_item:eq(-1)").toHaveText("partner 3");
+    await contains(".w-autocomplete--dropdown-item:first-child").click();
+    expect(".w_calendar_filter_item:eq(-1)").toHaveText("partner 3");
 });
 
 test.tags("desktop");
@@ -640,16 +640,16 @@ test(`Select multiple attendees in the calendar filter panel autocomplete on des
         `,
     });
 
-    const section = `.o_calendar_filter[data-name="attendee_ids"]`;
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(1);
+    const section = `.w_calendar_filter[data-name="attendee_ids"]`;
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(1);
     await checkFilterItems(2);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
 
-    expect(`.o_calendar_filter:eq(0) .o-autocomplete`).toHaveCount(1);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`.w_calendar_filter:eq(0) .w-autocomplete`).toHaveCount(1);
+    await contains(`${section} .w-autocomplete--input`).click();
     await runAllTimers();
     expect(`.dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "partner 3",
         "partner 4",
         "foo partner 5",
@@ -661,16 +661,16 @@ test(`Select multiple attendees in the calendar filter panel autocomplete on des
         "Search More...",
     ]);
 
-    await contains(`.o-autocomplete--dropdown-item:last-child`).click();
-    expect(`.modal .o_data_row`).toHaveCount(12);
-    await contains(".o_data_row:nth-child(1) .o_list_record_selector").click();
-    await contains(".o_data_row:nth-child(2) .o_list_record_selector").click();
-    await contains(".o_dialog .o_select_button").click();
+    await contains(`.w-autocomplete--dropdown-item:last-child`).click();
+    expect(`.modal .w_data_row`).toHaveCount(12);
+    await contains(".w_data_row:nth-child(1) .w_list_record_selector").click();
+    await contains(".w_data_row:nth-child(2) .w_list_record_selector").click();
+    await contains(".w_dialog .w_select_button").click();
     expect("o_dialog").toHaveCount(0);
 
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(1);
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(1);
     await checkFilterItems(4);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual([
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual([
         "partner 1",
         "partner 2",
         "partner 3",
@@ -705,18 +705,18 @@ test(`add a filter with the search more dialog on desktop`, async () => {
             </calendar>
         `,
     });
-    const section = `.o_calendar_filter[data-name="attendee_ids"]`;
-    expect(`${section} .o_calendar_filter_item`).toHaveCount(2);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
+    const section = `.w_calendar_filter[data-name="attendee_ids"]`;
+    expect(`${section} .w_calendar_filter_item`).toHaveCount(2);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
 
     // Open the autocomplete dropdown
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(0);
+    await contains(`${section} .w-autocomplete--input`).click();
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "partner 3",
         "partner 4",
         "foo partner 5",
@@ -729,11 +729,11 @@ test(`add a filter with the search more dialog on desktop`, async () => {
     ]);
 
     // Change the search term
-    await contains(`.o-autocomplete--input`).edit("foo", { confirm: false });
+    await contains(`.w-autocomplete--input`).edit("foo", { confirm: false });
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "foo partner 7",
@@ -747,10 +747,10 @@ test(`add a filter with the search more dialog on desktop`, async () => {
 
     // Open the search more dialog
     expect(`.modal`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--dropdown-item:last-child`).click();
+    await contains(`${section} .w-autocomplete--dropdown-item:last-child`).click();
     expect(`.modal`).toHaveCount(1);
-    expect(`.modal .o_data_row`).toHaveCount(10);
-    expect(queryAllTexts`.modal .o_data_row`).toEqual([
+    expect(`.modal .w_data_row`).toHaveCount(10);
+    expect(queryAllTexts`.modal .w_data_row`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "foo partner 7",
@@ -762,18 +762,18 @@ test(`add a filter with the search more dialog on desktop`, async () => {
         "foo partner 13",
         "foo partner 14",
     ]);
-    expect(`.modal .o_searchview_facet`).toHaveCount(1);
-    expect(`.modal .o_searchview_facet`).toHaveText("Quick search: foo");
+    expect(`.modal .w_searchview_facet`).toHaveCount(1);
+    expect(`.modal .w_searchview_facet`).toHaveText("Quick search: foo");
 
     // Choose a record
-    await contains(".o_data_row:nth-child(1) .o_list_record_selector").click();
-    await contains(".o_data_row:nth-child(2) .o_list_record_selector").click();
-    await contains(".o_dialog .o_select_button").click();
+    await contains(".w_data_row:nth-child(1) .w_list_record_selector").click();
+    await contains(".w_data_row:nth-child(2) .w_list_record_selector").click();
+    await contains(".w_dialog .w_select_button").click();
     expect("o_dialog").toHaveCount(0);
 
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(1);
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(1);
     await checkFilterItems(4);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual([
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "partner 1",
@@ -781,13 +781,13 @@ test(`add a filter with the search more dialog on desktop`, async () => {
     ]);
 
     // Open the autocomplete dropdown
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(0);
+    await contains(`${section} .w-autocomplete--input`).click();
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "partner 3",
         "partner 4",
         "foo partner 7",
@@ -800,11 +800,11 @@ test(`add a filter with the search more dialog on desktop`, async () => {
     ]);
 
     // Change the search term
-    await contains(`.o-autocomplete--input`).edit("foo", { confirm: false });
+    await contains(`.w-autocomplete--input`).edit("foo", { confirm: false });
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "foo partner 7",
         "foo partner 8",
         "foo partner 9",
@@ -818,10 +818,10 @@ test(`add a filter with the search more dialog on desktop`, async () => {
 
     // Open the search more dialog
     expect(`.modal`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--dropdown-item:last-child`).click();
+    await contains(`${section} .w-autocomplete--dropdown-item:last-child`).click();
     expect(`.modal`).toHaveCount(1);
-    expect(`.modal .o_data_row`).toHaveCount(8);
-    expect(queryAllTexts`.modal .o_data_row`).toEqual([
+    expect(`.modal .w_data_row`).toHaveCount(8);
+    expect(queryAllTexts`.modal .w_data_row`).toEqual([
         "foo partner 7",
         "foo partner 8",
         "foo partner 9",
@@ -831,20 +831,20 @@ test(`add a filter with the search more dialog on desktop`, async () => {
         "foo partner 13",
         "foo partner 14",
     ]);
-    expect(`.modal .o_searchview_facet`).toHaveCount(1);
-    expect(`.modal .o_searchview_facet`).toHaveText("Quick search: foo");
+    expect(`.modal .w_searchview_facet`).toHaveCount(1);
+    expect(`.modal .w_searchview_facet`).toHaveText("Quick search: foo");
 
     // Close the search more dialog without choosing a record
-    await contains(`.modal .o_form_button_cancel`).click();
+    await contains(`.modal .w_form_button_cancel`).click();
     expect(`.modal`).toHaveCount(0);
-    expect(`${section} .o_calendar_filter_item`).toHaveCount(4);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual([
+    expect(`${section} .w_calendar_filter_item`).toHaveCount(4);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "partner 1",
         "partner 2",
     ]);
-    expect(`.o-autocomplete--input`).toHaveValue("");
+    expect(`.w-autocomplete--input`).toHaveValue("");
 });
 
 test.tags("desktop");
@@ -879,13 +879,13 @@ test(`add a filter with the search more dialog (field with a context)`, async ()
         expect.step("get_views");
         expect(kwargs.context.search_view_ref).toBe("my_view");
     });
-    await contains(`.o_calendar_filter[data-name="attendee_ids"] .o-autocomplete--input`).click();
+    await contains(`.w_calendar_filter[data-name="attendee_ids"] .w-autocomplete--input`).click();
     await advanceTime(500);
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o-autocomplete--dropdown-item:last-child`
+        `.w_calendar_filter[data-name="attendee_ids"] .w-autocomplete--dropdown-item:last-child`
     ).toHaveText("Search More...");
     await contains(
-        `.o_calendar_filter[data-name="attendee_ids"] .o-autocomplete--dropdown-item:last-child`
+        `.w_calendar_filter[data-name="attendee_ids"] .w-autocomplete--dropdown-item:last-child`
     ).click();
     expect(`.modal`).toHaveCount(1);
     expect.verifySteps(["get_views"]);
@@ -922,13 +922,13 @@ test(`add a filter with the search more dialog (field with a relation option)`, 
     onRpc("web_search_read", ({ model }) => {
         expect.step(model);
     });
-    await contains(`.o_calendar_filter[data-name="user_id"] .o-autocomplete--input`).click();
+    await contains(`.w_calendar_filter[data-name="user_id"] .w-autocomplete--input`).click();
     await advanceTime(500);
     expect(
-        `.o_calendar_filter[data-name="user_id"] .o-autocomplete--dropdown-item:last-child`
+        `.w_calendar_filter[data-name="user_id"] .w-autocomplete--dropdown-item:last-child`
     ).toHaveText("Search More...");
     await contains(
-        `.o_calendar_filter[data-name="user_id"] .o-autocomplete--dropdown-item:last-child`
+        `.w_calendar_filter[data-name="user_id"] .w-autocomplete--dropdown-item:last-child`
     ).click();
     expect(`.modal`).toHaveCount(1);
     expect.verifySteps(["calendar.partner"]);
@@ -963,18 +963,18 @@ test(`add a filter with the search more dialog on mobile`, async () => {
         `,
     });
     await displayCalendarPanel();
-    const section = `.o_calendar_filter[data-name="attendee_ids"]`;
-    expect(`${section} .o_calendar_filter_item`).toHaveCount(2);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
+    const section = `.w_calendar_filter[data-name="attendee_ids"]`;
+    expect(`${section} .w_calendar_filter_item`).toHaveCount(2);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual(["partner 1", "partner 2"]);
 
     // Open the autocomplete dropdown
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(0);
+    await contains(`${section} .w-autocomplete--input`).click();
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "partner 3",
         "partner 4",
         "foo partner 5",
@@ -987,11 +987,11 @@ test(`add a filter with the search more dialog on mobile`, async () => {
     ]);
 
     // Change the search term
-    await contains(`.o-autocomplete--input`).edit("foo", { confirm: false });
+    await contains(`.w-autocomplete--input`).edit("foo", { confirm: false });
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "foo partner 7",
@@ -1005,10 +1005,10 @@ test(`add a filter with the search more dialog on mobile`, async () => {
 
     // Open the search more dialog
     expect(`.modal`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--dropdown-item:last-child`).click();
+    await contains(`${section} .w-autocomplete--dropdown-item:last-child`).click();
     expect(`.modal`).toHaveCount(1);
-    expect(`.modal .o_data_row`).toHaveCount(10);
-    expect(queryAllTexts`.modal .o_data_row`).toEqual([
+    expect(`.modal .w_data_row`).toHaveCount(10);
+    expect(queryAllTexts`.modal .w_data_row`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "foo partner 7",
@@ -1020,16 +1020,16 @@ test(`add a filter with the search more dialog on mobile`, async () => {
         "foo partner 13",
         "foo partner 14",
     ]);
-    await contains(".o_data_row:eq(0)").click();
-    await contains(`.o-autocomplete--input`).edit("foo", { confirm: false });
+    await contains(".w_data_row:eq(0)").click();
+    await contains(`.w-autocomplete--input`).edit("foo", { confirm: false });
     await advanceTime(500);
-    await contains(`${section} .o-autocomplete--dropdown-item:last-child`).click();
-    await contains(".o_data_row:eq(0)").click();
+    await contains(`${section} .w-autocomplete--dropdown-item:last-child`).click();
+    await contains(".w_data_row:eq(0)").click();
     expect("o_dialog").toHaveCount(0);
 
-    expect(`.o_calendar_sidepanel .o_calendar_filter`).toHaveCount(1);
-    expect(`.o_calendar_filter_item`).toHaveCount(4);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual([
+    expect(`.w_calendar_sidepanel .w_calendar_filter`).toHaveCount(1);
+    expect(`.w_calendar_filter_item`).toHaveCount(4);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "partner 1",
@@ -1037,13 +1037,13 @@ test(`add a filter with the search more dialog on mobile`, async () => {
     ]);
 
     // Open the autocomplete dropdown
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(0);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--input`).click();
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(0);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(0);
+    await contains(`${section} .w-autocomplete--input`).click();
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "partner 3",
         "partner 4",
         "foo partner 7",
@@ -1056,11 +1056,11 @@ test(`add a filter with the search more dialog on mobile`, async () => {
     ]);
 
     // Change the search term
-    await contains(`.o-autocomplete--input`).edit("foo", { confirm: false });
+    await contains(`.w-autocomplete--input`).edit("foo", { confirm: false });
     await advanceTime(500);
-    expect(`${section} .o-autocomplete--dropdown-menu`).toHaveCount(1);
-    expect(`${section} .o-autocomplete--dropdown-item`).toHaveCount(9);
-    expect(queryAllTexts`.o-autocomplete--dropdown-item`).toEqual([
+    expect(`${section} .w-autocomplete--dropdown-menu`).toHaveCount(1);
+    expect(`${section} .w-autocomplete--dropdown-item`).toHaveCount(9);
+    expect(queryAllTexts`.w-autocomplete--dropdown-item`).toEqual([
         "foo partner 7",
         "foo partner 8",
         "foo partner 9",
@@ -1074,10 +1074,10 @@ test(`add a filter with the search more dialog on mobile`, async () => {
 
     // Open the search more dialog
     expect(`.modal`).toHaveCount(0);
-    await contains(`${section} .o-autocomplete--dropdown-item:last-child`).click();
+    await contains(`${section} .w-autocomplete--dropdown-item:last-child`).click();
     expect(`.modal`).toHaveCount(1);
-    expect(`.modal .o_data_row`).toHaveCount(8);
-    expect(queryAllTexts`.modal .o_data_row`).toEqual([
+    expect(`.modal .w_data_row`).toHaveCount(8);
+    expect(queryAllTexts`.modal .w_data_row`).toEqual([
         "foo partner 7",
         "foo partner 8",
         "foo partner 9",
@@ -1089,14 +1089,14 @@ test(`add a filter with the search more dialog on mobile`, async () => {
     ]);
     await contains(`[data-icon='arrow_back']`).click();
     expect(`.modal`).toHaveCount(0);
-    expect(`${section} .o_calendar_filter_item`).toHaveCount(4);
-    expect(queryAllTexts`.o_calendar_filter_item`).toEqual([
+    expect(`${section} .w_calendar_filter_item`).toHaveCount(4);
+    expect(queryAllTexts`.w_calendar_filter_item`).toEqual([
         "foo partner 5",
         "foo partner 6",
         "partner 1",
         "partner 2",
     ]);
-    expect(`.o-autocomplete--input`).toHaveValue("");
+    expect(`.w-autocomplete--input`).toHaveValue("");
 });
 
 test(`delete attribute on calendar doesn't show delete button in popover`, async () => {
@@ -1107,8 +1107,8 @@ test(`delete attribute on calendar doesn't show delete button in popover`, async
     });
 
     await clickEvent(4);
-    expect(".o_cw_popover").toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_delete`).toHaveCount(0);
+    expect(".w_cw_popover").toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_delete`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -1128,97 +1128,97 @@ test(`create and change events on desktop`, async () => {
 
     // click on an existing event to open the formViewDialog
     await clickEvent(4);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_delete`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_popover_close`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_popover_close`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover .w_cw_popover_edit`).click();
     expect(`.modal-body`).toHaveCount(1);
 
     await contains(`.modal-body input`).edit("event 4 modified");
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal-body`).toHaveCount(0);
 
     // create a new event, quick create only
     await clickDate("2016-12-13");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="8"]`).toHaveText("new event in quick create");
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="8"]`).toHaveText("new event in quick create");
     expect(
         `.fc-daygrid-event-harness:not(.fc-daygrid-event-harness-abs):contains("new event in quick create")`
     ).toHaveCount(1);
 
     // create a new event, quick create only (validated by pressing enter key)
     await clickDate("2016-12-13");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit(
+    await contains(`.w-calendar-quick-create--input`).edit(
         "new event in quick create validated by pressing enter key.",
         { confirm: "enter" }
     );
-    expect(`.o_event[data-event-id="9"]`).toHaveText(
+    expect(`.w_event[data-event-id="9"]`).toHaveText(
         "new event in quick create validated by pressing enter key."
     );
 
     // create a new event and edit it
     await clickDate("2016-12-27");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect(`.modal`).toHaveCount(1);
     expect(`.modal .modal-title`).toHaveText("New Event");
     expect(`.modal [name="name"] input`).toHaveValue("coucou");
 
-    await contains(`.modal-footer .o_form_button_save`).click();
-    expect(`.o_event[data-event-id="10"]`).toHaveText("coucou");
+    await contains(`.modal-footer .w_form_button_save`).click();
+    expect(`.w_event[data-event-id="10"]`).toHaveText("coucou");
 
     // create a new event with 2 days
     await selectDateRange("2016-12-20", "2016-12-21");
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create 2", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create 2", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
-    expect(`.modal .o_form_view [name="name"] input`).toHaveValue("new event in quick create 2");
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
+    expect(`.modal .w_form_view [name="name"] input`).toHaveValue("new event in quick create 2");
 
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal`).toHaveCount(0);
 
-    expect(`.o_event[data-event-id="11"]`).toHaveText("new event in quick create 2");
-    expectEventToBeOver(`.o_event[data-event-id="11"]`, [["2016-12-20", "2016-12-21"]]);
+    expect(`.w_event[data-event-id="11"]`).toHaveText("new event in quick create 2");
+    expectEventToBeOver(`.w_event[data-event-id="11"]`, [["2016-12-20", "2016-12-21"]]);
 
     await clickEvent(11);
-    expect(`.o_cw_popover .o_card_record > div:eq(0)`).toHaveText("December 20-21, 2016\n2 days");
+    expect(`.w_cw_popover .w_card_record > div:eq(0)`).toHaveText("December 20-21, 2016\n2 days");
     await closeCwPopOver();
 
     // delete the a record
     await clickEvent(4);
-    await contains(`.o_cw_popover_delete`).click();
+    await contains(`.w_cw_popover_delete`).click();
     expect(`.modal-title`).toHaveText("Bye-bye, record!");
 
     await contains(`.modal-footer button.btn-danger`).click();
-    expect(`.o_event[data-event-id="4"]`).toHaveCount(0);
-    expect(`.o_event`).toHaveCount(10);
+    expect(`.w_event[data-event-id="4"]`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(10);
 
     // move to next month
     await navigate("next");
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
 
     await pickDate("2017-01-01");
     await changeScale("month");
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
 
     await navigate("prev");
     await pickDate("2016-12-27");
     await changeScale("month");
     await selectDateRange("2016-12-20", "2016-12-21");
-    await contains(`.o-calendar-quick-create--input`).edit("test", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("test", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["web_save"]);
 });
 
@@ -1239,95 +1239,95 @@ test(`create and change events on mobile`, async () => {
 
     // click on an existing event to open the formViewDialog
     await clickEvent(4);
-    expect(".o_cw_popover").toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_delete`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_popover_close`).toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_popover_close`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover .w_cw_popover_edit`).click();
     expect(`.modal-body`).toHaveCount(1);
 
     await contains(`.modal-body input:eq(0)`).edit("event 4 modified");
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal-body`).toHaveCount(0);
 
     // create a new event, quick create only
     await clickDate("2016-12-13");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="8"]`).toHaveText("new event in quick create");
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="8"]`).toHaveText("new event in quick create");
     expect(
         `.fc-daygrid-event-harness:not(.fc-daygrid-event-harness-abs):contains("new event in quick create")`
     ).toHaveCount(1);
 
     // create a new event, quick create only (validated by pressing enter key)
     await clickDate("2016-12-13");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit(
+    await contains(`.w-calendar-quick-create--input`).edit(
         "new event in quick create validated by pressing enter key.",
         { confirm: "enter" }
     );
-    expect(`.o_event[data-event-id="9"]`).toHaveText(
+    expect(`.w_event[data-event-id="9"]`).toHaveText(
         "new event in quick create validated by pressing enter key."
     );
 
     // create a new event and edit it
     await clickDate("2016-12-27");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect(`.modal`).toHaveCount(1);
     expect(`.modal .modal-title`).toHaveText("New Event");
     expect(`.modal [name="name"] input`).toHaveValue("coucou");
 
-    await contains(`.modal-footer .o_form_button_save`).click();
-    expect(`.o_event[data-event-id="10"]`).toHaveText("coucou");
+    await contains(`.modal-footer .w_form_button_save`).click();
+    expect(`.w_event[data-event-id="10"]`).toHaveText("coucou");
 
     // create a new event with 2 days
     await selectDateRange("2016-12-20", "2016-12-21");
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create 2", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create 2", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
-    expect(`.modal .o_form_view [name="name"] input`).toHaveValue("new event in quick create 2");
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
+    expect(`.modal .w_form_view [name="name"] input`).toHaveValue("new event in quick create 2");
 
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal`).toHaveCount(0);
 
-    expect(`.o_event[data-event-id="11"]`).toHaveText("new event in quick create 2");
-    expectEventToBeOver(`.o_event[data-event-id="11"]`, [["2016-12-20", "2016-12-21"]]);
+    expect(`.w_event[data-event-id="11"]`).toHaveText("new event in quick create 2");
+    expectEventToBeOver(`.w_event[data-event-id="11"]`, [["2016-12-20", "2016-12-21"]]);
 
     await clickEvent(11);
 
-    expect(`.o_cw_popover .o_card_record > div:eq(0)`).toHaveText("December 20-21, 2016\n2 days");
+    expect(`.w_cw_popover .w_card_record > div:eq(0)`).toHaveText("December 20-21, 2016\n2 days");
 
     await closeCwPopOver();
 
     // delete the a record
     await clickEvent(4);
-    await contains(`.o_cw_popover_delete`).click();
+    await contains(`.w_cw_popover_delete`).click();
     expect(`.modal-title`).toHaveText("Bye-bye, record!");
 
     await contains(`.modal-footer button.btn-danger`).click();
-    expect(`.o_event[data-event-id="4"]`).toHaveCount(0);
-    expect(`.o_event`).toHaveCount(10);
+    expect(`.w_event[data-event-id="4"]`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(10);
 
     // move to next month
     await navigate("next");
 
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
 
     await navigate("prev");
 
     await selectDateRange("2016-12-20", "2016-12-21");
-    await contains(`.o-calendar-quick-create--input`).edit("test", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("test", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
 
     expect.verifySteps(["web_save"]);
 });
@@ -1365,14 +1365,14 @@ test(`quickcreate with custom create_name_field`, async () => {
 
     // create a new event
     await clickDate("2016-12-13");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
-    await contains(`.o-calendar-quick-create--input`).edit("custom event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("custom event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="2"]`).toHaveCount(1);
-    expect(`.o_event[data-event-id="2"]`).toHaveText("custom event in quick create");
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="2"]`).toHaveCount(1);
+    expect(`.w_event[data-event-id="2"]`).toHaveText("custom event in quick create");
     expect.verifySteps(["create"]);
 });
 
@@ -1390,13 +1390,13 @@ test(`quickcreate switching to actual create for required fields`, async () => {
     await clickDate("2016-12-13");
     expect(`.modal-title`).toHaveText("New Event");
 
-    await contains(`.o-calendar-quick-create--input`).edit("custom event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("custom event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o-calendar-quick-create`).toHaveCount(0);
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w-calendar-quick-create`).toHaveCount(0);
     expect(`.modal-title`).toHaveText("New Event");
-    expect(`.modal .o_form_view .o_form_editable`).toHaveCount(1);
+    expect(`.modal .w_form_view .w_form_editable`).toHaveCount(1);
 });
 
 test(`open multiple event form at the same time`, async () => {
@@ -1455,13 +1455,13 @@ test(`create event with timezone in week mode European locale`, async () => {
     await selectTimeRange("2016-12-13 08:00:00", "2016-12-13 10:00:00");
     expect(`.fc-event-main .fc-event-time`).toHaveText("08:00 - 10:00");
 
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["create"]);
-    expect(`.fc-event-main .o_event_title`).toHaveText("new event");
+    expect(`.fc-event-main .w_event_title`).toHaveText("new event");
 
     await clickEvent(1);
-    await contains(`.o_cw_popover_delete`).click();
+    await contains(`.w_cw_popover_delete`).click();
     await contains(`.modal button.btn-danger`).click();
     expect(`.fc-event-main`).toHaveCount(0);
 });
@@ -1502,8 +1502,8 @@ test(`default week start (US)`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("SUN");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SAT");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("SUN");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SAT");
 });
 
 test(`European week start`, async () => {
@@ -1526,8 +1526,8 @@ test(`European week start`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("MON");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SUN");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("MON");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SUN");
 });
 
 test.tags("desktop");
@@ -1559,23 +1559,23 @@ test(`render popover`, async () => {
     });
 
     await clickEvent(2);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_popover_header`).toHaveText("event 2");
-    expect(`.o_cw_popover .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_delete`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_popover_close`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record > div:eq(0)`).toHaveText("December 12, 2016");
-    expect(`.o_cw_popover .o_card_record > div:eq(1)`).toHaveText("11:55 - 15:55\n(4 hours)");
-    expect(`.o_cw_popover .o_card_record > div:eq(2) .o_field_char`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record > div:eq(2) .o_field_char`).toHaveText("event 2");
-    expect(`.o_cw_popover .o_card_record > div:eq(2) span.fw-bold`).toHaveText("Custom Name");
-    expect(`.o_cw_popover .o_card_record > div:eq(3) .o_form_uri`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record > div:eq(3) .o_form_uri`).toHaveText("partner 1");
-    expect(`.o_cw_popover .o_card_record > div:eq(3) span.fw-bold`).toHaveText("Partner");
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_popover_header`).toHaveText("event 2");
+    expect(`.w_cw_popover .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_popover_close`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record > div:eq(0)`).toHaveText("December 12, 2016");
+    expect(`.w_cw_popover .w_card_record > div:eq(1)`).toHaveText("11:55 - 15:55\n(4 hours)");
+    expect(`.w_cw_popover .w_card_record > div:eq(2) .w_field_char`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record > div:eq(2) .w_field_char`).toHaveText("event 2");
+    expect(`.w_cw_popover .w_card_record > div:eq(2) span.fw-bold`).toHaveText("Custom Name");
+    expect(`.w_cw_popover .w_card_record > div:eq(3) .w_form_uri`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record > div:eq(3) .w_form_uri`).toHaveText("partner 1");
+    expect(`.w_cw_popover .w_card_record > div:eq(3) span.fw-bold`).toHaveText("Partner");
 
     await animationFrame();
     // Fully visible
-    const popover = document.querySelector(`.o_cw_popover`).getBoundingClientRect();
+    const popover = document.querySelector(`.w_cw_popover`).getBoundingClientRect();
     expect(
         popover.top >= 0 &&
         popover.left >= 0 &&
@@ -1595,15 +1595,15 @@ test(`render popover`, async () => {
         )
     ).toBeLessThan(35);
 
-    await contains(`.o_cw_popover .o_card_popover_close`).click();
-    expect(`.o_cw_popover`).toHaveCount(0);
+    await contains(`.w_cw_popover .w_card_popover_close`).click();
+    expect(`.w_cw_popover`).toHaveCount(0);
 
     // Drag and drop with opened popover should work and close popover
     await clickEvent(2);
-    expect(`.o_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
     await moveEventToTime(2, "2016-12-13 08:00:00");
     expect.verifySteps(["write"]);
-    expect(`.o_cw_popover`).toHaveCount(0);
+    expect(`.w_cw_popover`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -1629,13 +1629,13 @@ test(`render popover with modifiers`, async () => {
     });
 
     await clickEvent(4);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_priority span.o_priority_star`).toHaveCount(1);
-    expect(`.o_cw_popover li.o_invisible_modifier`).toHaveCount(0);
-    expect(`.o_cw_popover .o_field_datetime`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_priority span.w_priority_star`).toHaveCount(1);
+    expect(`.w_cw_popover li.w_invisible_modifier`).toHaveCount(0);
+    expect(`.w_cw_popover .w_field_datetime`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_card_popover_close`).click();
-    expect(`.o_cw_popover`).toHaveCount(0);
+    await contains(`.w_cw_popover .w_card_popover_close`).click();
+    expect(`.w_cw_popover`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -1683,15 +1683,15 @@ test(`render popover: inside fullcalendar popover`, async () => {
     await contains(`.fc-more-link`).click();
     expect(`.fc-popover`).toHaveCount(1);
     expect(`.fc-popover :not(.fc-daygrid-event-harness-abs) > .fc-event`).toHaveCount(10);
-    expect(`.o_cw_popover`).toHaveCount(0);
+    expect(`.w_cw_popover`).toHaveCount(0);
 
     await contains(`.fc-popover .fc-daygrid-event-harness:nth-child(1) .fc-event`).click();
     await advanceTime(500);
-    expect(`.o_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover .w_cw_popover_edit`).click();
     expect.verifySteps(["doAction"]);
-    expect(`.o_cw_popover`).toHaveCount(0);
+    expect(`.w_cw_popover`).toHaveCount(0);
     expect(`.fc-popover`).toHaveCount(1);
 });
 
@@ -1702,7 +1702,7 @@ test(`attributes hide_date and hide_time`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" hide_date="1" hide_time="1" mode="month"/>`,
     });
     await clickEvent(4);
-    expect(`.o_cw_popover .list-group-item`).toHaveCount(0);
+    expect(`.w_cw_popover .list-group-item`).toHaveCount(0);
 });
 
 test(`create event with timezone in week mode with formViewDialog`, async () => {
@@ -1747,31 +1747,31 @@ test(`create event with timezone in week mode with formViewDialog`, async () => 
     });
 
     await selectTimeRange("2016-12-13 08:00:00", "2016-12-13 10:00:00");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
-    expect(`.o_field_widget[name='start']`).toHaveText("Dec 13, 8:00 AM");
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
+    expect(`.w_field_widget[name='start']`).toHaveText("Dec 13, 8:00 AM");
 
     // Set is_all_day to true in formViewDialog
-    await contains(`.modal .o_field_boolean[name='is_all_day'] input`).click();
-    expect(`.o_field_widget[name='start_date']`).toHaveText("Dec 13");
+    await contains(`.modal .w_field_boolean[name='is_all_day'] input`).click();
+    expect(`.w_field_widget[name='start_date']`).toHaveText("Dec 13");
 
-    await contains(`.modal .o_field_boolean[name='is_all_day'] input`).click();
-    expect(`.o_field_widget[name='start']`).toHaveText("Dec 13, 2:00 AM");
+    await contains(`.modal .w_field_boolean[name='is_all_day'] input`).click();
+    expect(`.w_field_widget[name='start']`).toHaveText("Dec 13, 2:00 AM");
 
     // use datepicker to enter a date: 12/13/2016 08:00:00
-    await contains(`.o_field_widget[name='start'] button`).click();
+    await contains(`.w_field_widget[name='start'] button`).click();
     await selectHourOnPicker("8");
 
     // use datepicker to enter a date: 12/13/2016 10:00:00
-    await contains(`.o_field_widget[name='stop'] button`).click();
+    await contains(`.w_field_widget[name='stop'] button`).click();
     await selectHourOnPicker("10");
     if (isSmall()) {
         // Close the timepicker
-        await click(".o_bottom_sheet_backdrop");
+        await click(".w_bottom_sheet_backdrop");
     }
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect.verifySteps(["web_save"]);
-    expect(`.o_event[data-event-id="1"] .o_event_title`).toHaveText("new event");
+    expect(`.w_event[data-event-id="1"] .w_event_title`).toHaveText("new event");
 
     // Move this event to another day
     await moveEventToTime(1, "2016-12-12 08:00:00");
@@ -1815,14 +1815,14 @@ test(`create event with timezone in week mode American locale`, async () => {
     });
 
     await selectTimeRange("2016-12-13 06:00:00", "2016-12-13 08:00:00");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="1"] .o_event_title`).toHaveText("new event");
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="1"] .w_event_title`).toHaveText("new event");
     expect.verifySteps(["create"]);
 
     // delete record
     await clickEvent(1);
-    await contains(`.o_cw_popover_delete`).click();
+    await contains(`.w_cw_popover_delete`).click();
     await contains(`.modal button.btn-danger`).click();
     expect(`.fc-event-main`).toHaveCount(0);
 });
@@ -1852,8 +1852,8 @@ test(`fetch event when being in timezone`, async () => {
         `,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(0)`).toHaveText("11");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(-1)`).toHaveText("17");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(0)`).toHaveText("11");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(-1)`).toHaveText("17");
 });
 
 test(`check calendar week column time format`, async () => {
@@ -1894,11 +1894,11 @@ test(`create all day event in week mode`, async () => {
     });
 
     await selectAllDayRange("2016-12-14", "2016-12-15");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="1"]`).toHaveText("new event");
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="1"]`).toHaveText("new event");
     expect.verifySteps(["create"]);
-    expectEventToBeOver(`.o_event[data-event-id="1"]`, [["2016-12-14", "2016-12-15"]]);
+    expectEventToBeOver(`.w_event[data-event-id="1"]`, [["2016-12-14", "2016-12-15"]]);
 });
 
 test(`create all day event in month mode: utc-11`, async () => {
@@ -1927,11 +1927,11 @@ test(`create all day event in month mode: utc-11`, async () => {
     });
 
     await clickDate("2016-12-14");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["create"]);
-    expect(`.o_event[data-event-id="1"]`).toHaveText("new event");
-    const eventRect = queryRect(`.o_event[data-event-id="1"]`);
+    expect(`.w_event[data-event-id="1"]`).toHaveText("new event");
+    const eventRect = queryRect(`.w_event[data-event-id="1"]`);
     const cellRect = queryRect(`[data-date="2016-12-14"]`);
     expect(eventRect.left).toBeGreaterThan(cellRect.left);
     expect(eventRect.right).toBeLessThan(cellRect.right);
@@ -1965,10 +1965,10 @@ test(`create all day event in year mode: utc-11`, async () => {
         `,
     });
     await clickDate("2016-12-14");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["create"]);
-    expect(`.o_event[data-event-id="1"]`).toHaveRect(`[data-date="2016-12-14"]`);
+    expect(`.w_event[data-event-id="1"]`).toHaveRect(`[data-date="2016-12-14"]`);
 });
 
 test(`create event with default context (no quickCreate)`, async () => {
@@ -2015,7 +2015,7 @@ test(`create event with default title in context (with quickCreate)`, async () =
         },
     });
     await selectAllDayRange("2016-12-14", "2016-12-15");
-    expect(`.o-calendar-quick-create--input`).toHaveValue("Example Title");
+    expect(`.w-calendar-quick-create--input`).toHaveValue("Example Title");
 });
 
 test(`create all day event in week mode (no quickCreate)`, async () => {
@@ -2073,11 +2073,11 @@ test(`create event in month mode`, async () => {
     });
 
     await selectDateRange("2016-12-14", "2016-12-15");
-    await contains(`.o-calendar-quick-create--input`).edit("new event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="1"]`).toHaveText("new event");
+    await contains(`.w-calendar-quick-create--input`).edit("new event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="1"]`).toHaveText("new event");
     expect.verifySteps(["create"]);
-    expectEventToBeOver(`.o_event[data-event-id="1"]`, [["2016-12-14", "2016-12-15"]]);
+    expectEventToBeOver(`.w_event[data-event-id="1"]`, [["2016-12-14", "2016-12-15"]]);
 });
 
 test.tags("desktop");
@@ -2090,30 +2090,30 @@ test(`use mini calendar`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" all_day="is_all_day" mode="week" event_open_popup="1"/>`,
     });
     expect(`.fc-timeGridWeek-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(5);
+    expect(`.w_event`).toHaveCount(5);
 
     // Clicking on a day in another week should switch to the other week view
     await pickDate("2016-12-19");
     expect(`.fc-timeGridWeek-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
 
     // Clicking on a day in the same week should switch to that particular day view
     await pickDate("2016-12-18");
     expect(`.fc-timeGridDay-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
 
     // Clicking on the same day should toggle between day, month and week views
     await pickDate("2016-12-18");
     expect(`.fc-dayGridMonth-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(7);
+    expect(`.w_event`).toHaveCount(7);
 
     await pickDate("2016-12-18");
     expect(`.fc-timeGridWeek-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
 
     await pickDate("2016-12-18");
     expect(`.fc-timeGridDay-view`).toHaveCount(1);
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
 });
 
 test.tags("desktop");
@@ -2134,19 +2134,19 @@ test(`rendering, with many2many on desktop`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter_item .o_cw_filter_avatar`).toHaveCount(2);
+    expect(`.w_calendar_filter_item .w_cw_filter_avatar`).toHaveCount(2);
 
     await toggleSectionFilter("attendee_ids");
     await clickEvent(4);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover img`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover img`).toHaveCount(1);
 
     await clickEvent(1);
-    expect(`.o_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
     // the card variant of the many2many_tags_avatar widget limits visible avatars to 1,
     // grouping the rest behind a "+4" overflow badge
-    expect(`.o_cw_popover img`).toHaveCount(1);
-    expect(`.o_cw_popover .o_m2m_avatar_empty`).toHaveText("+4");
+    expect(`.w_cw_popover img`).toHaveCount(1);
+    expect(`.w_cw_popover .w_m2m_avatar_empty`).toHaveText("+4");
 });
 
 test.tags("mobile");
@@ -2168,19 +2168,19 @@ test(`rendering, with many2many on mobile`, async () => {
         `,
     });
     await displayCalendarPanel();
-    expect(`.o_calendar_filter_item .o_cw_filter_avatar`).toHaveCount(2);
+    expect(`.w_calendar_filter_item .w_cw_filter_avatar`).toHaveCount(2);
     await hideCalendarPanel();
     await toggleSectionFilter("attendee_ids");
     await clickEvent(4);
-    expect(".o_cw_popover").toHaveCount(1);
-    expect(`.o_cw_popover img`).toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
+    expect(`.w_cw_popover img`).toHaveCount(1);
     await closeCwPopOver();
     await clickEvent(1);
-    expect(".o_cw_popover").toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
     // the card variant of the many2many_tags_avatar widget limits visible avatars to 1,
     // grouping the rest behind a "+4" overflow badge
-    expect(`.o_cw_popover img`).toHaveCount(1);
-    expect(`.o_cw_popover .o_m2m_avatar_empty`).toHaveText("+4");
+    expect(`.w_cw_popover img`).toHaveCount(1);
+    expect(`.w_cw_popover .w_m2m_avatar_empty`).toHaveText("+4");
 });
 
 test.tags("desktop");
@@ -2200,17 +2200,17 @@ test(`set filter with many2many field on desktop`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter_item`).toHaveCount(5);
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_calendar_filter_item`).toHaveCount(5);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
 
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 });
 
 test.tags("mobile");
@@ -2230,19 +2230,19 @@ test(`set filter with many2many field on mobile`, async () => {
             </calendar>
         `,
     });
-    await contains(`.o_filter`).click();
-    expect(`.o_calendar_filter_item`).toHaveCount(5);
-    await contains(`.o_filter`).click();
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
+    await contains(`.w_filter`).click();
+    expect(`.w_calendar_filter_item`).toHaveCount(5);
+    await contains(`.w_filter`).click();
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
 
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -2264,7 +2264,7 @@ test("many2many filter handles archived records without crashing on desktop", as
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter_item`).toHaveCount(4);
+    expect(`.w_calendar_filter_item`).toHaveCount(4);
 });
 
 test.tags("mobile");
@@ -2286,8 +2286,8 @@ test("many2many filter handles archived records without crashing on mobile", asy
             </calendar>
         `,
     });
-    await contains(`.o_filter`).click();
-    expect(`.o_calendar_filter_item`).toHaveCount(4);
+    await contains(`.w_filter`).click();
+    expect(`.w_calendar_filter_item`).toHaveCount(4);
 });
 
 test.tags("desktop");
@@ -2307,17 +2307,17 @@ test(`set filter with one2many field on desktop`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter_item`).toHaveCount(5);
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_calendar_filter_item`).toHaveCount(5);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
 
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 });
 
 test.tags("mobile");
@@ -2337,19 +2337,19 @@ test(`set filter with one2many field on mobile`, async () => {
             </calendar>
         `,
     });
-    await contains(`.o_filter`).click();
-    expect(`.o_calendar_filter_item`).toHaveCount(5);
-    await contains(`.o_filter`).click();
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
+    await contains(`.w_filter`).click();
+    expect(`.w_calendar_filter_item`).toHaveCount(5);
+    await contains(`.w_filter`).click();
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(1);
 
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 
     await toggleFilter("attendee_ids", "1");
-    expect(`.o_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
-    expect(`.o_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
+    expect(`.w_event[data-event-id="1"] .fc-event-main`).toHaveCount(1);
+    expect(`.w_event[data-event-id="5"] .fc-event-main`).toHaveCount(0);
 });
 
 test(`open form view`, async () => {
@@ -2378,11 +2378,11 @@ test(`open form view`, async () => {
         context: {},
     };
     await clickEvent(4);
-    await contains(`.o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover_edit`).click();
     expect.verifySteps(["doAction"]);
 
     await clickDate("2016-12-27");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
     expectedRequest = {
         type: "ir.actions.act_window",
         res_model: "event",
@@ -2399,7 +2399,7 @@ test(`open form view`, async () => {
             allowed_company_ids: [1],
         },
     };
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -2435,8 +2435,8 @@ test(`create and edit event in month mode (all_day: false)`, async () => {
     });
 
     await clickDate("2016-12-27");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -2448,12 +2448,12 @@ test(`show start time of single day event`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" all_day="is_all_day" mode="month"/>`,
     });
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveText("06:55");
-    expect(`.o_event[data-event-id="4"] .fc-event-main .fc-time`).toHaveCount(0);
-    expect(`.o_event[data-event-id="5"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveText("06:55");
+    expect(`.w_event[data-event-id="4"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="5"] .fc-event-main .fc-time`).toHaveCount(0);
 
     await changeScale("week");
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(1);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(1);
 });
 
 test(`start time should not shown for date type field`, async () => {
@@ -2464,13 +2464,13 @@ test(`start time should not shown for date type field`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start_date" date_stop="stop_date" mode="month"/>`,
     });
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 
     await changeScale("week");
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 
     await changeScale("day");
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 });
 
 test(`start time should not shown if hide_time is true`, async () => {
@@ -2481,13 +2481,13 @@ test(`start time should not shown if hide_time is true`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" mode="month" hide_time="1"/>`,
     });
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 
     await changeScale("week");
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 
     await changeScale("day");
-    expect(`.o_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
+    expect(`.w_event[data-event-id="2"] .fc-event-main .fc-time`).toHaveCount(0);
 });
 
 test(`readonly date_start field`, async () => {
@@ -2517,12 +2517,12 @@ test(`readonly date_start field`, async () => {
         context: {},
     };
     await clickEvent(4);
-    await contains(`.o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover_edit`).click();
     expect.verifySteps(["doAction"]);
 
     // create a new event and edit it
     await clickDate("2016-12-27");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
     expectedRequest = {
         type: "ir.actions.act_window",
         res_model: "event",
@@ -2539,7 +2539,7 @@ test(`readonly date_start field`, async () => {
             uid: serverState.userId,
         },
     };
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -2568,12 +2568,12 @@ test(`readonly calendar view`, async () => {
         context: {},
     };
     await clickEvent(4);
-    await contains(`.o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover_edit`).click();
     expect.verifySteps(["doAction"]);
 
     // create a new event and edit it
     await clickDate("2016-12-27");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
     expectedRequest = {
         type: "ir.actions.act_window",
         res_model: "event",
@@ -2590,7 +2590,7 @@ test(`readonly calendar view`, async () => {
             uid: serverState.userId,
         },
     };
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -2606,19 +2606,19 @@ test(`check filters with filter_field specified on desktop`, async () => {
         `,
     });
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(1);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(true);
 
     await toggleFilter("attendee_ids", 2);
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(0);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(false);
 
     await changeScale("week"); // trick to reload the entire view
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(0);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(false);
 });
@@ -2636,21 +2636,21 @@ test(`check filters with filter_field specified on mobile`, async () => {
     });
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(1);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(true);
     await hideCalendarPanel();
     await toggleFilter("attendee_ids", 2);
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(0);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(false);
     await hideCalendarPanel();
     await changeScale("week"); // trick to reload the entire view
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="2"] input:checked`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="2"] input:checked`
     ).toHaveCount(0);
     expect(MockServer.env["filter.partner"].read([2])[0].is_checked).toBe(false);
 });
@@ -2677,9 +2677,9 @@ test(`dynamic filters with selection fields`, async () => {
         `,
     });
     await displayCalendarPanel();
-    expect(`.o_calendar_filter[data-name="selection"] .o_cw_filter_label`).toHaveText("Ambiance");
+    expect(`.w_calendar_filter[data-name="selection"] .w_cw_filter_label`).toHaveText("Ambiance");
     expect(
-        queryAllTexts(`.o_calendar_filter[data-name="selection"] .o_calendar_filter_item`)
+        queryAllTexts(`.w_calendar_filter[data-name="selection"] .w_calendar_filter_item`)
     ).toEqual(["Desert", "Forest", "Undefined"]);
 });
 
@@ -2694,7 +2694,7 @@ test(`string is used as label when provided`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter[data-name="attendee_ids"] .o_cw_filter_label`).toHaveText(
+    expect(`.w_calendar_filter[data-name="attendee_ids"] .w_cw_filter_label`).toHaveText(
         "Custom Label"
     );
 });
@@ -2710,7 +2710,7 @@ test(`filter label falls back to field name when string is absent`, async () => 
             </calendar>
         `,
     });
-    expect(`.o_calendar_filter[data-name="attendee_ids"] .o_cw_filter_label`).toHaveText(
+    expect(`.w_calendar_filter[data-name="attendee_ids"] .w_cw_filter_label`).toHaveText(
         "Attendees"
     );
 });
@@ -2744,19 +2744,19 @@ test(`Colors: cycling through available colors`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_event`).toHaveCount(56);
-    expect(`.o_event[data-event-id="1"]`).toHaveClass("o_calendar_color_1");
-    expect(`.o_event[data-event-id="55"]`).toHaveClass("o_calendar_color_55");
-    expect(`.o_event[data-event-id="56"]`).toHaveClass("o_calendar_color_1");
+    expect(`.w_event`).toHaveCount(56);
+    expect(`.w_event[data-event-id="1"]`).toHaveClass("o_calendar_color_1");
+    expect(`.w_event[data-event-id="55"]`).toHaveClass("o_calendar_color_55");
+    expect(`.w_event[data-event-id="56"]`).toHaveClass("o_calendar_color_1");
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="1"]`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="1"]`
     ).toHaveClass("o_cw_filter_color_1");
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="55"]`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="55"]`
     ).toHaveClass("o_cw_filter_color_55");
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] .o_calendar_filter_item[data-value="56"]`
+        `.w_calendar_filter[data-name="attendee_ids"] .w_calendar_filter_item[data-value="56"]`
     ).toHaveClass("o_cw_filter_color_1");
 });
 
@@ -2771,13 +2771,13 @@ test(`Colors: use available colors when attr is not number on desktop`, async ()
             </calendar>
         `,
     });
-    const colorClass = Array.from(queryFirst`.o_event[data-event-id="1"]`.classList).find(
+    const colorClass = Array.from(queryFirst`.w_event[data-event-id="1"]`.classList).find(
         (className) => className.startsWith("o_calendar_color_")
     );
     expect(isNaN(Number(colorClass.split("_").at(-1)))).toBe(false);
 
     await clickEvent(1);
-    expect(`.o_cw_popover`).toHaveClass(colorClass);
+    expect(`.w_cw_popover`).toHaveClass(colorClass);
 });
 
 test.tags("mobile");
@@ -2791,7 +2791,7 @@ test(`Colors: use available colors when attr is not number on mobile`, async () 
             </calendar>
         `,
     });
-    const colorClass = Array.from(queryFirst`.o_event[data-event-id="1"]`.classList).find(
+    const colorClass = Array.from(queryFirst`.w_event[data-event-id="1"]`.classList).find(
         (className) => className.startsWith("o_calendar_color_")
     );
     expect(isNaN(Number(colorClass.split("_").at(-1)))).toBe(false);
@@ -2875,16 +2875,16 @@ test(`Add filters and specific color`, async () => {
         "search_read (event) [display_name, start, stop, is_all_day, color, attendee_ids, type_id]",
     ]);
 
-    expect(`.o_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
-    expect(`.o_event[data-event-id="10"]`).toHaveClass("o_calendar_color_0");
+    expect(`.w_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
+    expect(`.w_event[data-event-id="10"]`).toHaveClass("o_calendar_color_0");
 
     await displayCalendarPanel();
-    expect(`.o_calendar_filter`).toHaveCount(2);
-    expect(`.o_calendar_filter[data-name="type_id"] .o_cw_filter_label`).toHaveText("Event Type");
-    expect(`.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item`).toHaveCount(4);
+    expect(`.w_calendar_filter`).toHaveCount(2);
+    expect(`.w_calendar_filter[data-name="type_id"] .w_cw_filter_label`).toHaveText("Event Type");
+    expect(`.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item`).toHaveCount(4);
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="3"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="3"]`
     ).toHaveClass("o_cw_filter_color_4");
 });
 
@@ -2898,13 +2898,13 @@ test(`Colors: dynamic filters without any color attr`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_event[data-event-id="1"]`).toHaveClass("o_calendar_color_0");
-    expect(`.o_event[data-event-id="2"]`).toHaveClass("o_calendar_color_0");
-    expect(`.o_event[data-event-id="3"]`).toHaveClass("o_calendar_color_0");
-    expect(`.o_event[data-event-id="4"]`).toHaveClass("o_calendar_color_0");
+    expect(`.w_event[data-event-id="1"]`).toHaveClass("o_calendar_color_0");
+    expect(`.w_event[data-event-id="2"]`).toHaveClass("o_calendar_color_0");
+    expect(`.w_event[data-event-id="3"]`).toHaveClass("o_calendar_color_0");
+    expect(`.w_event[data-event-id="4"]`).toHaveClass("o_calendar_color_0");
     await displayCalendarPanel();
-    expect(`.o_calendar_filter[data-name="user_id"]`).toHaveCount(1);
-    expect(`.o_calendar_filter[data-name="user_id"] [class*='o_cw_filter_color_']`).toHaveCount(0);
+    expect(`.w_calendar_filter[data-name="user_id"]`).toHaveCount(1);
+    expect(`.w_calendar_filter[data-name="user_id"] [class*='o_cw_filter_color_']`).toHaveCount(0);
 });
 
 test(`Colors: dynamic filters without color attr (related)`, async () => {
@@ -2958,14 +2958,14 @@ test(`Colors: dynamic filters without color attr (related)`, async () => {
         `,
     });
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
-    expect(`.o_event[data-event-id="10"]`).toHaveClass("o_calendar_color_2");
+    expect(`.w_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
+    expect(`.w_event[data-event-id="10"]`).toHaveClass("o_calendar_color_2");
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="attendee_ids"] [class*='o_cw_filter_color_']`
+        `.w_calendar_filter[data-name="attendee_ids"] [class*='o_cw_filter_color_']`
     ).toHaveCount(0);
-    expect(`.o_calendar_filter[data-name="type_id"] [class*='o_cw_filter_color_']`).toHaveCount(3);
+    expect(`.w_calendar_filter[data-name="type_id"] [class*='o_cw_filter_color_']`).toHaveCount(3);
 });
 
 test(`Colors: dynamic filters without color attr (direct)`, async () => {
@@ -2982,15 +2982,15 @@ test(`Colors: dynamic filters without color attr (direct)`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_event[data-event-id="1"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
-    expect(`.o_event[data-event-id="2"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
-    expect(`.o_event[data-event-id="3"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="4"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
+    expect(`.w_event[data-event-id="1"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
+    expect(`.w_event[data-event-id="2"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
+    expect(`.w_event[data-event-id="3"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="4"]`).toHaveClass("o_calendar_color_7"); // uid = serverState.user_id
     await displayCalendarPanel();
-    expect(`.o_calendar_filter[data-name="partner_id"] [class*='o_cw_filter_color_']`).toHaveCount(
+    expect(`.w_calendar_filter[data-name="partner_id"] [class*='o_cw_filter_color_']`).toHaveCount(
         0
     );
-    expect(`.o_calendar_filter[data-name="user_id"] [class*='o_cw_filter_color_']`).toHaveCount(2);
+    expect(`.w_calendar_filter[data-name="user_id"] [class*='o_cw_filter_color_']`).toHaveCount(2);
 });
 
 test(`makeFilterUser: color for current user`, async () => {
@@ -3026,16 +3026,16 @@ test(`makeFilterUser: color for current user`, async () => {
     });
 
     await displayCalendarPanel();
-    const section = `.o_calendar_filter[data-name="attendee_ids"]`;
+    const section = `.w_calendar_filter[data-name="attendee_ids"]`;
     expect(`${section} [class*='o_cw_filter_color_']`).toHaveCount(3);
-    expect(`${section} .o_cw_filter_label`).toHaveText("Attendees");
-    expect(`${section} .o_calendar_filter_item`).toHaveCount(3);
-    expect(`${section} .o_calendar_filter_item[data-value="17"]`).toHaveText("Mitchell Admin");
-    expect(`${section} .o_calendar_filter_item[data-value="17"]`).toHaveClass(
+    expect(`${section} .w_cw_filter_label`).toHaveText("Attendees");
+    expect(`${section} .w_calendar_filter_item`).toHaveCount(3);
+    expect(`${section} .w_calendar_filter_item[data-value="17"]`).toHaveText("Mitchell Admin");
+    expect(`${section} .w_calendar_filter_item[data-value="17"]`).toHaveClass(
         "o_cw_filter_color_17"
     );
-    expect(`${section} .o_calendar_filter_item[data-value="2"]`).toHaveClass("o_cw_filter_color_2");
-    expect(`${section} .o_calendar_filter_item[data-value="1"]`).toHaveClass("o_cw_filter_color_1");
+    expect(`${section} .w_calendar_filter_item[data-value="2"]`).toHaveClass("o_cw_filter_color_2");
+    expect(`${section} .w_calendar_filter_item[data-value="1"]`).toHaveClass("o_cw_filter_color_1");
 });
 
 test(`Colors: dynamic filters with same color as events`, async () => {
@@ -3089,19 +3089,19 @@ test(`Colors: dynamic filters with same color as events`, async () => {
         `,
     });
     await toggleSectionFilter("attendee_ids");
-    expect(`.o_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
-    expect(`.o_event[data-event-id="10"]`).toHaveClass("o_calendar_color_2");
+    expect(`.w_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="9"]`).toHaveClass("o_calendar_color_1");
+    expect(`.w_event[data-event-id="10"]`).toHaveClass("o_calendar_color_2");
     await displayCalendarPanel();
-    expect(`.o_calendar_filter[data-name="type_id"] [class*='o_cw_filter_color_']`).toHaveCount(3);
+    expect(`.w_calendar_filter[data-name="type_id"] [class*='o_cw_filter_color_']`).toHaveCount(3);
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="1"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="1"]`
     ).toHaveClass("o_cw_filter_color_1");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="2"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="2"]`
     ).toHaveClass("o_cw_filter_color_2");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="3"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="3"]`
     ).toHaveClass("o_cw_filter_color_4");
 });
 
@@ -3156,18 +3156,18 @@ test(`Colors: dynamic filters with another color source`, async () => {
 
     await toggleSectionFilter("attendee_ids");
     expect.verifySteps(["fetching event.type filter colors"]);
-    expect(`.o_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="9"]`).toHaveClass("o_calendar_color_4");
-    expect(`.o_event[data-event-id="10"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="8"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="9"]`).toHaveClass("o_calendar_color_4");
+    expect(`.w_event[data-event-id="10"]`).toHaveClass("o_calendar_color_4");
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="1"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="1"]`
     ).toHaveClass("o_cw_filter_color_1");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="2"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="2"]`
     ).toHaveClass("o_cw_filter_color_2");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="3"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="3"]`
     ).toHaveClass("o_cw_filter_color_4");
 });
 
@@ -3224,13 +3224,13 @@ test(`Colors: dynamic filters with no color source`, async () => {
     expect.verifySteps(["fetching event.type filter colors"]);
     await displayCalendarPanel();
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="1"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="1"]`
     ).toHaveClass("o_cw_filter_color_1");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="2"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="2"]`
     ).toHaveClass("o_cw_filter_color_2");
     expect(
-        `.o_calendar_filter[data-name="type_id"] .o_calendar_filter_item[data-value="3"]`
+        `.w_calendar_filter[data-name="type_id"] .w_calendar_filter_item[data-value="3"]`
     ).toHaveClass("o_cw_filter_color_4");
 });
 
@@ -3253,14 +3253,14 @@ test(`create event with filters`, async () => {
     // By default only
     await toggleFilter("attendee_ids", 1);
     await checkFilterItems(4);
-    expect(`.o_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(4);
 
     // quick create a record
     await selectTimeRange("2016-12-15 06:00:00", "2016-12-15 08:00:00");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     await checkFilterItems(5);
-    expect(`.o_event`).toHaveCount(5);
+    expect(`.w_event`).toHaveCount(5);
 
     // change default value for quick create an hide record
     Event._fields.user_id.default = 4;
@@ -3271,14 +3271,14 @@ test(`create event with filters`, async () => {
 
     // quick create and other record
     await selectTimeRange("2016-12-13 06:00:00", "2016-12-13 08:00:00");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou 2", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou 2", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     await checkFilterItems(5);
-    expect(`.o_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(4);
 
     await toggleFilter("partner_id", 4);
     await toggleFilter("attendee_ids", 2);
-    expect(`.o_event`).toHaveCount(7);
+    expect(`.w_event`).toHaveCount(7);
 });
 
 test(`create event with filters (no quickCreate)`, async () => {
@@ -3315,15 +3315,15 @@ test(`create event with filters (no quickCreate)`, async () => {
     await toggleSectionFilter("attendee_ids");
     await toggleFilter("partner_id", 4);
     await checkFilterItems(4);
-    expect(`.o_event`).toHaveCount(3);
+    expect(`.w_event`).toHaveCount(3);
 
     // quick create a record
     await selectTimeRange("2016-12-15 06:00:00", "2016-12-15 08:00:00");
-    await contains(`.o-calendar-quick-create--input`).edit("coucou", { confirm: false });
-    await contains(`.o-calendar-quick-create--edit-btn`).click();
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("coucou", { confirm: false });
+    await contains(`.w-calendar-quick-create--edit-btn`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     await checkFilterItems(5);
-    expect(`.o_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(4);
 });
 
 test(`Toggle multiple values at once in a filter with filter_field`, async () => {
@@ -3377,39 +3377,39 @@ test(`Update event with filters on desktop`, async () => {
     // select needed partner filters
     await toggleFilter("attendee_ids", 1);
     await toggleFilter("partner_id", 4);
-    expect(`.o_calendar_filter_item`).toHaveCount(4);
-    expect(`.o_event`).toHaveCount(3);
+    expect(`.w_calendar_filter_item`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(3);
 
     await clickEvent(2);
-    expect(`.o_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
 
-    await contains(`.o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover_edit`).click();
     expect(`.modal .modal-title`).toHaveText("Open: event 2");
 
-    await contains(`.modal .o_field_widget[name="user_id"] input`).click();
+    await contains(`.modal .w_field_widget[name="user_id"] input`).click();
     await contains(`.ui-autocomplete.dropdown-menu .ui-menu-item:contains(user 5)`).click();
-    await contains(`.modal .o_form_button_save`).click();
+    await contains(`.modal .w_form_button_save`).click();
 
-    expect(`.o_calendar_filter_item`).toHaveCount(5);
-    expect(`.o_event`).toHaveCount(3);
+    expect(`.w_calendar_filter_item`).toHaveCount(5);
+    expect(`.w_event`).toHaveCount(3);
 
     // test the behavior of the 'select all' input checkbox
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(3);
-    expect(`.o_calendar_filter_item input:not(:checked)`).toHaveCount(2);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(3);
+    expect(`.w_calendar_filter_item input:not(:checked)`).toHaveCount(2);
 
     // Click to select all users
     await toggleSectionFilter("partner_id");
 
     // should contains 4 events
-    expect(`.o_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(4);
 
     // Should have 4 checked boxes
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(4);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(4);
 
     // unselect all user
     await toggleSectionFilter("partner_id");
-    expect(`.o_event`).toHaveCount(0);
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(1);
+    expect(`.w_event`).toHaveCount(0);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(1);
 });
 
 test.tags("mobile");
@@ -3448,40 +3448,40 @@ test(`Update event with filters on mobile`, async () => {
     await toggleFilter("attendee_ids", 1);
     await toggleFilter("partner_id", 4);
     await checkFilterItems(4);
-    expect(`.o_event`).toHaveCount(3);
+    expect(`.w_event`).toHaveCount(3);
 
     await clickEvent(2);
-    await contains(`.o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover_edit`).click();
     expect(`.modal .modal-title`).toHaveText("Open: event 2");
 
-    await contains(`.modal .o_field_widget[name="user_id"] input`).click();
+    await contains(`.modal .w_field_widget[name="user_id"] input`).click();
     await animationFrame();
-    await contains(`.o_kanban_record:contains(user 5)`).click();
-    await contains(`.modal .o_form_button_save`).click();
+    await contains(`.w_kanban_record:contains(user 5)`).click();
+    await contains(`.modal .w_form_button_save`).click();
 
     await checkFilterItems(5);
-    expect(`.o_event`).toHaveCount(3);
+    expect(`.w_event`).toHaveCount(3);
     await displayCalendarPanel();
 
     // test the behavior of the 'select all' input checkbox
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(3);
-    expect(`.o_calendar_filter_item input:not(:checked)`).toHaveCount(2);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(3);
+    expect(`.w_calendar_filter_item input:not(:checked)`).toHaveCount(2);
     await hideCalendarPanel();
 
     // Click to select all users
     await toggleSectionFilter("partner_id");
 
     // should contains 4 events
-    expect(`.o_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(4);
     await displayCalendarPanel();
     // Should have 4 checked boxes
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(4);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(4);
     await hideCalendarPanel();
     // unselect all user
     await toggleSectionFilter("partner_id");
-    expect(`.o_event`).toHaveCount(0);
+    expect(`.w_event`).toHaveCount(0);
     await displayCalendarPanel();
-    expect(`.o_calendar_filter_item input:checked`).toHaveCount(1);
+    expect(`.w_calendar_filter_item input:checked`).toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -3538,8 +3538,8 @@ test(`change pager with filters`, async () => {
     await pickDate("2016-12-05");
     await changeScale("week");
     await checkFilterItems(5);
-    expect(`.o_event`).toHaveCount(2);
-    expect(queryAllTexts`.fc-event .o_event_title`).toEqual(["event 8", "event 9"]);
+    expect(`.w_event`).toHaveCount(2);
+    expect(queryAllTexts`.fc-event .w_event_title`).toEqual(["event 8", "event 9"]);
 });
 
 test.tags("desktop");
@@ -3552,14 +3552,14 @@ test(`events starting at midnight on desktop`, async () => {
 
     // Click on Tuesday 12am
     await selectTimeRange("2016-12-13 00:00:00", "2016-12-13 00:30:00");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
     // Creating the event
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="8"]`).toHaveText("00:00\nnew event in quick create");
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="8"]`).toHaveText("00:00\nnew event in quick create");
 });
 
 test.tags("mobile");
@@ -3572,14 +3572,14 @@ test(`events starting at midnight on mobile`, async () => {
 
     // Click on Tuesday 12am
     await selectTimeRange("2016-12-13 00:00:00", "2016-12-13 00:30:00");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
 
     // Creating the event
-    await contains(`.o-calendar-quick-create--input`).edit("new event in quick create", {
+    await contains(`.w-calendar-quick-create--input`).edit("new event in quick create", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
-    expect(`.o_event[data-event-id="8"]`).toHaveText("new event in quick create");
+    await contains(`.w-calendar-quick-create--create-btn`).click();
+    expect(`.w_event[data-event-id="8"]`).toHaveText("new event in quick create");
 });
 
 test(`single day event from midnight to midnight`, async () => {
@@ -3598,24 +3598,24 @@ test(`single day event from midnight to midnight`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="year"/>`,
     });
 
-    expect(`.o_event`).toHaveCount(1);
-    let eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    let eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     let cellWidth = queryFirst(`.fc-daygrid-day-frame`).getBoundingClientRect().width;
     expect(eventWidth).toBe(cellWidth); // over a single day
     await changeScale("month");
-    expect(`.o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-daygrid-day-events`).getBoundingClientRect().width;
     expect(eventWidth).not.toBeGreaterThan(cellWidth);
     await changeScale("week");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-day`).getBoundingClientRect().width;
     expect(eventWidth).not.toBeGreaterThan(cellWidth);
     await changeScale("day");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
     await navigate("next");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(0);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(0);
 });
 
 test(`event over two days but lasting less than 24h`, async () => {
@@ -3634,23 +3634,23 @@ test(`event over two days but lasting less than 24h`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="year"/>`,
     });
 
-    expect(`.o_event`).toHaveCount(1);
-    let eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    let eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     let cellWidth = queryFirst(`.fc-daygrid-day-frame`).getBoundingClientRect().width;
     expect(eventWidth).toBe(2 * cellWidth); // over 2 days
     await changeScale("month");
-    expect(`.o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-daygrid-day-events`).getBoundingClientRect().width;
     expect(eventWidth).toBeGreaterThan(cellWidth);
     expect(eventWidth).not.toBeGreaterThan(2 * cellWidth);
     await changeScale("week");
-    expect(`.fc-day-mon .o_event`).toHaveCount(1);
-    expect(`.fc-day-tue .o_event`).toHaveCount(1);
+    expect(`.fc-day-mon .w_event`).toHaveCount(1);
+    expect(`.fc-day-tue .w_event`).toHaveCount(1);
     await changeScale("day");
-    expect(`.fc-day-mon .o_event`).toHaveCount(1);
+    expect(`.fc-day-mon .w_event`).toHaveCount(1);
     await navigate("next");
-    expect(`.fc-day-tue .o_event`).toHaveCount(1);
+    expect(`.fc-day-tue .w_event`).toHaveCount(1);
 });
 
 test(`event over two days lasting longer than 24h`, async () => {
@@ -3669,26 +3669,26 @@ test(`event over two days lasting longer than 24h`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="year"/>`,
     });
 
-    expect(`.o_event`).toHaveCount(1);
-    let eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    let eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     let cellWidth = queryFirst(`.fc-daygrid-day-frame`).getBoundingClientRect().width;
     expect(eventWidth).toBe(2 * cellWidth); // over 2 days
     await changeScale("month");
-    expect(`.o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-daygrid-day-events`).getBoundingClientRect().width;
     expect(eventWidth).toBeGreaterThan(cellWidth);
     expect(eventWidth).not.toBeGreaterThan(2 * cellWidth);
     await changeScale("week");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-day`).getBoundingClientRect().width;
     expect(eventWidth).toBeGreaterThan(cellWidth);
     expect(eventWidth).not.toBeGreaterThan(2 * cellWidth);
     await changeScale("day");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
     await navigate("next");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
 });
 
 test(`all day event lasting 2 days`, async () => {
@@ -3708,26 +3708,26 @@ test(`all day event lasting 2 days`, async () => {
         arch: `<calendar date_start="start_date" date_stop="stop_date" all_day="is_all_day" mode="year"/>`,
     });
 
-    expect(`.o_event`).toHaveCount(1);
-    let eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    let eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     let cellWidth = queryFirst(`.fc-daygrid-day-frame`).getBoundingClientRect().width;
     expect(eventWidth).toBe(2 * cellWidth); // over 2 days
     await changeScale("month");
-    expect(`.o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-daygrid-day-events`).getBoundingClientRect().width;
     expect(eventWidth).toBeGreaterThan(cellWidth);
     expect(eventWidth).not.toBeGreaterThan(2 * cellWidth);
     await changeScale("week");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
-    eventWidth = queryOne(`.o_event`).getBoundingClientRect().width;
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
+    eventWidth = queryOne(`.w_event`).getBoundingClientRect().width;
     cellWidth = queryFirst(`.fc-day`).getBoundingClientRect().width;
     expect(eventWidth).toBeGreaterThan(cellWidth);
     expect(eventWidth).not.toBeGreaterThan(2 * cellWidth);
     await changeScale("day");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
     await navigate("next");
-    expect(`.fc-daygrid-day-events .o_event`).toHaveCount(1);
+    expect(`.fc-daygrid-day-events .w_event`).toHaveCount(1);
 });
 
 test(`set event as all day when field is date`, async () => {
@@ -3750,7 +3750,7 @@ test(`set event as all day when field is date`, async () => {
     expect(`.fc-daygrid-body .fc-event`).toHaveCount(1);
 
     await clickEvent(1);
-    expect(`.o_card_record > div:eq(0)`).toHaveText("December 14, 2016");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("December 14, 2016");
 });
 
 test(`set event as all day when field is date (without all_day mapping)`, async () => {
@@ -3770,7 +3770,7 @@ test(`set event as all day when field is datetime (without all_day mapping)`, as
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
-    expect(`.o_calendar_current .fc-daygrid-body .fc-event`).toHaveCount(1, {
+    expect(`.w_calendar_current .fc-daygrid-body .fc-event`).toHaveCount(1, {
         message: "should be one event in the all day row",
     });
 });
@@ -3794,7 +3794,7 @@ test(`quickcreate avoid double event creation`, async () => {
 
     // Simulate ENTER pressed on Create button (after a TAB)
     await press("Enter");
-    await click(`.o-calendar-quick-create--create-btn`);
+    await click(`.w-calendar-quick-create--create-btn`);
     await animationFrame();
 
     deferred.resolve();
@@ -3808,7 +3808,7 @@ test(`calendar is configured to have no groupBy menu`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start"/>`,
     });
-    expect(`.o_control_panel .o_group_by_menu`).toHaveCount(0);
+    expect(`.w_control_panel .w_group_by_menu`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -3820,10 +3820,10 @@ test(`timezone does not affect current day`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start"/>`,
     });
-    expect(`.o_datetime_picker .o_selected`).toHaveText("14");
+    expect(`.w_datetime_picker .w_selected`).toHaveText("14");
 
     await pickDate("2016-12-11");
-    expect(`.o_datetime_picker .o_selected`).toHaveText("11");
+    expect(`.w_datetime_picker .w_selected`).toHaveText("11");
 });
 
 test.tags("desktop");
@@ -3847,23 +3847,23 @@ test(`timezone does not affect drag and drop on desktop`, async () => {
     });
 
     await clickEvent(1);
-    expect(`.o_event[data-event-id="1"]`).toHaveText("08:00\nevent 1");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
+    expect(`.w_event[data-event-id="1"]`).toHaveText("08:00\nevent 1");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
 
     await clickEvent(6);
-    expect(`.o_event[data-event-id="6"]`).toHaveText("16:00\nevent 6");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 16, 4:00 PM");
+    expect(`.w_event[data-event-id="6"]`).toHaveText("16:00\nevent 6");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 16, 4:00 PM");
 
     await closeCwPopOver();
     await moveEventToDate(6, "2016-11-27");
     await clickEvent(6);
-    expect(`.o_event[data-event-id="6"]`).toHaveText("16:00\nevent 6");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Nov 27, 4:00 PM");
+    expect(`.w_event[data-event-id="6"]`).toHaveText("16:00\nevent 6");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Nov 27, 4:00 PM");
     expect.verifySteps(["write"]);
 
     await clickEvent(1);
-    expect(`.o_event[data-event-id="1"]`).toHaveText("08:00\nevent 1");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
+    expect(`.w_event[data-event-id="1"]`).toHaveText("08:00\nevent 1");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
 });
 
 test.tags("mobile");
@@ -3886,25 +3886,25 @@ test(`timezone does not affect drag and drop on mobile`, async () => {
     });
 
     await clickEvent(1);
-    expect(`.o_event[data-event-id="1"]`).toHaveText("event 1");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
+    expect(`.w_event[data-event-id="1"]`).toHaveText("event 1");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
     await closeCwPopOver();
 
     await clickEvent(6);
-    expect(`.o_event[data-event-id="6"]`).toHaveText("event 6");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 16, 4:00 PM");
+    expect(`.w_event[data-event-id="6"]`).toHaveText("event 6");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 16, 4:00 PM");
     await closeCwPopOver();
 
     await moveEventToDate(6, "2016-11-27");
     await clickEvent(6);
-    expect(`.o_event[data-event-id="6"]`).toHaveText("event 6");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Nov 27, 4:00 PM");
+    expect(`.w_event[data-event-id="6"]`).toHaveText("event 6");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Nov 27, 4:00 PM");
     await closeCwPopOver();
     expect.verifySteps(["write"]);
 
     await clickEvent(1);
-    expect(`.o_event[data-event-id="1"]`).toHaveText("event 1");
-    expect(`.o_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
+    expect(`.w_event[data-event-id="1"]`).toHaveText("event 1");
+    expect(`.w_field_widget[name="start"]`).toHaveText("Dec 9, 8:00 AM");
 });
 
 test.tags("desktop");
@@ -3930,21 +3930,21 @@ test(`timezone does not affect calendar with date field on desktop`, async () =>
     });
 
     await clickDate("2016-12-20");
-    await contains(`.o-calendar-quick-create--input`).edit("An event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("An event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["create 2016-12-20"]);
 
     await clickEvent(8);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record .o_field_date`).toHaveText("Dec 20");
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record .w_field_date`).toHaveText("Dec 20");
 
     await closeCwPopOver();
     await moveEventToDate(8, "2016-11-27");
     expect.verifySteps(["write 2016-11-27"]);
 
     await clickEvent(8);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record .o_field_date`).toHaveText("Nov 27");
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record .w_field_date`).toHaveText("Nov 27");
 });
 
 test.tags("mobile");
@@ -3969,21 +3969,21 @@ test(`timezone does not affect calendar with date field on mobile`, async () => 
     });
 
     await clickDate("2016-12-20");
-    await contains(`.o-calendar-quick-create--input`).edit("An event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("An event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["create 2016-12-20"]);
 
     await clickEvent(8);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record .o_field_date`).toHaveText("Dec 20");
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record .w_field_date`).toHaveText("Dec 20");
 
     await closeCwPopOver();
     await moveEventToDate(8, "2016-11-27");
     expect.verifySteps(["write 2016-11-27"]);
 
     await clickEvent(8);
-    expect(`.o_cw_popover`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record .o_field_date`).toHaveText("Nov 27");
+    expect(`.w_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record .w_field_date`).toHaveText("Nov 27");
 });
 
 test(`drag and drop on month mode`, async () => {
@@ -3999,14 +3999,14 @@ test(`drag and drop on month mode`, async () => {
     });
 
     await clickDate("2016-12-20");
-    await contains(`.modal-body .o_field_widget[name=name] input`).edit("An event");
-    await contains(`.modal .o_form_button_save`).click();
+    await contains(`.modal-body .w_field_widget[name=name] input`).edit("An event");
+    await contains(`.modal .w_form_button_save`).click();
     await moveEventToDate(1, "2016-12-19", { disableDrop: true });
-    expect(`.o_event[data-event-id="1"].fc-event-dragging`).toHaveClass("dayGridMonth");
+    expect(`.w_event[data-event-id="1"].fc-event-dragging`).toHaveClass("dayGridMonth");
 
     await moveEventToDate(8, "2016-12-19");
     await clickEvent(8);
-    expect(`.o_card_record > div:eq(1)`).toHaveText("07:00 - 19:00\n(12 hours)");
+    expect(`.w_card_record > div:eq(1)`).toHaveText("07:00 - 19:00\n(12 hours)");
 });
 
 test(`drag and drop on month mode with all_day mapping`, async () => {
@@ -4024,27 +4024,27 @@ test(`drag and drop on month mode with all_day mapping`, async () => {
         `,
     });
     await clickDate("2016-12-20");
-    await contains(`.o_field_widget[name="name"] input`).edit("An event");
-    await contains(`.o_field_widget[name="is_all_day"] input`).click();
+    await contains(`.w_field_widget[name="name"] input`).edit("An event");
+    await contains(`.w_field_widget[name="is_all_day"] input`).click();
 
     // use datepicker to enter a date: 12/20/2016 07:00:00
-    await contains(`.o_field_widget[name="start"] button`).click();
+    await contains(`.w_field_widget[name="start"] button`).click();
     await selectHourOnPicker("7:00");
     if (isSmall()) {
-        await click(".o_bottom_sheet_backdrop");
+        await click(".w_bottom_sheet_backdrop");
     }
 
     // use datepicker to enter a date: 12/20/2016 19:00:00
-    await contains(`.o_field_widget[name="stop"] button`).click();
+    await contains(`.w_field_widget[name="stop"] button`).click();
     await selectHourOnPicker("19:00");
     if (isSmall()) {
-        await click(".o_bottom_sheet_backdrop");
+        await click(".w_bottom_sheet_backdrop");
     }
 
-    await contains(`.modal .o_form_button_save`).click();
+    await contains(`.modal .w_form_button_save`).click();
     await moveEventToDate(8, "2016-12-19");
     await clickEvent(8);
-    expect(`.o_card_record > div:eq(1)`).toHaveText("07:00 - 19:00\n(12 hours)");
+    expect(`.w_card_record > div:eq(1)`).toHaveText("07:00 - 19:00\n(12 hours)");
 });
 
 test(`form_view_id attribute works (for creating events)`, async () => {
@@ -4071,7 +4071,7 @@ test(`form_view_id attribute works (for creating events)`, async () => {
     });
     await clickDate("2016-12-13");
     await contains(`.modal-body input`).edit("It's just a fleshwound", { confirm: "blur" });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -4138,7 +4138,7 @@ test(`calendar fallback to form view id in action if necessary`, async () => {
 
     await clickDate("2016-12-13");
     await contains(`.modal-body input`).edit("It's just a fleshwound", { confirm: "blur" });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps(["doAction"]);
 });
 
@@ -4151,7 +4151,7 @@ test(`fullcalendar initializes with right locale`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
-    expect(queryAllTexts`.o_calendar_current .fc-col-header-cell`).toEqual([
+    expect(queryAllTexts`.w_calendar_current .fc-col-header-cell`).toEqual([
         "DIM.\n11",
         "LUN.\n12",
         "MAR.\n13",
@@ -4179,9 +4179,9 @@ test(`initial_date given in the context`, async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(`.o_breadcrumb`).toHaveText("context initial date");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name`).toHaveText("Saturday");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number`).toHaveText("30");
+    expect(`.w_breadcrumb`).toHaveText("context initial date");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name`).toHaveText("Saturday");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number`).toHaveText("30");
 });
 
 test.tags("desktop");
@@ -4205,8 +4205,8 @@ test(`default week start (US) month mode on desktop`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="month"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("SUN");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SAT");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("SUN");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SAT");
     expect(`.fc-daygrid-day:eq(0) .fc-daygrid-week-number`).toHaveText("36");
     expect(`.fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("1");
     expect(`.fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-09-01");
@@ -4235,13 +4235,13 @@ test(`default week start (US) month mode on mobile`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="month"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("SUN");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SAT");
-    expect(`.o_calendar_current .o-fc-week:eq(0)`).toHaveText("36");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("1");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-09-01");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(-1) .fc-daygrid-day-number`).toHaveText("5");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(-1)`).toHaveAttribute("data-date", "2019-10-05");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("SUN");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SAT");
+    expect(`.w_calendar_current .w-fc-week:eq(0)`).toHaveText("36");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("1");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-09-01");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(-1) .fc-daygrid-day-number`).toHaveText("5");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(-1)`).toHaveAttribute("data-date", "2019-10-05");
 });
 
 test.tags("desktop");
@@ -4266,8 +4266,8 @@ test(`European week start month mode on chat`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="month"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("MON");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SUN");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("MON");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SUN");
     expect(`.fc-daygrid-day:eq(0) .fc-daygrid-week-number`).toHaveText("35");
     expect(`.fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("26");
     expect(`.fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-08-26");
@@ -4297,13 +4297,13 @@ test(`European week start month mode on mobile`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="month"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("MON");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SUN");
-    expect(`.o_calendar_current .o-fc-week:eq(0)`).toHaveText("35");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("26");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-08-26");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(-1) .fc-daygrid-day-number`).toHaveText("6");
-    expect(`.o_calendar_current .fc-daygrid-day:eq(-1)`).toHaveAttribute("data-date", "2019-10-06");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("MON");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SUN");
+    expect(`.w_calendar_current .w-fc-week:eq(0)`).toHaveText("35");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(0) .fc-daygrid-day-number`).toHaveText("26");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(0)`).toHaveAttribute("data-date", "2019-08-26");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(-1) .fc-daygrid-day-number`).toHaveText("6");
+    expect(`.w_calendar_current .fc-daygrid-day:eq(-1)`).toHaveAttribute("data-date", "2019-10-06");
 });
 
 test.tags("desktop");
@@ -4329,10 +4329,10 @@ test(`Monday week start week mode on desktop`, async () => {
     });
     expect.verifySteps(["event.search_read"]);
     expect(`.fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("MON");
-    expect(`.fc-col-header-cell .o_cw_day_number:eq(0)`).toHaveText("9");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SUN");
-    expect(`.fc-col-header-cell .o_cw_day_number:eq(-1)`).toHaveText("15");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("MON");
+    expect(`.fc-col-header-cell .w_cw_day_number:eq(0)`).toHaveText("9");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SUN");
+    expect(`.fc-col-header-cell .w_cw_day_number:eq(-1)`).toHaveText("15");
     expect(`.fc-timegrid-axis-cushion:eq(0)`).toHaveText("Week 37");
 });
 
@@ -4359,13 +4359,13 @@ test(`Monday week start week mode on mobile`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.o_calendar_current .fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("MON");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(0)`).toHaveText("9");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("SUN");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(-1)`).toHaveText("15");
-    expect(`.o_calendar_current .fc-timegrid-axis-cushion:eq(0)`).toHaveText("37");
-    expect(`.o_calendar_header .badge`).toHaveText("Week 37");
+    expect(`.w_calendar_current .fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("MON");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(0)`).toHaveText("9");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("SUN");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(-1)`).toHaveText("15");
+    expect(`.w_calendar_current .fc-timegrid-axis-cushion:eq(0)`).toHaveText("37");
+    expect(`.w_calendar_header .badge`).toHaveText("Week 37");
 });
 
 test.tags("desktop");
@@ -4391,10 +4391,10 @@ test(`Saturday week start week mode on desktop`, async () => {
     });
     expect.verifySteps(["event.search_read"]);
     expect(`.fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("SAT");
-    expect(`.fc-col-header-cell .o_cw_day_number:eq(0)`).toHaveText("7");
-    expect(`.fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("FRI");
-    expect(`.fc-col-header-cell .o_cw_day_number:eq(-1)`).toHaveText("13");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("SAT");
+    expect(`.fc-col-header-cell .w_cw_day_number:eq(0)`).toHaveText("7");
+    expect(`.fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("FRI");
+    expect(`.fc-col-header-cell .w_cw_day_number:eq(-1)`).toHaveText("13");
     expect(`.fc-timegrid-axis-cushion:eq(0)`).toHaveText("Week 37");
 });
 
@@ -4420,13 +4420,13 @@ test(`Saturday week start week mode on mobile`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(`.o_calendar_current .fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(0)`).toHaveText("SAT");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(0)`).toHaveText("7");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_name:eq(-1)`).toHaveText("FRI");
-    expect(`.o_calendar_current .fc-col-header-cell .o_cw_day_number:eq(-1)`).toHaveText("13");
-    expect(`.o_calendar_current .fc-timegrid-axis-cushion:eq(0)`).toHaveText("37");
-    expect(`.o_calendar_header .badge`).toHaveText("Week 37");
+    expect(`.w_calendar_current .fc-timeGridWeek-view .fc-daygrid-body`).toHaveCount(1);
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(0)`).toHaveText("SAT");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(0)`).toHaveText("7");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_name:eq(-1)`).toHaveText("FRI");
+    expect(`.w_calendar_current .fc-col-header-cell .w_cw_day_number:eq(-1)`).toHaveText("13");
+    expect(`.w_calendar_current .fc-timegrid-axis-cushion:eq(0)`).toHaveText("37");
+    expect(`.w_calendar_header .badge`).toHaveText("Week 37");
 });
 
 test(`Monday week start year mode`, async () => {
@@ -4521,16 +4521,16 @@ test(`edit record and attempt to create a record with "create" attribute set to 
     // editing existing events should still be possible
     // click on an existing event to open the formViewDialog
     await clickEvent(4);
-    expect(".o_cw_popover").toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_cw_popover .o_cw_popover_delete`).toHaveCount(1);
-    expect(`.o_cw_popover .o_card_popover_close`).toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_cw_popover .w_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_cw_popover .w_card_popover_close`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_cw_popover_edit`).click();
+    await contains(`.w_cw_popover .w_cw_popover_edit`).click();
     expect(`.modal-body`).toHaveCount(1);
 
     await contains(`.modal-body input`).edit("event 4 modified");
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal`).toHaveCount(0);
     expect.verifySteps(["save"]);
 
@@ -4589,8 +4589,8 @@ test(`attempt to create multiples events and the same day and check the ordering
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" all_day="is_all_day" mode="month"/>`,
     });
-    expect(`.o_calendar_current .fc-view`).toHaveCount(1);
-    expect(queryAllTexts`.o_event_title`).toEqual(["First event", "Second event", "Third event"]);
+    expect(`.w_calendar_current .fc-view`).toHaveCount(1);
+    expect(queryAllTexts`.w_event_title`).toEqual(["First event", "Second event", "Third event"]);
 });
 
 test.tags("desktop");
@@ -4640,13 +4640,13 @@ test(`Resizing Pill of Multiple Days on month mode`, async () => {
     // extend event left and right, expect that it will start and end on those dates
     await resizeEventToDate(1, "2016-12-12", true);
     await resizeEventToDate(1, "2016-12-16", false);
-    let eventEl = queryFirst('.o_event[data-event-id="1"]');
+    let eventEl = queryFirst('.w_event[data-event-id="1"]');
     expect(eventEl).toHaveText("All-day midnight");
     let { is_all_day, start, stop } = MockServer.env["event"].read(1)[0];
     expect(is_all_day).toEqual(true);
     expect(start).toEqual("2016-12-12");
     expect(stop).toEqual("2016-12-16");
-    eventEl = queryFirst('.o_event[data-event-id="1"]');
+    eventEl = queryFirst('.w_event[data-event-id="1"]');
     expect(eventEl.closest("[data-date]").dataset.date).toBe("2016-12-12");
     const { width: eventElFullWeekWidth } = queryRect(eventEl);
     // resize down to 1 day, should remain allday
@@ -4659,7 +4659,7 @@ test(`Resizing Pill of Multiple Days on month mode`, async () => {
     // extend event left and right, expect that it will end on the day following the end and not become allday
     await resizeEventToDate(2, "2016-12-12", true);
     await resizeEventToDate(2, "2016-12-16", false);
-    eventEl = queryFirst('.o_event[data-event-id="2"]');
+    eventEl = queryFirst('.w_event[data-event-id="2"]');
     expect(eventEl).toHaveText("Datetime midnight");
     ({ is_all_day, start, stop } = MockServer.env["event"].read(2)[0]);
     expect(is_all_day).toEqual(false);
@@ -4667,7 +4667,7 @@ test(`Resizing Pill of Multiple Days on month mode`, async () => {
     // as it ends at midnight in the UI, it effectively shows up as ending on the 13th rather than 14th
     // hence from the UI the event actually gets extended from the 13th to the 16th (in reality 14th 00:00 to 17th 00:00)
     expect(stop).toEqual(midnightStop.plus({ days: 3 }).toFormat("yyyy-MM-dd HH:mm:ss"));
-    eventEl = queryFirst('.o_event[data-event-id="2"]');
+    eventEl = queryFirst('.w_event[data-event-id="2"]');
     expect(eventEl.closest("[data-date]").dataset.date).toBe("2016-12-12");
     expect(queryRect(eventEl).width).toBe(eventElFullWeekWidth);
     // resize down to 1 day, expect to remain exactly 24-hours long and still not allday
@@ -4680,13 +4680,13 @@ test(`Resizing Pill of Multiple Days on month mode`, async () => {
     // extend event left and right, expect that it will start and end on those dates keeping its existing start and stop time
     await resizeEventToDate(3, "2016-12-12", true);
     await resizeEventToDate(3, "2016-12-16", false);
-    eventEl = queryFirst('.o_event[data-event-id="3"]');
+    eventEl = queryFirst('.w_event[data-event-id="3"]');
     expect(eventEl).toHaveText("Datetime specific time");
     ({ is_all_day, start, stop } = MockServer.env["event"].read(3)[0]);
     expect(is_all_day).toEqual(false);
     expect(start).toEqual("2016-12-12 20:30:00");
     expect(stop).toEqual("2016-12-16 12:18:00");
-    eventEl = queryFirst('.o_event[data-event-id="3"]');
+    eventEl = queryFirst('.w_event[data-event-id="3"]');
     expect(eventEl.closest("[data-date]").dataset.date).toBe("2016-12-12");
     expect(queryRect(eventEl).width).toBe(eventElFullWeekWidth);
     // resize down to 1 day, expect the end time will be set the same day
@@ -4726,12 +4726,12 @@ test(`create event and resize to next day (24h) on week mode`, async () => {
     });
 
     await selectTimeRange("2016-12-13 08:00:00", "2016-12-13 16:00:00");
-    await contains(`.modal .o_field_widget[name="name"] input`).edit("foobar", { confirm: false });
-    await contains(`.modal .o_form_button_save`).click();
+    await contains(`.modal .w_field_widget[name="name"] input`).edit("foobar", { confirm: false });
+    await contains(`.modal .w_form_button_save`).click();
     expect.verifySteps(["web_save"]);
 
     await resizeEventToTime(8, "2016-12-14 08:00:00");
-    const event = queryFirst`.o_event[data-event-id="8"]`;
+    const event = queryFirst`.w_event[data-event-id="8"]`;
     expect(event).toHaveText("foobar");
     expect(event.closest(".fc-daygrid-day")).not.toBeEmpty();
     expect.verifySteps(["write"]);
@@ -4771,48 +4771,48 @@ test(`correctly display year view`, async () => {
         "December 2016",
     ]);
     expect(`.fc-bg-event`).toHaveCount(7); // There should be 6 events displayed but there is 1 split on 2 weeks
-    expect(`.o_event_hatched`).toHaveCount(3);
-    expect(`.o_event_striked`).toHaveCount(1);
+    expect(`.w_event_hatched`).toHaveCount(3);
+    expect(`.w_event_striked`).toHaveCount(1);
 
     await clickDate("2016-11-17");
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-11-16");
-    expect(`.o_popover`).toHaveCount(1);
-    expect(`.o_popover`).toHaveText("November 14-16, 2016\nevent 7");
+    expect(`.w_popover`).toHaveCount(1);
+    expect(`.w_popover`).toHaveText("November 14-16, 2016\nevent 7");
 
     await closeCwPopOver();
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-11-14");
-    expect(`.o_popover`).toHaveCount(1);
-    expect(`.o_popover`).toHaveText("November 14-16, 2016\nevent 7");
+    expect(`.w_popover`).toHaveCount(1);
+    expect(`.w_popover`).toHaveText("November 14-16, 2016\nevent 7");
 
     await closeCwPopOver();
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-11-13");
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-12-10");
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-12-12");
-    expect(`.o_popover`).toHaveCount(1);
-    expect(`.o_popover`).toHaveText("December 12, 2016\n11:55\nevent 2\n16:55\nevent 3");
+    expect(`.w_popover`).toHaveCount(1);
+    expect(`.w_popover`).toHaveText("December 12, 2016\n11:55\nevent 2\n16:55\nevent 3");
 
     await closeCwPopOver();
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-12-14");
-    expect(`.o_popover`).toHaveCount(1);
-    expect(`.o_popover`).toHaveText("December 14, 2016\nevent 4\nDecember 13-20, 2016\nevent 5");
+    expect(`.w_popover`).toHaveCount(1);
+    expect(`.w_popover`).toHaveText("December 14, 2016\nevent 4\nDecember 13-20, 2016\nevent 5");
 
     await closeCwPopOver();
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 
     await clickDate("2016-12-21");
-    expect(`.o_popover`).toHaveCount(0);
+    expect(`.w_popover`).toHaveCount(0);
 });
 
 test(`toggle filters in year view`, async () => {
@@ -4908,11 +4908,11 @@ test(`allowed scales`, async () => {
         arch: `<calendar date_start="start" date_stop="stop" all_day="is_all_day" scales="day,week"/>`,
     });
 
-    await contains(`.o_view_scale_selector .scale_button_selection`).click();
-    expect(`.o-dropdown--menu .o_scale_button_day`).toHaveCount(1);
-    expect(`.o-dropdown--menu .o_scale_button_week`).toHaveCount(1);
-    expect(`.o-dropdown--menu .o_scale_button_month`).toHaveCount(0);
-    expect(`.o-dropdown--menu .o_scale_button_year`).toHaveCount(0);
+    await contains(`.w_view_scale_selector .scale_button_selection`).click();
+    expect(`.w-dropdown--menu .w_scale_button_day`).toHaveCount(1);
+    expect(`.w-dropdown--menu .w_scale_button_week`).toHaveCount(1);
+    expect(`.w-dropdown--menu .w_scale_button_month`).toHaveCount(0);
+    expect(`.w-dropdown--menu .w_scale_button_year`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -4922,16 +4922,16 @@ test(`click outside the popup should close it`, async () => {
         type: "calendar",
         arch: `<calendar create="0" event_open_popup="1" quick_create="0" date_start="start" date_stop="stop" all_day="is_all_day" mode="month"/>`,
     });
-    expect(`.o_cw_popover`).toHaveCount(0);
+    expect(`.w_cw_popover`).toHaveCount(0);
 
     await clickEvent(1);
-    expect(`.o_cw_popover`).toHaveCount(1);
+    expect(`.w_cw_popover`).toHaveCount(1);
 
-    await contains(`.o_cw_popover .o_cw_body`).click();
-    expect(`.o_cw_popover`).toHaveCount(1);
+    await contains(`.w_cw_popover .w_cw_body`).click();
+    expect(`.w_cw_popover`).toHaveCount(1);
 
-    await contains(`.o_calendar_view`).click();
-    expect(`.o_cw_popover`).toHaveCount(0);
+    await contains(`.w_calendar_view`).click();
+    expect(`.w_cw_popover`).toHaveCount(0);
 });
 
 test(`fields are added in the right order in popover`, async () => {
@@ -4956,13 +4956,13 @@ test(`fields are added in the right order in popover`, async () => {
     });
 
     await clickEvent(4);
-    expect(".o_cw_popover").toHaveCount(0);
+    expect(".w_cw_popover").toHaveCount(0);
 
     deferred.resolve();
     await animationFrame();
-    expect(".o_cw_popover").toHaveCount(1);
-    expect(`.o_cw_popover .o_card_record > div:eq(1)`).toHaveText("User");
-    expect(`.o_cw_popover .o_card_record > div:eq(2)`).toHaveText("Name\nevent 4");
+    expect(".w_cw_popover").toHaveCount(1);
+    expect(`.w_cw_popover .w_card_record > div:eq(1)`).toHaveText("User");
+    expect(`.w_cw_popover .w_card_record > div:eq(2)`).toHaveText("Name\nevent 4");
 });
 
 test(`select events and discard create`, async () => {
@@ -4971,13 +4971,13 @@ test(`select events and discard create`, async () => {
         type: "calendar",
         arch: `<calendar event_open_popup="1" date_start="start" date_stop="stop" all_day="is_all_day" mode="year"/>`,
     });
-    expect(`.o_calendar_current .fc-dayGridMonth-view`).toHaveCount(12);
+    expect(`.w_calendar_current .fc-dayGridMonth-view`).toHaveCount(12);
 
     await selectDateRange("2016-11-13", "2016-11-19");
-    expect(`.o-calendar-quick-create`).toHaveCount(1);
+    expect(`.w-calendar-quick-create`).toHaveCount(1);
     expectEventToBeOver(`.fc-highlight`, [["2016-11-13", "2016-11-19"]]);
 
-    await contains(`.o-calendar-quick-create--cancel-btn`).click();
+    await contains(`.w-calendar-quick-create--cancel-btn`).click();
     expect(`.fc-highlight`).toHaveCount(0);
 });
 
@@ -4995,17 +4995,17 @@ test(`create event in year view`, async () => {
 
     // Select the whole month of July
     await selectDateRange("2016-07-01", "2016-07-31");
-    await contains(`.o-calendar-quick-create--input[name=title]`).edit("Whole July", {
+    await contains(`.w-calendar-quick-create--input[name=title]`).edit("Whole July", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps([
         { name: "Whole July", is_all_day: true, start: "2016-07-01", stop: "2016-07-31" },
     ]);
 
     // get all rows for event 8
-    expect(`.o_event[data-event-id='8']`).toHaveCount(6);
-    expectEventToBeOver(`.o_event[data-event-id='8']`, [
+    expect(`.w_event[data-event-id='8']`).toHaveCount(6);
+    expectEventToBeOver(`.w_event[data-event-id='8']`, [
         ["2016-07-01", "2016-07-02"],
         ["2016-07-03", "2016-07-09"],
         ["2016-07-10", "2016-07-16"],
@@ -5016,17 +5016,17 @@ test(`create event in year view`, async () => {
 
     // Select the whole month of November
     await selectDateRange("2016-11-01", "2016-11-30");
-    await contains(`.o-calendar-quick-create--input[name=title]`).edit("Whole November", {
+    await contains(`.w-calendar-quick-create--input[name=title]`).edit("Whole November", {
         confirm: false,
     });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     expect.verifySteps([
         { name: "Whole November", is_all_day: true, start: "2016-11-01", stop: "2016-11-30" },
     ]);
 
     // get all rows for event 9
-    expect(`.o_event[data-event-id='9']`).toHaveCount(5);
-    expectEventToBeOver(`.o_event[data-event-id='9']`, [
+    expect(`.w_event[data-event-id='9']`).toHaveCount(5);
+    expectEventToBeOver(`.w_event[data-event-id='9']`, [
         ["2016-11-01", "2016-11-05"],
         ["2016-11-06", "2016-11-12"],
         ["2016-11-13", "2016-11-19"],
@@ -5049,7 +5049,7 @@ test(`popover ignores readonly field modifier`, async () => {
 
     await clickEvent(4);
     // test would fail here if we don't ignore readonly modifier
-    expect(".o_cw_popover").toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -5063,8 +5063,8 @@ test(`calendar with option show_date_picker set to false and no filter`, async (
             </calendar>
         `,
     });
-    expect(`.o_datetime_picker`).toHaveCount(0);
-    expect(`.o_calendar_sidepanel`).toHaveCount(0);
+    expect(`.w_datetime_picker`).toHaveCount(0);
+    expect(`.w_calendar_sidepanel`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -5079,12 +5079,12 @@ test(`calendar with option show_date_picker set to false and filters`, async () 
             </calendar>
         `,
     });
-    expect(`.o_datetime_picker`).toHaveCount(0);
-    expect(`.o_calendar_sidepanel`).toHaveCount(1);
-    await contains('.o_calendar_sidebar_controller button[title="Toggle Side Panel"]').click();
-    expect(`.o_calendar_sidepanel`).toHaveCount(0);
-    expect(`.o_calendar_sidebar_controller`).toHaveCount(1);
-    expect(`.o_calendar_sidebar_controller`).toHaveText("Partner");
+    expect(`.w_datetime_picker`).toHaveCount(0);
+    expect(`.w_calendar_sidepanel`).toHaveCount(1);
+    await contains('.w_calendar_sidebar_controller button[title="Toggle Side Panel"]').click();
+    expect(`.w_calendar_sidepanel`).toHaveCount(0);
+    expect(`.w_calendar_sidebar_controller`).toHaveCount(1);
+    expect(`.w_calendar_sidebar_controller`).toHaveText("Partner");
 });
 
 test(`calendar with option month_overflow not set (default)`, async () => {
@@ -5124,7 +5124,7 @@ test(`calendar with option month_overflow not set (default)`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_event`).toHaveCount(2);
+    expect(`.w_event`).toHaveCount(2);
     expect(".fc-day-disabled").toHaveCount(0);
     expect.verifySteps(["search_read"]);
 });
@@ -5174,8 +5174,8 @@ test(`calendar with option month_overflow set to false`, async () => {
             </calendar>
         `,
     });
-    expect(".o_event").toHaveCount(1);
-    expect(".o_calendar_current .fc-day-disabled").toHaveCount(4);
+    expect(".w_event").toHaveCount(1);
+    expect(".w_calendar_current .fc-day-disabled").toHaveCount(4);
     expect.verifySteps(["search_read"]);
 });
 
@@ -5192,7 +5192,7 @@ test(`can not select invalid scale from datepicker`, async () => {
         `,
     });
 
-    await contains(`.o_datetime_picker .o_today`).click();
+    await contains(`.w_datetime_picker .w_today`).click();
     // test would fail here if we went to week mode
     expect(`.fc-dayGridMonth-view`).toHaveCount(1);
 });
@@ -5233,10 +5233,10 @@ test(`calendar with custom quick create view: reload after save`, async () => {
     expect(`.fc-event:contains("new event")`).toHaveCount(0);
 
     await clickAllDaySlot("2016-12-14");
-    expect(`.modal .o_form_view`).toHaveCount(1);
+    expect(`.modal .w_form_view`).toHaveCount(1);
 
-    await contains(`.modal .o_field_widget[name=name] input`).edit("new event");
-    await contains(`.modal-footer .o_form_button_save`).click();
+    await contains(`.modal .w_field_widget[name=name] input`).edit("new event");
+    await contains(`.modal-footer .w_form_button_save`).click();
     expect(`.modal`).toHaveCount(0);
     expect(`.fc-event:contains("new event")`).toHaveCount(1);
 });
@@ -5316,10 +5316,10 @@ test(`calendar render properties in popover`, async () => {
 
     await clickEvent(1);
     // Only the 2 properties with view_in_cards=true are shown ("property_3" is hidden):
-    expect(`.o_popover .o_card_property_field`).toHaveCount(2);
+    expect(`.w_popover .w_card_property_field`).toHaveCount(2);
     // Values:
-    expect(`.o_popover .o_card_property_field:eq(0) span`).toHaveText("hello");
-    expect(`.o_popover .o_card_property_field:eq(1) span`).toHaveText("B");
+    expect(`.w_popover .w_card_property_field:eq(0) span`).toHaveText("hello");
+    expect(`.w_popover .w_card_property_field:eq(1) span`).toHaveText("B");
 });
 
 test(`calendar create record with default properties`, async () => {
@@ -5367,8 +5367,8 @@ test(`calendar show past events with background blur`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" mode="week"/>`,
     });
-    expect(`.o_event`).toHaveCount(5);
-    expect(`.fc-event.o_past_event`).toHaveCount(4);
+    expect(`.w_event`).toHaveCount(5);
+    expect(`.fc-event.w_past_event`).toHaveCount(4);
 });
 
 test.tags("desktop");
@@ -5386,12 +5386,12 @@ test(`calendar sidepanel can be collapsed/expanded`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" mode="week"/>`,
     });
-    expect(`.o_calendar_sidepanel`).toHaveCount(1);
-    await contains(`.o_calendar_sidebar_controller button`).click();
-    expect(`.o_calendar_sidepanel`).toHaveCount(0);
+    expect(`.w_calendar_sidepanel`).toHaveCount(1);
+    await contains(`.w_calendar_sidebar_controller button`).click();
+    expect(`.w_calendar_sidepanel`).toHaveCount(0);
     expect.verifySteps([["setItem", "calendar_sidepanel_expanded,-1,false", false]]);
-    await contains(`.o_calendar_sidebar_controller button`).click();
-    expect(`.o_calendar_sidepanel`).toHaveCount(1);
+    await contains(`.w_calendar_sidebar_controller button`).click();
+    expect(`.w_calendar_sidepanel`).toHaveCount(1);
     expect.verifySteps([["setItem", "calendar_sidepanel_expanded,-1,false", true]]);
 });
 
@@ -5403,7 +5403,7 @@ test(`calendar sidepanel can be collapsed by default if it was set in local stor
         type: "calendar",
         arch: `<calendar date_start="start" mode="week"/>`,
     });
-    expect(`.o_calendar_sidepanel`).toHaveCount(0);
+    expect(`.w_calendar_sidepanel`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -5413,29 +5413,29 @@ test("calendar sidebar reacts to isSmall changes", async () => {
         type: "calendar",
         arch: `<calendar date_start="start" mode="week"/>`,
     });
-    expect(".o_calendar_renderer").toHaveCount(1);
-    expect(".o_calendar_sidepanel").toHaveCount(1);
-    expect(".o_calendar_sidebar").toHaveCount(0);
-    expect(".o_other_calendar_panel").toHaveCount(0);
+    expect(".w_calendar_renderer").toHaveCount(1);
+    expect(".w_calendar_sidepanel").toHaveCount(1);
+    expect(".w_calendar_sidebar").toHaveCount(0);
+    expect(".w_other_calendar_panel").toHaveCount(0);
 
     // Reduce the viewport to a mobile size (isSmall = true)
     // The sidepanel (which is expanded by default) should be hidden without interaction,
     // and swapped for the mobile filter panel's toggle bar instead of the desktop sidepanel.
     await resize({ width: 500 });
     await animationFrame();
-    expect(".o_calendar_renderer").toHaveCount(1);
-    expect(".o_calendar_sidepanel").toHaveCount(0);
-    expect(".o_calendar_sidebar").toHaveCount(0);
-    expect(".o_other_calendar_panel").toHaveCount(1);
+    expect(".w_calendar_renderer").toHaveCount(1);
+    expect(".w_calendar_sidepanel").toHaveCount(0);
+    expect(".w_calendar_sidebar").toHaveCount(0);
+    expect(".w_other_calendar_panel").toHaveCount(1);
 
     // Expand the viewport to desktop size, the sidepanel should show again,
     // and the mobile filter panel should be removed.
     await resize({ width: 1200 });
     await animationFrame();
-    expect(".o_calendar_renderer").toHaveCount(1);
-    expect(".o_calendar_sidepanel").toHaveCount(1);
-    expect(".o_calendar_sidebar").toHaveCount(0);
-    expect(".o_other_calendar_panel").toHaveCount(0);
+    expect(".w_calendar_renderer").toHaveCount(1);
+    expect(".w_calendar_sidepanel").toHaveCount(1);
+    expect(".w_calendar_sidebar").toHaveCount(0);
+    expect(".w_other_calendar_panel").toHaveCount(0);
 });
 
 test(`calendar should show date information on header`, async () => {
@@ -5446,26 +5446,26 @@ test(`calendar should show date information on header`, async () => {
         type: "calendar",
         arch: `<calendar date_start="start" mode="week"/>`,
     });
-    expect(`.o_calendar_header h5`).toHaveText("December 2015\nWeek 52");
+    expect(`.w_calendar_header h5`).toHaveText("December 2015\nWeek 52");
 
     await changeScale("day");
-    expect(`.o_calendar_header h5`).toHaveText("26 December 2015");
+    expect(`.w_calendar_header h5`).toHaveText("26 December 2015");
 
     await changeScale("month");
-    expect(`.o_calendar_header h5`).toHaveText("December 2015");
+    expect(`.w_calendar_header h5`).toHaveText("December 2015");
 
     await changeScale("year");
-    expect(`.o_calendar_header h5`).toHaveText("2015");
+    expect(`.w_calendar_header h5`).toHaveText("2015");
 
     await changeScale("week");
     await navigate("next");
-    expect(`.o_calendar_header h5`).toHaveText("December 2015 - January 2016\nWeek 53");
+    expect(`.w_calendar_header h5`).toHaveText("December 2015 - January 2016\nWeek 53");
 
     await navigate("prev");
     await navigate("prev");
     await navigate("prev");
     await navigate("prev");
-    expect(`.o_calendar_header h5`).toHaveText("November - December 2015\nWeek 49");
+    expect(`.w_calendar_header h5`).toHaveText("November - December 2015\nWeek 49");
 });
 
 test(`calendar sidebar filters are ASC sorted (not valued @end)`, async () => {
@@ -5518,7 +5518,7 @@ test(`calendar sidebar filters are ASC sorted (not valued @end)`, async () => {
         `,
     });
     await displayCalendarPanel();
-    expect(queryAllTexts`.o_calendar_filter_items .o_cw_filter_title`).toEqual([
+    expect(queryAllTexts`.w_calendar_filter_items .w_cw_filter_title`).toEqual([
         "00 - bazar",
         "0 - chouette",
         "1 - brol",
@@ -5567,15 +5567,15 @@ test("sample data are not removed when switching back from calendar view", async
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(`.o_list_view`).toHaveCount(1);
-    expect(`.o_view_sample_data`).toHaveCount(1);
+    expect(`.w_list_view`).toHaveCount(1);
+    expect(`.w_view_sample_data`).toHaveCount(1);
 
     await getService("action").switchView("calendar");
-    expect(`.o_calendar_container`).toHaveCount(1);
+    expect(`.w_calendar_container`).toHaveCount(1);
 
     await getService("action").switchView("list");
-    expect(`.o_list_view`).toHaveCount(1);
-    expect(`.o_view_sample_data`).toHaveCount(1);
+    expect(`.w_list_view`).toHaveCount(1);
+    expect(`.w_view_sample_data`).toHaveCount(1);
 });
 
 test(`Scale: scale default is fetched from localStorage`, async () => {
@@ -5616,10 +5616,10 @@ test(`scroll to current hour when clicking on today`, async () => {
     });
     // Default scroll time should be 6am no matter the current hour
     expect(queryOne(".fc-scroller:last").scrollTop).toBeWithin(280, 300);
-    await contains(".o_calendar_button_today").click();
+    await contains(".w_calendar_button_today").click();
     expect(queryOne(".fc-scroller:last").scrollTop).toBe(0);
     mockDate("2016-12-12T20:00:00", 1);
-    await contains(".o_calendar_button_today").click();
+    await contains(".w_calendar_button_today").click();
     expect(queryOne(".fc-scroller:last").scrollTop).toBeWithin(620, 640);
 });
 
@@ -5700,18 +5700,18 @@ test("update time while drag and drop on month mode", async () => {
     });
 
     await clickDate("2016-12-20");
-    await contains(".modal-body .o_field_widget[name=name] input").edit("An event");
-    await contains(".modal-body .o_field_widget[name=start] button").click();
-    await contains(".modal-body .o_field_widget[name=start] input").edit("2016-12-20 08:00:00");
-    await contains(".modal-body .o_field_widget[name=stop] button").click();
-    await contains(".modal-body .o_field_widget[name=stop] input").edit("2016-12-24 10:00:00");
-    await contains(".modal .o_form_button_save").click();
+    await contains(".modal-body .w_field_widget[name=name] input").edit("An event");
+    await contains(".modal-body .w_field_widget[name=start] button").click();
+    await contains(".modal-body .w_field_widget[name=start] input").edit("2016-12-20 08:00:00");
+    await contains(".modal-body .w_field_widget[name=stop] button").click();
+    await contains(".modal-body .w_field_widget[name=stop] input").edit("2016-12-24 10:00:00");
+    await contains(".modal .w_form_button_save").click();
     await moveEventToDate(8, "2016-12-27");
     await clickEvent(8);
-    await contains(".o_cw_popover_edit").click();
+    await contains(".w_cw_popover_edit").click();
 
-    expect(".o_field_widget[name='start']").toHaveText("Dec 25, 8:00 AM");
-    expect(".o_field_widget[name='stop']").toHaveText("Dec 29, 10:00 AM");
+    expect(".w_field_widget[name='start']").toHaveText("Dec 25, 8:00 AM");
+    expect(".w_field_widget[name='stop']").toHaveText("Dec 29, 10:00 AM");
 });
 
 test("html and boolean fields on calendar shouldn't have a tooltip", async () => {
@@ -5729,12 +5729,12 @@ test("html and boolean fields on calendar shouldn't have a tooltip", async () =>
     });
 
     await clickEvent(MockServer.env["event"][0].id);
-    expect(`.o_card_record .o_field_widget[name="description"]`).toHaveCount(1);
-    expect(`.o_card_record > div:has(.o_field_widget[name="description"])`).not.toHaveAttribute(
+    expect(`.w_card_record .w_field_widget[name="description"]`).toHaveCount(1);
+    expect(`.w_card_record > div:has(.w_field_widget[name="description"])`).not.toHaveAttribute(
         "data-tooltip"
     );
-    expect(`.o_card_record .o_field_widget[name="is_all_day"]`).toHaveCount(1);
-    expect(`.o_card_record > div:has(.o_field_widget[name="is_all_day"])`).not.toHaveAttribute(
+    expect(`.w_card_record .w_field_widget[name="is_all_day"]`).toHaveCount(1);
+    expect(`.w_card_record > div:has(.w_field_widget[name="is_all_day"])`).not.toHaveAttribute(
         "data-tooltip"
     );
 });
@@ -5747,36 +5747,36 @@ test("simple calendar rendering in mobile", async () => {
         arch: `<calendar date_start="start" date_stop="stop"><field name="name"/></calendar>`,
     });
 
-    expect(".o_calendar_button_prev").toHaveCount(0, { message: "prev button should be hidden" });
-    expect(".o_calendar_button_next").toHaveCount(0, { message: "next button should be hidden" });
-    expect(".o_calendar_container .o_calendar_header button.o_calendar_button_today").toBeVisible({
+    expect(".w_calendar_button_prev").toHaveCount(0, { message: "prev button should be hidden" });
+    expect(".w_calendar_button_next").toHaveCount(0, { message: "next button should be hidden" });
+    expect(".w_calendar_container .w_calendar_header button.w_calendar_button_today").toBeVisible({
         message: "today button should be visible",
     });
     // Test all views
     // displays month mode by default
-    expect(".o_calendar_container .o_calendar_header .dropdown-toggle").toHaveText("Week", {
+    expect(".w_calendar_container .w_calendar_header .dropdown-toggle").toHaveText("Week", {
         message: "should display the current week",
     });
     // switch to day mode
-    await contains(".o_calendar_container .o_calendar_header .dropdown-toggle").click();
-    await contains(".o-dropdown--menu .o_scale_button_day").click();
+    await contains(".w_calendar_container .w_calendar_header .dropdown-toggle").click();
+    await contains(".w-dropdown--menu .w_scale_button_day").click();
     await animationFrame();
-    expect(".o_calendar_container .o_calendar_header .dropdown-toggle").toHaveText("Day", {
+    expect(".w_calendar_container .w_calendar_header .dropdown-toggle").toHaveText("Day", {
         message: "should display the current day",
     });
     // switch to month mode
-    await contains(".o_calendar_container .o_calendar_header .dropdown-toggle").click();
-    await contains(".o-dropdown--menu .o_scale_button_month").click();
+    await contains(".w_calendar_container .w_calendar_header .dropdown-toggle").click();
+    await contains(".w-dropdown--menu .w_scale_button_month").click();
     // await nextTick();
-    expect(".o_calendar_container .o_calendar_header .dropdown-toggle").toHaveText("Month", {
+    expect(".w_calendar_container .w_calendar_header .dropdown-toggle").toHaveText("Month", {
         message: "should display the current month",
     });
 
     // switch to year mode
-    await contains(".o_calendar_container .o_calendar_header .dropdown-toggle").click();
-    await contains(".o-dropdown--menu .o_scale_button_year").click();
+    await contains(".w_calendar_container .w_calendar_header .dropdown-toggle").click();
+    await contains(".w-dropdown--menu .w_scale_button_year").click();
     // await nextTick();
-    expect(".o_calendar_container .o_calendar_header .dropdown-toggle").toHaveText("Year", {
+    expect(".w_calendar_container .w_calendar_header .dropdown-toggle").toHaveText("Year", {
         message: "should display the current year",
     });
 });
@@ -5790,13 +5790,13 @@ test("calendar: popover rendering in mobile", async () => {
     });
 
     await clickEvent(1);
-    expect(".o_cw_popover").toHaveCount(1);
+    expect(".w_cw_popover").toHaveCount(1);
 
     // note: these buttons render as part of the card's own footer (inside the modal
     // body), not projected into the Dialog's actual bootstrap `.modal-footer` slot
-    expect(".o_cw_popover .o_popover_footer .btn").toHaveCount(2);
-    expect(".o_cw_popover .o_popover_footer .btn.btn-primary.o_cw_popover_edit").toHaveCount(1);
-    expect(".o_cw_popover .o_popover_footer .btn.btn-danger.o_cw_popover_delete").toHaveCount(1);
+    expect(".w_cw_popover .w_popover_footer .btn").toHaveCount(2);
+    expect(".w_cw_popover .w_popover_footer .btn.btn-primary.w_cw_popover_edit").toHaveCount(1);
+    expect(".w_cw_popover .w_popover_footer .btn.btn-danger.w_cw_popover_delete").toHaveCount(1);
 });
 
 test.tags("mobile");
@@ -5813,7 +5813,7 @@ test("calendar: today button", async () => {
 
     expect(queryFirst(".fc-col-header-cell[data-date]").dataset.date).toBe("2016-12-11");
 
-    await contains(".o_calendar_button_today").click();
+    await contains(".w_calendar_button_today").click();
     expect(queryFirst(".fc-col-header-cell[data-date]").dataset.date).toBe("2016-12-12");
 });
 
@@ -5829,33 +5829,33 @@ test("calendar: show and change other calendar", async () => {
             </calendar>`,
     });
 
-    expect(".o_calendar_renderer").toHaveCount(1);
-    expect(".o_other_calendar_panel").toHaveCount(1);
+    expect(".w_calendar_renderer").toHaveCount(1);
+    expect(".w_other_calendar_panel").toHaveCount(1);
     await displayCalendarPanel();
-    expect(".o_calendar_filter_items_checkall").toHaveCount(1, {
+    expect(".w_calendar_filter_items_checkall").toHaveCount(1, {
         message: "should contain one filter to check all",
     });
-    expect(".o_calendar_filter_item").toHaveCount(2, {
+    expect(".w_calendar_filter_item").toHaveCount(2, {
         message: "should contain 2 child nodes -> 2 resources",
     });
 
-    expect(".o_calendar_sidepanel").toHaveCount(1);
-    expect(".o_calendar_renderer").toHaveCount(0);
-    expect(".o_calendar_filter").toHaveCount(1);
-    expect(".o_calendar_filter[data-name=partner_id]").toHaveCount(1);
+    expect(".w_calendar_sidepanel").toHaveCount(1);
+    expect(".w_calendar_renderer").toHaveCount(0);
+    expect(".w_calendar_filter").toHaveCount(1);
+    expect(".w_calendar_filter[data-name=partner_id]").toHaveCount(1);
 
     // Toggle the whole section filters by unchecking the all items checkbox
     await hideCalendarPanel();
     await toggleSectionFilter("partner_id");
     await displayCalendarPanel();
-    expect(".o_other_calendar_panel .o_filter > *").toHaveCount(0, {
+    expect(".w_other_calendar_panel .w_filter > *").toHaveCount(0, {
         message: "should contain 0 child nodes -> no filters selected",
     });
 
     // Toggle again the other calendar panel should hide the sidebar and show the calendar view
-    await contains(".o_other_calendar_panel").click();
-    expect(".o_calendar_sidepanel").toHaveCount(0);
-    expect(".o_calendar_renderer").toHaveCount(1);
+    await contains(".w_other_calendar_panel").click();
+    expect(".w_calendar_sidepanel").toHaveCount(0);
+    expect(".w_calendar_renderer").toHaveCount(1);
 });
 
 test.tags("mobile");
@@ -5954,34 +5954,34 @@ test("calendar (year): tap on date switch to day scale", async () => {
     expandCalendarView();
 
     // Should display year view
-    expect(".o_calendar_current .fc-dayGridYear-view").toHaveCount(1);
-    expect(".o_calendar_current .fc-month-container").toHaveCount(12);
+    expect(".w_calendar_current .fc-dayGridYear-view").toHaveCount(1);
+    expect(".w_calendar_current .fc-month-container").toHaveCount(12);
 
     // Tap on a date
-    await click(".o_calendar_current .fc-daygrid-day[data-date='2016-02-05']");
+    await click(".w_calendar_current .fc-daygrid-day[data-date='2016-02-05']");
     await animationFrame(); // switch renderer
     await animationFrame(); // await breadcrumb update
-    expect(".o_calendar_container .o_calendar_header h5").toHaveText("5 February 2016");
+    expect(".w_calendar_container .w_calendar_header h5").toHaveText("5 February 2016");
 
     // Should display day view
-    expect(".o_calendar_current .fc-dayGridYear-view").toHaveCount(0);
-    expect(".o_calendar_current .fc-timeGridDay-view").toHaveCount(1);
-    expect(queryFirst(".o_calendar_current .fc-col-header-cell[data-date]").dataset.date).toBe(
+    expect(".w_calendar_current .fc-dayGridYear-view").toHaveCount(0);
+    expect(".w_calendar_current .fc-timeGridDay-view").toHaveCount(1);
+    expect(queryFirst(".w_calendar_current .fc-col-header-cell[data-date]").dataset.date).toBe(
         "2016-02-05"
     );
 
     // Change scale to month
     await changeScale("month");
-    expect(".o_calendar_container .o_calendar_header h5").toHaveCount(1);
-    expect(".o_calendar_container .o_calendar_header h5").toHaveText("February 2016");
-    expect(".o_calendar_current .fc-timeGridDay-view").toHaveCount(0);
-    expect(".o_calendar_current .fc-dayGridMonth-view").toHaveCount(1);
+    expect(".w_calendar_container .w_calendar_header h5").toHaveCount(1);
+    expect(".w_calendar_container .w_calendar_header h5").toHaveText("February 2016");
+    expect(".w_calendar_current .fc-timeGridDay-view").toHaveCount(0);
+    expect(".w_calendar_current .fc-dayGridMonth-view").toHaveCount(1);
 
     // Tap on a date
-    await click(".o_calendar_current .fc-daygrid-day[data-date='2016-02-10']");
+    await click(".w_calendar_current .fc-daygrid-day[data-date='2016-02-10']");
     await animationFrame(); // await reload & render
     await animationFrame(); // await breadcrumb update
-    expect(".o_calendar_container .o_calendar_header h5").toHaveText("February 2016");
+    expect(".w_calendar_container .w_calendar_header h5").toHaveText("February 2016");
 
     // should open a Quick create modal view in mobile on short tap on date in monthly view
     expect(".modal").toHaveCount(1);
@@ -6036,29 +6036,29 @@ test(`calendar view with show_unusual_days`, async () => {
             </calendar>
         `,
     });
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveCount(1);
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveCount(1);
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
 
     unusualDays = {
         "2016-12-14": true,
         "2016-12-21": true,
     };
     await changeScale("month");
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveCount(2);
-    expect(".fc-daygrid-day.o_calendar_disabled:eq(0)").toHaveAttribute("data-date", "2016-12-14");
-    expect(".fc-daygrid-day.o_calendar_disabled:eq(1)").toHaveAttribute("data-date", "2016-12-21");
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveCount(2);
+    expect(".fc-daygrid-day.w_calendar_disabled:eq(0)").toHaveAttribute("data-date", "2016-12-14");
+    expect(".fc-daygrid-day.w_calendar_disabled:eq(1)").toHaveAttribute("data-date", "2016-12-21");
 
     await changeScale("week");
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveCount(1);
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveCount(1);
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
 
     unusualDays = {};
     await navigate("next");
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveCount(0);
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveCount(0);
 
     await navigate("prev");
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveCount(1);
-    expect(".fc-daygrid-day.o_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveCount(1);
+    expect(".fc-daygrid-day.w_calendar_disabled").toHaveAttribute("data-date", "2016-12-14");
 
     expect.verifySteps([
         "get_unusual_days from 2016-12-10 23:00:00 to 2016-12-17 22:59:59",
@@ -6160,7 +6160,7 @@ test(`calendar renderer is rendered twice after date change`, async () => {
     expect.verifySteps(["before load", "after load", "rendered"], {
         message: "no additional notify",
     });
-    await contains(".o_calendar_button_next").click();
+    await contains(".w_calendar_button_next").click();
     expect.verifySteps(["before load", "rendered", "rendered", "after load"], {
         // render is trigger sync before load ends
         message: "additional notify is called to prerender the view and avoid flickering",
@@ -6179,7 +6179,7 @@ test(`calendar with filters and count aggregate`, async () => {
         `,
     });
 
-    expect(queryAllTexts(".o_calendar_filter_item span")).toEqual(["partner 1", "2", "partner 2"]);
+    expect(queryAllTexts(".w_calendar_filter_item span")).toEqual(["partner 1", "2", "partner 2"]);
 });
 
 test.tags("desktop");
@@ -6200,7 +6200,7 @@ test(`calendar with dynamic filters and sum aggregate`, async () => {
         `,
     });
 
-    expect(queryAllTexts(".o_calendar_filter_item span")).toEqual([
+    expect(queryAllTexts(".w_calendar_filter_item span")).toEqual([
         "partner 1",
         "4,550",
         "partner 4",
@@ -6224,13 +6224,13 @@ test(`Hour format mirror event`, async () => {
     await selectTimeRange("2016-12-13 11:00:00", "2016-12-13 16:30:00");
     // Verify highlighted event
     expect(`.fc-event-mirror`).toHaveText("11:00 - 16:30");
-    await contains(`.o-calendar-quick-create--input`).edit("mirror_event", { confirm: false });
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--input`).edit("mirror_event", { confirm: false });
+    await contains(`.w-calendar-quick-create--create-btn`).click();
 
     expect.verifySteps(["create"]);
 
-    expect(`.o_event[data-event-id="8"] .fc-event-main .o_event_title`).toHaveText("mirror_event");
-    expect(`.o_event[data-event-id="8"] .fc-event-main .fc-time`).toHaveText("11:00");
+    expect(`.w_event[data-event-id="8"] .fc-event-main .w_event_title`).toHaveText("mirror_event");
+    expect(`.w_event[data-event-id="8"] .fc-event-main .fc-time`).toHaveText("11:00");
 });
 
 test(`three calendars are rendered in the ActionSwiper on touch devices`, async () => {
@@ -6247,11 +6247,11 @@ test(`three calendars are rendered in the ActionSwiper on touch devices`, async 
         arch: `<calendar date_start="start" date_stop="stop" mode="week"/>`,
     });
     expect.verifySteps(["event.search_read"]);
-    expect(".o_calendar_widget").toHaveCount(3);
-    expect(".o_actionswiper_left_swipe_area .fc-event").toHaveCount(2, {
+    expect(".w_calendar_widget").toHaveCount(3);
+    expect(".w_actionswiper_left_swipe_area .fc-event").toHaveCount(2, {
         message: "events are displayed on the following month",
     });
-    expect(".o_actionswiper_left_swipe_area .fc-daygrid-body .fc-event").toHaveText("event 5");
+    expect(".w_actionswiper_left_swipe_area .fc-daygrid-body .fc-event").toHaveText("event 5");
 });
 
 test.tags("desktop");
@@ -6262,24 +6262,24 @@ test("swiping from an event being dragged on touch devices", async () => {
         type: "calendar",
         arch: `<calendar date_start="start" date_stop="stop" mode="month"/>`,
     });
-    expect(".o_calendar_header h5").toHaveText("December 2016");
+    expect(".w_calendar_header h5").toHaveText("December 2016");
 
     const eventEl = findEvent(2);
-    const swipeWidth = queryRect(".o_actionswiper").width;
+    const swipeWidth = queryRect(".w_actionswiper").width;
     const { moveTo, drop } = await drag(eventEl, { position: { x: 10 }, relative: true });
     // move a bit before the swiper gets disabled
     await moveTo(eventEl, { position: { x: 5 }, relative: true });
     // long press: fullcalendar starts dragging the event
     await advanceTime(TOUCH_SELECTION_THRESHOLD);
-    expect(".o_calendar_widget.o_interacting").toHaveCount(1);
+    expect(".w_calendar_widget.w_interacting").toHaveCount(1);
 
     // swipe to the next month: the calendar is re-rendered while the event is being dragged
     await moveTo(eventEl, { position: { x: -swipeWidth }, relative: true });
     await drop();
     await advanceTime(1000);
     await animationFrame();
-    expect(".o_calendar_header h5").toHaveText("January 2017");
-    expect(".o_interacting").toHaveCount(0);
+    expect(".w_calendar_header h5").toHaveText("January 2017");
+    expect(".w_interacting").toHaveCount(0);
 });
 
 test("Revert to the previous state if updateRecord fails (onEventResize)", async () => {
@@ -6372,8 +6372,8 @@ test(`drag and drop events from side panel to schedule them`, async () => {
         `,
         context: { from_custom_context: true },
     });
-    expect(".o_event_to_schedule_draggable").toHaveCount(2);
-    const { drop, moveTo } = await contains(".o_event_to_schedule_draggable:first").drag();
+    expect(".w_event_to_schedule_draggable").toHaveCount(2);
+    const { drop, moveTo } = await contains(".w_event_to_schedule_draggable:first").drag();
     const dateCell = queryFirst(".fc-day.fc-day-today.fc-daygrid-day");
     expectedDate = luxon.DateTime.fromISO(dateCell.dataset.date);
     await moveTo(dateCell);
@@ -6386,8 +6386,8 @@ test(`drag and drop events from side panel to schedule them`, async () => {
         "search_read",
         "fetch events to schedule",
     ]);
-    expect(".o_event_to_schedule_draggable").toHaveCount(1);
-    expect(".o_event_to_schedule_draggable").toHaveText("event 9");
+    expect(".w_event_to_schedule_draggable").toHaveCount(1);
+    expect(".w_event_to_schedule_draggable").toHaveText("event 9");
 });
 
 test.tags("desktop");
@@ -6419,13 +6419,13 @@ test(`load more events to schedule`, async () => {
             </calendar>
         `,
     });
-    expect(".o_event_to_schedule_draggable").toHaveCount(20);
-    expect(".o_calendar_sidepanel button:contains(Load More)").toHaveCount(1);
+    expect(".w_event_to_schedule_draggable").toHaveCount(20);
+    expect(".w_calendar_sidepanel button:contains(Load More)").toHaveCount(1);
     expect.verifySteps(["search_read", "fetch events to schedule"]);
     expectedLimit += 20;
-    await contains(".o_calendar_sidepanel button:contains(Load More)").click();
+    await contains(".w_calendar_sidepanel button:contains(Load More)").click();
     expect.verifySteps(["fetch events to schedule"]);
-    expect(".o_event_to_schedule_draggable").toHaveCount(33);
+    expect(".w_event_to_schedule_draggable").toHaveCount(33);
 });
 
 test.tags("desktop");
@@ -6446,8 +6446,8 @@ test(`no event to schedule`, async () => {
             </calendar>
         `,
     });
-    expect(".o_event_to_schedule_draggable").toHaveCount(0);
-    expect(".o_calendar_sidepanel h5").toHaveText("Nothing to schedule");
+    expect(".w_event_to_schedule_draggable").toHaveCount(0);
+    expect(".w_calendar_sidepanel h5").toHaveText("Nothing to schedule");
     expect.verifySteps(["search_read", "fetch events to schedule"]);
 });
 
@@ -6478,20 +6478,20 @@ test(`drag and drop to unschedule`, async () => {
         `,
         context: { from_custom_context: true },
     });
-    expect(".o_calendar_unschedule_zone").toHaveCount(0);
-    expect(".o_calendar_sidepanel h5").toBeVisible();
-    expect(".o_calendar_sidepanel h5").toHaveText("Nothing to schedule");
+    expect(".w_calendar_unschedule_zone").toHaveCount(0);
+    expect(".w_calendar_sidepanel h5").toBeVisible();
+    expect(".w_calendar_sidepanel h5").toHaveText("Nothing to schedule");
     expect.verifySteps(["search_read", "fetch events to schedule"]);
-    const { drop } = await contains('.o_event[data-event-id="2"]').drag();
-    expect(".o_calendar_unschedule_zone").toHaveCount(1);
-    expect(".o_calendar_unschedule_zone").toHaveText("Drop here to unschedule");
-    expect(".o_calendar_sidepanel h5").not.toBeVisible();
-    await drop(queryFirst(".o_calendar_unschedule_zone"));
+    const { drop } = await contains('.w_event[data-event-id="2"]').drag();
+    expect(".w_calendar_unschedule_zone").toHaveCount(1);
+    expect(".w_calendar_unschedule_zone").toHaveText("Drop here to unschedule");
+    expect(".w_calendar_sidepanel h5").not.toBeVisible();
+    await drop(queryFirst(".w_calendar_unschedule_zone"));
     expect.verifySteps(["write", "search_read", "fetch events to schedule"]);
-    expect(".o_event_to_schedule_draggable").toHaveCount(1);
-    expect(".o_event_to_schedule_draggable").toHaveText("event 2");
-    expect(".o_calendar_sidepanel h5").toBeVisible();
-    expect(".o_calendar_sidepanel h5").toHaveText("1 to schedule");
+    expect(".w_event_to_schedule_draggable").toHaveCount(1);
+    expect(".w_event_to_schedule_draggable").toHaveText("event 2");
+    expect(".w_calendar_sidepanel h5").toBeVisible();
+    expect(".w_calendar_sidepanel h5").toHaveText("1 to schedule");
 });
 
 test.tags("desktop");
@@ -6510,8 +6510,8 @@ test(`show display name of event in edit mode`, async () => {
             <calendar schedule="1" date_start="start" date_stop="stop" event_open_popup="1"/>
         `,
     });
-    expect(".o_event_to_schedule_draggable span").toHaveText("event 8");
-    await contains(".o_event_to_schedule_draggable").click();
+    expect(".w_event_to_schedule_draggable span").toHaveText("event 8");
+    await contains(".w_event_to_schedule_draggable").click();
     expect(".modal-content .modal-title").toHaveText("Open: event 8", {
         message: "The title of the edit modal should contain the display name of the event",
     });

@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/purchase_requisition/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -83,13 +83,13 @@ msgid "A note"
 msgstr "Uma nota"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "A product is required on purchase agreement lines."
 msgstr "Um produto é obrigatório nas linhas do acordo de compras."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "A section or note line cannot have a product."
 msgstr "Uma linha de seção ou nota não pode ter um produto."
@@ -233,7 +233,7 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "Cancelled by the agreement associated to this quotation."
 msgstr "Cancelado pelo acordo associado a esta cotação."
@@ -340,7 +340,7 @@ msgid "End Date"
 msgstr "Data de término"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "End date cannot be earlier than start date. Please check dates for "
@@ -487,7 +487,7 @@ msgid "Name, TIN, Email, or Reference"
 msgstr "Nome, CNPJ, e-mail ou referência"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "New"
 msgstr "Novo"
@@ -813,7 +813,7 @@ msgid "Terms and Conditions"
 msgstr "Termos e Condições"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "There is already an open blanket order for this supplier. We suggest you "
@@ -823,7 +823,7 @@ msgstr ""
 "Sugerimos concluir este acordo de fornecimento em vez de criar um novo."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "To close this purchase requisition, cancel related Requests for Quotation.\n"
@@ -870,19 +870,19 @@ msgid "Vendor"
 msgstr "Fornecedor"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "Warning for %s"
 msgstr "Aviso para %s"
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "You can only delete draft or cancelled requisitions."
 msgstr "Você só pode excluir requisições em rascunho ou canceladas."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "You cannot change the Agreement Type or Company of a not draft purchase "
@@ -892,7 +892,7 @@ msgstr ""
 "compra não provisório."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "You cannot change the type of a purchase agreement line. Instead you should "
@@ -903,19 +903,19 @@ msgstr ""
 "apropriado."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "You cannot confirm a blanket order with lines missing a price."
 msgstr "Não é possível confirmar um pedido genérico com linhas sem preço."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid "You cannot confirm a blanket order with lines missing a quantity."
 msgstr "Não é possível confirmar um pedido genérico com linhas sem quantidade."
 
 #. module: purchase_requisition
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_requisition/models/purchase_requisition.py:0
 msgid ""
 "You cannot have a negative or unit price of 0 for an already confirmed "

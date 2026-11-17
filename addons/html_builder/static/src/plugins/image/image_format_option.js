@@ -64,7 +64,7 @@ export function computeMaxDisplayWidth(img, MAX_SUGGESTED_WIDTH = 1920) {
         // smaller screens. So we suggest the width of the current image unless
         // it is smaller than the size of the container on the md breapoint
         // (which is where our bootstrap columns fallback to full container
-        // width since we only use col-lg-* in Odoo).
+        // width since we only use col-lg-* in Weth).
     } else if (img.closest(".container, .o_container_small")) {
         const mdContainerMaxWidth =
             parseFloat(computedStyles.getPropertyValue("--o-md-container-max-width")) || 720;

@@ -1,5 +1,5 @@
 .s_whatsapp {
-    --s_whatsapp-font-family: #{$o-system-fonts};
+    --s_whatsapp-font-family: #{$w-system-fonts};
     --s_whatsapp-font-size: 1rem;
     --s_whatsapp-line-height: 1.5;
     --s_whatsapp-green: #25d366;
@@ -23,7 +23,7 @@
     :not(.oi)::before,
     :not(.oi)::after {
         font-family: inherit;
-    }    
+    }
 
     &:has(.s_whatsapp_fab.s_whatsapp_pos_left) {
         right: auto;
@@ -162,7 +162,12 @@
 
     // Toggle between input box and CTA button
     &[data-is-cta-mode="true"] {
-        .s_whatsapp_input_box { display: none; }
-        .s_whatsapp_cta_box { display: flex; }
+        .s_whatsapp_input_box {
+            display: none;
+        }
+
+        .s_whatsapp_cta_box {
+            display: flex;
+        }
     }
 }

@@ -1,4 +1,4 @@
-.o-debug-widget-btn {
+.w-debug-widget-btn {
     border-radius: 999px;
     z-index: 1040;
 
@@ -24,6 +24,7 @@
     z-index: 1040;
 }
 
-.o_popover, .o-tooltip {
+.o_popover,
+.w-tooltip {
     z-index: 1050;
 }

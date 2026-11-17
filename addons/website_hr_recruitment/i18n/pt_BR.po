@@ -20,7 +20,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/website_hr_recruitment/pt_BR/>\n"
+"weth-20/website_hr_recruitment/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: website_hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/website_hr_recruitment/models/hr_job.py:0
 msgid ""
 "\n"
@@ -274,7 +274,7 @@ msgid "All"
 msgstr "Tudo"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_floating_snippets_plugin.js:0
 msgid "All jobs"
 msgstr "Todas as vagas"
@@ -295,7 +295,7 @@ msgid "Application Info"
 msgstr "Informações da candidatura"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.js:0
 msgid "Applied Job"
 msgstr "Candidatou-se à vaga"
@@ -341,7 +341,7 @@ msgid "Close"
 msgstr "Fechar"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/systray_items/new_content.js:0
 msgid "Company Mismatch"
 msgstr "Incompatibilidade de empresa"
@@ -362,7 +362,7 @@ msgid "Contact us"
 msgstr "Entre em contato"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/widgets/copy_link_menuitem.js:0
 msgid "Copied"
 msgstr "Copiado"
@@ -373,7 +373,7 @@ msgid "Countries"
 msgstr "Países"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Countries Filter"
 msgstr "Filtro de países"
@@ -392,7 +392,7 @@ msgstr ""
 "<i>Novo</i></strong>."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.js:0
 #: model:ir.model,name:website_hr_recruitment.model_hr_department
 msgid "Department"
@@ -404,7 +404,7 @@ msgid "Departments"
 msgstr "Departamentos"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Departments Filter"
 msgstr "Filtro de departamentos"
@@ -455,7 +455,7 @@ msgid "Eat &amp; Drink"
 msgstr "Comida e bebida"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Employment Types Filter"
 msgstr "Filtro de tipos de contratação"
@@ -553,7 +553,7 @@ msgid "Industries"
 msgstr "Setores"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Industries Filter"
 msgstr "Filtro de setor"
@@ -594,7 +594,7 @@ msgid "Job Position"
 msgstr "Cargo"
 
 #. module: website_hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/website_hr_recruitment/controllers/main.py:0
 msgid "Job Title"
 msgstr "Nome do cargo"
@@ -605,7 +605,7 @@ msgid "Job not found"
 msgstr "Vaga não encontrada"
 
 #. module: website_hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/website_hr_recruitment/controllers/main.py:0
 #: code:addons/website_hr_recruitment/models/hr_job.py:0
 #: code:addons/website_hr_recruitment/models/website.py:0
@@ -616,7 +616,7 @@ msgid "Jobs"
 msgstr "Oportunidades de emprego"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Jobs Page"
 msgstr "Página da vaga"
@@ -632,7 +632,7 @@ msgid "Lead the entire sales cycle"
 msgstr "Lidere todo o ciclo de vendas"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.edit.js:0
 msgid "LinkedIn Profile"
 msgstr "Perfil do LinkedIn"
@@ -683,7 +683,7 @@ msgstr ""
 "autonomia"
 
 #. module: website_hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/website_hr_recruitment/models/website_published_multi_mixin.py:0
 msgid ""
 "No website found for the company. Please create a website for this company "
@@ -698,7 +698,7 @@ msgid "Offices"
 msgstr "Escritórios"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Offices Filter"
 msgstr "Filtro de escritórios"
@@ -750,7 +750,7 @@ msgid "Perks"
 msgstr "Benefícios"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.edit.js:0
 msgid "Phone Number"
 msgstr "Número de telefone"
@@ -808,7 +808,7 @@ msgid "Remote"
 msgstr "Remoto"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Reset Filter"
 msgstr "Redefinir filtro"
@@ -840,7 +840,7 @@ msgid "Scheduled"
 msgstr "Agendado"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Search Bar"
 msgstr "Barra de busca"
@@ -856,21 +856,21 @@ msgid "Set if the application is published on the website of the company."
 msgstr "Fica marcado se a candidatura estiver publicada no site da empresa."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/widgets/copy_link_menuitem.js:0
 msgid "Share Job"
 msgstr "Compartilhar vaga"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/website_hr_recruitment/controllers/main.py:0
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.edit.js:0
 msgid "Short Introduction"
 msgstr "Breve introdução"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_option.xml:0
 msgid "Sidebar"
 msgstr "Barra lateral"
@@ -906,19 +906,19 @@ msgid "The full relative URL to access the document through the website."
 msgstr "O URL relativo completo para acessar o documento pelo site."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/widgets/copy_link_menuitem.js:0
 msgid "The job link has been copied to the clipboard."
 msgstr "O link da vaga foi copiado para a área de transferência."
 
 #. module: website_hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/website_hr_recruitment/models/hr_applicant.py:0
 msgid "The job opportunity has been closed."
 msgstr "A vaga de emprego foi fechada."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/interactions/hr_recruitment_form.js:0
 msgid "The profile that you gave us doesn't seems like a linkedin profile"
 msgstr "O perfil que você nos forneceu não parece ser um perfil do LinkedIn"
@@ -936,7 +936,7 @@ msgstr ""
 "currículo."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_floating_snippets_plugin.js:0
 msgid "This job"
 msgstr "Esta vaga"
@@ -951,13 +951,13 @@ msgstr ""
 "acompanhar facilmente o envio de candidaturas."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/website_builder/website_hr_recruitment_floating_snippets_plugin.js:0
 msgid "This page"
 msgstr "esta página"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/systray_items/new_content.js:0
 msgid ""
 "This website belongs to %(company)s, which isn't one of your active "
@@ -967,7 +967,7 @@ msgstr ""
 "Mude para ela primeiro e tente novamente."
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/systray_items/new_content.js:0
 msgid ""
 "This website belongs to a company you don't have access to. Ask your "
@@ -1102,13 +1102,13 @@ msgid "Your <b>contact</b> information is:"
 msgstr "Sua informação de <b>contato</b> é:"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.edit.js:0
 msgid "Your Email"
 msgstr "Seu e-mail"
 
 #. module: website_hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.edit.js:0
 msgid "Your Name"
 msgstr "Seu nome"
@@ -1139,8 +1139,8 @@ msgstr ""
 
 #. module: website_hr_recruitment
 #: model_terms:ir.ui.view,arch_db:website_hr_recruitment.apply
-msgid "e.g. https://www.linkedin.com/in/fpodoo"
-msgstr "ex.: https://www.linkedin.com/in/fpodoo"
+msgid "e.g. https://www.linkedin.com/in/fpweth"
+msgstr "ex.: https://www.linkedin.com/in/fpweth"
 
 #. module: website_hr_recruitment
 #: model_terms:ir.ui.view,arch_db:website_hr_recruitment.job_right_side_bar

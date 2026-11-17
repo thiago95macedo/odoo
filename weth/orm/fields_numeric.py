@@ -272,7 +272,7 @@ class Monetary(Field[float]):
         # cache format: float
         value = float(value or 0.0)
         if value and validate:
-            # FIXME @rco-odoo: currency may not be already initialized if it is
+            # FIXME @rco-weth: currency may not be already initialized if it is
             # a function or related field!
             currency_field = self.get_currency_field(records)
             # sudo and only fetch the currency record in case the user doesn't

@@ -141,7 +141,7 @@ class SaleOrder(models.Model):
         """
 
         def has_ptavs(line, sorted_attr_ids):
-            # TODO instead of sorting on ids, use odoo-defined order for matrix ?
+            # TODO instead of sorting on ids, use weth-defined order for matrix ?
             ptav = line.product_template_attribute_value_ids.ids
             pnav = line.product_no_variant_attribute_value_ids.ids
             pav = pnav + ptav

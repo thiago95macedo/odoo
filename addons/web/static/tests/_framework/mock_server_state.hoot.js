@@ -61,8 +61,8 @@ const SERVER_STATE_VALUES = {
     isRegularUser: true,
     lang: "en",
     multiLang: false,
-    odoobotId: 418,
-    odoobotUid: 518,
+    wethbotId: 418,
+    wethbotUid: 518,
     partnerId: 17,
     partnerName: "Mitchell Admin",
     publicPartnerId: 18,
@@ -84,7 +84,7 @@ const SERVER_STATE_VALUES_SCHEMA = {
     isRegularUser: t.boolean,
     lang: t.string,
     multiLang: t.boolean,
-    odoobotId: t.or([t.number, t.literal(false)]),
+    wethbotId: t.or([t.number, t.literal(false)]),
     partnerId: t.or([t.number, t.literal(false)]),
     partnerName: t.string,
     publicPartnerId: t.or([t.number, t.literal(false)]),
@@ -108,9 +108,9 @@ const getServerStateValues = createJobScopedGetter(
 /** @type {Map<any, (state: ServerState) => any>} */
 const subscriptions = new Map([
     [
-        odoo,
+        weth,
         ({ db, debug, serverVersion }) => ({
-            ...odoo,
+            ...weth,
             debug,
             info: {
                 db,

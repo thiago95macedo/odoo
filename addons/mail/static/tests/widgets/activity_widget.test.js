@@ -43,8 +43,8 @@ test("list activity widget with no activity", async () => {
         arch: `<list><field name="activity_ids" widget="list_activity"/></list>`,
     });
     await expect.waitForSteps(["web_search_read"]);
-    await contains(".o-mail-ActivityButton i[data-icon='schedule']");
-    await contains(".o-mail-ListActivity-summary", { textContent: "" });
+    await contains(".w-mail-ActivityButton i[data-icon='schedule']");
+    await contains(".w-mail-ListActivity-summary", { textContent: "" });
 });
 
 test("list activity widget with activities", async () => {
@@ -87,14 +87,14 @@ test("list activity widget with activities", async () => {
     });
     await contains(":nth-child(1 of .o_data_row)", {
         contains: [
-            [".o-mail-ActivityButton i.text-warning[data-icon='phone']"],
-            [".o-mail-ListActivity-summary:text('Call with Al')"],
+            [".w-mail-ActivityButton i.text-warning[data-icon='phone']"],
+            [".w-mail-ListActivity-summary:text('Call with Al')"],
         ],
     });
     await contains(":nth-child(2 of .o_data_row)", {
         contains: [
-            [".o-mail-ActivityButton i.text-success[data-icon='checklist']"],
-            [".o-mail-ListActivity-summary:text('Type 2')"],
+            [".w-mail-ActivityButton i.text-success[data-icon='checklist']"],
+            [".w-mail-ListActivity-summary:text('Type 2')"],
         ],
     });
 });
@@ -120,8 +120,8 @@ test("list activity widget with exception", async () => {
     await openListView("res.users", {
         arch: "<list><field name='activity_ids' widget='list_activity'/></list>",
     });
-    await contains(".o-mail-ActivityButton i.text-warning[data-icon='warning']");
-    await contains(".o-mail-ListActivity-summary:text('Warning')");
+    await contains(".w-mail-ActivityButton i.text-warning[data-icon='warning']");
+    await contains(".w-mail-ListActivity-summary:text('Warning')");
 });
 
 test("list activity widget: open dropdown", async () => {
@@ -173,15 +173,15 @@ test("list activity widget: open dropdown", async () => {
     await openListView("res.users", {
         arch: "<list><field name='name'/><field name='activity_ids' widget='list_activity'/></list>",
     });
-    await contains(".o-mail-ListActivity-summary:text('Call with Al')");
-    await click(".o-mail-ActivityButton");
+    await contains(".w-mail-ListActivity-summary:text('Call with Al')");
+    await click(".w-mail-ActivityButton");
     await waitStoreFetch("mail.activity");
     await click(
-        ":nth-child(1 of .o-mail-ActivityListPopoverItem) .o-mail-ActivityListPopoverItem-markAsDone"
+        ":nth-child(1 of .w-mail-ActivityListPopoverItem) .w-mail-ActivityListPopoverItem-markAsDone"
     );
-    await click(".o-mail-ActivityMarkAsDone button[aria-label='Done']");
+    await click(".w-mail-ActivityMarkAsDone button[aria-label='Done']");
     await expect.waitForSteps(["action_feedback"]);
-    await contains(".o-mail-ListActivity-summary:text('Meet FP')");
+    await contains(".w-mail-ListActivity-summary:text('Meet FP')");
 });
 
 test("list activity widget: batch selection from list", async (assert) => {
@@ -226,8 +226,8 @@ test("list activity widget: batch selection from list", async (assert) => {
     expect(Boolean(matildeRow)).toBe(true);
     expect(Boolean(alexanderRow)).toBe(true);
     // Clicking on the clock of a partner without selection, open the wizard for that record only
-    await click(".o-mail-ActivityButton", { target: matildeRow });
-    await click(".o-mail-ActivityListPopover button");
+    await click(".w-mail-ActivityButton", { target: matildeRow });
+    await click(".w-mail-ActivityListPopover button");
     await wizardOpened;
     await tick();
     expect(scheduleWizardContext).toEqual({
@@ -237,17 +237,17 @@ test("list activity widget: batch selection from list", async (assert) => {
     });
     await expect.waitForSteps(["do_action_activity"]);
     // We select 2 among the 3 partners created above and click on the clock of one of them
-    await click(".o_list_record_selector .o-checkbox", { target: matildeRow });
-    await click(".o_list_record_selector .o-checkbox", { target: marioRow });
+    await click(".o_list_record_selector .w-checkbox", { target: matildeRow });
+    await click(".o_list_record_selector .w-checkbox", { target: marioRow });
     await contains(".o_selection_box:text('2 selected')");
-    await click(".o-mail-ActivityButton", { target: matildeRow });
+    await click(".w-mail-ActivityButton", { target: matildeRow });
     await contains(
-        ".o-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
+        ".w-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
     );
     await contains(
-        ".o-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
+        ".w-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
     );
-    await click(".o-mail-ActivityListPopover button");
+    await click(".w-mail-ActivityListPopover button");
     await wizardOpened;
     expect(scheduleWizardContext).toEqual({
         // res.partner is ordered "complete_name ASC" so Mario sorts before Matilde, and active_id
@@ -258,12 +258,12 @@ test("list activity widget: batch selection from list", async (assert) => {
     });
     // But when clicking on the clock of one of the non-selected row, it applies to only that row
     ({ promise: wizardOpened, resolve: resolveWizardOpened } = Promise.withResolvers());
-    await click(".o-mail-ActivityButton", { target: alexanderRow });
-    await contains(".o-mail-ActivityListPopover button:text('Schedule an activity')");
+    await click(".w-mail-ActivityButton", { target: alexanderRow });
+    await contains(".w-mail-ActivityListPopover button:text('Schedule an activity')");
     await contains(
-        ".o-mail-ActivityListPopover button:not(:contains('Schedule an activity on selected records'))"
+        ".w-mail-ActivityListPopover button:not(:contains('Schedule an activity on selected records'))"
     );
-    await click(".o-mail-ActivityListPopover button");
+    await click(".w-mail-ActivityListPopover button");
     await wizardOpened;
     expect(scheduleWizardContext).toEqual({
         active_ids: [alexanderId],
@@ -272,14 +272,14 @@ test("list activity widget: batch selection from list", async (assert) => {
     });
     // We now check that when clicking on the clock of the other selected row, it applies to both row
     ({ promise: wizardOpened, resolve: resolveWizardOpened } = Promise.withResolvers());
-    await click(".o-mail-ActivityButton", { target: marioRow });
+    await click(".w-mail-ActivityButton", { target: marioRow });
     await contains(
-        ".o-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
+        ".w-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
     );
     await contains(
-        ".o-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
+        ".w-mail-ActivityListPopover button:text('Schedule an activity on selected records')"
     );
-    await click(".o-mail-ActivityListPopover button");
+    await click(".w-mail-ActivityListPopover button");
     await wizardOpened;
     expect(scheduleWizardContext).toEqual({
         // res.partner is ordered "complete_name ASC" so Mario sorts before Matilde, and active_id
@@ -344,9 +344,9 @@ test("list activity exception widget with activity", async () => {
     });
     await contains(".o_data_row", { count: 2 });
     await contains(":nth-child(1 of .o_data_row) .o_activity_exception_cell", {
-        contains: [".o-mail-ActivityException", { count: 0 }],
+        contains: [".w-mail-ActivityException", { count: 0 }],
     });
     await contains(":nth-child(2 of .o_data_row) .o_activity_exception_cell", {
-        contains: [".o-mail-ActivityException"],
+        contains: [".w-mail-ActivityException"],
     });
 });

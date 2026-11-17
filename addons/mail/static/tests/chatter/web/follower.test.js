@@ -28,11 +28,11 @@ test("base rendering not editable", async () => {
     });
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
-    await contains(".o-mail-Follower-details");
-    await contains(".o-mail-Follower-avatar");
-    await contains(".o-mail-Follower-action", { count: 0 });
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
+    await contains(".w-mail-Follower-details");
+    await contains(".w-mail-Follower-avatar");
+    await contains(".w-mail-Follower-action", { count: 0 });
 });
 
 test("base rendering editable", async () => {
@@ -46,11 +46,11 @@ test("base rendering editable", async () => {
     });
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
-    await contains(".o-mail-Follower-details");
-    await contains(".o-mail-Follower-avatar");
-    await contains(".o-mail-Follower");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
+    await contains(".w-mail-Follower-details");
+    await contains(".w-mail-Follower-avatar");
+    await contains(".w-mail-Follower");
     await contains("[title='Edit Notification Preferences']");
     await contains("[title='Remove this follower']");
 });
@@ -66,10 +66,10 @@ test("click on partner follower opens avatar card", async () => {
     });
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
-    await contains(".o-mail-Follower-details");
-    await click(".o-mail-Follower-details:first");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
+    await contains(".w-mail-Follower-details");
+    await click(".w-mail-Follower-details:first");
     await contains(".o_avatar_card:contains('Batman')");
 });
 
@@ -85,13 +85,13 @@ test("click on edit follower", async () => {
     onRpcBefore("/mail/read_subscription_data", () => expect.step("fetch_subtypes"));
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
     await contains("[title='Edit Notification Preferences']");
     await click("[title='Edit Notification Preferences']");
-    await contains(".o-mail-Follower", { count: 0 });
+    await contains(".w-mail-Follower", { count: 0 });
     await expect.waitForSteps(["fetch_subtypes"]);
-    await contains(".o-mail-FollowerSubtypeDialog");
+    await contains(".w-mail-FollowerSubtypeDialog");
 });
 
 test("edit follower and close subtype dialog", async () => {
@@ -106,14 +106,14 @@ test("edit follower and close subtype dialog", async () => {
     onRpcBefore("/mail/read_subscription_data", () => expect.step("fetch_subtypes"));
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
     await contains("[title='Edit Notification Preferences']");
     await click("[title='Edit Notification Preferences']");
-    await contains(".o-mail-FollowerSubtypeDialog");
+    await contains(".w-mail-FollowerSubtypeDialog");
     await expect.waitForSteps(["fetch_subtypes"]);
-    await click(".o-mail-FollowerSubtypeDialog button:text('Discard')");
-    await contains(".o-mail-FollowerSubtypeDialog", { count: 0 });
+    await click(".w-mail-FollowerSubtypeDialog button:text('Discard')");
+    await contains(".w-mail-FollowerSubtypeDialog", { count: 0 });
 });
 
 test("remove a follower in a dirty form view", async () => {
@@ -138,11 +138,11 @@ test("remove a follower in a dirty form view", async () => {
     await click(".o_field_many2many_tags[name='channel_ids'] input");
     await click(".dropdown-item:text('General')");
     await contains(".o_tag:text('General')");
-    await contains(".o-mail-Followers-counter:text('1')");
+    await contains(".w-mail-Followers-counter:text('1')");
     await editInput(document.body, ".o_field_char[name=name] input", "some value");
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Remove this follower']");
-    await contains(".o-mail-Followers-counter:text('0')");
+    await contains(".w-mail-Followers-counter:text('0')");
     await contains(".o_field_char[name=name] input", { value: "some value" });
     await contains(".o_tag:text('General')");
 });
@@ -159,10 +159,10 @@ test("removing a follower should reload form view", async function () {
     onRpc("res.partner", "web_read", ({ args }) => expect.step(`read ${args[0][0]}`));
     await start();
     await openFormView("res.partner", threadId);
-    await contains(".o-mail-Followers-button");
+    await contains(".w-mail-Followers-button");
     await expect.waitForSteps([`read ${threadId}`]);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Remove this follower']");
-    await contains(".o-mail-Followers-counter:text('0')");
+    await contains(".w-mail-Followers-counter:text('0')");
     await expect.waitForSteps([`read ${threadId}`]);
 });

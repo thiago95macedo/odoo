@@ -1,12 +1,12 @@
-.o-mail-Chatter .o-mail-Message-body [summary~="o_mail_notification"] {
+.w-mail-Chatter .w-mail-Message-body [summary~="o_mail_notification"] {
     display: none;
 }
 
-.o-mail-Chatter-top {
-    z-index: $o-mail-NavigableList-zIndex - 2;
-    background-color: $o-webclient-background-color;
+.w-mail-Chatter-top {
+    z-index: $w-mail-NavigableList-zIndex - 2;
+    background-color: $w-webclient-background-color;
 
-    &.o-is-sticky {
+    &.w-is-sticky {
         &:after {
             position: absolute;
             left: 0;
@@ -20,32 +20,33 @@
     }
 }
 
-.o-mail-Chatter-top, .o-mail-Chatter-content {
-    --Chatter-default-padding-x: #{$o-spacer};
+.w-mail-Chatter-top,
+.w-mail-Chatter-content {
+    --Chatter-default-padding-x: #{$w-spacer};
 
     padding-right: var(--Chatter-default-padding-x);
 }
 
-.o-mail-Chatter-top .o-mail-Composer {
-    --Chatter-default-padding-x: #{$o-spacer};
+.w-mail-Chatter-top .w-mail-Composer {
+    --Chatter-default-padding-x: #{$w-spacer};
     --mail-Chatter-contentPaddingLeft: var(--ChatterAsideForm-padding-left, calc(var(--Chatter-default-padding-x) / 2));
     margin-left: calc((var(--mail-Chatter-contentPaddingLeft)) * -1);
 }
 
-.o-mail-Chatter-top {
+.w-mail-Chatter-top {
     padding-left: var(--ChatterAsideForm-padding-left, var(--Chatter-default-padding-x));
 }
 
-.o-mail-Chatter-content {
+.w-mail-Chatter-content {
     --mail-Chatter-contentPaddingLeft: var(--ChatterAsideForm-padding-left, var(--Chatter-default-padding-x));
-    padding-left: calc(var(--mail-Chatter-contentPaddingLeft) - #{($o-mail-Message-sidebarWidth - $o-mail-Avatar-size) / 2});
+    padding-left: calc(var(--mail-Chatter-contentPaddingLeft) - #{($w-mail-Message-sidebarWidth - $w-mail-Avatar-size) / 2});
 }
 
-.o-mail-Followers-button:focus {
+.w-mail-Followers-button:focus {
     background-color: $gray-200;
 }
 
-.o-mail-Followers-dropdown {
+.w-mail-Followers-dropdown {
     /**
      * Note: Min() refers to CSS min() and not SCSS min().
      *
@@ -55,14 +56,15 @@
     max-height: Min(500px, 50vh);
 }
 
-.o-mail-Follower-avatar {
-    --Avatar-size: #{$o-mail-Avatar-sizeSmall};
+.w-mail-Follower-avatar {
+    --Avatar-size: #{$w-mail-Avatar-sizeSmall};
 }
 
-.o-mail-Follower:has(.o-mail-Follower-action:hover), .o-mail-FollowerList-unfollow:has(.o-mail-Follower-action:hover) {
+.w-mail-Follower:has(.w-mail-Follower-action:hover),
+.w-mail-FollowerList-unfollow:has(.w-mail-Follower-action:hover) {
     background-color: inherit !important;
 }
 
-.btn.o-mail-Chatter-follow:hover {
+.btn.w-mail-Chatter-follow:hover {
     color: $black !important;
 }

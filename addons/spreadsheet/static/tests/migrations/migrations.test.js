@@ -9,7 +9,7 @@ defineSpreadsheetActions();
 
 describe.current.tags("headless");
 
-test("Odoo formulas are migrated", () => {
+test("WETH formulas are migrated", () => {
     const data = {
         version: 16,
         sheets: [
@@ -29,25 +29,25 @@ test("Odoo formulas are migrated", () => {
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1).toBe(`=PIVOT.VALUE("1")`);
     expect(migratedData.sheets[0].cells.A2).toBe(`=PIVOT.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A3).toBe(`=ODOO.FILTER.LABEL("1")`);
-    expect(migratedData.sheets[0].cells.A4).toBe(`=ODOO.LIST.VALUE("1")`);
-    expect(migratedData.sheets[0].cells.A5).toBe(`=ODOO.LIST.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A6).toBe(`=ODOO.PIVOT.POSITION("1")`);
+    expect(migratedData.sheets[0].cells.A3).toBe(`=WETH.FILTER.LABEL("1")`);
+    expect(migratedData.sheets[0].cells.A4).toBe(`=WETH.LIST.VALUE("1")`);
+    expect(migratedData.sheets[0].cells.A5).toBe(`=WETH.LIST.HEADER("1")`);
+    expect(migratedData.sheets[0].cells.A6).toBe(`=WETH.PIVOT.POSITION("1")`);
     expect(migratedData.sheets[0].cells.A7).toBe(`=PIVOT.VALUE("1")`);
 });
 
 test("Pivot 'day' arguments are migrated", () => {
     const data = {
         version: 16,
-        odooVersion: 1,
+        wethVersion: 1,
         sheets: [
             {
                 cells: {
-                    A1: { content: `=ODOO.PIVOT("1","21/07/2022")` },
-                    A2: { content: `=ODOO.PIVOT.HEADER("1","11/12/2022")` },
-                    A3: { content: `=odoo.pivot("1","21/07/2021")` },
-                    A4: { content: `=ODOO.PIVOT("1","test")` },
-                    A5: { content: `=odoo.pivot("1","21/07/2021")+"21/07/2021"` },
+                    A1: { content: `=WETH.PIVOT("1","21/07/2022")` },
+                    A2: { content: `=WETH.PIVOT.HEADER("1","11/12/2022")` },
+                    A3: { content: `=weth.pivot("1","21/07/2021")` },
+                    A4: { content: `=WETH.PIVOT("1","test")` },
+                    A5: { content: `=weth.pivot("1","21/07/2021")+"21/07/2021"` },
                     A6: { content: `=BAD_FORMULA(` },
                 },
             },
@@ -225,7 +225,7 @@ test("fieldMatchings are moved from filters to their respective datasources", ()
                         id: "fig1",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "weth_bar",
                             metaData: {},
                         },
                     },
@@ -297,7 +297,7 @@ test("fieldMatchings offsets are correctly preserved after migration", () => {
                         id: "fig1",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "weth_bar",
                             metaData: {},
                         },
                     },
@@ -320,7 +320,7 @@ test("fieldMatchings offsets are correctly preserved after migration", () => {
 test("group year/quarter/month filters to a single filter type", () => {
     const data = {
         version: 14,
-        odooVersion: 5,
+        wethVersion: 5,
         globalFilters: [
             {
                 id: "1",
@@ -416,7 +416,7 @@ test("Pivot are migrated from 6 to 9", () => {
     const migratedData = load(data);
     expect(Object.values(migratedData.pivots).length).toBe(1);
     expect(migratedData.pivots["1"]).toEqual({
-        type: "ODOO",
+        type: "WETH",
         fieldMatching: { 1: { chain: "foo", type: "char" } },
         name: "Name",
         model: "Model",
@@ -430,10 +430,10 @@ test("Pivot are migrated from 6 to 9", () => {
 test("Pivot are migrated from 9 to 10", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        wethVersion: 9,
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 name: "Name",
                 model: "res.model",
                 measures: ["probability"],
@@ -446,7 +446,7 @@ test("Pivot are migrated from 9 to 10", () => {
     const migratedData = load(data);
     expect(Object.values(migratedData.pivots).length).toBe(1);
     expect(migratedData.pivots["1"]).toEqual({
-        type: "ODOO",
+        type: "WETH",
         name: "Name",
         model: "res.model",
         measures: [{ id: "probability", fieldName: "probability", aggregator: undefined }],
@@ -459,15 +459,15 @@ test("Pivot are migrated from 9 to 10", () => {
 test("Pivot formulas are migrated from 9 to 10", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        wethVersion: 9,
         sheets: [
             {
                 cells: {
-                    A1: { content: `=ODOO.PIVOT("1")` },
-                    A2: { content: `=ODOO.PIVOT.HEADER("1")` },
-                    A3: { content: `=ODOO.PIVOT.POSITION("1")` },
-                    A4: { content: `=ODOO.PIVOT.TABLE("1")` },
-                    A5: { content: `=odoo.pivot("1")` },
+                    A1: { content: `=WETH.PIVOT("1")` },
+                    A2: { content: `=WETH.PIVOT.HEADER("1")` },
+                    A3: { content: `=WETH.PIVOT.POSITION("1")` },
+                    A4: { content: `=WETH.PIVOT.TABLE("1")` },
+                    A5: { content: `=weth.pivot("1")` },
                 },
             },
         ],
@@ -475,7 +475,7 @@ test("Pivot formulas are migrated from 9 to 10", () => {
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1).toBe(`=PIVOT.VALUE("1")`);
     expect(migratedData.sheets[0].cells.A2).toBe(`=PIVOT.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A3).toBe(`=ODOO.PIVOT.POSITION("1")`);
+    expect(migratedData.sheets[0].cells.A3).toBe(`=WETH.PIVOT.POSITION("1")`);
     expect(migratedData.sheets[0].cells.A4).toBe(`=PIVOT("1")`);
     expect(migratedData.sheets[0].cells.A5).toBe(`=PIVOT.VALUE("1")`);
 });
@@ -483,35 +483,35 @@ test("Pivot formulas are migrated from 9 to 10", () => {
 test("Pivot formulas using pivot positions are migrated (11 to 12)", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        wethVersion: 9,
         sheets: [
             {
                 cells: {
                     A1: {
-                        content: `=-PIVOT.VALUE("1","balance","account_id",ODOO.PIVOT.POSITION("1","account_id",12),"date:quarter","4/"&ODOO.FILTER.VALUE("Year"))`,
+                        content: `=-PIVOT.VALUE("1","balance","account_id",WETH.PIVOT.POSITION("1","account_id",12),"date:quarter","4/"&WETH.FILTER.VALUE("Year"))`,
                     },
                     A2: {
-                        content: `=PIVOT.HEADER("1","account_id",ODOO.PIVOT.POSITION("1","account_id",14))`,
+                        content: `=PIVOT.HEADER("1","account_id",WETH.PIVOT.POSITION("1","account_id",14))`,
                     },
-                    A3: { content: `=ODOO.PIVOT.POSITION("1","account_id",14)` },
-                    A4: { content: `=ODOO.PIVOT.POSITION("1",14)` },
+                    A3: { content: `=WETH.PIVOT.POSITION("1","account_id",14)` },
+                    A4: { content: `=WETH.PIVOT.POSITION("1",14)` },
                 },
             },
         ],
     };
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1).toBe(
-        `=-PIVOT.VALUE("1","balance","#account_id",12,"date:quarter","4/"&ODOO.FILTER.LABEL("Year"))`
+        `=-PIVOT.VALUE("1","balance","#account_id",12,"date:quarter","4/"&WETH.FILTER.LABEL("Year"))`
     );
     expect(migratedData.sheets[0].cells.A2).toBe(`=PIVOT.HEADER("1","#account_id",14)`);
-    expect(migratedData.sheets[0].cells.A3).toBe(`=ODOO.PIVOT.POSITION("1","account_id",14)`);
-    expect(migratedData.sheets[0].cells.A4).toBe(`=ODOO.PIVOT.POSITION("1",14)`);
+    expect(migratedData.sheets[0].cells.A3).toBe(`=WETH.PIVOT.POSITION("1","account_id",14)`);
+    expect(migratedData.sheets[0].cells.A4).toBe(`=WETH.PIVOT.POSITION("1",14)`);
 });
 
 test("Pivot sorted columns are migrated (12 to 13)", () => {
     const data = {
         version: 23,
-        odooVersion: 12,
+        wethVersion: 12,
         sheets: [],
         pivots: {
             1: {
@@ -551,7 +551,7 @@ test("Pivot sorted columns are migrated (12 to 13)", () => {
 test("Chart cumulatedStart is set to true if cumulative at migration", () => {
     const data = {
         version: 18.0,
-        odooVersion: 9,
+        wethVersion: 9,
         sheets: [
             {
                 figures: [
@@ -559,7 +559,7 @@ test("Chart cumulatedStart is set to true if cumulative at migration", () => {
                         id: "fig1",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "weth_bar",
                             metaData: {
                                 cumulatedStart: undefined,
                                 cumulative: true,
@@ -571,7 +571,7 @@ test("Chart cumulatedStart is set to true if cumulative at migration", () => {
                         id: "fig2",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "weth_bar",
                             metaData: {
                                 cumulative: false,
                             },
@@ -582,7 +582,7 @@ test("Chart cumulatedStart is set to true if cumulative at migration", () => {
                         id: "fig3",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "weth_bar",
                             metaData: {
                                 cumulative: true,
                                 cumulatedStart: false,
@@ -731,7 +731,7 @@ test("Default value is now undefined", () => {
 test("period values are correctly renamed/removed", () => {
     const data = {
         version: 14,
-        odooVersion: 5,
+        wethVersion: 5,
         globalFilters: [
             {
                 id: "1",
@@ -790,7 +790,7 @@ test("period values are correctly renamed/removed", () => {
 test("Date filters are migrated", () => {
     const data = {
         version: 14,
-        odooVersion: 5,
+        wethVersion: 5,
         globalFilters: [
             {
                 id: "1",
@@ -822,22 +822,22 @@ test("Date filters are migrated", () => {
     expect(filters[0].disabledPeriods).toBe(undefined);
 });
 
-test("Odoo Menu references are converted starting from 19.1.1", () => {
+test("WETH Menu references are converted starting from 19.1.1", () => {
     const data = {
         version: "18.5.10",
-        chartOdooMenusReferences: {
+        chartWethMenusReferences: {
             chart1: "menu.menu_1",
             chart2: "menu.menu_2",
         },
     };
     const migratedData = load(data);
-    expect(migratedData.odooLinkReferences).toEqual({
-        chart1: { type: "odooMenu", odooMenuId: "menu.menu_1" },
-        chart2: { type: "odooMenu", odooMenuId: "menu.menu_2" },
+    expect(migratedData.wethLinkReferences).toEqual({
+        chart1: { type: "wethMenu", wethMenuId: "menu.menu_1" },
+        chart2: { type: "wethMenu", wethMenuId: "menu.menu_2" },
     });
 });
 
-test("Odoo geo charts color scales are migrated", () => {
+test("WETH geo charts color scales are migrated", () => {
     const data = {
         version: "18.5.10",
         sheets: [
@@ -848,7 +848,7 @@ test("Odoo geo charts color scales are migrated", () => {
                         tag: "chart",
                         data: {
                             chartId: "chart1",
-                            type: "odoo_geo",
+                            type: "weth_geo",
                             colorScale: "reds",
                         },
                     },
@@ -858,7 +858,7 @@ test("Odoo geo charts color scales are migrated", () => {
                         data: {
                             chartDefinitions: {
                                 chart2: {
-                                    type: "odoo_geo",
+                                    type: "weth_geo",
                                     colorScale: "greens",
                                 },
                             },
@@ -876,20 +876,20 @@ test("Odoo geo charts color scales are migrated", () => {
     );
 });
 
-test("18.5.10: ODOO.FILTER.VALUE to ODOO.FILTER.LABEL in cells", () => {
+test("18.5.10: WETH.FILTER.VALUE to WETH.FILTER.LABEL in cells", () => {
     const data = {
         version: "18.4.14",
         sheets: [
             {
                 cells: {
-                    A1: '=ODOO.FILTER.VALUE("MyFilter")+odoo.filter.value("AnotherFilter")',
+                    A1: '=WETH.FILTER.VALUE("MyFilter")+weth.filter.value("AnotherFilter")',
                 },
             },
         ],
     };
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1).toBe(
-        `=ODOO.FILTER.LABEL("MyFilter")+ODOO.FILTER.LABEL("AnotherFilter")`
+        `=WETH.FILTER.LABEL("MyFilter")+WETH.FILTER.LABEL("AnotherFilter")`
     );
 });
 

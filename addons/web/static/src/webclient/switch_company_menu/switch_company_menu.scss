@@ -1,14 +1,13 @@
-
-.o_switch_company_menu_dropdown {
+.w_switch_company_menu_dropdown {
     min-width: 20rem;
-    
-    .o-checkbox .form-check-input {
+
+    .w-checkbox .form-check-input {
         margin-top: 0
     }
 }
 
-.o_switch_company_menu_items {
-    .o_switch_company_item {
+.w_switch_company_menu_items {
+    .w_switch_company_item {
         height: 33px;
 
         [role=button] {
@@ -16,7 +15,7 @@
         }
 
         &.focus,
-        &.focus > * {
+        &.focus>* {
             background-color: var(--gray-200);
         }
 
@@ -26,6 +25,6 @@
     }
 }
 
-.o_switch_company_menu .oe_topbar_name {
+.w_switch_company_menu .oe_topbar_name {
     max-width: 15rem;
 }

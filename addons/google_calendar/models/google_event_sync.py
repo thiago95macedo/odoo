@@ -83,7 +83,7 @@ class GoogleEventSync(models.AbstractModel):
             # Since we cannot delete such record (see method comment), we archive it.
             # Notice that archiving the record will delete the associated record on Google.
             # (archive calls write() which sets need sync to true when the active field changes)
-            # Then, since it has been deleted on Google, the record is also deleted on Odoo DB (_sync_google2weth).
+            # Then, since it has been deleted on Google, the record is also deleted on WETH DB (_sync_google2weth).
             self.action_archive()
             return True
         return super().unlink()
@@ -196,10 +196,10 @@ class GoogleEventSync(models.AbstractModel):
         """Synchronize Google recurrences in WETH. Creates new recurrences, updates
         existing ones.
 
-        :param google_events: Google recurrences to synchronize in Odoo
-        :param write_dates: A dictionary mapping Odoo record IDs to their write dates.
+        :param google_events: Google recurrences to synchronize in Weth
+        :param write_dates: A dictionary mapping WETH record IDs to their write dates.
         :param default_reminders:
-        :return: synchronized odoo recurrences
+        :return: synchronized weth recurrences
         """
         write_dates = dict(write_dates or {})
         existing = google_events.exists(self.env)
@@ -208,14 +208,14 @@ class GoogleEventSync(models.AbstractModel):
         self._pre_process_google_events(google_events)
         new = google_events - existing - google_events.cancelled() - self._get_skipped_google_events(google_events)
 
-        odoo_values = [
-            dict(self._odoo_values(e, calendar, default_reminders), need_sync=False)
+        weth_values = [
+            dict(self._weth_values(e, calendar, default_reminders), need_sync=False)
             for e in new
         ]
-        new_odoo = self.with_context(dont_notify=True, skip_contact_description=True)._create_from_google(new, calendar,
-                                                                                                          odoo_values)
+        new_weth = self.with_context(dont_notify=True, skip_contact_description=True)._create_from_google(new, calendar,
+                                                                                                          weth_values)
         cancelled = existing.cancelled()
-        cancelled_odoo = self.browse(cancelled.odoo_ids(self.env))
+        cancelled_weth = self.browse(cancelled.weth_ids(self.env))
 
         # Check if it is a recurring event that has been rescheduled.
         # We have to check if an event already exists in WETH.
@@ -226,27 +226,27 @@ class GoogleEventSync(models.AbstractModel):
         rescheduled_events = new.filter(lambda gevent: not gevent.is_recurrence_follower())
         if rescheduled_events:
             google_ids_to_remove = [event.full_recurring_event_id() for event in rescheduled_events]
-            cancelled_odoo += self.env['calendar.event'].search([('google_id', 'in', google_ids_to_remove)])
+            cancelled_weth += self.env['calendar.event'].search([('google_id', 'in', google_ids_to_remove)])
 
-        cancelled_odoo.exists()._cancel()
-        synced_records = new_odoo + cancelled_odoo
+        cancelled_weth.exists()._cancel()
+        synced_records = new_weth + cancelled_weth
         pending = existing - cancelled - self._get_skipped_google_events(existing)
-        pending_odoo = self.browse(pending.odoo_ids(self.env)).exists()
+        pending_weth = self.browse(pending.weth_ids(self.env)).exists()
         for gevent in pending:
-            odoo_record = self.browse(gevent.odoo_id(self.env))
-            if odoo_record not in pending_odoo:
+            weth_record = self.browse(gevent.weth_id(self.env))
+            if weth_record not in pending_weth:
                 # The record must have been deleted in the mean time; nothing left to sync
                 continue
             # Last updated wins.
-            # This could be dangerous if google server time and odoo server time are different
+            # This could be dangerous if google server time and weth server time are different
             updated = parse(gevent.updated)
-            # Use the record's write_date to apply Google updates only if they are newer than Odoo's write_date.
-            odoo_record_write_date = write_dates.get(odoo_record.id, odoo_record.write_date)
+            # Use the record's write_date to apply Google updates only if they are newer than WETH's write_date.
+            weth_record_write_date = write_dates.get(weth_record.id, weth_record.write_date)
             # Migration from 13.4 does not fill write_date. Therefore, we force the update from Google.
-            if not odoo_record_write_date or updated >= odoo_record_write_date.replace(tzinfo=datetime.UTC):
-                vals = dict(self._odoo_values(gevent, calendar, default_reminders), need_sync=False)
-                odoo_record.with_context(dont_notify=True)._write_from_google(gevent, vals, calendar)
-                synced_records |= odoo_record
+            if not weth_record_write_date or updated >= weth_record_write_date.replace(tzinfo=datetime.UTC):
+                vals = dict(self._weth_values(gevent, calendar, default_reminders), need_sync=False)
+                weth_record.with_context(dont_notify=True)._write_from_google(gevent, vals, calendar)
+                synced_records |= weth_record
 
         return synced_records
 
@@ -397,7 +397,7 @@ class GoogleEventSync(models.AbstractModel):
                         self.with_context(dont_notify=True).need_sync = False
 
     def _get_records_to_sync(self, calendar, full_sync=False):
-        """Return records that should be synced from Odoo to Google
+        """Return records that should be synced from WETH to Google
 
         :param calendar: calendar to get records from
         :param full_sync: If True, all events attended by the user are returned
@@ -428,7 +428,7 @@ class GoogleEventSync(models.AbstractModel):
         return self.with_context(active_test=False).search(domain, limit=200)
 
     def _check_any_records_to_sync(self):
-        """ Returns True if there are pending records to be synchronized from Odoo to Google, False otherwise. """
+        """ Returns True if there are pending records to be synchronized from WETH to Google, False otherwise. """
         is_active_clause = Domain(self._active_name, '=', True) if self._active_name else Domain.TRUE
         domain = self._get_sync_domain()
         domain &= (Domain('google_id', '=', False) & is_active_clause) | Domain('need_sync', '=', True)
@@ -452,10 +452,10 @@ class GoogleEventSync(models.AbstractModel):
         return partners.sorted(key=lambda p: k.get(p.email_normalized, -1))
 
     @api.model
-    def _odoo_values(self, google_event: GoogleEvent, calendar, default_reminders=()):
-        """Implements this method to return a dict of Odoo values corresponding
+    def _weth_values(self, google_event: GoogleEvent, calendar, default_reminders=()):
+        """Implements this method to return a dict of WETH values corresponding
         to the Google event given as parameter
-        :return: dict of Odoo formatted values
+        :return: dict of WETH formatted values
         """
         raise NotImplementedError()
 

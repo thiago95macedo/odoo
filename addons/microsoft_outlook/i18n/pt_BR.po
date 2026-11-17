@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/microsoft_outlook/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "An error occurred when fetching the access token. %s"
 msgstr "Houve um erro ao buscar o token de acesso. %s"
@@ -98,7 +98,7 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/ir_mail_server.py:0
 msgid ""
 "Connect your Outlook account with the OAuth Authentication process.  \n"
@@ -112,7 +112,7 @@ msgstr ""
 "parâmetro de sistema \"mail.default.from\"."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/fetchmail_server.py:0
 msgid ""
 "Connect your personal Outlook account using OAuth. \n"
@@ -157,7 +157,7 @@ msgid "Incoming Mail Server"
 msgstr "Servidor de recebimento de e-mails"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/ir_mail_server.py:0
 msgid ""
 "Incorrect Connection Security for Outlook mail server “%s”. Please set it to "
@@ -182,19 +182,19 @@ msgid "Microsoft Outlook Mixin"
 msgstr "Mixin do Microsoft Outlook"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Only the administrator can link an Outlook mail server."
 msgstr "Somente o administrador pode vincular um servidor de e-mail Outlook."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Oops, we could not authenticate you. Please try again later."
 msgstr "Opa! Não foi possível autenticá-lo. Tente novamente mais tarde."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/controllers/main.py:0
 msgid ""
 "Oops, you're creating an authorization to send from %(email_login)s but your "
@@ -257,25 +257,25 @@ msgid "Outlook support for incoming / outgoing mail servers"
 msgstr "Suporte do Outlook para servidores de e-mail de entrada / saída"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Please configure your Outlook credentials."
 msgstr "Configure suas credenciais do Outlook."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Please connect with your Outlook account before using it."
 msgstr "Conecte-se à sua conta do Outlook antes de usá-lo."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Please enter a valid email address."
 msgstr "Insira um e-mail válido."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/ir_mail_server.py:0
 msgid ""
 "Please fill the \"Username\" field with your Outlook/Office365 username "
@@ -287,7 +287,7 @@ msgstr ""
 "token do Outlook OAuthentication."
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/ir_mail_server.py:0
 msgid ""
 "Please leave the password field empty for Outlook mail server “%s”. The "
@@ -302,7 +302,7 @@ msgid "Read More"
 msgstr "Leia mais"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/fetchmail_server.py:0
 msgid "SSL is required for server “%s”."
 msgstr "SSL é obrigatório para o servidor “%s”."
@@ -330,7 +330,7 @@ msgid "The URL to generate the authorization code from Outlook"
 msgstr "O URL para gerar o código de autorização do Outlook"
 
 #. module: microsoft_outlook
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_outlook/models/microsoft_outlook_mixin.py:0
 msgid "Unknown error."
 msgstr "Erro desconhecido."

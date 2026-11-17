@@ -1,4 +1,4 @@
-"""Migrate FontAwesome / odoo-ui-icons markup to the Material Symbols system.
+"""Migrate FontAwesome / weth-ui-icons markup to the Material Symbols system.
 
 ``<i class="fa fa-user"/>`` becomes ``<i class="oi" data-icon="person"/>``, and
 the icon names carried by attributes, dict entries, JS strings and CSS
@@ -544,7 +544,7 @@ def test(transform, content, expected):
 
 if __name__ == '__main__':
     """Quick test suite (silent on success). Run with:
-    PYTHONPATH=. python odoo/upgrade_code/19.5-00-material-symbols-icons.py
+    PYTHONPATH=. python weth/upgrade_code/19.5-00-material-symbols-icons.py
     """
     js, js_test = partial(transform_js, is_test=False), partial(transform_js, is_test=True)
     test(transform_xml, '<i class="fa fa-user fa-fw text-muted"/>', '<i class="oi oi-fw oi-filled text-muted" data-icon="person"/>')

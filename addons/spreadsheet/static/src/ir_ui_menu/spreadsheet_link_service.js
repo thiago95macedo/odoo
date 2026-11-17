@@ -8,7 +8,7 @@ import {
     parseIrMenuXmlUrl,
     parseViewLink,
     parseIrMenuIdLink,
-} from "./odoo_menu_link_cell";
+} from "./weth_menu_link_cell";
 import { _t } from "@web/core/l10n/translation";
 import { navigateTo } from "../actions/helpers";
 
@@ -18,7 +18,7 @@ const { EvaluationError } = spreadsheet;
 const LINK_ERROR = "#LINK";
 errorTypes.add(LINK_ERROR);
 
-class BadOdooLinkError extends EvaluationError {
+class BadWethLinkError extends EvaluationError {
     constructor(menuId) {
         super(
             _t("Menu %s not found. You may not have the required access rights.", menuId),
@@ -33,20 +33,20 @@ export const spreadsheetLinkMenuCellService = {
         function _getIrMenuByXmlId(xmlId) {
             const menu = menuService.getAll().find((menu) => menu.xmlid === xmlId);
             if (!menu) {
-                throw new BadOdooLinkError(xmlId);
+                throw new BadWethLinkError(xmlId);
             }
             return menu;
         }
 
         urlRegistry
-            .replace("OdooMenuIdLink", {
+            .replace("WethMenuIdLink", {
                 sequence: 65,
                 match: isMarkdownIrMenuIdUrl,
                 createLink(url, label) {
                     const menuId = parseIrMenuIdLink(url);
                     const menu = menuService.getMenu(menuId);
                     if (!menu) {
-                        throw new BadOdooLinkError(menuId);
+                        throw new BadWethLinkError(menuId);
                     }
                     return {
                         url,
@@ -65,7 +65,7 @@ export const spreadsheetLinkMenuCellService = {
                     env.services.action.doAction(menu.actionID, { newWindow });
                 },
             })
-            .replace("OdooMenuXmlLink", {
+            .replace("WethMenuXmlLink", {
                 sequence: 66,
                 match: isIrMenuXmlUrl,
                 createLink(url, label) {
@@ -90,7 +90,7 @@ export const spreadsheetLinkMenuCellService = {
                     env.services.action.doAction(menu.actionID, { newWindow });
                 },
             })
-            .replace("OdooViewLink", {
+            .replace("WethViewLink", {
                 sequence: 67,
                 match: isMarkdownViewUrl,
                 createLink(url, label) {

@@ -21,12 +21,12 @@ test("open/close temporary channel", async () => {
     await startServer();
     await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
-    await contains(".o-livechat-LivechatButton", { count: 0 });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
+    await contains(".w-livechat-LivechatButton", { count: 0 });
     await click("[title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
-    await contains(".o-livechat-LivechatButton", { count: 1 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
+    await contains(".w-livechat-LivechatButton", { count: 1 });
 });
 
 test("open/close persisted channel", openClosePersistedChannel);
@@ -41,8 +41,8 @@ test("livechat not available", async () => {
         },
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await contains(".o-mail-ChatHub");
-    await contains(".o-livechat-LivechatButton", { count: 0 });
+    await contains(".w-mail-ChatHub");
+    await contains(".w-livechat-LivechatButton", { count: 0 });
 });
 
 test("clicking on notification opens the chat", async () => {
@@ -61,10 +61,10 @@ test("clicking on notification opens the chat", async () => {
         },
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton-notification", {
+    await click(".w-livechat-LivechatButton-notification", {
         text: "Need help? Chat with us.",
     });
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
 });
 
 test("can start a new live chat when acting as an agent in active live chats", async () => {
@@ -80,6 +80,6 @@ test("can start a new live chat when acting as an agent in active live chats", a
     });
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow");
-    await contains(".o-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
+    await contains(".w-livechat-LivechatButton");
 });

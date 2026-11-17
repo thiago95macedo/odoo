@@ -51,7 +51,7 @@ export class SnippetVisibilityOption extends BaseOptionComponent {
             domain,
             !this.debugMode.isActive()
         );
-        // Extract subtrees connected by an `&`, Odoo Standard for domain facets
+        // Extract subtrees connected by an `&`, WETH Standard for domain facets
         const trees = !tree.negate && tree.value === "&" ? tree.children : [tree];
         this.state.facets = await Promise.all(
             trees.map((tree) =>

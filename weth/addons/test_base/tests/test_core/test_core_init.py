@@ -34,7 +34,7 @@ class TestInit(BaseCase):
             **kwargs,
         )
 
-    def odoo_modules_to_test(self):
+    def weth_modules_to_test(self):
         import weth.cli  # noqa: PLC0415
         for path in (*weth.__path__, *weth.cli.__path__):
             parent = Path(path)
@@ -48,7 +48,7 @@ class TestInit(BaseCase):
     def test_import(self):
         """Test that importing a sub-module in any order works."""
         EXPECT_UTC = ('init', 'cli', 'http', 'modules', 'service', 'api', 'fields', 'models', 'orm', 'tests')
-        for module in sorted(self.odoo_modules_to_test()):
+        for module in sorted(self.weth_modules_to_test()):
             set_timezone = any(expect in module for expect in EXPECT_UTC)
             env = {'TZ': 'CET'}
             timezone = 'UTC' if set_timezone else 'CET'

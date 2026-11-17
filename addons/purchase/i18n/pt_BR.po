@@ -20,7 +20,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/purchase/pt_BR/>\n"
+"weth-20/purchase/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,13 +53,13 @@ msgid "# of Lines"
 msgstr "Nº de linhas"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "%(added_lines_count)s PO lines added to the bill."
 msgstr "%(added_lines_count)s linhas de pedido de compra adicionadas à fatura."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid ""
 "%(matched_lines_count)s bill lines matched, %(unmatched_lines_count)s "
@@ -69,7 +69,7 @@ msgstr ""
 "(unmatched_lines_count)s restantes sem correspondência."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/wizard/accrued_orders.py:0
 msgid ""
 "%(order)s - %(order_line)s; %(quantity_billed)s Billed, %"
@@ -79,19 +79,19 @@ msgstr ""
 "(quantity_received)s Recebido a %(unit_price)s cada"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/wizard/accrued_orders.py:0
 msgid "%(order)s - %(order_line)s; price difference for %(product)s"
 msgstr "%(order)s - %(order_line)s; diferença de preço para %(product)s"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "%(product)s from %(original_receipt_date)s to %(new_receipt_date)s"
 msgstr "%(product)s de %(original_receipt_date)s a %(new_receipt_date)s"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "%s modified receipt dates for the following products:"
 msgstr "%s modificou as datas de recebimento para os seguintes produtos:"
@@ -123,7 +123,7 @@ msgid "-&gt;"
 msgstr "-&gt;"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "0 bill lines matched with this PO."
 msgstr "0 linhas de fatura correspondidas com este pedido de compra."
@@ -522,7 +522,7 @@ msgstr ""
 "predefinido por um período de tempo."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "A sample email has been sent to %s."
 msgstr "Um e-mail de exemplo foi enviado para %s."
@@ -608,7 +608,7 @@ msgid "Accrued Orders Wizard"
 msgstr "Assistente de pedidos apropriados"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/wizard/accrued_orders.py:0
 msgid "Accrued total"
 msgstr "Total apropriado"
@@ -709,7 +709,7 @@ msgid "Add several variants to the purchase order from a grid"
 msgstr "Adicione várias variantes ao pedido de compra a partir de uma grade"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Add some products or services to your quotation."
 msgstr "Adicione alguns produtos ou serviços à sua cotação."
@@ -721,7 +721,7 @@ msgid "Add to PO"
 msgstr "Adicionar ao pedido"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_bill_line_match.py:0
 msgid "Add to Purchase Order"
 msgstr "Adicionar ao pedido de compra"
@@ -737,45 +737,45 @@ msgid "Administrator"
 msgstr "Administrador"
 
 #. module: purchase
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All"
 msgstr "Tudo"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Days to Order"
 msgstr "Todos os dias para o pedido"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Draft RFQs"
 msgstr "Todas as SDCs em rascunho"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Late RFQs"
 msgstr "Todas as SDCs atrasadas"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Late Receipt POs"
 msgstr "Todas as OPs com recebimento atrasado"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Not Acknowledged POs"
 msgstr "Todas as OPs não reconhecidas"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "All Sent RFQs"
 msgstr "Todas as solicitações de cotação enviadas"
@@ -867,7 +867,7 @@ msgid "Arrival Confirmation"
 msgstr "Confirmação de chegada"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/product.py:0
 msgid ""
 "As other units of measure (ex : %(problem_uom)s) than %(uom)s have already "
@@ -956,7 +956,7 @@ msgid "Bill Matched Ratio"
 msgstr "Proporção de correspondência da fatura"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_order_form
 msgid "Bill Matching"
@@ -1067,7 +1067,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 #: model:ir.model.fields.selection,name:purchase.selection__purchase_order__state__cancel
 #: model:ir.model.fields.selection,name:purchase.selection__purchase_report__state__cancel
@@ -1080,7 +1080,7 @@ msgid "Cancelled Purchase Order #"
 msgstr "Pedido de compra cancelado nº"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order_line.py:0
 msgid "Cannot delete a purchase order line which is in state “%s”."
 msgstr ""
@@ -1125,7 +1125,7 @@ msgid "Company Currency"
 msgstr "Moeda da empresa"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Compose Email"
 msgstr "Escrever e-mail"
@@ -1156,13 +1156,13 @@ msgid "Confirm purchase orders in one step"
 msgstr "Confirmar pedidos de compra em uma etapa"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Confirm the price."
 msgstr "Confirme o upgrade"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Confirm your purchase."
 msgstr "Confirme sua compra."
@@ -1227,7 +1227,7 @@ msgid "Create a Customer"
 msgstr "Criar um cliente"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/product_catalog/kanban_renderer.xml:0
 msgid "Create a product"
 msgstr "Criar um produto"
@@ -1279,7 +1279,7 @@ msgid "Date Calendar Start"
 msgstr "Data de início do calendário"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Date Updated"
 msgstr "Data atualizada"
@@ -1302,7 +1302,7 @@ msgid "Days to Confirm"
 msgstr "Dias para confirmar"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "Days to Order"
 msgstr "Dias para o pedido"
@@ -1452,13 +1452,13 @@ msgid "Double validation amount"
 msgstr "Quantia de validação dupla"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/wizard/bill_to_po_wizard.py:0
 msgid "Down Payment (ref: %(ref)s)"
 msgstr "Entrada (ref: %(ref)s)"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Down Payments"
 msgstr "Entradas"
@@ -1512,7 +1512,7 @@ msgstr ""
 "informações mais recentes"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order_line.py:0
 msgid "Extra line with %s "
 msgstr "Linha extra com %s "
@@ -1555,13 +1555,13 @@ msgid "Forecasted"
 msgstr "Previsão"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "From %s"
 msgstr "De %s"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "From Electronic Document"
 msgstr "Do documento eletrônico"
@@ -1583,7 +1583,7 @@ msgid "Future Activities"
 msgstr "Atividades futuras"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Generated Orders"
 msgstr "Pedidos gerados"
@@ -1687,13 +1687,13 @@ msgstr ""
 "compra por meio de uma entrada na grade."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "In order to delete a purchase order, you must cancel it first."
 msgstr "Para excluir um pedido de compra, é necessário cancelá-lo primeiro."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "In selected purchase order to merge these details must be same\n"
@@ -1721,7 +1721,7 @@ msgid "Incoterm Location"
 msgstr "Localização do Incoterm"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Indicate the product quantity you want to order."
 msgstr "Indique a quantidade de produtos que você deseja comprar."
@@ -1825,13 +1825,13 @@ msgid "Late Activities"
 msgstr "Atividades atrasadas"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "Late RFQ"
 msgstr "RFS atrasada"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "Late Receipt"
 msgstr "Recebimento atrasado"
@@ -1842,13 +1842,13 @@ msgid "Late Receipts"
 msgstr "Recebimentos atrasados"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Let's create your first request for quotation."
 msgstr "Crie sua primeira solicitação de cotação."
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid ""
 "Let's try the Purchase app to manage the flow from purchase to reception and "
@@ -1956,7 +1956,7 @@ msgid "Matching"
 msgstr "Correspondência"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order_line.py:0
 msgid "Matching Invoices"
 msgstr "Faturas correspondentes"
@@ -1972,7 +1972,7 @@ msgid "Merge RFQs"
 msgstr "Mesclar SDCs"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Merged RFQs"
 msgstr "SDCs mescladas"
@@ -2017,7 +2017,7 @@ msgstr ""
 "Campos obrigatórios ausentes em linha contabilizável do pedido de compra."
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My"
 msgstr "Meu"
@@ -2034,31 +2034,31 @@ msgid "My Activity Deadline"
 msgstr "Prazo da minha atividade"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Days to Order"
 msgstr "Dias para meus pedidos"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Draft RFQs"
 msgstr "Minhas SDCs em rascunho"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Late RFQs"
 msgstr "Minhas SDCs atrasadas"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Late Receipt POs"
 msgstr "Minhas OPs com recebimento atrasado"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Not Acknowledged POs"
 msgstr "Minhas OPs não reconhecidas"
@@ -2074,13 +2074,13 @@ msgid "My Purchases"
 msgstr "Minhas compras"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 msgid "My Waiting RFQs"
 msgstr "Minhas SDCs aguardando"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 msgid "Name"
 msgstr "Nome"
@@ -2091,8 +2091,8 @@ msgid "Name, TIN, Email, or Reference"
 msgstr "Nome, TIN, e-mail ou referência"
 
 #. module: purchase
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 #: model_terms:ir.ui.view,arch_db:purchase.view_purchase_order_filter
@@ -2100,7 +2100,7 @@ msgid "New"
 msgstr "Novo"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 msgid "Newest"
 msgstr "Mais recente"
@@ -2136,7 +2136,7 @@ msgid "No"
 msgstr "Não"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/product_catalog/kanban_renderer.xml:0
 msgid "No Products for the selected Vendor."
 msgstr "Nenhum produto para o fornecedor selecionado."
@@ -2147,7 +2147,7 @@ msgid "No Purchase Analysis"
 msgstr "Sem análise de compra"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "No attachment was provided"
 msgstr "Sem anexos"
@@ -2183,7 +2183,7 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 #: model_terms:ir.ui.view,arch_db:purchase.view_purchase_order_filter
 msgid "Not Acknowledged"
@@ -2201,8 +2201,8 @@ msgstr "Não recebido"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.portal_my_purchase_order
-msgid "Not using Odoo?"
-msgstr "Não está usando o Odoo?"
+msgid "Not using Weth?"
+msgstr "Não está usando o Weth?"
 
 #. module: purchase
 #: model:ir.model.fields.selection,name:purchase.selection__purchase_order_line__display_type__line_note
@@ -2250,16 +2250,16 @@ msgstr "Número de mensagens com erro de entrega"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.portal_my_purchase_order
-msgid "Odoo"
-msgstr "Odoo"
+msgid "Weth"
+msgstr "Weth"
 
 #. module: purchase
 #: model:ir.module.module,description:base.module_purchase
 msgid ""
-"Odoo Supply Chain\n"
+"WETH Supply Chain\n"
 "-----------------\n"
 "\n"
-"Automate requisition-to-pay, control invoicing with the Odoo\n"
+"Automate requisition-to-pay, control invoicing with the Weth\n"
 "<a href=\"https://www.weth.com.br/app/purchase\">Open Source Supply Chain</a>.\n"
 "\n"
 "Automate procurement propositions, launch request for quotations, track\n"
@@ -2303,7 +2303,7 @@ msgid ""
 "\n"
 "Use the costing method that reflects your business: standard price, average\n"
 "price, fifo or lifo. Get your accounting entries and the right inventory\n"
-"valuation in real-time; Odoo manages everything for you, transparently.\n"
+"valuation in real-time; WETH manages everything for you, transparently.\n"
 "\n"
 "Import Vendor Pricelists\n"
 "--------------------------\n"
@@ -2331,7 +2331,7 @@ msgid ""
 "etc.\n"
 "\n"
 msgstr ""
-"Cadeia de suprimentos Odoo\n"
+"Cadeia de suprimentos Weth\n"
 "-----------------\n"
 "\n"
 "Automatize o processo de requisição ao pagamento, controle o faturamento com "
@@ -2388,7 +2388,7 @@ msgstr ""
 "médio,\n"
 "FIFO ou LIFO. Obtenha seus lançamentos contábeis e a avaliação correta do "
 "inventário\n"
-"em tempo real; o Odoo gerencia tudo para você, de forma transparente.\n"
+"em tempo real; o WETH gerencia tudo para você, de forma transparente.\n"
 "\n"
 "Importar listas de preços de fornecedores\n"
 "--------------------------\n"
@@ -2441,7 +2441,7 @@ msgid "On received quantities"
 msgstr "Em quantidades recebidas"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid ""
 "Once you get the price from the vendor, you can complete the purchase order "
@@ -2460,7 +2460,7 @@ msgstr ""
 "solicitação de cotação e ela se tornará um pedido de compra."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 #: model:ir.model.fields,field_description:purchase.field_purchase_report__order_id
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_order_view_search
@@ -2525,7 +2525,7 @@ msgid "Orders"
 msgstr "Pedidos"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Order due %(date)s"
 msgstr "Prazo do pedido %(date)s"
@@ -2583,7 +2583,7 @@ msgid "Payment terms"
 msgstr "Condições de pagamento"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "Please select at least two purchase orders with state RFQ and RFQ sent to "
@@ -2593,7 +2593,7 @@ msgstr ""
 "para mesclar."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_bill_line_match.py:0
 msgid "Please select bill lines with the same vendor."
 msgstr "Selecione as linhas de fatura com o mesmo fornecedor."
@@ -2748,7 +2748,7 @@ msgid "Purchase Bill Lines"
 msgstr "Linhas de conta de compras"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Purchase Comparison for %s"
 msgstr "Comparação das compras de %s"
@@ -2764,7 +2764,7 @@ msgid "Purchase Grid Entry"
 msgstr "Entrada de grade de compra"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/product.py:0
 msgid "Purchase History for %s"
 msgstr "Histórico de compras para %s"
@@ -2789,7 +2789,7 @@ msgid "Purchase Matched Ratio"
 msgstr "Proporção de correspondência de compras"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "Purchase Matching"
 msgstr "Correspondência de compras"
@@ -2800,7 +2800,7 @@ msgid "Purchase Matching Issue Msg"
 msgstr "Mensagem de problema de correspondência de compras"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 #: code:addons/purchase/models/purchase_order.py:0
 #: model:ir.actions.report,name:purchase.action_report_purchase_order
@@ -2892,7 +2892,7 @@ msgid "Purchase Order Name"
 msgstr "Nome do pedido de compra"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/analytic_account.py:0
 #: model:ir.actions.act_window,name:purchase.purchase_form_action
 #: model:ir.ui.menu,name:purchase.menu_purchase_form_action
@@ -2988,7 +2988,7 @@ msgstr ""
 "confirmados não recebidos ou parcialmente recebidos"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_bill_line_match_search
 #: model_terms:ir.ui.view,arch_db:purchase.res_partner_view_purchase_buttons
@@ -3089,7 +3089,7 @@ msgid "RFQ Confirmed"
 msgstr "SDC confirmada"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/views/purchase_dashboard.xml:0
 #: model:ir.model.fields.selection,name:purchase.selection__purchase_order__state__sent
 #: model:ir.model.fields.selection,name:purchase.selection__purchase_report__state__sent
@@ -3098,13 +3098,13 @@ msgid "RFQ Sent"
 msgstr "SDC enviada"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "RFQ merged with %(oldest_rfq_name)s and %(cancelled_rfq)s"
 msgstr "SDC mesclada com %(oldest_rfq_name)s e %(cancelled_rfq)s"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "RFQ merged with %s"
 msgstr "SDC mesclada com %s"
@@ -3232,7 +3232,7 @@ msgid "Reporting"
 msgstr "Relatórios"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 #: model:ir.actions.report,name:purchase.report_purchase_quotation
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_order_portal_content
@@ -3300,7 +3300,7 @@ msgid "SMS Delivery error"
 msgstr "Erro no envio de SMS"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Save the line."
 msgstr "Salvar a linha."
@@ -3338,7 +3338,7 @@ msgid "Security Token"
 msgstr "Token de segurança"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_bill_line_match.py:0
 msgid "Select Vendor Bill lines to add to a Purchase Order"
 msgstr ""
@@ -3356,7 +3356,7 @@ msgid "Select a purchase document"
 msgstr "Selecione um documento de compra"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Select price"
 msgstr "Selecionar preço"
@@ -3398,7 +3398,7 @@ msgid "Send by mail"
 msgstr "Enviar por e-mail"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/js/tours/purchase.js:0
 msgid "Send the request for quotation to your vendor."
 msgstr "Envie a solicitação de cotação ao seu fornecedor."
@@ -3464,7 +3464,7 @@ msgid "Show all records whose next activity date is past"
 msgstr "Mostrar todos os registros cuja data da próxima atividade já passou"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "Some order lines are missing a product, you need to correct them before "
@@ -3487,8 +3487,8 @@ msgstr "Favoritos"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.portal_my_purchase_order
-msgid "Start on Odoo"
-msgstr "Iniciar no Odoo"
+msgid "Start on Weth"
+msgstr "Iniciar no Weth"
 
 #. module: purchase
 #: model:ir.model.fields,field_description:purchase.field_purchase_bill_line_match__state
@@ -3648,13 +3648,13 @@ msgstr ""
 "essa linha"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/product.py:0
 msgid "Template for Products"
 msgstr "Modelo para produtos"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Template for Requests for Quotation"
 msgstr "Modelo para solicitações de cotação"
@@ -3684,7 +3684,7 @@ msgid "The Price of one unit of the product's Unit of Measure"
 msgstr "O preço de uma unidade da Unidade de Medida do produto"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "The following purchase orders %(invalid_orders)s can't be received. "
@@ -3704,7 +3704,7 @@ msgid "The ordered quantity has been updated."
 msgstr "A quantidade pedida foi atualizada."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/res_partner.py:0
 msgid "The partner cannot be deleted because it is used as a dropship address"
 msgstr ""
@@ -3739,7 +3739,7 @@ msgid "There are currently no requests for quotation for your account."
 msgstr "Não há solicitações de cotação para a sua conta no momento."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/wizard/bill_to_po_wizard.py:0
 msgid ""
 "There are no products to add to the Purchase Order. Are these Down Payments?"
@@ -3772,13 +3772,13 @@ msgid "This note is added to purchase orders."
 msgstr "Esta nota é adicionada a pedidos de compra."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "This vendor bill has been created from: "
 msgstr "Esta fatura de fornecedor foi criada a partir de: "
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "This vendor bill has been modified from: "
 msgstr "Esta fatura de fornecedor foi modificada a partir de: "
@@ -3825,7 +3825,7 @@ msgid "Today Activities"
 msgstr "Atividades de hoje"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 #: model:ir.model.fields,field_description:purchase.field_purchase_order__amount_total
 #: model:ir.model.fields,field_description:purchase.field_purchase_order_line__price_total
@@ -3891,7 +3891,7 @@ msgid "Total purchased amount"
 msgstr "Valor total da compra"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/product_catalog/kanban_renderer.xml:0
 msgid "Try removing the top filter to broaden your search"
 msgstr "Tente remover o filtro superior para ampliar sua busca"
@@ -3902,7 +3902,7 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "Unable to cancel purchase order(s): %s. You must first cancel their related "
@@ -3912,7 +3912,7 @@ msgstr ""
 "cancelar as faturas de fornecedor relacionadas."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Unable to cancel purchase order(s): %s. You must first unlock them."
 msgstr ""
@@ -3972,7 +3972,7 @@ msgid "Unmatched"
 msgstr "Descombinado"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "Unsupported operator"
 msgstr "Operador sem suporte"
@@ -3995,13 +3995,13 @@ msgid "Untaxed Total"
 msgstr "Total sem impostos"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/account_invoice.py:0
 msgid "Update"
 msgstr "Atualizar"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/components/purchase_file_uploader/purchase_file_uploader.xml:0
 #, fuzzy
 msgid "Upload Bill"
@@ -4027,7 +4027,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: purchase
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/purchase/static/src/components/purchase_file_uploader/purchase_file_uploader.js:0
 msgid "Validation Error"
 msgstr "Erro de validação"
@@ -4062,7 +4062,7 @@ msgid "Vendor Bill"
 msgstr "Conta do fornecedor"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_bill_line_match.py:0
 msgid "Vendor Bill lines can only be added to one Purchase Order."
 msgstr ""
@@ -4125,7 +4125,7 @@ msgstr ""
 "                    em rascunho no WETH."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "View"
 msgstr "Visualização"
@@ -4136,13 +4136,13 @@ msgid "View Details"
 msgstr "Ver detalhes"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "View Order"
 msgstr "Ver pedido"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "View Quotation"
 msgstr "Ver cotação"
@@ -4160,8 +4160,8 @@ msgstr "Faturas em espera"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.portal_my_purchase_order
-msgid "Want to import this document in Odoo?"
-msgstr "Quer importar esse documento para o Odoo?"
+msgid "Want to import this document in Weth?"
+msgstr "Quer importar esse documento para o Weth?"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.view_product_supplier_inherit
@@ -4186,14 +4186,14 @@ msgid ""
 "When creating a purchase order, have a look at the vendor's <i>On Time "
 "Delivery</i> rate: the percentage of products shipped on time. If it is too "
 "low, activate the <i>automated reminders</i>. A few days before the due "
-"shipment, Odoo will send the vendor an email to ask confirmation of shipment "
+"shipment, WETH will send the vendor an email to ask confirmation of shipment "
 "dates and keep you informed in case of any delays. To get the vendor's "
 "performance statistics, click on the OTD rate."
 msgstr ""
 "Ao criar um pedido de compra, confira a taxa de <i>entrega dentro do prazo</"
 "i> do fornecedor: a porcentagem de produtos enviados dentro do prazo. Se "
 "estiver muito baixa, ative os <i>lembretes automáticos</i>. Poucos dias "
-"antes do prazo de envio, o Odoo enviará ao fornecedor um e-mail para "
+"antes do prazo de envio, o WETH enviará ao fornecedor um e-mail para "
 "solicitar a confirmação das datas de envio e para mantê-lo informado em caso "
 "de atrasos. Para obter as estatísticas de desempenho do fornecedor, clique "
 "na taxa de EDP."
@@ -4201,12 +4201,12 @@ msgstr ""
 #. module: purchase
 #: model_terms:digest.tip,tip_description:purchase.digest_tip_purchase_1
 msgid ""
-"When sending a purchase order by email, Odoo asks the vendor to acknowledge "
+"When sending a purchase order by email, WETH asks the vendor to acknowledge "
 "the reception of the order. When the vendor acknowledges the order by "
 "clicking on a button in the email, the information is added on the purchase "
 "order. Use filters to track orders that have not been acknowledged."
 msgstr ""
-"Ao enviar um pedido de compra por e-mail, o Odoo pede ao fornecedor que "
+"Ao enviar um pedido de compra por e-mail, o WETH pede ao fornecedor que "
 "confirme o recebimento do pedido. Quando o fornecedor confirma o recebimento "
 "do pedido clicando em um botão do e-mail, a informação é adicionada ao "
 "pedido de compra. Use filtros para rastrear pedidos cujo recebimento não foi "
@@ -4221,15 +4221,15 @@ msgstr ""
 "interna."
 
 #. module: purchase
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 #: code:addons/purchase/static/src/components/purchase_file_uploader/purchase_file_uploader.js:0
 msgid "You can only upload a bill for a single vendor at a time."
 msgstr "Você só pode carregar uma conta para um único parceiro por vez."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order_line.py:0
 msgid ""
 "You cannot change the type of a purchase order line. Instead you should "
@@ -4253,7 +4253,7 @@ msgstr ""
 "            seja um produto armazenável, um consumível ou um serviço."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_bill_line_match.py:0
 msgid ""
 "You must select at least one Purchase Order line to match or create bill."
@@ -4262,7 +4262,7 @@ msgstr ""
 "corresponder ou criar uma conta."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid ""
 "Your RFQ contains products from company %(product_company)s whereas your RFQ "
@@ -4291,7 +4291,7 @@ msgid "e.g. This vendor is on vacation until the end of August."
 msgstr "ex.: Esse fornecedor está de férias até o final de agosto."
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order_line.py:0
 msgid "id"
 msgstr "id"
@@ -4307,19 +4307,19 @@ msgid "purchase"
 msgstr "compra"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "res_id"
 msgstr "res_id"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/models/purchase_order.py:0
 msgid "res_model_id"
 msgstr "res_model_id"
 
 #. module: purchase
-#. odoo-python
+#. weth-python
 #: code:addons/purchase/controllers/portal.py:0
 msgid "state"
 msgstr "estado"

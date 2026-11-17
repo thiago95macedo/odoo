@@ -8,7 +8,7 @@ export class NonSecureContextError extends Error {
 }
 
 /**
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} _error
  * @param {Error} originalError
  * @returns {boolean}

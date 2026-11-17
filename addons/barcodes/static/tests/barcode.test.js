@@ -123,7 +123,7 @@ test("edit, save and cancel buttons", async () => {
     // OCDEDIT
     await simulateBarCode(["O", "C", "D", "E", "D", "I", "T", "Enter"]);
     // dummy change to check that it actually saves
-    await contains(".o_field_widget input").edit("test", { confirm: "blur" });
+    await contains(".w_field_widget input").edit("test", { confirm: "blur" });
 
     // OCDSAVE
     await simulateBarCode(["O", "C", "D", "S", "A", "V", "E", "Enter"]);
@@ -132,7 +132,7 @@ test("edit, save and cancel buttons", async () => {
     // OCDEDIT
     await simulateBarCode(["O", "C", "D", "E", "D", "I", "T", "Enter"]);
     // dummy change to check that it correctly discards
-    await contains(".o_field_widget input").edit("test", { confirm: "blur" });
+    await contains(".w_field_widget input").edit("test", { confirm: "blur" });
     // OCDDISC
     await simulateBarCode(["O", "C", "D", "D", "I", "S", "C", "Enter"]);
     expect.verifySteps([]);
@@ -148,23 +148,23 @@ test("pager buttons", async () => {
         resIds: [1, 2],
     });
 
-    expect(".o_field_widget input").toHaveValue("Large Cabinet");
+    expect(".w_field_widget input").toHaveValue("Large Cabinet");
     // OCDNEXT
     await simulateBarCode(["O", "C", "D", "N", "E", "X", "T", "Enter"]);
     await animationFrame();
-    expect(".o_field_widget input").toHaveValue("Cabinet with Doors");
+    expect(".w_field_widget input").toHaveValue("Cabinet with Doors");
 
     // OCDPREV
     await simulateBarCode(["O", "C", "D", "P", "R", "E", "V", "Enter"]);
     await animationFrame();
-    expect(".o_field_widget input").toHaveValue("Large Cabinet");
+    expect(".w_field_widget input").toHaveValue("Large Cabinet");
 
     // OCDPAGERLAST
     await simulateBarCode(["O", "C", "D", "P", "A", "G", "E", "R", "L", "A", "S", "T", "Enter"]);
     // need to await 2 macro steps
     await macroIsComplete();
     await animationFrame();
-    expect(".o_field_widget input").toHaveValue("Cabinet with Doors");
+    expect(".w_field_widget input").toHaveValue("Cabinet with Doors");
 
     // OCDPAGERFIRST
     await simulateBarCode([
@@ -186,5 +186,5 @@ test("pager buttons", async () => {
     // need to await 2 macro steps
     await macroIsComplete();
     await animationFrame();
-    expect(".o_field_widget input").toHaveValue("Large Cabinet");
+    expect(".w_field_widget input").toHaveValue("Large Cabinet");
 });

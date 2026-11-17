@@ -30,9 +30,9 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         self.assertEqual(link_tracker.absolute_url, link_tracker.url)
 
         # Make the scheme as an empty string by removing the http:// from the url
-        link_tracker.write({'url': "odoo"})
+        link_tracker.write({'url': "weth"})
         # Validate the absolute url is the combination of system parameter and link tracker's url
-        self.assertEqual(link_tracker.absolute_url, f'{self._web_base_url}/odoo')
+        self.assertEqual(link_tracker.absolute_url, f'{self._web_base_url}/weth')
 
     def test_create(self):
         link_trackers = self.env['link.tracker'].create([
@@ -59,7 +59,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
         values_1, values_2, values_3 = [
             {'url': 'https://weth.com.br', 'title': 'WETH'},
             {'url': 'https://weth.be', 'title': 'WETH'},
-            {'url': 'https://weth.com.br', 'title': 'Odoo New', 'label': 'New one!'}  # title is not in unique constraint
+            {'url': 'https://weth.com.br', 'title': 'WETH New', 'label': 'New one!'}  # title is not in unique constraint
         ]
         expected_values_1, expected_values_2, expected_values_3 = [
             {
@@ -81,7 +81,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
                 'label': 'New one!',
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
-                'title': 'Odoo New',
+                'title': 'WETH New',
                 'url': 'https://weth.com.br',
             },
         ]

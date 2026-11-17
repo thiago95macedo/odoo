@@ -63,7 +63,7 @@ test("display the active spreadsheet", async () => {
     expect(".o_search_panel li.active").toHaveCount(1, {
         message: "It should have one active element",
     });
-    expect(".o-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
+    expect(".w-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
 });
 
 test("Fold/unfold the search panel", async function () {
@@ -173,13 +173,13 @@ test("display error message", async () => {
         throw error;
     });
     await createSpreadsheetDashboard();
-    expect(".o-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
+    expect(".w-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
     await contains(".o_search_panel li:eq(1)").click();
     expect(".o_spreadsheet_dashboard_action .dashboard-loading-status.error").toHaveCount(1, {
         message: "It should display an error",
     });
     await contains(".o_search_panel li:eq(0)").click();
-    expect(".o-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
+    expect(".w-spreadsheet").toHaveCount(1, { message: "It should display the spreadsheet" });
     expect(".o_renderer .error").toHaveCount(0, { message: "It should not display an error" });
     expect.verifyErrors(["RPC_ERROR"]);
 });
@@ -227,7 +227,7 @@ test("Last selected spreadsheet is kept when go back from breadcrumb", async fun
     serverData.models["spreadsheet.dashboard.group"].records[0].published_dashboard_ids.push(790);
     await createSpreadsheetDashboard({ serverData });
     await contains(".o_search_panel li:last-child").click();
-    await contains(".o-dashboard-clickable-cell").click();
+    await contains(".w-dashboard-clickable-cell").click();
     expect(".o_list_view").toHaveCount(1);
     await contains(".o_back_button").click();
     expect(".o_search_panel li:last-child").toHaveClass("active");
@@ -255,9 +255,9 @@ test("Can clear filter date filter value that defaults to current period", async
     const year = luxon.DateTime.local().year;
     expect(".o_control_panel_actions .o_facet_value").toHaveText(String(year));
     await contains(".o_searchview_facet_label").click();
-    await contains('.o-filter-item[data-id="2"] input').click();
-    await contains(".o-dropdown-item[data-id='year'] .btn-previous").click();
-    await contains(".o-filter-values-footer .btn-primary").click();
+    await contains('.w-filter-item[data-id="2"] input').click();
+    await contains(".w-dropdown-item[data-id='year'] .btn-previous").click();
+    await contains(".w-filter-values-footer .btn-primary").click();
 
     expect(".o_control_panel_actions .o_facet_value").toHaveText(String(year - 1));
 
@@ -338,9 +338,9 @@ test("Changing filter values will create a new share", async function () {
     const year = luxon.DateTime.local().year;
     expect(".o_control_panel_actions .o_facet_value").toHaveText(String(year));
     await contains(".o_searchview_facet_label").click();
-    await contains(".o-filter-value input").click();
-    await contains(".o-dropdown-item[data-id='year'] .btn-previous").click();
-    await contains(".o-filter-values-footer .btn-primary").click();
+    await contains(".w-filter-value input").click();
+    await contains(".w-dropdown-item[data-id='year'] .btn-previous").click();
+    await contains(".w-filter-values-footer .btn-primary").click();
 
     await contains("i[data-icon='share']").click();
     await animationFrame();
@@ -397,12 +397,12 @@ test("Global filter with same id is not shared between dashboards", async functi
     expect(".o_searchview_facet").toHaveCount(0);
     await contains(".o_spreadsheet_dashboard_action .dropdown-toggle").click();
 
-    await contains(".o-autocomplete--input.o_input").click();
-    expect(".o-filter-value .o_tag_badge_text").toHaveCount(0);
+    await contains(".w-autocomplete--input.o_input").click();
+    expect(".w-filter-value .o_tag_badge_text").toHaveCount(0);
     await contains(".dropdown-item:first").click();
-    expect(".o-filter-value .o_tag_badge_text").toHaveCount(1);
+    expect(".w-filter-value .o_tag_badge_text").toHaveCount(1);
 
-    await contains(".o-filter-values-footer .btn-primary").click();
+    await contains(".w-filter-values-footer .btn-primary").click();
     expect(".o_searchview_facet").toHaveCount(1);
 
     await contains(".o_search_panel li:last-child").click();
@@ -435,11 +435,11 @@ test("Can add a new global filter from the search bar", async function () {
 
     await contains(".o_spreadsheet_dashboard_action .dropdown-toggle").click();
 
-    expect(".o-autocomplete--input.o_input").toHaveCount(1);
-    expect(".o-autocomplete--input.o_input").toHaveValue("");
-    await contains(".o-autocomplete--input.o_input").click();
-    await contains(".o-autocomplete--dropdown-item").click();
-    await contains(".o-filter-values-footer .btn-primary").click();
+    expect(".w-autocomplete--input.o_input").toHaveCount(1);
+    expect(".w-autocomplete--input.o_input").toHaveValue("");
+    await contains(".w-autocomplete--input.o_input").click();
+    await contains(".w-autocomplete--dropdown-item").click();
+    await contains(".w-filter-values-footer .btn-primary").click();
 
     expect(".o_searchview_facet").toHaveCount(1);
     expect(".o_searchview_facet .o_searchview_facet_label").toHaveText("Relation Filter");
@@ -463,7 +463,7 @@ test("Can open the dialog by clicking on a facet", async function () {
 
     expect(".o_searchview_facet").toHaveCount(1);
     await contains(".o_searchview_facet .o_searchview_facet_label ").click();
-    expect(".o-filter-values").toHaveCount(1);
+    expect(".w-filter-values").toHaveCount(1);
 });
 
 test("Can open the dialog by clicking on the search bar", async function () {
@@ -482,7 +482,7 @@ test("Can open the dialog by clicking on the search bar", async function () {
     await createSpreadsheetDashboard({ serverData });
 
     await contains(".o_searchview input").click();
-    expect(".o-filter-values").toHaveCount(1);
+    expect(".w-filter-values").toHaveCount(1);
 });
 
 test("pointerDown on the search input should not hide the search menu", async () => {
@@ -501,11 +501,11 @@ test("pointerDown on the search input should not hide the search menu", async ()
     await createSpreadsheetDashboard({ serverData });
 
     await contains(".o_searchview_input").click();
-    expect(`.o-filter-values`).toHaveCount(1);
+    expect(`.w-filter-values`).toHaveCount(1);
 
     await pointerDown(".o_searchview_input");
     await animationFrame();
-    expect(`.o-filter-values`).toHaveCount(1);
+    expect(`.w-filter-values`).toHaveCount(1);
 });
 
 test("Changes of global filters are not dispatched while inside the dialog", async function () {
@@ -526,10 +526,10 @@ test("Changes of global filters are not dispatched while inside the dialog", asy
 
     await contains(".o_spreadsheet_dashboard_action .dropdown-toggle").click();
 
-    await contains(".o-autocomplete--input.o_input").click();
-    await contains(".o-autocomplete--dropdown-item").click();
+    await contains(".w-autocomplete--input.o_input").click();
+    await contains(".w-autocomplete--dropdown-item").click();
     expect(model.getters.getGlobalFilterValue("1")).toBe(undefined);
-    await contains(".o-filter-values-footer .btn-primary").click();
+    await contains(".w-filter-values-footer .btn-primary").click();
     expect(model.getters.getGlobalFilterValue("1")).toEqual({ operator: "in", ids: [37] });
 });
 
@@ -613,7 +613,7 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("phone");
-        expect(".o-dropdown-item.focus").toHaveText("Search Product for: phone");
+        expect(".w-dropdown-item.focus").toHaveText("Search Product for: phone");
         await press("Enter");
 
         const filterValue = model.getters.getGlobalFilterValue(productFilter.id);
@@ -627,7 +627,7 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("test");
-        expect(".o-dropdown-item.focus").toHaveText("Search Product for: test");
+        expect(".w-dropdown-item.focus").toHaveText("Search Product for: test");
         await press("Enter");
 
         const filterValue = model.getters.getGlobalFilterValue(productFilter.id);
@@ -640,10 +640,10 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("x");
-        expect(".o-dropdown-item.focus").toHaveText("Search Product for: x");
-        await contains(".o-dropdown-item.focus .o_expand").click();
+        expect(".w-dropdown-item.focus").toHaveText("Search Product for: x");
+        await contains(".w-dropdown-item.focus .o_expand").click();
 
-        const children = queryAll(".o-dropdown-item.o_indent");
+        const children = queryAll(".w-dropdown-item.o_indent");
         expect(children.map((el) => el.innerText)).toEqual(["xphone", "xpad"]);
         await contains(children[0]).click();
 
@@ -659,17 +659,17 @@ describe("Quick search bar", () => {
         await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("name");
-        expect(".o-dropdown-item.focus").toHaveText("Search Product for: name");
-        await contains(".o-dropdown-item.focus .o_expand").click();
+        expect(".w-dropdown-item.focus").toHaveText("Search Product for: name");
+        await contains(".w-dropdown-item.focus .o_expand").click();
 
-        const children = queryAll(".o-dropdown-item.o_indent");
+        const children = queryAll(".w-dropdown-item.o_indent");
         expect(children.map((el) => el.innerText)).toEqual([
             ...range(9).map((i) => `name${i}`),
             "Load more",
         ]);
         await contains(children.at(-1)).click();
 
-        expect(queryAllTexts(".o-dropdown-item.o_indent")).toEqual(
+        expect(queryAllTexts(".w-dropdown-item.o_indent")).toEqual(
             range(15).map((i) => `name${i}`)
         );
     });
@@ -680,7 +680,7 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("phone");
-        expect(".o-dropdown-item.focus").toHaveText("Search Text for: phone");
+        expect(".w-dropdown-item.focus").toHaveText("Search Text for: phone");
         await press("Enter");
 
         const filterValue = model.getters.getGlobalFilterValue("2");
@@ -703,11 +703,11 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("a");
-        expect(".o-dropdown-item.focus").toHaveText("Search Text for: a");
+        expect(".w-dropdown-item.focus").toHaveText("Search Text for: a");
         await press("ArrowRight");
         await animationFrame();
 
-        const children = queryAll(".o-dropdown-item.o_indent");
+        const children = queryAll(".w-dropdown-item.o_indent");
         expect(children.map((el) => el.innerText)).toEqual(["tablet", "table"]);
         await contains(children[1]).click();
 
@@ -731,7 +731,7 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("desk");
-        expect(".o-dropdown-item.focus").toHaveText("Search Text for: desk");
+        expect(".w-dropdown-item.focus").toHaveText("Search Text for: desk");
         await press("Enter");
 
         const filterValue = model.getters.getGlobalFilterValue("2");
@@ -744,10 +744,10 @@ describe("Quick search bar", () => {
         const { model } = await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("a");
-        expect(".o-dropdown-item.focus").toHaveText("Search Selection Filter for: a");
-        await contains(".o-dropdown-item.focus .o_expand").click();
+        expect(".w-dropdown-item.focus").toHaveText("Search Selection Filter for: a");
+        await contains(".w-dropdown-item.focus .o_expand").click();
 
-        const children = queryAll(".o-dropdown-item.o_indent");
+        const children = queryAll(".w-dropdown-item.o_indent");
         expect(children.map((el) => el.innerText)).toEqual(["A"]);
         await contains(children[0]).click();
 
@@ -764,7 +764,7 @@ describe("Quick search bar", () => {
         await createSpreadsheetDashboard({ serverData });
 
         await contains(".o_searchview_input").edit("phone");
-        expect(queryAllTexts(".o-dropdown-item")).toEqual([
+        expect(queryAllTexts(".w-dropdown-item")).toEqual([
             "Search Product for: phone",
             "Search Selection Filter for: phone",
         ]);
@@ -794,19 +794,19 @@ describe("Quick search bar", () => {
 
         await contains(document.body).click(); // click outside to lost focus from autofocus
         expect(document.activeElement).toBe(document.body);
-        expect(".o_popover .o-filter-item").toHaveCount(0);
+        expect(".o_popover .w-filter-item").toHaveCount(0);
 
         await contains(".o_searchview.form-control").click();
         expect(document.activeElement).toHaveClass("o_searchview_input");
-        expect(".o_popover .o-filter-item").toHaveCount(1);
+        expect(".o_popover .w-filter-item").toHaveCount(1);
 
         await contains(document.body).click(); // click outside to close the popover and lose focus
         expect(document.activeElement).toBe(document.body);
-        expect(".o_popover .o-filter-item").toHaveCount(0);
+        expect(".o_popover .w-filter-item").toHaveCount(0);
 
         await contains(".o_searchview_facet_label").click();
         expect(document.activeElement).toHaveClass("o_searchview_input");
-        expect(".o_popover .o-filter-item").toHaveCount(1);
+        expect(".o_popover .w-filter-item").toHaveCount(1);
     });
 });
 
@@ -826,12 +826,12 @@ describe("Filter list behavior in search bar", () => {
             label: "Text Filter",
         });
 
-        await contains(".o-filter-values select").select("not ilike");
-        await contains(".o-filter-values .o-autocomplete input").edit("foo");
+        await contains(".w-filter-values select").select("not ilike");
+        await contains(".w-filter-values .w-autocomplete input").edit("foo");
         await press("Enter");
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined);
 
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual({
             operator: "not ilike",
             strings: ["foo"],
@@ -845,14 +845,14 @@ describe("Filter list behavior in search bar", () => {
             label: "Numeric Filter",
         });
 
-        await contains(".o-filter-values select").select(">");
-        await contains(".o-filter-values input").edit(1998);
+        await contains(".w-filter-values select").select(">");
+        await contains(".w-filter-values input").edit(1998);
         await press("Enter");
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined, {
             message: "value is not directly set",
         });
 
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual(
             { operator: ">", targetValue: 1998 },
             { message: "value is set" }
@@ -866,12 +866,12 @@ describe("Filter list behavior in search bar", () => {
             label: "Numeric Filter",
         });
 
-        await contains(".o-filter-values select").select("between");
-        const [minInput, maxInput] = document.querySelectorAll(".o-global-filter-numeric-value");
+        await contains(".w-filter-values select").select("between");
+        const [minInput, maxInput] = document.querySelectorAll(".w-global-filter-numeric-value");
         expect([minInput, maxInput]).toHaveLength(2);
         await contains(minInput).edit(1);
         await contains(maxInput).edit(99);
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual(
             { operator: "between", minimumValue: 1, maximumValue: 99 },
             { message: "value is set" }
@@ -886,12 +886,12 @@ describe("Filter list behavior in search bar", () => {
             label: "Relation Filter",
         });
 
-        await contains(".o-filter-values select").select("not in");
-        await contains("input.o-autocomplete--input").click();
-        await contains(".o-autocomplete--dropdown-item:first").click();
+        await contains(".w-filter-values select").select("not in");
+        await contains("input.w-autocomplete--input").click();
+        await contains(".w-autocomplete--dropdown-item:first").click();
         expect(".o_tag").toHaveCount(1);
 
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual(
             { operator: "not in", ids: [37] },
             { message: "value is set" }
@@ -899,7 +899,7 @@ describe("Filter list behavior in search bar", () => {
 
         await toggleSearchBarMenu();
         await contains(".o_tag .o_delete").click();
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined);
     });
 
@@ -916,7 +916,7 @@ describe("Filter list behavior in search bar", () => {
         await contains(".o_tag .o_delete").click();
         expect(".o_tag").toHaveCount(0);
 
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined);
     });
 
@@ -926,15 +926,15 @@ describe("Filter list behavior in search bar", () => {
             type: "boolean",
             label: "Boolean Filter",
         });
-        expect(".o-filter-values select").toHaveValue("");
+        expect(".w-filter-values select").toHaveValue("");
 
-        await contains(".o-filter-values select").select("not set");
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values select").select("not set");
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual({ operator: "not set" });
 
         await toggleSearchBarMenu();
-        await contains(".o-filter-values select").select("");
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values select").select("");
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined);
     });
 
@@ -945,11 +945,11 @@ describe("Filter list behavior in search bar", () => {
             label: "Date Filter",
         });
 
-        await contains(".o-date-filter-input").click();
-        await contains(".o-dropdown-item[data-id='last_7_days']").click();
-        expect(".o-date-filter-input").toHaveValue("Last 7 Days");
+        await contains(".w-date-filter-input").click();
+        await contains(".w-dropdown-item[data-id='last_7_days']").click();
+        expect(".w-date-filter-input").toHaveValue("Last 7 Days");
 
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual({
             period: "last_7_days",
             type: "relative",
@@ -962,8 +962,8 @@ describe("Filter list behavior in search bar", () => {
             type: "text",
             label: "Text Filter",
         });
-        await contains(".o-filter-values-footer .btn-primary").click();
-        expect(".o-filter-values").toHaveCount(0);
+        await contains(".w-filter-values-footer .btn-primary").click();
+        expect(".w-filter-values").toHaveCount(0);
     });
 
     test("Readonly user can update a filter value", async function () {
@@ -974,9 +974,9 @@ describe("Filter list behavior in search bar", () => {
         });
         model.updateMode("readonly");
 
-        await contains(".o-filter-values .o-autocomplete input").edit("foo");
+        await contains(".w-filter-values .w-autocomplete input").edit("foo");
         await press("Enter");
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42").strings).toEqual(["foo"], {
             message: "value is set",
         });
@@ -989,11 +989,11 @@ describe("Filter list behavior in search bar", () => {
             label: "Text Filter",
             defaultValue: { operator: "ilike", strings: ["foo"] },
         });
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(1);
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(1);
 
-        await contains(".o-filter-values .o-filter-item .o_tag .o_delete").click();
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(0);
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values .w-filter-item .o_tag .o_delete").click();
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(0);
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined, {
             message: "value is cleared",
         });
@@ -1006,12 +1006,12 @@ describe("Filter list behavior in search bar", () => {
             label: "Text Filter",
             defaultValue: { operator: "ilike", strings: ["foo"] },
         });
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(1);
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(1);
 
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(1);
-        await contains(".o-filter-values .o-filter-item .o-filter-clear button").click();
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(0);
-        await contains(".o-filter-values-footer .btn-primary").click();
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(1);
+        await contains(".w-filter-values .w-filter-item .w-filter-clear button").click();
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(0);
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toBe(undefined);
     });
 
@@ -1023,14 +1023,14 @@ describe("Filter list behavior in search bar", () => {
             defaultValue: { operator: "ilike", strings: ["foo"] },
         });
 
-        await contains(".o-filter-values select").select("starts with");
-        await contains(".o-filter-values .o-filter-item .o_tag .o_delete").click();
-        expect(".o-filter-values .o-filter-item .o_tag").toHaveCount(0);
-        expect(".o-filter-values select").toHaveValue("starts with");
+        await contains(".w-filter-values select").select("starts with");
+        await contains(".w-filter-values .w-filter-item .o_tag .o_delete").click();
+        expect(".w-filter-values .w-filter-item .o_tag").toHaveCount(0);
+        expect(".w-filter-values select").toHaveValue("starts with");
 
-        await contains(".o-filter-values .o-filter-item .o-autocomplete input").edit("foo");
-        await contains(".o-filter-values .o-filter-item .o-autocomplete input").press("Enter");
-        await contains(".o-filter-values-footer .btn-primary").click();
+        await contains(".w-filter-values .w-filter-item .w-autocomplete input").edit("foo");
+        await contains(".w-filter-values .w-filter-item .w-autocomplete input").press("Enter");
+        await contains(".w-filter-values-footer .btn-primary").click();
         expect(model.getters.getGlobalFilterValue("42")).toEqual({
             operator: "starts with",
             strings: ["foo"],

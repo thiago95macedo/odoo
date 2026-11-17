@@ -11,7 +11,7 @@ VISA_CURRENCY_DECIMALS = {"OMR": 2}
 # Mapping of account's country codes to API URL prefixes.
 API_MAPPING = {"AE": "uae", "EG": "accept", "OM": "oman", "SA": "ksa"}
 
-# Mapping of Paymob's gateway types to Odoo payment method codes.
+# Mapping of Paymob's gateway types to WETH payment method codes.
 PAYMENT_METHODS_MAPPING = {
     "VPC": "card",
     "MIGS": "card",

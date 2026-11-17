@@ -187,7 +187,7 @@ test("float fields are formatted properly without using a widget", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("0.40000\n0.400");
+    expect(".w_card_record").toHaveText("0.40000\n0.400");
 });
 
 test("field with widget and attributes in card", async () => {
@@ -245,8 +245,8 @@ test("card with integer field with human_readable option", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("5M");
-    expect(".o_field_widget").toHaveCount(0);
+    expect(".w_card_record").toHaveText("5M");
+    expect(".w_field_widget").toHaveCount(0);
 });
 
 test("context can be used in card template", async () => {
@@ -264,8 +264,8 @@ test("context can be used in card template", async () => {
         context: { some_key: 1 },
     });
 
-    expect(".o_card_record").toHaveCount(1);
-    expect(".o_card_record span:contains(yop)").toHaveCount(1);
+    expect(".w_card_record").toHaveCount(1);
+    expect(".w_card_record span:contains(yop)").toHaveCount(1);
 });
 
 test("card with sub-template", async () => {
@@ -285,7 +285,7 @@ test("card with sub-template", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("yop");
+    expect(".w_card_record").toHaveText("yop");
 });
 
 test("card with t-set outside card", async () => {
@@ -306,7 +306,7 @@ test("card with t-set outside card", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("10");
+    expect(".w_card_record").toHaveText("10");
 });
 
 test("card with t-if/t-else on field", async () => {
@@ -321,10 +321,10 @@ test("card with t-if/t-else on field", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0]).toHaveText("10");
+    expect(queryAll(".w_card_record")[0]).toHaveText("10");
 
     await mountCard({ resModel: "partner", resId: 3, arch });
-    expect(queryAll(".o_card_record")[1]).toHaveText("Negative value");
+    expect(queryAll(".w_card_record")[1]).toHaveText("Negative value");
 });
 
 test("card with t-if/t-else on field with widget", async () => {
@@ -339,10 +339,10 @@ test("card with t-if/t-else on field with widget", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0]).toHaveText("10");
+    expect(queryAll(".w_card_record")[0]).toHaveText("10");
 
     await mountCard({ resModel: "partner", resId: 3, arch });
-    expect(queryAll(".o_card_record")[1]).toHaveText("Negative value");
+    expect(queryAll(".w_card_record")[1]).toHaveText("Negative value");
 });
 
 test("field with widget and dynamic attributes in card", async () => {
@@ -433,8 +433,8 @@ test("buttons with modifiers", async () => {
             </card>`,
     });
 
-    expect(".o_btn_test_1").toHaveCount(1, { message: "card should have one button of type 1" });
-    expect(".o_btn_test_2").toHaveCount(1, { message: "card should have one button of type 2" });
+    expect(".w_btn_test_1").toHaveCount(1, { message: "card should have one button of type 1" });
+    expect(".w_btn_test_2").toHaveCount(1, { message: "card should have one button of type 2" });
 });
 
 test("support styling of anchor tags with action type", async () => {
@@ -522,10 +522,10 @@ test("field tag with modifiers but no widget", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0]).toHaveText("");
+    expect(queryAll(".w_card_record")[0]).toHaveText("");
 
     await mountCard({ resModel: "partner", resId: 2, arch });
-    expect(queryAll(".o_card_record")[1]).toHaveText("blip");
+    expect(queryAll(".w_card_record")[1]).toHaveText("blip");
 });
 
 test("field tag with widget and class attributes", async () => {
@@ -542,7 +542,7 @@ test("field tag with widget and class attributes", async () => {
             </card>`,
     });
 
-    expect(".o_field_widget.hi").toHaveCount(1);
+    expect(".w_field_widget.hi").toHaveCount(1);
 });
 
 test("rendering date and datetime (value)", async () => {
@@ -560,10 +560,10 @@ test("rendering date and datetime (value)", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0].querySelector(".date")).toHaveText("Jan 25, 2017");
+    expect(queryAll(".w_card_record")[0].querySelector(".date")).toHaveText("Jan 25, 2017");
 
     await mountCard({ resModel: "partner", resId: 2, arch });
-    expect(queryAll(".o_card_record")[1].querySelector(".datetime")).toHaveText(
+    expect(queryAll(".w_card_record")[1].querySelector(".datetime")).toHaveText(
         "Dec 12, 2016, 11:55 AM"
     );
 });
@@ -585,12 +585,12 @@ test("rendering date and datetime (raw value)", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0].querySelector(".date")).toHaveText(
+    expect(queryAll(".w_card_record")[0].querySelector(".date")).toHaveText(
         "2017-01-25T00:00:00.000+01:00"
     );
 
     await mountCard({ resModel: "partner", resId: 2, arch });
-    expect(queryAll(".o_card_record")[1].querySelector(".datetime")).toHaveText(
+    expect(queryAll(".w_card_record")[1].querySelector(".datetime")).toHaveText(
         "2016-12-12T11:55:05.000+01:00"
     );
 });
@@ -608,10 +608,10 @@ test("rendering many2one (value)", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0]).toHaveText("hello");
+    expect(queryAll(".w_card_record")[0]).toHaveText("hello");
 
     await mountCard({ resModel: "partner", resId: 2, arch });
-    expect(queryAll(".o_card_record")[1]).toHaveText("");
+    expect(queryAll(".w_card_record")[1]).toHaveText("");
 });
 
 test("rendering many2one (raw value)", async () => {
@@ -628,10 +628,10 @@ test("rendering many2one (raw value)", async () => {
         </card>`;
 
     await mountCard({ resModel: "partner", resId: 1, arch });
-    expect(queryAll(".o_card_record")[0]).toHaveText("3");
+    expect(queryAll(".w_card_record")[0]).toHaveText("3");
 
     await mountCard({ resModel: "partner", resId: 2, arch });
-    expect(queryAll(".o_card_record")[1]).toHaveText("false");
+    expect(queryAll(".w_card_record")[1]).toHaveText("false");
 });
 
 test("evaluate conditions on relational fields", async () => {
@@ -653,7 +653,7 @@ test("evaluate conditions on relational fields", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveCount(1);
+    expect(".w_card_record").toHaveCount(1);
     expect(".btn_a").toHaveCount(1, { message: "should show the 'Action' button" });
     expect(".btn_b").toHaveCount(1, { message: "should show the 'B' button" });
 });
@@ -705,21 +705,21 @@ test("many2many_tags in card views", async () => {
             </card>`,
     });
 
-    expect(".o_field_many2many_tags .o_tag").toHaveCount(2, {
+    expect(".w_field_many2many_tags .w_tag").toHaveCount(2, {
         message: "record should contain 2 tags",
     });
-    expect(".o_tag.o_tag_color_2").toHaveCount(1, {
+    expect(".w_tag.w_tag_color_2").toHaveCount(1, {
         message: "first tag should have color 2",
     });
 
     // Write on the record using the priority widget to trigger a re-render in readonly
-    await contains(".o_priority_star:first-child").click();
+    await contains(".w_priority_star:first-child").click();
 
     expect.verifySteps(["web_save"]);
-    expect(".o_field_many2many_tags .o_tag").toHaveCount(2, {
+    expect(".w_field_many2many_tags .w_tag").toHaveCount(2, {
         message: "record should still contain 2 tags",
     });
-    const tags = queryAll(".o_tag");
+    const tags = queryAll(".w_tag");
     expect(tags[0]).toHaveText("gold");
     expect(tags[1]).toHaveText("silver");
 });
@@ -739,9 +739,9 @@ test("priority field should not be editable when missing access rights", async (
             </card>`,
         readonly: true,
     });
-    expect(".o_card_record .o_priority [data-icon='star']:not(.oi-filled)").toHaveCount(2);
-    await contains(".o_card_record .o_priority_star:first-child").click();
-    expect(".o_card_record .o_priority [data-icon='star']:not(.oi-filled)").toHaveCount(2);
+    expect(".w_card_record .w_priority [data-icon='star']:not(.oi-filled)").toHaveCount(2);
+    await contains(".w_card_record .w_priority_star:first-child").click();
+    expect(".w_card_record .w_priority [data-icon='star']:not(.oi-filled)").toHaveCount(2);
 });
 
 test("can use JSON in card template", async () => {
@@ -763,9 +763,9 @@ test("can use JSON in card template", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveCount(1);
-    expect(".o_card_record span").toHaveCount(3);
-    expect(".o_card_record").toHaveText("ged");
+    expect(".w_card_record").toHaveCount(1);
+    expect(".w_card_record span").toHaveCount(3);
+    expect(".w_card_record").toHaveText("ged");
 });
 
 test("Missing t-key is automatically filled with a warning", async () => {
@@ -787,7 +787,7 @@ test("Missing t-key is automatically filled with a warning", async () => {
     });
 
     expect.verifySteps(["warning"]);
-    expect(queryOne(".o_card_record")).toHaveText("123");
+    expect(queryOne(".w_card_record")).toHaveText("123");
 });
 
 test("Allow use of 'editable'/'deletable' in card", async () => {
@@ -805,7 +805,7 @@ test("Allow use of 'editable'/'deletable' in card", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("EDITDELETE");
+    expect(".w_card_record").toHaveText("EDITDELETE");
 });
 
 test("basic support for widgets (being Owl Components)", async () => {
@@ -836,7 +836,7 @@ test("basic support for widgets (being Owl Components)", async () => {
             </card>`,
     });
 
-    expect(queryOne(".o_card_record").querySelector(".o_widget")).toHaveText('{"foo":"yop"}');
+    expect(queryOne(".w_card_record").querySelector(".w_widget")).toHaveText('{"foo":"yop"}');
 });
 
 test("card record: record value should be updated", async () => {
@@ -867,13 +867,13 @@ test("card record: record value should be updated", async () => {
             </card>`,
     });
 
-    expect(queryText(".foo", { root: queryOne(".o_card_record") })).toBe("yop");
+    expect(queryText(".foo", { root: queryOne(".w_card_record") })).toBe("yop");
 
-    await click(queryOne("button", { root: queryOne(".o_card_record") }));
+    await click(queryOne("button", { root: queryOne(".w_card_record") }));
     await animationFrame();
     await animationFrame();
 
-    expect(queryText(".foo", { root: queryOne(".o_card_record") })).toBe("yolo");
+    expect(queryText(".foo", { root: queryOne(".w_card_record") })).toBe("yolo");
 });
 
 test("card view with boolean field", async () => {
@@ -890,8 +890,8 @@ test("card view with boolean field", async () => {
             </card>`,
     });
 
-    expect(".o_card_record input:disabled").toHaveCount(1);
-    expect(".o_card_record input:checked").toHaveCount(1);
+    expect(".w_card_record input:disabled").toHaveCount(1);
+    expect(".w_card_record input:checked").toHaveCount(1);
 });
 
 test("card view with boolean widget", async () => {
@@ -909,7 +909,7 @@ test("card view with boolean widget", async () => {
     });
 
     expect(
-        queryAll("div.o_field_boolean .o-checkbox", { root: queryOne(".o_card_record") })
+        queryAll("div.w_field_boolean .w-checkbox", { root: queryOne(".w_card_record") })
     ).toHaveCount(1);
 });
 
@@ -926,12 +926,12 @@ test("card view with boolean toggle widget", async () => {
                 </templates>
             </card>`,
     });
-    expect(queryOne(".o_card_record").querySelector("[name='bar'] input")).toBeChecked();
+    expect(queryOne(".w_card_record").querySelector("[name='bar'] input")).toBeChecked();
 
     await click("[name='bar'] input");
     await animationFrame();
 
-    expect(queryOne(".o_card_record").querySelector("[name='bar'] input")).not.toBeChecked();
+    expect(queryOne(".w_card_record").querySelector("[name='bar'] input")).not.toBeChecked();
 });
 
 test("card view with monetary and currency fields without widget", async () => {
@@ -972,7 +972,7 @@ test("card view with monetary and currency fields without widget", async () => {
             </card>`,
     });
 
-    expect(".o_card_record").toHaveText("$ 1,750.00");
+    expect(".w_card_record").toHaveText("$ 1,750.00");
 });
 
 test("card widget can extract props from attrs", async () => {
@@ -1001,8 +1001,8 @@ test("card widget can extract props from attrs", async () => {
         resModel: "partner",
     });
 
-    expect(".o-test-widget-option").toHaveCount(1);
-    expect(".o-test-widget-option:first").toHaveText("Widget with Option");
+    expect(".w-test-widget-option").toHaveCount(1);
+    expect(".w-test-widget-option:first").toHaveText("Widget with Option");
 });
 
 test("fieldDependencies support for fields", async () => {
@@ -1080,7 +1080,7 @@ test("Can't use CardRenderer implementation details in arch", async () => {
                 </templates>
             </card>`,
     });
-    expect(queryOne(".o_card_record")).toHaveInnerHTML("<div></div>");
+    expect(queryOne(".w_card_record")).toHaveInnerHTML("<div></div>");
 });
 
 test("card with basic and custom compiler, same arch", async () => {
@@ -1137,8 +1137,8 @@ test("card: fields with data-tooltip attribute", async () => {
             </card>`,
     });
 
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
     await hover("article span");
     await advanceTime(500);
-    expect(".o-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveCount(1);
 });

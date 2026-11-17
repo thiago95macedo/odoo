@@ -53,7 +53,7 @@ test("Check contenteditable attribute", async () => {
         return true;
     });
     queryOne(":iframe .o_container_small").textContent = "dirty for save";
-    await contains(".o-snippets-top-actions [data-action='save']").click();
+    await contains(".w-snippets-top-actions [data-action='save']").click();
 });
 
 test("Check contenteditable on Parallax snippet", async () => {
@@ -121,7 +121,7 @@ test("feff on links are cleaned up", async () => {
     setSelection({ anchorNode: link.childNodes[1], anchorOffset: 2 });
     await insertText(getEditor(), "x");
     expect(link.innerText).toMatch(/\u{FEFF}/u);
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect.verifySteps(["save"]);
 });
 

@@ -1,12 +1,14 @@
 a.o_todo_done_button {
     margin: 0px 5px;
-    @include o-hover-text-color($gray-400, $o-success);
+    @include o-hover-text-color($gray-400, $w-success);
+
     &:hover:before {
         content: "check_circle_f";
     }
 
     &.done_button_enabled {
-        @include o-hover-text-color($o-success, $gray-400);
+        @include o-hover-text-color($w-success, $gray-400);
+
         &:hover:before {
             content: "check_circle";
         }
@@ -16,8 +18,9 @@ a.o_todo_done_button {
 a.o_todo_done_button_mobile {
     margin: 0px 5px;
     color: $gray-400;
+
     &.done_button_enabled {
-        color: $o-success;
+        color: $w-success;
     }
 }
 

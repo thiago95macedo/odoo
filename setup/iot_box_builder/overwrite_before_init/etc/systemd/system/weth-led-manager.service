@@ -1,5 +1,5 @@
 [Unit]
-Description=Odoo LED Status Indicator: makes LEDs blink based on Odoo status
+Description=WETH LED Status Indicator: makes LEDs blink based on WETH status
 
 [Service]
 Type=simple

@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 17:40+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_event_sale/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgid "Link module between pos_sale and pos_event"
 msgstr "Módulo de ligação entre pos_sale e pos_event"
 
 #. module: pos_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_event_sale/static/src/app/services/pos_store.js:0
 #, fuzzy
 msgid "No more seats available for %s"

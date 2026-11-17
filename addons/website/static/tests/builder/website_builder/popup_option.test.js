@@ -95,10 +95,10 @@ describe("Popup options: empty page before edit", () => {
         await insertCategorySnippet({ group: "content", snippet: "s_popup" });
         await contains(":iframe .s_popup .modal").click();
         await contains("[data-label=Backdrop] button.o_we_color_preview").click();
-        await contains(".o-overlay-item [data-color='o-color-1']").click();
+        await contains(".w-overlay-item [data-color='o-color-1']").click();
 
         expect(":iframe .s_popup .modal").toHaveClass("bg-o-color-1");
-        expect("[data-action-id='setBackdrop'] .o-checkbox .form-check-input:checked").toHaveCount(
+        expect("[data-action-id='setBackdrop'] .w-checkbox .form-check-input:checked").toHaveCount(
             1
         );
     });
@@ -110,7 +110,7 @@ describe("Popup options: empty page before edit", () => {
         await contains("button[title='Reset']").click();
 
         expect(queryOne(":iframe .s_popup .modal").style.backgroundColor).toBe("");
-        expect("[data-action-id='setBackdrop'] .o-checkbox .form-check-input:checked").toHaveCount(
+        expect("[data-action-id='setBackdrop'] .w-checkbox .form-check-input:checked").toHaveCount(
             1
         );
     });
@@ -139,7 +139,7 @@ test("dropping the popup snippet appends it to the end of the container", async 
         loadAssetsFrontendJS: true,
     });
     const { moveTo, drop } = await contains(
-        ".o-website-builder_sidebar [data-snippet-group='content'] .o_snippet_thumbnail"
+        ".w-website-builder_sidebar [data-snippet-group='content'] .o_snippet_thumbnail"
     ).drag();
     // Drop the snippet in the first dropzone.
     await moveTo(":iframe .oe_drop_zone:first");
@@ -309,7 +309,7 @@ describe("Popup options: popup in page before edit", () => {
         expect(":iframe .s_popup .modal-content").toHaveClass("oe_structure_empty_message");
 
         // Expect the empty message to be removed if the popup is no longer empty
-        await contains(".o-snippets-tabs [data-name='blocks']").click();
+        await contains(".w-snippets-tabs [data-name='blocks']").click();
         await insertCategorySnippet({ group: "text", snippet: "s_title" });
         expect(":iframe .s_popup .modal-content").not.toHaveClass("oe_structure_empty_message");
     });
@@ -329,7 +329,7 @@ describe("Popup options: popup in page before edit", () => {
 
         await contains(":iframe section p:contains('Popup content')").click();
         await contains(".overlay .oe_snippet_remove").click();
-        await contains(".o-snippets-top-actions button:contains(Save)").click();
+        await contains(".w-snippets-top-actions button:contains(Save)").click();
         expect.verifySteps(["save"]);
     });
 });

@@ -12,7 +12,7 @@ KNOWN_DATA_MODULES = {'test_data_module'}
 class TestDunderinit(LintCase):
 
     def test_dunderinit(self):
-        """ Test that __init__.py exists in Odoo modules, otherwise they won't get packaged"""
+        """ Test that __init__.py exists in WETH modules, otherwise they won't get packaged"""
 
         modules_list = [mod for mod in Manifest.all_addon_manifests() if mod.name not in KNOWN_DATA_MODULES]
         self.assertTrue(len(modules_list), "No modules found!")

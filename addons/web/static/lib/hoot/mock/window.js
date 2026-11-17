@@ -782,7 +782,7 @@ export function watchListeners(view = _getWindow()) {
  * @param {T} target
  * @param {string[]} [whiteList]
  * @example
- *  afterEach(watchKeys(window, ["odoo"]));
+ *  afterEach(watchKeys(window, ["weth"]));
  */
 export function watchKeys(target, whiteList) {
     const acceptedKeys = new Set($ownKeys(target).concat(whiteList || []));

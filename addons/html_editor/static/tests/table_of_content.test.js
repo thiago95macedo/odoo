@@ -19,8 +19,8 @@ test("should update table of contents when heading is removed with backspace", a
         config: configWithEmbeddedTableOfContent,
     });
     await insertText(editor, "/tableofcontent");
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Table of Contents");
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Table of Contents");
     await press("Enter");
     // TOC update is debounced
     await advanceTime(500);
@@ -37,16 +37,16 @@ test("should update table of contents when heading is converted to paragraph", a
         config: configWithEmbeddedTableOfContent,
     });
     await insertText(editor, "/tableofcontent");
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Table of Contents");
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Table of Contents");
     await press("Enter");
     // TOC update is debounced
     await advanceTime(500);
     expect(queryAll(".o_embedded_toc_link")).toHaveCount(1);
     const h1 = queryOne("h1");
     setSelection({ anchorNode: h1, anchorOffset: 0, focusNode: h1, focusOffset: nodeSize(h1) });
-    await expectElementCount(".o-we-toolbar", 1);
-    await contains(".o-we-toolbar [name='font_type'].dropdown-toggle").click();
+    await expectElementCount(".w-we-toolbar", 1);
+    await contains(".w-we-toolbar [name='font_type'].dropdown-toggle").click();
     await contains(".o_font_type_selector_menu .dropdown-item:contains('Paragraph')").click();
 
     // TOC update is debounced
@@ -59,8 +59,8 @@ test("should highlight corresponding heading when clicking on a heading in toc",
         config: configWithEmbeddedTableOfContent,
     });
     await insertText(editor, "/tableofcontent");
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Table of Contents");
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Table of Contents");
     await press("Enter");
     // TOC update is debounced
     await advanceTime(500);

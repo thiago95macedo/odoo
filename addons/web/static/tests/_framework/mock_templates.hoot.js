@@ -37,7 +37,7 @@ const SRC_REPLACERS = [
 ];
 const ATTRIBUTE_PREFIXES = ["", "t-att-", "t-attf-"];
 
-const { loader } = odoo;
+const { loader } = weth;
 
 //-----------------------------------------------------------------------------
 // Exports
@@ -45,7 +45,7 @@ const { loader } = odoo;
 
 /**
  * @param {string} name
- * @param {OdooModuleFactory} factory
+ * @param {WethModuleFactory} factory
  */
 export function mockTemplatesFactory(name, factory) {
     return function mockTemplates() {

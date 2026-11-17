@@ -18,7 +18,7 @@ test("disable link tracking option should be shown and diable/enable link tracki
         config,
     });
     // Click on the link to open link popover
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await click(".o_we_edit_link");
     // Open advanced mode
     await contains(".o_link_popover_container button[title='Advanced mode']").click();
@@ -34,7 +34,7 @@ test("disable link tracking option should be shown and diable/enable link tracki
     expect(el.querySelector("a")).toHaveAttribute("data-no-tracking");
 
     // Click on the link to open link popover
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await click(".o_we_edit_link");
     // Open advanced mode
     await contains(".o_link_popover_container button[title='Advanced mode']").click();

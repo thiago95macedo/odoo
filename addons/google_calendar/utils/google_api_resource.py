@@ -8,11 +8,11 @@ from weth import _
 class GoogleApiResource(abc.Set):
     """Abstract base class for Google API resource sets (events, calendars, etc.).
 
-    Inspired by Odoo recordset, one instance can be a single resource or an
+    Inspired by WETH recordset, one instance can be a single resource or an
     (immutable) set of resources. All usual set operations are supported.
 
     Subclasses must implement `_get_model`.
-    Optionally, it may also implement `_load_odoo_ids_from_metadata`
+    Optionally, it may also implement `_load_weth_ids_from_metadata`
     """
 
     def __init__(self, iterable=()):
@@ -71,43 +71,43 @@ class GoogleApiResource(abc.Set):
     def filter(self, func) -> 'GoogleApiResource':
         return self.__class__(item for item in self if func(item))
 
-    def odoo_id(self, env):
-        self.odoo_ids(env)  # load ids
-        return self._odoo_id
+    def weth_id(self, env):
+        self.weth_ids(env)  # load ids
+        return self._weth_id
 
-    def _meta_odoo_id(self, dbname):
-        """Returns the Odoo id stored in the Google Event metadata.
+    def _meta_weth_id(self, dbname):
+        """Returns the WETH id stored in the Google Event metadata.
         This id might not actually exists in the database.
         """
         properties = self.extendedProperties and (self.extendedProperties.get('shared', {}) or self.extendedProperties.get('private', {})) or {}
-        o_id = properties.get('%s_odoo_id' % dbname)
+        o_id = properties.get('%s_weth_id' % dbname)
         if o_id:
             return int(o_id)
 
-    def odoo_ids(self, env):
-        ids = tuple(item._odoo_id for item in self if item._odoo_id)
+    def weth_ids(self, env):
+        ids = tuple(item._weth_id for item in self if item._weth_id)
         if len(ids) == len(self):
             return ids
         model = self._get_model(env)
-        found = self._load_odoo_ids_from_db(env, model)
+        found = self._load_weth_ids_from_db(env, model)
         unsure = self - found
         if unsure:
-            unsure._load_odoo_ids_from_metadata(env, model)
+            unsure._load_weth_ids_from_metadata(env, model)
         # skip unmatched ids because we browse the result
-        return tuple(item._odoo_id for item in self if item._odoo_id)
+        return tuple(item._weth_id for item in self if item._weth_id)
 
     def _get_model(self, env):
         raise NotImplementedError("Subclasses must implement _get_model")
 
-    def _load_odoo_ids_from_db(self, env, model):
-        odoo_items = model.with_context(active_test=False)._from_google_ids(self.ids)
-        mapping = {item.google_id: item.id for item in odoo_items}  # {google_id: odoo_id}
-        existing_google_ids = odoo_items.mapped('google_id')
+    def _load_weth_ids_from_db(self, env, model):
+        weth_items = model.with_context(active_test=False)._from_google_ids(self.ids)
+        mapping = {item.google_id: item.id for item in weth_items}  # {google_id: weth_id}
+        existing_google_ids = weth_items.mapped('google_id')
         for item in self:
-            odoo_id = mapping.get(item.id)
-            if odoo_id:
-                item._items[item.id]['_odoo_id'] = odoo_id
+            weth_id = mapping.get(item.id)
+            if weth_id:
+                item._items[item.id]['_weth_id'] = weth_id
         return self.filter(lambda item: item.id in existing_google_ids)
 
-    def _load_odoo_ids_from_metadata(self, env, model):
+    def _load_weth_ids_from_metadata(self, env, model):
         return

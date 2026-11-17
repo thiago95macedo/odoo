@@ -1,12 +1,12 @@
 {
     "name": "Menu Principal WETH",
     "version": "20.0.1.0.0",
-    "summary": "Grade de aplicativos e tela inicial moderna para Odoo Community.",
+    "summary": "Grade de aplicativos e tela inicial moderna para WETH Community.",
     "description": """
 Menu Principal WETH
 ===================
 
-Adiciona uma tela inicial moderna ao Odoo Community com grade de aplicativos,
+Adiciona uma tela inicial moderna ao WETH Community com grade de aplicativos,
 pesquisa instantânea de módulos e saudação personalizada, integrada à paleta
 corporativa da WETH Tecnologia.
 """,

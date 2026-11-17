@@ -7,11 +7,11 @@
     }
 
     &.o_signature_editable:hover {
-        outline: 3px solid $o-enterprise-action-color;
+        outline: 3px solid $w-enterprise-action-color;
         cursor: pointer;
     }
 
-    > p {
+    >p {
         position: absolute;
         top: 50%;
         left: 50%;

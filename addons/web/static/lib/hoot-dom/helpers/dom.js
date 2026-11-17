@@ -1942,7 +1942,7 @@ export function matches(target, selector) {
  *  queryAll`div:visible:contains(Lorem ipsum)`; // -> [div, div, ...]
  *  queryAll`div:visible:contains(${/^L\w+\si.*m$/})`; // -> [div, div, ...]
  *  queryAll`:focusable`; // -> [a, button, input, ...]
- *  queryAll`.o_iframe:iframe p`; // -> [p, p, ...] (inside iframe)
+ *  queryAll`.w_iframe:iframe p`; // -> [p, p, ...] (inside iframe)
  *  queryAll`#editor:shadow div`; // -> [div, div, ...] (inside shadow DOM)
  * @example
  *  // with options

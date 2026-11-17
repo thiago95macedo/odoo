@@ -1,8 +1,8 @@
-.o-hidden-font-family-picker + .o-hb-select-toggle {
+.w-hidden-font-family-picker+.w-hb-select-toggle {
     --btn-padding-x: #{map-get($spacers , 2)};
     line-height: 1;
 }
 
 [data-action-param="font"] .o_we_delete_font_btn:hover {
-    color: mix($o-danger, $o-white, 80%),
+    color: mix($w-danger, $w-white, 80%),
 }

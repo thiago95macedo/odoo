@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mail_bot_hr/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,14 +26,14 @@ msgstr "Módulo de ponte entre RH e mailbot."
 
 #. module: mail_bot_hr
 #: model:ir.module.module,shortdesc:base.module_mail_bot_hr
-msgid "OdooBot - HR"
-msgstr "OdooBot - RH"
+msgid "WethBot - HR"
+msgstr "WethBot - RH"
 
 #. module: mail_bot_hr
 #: model:ir.module.module,description:base.module_mail_bot_hr
 msgid ""
-"This module adds the OdooBot state and notifications in the user form "
+"This module adds the WethBot state and notifications in the user form "
 "modified by hr."
 msgstr ""
-"Este módulo adiciona o estado e as notificações do OdooBot no formulário de "
+"Este módulo adiciona o estado e as notificações do WethBot no formulário de "
 "usuário modificado pelo RH."

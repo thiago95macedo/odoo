@@ -46,10 +46,10 @@ test("rendering when just one has seen the message", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageSeenIndicator");
-    await contains(".o-mail-MessageSeenIndicator[title='Seen by Demo User']");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 1 });
-    await contains(".o-mail-MessageSeenIndicator.o-hasEveryoneSeen", { count: 0 });
+    await contains(".w-mail-MessageSeenIndicator");
+    await contains(".w-mail-MessageSeenIndicator[title='Seen by Demo User']");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 1 });
+    await contains(".w-mail-MessageSeenIndicator.w-hasEveryoneSeen", { count: 0 });
 });
 
 test("rendering when just everyone has seen the message", async () => {
@@ -75,10 +75,10 @@ test("rendering when just everyone has seen the message", async () => {
     pyEnv["discuss.channel.member"].write(memberIds, { seen_message_id: messageId });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageSeenIndicator");
-    await contains(".o-mail-MessageSeenIndicator[title='Seen by everyone']");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
-    await contains(".o-mail-MessageSeenIndicator.o-hasEveryoneSeen", { count: 1 });
+    await contains(".w-mail-MessageSeenIndicator");
+    await contains(".w-mail-MessageSeenIndicator[title='Seen by everyone']");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
+    await contains(".w-mail-MessageSeenIndicator.w-hasEveryoneSeen", { count: 1 });
 });
 
 test("mark channel as seen from the bus", async () => {
@@ -100,8 +100,8 @@ test("mark channel as seen from the bus", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 0 });
+    await contains(".w-mail-Message");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 0 });
     const channel = pyEnv["discuss.channel"].search_read([["id", "=", channelId]])[0];
     // Simulate received channel seen notification
     const DiscussChannelMember = pyEnv["discuss.channel.member"];
@@ -120,8 +120,8 @@ test("mark channel as seen from the bus", async () => {
             )
             .as_dict()
     );
-    await contains(".o-mail-Message .o-mail-MessageSeenIndicator[title='Seen by test']");
-    await contains(".o-mail-Message .o-mail-MessageSeenIndicator [data-icon='check']", {
+    await contains(".w-mail-Message .w-mail-MessageSeenIndicator[title='Seen by test']");
+    await contains(".w-mail-Message .w-mail-MessageSeenIndicator [data-icon='check']", {
         count: 2,
     });
 });
@@ -145,8 +145,8 @@ test("should display message indicator when message is seen", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 0 });
+    await contains(".w-mail-Message");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 0 });
     const channel = pyEnv["discuss.channel"].search_read([["id", "=", channelId]])[0];
     // Simulate received channel seen notification
     const DiscussChannelMember = pyEnv["discuss.channel.member"];
@@ -165,7 +165,7 @@ test("should display message indicator when message is seen", async () => {
             )
             .as_dict()
     );
-    await contains(".o-mail-Message .o-mail-MessageSeenIndicator [data-icon='check']", {
+    await contains(".w-mail-Message .w-mail-MessageSeenIndicator [data-icon='check']", {
         count: 2,
     });
 });
@@ -191,8 +191,8 @@ test("do not show message seen indicator on the last message seen by everyone wh
     pyEnv["discuss.channel.member"].write(memberIds, { seen_message_id: messageId });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
-    await contains(".o-mail-MessageSeenIndicator", { count: 0 });
+    await contains(".w-mail-Message");
+    await contains(".w-mail-MessageSeenIndicator", { count: 0 });
 });
 
 test("do not show message seen indicator on all the messages of the current user that are older than the last message seen by everyone", async () => {
@@ -224,9 +224,9 @@ test("do not show message seen indicator on all the messages of the current user
     pyEnv["discuss.channel.member"].write(memberIds, { seen_message_id: messageId_2 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('Message before last seen'))", {
+    await contains(".w-mail-Message:has(:text('Message before last seen'))", {
         contains: [
-            ".o-mail-Message-seenContainer",
+            ".w-mail-Message-seenContainer",
             { contains: ["[data-icon='check']", { count: 0 }] },
         ],
     });
@@ -265,9 +265,9 @@ test("all seen indicator in chat displayed only once (chat created by correspond
     pyEnv["discuss.channel.member"].write(memberIds, { seen_message_id: messageId });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 2 });
+    await contains(".w-mail-Message", { count: 2 });
     await contains(
-        ".o-mail-Message:eq(1) .o-mail-MessageSeenIndicator.o-hasEveryoneSeen [data-icon='check']",
+        ".w-mail-Message:eq(1) .w-mail-MessageSeenIndicator.w-hasEveryoneSeen [data-icon='check']",
         { count: 2 }
     );
 });
@@ -315,12 +315,12 @@ test("no seen indicator in 'channel' channels (with is_typing)", async () => {
     pyEnv["discuss.channel.member"].write(chatMemberIds, { seen_message_id: 0 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('channel-msg'))");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // none in channel
-    await click(".o-mail-MessagingMenu-tab[data-id='chat']");
-    await click(".o-mail-NotificationItem:has(:text('Demo User'))");
-    await contains(".o-mail-Message:has(:text('chat-msg'))");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // not seen in chat
+    await contains(".w-mail-Message:has(:text('channel-msg'))");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // none in channel
+    await click(".w-mail-MessagingMenu-tab[data-id='chat']");
+    await click(".w-mail-NotificationItem:has(:text('Demo User'))");
+    await contains(".w-mail-Message:has(:text('chat-msg'))");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // not seen in chat
     // simulate channel read by Demo User in both threads
     await withUser(demoUserId, () =>
         rpc("/discuss/channel/mark_as_read", {
@@ -347,13 +347,13 @@ test("no seen indicator in 'channel' channels (with is_typing)", async () => {
             is_typing: true,
         })
     );
-    await contains(".o-mail-Message .o-mail-MessageSeenIndicator [data-icon='check']", {
+    await contains(".w-mail-Message .w-mail-MessageSeenIndicator [data-icon='check']", {
         count: 2,
     }); // seen in chat
-    await click(".o-mail-MessagingMenu-tab[data-id='channel']");
-    await click(".o-mail-NotificationItem:has(:text('test-channel'))");
-    await contains(".o-mail-Message:has(:text('channel-msg'))");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // none in channel
+    await click(".w-mail-MessagingMenu-tab[data-id='channel']");
+    await click(".w-mail-NotificationItem:has(:text('test-channel'))");
+    await contains(".w-mail-Message:has(:text('channel-msg'))");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 0 }); // none in channel
 });
 
 test("Show everyone seen title on message seen indicator", async () => {
@@ -432,7 +432,7 @@ test("Title show some member seen info (partial seen), click show dialog with fu
     await start();
     await openDiscuss(channelId);
     await contains("[title='Seen by User 0, User 1, User 2 and 8 others']");
-    await click(".o-mail-Message .o-mail-MessageSeenIndicator");
+    await click(".w-mail-Message .w-mail-MessageSeenIndicator");
     await contains("li", { count: 11 });
     for (let i = 0; i < 11; i++) {
         await contains(`li:text('User ${i}')`); // Not checking datetime because HOOT mocking of tz do not work
@@ -473,8 +473,8 @@ test("Show seen indicator on message with only attachment", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageSeenIndicator");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
+    await contains(".w-mail-MessageSeenIndicator");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
 });
 
 test("show seen indicator on previous message when last message is notification", async () => {
@@ -507,6 +507,6 @@ test("show seen indicator on previous message when last message is notification"
     pyEnv["discuss.channel.member"].write(memberIds, { seen_message_id: notificationMessageId });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageSeenIndicator");
-    await contains(".o-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
+    await contains(".w-mail-MessageSeenIndicator");
+    await contains(".w-mail-MessageSeenIndicator [data-icon='check']", { count: 2 });
 });

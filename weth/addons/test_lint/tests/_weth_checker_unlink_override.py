@@ -7,7 +7,7 @@ def parse_version(s):
     # inside pylint on runbot
     return [s.rjust(3, '0') for s in s.split('.')]
 
-class OdooBaseChecker(checkers.BaseChecker):
+class WethBaseChecker(checkers.BaseChecker):
     if parse_version(pylint.__version__) < parse_version('2.14.0'):
         __implements__ = pylint.interfaces.IAstroidChecker
     name = 'weth'
@@ -39,4 +39,4 @@ class OdooBaseChecker(checkers.BaseChecker):
             parent = parent.parent
 
 def register(linter):
-    linter.register_checker(OdooBaseChecker(linter))
+    linter.register_checker(WethBaseChecker(linter))

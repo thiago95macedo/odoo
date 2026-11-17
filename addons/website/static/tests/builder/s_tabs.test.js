@@ -10,9 +10,9 @@ async function setupWebsiteBuilderWithButtonsTabs() {
         loadIframeBundles: true,
     });
     await contains(":iframe .s_tabs .s_tabs_nav").click();
-    await contains(".o-hb-select-toggle:contains('Underline')").click();
+    await contains(".w-hb-select-toggle:contains('Underline')").click();
     await contains(
-        ".o-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-buttons']"
+        ".w-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-buttons']"
     ).click();
     await websiteBuilderObject.waitSidebarUpdated();
     return websiteBuilderObject;
@@ -92,9 +92,9 @@ test("switching from buttons tabs to tabs tabs keeps custom colors", async () =>
     });
     // Switch to tabs tabs
     await contains(":iframe .s_tabs .s_tabs_nav").click();
-    await contains(".o-hb-select-toggle:contains('Buttons')").click();
+    await contains(".w-hb-select-toggle:contains('Buttons')").click();
     await contains(
-        ".o-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-tabs']"
+        ".w-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-tabs']"
     ).click();
     await waitSidebarUpdated();
     expect(".o_we_color_preview:eq(1)").toHaveStyle({ backgroundColor: "rgb(206, 212, 218)" });
@@ -121,9 +121,9 @@ test("switching back from buttons tabs to underline or pills erases custom color
     const inactiveTabColor = getElStyle(inactiveTabEl, "color");
     const activeTabBackground = getElStyle(activeTabEl, "backgroundColor");
     await contains(":iframe .s_tabs .s_tabs_nav").click();
-    await contains(".o-hb-select-toggle:contains('Underline')").click();
+    await contains(".w-hb-select-toggle:contains('Underline')").click();
     await contains(
-        ".o-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-buttons']"
+        ".w-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-buttons']"
     ).click();
     await waitSidebarUpdated();
     // Update background
@@ -141,9 +141,9 @@ test("switching back from buttons tabs to underline or pills erases custom color
     expect(getElStyle(inactiveTabEl, "color")).not.toBe(inactiveTabColor);
     // Switch back to underline tabs
     await contains(":iframe .s_tabs .s_tabs_nav").click();
-    await contains(".o-hb-select-toggle:contains('Buttons')").click();
+    await contains(".w-hb-select-toggle:contains('Buttons')").click();
     await contains(
-        ".o-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-underline']"
+        ".w-hb-select-dropdown-item[data-action-id='setStyle'][data-action-value='nav-underline']"
     ).click();
     await waitSidebarUpdated();
     // The option is not available anymore.

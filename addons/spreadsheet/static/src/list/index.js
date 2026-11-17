@@ -19,32 +19,32 @@ const { coreTypes, evaluationCommandTypes, invalidateEvaluationCommands } = spre
 
 const { cellMenuRegistry } = spreadsheet.registries;
 
-coreTypes.add("INSERT_ODOO_LIST");
-coreTypes.add("RENAME_ODOO_LIST");
-coreTypes.add("REMOVE_ODOO_LIST");
-coreTypes.add("RE_INSERT_ODOO_LIST");
-coreTypes.add("UPDATE_ODOO_LIST_DOMAIN");
-coreTypes.add("UPDATE_ODOO_LIST");
+coreTypes.add("INSERT_WETH_LIST");
+coreTypes.add("RENAME_WETH_LIST");
+coreTypes.add("REMOVE_WETH_LIST");
+coreTypes.add("RE_INSERT_WETH_LIST");
+coreTypes.add("UPDATE_WETH_LIST_DOMAIN");
+coreTypes.add("UPDATE_WETH_LIST");
 coreTypes.add("ADD_LIST_DOMAIN");
-coreTypes.add("DUPLICATE_ODOO_LIST");
+coreTypes.add("DUPLICATE_WETH_LIST");
 
 // `evaluationCommandTypes` is a snapshot of `coreTypes` taken when o-spreadsheet
 // is loaded, so every core type added here has to be registered again for
 // evaluation plugins to receive it.
 // TODO: remove once `isEvaluationCommand` also checks `coreTypes` at call time.
-evaluationCommandTypes.add("INSERT_ODOO_LIST");
-evaluationCommandTypes.add("RENAME_ODOO_LIST");
-evaluationCommandTypes.add("REMOVE_ODOO_LIST");
-evaluationCommandTypes.add("RE_INSERT_ODOO_LIST");
-evaluationCommandTypes.add("UPDATE_ODOO_LIST_DOMAIN");
-evaluationCommandTypes.add("UPDATE_ODOO_LIST");
+evaluationCommandTypes.add("INSERT_WETH_LIST");
+evaluationCommandTypes.add("RENAME_WETH_LIST");
+evaluationCommandTypes.add("REMOVE_WETH_LIST");
+evaluationCommandTypes.add("RE_INSERT_WETH_LIST");
+evaluationCommandTypes.add("UPDATE_WETH_LIST_DOMAIN");
+evaluationCommandTypes.add("UPDATE_WETH_LIST");
 evaluationCommandTypes.add("ADD_LIST_DOMAIN");
-evaluationCommandTypes.add("DUPLICATE_ODOO_LIST");
+evaluationCommandTypes.add("DUPLICATE_WETH_LIST");
 
-invalidateEvaluationCommands.add("UPDATE_ODOO_LIST_DOMAIN");
-invalidateEvaluationCommands.add("UPDATE_ODOO_LIST");
-invalidateEvaluationCommands.add("INSERT_ODOO_LIST");
-invalidateEvaluationCommands.add("REMOVE_ODOO_LIST");
+invalidateEvaluationCommands.add("UPDATE_WETH_LIST_DOMAIN");
+invalidateEvaluationCommands.add("UPDATE_WETH_LIST");
+invalidateEvaluationCommands.add("INSERT_WETH_LIST");
+invalidateEvaluationCommands.add("REMOVE_WETH_LIST");
 
 cellMenuRegistry.add(
     "list_see_record",
@@ -64,12 +64,12 @@ cellMenuRegistry.add(
 );
 
 inverseCommandRegistry
-    .add("INSERT_ODOO_LIST", identity)
-    .add("UPDATE_ODOO_LIST_DOMAIN", identity)
-    .add("UPDATE_ODOO_LIST", identity)
-    .add("RE_INSERT_ODOO_LIST", identity)
-    .add("RENAME_ODOO_LIST", identity)
-    .add("REMOVE_ODOO_LIST", identity)
-    .add("DUPLICATE_ODOO_LIST", identity);
+    .add("INSERT_WETH_LIST", identity)
+    .add("UPDATE_WETH_LIST_DOMAIN", identity)
+    .add("UPDATE_WETH_LIST", identity)
+    .add("RE_INSERT_WETH_LIST", identity)
+    .add("RENAME_WETH_LIST", identity)
+    .add("REMOVE_WETH_LIST", identity)
+    .add("DUPLICATE_WETH_LIST", identity);
 
 export { ListCorePlugin, ListCoreViewPlugin, ListUIPlugin };

@@ -426,13 +426,13 @@ test("Add to my dashboard is not available in form views", async () => {
 
     // sanity check
     await contains(".o_cp_action_menus .dropdown-toggle").click();
-    expect(".o-dropdown--menu .o_add_to_board").toHaveCount(1);
+    expect(".w-dropdown--menu .o_add_to_board").toHaveCount(1);
 
     // open form view
     await contains(".o_data_cell").click();
     expect(".o_form_view").toHaveCount(1);
 
     await contains(".o_cp_action_menus .dropdown-toggle").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
-    expect(".o-dropdown--menu .o_add_to_board").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu .o_add_to_board").toHaveCount(0);
 });

@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-23 13:33+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/account_qr_code_sepa/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -41,20 +41,20 @@ msgid "Bank Account"
 msgstr "Conta bancária"
 
 #. module: account_qr_code_sepa
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_sepa/models/res_bank.py:0
 msgid "Can't generate a SEPA QR Code with the %s currency."
 msgstr "Não é possível gerar um código QR SEPA com a moeda %s."
 
 #. module: account_qr_code_sepa
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_sepa/models/res_bank.py:0
 msgid "Can't generate a SEPA QR code if the account type isn't IBAN."
 msgstr ""
 "Não é possível gerar um código QR SEPA se o tipo da conta não for IBAN."
 
 #. module: account_qr_code_sepa
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_sepa/models/res_bank.py:0
 msgid "Can't generate a SEPA QR code with a non SEPA iban."
 msgstr "Não é possível gerar um código QR SEPA com um IBAN da SEPA."
@@ -70,13 +70,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: account_qr_code_sepa
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_sepa/models/res_bank.py:0
 msgid "SEPA Credit Transfer QR"
 msgstr "QR de transferência de crédito SEPA"
 
 #. module: account_qr_code_sepa
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_sepa/models/res_bank.py:0
 msgid ""
 "The account receiving the payment must have an account holder name or "

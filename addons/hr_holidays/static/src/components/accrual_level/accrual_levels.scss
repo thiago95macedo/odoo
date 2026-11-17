@@ -10,27 +10,31 @@
 }
 
 .o_accrual {
-  .o_field_accrual, .o_field_selection, .o_field_day_selection, .o_field_filterable_selection {
+
+  .o_field_accrual,
+  .o_field_selection,
+  .o_field_day_selection,
+  .o_field_filterable_selection {
     width: fit-content !important;
 
-    &:not(.o_readonly_modifier) > *:first-child {
+    &:not(.o_readonly_modifier)>*:first-child {
       min-width: 50px;
       border-bottom: solid $border-width $border-color;
       max-width: fit-content;
       field-sizing: content;
     }
 
-    &:not(.o_field_selection, .o_field_day_selection, .o_field_filterable_selection) > *:first-child {
+    &:not(.o_field_selection, .o_field_day_selection, .o_field_filterable_selection)>*:first-child {
       max-width: 8ch;
     }
   }
 
   .o_accrual_input {
-      border-bottom: solid $border-width $border-color;
+    border-bottom: solid $border-width $border-color;
   }
 
   .o_form_label {
-    font-weight: $o-font-weight-normal;
+    font-weight: $w-font-weight-normal;
   }
 }
 
@@ -43,10 +47,10 @@
   & p {
     width: 70%;
     padding: 8px;
-    font-weight: $o-font-weight-normal;
+    font-weight: $w-font-weight-normal;
     border: solid $border-width $border-color;
     border-radius: $border-radius;
-    background-color: $o-webclient-background-color;
+    background-color: $w-webclient-background-color;
   }
 }
 
@@ -66,9 +70,9 @@
   }
 
   .o_accrual_plan_levels {
-    background-color: $o-webclient-background-color;
+    background-color: $w-webclient-background-color;
 
-    & > .o_accrual_levels_scrollable {
+    &>.o_accrual_levels_scrollable {
       overflow-y: auto;
       box-sizing: border-box;
 
@@ -83,7 +87,7 @@
   .new-text {
     top: -20px;
     right: 5px;
-    color: $o-brand-primary;
+    color: $w-brand-primary;
     pointer-events: none;
   }
 
@@ -92,8 +96,8 @@
   }
 
   .new {
-    background-color: $o-brand-primary;
-    border-color: $o-brand-primary;
+    background-color: $w-brand-primary;
+    border-color: $w-brand-primary;
   }
 
   .arrow {
@@ -105,29 +109,27 @@
   }
 
   .o_accrual_bg {
-    background-color: $o-view-background-color;
+    background-color: $w-view-background-color;
   }
 
   .delete span:hover {
-      background-color: $o-danger;
-      color: $o-white;
+    background-color: $w-danger;
+    color: $w-white;
   }
 
   &.o_accrual_level_hovered {
 
     .content {
-      border-color: $o-brand-primary !important;
+      border-color: $w-brand-primary !important;
     }
 
-    .time > span {
-      border-color: $o-brand-primary !important;
+    .time>span {
+      border-color: $w-brand-primary !important;
     }
 
-    .timeline > .circle {
-      border-color: $o-brand-primary !important;
-      background-color: $o-brand-primary;
+    .timeline>.circle {
+      border-color: $w-brand-primary !important;
+      background-color: $w-brand-primary;
     }
   }
 }
-
-

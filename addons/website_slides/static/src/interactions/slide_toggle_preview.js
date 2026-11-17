@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { rpc } from "@web/core/network/rpc";
 
 export class SlideTogglePreview extends Interaction {
-    static selector = ".o_wslides_js_slide_toggle_is_preview";
+    static selector = ".w_wslides_js_slide_toggle_is_preview";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.toggleSlidePreview,

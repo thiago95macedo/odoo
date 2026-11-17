@@ -333,7 +333,7 @@ test("customer_display_shows_qr_popup: customer display QR code popup", async ()
     await waitFor(".modal");
 
     if (Utils.isMobile()) {
-        const deviceBtn = document.querySelector(".o-overlay-item .modal .modal-footer a");
+        const deviceBtn = document.querySelector(".w-overlay-item .modal .modal-footer a");
         const url = deviceBtn.href;
         expect(url).not.toInclude("undefined");
         expect(new URL(url)).toBeInstanceOf(URL);

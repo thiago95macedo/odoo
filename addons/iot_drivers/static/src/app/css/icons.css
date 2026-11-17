@@ -1,5 +1,5 @@
-/* Minimal subset of odoo/addons/web/static/src/webclient/icons.scss's ".oi" rules.
- * The IoT Box runs without a database, so Odoo's SCSS asset bundling
+/* Minimal subset of weth/addons/web/static/src/webclient/icons.scss's ".oi" rules.
+ * The IoT Box runs without a database, so WETH's SCSS asset bundling
  * (web.icons_fonts) is unavailable here: this is a hand-written CSS
  * equivalent for the classes actually used under iot_drivers/static/src/app.
  */

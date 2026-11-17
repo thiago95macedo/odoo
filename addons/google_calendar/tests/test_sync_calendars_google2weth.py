@@ -10,7 +10,7 @@ from weth.tests.common import tagged
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
 @tagged('at_install', '-post_install')
-class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
+class TestSyncCalendarsGoogle2Weth(TestSyncGoogle):
 
     @patch_api
     def test_g2o_new_calendar_is_created_and_does_not_create_duplicate_on_google(self):
@@ -31,9 +31,9 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
     def test_g2o_deleted_calendar_is_unlinked(self):
         """
         A GoogleCalendar whose 'deleted' flag is truthy must cause the matching
-        non-primary Odoo record to be removed if it has no users.
+        non-primary WETH record to be removed if it has no users.
         """
-        odoo_cal = self.create_calendar(name='To Delete', google_id='google-del-1')
+        weth_cal = self.create_calendar(name='To Delete', google_id='google-del-1')
         google_calendars = GoogleCalendar([{
             'id': 'google-del-1',
             'summary': 'To Delete',
@@ -42,11 +42,11 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
 
         self.organizer_user.calendar_ids.with_user(self.organizer_user)._sync_calendars_google2weth(google_calendars)
 
-        self.assertFalse(odoo_cal.exists(), "Calendar flagged deleted on Google should be deleted in Odoo")
+        self.assertFalse(weth_cal.exists(), "Calendar flagged deleted on Google should be deleted in Weth")
 
     def test_g2o_primary_calendar_is_not_deleted(self):
         """
-        The primary Odoo calendar must never be deleted, even if the Google payload somehow marks the calendar as deleted.
+        The primary WETH calendar must never be deleted, even if the Google payload somehow marks the calendar as deleted.
         """
         google_calendars = GoogleCalendar([{
             'id': 'primary-gid',
@@ -63,24 +63,24 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
         )
 
     def test_g2o_updated_calendar_writes_changed_fields(self):
-        odoo_cal = self.create_calendar(name='Old Name', google_id='google-upd-1', need_sync=False)
+        weth_cal = self.create_calendar(name='Old Name', google_id='google-upd-1', need_sync=False)
         google_calendars = GoogleCalendar([{'id': 'google-upd-1', 'summary': 'New Name From Google'}])
 
         self.env['calendar.calendar'].with_user(self.organizer_user)._sync_calendars_google2weth(google_calendars)
 
         self.assertEqual(
-            odoo_cal.calendar_user_ids[0].name, 'New Name From Google',
-            "Calendar name should be updated from Google when Odoo has no pending changes",
+            weth_cal.calendar_user_ids[0].name, 'New Name From Google',
+            "Calendar name should be updated from Google when WETH has no pending changes",
         )
 
-    def test_g2o_updated_calendar_skips_when_odoo_has_pending_changes(self):
-        odoo_cal = self.create_calendar(name='Local Name', google_id='gid', need_sync=True)
+    def test_g2o_updated_calendar_skips_when_weth_has_pending_changes(self):
+        weth_cal = self.create_calendar(name='Local Name', google_id='gid', need_sync=True)
         google_calendars = GoogleCalendar([{'id': 'gid', 'summary': 'Google Name'}])
 
         self.env['calendar.calendar']._sync_calendars_google2weth(google_calendars)
 
         self.assertEqual(
-            odoo_cal.display_name, 'Local Name',
+            weth_cal.display_name, 'Local Name',
             "Calendar with pending local changes should NOT be overwritten by Google",
         )
 
@@ -156,7 +156,7 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
             'id': google_id,
             'description': 'desc',
             'updated': datetime.now().replace(tzinfo=UTC).isoformat(),
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': summary,
             'visibility': 'public',
             'attendees': [],

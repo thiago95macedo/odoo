@@ -662,7 +662,7 @@ css_error_message {
             if '.' not in ref and line not in imports and not ref.startswith(('.', '/', '~')):
                 imports.append(line)
                 return line
-            msg = "Local import '%s' is forbidden for security reasons. Please remove all @import {your_file} imports in your custom files. In Odoo you have to import all files in the assets, and not through the @import statement." % ref
+            msg = "Local import '%s' is forbidden for security reasons. Please remove all @import {your_file} imports in your custom files. In WETH you have to import all files in the assets, and not through the @import statement." % ref
             _logger.warning(msg)
             self.css_errors.append(msg)
             return ''
@@ -868,8 +868,8 @@ class JavascriptAsset(WebAsset):
     @property
     def is_transpiled(self):
         if self._is_transpiled is None:
-            from weth.tools.js_transpiler import is_odoo_module  # noqa: PLC0415
-            self._is_transpiled = bool(is_odoo_module(self.url, super().content))
+            from weth.tools.js_transpiler import is_weth_module  # noqa: PLC0415
+            self._is_transpiled = bool(is_weth_module(self.url, super().content))
         return self._is_transpiled
 
     @property

@@ -94,34 +94,34 @@ test("test combo move up/down", async () => {
     ]);
 
     await contains('.o_data_row:contains(Test Combo1) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Move Up)').toHaveCount(1, {
+    expect('.w-dropdown-item:contains(Move Up)').toHaveCount(1, {
         message: 'Move up option should be there for Test combo1 line having SO lines before and after'
     });
-    expect('.o-dropdown-item:contains(Move Down)').toHaveCount(1, {
+    expect('.w-dropdown-item:contains(Move Down)').toHaveCount(1, {
         message: 'Move down option should be there for Test combo1 line having SO lines before and after'
     });
 
-    await contains('.o-dropdown-item:contains(Move Up)').click();
+    await contains('.w-dropdown-item:contains(Move Up)').click();
     await contains('.o_data_row:contains(Test Combo1) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Move Up)').click();
+    await contains('.w-dropdown-item:contains(Move Up)').click();
 
     await contains('.o_data_row:contains(Test Combo1) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Move Up)').toHaveCount(0, {
+    expect('.w-dropdown-item:contains(Move Up)').toHaveCount(0, {
         message: 'Move up option should be invisible for Test combo1 since there aren\'t any non combo SO lines before'
     });
 
     await contains('.o_data_row:contains(Test Combo2) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Move Up)').toHaveCount(1, {
+    expect('.w-dropdown-item:contains(Move Up)').toHaveCount(1, {
         message: 'Move up option should be there for Test combo2 line having SO lines before and after'
     });
-    expect('.o-dropdown-item:contains(Move Down)').toHaveCount(1, {
+    expect('.w-dropdown-item:contains(Move Down)').toHaveCount(1, {
         message: 'Move down option should be there for Test combo2 line having SO lines before and after'
     });
 
-    await contains('.o-dropdown-item:contains(Move Down)').click();
+    await contains('.w-dropdown-item:contains(Move Down)').click();
 
     await contains('.o_data_row:contains(Test Combo2) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Move Down)').toHaveCount(0, {
+    expect('.w-dropdown-item:contains(Move Down)').toHaveCount(0, {
         message: 'Move down option should be invisible for Test combo2 since there aren\'t any non combo SO lines after'
     });
 
@@ -154,7 +154,7 @@ test("test combo move up/down", async () => {
     ]);
 
     await contains('.o_data_row:contains(Test Combo1) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Move Down)').click();
+    await contains('.w-dropdown-item:contains(Move Down)').click();
 
     expect(queryAllTexts('.o_data_row')).toEqual([
         "Non Combo Line1",
@@ -173,7 +173,7 @@ test("test combo move up/down", async () => {
     await clickCancel();
 
     await contains('.o_data_row:contains(Test Combo2) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Move Up)').click();
+    await contains('.w-dropdown-item:contains(Move Up)').click();
 
     expect(queryAllTexts('.o_data_row')).toEqual([
         "Non Combo Line1",

@@ -145,7 +145,7 @@ export class MediaDialog extends Component {
                 this.props.media &&
                 TABS.ICONS.Component.tagNames.includes(this.props.media.tagName)
             ) {
-                // Material Symbols or Odoo UI icon: identified by the data-icon
+                // Material Symbols or WETH UI icon: identified by the data-icon
                 // attribute. The icon list is fetched lazily by the IconSelector,
                 // so the pre-selection is rebuilt directly from the media element.
                 const dataIcon = this.props.media.dataset.icon;

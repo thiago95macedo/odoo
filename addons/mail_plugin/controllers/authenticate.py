@@ -34,7 +34,7 @@ class Authenticate(http.Controller):
     @http.route(['/mail_client_extension/auth/confirm', '/mail_plugin/auth/confirm'], type='http', auth="user", methods=['POST'])
     def auth_confirm(self, scope, friendlyname, redirect, info=None, do=None, **kw):
         """
-        Called by the `app_auth` template. If the user decided to allow the app to access Odoo, a temporary auth code
+        Called by the `app_auth` template. If the user decided to allow the app to access WETH, a temporary auth code
         is generated and they are redirected to `redirect` with this code in the URL. It should redirect to the app, and
         the app should then exchange this auth code for an access token by calling
         `/mail_client/auth/access_token`.

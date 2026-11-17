@@ -40,7 +40,7 @@ class TestResConfigSettings(TransactionCase):
         return self.settings._get_sfu_client_asset()
 
     def _get_sfu_client_asset_paths(self):
-        asset_paths = self.env["ir.asset"]._get_asset_paths("mail.assets_odoo_sfu", {})
+        asset_paths = self.env["ir.asset"]._get_asset_paths("mail.assets_weth_sfu", {})
         return [path for path, *_ in asset_paths]
 
     def test_activate_custom_sfu_client_asset(self):
@@ -51,7 +51,7 @@ class TestResConfigSettings(TransactionCase):
             [
                 {
                     "name": "Alternative SFU client",
-                    "bundle": "mail.assets_odoo_sfu",
+                    "bundle": "mail.assets_weth_sfu",
                     "directive": "replace",
                     "path": SFU_CLIENT_SOURCE_URL,
                     "target": SFU_CLIENT_TARGET,

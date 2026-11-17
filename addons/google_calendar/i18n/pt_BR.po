@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/google_calendar/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -26,31 +26,31 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid "%(id)s and %(length)s following"
 msgstr "%(id)s e %(length)s seguintes"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Days"
 msgstr "%(reminder_type)s – %(duration)s dias"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Hours"
 msgstr "%(reminder_type)s – %(duration)s horas"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Minutes"
 msgstr "%(reminder_type)s – %(duration)s minutos"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "(No title)"
 msgstr "(Sem título)"
@@ -79,7 +79,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_controller.js:0
 msgid ""
 "An administrator needs to configure Google Synchronization before you can "
@@ -89,7 +89,7 @@ msgstr ""
 "possa usá-la."
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/res_users_settings.py:0
 msgid ""
 "An error occurred while generating the token. Your authorization code may be "
@@ -113,7 +113,7 @@ msgid "Calendar Event"
 msgstr "Evento no calendário"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "Calendar Event imported from Google"
 msgstr "Evento de Calendário importado do Google"
@@ -124,7 +124,7 @@ msgid "Calendar User Manager"
 msgstr "Gerenciador de usuários do Calendário"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_model.js:0
 msgid "Choose which ones to synchronize"
 msgstr "Escolha quais sincronizar"
@@ -155,13 +155,13 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_controller.js:0
 msgid "Configuration"
 msgstr "Configuração"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_controller.js:0
 msgid "Configure"
 msgstr "Configurar"
@@ -183,8 +183,8 @@ msgstr "Criado em"
 
 #. module: google_calendar
 #: model:ir.model.fields,field_description:google_calendar.field_google_calendar_account_reset__delete_events
-msgid "Delete synced events from Odoo"
-msgstr "Excluir eventos sincronizados do Odoo"
+msgid "Delete synced events from Weth"
+msgstr "Excluir eventos sincronizados do Weth"
 
 #. module: google_calendar
 #: model_terms:ir.ui.view,arch_db:google_calendar.res_config_settings_view_form
@@ -218,7 +218,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "Email"
 msgstr "E-mail"
@@ -244,7 +244,7 @@ msgid "Free Busy Reader"
 msgstr "Free Busy Reader"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_controller.xml:0
 msgid "Google"
 msgstr "Google"
@@ -315,7 +315,7 @@ msgid "Google Synchronization stopped"
 msgstr "A sincronização do Google parou"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid "Google gave the following explanation: %s"
 msgstr "O Google deu a seguinte explicação: %s"
@@ -356,7 +356,7 @@ msgid "Indicates if synchronization with Google Calendar is paused or not."
 msgstr "Indica se a sincronização com o Google Agenda está pausada ou não."
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid "It will not be synced as long as it is not updated."
 msgstr "Não será sincronizado enquanto não for atualizado."
@@ -393,7 +393,7 @@ msgid "Needs Import"
 msgstr "Precisa ser importado"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_model.js:0
 msgid "New Google calendars detected"
 msgstr "Novos calendários do Google detectados"
@@ -405,13 +405,13 @@ msgid "Next Calendar Sync Token"
 msgstr "Próximo token de sincronização do Calendário"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid "Notification"
 msgstr "Notificação"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/utils/google_api_resource.py:0
 msgid "Only %s or iterable of dict are supported"
 msgstr "Apenas %s ou iteráveis de dicionário são suportados"
@@ -454,7 +454,7 @@ msgid "Synchronize a record with Google Calendar"
 msgstr "Sincronize um registro com o Google Agenda"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/google_calendar_controller.js:0
 msgid ""
 "The Google Synchronization needs to be configured before you can use it, do "
@@ -464,7 +464,7 @@ msgstr ""
 "Deseja fazer isso agora?"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid ""
 "The following event can only be updated by the organizer according to the "
@@ -474,13 +474,13 @@ msgstr ""
 "permissões de evento definidas no Google Agenda."
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid "The following event could not be synced with Google Calendar."
 msgstr "O evento a seguir não pôde ser sincronizado com o Google Agenda."
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/calendar_event.py:0
 msgid ""
 "This event has more than 5 reminders, only the first 5 will be synced to "
@@ -537,7 +537,7 @@ msgid "What should happen to previously synced events?"
 msgstr "O que deve acontecer com os eventos sincronizados anteriormente?"
 
 #. module: google_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_calendar/static/src/views/google_calendar/attendee_calendar/attendee_calendar_filter_section.js:0
 msgid ""
 "You're about to delete this calendar from WETH.\n"
@@ -551,13 +551,13 @@ msgstr ""
 "seu Google Agenda."
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid "undefined time"
 msgstr "tempo indefinido"
 
 #. module: google_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/google_calendar/models/google_event_sync.py:0
 msgid ""
 "you don't seem to have permission to modify this event on Google Calendar"
@@ -572,11 +572,11 @@ msgstr ""
 
 #~ msgid ""
 #~ "Last Calendar ID who has been synchronized. If it is changed, we remove "
-#~ "all links between GoogleID and Odoo Google Internal ID"
+#~ "all links between GoogleID and WETH Google Internal ID"
 #~ msgstr ""
 #~ "Último ID de calendário que foi sincronizado. Se estiver alterado, nós "
 #~ "removeremos todos os links entre o GoogleID e o ID interno do Google no "
-#~ "Odoo"
+#~ "Weth"
 
 #~ msgid "Next Sync Token"
 #~ msgstr "Token da próxima sincronização"

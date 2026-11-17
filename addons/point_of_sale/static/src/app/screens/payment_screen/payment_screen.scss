@@ -3,8 +3,8 @@
   min-width: $pos-left-pane-width;
 
   @include media-breakpoint-down(xl) {
-      width: $pos-left-pane-width-tablet;
-      min-width: $pos-left-pane-width-tablet;
+    width: $pos-left-pane-width-tablet;
+    min-width: $pos-left-pane-width-tablet;
   }
 }
 
@@ -21,14 +21,14 @@
 }
 
 .payment-method-icon {
-    max-width: 50px;
-    max-height: 50px;
-    vertical-align: middle;
+  max-width: 50px;
+  max-height: 50px;
+  vertical-align: middle;
 
-    @include media-breakpoint-down(sm) {
-      max-width: 32px;
-      max-height: 32px;
-    }
+  @include media-breakpoint-down(sm) {
+    max-width: 32px;
+    max-height: 32px;
+  }
 }
 
 .paymentlines-container .total {
@@ -36,24 +36,35 @@
 }
 
 @include media-breakpoint-down(md) {
-    .paymentlines-empty .message {
-        padding-bottom: map-get($spacers, 3);
-    }
+  .paymentlines-empty .message {
+    padding-bottom: map-get($spacers, 3);
+  }
 }
 
 .paymentline {
   border: $border-width solid $border-color;
+
   &.selected {
-    background: $o-component-active-bg;
-    border-color: $o-component-active-border;
-    color: $o-component-active-color;
+    background: $w-component-active-bg;
+    border-color: $w-component-active-border;
+    color: $w-component-active-color;
   }
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(30px); }
-  50% { opacity: 0.5; transform: translateY(0px); }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .fade-effect {

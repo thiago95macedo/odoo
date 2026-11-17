@@ -79,7 +79,7 @@ export function usePopoutAttachment({ thread }) {
     const notification = useService("notification");
 
     function attachmentViewParentElementClassList() {
-        const attachmentViewEl = document.querySelector(".o-mail-Attachment");
+        const attachmentViewEl = document.querySelector(".w-mail-Attachment");
         let parentElementClassList;
         if ((parentElementClassList = attachmentViewEl?.parentElement?.classList)) {
             return parentElementClassList;

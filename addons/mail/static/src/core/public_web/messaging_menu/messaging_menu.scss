@@ -1,8 +1,8 @@
-.o-mail-MessagingMenu {
-    background-color: $o-view-background-color;
+.w-mail-MessagingMenu {
+    background-color: $w-view-background-color;
 }
 
-.o-mail-NotificationItem-counterArea:not(:empty) {
+.w-mail-NotificationItem-counterArea:not(:empty) {
     height: 25px;
     min-width: 25px;
     min-height: 25px;
@@ -10,35 +10,35 @@
     margin-top: calc((var(--mail-NotificationItem-lineHeight) - 25px) * 0.5);
 }
 
-.o-mail-MessagingMenuItem:hover .o-mail-MessagingMenu-actions,
-.o-mail-MessagingMenu-actions:has(button[aria-expanded="true"]) {
+.w-mail-MessagingMenuItem:hover .w-mail-MessagingMenu-actions,
+.w-mail-MessagingMenu-actions:has(button[aria-expanded="true"]) {
     display: flex !important;
 }
 
-.o-mail-MessagingMenu-tabCounter {
-    min-width: $o-badge-min-width;
+.w-mail-MessagingMenu-tabCounter {
+    min-width: $w-badge-min-width;
     left: auto;
-    right: calc(50% - #{$o-badge-min-width} * 1.5);
+    right: calc(50% - #{$w-badge-min-width} * 1.5);
     transform: translate(0, 25%);
 }
 
-.o-mail-MessagingMenu-tabUnread {
+.w-mail-MessagingMenu-tabUnread {
     left: 50%;
     transform: translate(0, 25%) !important;
 }
 
-.o-discuss-badge.o-mail-MessagingMenu-tabUnread {
+.w-discuss-badge.w-mail-MessagingMenu-tabUnread {
     --o-discuss-badge-bg: #{transparent};
     opacity: 50%;
     color: unset !important;
 }
 
-.o-mail-MessagingMenu-navbar {
-    background-color: $o-webclient-background-color;
+.w-mail-MessagingMenu-navbar {
+    background-color: $w-webclient-background-color;
     width: 4.5rem;
 }
 
-.o-mail-MessagingMenu-filters {
+.w-mail-MessagingMenu-filters {
     overflow-x: auto;
     scrollbar-width: none;
 
@@ -47,22 +47,29 @@
     }
 }
 
-.o-mail-MessagingMenu-filter {
+.w-mail-MessagingMenu-filter {
     --btn-hover-color: #{$body-color};
-    --btn-border-color: #{var(--mail-MessagingMenu-filterBorderColor, #{$border-color})};
-    --btn-hover-border-color: #{var(--mail-MessagingMenu-filterBorderColor, #{$border-color})};
-
-    &.o-active {
-        --btn-color: #{$o-enterprise-action-color};
-        --btn-hover-color: #{$o-enterprise-action-color};
-        --btn-bg: #{rgba($o-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBgOpacity, 0.12))};
-        --btn-hover-bg: #{rgba($o-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBgOpacity, 0.12))};
-        --btn-border-color: #{rgba($o-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBorderOpacity, 0.35))};
-        --btn-hover-border-color: #{rgba($o-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBorderOpacity, 0.35))};
-    }
+    --btn-border-color: #{var(--mail-MessagingMenu-filterBorderColor, #{$border-color})
 }
 
-.o-mail-MessagingMenu-searchRow {
+;
+--btn-hover-border-color: #{var(--mail-MessagingMenu-filterBorderColor, #{$border-color})
+}
+
+;
+
+&.w-active {
+    --btn-color: #{$w-enterprise-action-color};
+    --btn-hover-color: #{$w-enterprise-action-color};
+    --btn-bg: #{rgba($w-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBgOpacity, 0.12))};
+    --btn-hover-bg: #{rgba($w-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBgOpacity, 0.12))};
+    --btn-border-color: #{rgba($w-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBorderOpacity, 0.35))};
+    --btn-hover-border-color: #{rgba($w-enterprise-action-color, var(--mail-MessagingMenu-filterActiveBorderOpacity, 0.35))};
+}
+}
+
+.w-mail-MessagingMenu-searchRow {
+
     // Keep the quick-action toggle button on its plain primary color while its
     // dropdown is open, instead of Bootstrap's pale ".show" active shade.
     .btn-primary.show {
@@ -71,28 +78,28 @@
     }
 }
 
-.o-mail-MessagingMenu-tab {
-    &:hover .o-mail-MessagingMenu-tabIcon {
+.w-mail-MessagingMenu-tab {
+    &:hover .w-mail-MessagingMenu-tabIcon {
         background: $gray-200;
     }
 
     &.active {
-        --btn-active-color: #{$o-enterprise-action-color};
+        --btn-active-color: #{$w-enterprise-action-color};
 
-        .o-mail-MessagingMenu-tabIcon {
-            background: $o-component-active-bg;
-            color: $o-enterprise-action-color;
-            outline: $border-width solid rgba($o-enterprise-action-color, 0.15);
+        .w-mail-MessagingMenu-tabIcon {
+            background: $w-component-active-bg;
+            color: $w-enterprise-action-color;
+            outline: $border-width solid rgba($w-enterprise-action-color, 0.15);
             outline-offset: -$border-width;
         }
     }
 
-    .o-mail-MessagingMenu-tabIcon {
+    .w-mail-MessagingMenu-tabIcon {
         width: $spacer * 3;
     }
 }
 
-.o-mail-MessagingMenu-dropdownMenu {
+.w-mail-MessagingMenu-dropdownMenu {
     max-width: 250px !important;
 
     .o_bottom_sheet & {
@@ -100,15 +107,16 @@
     }
 }
 
-.o-mail-MessagingMenu-filter,
-.o-mail-MessagingMenu-searchRow button,
-.o-mail-MessagingMenu-searchRow input,
-.o-mail-MessagingMenu-tab {
+.w-mail-MessagingMenu-filter,
+.w-mail-MessagingMenu-searchRow button,
+.w-mail-MessagingMenu-searchRow input,
+.w-mail-MessagingMenu-tab {
     &:focus-visible {
         box-shadow: none;
     }
 
-    &.focus, .o-mail-Discuss &:focus-visible {
-        outline: $border-width solid $o-enterprise-action-color !important;
+    &.focus,
+    .w-mail-Discuss &:focus-visible {
+        outline: $border-width solid $w-enterprise-action-color !important;
     }
 }

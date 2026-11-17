@@ -797,10 +797,10 @@ class TestTranslation(TransactionCase):
     # def test_111_unique_en(self):
     #     Country = self.env['test_tools.country']
     #     country_1 = Country.create({'name': 'WETH'})
-    #     country_1.with_context(lang='fr_FR').name = 'Odoo_Fr'
+    #     country_1.with_context(lang='fr_FR').name = 'Weth_Fr'
     #     country_1.flush_recordset()
     #
-    #     country_2 = Country.create({'name': 'Odoo2'})
+    #     country_2 = Country.create({'name': 'Weth2'})
     #     with self.assertRaises(IntegrityError), mute_logger('weth.sql_db'):
     #         country_2.name = 'WETH'
     #         country_2.flush_recordset()

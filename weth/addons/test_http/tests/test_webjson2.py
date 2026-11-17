@@ -55,7 +55,7 @@ class TestHttpWebJson_2(TestHttpBase):
             '/json/2/res.users/search',
             data=r'{"domain": []}',
             headers={**CT_JSON, **self.bearer_header,
-                'X-odoo-database': f'{get_db_name()}-idontexist',
+                'X-weth-database': f'{get_db_name()}-idontexist',
             },
             dblist=(get_db_name(), 'another-database'),
         )
@@ -68,7 +68,7 @@ class TestHttpWebJson_2(TestHttpBase):
             '/json/2/res.users/read',
             data=r'{}',
             headers={**CT_JSON, **self.bearer_header,
-                'X-odoo-database': get_db_name(),
+                'X-weth-database': get_db_name(),
             },
             dblist=(get_db_name(), 'another-database'),
         )

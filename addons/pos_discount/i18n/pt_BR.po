@@ -17,7 +17,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/pos_discount/pt_BR/>\n"
+"weth-20/pos_discount/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,7 @@ msgid "<strong>Number of global discounts</strong>:"
 msgstr "<strong>Número de descontos globais</strong>:"
 
 #. module: pos_discount
-#. odoo-python
+#. weth-python
 #: code:addons/pos_discount/models/pos_config.py:0
 msgid ""
 "A discount product is needed to use the Global Discount feature. Go to Point "
@@ -72,7 +72,7 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: pos_discount
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_discount/static/src/app/screens/product_screen/control_buttons/control_buttons.js:0
 #: code:addons/pos_discount/static/src/app/screens/product_screen/control_buttons/control_buttons.xml:0
 #: model:product.template,name:pos_discount.product_product_consumable_product_template
@@ -116,13 +116,13 @@ msgid "Journal Item"
 msgstr "Item do diário"
 
 #. module: pos_discount
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_discount/static/src/app/services/pos_store.js:0
 msgid "No discount product found"
 msgstr "Nenhum produto de desconto encontrado"
 
 #. module: pos_discount
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_discount/static/src/app/screens/ticket_screen/ticket_screen.js:0
 msgid "Oh snap !"
 msgstr "Ops!"
@@ -169,7 +169,7 @@ msgid "The default discount value when clicking on the Discount button"
 msgstr "O valor de desconto padrão ao clicar no botão de Desconto"
 
 #. module: pos_discount
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_discount/static/src/app/services/pos_store.js:0
 msgid ""
 "The discount product seems misconfigured. Make sure it is flagged as 'Can be "
@@ -184,7 +184,7 @@ msgid "The product used to apply the discount on the ticket."
 msgstr "O produto utilizado para aplicar o desconto no ticket."
 
 #. module: pos_discount
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_discount/static/src/app/screens/ticket_screen/ticket_screen.js:0
 msgid "You cannot edit a discount line."
 msgstr "Não é possível editar uma linha de desconto."

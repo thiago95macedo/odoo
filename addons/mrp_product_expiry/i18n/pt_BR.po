@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_product_expiry/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgid "Confirm Expiry"
 msgstr "Confirmar expiração"
 
 #. module: mrp_product_expiry
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_product_expiry/models/mrp_production.py:0
 msgid "Confirmation"
 msgstr "Confirmação"
@@ -80,7 +80,7 @@ msgid "Workorder"
 msgstr "Ordem de trabalho"
 
 #. module: mrp_product_expiry
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_product_expiry/wizard/confirm_expiry.py:0
 msgid ""
 "You are going to use some expired components.\n"
@@ -90,7 +90,7 @@ msgstr ""
 "Tem certeza de que deseja continuar?"
 
 #. module: mrp_product_expiry
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_product_expiry/wizard/confirm_expiry.py:0
 msgid ""
 "You are going to use the component %(product_name)s, %(lot_name)s which is "

@@ -2,7 +2,7 @@ import { parseEmail } from "@mail/utils/common/format";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { _t } from "@web/core/l10n/translation";
 import { isEmail } from "@web/core/utils/strings";
-import { highlightText, odoomark } from "@web/core/utils/html";
+import { highlightText, wethmark } from "@web/core/utils/html";
 import { useService } from "@web/core/utils/hooks";
 import { useSelectCreate } from "@web/views/fields/relational_utils";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
@@ -99,7 +99,7 @@ export class RecipientsInput extends Component {
                             label: match.display_name
                                 ? highlightText(
                                     term,
-                                    odoomark(match.__formatted_display_name),
+                                    wethmark(match.__formatted_display_name),
                                     "fw-bolder text-primary"
                                 )
                                 : _t("Unnamed"),

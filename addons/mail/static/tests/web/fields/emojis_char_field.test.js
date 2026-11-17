@@ -19,7 +19,7 @@ test("insert emoji at end of word", async () => {
     });
     await insertText("input#name_0", "Hello", { replace: true });
     await click(".o_field_char_emojis button");
-    await click('.o-Emoji[data-codepoints="😀"]');
+    await click('.w-Emoji[data-codepoints="😀"]');
     await contains("input#name_0", { value: "Hello😀" });
 });
 
@@ -30,6 +30,6 @@ test("insert emoji as new word", async () => {
     });
     await insertText("input#name_0", "Hello ", { replace: true });
     await click(".o_field_char_emojis button");
-    await click('.o-Emoji[data-codepoints="😀"]');
+    await click('.w-Emoji[data-codepoints="😀"]');
     await contains("input#name_0", { value: "Hello 😀" });
 });

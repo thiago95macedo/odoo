@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/bus/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgid "Attachment"
 msgstr "Anexo"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/debug/bus_logs_menu_item.js:0
 msgid ""
 "Bus logs contain confidential information and must only be shared with "
@@ -95,19 +95,19 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/debug/bus_logs_menu_item.js:0
 msgid "Download"
 msgstr "Baixar"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/debug/bus_logs_menu_item.xml:0
 msgid "Download logs"
 msgstr "Logs de download"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/debug/bus_logs_menu_item.xml:0
 msgid "Enable Bus Logging"
 msgstr "Ativar registro de barramento"
@@ -170,13 +170,13 @@ msgid "Qweb"
 msgstr "QWeb"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/services/assets_watchdog_plugin.js:0
 msgid "Refresh"
 msgstr "Atualizar"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/services/assets_watchdog_plugin.js:0
 msgid "The page appears to be out of date."
 msgstr "A página parece estar desatualizada."
@@ -192,13 +192,13 @@ msgid "User Settings"
 msgstr "Configurações do usuário"
 
 #. module: bus
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/bus/static/src/debug/bus_logs_menu_item.js:0
 msgid "You're about to download the bus logs"
 msgstr "Você está prestes a baixar os logs de bus"
 
 #. module: bus
-#. odoo-python
+#. weth-python
 #: code:addons/bus/controllers/home.py:0
 msgid ""
 "Your password is the default (admin)! If this system is exposed to untrusted "

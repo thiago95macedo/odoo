@@ -53,7 +53,7 @@ beforeEach(() => {
 
 for (const [viewType, newButtonClass] of [
     ["form", ".o_form_button_create"],
-    ["kanban", ".o-kanban-button-new"],
+    ["kanban", ".w-kanban-button-new"],
     ["list", ".o_list_button_add"],
 ]) {
     test(`template dropdown in ${viewType} view of a project with no template`, async () => {
@@ -141,7 +141,7 @@ test("template dropdown should not appear when not in the context of a specific 
         type: "kanban",
     });
 
-    expect(".o-kanban-button-new").not.toHaveClass("dropdown-toggle", {
+    expect(".w-kanban-button-new").not.toHaveClass("dropdown-toggle", {
         message:
             "The “New” button should not be a dropdown since there is no project in the context",
     });

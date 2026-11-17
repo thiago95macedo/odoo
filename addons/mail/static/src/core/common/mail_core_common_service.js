@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 
 export class MailCoreCommon {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     constructor(env, services) {
@@ -50,7 +50,7 @@ export class MailCoreCommon {
 export const mailCoreCommon = {
     dependencies: ["bus_service", "mail.store"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

@@ -60,27 +60,27 @@ test("widget many2one_binary", async () => {
         resId: 1,
     });
 
-    expect("div.o_field_widget .oe_fileupload").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveCount(1);
 
     // Set and trigger the import of file in the input
-    await contains(".o_file_input_trigger").click();
+    await contains(".w_file_input_trigger").click();
     await setInputFiles([new File(["Marley&Me"], "Marley&Me.jpg", { type: "image/jpeg" })]);
     await animationFrame();
 
     // Confirm that attachment is displayed
-    expect(".o_attachment .caption a:eq(0)").toHaveText("Marley&Me.jpg");
+    expect(".w_attachment .caption a:eq(0)").toHaveText("Marley&Me.jpg");
 
     // Confirm that the upload input is hidden or removed after a file is already present
-    expect("input.o_input_file").toHaveCount(0, {
+    expect("input.w_input_file").toHaveCount(0, {
         message: "Upload input should be removed after one file is uploaded",
     });
 
     // delete the attachment
-    await contains("div.o_field_widget .oe_fileupload .o_attachment .o_attachment_delete").click();
+    await contains("div.w_field_widget .oe_fileupload .w_attachment .w_attachment_delete").click();
 
     // Confirm that attachment is removed
-    expect(".o_attachment").toHaveCount(0, {
+    expect(".w_attachment").toHaveCount(0, {
         message: "Attachment should be removed after clicking delete",
     });
 });
@@ -120,16 +120,16 @@ test("widget many2one_binary displays notification on error", async () => {
         resId: 1,
     });
 
-    expect("div.o_field_widget .oe_fileupload").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveCount(1);
 
     // Set and trigger the import of 2 files in the input
-    await contains(".o_file_input_trigger").click();
+    await contains(".w_file_input_trigger").click();
     await setInputFiles([new File(["bad_file"], "bad_file.txt", { type: "text/plain" })]);
     await animationFrame();
 
     // Confirm that the notification is displayed
-    expect(".o_notification").toHaveCount(1);
-    expect(".o_notification_content").toHaveText("Uploading error. Error on file: bad_file.txt");
-    expect(".o_notification_bar").toHaveClass("bg-danger");
+    expect(".w_notification").toHaveCount(1);
+    expect(".w_notification_content").toHaveText("Uploading error. Error on file: bad_file.txt");
+    expect(".w_notification_bar").toHaveClass("bg-danger");
 });

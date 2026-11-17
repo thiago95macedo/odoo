@@ -5,7 +5,7 @@
         <record id="set_password_email" model="mail.template">
             <field name="name">Settings: New User Invite</field>
             <field name="model_id" ref="base.model_res_users"/>
-            <field name="subject">{{ object.create_uid.name }} from {{ object.company_id.name }} invites you to connect to Odoo</field>
+            <field name="subject">{{ object.create_uid.name }} from {{ object.company_id.name }} invites you to connect to Weth</field>
             <field name="email_from">{{ (object.company_id.email_formatted or user.email_formatted) }}</field>
             <field name="partner_to" eval="False"/>
             <field name="use_default_to" eval="True"/>
@@ -19,7 +19,7 @@
 Hi <t t-out="object.name or ''">Marc Demo</t>,<br/><br/>
 <em>This link is valid for <t t-out="(object.env['ir.config_parameter'].sudo().get_int('auth_signup.signup.validity.hours') or 144)//24">link_validity_days</t> days </em><br/>
 <b><t t-out="company_name"/></b> uses <a href="https://weth.com.br" t-attf-style="color: {{object.company_id.email_secondary_color or '#05285B'}};">WETH</a>
-to run its business. You have been invited by <b><t t-out="object.create_uid.name or ''">OdooBot</t></b> to connect.
+to run its business. You have been invited by <b><t t-out="object.create_uid.name or ''">WethBot</t></b> to connect.
 <br/><br/>
 Once accepted, you can reconnect through: <br/>
 <ul>
@@ -34,7 +34,7 @@ Once accepted, you can reconnect through: <br/>
     </a>
 </div>
 <br/>
-Enjoy Odoo!<br/><br/>
+Enjoy Weth!<br/><br/>
 --<br/>The <t t-out="company_name"/> Team</t>
             </field>
             <field name="lang">{{ object.lang }}</field>

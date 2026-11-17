@@ -136,7 +136,7 @@ class WorldlineCommon(PaymentCommon):
                         "fraudResults": {"cvvResult": "P", "fraudServiceResult": "accepted"},
                         "paymentProductId": 1,
                         "threeDSecureResults": {"eci": "9"},
-                        "token": "ODOO-ALIAS-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "token": "WETH-ALIAS-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                     },
                     "customer": {"device": {"ipAddressCountryCode": "99"}},
                     "paymentMethod": "card",

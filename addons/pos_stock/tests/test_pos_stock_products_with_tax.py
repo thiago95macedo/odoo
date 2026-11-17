@@ -177,7 +177,7 @@ class TestPosStockProductsWithTax(TestPosStockCommon):
         )
 
         pos_user = self.env['res.users'].create({
-            'name': 'Joe Odoo',
+            'name': 'Joe Weth',
             'login': 'pos_user',
             'password': 'pos_user',
             'group_ids': [

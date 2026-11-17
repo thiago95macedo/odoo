@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mail_tracking/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgid "Message ID"
 msgstr "ID da mensagem"
 
 #. module: mail_tracking
-#. odoo-python
+#. weth-python
 #: code:addons/mail_tracking/models/mail_thread.py:0
 msgid "Messages with tracking values cannot be modified"
 msgstr "Mensagens com valores de rastreamento não podem ser modificadas"
@@ -274,7 +274,7 @@ msgid "Tracking values"
 msgstr "Valores de rastreamento"
 
 #. module: mail_tracking
-#. odoo-python
+#. weth-python
 #: code:addons/mail_tracking/models/mail_thread.py:0
 msgid "Using an untagged view %(source_ref)s for rendering"
 msgstr "Usando uma visualização sem etiqueta %(source_ref)s para renderização"
@@ -285,7 +285,7 @@ msgid "View"
 msgstr "Visualizar"
 
 #. module: mail_tracking
-#. odoo-python
+#. weth-python
 #: code:addons/mail_tracking/models/mail_message.py:0
 msgid ""
 "You cannot change message type while copying a message that contains "

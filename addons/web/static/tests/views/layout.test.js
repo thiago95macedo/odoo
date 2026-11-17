@@ -58,11 +58,11 @@ test(`Simple rendering`, async () => {
 
     assignTestEnv({ config: {} });
     await mountWithCleanup(ToyComponent);
-    expect(`.o_view_sample_data`).toHaveCount(1);
-    expect(`.o_control_panel`).toHaveCount(0);
-    expect(`.o_component_with_search_panel`).toHaveCount(0);
-    expect(`.o_search_panel`).toHaveCount(0);
-    expect(`.o_content > .toy_content`).toHaveCount(1);
+    expect(`.w_view_sample_data`).toHaveCount(1);
+    expect(`.w_control_panel`).toHaveCount(0);
+    expect(`.w_component_with_search_panel`).toHaveCount(0);
+    expect(`.w_search_panel`).toHaveCount(0);
+    expect(`.w_content > .toy_content`).toHaveCount(1);
 });
 
 test(`Simple rendering: with search`, async () => {
@@ -83,10 +83,10 @@ test(`Simple rendering: with search`, async () => {
         resModel: "foo",
         searchViewId: false,
     });
-    expect(`.o_control_panel .o_control_panel_actions .toy_search_bar`).toHaveCount(1);
-    expect(`.o_component_with_search_panel .o_search_panel`).toHaveCount(1);
-    expect(`.o_cp_searchview`).toHaveCount(0);
-    expect(`.o_content > .toy_content`).toHaveCount(1);
+    expect(`.w_control_panel .w_control_panel_actions .toy_search_bar`).toHaveCount(1);
+    expect(`.w_component_with_search_panel .w_search_panel`).toHaveCount(1);
+    expect(`.w_cp_searchview`).toHaveCount(0);
+    expect(`.w_content > .toy_content`).toHaveCount(1);
 });
 
 test(`Rendering with default ControlPanel and SearchPanel`, async () => {
@@ -116,11 +116,11 @@ test(`Rendering with default ControlPanel and SearchPanel`, async () => {
         },
     });
     await mountWithCleanup(ToyComponent);
-    expect(`.o_search_panel`).toHaveCount(1);
-    expect(`.o_control_panel`).toHaveCount(1);
-    expect(`.o_breadcrumb`).toHaveCount(1);
-    expect(`.o_component_with_search_panel`).toHaveCount(1);
-    expect(`.o_content > .toy_content`).toHaveCount(1);
+    expect(`.w_search_panel`).toHaveCount(1);
+    expect(`.w_control_panel`).toHaveCount(1);
+    expect(`.w_breadcrumb`).toHaveCount(1);
+    expect(`.w_component_with_search_panel`).toHaveCount(1);
+    expect(`.w_content > .toy_content`).toHaveCount(1);
 });
 
 test(`Nested layouts`, async () => {
@@ -185,11 +185,11 @@ test(`Nested layouts`, async () => {
         resModel: "foo",
         searchViewId: false,
     });
-    expect(`.o_content.toy_a .o_content.toy_b .o_content.toy_c`).toHaveCount(1);
-    expect(".o_control_panel").toHaveCount(2);
-    expect(".o_content.o_component_with_search_panel").toHaveCount(3);
-    expect(`.o_search_panel`).toHaveCount(1);
-    expect(".o_toy_search_panel").toHaveCount(2);
+    expect(`.w_content.toy_a .w_content.toy_b .w_content.toy_c`).toHaveCount(1);
+    expect(".w_control_panel").toHaveCount(2);
+    expect(".w_content.w_component_with_search_panel").toHaveCount(3);
+    expect(`.w_search_panel`).toHaveCount(1);
+    expect(".w_toy_search_panel").toHaveCount(2);
     expect(`.toy_a_search`).toHaveCount(1);
     expect(`.toy_b_breadcrumbs`).toHaveCount(1);
     expect(`.toy_c_content`).toHaveCount(1);
@@ -218,9 +218,9 @@ test(`Custom control panel`, async () => {
         },
         { ControlPanel }
     );
-    expect(`.o_toy_content`).toHaveCount(1);
-    expect(`.o_toy_search_panel`).toHaveCount(1);
-    expect(`.o_control_panel`).toHaveCount(0);
+    expect(`.w_toy_content`).toHaveCount(1);
+    expect(`.w_toy_search_panel`).toHaveCount(1);
+    expect(`.w_control_panel`).toHaveCount(0);
 });
 
 test(`Custom search panel`, async () => {
@@ -246,9 +246,9 @@ test(`Custom search panel`, async () => {
         },
         { SearchPanel }
     );
-    expect(`.o_toy_content`).toHaveCount(1);
-    expect(`.o_toy_search_panel`).toHaveCount(1);
-    expect(`.o_search_panel`).toHaveCount(0);
+    expect(`.w_toy_content`).toHaveCount(1);
+    expect(`.w_toy_search_panel`).toHaveCount(1);
+    expect(`.w_search_panel`).toHaveCount(0);
 });
 
 test(`Simple rendering: with dynamically displayed search`, async () => {
@@ -285,15 +285,15 @@ test(`Simple rendering: with dynamically displayed search`, async () => {
         resModel: "foo",
         searchViewId: false,
     });
-    expect(`.o_control_panel .o_control_panel_actions .toy_search_bar`).toHaveCount(1);
-    expect(`.o_component_with_search_panel .o_search_panel`).toHaveCount(1);
-    expect(`.o_cp_searchview`).toHaveCount(0);
-    expect(`.o_content > .toy_content`).toHaveCount(1);
+    expect(`.w_control_panel .w_control_panel_actions .toy_search_bar`).toHaveCount(1);
+    expect(`.w_component_with_search_panel .w_search_panel`).toHaveCount(1);
+    expect(`.w_cp_searchview`).toHaveCount(0);
+    expect(`.w_content > .toy_content`).toHaveCount(1);
 
     state.displayControlPanelActions = false;
     await animationFrame();
-    expect(`.o_control_panel .o_control_panel_actions .toy_search_bar`).toHaveCount(0);
-    expect(`.o_component_with_search_panel .o_search_panel`).toHaveCount(1);
-    expect(`.o_cp_searchview`).toHaveCount(0);
-    expect(`.o_content > .toy_content`).toHaveCount(1);
+    expect(`.w_control_panel .w_control_panel_actions .toy_search_bar`).toHaveCount(0);
+    expect(`.w_component_with_search_panel .w_search_panel`).toHaveCount(1);
+    expect(`.w_cp_searchview`).toHaveCount(0);
+    expect(`.w_content > .toy_content`).toHaveCount(1);
 });

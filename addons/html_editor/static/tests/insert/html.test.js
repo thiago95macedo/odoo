@@ -307,8 +307,8 @@ describe("collapsed selection", () => {
         // Insertion triggers `selectionchange` and `commit` creates a selection
         // placeholder. `fixSelectionInsideEditableRoot` moves the selection
         // into it and triggers another `selectionchange` that removes the
-        // selection placeholder. So we must wait for the `.o-we-hint`.
-        await waitFor(".o-we-hint");
+        // selection placeholder. So we must wait for the `.w-we-hint`.
+        await waitFor(".w-we-hint");
         cleanHints(editor);
         expect(getContent(editor.editable, { sortAttrs: true })).toBe(
             unformat(`

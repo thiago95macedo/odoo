@@ -12,12 +12,12 @@ export class WishlistPageOptionPlugin extends Plugin {
             WishlistSetGapAction,
         },
         dirty_trackers: {
-            selector: ".o_wishlist_table",
+            selector: ".w_wishlist_table",
             dirtyClass: "o_dirty_product_design_list",
             match: "self",
         },
         product_design_list_to_save: {
-            selector: ".o_wishlist_table",
+            selector: ".w_wishlist_table",
             getData(el) {
                 const productOptClasses = Array.from(el.classList).filter((className) =>
                     className.startsWith("o_wsale_products_opt_")

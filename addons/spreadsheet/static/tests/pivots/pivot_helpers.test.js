@@ -29,7 +29,7 @@ describe.current.tags("headless");
 
 test("Basic formula extractor", async function () {
     const model = new Model();
-    const formula = `=PIVOT.VALUE("1", "test") + ODOO.LIST.VALUE("2", "hello", "bla")`;
+    const formula = `=PIVOT.VALUE("1", "test") + WETH.LIST.VALUE("2", "hello", "bla")`;
     const compiledFormula = CompiledFormula.Compile(formula, "no_sheet", model.getters);
     let functionName;
     let args;
@@ -39,7 +39,7 @@ test("Basic formula extractor", async function () {
     expect(args[0]).toEqual(stringArg("1", 3));
     expect(args[1]).toEqual(stringArg("test", 6));
     ({ functionName, args } = getFirstListFunction(compiledFormula, model.getters));
-    expect(functionName).toBe("ODOO.LIST.VALUE");
+    expect(functionName).toBe("WETH.LIST.VALUE");
     expect(args.length).toBe(3);
     expect(args[0]).toEqual(stringArg("2", 13));
     expect(args[1]).toEqual(stringArg("hello", 16));
@@ -61,7 +61,7 @@ test("Extraction with two PIVOT formulas", async function () {
 test("Number of formulas", async function () {
     const model = new Model();
     const formula = CompiledFormula.Compile(
-        `=PIVOT.VALUE("1", "test") + PIVOT.VALUE("2", "hello") + ODOO.LIST.VALUE("1", 1, "bla")`,
+        `=PIVOT.VALUE("1", "test") + PIVOT.VALUE("2", "hello") + WETH.LIST.VALUE("1", 1, "bla")`,
         "no_sheet",
         model.getters
     );

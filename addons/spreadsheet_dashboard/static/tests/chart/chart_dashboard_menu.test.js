@@ -2,7 +2,7 @@ import { expect, queryOne, test } from "@weth/hoot";
 import { Model } from "@weth/o-spreadsheet";
 import { insertChartInSpreadsheet } from "@spreadsheet/../tests/helpers/chart";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import { createDashboardActionWithData } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import { defineSpreadsheetDashboardModels } from "@spreadsheet_dashboard/../tests/helpers/data";
 import { contains, getMockEnv } from "@web/../tests/web_test_helpers";
@@ -16,7 +16,7 @@ function testChangeGranularity(mode) {
         await makeSpreadsheetMockEnv();
         const setupModel = new Model(
             {},
-            { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+            { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
         );
         const chartId = insertChartInSpreadsheet(setupModel, "line", {
             dataSource: {
@@ -30,9 +30,9 @@ function testChangeGranularity(mode) {
         });
         const { model } = await createDashboardActionWithData(setupModel.exportData());
 
-        expect(queryOne(".o-select").textContent).toBe("Months");
-        await click(queryOne(".o-select"));
-        await contains(`.o-popover .o-select-option[data-id="quarter"]`).click("quarter");
+        expect(queryOne(".w-select").textContent).toBe("Months");
+        await click(queryOne(".w-select"));
+        await contains(`.w-popover .w-select-option[data-id="quarter"]`).click("quarter");
         expect(model.getters.getChartGranularity(chartId)).toEqual({
             fieldName: "date",
             granularity: "quarter",

@@ -12,32 +12,38 @@
 .o_field_properties,
 .o_field_properties.o_field_invalid,
 .o_property_field_popover {
+
     .o_input,
     .o_dropdown_button,
     .o_datepicker_button {
-        @include print-variable(o-input-border-color, $o-form-lightsecondary);
-        color: $o-main-text-color !important;
+        @include print-variable(o-input-border-color, $w-form-lightsecondary);
+        color: $w-main-text-color !important;
     }
+
     .o_dropdown_button,
     .o_datepicker_button {
         color: initial !important;
     }
+
     .o_input_dropdown {
-        color: $o-main-text-color !important;
+        color: $w-main-text-color !important;
     }
 
     & {
+
         .o_input:focus,
-        .dropdown:focus ~ .o_dropdown_button,
-        .dropdown:focus-within ~ .o_dropdown_button,
-        .o_input:focus ~ .o_datepicker_button,
+        .dropdown:focus~.o_dropdown_button,
+        .dropdown:focus-within~.o_dropdown_button,
+        .o_input:focus~.o_datepicker_button,
         .o_dropdown_button:focus {
-            @include print-variable(o-input-border-color, $o-action);
+            @include print-variable(o-input-border-color, $w-action);
+
             * {
-                @include print-variable(o-input-border-color, $o-action);
+                @include print-variable(o-input-border-color, $w-action);
             }
         }
     }
+
     // only the empty property label should be affected by `o_field_invalid`
     .o_field_property_empty_label {
         color: map-get($theme-colors, 'danger');
@@ -59,11 +65,12 @@
     [data-icon="arrow_right"] {
         width: 8px;
     }
+
     .o_field_property_open_popover,
     [data-icon='drag_indicator'] {
         cursor: pointer;
         font-size: 15px;
-        @include o-hover-text-color($o-main-color-muted, $o-main-text-color);
+        @include o-hover-text-color($w-main-color-muted, $w-main-text-color);
     }
 }
 
@@ -74,6 +81,7 @@
 }
 
 .o_property_folded {
+
     .o_field_property_label,
     .o_property_field_value {
         display: none !important;
@@ -98,8 +106,9 @@
     cursor: pointer;
     user-select: none;
     height: 20px;
+
     &:not(.folded) {
-        box-shadow: 0 $border-width 0 $o-form-separator-color;
+        box-shadow: 0 $border-width 0 $w-form-separator-color;
     }
 }
 
@@ -107,9 +116,11 @@
     [data-icon='drag_indicator'] {
         cursor: grab;
     }
+
     @include media-breakpoint-down(sm) {
         .o_field_property_open_popover {
             opacity: 1;
+
             &.disabled {
                 pointer-events: none;
             }
@@ -118,6 +129,7 @@
 }
 
 .o_property_dragging {
+
     // make the background transparent for "o_property_drag_group" effect
     input {
         background: transparent;
@@ -143,6 +155,6 @@
 .o_field_properties div:not([columns="1"]) .o_property_drag_group {
     // highlight effect on the group is activated only in multi-columns
     box-sizing: border-box;
-    background-color: #{tint-color($o-action, 90%)};
-    border: 1px solid #{$o-action};
+    background-color: #{tint-color($w-action, 90%)};
+    border: 1px solid #{$w-action};
 }

@@ -39,22 +39,22 @@ test("Visitor going offline shows disconnection banner to operator", async () =>
     });
     setupChatHub({ opened: [channel_id] });
     await start();
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
     mockDate("2025-01-01 12:00:00", +1);
     sendPresenceUpdate("mail.guest", guestId, "offline");
-    await contains(".o-livechat-VisitorDisconnected", {
+    await contains(".w-livechat-VisitorDisconnected", {
         text: "Visitor is disconnected since 1:00 PM",
     });
     mockDate("2025-01-02 12:00:00", +1);
     await click("button[title*='Fold']");
-    await click(".o-mail-ChatBubble");
-    await contains(".o-livechat-VisitorDisconnected", {
+    await click(".w-mail-ChatBubble");
+    await contains(".w-livechat-VisitorDisconnected", {
         text: "Visitor is disconnected since yesterday at 1:00 PM",
     });
     mockDate("2025-01-05 12:00:00", +1);
     await click("button[title*='Fold']");
-    await click(".o-mail-ChatBubble");
-    await contains(".o-livechat-VisitorDisconnected", { text: `Visitor is disconnected` });
+    await click(".w-mail-ChatBubble");
+    await contains(".w-livechat-VisitorDisconnected", { text: `Visitor is disconnected` });
     sendPresenceUpdate("mail.guest", guestId, "online");
-    await contains(".o-livechat-VisitorDisconnected", { count: 0 });
+    await contains(".w-livechat-VisitorDisconnected", { count: 0 });
 });

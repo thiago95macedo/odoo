@@ -2,13 +2,17 @@
     color: $btn-link-hover-color !important;
 }
 
-.o-project-template, .o-task-template {
+.w-project-template,
+.w-task-template {
     @include media-breakpoint-up(sm) {
         .o_template_icon_group {
             visibility: hidden;
         }
+
         line-height: 2rem;
-        &:hover, &.focus {
+
+        &:hover,
+        &.focus {
             .o_template_icon_group {
                 visibility: visible;
 
@@ -20,7 +24,7 @@
                     }
 
                     &[data-icon="delete"]:hover {
-                        color: $o-danger !important;
+                        color: $w-danger !important;
                     }
                 }
             }

@@ -74,11 +74,11 @@ describe("serialize glory xml", () => {
 });
 
 describe("make glory header", () => {
-    test("sets the ID to 'OdooPos'", () => {
+    test("sets the ID to 'WethPos'", () => {
         const result = makeGloryHeader(1);
 
         expect(result[0].name).toBe("Id");
-        expect(result[0].children[0]).toBe("OdooPos");
+        expect(result[0].children[0]).toBe("WethPos");
     });
 
     test("sets the sequence number to the provided number", () => {

@@ -361,9 +361,9 @@ READ_GROUP_DISPLAY_FORMAT = {
 
 
 class BaseModel(metaclass=MetaModel):
-    """Base class for Odoo models.
+    """Base class for WETH models.
 
-    Odoo models are created by inheriting one of the following:
+    WETH models are created by inheriting one of the following:
 
     *   :class:`Model` for regular database-persisted models
 
@@ -428,7 +428,7 @@ class BaseModel(metaclass=MetaModel):
     _name: str = None                   #: the model name (in dot-notation, module namespace)
     _description: str | None = None     #: the model's informal name
     _explanation: str | None = None     #: the model's verbose explanation (what purpuse does it serve)
-    _module: str | None = None          #: the model's module (in the Odoo sense)
+    _module: str | None = None          #: the model's module (in the WETH sense)
     _custom: bool = False               #: should be True for custom models only
 
     _inherit: str | list[str] | tuple[str, ...] = ()
@@ -2271,7 +2271,7 @@ class BaseModel(metaclass=MetaModel):
 
                                | week starts on
                            SQL | mon   sun   sat
-                               |  1  |  7  |  6   <-- first_week_day (in odoo)
+                               |  1  |  7  |  6   <-- first_week_day (in weth)
                           -----|-----------------
                     mon     1  |  0  |  1  |  2
                     tue     2  |  1  |  2  |  3
@@ -6575,9 +6575,9 @@ AbstractModel = BaseModel
 
 
 class Model(AbstractModel):
-    """ Main super-class for regular database-persisted Odoo models.
+    """ Main super-class for regular database-persisted WETH models.
 
-    Odoo models are created by inheriting from this class::
+    WETH models are created by inheriting from this class::
 
         class ResUsers(Model):
             ...

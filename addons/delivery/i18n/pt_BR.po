@@ -17,7 +17,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-15 06:59+0000\n"
 "Last-Translator: MAHAMADASIF ANSARI <maan@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/delivery/pt_BR/>\n"
+"weth-20/delivery/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,13 +55,13 @@ msgstr ""
 "O sistema é capaz de adicionar e calcular a linha de frete.\n"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/wizard/choose_delivery_carrier.py:0
 msgid "%(carrier)s Error"
 msgstr "Erro %(carrier)s"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/sale_order.py:0
 msgid ""
 "%s\n"
@@ -104,15 +104,15 @@ msgid ""
 msgstr ""
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid ""
 "<p class=\"o_view_nocontent\">\n"
-"                    Buy Odoo Enterprise now to get more providers.\n"
+"                    Buy WETH Enterprise now to get more providers.\n"
 "                </p>"
 msgstr ""
 "<p class=\"o_view_nocontent\">\n"
-"                    Adquira o Odoo Enterprise agora para obter mais "
+"                    Adquira o WETH Enterprise agora para obter mais "
 "prestadores.\n"
 "                </p>"
 
@@ -219,7 +219,7 @@ msgid "Add"
 msgstr "Adicionar"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/sale_order.py:0
 #: code:addons/delivery/wizard/choose_delivery_carrier.py:0
 msgid "Add a delivery method"
@@ -314,19 +314,19 @@ msgid "Cash on Delivery"
 msgstr "Pagamento na entrega"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/payment_provider.py:0
 msgid "Cash on delivery is only allowed if a sales order exists"
 msgstr "O pagamento na entrega só é permitido se houver um pedido de venda"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/payment_provider.py:0
 msgid "Cash on delivery not allowed by selected delivery method"
 msgstr "Dinheiro na entrega não permitido pelo método de entrega selecionado"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/payment_provider.py:0
 msgid ""
 "Cash on delivery not allowed to pay less than the order remaining balance"
@@ -546,7 +546,7 @@ msgid "Delivery method"
 msgstr "Método de entrega"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid ""
 "Delivery method %(name)s cannot have the same tag in both Must Have Tags and "
@@ -628,13 +628,13 @@ msgid "Environment"
 msgstr "Ambiente"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "Error: this delivery method is not available for this address."
 msgstr "Erro: este método de entrega não está disponível para este endereço."
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "Error: this delivery method is not available."
 msgstr "Erro: este método de entrega não está disponível."
@@ -715,7 +715,7 @@ msgid "Get Rate and Create Shipment"
 msgstr "Obter taxa e criar remessa"
 
 #. module: delivery
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/delivery/static/src/backend/widgets/carrier_rates_loader.xml:0
 msgid "Get all rates"
 msgstr "Ver todas as taxas"
@@ -793,7 +793,7 @@ msgid "Integration Level"
 msgstr "Nível de integração"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "Invalid source document type"
 msgstr "Tipo de documento de origem inválido"
@@ -839,7 +839,7 @@ msgid "Last Updated on"
 msgstr "Última atualização em"
 
 #. module: delivery
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/delivery/static/src/backend/widgets/carrier_rates_loader.xml:0
 msgid "Loading Rates"
 msgstr "Carregando preços"
@@ -905,13 +905,13 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "New Providers"
 msgstr "Novos prestadores"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "Not available for current order"
 msgstr "Não disponível para o pedido atual"
@@ -1102,7 +1102,7 @@ msgid "Ship"
 msgstr "Enviar"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/sale_order.py:0
 msgid "Ship Order %s"
 msgstr "Pedido de envio %s"
@@ -1215,7 +1215,7 @@ msgid "The shipping insurance must be a percentage between 0 and 100."
 msgstr "O seguro de envio deve ser uma porcentagem entre 0 e 100."
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/delivery_carrier.py:0
 msgid "The shipping is free since the order amount exceeds %.2f."
 msgstr "O frete é grátis desde que o valor do pedido exceda %.2f."
@@ -1287,7 +1287,7 @@ msgid "Update"
 msgstr "Atualizar"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/sale_order.py:0
 #: model_terms:ir.ui.view,arch_db:delivery.view_order_form_with_carrier
 msgid "Update shipping cost"
@@ -1353,7 +1353,7 @@ msgid "Weight unit of measure label"
 msgstr "Etiqueta da unidade de medida de peso"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/sale_order.py:0
 msgid ""
 "You can not update the shipping costs on an order where it was already "
@@ -1373,7 +1373,7 @@ msgstr ""
 "%s"
 
 #. module: delivery
-#. odoo-python
+#. weth-python
 #: code:addons/delivery/models/product_category.py:0
 msgid ""
 "You cannot delete this product category as it is used on the products linked "

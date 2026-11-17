@@ -75,9 +75,9 @@ test("project.task (list): toggle sub-tasks", async () => {
     expect(".o_data_row").toHaveCount(1);
     expect(".o_control_panel_navigation button i[data-icon='tune']").toHaveCount(1);
     await click(".o_control_panel_navigation button i[data-icon='tune']");
-    await waitFor("span.o-dropdown-item");
-    expect("span.o-dropdown-item").toHaveText("Show Sub-Tasks");
-    await click("span.o-dropdown-item");
+    await waitFor("span.w-dropdown-item");
+    expect("span.w-dropdown-item").toHaveText("Show Sub-Tasks");
+    await click("span.w-dropdown-item");
     await animationFrame();
     expect(".o_data_row").toHaveCount(2);
 });

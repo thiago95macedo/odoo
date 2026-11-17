@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-01 19:35+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_holidays_attendance/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -318,7 +318,7 @@ msgid "Working Schedule"
 msgstr "Horário de trabalho"
 
 #. module: hr_holidays_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays_attendance/models/hr_leave_accrual_plan_level.py:0
 msgid ""
 "You can't base accrued time on hours worked, because time is accrued at the "
@@ -328,7 +328,7 @@ msgstr ""
 "é acumulado no início do período."
 
 #. module: hr_holidays_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays_attendance/static/src/components/accrual_levels/accrual_levels.xml:0
 msgid "every worked hour."
 msgstr "a cada hora trabalhada."

@@ -187,7 +187,7 @@ class TestWebsocketCheckSession(WebsocketCase, HttpCase):
         websocket = self.websocket_connect()
         self.assertNotIn("set-cookie", websocket.getheaders())
 
-    @patch.dict(os.environ, {"ODOO_BUS_PUBLIC_SAMESITE_WS": "True"})
+    @patch.dict(os.environ, {"WETH_BUS_PUBLIC_SAMESITE_WS": "True"})
     def test_public_configuration(self):
         new_test_user(self.env, login='test_user', password='Password!1')
         user_session = self.authenticate('test_user', 'Password!1')

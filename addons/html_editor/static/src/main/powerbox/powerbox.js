@@ -18,7 +18,7 @@ export class Powerbox extends Component {
         this.root = signal.ref();
 
         onPatched(() => {
-            const activeCommand = this.root().querySelector(".o-we-command.active");
+            const activeCommand = this.root().querySelector(".w-we-command.active");
             if (activeCommand) {
                 activeCommand.scrollIntoView({ block: "nearest", inline: "nearest" });
             }

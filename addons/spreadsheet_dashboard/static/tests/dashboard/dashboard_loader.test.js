@@ -187,7 +187,7 @@ test("async formulas are correctly evaluated", async () => {
             {
                 id: "sheet1",
                 cells: {
-                    A1: '=ODOO.CURRENCY.RATE("EUR","USD")', // an async formula
+                    A1: '=WETH.CURRENCY.RATE("EUR","USD")', // an async formula
                 },
             },
         ],
@@ -250,7 +250,7 @@ test("default currency format", async () => {
         data: {},
         revisions: [],
         default_currency: {
-            code: "Odoo",
+            code: "Weth",
             symbol: "θ",
             position: "after",
             decimalPlaces: 2,

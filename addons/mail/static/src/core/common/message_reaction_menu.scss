@@ -1,9 +1,9 @@
-.o-mail-MessageReactionMenu-avatar {
-    width: $o-mail-Avatar-size;
-    height: $o-mail-Avatar-size;
+.w-mail-MessageReactionMenu-avatar {
+    width: $w-mail-Avatar-size;
+    height: $w-mail-Avatar-size;
 }
 
-.o-mail-MessageReactionMenu-persona:not(.o-isDeviceSmall) {
+.w-mail-MessageReactionMenu-persona:not(.w-isDeviceSmall) {
     &:not(:hover) button[data-icon="delete"] {
         opacity: 0;
     }

@@ -24,7 +24,7 @@ export class ProductsItemOption extends BaseOptionComponent {
 
         this.productsGridTableEl = this.env
             .getEditingElement()
-            .closest(".o_wsale_products_grid_table");
+            .closest(".w_wsale_products_grid_table");
 
         this.domState = useDomState(() => {
             // If /shop page layout is list, do not display Size option

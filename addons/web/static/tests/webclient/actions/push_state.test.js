@@ -175,41 +175,41 @@ beforeEach(() => {
     patchWithCleanup(location, {
         origin: "http://example.com",
     });
-    redirect("/odoo");
+    redirect("/weth");
 });
 
 test(`basic action as App`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(router.current).toEqual({});
 
-    await contains(`.o_navbar_apps_menu button`).click();
-    await contains(`.o-dropdown-item:eq(2)`).click();
+    await contains(`.w_navbar_apps_menu button`).click();
+    await contains(`.w-dropdown-item:eq(2)`).click();
     await animationFrame(); // one render for the blank component, one for the client action
     expect(router.current.action).toBe(1002);
     expect(location.href).toBe("http://example.com/weth/action-1002");
     expect(`.test_client_action`).toHaveText("ClientAction_Id 2");
-    expect(`.o_menu_brand`).toHaveText("App2");
+    expect(`.w_menu_brand`).toHaveText("App2");
 });
 
 test(`do action keeps menu in url`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(router.current).toEqual({});
 
-    await contains(`.o_navbar_apps_menu button`).click();
-    await contains(`.o-dropdown-item:eq(2)`).click();
+    await contains(`.w_navbar_apps_menu button`).click();
+    await contains(`.w-dropdown-item:eq(2)`).click();
     await animationFrame(); // one render for the blank component, one for the client action
     expect(location.href).toBe("http://example.com/weth/action-1002");
     expect(router.current.action).toBe(1002);
     expect(`.test_client_action`).toHaveText("ClientAction_Id 2");
-    expect(`.o_menu_brand`).toHaveText("App2");
+    expect(`.w_menu_brand`).toHaveText("App2");
 
     await getService("action").doAction(1001, { clearBreadcrumbs: true });
     expect(location.href).toBe("http://example.com/weth/action-1001");
     expect(router.current.action).toBe(1001);
     expect(`.test_client_action`).toHaveText("ClientAction_Id 1");
-    expect(`.o_menu_brand`).toHaveText("App2");
+    expect(`.w_menu_brand`).toHaveText("App2");
 });
 
 test(`actions can push state`, async () => {
@@ -228,7 +228,7 @@ test(`actions can push state`, async () => {
     actionRegistry.add("client_action_pushes", ClientActionPushes);
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
     expect(router.current).toEqual({});
 
@@ -263,7 +263,7 @@ test(`actions override previous state`, async () => {
     actionRegistry.add("client_action_pushes", ClientActionPushes);
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
     expect(router.current).toEqual({});
 
@@ -301,13 +301,13 @@ test(`actions override previous state from menu click`, async () => {
     actionRegistry.add("client_action_pushes", ClientActionPushes);
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(router.current).toEqual({});
 
     await getService("action").doAction("client_action_pushes");
     await contains(`.test_client_action`).click();
-    await contains(`.o_navbar_apps_menu button`).click();
-    await contains(`.o-dropdown-item:eq(2)`).click();
+    await contains(`.w_navbar_apps_menu button`).click();
+    await contains(`.w-dropdown-item:eq(2)`).click();
     await animationFrame(); // one render for the blank component, one for the client action
     expect(location.href).toBe("http://example.com/weth/action-1002");
     expect(router.current.action).toBe(1002);
@@ -331,13 +331,13 @@ test(`action in target new do not push state`, async () => {
     });
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(2001);
     expect(`.modal .test_client_action`).toHaveCount(1);
 
-    expect(location.href).toBe("http://example.com/odoo", {
+    expect(location.href).toBe("http://example.com/weth", {
         message: "url did not change",
     });
     expect(browser.history.length).toBe(1, { message: "did not create a history entry" });
@@ -346,7 +346,7 @@ test(`action in target new do not push state`, async () => {
 
 test(`properly push state`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(4);
@@ -382,7 +382,7 @@ test(`properly push state`, async () => {
         ],
     });
 
-    await contains(`tr .o_data_cell:first`).click();
+    await contains(`tr .w_data_cell:first`).click();
     expect(location.href).toBe("http://example.com/weth/action-4/action-8/4");
     expect(browser.history.length).toBe(4);
     expect(router.current).toEqual({
@@ -414,12 +414,12 @@ test(`push state after action is loaded, not before`, async () => {
     onRpc("get_views", () => def?.promise);
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     getService("action").doAction(4);
 
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
     expect(router.current).toEqual({});
 
@@ -443,7 +443,7 @@ test(`do not push state when action fails`, async () => {
     onRpc("read", () => Promise.reject());
 
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(8);
@@ -460,9 +460,9 @@ test(`do not push state when action fails`, async () => {
         ],
     });
 
-    await contains(`tr.o_data_row:first`).click();
+    await contains(`tr.w_data_row:first`).click();
     // we make sure here that the list view is still in the dom
-    expect(`.o_list_view`).toHaveCount(1, {
+    expect(`.w_list_view`).toHaveCount(1, {
         message: "there should still be a list view in dom",
     });
 
@@ -482,7 +482,7 @@ test(`do not push state when action fails`, async () => {
 
 test(`view_type is in url when not the default one`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(3);
@@ -526,7 +526,7 @@ test(`view_type is in url when not the default one`, async () => {
 
 test(`switchView pushes the stat but doesn't add to the breadcrumbs`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(3);
@@ -563,7 +563,7 @@ test(`switchView pushes the stat but doesn't add to the breadcrumbs`, async () =
 
 test(`properly push globalState`, async () => {
     await mountWithCleanup(WebClient);
-    expect(location.href).toBe("http://example.com/odoo");
+    expect(location.href).toBe("http://example.com/weth");
     expect(browser.history.length).toBe(1);
 
     await getService("action").doAction(4);
@@ -583,11 +583,11 @@ test(`properly push globalState`, async () => {
     // add element on the search Model
     await editSearch("blip");
     await validateSearch();
-    expect(queryAllTexts(".o_facet_value")).toEqual(["blip"]);
+    expect(queryAllTexts(".w_facet_value")).toEqual(["blip"]);
 
     //open record
-    await contains(".o_kanban_record").click();
-    expect(".o_form_view").toHaveCount(1);
+    await contains(".w_kanban_record").click();
+    expect(".w_form_view").toHaveCount(1);
     expect(location.href).toBe("http://example.com/weth/action-4/2");
     expect(router.current).toEqual({
         action: 4,
@@ -612,6 +612,6 @@ test(`properly push globalState`, async () => {
     await animationFrame();
 
     // The search Model should be restored
-    expect(queryAllTexts(".o_facet_value")).toEqual(["blip"]);
+    expect(queryAllTexts(".w_facet_value")).toEqual(["blip"]);
     expect(location.href).toBe("http://example.com/weth/action-4");
 });

@@ -4,7 +4,7 @@ import { Interaction } from '@web/public/interaction';
 import { registry } from '@web/core/registry';
 
 export class RecentlyViewedProducts extends Interaction {
-    static selector = '.o_wsale_product_page';
+    static selector = '.w_wsale_product_page';
     dynamicContent = {
         '.js_product': { 't-on-product_changed': this.debounced(this.onProductChanged, 500) },
     };

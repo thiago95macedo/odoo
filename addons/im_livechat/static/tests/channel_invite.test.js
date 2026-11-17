@@ -55,21 +55,21 @@ test("Can invite a partner to a livechat channel", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await click("button[title='Add People']");
     await click("input", {
-        parent: [".o-discuss-ChannelInvitation-selectable", { text: "James" }],
+        parent: [".w-discuss-ChannelInvitation-selectable", { text: "James" }],
     });
     await contains(
-        ".o-discuss-ChannelInvitation-selectable:contains('James English French German pricing events')"
+        ".w-discuss-ChannelInvitation-selectable:contains('James English French German pricing events')"
     );
     await click("button:enabled", { text: "Invite" });
-    await contains(".o-mail-NotificationMessage", {
+    await contains(".w-mail-NotificationMessage", {
         text: "Mitch (FR) invited James to the channel1:00 PM",
     });
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
-    await contains(".o-discuss-ChannelMember", { text: "James" });
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
+    await contains(".w-discuss-ChannelMember", { text: "James" });
 });
 
 test("Available operators come first", async () => {
@@ -95,12 +95,12 @@ test("Available operators come first", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await click("button[title='Add People']");
-    await contains(".o-discuss-ChannelInvitation-selectable", { count: 2 });
-    await contains(":nth-child(1 of .o-discuss-ChannelInvitation-selectable)", { text: "Ron" });
-    await contains(":nth-child(2 of .o-discuss-ChannelInvitation-selectable)", { text: "Harry" });
+    await contains(".w-discuss-ChannelInvitation-selectable", { count: 2 });
+    await contains(":nth-child(1 of .w-discuss-ChannelInvitation-selectable)", { text: "Ron" });
+    await contains(":nth-child(2 of .w-discuss-ChannelInvitation-selectable)", { text: "Harry" });
 });
 
 test("Partners invited most frequently by the current user come first", async () => {
@@ -148,19 +148,19 @@ test("Partners invited most frequently by the current user come first", async ()
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem:has(:text('Visitor #1'))");
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await click(".w-mail-NotificationItem:has(:text('Visitor #1'))");
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await click("button[title='Add People']");
-    await click("input", { parent: [".o-discuss-ChannelInvitation-selectable", { text: "John" }] });
+    await click("input", { parent: [".w-discuss-ChannelInvitation-selectable", { text: "John" }] });
     await click("button:enabled", { text: "Invite" });
-    await contains(".o-discuss-ChannelMember", { text: "John" });
-    await click(".o-mail-NotificationItem:has(:text('Visitor #2'))");
-    await contains(".o-mail-DiscussContent-threadName:value('Visitor #2')");
+    await contains(".w-discuss-ChannelMember", { text: "John" });
+    await click(".w-mail-NotificationItem:has(:text('Visitor #2'))");
+    await contains(".w-mail-DiscussContent-threadName:value('Visitor #2')");
     await click("button[title='Add People']");
-    await contains(".o-discuss-ChannelInvitation-selectable", { count: 2 });
-    await contains(":nth-child(1 of .o-discuss-ChannelInvitation-selectable)", { text: "John" });
-    await contains(":nth-child(2 of .o-discuss-ChannelInvitation-selectable)", { text: "Albert" });
+    await contains(".w-discuss-ChannelInvitation-selectable", { count: 2 });
+    await contains(":nth-child(1 of .w-discuss-ChannelInvitation-selectable)", { text: "John" });
+    await contains(":nth-child(2 of .w-discuss-ChannelInvitation-selectable)", { text: "Albert" });
 });
 
 test("shows operators are in call", async () => {
@@ -195,12 +195,12 @@ test("shows operators are in call", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await click("[title='Add People']");
-    await contains(".o-discuss-ChannelInvitation-selectable:contains('bob in a call')");
-    await contains(".o-discuss-ChannelInvitation-selectable:contains('john')");
-    await contains(".o-discuss-ChannelInvitation-selectable:contains('john in a call')", {
+    await contains(".w-discuss-ChannelInvitation-selectable:contains('bob in a call')");
+    await contains(".w-discuss-ChannelInvitation-selectable:contains('john')");
+    await contains(".w-discuss-ChannelInvitation-selectable:contains('john in a call')", {
         count: 0,
     });
 });
@@ -230,11 +230,11 @@ test("Operator invite shows livechat_username", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem:has(:text('Visitor #1'))");
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await click(".w-mail-NotificationItem:has(:text('Visitor #1'))");
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await click("button[title='Add People']");
     await contains("input", {
-        parent: [".o-discuss-ChannelInvitation-selectable", { text: "Johnny" }],
+        parent: [".w-discuss-ChannelInvitation-selectable", { text: "Johnny" }],
     });
 });

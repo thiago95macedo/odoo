@@ -368,13 +368,13 @@ export function prepareBodyForEditing(body) {
         mention.setAttribute("contenteditable", false);
     }
     // for special mentions
-    for (const mention of bodyEl.querySelectorAll(".o-discuss-mention")) {
+    for (const mention of bodyEl.querySelectorAll(".w-discuss-mention")) {
         mention.setAttribute("contenteditable", false);
     }
     // The "(edited)" label is added by the server and must never be editable.
     // Remove it so that CTRL+A does not select it and it is always re-added at
     // the end by the server upon saving.
-    for (const edited of bodyEl.querySelectorAll(".o-mail-Message-edited")) {
+    for (const edited of bodyEl.querySelectorAll(".w-mail-Message-edited")) {
         edited.remove();
     }
     return getInnerHtml(bodyEl);

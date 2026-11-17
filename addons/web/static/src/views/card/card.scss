@@ -3,8 +3,8 @@
     --Card-min-width: 240px;
     --Card-padding-v: 0;
     --Card-padding-h: 0;
-    --Card__image-width: #{$o-kanban-image-width};
-    --Card__image--fill-width: #{$o-kanban-image-fill-width};
+    --Card__image-width: #{$w-kanban-image-width};
+    --Card__image--fill-width: #{$w-kanban-image-fill-width};
 
 }
 
@@ -12,7 +12,7 @@
 .o_card_record {
     --fieldWidget-display: block;
     --Tag-max-width: 100%;
-    --Tag-font-size: #{$o-font-size-base-smaller};
+    --Tag-font-size: #{$w-font-size-base-smaller};
     --Tags-margin: calc(1em - var(--Tag-font-size, .75rem)) 0;
 
     position: relative;
@@ -50,7 +50,7 @@
             height: auto;
         }
 
-        div.o_field_widget.o_field_background_image > img {
+        div.o_field_widget.o_field_background_image>img {
             position: relative;
         }
     }
@@ -67,7 +67,7 @@
         }
     }
 
-    > .o_record_main {
+    >.o_record_main {
         display: flex;
         flex-flow: column;
         min-width: 0;
@@ -78,7 +78,8 @@
         }
     }
 
-    > footer, > .o_record_main > footer {
+    >footer,
+    >.o_record_main>footer {
         display: flex;
         align-items: center;
         column-gap: var(--Card-Footer-gap, #{map-get($spacers, 2)});
@@ -106,20 +107,20 @@
 
             .o_card_image_fill {
                 min-height: var(--Card__image-fill-width);
-                max-height: var(--Card__image-max-height, $o-kanban-image-fill-width * 1.5);
+                max-height: var(--Card__image-max-height, $w-kanban-image-fill-width * 1.5);
 
                 @include media-only(print) {
                     height: auto;
                 }
             }
 
-            > * {
+            >* {
                 @include media-breakpoint-up(md) {
                     height: calc(100% + var(--Card-padding-v)* 2);
                     margin-top: calc(var(--Card-padding-v)* -1);
                     margin-bottom: calc(var(--Card-padding-v)* -1);
                     margin-left: calc(var(--Card-padding-h)* -1);
-                
+
                     @include media-only(print) {
                         height: auto;
                     }
@@ -128,7 +129,7 @@
         }
     }
 
-    .o_attachment_image > img {
+    .o_attachment_image>img {
         width: 100%;
         height: auto;
         border-radius: var(--Attachment-Image-border-radius, #{$border-radius});

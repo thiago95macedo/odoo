@@ -306,7 +306,7 @@ export class Composer extends Component {
                     this.props.composer.composerHtml
                 );
                 const elements = fragment.querySelectorAll(
-                    `.o_mail_redirect, .o-discuss-readonly-mention`
+                    `.o_mail_redirect, .w-discuss-readonly-mention`
                 );
                 let hasChanged = false;
                 for (const el of elements) {
@@ -681,7 +681,7 @@ export class Composer extends Component {
             case "Enter": {
                 if (
                     isEventHandled(ev, "NavigableList.select") ||
-                    document.querySelector(".o-we-SuggestionList .o-navigable") ||
+                    document.querySelector(".w-we-SuggestionList .w-navigable") ||
                     !this.state.active
                 ) {
                     ev.preventDefault();

@@ -97,7 +97,7 @@ class DisplayDriver(Driver):
         self.browser.refresh()
 
     def _action_open_kiosk(self, data):
-        origin = helpers.get_odoo_server_url()
+        origin = helpers.get_weth_server_url()
         self.update_url(f"{origin}/pos-self/{data.get('pos_id')}?access_token={data.get('access_token')}")
         self.set_orientation(Orientation.RIGHT)
 
@@ -109,7 +109,7 @@ class DisplayDriver(Driver):
         if not data.get('pos_id') or not data.get('access_token'):
             return
 
-        origin = helpers.get_odoo_server_url() or http.request.httprequest.origin
+        origin = helpers.get_weth_server_url() or http.request.httprequest.origin
         self.update_url(f"{origin}/pos_customer_display/{data['pos_id']}/{data['access_token']}?access_token={data['access_token']}")
 
     def _action_close_customer_display(self, data):

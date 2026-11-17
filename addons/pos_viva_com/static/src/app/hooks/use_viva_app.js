@@ -96,7 +96,7 @@ export const useVivaApp = (validateCallback) => {
         const callbackLink = `${baseUrl}${callbackPath}`;
         const url =
             "vivapayclient://pay/v1" +
-            "?appId=com.odoo.mobile" +
+            "?appId=com.weth.mobile" +
             "&action=abort" +
             `&callback=${callbackLink}`;
         window.open(url, "_self");
@@ -128,7 +128,7 @@ export const useVivaApp = (validateCallback) => {
 
             let url =
                 "vivapayclient://pay/v1" +
-                "?appId=com.odoo.mobile" +
+                "?appId=com.weth.mobile" +
                 `&amount=${roundPrecision(Math.abs(line.amount * 100))}` +
                 "&show_receipt=true" +
                 "&show_transaction_result=true" +

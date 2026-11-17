@@ -243,7 +243,7 @@ describe("to paragraph", () => {
         const { el, editor } = await setupEditor("<h1>ab[]cd</h1>");
         await insertText(editor, "/text");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Text");
+        expect(".active .w-we-command-name").toHaveText("Text");
 
         await press("enter");
         expect(getContent(el)).toBe("<p>ab[]cd</p>");
@@ -253,7 +253,7 @@ describe("to paragraph", () => {
         const { el, editor } = await setupEditor("<h1>a<br>b<br>[]c<br>d<br>e</h1>");
         await insertText(editor, "/text");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Text");
+        expect(".active .w-we-command-name").toHaveText("Text");
 
         await press("enter");
         expect(getContent(el)).toBe("<h1>a<br>b</h1><p>[]c</p><h1>d<br>e</h1>");
@@ -263,7 +263,7 @@ describe("to paragraph", () => {
         const { el, editor } = await setupEditor("<h1>ab<br>[]<br>cd</h1>");
         await insertText(editor, "/text");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Text");
+        expect(".active .w-we-command-name").toHaveText("Text");
 
         await press("enter");
         expect(getContent(el)).toBe(
@@ -828,7 +828,7 @@ describe("to pre", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/code");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Code");
+        expect(".active .w-we-command-name").toHaveText("Code");
 
         await press("enter");
         expect(getContent(el)).toBe("<pre>ab[]cd</pre>");
@@ -838,7 +838,7 @@ describe("to pre", () => {
         const { el, editor } = await setupEditor("<h1>a<br>b<br>[]c<br>d<br>e</h1>");
         await insertText(editor, "/code");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Code");
+        expect(".active .w-we-command-name").toHaveText("Code");
 
         await press("enter");
         expect(getContent(el)).toBe("<h1>a<br>b</h1><pre>[]c</pre><h1>d<br>e</h1>");
@@ -848,7 +848,7 @@ describe("to pre", () => {
         const { el, editor } = await setupEditor("<h1>ab<br>[]<br>cd</h1>");
         await insertText(editor, "/code");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Code");
+        expect(".active .w-we-command-name").toHaveText("Code");
 
         await press("enter");
         expect(getContent(el)).toBe(
@@ -997,7 +997,7 @@ describe("to blockquote", () => {
 
     test("setTag should work when we move the selection outside of the editor", async () => {
         const { editor, el } = await setupEditor("<p>ab[]cd</p>");
-        const anchorNode = queryFirst(".odoo-editor-editable").parentElement;
+        const anchorNode = queryFirst(".weth-editor-editable").parentElement;
         setSelection({ anchorNode, anchorOffset: 0 });
         expect(getContent(el)).toBe("<p>abcd</p>");
 
@@ -1031,7 +1031,7 @@ describe("to blockquote", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/quote");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Quote");
+        expect(".active .w-we-command-name").toHaveText("Quote");
 
         await press("enter");
         expect(getContent(el)).toBe("<blockquote>ab[]cd</blockquote>");

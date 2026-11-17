@@ -8,7 +8,7 @@ from weth import models, fields
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
-    odoobot_state = fields.Selection(
+    wethbot_state = fields.Selection(
         [
             ('not_initialized', 'Not initialized'),
             ('onboarding_emoji', 'Onboarding emoji'),
@@ -19,9 +19,7 @@ class ResUsers(models.Model):
             ('idle', 'Idle'),
             ('disabled', 'Disabled'),
         ], string="WethBot Status", readonly=True, required=False)
-    odoobot_failed = fields.Boolean(readonly=True)
-    wethbot_state = fields.Selection(related='odoobot_state', readonly=False)
-    wethbot_failed = fields.Boolean(related='odoobot_failed', readonly=False)
+    wethbot_failed = fields.Boolean(readonly=True)
 
     def _on_webclient_bootstrap(self):
         super()._on_webclient_bootstrap()

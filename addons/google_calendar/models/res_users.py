@@ -46,7 +46,7 @@ class ResUsers(models.Model):
             status = "sync_stopped"
         return status
 
-    def _check_pending_odoo_records(self):
+    def _check_pending_weth_records(self):
         """ Returns True if sync is active and there are records to be synchronized to Google. """
         if self._get_google_sync_status() != "sync_active":
             return False
@@ -67,7 +67,7 @@ class ResUsers(models.Model):
             return False
 
         with google_calendar_token(self) as token:
-            # Google -> Odoo
+            # Google -> Weth
             # Utilize incremental sync to only fetch the changes since the last sync.
             # https://developers.google.com/workspace/calendar/api/guides/sync
             try:
@@ -81,12 +81,12 @@ class ResUsers(models.Model):
             return calendars
 
     def _sync_google_calendars(self, calendar_service: GoogleCalendarService):
-        # Google -> Odoo
+        # Google -> Weth
         new_calendars = False
         if google_calendar_values := self._sync_calendars_request(calendar_service):
             new_calendars = self.env['calendar.calendar']._sync_calendars_google2weth(google_calendar_values)
 
-        # Odoo -> Google
+        # WETH -> Google
         # Local calendars, which have not yet been synchronized with Google or need to be updated
         calendars_to_sync = self.calendar_ids.filtered(lambda c: c.google_sync_enabled and (c.need_sync or not c.google_id))
         calendars_to_sync._sync_calendars_weth2google(calendar_service)
@@ -100,7 +100,7 @@ class ResUsers(models.Model):
 
         events_by_calendar = {}
 
-        # Google -> Odoo
+        # Google -> Weth
         # Fetch events for all calendars before processing them.
         for calendar in self.env.user.calendar_ids:
             if not calendar.google_sync_enabled:
@@ -124,7 +124,7 @@ class ResUsers(models.Model):
 
         # When moving an event from one calendar to another, Google will send a cancellation event for the
         # original calendar, and an update event for the new one. We need to make sure that we don't cancel the
-        # event in Odoo if it only moved. To do this, we keep track of all active events and ignore any
+        # event in WETH if it only moved. To do this, we keep track of all active events and ignore any
         # cancellation for those which are still active in some calendar.
         persisted_events = set()
         persisted_recurrences = set()
@@ -149,21 +149,21 @@ class ResUsers(models.Model):
 
             # We apply Google updates only if their write date is later than the write date in WETH.
             # It's possible that multiple updates affect the same record, maybe not directly.
-            # To handle this, we preserve the write dates in Odoo before applying any updates,
+            # To handle this, we preserve the write dates in WETH before applying any updates,
             # and use these dates instead of the current live dates.
-            odoo_events = self.env['calendar.event'].browse(events_to_sync.odoo_ids(self.env))
-            odoo_recurrences = self.env['calendar.recurrence'].browse(recurrences_to_sync.odoo_ids(self.env))
-            recurrences_write_dates = {r.id: r.write_date for r in odoo_recurrences}
-            events_write_dates = {e.id: e.write_date for e in odoo_events}
+            weth_events = self.env['calendar.event'].browse(events_to_sync.weth_ids(self.env))
+            weth_recurrences = self.env['calendar.recurrence'].browse(recurrences_to_sync.weth_ids(self.env))
+            recurrences_write_dates = {r.id: r.write_date for r in weth_recurrences}
+            events_write_dates = {e.id: e.write_date for e in weth_events}
 
             synced_recurrences |= self.env['calendar.recurrence']._sync_google2weth(recurrences_to_sync, calendar, recurrences_write_dates)
             synced_events |= self.env['calendar.event']._sync_google2weth(events_to_sync, calendar, events_write_dates, default_reminders=default_reminders)
 
         need_refresh = bool(synced_recurrences or synced_events)
-        if not self._check_pending_odoo_records():
+        if not self._check_pending_weth_records():
             return need_refresh
 
-        # Odoo -> Google
+        # WETH -> Google
         for calendar in self.env.user.calendar_ids:
             if calendar.user_access_role not in ['owner', 'writer'] or not calendar.google_sync_enabled:
                 continue
@@ -180,7 +180,7 @@ class ResUsers(models.Model):
         return need_refresh
 
     def _sync_google_calendar_filter_remote_events(self, google_events):
-        """Filter out events coming from google which should not be synced into odoo."""
+        """Filter out events coming from google which should not be synced into weth."""
         # Birthday events appear in a separate virtual calendar in the UI of google calendar which can be confusing.
         # They require special handling and are not very useful in business flows so they are ignored for now.
         return google_events.filter(lambda google_event: google_event.eventType != 'birthday')

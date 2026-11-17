@@ -312,7 +312,7 @@ class Base(models.AbstractModel):
                 all_emails += defaults['email_cc_lst']
             all_emails += defaults['partners'].mapped('email_normalized')
         ban_emails = []
-        # ban emails: don't propose odoobot unless another active partner has the same email
+        # ban emails: don't propose wethbot unless another active partner has the same email
         root_email = self.env.ref('base.partner_root').email_normalized
         if root_email in all_emails and not self.env['res.partner'].search_count([('email_normalized', '=', root_email)], limit=1):
             ban_emails.append(root_email)
@@ -475,7 +475,7 @@ class Base(models.AbstractModel):
             ]
             all_emails |= (set(records_emails[record]) | set(partners.mapped('email_normalized'))
                            | set(cc_partners.mapped('email_normalized')))
-        # ban emails: never propose odoobot nor aliases
+        # ban emails: never propose wethbot nor aliases
         ban_emails = [self.env.ref('base.partner_root').email_normalized]
         ban_emails += self.env['mail.alias.domain'].sudo()._find_aliases(
             [email_key(e) for e in all_emails if e and e.strip()]
@@ -784,7 +784,7 @@ class Base(models.AbstractModel):
         if not self:
             return headers
         self.ensure_one()
-        headers['X-Odoo-Objects'] = f"{self._name}-{self.id}"
+        headers['X-Weth-Objects'] = f"{self._name}-{self.id}"
         if 'Return-Path' not in headers:
             company = self._mail_get_companies(default=self.env.company)[self.id]
             if company.bounce_email:

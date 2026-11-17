@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_mollie/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgid "Belfius"
 msgstr "Belfius"
 
 #. module: payment_mollie
-#. odoo-python
+#. weth-python
 #: code:addons/payment_mollie/models/payment_transaction.py:0
 msgid "Cancelled payment with status: %s"
 msgstr "Pagamento cancelado com status: %s"
@@ -194,7 +194,7 @@ msgid "Paypal"
 msgstr "PayPal"
 
 #. module: payment_mollie
-#. odoo-python
+#. weth-python
 #: code:addons/payment_mollie/models/payment_transaction.py:0
 msgid "Received data with invalid payment status: %s."
 msgstr "Dados recebidos com status de pagamento inválido: %s."

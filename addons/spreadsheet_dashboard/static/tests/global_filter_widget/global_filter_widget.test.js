@@ -58,8 +58,8 @@ test("global filter widget renders", async () => {
     await mountFavoriteFilterForm();
 
     // Widget rendered
-    expect(".o_field_global_filters .o-filter-values").toHaveCount(1);
-    expect(".o-filter-item > div:first-child").toHaveText("Period");
+    expect(".o_field_global_filters .w-filter-values").toHaveCount(1);
+    expect(".w-filter-item > div:first-child").toHaveText("Period");
 });
 
 test("editing global filter updates favorite filters record", async () => {
@@ -80,11 +80,11 @@ test("editing global filter updates favorite filters record", async () => {
         expect.step("web_save");
     });
     await mountFavoriteFilterForm();
-    await contains(".o-filter-values select").select("not in");
+    await contains(".w-filter-values select").select("not in");
 
     // Pick a product via autocomplete
-    await contains(".o-filter-value input").click();
-    await contains(".o-autocomplete--dropdown-item:first").click();
+    await contains(".w-filter-value input").click();
+    await contains(".w-autocomplete--dropdown-item:first").click();
     expect(".o_tag .o_tag_badge_text").toHaveText("xphone");
 
     await contains(".o_form_button_save").click();
@@ -110,17 +110,17 @@ test("changing dashboard reloads global filters", async () => {
     };
     await mountFavoriteFilterForm();
     expect("div[name='dashboard_id'] input").toHaveValue("Dashboard CRM 1");
-    expect(".o-filter-value input").toHaveValue("Last 90 Days");
-    expect(".o-filter-item > div:first-child").toHaveText("Period");
+    expect(".w-filter-value input").toHaveValue("Last 90 Days");
+    expect(".w-filter-item > div:first-child").toHaveText("Period");
 
     // Change dashboard
     await contains("div[name='dashboard_id'] input").click();
-    await contains(".o-autocomplete--dropdown-item:nth-child(2)").click();
+    await contains(".w-autocomplete--dropdown-item:nth-child(2)").click();
 
     await animationFrame();
     expect("div[name='dashboard_id'] input").toHaveValue("Dashboard CRM 2");
-    expect(".o-filter-values").toHaveCount(1);
-    expect(".o-filter-item > div:first-child").toHaveText("Product");
+    expect(".w-filter-values").toHaveCount(1);
+    expect(".w-filter-item > div:first-child").toHaveText("Product");
 });
 
 test("clearing a relation global filter resets operator and removes values", async () => {
@@ -138,12 +138,12 @@ test("clearing a relation global filter resets operator and removes values", asy
         1: { operator: "ilike", strings: ["hello"] },
     };
     await mountFavoriteFilterForm();
-    expect(".o-filter-item > div:first-child").toHaveText("Product");
-    expect(".o-filter-values select").toHaveValue("ilike");
+    expect(".w-filter-item > div:first-child").toHaveText("Product");
+    expect(".w-filter-values select").toHaveValue("ilike");
     expect(".o_tag .o_tag_badge_text").toHaveText("hello");
 
     // Clear facet
-    await contains(".o-filter-clear button").click();
-    expect(".o-filter-values select").toHaveValue("in");
+    await contains(".w-filter-clear button").click();
+    expect(".w-filter-values select").toHaveValue("in");
     expect(".o_tag .o_tag_badge_text").toHaveCount(0);
 });

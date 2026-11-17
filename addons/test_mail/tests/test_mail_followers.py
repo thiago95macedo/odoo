@@ -903,10 +903,10 @@ class RecipientsNotificationTest(MailCommon):
         self.assertRecipientsData(recipients_data, False, test_partners)
 
     def test_subscribe_post_author(self):
-        """ Test author is added in followers, unless it is archived / odoobot """
+        """ Test author is added in followers, unless it is archived / wethbot """
         # some automated action post on behalf of author
         test_record = self.env['mail.test.simple'].create({'name': 'Test'})
-        self.partner_root.active = True  # edge case, people activating Odoobot partner (not user)
+        self.partner_root.active = True  # edge case, people activating Wethbot partner (not user)
         (self.user_1 + self.user_2).active = False  # archived users should not be subscribed
         self.user_1.partner_id.active = False  # archived authors should not be subscribed
         self.assertFalse(test_record.message_partner_ids)
@@ -916,7 +916,7 @@ class RecipientsNotificationTest(MailCommon):
             # inactive user -> check for author
             (self.user_2, self.user_employee.partner_id, self.user_employee.partner_id),
             (self.user_2, self.user_1.partner_id, self.env['res.partner']),  # no inactive !
-            (self.user_2, self.user_root.partner_id, self.env['res.partner']),  # no odoobot !
+            (self.user_2, self.user_root.partner_id, self.env['res.partner']),  # no wethbot !
         ]:
             with self.subTest(user=user.name, author=author.name):
                 test_record.with_user(user).message_post(

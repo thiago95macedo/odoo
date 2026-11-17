@@ -72,15 +72,15 @@ class DriverController(http.Controller):
         """
         Downloads the log file
         """
-        log_path = tools.config['logfile'] or "/var/log/weth/odoo-server.log"
+        log_path = tools.config['logfile'] or "/var/log/weth/weth-server.log"
         try:
             stat = os.stat(log_path)
         except FileNotFoundError:
             raise InternalServerError("Log file has not been found. Check your Log file configuration.")
         check = adler32(log_path.encode())
-        log_file_name = f"iot-odoo-{gethostname()}-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+        log_file_name = f"iot-weth-{gethostname()}-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
         # intentionally don't use Stream.from_path as the path used is not in the addons path
-        # for instance, for the iot-box it will be in /var/log/odoo
+        # for instance, for the iot-box it will be in /var/log/weth
         return Stream(
                 type='path',
                 path=log_path,

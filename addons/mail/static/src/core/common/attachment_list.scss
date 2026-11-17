@@ -1,56 +1,64 @@
-$o-mail-attachment-height: 10em;
+$w-mail-attachment-height: 10em;
 
-.o-mail-AttachmentContainer {
-    &.o-inMessage.o-isImage:not(.o-inChatter) {
+.w-mail-AttachmentContainer {
+    &.w-inMessage.w-isImage:not(.w-inChatter) {
         min-width: 13em;
-        min-height: $o-mail-attachment-height;
+        min-height: $w-mail-attachment-height;
     }
-    &:not(.o-inMessage.o-isImage),&.o-inChatter.o-inMessage.o-isImage {
+
+    &:not(.w-inMessage.w-isImage),
+    &.w-inChatter.w-inMessage.w-isImage {
         width: 13em;
-        height: $o-mail-attachment-height;
+        height: $w-mail-attachment-height;
     }
+
     background-color: $gray-200;
 
     @include media-breakpoint-down(sm) {
         width: 12em;
     }
-    .o_image, .oi {
+
+    .o_image,
+    .oi {
         z-index: 1;
     }
 }
 
-.o-mail-Attachment-selectCheckbox {
+.w-mail-Attachment-selectCheckbox {
     width: 1.5em;
     height: 1.5em;
     background-color: $body-bg;
     z-index: 3;
 }
 
-.o-mail-AttachmentCard-image, .o-mail-Attachment-hover-image {
+.w-mail-AttachmentCard-image,
+.w-mail-Attachment-hover-image {
     width: 1.4em;
     height: 1.4em;
 }
 
-.o-mail-Attachment-duplicateCounter {
+.w-mail-Attachment-duplicateCounter {
     z-index: 3;
 
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
         outline: 2px solid $body-bg;
     }
 }
 
-.o-mail-Attachment-duplicateList {
+.w-mail-Attachment-duplicateList {
     max-width: 25em;
 }
 
-.o-mail-Attachment-duplicateUnlink:hover {
+.w-mail-Attachment-duplicateUnlink:hover {
     @include button-variant($danger, $danger);
 }
 
-.o-mail-Attachment-hover {
+.w-mail-Attachment-hover {
     background: $gray-100;
     z-index: 2;
-    &.o-bgTranslucent {
+
+    &.w-bgTranslucent {
         background: rgba(0, 0, 0, 0.4);
     }
 
@@ -59,14 +67,14 @@ $o-mail-attachment-height: 10em;
     }
 }
 
-.o-mail-AttachmentImage.o-inMessage:not(.o-inComposer) {
+.w-mail-AttachmentImage.w-inMessage:not(.w-inComposer) {
     max-height: 300px;
 }
 
-.o-mail-AttachmentImage.o-inComposer {
-    max-height: $o-mail-attachment-height;
+.w-mail-AttachmentImage.w-inComposer {
+    max-height: $w-mail-attachment-height;
 }
 
-.o-viewable {
+.w-viewable {
     cursor: zoom-in;
 }

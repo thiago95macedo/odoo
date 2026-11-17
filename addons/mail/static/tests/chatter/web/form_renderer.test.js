@@ -51,15 +51,15 @@ test.skip("Form view not scrolled when switching record", async () => {
             </form>`,
         resIds: [partnerId_1, partnerId_2],
     });
-    await contains(".o-mail-Message", { count: 29 });
+    await contains(".w-mail-Message", { count: 29 });
     await contains(".o_content", { scroll: 0 });
     await scroll(".o_content", 150);
     await click(".o_pager_next");
-    await contains(".o-mail-Message", { count: 30 });
+    await contains(".w-mail-Message", { count: 30 });
     await contains(".o_content", { scroll: 150 });
     await scroll(".o_content", 0);
     await click(".o_pager_previous");
-    await contains(".o-mail-Message", { count: 29 });
+    await contains(".w-mail-Message", { count: 29 });
     await contains(".o_content", { scroll: 0 });
 });
 
@@ -137,9 +137,9 @@ test("ellipsis button is not duplicated when switching from read to edit mode", 
                 <chatter/>
             </form>`,
     });
-    await contains(".o-mail-Chatter");
-    await contains(".o-mail-Message");
-    await contains(".o-mail-ellipsis");
+    await contains(".w-mail-Chatter");
+    await contains(".w-mail-Message");
+    await contains(".w-mail-ellipsis");
 });
 
 test("[TECHNICAL] unfolded ellipsis button should not fold on message click besides that button", async () => {
@@ -180,11 +180,11 @@ test("[TECHNICAL] unfolded ellipsis button should not fold on message click besi
                 <chatter/>
             </form>`,
     });
-    expect(".o-mail-Message-body span").toHaveCount(0);
-    await click(".o-mail-ellipsis");
-    expect(".o-mail-Message-body span").toHaveText("--\nSystem");
-    await click(".o-mail-Message");
-    expect(".o-mail-Message-body span").toHaveCount(1);
+    expect(".w-mail-Message-body span").toHaveCount(0);
+    await click(".w-mail-ellipsis");
+    expect(".w-mail-Message-body span").toHaveText("--\nSystem");
+    await click(".w-mail-Message");
+    expect(".w-mail-Message-body span").toHaveCount(1);
 });
 
 test("ellipsis button on message of type notification", async () => {
@@ -218,7 +218,7 @@ test("ellipsis button on message of type notification", async () => {
                 <chatter/>
             </form>`,
     });
-    await contains(".o-mail-ellipsis");
+    await contains(".w-mail-ellipsis");
 });
 
 test("read more/less should appear only once for the signature", async () => {
@@ -259,10 +259,10 @@ test("read more/less should appear only once for the signature", async () => {
 
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter");
-    await click(".o-mail-Chatter-sendMessage");
-    await insertText(".o-mail-Composer-input", "Example Body");
+    await contains(".w-mail-Chatter");
+    await click(".w-mail-Chatter-sendMessage");
+    await insertText(".w-mail-Composer-input", "Example Body");
     await click("[name='open-full-composer']");
-    await contains(".o-mail-Message-body:has(:text('Example Body'))");
-    expect(".o-mail-Message .o-signature-container button.o-mail-ellipsis").toHaveCount(1);
+    await contains(".w-mail-Message-body:has(:text('Example Body'))");
+    expect(".w-mail-Message .w-signature-container button.w-mail-ellipsis").toHaveCount(1);
 });

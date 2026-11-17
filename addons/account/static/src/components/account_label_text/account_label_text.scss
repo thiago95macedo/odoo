@@ -1,16 +1,16 @@
-.o_account_label_text {
-    textarea.o_input {
+.w_account_label_text {
+    textarea.w_input {
         resize: none;
 
-        &.o_has_product::first-line {
+        &.w_has_product::first-line {
             font-weight: 600;
         }
     }
 
-    .o_m2o_overlay {
+    .w_m2o_overlay {
         pointer-events: none;
 
-        .o-autocomplete {
+        .w-autocomplete {
             height: 100%;
 
             &--input {
@@ -21,24 +21,24 @@
             &--dropdown-menu {
                 pointer-events: auto;
 
-                &:has(li.o_m2o_no_result),
-                &:has(.o_loading) {
+                &:has(li.w_m2o_no_result),
+                &:has(.w_loading) {
                     display: none;
                 }
             }
         }
 
-        .o_dropdown_button {
+        .w_dropdown_button {
             display: none;
         }
     }
 
-    .o_external_button {
+    .w_external_button {
         visibility: hidden;
     }
 
     &:focus-within {
-        .o_external_button {
+        .w_external_button {
             visibility: visible;
         }
     }

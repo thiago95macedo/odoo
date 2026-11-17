@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_qfpay/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "American Express Card"
 msgstr "Cartão American Express"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid "Credit card payments refund must be for the full amount."
 msgstr ""
@@ -49,7 +49,7 @@ msgid "FPS"
 msgstr "FPS"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/qfpay.js:0
 msgid ""
 "Failed to connect to the QFPay terminal. This might be a certificate issue.\n"
@@ -70,7 +70,7 @@ msgid "Integrate your POS with the QFPay terminal in Hong Kong"
 msgstr "Integre seu PDV com o terminal QFPay em Hong Kong"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid "No payment with %s found for this order."
 msgstr "Não foi encontrado nenhum pagamento com %s para este pedido."
@@ -101,7 +101,7 @@ msgid "QFPay"
 msgstr "QFPay"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid "QFPay Error"
 msgstr "Erro QFPay"
@@ -127,13 +127,13 @@ msgid "QFPay Terminal IP Address"
 msgstr "Endereço IP do terminal QFPay"
 
 #. module: pos_qfpay
-#. odoo-python
+#. weth-python
 #: code:addons/pos_qfpay/models/pos_payment_method.py:0
 msgid "QFPay is only valid for HKD Currency"
 msgstr "O QFPay é válido apenas para a moeda HKD"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid ""
 "QFPay payment failed. Please try again or use a different payment method."
@@ -147,14 +147,14 @@ msgid "Qfpay Latest Response"
 msgstr "Última resposta da Qfpay"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid "Refund amount cannot be greater than the original payment amount."
 msgstr ""
 "O valor do reembolso não pode ser superior ao valor do pagamento original."
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/payment_qfpay.js:0
 msgid ""
 "Refunds can only be made on the same day before 23:00 HKT. Use the QFPay "
@@ -164,7 +164,7 @@ msgstr ""
 "portal QFPay para realizar este reembolso"
 
 #. module: pos_qfpay
-#. odoo-python
+#. weth-python
 #: code:addons/pos_qfpay/models/pos_payment_method.py:0
 msgid "This method can only be used with QFPay payment terminal."
 msgstr "Este método só pode ser utilizado com o terminal de pagamento QFPay."
@@ -180,7 +180,7 @@ msgid "Unionpay Card"
 msgstr "Cartão Unionpay"
 
 #. module: pos_qfpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_qfpay/static/src/app/qfpay.js:0
 msgid "Unknown error occurred"
 msgstr "Ocorreu um erro desconhecido"

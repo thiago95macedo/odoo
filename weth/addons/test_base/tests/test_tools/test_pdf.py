@@ -86,9 +86,9 @@ class TestPdf(TransactionCase):
         super().setUp()
         self.file = PDF_RAW
         self.minimal_reader_buffer = io.BytesIO(self.file)
-        self.minimal_pdf_reader = pdf.OdooPdfFileReader(self.minimal_reader_buffer)
+        self.minimal_pdf_reader = pdf.WethPdfFileReader(self.minimal_reader_buffer)
 
-    def test_odoo_pdf_file_reader(self):
+    def test_weth_pdf_file_reader(self):
         attachments = list(self.minimal_pdf_reader.get_attachments())
         self.assertEqual(len(attachments), 0)
 
@@ -98,10 +98,10 @@ class TestPdf(TransactionCase):
         out = io.BytesIO()
         pdf_writer.write(out)
 
-        r = pdf.OdooPdfFileReader(io.BytesIO(out.getvalue()))
+        r = pdf.WethPdfFileReader(io.BytesIO(out.getvalue()))
         self.assertEqual(len(list(r.get_attachments())), 1)
 
-    def test_odoo_pdf_file_writer(self):
+    def test_weth_pdf_file_writer(self):
         attachments = list(self.minimal_pdf_reader.get_attachments())
         self.assertEqual(len(attachments), 0)
         r = self.minimal_pdf_reader
@@ -110,17 +110,17 @@ class TestPdf(TransactionCase):
             ('test_attachment.txt', b'My awesome attachment'),
             ('another_attachment.txt', b'My awesome OTHER attachment'),
         ], start=1):
-            pdf_writer = pdf.OdooPdfFileWriter()
+            pdf_writer = pdf.WethPdfFileWriter()
             pdf_writer.clone_reader_document_root(r)
             pdf_writer.add_attachment(name, data)
             out = io.BytesIO()
             pdf_writer.write(out)
 
-            r = pdf.OdooPdfFileReader(io.BytesIO(out.getvalue()))
+            r = pdf.WethPdfFileReader(io.BytesIO(out.getvalue()))
             self.assertEqual(len(list(r.get_attachments())), count)
 
-    def test_odoo_pdf_file_reader_with_owner_encryption(self):
-        pdf_writer = pdf.OdooPdfFileWriter()
+    def test_weth_pdf_file_reader_with_owner_encryption(self):
+        pdf_writer = pdf.WethPdfFileWriter()
         pdf_writer.clone_reader_document_root(self.minimal_pdf_reader)
 
         pdf_writer.add_attachment('test_attachment.txt', b'My awesome attachment')
@@ -133,14 +133,14 @@ class TestPdf(TransactionCase):
             encrypted_content = writer_buffer.getvalue()
 
         with io.BytesIO(encrypted_content) as reader_buffer:
-            pdf_reader = pdf.OdooPdfFileReader(reader_buffer)
+            pdf_reader = pdf.WethPdfFileReader(reader_buffer)
             attachments = list(pdf_reader.get_attachments())
 
         self.assertEqual(len(attachments), 2)
 
-    def test_odoo_pdf_file_reader_with_nested_attachments(self):
+    def test_weth_pdf_file_reader_with_nested_attachments(self):
         reader_buffer = io.BytesIO(KIDS_PDF_RAW)
-        pdf_reader = pdf.OdooPdfFileReader(reader_buffer, strict=False)
+        pdf_reader = pdf.WethPdfFileReader(reader_buffer, strict=False)
         attachments = list(pdf_reader.get_attachments())
         self.assertEqual(len(attachments), 2)
 
@@ -149,7 +149,7 @@ class TestPdf(TransactionCase):
 
         merged_pdf = pdf.merge_pdf([self.file, self.file])
         merged_reader_buffer = io.BytesIO(merged_pdf)
-        merged_pdf_reader = pdf.OdooPdfFileReader(merged_reader_buffer)
+        merged_pdf_reader = pdf.WethPdfFileReader(merged_reader_buffer)
         self.assertEqual(len(merged_pdf_reader.pages), 2)
         merged_reader_buffer.close()
 
@@ -225,7 +225,7 @@ class TestPdf(TransactionCase):
         """
         Test converting a PDF without outlines dictionary to PDF/A.
         """
-        pdf_writer = pdf.OdooPdfFileWriter()
+        pdf_writer = pdf.WethPdfFileWriter()
         pdf_writer.clone_reader_document_root(self.minimal_pdf_reader)
         self.assertNotIn('/Outlines', pdf_writer._root_object)
 
@@ -251,7 +251,7 @@ class TestSignature(TransactionCase):
             x509.NameAttribute(
                 NameOID.STATE_OR_PROVINCE_NAME, "Brabant Wallon"),
             x509.NameAttribute(NameOID.LOCALITY_NAME, "Grand Rosiere"),
-            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Odoo"),
+            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Weth"),
             x509.NameAttribute(NameOID.COMMON_NAME, "weth.com.br"),
         ])
 
@@ -275,7 +275,7 @@ class TestSignature(TransactionCase):
 
         cls.pdf_path = "base/tests/files/file.pdf"
 
-    def test_odoo_pdf_signer(self):
+    def test_weth_pdf_signer(self):
         fixed_time = datetime.datetime.now(datetime.UTC)
         with file_open(self.pdf_path, "rb") as stream:
             out_stream = io.BytesIO()

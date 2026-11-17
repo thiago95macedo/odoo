@@ -22,8 +22,8 @@ class TestGamificationCommon(TransactionCaseGamification):
         self.env.ref('gamification.challenge_base_discover')._update_all()
         self.robot = self.env['res.users'].with_context(no_reset_password=True).create({
             'name': 'R2D2',
-            'login': 'r2d2@openerp.com',
-            'email': 'r2d2@openerp.com',
+            'login': 'r2d2@weth.com',
+            'email': 'r2d2@weth.com',
             'group_ids': [(6, 0, [employees_group.id])]
         })
         self.badge_good_job = self.env.ref('gamification.badge_good_job')

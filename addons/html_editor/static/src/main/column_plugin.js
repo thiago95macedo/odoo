@@ -87,8 +87,8 @@ export class ColumnPlugin extends Plugin {
         ],
         hints: [
             {
-                selector: `.odoo-editor-editable .o_text_columns div[class*='col-'],
-                            .odoo-editor-editable .o_text_columns div[class*='col-']>${baseContainerGlobalSelector}:first-child`,
+                selector: `.weth-editor-editable .o_text_columns div[class*='col-'],
+                            .weth-editor-editable .o_text_columns div[class*='col-']>${baseContainerGlobalSelector}:first-child`,
                 text: _t("Empty column"),
             },
         ],

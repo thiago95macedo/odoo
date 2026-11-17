@@ -34,7 +34,7 @@ def og_title_from_path(env, path):
         return "WETH"
     except Exception:
         _logger.warning("og_title_from_path failed for path %r", path, exc_info=True)
-        return "Odoo"
+        return "Weth"
 
 
 def clean_action(action, env):

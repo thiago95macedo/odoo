@@ -131,7 +131,7 @@ describe("collapsed selection", () => {
                                 <br>
                             </span>
                             <span class="o_file_name_container mx-2 d-flex flex-grow-1">
-                                <a class="o_link_readonly w-100" contenteditable="false" href="#">odoo_gmail.png</a>
+                                <a class="o_link_readonly w-100" contenteditable="false" href="#">weth_gmail.png</a>
                             </span>
                         </span>
                     </span>\ufeff&nbsp;--> Document (fr&nbsp;[]

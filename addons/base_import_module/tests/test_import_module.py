@@ -74,7 +74,7 @@ class TestImportModule(weth.tests.TransactionCase):
                 msgstr "dumb"
 
                 #. module: bar
-                #. odoo-javascript
+                #. weth-javascript
                 #: code:addons/foo/static/src/js/foo.js:0
                 msgid "baz"
                 msgstr "qux"
@@ -86,7 +86,7 @@ class TestImportModule(weth.tests.TransactionCase):
                 msgstr "dumb_nl"
 
                 #. module: bar
-                #. odoo-javascript
+                #. weth-javascript
                 #: code:addons/foo/static/src/js/baz.js:0
                 msgid "baz"
                 msgstr "qux_nl"
@@ -136,7 +136,7 @@ class TestImportModule(weth.tests.TransactionCase):
             po_reader._to_translate,
             [
                 ('bar', 'foo', 'res.country,name', 'bar.foo', 'model', (), self.env.ref('bar.foo').id, 'dumb'),
-                ('bar', 'baz', r'addons/bar/static/src/js/bar.js', 1, 'code', ('odoo-javascript',), None, 'qux'),
+                ('bar', 'baz', r'addons/bar/static/src/js/bar.js', 1, 'code', ('weth-javascript',), None, 'qux'),
             ]
         )
 

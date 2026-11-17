@@ -1,10 +1,10 @@
 import { registries } from "@weth/o-spreadsheet";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 import { toServerDateString } from "@spreadsheet/helpers/helpers";
 import { computeFormatFromCurrency } from "../helpers";
 const { evaluationPluginRegistry } = registries;
 
-export class CurrencyPlugin extends OdooEvaluationPlugin {
+export class CurrencyPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ ([
         "getCurrencyRate",
         "getCompanyCurrency",
@@ -69,4 +69,4 @@ export class CurrencyPlugin extends OdooEvaluationPlugin {
     }
 }
 
-evaluationPluginRegistry.add("odooCurrency", CurrencyPlugin);
+evaluationPluginRegistry.add("wethCurrency", CurrencyPlugin);

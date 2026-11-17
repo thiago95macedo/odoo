@@ -26,11 +26,11 @@ const parsedMockSettings = {
 };
 
 const expectedDateTimeMessage =
-    '<AdjustTimeRequest><Id>OdooPos</Id><SeqNo>00000000000</SeqNo><Date year="2019" month="3" day="11"/><Time hour="10" minute="30" second="0"/></AdjustTimeRequest>\0';
+    '<AdjustTimeRequest><Id>WethPos</Id><SeqNo>00000000000</SeqNo><Date year="2019" month="3" day="11"/><Time hour="10" minute="30" second="0"/></AdjustTimeRequest>\0';
 const expectedGetStatusMessage =
-    '<StatusRequest><Id>OdooPos</Id><SeqNo>00000000000</SeqNo><RequireVerification type="1"/></StatusRequest>\0';
+    '<StatusRequest><Id>WethPos</Id><SeqNo>00000000000</SeqNo><RequireVerification type="1"/></StatusRequest>\0';
 const expectedGetInventoryMessage =
-    '<InventoryRequest><Id>OdooPos</Id><SeqNo>00000000000</SeqNo><Option type="2"/></InventoryRequest>\0';
+    '<InventoryRequest><Id>WethPos</Id><SeqNo>00000000000</SeqNo><Option type="2"/></InventoryRequest>\0';
 
 beforeEach(() => {
     sentMessages.splice(0, sentMessages.length);

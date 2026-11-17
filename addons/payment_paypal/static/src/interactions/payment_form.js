@@ -276,7 +276,7 @@ patch(PaymentForm.prototype, {
     },
 
     /**
-     * Load the JS from the PayPal SDK URL and set an identifier dedicated to Odoo, for PayPal to be
+     * Load the JS from the PayPal SDK URL and set an identifier dedicated to WETH, for PayPal to be
      * able to recognize which transactions are originating from WETH.
      *
      * @private
@@ -287,7 +287,7 @@ patch(PaymentForm.prototype, {
         await loadJS(paypalSDKURL);
         const paypalSDKs = document.querySelectorAll(`script[src="${paypalSDKURL}"]`);
         [...paypalSDKs].forEach(sdk => {
-            sdk.setAttribute('data-partner-attribution-id', 'ODOO_SP_DIRECT');
+            sdk.setAttribute('data-partner-attribution-id', 'WETH_SP_DIRECT');
         });
     },
 

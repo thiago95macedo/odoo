@@ -14,7 +14,7 @@ beforeEach(() => mockDate("2023-04-08 10:00:00", 0));
 test("menu with no records", async () => {
     await start();
     await click(".o_menu_systray .dropdown-toggle:has(i[aria-label='Activities'])");
-    await contains(".o-mail-ActivityMenu", {
+    await contains(".w-mail-ActivityMenu", {
         text: "Congratulations, you're done with your activities.",
     });
 });
@@ -32,7 +32,7 @@ test("do not show empty text when at least some future activities", async () => 
     ]);
     await start();
     await click(".o_menu_systray .dropdown-toggle:has(i[aria-label='Activities'])");
-    await contains(".o-mail-ActivityMenu", {
+    await contains(".w-mail-ActivityMenu", {
         count: 0,
         text: "Congratulations, you're done with your activities.",
     });
@@ -69,8 +69,8 @@ test("activity menu widget: activity menu with 2 models", async () => {
     ]);
     await start();
     await contains(".o_menu_systray i[aria-label='Activities']");
-    await contains(".o-mail-ActivityMenu-counter");
-    await contains(".o-mail-ActivityMenu-counter", { text: "5" });
+    await contains(".w-mail-ActivityMenu-counter");
+    await contains(".w-mail-ActivityMenu-counter", { text: "5" });
     const actionChecks = {
         context: {
             force_search_count: 1,
@@ -93,9 +93,9 @@ test("activity menu widget: activity menu with 2 models", async () => {
         },
     });
     await click(".o_menu_systray i[aria-label='Activities']");
-    await contains(".o-mail-ActivityMenu");
-    await contains(".o-mail-ActivityMenu .o-mail-ActivityGroup", { count: 2 });
-    await contains(".o-mail-ActivityMenu .o-mail-ActivityGroup", {
+    await contains(".w-mail-ActivityMenu");
+    await contains(".w-mail-ActivityMenu .w-mail-ActivityGroup", { count: 2 });
+    await contains(".w-mail-ActivityMenu .w-mail-ActivityGroup", {
         contains: [
             ["div[name='activityTitle']", { text: "res.partner" }],
             ["span", { text: "0 Late" }],
@@ -103,7 +103,7 @@ test("activity menu widget: activity menu with 2 models", async () => {
             ["span", { text: "0 Future" }],
         ],
     });
-    await contains(".o-mail-ActivityMenu .o-mail-ActivityGroup", {
+    await contains(".w-mail-ActivityMenu .w-mail-ActivityGroup", {
         contains: [
             ["div[name='activityTitle']", { text: "mail.test.activity" }],
             ["span", { text: "1 Late" }],
@@ -112,20 +112,20 @@ test("activity menu widget: activity menu with 2 models", async () => {
         ],
     });
     actionChecks.res_model = "res.partner";
-    await click(".o-mail-ActivityMenu .o-mail-ActivityGroup", { text: "res.partner" });
-    await contains(".o-mail-ActivityMenu", { count: 0 });
+    await click(".w-mail-ActivityMenu .w-mail-ActivityGroup", { text: "res.partner" });
+    await contains(".w-mail-ActivityMenu", { count: 0 });
     await click(".o_menu_systray i[aria-label='Activities']");
     actionChecks.res_model = "mail.test.activity";
-    await click(".o-mail-ActivityMenu .o-mail-ActivityGroup", { text: "mail.test.activity" });
+    await click(".w-mail-ActivityMenu .w-mail-ActivityGroup", { text: "mail.test.activity" });
     await expect.waitForSteps(["do_action:res.partner", "do_action:mail.test.activity"]);
 });
 
 test("activity menu widget: close on messaging menu click", async () => {
     await start();
     await click(".o_menu_systray i[aria-label='Activities']");
-    await contains(".o-mail-ActivityMenu");
+    await contains(".w-mail-ActivityMenu");
     await click(".o_menu_systray i[aria-label='Messages']");
-    await contains(".o-mail-ActivityMenu", { count: 0 });
+    await contains(".w-mail-ActivityMenu", { count: 0 });
 });
 
 test("activity menu widget: 'To Assign' button visibility and action", async () => {
@@ -147,8 +147,8 @@ test("activity menu widget: 'To Assign' button visibility and action", async () 
 
     await start();
     await click(".o_menu_systray i[aria-label='Activities']");
-    await contains(".o-mail-ActivityMenu");
-    await contains(".o-mail-ActivityMenu span.list-group-item", { text: "2 To Assign" });
-    await click(".o-mail-ActivityMenu span.list-group-item", { text: "2 To Assign" });
+    await contains(".w-mail-ActivityMenu");
+    await contains(".w-mail-ActivityMenu span.list-group-item", { text: "2 To Assign" });
+    await click(".w-mail-ActivityMenu span.list-group-item", { text: "2 To Assign" });
     await expect.waitForSteps(["do_action"]);
 });

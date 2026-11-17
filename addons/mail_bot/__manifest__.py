@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'OdooBot',
+    'name': 'WethBot',
     'version': '1.2',
     'category': 'Productivity/Discuss',
-    'summary': 'Add OdooBot in discussions',
+    'summary': 'Add WethBot in discussions',
     'website': 'https://www.weth.com.br/app/discuss',
     'depends': ['mail'],
     'auto_install': True,

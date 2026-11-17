@@ -406,7 +406,7 @@ test("async method loadFields is protected", async () => {
     });
     const parent = await mountWithCleanup(Parent);
 
-    expect(".o_child_component").toHaveCount(1);
+    expect(".w_child_component").toHaveCount(1);
 
     callFieldService();
     expect.verifySteps(["loadFields called"]);

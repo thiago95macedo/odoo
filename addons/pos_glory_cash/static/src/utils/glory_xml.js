@@ -50,7 +50,7 @@ export const makeGloryHeader = (sequenceNumber, sessionId) => {
     const header = [
         {
             name: "Id",
-            children: ["OdooPos"],
+            children: ["WethPos"],
         },
         {
             name: "SeqNo",

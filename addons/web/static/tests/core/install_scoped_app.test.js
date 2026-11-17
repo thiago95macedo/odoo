@@ -56,9 +56,9 @@ test("Installation page displays the app info correctly", async () => {
     await mountWithCleanup(Parent);
     expect.verifySteps(["/web/manifest.scoped_app_manifest"]);
     await animationFrame();
-    expect(".o_install_scoped_app").toHaveCount(1);
-    expect(".o_install_scoped_app h1").toHaveText("My App");
-    expect(".o_install_scoped_app img").toHaveAttribute("data-src", "/fake_image_src");
+    expect(".w_install_scoped_app").toHaveCount(1);
+    expect(".w_install_scoped_app h1").toHaveText("My App");
+    expect(".w_install_scoped_app img").toHaveAttribute("data-src", "/fake_image_src");
     expect("[data-icon='edit']").toHaveCount(0);
     expect("button.btn-primary").toHaveCount(0);
     expect("div.bg-info").toHaveCount(1);
@@ -102,9 +102,9 @@ test("Installation page displays the error message when browser is not supported
     await mountWithCleanup(Parent);
     expect.verifySteps(["/web/manifest.scoped_app_manifest"]);
     await animationFrame();
-    expect(".o_install_scoped_app").toHaveCount(1);
-    expect(".o_install_scoped_app h1").toHaveText("My App");
-    expect(".o_install_scoped_app img").toHaveAttribute("data-src", "/fake_image_src");
+    expect(".w_install_scoped_app").toHaveCount(1);
+    expect(".w_install_scoped_app h1").toHaveText("My App");
+    expect(".w_install_scoped_app img").toHaveAttribute("data-src", "/fake_image_src");
     expect("button.btn-primary").toHaveCount(0);
     expect("div.bg-info").toHaveCount(1);
     expect("div.bg-info").toHaveText("The app cannot be installed with this browser");

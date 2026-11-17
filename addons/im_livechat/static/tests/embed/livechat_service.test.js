@@ -58,7 +58,7 @@ test("persisted session history", async () => {
     await start({
         authenticateAs: { ...pyEnv["mail.guest"].read(guestId)[0], _name: "mail.guest" },
     });
-    await contains(".o-mail-Message-content", { text: "Old message in history" });
+    await contains(".w-mail-Message-content", { text: "Old message in history" });
 });
 
 test("previous operator prioritized", async () => {
@@ -72,8 +72,8 @@ test("previous operator prioritized", async () => {
     pyEnv["im_livechat.channel"].write([livechatChannelId], { user_ids: [Command.link(userId)] });
     expirableStorage.setItem("im_livechat_previous_operator", JSON.stringify(previousOperatorId));
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-Message-author", { text: "John Doe" });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-Message-author", { text: "John Doe" });
 });
 
 test("Only necessary requests are made when creating a new chat", async () => {
@@ -87,7 +87,7 @@ test("Only necessary requests are made when creating a new chat", async () => {
     });
     listenStoreFetch(undefined, { logParams: ["init_livechat"] });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await contains(".o-livechat-LivechatButton");
+    await contains(".w-livechat-LivechatButton");
     await waitStoreFetch([
         "init_messaging",
         // Called because mail/core/public_web is loaded in test bundle, and it cannot be
@@ -95,8 +95,8 @@ test("Only necessary requests are made when creating a new chat", async () => {
         "/mail/messaging_menu/initialize_counters",
         ["init_livechat", livechatChannelId],
     ]);
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-Message", { text: "Hello, how may I help you?" });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-Message", { text: "Hello, how may I help you?" });
     await expect.waitForSteps([
         `/im_livechat/get_session - ${JSON.stringify({
             channel_id: livechatChannelId,
@@ -104,12 +104,12 @@ test("Only necessary requests are made when creating a new chat", async () => {
             persisted: false,
         })}`,
     ]);
-    await insertText(".o-mail-Composer-input", "Hello!");
+    await insertText(".w-mail-Composer-input", "Hello!");
     await expect.waitForSteps([]);
     const subscribed = waitUntilSubscribe();
     await triggerHotkey("Enter");
     await subscribed;
-    await contains(".o-mail-Message", { text: "Hello!" });
+    await contains(".w-mail-Message", { text: "Hello!" });
     const [threadId] = pyEnv["discuss.channel"].search([], { order: "id DESC" });
     await expect.waitForSteps([
         `/im_livechat/get_session - ${JSON.stringify({
@@ -151,7 +151,7 @@ test("do not create new thread when operator answers to visitor", async () => {
         authenticateAs: pyEnv["res.users"].search_read([["id", "=", serverState.userId]])[0],
     });
     await postLivechatMessage("Hello!");
-    await contains(".o-mail-Message", { text: "Hello!" });
+    await contains(".w-mail-Message", { text: "Hello!" });
     await expect.waitForSteps(["/mail/message/post"]);
 });
 
@@ -170,17 +170,17 @@ test("Only create one channel when posting multiple messages", async () => {
         expect.step(`/mail/message/post - ${params.post_data.body}`);
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     await expect.waitForSteps(["/im_livechat/get_session"]);
-    await insertText(".o-mail-Composer-input", "1");
-    await click(".o-sendMessageActive");
-    await contains(".o-mail-Composer-input", { value: "" });
-    await insertText(".o-mail-Composer-input", "2");
-    await click(".o-sendMessageActive");
-    await contains(".o-mail-Composer-input", { value: "" });
-    await insertText(".o-mail-Composer-input", "3");
-    await click(".o-sendMessageActive");
-    await contains(".o-mail-Composer-input", { value: "" });
+    await insertText(".w-mail-Composer-input", "1");
+    await click(".w-sendMessageActive");
+    await contains(".w-mail-Composer-input", { value: "" });
+    await insertText(".w-mail-Composer-input", "2");
+    await click(".w-sendMessageActive");
+    await contains(".w-mail-Composer-input", { value: "" });
+    await insertText(".w-mail-Composer-input", "3");
+    await click(".w-sendMessageActive");
+    await contains(".w-mail-Composer-input", { value: "" });
     await expect.waitForSteps([]);
     const subscribed = waitUntilSubscribe();
     getSessionResolvers.resolve();
@@ -207,7 +207,7 @@ test("Only create one channel when posting multiple lines on chat bot multi-line
     const pyEnv = await startServer();
     const livechatChannelId = await loadDefaultEmbedConfig();
     const scriptId = pyEnv["chatbot.script"].create({
-        operator_partner_id: serverState.odoobotId,
+        operator_partner_id: serverState.wethbotId,
         title: "Bot",
     });
     pyEnv["chatbot.script.step"].create([
@@ -239,14 +239,14 @@ test("Only create one channel when posting multiple lines on chat bot multi-line
         expect.step(`/mail/message/post - ${params.post_data.body}`);
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-Message", { text: "Tell us what you need." });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-Message", { text: "Tell us what you need." });
     // Lines are posted before the multi-line step is completed.
     for (const line of ["Line 1", "Line 2", "Line 3"]) {
-        await insertText(".o-mail-Composer-input", line);
-        await click(".o-sendMessageActive");
-        await contains(".o-mail-Message", { text: line });
-        await contains(".o-mail-Composer-input", { value: "" });
+        await insertText(".w-mail-Composer-input", line);
+        await click(".w-sendMessageActive");
+        await contains(".w-mail-Message", { text: line });
+        await contains(".w-mail-Composer-input", { value: "" });
     }
     await expect.waitForSteps([
         "persist",

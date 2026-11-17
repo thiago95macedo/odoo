@@ -53,7 +53,7 @@ const FORM_ARCH = `
         <field name="work_entry_type_id" widget="many2one_work_entry_type"/>
     </form>`;
 
-const AVATAR = ".o_field_widget[name=work_entry_type_id] .o_calendar_renderer span";
+const AVATAR = ".w_field_widget[name=work_entry_type_id] .w_calendar_renderer span";
 
 test.tags("desktop");
 test("dropdown selection shows display_code and color", async () => {
@@ -69,7 +69,7 @@ test("dropdown selection shows display_code and color", async () => {
 
     await clickFieldDropdown("work_entry_type_id");
     await contains(
-        ".o_field_widget[name=work_entry_type_id] .dropdown-menu li:contains('Time Off')"
+        ".w_field_widget[name=work_entry_type_id] .dropdown-menu li:contains('Time Off')"
     ).click();
 
     expect(AVATAR).toHaveText("T");
@@ -103,12 +103,12 @@ test("search more selection refetches display_code and color", async () => {
         arch: FORM_ARCH,
     });
 
-    await contains(`.o_field_widget[name=work_entry_type_id] input`).click();
+    await contains(`.w_field_widget[name=work_entry_type_id] input`).click();
     await runAllTimers();
     await contains(
-        `.o_field_widget[name=work_entry_type_id] .o_m2o_dropdown_option_search_more`
+        `.w_field_widget[name=work_entry_type_id] .w_m2o_dropdown_option_search_more`
     ).click();
-    await contains(".modal .o_data_row .o_data_cell:contains('Special')").click();
+    await contains(".modal .w_data_row .w_data_cell:contains('Special')").click();
 
     expect.verifySteps(["read:200:display_name,display_code,color"]);
     expect(AVATAR).toHaveText("S");
@@ -141,18 +141,18 @@ test("search more 'Create New' refetches display_code and color of the new recor
         arch: FORM_ARCH,
     });
 
-    await contains(`.o_field_widget[name=work_entry_type_id] input`).click();
+    await contains(`.w_field_widget[name=work_entry_type_id] input`).click();
     await runAllTimers();
     await contains(
-        `.o_field_widget[name=work_entry_type_id] .o_m2o_dropdown_option_search_more`
+        `.w_field_widget[name=work_entry_type_id] .w_m2o_dropdown_option_search_more`
     ).click();
 
-    await contains(".modal .o_create_button").click();
+    await contains(".modal .w_create_button").click();
 
-    await contains(".modal .o_field_widget[name=name] input").edit("New Type");
-    await contains(".modal .o_field_widget[name=display_code] input").edit("N");
-    await contains(".modal .o_field_widget[name=color] input").edit("3");
-    await contains(".modal .o_form_button_save").click();
+    await contains(".modal .w_field_widget[name=name] input").edit("New Type");
+    await contains(".modal .w_field_widget[name=display_code] input").edit("N");
+    await contains(".modal .w_field_widget[name=color] input").edit("3");
+    await contains(".modal .w_form_button_save").click();
 
     expect.verifySteps(["web_save", "read:display_name,display_code,color"]);
     expect(AVATAR).toHaveText("N");

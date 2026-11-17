@@ -6,35 +6,46 @@
 $variable-prefix: '' !default;
 
 // Automatically update bootstrap colors map (unused by BS itself)
-$colors: () !default;
-@each $name, $color in $o-color-palette {
-    $colors: map-merge(('#{$name}': o-color($color)), $colors);
+$colors: (
+    ) !default;
+
+@each $name, $color in $w-color-palette {
+    $colors: map-merge(('#{$name}': o-color($color)), $colors
+    );
 }
 
-$o-btn-bg-colors: () !default;
-$o-btn-border-colors: () !default;
+$w-btn-bg-colors: (
+    ) !default;
+$w-btn-border-colors: (
+    ) !default;
+
 @if not (variable-exists('prevent-backend-colors-alteration') and $prevent-backend-colors-alteration) {
-    $o-btn-bg-colors: map-merge((
-        'primary': o-color('o-cc1-btn-primary'),
-        'secondary': o-color('o-cc1-btn-secondary'),
-    ), $o-btn-bg-colors);
-    $o-btn-border-colors: map-merge((
-        'primary': o-color('o-cc1-btn-primary-border'),
-        'secondary': o-color('o-cc1-btn-secondary-border'),
-    ), $o-btn-border-colors);
+    $w-btn-bg-colors: map-merge(('primary': o-color('o-cc1-btn-primary'),
+                'secondary': o-color('o-cc1-btn-secondary'),
+            ), $w-btn-bg-colors
+    );
+$w-btn-border-colors: map-merge(('primary': o-color('o-cc1-btn-primary-border'),
+            'secondary': o-color('o-cc1-btn-secondary-border'),
+        ), $w-btn-border-colors);
 }
 
 // Automatically extend bootstrap to create theme background/text/button classes
-$theme-colors: () !default;
-@each $name, $color in $o-theme-color-palette {
-    $theme-colors: map-merge(('#{$name}': o-color($color)), $theme-colors);
+$theme-colors: (
+    ) !default;
+
+@each $name, $color in $w-theme-color-palette {
+    $theme-colors: map-merge(('#{$name}': o-color($color)), $theme-colors
+    );
 }
 
 // Automatically extend bootstrap gray palette (the theme palette is supposed to
 // at least declare white and black)
-$grays: () !default;
-@each $name, $color in $o-gray-color-palette {
-    $grays: map-merge(('#{$name}': o-color($color)), $grays);
+$grays: (
+    ) !default;
+
+@each $name, $color in $w-gray-color-palette {
+    $grays: map-merge(('#{$name}': o-color($color)), $grays
+    );
 }
 
 // Detach colors that are used for backend UI (see comment linked to the
@@ -86,14 +97,12 @@ $gray-800: map-get($grays, '800') !default;
 $gray-900: map-get($grays, '900') !default;
 $black: map-get($grays, 'black') !default;
 
-$o-color-system-initialized: true;
+$w-color-system-initialized: true;
 
 // This was added by compatibility but it actually became a nice behavior: the
 // bootstrap default "small" behavior will use the ratio of the configured base
-// font size (if configured, e.g. with website settings) and the Odoo own's
+// font size (if configured, e.g. with website settings) and the WETH own's
 // "small" font size. Grep: SMALLER_FONT_SIZE_RATIO.
-$small-font-size: if(
-    variable-exists('font-size-base'),
-    ($o-small-font-size / $font-size-base) * 1em,
-    null
-) !default;
+$small-font-size: if(variable-exists('font-size-base'),
+        ($w-small-font-size / $font-size-base) * 1em,
+        null) !default;

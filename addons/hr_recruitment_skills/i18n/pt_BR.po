@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:46+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_recruitment_skills/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgid "Job Position"
 msgstr "Cargo"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 #: model_terms:ir.ui.view,arch_db:hr_recruitment_skills.hr_applicant_view_form
 msgid "Job Position Matching"
@@ -135,7 +135,7 @@ msgid "Matching"
 msgstr "Correspondência"
 
 #. module: hr_recruitment_skills
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_skills/models/hr_job.py:0
 msgid "Matching Applicants"
 msgstr "Candidatos compatíveis"
@@ -163,7 +163,7 @@ msgid "Matching Skills"
 msgstr "Habilidades compatíveis"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/search_job_applicant_menu/search_job_applicant_menu.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_recruitment_skills.view_hr_job_form
 #: model_terms:ir.ui.view,arch_db:hr_recruitment_skills.view_hr_job_kanban
@@ -171,13 +171,13 @@ msgid "Matching Talents"
 msgstr "Talentos compatíveis"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 msgid "Max Value"
 msgstr "Valor máximo"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 msgid "Max Value Field"
 msgstr "Campo de valor máximo"
@@ -198,7 +198,7 @@ msgid "Move to this Job Position"
 msgstr "Mover para este cargo"
 
 #. module: hr_recruitment_skills
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_skills/models/hr_job.py:0
 msgid "No Matching Talents"
 msgstr "Sem talentos correspondentes"
@@ -224,13 +224,13 @@ msgid "Recruitment - Skills Management"
 msgstr "Recrutamento - Gestão de habilidades"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 msgid "Remaining"
 msgstr "Restante"
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 msgid "Score Fields"
 msgstr "Campos de pontuação"
@@ -282,7 +282,7 @@ msgid "The end date must be after the start date."
 msgstr "A data final deve ser posterior à data inicial."
 
 #. module: hr_recruitment_skills
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment_skills/static/src/components/match_scores_gauge/match_scores_gauge.js:0
 msgid "Title"
 msgstr "Título"
@@ -308,7 +308,7 @@ msgid "Validity Stop"
 msgstr "Fim da validade"
 
 #. module: hr_recruitment_skills
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_skills/models/hr_job.py:0
 msgid ""
 "We do not have any talents who meet the skill requirements for this job "

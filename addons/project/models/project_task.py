@@ -229,7 +229,7 @@ class ProjectTask(models.Model):
         compute='_compute_partner_phone', inverse='_inverse_partner_phone',
         string="Contact Number", readonly=False, store=True, copy=False
     )
-    # Need this field to check there is no email loops when Odoo reply automatically
+    # Need this field to check there is no email loops when WETH reply automatically
     email_from = fields.Char('Email From')
     company_id = fields.Many2one('res.company', string='Company', compute='_compute_company_id', store=True, readonly=False, recursive=True, copy=True, default=_default_company_id)
     color = fields.Integer(string='Color Index', export_string_translation=False)
@@ -1805,11 +1805,11 @@ class ProjectTask(models.Model):
     def _notify_by_email_get_headers(self, headers=None):
         headers = super()._notify_by_email_get_headers(headers=headers)
         if self.project_id:
-            current_objects = [h for h in headers.get('X-Odoo-Objects', '').split(',') if h]
+            current_objects = [h for h in headers.get('X-Weth-Objects', '').split(',') if h]
             current_objects.insert(0, 'project.project-%s, ' % self.project_id.id)
-            headers['X-Odoo-Objects'] = ','.join(current_objects)
+            headers['X-Weth-Objects'] = ','.join(current_objects)
         if self.tag_ids:
-            headers['X-Odoo-Tags'] = ','.join(self.tag_ids.mapped('name'))
+            headers['X-Weth-Tags'] = ','.join(self.tag_ids.mapped('name'))
         return headers
 
     def _message_post_after_hook(self, message):

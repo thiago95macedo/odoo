@@ -158,7 +158,7 @@ const POSTED_ARG = arg(
     _t("Set to TRUE to include unposted entries.")
 );
 
-const ODOO_FIN_ARGS = () => [
+const WETH_FIN_ARGS = () => [
     arg("account_codes (string)", _t("The prefix of the accounts.")),
     arg(
         "date_range (string, date)",
@@ -169,7 +169,7 @@ const ODOO_FIN_ARGS = () => [
     POSTED_ARG,
 ];
 
-const ODOO_RESIDUAL_ARGS = () => [
+const WETH_RESIDUAL_ARGS = () => [
     arg(
         "account_codes (string, optional)",
         _t(
@@ -185,9 +185,9 @@ const ODOO_RESIDUAL_ARGS = () => [
     POSTED_ARG,
 ];
 
-const ODOO_PARTNER_BALANCE_ARGS = () => {
+const WETH_PARTNER_BALANCE_ARGS = () => {
     const partner_arg = arg("partner_ids (string)", _t("The partner ids (separated by a comma)."));
-    return [partner_arg, ...ODOO_RESIDUAL_ARGS()];
+    return [partner_arg, ...WETH_RESIDUAL_ARGS()];
 };
 
 /**
@@ -203,10 +203,10 @@ function getCurrencyFormatOrThrow(getters, companyId) {
     return computeFormatFromCurrency(currency) || "#,##0.00";
 }
 
-functionRegistry.add("ODOO.CREDIT", {
+functionRegistry.add("WETH.CREDIT", {
     description: _t("Get the total credit for the specified account(s) and period."),
-    args: ODOO_FIN_ARGS(),
-    category: "Odoo",
+    args: WETH_FIN_ARGS(),
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         accountCodes,
@@ -237,10 +237,10 @@ functionRegistry.add("ODOO.CREDIT", {
     },
 });
 
-functionRegistry.add("ODOO.DEBIT", {
+functionRegistry.add("WETH.DEBIT", {
     description: _t("Get the total debit for the specified account(s) and period."),
-    args: ODOO_FIN_ARGS(),
-    category: "Odoo",
+    args: WETH_FIN_ARGS(),
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         accountCodes,
@@ -271,10 +271,10 @@ functionRegistry.add("ODOO.DEBIT", {
     },
 });
 
-functionRegistry.add("ODOO.BALANCE", {
+functionRegistry.add("WETH.BALANCE", {
     description: _t("Get the total balance for the specified account(s) and period."),
-    args: ODOO_FIN_ARGS(),
-    category: "Odoo",
+    args: WETH_FIN_ARGS(),
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         accountCodes,
@@ -311,13 +311,13 @@ functionRegistry.add("ODOO.BALANCE", {
     },
 });
 
-functionRegistry.add("ODOO.FISCALYEAR.START", {
+functionRegistry.add("WETH.FISCALYEAR.START", {
     description: _t("Returns the starting date of the fiscal year encompassing the provided date."),
     args: [
         arg("day (date)", _t("The day from which to extract the fiscal year start.")),
         arg("company_id (number, optional)", _t("The company.")),
     ],
-    category: "Odoo",
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (date, companyId = { value: null }) {
         const fiscalDates = this.getters.getFiscalDates(
@@ -334,13 +334,13 @@ functionRegistry.add("ODOO.FISCALYEAR.START", {
     },
 });
 
-functionRegistry.add("ODOO.FISCALYEAR.END", {
+functionRegistry.add("WETH.FISCALYEAR.END", {
     description: _t("Returns the ending date of the fiscal year encompassing the provided date."),
     args: [
         arg("day (date)", _t("The day from which to extract the fiscal year end.")),
         arg("company_id (number, optional)", _t("The company.")),
     ],
-    category: "Odoo",
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (date, companyId = { value: null }) {
         const fiscalDates = this.getters.getFiscalDates(
@@ -379,7 +379,7 @@ const ACCOUNT_TYPES = [
     "off_balance",
 ];
 
-functionRegistry.add("ODOO.ACCOUNT.GROUP", {
+functionRegistry.add("WETH.ACCOUNT.GROUP", {
     description: _t("Returns the account codes of a given group."),
     args: [
         arg(
@@ -387,7 +387,7 @@ functionRegistry.add("ODOO.ACCOUNT.GROUP", {
             _t("The technical account type (possible values are: %s).", ACCOUNT_TYPES.join(", "))
         ),
     ],
-    category: "Odoo",
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (accountType) {
         const accountTypes = this.getters.getAccountGroupCodes(toString(accountType));
@@ -395,10 +395,10 @@ functionRegistry.add("ODOO.ACCOUNT.GROUP", {
     },
 });
 
-functionRegistry.add("ODOO.RESIDUAL", {
+functionRegistry.add("WETH.RESIDUAL", {
     description: _t("Return the residual amount for the specified account(s) and period"),
-    args: ODOO_RESIDUAL_ARGS(),
-    category: "Odoo",
+    args: WETH_RESIDUAL_ARGS(),
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         accountCodes,
@@ -438,10 +438,10 @@ functionRegistry.add("ODOO.RESIDUAL", {
     },
 });
 
-functionRegistry.add("ODOO.PARTNER.BALANCE", {
+functionRegistry.add("WETH.PARTNER.BALANCE", {
     description: _t("Return the partner balance for the specified account(s) and period"),
-    args: ODOO_PARTNER_BALANCE_ARGS(),
-    category: "Odoo",
+    args: WETH_PARTNER_BALANCE_ARGS(),
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         partnerIds,
@@ -486,7 +486,7 @@ functionRegistry.add("ODOO.PARTNER.BALANCE", {
     },
 });
 
-functionRegistry.add("ODOO.BALANCE.TAG", {
+functionRegistry.add("WETH.BALANCE.TAG", {
     description: _t("Return the balance of accounts for the specified tag(s) and period"),
     args: [
         arg("account_tag_ids (string)", _t("The tag ids (separated by a comma).")),
@@ -500,7 +500,7 @@ functionRegistry.add("ODOO.BALANCE.TAG", {
         COMPANY_ARG,
         POSTED_ARG,
     ],
-    category: "Odoo",
+    category: "Weth",
     returns: ["NUMBER"],
     compute: function (
         accountTagIds,

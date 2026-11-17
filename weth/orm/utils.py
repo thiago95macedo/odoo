@@ -19,7 +19,7 @@ regex_private = re.compile(r'^(_.*|init)$')
 
 # types handled as collections
 COLLECTION_TYPES = (list, tuple, AbstractSet)
-# The hard-coded super-user id (a.k.a. root user, or OdooBot).
+# The hard-coded super-user id (a.k.a. root user, or WethBot).
 SUPERUSER_ID = 1
 
 # _read_group stuff

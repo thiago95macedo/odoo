@@ -66,7 +66,7 @@ test('many2one_avatar_user widget edited by the smart action "Assign to..."', as
     await contains(".o_command", { count: 6 });
     await contains(".o_command:eq(0):text('Mitchell Admin')");
     await contains(".o_command:eq(1):text('Public user')");
-    await contains(".o_command:eq(2):text('OdooBot')");
+    await contains(".o_command:eq(2):text('WethBot')");
     await contains(".o_command:eq(3):text('Mario')");
     await contains(".o_command:eq(4):text('Luigi')");
     await contains(".o_command:eq(5):text('Yoshi')");
@@ -96,7 +96,7 @@ test('many2many_avatar_user widget edited by the smart action "Assign to..."', a
     await contains(".o_command", { count: 4 });
     await contains(".o_command:eq(0):text('Mitchell Admin')");
     await contains(".o_command:eq(1):text('Public user')");
-    await contains(".o_command:eq(2):text('OdooBot')");
+    await contains(".o_command:eq(2):text('WethBot')");
     await contains(".o_command:eq(3):text('Luigi')");
     await click(".o_command:text('Luigi')");
     await contains(".o_tag_badge_text", { count: 3 });
@@ -286,7 +286,7 @@ test("avatar card preview", async () => {
     const pyEnv = await startServer();
     const userId = pyEnv["res.users"].create({
         partner_id: pyEnv["res.partner"].create({
-            email: "Mario@odoo.test",
+            email: "Mario@weth.test",
             name: "Mario",
             phone: "+78786987",
         }),
@@ -309,8 +309,8 @@ test("avatar card preview", async () => {
     // Open card
     await click(".o_m2o_avatar > img");
     await contains(".o_avatar_card");
-    await contains(".o-mail-avatar-card-name:text('Mario')");
-    await contains(".o_card_user_infos > a:text('Mario@odoo.test')");
+    await contains(".w-mail-avatar-card-name:text('Mario')");
+    await contains(".o_card_user_infos > a:text('Mario@weth.test')");
     await contains(".o_card_user_infos > a:text('+78786987')");
     // Close card
     await click(".o_action_manager");
@@ -336,7 +336,7 @@ test("avatar card preview (partner_id field)", async () => {
         im_status: "online",
     });
     const partnerId = pyEnv["res.partner"].create({
-        email: "Mario@odoo.test",
+        email: "Mario@weth.test",
         name: "Mario",
         phone: "+78786987",
         user_ids: [userId],
@@ -358,8 +358,8 @@ test("avatar card preview (partner_id field)", async () => {
     // Open card
     await click(".o_m2o_avatar > img");
     await contains(".o_avatar_card");
-    await contains(".o-mail-avatar-card-name:text('Mario')");
-    await contains(".o_card_user_infos > a:text('Mario@odoo.test')");
+    await contains(".w-mail-avatar-card-name:text('Mario')");
+    await contains(".o_card_user_infos > a:text('Mario@weth.test')");
     await contains(".o_card_user_infos > a:text('+78786987')");
     // Close card
     await click(".o_action_manager");
@@ -400,7 +400,7 @@ test("many2one_avatar_user widget in list view", async () => {
     await contains(".o_data_cell .o_many2one a", { count: 0 });
     await click(".o_data_cell .o_m2o_avatar > img");
     await contains(".o_avatar_card");
-    await contains(".o-mail-avatar-card-name:text('Mario')");
+    await contains(".w-mail-avatar-card-name:text('Mario')");
     await contains(".o_card_user_infos > a:text('Mario@partner.com')");
     await contains(".o_card_user_infos > a:text('+45687468')");
 });
@@ -422,7 +422,7 @@ test("many2many_avatar_user widget in form view", async () => {
     });
     await click(".o_field_many2many_avatar_user .o_avatar img");
     await contains(".o_avatar_card");
-    await contains(".o-mail-avatar-card-name:text('Mario')");
+    await contains(".w-mail-avatar-card-name:text('Mario')");
     await contains(".o_card_user_infos > a:text('Mario@partner.com')");
     await contains(".o_card_user_infos > a:text('+45687468')");
 });

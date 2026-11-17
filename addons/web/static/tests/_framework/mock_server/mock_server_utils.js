@@ -99,7 +99,7 @@ export function makeServerError({
     return makeErrorFromResponse({
         code: code || 0,
         data: {
-            name: errorName || `odoo.exceptions.${type || "UserError"}`,
+            name: errorName || `weth.exceptions.${type || "UserError"}`,
             debug: "traceback",
             arguments: args || [],
             context: context || {},

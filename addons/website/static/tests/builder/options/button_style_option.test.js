@@ -67,8 +67,8 @@ test("keep current style when switching from button", async () => {
     };
     await contains(":iframe p > a").click();
 
-    expect("[data-label=Type] .o-hb-select-toggle").toHaveText("Button Secondary");
-    await contains("[data-label=Type] .o-hb-select-toggle").click();
+    expect("[data-label=Type] .w-hb-select-toggle").toHaveText("Button Secondary");
+    await contains("[data-label=Type] .w-hb-select-toggle").click();
     await contains(".o_popover .dropdown-item:contains('Custom')").click();
 
     expect(":iframe p > a").toHaveClass("btn btn-custom");
@@ -88,9 +88,9 @@ test("should preview button styles in dropdown", async () => {
 
     await contains(":iframe p > a.test-target").click();
     // primary count=2 because it's shown both in dropdown list and trigger
-    expect(".o-hb-button-style-preview.btn-primary").toHaveCount(2);
-    expect(".o-hb-button-style-preview.btn-secondary").toHaveCount(1);
-    expect(".o-hb-button-style-preview.btn-custom").toHaveCount(1);
+    expect(".w-hb-button-style-preview.btn-primary").toHaveCount(2);
+    expect(".w-hb-button-style-preview.btn-secondary").toHaveCount(1);
+    expect(".w-hb-button-style-preview.btn-custom").toHaveCount(1);
 
     const primaryStyle = getComputedStyle(queryOne(":iframe .btn-primary.test-target"));
     const secondaryStyle = getComputedStyle(queryOne(":iframe .btn-secondary.test-target"));
@@ -105,8 +105,8 @@ test("should preview button styles in dropdown", async () => {
     ];
 
     previewVariables.forEach((v) => {
-        expect(".o-hb-button-style-preview.btn-primary").toHaveStyle(`${v}: ${primaryStyle[v]}`);
-        expect(".o-hb-button-style-preview.btn-secondary").toHaveStyle(
+        expect(".w-hb-button-style-preview.btn-primary").toHaveStyle(`${v}: ${primaryStyle[v]}`);
+        expect(".w-hb-button-style-preview.btn-secondary").toHaveStyle(
             `${v}: ${secondaryStyle[v]}`
         );
     });
@@ -123,7 +123,7 @@ test("should have a button linking to theme tab", async () => {
     );
 
     await contains(":iframe p > a.test-target").click();
-    await contains("a.o-hb-theme-tab-link").click();
+    await contains("a.w-hb-theme-tab-link").click();
 
     // Hoot disables transitions by default, so the tab switch relies on the
     // fallback instead of a transitionend event.
@@ -150,7 +150,7 @@ test("button border width is not previewed", async () => {
         confirm: "enter",
     });
     // If border width is > 0, previewed width is fixed to 2 px
-    expect(".options-container .o-hb-select-toggle .o-hb-button-style-preview").toHaveStyle({
+    expect(".options-container .w-hb-select-toggle .w-hb-button-style-preview").toHaveStyle({
         "border-width": "2px",
     });
 
@@ -158,7 +158,7 @@ test("button border width is not previewed", async () => {
         confirm: "enter",
     });
     // If border width is 0, previewed width is 0
-    expect(".options-container .o-hb-select-toggle .o-hb-button-style-preview").toHaveStyle({
+    expect(".options-container .w-hb-select-toggle .w-hb-button-style-preview").toHaveStyle({
         "border-width": "0px",
     });
 });

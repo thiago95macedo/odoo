@@ -103,7 +103,7 @@ export class QWebPlugin extends Plugin {
     };
 
     setup() {
-        this.editable.classList.add("odoo-editor-qweb");
+        this.editable.classList.add("weth-editor-qweb");
         this.picker = this.dependencies.overlay.createOverlay(QWebPicker, {
             positionOptions: { position: "top-start" },
         });

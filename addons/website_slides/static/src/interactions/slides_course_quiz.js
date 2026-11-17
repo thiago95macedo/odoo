@@ -8,22 +8,22 @@ import { session } from "@web/session";
 import { user } from "@web/core/user";
 
 export class WebsiteSlidesQuiz extends Interaction {
-    static selector = ".o_wslides_js_quiz_container";
+    static selector = ".w_wslides_js_quiz_container";
     dynamicContent = {
-        ".o_wslides_js_lesson_quiz_reset": { "t-on-click": this.onResetClick },
-        ".o_wslides_quiz_answer": { "t-on-click.prevent": this.onAnswerClick },
-        ".o_wslides_js_lesson_quiz_submit": { "t-on-click": this.onQuizSubmit },
-        ".o_wslides_quiz_continue": { "t-on-click": this.onNextClick },
-        ".o_wslides_js_lesson_quiz_validation": {
+        ".w_wslides_js_lesson_quiz_reset": { "t-on-click": this.onResetClick },
+        ".w_wslides_quiz_answer": { "t-on-click.prevent": this.onAnswerClick },
+        ".w_wslides_js_lesson_quiz_submit": { "t-on-click": this.onQuizSubmit },
+        ".w_wslides_quiz_continue": { "t-on-click": this.onNextClick },
+        ".w_wslides_js_lesson_quiz_validation": {
             "t-att-class": () => ({ "d-none": !this.showValidationInfo }),
         },
-        ".o_wslides_js_quiz_submit_error": {
+        ".w_wslides_js_quiz_submit_error": {
             "t-att-class": () => ({ "d-none": !this.error }),
         },
-        ".o_wslides_js_quiz_submit_error_text": {
+        ".w_wslides_js_quiz_submit_error_text": {
             "t-out": () => this.error || "",
         },
-        ".o_wslides_js_lesson_quiz_resource_info": {
+        ".w_wslides_js_lesson_quiz_resource_info": {
             "t-att-class": () => ({ "d-none": !this.showResourceInfo }),
         },
     };
@@ -62,7 +62,7 @@ export class WebsiteSlidesQuiz extends Interaction {
      * Update validation box (karma, buttons)
      */
     async renderValidationInfo() {
-        const validationEl = this.el.querySelector(".o_wslides_js_lesson_quiz_validation");
+        const validationEl = this.el.querySelector(".w_wslides_js_lesson_quiz_validation");
         if (!validationEl) {
             return;
         }
@@ -73,7 +73,7 @@ export class WebsiteSlidesQuiz extends Interaction {
                 ...this.slidesService.data,
                 redirectURL: encodeURIComponent(document.URL),
                 signupAllowed: !!document.querySelector(
-                    ".o_wslides_fs_main, .o_wslides_js_lesson_quiz"
+                    ".w_wslides_fs_main, .w_wslides_js_lesson_quiz"
                 ).dataset.signupAllowed,
                 isPublicUser: session.is_public,
             },
@@ -88,7 +88,7 @@ export class WebsiteSlidesQuiz extends Interaction {
      * submit answers, we automatically attempt to join the course.
      */
     async renderJoinButton() {
-        const containerEl = this.el.querySelector(".o_wslides_join_course_widget");
+        const containerEl = this.el.querySelector(".w_wslides_join_course_widget");
         if (!containerEl) {
             return;
         }
@@ -133,7 +133,7 @@ export class WebsiteSlidesQuiz extends Interaction {
      * Decorate the answers according to state
      */
     disableAnswers() {
-        for (const el of this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question")) {
+        for (const el of this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question")) {
             el.classList.add("completed-disabled");
         }
         for (const el of this.el.querySelectorAll("input[type='radio'")) {
@@ -146,10 +146,10 @@ export class WebsiteSlidesQuiz extends Interaction {
      * any.
      */
     renderAnswersHighlightingAndComments() {
-        for (const questionEl of this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question")) {
+        for (const questionEl of this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question")) {
             const questionId = Number(questionEl.dataset.questionId);
             const isCorrect = this.quiz.answers[questionId].is_correct;
-            for (const answerEl of questionEl.querySelectorAll("a.o_wslides_quiz_answer")) {
+            for (const answerEl of questionEl.querySelectorAll("a.w_wslides_quiz_answer")) {
                 for (const iconEl of answerEl.querySelectorAll("i.oi")) {
                     iconEl.classList.add("d-none");
                 }
@@ -175,8 +175,8 @@ export class WebsiteSlidesQuiz extends Interaction {
             }
             const comment = this.quiz.answers[questionId].comment;
             if (comment) {
-                questionEl.querySelector(".o_wslides_quiz_answer_info").classList.remove("d-none");
-                questionEl.querySelector(".o_wslides_quiz_answer_comment").textContent = comment;
+                questionEl.querySelector(".w_wslides_quiz_answer_info").classList.remove("d-none");
+                questionEl.querySelector(".w_wslides_quiz_answer_comment").textContent = comment;
             }
         }
     }
@@ -302,8 +302,8 @@ export class WebsiteSlidesQuiz extends Interaction {
         if (this.quiz.sessionAnswers.length === 0) {
             return;
         }
-        for (const questionEl of this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question")) {
-            for (const answerEl of questionEl.querySelectorAll("a.o_wslides_quiz_answer")) {
+        for (const questionEl of this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question")) {
+            for (const answerEl of questionEl.querySelectorAll("a.w_wslides_quiz_answer")) {
                 if (
                     !answerEl.querySelector("input[type=radio]").checked &&
                     this.quiz.sessionAnswers.includes(Number(answerEl.dataset.answerId))

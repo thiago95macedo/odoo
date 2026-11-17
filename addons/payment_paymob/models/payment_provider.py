@@ -145,7 +145,7 @@ class PaymentProvider(models.Model):
         This method takes the full list of gateways from Paymob, and while avoiding duplicates,
         returns only those that:
 
-        1. Have a gateway_type mapped to an Odoo payment method code.
+        1. Have a gateway_type mapped to an WETH payment method code.
         2. Are available for the current provider.
         3. Are not Apple Pay or Google Pay (currently unsupported for mobile-only payments).
         4. Are not a saved card (currently unsupported).

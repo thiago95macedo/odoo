@@ -1418,7 +1418,7 @@ test("Prevents loss of value due to debounce when changing state (rendering)", a
     machin.choices.push({ label: "Michael Owen", value: "owen" });
     expect(".o_select_menu_input").toHaveValue("Michael");
     await runAllTimers();
-    expect(".o_select_menu-choices .o-dropdown-item").toHaveCount(2);
+    expect(".o_select_menu-choices .w-dropdown-item").toHaveCount(2);
 });
 
 test("Filter is preserved when choices rerender before the debounced search runs", async () => {
@@ -1455,10 +1455,10 @@ test("Filter is preserved when choices rerender before the debounced search runs
     ];
     await animationFrame();
     // Filter must stay on "ku": only Doku and Lukaku match
-    expect(".o_select_menu-choices span.o-dropdown-item").toHaveCount(2);
+    expect(".o_select_menu-choices span.w-dropdown-item").toHaveCount(2);
     await animationFrame();
     // Filter must stay on "ku": only Doku and Lukaku match
-    expect(".o_select_menu-choices span.o-dropdown-item").toHaveCount(2);
+    expect(".o_select_menu-choices span.w-dropdown-item").toHaveCount(2);
 });
 
 test.tags("desktop");

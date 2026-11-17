@@ -34,7 +34,7 @@ export class SettingsBlock extends Component {
                 const force =
                     this.state.search.value &&
                     !this.showAllContainer() &&
-                    !containerEl.querySelector(".o_setting_box.o_searchable_setting");
+                    !containerEl.querySelector(".w_setting_box.w_searchable_setting");
                 this.toggleContainer(force);
             },
             () => [this.state.search.value, this.settingsContainerRef()]

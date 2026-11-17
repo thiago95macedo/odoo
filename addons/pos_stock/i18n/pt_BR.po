@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_stock/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_move.py:0
 msgid ""
 "\n"
@@ -38,19 +38,19 @@ msgstr ""
 "unidade original seja arredondada para zero na unidade de destino."
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_move.py:0
 msgid " - From \"%(uom_from)s\" to \"%(uom_to)s\""
 msgstr " De \"%(uom_from)s\" para \"%(uom_to)s\""
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_warehouse.py:0
 msgid "%(name)s Picking POS"
 msgstr "%(name)sPDV de separação"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "(as of opening)"
 msgstr "(desde a abertura)"
@@ -66,7 +66,7 @@ msgid "Allow Ship Later"
 msgstr "Permitir envio mais tarde"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.xml:0
 msgid "Apply"
 msgstr "Aplicar"
@@ -94,7 +94,7 @@ msgstr ""
 "Em tempo real: cada pedido enviado ao servidor cria sua própria separação"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "Available"
 msgstr "Disponível"
@@ -110,13 +110,13 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/date_picker_popup/date_picker_popup.js:0
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_move.py:0
 msgid ""
 "Conversion Error: The following unit of measure conversions result in a zero "
@@ -126,7 +126,7 @@ msgstr ""
 "uma quantidade zero devido ao arredondamento:"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.js:0
 msgid "Create Lot/Serial number..."
 msgstr "Criar número de lote/série..."
@@ -142,13 +142,13 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/date_picker_popup/date_picker_popup.js:0
 msgid "DatePicker"
 msgstr "Seletor de data"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.xml:0
 msgid "Discard"
 msgstr "Descartar"
@@ -183,7 +183,7 @@ msgid "Failed Pickings"
 msgstr "Separações com falha"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "Forecasted"
 msgstr "Previsão"
@@ -234,13 +234,13 @@ msgid "In real time"
 msgstr "Em tempo real"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/utils/order_payment_validation.js:0
 msgid "Incorrect address for shipping"
 msgstr "Endereço de envio incorreto"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/product_info_banner/product_info_banner.xml:0
 #: model_terms:ir.ui.view,arch_db:pos_stock.res_config_settings_view_form
 msgid "Inventory"
@@ -272,8 +272,8 @@ msgid "Last Updated on"
 msgstr "Última atualização em"
 
 #. module: pos_stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/pos_stock/receipt/pos_order_receipt.py:0
 #: code:addons/pos_stock/static/src/app/models/pos_order_line.js:0
 msgid "Lot"
@@ -285,19 +285,19 @@ msgid "Lot Name"
 msgstr "Nome do lote"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "Lot/Serial %s is expired"
 msgstr "%s de lote/série expirou"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.xml:0
 msgid "Lot/Serial number"
 msgstr "Número de lote/série"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "Lot/Serial number(s) required for"
 msgstr "Número(s) de lote/série necessário(s) para"
@@ -308,39 +308,39 @@ msgid "Lot/serial Number"
 msgstr "Número de série/lote"
 
 #. module: pos_stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/pos_stock/receipt/pos_order_receipt.py:0
 #: code:addons/pos_stock/static/src/app/models/pos_order.js:0
 msgid "Lot:"
 msgstr "Lote:"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "No"
 msgstr "Não"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/pos_order_line.py:0
 msgid "No PoS configuration found"
 msgstr "Nenhuma configuração de PDV encontrada"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.js:0
 msgid "No existing Lot/Serial number found..."
 msgstr "Nenhum número de série/lote existente encontrado..."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "No existing serial/lot number"
 msgstr "Não há números de série/lote"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "On hand"
 msgstr "Em mãos"
@@ -381,7 +381,7 @@ msgid "Picking Type"
 msgstr "Tipo de separação"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/pos_order.py:0
 #: code:addons/pos_stock/models/pos_session.py:0
 #: model_terms:ir.ui.view,arch_db:pos_stock.view_pos_pos_form
@@ -395,7 +395,7 @@ msgid "PoS - Stock"
 msgstr "PDV - Estoque"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_warehouse.py:0
 #: model:ir.model.fields,field_description:pos_stock.field_stock_reference__pos_order_ids
 msgid "PoS Orders"
@@ -473,29 +473,29 @@ msgid "Removal Strategy"
 msgstr "Estratégia de remoção"
 
 #. module: pos_stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/pos_stock/receipt/pos_order_receipt.py:0
 #: code:addons/pos_stock/static/src/app/models/pos_order_line.js:0
 msgid "SN"
 msgstr "SN"
 
 #. module: pos_stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/pos_stock/receipt/pos_order_receipt.py:0
 #: code:addons/pos_stock/static/src/app/models/pos_order.js:0
 msgid "SN:"
 msgstr "NS:"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/screens/payment_screen/payment_screen.js:0
 msgid "Select the shipping date"
 msgstr "Selecione a data de envio"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/date_picker_popup/date_picker_popup.js:0
 msgid "Selected date cannot be in the past."
 msgstr "A data selecionada não pode estar no passado."
@@ -506,13 +506,13 @@ msgid "Sell products and deliver them later."
 msgstr "Venda produtos e entregue-os mais tarde."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "Server communication problem"
 msgstr "Problema de comunicação com o servidor"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/screens/payment_screen/payment_screen.xml:0
 #: model:ir.model.fields,field_description:pos_stock.field_pos_config__ship_later
 #: model:ir.model.fields,field_description:pos_stock.field_res_config_settings__pos_ship_later
@@ -531,7 +531,7 @@ msgid "Shipping Policy"
 msgstr "Política de envio"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "Some Serial/Lot Numbers are missing"
 msgstr "Alguns números de lote/série estão ausentes"
@@ -573,25 +573,25 @@ msgid "Stock should be updated at closing"
 msgstr "O estoque deve ser atualizado no fechamento"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/pos_session.py:0
 msgid "Stock variation for %s"
 msgstr "Variação de estoque para %s"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.js:0
 msgid "The Lot/Serial number is already added."
 msgstr "O número de lote/série já foi adicionado."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/select_lot_popup/select_lot_popup.js:0
 msgid "The Lot/Serial number is not valid"
 msgstr "O número de lote/série não é válido"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid ""
 "The existing serial/lot numbers could not be retrieved. \n"
@@ -601,13 +601,13 @@ msgstr ""
 "Continuar sem verificar a validade dos números de série/lote?"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/utils/order_payment_validation.js:0
 msgid "The selected customer needs an address."
 msgstr "O cliente selecionado precisa de um endereço."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid ""
 "There is no serial/lot number for the selected product, and their creation "
@@ -638,7 +638,7 @@ msgstr ""
 "partir de seu local de origem padrão."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/date_picker_popup/date_picker_popup.js:0
 msgid "Validation Error"
 msgstr "Erro de validação"
@@ -661,13 +661,13 @@ msgid "When all products are ready"
 msgstr "Quando todos os produtos estiverem prontos"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid "Yes"
 msgstr "Sim"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/services/pos_store.js:0
 msgid ""
 "You are trying to sell products with serial/lot numbers, but some of them "
@@ -679,7 +679,7 @@ msgstr ""
 "Você gostaria de prosseguir mesmo assim?"
 
 #. module: pos_stock
-#. odoo-python
+#. weth-python
 #: code:addons/pos_stock/models/stock_picking.py:0
 msgid ""
 "You cannot archive '%(picking_type)s' as it is used by POS configuration '%"
@@ -689,26 +689,26 @@ msgstr ""
 "de PDV '%(config)s'."
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "available"
 msgstr "disponível"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/product_info_banner/product_info_banner.xml:0
 msgid "available,"
 msgstr "disponível,"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 #: code:addons/pos_stock/static/src/app/components/product_info_banner/product_info_banner.xml:0
 msgid "forecasted"
 msgstr "previsto"
 
 #. module: pos_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_stock/static/src/app/components/popups/product_info_popup/product_info_popup.xml:0
 msgid "on hand"
 msgstr "em mãos"

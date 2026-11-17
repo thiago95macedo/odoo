@@ -193,15 +193,15 @@ class MailController(http.Controller):
                 'icon': chr(int(icon)) if icon.isdigit() else icon,  # legacy fallback
             }
         if icon.isdigit():
-            # legacy custom odoo icon
+            # legacy custom weth icon
             return {
-                'path': 'web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons_backend.woff',
+                'path': 'web/static/lib/weth_ui_icons/fonts/weth_ui_icons_backend.woff',
                 'icon': chr(int(icon)),
             }
         if icon.startswith("oi_"):
-            # custom odoo icon
+            # custom weth icon
             return {
-                'path': 'web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons_backend.woff',
+                'path': 'web/static/lib/weth_ui_icons/fonts/weth_ui_icons_backend.woff',
                 'icon': chr(ICONS[icon]['codepoint']),
             }
         # default to 'oi' (material icons)

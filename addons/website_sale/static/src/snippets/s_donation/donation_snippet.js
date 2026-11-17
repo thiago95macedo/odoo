@@ -21,7 +21,7 @@ export class DonationSnippet extends Interaction {
         "#s_donation_range_slider": { "t-on-input": this.onRangeSliderInput },
         "#s_donation_amount_input": {
             "t-on-input": () => {
-                this.el.querySelector(".o_donation_custom_btn_warning")?.classList.add("d-none");
+                this.el.querySelector(".w_donation_custom_btn_warning")?.classList.add("d-none");
             },
         },
     };
@@ -102,7 +102,7 @@ export class DonationSnippet extends Interaction {
         this.activeButtonEl = ev.currentTarget;
         const amountInputEl = this.el.querySelector("#s_donation_amount_input");
         if (!ev.currentTarget.classList.contains("s_donation_custom_btn") && amountInputEl) {
-            this.el.querySelector(".o_donation_custom_btn_warning")?.classList.add("d-none");
+            this.el.querySelector(".w_donation_custom_btn_warning")?.classList.add("d-none");
             amountInputEl.value = "";
         }
         if (this.rangeSliderEl) {
@@ -137,7 +137,7 @@ export class DonationSnippet extends Interaction {
         } else if (this.el.dataset.displayOptions) {
             if (this.rangeSliderEl) {  // Range slider
                 amount = parseFloat(this.rangeSliderEl.value);
-            // Custom amount input
+                // Custom amount input
             } else if (this.el.querySelectorAll(".s_donation_btn").length) {
                 amount = parseFloat(this.el.querySelector("#s_donation_amount_input")?.value);
                 const errorMessage = this._getAmountValidationError(amount);

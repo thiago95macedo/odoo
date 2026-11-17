@@ -19,7 +19,7 @@ import { useService } from "@web/core/utils/hooks";
 import { session } from "@web/session";
 
 /**
- * @typedef {import("../../env").OdooEnv} OdooEnv
+ * @typedef {import("../../env").WethEnv} WethEnv
  * @typedef {import("./error_service").UncaughtError} UncaughError
  */
 
@@ -32,7 +32,7 @@ const errorNotificationRegistry = registry.category("error_notifications");
 // -----------------------------------------------------------------------------
 
 /**
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}
@@ -96,7 +96,7 @@ errorHandlerRegistry.add("rpcErrorHandler", rpcErrorHandler, { sequence: 97 });
 // -----------------------------------------------------------------------------
 
 /**
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}
@@ -131,7 +131,7 @@ const defaultDialogs = new Map([
  * Handles the errors based on the very general error categories emitted by the
  * error service. Notice how we do not look at the original error at all.
  *
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @returns {boolean}
  */
@@ -165,7 +165,7 @@ export function swallowAllVisitorErrors(env, error, originalError) {
 
 if (user.isInternalUser === undefined) {
     // Only warn about this while on the "frontend": the session info might
-    // apparently not be present in all Odoo screens at the moment... TODO ?
+    // apparently not be present in all WETH screens at the moment... TODO ?
     if (session.is_frontend) {
         console.warn(
             "isInternalUser information is required for this handler to work. It must be available in the page."

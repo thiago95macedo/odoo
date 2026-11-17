@@ -78,7 +78,7 @@ test("new message from operator displays unread counter", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatWindow-counter", { text: "1" });
+    await contains(".w-mail-ChatWindow-counter", { text: "1" });
     await expect.waitForSteps(["set_counters:discuss:1"]);
 });
 
@@ -90,13 +90,13 @@ test("focus on unread livechat marks it as read", async () => {
     listenStoreFetch(["init_messaging", "init_livechat"]);
     await start({ authenticateAs: false, waitUntilSubscribe: false });
     await waitStoreFetch(["init_messaging", "init_livechat"]);
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     // Wait for bus subscription to be done after persisting the thread:
     // presence of the message is not enough (temporary message).
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Message-content", { text: "Hello World!" });
+    await contains(".w-mail-Message-content", { text: "Hello World!" });
     const [channelId] = pyEnv["discuss.channel"].search([
         ["channel_type", "=", "livechat"],
         [
@@ -105,7 +105,7 @@ test("focus on unread livechat marks it as read", async () => {
             pyEnv["discuss.channel.member"].search([["guest_id", "=", pyEnv.cookie.get("dgid")]]),
         ],
     ]);
-    queryFirst(".o-mail-Composer-input").blur();
+    queryFirst(".w-mail-Composer-input").blur();
     // send after init_messaging because bus subscription is done after init_messaging
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -114,10 +114,10 @@ test("focus on unread livechat marks it as read", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatWindow-counter", { text: "1" });
-    await contains(".o-mail-Message", { text: "Are you there?" });
-    await focus(".o-mail-Composer-input");
-    await contains(".o-mail-ChatWindow-counter", { count: 0 });
+    await contains(".w-mail-ChatWindow-counter", { text: "1" });
+    await contains(".w-mail-Message", { text: "Are you there?" });
+    await focus(".w-mail-Composer-input");
+    await contains(".w-mail-ChatWindow-counter", { count: 0 });
 });
 test("new message from operator is automatically translated", async () => {
     const pyEnv = await startServer();
@@ -172,5 +172,5 @@ test("new message from operator is automatically translated", async () => {
         })
     );
     await expect.waitForSteps(["translate_request"]);
-    await contains(".o-mail-Message-content:contains('How are you?')");
+    await contains(".w-mail-Message-content:contains('How are you?')");
 });

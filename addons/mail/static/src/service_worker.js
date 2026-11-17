@@ -16,7 +16,7 @@ const PUSH_NOTIFICATION_ACTION = {
 const { Store, set, get } = idbKeyval;
 const LOG_AGE_LIMIT = 24 * 60 * 60 * 1000; // 24h
 let db;
-const unread_store = new Store("odoo-mail-unread-db", "odoo-mail-unread-store");
+const unread_store = new Store("weth-mail-unread-db", "weth-mail-unread-store");
 let interactionSinceCleanupCount = 0;
 
 async function openDatabase() {
@@ -138,7 +138,7 @@ function arrayBufferToBase64Url(buffer) {
 /**
  * @param {number} channelId id of the mail discuss channel
  * @param {Object} param1
- * @param {string} [param1.action] odoo client action
+ * @param {string} [param1.action] weth client action
  * @param {boolean} [param1.joinCall] whether we want to join a call on that channel
  * @param {Client | ServiceWorker | MessagePort} [source] if set, will not open the channel on the source
  */
@@ -180,7 +180,7 @@ async function openDiscussChannel(channelId, { action, joinCall = false, source 
 async function openRecord(model, resId) {
     const targetClient = (
         await self.clients.matchAll({ type: "window", includeUncontrolled: true })
-    ).find((client) => /^\/(odoo|scoped_app)(\/|$)/.test(new URL(client.url).pathname));
+    ).find((client) => /^\/(weth|scoped_app)(\/|$)/.test(new URL(client.url).pathname));
     if (!targetClient) {
         const modelPath = model.includes(".") ? model : `m-${model}`;
         await self.clients.openWindow(`/weth/${modelPath}/${resId}`);

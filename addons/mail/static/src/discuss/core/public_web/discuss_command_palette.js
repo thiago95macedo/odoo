@@ -119,7 +119,7 @@ async function makeNewChannel(name, store, is_readonly = false) {
 
 export class DiscussCommandPalette {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} env.services
      */
     constructor(env, options) {

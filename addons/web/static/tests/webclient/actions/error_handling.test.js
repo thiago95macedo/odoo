@@ -74,9 +74,9 @@ test("error in a client action (at rendering)", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_breadcrumb").toHaveText("Partners Action 1");
-    expect(queryAllTexts(".o_kanban_record span")).toEqual(["First record", "Second record"]);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_breadcrumb").toHaveText("Partners Action 1");
+    expect(queryAllTexts(".w_kanban_record span")).toEqual(["First record", "Second record"]);
     expect.verifySteps(["web_search_read"]);
 
     try {
@@ -85,9 +85,9 @@ test("error in a client action (at rendering)", async () => {
         expect(e).toBeInstanceOf(TypeError);
     }
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_breadcrumb").toHaveText("Partners Action 1");
-    expect(queryAllTexts(".o_kanban_record span")).toEqual(["First record", "Second record"]);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_breadcrumb").toHaveText("Partners Action 1");
+    expect(queryAllTexts(".w_kanban_record span")).toEqual(["First record", "Second record"]);
     expect.verifySteps(["web_search_read"]);
 });
 
@@ -103,14 +103,14 @@ test("dialog opened while an action fails is not closed", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
     await getService("action")
         .doAction("Boom")
         .catch(() => getService("dialog").add(CustomDialog));
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 });
 
 test("error in a client action (after the first rendering)", async () => {
@@ -143,7 +143,7 @@ test("error in a client action (after the first rendering)", async () => {
     await contains(".my_button").click();
     await animationFrame();
     expect(".my_button").toHaveCount(1);
-    expect(".o_error_dialog").toHaveCount(1);
+    expect(".w_error_dialog").toHaveCount(1);
     expect.verifyErrors(["Cannot read properties of undefined (reading 'b')"]);
 });
 
@@ -154,7 +154,7 @@ test("connection lost when opening form view from kanban", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
     mockFetch((input) => {
         expect.step(input);
@@ -165,8 +165,8 @@ test("connection lost when opening form view from kanban", async () => {
         }
         throw new Error(); // simulate a ConnectionLost error
     });
-    await contains(".o_kanban_record").click();
-    expect(".o_kanban_view").toHaveCount(1);
+    await contains(".w_kanban_record").click();
+    expect(".w_kanban_view").toHaveCount(1);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -212,18 +212,18 @@ test("connection lost when coming back to kanban from form", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
-    await contains(".o_kanban_record").click();
-    expect(".o_form_view").toHaveCount(1);
+    await contains(".w_kanban_record").click();
+    expect(".w_form_view").toHaveCount(1);
 
     offline = true;
-    await contains(".o_breadcrumb .o_back_button a").click();
+    await contains(".w_breadcrumb .w_back_button a").click();
     await animationFrame();
-    expect(".o_form_view").toHaveCount(0);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_view .o_kanban_renderer").toHaveCount(1);
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    expect(".w_form_view").toHaveCount(0);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view .w_kanban_renderer").toHaveCount(1);
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
     expect.verifySteps([
         "/web/webclient/load_menus",
         "/web/action/load",
@@ -242,8 +242,8 @@ test("connection lost when coming back to kanban from form", async () => {
     expect.verifyErrors([Error]);
 
     offline = false;
-    await contains(".o_searchview .o_searchview_icon").click();
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    await contains(".w_searchview .w_searchview_icon").click();
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
     expect.verifySteps(["/web/dataset/call_kw/partner/web_search_read"]);
 });
 
@@ -285,7 +285,7 @@ test("error on onMounted", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -295,12 +295,12 @@ test("error on onMounted", async () => {
         "has_group",
     ]);
 
-    await contains(".o_kanban_record").click();
+    await contains(".w_kanban_record").click();
     await animationFrame();
-    expect(".o_form_view").toHaveCount(0);
+    expect(".w_form_view").toHaveCount(0);
     // check that the action manager is empty
-    expect(".o_action_manager").toHaveText("");
-    expect(".o_error_dialog").toHaveCount(1);
+    expect(".w_action_manager").toHaveText("");
+    expect(".w_error_dialog").toHaveCount(1);
     expect.verifySteps(["web_read"]);
     expect.verifyErrors(["Error: faulty on mounted"]);
 });

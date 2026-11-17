@@ -1004,7 +1004,7 @@ export function useBuilderNumberInputUnits(props) {
  * errors and recovery strategies.
  *
  * @param {Error} error
- * @param {import("@web/env").OdooEnv} env
+ * @param {import("@web/env").WethEnv} env
  * @param {Element} [editingElement]
  * @throws {Error} If editingElement is not an outdated snippet
  */

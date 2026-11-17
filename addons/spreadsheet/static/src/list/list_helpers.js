@@ -3,10 +3,10 @@
 /**
  * @typedef {import("@weth/o-spreadsheet").CompiledFormula} CompiledFormula
  * @typedef {import("@weth/o-spreadsheet").CoreGetters} CoreGetters
- * @typedef  {import("../helpers/odoo_functions_helpers").OdooFunctionDescription} OdooFunctionDescription
+ * @typedef  {import("../helpers/weth_functions_helpers").WethFunctionDescription} WethFunctionDescription
  * */
 
-const ALL_LIST_FUNCTIONS = ["ODOO.LIST", "ODOO.LIST.HEADER", "ODOO.LIST.VALUE"];
+const ALL_LIST_FUNCTIONS = ["WETH.LIST", "WETH.LIST.HEADER", "WETH.LIST.VALUE"];
 /**
  * Parse a spreadsheet formula and detect the number of LIST functions that are
  * present in the given formula.
@@ -25,7 +25,7 @@ export function hasListFormula(compiledFormula) {
  * @param {CompiledFormula} compiledFormula
  * @param {CoreGetters} getters
  *
- * @returns {OdooFunctionDescription|undefined}
+ * @returns {WethFunctionDescription|undefined}
  */
 export function getFirstListFunction(compiledFormula, getters) {
     return compiledFormula.getFunctionsFromTokens(ALL_LIST_FUNCTIONS, getters)[0];

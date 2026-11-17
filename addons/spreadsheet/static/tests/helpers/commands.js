@@ -9,7 +9,7 @@ const { toCartesian, toZone, lettersToNumber, deepCopy, UuidGenerator } = spread
 /**
  * @typedef {import("@spreadsheet").GlobalFilter} GlobalFilter
  * @typedef {import("@spreadsheet").CmdGlobalFilter} CmdGlobalFilter
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").WethSpreadsheetModel} WethSpreadsheetModel
  * @typedef {import("@weth/o-spreadsheet").UID} UID
  */
 
@@ -26,7 +26,7 @@ export function selectCell(model, xc, sheetId = model.getters.getActiveSheetId()
 
 /**
  * Add a global filter. Does not wait for the data sources to be reloaded
- * @param {import("@spreadsheet").OdooSpreadsheetModel} model
+ * @param {import("@spreadsheet").WethSpreadsheetModel} model
  * @param {CmdGlobalFilter} filter
  */
 export function addGlobalFilterWithoutReload(model, filter, fieldMatchings = {}) {
@@ -39,7 +39,7 @@ export function setGlobalFilterValueWithoutReload(model, payload) {
 
 /**
  * Add a global filter and ensure the data sources are completely reloaded
- * @param {import("@spreadsheet").OdooSpreadsheetModel} model
+ * @param {import("@spreadsheet").WethSpreadsheetModel} model
  * @param {CmdGlobalFilter} filter
  */
 export async function addGlobalFilter(model, filter, fieldMatchings = {}) {
@@ -130,7 +130,7 @@ export function setCellStyle(model, xc, style, sheetId = model.getters.getActive
 
 /**
  * Add columns
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @param {"before"|"after"} position
  * @param {string} column
  * @param {number} quantity
@@ -172,7 +172,7 @@ export function addRows(
 
 /**
  * Delete columns
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @param {string[]} columns
  * @param {UID} sheetId
  */

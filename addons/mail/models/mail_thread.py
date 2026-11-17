@@ -1151,7 +1151,7 @@ class MailThread(models.AbstractModel):
     def _detect_write_to_catchall(self, msg_dict):
         """Return True if directly contacts catchall."""
         # Note: tweaked in stable to avoid doing two times same search due to bugfix
-        # (see odoo/odoo#161782), to clean when reaching master
+        # (see weth/weth#161782), to clean when reaching master
         if self.env.context.get("mail_catchall_aliases"):
             catchall_aliases = self.env.context["mail_catchall_aliases"]
         else:
@@ -1435,7 +1435,7 @@ class MailThread(models.AbstractModel):
                 thread_id = thread.id
                 subtype_id = thread._creation_subtype().id
 
-            # switch to odoobot for all incoming message creation
+            # switch to wethbot for all incoming message creation
             # to have a high-privilege archived user so real_author_id is correctly computed
             thread_root = thread.with_user(self.env.ref('base.user_root'))
             # replies to internal message are considered as notes, otherwise they are comments
@@ -1468,7 +1468,7 @@ class MailThread(models.AbstractModel):
             # remove computational values not stored on mail.message and avoid warnings when creating it
             for x in ('from', 'recipients', 'recipients_cc',
                       'cc', 'to',  # use cc_filtered, to_filtered
-                      'references', 'in_reply_to', 'x_odoo_message_id',
+                      'references', 'in_reply_to', 'x_weth_message_id',
                       'is_bounce', 'bounced_email', 'bounced_message', 'bounced_msg_ids', 'bounced_partner'):
                 post_params.pop(x, None)
             new_msg = False
@@ -1476,7 +1476,7 @@ class MailThread(models.AbstractModel):
                 new_msg = thread_root.message_notify(**post_params)
             else:
                 # if no author, skip any author subscribe check; otherwise message_post
-                # checks anyway for real author and filters inactive (like odoobot)
+                # checks anyway for real author and filters inactive (like wethbot)
                 thread_root = thread_root.with_context(mail_post_autofollow_author_skip=not message_dict.get('author_id'))
                 new_msg = thread_root.message_post(**post_params)
 
@@ -2151,7 +2151,7 @@ class MailThread(models.AbstractModel):
 
         emails_set = set(chain.from_iterable(records_emails.values()))
 
-        # inspired notably from weth/odoo@80a0b45df806ffecfb068b5ef05ae1931d655810; final
+        # inspired notably from weth/weth@80a0b45df806ffecfb068b5ef05ae1931d655810; final
         # ordering is search order defined in '_find_or_create_from_emails', which is id ASC
         def sort_key(p):
             return (
@@ -2297,7 +2297,7 @@ class MailThread(models.AbstractModel):
         :param list(int) partner_cc_ids: partner_ids to notify in "Cc" in addition to partner_ids and
             partners computed based on subtype / followers matching;
         :param str outgoing_email_to: comma-separated list of emails to notify in
-            addition to partner_ids. Experimental support as of Odoo v19;
+            addition to partner_ids. Experimental support as of WETH v19;
         :param str incoming_email_to: comma-separated list of emails, already notified
             by incoming email;
         :param str incoming_email_cc: comma-separated list of emails, already notified
@@ -3175,8 +3175,8 @@ class MailThread(models.AbstractModel):
         # if current user is active, they are the one doing the action and should
         # be notified of answers. If they are inactive they are posting on behalf
         # of someone else (a customer, mailgateway, ...) and the real author is the
-        # message author. In any case avoid odoobot.
-        if self.env.user.active:  # note that odoobot is always inactive, there is a python check
+        # message author. In any case avoid wethbot.
+        if self.env.user.active:  # note that wethbot is always inactive, there is a python check
             real_author = self.env.user.partner_id
         elif author_id:
             author = self.env['res.partner'].browse(author_id)
@@ -4042,7 +4042,7 @@ class MailThread(models.AbstractModel):
 
         # compute references: set references to parents likely to be sent and add current message just to
         # have a fallback in case replies mess with Messsage-Id in the In-Reply-To (e.g. amazon
-        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Odoo)
+        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Weth)
         message_sudo = message.sudo()
         ancestors = self.env['mail.message'].sudo().search(
             [
@@ -4596,7 +4596,7 @@ class MailThread(models.AbstractModel):
         ]
 
     def _notify_get_recipients_for_extra_notifications(self, message, recipients_data):
-        """ Never send to author and to people outside Odoo (email) except comments """
+        """ Never send to author and to people outside WETH (email) except comments """
         notif_pids = []
         notif_pids_notinbox = []
         for recipient in (r for r in recipients_data if r['active'] and r['id']):

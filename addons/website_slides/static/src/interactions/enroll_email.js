@@ -8,7 +8,7 @@ import { createElementWithContent } from "@web/core/utils/html";
 export class EnrollEmail extends Interaction {
     static selector = "#wrapwrap";
     dynamicContent = {
-        ".o_wslides_js_channel_enroll": {
+        ".w_wslides_js_channel_enroll": {
             "t-on-click.prevent": this.openDialog,
         },
     };

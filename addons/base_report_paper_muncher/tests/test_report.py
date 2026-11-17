@@ -50,7 +50,7 @@ class TestPaperMuncherReport(weth.tests.HttpCase):
 
         # Mirror what HttpCase does for _run_wkhtmltopdf: set the test cursor key,
         # release the registry lock so _handle_fallback can open a TestCursor, and
-        # inject the matching cookie into every fallback environ so Odoo's asset
+        # inject the matching cookie into every fallback environ so WETH's asset
         # routes pass assertCanOpenTestCursor.
         self_setup = self
         old_serve = PaperMuncherServer.serve

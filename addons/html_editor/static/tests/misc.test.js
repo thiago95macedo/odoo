@@ -36,7 +36,7 @@ test("cannot reattach a destroyed editor", async () => {
 test.tags("iframe");
 test("can instantiate a Editor in an iframe", async () => {
     const { el, editor } = await setupEditor("<p>hel[lo] world</p>", { props: { iframe: true } });
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("iframe").toHaveCount(2);
     expect(el.innerHTML).toBe(`<p>hello world</p>`);
     expect(getContent(el)).toBe(`<p>hel[lo] world</p>`);

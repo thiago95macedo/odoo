@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/stock_delivery/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -40,13 +40,13 @@ msgstr ""
 "calcular a linha de envio.\n"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/sale_order.py:0
 msgid "%(name)s (Estimated Cost: %(cost)s)"
 msgstr "%(name)s (Custo estimado: %(cost)s)"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_package_label_layout.py:0
 msgid "%(weight_name)s: %(weight)s %(uom)s"
 msgstr "%(weight_name)s: %(weight)s %(uom)s"
@@ -67,13 +67,13 @@ msgid "(computed:"
 msgstr "(computado:"
 
 #. module: stock_delivery
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock_delivery/static/src/return_order_dialog/return_label_info.xml:0
 msgid "1. Download and print the Return label and place it in your package."
 msgstr "1. Baixe e imprima a etiqueta de devolução e coloque-a em seu pacote."
 
 #. module: stock_delivery
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock_delivery/static/src/return_order_dialog/return_label_info.xml:0
 msgid "2. Download and print the Shipping label and place it on your package."
 msgstr "2. Baixe e imprima a etiqueta de envio e coloque-a em seu pacote."
@@ -283,19 +283,19 @@ msgid "Choose the sheet layout to print the labels"
 msgstr "Escolha o layout de folha para imprimir as etiquetas"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Collect Payment"
 msgstr "Cobrar pagamento"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/ir_actions_report.py:0
 msgid "Configure a printer to print this report: '%s'"
 msgstr "Configure uma impressora para imprimir este relatório: '%s'"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/ir_actions_report.py:0
 msgid ""
 "Configure the carrier to generate labels in PDF format, or use a ZPL/ePOS "
@@ -315,7 +315,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Cost: %(price).2f %(currency)s"
 msgstr "Custo: %(price).2f %(currency)s"
@@ -402,7 +402,7 @@ msgid "Display tracking links"
 msgstr "Exibir links de rastreamento"
 
 #. module: stock_delivery
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock_delivery/static/src/return_order_dialog/return_order_dialog.js:0
 msgid "Download Shipping Label"
 msgstr "Baixar etiqueta de envio"
@@ -421,13 +421,13 @@ msgstr ""
 "do frete será atualizado no PV após a entrega."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Exception occurred with respect to carrier on the transfer"
 msgstr "A exceção ocorreu com relação ao transportador na transferência"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Exception:"
 msgstr "Exceção:"
@@ -509,7 +509,7 @@ msgid "Manage Printers"
 msgstr "Gerenciar impressoras"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Manual actions might be needed."
 msgstr "Talvez sejam necessárias ações manuais."
@@ -546,7 +546,7 @@ msgid "Package"
 msgstr "Embalagem"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_put_in_pack.py:0
 msgid "Package too heavy!"
 msgstr "Embalagem muito pesada!"
@@ -669,7 +669,7 @@ msgid "Send to Shipper"
 msgstr "Enviar à transportadora"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid ""
 "Shipment sent to carrier %(carrier_name)s for shipping with tracking number %"
@@ -709,7 +709,7 @@ msgid "Shipping Labels Report"
 msgstr "Relatório de etiquetas de envio"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_package_label_layout.py:0
 #: model:ir.model.fields,field_description:stock_delivery.field_stock_put_in_pack__shipping_weight
 msgid "Shipping Weight"
@@ -763,7 +763,7 @@ msgstr ""
 "Use este campo para fazer uma busca."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/delivery_carrier.py:0
 msgid ""
 "The package cannot be created because the total weight of the products in "
@@ -773,13 +773,13 @@ msgstr ""
 "separação é 0,0 %s"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/choose_delivery_carrier.py:0
 msgid "The shipping price will be set once the delivery is done."
 msgstr "O valor do frete será definido assim que a entrega for concluída."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_put_in_pack.py:0
 msgid ""
 "The weight of your package is higher than the maximum weight authorized for "
@@ -789,7 +789,7 @@ msgstr ""
 "embalagem. Por favor, escolha outra embalagem."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_put_in_pack.py:0
 msgid ""
 "The weight of your package is higher than the maximum weight authorized for "
@@ -799,13 +799,13 @@ msgstr ""
 "de embalagem. Escolha outro tipo de embalagem."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/delivery_carrier.py:0
 msgid "There is no matching delivery rule."
 msgstr "Não há regra de entrega correspondente."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/pay_on_delivery.py:0
 msgid ""
 "These transfers are for orders that are paid on delivery, and the amounts "
@@ -817,7 +817,7 @@ msgstr ""
 "uma moeda de cada vez para os cobrar."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/ir_actions_report.py:0
 msgid ""
 "This action is meant to print %s attachments from the chatter: none was "
@@ -856,7 +856,7 @@ msgid "Tracking URL"
 msgstr "URL do rastreamento"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid "Tracking links for shipment:"
 msgstr "Links de rastreamento para a remessa:"
@@ -872,7 +872,7 @@ msgid "Transfer"
 msgstr "Transferir"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/wizard/stock_package_label_layout.py:0
 #: model:ir.model.fields,field_description:stock_delivery.field_stock_move__weight
 #: model:ir.model.fields,field_description:stock_delivery.field_stock_package__weight
@@ -895,7 +895,7 @@ msgid "Weight unit of measure label"
 msgstr "Etiqueta da unidade de medida de peso"
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_move.py:0
 msgid ""
 "You cannot pack products into the same package when they have different "
@@ -913,7 +913,7 @@ msgstr ""
 "Você tem múltiplos links de rastreamento e eles estão disponíveis no chatter."
 
 #. module: stock_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/stock_delivery/models/stock_picking.py:0
 msgid ""
 "Your delivery method has no redirect on courier provider's website to track "

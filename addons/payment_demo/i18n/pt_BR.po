@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_demo/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgid "Demo Express Checkout"
 msgstr "Checkout expresso (demo)"
 
 #. module: payment_demo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_demo/models/payment_provider.py:0
 msgid "Demo providers must never be set in live mode."
 msgstr "Provedores de demonstração nunca devem ser configurados em modo real."
@@ -173,7 +173,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: payment_demo
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_demo/static/src/interactions/express_checkout.js:0
 msgid "No delivery method is available."
 msgstr "Nenhum método de entrega disponível."
@@ -219,7 +219,7 @@ msgid "Payment processing"
 msgstr "Processamento de pagamentos"
 
 #. module: payment_demo
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_demo/static/src/interactions/payment_demo_mixin.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -263,7 +263,7 @@ msgid "Processing error"
 msgstr "Erro de processamento"
 
 #. module: payment_demo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_demo/controllers/portal.py:0
 msgid "Provider %s is not properly configured."
 msgstr "O provedor %s não está configurado corretamente."
@@ -306,7 +306,7 @@ msgid "Unpublished"
 msgstr "Não publicado"
 
 #. module: payment_demo
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_demo/static/src/interactions/express_checkout.js:0
 msgid "Validation Error"
 msgstr "Erro de validação"
@@ -317,7 +317,7 @@ msgid "XXXX XXXX XXXX XXXX"
 msgstr "XXXX XXXX XXXX XXXX"
 
 #. module: payment_demo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_demo/models/payment_transaction.py:0
 msgid "You selected the following demo payment status: %s"
 msgstr "Você selecionou o seguinte status de pagamento de demonstração: %s"

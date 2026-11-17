@@ -8,35 +8,35 @@ from weth.tools.view_validation import get_domain_value_names
 
 markdown_link_regex = r"^\[([^\[]+)\]\((.+)\)$"
 
-xml_id_url_prefix = "odoo://ir_menu_xml_id/"
+xml_id_url_prefix = "weth://ir_menu_xml_id/"
 
-odoo_view_link_prefix = "odoo://view/"
+weth_view_link_prefix = "weth://view/"
 
 
-def odoo_charts(data):
-    """returns all odoo chart definitions in the spreadsheet"""
+def weth_charts(data):
+    """returns all weth chart definitions in the spreadsheet"""
     figures = []
-    odooVersion = "odooVersion" in data and data["odooVersion"]
+    wethVersion = "wethVersion" in data and data["wethVersion"]
     for sheet in data.get("sheets", []):
         for figure in sheet.get("figures", []):
-            if figure["tag"] == "chart" and (data := odoo_chart(odooVersion, figure)):
+            if figure["tag"] == "chart" and (data := weth_chart(wethVersion, figure)):
                 figures.append(dict(data, id=figure["id"]))
             elif figure["tag"] == "carousel":
-                figures.extend(get_odoo_charts_from_carousel(odooVersion, figure["data"]))
+                figures.extend(get_weth_charts_from_carousel(wethVersion, figure["data"]))
     return figures
 
 
-def odoo_chart(version, definition):
+def weth_chart(version, definition):
     if version and (not isinstance(version, str) or version < "19.3.1"):
-        return definition["data"]["type"].startswith("odoo_") and definition["data"]
+        return definition["data"]["type"].startswith("weth_") and definition["data"]
     else:
-        return 'dataSource' in definition and definition['dataSource']['type'] == 'odoo' and definition["dataSource"]
+        return 'dataSource' in definition and definition['dataSource']['type'] == 'weth' and definition["dataSource"]
 
 
-def get_odoo_charts_from_carousel(version, carousel):
+def get_weth_charts_from_carousel(version, carousel):
     charts = []
     for chart_id, chart in carousel["chartDefinitions"].items():
-        if data := odoo_chart(version, chart):
+        if data := weth_chart(version, chart):
             charts.append(dict(data, id=chart_id))
     return charts
 
@@ -44,7 +44,7 @@ def get_odoo_charts_from_carousel(version, carousel):
 def links_urls(data):
     """return all markdown links in cells"""
     urls = []
-    link_prefix = "odoo://view/"
+    link_prefix = "weth://view/"
     for sheet in data.get("sheets", []):
         for cell in sheet.get("cells", {}).values():
             # 'cell' was an object in versions <saas-18.1
@@ -55,14 +55,14 @@ def links_urls(data):
     return urls
 
 
-def odoo_view_links(data):
+def weth_view_links(data):
     """return all view definitions embedded in link cells.
-    urls looks like odoo://view/{... view data...}
+    urls looks like weth://view/{... view data...}
     """
     return [
-        json.loads(url[len(odoo_view_link_prefix):])
+        json.loads(url[len(weth_view_link_prefix):])
         for url in links_urls(data)
-        if url.startswith(odoo_view_link_prefix)
+        if url.startswith(weth_view_link_prefix)
     ]
 
 
@@ -150,8 +150,8 @@ def chart_fields(chart):
 def filter_fields(data):
     """return all field names used in global filter definitions"""
     fields_by_model = defaultdict(set)
-    charts = odoo_charts(data)
-    if "odooVersion" in data and data["odooVersion"] < 5:
+    charts = weth_charts(data)
+    if "wethVersion" in data and data["wethVersion"] < 5:
         for filter_definition in data.get("globalFilters", []):
             for pivot_id, matching in filter_definition.get("pivotFields", dict()).items():
                 model = data["pivots"][pivot_id]["model"]
@@ -165,7 +165,7 @@ def filter_fields(data):
                 fields_by_model[model].add(matching["field"])
     else:
         for pivot in data.get("pivots", {}).values():
-            if pivot.get("type", "ODOO") == "ODOO":
+            if pivot.get("type", "WETH") == "WETH":
                 model = pivot["model"]
                 field = pivot.get("fieldMatching", {}).get("chain")
                 if field:
@@ -184,7 +184,7 @@ def filter_fields(data):
     return dict(fields_by_model)
 
 
-def odoo_view_fields(view):
+def weth_view_fields(view):
     return view["action"]["modelName"], set(domain_fields(view["action"]["domain"]))
 
 
@@ -198,12 +198,12 @@ def extract_fields(extract_fn, items):
 
 def fields_in_spreadsheet(data):
     """return all fields, grouped by model, used in the spreadsheet"""
-    odoo_pivots = (pivot for pivot in data.get("pivots", dict()).values() if pivot.get("type", "ODOO") == "ODOO")
+    weth_pivots = (pivot for pivot in data.get("pivots", dict()).values() if pivot.get("type", "WETH") == "WETH")
     all_fields = chain(
         extract_fields(list_fields, data.get("lists", dict()).values()).items(),
-        extract_fields(pivot_fields, odoo_pivots).items(),
-        extract_fields(chart_fields, odoo_charts(data)).items(),
-        extract_fields(odoo_view_fields, odoo_view_links(data)).items(),
+        extract_fields(pivot_fields, weth_pivots).items(),
+        extract_fields(chart_fields, weth_charts(data)).items(),
+        extract_fields(weth_view_fields, weth_view_links(data)).items(),
         filter_fields(data).items(),
     )
     fields_by_model = defaultdict(set)
@@ -214,7 +214,7 @@ def fields_in_spreadsheet(data):
 
 def menus_xml_ids_in_spreadsheet(data):
 
-    return set(data.get("chartOdooMenusReferences", {}).values()) | {
+    return set(data.get("chartWethMenusReferences", {}).values()) | {
         url[len(xml_id_url_prefix):]
         for url in links_urls(data)
         if url.startswith(xml_id_url_prefix)

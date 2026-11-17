@@ -2,19 +2,19 @@
 
 import { parse, helpers, iterateAstNodes } from "@weth/o-spreadsheet";
 import { isLoadingError } from "@spreadsheet/o_spreadsheet/errors";
-import { OdooSpreadsheetModel } from "@spreadsheet/model";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethSpreadsheetModel } from "@spreadsheet/model";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 
 const { formatValue, isDefined, toCartesian, toXC, addStyleToWorkbookData } = helpers;
 import {
     isMarkdownViewUrl,
     isMarkdownIrMenuIdUrl,
     isIrMenuXmlUrl,
-} from "@spreadsheet/ir_ui_menu/odoo_menu_link_cell";
+} from "@spreadsheet/ir_ui_menu/weth_menu_link_cell";
 import { getNeutralizedLink } from "./neutralized_link";
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").WethSpreadsheetModel} WethSpreadsheetModel
  */
 
 export async function fetchSpreadsheetModel(env, resModel, resId) {
@@ -25,22 +25,22 @@ export async function fetchSpreadsheetModel(env, resModel, resId) {
 }
 
 export function createSpreadsheetModel({ env, data, revisions }) {
-    const odooDataProvider = new OdooDataProvider(env);
-    const model = new OdooSpreadsheetModel(data, { custom: { env, odooDataProvider } }, revisions);
+    const wethDataProvider = new WethDataProvider(env);
+    const model = new WethSpreadsheetModel(data, { custom: { env, wethDataProvider } }, revisions);
     return model;
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  */
-export async function waitForOdooSources(model) {
+export async function waitForWethSources(model) {
     const promises = model.getters
-        .getOdooChartIds()
+        .getWethChartIds()
         .map((chartId) => model.getters.getChartDataSource(chartId).load());
     promises.push(
         ...model.getters
             .getPivotIds()
-            .filter((pivotId) => model.getters.getPivotCoreDefinition(pivotId).type === "ODOO")
+            .filter((pivotId) => model.getters.getPivotCoreDefinition(pivotId).type === "WETH")
             .map((pivotId) => model.getters.getPivot(pivotId))
             .map((pivot) => pivot.load())
     );
@@ -55,30 +55,30 @@ export async function waitForOdooSources(model) {
 
 /**
  * Ensure that the spreadsheet does not contains cells that are in loading state
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @returns {Promise<void>}
  */
 export async function waitForDataLoaded(model) {
     await model.getters.loadUsedGeoJsonFeatures();
-    await waitForOdooSources(model);
-    const odooDataProvider = model.config.custom.odooDataProvider;
-    if (!odooDataProvider) {
+    await waitForWethSources(model);
+    const wethDataProvider = model.config.custom.wethDataProvider;
+    if (!wethDataProvider) {
         return;
     }
     await new Promise((resolve, reject) => {
         function check() {
             model.dispatch("EVALUATE_CELLS");
             if (isLoaded(model)) {
-                odooDataProvider.removeEventListener("data-source-updated", check);
+                wethDataProvider.removeEventListener("data-source-updated", check);
                 resolve();
             }
         }
-        odooDataProvider.addEventListener("data-source-updated", check);
+        wethDataProvider.addEventListener("data-source-updated", check);
         check();
     });
 }
 
-function containsLinkToOdoo(link) {
+function containsLinkToWeth(link) {
     if (link && link.url) {
         return (
             isMarkdownViewUrl(link.url) ||
@@ -89,10 +89,10 @@ function containsLinkToOdoo(link) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @returns {Promise<object>}
  */
-export async function freezeOdooData(model) {
+export async function freezeWethData(model) {
     await waitForDataLoaded(model);
     const data = model._exportData(false);
     //TODO: rewrite with normal export and squished positions ?
@@ -103,10 +103,10 @@ export async function freezeOdooData(model) {
             const sheetId = sheet.id;
             const position = { sheetId, col, row };
             const evaluatedCell = model.getters.getEvaluatedCell(position);
-            if (containsOdooFunction(content)) {
+            if (containsWethFunction(content)) {
                 freezeDynamicTable(model, position, data);
                 const pivotId = model.getters.getPivotIdFromPosition(position);
-                if (pivotId && model.getters.getPivotCoreDefinition(pivotId).type !== "ODOO") {
+                if (pivotId && model.getters.getPivotCoreDefinition(pivotId).type !== "WETH") {
                     continue;
                 }
                 sheet.cells[xc] = toFrozenContent(evaluatedCell);
@@ -132,16 +132,16 @@ export async function freezeOdooData(model) {
                     }
                 }
             }
-            if (containsLinkToOdoo(evaluatedCell.link)) {
+            if (containsLinkToWeth(evaluatedCell.link)) {
                 sheet.cells[xc] = `[${evaluatedCell.link.label}](${getNeutralizedLink()})`;
             }
         }
         for (const figure of sheet.figures) {
             if (
                 figure.tag === "chart" &&
-                (figure.data.dataSource?.type === "odoo" || figure.data.type === "geo")
+                (figure.data.dataSource?.type === "weth" || figure.data.type === "geo")
             ) {
-                const img = odooChartToImage(model, figure, figure.data.chartId);
+                const img = wethChartToImage(model, figure, figure.data.chartId);
                 figure.tag = "image";
                 figure.data = {
                     path: img,
@@ -154,7 +154,7 @@ export async function freezeOdooData(model) {
                     }
                     const chartDefinition = model.getters.getChartDefinition(item.chartId);
                     return (
-                        chartDefinition.dataSource?.type === "odoo" ||
+                        chartDefinition.dataSource?.type === "weth" ||
                         chartDefinition.type === "geo"
                     );
                 });
@@ -162,7 +162,7 @@ export async function freezeOdooData(model) {
                     const chartId = figure.data.items.find((item) => item.type === "chart").chartId;
                     figure.tag = "image";
                     figure.data = {
-                        path: odooChartToImage(model, figure, chartId),
+                        path: wethChartToImage(model, figure, chartId),
                         size: { width: figure.width, height: figure.height },
                     };
                 }
@@ -171,7 +171,7 @@ export async function freezeOdooData(model) {
     }
     if (data.pivots) {
         data.pivots = Object.fromEntries(
-            Object.entries(data.pivots).filter(([id, def]) => def.type !== "ODOO")
+            Object.entries(data.pivots).filter(([id, def]) => def.type !== "WETH")
         );
     }
     data.lists = {};
@@ -188,7 +188,7 @@ function toFrozenContent(evaluatedCell) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @returns {object}
  */
 function exportGlobalFiltersToSheet(model, data) {
@@ -230,11 +230,11 @@ export function getItemId(item, itemsDic) {
  * @param {string | undefined} content
  * @returns {boolean}
  */
-function containsOdooFunction(content) {
+function containsWethFunction(content) {
     if (
         !content ||
         !content.startsWith("=") ||
-        (!content.toUpperCase().includes("ODOO.") &&
+        (!content.toUpperCase().includes("WETH.") &&
             !content.toUpperCase().includes("_T") &&
             !content.toUpperCase().includes("PIVOT"))
     ) {
@@ -245,7 +245,7 @@ function containsOdooFunction(content) {
         return iterateAstNodes(ast).some(
             (ast) =>
                 ast.type === "FUNCALL" &&
-                (ast.value.toUpperCase().startsWith("ODOO.") ||
+                (ast.value.toUpperCase().startsWith("WETH.") ||
                     ast.value.toUpperCase().startsWith("_T") ||
                     ast.value.toUpperCase().startsWith("PIVOT"))
         );
@@ -255,7 +255,7 @@ function containsOdooFunction(content) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @returns {boolean}
  */
 function isLoaded(model) {
@@ -272,12 +272,12 @@ function isLoaded(model) {
 /**
  * Return the chart figure as a base64 image.
  * "data:image/png;base64,iVBORw0KGg..."
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @param {object} figure
  * @param {string} chartId
  * @returns {string}
  */
-function odooChartToImage(model, figure, chartId) {
+function wethChartToImage(model, figure, chartId) {
     const runtime = model.getters.getChartRuntime(chartId);
     // wrap the canvas in a div with a fixed size because chart.js would
     // fill the whole page otherwise

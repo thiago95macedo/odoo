@@ -1,11 +1,11 @@
-# Regras de Governança Operacional WETH — Odoo 20
+# Regras de Governança Operacional WETH — WETH
 
-Este arquivo define as restrições inegociáveis de operação do agente no ambiente de desenvolvimento Odoo da WETH:
+Este arquivo define as restrições inegociáveis de operação do agente no ambiente de desenvolvimento WETH da WETH:
 
-1. **Evidências Fatuais:** Não assuma comportamentos com base em versões antigas (v14, v16). Valide diretamente no código do Odoo 20 (`git grep`, leitura de sources).
-2. **Investigação Prévia:** Antes de alterar qualquer método, campo ou template, busque suas referências ativas em `odoo/` e `addons/`.
+1. **Evidências Fatuais:** Não assuma comportamentos com base em versões antigas (v14, v16). Valide diretamente no código do WETH (`git grep`, leitura de sources).
+2. **Investigação Prévia:** Antes de alterar qualquer método, campo ou template, busque suas referências ativas em `weth/` e `addons/`.
 3. **Mínimo Impacto:** Altere exclusivamente o estritamente necessário. Não faça refatorações cosméticas em código estável.
-4. **Isolamento de Mudanças:** Módulos customizados não devem poluir nem sobrescrever arquivos do core do Odoo diretamente. Use herança (`_inherit`, templates QWeb com `xpath`).
+4. **Isolamento de Mudanças:** Módulos customizados não devem poluir nem sobrescrever arquivos do core do WETH diretamente. Use herança (`_inherit`, templates QWeb com `xpath`).
 5. **Segurança Proativa:**
    - Toda chamada `sudo()` requer justificativa documentada em comentário.
    - Rotas HTTP de escrita exigem `POST` e validação CSRF.

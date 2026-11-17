@@ -60,7 +60,7 @@ function getEditorOptions() {
     return {
         config: {
             includePlugins: DYNAMIC_FIELD_PLUGINS,
-            classList: ["odoo-editor-qweb"],
+            classList: ["weth-editor-qweb"],
             dynamicResModel: "some.model",
         },
         props: {
@@ -73,13 +73,13 @@ function getEditorOptions() {
 test("add dynamic field", async () => {
     const { editor, el } = await setupEditor(`<div>[hop hop]</div>`, getEditorOptions());
     await insertText(editor, "/");
-    await contains(".o-we-powerbox .o-we-command-name:contains(/^Field$/)").click();
+    await contains(".w-we-powerbox .w-we-command-name:contains(/^Field$/)").click();
 
-    await contains(".o-dynamic-field-popover .o_model_field_selector_value").click();
+    await contains(".w-dynamic-field-popover .o_model_field_selector_value").click();
     await contains(".o_model_field_selector_popover_page li[data-name='field'] button").click();
-    expect(".o-dynamic-field-popover input[name='label_value']").toHaveValue("My little field");
+    expect(".w-dynamic-field-popover input[name='label_value']").toHaveValue("My little field");
 
-    await contains(".o-dynamic-field-popover button.btn-primary").click();
+    await contains(".w-dynamic-field-popover button.btn-primary").click();
     await animationFrame();
     expect(getContent(el)).toBe(
         unformat(`
@@ -95,24 +95,24 @@ test("add dynamic field", async () => {
 test("add dynamic field with relational property", async () => {
     const { editor, el } = await setupEditor(`<div>[hop hop]</div>`, getEditorOptions());
     await insertText(editor, "/");
-    await contains(".o-we-powerbox .o-we-command-name:contains(/^Field$/)").click();
+    await contains(".w-we-powerbox .w-we-command-name:contains(/^Field$/)").click();
 
-    await contains(".o-dynamic-field-popover .o_model_field_selector_value").click();
+    await contains(".w-dynamic-field-popover .o_model_field_selector_value").click();
     await contains(
         "li[data-name='properties'] .o_model_field_selector_popover_item_relation"
     ).click();
-    expect(".o-dynamic-field-popover button.btn-primary").not.toBeEnabled();
+    expect(".w-dynamic-field-popover button.btn-primary").not.toBeEnabled();
     await contains(
         "li[data-name='property_partner'] .o_model_field_selector_popover_item_relation"
     ).click();
-    expect(".o-dynamic-field-popover .o_model_field_selector_chain_part").toHaveCount(1);
-    expect(".o-dynamic-field-popover .o_model_field_selector_chain_part").toHaveText(
+    expect(".w-dynamic-field-popover .o_model_field_selector_chain_part").toHaveCount(1);
+    expect(".w-dynamic-field-popover .o_model_field_selector_chain_part").toHaveText(
         "properties.get('property_partner', env['res.partner'])"
     );
     await contains("li[data-name='name'] button:contains('Partner Name')").click();
     expect("input[name='label_value']").toHaveValue("Partner Name");
 
-    await contains(".o-dynamic-field-popover button.btn-primary").click();
+    await contains(".w-dynamic-field-popover button.btn-primary").click();
     await animationFrame();
     expect(getContent(el)).toInclude("Partner Name");
     expect(getContent(el)).toInclude(
@@ -123,15 +123,15 @@ test("add dynamic field with relational property", async () => {
 test("add many2one dynamic field should take the name by default", async () => {
     const { editor, el } = await setupEditor(`<div>[hop hop]</div>`, getEditorOptions());
     await insertText(editor, "/");
-    await contains(".o-we-powerbox .o-we-command-name:contains(/^Field$/)").click();
+    await contains(".w-we-powerbox .w-we-command-name:contains(/^Field$/)").click();
 
-    await contains(".o-dynamic-field-popover .o_model_field_selector_value").click();
+    await contains(".w-dynamic-field-popover .o_model_field_selector_value").click();
     await contains(
         ".o_model_field_selector_popover_page li[data-name='many2one_model_id'] button"
     ).click();
-    expect(".o-dynamic-field-popover input[name='label_value']").toHaveValue("Many2one model");
+    expect(".w-dynamic-field-popover input[name='label_value']").toHaveValue("Many2one model");
 
-    await contains(".o-dynamic-field-popover button.btn-primary").click();
+    await contains(".w-dynamic-field-popover button.btn-primary").click();
     await animationFrame();
     expect(getContent(el)).toBe(
         unformat(`
@@ -170,11 +170,11 @@ test("copy field", async () => {
     await contains("t[t-out]").click();
     const clipboardData = new DataTransfer();
     await press(["ctrl", "c"], { dataTransfer: clipboardData });
-    expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+    expect(clipboardData.getData("application/vnd.weth.weth-editor")).toBe(
         `<t t-out="object.field" data-oe-expression-readable="human ... expr" data-oe-protected="true" contenteditable="false"></t>`
     );
 
-    editor.shared.selection.setSelection({ anchorNode: queryOne(".odoo-editor-editable div") });
+    editor.shared.selection.setSelection({ anchorNode: queryOne(".weth-editor-editable div") });
     await manuallyDispatchProgrammaticEvent(el, "paste", { clipboardData });
 
     expect(getContent(el)).toBe(
@@ -199,15 +199,15 @@ test("edit fields and back", async () => {
     );
 
     await contains(":iframe t[t-out]").click();
-    await contains(".o-we-toolbar button[name='editDynamicField']").click();
-    await contains(".o-dynamic-field-popover .o_model_field_selector_value").click();
+    await contains(".w-we-toolbar button[name='editDynamicField']").click();
+    await contains(".w-dynamic-field-popover .o_model_field_selector_value").click();
     await contains(
         ".o_model_field_selector_popover_page li[data-name='display_name'] button"
     ).click();
-    await contains(".o-dynamic-field-popover input[name='label_value']").edit("edited", {
+    await contains(".w-dynamic-field-popover input[name='label_value']").edit("edited", {
         confirm: false,
     });
-    await contains(".o-dynamic-field-popover button.btn-primary").click();
+    await contains(".w-dynamic-field-popover button.btn-primary").click();
 
     expect(getContent(el)).toBe(
         unformat(`
@@ -240,13 +240,13 @@ test("inserted value from dynamic field should contain the data-oe-t-inline attr
         },
     });
     await insertText(editor, "/");
-    await contains(".o-we-powerbox .o-we-command-name:contains(/^Field$/)").click();
+    await contains(".w-we-powerbox .w-we-command-name:contains(/^Field$/)").click();
 
-    await contains(".o-dynamic-field-popover .o_model_field_selector_value").click();
+    await contains(".w-dynamic-field-popover .o_model_field_selector_value").click();
     await contains(".o_model_field_selector_popover_page li[data-name='field'] button").click();
-    expect(".o-dynamic-field-popover input[name='label_value']").toHaveValue("My little field");
+    expect(".w-dynamic-field-popover input[name='label_value']").toHaveValue("My little field");
 
-    await contains(".o-dynamic-field-popover button.btn-primary").click();
+    await contains(".w-dynamic-field-popover button.btn-primary").click();
     await animationFrame();
 
     expect("t[data-oe-t-inline]").toHaveCount(1);
@@ -258,12 +258,12 @@ test("cannot insert or edit a dynamic field without a model", async () => {
     // Verify insert
     const { editor } = await setupEditor("<p>[]</p>", options);
     await insertText(editor, "/");
-    await contains(".o-we-powerbox .o-we-command-name:contains(/^Field$/)").click();
+    await contains(".w-we-powerbox .w-we-command-name:contains(/^Field$/)").click();
 
     expect(".o_notification").toHaveText(
         "Oops! Select a model for this template before inserting fields."
     );
-    expect(".o-dynamic-field-popover").toHaveCount(0);
+    expect(".w-dynamic-field-popover").toHaveCount(0);
     await contains(".o_notification .btn-close").click();
 
     // Verify edit
@@ -272,10 +272,10 @@ test("cannot insert or edit a dynamic field without a model", async () => {
         options
     );
     await contains(":iframe t[t-out]").click();
-    await contains(".o-we-toolbar button[name='editDynamicField']").click();
+    await contains(".w-we-toolbar button[name='editDynamicField']").click();
 
     expect(".o_notification").toHaveText(
         "Oops! Select a model for this template before editing fields."
     );
-    expect(".o-dynamic-field-popover").toHaveCount(0);
+    expect(".w-dynamic-field-popover").toHaveCount(0);
 });

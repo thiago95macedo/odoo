@@ -1030,7 +1030,7 @@ foo3,Invalid Country\n"""),
         In such a case, you have a file with dates visually looking using the same format in the user interface,
         but in reality some are stored as simple strings, some are stored as date objects within the xls(x) file.
 
-        Given how easy this is to land in such a situation using Google Spreadhseet, Odoo should support it.
+        Given how easy this is to land in such a situation using Google Spreadhseet, WETH should support it.
         """
         GENERATE_DATA_DATETIME = [
             ({

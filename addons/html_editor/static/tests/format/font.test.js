@@ -13,7 +13,7 @@ test("should change the containing block with the font", async () => {
     expect(".btn[name='font_type']").toHaveText("Paragraph");
     await contains(".btn[name='font_type']").click();
     await waitFor(".o_font_type_selector_menu");
-    await contains(".o_font_type_selector_menu .o-dropdown-item[name=blockquote]").click();
+    await contains(".o_font_type_selector_menu .w-dropdown-item[name=blockquote]").click();
     expect(".btn[name='font_type']").toHaveText("Quote");
     expect(getContent(el)).toBe("<blockquote>ab[cde]fg</blockquote>");
 });
@@ -63,9 +63,9 @@ test("Should show the default font display name", async () => {
             </li>
         </ul>    
     `);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     const fontSizeInputEl = await getIframeInput(
-        ".o-we-toolbar [name='font_size'] iframe.o_font_size_selector_iframe",
+        ".w-we-toolbar [name='font_size'] iframe.o_font_size_selector_iframe",
         "input[name='font_size_input']"
     );
     expect(fontSizeInputEl.value).toBe("14");

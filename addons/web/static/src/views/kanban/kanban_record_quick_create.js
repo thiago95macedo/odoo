@@ -145,10 +145,10 @@ export class KanbanQuickCreateController extends Component {
                 const target = this.mousedownTarget || ev.target;
                 if (this.rootRef() && !this.rootRef().contains(target)) {
                     const isSameOverlay =
-                        this.rootRef().closest(".o-overlay-item") ===
-                        target.closest(".o-overlay-item");
+                        this.rootRef().closest(".w-overlay-item") ===
+                        target.closest(".w-overlay-item");
                     if (isSameOverlay) {
-                        if (!target.closest(".o_kanban_quick_add,.o-kanban-button-new")) {
+                        if (!target.closest(".o_kanban_quick_add,.w-kanban-button-new")) {
                             await this.validate("close");
                         }
                     }

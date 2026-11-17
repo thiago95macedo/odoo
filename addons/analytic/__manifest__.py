@@ -9,7 +9,7 @@
 Module for defining analytic accounting object.
 ===============================================
 
-In Odoo, analytic accounts are linked to general accounts but are treated
+In WETH, analytic accounts are linked to general accounts but are treated
 totally independently. So, you can enter various different analytic operations
 that have no counterpart in the general financial accounts.
     """,

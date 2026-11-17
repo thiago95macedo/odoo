@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/auth_oauth/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr ""
 "=============================================\n"
 
 #. module: auth_oauth
-#. odoo-python
+#. weth-python
 #: code:addons/auth_oauth/controllers/main.py:0
 msgid "Access Denied"
 msgstr "Acesso negado"
@@ -145,7 +145,7 @@ msgid "Login button label"
 msgstr "Rótulo do botão de login"
 
 #. module: auth_oauth
-#. odoo-python
+#. weth-python
 #: code:addons/auth_oauth/models/res_users.py:0
 msgid "Missing subject identity"
 msgstr "Falta de identidade do sujeito"
@@ -227,12 +227,12 @@ msgid "Sign in with Google"
 msgstr "Login com Google"
 
 #. module: auth_oauth
-#: model:auth.oauth.provider,body:auth_oauth.provider_openerp
+#: model:auth.oauth.provider,body:auth_oauth.provider_weth
 msgid "Sign in with WETH.com"
 msgstr "Login com WETH.com"
 
 #. module: auth_oauth
-#. odoo-python
+#. weth-python
 #: code:addons/auth_oauth/controllers/main.py:0
 msgid "Sign up is not allowed on this database."
 msgstr "Cadastro não permitido nesta base de dados."
@@ -253,7 +253,7 @@ msgid "UserInfo URL"
 msgstr "URL de UserInfo"
 
 #. module: auth_oauth
-#. odoo-python
+#. weth-python
 #: code:addons/auth_oauth/controllers/main.py:0
 msgid ""
 "You do not have access to this database or your invitation has expired. "
@@ -264,7 +264,7 @@ msgstr ""
 "convite e certifique-se de clicar no link do convite recebido no seu e-mail."
 
 #. module: auth_oauth
-#. odoo-python
+#. weth-python
 #: code:addons/auth_oauth/models/res_users.py:0
 msgid "You do not have permissions to remove the access token"
 msgstr "Você não tem permissão para remover o token de acesso"

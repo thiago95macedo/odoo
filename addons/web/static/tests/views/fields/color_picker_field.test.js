@@ -46,12 +46,12 @@ defineModels([Partner, User]);
 
 test("No chosen color is a red line with a white background (color 0)", async () => {
     await mountView({ type: "form", resModel: "res.partner", resId: 1 });
-    expect(".o_field_color_picker button.o_colorlist_item_color_0").toHaveCount(1);
-    await contains(".o_field_color_picker button").click();
-    expect(".o_colorlist button.o_colorlist_item_color_0").toHaveCount(1);
-    await contains(".o_colorlist .o_colorlist_item_color_3").click();
-    await contains(".o_field_color_picker button").click();
-    expect(".o_colorlist button.o_colorlist_item_color_0").toHaveCount(1);
+    expect(".w_field_color_picker button.w_colorlist_item_color_0").toHaveCount(1);
+    await contains(".w_field_color_picker button").click();
+    expect(".w_colorlist button.w_colorlist_item_color_0").toHaveCount(1);
+    await contains(".w_colorlist .w_colorlist_item_color_3").click();
+    await contains(".w_field_color_picker button").click();
+    expect(".w_colorlist button.w_colorlist_item_color_0").toHaveCount(1);
 });
 
 test("closes when color selected or outside click", async () => {
@@ -67,13 +67,13 @@ test("closes when color selected or outside click", async () => {
             </group>
         </form>`,
     });
-    await contains(".o_field_color_picker button").click();
-    expect(queryAll(".o_colorlist button").length).toBeGreaterThan(1);
-    await contains(".o_colorlist .o_colorlist_item_color_3").click();
-    expect(".o_field_color_picker button").toHaveCount(1);
-    await contains(".o_field_color_picker button").click();
-    await contains(".o_field_widget[name='name'] input").click();
-    expect(".o_field_color_picker button").toHaveCount(1);
+    await contains(".w_field_color_picker button").click();
+    expect(queryAll(".w_colorlist button").length).toBeGreaterThan(1);
+    await contains(".w_colorlist .w_colorlist_item_color_3").click();
+    expect(".w_field_color_picker button").toHaveCount(1);
+    await contains(".w_field_color_picker button").click();
+    await contains(".w_field_widget[name='name'] input").click();
+    expect(".w_field_color_picker button").toHaveCount(1);
 });
 
 test("color picker on list view", async () => {
@@ -85,9 +85,9 @@ test("color picker on list view", async () => {
         },
     });
 
-    await contains(".o_field_color_picker button").click();
+    await contains(".w_field_color_picker button").click();
     expect.verifySteps([]);
-    expect(".o_colorlist button").toHaveCount(12);
+    expect(".w_colorlist button").toHaveCount(12);
 });
 
 test("color picker in editable list view", async () => {
@@ -103,14 +103,14 @@ test("color picker in editable list view", async () => {
                 <field name="display_name" />
             </list>`,
     });
-    expect(".o_data_row:nth-child(1) .o_field_color_picker button").toHaveCount(1);
-    await contains(".o_data_row:nth-child(1) .o_field_color_picker button").click();
-    expect(".o_data_row:nth-child(1).o_selected_row").toHaveCount(0);
-    expect(".o_colorlist button").toHaveCount(12);
+    expect(".w_data_row:nth-child(1) .w_field_color_picker button").toHaveCount(1);
+    await contains(".w_data_row:nth-child(1) .w_field_color_picker button").click();
+    expect(".w_data_row:nth-child(1).w_selected_row").toHaveCount(0);
+    expect(".w_colorlist button").toHaveCount(12);
     await contains(
-        ".o_colorlist .o_colorlist_item_color_6"
+        ".w_colorlist .w_colorlist_item_color_6"
     ).click();
-    expect(".o_colorlist").toHaveCount(0);
+    expect(".w_colorlist").toHaveCount(0);
 });
 
 test("column widths: dont overflow color picker in list", async () => {
@@ -125,14 +125,14 @@ test("column widths: dont overflow color picker in list", async () => {
         </list>`,
         domain: [["id", "<", 0]],
     });
-    await contains(".o_control_panel_main_buttons .o_list_button_add", {
+    await contains(".w_control_panel_main_buttons .w_list_button_add", {
         visible: false,
     }).click();
     const date_column_width = queryAll(
-        '.o_list_table thead th[data-name="date_field"]'
+        '.w_list_table thead th[data-name="date_field"]'
     )[0].style.width.replace("px", "");
     const int_field_column_width = queryAll(
-        '.o_list_table thead th[data-name="int_field"]'
+        '.w_list_table thead th[data-name="int_field"]'
     )[0].style.width.replace("px", "");
     // Default values for date and int fields are: date: '92px', integer: '74px'
     // With the screen growing, the proportion is kept and thus int_field would remain smaller than date if
@@ -157,8 +157,8 @@ test("ColorPicker opens a BottomSheet on mobile", async () => {
             </group>
         </form>`,
     });
-    await contains(".o_field_color_picker button").click();
-    expect(".o_bottom_sheet").toHaveCount(1);
-    await contains(".o_colorlist .o_colorlist_item_color_3").click();
-    expect(".o_bottom_sheet").toHaveCount(0);
+    await contains(".w_field_color_picker button").click();
+    expect(".w_bottom_sheet").toHaveCount(1);
+    await contains(".w_colorlist .w_colorlist_item_color_3").click();
+    expect(".w_bottom_sheet").toHaveCount(0);
 });

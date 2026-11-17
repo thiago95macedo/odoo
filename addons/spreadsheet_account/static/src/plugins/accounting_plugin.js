@@ -1,5 +1,5 @@
 // @ts-check
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 import { deepCopy } from "@web/core/utils/objects";
 import { camelToSnakeObject, toServerDateString } from "@spreadsheet/helpers/helpers";
 
@@ -7,7 +7,7 @@ import { camelToSnakeObject, toServerDateString } from "@spreadsheet/helpers/hel
  * @typedef {import("../accounting_functions").DateRange} DateRange
  */
 
-export class AccountingPlugin extends OdooEvaluationPlugin {
+export class AccountingPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ ([
         "getAccountPrefixCredit",
         "getAccountPrefixDebit",

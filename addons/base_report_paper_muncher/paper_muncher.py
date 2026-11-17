@@ -298,7 +298,7 @@ class PaperMuncherServer:
             response = h11.Response(status_code=status_code, headers=headers)
             http_log(logging.DEBUG, '[RES] ', req=self._request, res=response)
 
-        response_body = root(environ, start_response)  # call Odoo as public user
+        response_body = root(environ, start_response)  # call WETH as public user
         bytes_sent = 0
         deadline = time.monotonic() + WRITE_TIMEOUT
         self._send(response, deadline=deadline)

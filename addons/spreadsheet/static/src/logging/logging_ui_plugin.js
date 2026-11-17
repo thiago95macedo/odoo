@@ -1,7 +1,7 @@
 /** @weth-module */
 
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { WethUIPlugin } from "@spreadsheet/plugins";
 import { rpc } from "@web/core/network/rpc";
 import * as spreadsheet from "@weth/o-spreadsheet";
 const { cellMenuRegistry, topbarMenuRegistry, colMenuRegistry, rowMenuRegistry } =
@@ -16,7 +16,7 @@ rowMenuRegistry.get("copy").isEnabled = (env) => !env.isFrozenSpreadsheet?.();
 topbarMenuRegistry.get("edit").children.filter((c) => c.id === "copy")[0].isEnabled = (env) =>
     !env.isFrozenSpreadsheet?.();
 
-export class LoggingUIPlugin extends OdooUIPlugin {
+export class LoggingUIPlugin extends WethUIPlugin {
     constructor(config) {
         super(config);
         this.isFrozenSpreadsheet = config.custom.isFrozenSpreadsheet;
@@ -67,7 +67,7 @@ export class LoggingUIPlugin extends OdooUIPlugin {
         const datasources = [];
         datasources.push(
             ...this.getters
-                .getOdooChartIds()
+                .getWethChartIds()
                 .map((chartId) => this.getters.getChartDataSource(chartId))
                 .filter((ds) => ds.isValid())
                 .map((ds) => ds.source)
@@ -76,7 +76,7 @@ export class LoggingUIPlugin extends OdooUIPlugin {
             ...this.getters
                 .getPivotIds()
                 .map((pivotId) => this.getters.getPivot(pivotId))
-                .filter((pivot) => pivot.type === "ODOO" && pivot.isValid())
+                .filter((pivot) => pivot.type === "WETH" && pivot.isValid())
                 .map((ds) => ds.source)
         );
         datasources.push(

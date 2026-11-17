@@ -24,7 +24,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-06 17:49+0000\n"
 "PO-Revision-Date: 2026-10-06 10:33+0000\n"
 "Last-Translator: MAHAMADASIF ANSARI <maan@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/base/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr ""
 "        "
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid ""
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "Exemplo: %(example)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "\n"
@@ -74,15 +74,15 @@ msgstr ""
 #: model:ir.module.module,description:base.module_base
 msgid ""
 "\n"
-"The kernel of Odoo, needed for all installation.\n"
+"The kernel of WETH, needed for all installation.\n"
 "===================================================\n"
 msgstr ""
 "\n"
-"O kernel do Odoo, necessário para todas as instalações.\n"
+"O kernel do WETH, necessário para todas as instalações.\n"
 "===================================================\n"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "\n"
@@ -99,7 +99,7 @@ msgid " 1:00:00 PM"
 msgstr " 13h"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "\"group_by\" value must be a string %(attribute)s=“%(value)s”"
 msgstr "o valor \"group_by\" deve ser uma string %(attribute)s=\"%(value)s\""
@@ -125,25 +125,25 @@ msgid "# Users"
 msgstr "Nº de usuários"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "%(action_name)s is not a valid action on %(model_name)s"
 msgstr "%(action_name)s não é uma ação válida em %(model_name)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "%(date_label)s - %(author)s"
 msgstr "%(date_label)s - %(author)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid "%(integral_amount)s %(currency_unit)s"
 msgstr "%(integral_amount)s %(currency_unit)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid ""
 "%(integral_amount)s %(currency_unit)s and %(fractional_amount)s %"
@@ -153,14 +153,14 @@ msgstr ""
 "(currency_subunit)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "%(method)s on %(model)s is private and cannot be called from a button"
 msgstr ""
 "%(method)s em %(model)s é privado e não pode ser chamado a partir de um botão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields.py:0 code:addons/models.py:0
 msgid ""
 "%(previous_message)s\n"
@@ -172,7 +172,7 @@ msgstr ""
 "Acessado implicitamente através de '%(document_kind)s' (%(document_model)s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "%(xmlid)s is of type %(xmlid_model)s, expected a subclass of "
@@ -182,19 +182,19 @@ msgstr ""
 "ir.actions.actions"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "%s (Dedicated Outgoing Mail Server):"
 msgstr "%s (Servidor dedicado de envio e-mails):"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0 code:addons/translate.py:0
 msgid "%s (copy)"
 msgstr "%s (cópia)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/properties_base_definition.py:0
 msgid "%s Properties"
 msgstr "%s Propriedades"
@@ -205,7 +205,7 @@ msgid "&amp; Close"
 msgstr "e fechar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "'%(value)s' does not seem to be a valid Property value for field '%%"
@@ -216,7 +216,7 @@ msgstr ""
 "\"type\" e \"string\"."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "'%(value)s' does not seem to be a valid Selection value for '%"
@@ -226,7 +226,7 @@ msgstr ""
 "(label_property)s' (subcampo do campao '%%(field)s')."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "'%(value)s' does not seem to be a valid Tag value for '%(label_property)s' "
@@ -236,7 +236,7 @@ msgstr ""
 "(label_property)s' (subcampo do campo '%%(field)s')."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "'%(value)s' does not seem to be an float for field '%(label_property)s' "
@@ -246,7 +246,7 @@ msgstr ""
 "(label_property)s' (subcampo do campo '%%(field)s')."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "'%(value)s' does not seem to be an integer for field '%(label_property)s' "
@@ -256,55 +256,55 @@ msgstr ""
 "(label_property)s' (subcampo do campo '%%(field)s')."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "'%s' does not seem to be a number for field '%%(field)s'"
 msgstr "'%s' não parece ser um número para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "'%s' does not seem to be a valid JSON for field '%%(field)s'"
 msgstr "'%s' não parece ser um JSON válido para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "'%s' does not seem to be a valid date for field '%%(field)s'"
 msgstr "'%s' não é uma data válida para '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "'%s' does not seem to be a valid datetime for field '%%(field)s'"
 msgstr "'%s' não é data/hora válida para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "'%s' does not seem to be an integer for field '%%(field)s'"
 msgstr "'%s' não é um valor inteiro válido para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "'action-' is a reserved prefix."
 msgstr "'action-' é um prefixo reservado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "'m-' is a reserved prefix."
 msgstr "'m-' é um prefixo reservado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "'new' is reserved, and can not be used as path."
 msgstr "'new' está reservado e não pode ser usado como caminho."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields.py:0
 msgid "(Record: %(record)s, User: %(user)s)"
 msgstr "(Registro: %(record)s, Usuário: %(user)s)"
@@ -330,13 +330,13 @@ msgid ", required"
 msgstr ", obrigatório"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "- %(description)s (%(model)s)"
 msgstr "- %(description)s (%(model)s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "- Only a root company can be set on “%(record)s”. Currently set to “%"
@@ -346,7 +346,7 @@ msgstr ""
 "definido como \"%(company)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "- Record is company “%(company)s” while “%(field)s” (%(fname)s: %(values)s) "
@@ -361,7 +361,7 @@ msgid "- domain ="
 msgstr "- domínio ="
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "- element “%(node)s” is shown in the view for groups: %(groups)s"
 msgstr ""
@@ -373,13 +373,13 @@ msgid "- field ="
 msgstr "- campo ="
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "- field “%(name)s” does not exist in model “%(model)s”."
 msgstr "- O campo \"%(name)s\" não existe no modelo \"%(model)s\"."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "- field “%(name)s” is accessible for groups: %(field_groups)s"
 msgstr "- O campo \"%(name)s\" está acessível para grupos: %(field_groups)s"
@@ -410,7 +410,7 @@ msgid "- size ="
 msgstr "- tamanho ="
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "- “%(record)s” belongs to company “%(company)s” while “%(field)s” (%"
@@ -425,7 +425,7 @@ msgid "/contactus"
 msgstr "/contactus"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "0123456789016 or 1234545678781 [13 digits]"
 msgstr "0123456789016 ou 1234545678781 [13 dígitos]"
@@ -446,40 +446,40 @@ msgid "1 Month"
 msgstr "1 mês"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "1-01-85004-3 or 101850043"
 msgstr "1-01-85004-3 ou 101850043"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "10XXXXXXXXY or 20XXXXXXXXY or 15XXXXXXXXY or 16XXXXXXXXY or 17XXXXXXXXY"
 msgstr "10XXXXXXXXY ou 20XXXXXXXXY ou 15XXXXXXXXY ou 16XXXXXXXXY ou 17XXXXXXXXY"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "11111111111 (NIN) or 2222222222 (VKN)"
 msgstr "11111111111 (NIN) ou 2222222222 (VKN)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "123-45-67890 or 1234567890"
 msgstr "123-45-67890 ou 1234567890"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "1234567 or 1234567-8 or 12345-1234567-8"
 msgstr "1234567 ou 1234567-8 ou 12345-1234567-8"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid ""
@@ -488,32 +488,32 @@ msgstr ""
 "12345678 ou UA12345678 (EDRPOU), 1234567890 (RNOPP) ou 123456789012 (IPN)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "123456782 or 123456782RT0001"
 msgstr "123456782 ou 123456782RT0001"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "123456789 (TIN) or 12345678901234 (PINFL)"
 msgstr "123456789 (TIN) ou 12345678901234 (PINFL)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "1792060346001 or 1792060346"
 msgstr "1792060346001 ou 1792060346"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "3002707692 [Tax identification number]"
 msgstr "3002707692 [Número de identificação fiscal]"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "310175397400003 [Fifteen digits, first and last digits should be \"3\"]"
@@ -522,7 +522,7 @@ msgstr ""
 "\"3\"]"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "49-098-576 or 49098576"
@@ -534,7 +534,7 @@ msgid "5 Minutes"
 msgstr "5 minutos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "700 Number"
 msgstr "Número 700"
@@ -1317,7 +1317,7 @@ msgid "A - AGRICULTURE, FORESTRY AND FISHING"
 msgstr "A - AGRICULTURA, FLORESTAL E PESCA"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "A <graph> can only contains <field> nodes, found a <%s>"
 msgstr "Um <graph> pode conter apenas nós <field>, <%s> encontrado"
@@ -1377,7 +1377,7 @@ msgstr ""
 "e pelas restrições"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "A sequence must only be used with character fields."
 msgstr "Sequências só devem ser usadas com campos de caracteres."
@@ -1397,7 +1397,7 @@ msgstr ""
 "aplicativo, criar e gerenciar avaliações dele mesmo e das pessoas que lidera."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "A valid email is required for find_or_create to work properly."
 msgstr ""
@@ -1409,7 +1409,7 @@ msgid "A0  5   841 x 1189 mm"
 msgstr "A0  5   841 x 1189 mm"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "A00012345"
 msgstr "A00012345"
@@ -1465,7 +1465,7 @@ msgid "ABN"
 msgstr "ABN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "ACN"
 msgstr "ACN"
@@ -1481,7 +1481,7 @@ msgid "API Key Description"
 msgstr "Descrição da chave da API"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "API Key Ready"
 msgstr "Chave da API pronta"
@@ -1539,7 +1539,7 @@ msgid "Access"
 msgstr "Acesso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Access Control"
 msgstr "Controle de acesso"
@@ -1565,7 +1565,7 @@ msgid "Access Right"
 msgstr "Direito de acesso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.ir_access_action
 #: model:ir.ui.menu,name:base.menu_ir_access
@@ -1583,13 +1583,13 @@ msgid "Access Rights"
 msgstr "Direitos de acesso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Access Rights Inconsistency"
 msgstr "Inconsistência de direitos de acesso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 #: model:ir.model.fields,field_description:base.field_res_groups__access_ids
 msgid "Access Rules"
@@ -1634,19 +1634,19 @@ msgid "Access to the settings to configure the apps"
 msgstr "Acesso às definições para configurar os aplicativos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/environments.py:0
 msgid "Access to unauthorized or invalid companies."
 msgstr "Acesso a empresas não autorizadas ou inválidas."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "Accesses with domain can not be applied on model Access itself."
 msgstr "Acessos com domínio não podem ser aplicados ao próprio modelo Acesso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Accessible only for the super user"
 msgstr "Acessível apenas para o superusuário"
@@ -1738,7 +1738,7 @@ msgid "Action"
 msgstr "Ação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Action %(action_reference)s (id: %(action_id)s) does not exist for button of "
@@ -1871,7 +1871,7 @@ msgid "Active Parent Model"
 msgstr "Modelo principal ativo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Actual Code"
 msgstr "Código real"
@@ -1910,13 +1910,13 @@ msgid "Add an action"
 msgstr "Adicionar uma ação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Add direction"
 msgstr "Adicionar direção"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Add directional information (not used for digital)"
 msgstr "Adicione informação direcional (não utilizado para digital)"
@@ -1957,7 +1957,7 @@ msgid "Additional Identifiers"
 msgstr "Identificadores adicionais"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: code:addons/base/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:base.contact
@@ -2002,7 +2002,7 @@ msgid "Address inline (without name)"
 msgstr "Endereço em linha (sem nome)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Address separator"
 msgstr "Separador de endereço"
@@ -2032,7 +2032,7 @@ msgid "Administrator"
 msgstr "Administrador"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Administrator access is required to uninstall a module"
 msgstr "Somente Administradores podem desinstalar um módulo"
@@ -2368,7 +2368,7 @@ msgid "All Child"
 msgstr "Todos os dependentes"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
@@ -2395,7 +2395,7 @@ msgstr ""
 "legislação dos Estados Unidos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_profile.py:0
 msgid ""
 "All profiles must have the same initial stack trace to be displayed together."
@@ -2441,7 +2441,7 @@ msgid "Allowed states"
 msgstr "Estados permitidos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Ambiguous specification for field '%(field)s', only provide one of name, "
@@ -3250,7 +3250,7 @@ msgstr ""
 "fator de arredondamento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "An SMTP exception occurred. Check port number and connection security type.\n"
@@ -3261,7 +3261,7 @@ msgstr ""
 "%s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "An SSL exception occurred. Check connection security type.\n"
@@ -3271,7 +3271,7 @@ msgstr ""
 " %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "An SSL exception occurred. Check connection security type.\n"
@@ -3302,13 +3302,13 @@ msgstr ""
 "dependência, ele será sempre instalado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "An email is required for find_or_create to work"
 msgstr "É necessário um e-mail para que find_or_create funcione"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "An error occurred while evaluating the domain:\n"
@@ -3318,7 +3318,7 @@ msgstr ""
 "%(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "An option is not supported by the server:\n"
@@ -3343,7 +3343,7 @@ msgid "Anguilla"
 msgstr "Anguilla"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Another model is using the record you are trying to delete.\n"
@@ -3359,7 +3359,7 @@ msgstr ""
 "Que tal arquivar o registro em vez disso?"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Another partner already has this barcode"
 msgstr "Outro usuário já tem esse código de barras"
@@ -3451,7 +3451,7 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_upgrade_install
 msgid "Apply Schedule Upgrade"
@@ -4063,7 +4063,7 @@ msgid "Associated reports"
 msgstr "Relatórios associados"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "At least one language must be active."
 msgstr "Ao menos um idioma deve estar ativo."
@@ -4150,7 +4150,7 @@ msgid "Attachment Name"
 msgstr "Nome do anexo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "Attachment is not encoded in base64."
 msgstr "O anexo não está codificado em base64."
@@ -4250,7 +4250,7 @@ msgid "Australia/Yancowinna"
 msgstr "Austrália/Yancowinna"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Australian Company Number."
 msgstr "Número de empresa australiano."
@@ -4261,7 +4261,7 @@ msgid "Austria"
 msgstr "Áustria"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Austrian company ID number (UID)."
 msgstr "Número de identificação da empresa austríaca (UID)."
@@ -4272,7 +4272,7 @@ msgid "Auth Method"
 msgstr "Método de autenticação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Authenticate by using SSL certificates, belonging to your domain name. \n"
@@ -4480,7 +4480,7 @@ msgid "B9  23  33 x 62 mm"
 msgstr "B9 23 33 x 62 mm"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "BCE/KBO"
 msgstr "BCE/KBO"
@@ -4491,20 +4491,20 @@ msgid "BIC/SWIFT"
 msgstr "BIC/SWIFT"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0 model:res.country,vat_label:base.hk
 msgid "BRN"
 msgstr "BRN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid "BSB is not valid (expected format is \"NNN-NNN\"). Please rectify."
 msgstr ""
 "O BSB não é válido (o formato esperado é \"NNN-NNN\"). Por favor, corrija."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid "Bad file format: %s"
 msgstr "Formato de arquivo inválido: %s"
@@ -4582,7 +4582,7 @@ msgid "Bank Address"
 msgstr "Endereço do banco"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid "Bank Code length must be 3."
 msgstr "O comprimento do código bancário deve ser 3."
@@ -4612,7 +4612,7 @@ msgid "Bank Name"
 msgstr "Nome do banco"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid "Bank SARIE ID must consist of 4 upper case English letter."
 msgstr "O ID SARIE do banco deve consistir em 4 letras maiúsculas em inglês."
@@ -4650,19 +4650,19 @@ msgid "Barcode"
 msgstr "Código de Barras"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Barcode %s"
 msgstr "Código de barras %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Barcode symbology"
 msgstr "Simbologia de código de barras"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Barcode type, eg: UPCA, EAN13, Code128"
 msgstr "Tipo de código de barras, por exemplo: UPCA, EAN13, Code128"
@@ -4687,7 +4687,7 @@ msgid "Base Field"
 msgstr "Campo de base"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Base Language 'en_US' can not be deleted."
 msgstr "O idioma base 'en_US' não pode ser excluído."
@@ -4723,13 +4723,13 @@ msgid ""
 "Be aware that editing the architecture of a standard view is not advised, "
 "since the changes will be overwritten during future module updates.<br/>\n"
 "                        We recommend applying modifications to standard "
-"views through inherited views or customization with Odoo Studio."
+"views through inherited views or customization with WETH Studio."
 msgstr ""
 "Esteja ciente de que editar a arquitetura de uma visualização padrão não é "
 "aconselhável, uma vez que as alterações serão reescritas durante futuras "
 "atualizações do módulo.<br/>\n"
 "                        Recomendamos aplicar modificações às visualizações "
-"padrão por meio de visualizações herdadas ou personalização com Odoo Estúdio."
+"padrão por meio de visualizações herdadas ou personalização com WETH Estúdio."
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_asset__directive__before
@@ -4752,13 +4752,13 @@ msgid "Belarus"
 msgstr "Belarus"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Belgian Crossroads Bank for Enterprises number."
 msgstr "Número do Banco de Encruzilhada Belga para Empresas."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Belgian national identification number."
 msgstr "Número de identificação nacional belga."
@@ -4842,7 +4842,7 @@ msgid "Birr"
 msgstr "Birr"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "Blame the following accesses:\n"
@@ -4908,25 +4908,25 @@ msgid "Boxed"
 msgstr "Encaixotado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Branch Code"
 msgstr "Código da Filial"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Branch Number"
 msgstr "Número da filial"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Branch Number of your company, leave empty for headquarters."
 msgstr "Número da filial da sua empresa; deixe em branco para a matriz."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 #: model:ir.model.fields,field_description:base.field_res_company__child_ids
 #: model_terms:ir.ui.view,arch_db:base.view_company_form
@@ -4951,7 +4951,7 @@ msgid "Brazil"
 msgstr "Brasil"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Brazilian company identification number. 14 digits."
 msgstr "Número de identificação da empresa brasileira. 14 dígitos."
@@ -4985,7 +4985,7 @@ msgid "Brunei Darussalam"
 msgstr "Brunei Darussalam"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Brønnøysund nr"
 msgstr "Brønnøysund nr"
@@ -5016,19 +5016,19 @@ msgid "Burundi"
 msgstr "Burundi"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Business ID"
 msgstr "ID da empresa"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Business ID (Y-tunnus)."
 msgstr "Identificação comercial (Y-tunnus)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Business Registration Number."
 msgstr "Número de registro da empresa."
@@ -5044,7 +5044,7 @@ msgid "By"
 msgstr "Por"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "By default the widget uses the field information"
 msgstr "Por padrão, o widget utiliza a informação do campo"
@@ -5065,7 +5065,7 @@ msgid "C5E 24  163 x 229 mm"
 msgstr "C5E 24  163 x 229 mm"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "CHE-123.456.788 TVA or CHE-123.456.788 MWST or CHE-123.456.788 IVA"
@@ -5077,13 +5077,13 @@ msgid "CIS"
 msgstr "CIS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid "CLABE should be a string of 18 digits."
 msgstr "O CLABE deve ser uma string de 18 dígitos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0 model:res.country,vat_label:base.br
 msgid "CNPJ"
 msgstr "CNPJ"
@@ -5132,7 +5132,7 @@ msgid "CUIT"
 msgstr "CUIT"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "CVR"
 msgstr "CVR"
@@ -5162,7 +5162,7 @@ msgid "Cameroon"
 msgstr "Camarões"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Can not create Many-To-One records indirectly, import the field separately"
@@ -5171,13 +5171,13 @@ msgstr ""
 "separadamente"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Can only rename one field at a time!"
 msgstr "Só é possível renomear um campo de cada vez."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Can't compare more than two views."
 msgstr "Não é possível comparar mais de duas visualizações."
@@ -5193,7 +5193,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Cannot create new '%s' records from their name alone. Please create those "
@@ -5203,31 +5203,31 @@ msgstr ""
 "registros manualmente e tente importar novamente."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Cannot deactivate a language that is currently used by contacts."
 msgstr "Não é possível desativar um idioma que está sendo usado por contatos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Cannot deactivate a language that is currently used by users."
 msgstr "Não é possível desativar um idioma que está sendo usado por usuários."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_config.py:0
 msgid "Cannot duplicate configuration!"
 msgstr "Não é possível duplicar a configuração."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Cannot grab a lock on records"
 msgstr "Não é possível obter um bloqueio nos registros"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Cannot rename/delete fields that are still present in views:\n"
@@ -5240,19 +5240,19 @@ msgstr ""
 "Visualização: %(view)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "Cannot search, too many attachments"
 msgstr "Não é possível pesquisar, há muitos anexos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Cannot update a record without specifying its id or xml_id"
 msgstr "Não é possível atualizar um registro sem especificar seu id ou xml_id"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Cannot upgrade module “%s”. It is not installed."
 msgstr "Não é possível atualizar o módulo \"%s\". Ele não está instalado."
@@ -5500,13 +5500,13 @@ msgid "Change the way addresses are displayed in reports"
 msgstr "Altere a maneira que os endereços são exibidos em relatórios"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Changing the model of a field is forbidden!"
 msgstr "É proibido alterar o modelo de um campo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Changing the type of a field is not yet supported. Please drop it and create "
@@ -5516,7 +5516,7 @@ msgstr ""
 "alteração e crie-o novamente."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Changing to 12-hour clock format instead."
 msgstr "Muda para o formato de relógio de 12 horas."
@@ -5642,7 +5642,7 @@ msgid "Christmas Island"
 msgstr "Ilha do Natal"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Citizen Identification"
 msgstr "Identificação do cidadão"
@@ -5728,7 +5728,7 @@ msgid "Code Diff"
 msgstr "Diferenças de código"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 #: model_terms:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Code History"
@@ -5833,7 +5833,7 @@ msgid "Comm10E 25  105 x 241 mm, U.S. Common 10 Envelope"
 msgstr "Envelope 25 105 x 241 mm, U.S. Envelope Comum 10"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Comma"
 msgstr "Vírgula"
@@ -5870,7 +5870,7 @@ msgid "Commercial Entity"
 msgstr "Entidade comercial"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Commercial Registration Number"
 msgstr "Número de Registro Comercial"
@@ -5905,7 +5905,7 @@ msgid "Companies"
 msgstr "Empresas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model,name:base.model_res_company
 #: model:ir.model.fields,field_description:base.field_ir_attachment__company_id
@@ -5926,7 +5926,7 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Company %(company_name)s is not in the allowed companies for user %"
@@ -5956,7 +5956,7 @@ msgid "Company Employer"
 msgstr "Empresa Empregadora"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Company ID"
 msgstr "ID da empresa"
@@ -5993,7 +5993,7 @@ msgid "Company Tagline"
 msgstr "Slogan da empresa"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Company identification number"
 msgstr "Número de identificação da empresa"
@@ -6008,7 +6008,7 @@ msgstr ""
 "impressos, dependendo do layout selecionado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid ""
 "Company used for the original currency (only used for t-out). By default use "
@@ -6059,7 +6059,7 @@ msgid "Compute"
 msgstr "Calcular"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Compute method cannot depend on field 'id'"
 msgstr "O método de cálculo não pode depender do campo 'id'"
@@ -6171,7 +6171,7 @@ msgid "Congo (Republic)"
 msgstr "Congo (Republic)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Connect to your server through your usual username and password. \n"
@@ -6193,7 +6193,7 @@ msgid "Connection Encryption"
 msgstr "Criptografia de conexão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Connection Test Failed! Here is what we got instead:\n"
@@ -6203,7 +6203,7 @@ msgstr ""
 "%s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "Connection Test Successful!"
 msgstr "Teste de conexão bem-sucedido."
@@ -6271,7 +6271,7 @@ msgid "Consulting Services"
 msgstr "Serviços de Consultoria"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Consumer Identification"
 msgstr "Identificação do consumidor"
@@ -6302,7 +6302,7 @@ msgid "Contact Tags"
 msgstr "Marcadores de contato"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid "Contact your administrator to request access if necessary."
 msgstr ""
@@ -6372,7 +6372,7 @@ msgid "Costa Rica"
 msgstr "Costa Rica"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Could not load your certificate / private key. \n"
@@ -6382,13 +6382,13 @@ msgstr ""
 "%s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Couldn't create contact without email address!"
 msgstr "Não é possível criar um contato sem endereço de e-mail."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_relational.py:0
 msgid ""
 "Couldn't generate a company-dependent domain for field %s. The model doesn't "
@@ -6490,7 +6490,7 @@ msgid "Create"
 msgstr "Criar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Create %(model_name)s"
 msgstr "Criar %(model_name)s"
@@ -6585,10 +6585,10 @@ msgstr "Criar uma indústria"
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_res_company_form
 msgid ""
-"Create and manage the companies that will be managed by Odoo from here. "
+"Create and manage the companies that will be managed by WETH from here. "
 "Shops or subsidiaries can be created and maintained from here."
 msgstr ""
-"Crie e gerencie as empresas que serão gerenciadas pelo Odoo a partir daqui. "
+"Crie e gerencie as empresas que serão gerenciadas pelo WETH a partir daqui. "
 "Lojas ou subsidiárias podem ser criadas e mantidas a partir daqui."
 
 #. module: base
@@ -6849,7 +6849,7 @@ msgid "Croatia"
 msgstr "Croácia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Croatian company ID number."
 msgstr "Número de identificação da empresa croata."
@@ -6872,7 +6872,7 @@ msgid "Cron Triggers"
 msgstr "Disparos do cron"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_cron.py:0
 msgid ""
 "Cron job %(name)s (%(id)s) has been deactivated after failing %(count)s "
@@ -6883,7 +6883,7 @@ msgstr ""
 "(time)s."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_cron.py:0
 msgid ""
 "Cron job %(name)s (%(id)s) is failing and will be deactivated if you don't "
@@ -6965,19 +6965,19 @@ msgid "Currency field"
 msgstr "Campo de moeda"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Currency field does not have type many2one"
 msgstr "O campo de moeda não tem o tipo many2one"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Currency field is empty and there is no fallback field in the model"
 msgstr "O campo de moeda está vazio e não há campo de fallback no modelo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Currency field should have a res.currency relation"
 msgstr "O campo de moeda deve ter uma relação res.currency"
@@ -6988,7 +6988,7 @@ msgid "Currency numeric code."
 msgstr "Código numérico da moeda."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid "Currency rates should only be created for main companies"
 msgstr ""
@@ -7006,7 +7006,7 @@ msgid "Current"
 msgstr "Atual"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Current Arch"
 msgstr "Arch atual"
@@ -7120,7 +7120,7 @@ msgid "Czech Republic"
 msgstr "República Tcheca"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Czech business identification number (IČO)."
 msgstr "Número de identificação comercial tcheco (IČO)."
@@ -7136,7 +7136,7 @@ msgid "D - ELECTRICITY, GAS, STEAM AND AIR CONDITIONING SUPPLY"
 msgstr "D - FORNECIMENTO DE ELETRICIDADE, GÁS, VAPOR E AR CONDICIONADO"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "DE123456788 or 12/345/67890"
@@ -7153,7 +7153,7 @@ msgid "DOM-TOM"
 msgstr "DOM-TOM"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "DUNS"
 msgstr "DUNS"
@@ -7164,19 +7164,19 @@ msgid "Dalasi"
 msgstr "Dalasi"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Danish Central Business Register number."
 msgstr "Número do Registro Central de Empresas da Dinamarca."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Danish tax entity number (SE-nummer)."
 msgstr "Número de identificação fiscal dinamarquês (SE-nummer)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Dash"
 msgstr "Painel"
@@ -7231,7 +7231,7 @@ msgid "Databases"
 msgstr "Bases de dados"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_res_currency_rate__name
 #: model_terms:ir.ui.view,arch_db:base.view_currency_rate_search
@@ -7244,32 +7244,32 @@ msgid "Date Format"
 msgstr "Formato de data"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Date format"
 msgstr "Formato de data"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Date to compare with the field value, by default use the current date."
 msgstr ""
 "Data a ser comparada com o valor do campo; por padrão, use a data atual."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Date unit"
 msgstr "Unidade de data"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Date unit used for comparison and formatting"
 msgstr "Unidade de data usada para comparação e formatação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid ""
 "Date unit used for the rounding. The value must be smaller than 'hour' if "
@@ -7279,7 +7279,7 @@ msgstr ""
 "'hora' se você usar a formatação digital."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid ""
 "Date used for the original currency (only used for t-out). by default use "
@@ -7304,7 +7304,7 @@ msgid "Debugging"
 msgstr "Depurando"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Debugging information:"
 msgstr "Informações de depuração:"
@@ -7342,7 +7342,7 @@ msgstr ""
 "determinado pelo fator de arredondamento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Decimalized number"
 msgstr "Número decimalizado"
@@ -7456,7 +7456,7 @@ msgid "Delete Action"
 msgstr "Excluir ação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Deleting the public user is not allowed. Deleting this profile will "
@@ -7466,7 +7466,7 @@ msgstr ""
 "comprometerá funcionalidades essenciais."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Deleting the template users is not allowed. Deleting this profile will "
@@ -7482,7 +7482,7 @@ msgid "Delivery"
 msgstr "Entregas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Delivery Address"
 msgstr "Endereço de entrega"
@@ -7640,7 +7640,7 @@ msgid "Devices"
 msgstr "Dispositivos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Digital formatting"
 msgstr "Formatação digital"
@@ -7852,13 +7852,13 @@ msgstr ""
 "Exibir uma opção em documentos relacionados para imprimir este relatório"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display country image"
 msgstr "Exibir imagem do país"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display currency"
 msgstr "Exibir moeda"
@@ -7886,37 +7886,37 @@ msgstr ""
 "%(country_code)s: o código do país"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display only the date"
 msgstr "Exibir apenas a data"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display only the time"
 msgstr "Exibir apenas a hora"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display phone icons"
 msgstr "Exibir ícones de telefone"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display the country image if the field is present on the record"
 msgstr "Exibir a imagem do país se o campo estiver presente no registro"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Display the phone icons even if no_marker is True"
 msgstr "Exibir os ícones do telefone mesmo se no_marker estiver marcado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Displayed fields"
 msgstr "Campos exibidos"
@@ -7989,7 +7989,7 @@ msgid "Domain applied to the active id of the parent model"
 msgstr "Domínio aplicado ao id ativo do modelo principal"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Domain on non-relational field \"%(name)s\" makes no sense (domain:%"
@@ -8009,7 +8009,7 @@ msgid "Dominican Republic"
 msgstr "República Dominicana"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Don't display the font awesome marker"
 msgstr "Não exibir o marcador do Font Awesome"
@@ -8060,19 +8060,19 @@ msgid "Dram"
 msgstr "Dram"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Dun & Bradstreet unique 9-digit business identifier."
 msgstr "Identificador comercial exclusivo de 9 dígitos da Dun & Bradstreet."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Duplicate %(record)s"
 msgstr "Duplicar %(record)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Duplicate ..."
 msgstr "Duplicado ..."
@@ -8094,7 +8094,7 @@ msgid "Duplicate this access to customize it"
 msgstr "Duplique este acesso para personalizá-lo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 msgid ""
 "Duplicating a company is not allowed. Please create a new company instead."
@@ -8108,13 +8108,13 @@ msgid "Duration"
 msgstr "Duração"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Dutch Chamber of Commerce registration number."
 msgstr "Número de registro na Câmara de Comércio Holandesa."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Dutch government Organisation Identification Number."
 msgstr "Número de Identificação da Organização do governo holandês."
@@ -8132,7 +8132,7 @@ msgid "E.g. https://www.mydomain.com"
 msgstr "Ex.: https://www.meudominio.com"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "EAN/GLN"
 msgstr "EAN/GLN"
@@ -8187,7 +8187,7 @@ msgid "El Salvador"
 msgstr "El Salvador"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Electronic address for French e-invoicing platforms (PDP/PPF)."
 msgstr ""
@@ -8195,13 +8195,13 @@ msgstr ""
 "(PDP/PPF)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Element '%s' cannot be located in parent view"
 msgstr "O elemento '%s' não pode ser localizado na visualização principal"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Element <attribute> with 'add' or 'remove' cannot contain text %s"
 msgstr ""
@@ -8209,13 +8209,13 @@ msgstr ""
 "texto %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Element “%s” cannot be located in parent view"
 msgstr "O elemento \"%s\" não pode ser localizado na visualização principal"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: code:addons/base/models/res_users.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_email
@@ -8281,7 +8281,7 @@ msgid "Employees"
 msgstr "Funcionários"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Empty dependency in “%s”"
 msgstr "Dependência vazia em “%s”"
@@ -8360,7 +8360,7 @@ msgid "Error"
 msgstr "Erro"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Error ! You cannot create recursive categories."
 msgstr "Erro: não é possível criar categorias recursivas."
@@ -8371,7 +8371,7 @@ msgid "Error message returned when the constraint is violated."
 msgstr "Mensagem de erro retornada quando a restrição é violada."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Error while parsing or validating view:\n"
@@ -8383,7 +8383,7 @@ msgstr ""
 "%(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Error while parsing view:\n"
@@ -8395,7 +8395,7 @@ msgstr ""
 "%s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Error while validating view (%(view)s):\n"
@@ -8407,7 +8407,7 @@ msgstr ""
 "%(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Error while validating view near:\n"
@@ -8431,7 +8431,7 @@ msgid "Estonia"
 msgstr "Estônia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Estonian business registry code."
 msgstr "Código de registro comercial da Estônia."
@@ -8957,7 +8957,7 @@ msgid "Example of Python code:"
 msgstr "Exemplo de código Python:"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "Example: '219999830019' (format: 12 digits, all numbers, valid check digit)"
@@ -9026,7 +9026,7 @@ msgid "Expand Groups"
 msgstr "Expandir grupos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_binary.py:0
 msgid "Expected singleton: %(record)s"
 msgstr "Singleton esperado: %(record)s"
@@ -9148,7 +9148,7 @@ msgid "External ID"
 msgstr "ID externo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb.py:0
 msgid "External ID can not be loaded: %s"
 msgstr "Não foi possível carregar o ID externo: %s"
@@ -9234,7 +9234,7 @@ msgstr ""
 "desativada"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_relational.py:0
 msgid "Failed to write field %s"
 msgstr "Falha ao gravar campo %s"
@@ -9299,13 +9299,13 @@ msgid "Field"
 msgstr "Campo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Field \"%(field_name)s\" does not exist in model \"%(model_name)s\""
 msgstr "O campo \"%(field_name)s\" não existe no modelo \"%(model_name)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Field \"%(field_name)s\" in related path \"%(related_field)s\" is not "
@@ -9316,19 +9316,19 @@ msgstr ""
 "relacionados."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Field \"%s\" is not cached"
 msgstr "O campo \"%s\" não tem cache"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Field %s cannot be modified on models."
 msgstr "O campo %s não pode ser modificado nos modelos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Field '%(field)s' found in 'groupby' node does not exist in model %(model)s"
@@ -9336,7 +9336,7 @@ msgstr ""
 "O campo '%(field)s' encontrado no nó 'groupby' não existe no modelo %(model)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Field '%(name)s' found in 'groupby' node can only be of type many2one, found "
@@ -9377,13 +9377,13 @@ msgid "Field Type"
 msgstr "Tipo de campo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Field `%(name)s` does not exist"
 msgstr "O campo '%(name)s' não existe"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Field names can only contain characters, digits and underscores (up to 63)."
@@ -9396,7 +9396,7 @@ msgid "Field names must be unique per model."
 msgstr "Os nomes dos campos devem ser exclusivos por modelo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Field tag must have a \"name\" attribute defined"
 msgstr "O marcador de campo deve ter um atributo \"name\" definido"
@@ -9414,7 +9414,7 @@ msgid "Field to Update Path"
 msgstr "Campo cujo caminho será atualizado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_binary.py:0
 msgid ""
 "Field “%(field)s” is type “%(field_type)s” but it is only possible to stream "
@@ -9424,7 +9424,7 @@ msgstr ""
 "campos binários ou de imagem."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Field “%(name)s” used in %(use)s is present in view but is in select multi."
@@ -9447,7 +9447,7 @@ msgid "Fields"
 msgstr "Campos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Fields %s contain a non-str value/label in selection"
 msgstr "Os campos %s contém um valor/rótulo que não seja str na seleção"
@@ -9494,7 +9494,7 @@ msgid "File"
 msgstr "Arquivo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_import_language.py:0
 msgid ""
 "File \"%(file_name)s\" not imported due to format mismatch or a malformed "
@@ -9510,7 +9510,7 @@ msgstr ""
 "%(error_message)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "File Arch"
 msgstr "Arch do arquivo"
@@ -9698,13 +9698,13 @@ msgid "Folio 27  210 x 330 mm"
 msgstr "Ofício 27 210 x 330 mm"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Following child actions have warnings: %(children)s"
 msgstr "Há avisos nas seguintes ações secundárias: %(children)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "Following child actions should have the same groups (%(groups)s): %"
@@ -9714,7 +9714,7 @@ msgstr ""
 "(children)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "Following child actions should have the same model (%(model)s): %(children)s"
@@ -9769,9 +9769,9 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.wizard_lang_export
 msgid ""
-"For more details about translating Odoo in your language, please refer to the"
+"For more details about translating WETH in your language, please refer to the"
 msgstr ""
-"Para mais informações sobre a tradução do Odoo para o seu idioma, consulte a"
+"Para mais informações sobre a tradução do WETH para o seu idioma, consulte a"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields__relation_field
@@ -9788,7 +9788,7 @@ msgid "For relationship fields, the technical name of the target model"
 msgstr "Para campos de relacionamento, o nome técnico do modelo de destino"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
@@ -9798,19 +9798,19 @@ msgstr ""
 "pode executar o assistente diversas vezes, se necessário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Forbidden attribute used in arch (%s)."
 msgstr "Atributo proibido usado no arch (%s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Forbidden owl directive used in arch (%s)."
 msgstr "Diretiva OWL proibida usada no arch (%s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Forbidden use of `__comp__` in arch."
 msgstr "Uso proibido de `__comp__` no arch."
@@ -9833,7 +9833,7 @@ msgid "Form"
 msgstr "Formulário"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_ir_actions_report__report_type
 #: model_terms:ir.ui.view,arch_db:base.act_report_xml_search_view
@@ -9853,13 +9853,13 @@ msgid "Formatted Email"
 msgstr "E-mail formatado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Formatting: long, short, narrow (not used for digital)"
 msgstr "Formatação: longa, curta, estreita (não usado para digital)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Found more than 10 errors and more than one error per 10 records, "
@@ -9869,7 +9869,7 @@ msgstr ""
 "interrompido para evitar a exibição de erros em excesso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Found multiple matches for value \"%(value)s\" in field \"%%(field)s\" (%"
@@ -9898,25 +9898,25 @@ msgid "France"
 msgstr "França"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "France FRCTC Electronic Address"
 msgstr "France FRCTC Electronic Address"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "France Register of legal persons"
 msgstr "France Register of legal persons"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Free access"
 msgstr "Acesso gratuito"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "French 14-digit establishment identification number (SIREN + NIC)."
 msgstr ""
@@ -9924,7 +9924,7 @@ msgstr ""
 "NIC)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "French 9-digit business identification number."
 msgstr "Número de identificação comercial francês de 9 dígitos."
@@ -9945,7 +9945,7 @@ msgid "French Southern Territories"
 msgstr "Territórios Franceses do Sul"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "French national identification number (NIR)."
 msgstr "Número de identificação nacional francês (NIR)."
@@ -10008,26 +10008,26 @@ msgstr ""
 "MOTOCICLETAS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "GB123456782 or XI123456782"
 msgstr "GB123456782 ou XI123456782"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "GCC ID"
 msgstr "ID do GCC"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "GCC ID Number"
 msgstr "Número do ID GCC"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "GEBA"
 msgstr "GEBA"
@@ -10038,7 +10038,7 @@ msgid "GMT"
 msgstr "GMT"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "GODE561231GR8"
 msgstr "GODE561231GR8"
@@ -10120,13 +10120,13 @@ msgid "Georgia"
 msgstr "Geórgia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "German Commercial Register (Handelsregister) number."
 msgstr "Número do Registro Comercial (Handelsregister) alemão."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "German Electronic Business Address."
 msgstr "Endereço comercial eletrônico alemão."
@@ -10157,19 +10157,19 @@ msgid "Global"
 msgstr "Global"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Global Location Number, used to identify parties and locations."
 msgstr "Número de localização global, usado para identificar partes e locais."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_config.py:0
 msgid "Go to the configuration panel"
 msgstr "Acessar o painel de configuração"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Go to users"
 msgstr "Acessar usuários"
@@ -10239,7 +10239,7 @@ msgid "Group of Contacts"
 msgstr "Grupo de contatos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "Group-restricted fields cannot be included in webhook payloads, as it could "
@@ -10254,13 +10254,13 @@ msgstr ""
 "%(restricted_fields)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_properties.py:0
 msgid "Grouping by HTML properties is not supported."
 msgstr "O agrupamento por propriedades HTML não é suportado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.action_res_groups
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_window__group_ids
@@ -10390,7 +10390,7 @@ msgid "HMRC"
 msgstr "HMRC"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "HRB Nr"
 msgstr "N.º HRB"
@@ -10412,7 +10412,7 @@ msgid "HTTP Routing"
 msgstr "Roteamento HTTP"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "HU12345676 or 12345678-1-11 or 8071592153"
 msgstr "HU12345676 ou 12345678-1-11 ou 8071592153"
@@ -10473,7 +10473,7 @@ msgid "Heard Island and McDonald Islands"
 msgstr "Ilha Heard e Ilhas McDonald"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Height"
 msgstr "Altura"
@@ -10526,13 +10526,13 @@ msgstr ""
 "Seu login ainda é necessário para uso interativo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Hide badges"
 msgstr "Ocultar emblemas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Hide seconds"
 msgstr "Ocultar segundos"
@@ -10605,7 +10605,7 @@ msgid "Html Value"
 msgstr "Valor Html"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Human Readable"
 msgstr "Legível por humanos"
@@ -10616,13 +10616,13 @@ msgid "Human Resources"
 msgstr "Recursos Humanos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Hungarian Tax ID"
 msgstr "Número de identificação fiscal húngaro"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Hungarian company ID number."
 msgstr "Número de identificação da empresa húngara."
@@ -10638,7 +10638,7 @@ msgid "I - ACCOMMODATION AND FOOD SERVICE ACTIVITIES"
 msgstr "I - ATIVIDADES DE ALOJAMENTO E SERVIÇOS DE ALIMENTAÇÃO"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "I'll be happy to send a webhook for you, but you really need to give me a "
@@ -10648,7 +10648,7 @@ msgstr ""
 "precisa me fornecer um URL para contato..."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "I'm sorry to say that JSON fields (such as '%s') are currently not supported."
@@ -10657,7 +10657,7 @@ msgstr ""
 "momento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "ICE"
 msgstr "ICE"
@@ -10830,7 +10830,7 @@ msgid "ID used for employee identification."
 msgstr "ID utilizado para identificação do funcionário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "IIN"
 msgstr "IIN"
@@ -10868,7 +10868,7 @@ msgid "IT/Communication"
 msgstr "TI/Comunicações"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "IVA"
 msgstr "IVA"
@@ -11040,7 +11040,7 @@ msgstr ""
 "         "
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "If you are trying to input a European number, this is the expected format: "
@@ -11068,15 +11068,15 @@ msgstr ""
 #: model:ir.model.fields,help:base.field_ir_ui_menu__group_ids
 msgid ""
 "If you have groups, the visibility of this menu will be based on these "
-"groups. If this field is empty, Odoo will compute visibility based on the "
+"groups. If this field is empty, WETH will compute visibility based on the "
 "related object's read access."
 msgstr ""
 "Se você tiver grupos, a visibilidade deste menu será com base nesses grupos. "
-"Se este campo estiver vazio, o Odoo calculará a visibilidade com base no "
+"Se este campo estiver vazio, o WETH calculará a visibilidade com base no "
 "acesso de leitura do objeto relacionado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "If you really, really need access, perhaps you can win over your friendly "
@@ -11183,7 +11183,7 @@ msgid "Implied Group"
 msgstr "Grupo implicado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 #: model:ir.model.fields,field_description:base.field_res_groups__implied_ids
 #: model_terms:ir.ui.view,arch_db:base.view_groups_form
@@ -11201,7 +11201,7 @@ msgid "Implying Group"
 msgstr "Grupo implícito"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 #: model:ir.model.fields,field_description:base.field_res_groups__implied_by_ids
 #: model_terms:ir.ui.view,arch_db:base.view_groups_form
@@ -11290,7 +11290,7 @@ msgstr ""
 "convenientes."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Inconsistent values: model=%(model)s does not match model_id=%(model_id)s."
@@ -11299,7 +11299,7 @@ msgstr ""
 "(model_id)s."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Incorrect Password, try again or click on Forgot Password to reset your "
@@ -11440,7 +11440,7 @@ msgid "Inherited models"
 msgstr "Modelos herdados"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Inherited view cannot have '%(attr)s' defined on the record. Use '%(attr)s' "
@@ -11460,7 +11460,7 @@ msgid "Input View"
 msgstr "Visualização de entrada"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Install"
 msgstr "Instalar"
@@ -11496,7 +11496,7 @@ msgid "Installing"
 msgstr "Instalando"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Insufficient fields for Calendar View!"
 msgstr "Sem campos suficientes para a visualização de calendário"
@@ -11544,7 +11544,7 @@ msgid "Introspection report on objects"
 msgstr "Relatório de introspecção de objetos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Invalid \"order\" specified (%s). A valid \"order\" specification is a comma-"
@@ -11556,7 +11556,7 @@ msgstr ""
 "seguido por asc/desc para especificar a direção)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Invalid %(use)s: “%(expr)s”\n"
@@ -11566,13 +11566,13 @@ msgstr ""
 "%(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Invalid Expression while parsing xpath “%s”"
 msgstr "Expressão inválida durante a análise do xpath “%s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_default.py:0
 msgid "Invalid JSON format in Default Value field."
 msgstr "Formato JSON inválido no campo 'Valor padrão'."
@@ -11583,19 +11583,19 @@ msgid "Invalid Locators"
 msgstr "Localizadores inválidos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Invalid attributes %s in element <attribute>"
 msgstr "Atributos inválidos %s no elemento <attribute>"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Invalid composed field %(definition)s in %(use)s"
 msgstr "Campo composto inválido %(definition)s em %(use)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Invalid context: “%(expr)s” is not a valid Python expression \n"
@@ -11607,13 +11607,13 @@ msgstr ""
 " %(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Invalid database id '%s' for the field '%%(field)s'"
 msgstr "ID de base de dados inválida '%s' para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid ""
 "Invalid date/time format directive specified. Please refer to the list of "
@@ -11623,25 +11623,25 @@ msgstr ""
 "exibida quando você edita um idioma."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Invalid default period %(default_period)s for date filter"
 msgstr "Período padrão inválido %(default_period)s no filtro de data"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "Invalid domain %(domain)s: %(error)s"
 msgstr "Domínio inválido %(domain)s: %(error)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_default.py:0
 msgid "Invalid field %(model)s.%(field)s"
 msgstr "Campo inválido %(model)s.%(field)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid ""
 "Invalid identifier: %(identifier_value)s%(identifier_label)s.%(example)s"
@@ -11649,7 +11649,7 @@ msgstr ""
 "Identificador inválido: %(identifier_value)s%(identifier_label)s.%(example)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/assetsbundle.py:0
 msgid ""
 "Invalid inherit mode. Module \"%(module)s\" and template name \"%"
@@ -11673,31 +11673,31 @@ msgid "Invalid key: QWeb view should have a key"
 msgstr "Chave inválida: a visualização QWeb deve ter uma chave"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Invalid mode attribute: “%s”"
 msgstr "Atributo de modo inválido: “%s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Invalid model name “%s” in action definition."
 msgstr "Nome de modelo inválido “%s” na definição de ação."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Invalid position attribute: '%s'"
 msgstr "Atributo de posição inválido: '%s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_sequence.py:0
 msgid "Invalid prefix or suffix for sequence “%s”"
 msgstr "Prefixo ou sufixo inválido para a sequência “%s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid ""
 "Invalid separator %(separator)s for python expression %(expression)s; valid "
@@ -11707,7 +11707,7 @@ msgstr ""
 "valores válidos são 'and' e 'or'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Invalid server name!\n"
@@ -11722,37 +11722,37 @@ msgid "Invalid sort definition"
 msgstr "Definição de classificação inválida"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Invalid special '%(value)s' in button"
 msgstr "'%(value)s' especial inválido no botão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Invalid specification for moved nodes: “%s”"
 msgstr "Especificação inválida para os nós movidos: “%s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_config.py:0
 msgid "Invalid template user. It seems it has been deleted."
 msgstr "Usuário de modelo inválido. Parece que foi excluído."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Invalid user group."
 msgstr "Grupo de usuários inválido."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_default.py:0
 msgid "Invalid value for %(model)s.%(field)s: %(value)s"
 msgstr "Valor inválido para %(model)s.%(field)s: %(value)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_default.py:0
 msgid ""
 "Invalid value for %(model)s.%(field)s: %(value)s is out of bounds (integers "
@@ -11762,7 +11762,7 @@ msgstr ""
 "números inteiros devem estar entre -2.147.483.648 e 2.147.483.647)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_default.py:0
 msgid ""
 "Invalid value in Default Value field. Expected type '%(field_type)s' for '%"
@@ -11772,13 +11772,13 @@ msgstr ""
 "(model_name)s.%(field_name)s'."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Invalid view %(name)s definition in %(file)s"
 msgstr "Definição de visualização %(name)s inválida em %(file)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Invalid view type: '%(view_type)s'.\n"
@@ -11790,7 +11790,7 @@ msgstr ""
 "Os tipos permitidos são: %(valid_types)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Invalid xmlid %(xmlid)s for button of type action."
 msgstr "xmlid %(xmlid)s inválido para o botão do tipo 'ação'."
@@ -11822,7 +11822,7 @@ msgid "Invoice"
 msgstr "Fatura"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Invoice Address"
 msgstr "Endereço de cobrança"
@@ -11838,13 +11838,13 @@ msgid "IoT"
 msgstr "Internet das Coisas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Iqama ID Number"
 msgstr "Número de identificação do Iqama"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Iqama Number"
 msgstr "Número de Iqama"
@@ -11875,7 +11875,7 @@ msgid "Ireland"
 msgstr "Irlanda"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Ireland Personal Public Service Number."
 msgstr "Número Pessoal de Serviço Público da Irlanda."
@@ -11933,7 +11933,7 @@ msgid "Israel"
 msgstr "Israel"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 msgid ""
 "It is not possible to remove implied group %(group)s from users %(users)s"
@@ -11996,7 +11996,7 @@ msgid "Italy"
 msgstr "Itália"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "IČO"
 msgstr "IČO"
@@ -12017,7 +12017,7 @@ msgid "Japan"
 msgstr "Japão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Japanese corporate number (Specified Subject to Tax)."
 msgstr "Número corporativo japonês (sujeito a tributação)."
@@ -12028,7 +12028,7 @@ msgid "Jersey"
 msgstr "Jersey"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_cron.py:0
 msgid "Job '%s' already executing"
 msgstr "A tarefa \"%s\" já está sendo executada"
@@ -12055,7 +12055,7 @@ msgid "Journal Items associated to the contact"
 msgstr "Itens do diário associado ao contato"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Json"
 msgstr "Json"
@@ -12066,7 +12066,7 @@ msgid "K - FINANCIAL AND INSURANCE ACTIVITIES"
 msgstr "K - ATIVIDADES FINANCEIRAS E DE SEGUROS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "KVK"
 msgstr "KVK"
@@ -12249,7 +12249,7 @@ msgid "L - REAL ESTATE ACTIVITIES"
 msgstr "L - ATIVIDADES IMOBILIÁRIAS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "LEI"
 msgstr "LEI"
@@ -12272,7 +12272,7 @@ msgstr ""
 "Rótulo exibido quando o usuário não pertence a nenhum grupo desse escopo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Label tag must contain a \"for\". To match label style without corresponding "
@@ -12311,7 +12311,7 @@ msgid "Language Name"
 msgstr "Nome do idioma"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Language code cannot be modified."
 msgstr "O código do idioma não pode ser modificado."
@@ -12565,7 +12565,7 @@ msgid "Latvia"
 msgstr "Letônia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Latvian unified registration number."
 msgstr "Número de registro unificado da Letônia."
@@ -12618,7 +12618,7 @@ msgid "Legal    3   8.5 x 14 inches, 215.9 x 355.6 mm"
 msgstr "Legal 3 8,5 x 14 polegadas, 215,9 x 355,6 mm"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Legal Entity Identifier"
 msgstr "Identificador da entidade jurídica"
@@ -12629,7 +12629,7 @@ msgid "Legend (for prefix, suffix)"
 msgstr "Legenda (para prefixo, sufixo)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Leitweg-ID"
 msgstr "Leitweg-ID"
@@ -12718,7 +12718,7 @@ msgid "Limit"
 msgstr "Limite"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Limit of %s API keys is reached for programmatic creation"
 msgstr "O limite de chaves de API do %s foi atingido para criação programática"
@@ -12729,7 +12729,7 @@ msgid "Line"
 msgstr "Linha"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Linebreak"
 msgstr "Quebra de linha"
@@ -12773,14 +12773,14 @@ msgid "List"
 msgstr "Lista"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "List child can only have one of %(tags)s tag (not %(wrong_tag)s)"
 msgstr ""
 "A lista secundária só pode ter um dos marcadores %(tags)s (%(wrong_tag)s não)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "List of contact fields to display in the widget"
 msgstr "Lista de campos de contato para exibir no widget"
@@ -12806,7 +12806,7 @@ msgid "Lithuania"
 msgstr "Lituânia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Lithuanian legal entity code (JAK)."
 msgstr "Código de pessoa jurídica lituano (JAK)."
@@ -12889,7 +12889,7 @@ msgid "Logs"
 msgstr "Logs"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Long"
 msgstr "Longo"
@@ -12921,7 +12921,7 @@ msgid "Luxembourg"
 msgstr "Luxemburgo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Luxembourg business registry number."
 msgstr "Número de registro comercial de Luxemburgo."
@@ -12932,37 +12932,37 @@ msgid "M - PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES"
 msgstr "M - ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MHRSD License"
 msgstr "Licença MHRSD"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MHRSD License Number"
 msgstr "Número de licença MHRSD"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MISA License"
 msgstr "Licença MISA"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MISA License Number"
 msgstr "Número da Licença MISA"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MOMRAH License"
 msgstr "Licença MOMRAH"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "MOMRAH License Number"
 msgstr "Número de licença MOMRAH"
@@ -12978,7 +12978,7 @@ msgid "Madagascar"
 msgstr "Madadascar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "Mail Delivery Failed"
 msgstr "Falha na entrega da mensagem"
@@ -12989,7 +12989,7 @@ msgid "Mail Server"
 msgstr "Servidor de e-mail"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Mail delivery failed via SMTP server '%(server)s'.\n"
@@ -13041,7 +13041,7 @@ msgid "Malaysia"
 msgstr "Malásia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Malaysian company registration number."
 msgstr "Número de registro da empresa na Malásia."
@@ -13069,14 +13069,14 @@ msgstr "Gerenciar escopos"
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.grant_menu_access
 msgid ""
-"Manage and customize the items available and displayed in your Odoo system "
+"Manage and customize the items available and displayed in your WETH system "
 "menu. You can delete an item by clicking on the box at the beginning of each "
 "line and then delete it through the button that appeared. Items can be "
 "assigned to specific groups in order to make them accessible to some users "
 "within the system."
 msgstr ""
 "Gerencie e personalize os itens disponíveis e exibidos no menu do sistema "
-"Odoo. Você pode excluir um item clicando na caixa no início de cada linha e, "
+"Weth. Você pode excluir um item clicando na caixa no início de cada linha e, "
 "em seguida, excluindo-o por meio do botão exibido. Os itens podem ser "
 "atribuídos a grupos específicos para torná-los acessíveis a alguns usuários "
 "do sistema."
@@ -13105,7 +13105,7 @@ msgid "Many2many Operations"
 msgstr "Operações many2many"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Many2one %(field)s on model %(model)s does not exist!"
 msgstr "Many2one %(field)s no modelo %(model)s não existe!"
@@ -13165,7 +13165,7 @@ msgid "Mauritania"
 msgstr "Mauritânia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Mauritian Business Registration Number."
 msgstr "Mauritian Business Registration Number."
@@ -13258,7 +13258,7 @@ msgid "Merge with Manual Check"
 msgstr "Mesclar com verificação manual"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Mersis Number"
 msgstr "Número Mersis"
@@ -13315,13 +13315,13 @@ msgid "Misc"
 msgstr "Diversos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/template_inheritance.py:0
 msgid "Missing 'expr' attribute in xpath specification"
 msgstr "Atributo 'expr' ausente na especificação xpath"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Missing SMTP Server\n"
@@ -13333,14 +13333,14 @@ msgstr ""
 "explicitamente."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Missing required field %(field_display)s for model %(model_display)s"
 msgstr ""
 "Campo obrigatório ausente %(field_display)s para o modelo %(model_display)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Missing view architecture."
 msgstr "Arquitetura da visualização ausente."
@@ -13387,13 +13387,13 @@ msgid "Model"
 msgstr "Modelo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Model %s does not exist"
 msgstr "O modelo %s não existe"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Model %s does not exist!"
 msgstr "O modelo %s não existe."
@@ -13461,7 +13461,7 @@ msgid "Model name of the object to open in the view window"
 msgstr "O nome do modelo do objeto a ser aberto na janela da visualização"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Model not found: %(model)s"
 msgstr "Modelo não encontrado: %(model)s"
@@ -13483,7 +13483,7 @@ msgid "Model to Export"
 msgstr "Modelo a ser exportado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Model “%s” contains module data and cannot be removed."
 msgstr "Modelo “%s” contém dados do módulo e não pode ser removido."
@@ -13579,7 +13579,7 @@ msgid "Module exclusion"
 msgstr "Exclusão de módulo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/convert.py:0
 msgid ""
 "Module loading %(module)s failed: file %(file)s could not be processed:\n"
@@ -13602,7 +13602,7 @@ msgid "Modules"
 msgstr "Módulos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "Modules \"%(module)s\" and \"%(incompatible_module)s\" are incompatible."
@@ -13651,7 +13651,7 @@ msgid "Montserrat"
 msgstr "Montserrat"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid ""
 "Moroccan joint business identifier (Identifiant Commun de l'Entreprise)."
@@ -13748,7 +13748,7 @@ msgid "NUIT"
 msgstr "NUIT"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "NZBN"
 msgstr "NZBN"
@@ -13764,7 +13764,7 @@ msgid "Nakfa"
 msgstr "Nakfa"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_name
 #: model:ir.model.fields,field_description:base.field_clearing_label__name
@@ -13821,13 +13821,13 @@ msgid "Name of the Many2one field holding the res.currency"
 msgstr "Nome do campo Many2one que contém a moeda res.currency"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Name or id “%(name_or_id)s” in %(use)s does not exist."
 msgstr "O nome ou ID “%(name_or_id)s” em %(use)s não existe."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Name or id “%(name_or_id)s” in %(use)s must be present in view but is "
@@ -13852,13 +13852,13 @@ msgid "Namibia"
 msgstr "Namíbia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Narrow"
 msgstr "Estreito"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "National ID"
 msgstr "Identificação nacional"
@@ -13869,7 +13869,7 @@ msgid "Nauru"
 msgstr "Nauru"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Need groupby or aggregates."
 msgstr "É necessário usar groupby ou agregados."
@@ -13890,7 +13890,7 @@ msgid "New Caledonia"
 msgstr "Nova Caledônia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_export_language.py:0
 msgid "New Language (Empty translation template)"
 msgstr "Novo idioma (modelo de tradução vazio)"
@@ -13919,7 +13919,7 @@ msgid "New Zealand"
 msgstr "Nova Zelândia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "New Zealand Business Number."
 msgstr "Número comercial da Nova Zelândia."
@@ -13977,10 +13977,10 @@ msgstr "Nicarágua"
 #: model_terms:res.partner,website_description:base.res_partner_address_16
 msgid ""
 "Nicole is <b>author of several books</b>, including Amazon best seller\n"
-"                \"How Azure and Odoo will change the business world!\"."
+"                \"How Azure and WETH will change the business world!\"."
 msgstr ""
 "Nicole é <b>autora de vários livros</b>, incluindo o best-seller da Amazon\n"
-"                \"Como o Azure e o Odoo mudarão o mundo dos negócios!\"."
+"                \"Como o Azure e o WETH mudarão o mundo dos negócios!\"."
 
 #. module: base
 #: model_terms:res.partner,website_description:base.res_partner_address_16
@@ -13996,7 +13996,7 @@ msgstr ""
 "desenvolve software para ajudar a desenvolver sites. Ela vendeu sua\n"
 "primeira empresa aos 30 anos e consegue crescer Azure Interior\n"
 "de 1 a 55 funcionários principalmente revendendo serviços em\n"
-"Odoo."
+"Weth."
 
 #. module: base
 #: model:res.country,name:base.ne
@@ -14014,7 +14014,7 @@ msgid "Niue"
 msgstr "Niue"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups_privilege.py:0
 #: model:res.groups.privilege,placeholder:base.res_groups_privilege_contact
 #: model:res.groups.privilege,placeholder:base.res_groups_privilege_export
@@ -14032,7 +14032,7 @@ msgid "No Country Found!"
 msgstr "Nenhum país encontrado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "No default view of type '%s' could be found!"
 msgstr "Não foi possível encontrar nenhuma visualização padrão do tipo '%s'."
@@ -14048,7 +14048,7 @@ msgid "No gap"
 msgstr "Sem lacuna"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid "No group currently allows this operation."
 msgstr "Nenhum grupo permite esta operação atualmente."
@@ -14064,14 +14064,14 @@ msgid "No groups found. Let's create one!"
 msgstr "Nenhum grupo encontrado. Vamos criar um!"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_relational.py:0
 msgid "No inverse field \"%(inverse_field)s\" found for \"%(comodel)s\""
 msgstr ""
 "Nenhum campo inverso \"%(inverse_field)s\" encontrado para \"%(comodel)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "No matching record found for %(field_type)s '%(value)s' in field '%%(field)s'"
@@ -14080,7 +14080,7 @@ msgstr ""
 "(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "No matching record found for %(field_type)s '%(value)s' in field '%%"
@@ -14102,7 +14102,7 @@ msgid "No of Views"
 msgstr "Número de visualizações"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_binary.py:0
 msgid ""
 "No record found for xmlid=%(xmlid)s, res_model=%(res_model)s, id=%(res_id)s"
@@ -14111,7 +14111,7 @@ msgstr ""
 "id=%(res_id)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "No response received. Check server address and port number.\n"
@@ -14127,7 +14127,7 @@ msgid "No scope"
 msgstr "Sem escopo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "No spaces allowed in view_mode: “%s”"
 msgstr "Não são permitidos espaços em view_mode: “%s”"
@@ -14138,13 +14138,13 @@ msgid "Non Updatable"
 msgstr "Não atualizável"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_sequence.py:0
 msgid "Non-ASCII characters in %s"
 msgstr "Caracteres não ASCII em %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Non-relational field name \"%(field_name)s\" in related field \"%"
@@ -14154,13 +14154,13 @@ msgstr ""
 "(related_field)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Non-relational field “%(field)s” in dependency “%(dependency)s”"
 msgstr "Campo não relacional “%(field)s” na dependência “%(dependency)s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Non-relational field “%(field)s” in path “%(field_path)s” in %(use)s)"
 msgstr ""
@@ -14207,7 +14207,7 @@ msgid "Norway"
 msgstr "Noruega"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Norwegian Register of Legal Entities (Brønnøysund Register Center)"
 msgstr ""
@@ -14222,14 +14222,14 @@ msgid "Not Installed"
 msgstr "Não instalado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Not enough access rights on the external ID \"%(module)s.%(xml_id)s\""
 msgstr ""
 "Não há direitos de acesso suficientes no ID externo \"%(module)s.%(xml_id)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid ""
 "Not enough workers to generate the PDF. Please try another engine or upgrade "
@@ -14245,20 +14245,20 @@ msgid "Note"
 msgstr "Observação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Note: the expected format is %(expected_format)s"
 msgstr "Observação: o formato esperado é %(expected_format)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "Note: this might be a multi-company issue. Switching company may help - in "
-"Odoo, not in real life!"
+"WETH, not in real life!"
 msgstr ""
 "Observação: isso pode ser um problema que envolve várias empresas. Mudar de "
-"empresa pode ajudar — no Odoo, não na vida real!"
+"empresa pode ajudar — no WETH, não na vida real!"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_groups__comment
@@ -14314,20 +14314,20 @@ msgid "O - PUBLIC ADMINISTRATION AND DEFENCE; COMPULSORY SOCIAL SECURITY"
 msgstr "O - ADMINISTRAÇÃO PÚBLICA E DEFESA; SEGURIDADE SOCIAL COMPULSÓRIA"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "OB"
 msgstr "OB"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "OB-number cannot be computed from the VAT for sole proprietorships."
 msgstr ""
 "O número OB não pode ser calculado a partir do IVA para empresas individuais."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "OIN"
 msgstr "OIN"
@@ -14354,86 +14354,86 @@ msgstr "Obox"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__license__oeel-1
-msgid "Odoo Enterprise Edition License v1.0"
-msgstr "Odoo Enterprise Edition Licença v1.0"
+msgid "WETH Enterprise Edition License v1.0"
+msgstr "WETH Enterprise Edition Licença v1.0"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module__to_buy
-msgid "Odoo Enterprise Module"
-msgstr "Módulo do Odoo Enterprise"
+msgid "WETH Enterprise Module"
+msgstr "Módulo do WETH Enterprise"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__license__opl-1
-msgid "Odoo Proprietary License v1.0"
-msgstr "Licença proprietária do Odoo v1.0"
+msgid "WETH Proprietary License v1.0"
+msgstr "Licença proprietária do WETH v1.0"
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_customer_form
-msgid "Odoo helps you easily track all activities related to a customer."
+msgid "WETH helps you easily track all activities related to a customer."
 msgstr ""
-"O Odoo ajuda você a rastrear facilmente todas as atividades relacionadas a "
+"O WETH ajuda você a rastrear facilmente todas as atividades relacionadas a "
 "um cliente."
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_supplier_form
-msgid "Odoo helps you easily track all activities related to a vendor."
+msgid "WETH helps you easily track all activities related to a vendor."
 msgstr ""
-"O Odoo ajuda você a rastrear facilmente todas as atividades relacionadas a "
+"O WETH ajuda você a rastrear facilmente todas as atividades relacionadas a "
 "um fornecedor."
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_form
-msgid "Odoo helps you track all activities related to your contacts."
+msgid "WETH helps you track all activities related to your contacts."
 msgstr ""
-"O Odoo ajuda você a rastrear todas as atividades relacionadas aos seus "
+"O WETH ajuda você a rastrear todas as atividades relacionadas aos seus "
 "contatos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
-"Odoo is currently processing a scheduled action.\n"
+"WETH is currently processing a scheduled action.\n"
 "Module operations are not possible at this time, please try again later or "
 "contact your system administrator."
 msgstr ""
-"O Odoo está processando uma ação agendada.\n"
+"O WETH está processando uma ação agendada.\n"
 "As operações do módulo não são possíveis neste momento, tente novamente mais "
 "tarde ou entre em contato com o administrador do sistema."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
-"Odoo is currently processing another module operation.\n"
+"WETH is currently processing another module operation.\n"
 "Please try again later or contact your system administrator."
 msgstr ""
-"O Odoo está processando outra operação de módulo no momento.\n"
+"O WETH está processando outra operação de módulo no momento.\n"
 "Tente novamente mais tarde ou entre em contato com o administrador do "
 "sistema."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid ""
-"Odoo is unable to merge the generated PDFs because of %(num_errors)s "
+"WETH is unable to merge the generated PDFs because of %(num_errors)s "
 "corrupted file(s)"
 msgstr ""
-"O Odoo não conseguiu mesclar os PDFs gerados devido a %(num_errors)s "
+"O WETH não conseguiu mesclar os PDFs gerados devido a %(num_errors)s "
 "arquivo(s) corrompido(s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
-msgid "Odoo is unable to merge the generated PDFs."
+msgid "WETH is unable to merge the generated PDFs."
 msgstr "Não foi possível mesclar os PDFs gerados."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_sequence__padding
 msgid ""
-"Odoo will automatically adds some '0' on the left of the 'Next Number' to "
+"WETH will automatically adds some '0' on the left of the 'Next Number' to "
 "get the required padding size."
 msgstr ""
-"O Odoo adicionará alguns '0' automaticamente a esquerda do 'Próximo número' "
+"O WETH adicionará alguns '0' automaticamente a esquerda do 'Próximo número' "
 "para ficar do tamanho correto."
 
 #. module: base
@@ -14468,7 +14468,7 @@ msgid "On delete property for many2one fields"
 msgstr "Propriedade \"on delete\" para campos \"many2one\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "One or more of the selected modules have already been uninstalled, if you "
@@ -14484,7 +14484,7 @@ msgid "One user should only have one user settings."
 msgstr "Um usuário deve ter apenas uma configuração de usuário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "One2Many fields cannot be synchronized as part of `commercial_fields` or "
@@ -14507,19 +14507,19 @@ msgstr ""
 "direitos de acesso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_config.py:0
 msgid "Only administrators can change the settings"
 msgstr "Apenas administradores podem alterar as configurações"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "Only administrators can execute this action."
 msgstr "Apenas administradores podem executar essa ação."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_binary.py:0
 msgid "Only admins can upload SVG files."
 msgstr "Somente os administradores podem carregar arquivos SVG."
@@ -14551,7 +14551,7 @@ msgstr ""
 "resultado é usado como se fosse o arquivo real dessa exibição.\n"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Only internal users can create API keys"
 msgstr "Apenas usuários internos podem criar chaves de API"
@@ -14573,7 +14573,7 @@ msgid "Only one value can be defined for each given usage!"
 msgstr "Somente um valor pode ser definido para cada uso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Only stored fields with a database column can be indexed."
 msgstr ""
@@ -14581,13 +14581,13 @@ msgstr ""
 "indexados."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Only super user has access"
 msgstr "Somente o superusuário tem acesso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Only the portal users can delete their accounts. The user(s) %s can not be "
@@ -14696,7 +14696,7 @@ msgid "Optional password for SMTP authentication"
 msgstr "Senha opcional para autenticação SMTP"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Optional timezone name"
 msgstr "Nome do fuso horário opcional"
@@ -14734,7 +14734,7 @@ msgid "Original View"
 msgstr "Visualização original"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Original currency"
 msgstr "Moeda original"
@@ -14755,13 +14755,13 @@ msgid "Other Extra Rights"
 msgstr "Outros direitos adicionais"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Other ID"
 msgstr "Outro ID"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Other ID Number"
 msgstr "Outro número de identificação"
@@ -14916,7 +14916,7 @@ msgid "POEdit"
 msgstr "POEdit"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "PPSN"
 msgstr "PPSN"
@@ -15132,7 +15132,7 @@ msgid "Pacific/Yap"
 msgstr "Pacífico/Yap"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Page direct ancestor must be notebook"
 msgstr "O ancestral direto da página deve ser notebook"
@@ -15165,7 +15165,7 @@ msgid "Pakistan"
 msgstr "Paquistão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Pakistani Computerized National Identity Card number (CNIC), 13 digits."
 msgstr ""
@@ -15280,7 +15280,7 @@ msgid "Parent Menu"
 msgstr "Menu primário"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Parent Name is required at this point"
 msgstr "O nome do principal é obrigatório neste momento"
@@ -15324,7 +15324,7 @@ msgstr "Usuário com o mesmo CPF/CNPJ"
 #. module: base
 #: model:ir.model.fields,help:base.field_res_users__partner_id
 msgid "Partner-related data of the user"
-msgstr "Dados do usuário no Odoo"
+msgstr "Dados do usuário no Weth"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_category__partner_ids
@@ -15334,25 +15334,25 @@ msgid "Partners"
 msgstr "Parceiros"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Partners: %(category)s"
 msgstr "Parceiros: %(category)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Passport"
 msgstr "Passaporte"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Passport ID"
 msgstr "Número do passaporte"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Passport number."
 msgstr "Número do passaporte."
@@ -15404,7 +15404,7 @@ msgid "Path to show in the URL"
 msgstr "Caminho exibido no URL"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 #: model:ir.model.constraint,message:base.constraint_ir_act_client_path_unique
 #: model:ir.model.constraint,message:base.constraint_ir_act_report_xml_path_unique
@@ -15422,7 +15422,7 @@ msgid "Path to the field to update, e.g. 'partner_id.name'"
 msgstr "Caminho para o campo a ser atualizado, por exemplo, 'partner_id.name'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Pattern to format"
 msgstr "Padrão para formatar"
@@ -15484,7 +15484,7 @@ msgid "Peru"
 msgstr "Perú"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Peruvian unique taxpayer registry number (RUC)."
 msgstr "Número de registro único de contribuinte peruano (RUC)."
@@ -15519,7 +15519,7 @@ msgid "Philippines"
 msgstr "Filipinas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_res_company__phone
 #: model:ir.model.fields,field_description:base.field_res_partner__phone
@@ -15572,7 +15572,7 @@ msgid "Platform"
 msgstr "Plataforma"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid ""
 "Please add your own bank account manually: %(account_number)s (%(partner)s)"
@@ -15581,7 +15581,7 @@ msgstr ""
 "(partner)s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Please configure an email on the current user to simulate sending an email "
@@ -15600,7 +15600,7 @@ msgstr ""
 "base de dados uma base de dados de demonstração."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "Please use the change password wizard (in User Preferences or User menu) to "
@@ -15635,11 +15635,11 @@ msgstr "Usuários do portal"
 msgid ""
 "Portal members have specific access rights (such as record rules and "
 "restricted menus).\n"
-"                They usually do not belong to the usual Odoo groups."
+"                They usually do not belong to the usual WETH groups."
 msgstr ""
 "Membros do portal têm direitos de acesso específicos (tais como regras de "
 "registro e menus restritos).\n"
-"Eles geralmente não pertencem aos grupos Odoo habituais."
+"Eles geralmente não pertencem aos grupos WETH habituais."
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__orientation__portrait
@@ -15687,7 +15687,7 @@ msgid "Pounds"
 msgstr "Libras"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Precision Digits"
 msgstr "Dígitos de precisão"
@@ -15724,7 +15724,7 @@ msgid "Preview pdf src"
 msgstr "Pré-visualização src do pdf"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Previous Arch"
 msgstr "Arquitetura anterior"
@@ -15790,7 +15790,7 @@ msgid "Privileges"
 msgstr "Privilégios"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid "Problematic record(s)"
 msgstr "Registro(s) problemático(s)"
@@ -15845,7 +15845,7 @@ msgid "Profiling is currently disabled."
 msgstr "A criação de perfil de dados está desativada no momento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_profile.py:0
 msgid ""
 "Profiling is not enabled on this database. Please contact an administrator."
@@ -15854,7 +15854,7 @@ msgstr ""
 "contato com um administrador."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Programmatic API keys are not enabled"
 msgstr "As chaves de API programáticas não estão habilitadas"
@@ -15903,7 +15903,7 @@ msgid "Properties Field"
 msgstr "Campo Propriedades"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Properties of base fields cannot be altered in this manner! Please modify "
@@ -15950,12 +15950,12 @@ msgstr "Usuário público"
 msgid ""
 "Public users have specific access rights (such as record rules and "
 "restricted menus).\n"
-"                They usually do not belong to the usual Odoo groups.\n"
+"                They usually do not belong to the usual WETH groups.\n"
 "                This makes group restrictions more convenient."
 msgstr ""
 "Os usuários públicos têm direitos de acesso específicos (como regras de "
 "registro e menus restritos).\n"
-"Eles geralmente não pertencem aos grupos Odoo habituais.\n"
+"Eles geralmente não pertencem aos grupos WETH habituais.\n"
 "Isso torna as restrições de grupo mais convenientes."
 
 #. module: base
@@ -16166,7 +16166,7 @@ msgid "R - ARTS, ENTERTAINMENT AND RECREATION"
 msgstr "R - ARTES, ENTRETENIMENTO E RECREAÇÃO"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "RC123456"
 msgstr "RC123456"
@@ -16182,7 +16182,7 @@ msgid "RNC"
 msgstr "RNC"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "RO1234567897 or 8001011234567 or 9000123456789"
 msgstr "RO1234567897 ou 8001011234567 ou 9000123456789"
@@ -16198,7 +16198,7 @@ msgid "RTN"
 msgstr "RTN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0 model:res.country,vat_label:base.ec
 #: model:res.country,vat_label:base.pa model:res.country,vat_label:base.pe
 msgid "RUC"
@@ -16288,7 +16288,7 @@ msgid "Record ID"
 msgstr "ID do registro"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_cron.py:0
 msgid ""
 "Record cannot be modified right now: This cron task is currently being "
@@ -16298,13 +16298,13 @@ msgstr ""
 "executada e não pode ser modificada. Tente novamente em alguns minutos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields.py:0
 msgid "Record does not exist or has been deleted."
 msgstr "Registro não existe ou foi apagado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_binary.py:0
 msgid "Record has no field “%s”"
 msgstr "O registro não possui o campo “%s”"
@@ -16321,13 +16321,13 @@ msgid "Recruitment"
 msgstr "Recrutamento"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Recursion error in modules dependencies!"
 msgstr "Erro de recursão em dependências de módulos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Recursion found in child server actions"
 msgstr "Recursão encontrada em ações de servidor secundário"
@@ -16341,7 +16341,7 @@ msgid "Reference"
 msgstr "Referência"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Reference date"
 msgstr "Data de referência"
@@ -16352,7 +16352,7 @@ msgid "Referrals"
 msgstr "Indicações"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Registrikood"
 msgstr "Registrikood"
@@ -16390,7 +16390,7 @@ msgid "Related Partner"
 msgstr "Usuário relacionado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Related field \"%(related_field)s\" does not have comodel \"%(comodel)s\""
@@ -16399,7 +16399,7 @@ msgstr ""
 "(comodel)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Related field \"%(related_field)s\" does not have type \"%(type)s\""
 msgstr "Campo relacionado \"%(related_field)s\" não tem o tipo \"%(type)s\""
@@ -16532,7 +16532,7 @@ msgid "Report Xml"
 msgstr "Relatório XML"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid ""
 "Report template “%s” has an issue, please contact your administrator. \n"
@@ -16625,7 +16625,7 @@ msgid "Reset to file version (hard reset)."
 msgstr "Redefinir para versão de arquivo (reinicialização forçada)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Resolve other errors first"
 msgstr "Resolva outros erros primeiro"
@@ -16702,7 +16702,7 @@ msgid "Revision"
 msgstr "Revisão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Revision Code"
 msgstr "Código de revisão"
@@ -16817,25 +16817,25 @@ msgid "Rounding Factor"
 msgstr "Fator de arredondamento"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Rounding precision"
 msgstr "Precisão de arredondamento"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Rounding unit"
 msgstr "Unidade de arredondamento"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Routing ID for invoicing German public authorities."
 msgstr "ID de roteamento para faturamento a autoridades públicas alemãs."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid "Routing Number should only contain numbers (maximum 9 digits)."
 msgstr ""
@@ -16921,7 +16921,7 @@ msgid "S - OTHER SERVICE ACTIVITIES"
 msgstr "S - OUTRAS ATIVIDADES DE SERVIÇO"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "SE"
 msgstr "SE"
@@ -16932,13 +16932,13 @@ msgid "SEPA Countries"
 msgstr "Países SEPA"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "SIREN"
 msgstr "SIREN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "SIRET"
 msgstr "SIRET"
@@ -16979,7 +16979,7 @@ msgid "SSL Private Key"
 msgstr "Chave privada SSL"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "SSL certificate is missing for %s."
 msgstr "Certificado SSL ausente para %s."
@@ -16990,7 +16990,7 @@ msgid "SSL certificate used for authentication"
 msgstr "Certificado SSL usado para autenticação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "SSL private key is missing for %s."
 msgstr "Chave privada SSL ausente para %s."
@@ -17011,7 +17011,7 @@ msgid "SSL/TLS, encryption only"
 msgstr "SSL/TLS, somente criptografia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "SST"
 msgstr "SST"
@@ -17165,67 +17165,67 @@ msgid "Saudi Arabia"
 msgstr "Arábia Saudita"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia 700 Number"
 msgstr "Saudi Arabia 700 Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia Commercial Registration Number"
 msgstr "Saudi Arabia Commercial Registration Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia GCC ID Number"
 msgstr "Saudi Arabia GCC ID Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia Iqama ID Number"
 msgstr "Saudi Arabia Iqama ID Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia MHRSD License Number"
 msgstr "Saudi Arabia MHRSD License Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia MISA License Number"
 msgstr "Saudi Arabia MISA License Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia MOMRAH License Number"
 msgstr "Saudi Arabia MOMRAH License Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia National ID Number"
 msgstr "Saudi Arabia National ID Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia Other ID Number"
 msgstr "Saudi Arabia Other ID Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia Passport ID Number"
 msgstr "Saudi Arabia Passport ID Number"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Saudi Arabia Tax Identification Number"
 msgstr "Saudi Arabia Tax Identification Number"
@@ -17336,13 +17336,13 @@ msgid "Search modules"
 msgstr "Buscar módulos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Search tag can only contain one search panel"
 msgstr "O marcador de busca pode conter apenas um painel de busca"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Searchpanel item with select multi cannot have a domain."
 msgstr ""
@@ -17361,7 +17361,7 @@ msgid "Security"
 msgstr "Segurança"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "See all possible values"
 msgstr "Ver todos os valores possíveis"
@@ -17402,14 +17402,14 @@ msgid ""
 "Select the list of fields used to search for\n"
 "                            duplicated records. If you select several "
 "fields,\n"
-"                            Odoo will propose you to merge only those "
+"                            WETH will propose you to merge only those "
 "having\n"
 "                            all these fields in common. (not one of the "
 "fields)."
 msgstr ""
 "Selecione a lista de campos usados para procurar \n"
 "registros duplicados. Se você selecionar vários campos,\n"
-"o Odoo proporá que você mescle apenas aqueles que tenham \n"
+"o WETH proporá que você mescle apenas aqueles que tenham \n"
 "todos esses campos em comum. (não um dos campos)."
 
 #. module: base
@@ -17434,7 +17434,7 @@ msgstr ""
 "Você pode remover contatos dessa lista para evitar mesclá-los."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields.selection,name:base.selection__base_partner_merge_automatic_wizard__state__selection
 #: model_terms:ir.ui.view,arch_db:base.view_model_fields_selection_search
@@ -17531,7 +17531,7 @@ msgid "Separator Format"
 msgstr "Formato de separador"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Separator use to split the address from the display_name."
 msgstr "Separador usado para separar o endereço do display_name."
@@ -17639,7 +17639,7 @@ msgid "Server action"
 msgstr "Ação de servidor"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "Server action %(action_name)s has one or more warnings, address them first."
@@ -17648,7 +17648,7 @@ msgstr ""
 "primeiro."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Server replied with following exception:\n"
@@ -17741,7 +17741,7 @@ msgstr ""
 "fornecido."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Setting empty passwords is not allowed for security reasons!"
 msgstr "Por motivos de segurança, não é permitido definir senhas vazias."
@@ -17810,7 +17810,7 @@ msgid "Shipping Connectors"
 msgstr "Conectores de envio"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Short"
 msgstr "Curto"
@@ -17867,7 +17867,7 @@ msgid "Sin"
 msgstr "Sin"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Since 17.0, the \"attrs\" and \"states\" attributes are no longer used.\n"
@@ -17883,7 +17883,7 @@ msgid "Singapore"
 msgstr "Cingapura"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Singapore Unique Entity Number."
 msgstr "Número de Identificação Único de Cingapura."
@@ -17909,7 +17909,7 @@ msgid "Skip these contacts"
 msgstr "Pular estes contatos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Skipping a company check for model %(model_name)s. Its fields %"
@@ -17921,13 +17921,13 @@ msgstr ""
 "tem um campo `company_id` ou `company_ids`."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Slash"
 msgstr "Slash"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Slovak company identification number (IČO)."
 msgstr "Número de identificação da empresa eslovaca (IČO)."
@@ -17975,13 +17975,13 @@ msgid "Somalia"
 msgstr "Somália"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_textual.py:0
 msgid "Some of the languages are not active: %s"
 msgstr "Alguns dos idiomas não estão ativos: %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_textual.py:0
 msgid "Some of the translations are False: %s"
 msgstr "Algumas das traduções estão incorretas: %s"
@@ -17992,13 +17992,13 @@ msgid "Somoni"
 msgstr "Somoni"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "Sorry, you are not allowed to access this document."
 msgstr "Usuário não autorizado a acessar esse documento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid ""
 "Sorry, you are not allowed to access this document. Please contact your "
@@ -18016,7 +18016,7 @@ msgstr ""
 "Registros: %(records)s, Usuário: %(user)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "Sorry, you are not allowed to write on this document"
 msgstr "Você não tem permissão para escrever nesse documento"
@@ -18052,7 +18052,7 @@ msgid "South Sudan"
 msgstr "Sudão do Sul"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Space"
 msgstr "Espaço"
@@ -18186,7 +18186,7 @@ msgid "Step"
 msgstr "Etapa"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_sequence.py:0
 msgid "Step must not be zero."
 msgstr "A etapa não pode ser zero."
@@ -18349,13 +18349,13 @@ msgid "Sweden"
 msgstr "Suécia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Swedish organization number (Organisationsnummer)."
 msgstr "Número de organização sueco (Organisationsnummer)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Swiss company identification number (UIDB)."
 msgstr "Número de identificação da empresa suíça (UIDB)."
@@ -18449,7 +18449,7 @@ msgid "TIN"
 msgstr "TIN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "TKU"
 msgstr "TKU"
@@ -18555,7 +18555,7 @@ msgid "Target Window"
 msgstr "Janela de destino"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: model:ir.model.fields,field_description:base.field_res_company__vat
 #: model:ir.model.fields,field_description:base.field_res_partner__vat
@@ -18570,7 +18570,7 @@ msgid "Tax ID Label"
 msgstr "Rótulo de ID fiscal"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Tax Identification Number"
 msgstr "Número de Identificação Fiscal"
@@ -18637,19 +18637,19 @@ msgid "Technical guide"
 msgstr "Guia técnico"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "Template for Contacts"
 msgstr "Modelo para Contatos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/assetsbundle.py:0
 msgid "Template name is missing."
 msgstr "O nome do modelo está ausente."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Template not found: '%s'"
 msgstr "Modelo não encontrado: %s"
@@ -18696,19 +18696,19 @@ msgid "Thailand"
 msgstr "Tailândia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The \"%s\" action cannot be selected as home action."
 msgstr "A ação \"%s\" não pode ser selecionada como ação inicial."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The \"App Switcher\" action cannot be selected as home action."
 msgstr "A ação \"App Switcher\" não pode ser selecionada como ação inicial."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "The \"editable\" attribute of list views must be \"top\" or \"bottom\", "
@@ -18718,7 +18718,7 @@ msgstr ""
 "\"superior\" ou \"inferior\", %(value)s recebido"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_sequence.py:0
 msgid ""
 "The %(field)s %(value)s contains non-ASCII characters. Names generated by "
@@ -18730,7 +18730,7 @@ msgstr ""
 "Code128 em relatórios, que suportam apenas caracteres ASCII."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "The %(vat_label)s number [%(wrong_vat)s] does not seem to be valid. %"
@@ -18739,7 +18739,7 @@ msgstr ""
 "O número %(vat_label)s [%(wrong_vat)s] parece ser inválido. %(expected_note)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "The %(vat_label)s number [%(wrong_vat)s] for %(record_label)s does not seem "
@@ -18749,13 +18749,13 @@ msgstr ""
 "inválido. %(expected_note)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 msgid "The %s of a subsidiary must be the same as it's root company."
 msgstr "%s de uma subsidiária deve igual ao da empresa raiz."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid ""
 "The 5-digit branch code as registered with the Revenue Department. Leave "
@@ -18765,13 +18765,13 @@ msgstr ""
 "Receita. Deixe em branco para a sede."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The API key duration is not correct."
 msgstr "A duração da chave de API não está correta."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The API key must have an expiration date"
 msgstr "A chave da API deve ter uma data de expiração"
@@ -18786,7 +18786,7 @@ msgstr ""
 "usada para outros escopos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid ""
 "The IBAN does not seem to be correct. You should have entered something like "
@@ -18800,7 +18800,7 @@ msgstr ""
 "conta, k = Dígito de verificação"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid "The IBAN is invalid, it should begin with the country code"
 msgstr "Este IBAN é inválido. Ele deve começar com o código de país"
@@ -18848,7 +18848,7 @@ msgid "The URL code of the language must be unique!"
 msgstr "O código de URL do idioma deve ser exclusivo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "The action \"%s\" cannot be set as the home action because it requires a "
@@ -18902,7 +18902,7 @@ msgid "The combination Account Number/Partner must be unique."
 msgstr "A combinação de 'usuário' e 'número da conta' deve ser única."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 msgid ""
 "The company %(company_name)s cannot be archived because it is still used as "
@@ -18912,7 +18912,7 @@ msgstr ""
 "empresa padrão de %(active_users)s usuários."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "The company assigned to this partner does not match the company this partner "
@@ -18922,7 +18922,7 @@ msgstr ""
 "representa."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 msgid "The company hierarchy cannot be changed."
 msgstr "A hierarquia da empresa não pode ser alterada."
@@ -18936,7 +18936,7 @@ msgstr "O nome da empresa deve ser exclusivo."
 #: model_terms:ir.actions.act_window,help:base.act_ir_actions_todo_form
 msgid ""
 "The configuration wizards are used to help you configure a new instance of "
-"Odoo. They are launched during the installation of new modules, but you can "
+"Weth. They are launched during the installation of new modules, but you can "
 "choose to restart some wizards manually from this menu."
 msgstr ""
 "Os assistentes de configuração são usados para ajudar a configurar uma nova "
@@ -18979,7 +18979,7 @@ msgid "The default company for this user."
 msgstr "A empresa padrão para este usuário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/properties_base_definition.py:0
 msgid ""
 "The definition needs to be linked to a properties field. Those fields are "
@@ -18999,7 +18999,7 @@ msgid "The embedded action this filter is applied to"
 msgstr "A ação incorporada à qual esse filtro é aplicado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "The field '%(field)s' cannot be removed because the field '%(other_field)s' "
@@ -19074,7 +19074,7 @@ msgstr ""
 "<code>partner_id.company_id.name</code>."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_textual.py:0
 msgid ""
 "The field value you're saving (%(model)s %(field)s)(%(record)s) includes "
@@ -19095,13 +19095,13 @@ msgstr ""
 "sucesso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "The following languages are not activated: %(missing_names)s"
 msgstr "Os seguintes idiomas não estão ativados: %(missing_names)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_module_upgrade.py:0
 msgid "The following modules are not installed or unknown: %s"
 msgstr "Os seguintes módulos não estão instalados ou são desconhecidos: %s"
@@ -19117,13 +19117,13 @@ msgid "The group itself with all its implied groups."
 msgstr "O próprio grupo, com todos os seus grupos implícitos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "The group “%(name)s” defined in view does not exist!"
 msgstr "O grupo “%(name)s” definido na visualização não existe!"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "The hour must be between 0 and 23"
 msgstr "As horas devem ser entre 0 e 23"
@@ -19159,13 +19159,13 @@ msgstr ""
 "branco não remove um índice que já exista."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "The language %s is not installed."
 msgstr "O idioma %s não está instalado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 #: code:addons/base/wizard/base_language_install.py:0
 msgid ""
@@ -19176,7 +19176,7 @@ msgstr ""
 "podem escolher o idioma favorito deles nas preferências."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_country.py:0
 msgid "The layout contains an invalid format key"
 msgstr "O layout contém um formato de chave inválido"
@@ -19187,7 +19187,7 @@ msgid "The list of models that extends the current model."
 msgstr "A lista de modelos que estende o modelo atual."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "The m2o field %s is required but declares its ondelete policy as being 'set "
@@ -19206,7 +19206,7 @@ msgstr ""
 "filtro se aplica a todos os menus desse modelo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "The method _button_immediate_install cannot be called on init or non loaded "
@@ -19216,7 +19216,7 @@ msgstr ""
 "não carregados. Em vez disso, use button_install."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "The model name can only contain lowercase characters, digits, underscores "
@@ -19226,7 +19226,7 @@ msgstr ""
 "e pontos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "The model name must start with 'x_'."
 msgstr "O nome do modelo deve começar com 'x_'."
@@ -19237,13 +19237,13 @@ msgid "The model this field belongs to"
 msgstr "O modelo ao qual esse campo pertence"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "The modes in view_mode must not be duplicated: %s"
 msgstr "Os modelos em view_mode não devem ser duplicados: %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid ""
 "The name for the current rate is empty.\n"
@@ -19258,7 +19258,7 @@ msgid "The name of the country must be unique!"
 msgstr "O nome do país deve ser exclusivo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 msgid "The name of the group can not start with \"-\""
 msgstr "O nome do grupo não pode iniciar com \"-\""
@@ -19279,13 +19279,13 @@ msgid "The name of the record to create"
 msgstr "O nome do registro a ser criado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The new password and its confirmation must be identical."
 msgstr "A nova senha e sua confirmação devem ser idênticas."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid ""
 "The new rate is quite far from the previous rate.\n"
@@ -19307,7 +19307,7 @@ msgid "The next step depends on the file format:"
 msgstr "O próximo passo depende do formato do arquivo:"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_textual.py:0
 msgid ""
 "The non translatable content of the written value are not consistent: %s"
@@ -19323,7 +19323,7 @@ msgstr ""
 "em caso de sucesso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "The ondelete policy \"%(policy)s\" is not valid for field \"%(field)s\""
 msgstr ""
@@ -19353,7 +19353,7 @@ msgstr ""
 "lista de trios. Por exemplo: [('color','=','red')]"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "The path contained by the field '%(searched_field)s' contains a non-"
@@ -19367,7 +19367,7 @@ msgstr ""
 "Certifique-se de que apenas o último campo do caminho seja não relacional."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid ""
 "The path should contain only lowercase alphanumeric characters, underscore, "
@@ -19377,13 +19377,13 @@ msgstr ""
 "e traço, e deve começar com uma letra."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid "The pdf engine on this system is not working."
 msgstr "O mecanismo de PDF neste sistema não está funcionando."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/decimal_precision.py:0
 msgid ""
 "The precision has been reduced for %s.\n"
@@ -19417,7 +19417,7 @@ msgstr ""
 "mais elevada, 10 uma prioridade mais baixa."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "The private key or the certificate is not a valid file. \n"
@@ -19427,13 +19427,13 @@ msgstr ""
 "%s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The provided API key is invalid or does not belong to the current user."
 msgstr "A chave de API fornecida é inválida ou não pertence ao usuário atual."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "The provided API key is invalid."
 msgstr "A chave de API fornecida é inválida."
@@ -19444,7 +19444,7 @@ msgid "The rate of the currency to the currency of rate 1."
 msgstr "A taxa de câmbio da moeda para a moeda da taxa de câmbio 1."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "The record %(xml_id)s has the module prefix %(module_name)s. This is the "
@@ -19462,13 +19462,13 @@ msgstr ""
 "(record_id)s."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_binary.py:0
 msgid "The related attachment does not exist."
 msgstr "O anexo relacionado não existe."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "The root node of a %(view_type)s view should be a <%(view_type)s>, not a <%"
@@ -19483,7 +19483,7 @@ msgid "The rounding factor must be greater than 0!"
 msgstr "O fator de arredondamento deve ser maior que 0."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "The selected company is not compatible with the companies of the related "
@@ -19493,13 +19493,13 @@ msgstr ""
 "relacionado(s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "The server \"%s\" cannot be used because it is archived."
 msgstr "O servidor “%s” não pode ser usado porque está arquivado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "The server has closed the connection unexpectedly. Check configuration "
@@ -19511,7 +19511,7 @@ msgstr ""
 " %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "The server refused the sender address (%(email_from)s) with error %(repl)s"
@@ -19520,13 +19520,13 @@ msgstr ""
 "(repl)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid "The server refused the test connection with error %(repl)s"
 msgstr "O servidor recusou a conexão de teste com o erro %(repl)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "The server refused the test recipient (%(email_to)s) with error %(repl)s"
@@ -19539,7 +19539,7 @@ msgid "The state code."
 msgstr "O código do estado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "The table “%s” is used by another, possibly incompatible field(s)."
 msgstr "A tabela “%s” é usado por outros campos, possivelmente incompatíveis."
@@ -19570,13 +19570,13 @@ msgstr ""
 "filtro será compartilhado com todos os usuários."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "The value (%s) passed should be positive"
 msgstr "O valor (%s) informado deve ser positivo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "The value for %(field_display)s already exists.\n"
@@ -19588,13 +19588,13 @@ msgstr ""
 "Detalhes: %(detail)s\n"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "The value of 'Fold Field' should be a field name of the model."
 msgstr "O valor de 'Dobrar campo' deve ser um nome de campo do modelo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "The value send to monetary field is not a number."
 msgstr "O valor enviado para o campo monetário não é um número."
@@ -19632,7 +19632,7 @@ msgstr ""
 "necessário um único usuário, esse campo tentará encontrar o mais adequado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid "There is no IBAN code."
 msgstr "Não há código IBAN."
@@ -19644,13 +19644,13 @@ msgid "Third-Party Apps"
 msgstr "Apps de terceiros"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid "This CLABE does not pass the checksum check, please verify it."
 msgstr "Este CLABE não passou na verificação de checksum; verifique-o."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/bank_account_number.py:0
 msgid "This IBAN does not pass the validation check, please verify it."
 msgstr "Este IBAN não passou na verificação de validação, verifique-o."
@@ -19666,13 +19666,13 @@ msgid "This Window"
 msgstr "Esta janela"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "This column contains module data and cannot be removed!"
 msgstr "Esta coluna contém dados de módulos e não pode ser removida."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_currency.py:0
 msgid "This currency is set on a company and therefore cannot be deactivated."
 msgstr ""
@@ -19719,13 +19719,13 @@ msgstr ""
 "para redefinir (suavemente) uma visualização quebrada."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/image.py:0
 msgid "This file could not be decoded as an image file."
 msgstr "Este arquivo não pôde ser decodificado como um arquivo de imagem."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/image.py:0
 msgid "This file is not a webp file."
 msgstr "Esse arquivo não é um arquivo webp."
@@ -19782,13 +19782,13 @@ msgid "This is your company's currency."
 msgstr "Esta é a moeda da sua empresa."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 msgid "This makes a group imply two disjoint groups."
 msgstr "Isso faz com que um grupo implique dois grupos disjuntos."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "This method can only be accessed over HTTP"
 msgstr "Este método só pode ser acessado por HTTP"
@@ -19799,7 +19799,7 @@ msgid "This module will trigger the uninstallation of below modules."
 msgstr "Este módulo acionará a desinstalação de módulos abaixo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid ""
 "This operation is allowed for the following groups:\n"
@@ -19809,7 +19809,7 @@ msgstr ""
 "%(groups_list)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "This seems to be a multi-company issue, but you do not have access to the "
@@ -19819,7 +19819,7 @@ msgstr ""
 "não tem acesso à empresa adequada para acessar o registro."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "This seems to be a multi-company issue, you might be able to access the "
@@ -19829,7 +19829,7 @@ msgstr ""
 "o registro mudando para a empresa: %s."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "This view may not work for all users: some users may have a combination of "
@@ -19855,7 +19855,7 @@ msgid "This will remove:"
 msgstr "Isso removerá:"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Those modules cannot be uninstalled: %s"
 msgstr "Esses módulos não podem ser desinstalados: %s"
@@ -19930,7 +19930,7 @@ msgid "To Do"
 msgstr "A fazer"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "To avoid a mess, no company crossover is allowed!"
 msgstr "Para evitar confusão, não é permitido cruzar empresas!"
@@ -19957,7 +19957,7 @@ msgid "To be upgraded"
 msgstr "A ser atualizado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "To explicitly indicate no (valid) VAT, use '/', 'na' or 'NA' instead. "
 msgstr ""
@@ -20026,13 +20026,13 @@ msgstr ""
 "                Parceiro de Gerenciamento Famoso."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/image.py:0
 msgid "Too large image (above %sMpx), reduce the image size."
 msgstr "Imagem muito grande (acima de %sMpx). Reduza o tamanho da imagem."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "Too many login failures, please wait a bit before trying again."
 msgstr "Muitas falhas de login. Aguarde um pouco antes de tentar novamente."
@@ -20064,7 +20064,7 @@ msgid "Traces Async"
 msgstr "Traces Async"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "Trade Registry Number"
 msgstr "Número de Registro Comercial"
@@ -20125,7 +20125,7 @@ msgid "Translate as a whole"
 msgstr "Traduzir tudo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Translated fields only support trigram indexes."
 msgstr "Os campos traduzidos suportam apenas índices de trigramas."
@@ -20136,7 +20136,7 @@ msgid "Translations"
 msgstr "Traduções"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Translations %(translations)s for field %(field)s has None value for "
@@ -20146,7 +20146,7 @@ msgstr ""
 "idioma '%(language)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Translations %(translations)s for field %(field)s has invalid language '%"
@@ -20156,7 +20156,7 @@ msgstr ""
 "(language)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Translations %(translations)s for field %(field)s has technical language %"
@@ -20166,7 +20166,7 @@ msgstr ""
 "(technical_language)s, mas não a linguagem correspondente '%(language)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Translations %(translations)s for field %(field)s have different structures"
@@ -20174,13 +20174,13 @@ msgstr ""
 "As traduções %(translations)s do campo %(field)s têm estruturas diferentes"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid "Translations %(translations)s for field %(field)s must have 'en_US'"
 msgstr "As traduções %(translations)s do campo %(field)s devem ter 'en_US'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Translations for model translated fields only accept falsy values and str"
@@ -20203,7 +20203,7 @@ msgid "Trigram"
 msgstr "Trigrama"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Trigram indexes are only supported on stored Char, Text, and HTML fields."
@@ -20212,7 +20212,7 @@ msgstr ""
 "Char, Text e HTML."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Trigram indexes require the PostgreSQL pg_trgm extension."
 msgstr "Os índices de trigramas requerem a extensão pg_trgm do PostgreSQL."
@@ -20337,13 +20337,13 @@ msgid "U - ACTIVITIES OF EXTRATERRITORIAL ORGANISATIONS AND BODIES"
 msgstr "U - ATIVIDADES DE ORGANIZAÇÕES E ÓRGÃOS EXTRATERRITORIAIS"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "UEN"
 msgstr "UEN"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "UIDB"
 msgstr "UIDB"
@@ -20367,7 +20367,7 @@ msgid "URL Code"
 msgstr "Código do URL"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid "URL attachment (%s) shouldn't be migrated to local."
 msgstr "O anexo de URL (%s) não deve ser migrado para o local."
@@ -20399,7 +20399,7 @@ msgid "Uganda"
 msgstr "Uganda"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid ""
 "Uh-oh! Looks like you have stumbled upon some top-secret records.\n"
@@ -20411,7 +20411,7 @@ msgstr ""
 "Desculpe, %(user)s não tem '%(operation)s' acesso a:"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Uh-oh! You’ve got some company inconsistencies here:"
 msgstr "Opa! Há algumas inconsistências de empresa aqui:"
@@ -20422,7 +20422,7 @@ msgid "Ukraine"
 msgstr "Ucrânia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "Unable to delete %(record)s because it is used as the default value of %"
@@ -20432,7 +20432,7 @@ msgstr ""
 "(field)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid ""
 "Unable to find the pdf engine on this system. The PDF can not be created."
@@ -20441,7 +20441,7 @@ msgstr ""
 "ser criado."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Unable to import'%%(field)s' Properties field as a whole, target individual "
@@ -20451,7 +20451,7 @@ msgstr ""
 "em vez disso, use a propriedade individual."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "Unable to install module \"%(module)s\" because an external dependency is "
@@ -20461,7 +20461,7 @@ msgstr ""
 "não foi cumprida: %(dependency)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Unable to order by %s: fields used for ordering must be present on the model "
@@ -20471,7 +20471,7 @@ msgstr ""
 "devem estar presentes no modelo e armazenados."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "Unable to process module \"%(module)s\" because an external dependency is "
@@ -20481,7 +20481,7 @@ msgstr ""
 "externa não foi cumprida: %(dependency)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "Unable to upgrade module \"%(module)s\" because an external dependency is "
@@ -20496,7 +20496,7 @@ msgid "Uncategorized"
 msgstr "Sem categoria"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Unicode strings with encoding declaration are not supported in XML.\n"
@@ -20506,7 +20506,7 @@ msgstr ""
 "Remova a declaração de codificação."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 #: model_terms:ir.ui.view,arch_db:base.module_form
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_uninstall
@@ -20514,13 +20514,13 @@ msgid "Uninstall"
 msgstr "Desinstalar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid "Uninstall module"
 msgstr "Desinstalar módulo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_config.py:0
 msgid "Uninstall modules"
 msgstr "Desinstalar módulos"
@@ -20577,7 +20577,7 @@ msgid "United States"
 msgstr "Estados Unidos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_device.py:0 code:addons/models.py:0
 #: model:ir.model,name:base.model__unknown
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module_dependency__state__unknown
@@ -20586,32 +20586,32 @@ msgid "Unknown"
 msgstr "Desconhecido"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Unknown database error: '%s'"
 msgstr "Erro de base de dados desconhecida: '%s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Unknown database identifier '%s'"
 msgstr "Identificador de base de dados desconhecido '%s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "Unknown error during import: %(error_type)s: %(error_message)s"
 msgstr ""
 "Erro desconhecido durante a importação: %(error_type)s: %(error_message)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Unknown field \"%(model)s.%(field)s\" in %(use)s)"
 msgstr "Campo desconhecido \"%(model)s.%(field)s\" em %(use)s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid ""
 "Unknown field name \"%(field_name)s\" in related field \"%(related_field)s\""
@@ -20620,13 +20620,13 @@ msgstr ""
 "(related_field)s\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Unknown field specified “%s” in currency_field"
 msgstr "Campo desconhecido especificado “%s” em currency_field"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid ""
 "Unknown field “%(field)s” in \"group_by\" value in %(attribute)s=“%(value)s”"
@@ -20635,25 +20635,25 @@ msgstr ""
 "(value)s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Unknown field “%(field)s” in dependency “%(dependency)s”"
 msgstr "Campo desconhecido “%(field)s” em dependência “%(dependency)s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_model.py:0
 msgid "Unknown model name '%s' in Related Model"
 msgstr "Nome de modelo desconhecido '%s' no modelo relacionado"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Unknown sub-field “%s”"
 msgstr "Subcampo desconhecido “%s”"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid ""
 "Unknown value '%(value)s' for boolean '%(label_property)s' property "
@@ -20663,13 +20663,13 @@ msgstr ""
 "(label_property)s' (subcampo do campo '%%(field)s')."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Unknown value '%s' for boolean field '%%(field)s'"
 msgstr "Valor desconhecido '%s' para o campo booleano '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/translate.py:0
 msgid ""
 "Unrecognized extension: must be one of .csv, .po, or .tgz (received .%s)."
@@ -20678,14 +20678,14 @@ msgstr ""
 "%s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "Unsearchable field “%(field)s” in path “%(field_path)s” in %(use)s)"
 msgstr ""
 "Campo não pesquisável “%(field)s” no caminho “%(field_path)s” em %(use)s)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/domains.py:0
 msgid "Unsupported operator on %(field_label)s %(model_label)s in %(domain)s"
 msgstr ""
@@ -20708,7 +20708,7 @@ msgid "Update"
 msgstr "Atualizar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "Update %(model_name)s"
 msgstr "Atualizar %(model_name)s"
@@ -20750,7 +20750,7 @@ msgid "Update, Delete"
 msgstr "Atualizar, Excluir"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_properties.py:0
 msgid ""
 "Updating records with different property fields definitions is not "
@@ -20802,7 +20802,7 @@ msgid "Usage"
 msgstr "Uso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Use '1' for yes and '0' for no"
 msgstr "Use '1' para sim e '0' para não"
@@ -20813,13 +20813,13 @@ msgid "Use a barcode to identify this contact."
 msgstr "Use um código de barras para identificar este contato."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Use comma"
 msgstr "Use vírgula"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Use comma instead of the <br> tag to display the address"
 msgstr "Usar vírgula em vez do marcador <br> para exibir o endereço"
@@ -20844,7 +20844,7 @@ msgid "Use subsequences per date_range"
 msgstr "Usar subsequências por date_range"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Use the SMTP configuration set in the \"Command Line Interface\" arguments."
@@ -20853,7 +20853,7 @@ msgstr ""
 "comando\"."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Use the format '%s'"
 msgstr "Use o formato '%s'"
@@ -20931,7 +20931,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 #: code:addons/base/models/res_users.py:0
 msgid ""
@@ -21039,7 +21039,7 @@ msgid "Username"
 msgstr "Nome do usuário"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.action_res_users
 #: model:ir.model.fields,field_description:base.field_change_password_wizard__user_ids
@@ -21078,7 +21078,7 @@ msgid "Users and implied users"
 msgstr "Usuários e usuários implícitos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 msgid "Users and implied users of %(group)s"
 msgstr "Usuários e usuários implícitos de %(group)s"
@@ -21115,7 +21115,7 @@ msgid "Uses Default Logo"
 msgstr "Usa o logotipo padrão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "Using 24-hour clock format with AM/PM can cause issues."
 msgstr "Usar o formato de relógio de 24 horas com AM/PM pode causar problemas."
@@ -21126,7 +21126,7 @@ msgid "Uzbekistan"
 msgstr "Uzbequistão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: code:addons/base/models/res_partner.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_vat
@@ -21148,7 +21148,7 @@ msgid "VAT"
 msgstr "CPF/CNPJ"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/partner_identifiers.py:0
 msgid "VAT Registry (VAT ID)"
 msgstr "Registro de IVA (Número de Identificação Fiscal)"
@@ -21162,7 +21162,7 @@ msgid "Value"
 msgstr "Valor"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "Value '%s' not found in selection field '%%(field)s'"
 msgstr "O valor '%s' não foi encontrado no campo selecionado '%%(field)s'"
@@ -21232,7 +21232,7 @@ msgid "Verbose description of what this action actually does"
 msgstr "Descrição detalhada do que essa ação realmente faz"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Vertical bar"
 msgstr "Barra vertical"
@@ -21252,13 +21252,13 @@ msgid "View"
 msgstr "Visualização"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "View '%(name)s' accessible only to groups %(groups)s "
 msgstr "A visualização '%(name)s' é acessível apenas aos grupos %(groups)s "
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "View '%(name)s' is private"
 msgstr "A visualização '%(name)s' é privada"
@@ -21284,7 +21284,7 @@ msgid "View Name"
 msgstr "Nome da visualização"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions_report.py:0
 msgid "View Problematic Record(s)"
 msgstr "Exibir registro(s) problemático(s)"
@@ -21397,7 +21397,7 @@ msgid "Wallis and Futuna"
 msgstr "Wallis e Futuna"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 #: code:addons/base/models/ir_model.py:0 code:addons/models.py:0
 #: model:ir.model.fields,field_description:base.field_ir_actions_server__warning
@@ -21406,7 +21406,7 @@ msgid "Warning"
 msgstr "Aviso"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/decimal_precision.py:0
 #: code:addons/base/models/res_currency.py:0
 msgid "Warning for %s"
@@ -21706,7 +21706,7 @@ msgid "Wholesale/Retail"
 msgstr "Atacado/Varejo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "Width"
 msgstr "Largura"
@@ -21772,7 +21772,7 @@ msgid "X"
 msgstr "X"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/partner_identifiers.py:0
 msgid "XXXXXXXXX [9 digits] and it should respect the Luhn algorithm checksum"
@@ -21806,7 +21806,7 @@ msgid "Yes, I understand the risks"
 msgstr "Sim, eu entendo os riscos"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "You are creating a loop in your '%s' records. A record cannot be a child of "
@@ -21817,7 +21817,7 @@ msgstr ""
 "principal diferente."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid ""
 "You are not allowed to access '%(document_kind)s' (%(document_model)s) "
@@ -21827,7 +21827,7 @@ msgstr ""
 "(document_model)s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid ""
 "You are not allowed to create '%(document_kind)s' (%(document_model)s) "
@@ -21837,7 +21837,7 @@ msgstr ""
 "(document_model)s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid ""
 "You are not allowed to delete '%(document_kind)s' (%(document_model)s) "
@@ -21847,7 +21847,7 @@ msgstr ""
 "(document_model)s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0 code:addons/base/models/ir_model.py:0
 msgid ""
 "You are not allowed to modify '%(document_kind)s' (%(document_model)s) "
@@ -21857,7 +21857,7 @@ msgstr ""
 "(document_model)s)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "You are trying to install incompatible modules in category \"%(category)s\":%"
@@ -21867,7 +21867,7 @@ msgstr ""
 "(category)s\":%(module_list)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "You are trying to remove a module that is installed or will be installed."
@@ -21889,7 +21889,7 @@ msgstr ""
 "pode copiar e colar o link para seu arquivo na internet."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/properties_base_definition.py:0
 msgid "You can not change the field of a base definition"
 msgstr "Não é possível alterar o campo de uma definição base"
@@ -21900,7 +21900,7 @@ msgid "You can not have two users with the same login!"
 msgstr "Não é possível ter dois usuários com o mesmo login."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "You can not remove API keys unless they're yours or you are a system user"
@@ -21909,24 +21909,24 @@ msgstr ""
 "você seja um usuário do sistema"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "You can not remove the admin user as it is used internally for resources "
-"created by Odoo (updates, module installation, ...)"
+"created by WETH (updates, module installation, ...)"
 msgstr ""
 "Não é possível remover o usuário administrador, pois ele é usado "
-"internamente para recursos criados pelo Odoo (atualizações, instalação de "
+"internamente para recursos criados pelo WETH (atualizações, instalação de "
 "módulos etc.)."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "You can ony call user.has_group() with your current user."
 msgstr "Você só pode chamar user.has_group() com seu usuário atual."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/report_paperformat.py:0
 msgid ""
 "You can select either a format or a specific page width/height, but not both."
@@ -21942,13 +21942,13 @@ msgid "You can use '/' to indicate that the customer has no Tax ID."
 msgstr "Você pode usar '/' para indicar que o cliente não possui CPF."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "You cannot activate the superuser."
 msgstr "Você não pode ativar o super usuário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "You cannot archive contacts linked to an active user.\n"
@@ -21964,7 +21964,7 @@ msgstr ""
 "%(names)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "You cannot archive contacts linked to an active user.\n"
@@ -21978,17 +21978,17 @@ msgstr ""
 "Usuários ativos associados: %(names)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid ""
-"You cannot archive the language in which Odoo was setup as it is used by "
+"You cannot archive the language in which WETH was setup as it is used by "
 "automated processes."
 msgstr ""
-"Você não pode arquivar o idioma no qual o Odoo foi configurado, pois ele é "
+"Você não pode arquivar o idioma no qual o WETH foi configurado, pois ele é "
 "usado por processos automatizados."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "You cannot archive these Outgoing Mail Servers (%(server_usage)s) because "
@@ -22000,7 +22000,7 @@ msgstr ""
 "%(usage_details)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "You cannot archive this Outgoing Mail Server (%(server_usage)s) because it "
@@ -22012,7 +22012,7 @@ msgstr ""
 "%(usage_details)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_attachment.py:0
 msgid ""
 "You cannot attach an attachment to itself.\n"
@@ -22022,13 +22022,13 @@ msgstr ""
 "O anexo %(record)s não pode ter res_id: %(res_id)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "You cannot create recursive Partner hierarchies."
 msgstr "Você não pode criar hierarquias de usuários recursivas."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "You cannot create recursive inherited views."
 msgstr "Você não pode criar visualizações herdadas recursivas."
@@ -22043,14 +22043,14 @@ msgstr ""
 "mesmo intervalo de datas."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "You cannot deactivate the user you're currently logged in as."
 msgstr ""
 "Não é possível desativar o usuário no qual você está conectado no momento."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "You cannot delete %(to_delete_record)s, as it is used by %"
@@ -22060,19 +22060,19 @@ msgstr ""
 "(on_restrict_record)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_embedded_actions.py:0
 msgid "You cannot delete a default embedded action"
 msgstr "Não é possível excluir uma ação incorporada padrão"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_groups.py:0
 msgid "You cannot delete a group linked with a settings field."
 msgstr "Você não pode excluir um grupo vinculado a um campo de configuração."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "You cannot delete contacts linked to an active user.\n"
@@ -22088,7 +22088,7 @@ msgstr ""
 "%(names)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid ""
 "You cannot delete contacts linked to an active user.\n"
@@ -22102,13 +22102,13 @@ msgstr ""
 "Usuários ativos associados: %(names)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_config_parameter.py:0
 msgid "You cannot delete the %s record."
 msgstr "Você não pode deletar o registro %s."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid ""
 "You cannot delete the admin user because it is utilized in various places "
@@ -22118,7 +22118,7 @@ msgstr ""
 "lugares (como configurações de segurança etc.) Em vez disso, arquive-o."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid ""
 "You cannot delete the language which is Active!\n"
@@ -22128,25 +22128,25 @@ msgstr ""
 "Desative o idioma primeiro."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "You cannot delete the language which is the user's preferred language."
 msgstr "Não é possível excluir o idioma preferido do usuário."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "You cannot exceed %(duration)s days."
 msgstr "Você não pode exceder %(duration)s dias."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 msgid "You cannot merge a contact with one of his parent."
 msgstr "Não é possível mesclar um contato com um de seus contatos primários."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 msgid ""
 "You cannot merge contacts linked to more than one user even if only one is "
@@ -22156,13 +22156,13 @@ msgstr ""
 "apenas um esteja ativo."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_config_parameter.py:0
 msgid "You cannot rename config parameters with keys %s"
 msgstr "Não é possível renomear os parâmetros de configuração com chaves %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/fields_properties.py:0
 msgid ""
 "You cannot use “%(property_name)s” because the linked “%(model_name)s” model "
@@ -22172,7 +22172,7 @@ msgstr ""
 "(model_name)s” não existe ou é inválido"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "You do not have enough rights to access the field \"%(field)s\" on %"
@@ -22188,13 +22188,13 @@ msgstr ""
 "Operação: %(operation)s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_actions.py:0
 msgid "You don't have enough access rights to run this action."
 msgstr "Você não possui direitos de acesso para executar esta ação."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid ""
 "You don't have the rights to export data. Please contact an Administrator."
@@ -22203,13 +22203,13 @@ msgstr ""
 "administrador."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 msgid "You have to specify a filter for your selection."
 msgstr "É necessário especificar um filtro para sua seleção."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "You must have at least an administrator user."
 msgstr "Você deve ter pelo menos um usuário administrador."
@@ -22226,7 +22226,7 @@ msgid "You should update this document to reflect your T&amp;C."
 msgstr "Você precisa atualizar esse documento para refletir seu T&amp;C."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "You try to install module \"%(module)s\" that depends on module \"%"
@@ -22238,7 +22238,7 @@ msgstr ""
 "mas este último não está disponível em seu sistema."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_module.py:0
 msgid ""
 "You try to upgrade the module %(module)s that depends on the module: %"
@@ -22277,7 +22277,7 @@ msgstr ""
 "Aproveite sua refeição!"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_mail_server.py:0
 msgid ""
 "Your server does not seem to support SSL, you may want to try STARTTLS "
@@ -22304,7 +22304,7 @@ msgid "Zambia"
 msgstr "Zâmbia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner_bank.py:0
 msgid "Zengin Branch Code must consist of 3 digits."
 msgstr "O código do ramo Zengin deve consistir em 3 dígitos."
@@ -22354,13 +22354,13 @@ msgid "address"
 msgstr "endereço"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "allowed for groups %s"
 msgstr "permitido para grupos %s"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "always forbidden"
 msgstr "sempre proibido"
@@ -22402,13 +22402,13 @@ msgid "choose"
 msgstr "escolha"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "create"
 msgstr "criar"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/models.py:0
 msgid "custom field access rules"
 msgstr "regras de acesso a campos personalizados"
@@ -22419,7 +22419,7 @@ msgid "cêntimo"
 msgstr "cêntimo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "database id"
 msgstr "id da base de dados"
@@ -22435,13 +22435,13 @@ msgid "datetime"
 msgstr "data/hora"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "day"
 msgstr "dia"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "delete"
 msgstr "Excluir"
@@ -22482,7 +22482,7 @@ msgid "e.g. \"Roadshow\""
 msgstr "ex.: \"Roadshow\""
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_users.py:0
 msgid "e.g. %(placeholder)s"
 msgstr "ex.: %(placeholder)s"
@@ -22593,7 +22593,7 @@ msgid "eLearning"
 msgstr "e-Learning"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "either 11 digits for CPF or 14 characters for CNPJ"
 msgstr "11 dígitos para o CPF ou 14 caracteres para o CNPJ"
@@ -22604,13 +22604,13 @@ msgid "expenses"
 msgstr "despesas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "external id"
 msgstr "id externo"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "false"
 msgstr "falso"
@@ -22631,7 +22631,7 @@ msgstr ""
 "record['size'] = len(record.name)"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_lang.py:0
 msgid "format() must be given exactly one %char format specifier"
 msgstr ""
@@ -22654,7 +22654,7 @@ msgstr ""
 "deles nas preferências."
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "hour"
 msgstr "hora"
@@ -22734,7 +22734,7 @@ msgid "many2one_reference"
 msgstr "many2one_reference"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "minute"
 msgstr "minuto"
@@ -22750,25 +22750,25 @@ msgid "monetary"
 msgstr "monetário"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "month"
 msgstr "mês"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "name"
 msgstr "nome"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "narrow"
 msgstr "narrow"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "no"
 msgstr "não"
@@ -22789,13 +22789,13 @@ msgid "others"
 msgstr "outros"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_company.py:0
 msgid "parent_id"
 msgstr "parent_id"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/res_partner.py:0
 msgid "partner%s"
 msgstr "parceiro%s"
@@ -22835,7 +22835,7 @@ msgid "property_selection"
 msgstr "property_selection"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "read"
 msgstr "leitura"
@@ -22852,7 +22852,7 @@ msgid "sales"
 msgstr "vendas"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "second"
 msgstr "segundo"
@@ -22873,7 +22873,7 @@ msgid "sequence_id"
 msgstr "sequence_id"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "short"
 msgstr "short"
@@ -22889,7 +22889,7 @@ msgid "text"
 msgstr "texto"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "true"
 msgstr "verdadeiro"
@@ -22905,13 +22905,13 @@ msgid "value"
 msgstr "valor"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "week"
 msgstr "semana"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_access.py:0
 msgid "write"
 msgstr "write"
@@ -22927,13 +22927,13 @@ msgid "x2many"
 msgstr "x2many"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 msgid "year"
 msgstr "ano"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_fields.py:0
 msgid "yes"
 msgstr "sim"
@@ -22944,7 +22944,7 @@ msgid "Åland Islands"
 msgstr "Ilhas Åland"
 
 #. module: base
-#. odoo-python
+#. weth-python
 #: code:addons/base/models/ir_ui_view.py:0
 msgid "“%(attribute)s” value must be an integer (%(value)s)"
 msgstr "o valor “%(attribute)s” deve ser um número inteiro (%(value)s)"

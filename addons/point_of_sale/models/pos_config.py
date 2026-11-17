@@ -696,7 +696,7 @@ class PosConfig(models.Model):
 
         if not partner:
             partner = self.env['res.partner'].create({
-                'name': 'Odoo POS',
+                'name': 'WETH POS',
                 'is_company': False,
                 'active': False,
                 'company_id': self.env.company.id,

@@ -49,8 +49,8 @@ test("Analytic hierachy in list view", async () => {
     });
     await contains(".o_searchview_dropdown_toggler").click()
     await contains(".o_group_by_menu .o_accordion_toggle").click();
-    expect(".o_group_by_menu .o_accordion_values .o-dropdown-item").toHaveCount(3);
-    await contains(".o_group_by_menu .o_accordion_values .o-dropdown-item:last").click();
+    expect(".o_group_by_menu .o_accordion_values .w-dropdown-item").toHaveCount(3);
+    await contains(".o_group_by_menu .o_accordion_values .w-dropdown-item:last").click();
     expect(".o_facet_value").toHaveText("Country")
     expect(".o_list_table tbody .o_group_name").toHaveCount(3);
 });
@@ -73,8 +73,8 @@ test("Analytic hierachy in kanban view", async () => {
     });
     await contains(".o_searchview_dropdown_toggler").click()
     await contains(".o_group_by_menu .o_accordion_toggle").click();
-    expect(".o_group_by_menu .o_accordion_values .o-dropdown-item").toHaveCount(3);
-    await contains(".o_group_by_menu .o_accordion_values .o-dropdown-item:last").click();
+    expect(".o_group_by_menu .o_accordion_values .w-dropdown-item").toHaveCount(3);
+    await contains(".o_group_by_menu .o_accordion_values .w-dropdown-item:last").click();
     expect(".o_facet_value").toHaveText("Country")
     expect(".o_kanban_renderer .o_kanban_group").toHaveCount(3);
 });
@@ -93,15 +93,15 @@ test("Analytic hierachy in pivot view", async () => {
     });
     await contains(".o_searchview_dropdown_toggler").click()
     await contains(".o_group_by_menu .o_accordion_toggle").click();
-    expect(".o_group_by_menu .o_accordion_values .o-dropdown-item").toHaveCount(3);
-    await contains(".o_group_by_menu .o_accordion_values .o-dropdown-item:last").click();
+    expect(".o_group_by_menu .o_accordion_values .w-dropdown-item").toHaveCount(3);
+    await contains(".o_group_by_menu .o_accordion_values .w-dropdown-item:last").click();
     expect(".o_facet_value").toHaveText("Country");
     expect(".o_pivot tbody .o_value").toHaveCount(4); // 3 groups + 1 total
 
     // Also check the pivot cell choices
     await contains(".o_pivot tbody .o_pivot_header_cell_closed").click()
-    await contains(".o_popover .o-dropdown-caret").hover()
-    expect(".o_popover.o-dropdown--menu-submenu span.o-dropdown-item").toHaveCount(3);
+    await contains(".o_popover .w-dropdown-caret").hover()
+    expect(".o_popover.w-dropdown--menu-submenu span.w-dropdown-item").toHaveCount(3);
 });
 
 test.tags("desktop");
@@ -115,7 +115,7 @@ test("Analytic hierachy in graph view", async () => {
     });
     await contains(".o_searchview_dropdown_toggler").click()
     await contains(".o_group_by_menu .o_accordion_toggle").click();
-    expect(".o_group_by_menu .o_accordion_values .o-dropdown-item").toHaveCount(3);
-    await contains(".o_group_by_menu .o_accordion_values .o-dropdown-item:last").click();
+    expect(".o_group_by_menu .o_accordion_values .w-dropdown-item").toHaveCount(3);
+    await contains(".o_group_by_menu .o_accordion_values .w-dropdown-item:last").click();
     expect(".o_facet_value").toHaveText("Country")
 });

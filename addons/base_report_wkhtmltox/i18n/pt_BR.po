@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/base_report_wkhtmltox/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -78,14 +78,14 @@ msgstr ""
 "navegador; PDF significa que o relatório será gerado e baixado pelo usuário."
 
 #. module: base_report_wkhtmltox
-#. odoo-python
+#. weth-python
 #: code:addons/base_report_wkhtmltox/models/ir_actions_report.py:0
 msgid "Tried to convert multiple documents in wkhtmltopdf using unpatched QT"
 msgstr ""
 "Tentei converter vários documentos no wkhtmltopdf usando o QT não corrigido"
 
 #. module: base_report_wkhtmltox
-#. odoo-python
+#. weth-python
 #: code:addons/base_report_wkhtmltox/models/ir_actions_report.py:0
 msgid ""
 "Wkhtmltoimage failed (error code: %(error_code)s). Message: %"
@@ -95,7 +95,7 @@ msgstr ""
 "(error_message_end)s"
 
 #. module: base_report_wkhtmltox
-#. odoo-python
+#. weth-python
 #: code:addons/base_report_wkhtmltox/models/ir_actions_report.py:0
 msgid ""
 "Wkhtmltopdf failed (error code: %(error_code)s). Memory limit too low or "
@@ -106,14 +106,14 @@ msgstr ""
 "%(message)s"
 
 #. module: base_report_wkhtmltox
-#. odoo-python
+#. weth-python
 #: code:addons/base_report_wkhtmltox/models/ir_actions_report.py:0
 msgid "Wkhtmltopdf failed (error code: %(error_code)s). Message: %(message)s"
 msgstr ""
 "Falha de Wkhtmltopdf (código de erro: %(error_code)s). Mensagem: %(message)s"
 
 #. module: base_report_wkhtmltox
-#. odoo-python
+#. weth-python
 #: code:addons/base_report_wkhtmltox/models/ir_actions_report.py:0
 msgid "wkhtmltoimage 0.12.0^ is required in order to render images from html"
 msgstr "wkhtmltoimage 0.12.0^ é necessário para renderizar imagens de html"

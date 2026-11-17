@@ -70,7 +70,7 @@ class DiscussChannel(models.Model):
     def message_post(self, **kwargs):
         """Override to mark the visitor as still connected.
         If the message sent is not from the operator (so if it's the visitor or
-        odoobot sending closing chat notification, the visitor last action date is updated."""
+        wethbot sending closing chat notification, the visitor last action date is updated."""
         message = super().message_post(**kwargs)
         message_author_id = message.author_id
         visitor = self.livechat_visitor_id

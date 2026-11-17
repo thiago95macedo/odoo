@@ -432,7 +432,7 @@ class ExportFormat:
         return f"{model_description} ({base})"
 
     def from_data(self, fields, columns_headers, rows):
-        """ Conversion method from Odoo's export data to whatever the
+        """ Conversion method from WETH's export data to whatever the
         current export class outputs
 
         :params list fields: a list of fields to export

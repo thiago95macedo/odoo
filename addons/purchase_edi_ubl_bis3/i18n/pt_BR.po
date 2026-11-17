@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/purchase_edi_ubl_bis3/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 "receptor recupere o PDF apenas com o arquivo xml.\n"
 
 #. module: purchase_edi_ubl_bis3
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_edi_ubl_bis3/models/purchase_edi_xml_ubl_bis3.py:0
 msgid "Could not retrieve the product named: %(name)s"
 msgstr "Não foi possível recuperar o produto chamado: %(name)s"
@@ -77,13 +77,13 @@ msgid "Purchase UBL BIS Ordering 3.5"
 msgstr "Comprar UBL BIS Ordering 3.5"
 
 #. module: purchase_edi_ubl_bis3
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_edi_ubl_bis3/models/purchase_order.py:0
 msgid "Some information could not be imported:"
 msgstr "Não foi possível importar algumas informações:"
 
 #. module: purchase_edi_ubl_bis3
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_edi_ubl_bis3/models/account_move.py:0
 msgid ""
 "You can only (un)group lines of an invoice not linked to a purchase order"

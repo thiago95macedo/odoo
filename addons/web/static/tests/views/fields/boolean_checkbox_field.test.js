@@ -17,5 +17,5 @@ test("boolean_checkbox display as checkbox instead of toggle on mobile", async (
         type: "form",
         arch: `<form><field widget="boolean_checkbox" name="bar"/></form>`,
     });
-    expect(".o-checkbox").not.toHaveClass("o_boolean_toggle");
+    expect(".w-checkbox").not.toHaveClass("o_boolean_toggle");
 });

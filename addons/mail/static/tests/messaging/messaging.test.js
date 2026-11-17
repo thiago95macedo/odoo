@@ -43,7 +43,7 @@ test("Receiving a new message out of discuss app should open a chat bubble", asy
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatBubble[name='Dumbledore']");
+    await contains(".w-mail-ChatBubble[name='Dumbledore']");
 });
 
 test("Show conversations with new message in chat hub (outside of discuss app)", async () => {
@@ -80,12 +80,12 @@ test("Show conversations with new message in chat hub (outside of discuss app)",
         })
     );
     await expect.waitForSteps(["discuss.channel/new_message"]);
-    await contains(".o-mail-ChatBubble .badge:contains(1)", { count: 1 });
-    await click(".o-mail-ChatBubble[name='Dumbledore']");
-    await contains(".o-mail-ChatWindow-header:contains('Dumbledore')");
-    await contains(".o-mail-Message:contains('Chat Message 1')");
+    await contains(".w-mail-ChatBubble .badge:contains(1)", { count: 1 });
+    await click(".w-mail-ChatBubble[name='Dumbledore']");
+    await contains(".w-mail-ChatWindow-header:contains('Dumbledore')");
+    await contains(".w-mail-Message:contains('Chat Message 1')");
     await contains(".badge", { count: 0 });
-    await click(".o-mail-ChatWindow [title*='Close Chat Window']");
+    await click(".w-mail-ChatWindow [title*='Close Chat Window']");
     // simulate receiving new message (group chat, outside discuss app)
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -95,12 +95,12 @@ test("Show conversations with new message in chat hub (outside of discuss app)",
         })
     );
     await expect.waitForSteps(["discuss.channel/new_message"]);
-    await contains(".o-mail-ChatBubble[name='GroupChat']");
+    await contains(".w-mail-ChatBubble[name='GroupChat']");
     await openDiscuss();
-    await contains(".o-mail-Discuss[data-active]");
+    await contains(".w-mail-Discuss[data-active]");
     // simulate receiving new message (chat, inside discuss app)
     await contains(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem-name:text(Dumbledore)) .badge",
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem-name:text(Dumbledore)) .badge",
         { count: 0 }
     );
     await withUser(userId, () =>
@@ -112,14 +112,14 @@ test("Show conversations with new message in chat hub (outside of discuss app)",
     );
     await expect.waitForSteps(["discuss.channel/new_message"]);
     await click(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem-name:text(Dumbledore)) .badge:text(1)"
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem-name:text(Dumbledore)) .badge:text(1)"
     );
-    await contains(".o-mail-Message:contains('Tricky')");
+    await contains(".w-mail-Message:contains('Tricky')");
     // check no new chat window/bubble while in discuss app
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-ChatBubble[name='GroupChat']");
-    await contains(".o-mail-ChatBubble[name='Dumbledore']", { count: 0 });
-    await contains(".o-mail-ChatWindow-header:contains('Dumbledore')", { count: 0 });
+    await contains(".w-mail-ChatBubble[name='GroupChat']");
+    await contains(".w-mail-ChatBubble[name='Dumbledore']", { count: 0 });
+    await contains(".w-mail-ChatWindow-header:contains('Dumbledore')", { count: 0 });
 });
 
 test("Posting a message in discuss app should not open a chat window after leaving discuss app", async () => {
@@ -134,10 +134,10 @@ test("Posting a message in discuss app should not open a chat window after leavi
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "test https://www.weth.com.br/");
+    await insertText(".w-mail-Composer-input", "test https://www.weth.com.br/");
     await press("Enter");
     // leaving discuss.
     await openFormView("res.partner", partnerId);
     // weak test, no guarantee that we waited long enough for the potential chat window to open
-    await contains(".o-mail-ChatWindow-displayName:text('Dumbledore')", { count: 0 });
+    await contains(".w-mail-ChatWindow-displayName:text('Dumbledore')", { count: 0 });
 });

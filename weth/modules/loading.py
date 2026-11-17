@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
     from collections.abc import Collection, Iterable
     from weth.api import Environment
     from weth.sql_db import BaseCursor
-    from weth.tests.result import OdooTestResult
+    from weth.tests.result import WethTestResult
     from .module_graph import ModuleNode
 
     LoadKind = typing.Literal['data', 'demo']
@@ -116,7 +116,7 @@ def load_module_graph(
     env: Environment,
     graph: ModuleGraph,
     update_module: bool = False,
-    report: OdooTestResult | None = None,
+    report: WethTestResult | None = None,
     install_demo: bool = True,
 ) -> None:
     """ Load, upgrade and install not loaded module nodes in the ``graph`` for ``env.registry``

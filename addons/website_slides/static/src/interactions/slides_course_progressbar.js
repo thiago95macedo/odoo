@@ -2,28 +2,28 @@ import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 
 export class WebsiteSlidesProgressBar extends Interaction {
-    static selector = ".o_wslides_slides_list";
+    static selector = ".w_wslides_slides_list";
 
     dynamicSelectors = {
         ...this.dynamicSelectors,
         _progressPercentage: () =>
             document.querySelector(
-                ".o_wslides_channel_completion_progressbar .o_wslides_progress_percentage"
+                ".w_wslides_channel_completion_progressbar .w_wslides_progress_percentage"
             ),
         _progressBar: () =>
-            document.querySelector(".o_wslides_channel_completion_progressbar .progress-bar"),
+            document.querySelector(".w_wslides_channel_completion_progressbar .progress-bar"),
     };
     dynamicContent = {
-        "button.o_wslides_button_complete": {
+        "button.w_wslides_button_complete": {
             "t-on-click.prevent.stop": this.onCompleteClick,
         },
-        ".o_wslides_channel_completion_progressbar": {
+        ".w_wslides_channel_completion_progressbar": {
             "t-att-class": () => ({
                 "d-none": this.progressbarCompletion >= 100,
                 "d-flex": this.progressbarCompletion < 100,
             }),
         },
-        ".o_wslides_channel_completion_completed": {
+        ".w_wslides_channel_completion_completed": {
             "t-att-class": () => ({ "d-none": this.progressbarCompletion < 100 }),
         },
         _progressBar: {
@@ -46,7 +46,7 @@ export class WebsiteSlidesProgressBar extends Interaction {
         });
         this.progressbarCompletion = parseInt(
             document.querySelector(
-                ".o_wslides_channel_completion_progressbar .o_wslides_progress_percentage"
+                ".w_wslides_channel_completion_progressbar .w_wslides_progress_percentage"
             )?.textContent || 0
         );
     }
@@ -57,7 +57,7 @@ export class WebsiteSlidesProgressBar extends Interaction {
      */
     toggleCompletionButton(slide) {
         const buttonEl = this.el.querySelector(
-            `.o_wslides_sidebar_done_button[data-id="${slide.id}"]`
+            `.w_wslides_sidebar_done_button[data-id="${slide.id}"]`
         );
         if (!buttonEl) {
             return;
@@ -91,7 +91,7 @@ export class WebsiteSlidesProgressBar extends Interaction {
      * It will toggle the slide completion in the slides service.
      */
     onCompleteClick(ev) {
-        const data = ev.currentTarget.closest(".o_wslides_sidebar_done_button").dataset;
+        const data = ev.currentTarget.closest(".w_wslides_sidebar_done_button").dataset;
         const slide = {
             id: Number(data.id),
             uncompletedIcon: data.uncompletedIcon,

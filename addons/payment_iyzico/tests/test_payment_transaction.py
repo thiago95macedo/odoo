@@ -30,7 +30,7 @@ class TestPaymentTransaction(IyzicoCommon, PaymentHttpCommon):
                     {
                         "id": tx.id,
                         "price": tx.amount,
-                        "name": "Odoo purchase",
+                        "name": "WETH purchase",
                         "category1": "Service",
                         "itemType": "VIRTUAL",
                     }
@@ -57,7 +57,7 @@ class TestPaymentTransaction(IyzicoCommon, PaymentHttpCommon):
                 "currency": tx.currency_id.name,
                 "locale": "tr" if tx.env.lang == "tr_TR" else "en",
                 "paidPrice": tx.amount,
-                "paymentSource": "ODOO",
+                "paymentSource": "WETH",
                 "price": tx.amount,
             },
         )

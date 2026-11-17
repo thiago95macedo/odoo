@@ -37,5 +37,5 @@ test("Search input is not focusable in mobile", async () => {
 
     const input = getFixture().querySelector(".o_searchview_input");
     expect(document.activeElement).not.toBe(input);
-    expect(".o_bottom_sheet .o-filter-values").toHaveCount(1);
+    expect(".o_bottom_sheet .w-filter-values").toHaveCount(1);
 });

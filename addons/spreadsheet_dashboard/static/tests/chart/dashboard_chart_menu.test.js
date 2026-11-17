@@ -77,27 +77,27 @@ test("Click on chart in dashboard mode redirect to the datasource action", async
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
+        wethLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
     });
-    const chartMenu = model.getters.getChartOdooLink(chartId);
+    const chartMenu = model.getters.getChartWethLink(chartId);
     expect(chartMenu).toEqual(
         { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
-        { message: "Odoo menu is linked to chart" }
+        { message: "WETH menu is linked to chart" }
     );
     await animationFrame();
 
-    await click(fixture.querySelector(".o-chart-container canvas"));
+    await click(fixture.querySelector(".w-chart-container canvas"));
     await animationFrame();
     // Clicking on a chart while not dashboard mode do nothing
     expect.verifySteps([]);
 
     model.updateMode("dashboard");
     await animationFrame();
-    await click(fixture.querySelector(".o-chart-container canvas"));
+    await click(fixture.querySelector(".w-chart-container canvas"));
     await animationFrame();
-    // Clicking on a chart while on dashboard mode redirect to the odoo menu
+    // Clicking on a chart while on dashboard mode redirect to the weth menu
     expect.verifySteps([doActionStep]);
 });
 
@@ -129,32 +129,32 @@ test("Click on chart element in dashboard mode do not redirect twice", async fun
     });
     const fixture = await mountSpreadsheet(model);
     const chartId = insertChartInSpreadsheet(model, "pie");
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
+        wethLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
     });
     await animationFrame();
     model.updateMode("dashboard");
     await animationFrame();
 
     // Click pie element
-    const chartCanvas = fixture.querySelector(".o-chart-container canvas");
+    const chartCanvas = fixture.querySelector(".w-chart-container canvas");
     const canvasRect = chartCanvas.getBoundingClientRect();
     const canvasCenter = {
         x: canvasRect.left + canvasRect.width / 2 - 5,
         y: canvasRect.top + canvasRect.height / 2 - 5,
     };
-    await click(".o-chart-container canvas", { position: canvasCenter, relative: true });
+    await click(".w-chart-container canvas", { position: canvasCenter, relative: true });
     await animationFrame();
     expect.verifySteps(["chartElementRedirect"]);
 
     // Click outside the pie element
-    await click(".o-chart-container canvas", { position: "top-left" });
+    await click(".w-chart-container canvas", { position: "top-left" });
     await animationFrame();
     expect.verifySteps(["chartMenuRedirect"]);
 });
 
-test("Can click on a chart with no odoo link", async function () {
+test("Can click on a chart with no weth link", async function () {
     const { model } = await createSpreadsheetWithPivot({ serverData });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
@@ -163,7 +163,7 @@ test("Can click on a chart with no odoo link", async function () {
     model.updateMode("dashboard");
     await animationFrame();
 
-    await contains(".o-chart-container canvas").click();
+    await contains(".w-chart-container canvas").click();
     await animationFrame();
     expect.verifySteps([]);
 });
@@ -180,20 +180,20 @@ test("Clicking on a scorecard or gauge redirects to the linked datasource", asyn
     await mountSpreadsheet(model);
     createScorecardChart(model, "scorecardId");
     createGaugeChart(model, "gaugeId");
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId: "scorecardId",
-        odooLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
+        wethLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
     });
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId: "gaugeId",
-        odooLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
+        wethLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
     });
     await animationFrame();
 
     model.updateMode("dashboard");
     await animationFrame();
 
-    const chartCanvas = document.querySelectorAll(".o-figure canvas");
+    const chartCanvas = document.querySelectorAll(".w-figure canvas");
 
     await click(chartCanvas[0]);
     await animationFrame();
@@ -222,17 +222,17 @@ test("Middle-click on chart in dashboard mode open the linked datasource in a ne
     });
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
+        wethLink: { type: "dataSource", dataSourceType: "pivot", dataSourceCoreId: pivotId },
     });
 
     model.updateMode("dashboard");
     await animationFrame();
-    await contains(".o-chart-container canvas").click({ ctrlKey: true });
+    await contains(".w-chart-container canvas").click({ ctrlKey: true });
     expect.verifySteps(["doAction"]);
 
-    await contains(".o-chart-container canvas").click({ button: 1 }); // middle mouse click
+    await contains(".w-chart-container canvas").click({ button: 1 }); // middle mouse click
     expect.verifySteps(["doAction"]);
 });
 
@@ -250,16 +250,16 @@ test("Clicking on the carousel header doesn't redirect to its chart's linked men
     createCarousel(model, { items: [] }, "carouselId");
     addChartFigureToCarousel(model, "carouselId", chartFigureId);
 
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: 2 },
+        wethLink: { type: "wethMenu", wethMenuId: 2 },
     });
     model.updateMode("dashboard");
     await animationFrame();
 
-    await contains(".o-carousel-header").click();
+    await contains(".w-carousel-header").click();
     expect.verifySteps([]);
 
-    await contains(".o-carousel canvas").click();
+    await contains(".w-carousel canvas").click();
     expect.verifySteps(["menuAction2"]);
 });

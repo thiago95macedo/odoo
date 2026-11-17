@@ -13,24 +13,24 @@ class MailBot(models.AbstractModel):
 
     def _apply_logic(self, channel, message, command=None):
         """ Apply bot logic to generate an answer (or not) for the user
-        The logic will only be applied if odoobot is in a chat with a user or
-        if someone pinged odoobot.
+        The logic will only be applied if wethbot is in a chat with a user or
+        if someone pinged wethbot.
 
-         :param channel: the discuss channel where the user message was posted/odoobot will answer.
+         :param channel: the discuss channel where the user message was posted/wethbot will answer.
          :param values: msg_values of the message_post or other values needed by logic
          :param command: the name of the called command if the logic is not triggered by a message_post
         """
         channel.ensure_one()
-        odoobot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
+        wethbot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
         message = message or self.env['mail.message']
-        if message.author_id.id == odoobot_id or message.message_type != "comment" and not command:
+        if message.author_id.id == wethbot_id or message.message_type != "comment" and not command:
             return
         body = (message.body or '').replace("\xa0", " ").strip().lower().strip(".!")
         if answer := self._get_answer(channel, body, message, command):
             answers = answer if isinstance(answer, list) else [answer]
             for ans in answers:
                 channel.sudo().message_post(
-                    author_id=odoobot_id,
+                    author_id=wethbot_id,
                     body=ans,
                     message_type="comment",
                     silent=True,
@@ -55,49 +55,49 @@ class MailBot(models.AbstractModel):
         }
 
     def _get_answer(self, channel, body, message, command=False):
-        odoobot = self.env.ref("base.partner_root")
+        wethbot = self.env.ref("base.partner_root")
         # onboarding
-        odoobot_state = self.env.user.odoobot_state
+        wethbot_state = self.env.user.wethbot_state
 
-        if channel.channel_type == "chat" and odoobot in channel.channel_member_ids.partner_id:
+        if channel.channel_type == "chat" and wethbot in channel.channel_member_ids.partner_id:
             # main flow
             source = _("Thanks")
-            if odoobot_state == 'onboarding_emoji' and self._body_contains_emoji(body):
-                self.env.user.odoobot_state = "onboarding_ping"
-                self.env.user.odoobot_failed = False
+            if wethbot_state == 'onboarding_emoji' and self._body_contains_emoji(body):
+                self.env.user.wethbot_state = "onboarding_ping"
+                self.env.user.wethbot_failed = False
                 return self.env._(
                     "Wow, you're a natural!%(new_line)s Use @username to mention someone and grab their "
                     "attention.%(new_line)s %(bold_start)sTry mentioning me by typing%(bold_end)s "
-                    "%(command_start)s@OdooBot%(command_end)s in your message.",
+                    "%(command_start)s@WethBot%(command_end)s in your message.",
                     **self._get_style_dict()
                 )
-            elif odoobot_state == "onboarding_ping" and odoobot in message.partner_ids:
-                self.env.user.odoobot_state = "onboarding_attachement"
-                self.env.user.odoobot_failed = False
+            elif wethbot_state == "onboarding_ping" and wethbot in message.partner_ids:
+                self.env.user.wethbot_state = "onboarding_attachement"
+                self.env.user.wethbot_failed = False
                 return self.env._(
                     "Yep, I'm here! 🎉 %(new_line)sNow, try %(bold_start)ssending an "
                     "attachment%(bold_end)s 📎 - maybe a picture of your cute dog... 🐕",
                     **self._get_style_dict()
                 )
-            elif odoobot_state == "onboarding_attachement" and message.attachment_ids:
+            elif wethbot_state == "onboarding_attachement" and message.attachment_ids:
                 self.env["mail.canned.response"].create({
                     "source": source,
                     "substitution": _("Thanks for your feedback. Goodbye!"),
                 })
-                self.env.user.odoobot_failed = False
-                self.env.user.odoobot_state = "onboarding_canned"
+                self.env.user.wethbot_failed = False
+                self.env.user.wethbot_state = "onboarding_canned"
                 return self.env._(
                     "Wonderful! 😇%(new_line)sTry typing %(command_start)s::%(command_end)s to use "
                     "canned responses. I've created a temporary one just for you.",
                     **self._get_style_dict()
                 )
-            elif odoobot_state == "onboarding_canned" and self.env.context.get("canned_response_ids"):
+            elif wethbot_state == "onboarding_canned" and self.env.context.get("canned_response_ids"):
                 self.env["mail.canned.response"].search([
                     ("create_uid", "=", self.env.user.id),
                     ("source", "=", source),
                 ]).unlink()
-                self.env.user.odoobot_failed = False
-                self.env.user.odoobot_state = "onboarding_command"
+                self.env.user.wethbot_failed = False
+                self.env.user.wethbot_state = "onboarding_command"
                 return [
                     self.env._(
                         "Great! You can customize %(bold_start)scanned responses%(bold_end)s in the Discuss app settings.",
@@ -109,33 +109,33 @@ class MailBot(models.AbstractModel):
                         **self._get_style_dict(),
                     ),
                 ]
-            elif odoobot_state == 'onboarding_command' and command == 'help':
-                self.env.user.odoobot_state = "idle"
-                self.env.user.odoobot_failed = False
+            elif wethbot_state == 'onboarding_command' and command == 'help':
+                self.env.user.wethbot_state = "idle"
+                self.env.user.wethbot_failed = False
                 return self.env._(
                     "That's the end of this overview. You can %(bold_start)sclose this conversation%(bold_end)s or type "
-                    "%(command_start)sstart the tour%(command_end)s to see it again. Enjoy exploring Odoo!",
+                    "%(command_start)sstart the tour%(command_end)s to see it again. Enjoy exploring Weth!",
                     **self._get_style_dict(),
                 )
             # repeat question if needed
-            elif odoobot_state == 'onboarding_command' and not self._is_help_requested(body):
-                self.env.user.odoobot_failed = True
+            elif wethbot_state == 'onboarding_command' and not self._is_help_requested(body):
+                self.env.user.wethbot_failed = True
                 return self.env._(
                     "It looks like you're not sure what to do next. Please type "
                     "%(command_start)s/%(command_end)s to see the suggestions, then "
                     "select %(command_start)shelp%(command_end)s and press Enter.",
                     **self._get_style_dict()
                 )
-            elif odoobot_state in (False, "idle", "not_initialized") and (_('start the tour') in body.lower()):
-                self.env.user.odoobot_state = "onboarding_emoji"
+            elif wethbot_state in (False, "idle", "not_initialized") and (_('start the tour') in body.lower()):
+                self.env.user.wethbot_state = "onboarding_emoji"
                 return self.env._("To get started, try sending me an emoji 😊")
             # easter eggs
-            elif odoobot_state == "idle" and body in ['❤️', _('i love you'), _('love'), '<p>❤️</p>', '<p>%s</p>' % _('i love you'), '<p>%s</p>' % _('love')]:
+            elif wethbot_state == "idle" and body in ['❤️', _('i love you'), _('love'), '<p>❤️</p>', '<p>%s</p>' % _('i love you'), '<p>%s</p>' % _('love')]:
                 return _("Aaaaaw that's really cute but, you know, bots don't work that way. You're too human for me! Let's keep it professional ❤️")
             elif _('fuck') in body or "fuck" in body:
                 return _("That's not nice! I'm a bot but I have feelings... 💔")
             # help message
-            elif self._is_help_requested(body) or odoobot_state == 'idle':
+            elif self._is_help_requested(body) or wethbot_state == 'idle':
                 return self.env._(
                     "Unfortunately, I'm just a bot 😞 I don't understand that.%(new_line)s"
                     "If you need help exploring our apps, please check out %(document_link_start)sour "
@@ -145,31 +145,31 @@ class MailBot(models.AbstractModel):
                 )
             else:
                 # repeat question
-                if odoobot_state == 'onboarding_emoji':
-                    self.env.user.odoobot_failed = True
+                if wethbot_state == 'onboarding_emoji':
+                    self.env.user.wethbot_failed = True
                     return self.env._(
                         "Not quite. To continue the tour, please send an emoji by typing"
                         " %(command_start)s:)%(command_end)s and "
                         "pressing Enter, or by clicking the %(smile_icon)s icon to pick one.",
                         **self._get_style_dict()
                     )
-                elif odoobot_state == 'onboarding_ping':
-                    self.env.user.odoobot_failed = True
+                elif wethbot_state == 'onboarding_ping':
+                    self.env.user.wethbot_failed = True
                     return self.env._(
                         "Sorry, I'm not listening right now. To get my attention, %(bold_start)smention "
-                        "me%(bold_end)s by typing %(command_start)s@OdooBot%(command_end)s and selecting"
+                        "me%(bold_end)s by typing %(command_start)s@WethBot%(command_end)s and selecting"
                         " me.",
                         **self._get_style_dict()
                     )
-                elif odoobot_state == 'onboarding_attachement':
-                    self.env.user.odoobot_failed = True
+                elif wethbot_state == 'onboarding_attachement':
+                    self.env.user.wethbot_failed = True
                     return self.env._(
                         "To %(bold_start)ssend an attachment%(bold_end)s, first click the "
                         "%(plus_icon)s icon, then select %(paperclip_icon)s Attach files.",
                         **self._get_style_dict()
                     )
-                elif odoobot_state == 'onboarding_canned':
-                    self.env.user.odoobot_failed = True
+                elif wethbot_state == 'onboarding_canned':
+                    self.env.user.wethbot_failed = True
                     return self.env._(
                         "Not sure what you're doing? Please type %(command_start)s::%(command_end)s "
                         "to see canned responses. Select one and press Enter.",
@@ -331,4 +331,4 @@ class MailBot(models.AbstractModel):
         """Returns whether a message linking to the documentation and videos
         should be sent back to the user.
         """
-        return any(token in body for token in ['help', _('help'), '?']) or self.env.user.odoobot_failed
+        return any(token in body for token in ['help', _('help'), '?']) or self.env.user.wethbot_failed

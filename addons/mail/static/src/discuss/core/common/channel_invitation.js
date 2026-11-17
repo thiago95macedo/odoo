@@ -13,7 +13,7 @@ import { useDebounced } from "@web/core/utils/timing";
 /**
  * Open the channel invitation UI as a centered dialog, reusing {@link ChannelInvitation}.
  *
- * @param {import("@web/env").OdooEnv} env environment providing the dialog service.
+ * @param {import("@web/env").WethEnv} env environment providing the dialog service.
  * @param {import("models").DiscussChannel} [channel] channel to invite people to.
  * @returns {void}
  */

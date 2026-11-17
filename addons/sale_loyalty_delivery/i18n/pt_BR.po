@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 13:34+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_loyalty_delivery/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/models/loyalty_reward.py:0
 msgid " (Max %s)"
 msgstr " (Máx %s)"
@@ -41,13 +41,13 @@ msgid "Adds free shipping mechanism in sales orders"
 msgstr "Adiciona o mecanismo de frete grátis em pedidos de venda"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/models/loyalty_program.py:0
 msgid "Automatic promotion: free shipping on orders higher than $50"
 msgstr "Promoção automática: frete grátis para pedidos acima de US$ 50"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/controllers/payment.py:0
 #, fuzzy
 msgid ""
@@ -71,13 +71,13 @@ msgid "Free Shipping"
 msgstr "Frete grátis"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/models/sale_order.py:0
 msgid "Free Shipping - %s"
 msgstr "Entrega grátis - %s"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/models/loyalty_reward.py:0
 #: model_terms:ir.ui.view,arch_db:sale_loyalty_delivery.loyalty_reward_view_form_inherit_loyalty_delivery
 #: model_terms:ir.ui.view,arch_db:sale_loyalty_delivery.loyalty_reward_view_kanban_inherit_loyalty_delivery
@@ -109,7 +109,7 @@ msgid "Loyalty Reward"
 msgstr "Recompensa por fidelidade"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/tests/test_loyalty_delivery.py:0
 msgid "No reward to claim with this coupon"
 msgstr "Não há recompensa a ser resgatada com este cupom"
@@ -136,7 +136,7 @@ msgid "Sales Order"
 msgstr "Pedido de venda"
 
 #. module: sale_loyalty_delivery
-#. odoo-python
+#. weth-python
 #: code:addons/sale_loyalty_delivery/models/payment_provider.py:0
 #, fuzzy
 msgid "incompatible with gift cards and eWallets"

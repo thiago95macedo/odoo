@@ -54,7 +54,7 @@ export function registerPythonTemplate(name, url, templateString) {
 
     /**
      * Converts Python-style expressions to JavaScript equivalents.
-     * Used to pre-process Odoo QWeb-like template expressions before client-side rendering.
+     * Used to pre-process WETH QWeb-like template expressions before client-side rendering.
      */
     const translatePythonExprToJs = (template) => {
         const replacements = [

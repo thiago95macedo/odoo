@@ -2,7 +2,7 @@ import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { registry } from "@web/core/registry";
 
-export const PRODUCT_PAGE_OPTION_SELECTOR = "main:has(.o_wsale_product_page)";
+export const PRODUCT_PAGE_OPTION_SELECTOR = "main:has(.w_wsale_product_page)";
 
 export class ProductPageOption extends BaseOptionComponent {
     static id = "product_page_option";
@@ -24,8 +24,8 @@ export class ProductPageOption extends BaseOptionComponent {
             );
             const multipleImages =
                 hasImages &&
-                productDetailMainEl.querySelector(".o_wsale_product_images")?.dataset.imageAmount >
-                    1;
+                productDetailMainEl.querySelector(".w_wsale_product_images")?.dataset.imageAmount >
+                1;
             const isGrid = !!productDetailMainEl.querySelector("#o-grid-product");
             const hasCarousel = !!productPageCarouselEl;
             const hasGrid = !!productPageGridEl;

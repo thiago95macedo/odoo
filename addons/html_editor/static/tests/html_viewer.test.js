@@ -42,7 +42,7 @@ test(`tables are wrapped in a scroll container in a standalone HtmlViewer`, asyn
     expect("td .o_table_wrapper").toHaveCount(0);
 });
 
-test(`copy from HtmlViewer must support application/vnd.odoo.odoo-editor`, async () => {
+test(`copy from HtmlViewer must support application/vnd.weth.weth-editor`, async () => {
     await mountWithCleanup(WebClient);
 
     registry.category("main_components").add("mycomponent", {
@@ -80,7 +80,7 @@ test(`copy from HtmlViewer must support application/vnd.odoo.odoo-editor`, async
 
     expect(clipboardData.getData("text/plain").trim()).toBe("A");
     expect(clipboardData.getData("text/html")).toInclude("background-color");
-    expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+    expect(clipboardData.getData("application/vnd.weth.weth-editor")).toBe(
         clipboardData.getData("text/html")
     );
 });
@@ -117,7 +117,7 @@ test(`copy from HtmlViewer should copy all the selection`, async () => {
     tableParent.dispatchEvent(new ClipboardEvent("copy", { bubbles: true, clipboardData }));
 
     expect(clipboardData.getData("text/html")).toInclude("table");
-    expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+    expect(clipboardData.getData("application/vnd.weth.weth-editor")).toBe(
         clipboardData.getData("text/html")
     );
 });

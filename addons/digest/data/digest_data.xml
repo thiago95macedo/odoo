@@ -147,11 +147,11 @@
                 color: #374151;
                 font-size: 14px;
             }
-            .by_odoo {
+            .by_weth {
                 color: #878d97;
                 font-size: 12px;
             }
-            .odoo_link_text {
+            .weth_link_text {
                 font-weight: bold;
                 color: <t t-out="color_company"/>;
             }
@@ -233,7 +233,7 @@
                 .preference {
                     font-size: 12px;
                 }
-                .by_odoo {
+                .by_weth {
                     font-size: 10px;
                 }
                 .run_business {
@@ -409,9 +409,9 @@
                                                 <div t-if="preferences" t-foreach="preferences" t-as="preference" class="preference">
                                                     <t t-out="preference" />
                                                 </div>
-                                                <div class="by_odoo" style="margin-bottom: 15px;">
+                                                <div class="by_weth" style="margin-bottom: 15px;">
                                                     Sent by <a href="https://www.weth.com.br" target="_blank">
-                                                    <span class="odoo_link_text">WETH</span></a>
+                                                    <span class="weth_link_text">WETH</span></a>
                                                     <t t-if="unsubscribe_token">
                                                         –
                                                         <a t-attf-href="/digest/#{object.id}/unsubscribe?token=#{unsubscribe_token}&amp;user_id=#{user.id}" target="_blank"
@@ -449,9 +449,9 @@
                         <tr>
                             <div id="footer">
                                 <p style="font-weight: bold;" t-out="company.name" />
-                                <p class="by_odoo" id="powered">
-                                    Powered by <a href="https://www.weth.com.br" target="_blank" class="odoo_link">
-                                        <span class="odoo_link_text">WETH</span></a>
+                                <p class="by_weth" id="powered">
+                                    Powered by <a href="https://www.weth.com.br" target="_blank" class="weth_link">
+                                        <span class="weth_link_text">WETH</span></a>
                                 </p>
                             </div>
                         </tr>
@@ -472,26 +472,26 @@
         <tbody>
             <tr>
                 <td align="right" style="width: 33%;">
-                    <img src="https://www.weth.com.br/web/image/38874595-16ef5349/odoo-mobile.png" alt="Odoo Mobile" />
+                    <img src="https://www.weth.com.br/web/image/38874595-16ef5349/weth-mobile.png" alt="WETH Mobile" />
                 </td>
                 <td align="left" style="width: 66%;">
                     <table>
                         <tbody>
                             <tr>
                                 <td>
-                                    <p class="run_business">Run your business from anywhere with <b>Odoo Mobile</b>.</p>
+                                    <p class="run_business">Run your business from anywhere with <b>WETH Mobile</b>.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://play.google.com/store/apps/details?id=com.odoo.mobile"
+                                    <a href="https://play.google.com/store/apps/details?id=com.weth.mobile"
                                         target="_blank">
                                             <img class="download_app" height="40" width="135"
-                                                    src="https://download.odoocdn.com/digests/digest/static/src/img/google_play.png" />
+                                                    src="https://download.wethcdn.com/digests/digest/static/src/img/google_play.png" />
                                     </a>
                                     <a href="https://itunes.apple.com/us/app/weth/id1272543640" target="_blank">
                                         <img class="download_app" height="40" width="135"
-                                                src="https://download.odoocdn.com/digests/digest/static/src/img/app_store.png" />
+                                                src="https://download.wethcdn.com/digests/digest/static/src/img/app_store.png" />
                                     </a>
                                 </td>
                             </tr>

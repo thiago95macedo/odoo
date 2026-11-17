@@ -15,7 +15,7 @@ test("toggle price list description items", async () => {
     await unfoldAllOptionsGroups();
     await waitFor("[data-action-id='togglePriceListDescription']");
     expect(
-        "[data-action-id='togglePriceListDescription'] .o-checkbox .form-check-input:checked"
+        "[data-action-id='togglePriceListDescription'] .w-checkbox .form-check-input:checked"
     ).toHaveCount(1);
     expect(
         queryAll(":iframe .s_pricelist_boxed .s_pricelist_boxed_item_description").some(
@@ -23,9 +23,9 @@ test("toggle price list description items", async () => {
         )
     ).toBe(false);
 
-    await contains("[data-action-id='togglePriceListDescription'] .o-checkbox").click();
+    await contains("[data-action-id='togglePriceListDescription'] .w-checkbox").click();
     expect(
-        "[data-action-id='togglePriceListDescription'] .o-checkbox .form-check-input:checked"
+        "[data-action-id='togglePriceListDescription'] .w-checkbox .form-check-input:checked"
     ).toHaveCount(0);
     expect(
         queryAll(":iframe .s_pricelist_boxed .s_pricelist_boxed_item_description").every(

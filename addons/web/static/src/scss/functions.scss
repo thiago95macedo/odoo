@@ -1,5 +1,5 @@
 ///============================================================================
-/// Odoo SCSS Functions
+/// WETH SCSS Functions
 ///
 /// Regroup functions that can be used at any stage of the compilation process.
 ///============================================================================
@@ -12,7 +12,7 @@
 /// @return {$-value}
 ///     Unitless number
 @function o-strip-unit($-value) {
-    @if type-of($-value) == 'number' and not unitless($-value) {
+    @if type-of($-value)=='number' and not unitless($-value) {
         @return $-value / ($-value * 0 + 1);
     }
 

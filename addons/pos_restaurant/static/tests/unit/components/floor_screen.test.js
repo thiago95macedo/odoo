@@ -18,9 +18,9 @@ test("timer badge shows duration on floor screen table", async () => {
     const order = store.addNewOrder({ table_id: table });
     order.create_date = DateTime.now().minus({ minutes: 15 });
     await mountWithCleanup(FloorScreen);
-    await waitFor(`.o_fp_table[data-table_id="${table.id}"] .table-timer-badge`);
+    await waitFor(`.w_fp_table[data-table_id="${table.id}"] .table-timer-badge`);
     expect(
-        queryOne(`.o_fp_table[data-table_id="${table.id}"] .table-timer-badge`).textContent.trim()
+        queryOne(`.w_fp_table[data-table_id="${table.id}"] .table-timer-badge`).textContent.trim()
     ).toBe("15'");
 });
 
@@ -39,13 +39,13 @@ test("floor plan unmounted before the background image is loaded", async () => {
         }
     }
     const parent = await mountWithCleanup(Parent);
-    await waitFor(".o_fp_canvas");
+    await waitFor(".w_fp_canvas");
 
     parent.state.show = false;
     await animationFrame();
-    expect(".o_fp_canvas").toHaveCount(0);
+    expect(".w_fp_canvas").toHaveCount(0);
 
     bgImageLoaded.resolve(true);
     await animationFrame();
-    expect(".o_fp_canvas").toHaveCount(0);
+    expect(".w_fp_canvas").toHaveCount(0);
 });

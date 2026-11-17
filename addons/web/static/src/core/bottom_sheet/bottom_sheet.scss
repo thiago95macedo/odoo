@@ -2,12 +2,12 @@
     // =============================================
     // Layout and inner elements
     // =============================================
-    --BottomSheet-slideIn-duration: #{$o_BottomSheet_slideIn_duration};
-    --BottomSheet-slideIn-easing: #{$o_BottomSheet_slideIn_easing};
-    --BottomSheet-slideOut-duration: #{$o_BottomSheet_slideOut_duration};
-    --BottomSheet-slideOut-easing: #{$o_BottomSheet_slideOut_easing};
+    --BottomSheet-slideIn-duration: #{$w_BottomSheet_slideIn_duration};
+    --BottomSheet-slideIn-easing: #{$w_BottomSheet_slideIn_easing};
+    --BottomSheet-slideOut-duration: #{$w_BottomSheet_slideOut_duration};
+    --BottomSheet-slideOut-easing: #{$w_BottomSheet_slideOut_easing};
 
-    --BottomSheet-Sheet-borderColor: #{$o_BottomSheet_Sheet_borderColor};
+    --BottomSheet-Sheet-borderColor: #{$w_BottomSheet_Sheet_borderColor};
 
     @mixin has-more-content-visual {
         content: "";
@@ -59,7 +59,9 @@
     }
 
     // Set snapping behaviors
-    .o_bottom_sheet_dismiss, .o_bottom_sheet_spacer, .o_bottom_sheet_sheet {
+    .o_bottom_sheet_dismiss,
+    .o_bottom_sheet_spacer,
+    .o_bottom_sheet_sheet {
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
@@ -70,9 +72,11 @@
         inset: 0;
         background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
         opacity: 0;
+
         @media (prefers-reduced-motion: no-preference) {
             transition: all 0.2s ease;
         }
+
         pointer-events: auto;
         touch-action: none;
         z-index: $zindex-offcanvas - 1;
@@ -118,13 +122,23 @@
     // States
     // =============================================
     @keyframes bottom-sheet-in {
-        from { transform: translateY(100%) translateZ(0); }
-        to { transform: translateY(0) translateZ(0); }
+        from {
+            transform: translateY(100%) translateZ(0);
+        }
+
+        to {
+            transform: translateY(0) translateZ(0);
+        }
     }
 
     @keyframes bottom-sheet-out {
-        from { transform: translateY(0) translateZ(0); }
-        to { transform: translateY(100%) translateZ(0); }
+        from {
+            transform: translateY(0) translateZ(0);
+        }
+
+        to {
+            transform: translateY(100%) translateZ(0);
+        }
     }
 
     // BottomSheet is ready to be rendered on screen
@@ -184,6 +198,7 @@
         .o_bottom_sheet_backdrop {
             opacity: 0;
             backdrop-filter: grayscale(0%);
+
             @media (prefers-reduced-motion: no-preference) {
                 transition: all var(--BottomSheet-slideOut-duration, 300ms) var(--BottomSheet-slideOut-easing, ease-in);
             }
@@ -214,7 +229,7 @@
         &::after {
             @include o-position-absolute(50%, $list-group-item-padding-x);
             transform: translateY(-50%);
-            color: var(--BottomSheetStatusBar__entry-caret--active, $o-action);
+            color: var(--BottomSheetStatusBar__entry-caret--active, $w-action);
             text-rendering: auto;
             font: normal normal normal 14px/1 'Material Symbols Outlined';
             content: "check";
@@ -230,14 +245,15 @@
         margin: map-get($spacers, 2) ($offcanvas-padding-x * .5);
     }
 
-    .dropdown-item, .dropdown-header {
+    .dropdown-item,
+    .dropdown-header {
         --dropdown-item-padding-y: #{map-get($spacers, 3)};
         --dropdown-item-padding-x: var(--BottomSheet-Entry-paddingX);
         --dropdown-header-padding-y: var(--dropdown-item-padding-y);
         --dropdown-header-padding-x: var(--dropdown-item-padding-x);
 
         font-size: $h5-font-size;
-        font-weight: $o-font-weight-medium;
+        font-weight: $w-font-weight-medium;
         text-align: start !important;
         white-space: normal;
     }
@@ -247,6 +263,7 @@
     }
 
     .o_bottom_sheet_body:not(.o_custom_bottom_sheet) {
+
         // Leave space for the active checkmark icon
         &:has(.dropdown-item.active, .dropdown-item.selected) .dropdown-item {
             padding-right: $spacer * 2.5;
@@ -254,7 +271,9 @@
 
         // Dropdown
         .dropdown-item:not(.dropdown-item_active_noarrow) {
-            &.active, &.selected {
+
+            &.active,
+            &.selected {
                 @extend %BottomSheet-Entry-active;
             }
         }
@@ -272,6 +291,7 @@
             font: normal normal normal 14px/1 'Material Symbols Outlined';
             content: "arrow_drop_down";
         }
+
         &.open::after {
             content: "arrow_drop_up";
         }
@@ -280,6 +300,7 @@
     .o_kanban_card_manage_settings.row .o_colorlist {
         --ColorListField-columns: 6;
     }
+
     .row.o_kanban_card_manage_settings:last-child {
         &:has(:not(.o_field_boolean_favorite)) {
             @include media-breakpoint-down(md) {
@@ -291,7 +312,7 @@
             }
         }
 
-        > div[class*="col-"] {
+        >div[class*="col-"] {
             width: 100%;
             padding: 0;
 
@@ -299,7 +320,7 @@
                 margin: 0;
                 padding: #{map-get($spacers, 3)} var(--BottomSheet-Entry-paddingX);
                 font-size: $h5-font-size;
-                font-weight: $o-font-weight-medium;
+                font-weight: $w-font-weight-medium;
             }
         }
     }

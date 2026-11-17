@@ -21,7 +21,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 13:33+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/hr/pt_BR/>\n"
+"weth-20/hr/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid " Records"
 msgstr " Registros"
@@ -43,31 +43,31 @@ msgid "# emails to send"
 msgstr "Nº de e-mails a enviar"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 msgid "%(calendar_name)s (%(employee_name)s)"
 msgstr "%(calendar_name)s (%(employee_name)s)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan_template.py:0
 msgid "%(employee_name)s has no manager."
 msgstr "%(employee_name)s não tem gerente."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan_template.py:0
 msgid "%(employee_name)s has no user."
 msgstr "%(employee_name)s não tem usuário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan_template.py:0
 msgid "%(employee_name)s's manager (%(manager_name)s) has no user."
 msgstr "O gerente (%(manager_name)s) de %(employee_name)s não tem usuário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid ""
 "%s already has a contract running during the selected period.\n"
@@ -643,7 +643,7 @@ msgid "A good company embraces technological innovation"
 msgstr "Uma boa empresa adota a inovação tecnológica"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "A portal user already exist with the following login: %(login)s. User Name: %"
@@ -654,13 +654,13 @@ msgstr ""
 "funcionário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "A signup link was sent by email"
 msgstr "Um link de registro foi enviado por e-mail"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "A user already exist with the following login: %(login)s. User Name: %"
@@ -677,7 +677,7 @@ msgstr ""
 "empresa."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "A user with the same login (%(login)s) already has an employee in this "
@@ -687,7 +687,7 @@ msgstr ""
 "empresa. Nome de usuário: %(user_name)s / Nome do funcionário: %(employee)s"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "AI"
 msgstr "IA"
@@ -708,7 +708,7 @@ msgid "Ability to manage multiple tasks"
 msgstr "Capacidade de gerenciar várias tarefas"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_absent
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_presence_state__absent
@@ -842,7 +842,7 @@ msgid "Additional Information"
 msgstr "Informação adicional"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "Additional Information: \n"
@@ -937,7 +937,7 @@ msgid "Amount Type"
 msgstr "Tipo de valor"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/radio_followed_by_element.js:0
 msgid "An element name parent of the radio to observe updates"
 msgstr "Nome do elemento principal do rádio para observar as atualizações"
@@ -952,7 +952,7 @@ msgstr ""
 "vigência."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "An inactive user already exist with the following login: %(login)s. User "
@@ -962,7 +962,7 @@ msgstr ""
 "usuário: %(user_name)s."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/radio_followed_by_element.js:0
 msgid "An object to link select options and element id to move"
 msgstr ""
@@ -1022,7 +1022,7 @@ msgid "Archive Employee On"
 msgstr "Funcionário do arquivo em"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 #: model_terms:ir.ui.view,arch_db:hr.hr_employee_public_view_form
 #: model_terms:ir.ui.view,arch_db:hr.hr_employee_public_view_search
@@ -1038,25 +1038,25 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/user_deactivation_dialog.xml:0
 msgid "Are you sure you want to deactivate this user?"
 msgstr "Tem certeza de que quer desativar este usuário?"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "As of"
 msgstr "A partir de"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "As of %(start)s to %(end)s"
 msgstr "A partir de %(start)s para %(end)s"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "As of %s"
 msgstr "A partir de %s"
@@ -1077,33 +1077,33 @@ msgid "Assist with daily project tasks"
 msgstr "Auxiliar nas tarefas diárias do projeto"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_home
 msgid "At Home"
 msgstr "Em casa"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "At Home - Present"
 msgstr "Em casa - Presente"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_office
 msgid "At Office"
 msgstr "No escritório"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "At Office - Present"
 msgstr "No escritório - Presente"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_other
 msgid "At Other"
@@ -1183,7 +1183,7 @@ msgid "Avatar 512"
 msgstr "Avatar 512"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Bachelor"
 msgstr "Graduado"
@@ -1213,7 +1213,7 @@ msgid "Bank Account"
 msgstr "Conta bancária"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 #: model_terms:ir.ui.view,arch_db:hr.view_bank_account_allocation_wizard
 msgid "Bank Account Allocation"
@@ -1241,7 +1241,7 @@ msgid "Bank Accounts"
 msgstr "Contas bancárias"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/wizard/hr_bank_account_wizard.py:0
 msgid ""
 "Bank account %s not found within the salary distribution of the employee"
@@ -1278,7 +1278,7 @@ msgid "Based on user status in system"
 msgstr "Baseado no status do usuário no sistema"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid ""
 "Before creating a new contract, close the current one by setting an end date."
@@ -1287,7 +1287,7 @@ msgstr ""
 "término."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/background_image/background_image.xml:0
 msgid "Binary file"
 msgstr "Arquivo binário"
@@ -1309,7 +1309,7 @@ msgid "Blacklisted Phone is Phone"
 msgstr "O telefone na lista de bloqueio é fixo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "Boolean display as radio field with translatable labels"
 msgstr "Exibição booleana como campo de rádio com rótulos traduzíveis"
@@ -1321,13 +1321,13 @@ msgid "Business Leader"
 msgstr "Líder de negócios"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/form/multi_version_update_confirmation_dialog.xml:0
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/js/departure_conflict_dialog.js:0
 msgid "Cancel Departure"
 msgstr "Cancelar partida"
@@ -1338,13 +1338,13 @@ msgid "Cancel End of Collaboration"
 msgstr "Cancelar Fim da colaboração"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Cannot archive all the active versions of an employee."
 msgstr "Não é possível arquivar todas as versões ativas de um funcionário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "Cannot create light user for an employee without login (email address or "
@@ -1354,7 +1354,7 @@ msgstr ""
 "login (endereço de e-mail ou contato relacionado)."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid ""
 "Cannot modify multiple versions contract dates with different contracts at "
@@ -1364,7 +1364,7 @@ msgstr ""
 "versões e contratos diferentes."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Cannot search or group by hr_presence state: too many employees (%s)"
 msgstr ""
@@ -1372,7 +1372,7 @@ msgstr ""
 "em excesso (%s)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Cannot unassign all the active versions of an employee."
 msgstr ""
@@ -1395,7 +1395,7 @@ msgid "Challenge the customer idea"
 msgstr "Desafiar a ideia do cliente"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/form/multi_version_update_confirmation_dialog.xml:0
 msgid "Change all"
 msgstr "Alterar tudo"
@@ -1557,33 +1557,33 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/resource_calendar_form/form_controller.js:0
 #: code:addons/hr/static/src/components/resource_calendar_form/resource_calendar_plugin_patch.js:0
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/user_deactivation_dialog.xml:0
 msgid "Confirmation"
 msgstr "Confirmação"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/resource_calendar_form/form_controller.js:0
 #: code:addons/hr/static/src/components/resource_calendar_form/resource_calendar_plugin_patch.js:0
 msgid "Confirmation Warning"
 msgstr "Aviso de confirmação"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Confirmed"
 msgstr "Confirmado"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Congratulations!"
 msgstr "Parabéns!"
@@ -1610,13 +1610,13 @@ msgid "Contact Phone"
 msgstr "Telefone de contato"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_partner.py:0
 msgid "Contacts"
 msgstr "Contatos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/versions_timeline/versions_timeline.js:0
 #: model_terms:ir.ui.view,arch_db:hr.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
@@ -1670,7 +1670,7 @@ msgid "Contract Start Date"
 msgstr "Data de início do contrato"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 #: model:ir.model.fields,field_description:hr.field_hr_employee__contract_template_id
 #: model:ir.model.fields,field_description:hr.field_hr_version__contract_template_id
@@ -1702,19 +1702,19 @@ msgid "Contract to Renew"
 msgstr "Contrato a renovar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Copy Invitation Link"
 msgstr "Copy Invitation Link"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "Correct terms"
 msgstr "Termos corretos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "Correction of contract terms"
 msgstr "Correção dos termos contratuais"
@@ -1803,7 +1803,7 @@ msgid "Create an Activity Plan"
 msgstr "Criar um plano de atividade"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/hr_employee_action_helper.xml:0
 #: model_terms:ir.actions.act_window,help:hr.hr_employee_public_action
 #: model_terms:ir.actions.act_window,help:hr.open_view_employee_list_my
@@ -1906,7 +1906,7 @@ msgid "Currently enrolled in final study years"
 msgstr "Atualmente matriculado nos anos finais do estudo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Dashboard"
 msgstr "Painel"
@@ -1950,7 +1950,7 @@ msgstr ""
 "no caso de um período de aviso prévio."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/js/DynamicMinDateTimeField.js:0
 msgid "Date with Dynamic Minimum Value"
 msgstr "Data com valor mínimo dinâmico"
@@ -1961,14 +1961,14 @@ msgid "Day Week String"
 msgstr "String de dia da semana"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 #: code:addons/hr/static/src/components/employee_user_status/user_deactivation_dialog.xml:0
 msgid "Deactivate"
 msgstr "Desativar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/user_deactivation_dialog.xml:0
 msgid "Deactivate & End Collaboration"
 msgstr "Desativar e encerrar a colaboração"
@@ -1994,7 +1994,7 @@ msgid "Deep understanding of technology trends"
 msgstr "Conhecimento profundo das tendências tecnológicas"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_departure_reason.py:0
 msgid "Default departure reasons cannot be deleted."
 msgstr "Os motivos de desligamento padrões não podem ser excluídos."
@@ -2024,7 +2024,7 @@ msgstr ""
 "para horários de trabalho totalmente flexíveis."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "Defines which values comes first."
 msgstr "Define quais valores vêm primeiro."
@@ -2065,7 +2065,7 @@ msgid "Department Name"
 msgstr "Nome do departamento"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/department_chart/department_chart.xml:0
 msgid "Department Organization"
 msgstr "Organização do departamento"
@@ -2105,13 +2105,13 @@ msgid "Departure Reasons"
 msgstr "Motivos do desligamento"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Departure already configured"
 msgstr "Partida já configurada"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid ""
 "Departure date is earlier than the start date of the current contract(s) of "
@@ -2147,7 +2147,7 @@ msgid "Develop technology strategy and vision"
 msgstr "Desenvolver estratégias e visão de tecnologia"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Development"
 msgstr "Desenvolvimento"
@@ -2164,7 +2164,7 @@ msgid "Direct and indirect subordinates"
 msgstr "Subordinados Diretos e Indiretos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 #: model:ir.model.fields,field_description:hr.field_hr_employee__child_ids
 #: model:ir.model.fields,field_description:hr.field_hr_employee_public__child_ids
@@ -2177,7 +2177,7 @@ msgid "Directory"
 msgstr "Diretório"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 #: code:addons/hr/static/src/components/employee_user_status/user_deactivation_dialog.xml:0
 #: code:addons/hr/static/src/js/departure_conflict_dialog.js:0
@@ -2247,19 +2247,19 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/fields/many2one_avatar_employee_field/kanban_many2one_avatar_employee_field.js:0
 msgid "Display avatar name"
 msgstr "Exibir nome do avatar"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Divorced"
 msgstr "Divorciado(a)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Doctor"
 msgstr "Doutor"
@@ -2270,7 +2270,7 @@ msgid "Document"
 msgstr "Documento"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Documents"
@@ -2292,7 +2292,7 @@ msgid "Duplicate & Edit for Current Employee"
 msgstr "Duplicar e editar para o funcionário atual"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Each amount percentage must be a number between 0 and 100."
 msgstr "Cada porcentagem de valor deve ser um número entre 0 e 100."
@@ -2349,13 +2349,13 @@ msgid "Effective Date"
 msgstr "Data efetiva"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/radio_followed_by_element.js:0
 msgid "Element association"
 msgstr "Associação entre elementos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/radio_followed_by_element.js:0
 msgid "Element to observe"
 msgstr "Elemento a ser observado"
@@ -2387,7 +2387,7 @@ msgid "Emergency Phone"
 msgstr "Telefone de emergência"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_type.py:0
 #: code:addons/hr/models/res_partner.py:0 code:addons/hr/models/res_users.py:0
 #: model:hr.employee.type,name:hr.contract_type_employee
@@ -2417,7 +2417,7 @@ msgid "Employee"
 msgstr "Funcionário"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Employee %s must always have at least one active version."
 msgstr "O funcionário %s deve sempre ter pelo menos uma versão ativa."
@@ -2532,7 +2532,7 @@ msgid "Employee development is a core focus"
 msgstr "O desenvolvimento dos funcionários é um foco central"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "Employee is already configured in a Departure process. \n"
@@ -2577,8 +2577,8 @@ msgid "Employee's monthly gross wage."
 msgstr "Salário bruto mensal do funcionário."
 
 #. module: hr
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr/models/hr_department.py:0
 #: code:addons/hr/models/resource_calendar.py:0
 #: code:addons/hr/static/src/views/hr_employee_action_helper/hr_employee_action_helper.js:0
@@ -2624,7 +2624,7 @@ msgid "Employees Tags"
 msgstr "Marcadores de funcionários"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Employees profile"
 msgstr "Perfil dos funcionários"
@@ -2659,7 +2659,7 @@ msgid "End date of the trial period (if there is one)."
 msgstr "Data de término do período de experiência (se houver)."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 #: model:ir.actions.server,name:hr.action_hr_employee_departure
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
@@ -2667,13 +2667,13 @@ msgid "End of Collaboration"
 msgstr "Fim da colaboração"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "End of Collaboration cancelled"
 msgstr ""
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "End of Collaboration planned"
 msgstr ""
@@ -2685,13 +2685,13 @@ msgid "End of Trial Period"
 msgstr "Fim do período de experiência"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "End of collaboration"
 msgstr "Fim da colaboração"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "End of contract?"
 msgstr "Fim do contrato?"
@@ -2747,7 +2747,7 @@ msgstr ""
 "recrutamento."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Experience"
 msgstr "Experiência"
@@ -2823,7 +2823,7 @@ msgid "Facilitate workshops and stakeholder meetings"
 msgstr "Facilitar workshops e reuniões com as partes interessadas"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "False association"
 msgstr "Associação falsa"
@@ -2910,7 +2910,7 @@ msgid "First Contract Date"
 msgstr "Data do primeiro contrato"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "First Element"
 msgstr "Primeiro elemento"
@@ -2929,7 +2929,7 @@ msgid "Fixed-term Contract"
 msgstr "Contrato por prazo determinado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Fleet"
 msgstr "Frota"
@@ -2951,7 +2951,7 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (usuários)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/discuss_channel.py:0
 msgid ""
 "For %(channels)s, channel_type should be 'channel' to have the department "
@@ -3012,7 +3012,7 @@ msgid "Generate"
 msgstr "Gerar"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_partner.py:0
 msgid "Go to contact"
 msgstr "Ir para contato"
@@ -3023,7 +3023,7 @@ msgid "Google Adwords experience"
 msgstr "Experiência com Google Adwords"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Graduate"
 msgstr "Graduação"
@@ -3056,7 +3056,7 @@ msgid "HR Employee: Update Current Version"
 msgstr "Funcionário do RH: Atualizar versão atual"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/hr_presence_status/hr_presence_status.js:0
 msgid "HR Presence Status"
 msgstr "HR – Status da presença"
@@ -3068,7 +3068,7 @@ msgid "HR Responsible"
 msgstr "Responsável do RH"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "HR Responsible Update"
 msgstr "Atualização do responsável pelo RH"
@@ -3105,7 +3105,7 @@ msgid "Highly creative and autonomous"
 msgstr "Altamente criativo e autônomo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Hiring"
 msgstr "Contratação"
@@ -3338,7 +3338,7 @@ msgid "In-depth knowledge of labor laws"
 msgstr "Conhecimento profundo das leis trabalhistas"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/versions_timeline/versions_timeline.js:0
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Indefinite"
@@ -3371,7 +3371,7 @@ msgid "Indirect Subordinates Count"
 msgstr "Total de subordinados indiretos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "Indirect subordinates"
 msgstr "Subordinados indiretos"
@@ -3387,20 +3387,20 @@ msgid "Intern"
 msgstr "Estagiário"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Invitation link copied to clipboard."
 msgstr "Link do convite copiado para a área de transferência."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Invite"
 msgstr "Convidar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Invited"
 msgstr "Convidado"
@@ -3655,13 +3655,13 @@ msgid "Learn company processes and tools"
 msgstr "Aprender os processos e as ferramentas da empresa"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Leaves"
 msgstr "Licenças"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Legal Cohabitant"
 msgstr "União estável"
@@ -3682,37 +3682,37 @@ msgid "Let's create one"
 msgstr "Crie um"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "Link an element with the boolean False value."
 msgstr "Vincular um elemento com o valor booleano False."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "Link an element with the boolean True value."
 msgstr "Vincular um elemento com o valor booleano True."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/xml/contract_template_button.xml:0
 msgid "Load Contract Template"
 msgstr "Carregar modelo de contrato"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/xml/contract_template_button.xml:0
 msgid "Load Template"
 msgstr "Carregar modelo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/xml/contract_template_button.xml:0
 msgid "Load a Template"
 msgstr "Carregar um modelo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/hr_employee_action_helper.xml:0
 msgid "Load sample data"
 msgstr "Carregar amostras de dados"
@@ -3746,7 +3746,7 @@ msgid "Long Term Projects"
 msgstr "Projetos de longo prazo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Lunch"
 msgstr "Almoço"
@@ -3815,13 +3815,13 @@ msgid "Marketing and Community Manager"
 msgstr "Gerente de comunidade e marketing"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Married"
 msgstr "Casado(a)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Master"
 msgstr "Mestre"
@@ -3860,7 +3860,7 @@ msgid "May"
 msgstr "Maio"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "May I recommend you to setup an"
 msgstr "Gostaria de recomendar que você configure um"
@@ -3907,7 +3907,7 @@ msgid "Messages"
 msgstr "Mensagens"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/js/DynamicMinDateTimeField.js:0
 msgid "Minimum Date Field"
 msgstr "Campo de data mínima"
@@ -3939,7 +3939,7 @@ msgid "Mondays"
 msgstr "Segundas-feiras"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "More managers"
 msgstr "Mais gerentes"
@@ -3992,14 +3992,14 @@ msgid "Negotiate and contract"
 msgstr "Negocie e contrate"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/button_new_contract/button_new_contract.xml:0
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "New Contract"
 msgstr "Novo contrato"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/versions_timeline/versions_timeline.xml:0
 msgid "New Employee Record"
 msgstr "Registro de novo funcionário"
@@ -4077,7 +4077,7 @@ msgid "No Template found"
 msgstr "Nenhum modelo encontrado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/versions_timeline/versions_timeline.js:0
 msgid "No contract"
 msgstr "Sem contrato"
@@ -4116,7 +4116,7 @@ msgid "Not Employed"
 msgstr "Não empregado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Not Invited"
 msgstr "Não convidado"
@@ -4220,10 +4220,10 @@ msgstr "Outubro"
 #. module: hr
 #: model:ir.module.module,description:base.module_hr
 msgid ""
-"Odoo Human Resources\n"
+"WETH Human Resources\n"
 "--------------------\n"
 "\n"
-"With Odoo <a href=\"https://www.weth.com.br/app/employees\">Human Resources</"
+"With WETH <a href=\"https://www.weth.com.br/app/employees\">Human Resources</"
 "a>,\n"
 "manage the most important asset in your company: People\n"
 "\n"
@@ -4245,7 +4245,7 @@ msgid ""
 "-----------------------------------\n"
 "\n"
 "Index resumes, track applicants, search profiles with <a href=\"https://"
-"www.weth.com.br/app/employees\">Odoo HR</a>.\n"
+"www.weth.com.br/app/employees\">WETH HR</a>.\n"
 "\n"
 "Post job offers and keep track of each application received. Follow "
 "applicants\n"
@@ -4297,7 +4297,7 @@ msgid ""
 "--------------------------\n"
 "\n"
 "Set-up appraisals plans and/or surveys for your employees and watch their\n"
-"evolution. Define steps for interviews and Odoo will notify managers or\n"
+"evolution. Define steps for interviews and WETH will notify managers or\n"
 "subordinates automatically to prepare appraisals. Keep track of the progress "
 "of\n"
 "your staff periodically.\n"
@@ -4325,10 +4325,10 @@ msgid ""
 "Compare revenues with forecasts and budgets in real time.\n"
 "\n"
 msgstr ""
-"Recursos Humanos do Odoo\n"
+"Recursos Humanos do Weth\n"
 "--------------------\n"
 "\n"
-"Com o Odoo <a href=\"https://www.weth.com.br/app/employees\">Recursos Humanos</"
+"Com o WETH <a href=\"https://www.weth.com.br/app/employees\">Recursos Humanos</"
 "a>,\n"
 "gerencie o ativo mais importante da sua empresa: as pessoas\n"
 "\n"
@@ -4356,7 +4356,7 @@ msgstr ""
 "-----------------------------------\n"
 "\n"
 "Indexe currículos, acompanhe candidatos e pesquise perfis com o <a "
-"href=\"https://www.weth.com.br/app/employees\">Odoo HR</a>.\n"
+"href=\"https://www.weth.com.br/app/employees\">WETH HR</a>.\n"
 "\n"
 "Publique ofertas de emprego e acompanhe cada candidatura recebida. Acompanhe "
 "os candidatos\n"
@@ -4402,7 +4402,7 @@ msgstr ""
 "-------------------------------\n"
 "\n"
 "Livre-se da papelada e acompanhe as despesas dos funcionários diretamente no "
-"Odoo.\n"
+"Weth.\n"
 "Não perca tempo nem dinheiro, controlando todo o fluxo: validação de "
 "despesas,\n"
 "reembolso aos funcionários, lançamento no Financeiro e faturamento para\n"
@@ -4413,7 +4413,7 @@ msgstr ""
 "\n"
 "Configure planos de avaliação e/ou pesquisas para seus funcionários e "
 "acompanhe a\n"
-"evolução deles. Defina etapas para as entrevistas e o Odoo notificará os "
+"evolução deles. Defina etapas para as entrevistas e o WETH notificará os "
 "gerentes ou\n"
 "subordinados automaticamente para que preparem as avaliações. Acompanhe o "
 "progresso de\n"
@@ -4446,7 +4446,7 @@ msgstr ""
 "\n"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_out_of_working_hour
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_presence_state__out_of_working_hour
@@ -4471,7 +4471,7 @@ msgid "Onboarding / Offboarding"
 msgstr "Integração/Desligamento"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Only HR users can access first version date on an employee."
 msgstr ""
@@ -4488,7 +4488,7 @@ msgstr ""
 "dia, por funcionário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan_template.py:0
 msgid ""
 "Oops! It seems there is a problem with your team "
@@ -4501,19 +4501,19 @@ msgstr ""
 "usuário. Verifique novamente se todos se reportam ao gerente correto."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "Open Contact Profile"
 msgstr "Abrir perfil de contato de Contatos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "Open Employee Profile (activates company)"
 msgstr "Abrir perfil do funcionário (ativa a empresa)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_department.py:0
 msgid "Operation not Supported."
 msgstr "Operação não suportada."
@@ -4530,7 +4530,7 @@ msgid "Organization Chart"
 msgstr "Organograma"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__work_location_type__other
 #: model:ir.model.fields.selection,name:hr.selection__hr_work_location__location_type__other
@@ -4604,7 +4604,7 @@ msgstr "Participar de reuniões e discussões da equipe"
 #: model:ir.model.fields,help:hr.field_hr_employee__user_partner_id
 #: model:ir.model.fields,help:hr.field_hr_employee_public__user_partner_id
 msgid "Partner-related data of the user"
-msgstr "Dados do usuário no Odoo"
+msgstr "Dados do usuário no Weth"
 
 #. module: hr
 #: model_terms:hr.job,website_description:hr.job_marketing
@@ -4630,7 +4630,7 @@ msgid "Pay Category"
 msgstr "Categoria de Pagamento"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Payroll"
@@ -4646,7 +4646,7 @@ msgid "Perfect written English"
 msgstr "Escrita perfeita em inglês"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Performance"
 msgstr "Desempenho"
@@ -4688,7 +4688,7 @@ msgid "Personal Project"
 msgstr "Projeto pessoal"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_users.py:0
 msgid "Personal information update."
 msgstr "Atualização de informações pessoais."
@@ -4726,7 +4726,7 @@ msgid "Plan"
 msgstr "Plano"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan.py:0
 msgid ""
 "Plan %(plan_names)s cannot use a department as it is used only for some HR "
@@ -4741,7 +4741,7 @@ msgid "Plan Department Filterable"
 msgstr "Filtrável por departamento de plano"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan.py:0
 msgid ""
 "Plan activities %(template_names)s cannot use coach, manager or employee "
@@ -4752,7 +4752,7 @@ msgstr ""
 "funcionários."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Planning"
 msgstr "Planejamento"
@@ -4820,7 +4820,7 @@ msgid "Presence reporting screen, email and IP address control."
 msgstr "Tela de relatório de presenças, controle de endereço de IP e e-mail."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_icon_display__presence_present
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__hr_presence_state__present
@@ -4980,7 +4980,7 @@ msgid "Qualify the customer needs"
 msgstr "Qualifique as necessidades do cliente"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/radio_followed_by_element.js:0
 msgid "Radio followed by element"
 msgstr "Rádio seguido de elemento"
@@ -4994,7 +4994,7 @@ msgid "Ratings"
 msgstr "Avaliações"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Reactivate"
 msgstr "Reativar"
@@ -5005,7 +5005,7 @@ msgid "Ready to recruit more efficiently?"
 msgstr "Pronto para recrutar de forma mais eficiente?"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/hr_employee_action_helper.xml:0
 msgid "Ready to start your experience?"
 msgstr "Pronto para começar sua experiência?"
@@ -5043,33 +5043,33 @@ msgid "Recruitment"
 msgstr "Recrutamento"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/js/DynamicMinDateTimeField.js:0
 msgid "Reference another date/datetime field to use as minimum date"
 msgstr "Referenciar outro campo de data/hora para usar como data mínima"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Referral"
 msgstr "Indicação"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_users.py:0
 #: model_terms:ir.ui.view,arch_db:hr.res_users_view_form
 msgid "Related Contact"
 msgstr "Contato relacionado"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 #: model_terms:ir.ui.view,arch_db:hr.view_employee_form_smartbutton_inherited
 msgid "Related Contacts"
 msgstr "Contatos relacionados"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_type.py:0
 #: code:addons/hr/models/res_partner.py:0 code:addons/hr/models/res_users.py:0
 #: model:ir.model.fields,field_description:hr.field_hr_employee_type__employee_ids
@@ -5128,13 +5128,13 @@ msgid "Research & Development"
 msgstr "Pesquisa e Desenvolvimento"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Resend Invitation"
 msgstr "Reenviar convite"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/employee_user_status/employee_user_status.js:0
 msgid "Reset Password"
 msgstr "Redefinição de senha"
@@ -5269,13 +5269,13 @@ msgid "Schedule"
 msgstr "Agendar"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/fields/many2many_avatar_employee_field/many2many_avatar_employee_field.js:0
 msgid "Search employee..."
 msgstr "Pesquisar funcionário..."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "See All"
 msgstr "Ver tudo"
@@ -5324,7 +5324,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "Set a manager or reports to show in org chart."
 msgstr "Defina um gerente ou relatórios para serem exibidos no organograma."
@@ -5380,13 +5380,13 @@ msgstr ""
 "Mostrar todos os registros cuja próxima data de atividade já tenha passado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Sign"
 msgstr "Assinar"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Single"
 msgstr "Solteiro(a)"
@@ -5397,13 +5397,13 @@ msgid "Skills Management"
 msgstr "Gestão de habilidades"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Some employee already has a work contact"
 msgstr "Algum funcionário já possui um contato profissional"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_hierarchy/hr_employee_hierarchy_renderer.xml:0
 msgid ""
 "Some employees are present in a loop.\n"
@@ -5413,7 +5413,7 @@ msgstr ""
 "                Clique em"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "Some of these fields %(field_name)s don't exist on this model (hr.version)."
@@ -5458,7 +5458,7 @@ msgid "Start Date"
 msgstr "Data de início"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "Start a new contract"
 msgstr "Iniciar um novo contrato"
@@ -5469,7 +5469,7 @@ msgid "Start date"
 msgstr "Data de início"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid ""
 "Start date (%(start)s) must be earlier than contract end date (%(end)s)."
@@ -5583,7 +5583,7 @@ msgid "Tags"
 msgstr "Marcadores"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "Talent"
 msgstr "Talento"
@@ -5594,7 +5594,7 @@ msgid "Target"
 msgstr "Meta"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hooks.js:0
 msgid "Team"
 msgstr "Equipe"
@@ -5630,7 +5630,7 @@ msgid "Template Name"
 msgstr "Nome do modelo"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Template for Employees"
 msgstr "Modelo para funcionários"
@@ -5645,7 +5645,7 @@ msgstr ""
 "funcionário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 #, fuzzy
 msgid ""
@@ -5692,7 +5692,7 @@ msgstr ""
 "com o Serviço Técnico e Vendas."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "The PIN must be a sequence of digits."
 msgstr "O PIN deve ser uma sequência de dígitos."
@@ -5708,7 +5708,7 @@ msgstr ""
 "recrutador é automaticamente adicionado a todas as reuniões com o candidato."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "The apply date isn't reached yet for the departure of %(emp)s."
 msgstr "A data de aplicação ainda não chegou para o desligamento de %(emp)s."
@@ -5719,7 +5719,7 @@ msgid "The contract must have a start date."
 msgstr "O contrato deve ter uma data de início."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "The contract of %(employee_name)s is about to expire."
 msgstr "O contrato de %(employee_name)s está prestes a expirar."
@@ -5747,7 +5747,7 @@ msgid "The departure process has been completed on"
 msgstr "O processo de embarque foi concluído em"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "The employee is already in contract on %s. Please select a date outside "
@@ -5770,7 +5770,7 @@ msgid "The expected number of new employees must be positive."
 msgstr "O número previsto de novos funcionários deve ser positivo."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "The fields “%s”, which you are trying to read, are not available for "
@@ -5780,19 +5780,19 @@ msgstr ""
 "perfis públicos de funcionários."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_users.py:0
 msgid "The following fields were modified by %s"
 msgstr "Os seguintes campos foram modificados por %s"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "The following users have been archived: %s"
 msgstr "Os seguintes usuários foram arquivados: %s"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid ""
 "The following users have not been archived as they are still linked to "
@@ -5826,13 +5826,13 @@ msgid "The wage must be a positive value."
 msgstr "O salário deve ser um valor positivo."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "The work permit of %(employee_name)s is about to expire."
 msgstr "A autorização de trabalho de %(employee_name)s está prestes a expirar."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 msgid ""
 "The working schedule '%s' is linked to version(s) not compatible with its "
@@ -5842,7 +5842,7 @@ msgstr ""
 "sua nova empresa."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "There is no valid version starting before the departure date for %s."
 msgstr "Não há nenhuma versão válida anterior à data de partida para %s."
@@ -5862,13 +5862,13 @@ msgstr ""
 "prosseguir?"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "This employee has no user."
 msgstr "Este funcionário não possui usuário."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_type.py:0
 msgid ""
 "This employee type is used in another company, you can't modify the country "
@@ -5882,7 +5882,7 @@ msgstr ""
 "modificar isso."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "This field %(field_name)s doesn't exist on this model (hr.version)."
 msgstr "Este campo %(field_name)s não existe neste modelo (hr.version)."
@@ -5918,7 +5918,7 @@ msgstr ""
 "Esse bloco de configuração é utilizado para gerenciar o design do frontend."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/form/multi_version_update_confirmation_dialog.xml:0
 msgid "This version"
 msgstr "Esta versão"
@@ -5943,7 +5943,7 @@ msgid "This working schedule is shared across"
 msgstr "Este cronograma de trabalho é compartilhado entre"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/resource_calendar_form/form_controller.js:0
 #: code:addons/hr/static/src/components/resource_calendar_form/resource_calendar_plugin_patch.js:0
 #, fuzzy
@@ -5955,7 +5955,7 @@ msgstr ""
 "que quer alterá-lo para todos os funcionários?"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_activity_plan_template.py:0
 msgid "Those responsible types are limited to Employee plans."
 msgstr "Esses tipos de responsáveis são limitados a planos para funcionários."
@@ -5996,7 +5996,7 @@ msgid "To Renew"
 msgstr "A ser renovada"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "To avoid multi company issues (losing the access to your previous contracts, "
@@ -6018,7 +6018,7 @@ msgid "Today Location Name"
 msgstr "Nome do local de hoje"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "Total"
 msgstr "Total"
@@ -6029,13 +6029,13 @@ msgid "Total Forecasted Employees"
 msgstr "Total de funcionários previstos"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/wizard/hr_bank_account_wizard.py:0
 msgid "Total percentage allocation must equal 100%."
 msgstr "A porcentagem total de alocação deve ser igual a 100%."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Total salary distribution on bank accounts must be exactly 100%."
 msgstr ""
@@ -6048,7 +6048,7 @@ msgid "Trainee"
 msgstr "Estagiário"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 #: model_terms:hr.job,website_description:hr.job_consultant
 #: model_terms:hr.job,website_description:hr.job_developer
@@ -6059,7 +6059,7 @@ msgid "Trainings"
 msgstr "Treinamentos"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/boolean_radio.js:0
 msgid "True association"
 msgstr "Associação verdadeira"
@@ -6126,7 +6126,7 @@ msgid "Unread Messages"
 msgstr "Mensagens não lidas"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/hr_presence_status/hr_presence_status.js:0
 #: model_terms:ir.ui.view,arch_db:hr.res_users_view_form
 #: model_terms:ir.ui.view,arch_db:hr.res_users_view_form_preferences
@@ -6145,7 +6145,7 @@ msgid "Update and maintain project documentation"
 msgstr "Atualizar e manter a documentação do projeto"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "Use Employee's current version information"
 msgstr "Utilize as informações da versão atual do funcionário"
@@ -6165,7 +6165,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee_departure.py:0
 msgid "User Archive Notification"
 msgstr "Notificação de arquivo do usuário"
@@ -6181,91 +6181,91 @@ msgid "User Timezone"
 msgstr "Fuso horário do usuário"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at home"
 msgstr "O usuário está em casa"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at home and busy"
 msgstr "O usuário está em casa e ocupado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at home and idle"
 msgstr "O usuário está em casa e ocioso"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at home and offline"
 msgstr "O usuário está em casa e offline"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at home and online"
 msgstr "O usuário está em casa e online"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at other location"
 msgstr "O usuário está em outro local"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at other location and busy"
 msgstr "O usuário está em outro local e ocupado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at other location and idle"
 msgstr "O usuário está em outro local e inativo"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at other location and offline"
 msgstr "O usuário está em outro local e offline"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at other location and online"
 msgstr "O usuário está em outro local e online"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at the office"
 msgstr "O usuário está no escritório"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at the office and busy"
 msgstr "O usuário está no escritório e ocupado"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at the office and idle"
 msgstr "O usuário está no escritório e ocioso"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at the office and offline"
 msgstr "O usuário está no escritório e offline"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/im_status_patch.js:0
 msgid "User is at the office and online"
 msgstr "O usuário está no escritório e online"
@@ -6323,14 +6323,14 @@ msgid "View Employees"
 msgstr "Ver funcionários"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 #: code:addons/hr/static/src/core/web/thread_actions.js:0
 msgid "View Profile"
 msgstr "Visualizar perfil"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/fields/hr_org_chart.xml:0
 msgid "View employee"
 msgstr "Ver funcionário"
@@ -6363,7 +6363,7 @@ msgid "Wage"
 msgstr "Salário"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "Warning"
 msgstr "Aviso"
@@ -6443,13 +6443,13 @@ msgid "Whether this contact is an Employee."
 msgstr "Se esse contato é um funcionário."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/components/contract_end_dialog/contract_end_dialog.xml:0
 msgid "Why did you change the contract end date?"
 msgstr "Por que você alterou a data de término do contrato?"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Widower"
 msgstr "Viúvo"
@@ -6605,7 +6605,7 @@ msgid "Working Hours"
 msgstr "Horário de trabalho"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 #: model_terms:ir.ui.view,arch_db:hr.hr_version_search_view
 msgid "Working Schedule"
@@ -6622,7 +6622,7 @@ msgid "Working Time"
 msgstr "Tempo de Trabalho"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "You are not allowed to access \"Employee\" (hr.employee) records.\n"
@@ -6633,7 +6633,7 @@ msgstr ""
 "    Podemos redirecioná-lo para a lista pública de funcionários."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_users.py:0
 msgid ""
 "You are not allowed to create an employee because the user does not have "
@@ -6643,7 +6643,7 @@ msgstr ""
 "direitos de acesso para %s"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_users.py:0
 msgid ""
 "You are receiving this message because you are the HR Responsible of this "
@@ -6653,13 +6653,13 @@ msgstr ""
 "funcionário."
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/core/common/store_service_patch.js:0
 msgid "You can only chat with employees that have a dedicated user."
 msgstr "Você só pode usar o chat com funcionários que têm um usuário dedicado."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 msgid ""
 "You can't change this working schedule, it's used by employees from other "
@@ -6671,7 +6671,7 @@ msgstr ""
 "contato com seu administrador ou crie um novo horário de trabalho."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "You can't end the collaboration of an employee without contract, archive it "
@@ -6681,7 +6681,7 @@ msgstr ""
 "disso, arquive-a."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid ""
 "You can't modify the departure of an employee that has already departed."
@@ -6690,7 +6690,7 @@ msgstr ""
 "saído."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_partner.py:0
 msgid ""
 "You cannot delete contact that are linked to an employee, please archive "
@@ -6700,7 +6700,7 @@ msgstr ""
 "arquive-os."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/res_partner.py:0
 msgid ""
 "You cannot delete contact(s) linked to employee(s).\n"
@@ -6714,14 +6714,14 @@ msgstr ""
 "Contatos afetados: %(names)s"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_work_location.py:0
 msgid "You cannot delete locations that are being used by your employees"
 msgstr ""
 "Não é possível excluir locais que estejam sendo usados por seus funcionários"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/form/multi_version_update_confirmation_dialog.xml:0
 msgid ""
 "You changed an old version of the employee. Do you want to apply the "
@@ -6731,13 +6731,13 @@ msgstr ""
 "alterações também às versões futuras?"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "You do not have access to this document."
 msgstr "Você não tem acesso a esse documento."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "You do not have the rights to load the Employees sample data."
 msgstr ""
@@ -6745,7 +6745,7 @@ msgstr ""
 "“Funcionários”."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/wizard/hr_bank_account_allocation_wizard_line.py:0
 msgid "You do not have the rights to trust or un-trust accounts."
 msgstr ""
@@ -6758,12 +6758,12 @@ msgid ""
 "software brings significant improvements in terms of functionalities, "
 "ergonomics and configuration.\n"
 "You will have to become familiar with the existing tools (books, class "
-"supports, Odoo presentation’s slides, commercial tools),\n"
+"supports, WETH presentation’s slides, commercial tools),\n"
 "to participate to the update of those tools in order to make them "
 "appropriate for the new version of the software and, for sure,\n"
 "to suggest improvements in order to cover the new domains of the software.\n"
 "You join the Implementation Assistance department. This team of 3 people go "
-"with Odoo’s clients in the set up of the software. Your role will be\n"
+"with Weth’s clients in the set up of the software. Your role will be\n"
 "to animate webinars in order to show the different functionalities of the "
 "software.\n"
 "to be involved in the support of the customers and\n"
@@ -6779,13 +6779,13 @@ msgstr ""
 "software traz melhorias significativas em termos de funcionalidades, "
 "ergonometria e configurações.\n"
 "Você terá que se familiarizar com as ferramentas existentes (livros, "
-"suportes de classe, slides de apresentações da Odoo, ferramentas "
+"suportes de classe, slides de apresentações da WETH, ferramentas "
 "comerciais)\n"
 "para colaborar na atualização de tais ferramentas e adequá-las para a nova "
 "versão do software, além de\n"
 "sugerir aprimoramentos que cubram novos domínios do software.\n"
 "Você fará parte do departamento de Assistência à implementação. Esta equipe "
-"de três pessoas acompanha os clientes da Odoo na instalação do software. Sua "
+"de três pessoas acompanha os clientes da WETH na instalação do software. Sua "
 "função será\n"
 "conduzir webinários para mostrar as diferentes funcionalidades do software,\n"
 "participar do suporte aos clientes e\n"
@@ -6803,7 +6803,7 @@ msgid ""
 "customers: design, analysis, development, testing, project management, "
 "support/coaching. You will work autonomously as well as coordinate and "
 "supervise small distributed development teams for some projects. Optionally, "
-"you will deliver Odoo training sessions to partners and customers (8-10 "
+"you will deliver WETH training sessions to partners and customers (8-10 "
 "people/session). You will report to the Head of Professional Services and "
 "work closely with all developers and consultants.\n"
 "\n"
@@ -6815,7 +6815,7 @@ msgstr ""
 "projeto, suporte/treinamento. Você trabalhará de modo autônomo, assim como "
 "coordenará e supervisionará pequenas equipes de desenvolvimento distribuídas "
 "em alguns projetos. Haverá a opção de conduzir sessões de treinamento em "
-"Odoo para parceiros e clientes (8 a 10 pessoas/sessão). Seu superior será o "
+"WETH para parceiros e clientes (8 a 10 pessoas/sessão). Seu superior será o "
 "Líder de Serviços Profissionais )(Head of Professional Services) e você "
 "trabalhará junto de desenvolvedores e consultores.\n"
 "\n"
@@ -6823,7 +6823,7 @@ msgstr ""
 "Louvain-La-Neuve e Namur)."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "Your HR Responsible has been updated to %s."
 msgstr "Seu responsável pelo RH foi atualizado para %s."
@@ -6835,19 +6835,19 @@ msgid "ZIP"
 msgstr "CEP"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/mail_alias.py:0
 msgid "addresses linked to registered employees"
 msgstr "endereços vinculados a funcionários registrados"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "bachelor"
 msgstr "graduado"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "cohabitant"
 msgstr "cohabitante"
@@ -6858,13 +6858,13 @@ msgid "department"
 msgstr "departamento"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "divorced"
 msgstr "divorciado(a)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "doctor"
 msgstr "doctor"
@@ -6918,7 +6918,7 @@ msgid "e.g. myprivateemail@example.com"
 msgstr "ex.: emailprivado@exemplo.com"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/onboarding_helper_blocks.xml:0
 msgid "eLearning"
 msgstr "e-Learning"
@@ -6934,7 +6934,7 @@ msgid "employees →"
 msgstr "funcionários →"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_hierarchy/hr_employee_hierarchy_renderer.xml:0
 msgid "here"
 msgstr "aqui"
@@ -6950,13 +6950,13 @@ msgid "km"
 msgstr "km"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "married"
 msgstr "casado(a)"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "master"
 msgstr "mestre"
@@ -6967,19 +6967,19 @@ msgid "mi"
 msgstr "mi"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "onboarding plan"
 msgstr "plano de integração"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_action_helper/hr_employee_action_helper.xml:0
 msgid "or"
 msgstr "ou"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_employee.py:0
 msgid "other"
 msgstr "outros"
@@ -6991,31 +6991,31 @@ msgid "people"
 msgstr "pessoas"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 msgid "resource_calendar_id"
 msgstr "resource_calendar_id"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/models.py:0
 msgid "restricted to employees"
 msgstr "restrito a funcionários"
 
 #. module: hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr/static/src/views/hr_employee_hierarchy/hr_employee_hierarchy_renderer.xml:0
 msgid "to see those employees."
 msgstr "para ver esses funcionários."
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/resource_calendar.py:0
 msgid "version_ids"
 msgstr "version_ids"
 
 #. module: hr
-#. odoo-python
+#. weth-python
 #: code:addons/hr/models/hr_version.py:0
 msgid "widower"
 msgstr "viúvo(a)"

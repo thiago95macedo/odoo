@@ -18,7 +18,7 @@ import {
 import { mailModels } from "../mail_test_helpers";
 
 function setSelectionInHtmlField(selector = "p", fieldName = "body") {
-    const anchorNode = queryOne(`[name='${fieldName}'] .odoo-editor-editable ${selector}`);
+    const anchorNode = queryOne(`[name='${fieldName}'] .weth-editor-editable ${selector}`);
     setSelection({ anchorNode, anchorOffset: 0 });
     return anchorNode;
 }
@@ -92,7 +92,7 @@ test("HtmlMail save inline html", async function () {
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/heading1");
     await press("enter");
-    expect(".odoo-editor-editable").toHaveInnerHTML("<h1> first </h1>");
+    expect(".weth-editor-editable").toHaveInnerHTML("<h1> first </h1>");
 
     await clickSave();
     await expect.waitForSteps(["web_save"]);
@@ -111,11 +111,11 @@ test("HtmlMail don't have access to column commands", async function () {
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
 
     await insertText(htmlEditor, "column");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
 });
 
 test("HtmlMail add icon and save inline html", async function () {

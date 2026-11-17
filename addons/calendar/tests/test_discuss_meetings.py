@@ -104,7 +104,7 @@ class TestDiscussMeetings(TransactionCase):
             "Google Meet Call",
             datetime(2024, 5, 20, 17, 0),
             with_videocall=False,
-            videocall_location="https://meet.google.com/odoo-test",
+            videocall_location="https://meet.google.com/weth-test",
         )
         meetings = upcoming + over + no_videocall + custom_videocall
         self.assertEqual(

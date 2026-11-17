@@ -21,7 +21,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/stock_account/pt_BR/>\n"
+"weth-20/stock_account/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,13 +66,13 @@ msgstr ""
 "passado)\n"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_quant.py:0
 msgid " [Accounted on %s]"
 msgstr " [Contabilizado em %s]"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_lot.py:0
 msgid ""
 "%(lot)s cost update from %(old_value)s to %(new_value)s for %(quantity)s by %"
@@ -82,7 +82,7 @@ msgstr ""
 "(quantity)s por %(user)s"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/product_value.py:0
 msgid ""
 "%(move)s cost update from %(old_value)s to %(new_value)s for %(quantity)s by "
@@ -92,7 +92,7 @@ msgstr ""
 "(quantity)s por %(user)s"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "%(quantity)s %(uom)s at product's cost"
 msgstr "%(quantity)s %(uom)s ao custo do produto"
@@ -118,7 +118,7 @@ msgid "<span>SN/LN</span>"
 msgstr "<span>NS/NL</span>"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid ""
 "A lot/serial number is required for product '%s' as it has lot valuation "
@@ -185,13 +185,13 @@ msgid "Adjust Valuation"
 msgstr "Ajustar valoração"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "Adjust Valuation: %(product)s"
 msgstr "Ajustar valoração: %(product)s"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "Adjusted on %(date)s by %(user)s"
 msgstr "Ajustado em %(date)s por%(user)s"
@@ -269,7 +269,7 @@ msgid "Closing Date"
 msgstr "Data de Fechamento"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/res_company.py:0
 msgid "Closing: Location Reclassification - [%(account)s]"
 msgstr "Fechamento: Reclassificação de local - [%(account)s]"
@@ -293,7 +293,7 @@ msgid "Computed Value Description"
 msgstr "Descrição do valor calculado"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid ""
 "Computed value: %(value)s\n"
@@ -326,7 +326,7 @@ msgid "Cost of Production"
 msgstr "Custo de produção"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/product.py:0
 msgid ""
 "Cost update from %(old_value)s to %(new_value)s for %(quantity)s by %(user)s"
@@ -458,7 +458,7 @@ msgid "First In First Out (FIFO)"
 msgstr "Primeiro a entrar, primeiro a sair (PEPS)"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/product_value.py:0
 msgid "For %(quantity)s %(uom)s (%(price_unit)s per %(uom)s)"
 msgstr "Para %(quantity)s %(uom)s (%(price_unit)s por %(uom)s)"
@@ -514,7 +514,7 @@ msgstr ""
 "parceiro daquela empresa; caso contrário, o parceiro da movimentação."
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_location.py:0
 msgid "Invalid search operator or value"
 msgstr "Operador ou valor de pesquisa inválido"
@@ -530,8 +530,8 @@ msgid "Inventory Location"
 msgstr "Localização do inventário"
 
 #. module: stock_account
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock_account/report/account_stock_valuation_report.py:0
 #: code:addons/stock_account/static/src/stock_valuation/stock_valuation_report.js:0
 msgid "Inventory Loss"
@@ -578,7 +578,7 @@ msgid "Is valued inside the company"
 msgstr "É valorizado dentro da empresa"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/product_value.py:0
 #: model:ir.model,name:stock_account.model_account_move
 msgid "Journal Entry"
@@ -661,7 +661,7 @@ msgid "Old Value"
 msgstr "Valor antigo"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "Only is set (= True) is supported in search for remaining_qty."
 msgstr ""
@@ -716,19 +716,19 @@ msgid "Product Moves (Stock Move Line)"
 msgstr "Movimentações do produto (linha da movimentação de estoque)"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_quant.py:0
 msgid "Product Quantity Confirmed"
 msgstr "Quantidade de produtos confirmada"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_quant.py:0
 msgid "Product Quantity Updated"
 msgstr "Quantidade de produtos atualizada"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/account_move.py:0
 #: model:ir.model,name:stock_account.model_product_value
 #: model:ir.model.fields,field_description:stock_account.field_account_bank_statement_line__product_value_id
@@ -744,7 +744,7 @@ msgid "Product Variant"
 msgstr "Variante do produto"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid ""
 "Product should be passed as an argument in order to get the unit price for "
@@ -889,7 +889,7 @@ msgid "The current value of the move. It's zero if the move is not valued."
 msgstr "O valor atual da movimentação. Será zero se não for valorada."
 
 #. module: stock_account
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock_account/static/src/fields/boolean_confirm.js:0
 msgid ""
 "This operation might lead in a loss of data. Valuation will be identical for "
@@ -1014,19 +1014,19 @@ msgid "Value Description"
 msgstr "Descrição do valor"
 
 #. module: stock_account
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock_account/static/src/stock_account_forecasted/forecasted_header.xml:0
 msgid "Value On Hand:"
 msgstr "Valor em estoque:"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "Value based on original move %(reference)s"
 msgstr "Valor baseado na jogada original %(reference)s"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "Value from previous move %(references)s"
 msgstr "Valor do movimento anterior %(references)s"
@@ -1055,13 +1055,13 @@ msgid "WMS Accounting"
 msgstr "Contabilidade WMS"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_move.py:0
 msgid "You can only adjust valuation for one move at a time."
 msgstr "Você só pode ajustar a valoração para uma movimentação de cada vez."
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/product.py:0
 msgid ""
 "You cannot enable lot valuation because the following products have on-hand "
@@ -1073,7 +1073,7 @@ msgstr ""
 "%s"
 
 #. module: stock_account
-#. odoo-python
+#. weth-python
 #: code:addons/stock_account/models/stock_picking.py:0
 msgid ""
 "You cannot modify the scheduled date of operation %s because it falls within "

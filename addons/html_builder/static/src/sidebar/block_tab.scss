@@ -1,50 +1,52 @@
 // TODO define these variables elsewhere.
-$o-we-overlay-zindex: ($zindex-fixed + $zindex-modal-backdrop) / 2 !default;
-$o-we-zindex: $o-we-overlay-zindex + 1 !default;
+$w-we-overlay-zindex: (
+    $zindex-fixed + $zindex-modal-backdrop) / 2 !default;
+$w-we-zindex: $w-we-overlay-zindex + 1 !default;
 
 .o_snippet {
     // No root because can be dragged and dropped and the helper is in the body.
     position: relative;
-    z-index: $o-we-zindex;
+    z-index: $w-we-zindex;
     width: 77px;
-    background-color: $o-we-sidebar-blocks-content-snippet-bg;
+    background-color: $w-we-sidebar-blocks-content-snippet-bg;
 
     &.o_draggable_dragging {
-        transform: rotate(-3deg) scale(1.2);
-        border-radius: $border-radius;
-        box-shadow: 0 5px 25px -10px black;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+        transform: rotate(-3deg) scale(1.2
+        );
+    border-radius: $border-radius;
+    box-shadow: 0 5px 25px -10px black;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .o_snippet_thumbnail {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: map-get($spacers, 2);
-        width: 100%;
-        padding: map-get($spacers, 2);
+.o_snippet_thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($spacers, 2);
+    width: 100%;
+    padding: map-get($spacers, 2);
 
-        .o_snippet_thumbnail_img {
-            width: 30px;
-            height: 30px;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
+    .o_snippet_thumbnail_img {
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
 
-            .o_snippets_container:not(#snippet_custom_content) & {
-                margin-block: map-get($spacers, 2);
-            }
+        .o_snippets_container:not(#snippet_custom_content) & {
+            margin-block: map-get($spacers, 2);
         }
     }
+}
 
-    &:hover:not(.o_disabled):not(.o_to_install) {
-        background: $o-we-bg-light;
+&:hover:not(.o_disabled):not(.o_to_install) {
+    background: $w-we-bg-light;
 
-        .o_snippet_thumbnail_title {
-            color: $o-we-fg-lighter;
-        }
+    .o_snippet_thumbnail_title {
+        color: $w-we-fg-lighter;
     }
+}
 }
 
 .o_block_tab {
@@ -53,15 +55,16 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
     z-index: 1;
 
 
-    .o_snippets_container, .o_snippets_container_header {
-        padding-bottom: $o-we-sidebar-blocks-content-spacing;
+    .o_snippets_container,
+    .o_snippets_container_header {
+        padding-bottom: $w-we-sidebar-blocks-content-spacing;
     }
 
     .o_snippets_container_header {
         position: sticky;
         top: 0;
-        background-color: $o-we-bg-darker;
-        padding-top: $o-we-sidebar-blocks-content-spacing;
+        background-color: $w-we-bg-darker;
+        padding-top: $w-we-sidebar-blocks-content-spacing;
         z-index: 1;
     }
 
@@ -94,7 +97,7 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
             .o_snippet_thumbnail_title {
                 @include o-text-overflow(block);
                 white-space: normal;
-                font-size: $o-we-font-size-sm;
+                font-size: $w-we-font-size-sm;
             }
 
             .o_snippet_thumbnail_area {
@@ -105,7 +108,7 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
                 cursor: inherit;
 
                 &:focus-visible {
-                    border: $o-we-border-width * 2 solid $o-we-color-success;
+                    border: $w-we-border-width * 2 solid $w-we-color-success;
                     border-radius: $border-radius;
                     outline: none;
                     box-shadow: none;
@@ -118,12 +121,13 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
                 }
             }
 
-            &.o_disabled, &.o_to_install {
+            &.o_disabled,
+            &.o_to_install {
                 cursor: default;
-                background-color: rgba($o-we-sidebar-blocks-content-snippet-bg, .2);
+                background-color: rgba($w-we-sidebar-blocks-content-snippet-bg, .2);
 
                 .o_snippet_thumbnail_img {
-                    opacity: $o-opacity-disabled;
+                    opacity: $w-opacity-disabled;
                     filter: saturate(0);
                 }
             }
@@ -157,11 +161,12 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
         // TODO improve the following rules later
         .rename-delete-buttons button {
             // @extend %we-generic-link;
-            padding-left: $o-we-sidebar-content-field-button-group-button-spacing;
-            padding-right: $o-we-sidebar-content-field-button-group-button-spacing;
+            padding-left: $w-we-sidebar-content-field-button-group-button-spacing;
+            padding-right: $w-we-sidebar-content-field-button-group-button-spacing;
         }
 
-        &:not(:hover, :focus-within), &.o_disabled:hover {
+        &:not(:hover, :focus-within),
+        &.o_disabled:hover {
             .rename-delete-buttons button {
                 display: none;
             }
@@ -180,7 +185,7 @@ $o-we-zindex: $o-we-overlay-zindex + 1 !default;
                 // @extend %we-generic-clickable;
                 cursor: pointer;
                 flex: 1 1 auto;
-                padding: 0 $o-we-sidebar-content-field-button-group-button-spacing;
+                padding: 0 $w-we-sidebar-content-field-button-group-button-spacing;
                 line-height: 17px;
                 text-align: center;
             }

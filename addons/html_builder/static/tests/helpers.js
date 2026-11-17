@@ -373,7 +373,7 @@ export async function setupHTMLBuilder(
         getEditor: () => attachedEditor,
         getEditableContent: () => editableContent,
         contentEl: comp.iframeRef().contentDocument.body.firstChild.firstChild,
-        builderEl: comp.containerRef().querySelector(".o-website-builder_sidebar"),
+        builderEl: comp.containerRef().querySelector(".w-website-builder_sidebar"),
         waitSidebarUpdated,
     };
 }

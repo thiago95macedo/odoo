@@ -13,8 +13,8 @@ defineLivechatModels();
 test("Visitor cannot use @ mentions in livechat", async () => {
     await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-Message", { text: "Hello, how may I help you?" });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-Message", { text: "Hello, how may I help you?" });
     patchWithCleanup(SuggestionService.prototype, {
         getSupportedDelimiters() {
             const delimiters = super.getSupportedDelimiters(...arguments);
@@ -22,7 +22,7 @@ test("Visitor cannot use @ mentions in livechat", async () => {
             return delimiters;
         },
     });
-    await insertText(".o-mail-Composer-input", "@");
+    await insertText(".w-mail-Composer-input", "@");
     await expect.waitForSteps(["::,:,/"]);
-    await contains(".o-mail-Composer-suggestion", { count: 0 });
+    await contains(".w-mail-Composer-suggestion", { count: 0 });
 });

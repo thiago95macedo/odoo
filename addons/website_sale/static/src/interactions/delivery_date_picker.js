@@ -6,7 +6,7 @@ import { Interaction } from '@web/public/interaction';
 const { DateTime } = luxon;
 
 export class DeliveryDatePicker extends Interaction {
-    static selector = '.o_website_sale_delivery_date_picker';
+    static selector = '.w_website_sale_delivery_date_picker';
 
     start() {
         const deliveryMethod = this.el.closest('[name="o_delivery_method"]');

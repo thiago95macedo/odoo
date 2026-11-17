@@ -21,7 +21,7 @@ msgstr ""
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/hr_expense/pt_BR/>\n"
+"weth-20/hr_expense/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,31 +96,31 @@ msgstr ""
 "            "
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "%(employee_name)s: %(expense_name)s"
 msgstr "%(employee_name)s: %(expense_name)s"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "%(expense_name)s: It is not from your department"
 msgstr "%(expense_name)s: não é do seu departamento"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "%(expense_name)s: It is your own expense"
 msgstr "%(expense_name)s: é sua própria despesa"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "%(expense_name)s: You are neither a Manager nor a HR Officer"
 msgstr "%(expense_name)s: Você não é um gerente nem um diretor de RH"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "%(expense_name)s: Your are neither a Manager nor a HR Officer of this "
@@ -130,7 +130,7 @@ msgstr ""
 "despesa"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "%(user)s confirms this expense is not a duplicate with similar expense."
 msgstr ""
@@ -151,13 +151,13 @@ msgid "--<br/>"
 msgstr "--<br/>"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "1 %(exp_cur)s = %(rate)s %(comp_cur)s"
 msgstr "1 %(exp_cur)s = %(rate)s %(comp_cur)s"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "<b>Wasting time recording your receipts?</b> Let’s try a better way."
 msgstr ""
@@ -336,7 +336,7 @@ msgid "Amount Due"
 msgstr "Valor devido"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Amount reimbursed"
 msgstr "Valor reembolsado"
@@ -347,7 +347,7 @@ msgid "An"
 msgstr "Um"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/mixins/document_upload.js:0
 msgid "An error occurred during the upload"
 msgstr "Ocorreu um erro durante o carregamento"
@@ -366,7 +366,7 @@ msgstr ""
 "ser a conta a pagar da fatura."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/expense_form_view.js:0
 msgid ""
 "An expense with the same product, amount, and date already exists.\n"
@@ -417,7 +417,7 @@ msgid "Approval State"
 msgstr "Estado de aprovação"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/list.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_approve_duplicate_view_form
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_form
@@ -443,14 +443,14 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_form
 msgid "Attach Receipt"
 msgstr "Anexar recibo"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Attach a receipt - usually an image or a PDF file."
 msgstr "Anexe um recibo – geralmente uma imagem ou arquivo PDF."
@@ -533,13 +533,13 @@ msgid "Checksum/SHA1"
 msgstr "Checksum/SHA1"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Click here to create your employee profile."
 msgstr "Clique aqui para criar seu perfil de funcionário."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Click on all expenses"
 msgstr "Clique em todas as despesas"
@@ -550,7 +550,7 @@ msgid "Communication"
 msgstr "Comunicação"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 #: model:ir.model,name:hr_expense.model_res_company
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__company_id
@@ -590,7 +590,7 @@ msgid "Create a new expense"
 msgstr "Criar uma nova despesa"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Create and edit a new employee profile."
 msgstr "Crie e edite um novo perfil de funcionário."
@@ -609,10 +609,10 @@ msgstr "Crie novas despesas para obter estatísticas."
 #: model_terms:ir.ui.view,arch_db:hr_expense.res_config_settings_view_form
 msgid ""
 "Create prepaid virtual and physical cards for both one-time and recurring "
-"expenses, integrated into Odoo through Stripe Issuing."
+"expenses, integrated into WETH through Stripe Issuing."
 msgstr ""
 "Crie cartões pré-pagos virtuais e físicos para despesas únicas e "
-"recorrentes, integrados ao Odoo através do Stripe Issuing."
+"recorrentes, integrados ao WETH através do Stripe Issuing."
 
 #. module: hr_expense
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__create_uid
@@ -728,11 +728,11 @@ msgstr "Conta analítica de distribuição"
 #: model_terms:digest.tip,tip_description:hr_expense.digest_tip_hr_expense_0
 msgid ""
 "Do not keep your expense tickets in your pockets any longer. Just snap a "
-"picture of your receipt and let Odoo digitalizes it for you. The OCR and "
+"picture of your receipt and let WETH digitalizes it for you. The OCR and "
 "Artificial Intelligence will fill the data automatically."
 msgstr ""
 "Não guarde mais seus recibos de despesas no bolso: basta tirar uma foto dele "
-"e deixar que Odoo o digitalize para você. O OCR e a Inteligência Artificial "
+"e deixar que WETH o digitalize para você. O OCR e a Inteligência Artificial "
 "preencherão os dados automaticamente."
 
 #. module: hr_expense
@@ -747,20 +747,20 @@ msgid "Draft"
 msgstr "Provisório"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/wizard/hr_expense_approve_duplicate.py:0
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__duplicate_expense_ids
 msgid "Duplicate Expense"
 msgstr "Duplicar despesa"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/expense_form_view.js:0
 msgid "Duplicate Expense found"
 msgstr "Despesa duplicada encontrada"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_move.py:0
 msgid ""
 "Each expense paid by the company must have a distinct and dedicated journal "
@@ -770,7 +770,7 @@ msgstr ""
 "dedicado."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 #: model:ir.model,name:hr_expense.model_hr_employee
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__employee_id
@@ -793,31 +793,31 @@ msgid "Employee Expenses"
 msgstr "Despesas do funcionário"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Enter a description and select a product to proceed."
 msgstr "Insira uma descrição e selecione um produto para continuar."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Enter a description to proceed."
 msgstr "Insira uma descrição para continuar."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Enter the total amount of the expense."
 msgstr "Insira o valor total das despesas."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Enter your name to create your employee profile."
 msgstr "Digite seu nome para criar seu perfil de funcionário."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Exceeds company limit"
 msgstr "Excede o limite da empresa"
@@ -834,7 +834,7 @@ msgid "Existing Expense"
 msgstr "Despesa existente"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/webclient/share_target/expense_share_target_item.js:0
 #: model:account.journal,name:hr_expense.hr_expense_account_journal
 #: model:ir.model,name:hr_expense.model_hr_expense
@@ -947,13 +947,13 @@ msgid "Expense approved"
 msgstr "Despesas aprovadas"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Expense created from a split."
 msgstr "Despesa criada a partir de uma divisão."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_journal.py:0
 msgid "Expense linked moves"
 msgstr "Movimentações vinculadas a despesas"
@@ -984,13 +984,13 @@ msgid "Expense reset to Draft"
 msgstr "Despesa redefinida como Provisório"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Expense split"
 msgstr "Divisão de despesas"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_move.py:0
 #: code:addons/hr_expense/models/account_payment.py:0
 #: model:ir.model.fields,field_description:hr_expense.field_product_product__can_be_expensed
@@ -1024,7 +1024,7 @@ msgid "Expenses Report"
 msgstr "Relatórios de despesas"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Expenses of %(employee)s"
 msgstr "Despesas de %(employee)s"
@@ -1035,7 +1035,7 @@ msgid "Expenses of Your Team Member"
 msgstr "Despesas do membro da sua equipe"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Expenses similar to %(other_expense_name)s"
 msgstr "Despesas semelhantes a %(other_expense_name)s"
@@ -1058,13 +1058,13 @@ msgid "Expenses to post"
 msgstr "Despesas com postagem"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Expenses with a similar receipt to %(other_expense_name)s"
 msgstr "Despesas com um recibo semelhante a %(other_expense_name)s"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "Failed to send mails for submitted expenses. No valid email was found for "
@@ -1105,7 +1105,7 @@ msgid "Future Activities"
 msgstr "Atividades futuras"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/mixins/document_upload.js:0
 msgid "Generate Expenses"
 msgstr "Gerar despesas"
@@ -1121,19 +1121,19 @@ msgid "Gifts to customers or vendors"
 msgstr "Brindes para clientes ou fornecedores"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Go to Account"
 msgstr "Ir para a conta"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Go to expense(s)"
 msgstr "Ir para despesas"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Go to the Settings tab to configure the expense approver."
 msgstr "Acesse a guia “Configurações” para definir quem aprova as despesas."
@@ -1247,7 +1247,7 @@ msgid "Internal Notes"
 msgstr "Anotações internas"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Invalid attachments!"
 msgstr "Anexos inválidos!"
@@ -1288,7 +1288,7 @@ msgid "Is product with non zero cost selected"
 msgstr "O produto não tem custo diferente de zero selecionado"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "It all begins here - let's go!"
 msgstr "Tudo começa por aqui – vamos lá!"
@@ -1346,13 +1346,13 @@ msgid "Journal Item"
 msgstr "Item de diário"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_move.py:0
 msgid "Journal entry created from these expenses: %(links)s"
 msgstr "Lançamento de diário criado a partir dessas despesas: %(links)s"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_move.py:0
 msgid "Journal entry created from this expense: %(link)s"
 msgstr "Lançamento de diário criado a partir dessa despesa: %(link)s"
@@ -1413,7 +1413,7 @@ msgid "Let your employees record expenses by email"
 msgstr "Permitir que seus funcionários relatem despesas por e-mail"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Let's check out where you can manage all your employees expenses"
 msgstr ""
@@ -1421,7 +1421,7 @@ msgstr ""
 "funcionários"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Let's go back to your expenses."
 msgstr "Vamos voltar às suas despesas."
@@ -1440,13 +1440,13 @@ msgstr "Limites"
 #: model:ir.model.fields,field_description:hr_expense.field_res_config_settings__module_hr_expense_stripe
 msgid ""
 "Link your stripe issuing account to manage company credit cards for your "
-"employees through Odoo"
+"employees through Weth"
 msgstr ""
 "Vincule sua conta de emissão Stripe para gerenciar os cartões de crédito "
-"corporativos de seus funcionários no Odoo"
+"corporativos de seus funcionários no Weth"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Lunch with customer $12.32"
 msgstr "Almoço com cliente US$ 12,32"
@@ -1462,7 +1462,7 @@ msgid "Manager"
 msgstr "Gerente"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid ""
 "Managers can approve the expense here, then an accountant can post the "
@@ -1472,13 +1472,13 @@ msgstr ""
 "lançar os lançamentos contábeis."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Managers can inspect and select expenses from here."
 msgstr "Os gerentes podem verificar e selecionar despesas a partir daqui."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Managers can inspect expenses from here."
 msgstr "Os gerentes podem verificar as despesas a partir daqui."
@@ -1519,19 +1519,19 @@ msgid "Mitchell Admin"
 msgstr "Michel Admin"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid "Multiple Approvers"
 msgstr ""
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid "Multiple employees"
 msgstr "Vários funcionários"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid "Multiple payment modes"
 msgstr "Várias formas de pagamento"
@@ -1565,7 +1565,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "New expenses waiting for your approval"
 msgstr "Novas despesas aguardando sua aprovação"
@@ -1591,7 +1591,7 @@ msgid "Next Activity Type"
 msgstr "Tipo da próxima atividade"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "No attachment was provided"
 msgstr "Nenhum anexo foi fornecido"
@@ -1603,7 +1603,7 @@ msgid "No data yet!"
 msgstr "Sem dados ainda!"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid "No employee"
 msgstr "Sem funcionários"
@@ -1614,7 +1614,7 @@ msgid "No expense products found. Let's create one!"
 msgstr "Nenhum produto de despesas encontrado. Vamos criar um!"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "No work contact found for the employee %(name)s, please configure one."
 msgstr ""
@@ -1622,7 +1622,7 @@ msgstr ""
 "Configure um contato."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid "None (automatic)"
 msgstr "Nenhum (automático)"
@@ -1674,7 +1674,7 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/components/expense_dashboard.xml:0
 msgid "Numbers computed from your personal expenses."
 msgstr "Números calculados com base em suas despesas pessoais."
@@ -1682,21 +1682,21 @@ msgstr "Números calculados com base em suas despesas pessoais."
 #. module: hr_expense
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_template_register_no_user
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_template_submitted_expenses
-msgid "Odoo"
-msgstr "Odoo"
+msgid "Weth"
+msgstr "Weth"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
-"Odoo had a look at your expense, its product, your company and the journal "
+"WETH had a look at your expense, its product, your company and the journal "
 "but came back with empty hands.\n"
-"Give Odoo a hand to find an account by setting up an expense account.\n"
+"Give WETH a hand to find an account by setting up an expense account.\n"
 "%(expense)s %(expense_name)s.\n"
 msgstr ""
-"O Odoo deu uma olhada em sua despesa, produto, empresa e diário, mas voltou "
+"O WETH deu uma olhada em sua despesa, produto, empresa e diário, mas voltou "
 "com uma mão atrás da outra :(\n"
-"Ajude o Odoo na missão configurando uma conta de despesas.\n"
+"Ajude o WETH na missão configurando uma conta de despesas.\n"
 "%(expense)s %(expense_name)s.\n"
 
 #. module: hr_expense
@@ -1707,7 +1707,7 @@ msgid ""
 msgstr "Depois de criar a despesa, envie-a para validação do seu gerente."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid ""
 "Once your <b>Expense</b> is ready, you can submit it to your manager and "
@@ -1717,7 +1717,7 @@ msgstr ""
 "e aguardar a aprovação."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "Only HR Officers, accountants, or the concerned employee can reset to draft."
@@ -1726,25 +1726,25 @@ msgstr ""
 "redefinir como provisório."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Only draft expenses can have a total of 0."
 msgstr "Somente as despesas de rascunho podem ter um total de 0."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Only one expense can be linked to a particular payment"
 msgstr "Somente uma despesa pode ser vinculada a um determinado pagamento"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense_product_job_position_limit.py:0
 msgid "Only one generic expense limit can be defined per product."
 msgstr "É possível definir apenas um limite de despesas genérico por produto."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Only submitted expenses exceeding a job position limit can be capped."
 msgstr ""
@@ -1752,13 +1752,13 @@ msgstr ""
 "limitadas."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Open burger menu."
 msgstr "Abrir o menu tipo hambúrguer."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Open the actions menu."
 msgstr "Abra o menu de ações."
@@ -1816,7 +1816,7 @@ msgid "Payment Method"
 msgstr "Método de pagamento"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_payment.py:0
 msgid "Payment created for: %s"
 msgstr "Pagamento criado para: %s"
@@ -1843,7 +1843,7 @@ msgid "Phone bills, postage, etc."
 msgstr "Contas de telefone, correios, etc."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "Please specify if the expenses were paid by the company, reimbursed to the "
@@ -1869,8 +1869,8 @@ msgid "Price:"
 msgstr "Preço:"
 
 #. module: hr_expense
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 #: code:addons/hr_expense/static/src/views/list.xml:0
 msgid "Print"
@@ -1937,15 +1937,15 @@ msgid "Ratings"
 msgstr "Avaliações"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid ""
 "Ready? You can save it manually or discard modifications from here. You "
-"don't <em>need to save</em> - Odoo will save everything for you when you "
+"don't <em>need to save</em> - WETH will save everything for you when you "
 "navigate."
 msgstr ""
 "Pronto? Você pode salvar manualmente ou descartar as alterações a partir "
-"daqui. Você não <em>precisa salvar</em> — o Odoo salvará tudo para você "
+"daqui. Você não <em>precisa salvar</em> — o WETH salvará tudo para você "
 "quando você navegar."
 
 #. module: hr_expense
@@ -1971,7 +1971,7 @@ msgid "Refund employees via their payslips."
 msgstr "Reembolsar os funcionários nos holerites."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/list.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_approve_duplicate_view_form
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_refuse_wizard_view_form
@@ -2058,7 +2058,7 @@ msgid "Same Receipt Expense"
 msgstr "Despesas com o mesmo recibo"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Save the employee profile."
 msgstr "Salve o perfil do funcionário."
@@ -2069,26 +2069,26 @@ msgid "Save this page and come back here to set up the feature."
 msgstr "Salve esta página e retorne aqui para configurar o recurso."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/kanban.xml:0
 #: code:addons/hr_expense/static/src/views/list.xml:0
 msgid "Scan"
 msgstr "Digitalizar"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Select a product to proceed."
 msgstr "Selecione um produto para continuar."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Select an employee to proceed."
 msgstr "Selecione um funcionário para continuar."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Select the expense approver."
 msgstr "Selecione o aprovador das despesas."
@@ -2138,7 +2138,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Set an expense approver for this employee."
 msgstr "Defina um aprovador de despesas para este funcionário."
@@ -2172,7 +2172,7 @@ msgid "Split"
 msgstr "Dividir"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 #: code:addons/hr_expense/wizard/hr_expense_split_wizard.py:0
 msgid "Split Expenses"
@@ -2204,7 +2204,7 @@ msgstr ""
 "Planejado: atividades futuras."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 #: code:addons/hr_expense/static/src/views/list.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_form
@@ -2212,7 +2212,7 @@ msgid "Submit"
 msgstr "Enviar"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/expense_form_view.js:0
 msgid "Submit Expense"
 msgstr "Enviar despesa"
@@ -2240,7 +2240,7 @@ msgid "Subtotal in currency"
 msgstr "Subtotal na moeda"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Switch to the list view."
 msgstr "Alternar para a visualização em lista."
@@ -2308,13 +2308,13 @@ msgid "Thanks,"
 msgstr "Agradecemos,"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "The account %(name)s (%(code)s) is archived. Activate it to continue"
 msgstr "A conta %(name)s (%(code)s) está arquivada. Ative-a para continuar"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 msgid ""
 "The attachment (%(attachment_name)s) has not been added to the report due to "
@@ -2331,7 +2331,7 @@ msgstr ""
 "O diário padrão da empresa usado quando é criada uma despesa de funcionário."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "The current user has no related employee. Please, create one in %(company)s, "
@@ -2339,7 +2339,7 @@ msgid ""
 msgstr ""
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/res_company.py:0
 msgid "The employee expense journal must be a purchase journal."
 msgstr "O diário de despesas dos funcionários deve ser um diário de compras."
@@ -2365,7 +2365,7 @@ msgstr ""
 "relatório não contém duplicatas."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "The following expenses payment method leads to several accounts payable and "
@@ -2382,7 +2382,7 @@ msgid "The payment method used when the expense is paid by the company."
 msgstr "O método de pagamento utilizado quando a despesa é paga pela empresa."
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "The status of all your current expenses is visible from here."
 msgstr "O status de todas as suas despesas atuais fica visível aqui."
@@ -2393,7 +2393,7 @@ msgid "The sum of after split shut remain the same"
 msgstr "A soma após o fechamento da divisão deve permanecer a mesma"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "The vendor is required for expenses using SEPA Credit Transfer as the "
@@ -2405,7 +2405,7 @@ msgstr ""
 "Por favor, indique um fornecedor nas despesas."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/product_product.py:0
 msgid ""
 "There are draft expenses linked to this product. Updating the product cost "
@@ -2427,7 +2427,7 @@ msgid "Tip: Snap pictures of your receipts with the remote app"
 msgstr "Dica: tire fotos de seus recibos com o app remoto"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "Tip: try sending receipts by email"
 msgstr "Dica: experimente enviar recibos por e-mail"
@@ -2438,7 +2438,7 @@ msgid "To Post"
 msgstr "A lançar"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_search
 msgid "To Submit"
@@ -2507,7 +2507,7 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo da atividade de exceção registrada."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "Uh-oh! You can’t edit this expense.\n"
@@ -2533,7 +2533,7 @@ msgid "Unit Price"
 msgstr "Preço unitário"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_actions_report.py:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_form
 msgid "Unknown"
@@ -2545,13 +2545,13 @@ msgid "Untaxed Amount"
 msgstr "Valor sem impostos"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/components/hr_expense_product_form_view.js:0
 msgid "Update cost"
 msgstr "Atualizar custo"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/views/kanban.xml:0
 #: code:addons/hr_expense/static/src/views/list.xml:0
 msgid "Upload"
@@ -2564,7 +2564,7 @@ msgid "Upload or drop an expense receipt"
 msgstr "Carregue ou arraste e solte um recibo de despesa"
 
 #. module: hr_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_expense/static/src/js/tours/hr_expense.js:0
 msgid "Use the breadcrumbs to go back to the list of expenses."
 msgstr "Use a trilha de navegação para volta à lista de despesas."
@@ -2585,14 +2585,14 @@ msgid "View Expense"
 msgstr "Ver despesa"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_search
 msgid "Waiting Approval"
 msgstr "Aguardando aprovação"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 #: model_terms:ir.ui.view,arch_db:hr_expense.hr_expense_view_search
 msgid "Waiting Reimbursement"
@@ -2636,13 +2636,13 @@ msgid "You can now submit it to the manager from the following link."
 msgstr "Você pode enviá-lo agora ao gerente pelo seguinte link."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You can only generate an accounting entry for approved expense(s)."
 msgstr "Você só pode gerar lançamentos contábeis de despesa(s) aprovada(s)."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You can't add an attachment to an expense once it has been approved."
 msgstr ""
@@ -2650,7 +2650,7 @@ msgstr ""
 "aprovada."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "You can't create move for employee-paid expenses belonging to different "
@@ -2660,7 +2660,7 @@ msgstr ""
 "pertencentes a diferentes empresas ao mesmo tempo"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/ir_attachment.py:0
 msgid ""
 "You can't delete attachments from an expense once it has been submitted."
@@ -2669,7 +2669,7 @@ msgstr ""
 "enviada."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "You cannot approve:\n"
@@ -2679,26 +2679,26 @@ msgstr ""
 "%(reasons)s"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You cannot cancel an expense linked to a journal entry"
 msgstr ""
 "Não é possível cancelar uma despesa vinculada a um lançamento no diário"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You cannot delete a posted or approved expense."
 msgstr "Você não pode remover uma despesa lançada ou aprovada."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/analytic.py:0
 msgid "You cannot delete an analytic account that is used in an expense."
 msgstr "Você não pode excluir uma conta analítica que é usada em uma despesa."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/account_payment.py:0
 msgid ""
 "You cannot do this modification since the payment is linked to an expense."
@@ -2707,14 +2707,14 @@ msgstr ""
 "despesa."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You cannot edit the security fields of an expense manually"
 msgstr ""
 "Não é possível editar manualmente os campos de segurança de uma despesa"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid ""
 "You cannot refuse:\n"
@@ -2724,7 +2724,7 @@ msgstr ""
 "%(reasons)s"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You cannot reset to draft an expense linked to a journal entry."
 msgstr ""
@@ -2732,7 +2732,7 @@ msgstr ""
 "no diário."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You cannot split an expense that is already posted."
 msgstr "Não é possível dividir uma despesa que já tenha sido lançada."
@@ -2743,25 +2743,25 @@ msgid "You currently have"
 msgstr "Atualmente você tem"
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You do not have the required permission to submit this expense."
 msgstr "Você não tem a permissão necessária para enviar essa despesa."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You do not have the rights to edit this expense."
 msgstr "Você não tem o direito de editar essa despesa."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You don't have the access rights to modify this expense."
 msgstr "Você não tem permissão para modificar esta despesa."
 
 #. module: hr_expense
-#. odoo-python
+#. weth-python
 #: code:addons/hr_expense/models/hr_expense.py:0
 msgid "You need to add a manual payment method on the journal (%s)"
 msgstr "Você precisa adicionar um método de pagamento manual no diário (%s)"

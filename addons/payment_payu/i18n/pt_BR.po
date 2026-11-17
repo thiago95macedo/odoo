@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_payu/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/models/payment_transaction.py:0
 msgid "%(code)s: %(explanation)s"
 msgstr "%(code)s: %(explanation)s"
@@ -72,7 +72,7 @@ msgid "Connect"
 msgstr "Conectar"
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/controllers/onboarding.py:0
 msgid "Could not find PayU provider with id %s"
 msgstr "Não foi possível encontrar o provedor PayU com o id %s"
@@ -120,7 +120,7 @@ msgid "Netbanking"
 msgstr "Netbanking"
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/models/payment_provider.py:0
 msgid "Other Payment Providers"
 msgstr "Provedores de pagamento"
@@ -146,7 +146,7 @@ msgid "PayU Merchant Salt"
 msgstr "Salt do comerciante PayU"
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/models/payment_provider.py:0
 msgid ""
 "PayU credentials are missing. Click the \"Connect\" button to set up your "
@@ -156,7 +156,7 @@ msgstr ""
 "configurar sua conta."
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/models/payment_provider.py:0
 msgid ""
 "PayU is not available in your country; please use another payment provider."
@@ -194,7 +194,7 @@ msgid "UPI"
 msgstr "UPI"
 
 #. module: payment_payu
-#. odoo-python
+#. weth-python
 #: code:addons/payment_payu/models/payment_transaction.py:0
 msgid "Unknown status code: %s"
 msgstr "Código de status desconhecido: %s"

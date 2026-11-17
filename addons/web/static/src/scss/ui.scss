@@ -1,22 +1,22 @@
-:root .o_hidden {
-    // Add `:root` as parent selector to increase '.o_hidden' hierarchy.
+:root .w_hidden {
+    // Add `:root` as parent selector to increase '.w_hidden' hierarchy.
     // The aim is to ensure that it overrides any bootstrap default layout
     // class (eg. d-flex).
     // TODO: After migrating to BTS5 review how layout/visibility classes
     // interfere with each other.
-    display: none!important;
+    display: none !important;
 }
 
-.o_disabled {
+.w_disabled {
     pointer-events: none;
-    opacity: $o-opacity-disabled;
+    opacity: $w-opacity-disabled;
 }
 
-.o_btn_loading {
+.w_btn_loading {
     position: relative;
     opacity: $btn-disabled-opacity;
 
-    .o_btn_loading_spinner {
+    .w_btn_loading_spinner {
         @include o-position-absolute(-1px, -1px, -1px, -1px);
         z-index: 1;
         display: grid;
@@ -26,30 +26,33 @@
     }
 }
 
-.o_text_overflow {
+.w_text_overflow {
     @include o-text-overflow;
 }
 
 .dropdown-menu {
-    max-height: $o-dropdown-max-height;
+    max-height: $w-dropdown-max-height;
     overflow: auto;
     background-clip: border-box;
 
-    &:not(.o-hb-select-dropdown) {
+    &:not(.w-hb-select-dropdown) {
         scrollbar-width: thin;
     }
 }
+
 .dropdown-toggle {
     white-space: nowrap;
 
-    &.o-no-caret {
-        &::before, &::after {
+    &.w-no-caret {
+
+        &::before,
+        &::after {
             content: normal;
         }
     }
 }
 
-.o_catch_attention {
+.w_catch_attention {
     position: relative;
     z-index: 1;
     animation: catchAttention 200ms ease 0s infinite normal;
@@ -66,7 +69,7 @@
 // @param {color}  --treeEntry--beforeAfter-color - Lines color
 // @param {color}  --treeEntry--beforeAfter-left - Lines left position
 // ----------------------------------------------------------------------------
-.o_treeEntry {
+.w_treeEntry {
     $-padding-h: var(--treeEntry-padding-h, #{map-get($spacers, 4)});
     $-padding-v: var(--treeEntry-padding-v, #{map-get($spacers, 2)});
 
@@ -75,7 +78,8 @@
     padding-left: $-padding-h;
     position: relative;
 
-    &:before, &:after {
+    &:before,
+    &:after {
         position: absolute;
         left: var(--treeEntry--beforeAfter-left, calc(#{$-padding-h} * .5));
         background: var(--treeEntry--beforeAfter-color, #{$border-color});
@@ -103,33 +107,46 @@
 
 // bounce effect
 @keyframes catchAttention {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
+
     0% {
         transform: translateY(-30%);
     }
+
     20% {
         transform: translateY(-25%);
     }
+
     40% {
         transform: translateY(-20%);
     }
+
     60% {
         transform: translateY(-15%);
     }
+
     80% {
         transform: translateY(-10%);
     }
+
     100% {
         transform: translateY(-5%);
     }
 }
 
-span.o_force_ltr {
+span.w_force_ltr {
     display: inline;
 }
-.o_force_ltr {
+
+.w_force_ltr {
     unicode-bidi: embed; // ensure element has level of embedding for direction
     /*rtl:ignore*/
     direction: ltr;
@@ -140,31 +157,31 @@ span.o_force_ltr {
 [type="url"],
 [type="email"],
 [type="number"],
-.o_force_ltr {
+.w_force_ltr {
   text-align: end !important;
 }
 */
 
-.o_image_24_cover {
+.w_image_24_cover {
     width: 24px;
     height: 24px;
     object-fit: cover;
 }
 
-.o_image_40_cover {
+.w_image_40_cover {
     width: 40px;
     height: 40px;
     object-fit: cover;
 }
 
-.o_image_64_cover {
+.w_image_64_cover {
     width: 64px;
     height: 64px;
     object-fit: cover;
 }
 
 // Keep ratio but avoid cropping (so part of the background becomes visible).
-.o_image_64_contain {
+.w_image_64_contain {
     width: 64px;
     height: 64px;
     object-fit: contain;
@@ -172,25 +189,25 @@ span.o_force_ltr {
 
 // When having a square is not necessary, the image will take less space if any
 // of its width or height is smaller than 64px.
-.o_image_64_max {
+.w_image_64_max {
     max-width: 64px;
     max-height: 64px;
 }
 
-.o_ui_app_icon {
+.w_ui_app_icon {
     width: var(--oi-font-size, 1em);
 
-    :not(:hover) > & {
+    :not(:hover)>& {
         --oi-color: currentColor;
     }
- }
+}
 
-.o_button_area {
+.w_button_area {
     @include o-position-absolute(0, 0, 0, 0);
 }
 
 // Remove default user-agent styles on buttons
-.o_btn_reset {
+.w_btn_reset {
     appearance: none;
     margin: unset;
     padding: unset;
@@ -201,42 +218,52 @@ span.o_force_ltr {
 }
 
 // Chess-like background
-.o_preview_alpha_background {
+.w_preview_alpha_background {
     @extend %o-preview-alpha-background;
 }
 
 // touch display property +²
-.o_touch_device {
+.w_touch_device {
     .d-touch-none {
         display: none !important;
     }
+
     .d-touch-inline {
         display: inline !important;
     }
+
     .d-touch-inline-block {
         display: inline-block !important;
     }
+
     .d-touch-block {
         display: block !important;
     }
+
     .d-touch-grid {
         display: grid !important;
     }
+
     .d-touch-inline-grid {
         display: inline-grid !important;
     }
+
     .d-touch-table {
         display: table !important;
     }
+
     .d-touch-table-cell {
         display: table-cell !important;
     }
+
     .d-touch-table-row {
         display: table-row !important;
     }
+
     .d-touch-flex {
         display: flex !important;
     }
+
     .d-touch-inline-flex {
         display: inline-flex !important;
     }

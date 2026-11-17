@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-01 22:29+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/google_address_autocomplete/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -48,13 +48,13 @@ msgstr ""
 "                            Habilite o faturamento no seu projeto do Google"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Additional street field"
 msgstr "Campo adicional de endereço"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Address AutoComplete"
 msgstr "Preenchimento automático de endereço"
@@ -66,13 +66,13 @@ msgstr ""
 "Auxiliar com preenchimento automático e sugestões ao preencher o endereço"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "City Id field"
 msgstr "Campo ID da cidade"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "City field"
 msgstr "Campo Cidade"
@@ -88,7 +88,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Country field"
 msgstr "Campo País"
@@ -126,31 +126,31 @@ msgid "Paste your API key"
 msgstr "Cole sua chave de API"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Searching for addresses..."
 msgstr "Pesquisando endereços..."
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "State field"
 msgstr "Campo Estado"
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Street field"
 msgstr "Campo Rua"
 
 #. module: google_address_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/google_address_autocomplete/controllers/google_address_autocomplete.py:0
 msgid "You don't have access to the full autocomplete feature."
 msgstr "Você não tem acesso ao recurso completo de preenchimento automático."
 
 #. module: google_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.js:0
 msgid "Zip field"
 msgstr "Campo CEP"

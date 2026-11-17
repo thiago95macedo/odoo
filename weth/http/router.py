@@ -115,7 +115,7 @@ def db_filter(dbs: Iterable[str], host: str | None = None) -> list[str]:
         return [db for db in dbs if dbfilter_re.match(db)]
 
     if config['db_name']:
-        # In case --db-filter is not provided and --database is passed, Odoo will
+        # In case --db-filter is not provided and --database is passed, WETH will
         # use the value of --database as a comma separated list of exposed databases.
         return sorted(set(config['db_name']).intersection(dbs))
 
@@ -155,7 +155,7 @@ class RegistryError(RuntimeError):
 
 
 class Application:
-    """ Odoo WSGI application """
+    """ WETH WSGI application """
     # See also: https://www.python.org/dev/peps/pep-3333
 
     def initialize(self) -> None:
@@ -504,12 +504,12 @@ def _set_session_and_dbname(request: Request) -> None:
 
     dbname = None
     host = request.httprequest.environ['HTTP_HOST']
-    header_dbname = request.httprequest.headers.get('X-Odoo-Database')
+    header_dbname = request.httprequest.headers.get('X-Weth-Database')
     if session.db and db_filter([session.db], host=host):
         dbname = session.db
         if header_dbname and header_dbname != dbname:
             e = ("Cannot use both the session_id cookie and the "
-                    "x-odoo-database header.")
+                    "x-weth-database header.")
             raise Forbidden(e)
     elif header_dbname:
         session.can_save = False  # stateless

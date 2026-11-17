@@ -72,7 +72,7 @@ class Module(Command):
                 '-d', '--database', dest='db_name', default=None,
                 help="database name, connection details will be taken from the config file")
             parser.add_argument("-D", "--data-dir", dest="data_dir",
-                 help="directory where to store Odoo data")
+                 help="directory where to store WETH data")
         for parser in (
             install_parser,
             uninstall_parser,
@@ -85,7 +85,7 @@ class Module(Command):
             'modules', nargs='+', metavar='MODULE',
             help="names of the modules to be installed. For data modules (.zip), use the path instead")
         install_parser.epilog = textwrap.dedent("""\
-            Before installing modules, an Odoo database needs to be created and initialized
+            Before installing modules, an WETH database needs to be created and initialized
             on your PostgreSQL instance, using the `db init` command:
 
             $ weth-bin db init <db_name>

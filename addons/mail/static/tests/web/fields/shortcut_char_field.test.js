@@ -35,7 +35,7 @@ test('shortcut widget displays the appropriate "::" icon across views', async ()
     await switchView("kanban");
     await contains(".o_kanban_view .o_content");
     await contains(`${selector}:text(':: hello')`);
-    await click(".o_control_panel_main_buttons .o-kanban-button-new");
+    await click(".o_control_panel_main_buttons .w-kanban-button-new");
     await contains(`.o_form_view .o_content`);
     await contains(`${selector} input[type='text']`);
     await contains(`${selector}:text('::')`);

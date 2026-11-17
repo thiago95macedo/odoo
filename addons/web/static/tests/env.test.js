@@ -19,7 +19,7 @@ const servicesRegistry = registry.category("services");
 
 beforeEach(() => {
     clearRegistry(servicesRegistry);
-    // ideally, should not be done like this, we should simply start odoo with
+    // ideally, should not be done like this, we should simply start weth with
     // the services that we want. but for now, it will do
     patchWithCleanup(services, {
         _items: signal.Array([]),
@@ -27,14 +27,14 @@ beforeEach(() => {
     services.add(LegacyServiceStarterPlugin);
 });
 afterEach(() => {
-    delete odoo.isReady;
+    delete weth.isReady;
     delete weth.__WOWL_DEBUG__;
 });
 
 /**
  * @param {string} name
  * @param {string[]} dependencies
- * @param {(env: import("@web/env").OdooEnv, dependencies: Record<string, any>) => any} factory
+ * @param {(env: import("@web/env").WethEnv, dependencies: Record<string, any>) => any} factory
  */
 function registerService(name, dependencies, factory) {
     servicesRegistry.add(name, {

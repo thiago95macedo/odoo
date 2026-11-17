@@ -23,7 +23,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/project/pt_BR/>\n"
+"weth-20/project/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,86 +38,86 @@ msgid "# Ratings"
 msgstr "Nº de avaliações"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/burndown_chart/burndown_chart_model.js:0
 #: model:ir.model.fields,field_description:project.field_report_project_task_user__nbr
 msgid "# of Tasks"
 msgstr "Nº de tarefas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/widget/subtask_counter.js:0
 msgid "%(closedCount)s sub-tasks closed out of %(totalCount)s"
 msgstr "%(closedCount)s subtarefas encerradas de %(totalCount)s"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/widget/subtask_counter.js:0
 msgid "%(count1)s/%(count2)s"
 msgstr "%(count1)s/%(count2)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s Updates"
 msgstr "%(name)s Atualizações"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Burndown Chart"
 msgstr "Gráfico de burndown %(name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Milestones"
 msgstr "Marcos de %(name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Rating"
 msgstr "Classificação de %(name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Tasks Analysis"
 msgstr "Análise das tarefas de %(name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Time by Stage"
 msgstr "%(name)s Tempo por etapa"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/res_partner.py:0
 msgid "%(partner_name)s's Tasks"
 msgstr "Tarefas do %(partner_name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/account_analytic_line.py:0
 msgid "%(sign)s%(hours)sh"
 msgstr "%(sign)s%(hours)sh"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/account_analytic_line.py:0
 msgid "%(sign)s%(hours)sh %(minutes)sm"
 msgstr "%(sign)s%(hours)sh %(minutes)sm"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/account_analytic_line.py:0
 msgid "%(sign)s%(minutes)sm"
 msgstr "%(sign)s%(minutes)sm"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "%(warning_messages)s\n"
@@ -127,13 +127,13 @@ msgstr ""
 "Tem certeza de que quer continuar?"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "%s (copy)"
 msgstr "%s (cópia)"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/notebook_task_one2many_field/notebook_task_list_renderer.js:0
 msgid "%s closed tasks"
 msgstr "%s tarefas encerradas"
@@ -144,7 +144,7 @@ msgid "(due"
 msgstr "(prazo final em"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/components/depend_on_ids_one2many/depend_on_ids_list_renderer.xml:0
 msgid "(other) tasks to which you do not have access."
 msgstr "(outras) tarefas às quais você não tem acesso."
@@ -165,13 +165,13 @@ msgid "- reached on"
 msgstr "– alcançado em"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "<b>Drag &amp; drop</b> the card to change your task from stage."
 msgstr "<b>Arraste e solte</b> o cartão para mudar sua tarefa de estágio."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "<b>Log internal notes</b> and use @<b>mentions</b> to notify your colleagues."
@@ -780,7 +780,7 @@ msgstr ""
 "compartilhamento do projeto. Remova as duplicatas e tente novamente."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_type.py:0
 msgid ""
 "A personal stage cannot be linked to a project because it is only visible to "
@@ -916,25 +916,25 @@ msgid "Activity type"
 msgstr "Tipo de atividade"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_kanban_list/subtask_kanban_create/subtask_kanban_create.xml:0
 msgid "Add"
 msgstr "Adicionar"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_kanban_list/subtask_kanban_list.xml:0
 msgid "Add Sub-task"
 msgstr "Adicionar subtarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Add a sub-task"
 msgstr "Adicionar uma subtarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Add columns to organize your tasks into <b>stages</b> <i>e.g. New - In "
@@ -956,7 +956,7 @@ msgid "Add extra content to display in the email"
 msgstr "Adicionar conteúdo para exibido no e-mail"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "Add internal users as team members and invite portal users as collaborators "
@@ -967,7 +967,7 @@ msgstr ""
 "podem acessar tarefas que seguem."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "Add internal users as team members to give them access to the project. They "
@@ -986,7 +986,7 @@ msgstr ""
 "personalizar melhor seu processo de gerenciamento de projetos."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Add your task once it is ready."
 msgstr "Adicione sua tarefa quando ela estiver pronta."
@@ -1026,7 +1026,7 @@ msgstr ""
 "entre etapas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Agile Scrum"
 msgstr "Agile Scrum"
@@ -1079,13 +1079,13 @@ msgid "Aliased Model"
 msgstr "Modelo de alias"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "All"
 msgstr "Tudo"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_many2one_field/project_many2one_field.js:0
 msgid "All Projects"
 msgstr "Todos os projetos"
@@ -1107,7 +1107,7 @@ msgid "All internal users and invited portal users"
 msgstr "Todos os usuários internos e usuários do portal convidados"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "All internal users have access to the project. Invite portal users as "
@@ -1170,13 +1170,13 @@ msgid "Architecture"
 msgstr "Arquitetura"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_form/analytic_account_form_controller.js:0
 msgid "Archive Account"
 msgstr "Arquivar conta"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_list/analytic_account_list_controller.js:0
 msgid "Archive Accounts"
 msgstr "Arquivar contas"
@@ -1213,7 +1213,7 @@ msgid "Are you sure you want to delete these stages?"
 msgstr "Tem certeza de que quer excluir esses estágios?"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_one2many_field/subtask_list_renderer.js:0
 msgid ""
 "Are you sure you want to delete this subtask? All its content will be lost."
@@ -1222,7 +1222,7 @@ msgstr ""
 "perdido."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_form/project_task_form_controller.js:0
 msgid "Are you sure you want to restore this version ?"
 msgstr "Tem certeza de que quer restaurar esta versão?"
@@ -1233,13 +1233,13 @@ msgid "Ask for Ratings"
 msgstr "Solicitar avaliações"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Assembling"
 msgstr "Montagem"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Assign a responsible to your task"
 msgstr "Atribuir um responsável à sua tarefa"
@@ -1316,7 +1316,7 @@ msgid "At Risk"
 msgstr "Em risco"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "Attach all documents or links to the task directly, to have all research "
@@ -1400,7 +1400,7 @@ msgid "Average Rating (1-5)"
 msgstr "Avaliação média (1-5)"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Backlog"
 msgstr "Lista de pendências"
@@ -1411,7 +1411,7 @@ msgid "Balance"
 msgstr "Saldo"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/account_analytic_account.py:0
 msgid ""
 "Before we can bid farewell to these accounts, you need to tidy up the "
@@ -1443,7 +1443,7 @@ msgid "Blocking"
 msgstr "Bloqueio"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Brainstorm"
 msgstr "Brainstorm"
@@ -1465,7 +1465,7 @@ msgid "Burndown Chart"
 msgstr "Gráfico de Burndown"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: code:addons/project/models/project_task.py:0
 #: model:ir.model.fields,field_description:project.field_project_task_burndown_chart_report__is_canceled
@@ -1481,7 +1481,7 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid ""
 "Cannot convert back to regular task because the task has no project defined "
@@ -1511,7 +1511,7 @@ msgstr ""
 "gargalos no fluxo de trabalho do seu projeto."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Choose a <b>name</b> for your project. <i>It can be anything you want: the "
@@ -1522,7 +1522,7 @@ msgstr ""
 "etc.</i>"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Choose a task <b>name</b> <i>(e.g. Website Design, Purchase Goods...)</i>"
@@ -1545,13 +1545,13 @@ msgstr ""
 "por status dentro do estágio atual."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Client Review"
 msgstr "Avaliação de cliente"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Close the sub-tasks list"
 msgstr "Fechar lista de subtarefas"
@@ -1622,7 +1622,7 @@ msgid "Color"
 msgstr "Cor"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "Communicate with customers on the task using the email gateway. Attach logo "
@@ -1662,7 +1662,7 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_configure_project_cog_menu/project_configure_project_cog_menu.xml:0
 msgid "Configure Project"
 msgstr "Configurar Projeto"
@@ -1675,7 +1675,7 @@ msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/wizard/project_share_wizard.py:0
 #: code:addons/project/wizard/project_task_type_delete.py:0
 #: model_terms:ir.ui.view,arch_db:project.project_share_wizard_confirm_form
@@ -1688,7 +1688,7 @@ msgid "Construction"
 msgstr "Construção"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Consulting"
 msgstr "Consultoria"
@@ -1705,7 +1705,7 @@ msgid "Contact Number"
 msgstr "Número de contato"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_convert_project_to_template_cog_menu/project_convert_project_to_template_cog_menu.xml:0
 msgid "Convert Project to Template"
 msgstr "Converter Projeto em Modelo"
@@ -1716,13 +1716,13 @@ msgid "Convert Task"
 msgstr "Converter tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid "Convert to Task"
 msgstr "Converter em tarefa"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:ir.actions.server,name:project.action_server_convert_to_subtask
 msgid "Convert to Task/Sub-Task"
@@ -1735,7 +1735,7 @@ msgid "Convert to Template"
 msgstr "Converter em modelo"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Copywriting"
 msgstr "Redação"
@@ -1746,7 +1746,7 @@ msgid "Cover Image"
 msgstr "Imagem de capa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Create <b>activities</b> to set yourself to-dos or to schedule meetings."
@@ -1764,7 +1764,7 @@ msgid "Create Project"
 msgstr "Criar projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/wizard/project_template_create_wizard.py:0
 msgid "Create Project (Template: %s)"
 msgstr "Criar projetos (Modelo: %s)"
@@ -1795,7 +1795,7 @@ msgid "Create a new stage in the task pipeline"
 msgstr "Criar um novo estágio no funil de tarefas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Create a new sub-task"
 msgstr "Criar nova subtarefa"
@@ -1908,7 +1908,7 @@ msgid "Custom Bounced Message"
 msgstr "Mensagem personalizada de falha no envio"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_project__partner_id
 #: model:ir.model.fields,field_description:project.field_project_task__partner_id
@@ -1922,7 +1922,7 @@ msgid "Customer"
 msgstr "Cliente"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Customer Feedback"
 msgstr "Avaliação do cliente"
@@ -1946,14 +1946,14 @@ msgid "Customer Ratings Status"
 msgstr "Situações de avaliações de cliente"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
-"Customers propose feedbacks by email; Odoo creates tasks automatically, and "
+"Customers propose feedbacks by email; WETH creates tasks automatically, and "
 "you can\n"
 "      communicate on the task directly."
 msgstr ""
-"Clientes oferecem feedback por e-mail; o Odoo cria tarefas automaticamente, "
+"Clientes oferecem feedback por e-mail; o WETH cria tarefas automaticamente, "
 "e você pode\n"
 "      se comunicar diretamente na tarefa."
 
@@ -2054,7 +2054,7 @@ msgid "Days to rot"
 msgstr "Dias para apodrecer"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_milestone__deadline
 #: model:ir.model.fields,field_description:project.field_project_task__date_deadline
@@ -2113,7 +2113,7 @@ msgstr ""
 "conclusão."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_one2many_field/subtask_list_renderer.js:0
 #: model:ir.actions.server,name:project.unlink_project_stage_action
 #: model:ir.actions.server,name:project.unlink_task_type_action
@@ -2124,14 +2124,14 @@ msgid "Delete"
 msgstr "Excluir"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project_stage.py:0
 #: model_terms:ir.ui.view,arch_db:project.view_project_project_stage_delete_wizard
 msgid "Delete Project Stage"
 msgstr "Excluir estágio do projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_type.py:0
 #: model_terms:ir.ui.view,arch_db:project.view_project_project_stage_unarchive_wizard
 #: model_terms:ir.ui.view,arch_db:project.view_project_task_type_delete_confirmation_wizard
@@ -2141,7 +2141,7 @@ msgid "Delete Stage"
 msgstr "Excluir estágio"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_one2many_field/subtask_list_renderer.js:0
 msgid "Delete Subtask"
 msgstr "Excluir subtarefa"
@@ -2156,13 +2156,13 @@ msgstr ""
 "vinculando-o a um item do pedido de vendas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Delivered"
 msgstr "Entregue"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Dependent Tasks"
 msgstr "Tarefas dependentes"
@@ -2191,7 +2191,7 @@ msgid "Description to provide more information and context about this project"
 msgstr "Descrição para fornecer mais informações e contexto sobre este projeto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 #: model:project.tags,name:project.project_tags_08
 msgid "Design"
@@ -2208,7 +2208,7 @@ msgid "Determine the order in which to perform tasks"
 msgstr "Determinar a ordem em que as tarefas devem ser executadas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Development"
 msgstr "Desenvolvimento"
@@ -2219,13 +2219,13 @@ msgid "Digest"
 msgstr "Compilação"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Digital Marketing"
 msgstr "Marketing digital"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_list/analytic_account_list_controller.js:0
 msgid "Discard"
 msgstr "Cancelar"
@@ -2268,8 +2268,8 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: project
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: code:addons/project/models/project_task.py:0
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
@@ -2286,7 +2286,7 @@ msgid "Done"
 msgstr "Concluído"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Draft"
 msgstr "Rascunho"
@@ -2297,7 +2297,7 @@ msgid "Duplicate"
 msgstr "Duplicar"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_type.py:0
 msgid ""
 "Each user should have at least one personal stage. Create a new stage to "
@@ -2320,7 +2320,7 @@ msgid "Edit: can create and update tasks."
 msgstr "Editar: pode criar e atualizar tarefas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Editing"
 msgstr "Editando"
@@ -2348,8 +2348,8 @@ msgstr "Modelo de e-mail"
 
 #. module: project
 #: model:ir.model.fields,help:project.field_project_project__alias_domain
-msgid "Email domain e.g. 'example.com' in 'odoo@example.com'"
-msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'odoo@exemplo.com'"
+msgid "Email domain e.g. 'example.com' in 'weth@example.com'"
+msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'weth@exemplo.com'"
 
 #. module: project
 #: model_terms:digest.tip,tip_description:project.digest_tip_project_1
@@ -2373,13 +2373,13 @@ msgid "Ending Date"
 msgstr "Data de encerramento"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Error! You cannot create a recursive hierarchy of tasks."
 msgstr "Erro! Não é possível criar uma hierarquia recorrente de tarefas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Everyone can propose ideas, and the Editor marks the best ones as"
 msgstr "Todos podem propor ideias, e o editor marca as melhores como"
@@ -2417,7 +2417,7 @@ msgid "Favorite Projects"
 msgstr "Projetos favoritos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Final Document"
 msgstr "Documento final"
@@ -2440,7 +2440,7 @@ msgid "Folded"
 msgstr "Dobrado"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/chatter/portal_chatter_patch.xml:0
 msgid "Follow"
 msgstr "Seguir"
@@ -2518,13 +2518,13 @@ msgstr ""
 "os principais participantes."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Give the sub-task a <b>name</b>"
 msgstr "Dê um <b>nome</b> à subtarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/search/control_panel/control_panel.xml:0
 msgid "Go back to 'My Projects'"
 msgstr "Voltar para \"Meus projetos\""
@@ -2535,7 +2535,7 @@ msgid "Grant Portal Access"
 msgstr "Conceder acesso ao portal"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "Handle your idea gathering within Tasks of your new Project and discuss them "
@@ -2545,7 +2545,7 @@ msgstr ""
 "das tarefas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Handoff"
 msgstr "Não interferir"
@@ -2574,7 +2574,7 @@ msgid "Hello"
 msgstr "Olá"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/notebook_task_one2many_field/notebook_task_list_renderer.js:0
 msgid "Hide closed tasks"
 msgstr "Ocultar tarefas encerradas"
@@ -2693,7 +2693,7 @@ msgid "Icon to indicate an exception activity."
 msgstr "Ícone para indicar uma atividade excepcional."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Ideas"
 msgstr "Ideias"
@@ -2761,8 +2761,8 @@ msgid "Improve the configuration screen 5h #feature #v20 @"
 msgstr "Melhorar a tela de configuração 5h #feature #v20 @"
 
 #. module: project
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.xml:0
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
@@ -2775,19 +2775,19 @@ msgid "In Progress"
 msgstr "Em andamento"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/webclient/share_target/project_share_target_item.xml:0
 msgid "In Project"
 msgstr "No Projeto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "In development"
 msgstr "Em desenvolvimento"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:project.task.type,name:project.project_personal_stage_admin_0
 #: model:project.task.type,name:project.project_personal_stage_demo_0
@@ -2816,7 +2816,7 @@ msgstr ""
 "rastreador de incidentes estiver instalado)."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_kanban_list/subtask_kanban_list.js:0
 msgid "Invalid Display Name"
 msgstr "Nome de exibição inválido"
@@ -2841,7 +2841,7 @@ msgid "Is Template"
 msgstr "É modelo"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.js:0
 msgid "Is toggle mode"
 msgstr "Modo de alternância?"
@@ -2911,7 +2911,7 @@ msgid "Last Rating (1-5)"
 msgstr "Última avaliação (1-5)"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_project__date_last_stage_update
 #: model:ir.model.fields,field_description:project.field_project_task__date_last_stage_update
@@ -2982,7 +2982,7 @@ msgid "Late Milestones"
 msgstr "Marcos atrasados"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:project.task.type,name:project.project_personal_stage_admin_4
 #: model:project.task.type,name:project.project_personal_stage_demo_4
@@ -2990,43 +2990,43 @@ msgid "Later"
 msgstr "Mais tarde"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's add another <b>stage</b> to your project."
 msgstr ""
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create a regular <b>project</b>."
 msgstr "Vamos criar um projeto regular <b></b> ."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create your first <b>project</b>."
 msgstr "Vamos criar o seu primeiro <b>projeto</b>."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create your first <b>stage</b>."
 msgstr "Vamos criar seu primeiro <b>estágio</b>."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create your first <b>task</b>."
 msgstr "Vamos criar a sua primeira <b>tarefa</b>."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create your second <b>stage</b>."
 msgstr "Vamos criar seu segundo <b>estágio</b>."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Let's go back to the <b>kanban view</b> to have an overview of your next "
@@ -3036,13 +3036,13 @@ msgstr ""
 "próximas tarefas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's go back to the <b>kanban view</b> to see your task."
 msgstr ""
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's start working on your task."
 msgstr "Vamos começar a trabalhar na sua tarefa."
@@ -3058,7 +3058,7 @@ msgid "Link"
 msgstr "Vínculo"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Live"
 msgstr "Ao vivo"
@@ -3074,13 +3074,13 @@ msgid "Logistics Staff"
 msgstr "Equipe de Logística"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Logo Design"
 msgstr "Design do logo"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Look for the"
 msgstr "Procurar por"
@@ -3103,7 +3103,7 @@ msgid "Manage tasks and collaborate on projects"
 msgstr "Gerencie tarefas e colabore em projetos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "Manage the lifecycle of your project using the kanban view. Add newly "
@@ -3115,7 +3115,7 @@ msgstr ""
 "            atribua-os e use a função"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Manufacturing"
 msgstr "Fabricação"
@@ -3126,20 +3126,20 @@ msgid "Map"
 msgstr "Mapa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/done_checkmark/task_done_checkmark.xml:0
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.xml:0
 msgid "Mark as done"
 msgstr "Marcar como concluído"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Mark the task as <b>Cancelled</b>"
 msgstr "Marcar a tarefa como <b>Cancelado</b>"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Material Sourcing"
 msgstr "Fornecimento de material"
@@ -3204,7 +3204,7 @@ msgid "Messages"
 msgstr "Mensagens"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_task__milestone_id
 #: model:ir.model.fields,field_description:project.field_project_task_burndown_chart_report__milestone_id
@@ -3225,7 +3225,7 @@ msgid "Milestones"
 msgstr "Marcos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Mixing"
 msgstr "Mixing"
@@ -3282,7 +3282,7 @@ msgid "My Updates"
 msgstr "Minhas atualizações"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_milestone__name
 #: model:ir.model.fields,field_description:project.field_project_project__name
@@ -3313,8 +3313,8 @@ msgstr ""
 "chamados, sprints, etc..."
 
 #. module: project
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: code:addons/project/static/src/views/components/project_task_template_dropdown.xml:0
 #: code:addons/project/static/src/views/components/project_template_dropdown.xml:0
@@ -3329,39 +3329,39 @@ msgid "New Feature"
 msgstr "Nova funcionalidade"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "New Orders"
 msgstr "Novos pedidos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_template_dropdown.xml:0
 #: code:addons/project/static/src/views/project_project_calendar/project_project_calendar_controller.js:0
 msgid "New Project"
 msgstr "Novo projeto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "New Projects"
 msgstr "Novos projetos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "New Request"
 msgstr "Nova solicitação"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_task_template_dropdown.xml:0
 #: code:addons/project/static/src/views/project_task_calendar/project_task_calendar_controller.js:0
 msgid "New Task"
 msgstr "Nova tarefa"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Newest"
 msgstr "Mais recente"
@@ -3426,7 +3426,7 @@ msgid "No Project"
 msgstr "Não há projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "No Subject"
 msgstr "Sem assunto"
@@ -3510,7 +3510,7 @@ msgid "No updates found. Let's create one!"
 msgstr "Nenhuma atualização encontrada. Vamos criá-las!"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "None"
 msgstr "Nenhum"
@@ -3572,7 +3572,7 @@ msgid "Office Design"
 msgstr "Decoração do escritório"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Old Completed Sprint"
 msgstr "Sprint anterior concluído"
@@ -3602,7 +3602,7 @@ msgid "Once a Month"
 msgstr "Uma vez por mês"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Only jpeg, png, bmp and tiff images are allowed as attachments."
 msgstr "Somente imagens jpeg, png, bmp e tiff são permitidas como anexos."
@@ -3621,7 +3621,7 @@ msgid "Open Tasks"
 msgstr "Tarefas em aberto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Open sub-tasks notebook section"
 msgstr "Abrir a seção de bloco de notas de subtarefas"
@@ -3638,7 +3638,7 @@ msgstr ""
 "desabilitará totalmente a criação de novos registros."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Organize priorities amongst orders using the"
 msgstr "Organize prioridades entre pedidos usando"
@@ -3673,7 +3673,7 @@ msgid "Overview"
 msgstr "Visão Geral"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Page Ideas"
 msgstr "Ideias da página"
@@ -3689,7 +3689,7 @@ msgid "Parent Record Thread ID"
 msgstr "ID do tópico do registro primário"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: code:addons/project/models/project_task.py:0
 #: model:ir.model.fields,field_description:project.field_project_task__parent_id
@@ -3709,7 +3709,7 @@ msgstr ""
 "projeto (parent_model) e tarefa (model))"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/res_partner.py:0
 msgid "Partner company cannot be different from its assigned projects' company"
 msgstr ""
@@ -3717,7 +3717,7 @@ msgstr ""
 "atribuídos"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/res_partner.py:0
 msgid "Partner company cannot be different from its assigned tasks' company"
 msgstr ""
@@ -3774,7 +3774,7 @@ msgid "Plumber"
 msgstr "Encanador"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Podcast and Video Production"
 msgstr "Produção de vídeo e podcast"
@@ -3806,13 +3806,13 @@ msgid "Portal Sharing"
 msgstr "Compartilhamento do portal"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Prioritize your tasks by marking important ones using the"
 msgstr "Dê prioridade às tarefas importantes marcando-as com"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_task__priority
 #: model:ir.model.fields,field_description:project.field_project_task_stage_report__priority
@@ -3824,7 +3824,7 @@ msgid "Priority"
 msgstr "Prioridade"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_many2one_field/project_many2one_field.js:0
 #: code:addons/project/static/src/views/project_task_calendar/project_task_calendar_model.js:0
 #: model_terms:ir.ui.view,arch_db:project.quick_create_task_form
@@ -3832,7 +3832,7 @@ msgid "Private"
 msgstr "Privado"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid ""
 "Private (non-template) tasks cannot be converted into sub-tasks. Please set "
@@ -3868,7 +3868,7 @@ msgid "Progress"
 msgstr "Progresso"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model,name:project.model_project_project
 #: model:ir.model.fields,field_description:project.field_project_milestone__project_id
@@ -3910,7 +3910,7 @@ msgid ""
 "### Infinitely flexible. Incredibly easy to use.\n"
 "\n"
 "\n"
-"Odoo's collaborative and realtime <a href=\"https://www.weth.com.br/app/"
+"WETH's collaborative and realtime <a href=\"https://www.weth.com.br/app/"
 "project\">open source project management</a>\n"
 "helps your team get work done. Keep track of everything, from the big "
 "picture\n"
@@ -3992,7 +3992,7 @@ msgstr ""
 "\n"
 "\n"
 "O gerenciamento de projetos colaborativo, em tempo real <A href=\"https://"
-"www.weth.com.br/app/project\">de código aberto do Odoo</A>\n"
+"www.weth.com.br/app/project\">de código aberto do Weth</A>\n"
 "ajuda sua equipe a realizar o trabalho. Acompanhe tudo, desde o panorama "
 "geral\n"
 "até os mínimos detalhes, desde o contrato com o cliente até o faturamento.\n"
@@ -4094,7 +4094,7 @@ msgid "Project Name"
 msgstr "Nome do projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Project Overview"
 msgstr "Visão geral do projeto"
@@ -4181,7 +4181,7 @@ msgid "Project Template create Wizard"
 msgstr "Assistente de criação de modelo de projeto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_template_dropdown.xml:0
 #: model:ir.actions.act_window,name:project.open_view_project_template
 #: model:ir.ui.menu,name:project.menu_project_config_project_template
@@ -4255,13 +4255,13 @@ msgstr ""
 "sejam membros da equipe."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid "Project converted to template."
 msgstr "Projeto convertido em modelo."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Project created from template %(name)s."
 msgstr "Projeto criado a partir de um modelo %(name)s."
@@ -4282,7 +4282,7 @@ msgid "Project role to users mapping"
 msgstr "Função do projeto para mapeamento de usuários"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/wizard/project_share_wizard.py:0
 msgid "Project shared with your collaborators."
 msgstr "Projeto compartilhado com seus colaboradores."
@@ -4305,13 +4305,13 @@ msgid "Project's tasks"
 msgstr "Tarefas do projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Project: %(project_name)s"
 msgstr "Projeto: %(project_name)s"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Project: %(project_name)s, Stage: %(stage_name)s"
 msgstr "Projeto: %(project_name)s, Estágio: %(stage_name)s"
@@ -4332,7 +4332,7 @@ msgid "Project: Task Rating Request"
 msgstr "Projeto: Solicitação de avaliação de tarefas"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/account_analytic_account.py:0
 #: model:ir.actions.act_window,name:project.open_view_project_all
 #: model:ir.actions.act_window,name:project.open_view_project_all_config
@@ -4383,13 +4383,13 @@ msgid "Properties"
 msgstr "Propriedades"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Published"
 msgstr "Publicado"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Publishing"
 msgstr "Publicação"
@@ -4522,7 +4522,7 @@ msgid "Record Thread ID"
 msgstr "ID do registro do tópico"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Recording"
 msgstr "Registrando"
@@ -4550,7 +4550,7 @@ msgid "Recurring Tasks"
 msgstr "Tarefas recorrentes"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Refused"
 msgstr "Recusado"
@@ -4574,7 +4574,7 @@ msgid "Related Document Model"
 msgstr "Modelo do documento relacionado"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/core/web/follower_list_patch.js:0
 msgid "Remove Collaborator"
 msgstr "Remover colaborador"
@@ -4585,7 +4585,7 @@ msgid "Remove Me"
 msgstr "Remover"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_kanban_list/subtask_kanban_create/subtask_kanban_create.xml:0
 msgid "Rename"
 msgstr "Renomear"
@@ -4613,7 +4613,7 @@ msgid "Reporting"
 msgstr "Relatórios"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Research"
 msgstr "Pesquisa"
@@ -4625,19 +4625,19 @@ msgid "Research & Development"
 msgstr "Pesquisa e Desenvolvimento"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Research Project"
 msgstr "Projeto de pesquisa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Researching"
 msgstr "Pesquisando"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Resources Allocation"
 msgstr "Alocação de recursos"
@@ -4650,13 +4650,13 @@ msgid "Responsible User"
 msgstr "Usuário responsável"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_form/project_task_form_controller.js:0
 msgid "Restore"
 msgstr "Restaurar"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_form/project_task_form_controller.js:0
 msgid ""
 "Restoring will replace the current content with the selected version. Any "
@@ -4666,7 +4666,7 @@ msgstr ""
 "alterações não salvas serão perdidas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid "Revert to Project"
 msgstr "Reverter para o projeto"
@@ -4710,13 +4710,13 @@ msgid "Save"
 msgstr "Salvar"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/views/form/project_sharing_form_controller.js:0
 msgid "Save the task to be able to drag images in description"
 msgstr "Salve a tarefa para poder arrastar imagens na Descrição"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/views/form/project_sharing_form_controller.js:0
 msgid "Save the task to be able to paste images in description"
 msgstr "Salve a tarefa para poder colar imagens na descrição"
@@ -4732,19 +4732,19 @@ msgstr ""
 "Padronize os fluxos de trabalho e garanta a consistência entre as projeto."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Schedule your activity once it is ready."
 msgstr "Agende sua atividade quando ela estiver pronta."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Script"
 msgstr "Script"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:project.view_project_project_filter
 msgid "Search Project"
@@ -4756,55 +4756,55 @@ msgid "Search Update"
 msgstr "Atualização da pesquisa"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Assignees"
 msgstr "Buscar em Responsáveis"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Customer"
 msgstr "Buscar em Cliente"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Milestone"
 msgstr "Pesquisar em Marco"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Parent Task"
 msgstr "Pesquisar em Tarefas principais"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Priority"
 msgstr "Buscar em Prioridade"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Project"
 msgstr "Buscar em Projeto"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Stages"
 msgstr "Buscar em Estágios"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search in Status"
 msgstr "Buscar em Status"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "Search%(left)s Tasks%(right)s"
 msgstr "Pesquisar%(left)s tarefas%(right)s"
@@ -4831,7 +4831,7 @@ msgid "Select Tags"
 msgstr "Selecionar marcadores"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Select an assignee from the menu"
 msgstr "Selecione um responsável no menu"
@@ -4865,7 +4865,7 @@ msgid "Set Cover Image"
 msgstr "Definir imagem de capa"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: model:ir.model.fields.selection,name:project.selection__project_project__last_update_status__to_define
 msgid "Set Status"
@@ -4880,13 +4880,13 @@ msgstr ""
 "atingir esse estágio"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_priority_switch_field/project_task_priority_switch_field.js:0
 msgid "Set priority as %s"
 msgstr "Definir prioridade como %s"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.js:0
 msgid "Set state as..."
 msgstr "Definir situação como…"
@@ -4914,7 +4914,7 @@ msgid "Share Link"
 msgstr "Compartilhar link"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: model:ir.actions.act_window,name:project.project_share_wizard_action
 #: model:ir.actions.server,name:project.action_server_share_project
@@ -4931,7 +4931,7 @@ msgid "Share Task"
 msgstr "Compartilhar tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_control_panel/project_task_control_panel.xml:0
 msgid "Show Sub-Tasks"
 msgstr "Mostrar subtarefas"
@@ -4944,19 +4944,19 @@ msgid "Show all records whose next activity date is past"
 msgstr "Mostrar todos os registros cuja data da próxima atividade já passou"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/notebook_task_one2many_field/notebook_task_list_renderer.js:0
 msgid "Show closed tasks"
 msgstr "Mostrar tarefas encerradas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_control_panel/project_task_control_panel.js:0
 msgid "Show sub-tasks"
 msgstr "Mostrar subtarefas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_control_panel/project_task_control_panel.js:0
 msgid "Show sub-tasks & top menu"
 msgstr "Mostrar subtarefas e menu superior"
@@ -4972,13 +4972,13 @@ msgid "Social"
 msgstr "Redes Sociais"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Software Development"
 msgstr "Desenvolvimento de software"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_list/analytic_account_list_controller.js:0
 msgid ""
 "Some of the selected analytic accounts are associated with a project:\n"
@@ -4998,13 +4998,13 @@ msgstr ""
 "Tem certeza de que deseja prosseguir?"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Sorry. You can't set a task as its parent task."
 msgstr "Desculpe. Você não pode definir uma tarefa como tarefa pai."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "Sort your tasks by sprint using milestones, tags, or a dedicated property. "
@@ -5018,31 +5018,31 @@ msgstr ""
 "editando o marco, o marcador ou a propriedade."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Specifications"
 msgstr "Especificações"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Sprint Backlog"
 msgstr "Lista de pendências da sprint"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Sprint Complete"
 msgstr "Sprint concluída"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Sprint in Progress"
 msgstr "Sprint em andamento"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_project__stage_id
 #: model:ir.model.fields,field_description:project.field_project_task__stage_id
@@ -5094,7 +5094,7 @@ msgid "Stage changed"
 msgstr "Estágio alterado"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Stage: %(stage_name)s"
 msgstr "Estágio: %(stage_name)s"
@@ -5114,7 +5114,7 @@ msgid "State"
 msgstr "Situação"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:project.view_project
 #: model_terms:ir.ui.view,arch_db:project.view_project_calendar
@@ -5123,7 +5123,7 @@ msgid "Status"
 msgstr "Status"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Status Update - %(date)s"
 msgstr "Atualização de status – %(date)s"
@@ -5180,7 +5180,7 @@ msgid "Surface Installer"
 msgstr "Instalador do Surface"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "T-shirt Printing"
 msgstr "Impressão da camiseta"
@@ -5201,7 +5201,7 @@ msgid "Tags"
 msgstr "Marcadores"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/webclient/share_target/project_share_target_item.js:0
 #: model:ir.model,name:project.model_project_task
 #: model:ir.model.fields,field_description:project.field_project_task_recurrence__task_ids
@@ -5239,13 +5239,13 @@ msgid "Task Cancelled"
 msgstr "Tarefa cancelada"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Task Converted from To-Do"
 msgstr "Tarefa convertida em Lista de tarefas"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:mail.message.subtype,description:project.mt_task_new
 #: model:mail.message.subtype,name:project.mt_project_task_new
@@ -5317,7 +5317,7 @@ msgid "Task Stages"
 msgstr "Estágio da tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_task_template_dropdown.xml:0
 msgid "Task Templates"
 msgstr "Modelos de tarefas"
@@ -5337,7 +5337,7 @@ msgid "Task Title..."
 msgstr "Título da tarefa…"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid ""
 "Task Transferred from Project %(source_project)s to %(destination_project)s"
@@ -5362,8 +5362,8 @@ msgid "Task cancelled"
 msgstr "Tarefa cancelada"
 
 #. module: project
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid "Task converted to template"
@@ -5375,7 +5375,7 @@ msgid "Task done"
 msgstr "Tarefa concluída"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Task templates cannot be shared."
 msgstr "Os modelos de tarefas não podem ser compartilhados."
@@ -5391,7 +5391,7 @@ msgid "Task:"
 msgstr "Tarefa:"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: model:ir.actions.act_window,name:project.act_project_project_2_project_task_all
 #: model:ir.actions.act_window,name:project.action_view_task
@@ -5443,13 +5443,13 @@ msgid "Tasks Stages"
 msgstr "Estágio de tarefas"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_task_template_dropdown.js:0
 msgid "Tasks Templates"
 msgstr "Modelos de tarefas"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:ir.model.fields,field_description:project.field_project_task__recurring_count
 msgid "Tasks in Recurrence"
@@ -5486,25 +5486,25 @@ msgid "Template Has Dates"
 msgstr "O modelo contém datas"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Template converted back to regular project."
 msgstr "O modelo foi convertido novamente em um projeto normal."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Template converted back to regular task"
 msgstr "Modelo convertido novamente em tarefa regular"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Template created from %s."
 msgstr "Modelo criado a partir de %s."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Template for Tasks"
 msgstr "Modelo para tarefas"
@@ -5516,13 +5516,13 @@ msgid "Templates"
 msgstr "Modelos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Tests"
 msgstr "Testes"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/burndown_chart/burndown_chart_search_model.js:0
 msgid "The Burndown Chart must be grouped by Date"
 msgstr "O gráfico de burndown deve ser agrupado por data"
@@ -5533,13 +5533,13 @@ msgid "The current user's personal stage."
 msgstr "O estágio pessoal do usuário atual."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "The document does not exist or you do not have the rights to access it."
 msgstr "O documento não existe ou você não tem direitos para acessá-lo."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_recurrence.py:0
 msgid "The end date should be in the future"
 msgstr "A data de término deve ser no futuro"
@@ -5555,7 +5555,7 @@ msgid "The following milestones have been added:"
 msgstr "Os seguintes marcos foram adicionados:"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_recurrence.py:0
 msgid "The interval should be greater than 0"
 msgstr "O intervalo deve ser maior que 0"
@@ -5563,11 +5563,11 @@ msgstr "O intervalo deve ser maior que 0"
 #. module: project
 #: model:ir.model.fields,help:project.field_project_project__alias_model_id
 msgid ""
-"The model (Odoo Document Kind) to which this alias corresponds. Any incoming "
+"The model (WETH Document Kind) to which this alias corresponds. Any incoming "
 "email that does not reply to an existing record will cause the creation of a "
 "new record of this model (e.g. a Project Task)"
 msgstr ""
-"O modelo (tipo de documento do Odoo) ao qual esse alias corresponde. "
+"O modelo (tipo de documento do Weth) ao qual esse alias corresponde. "
 "Qualquer e-mail recebido que não responda a um registro existente criará "
 "novo registro desse modelo (ex.: uma tarefa de projeto)"
 
@@ -5581,7 +5581,7 @@ msgstr ""
 "mails enviados a <empregos@example.weth.com.br>"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "The project and the associated partner must be linked to the same company."
@@ -5589,7 +5589,7 @@ msgstr ""
 "O projeto e o usuário associado devem estar vinculados à mesma empresa."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "The project's company cannot be changed if its analytic account has analytic "
@@ -5604,7 +5604,7 @@ msgid "The project's start date must be before its end date."
 msgstr "A data de início do projeto deve ser anterior à data de término."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/burndown_chart/burndown_chart_search_model.js:0
 msgid ""
 "The report should be grouped either by \"Stage\" to represent a Burndown "
@@ -5617,19 +5617,19 @@ msgstr ""
 "relevantes."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "The task and the associated partner must be linked to the same company."
 msgstr "A tarefa e o usuário associado devem estar vinculados à mesma empresa."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_form/project_task_form_controller.js:0
 msgid "The task description was empty at the time."
 msgstr "A descrição da tarefa estava vazia no momento."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/report/project_task_burndown_chart_report.py:0
 msgid "The view must be grouped by date and by Stage - Burndown chart"
 msgstr ""
@@ -5652,7 +5652,7 @@ msgid "There are no tasks."
 msgstr "Não há tarefas."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "There is nothing to report."
 msgstr "Não há nada a relatar."
@@ -5669,7 +5669,7 @@ msgstr ""
 "de venda, pedidos de compra, faturas e contas, planilhas de horas e chamados."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:project.task.type,name:project.project_personal_stage_admin_3
 #: model:project.task.type,name:project.project_personal_stage_demo_3
@@ -5677,7 +5677,7 @@ msgid "This Month"
 msgstr "Este mês"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:project.task.type,name:project.project_personal_stage_admin_2
 #: model:project.task.type,name:project.project_personal_stage_demo_2
@@ -5686,7 +5686,7 @@ msgid "This Week"
 msgstr "Esta semana"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_form/analytic_account_form_controller.js:0
 msgid ""
 "This analytic account is associated with the following projects:\n"
@@ -5706,7 +5706,7 @@ msgstr ""
 "Tem certeza de que deseja prosseguir?"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/core/web/follower_list_patch.js:0
 msgid ""
 "This follower is currently a project collaborator. Removing them will revoke "
@@ -5725,25 +5725,25 @@ msgstr ""
 "clientes e eles tiverem acesso de edição."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "This new task has been created in the \"%(project_name)s\" project."
 msgstr "Esta nova tarefa foi criada no projeto \"%(project_name)s\"."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "This new task is not part of any project."
 msgstr "Esta nova tarefa não faz parte de nenhum projeto."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "This project can’t be shared with external people."
 msgstr "Este Projeto não pode ser compartilhado com pessoas externas."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "This project is associated with %(project_company)s, whereas the selected "
@@ -5759,7 +5759,7 @@ msgstr ""
 "para alinhá-los à mesma empresa."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "This project is currently a template. Would you like to convert it back into "
@@ -5769,7 +5769,7 @@ msgstr ""
 "projeto normal?"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid ""
 "This project is not associated with any company, while the stage is "
@@ -5783,25 +5783,25 @@ msgstr ""
 "empresa do estágio"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "This task can’t be shared with external people."
 msgstr "Esta tarefa não pode ser compartilhada com pessoas externas."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "This task has sub-tasks, so it can't be private."
 msgstr "Essa tarefa tem subtarefas, portanto não pode ser privada."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.xml:0
 msgid "This task is blocked by another unfinished task"
 msgstr "Esta tarefa está bloqueada por outra tarefa inacabada"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid ""
 "This task is currently a template. Would you like to convert it back into a "
@@ -5811,7 +5811,7 @@ msgstr ""
 "tarefa normal?"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/components/depend_on_ids_one2many/depend_on_ids_list_renderer.xml:0
 msgid "This task is currently blocked by"
 msgstr "Essa tarefa está atualmente bloqueada por"
@@ -5904,7 +5904,7 @@ msgid "Tip: Your personal kanban"
 msgstr "Dica: Seu kanban pessoal"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 #: model:ir.model.fields,field_description:project.field_project_task__name
 #: model:ir.model.fields,field_description:project.field_project_update__name
@@ -5918,7 +5918,7 @@ msgid "To Do"
 msgstr "A fazer"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "To Print"
 msgstr "A imprimir"
@@ -5946,7 +5946,7 @@ msgstr ""
 "uma subtarefa em tarefa independente."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 #: model:project.task.type,name:project.project_personal_stage_admin_1
 #: model:project.task.type,name:project.project_personal_stage_demo_1
@@ -5962,7 +5962,7 @@ msgid "Today Activities"
 msgstr "Atividades de hoje"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_control_panel/project_task_control_panel.xml:0
 msgid "Top Menu"
 msgstr "Menu superior"
@@ -6006,7 +6006,7 @@ msgid "Twice a Month"
 msgstr "Duas vezes por mês"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "Two tasks cannot depend on each other."
 msgstr "Duas tarefas não podem depender uma da outra."
@@ -6019,13 +6019,13 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project_stage.py:0
 msgid "Unarchive Projects"
 msgstr "Desarquivar projetos"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task_type.py:0
 msgid "Unarchive Tasks"
 msgstr "Desarquivar tarefas"
@@ -6038,19 +6038,19 @@ msgid "Unassigned"
 msgstr "Não atribuído"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/actions/client_actions.js:0
 msgid "Undo"
 msgstr "Desfazer"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/chatter/portal_chatter_patch.xml:0
 msgid "Unfollow"
 msgstr "Deixar de seguir"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 msgid "Unknown Analytic Account"
 msgstr "Conta analítica desconhecida"
@@ -6127,7 +6127,7 @@ msgid "Use Tasks as"
 msgstr "Use tarefas como"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Use This For My Project"
 msgstr "Usar isto no meu projeto"
@@ -6147,13 +6147,13 @@ msgid "Use tags to categorize your tasks."
 msgstr "Usar etiquetas para categorizar suas tarefas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Use the"
 msgstr "Use"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Use the chatter to <b>send emails</b> and communicate efficiently with your "
@@ -6216,7 +6216,7 @@ msgid "View"
 msgstr "Visualização"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/components/project_task_template_dropdown.xml:0
 msgid "View More"
 msgstr "Ver mais"
@@ -6227,7 +6227,7 @@ msgid "View Task"
 msgstr "Visualização da tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_project_calendar/common/project_common_calendar_popover.xml:0
 #: model_terms:ir.ui.view,arch_db:project.project_milestone_view_tree
 #: model_terms:ir.ui.view,arch_db:project.view_project
@@ -6266,7 +6266,7 @@ msgid "Visible to all"
 msgstr "Visível para todos"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_state_selection/project_task_state_selection.xml:0
 #: model:ir.model.fields.selection,name:project.selection__project_task__state__04_waiting_normal
 #: model:ir.model.fields.selection,name:project.selection__project_task_burndown_chart_report__state__04_waiting_normal
@@ -6275,7 +6275,7 @@ msgid "Waiting"
 msgstr "Aguardando"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
 "Want a better way to <b>manage your projects</b>? <i>It starts here.</i>"
@@ -6284,7 +6284,7 @@ msgstr ""
 "aqui.</i>"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Website Redesign"
 msgstr "Redesign do site"
@@ -6379,19 +6379,19 @@ msgstr ""
 "estágios?"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/project_sharing/chatter/composer_patch.js:0
 msgid "Write a message…"
 msgstr "Escreva uma mensagem…"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/subtask_kanban_list/subtask_kanban_create/subtask_kanban_create.js:0
 msgid "Write a task name"
 msgstr "Escreva o nome da tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/project_task_kanban/project_task_kanban_examples.js:0
 msgid "Writing"
 msgstr "Gravando"
@@ -6408,7 +6408,7 @@ msgid "Years"
 msgstr "Anos"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project_stage.py:0
 msgid ""
 "You are not able to switch the company of this stage to %(company_name)s "
@@ -6422,19 +6422,19 @@ msgstr ""
 "vinculados a %(company_name)s."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "You can change the sub-task state here!"
 msgstr "Você pode alterar o estado da subtarefa aqui."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "You can only set a personal stage on a private task."
 msgstr "Você só pode definir um estágio pessoal em uma tarefa privada."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "You can open sub-tasks from the kanban card!"
 msgstr "Você pode abrir subtarefas a partir do cartão Kanban."
@@ -6483,7 +6483,7 @@ msgstr ""
 "excluir todas as tarefas deles."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "You have been assigned to %s"
 msgstr "Você foi atribuído a %s"
@@ -6494,7 +6494,7 @@ msgid "You have been assigned to the"
 msgstr "Você foi atribuído a"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "You have been invited to follow %s"
 msgstr "Você foi convidado para seguir %s"
@@ -6514,20 +6514,20 @@ msgstr ""
 "momento. Está pronto para continuar?"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid ""
-"You have unsaved changes - no worries! Odoo will automatically save it as "
+"You have unsaved changes - no worries! WETH will automatically save it as "
 "you navigate.<br/> You can discard these changes from here or manually save "
 "your task.<br/>Let's save it manually."
 msgstr ""
-"Há alterações não salvas - não se preocupe! O Odoo as salvará "
+"Há alterações não salvas - não se preocupe! O WETH as salvará "
 "automaticamente à medida que você navegar.<br/> Você pode descartar essas "
 "alterações aqui ou salvar manualmente sua tarefa.<br/>Vamos salvá-la "
 "manualmente."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid ""
 "You need Advanced Edit access to change the stage or priority of a task."
@@ -6536,13 +6536,13 @@ msgstr ""
 "prioridade de uma tarefa."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "Your managers decide which feedback is accepted"
 msgstr "Seus gerentes decidem qual feedback será aceito"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/views/analytic_account_form/analytic_account_form_controller.js:0
 #: code:addons/project/static/src/views/analytic_account_list/analytic_account_list_controller.js:0
 msgid "\\t- ${"
@@ -6559,13 +6559,13 @@ msgid "analytic"
 msgstr "analítico"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "and"
 msgstr "e"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "and which feedback is\n"
@@ -6580,7 +6580,7 @@ msgid "assignees"
 msgstr "responsáveis"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "button."
 msgstr "botão."
@@ -6652,13 +6652,13 @@ msgid "e.g: Product Launch"
 msgstr "ex.: Lançamento de produto"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "icon to organize your daily activities."
 msgstr "ícone para organizar suas atividades diárias."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "icon to see tasks waiting on other ones. Once a task is marked as complete "
@@ -6669,13 +6669,13 @@ msgstr ""
 "desbloqueadas."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "icon."
 msgstr "ícone."
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/controllers/portal.py:0
 msgid "project_id"
 msgstr "project_id"
@@ -6686,7 +6686,7 @@ msgid "ready to be marked as reached"
 msgstr "pronto para ser marcado como alcançado"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "state to indicate a request for changes or a need for discussion on a task."
@@ -6695,7 +6695,7 @@ msgstr ""
 "debate em uma tarefa."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "state to inform your colleagues that a task is approved for the next stage."
@@ -6704,31 +6704,31 @@ msgstr ""
 "próximo estágio."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "state to mark the task as cancelled."
 msgstr "situação para marcar a tarefa como cancelada."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "state to mark the task as complete."
 msgstr "situação para marcar a tarefa como concluída."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_task_name_with_subtask_count_char_field/project_task_name_with_subtask_count_char_field.xml:0
 msgid "sub-tasks)"
 msgstr "subtarefas)"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_task.py:0
 msgid "task"
 msgstr "tarefa"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid ""
 "to define if the project is\n"
@@ -6738,7 +6738,7 @@ msgstr ""
 "pronto para a próxima etapa."
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/xml/project_task_kanban_examples.xml:0
 msgid "to signalize what is the current status of your Idea."
 msgstr "para sinalizar qual é o status atual da ideia."
@@ -6758,14 +6758,14 @@ msgid "{{0}} Milestones reached out of {{1}}"
 msgstr "{{0}} marcos alcançados, de {{1}}"
 
 #. module: project
-#. odoo-python
+#. weth-python
 #: code:addons/project/models/project_project.py:0
 #: code:addons/project/models/project_task.py:0
 msgid "👤 Unassigned"
 msgstr "👤 Não atribuído"
 
 #. module: project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/project/static/src/components/project_many2one_field/project_many2one_field.js:0
 msgid "🔒 Private"
 msgstr "🔒 Privado"

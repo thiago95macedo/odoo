@@ -40,7 +40,7 @@ export class PortalChatterService {
         };
     }
 
-    /** @param {import("@web/env").OdooEnv} env */
+    /** @param {import("@web/env").WethEnv} env */
     async initialize(env) {
         const chatterEl = document.querySelector(".o_portal_chatter");
         const props = this.getProps(chatterEl);

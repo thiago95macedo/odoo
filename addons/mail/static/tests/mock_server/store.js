@@ -176,7 +176,7 @@ export class StoreMany extends StoreRelation {
                 typeof this.sort === "function"
                     ? this.sort
                     : (a, b) =>
-                          a[this.sort] < b[this.sort] ? -1 : a[this.sort] > b[this.sort] ? 1 : 0;
+                        a[this.sort] < b[this.sort] ? -1 : a[this.sort] > b[this.sort] ? 1 : 0;
             this.records.sort(cmp);
             this.sort = null;
         }
@@ -690,7 +690,7 @@ class Store {
         if (typeof records[method_name] === "function") {
             return records[method_name];
         }
-        // mail.thread is a mixin in real Odoo: its store methods (e.g. `_store_thread_fields`)
+        // mail.thread is a mixin in real Weth: its store methods (e.g. `_store_thread_fields`)
         // are available on every thread record. The mock models don't share that base, so we
         // fall back to the mail.thread mock model, bound to the calling record.
         const MailThread = records.env["mail.thread"];

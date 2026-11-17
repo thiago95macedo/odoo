@@ -14,7 +14,7 @@ from platform import release, system
 
 import netifaces
 
-from weth import release as odoo_release
+from weth import release as weth_release
 
 _logger = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ else:
 
 def path_file(*args) -> Path:
     """Return the path to the file from `/home/pi` on IoT Box
-    or from `odoo` folder on Virtual IoT Box.
+    or from `weth` folder on Virtual IoT Box.
 
     :return: The path to the file
     """
@@ -61,7 +61,7 @@ def git(*args):
     :param args: list of arguments to pass to git
     """
     git_executable = 'git' if IS_RPI else path_file('git', 'cmd', 'git.exe')
-    command = [git_executable, f'--work-tree={path_file("odoo")}', f'--git-dir={path_file("odoo", ".git")}', *args]
+    command = [git_executable, f'--work-tree={path_file("weth")}', f'--git-dir={path_file("weth", ".git")}', *args]
 
     p = subprocess.run(command, stdout=subprocess.PIPE, text=True, check=False)
     if p.returncode == 0:
@@ -104,7 +104,7 @@ def get_version(detailed_version=False):
     version = IOT_CHAR + image_version
     if detailed_version:
         # Note: on Windows IoT, the `release.version` finish with the build date
-        version += f"-{odoo_release.version}"
+        version += f"-{weth_release.version}"
         if IS_RPI:
             commit_hash = git("rev-parse", "--short", "HEAD")
             version += f'#{commit_hash or "unknown"}'
@@ -316,11 +316,11 @@ def get_default_handlers() -> frozenset[str] | None:
     if tracked is None:
         return None
     return frozenset(
-        str(path_file("odoo", handler))
+        str(path_file("weth", handler))
         for handler in tracked.splitlines()
     )
 
 
 IOT_IDENTIFIER = _get_identifier()
-ODOO_START_TIME = time.monotonic()
-SYSTEM_START_TIME = ODOO_START_TIME - _get_system_uptime()
+WETH_START_TIME = time.monotonic()
+SYSTEM_START_TIME = WETH_START_TIME - _get_system_uptime()

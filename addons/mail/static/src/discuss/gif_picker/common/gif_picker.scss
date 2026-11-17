@@ -1,31 +1,32 @@
-.popover .o-discuss-GifPicker {
+.popover .w-discuss-GifPicker {
     width: 285px;
     height: 350px;
 }
 
-.o-discuss-GifPicker {
+.w-discuss-GifPicker {
     --o-gif-picker-active: #{$gray-200};
-    .o-active {
+
+    .w-active {
         background-color: var(--o-gif-picker-active) !important;
     }
 }
 
-.o-discuss-GifPicker-bigEmoji {
+.w-discuss-GifPicker-bigEmoji {
     font-size: 5rem !important;
     filter: grayscale(0.25);
 }
 
-.o-discuss-GifPickerCategory-img {
+.w-discuss-GifPickerCategory-img {
     object-fit: cover;
 }
 
-.o-discuss-GifPicker-noFavoritesIcon {
+.w-discuss-GifPicker-noFavoritesIcon {
     filter: grayscale(0.25);
 }
 
-.o-discuss-Gif {
-    .o-starred {
-        color: $o-main-favorite-color !important;
+.w-discuss-Gif {
+    .w-starred {
+        color: $w-main-favorite-color !important;
     }
 
     &:hover i {
@@ -33,6 +34,6 @@
     }
 }
 
-.o-discuss-GifPicker-error {
+.w-discuss-GifPicker-error {
     font-size: 5rem;
 }

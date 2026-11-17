@@ -19,8 +19,8 @@ test("open leads of the visitor are shown in the channel info list", async () =>
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList h6:text('Open leads')");
+    await contains(".w-livechat-ChannelInfoList h6:text('Open leads')");
     await contains(
-        ".o-livechat-ChannelInfoList a[data-oe-model='crm.lead']:text('Bob wants a demo')"
+        ".w-livechat-ChannelInfoList a[data-oe-model='crm.lead']:text('Bob wants a demo')"
     );
 });

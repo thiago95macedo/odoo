@@ -47,7 +47,7 @@ function removeWishlistProduct(productId) {
  */
 function updateWishlistNavBar() {
     const wishlistProductIds = getWishlistProductIds();
-    const wishButtons = document.querySelectorAll('.o_wsale_my_wish');
+    const wishButtons = document.querySelectorAll('.w_wsale_my_wish');
     wishButtons.forEach(button => {
         if (button.classList.contains('o_wsale_my_wish_hide_empty')) {
             button.classList.toggle('d-none', !wishlistProductIds.length);

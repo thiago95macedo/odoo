@@ -35,7 +35,7 @@ class TestAnswerEvents(TestCommon):
 
     @patch.object(MicrosoftCalendarService, '_get_single_event')
     @patch.object(MicrosoftCalendarService, 'answer')
-    def test_attendee_accepts_event_from_odoo_calendar(self, mock_answer, mock_get_single_event):
+    def test_attendee_accepts_event_from_weth_calendar(self, mock_answer, mock_get_single_event):
         attendee = self.env["calendar.attendee"].search([
             ('event_id', '=', self.simple_event.id),
             ('partner_id', '=', self.attendee_user.partner_id.id)
@@ -56,7 +56,7 @@ class TestAnswerEvents(TestCommon):
 
     @patch.object(MicrosoftCalendarService, '_get_single_event')
     @patch.object(MicrosoftCalendarService, 'answer')
-    def test_attendee_declines_event_from_odoo_calendar(self, mock_answer, mock_get_single_event):
+    def test_attendee_declines_event_from_weth_calendar(self, mock_answer, mock_get_single_event):
         attendee = self.env["calendar.attendee"].search([
             ('event_id', '=', self.simple_event.id),
             ('partner_id', '=', self.attendee_user.partner_id.id)
@@ -77,7 +77,7 @@ class TestAnswerEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_attendee_accepts_event_from_outlook_calendar(self, mock_get_events):
         """
-        In his Outlook calendar, the attendee accepts the event and sync with his odoo calendar.
+        In his Outlook calendar, the attendee accepts the event and sync with his weth calendar.
         """
         mock_get_events.return_value = (
             MicrosoftEvent([dict(
@@ -102,7 +102,7 @@ class TestAnswerEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_attendee_accepts_event_from_outlook_calendar_synced_by_organizer(self, mock_get_events):
         """
-        In his Outlook calendar, the attendee accepts the event and the organizer syncs his odoo calendar.
+        In his Outlook calendar, the attendee accepts the event and the organizer syncs his weth calendar.
         """
         mock_get_events.return_value = (
             MicrosoftEvent([dict(
@@ -130,7 +130,7 @@ class TestAnswerEvents(TestCommon):
 
         LIMITATION:
 
-        But, as there is no way to get the iCalUId to identify the corresponding Odoo event,
+        But, as there is no way to get the iCalUId to identify the corresponding WETH event,
         there is no way to update the attendee status to "declined".
         """
 

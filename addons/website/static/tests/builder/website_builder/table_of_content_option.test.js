@@ -145,10 +145,10 @@ test("properly sets the level of depth for a new heading", async () => {
         anchorOffset: 0,
         focusOffset: newSubheadingEl.firstChild.length,
     });
-    await waitFor(".o-we-toolbar");
-    await click(".o-we-toolbar .btn[name='font_type']");
+    await waitFor(".w-we-toolbar");
+    await click(".w-we-toolbar .btn[name='font_type']");
     await animationFrame();
-    await click(".o-dropdown-item[name='h4']");
+    await click(".w-dropdown-item[name='h4']");
     expect(":iframe .s_table_of_content_navbar a").toHaveCount(7);
     // it should have depth 2:
     // h2
@@ -264,9 +264,9 @@ test("toc headings are excluded from anchor autocomplete", async () => {
         focusOffset: headingEl.firstChild.length,
     });
 
-    await waitFor(".o-we-toolbar");
-    await click(".o-we-toolbar .btn[name=link]");
-    await contains(".o-we-linkpopover input.o_we_href_input_link").fill("#", { confirm: false });
+    await waitFor(".w-we-toolbar");
+    await click(".w-we-toolbar .btn[name=link]");
+    await contains(".w-we-linkpopover input.o_we_href_input_link").fill("#", { confirm: false });
     await advanceTime(250);
     // default anchors - #top and #bottom
     expect(".ui-autocomplete-item").toHaveCount(2);

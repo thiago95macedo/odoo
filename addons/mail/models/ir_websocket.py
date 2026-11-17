@@ -9,7 +9,7 @@ from weth.addons.mail.tools.discuss import add_guest_to_context
 from weth.tools.misc import verify_limited_field_access_token
 
 
-PRESENCE_CHANNEL_PREFIX = "odoo-presence-"
+PRESENCE_CHANNEL_PREFIX = "weth-presence-"
 PRESENCE_CHANNEL_REGEX = re.compile(
     rf"{PRESENCE_CHANNEL_PREFIX}"
     r"(?P<model>res\.users|mail\.guest)_(?P<record_id>\d+)"

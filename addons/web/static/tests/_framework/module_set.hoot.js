@@ -35,7 +35,7 @@ import { mockUserFactory } from "./mock_user.hoot";
  */
 
 const { fetch: realFetch } = globals;
-const { define, loader } = odoo;
+const { define, loader } = weth;
 
 //-----------------------------------------------------------------------------
 // Internal
@@ -389,7 +389,7 @@ async function __gcAndLogMemory(label, testCount) {
     console.log(...logs);
 }
 
-/** @extends {OdooModuleLoader} */
+/** @extends {WethModuleLoader} */
 class ModuleSetLoader extends loader.constructor {
     cleanups = [];
     preventGlobalDefine = false;
@@ -517,14 +517,14 @@ const ALLOWED_GLOBAL_KEYS = [
 ];
 const AUTO_INCLUDED_ADDONS = {
     /**
-     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@odoo` (`@weth/o-spreadsheet)
-     * To ensure that this module is loaded, we have to include `odoo` in the dependencies
+     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@weth` (`@weth/o-spreadsheet)
+     * To ensure that this module is loaded, we have to include `weth` in the dependencies
      */
     spreadsheet: ["weth"],
     /**
      * Add all view types by default
      */
-    
+
 };
 const CSRF_TOKEN = weth.csrf_token;
 const DEFAULT_ADDONS = ["base", "web"];

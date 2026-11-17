@@ -23,60 +23,60 @@ defineMailModels();
 test("Search highlight", async () => {
     const testCases = [
         {
-            input: markup`test odoo`,
-            output: `test <span class="${HIGHLIGHT_CLASS}">odoo</span>`,
-            searchTerm: "odoo",
+            input: markup`test weth`,
+            output: `test <span class="${HIGHLIGHT_CLASS}">weth</span>`,
+            searchTerm: "weth",
         },
         {
             input: markup`<a href="https://www.weth.com.br">https://www.weth.com.br</a>`,
-            output: `<a href="https://www.weth.com.br">https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com</a>`,
-            searchTerm: "odoo",
+            output: `<a href="https://www.weth.com.br">https://www.<span class="${HIGHLIGHT_CLASS}">weth</span>.com</a>`,
+            searchTerm: "weth",
         },
         {
             input: '<a href="https://www.weth.com.br">https://www.weth.com.br</a>',
-            output: `&lt;a href=&quot;https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com&quot;&gt;https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com&lt;/a&gt;`,
-            searchTerm: "odoo",
+            output: `&lt;a href=&quot;https://www.<span class="${HIGHLIGHT_CLASS}">weth</span>.com&quot;&gt;https://www.<span class="${HIGHLIGHT_CLASS}">weth</span>.com&lt;/a&gt;`,
+            searchTerm: "weth",
         },
         {
             input: markup`<a href="https://www.weth.com.br">WETH</a>`,
             output: `<a href="https://www.weth.com.br"><span class="${HIGHLIGHT_CLASS}">WETH</span></a>`,
-            searchTerm: "odoo",
+            searchTerm: "weth",
         },
         {
-            input: markup`<a href="https://www.weth.com.br">WETH</a> Odoo is a free software`,
+            input: markup`<a href="https://www.weth.com.br">WETH</a> WETH is a free software`,
             output: `<a href="https://www.weth.com.br"><span class="${HIGHLIGHT_CLASS}">WETH</span></a> <span class="${HIGHLIGHT_CLASS}">WETH</span> is a free software`,
-            searchTerm: "odoo",
+            searchTerm: "weth",
         },
         {
-            input: markup`odoo is a free software`,
-            output: `<span class="${HIGHLIGHT_CLASS}">odoo</span> is a free software`,
-            searchTerm: "odoo",
+            input: markup`weth is a free software`,
+            output: `<span class="${HIGHLIGHT_CLASS}">weth</span> is a free software`,
+            searchTerm: "weth",
         },
         {
-            input: markup`software ODOO is a free`,
-            output: `software <span class="${HIGHLIGHT_CLASS}">ODOO</span> is a free`,
-            searchTerm: "odoo",
+            input: markup`software WETH is a free`,
+            output: `software <span class="${HIGHLIGHT_CLASS}">WETH</span> is a free`,
+            searchTerm: "weth",
         },
         {
             input: markup`<ul>
                 <li>WETH</li>
-                <li><a href="https://weth.com.br">Odoo ERP</a> Best ERP</li>
+                <li><a href="https://weth.com.br">WETH ERP</a> Best ERP</li>
             </ul>`,
             output: `<ul>
                 <li><span class="${HIGHLIGHT_CLASS}">WETH</span></li>
                 <li><a href="https://weth.com.br"><span class="${HIGHLIGHT_CLASS}">WETH</span> ERP</a> Best ERP</li>
             </ul>`,
-            searchTerm: "odoo",
+            searchTerm: "weth",
         },
         {
             input: markup`test <strong>WETH</strong> test`,
             output: `<span class="${HIGHLIGHT_CLASS}">test</span> <strong><span class="${HIGHLIGHT_CLASS}">WETH</span></strong> <span class="${HIGHLIGHT_CLASS}">test</span>`,
-            searchTerm: "odoo test",
+            searchTerm: "weth test",
         },
         {
             input: markup`test <br> test`,
             output: `<span class="${HIGHLIGHT_CLASS}">test</span> <br> <span class="${HIGHLIGHT_CLASS}">test</span>`,
-            searchTerm: "odoo test",
+            searchTerm: "weth test",
         },
         {
             input: markup`<strong>test</strong> test`,
@@ -109,7 +109,7 @@ test("Search highlight", async () => {
             searchTerm: "test hello",
         },
         {
-            input: markup`test odoo`,
+            input: markup`test weth`,
             output: `t<span class="${HIGHLIGHT_CLASS}">e</span>st o<span class="${HIGHLIGHT_CLASS}">d</span>oo`,
             searchTerm: "e               d",
         },
@@ -132,13 +132,13 @@ test("Display highlighted search in chatter", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchInput input", "Groot");
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchInput input", "Groot");
     await contains(
-        `.o-mail-SearchMessageResult .o-mail-Message-author .${HIGHLIGHT_CLASS}:text('Groot')`
+        `.w-mail-SearchMessageResult .w-mail-Message-author .${HIGHLIGHT_CLASS}:text('Groot')`
     );
     await contains(
-        `.o-mail-SearchMessageResult .o-mail-Message-body .${HIGHLIGHT_CLASS}:text('Groot')`
+        `.w-mail-SearchMessageResult .w-mail-Message-body .${HIGHLIGHT_CLASS}:text('Groot')`
     );
 });
 
@@ -154,9 +154,9 @@ test("Display multiple highlighted search in chatter", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchInput input", "not empty");
-    await contains(`.o-mail-SearchMessageResult .o-mail-Message span.${HIGHLIGHT_CLASS}`, {
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchInput input", "not empty");
+    await contains(`.w-mail-SearchMessageResult .w-mail-Message span.${HIGHLIGHT_CLASS}`, {
         count: 2,
     });
 });
@@ -174,11 +174,11 @@ test("Display highlighted search in Discuss", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "empty");
-    await contains(`.o-mail-SearchMessagesPanel .o-mail-Message span.${HIGHLIGHT_CLASS}`);
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "empty");
+    await contains(`.w-mail-SearchMessagesPanel .w-mail-Message span.${HIGHLIGHT_CLASS}`);
 });
 
 test("Display multiple highlighted search in Discuss", async () => {
@@ -194,11 +194,11 @@ test("Display multiple highlighted search in Discuss", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "not empty");
-    await contains(`.o-mail-SearchMessagesPanel .o-mail-Message span.${HIGHLIGHT_CLASS}`, {
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "not empty");
+    await contains(`.w-mail-SearchMessagesPanel .w-mail-Message span.${HIGHLIGHT_CLASS}`, {
         count: 2,
     });
 });
@@ -216,19 +216,19 @@ test("Search update keeps embedded code block rendering in Discuss", async () =>
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "prefix");
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "prefix");
     await contains(
-        `.o-mail-SearchMessagesPanel .o-mail-Message span.${HIGHLIGHT_CLASS}:text('prefix')`
+        `.w-mail-SearchMessagesPanel .w-mail-Message span.${HIGHLIGHT_CLASS}:text('prefix')`
     );
-    await contains(".o-mail-SearchMessagesPanel pre[data-embedded='readonlySyntaxHighlighting']");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", " suffix");
+    await contains(".w-mail-SearchMessagesPanel pre[data-embedded='readonlySyntaxHighlighting']");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", " suffix");
     await contains(
-        `.o-mail-SearchMessagesPanel .o-mail-Message span.${HIGHLIGHT_CLASS}:text('suffix')`
+        `.w-mail-SearchMessagesPanel .w-mail-Message span.${HIGHLIGHT_CLASS}:text('suffix')`
     );
-    await contains(".o-mail-SearchMessagesPanel pre[data-embedded='readonlySyntaxHighlighting']");
+    await contains(".w-mail-SearchMessagesPanel pre[data-embedded='readonlySyntaxHighlighting']");
 });
 
 test("Display highlighted with escaped character must ignore them", async () => {
@@ -243,10 +243,10 @@ test("Display highlighted with escaped character must ignore them", async () => 
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchInput input", "test hello");
-    await contains(`.o-mail-SearchMessageResult .o-mail-Message span.${HIGHLIGHT_CLASS}`, {
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchInput input", "test hello");
+    await contains(`.w-mail-SearchMessageResult .w-mail-Message span.${HIGHLIGHT_CLASS}`, {
         count: 2,
     });
-    await contains(`.o-mail-Message-body:has(:text("<strong>test</strong> hello"))`);
+    await contains(`.w-mail-Message-body:has(:text("<strong>test</strong> hello"))`);
 });

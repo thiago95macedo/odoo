@@ -20,10 +20,10 @@ test("Member list and Pinned Messages Panel menu are exclusive", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // member list open by default
+    await contains(".w-discuss-ChannelMemberList"); // member list open by default
     await click("[title='Pinned Messages']");
-    await contains(".o-discuss-PinnedMessagesPanel");
-    await contains(".o-discuss-ChannelMemberList", { count: 0 });
+    await contains(".w-discuss-PinnedMessagesPanel");
+    await contains(".w-discuss-ChannelMemberList", { count: 0 });
 });
 
 test("subscribe to presence channels according to store data", async () => {
@@ -48,19 +48,19 @@ test("subscribe to presence channels according to store data", async () => {
     startBus();
     await expect.waitForSteps([
         "subscribe - []",
-        "subscribe - [odoo-presence-res.users_1]",
-        "subscribe - [odoo-presence-res.users_1,odoo-presence-res.users_2]",
+        "subscribe - [weth-presence-res.users_1]",
+        "subscribe - [weth-presence-res.users_1,weth-presence-res.users_2]",
     ]);
     // Discovering new presence channels should refresh the subscription.
     store["mail.guest"].insert({ id: 1 });
     await expect.waitForSteps([
-        "subscribe - [odoo-presence-mail.guest_1,odoo-presence-res.users_1,odoo-presence-res.users_2]",
+        "subscribe - [weth-presence-mail.guest_1,weth-presence-res.users_1,weth-presence-res.users_2]",
     ]);
     // Updating "im_status_access_token" should refresh the subscription. (first
     // subscription is made to remove the token-less channel).
     store["mail.guest"].insert({ id: 1, im_status_access_token: "token" });
     await expect.waitForSteps([
-        "subscribe - [odoo-presence-res.users_1,odoo-presence-res.users_2]",
-        "subscribe - [odoo-presence-mail.guest_1-token,odoo-presence-res.users_1,odoo-presence-res.users_2]",
+        "subscribe - [weth-presence-res.users_1,weth-presence-res.users_2]",
+        "subscribe - [weth-presence-mail.guest_1-token,weth-presence-res.users_1,weth-presence-res.users_2]",
     ]);
 });

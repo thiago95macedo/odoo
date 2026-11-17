@@ -120,7 +120,7 @@ def import_ctypes_library(lib_subfolder: str, lib_name: str):
     :return: The imported ctypes library object, or None if import failed
     """
     import_library = ctypes.WinDLL if IS_WINDOWS else ctypes.CDLL
-    lib_path = path_file("odoo/addons/iot_drivers/iot_handlers/drivers", lib_subfolder, lib_name)
+    lib_path = path_file("weth/addons/iot_drivers/iot_handlers/drivers", lib_subfolder, lib_name)
     try:
         ctypes_lib = import_library(lib_path)
         _logger.info("Successfully imported ctypes library '%s'", lib_path)

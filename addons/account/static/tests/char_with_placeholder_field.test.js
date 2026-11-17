@@ -46,7 +46,7 @@ test("List: placeholder_field shows as text/placeholder", async () => {
         resModel: "account.account",
     });
 
-    const firstCellSelector = "tbody td:not(.o_list_record_selector):first";
+    const firstCellSelector = "tbody td:not(.w_list_record_selector):first";
 
     expect(`${firstCellSelector} span`).toHaveText("Placeholder Code", {
         message: "placeholder_field should be the text value",
@@ -68,7 +68,7 @@ test("List: placeholder_field shows as text/placeholder", async () => {
     });
     await fieldInput("code").edit("100001", { confirm: false });
 
-    await contains(".o_list_button_save").click();
+    await contains(".w_list_button_save").click();
     expect(firstCellSelector).toHaveText("100001", {
         message: "entered value should be saved",
     });

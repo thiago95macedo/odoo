@@ -38,44 +38,44 @@ echo 'LANG=en_US.UTF-8' > /etc/default/locale
 # Aliases
 cat <<'EOF' | tee -a ~/.bashrc /home/pi/.bashrc
 alias ll='ls -al'
-alias odoo='sudo systemctl stop odoo; sudo -u weth /usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/weth.conf'
-alias odoo_logs='less -R +F /var/log/weth/weth-server.log'
-alias odoo_conf='cat /home/pi/weth.conf'
+alias weth='sudo systemctl stop weth; sudo -u weth /usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/weth.conf'
+alias weth_logs='less -R +F /var/log/weth/weth-server.log'
+alias weth_conf='cat /home/pi/weth.conf'
 alias install='sudo chroot /root_bypass_ramdisks/'
 alias blackbox='ls /dev/serial/by-path/'
-alias odoo_luxe='printf " ______\n< Luxe >\n ------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\ \n                ||----w |\n                ||     ||\n"'
-alias odoo_start='sudo systemctl start odoo'
-alias odoo_stop='sudo systemctl stop odoo'
-alias odoo_restart='sudo systemctl restart odoo'
+alias weth_luxe='printf " ______\n< Luxe >\n ------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\ \n                ||----w |\n                ||     ||\n"'
+alias weth_start='sudo systemctl start weth'
+alias weth_stop='sudo systemctl stop weth'
+alias weth_restart='sudo systemctl restart weth'
 
-odoo_help() {
+weth_help() {
   echo '-------------------------------'
-  echo ' Welcome to Odoo IoT Box tools'
+  echo ' Welcome to WETH IoT Box tools'
   echo '-------------------------------'
   echo ''
-  echo 'odoo                  Starts/Restarts Odoo server manually (not through weth.service)'
-  echo 'odoo_logs             Displays Odoo server logs in real time'
-  echo 'odoo_conf             Displays Odoo configuration file content'
+  echo 'weth                  Starts/Restarts WETH server manually (not through weth.service)'
+  echo 'weth_logs             Displays WETH server logs in real time'
+  echo 'weth_conf             Displays WETH configuration file content'
   echo 'install               Bypasses ramdisks to allow package installation'
   echo 'blackbox              Lists all serial connected devices'
-  echo 'odoo_start            Starts Odoo service'
-  echo 'odoo_stop             Stops Odoo service'
-  echo 'odoo_restart          Restarts Odoo service'
-  echo 'odoo_dev <branch>     Resets Odoo on the specified branch from weth-dev repository'
-  echo 'odoo_origin <branch>  Resets Odoo on the specified branch from the odoo repository'
+  echo 'weth_start            Starts WETH service'
+  echo 'weth_stop             Stops WETH service'
+  echo 'weth_restart          Restarts WETH service'
+  echo 'weth_dev <branch>     Resets WETH on the specified branch from weth-dev repository'
+  echo 'weth_origin <branch>  Resets WETH on the specified branch from the weth repository'
   echo 'devtools              Enables/Disables specific functions for development (more help with devtools help)'
   echo ''
-  echo 'Odoo IoT online help: <https://www.weth.com.br/documentation/latest/applications/general/iot.html>'
+  echo 'WETH IoT online help: <https://www.weth.com.br/documentation/latest/applications/general/iot.html>'
 }
 
-odoo_dev() {
+weth_dev() {
   if [ -z "$1" ]; then
-    odoo_help
+    weth_help
     return
   fi
   pwd=$(pwd)
-  cd /home/pi/odoo
-  sudo -u weth git remote add dev https://github.com/odoo-dev/odoo.git
+  cd /home/pi/weth
+  sudo -u weth git remote add dev https://github.com/weth-dev/weth.git
   sudo -u weth git fetch dev "$1" --depth=1 --prune
   sudo -u weth git reset --hard FETCH_HEAD
   sudo -u weth git branch -m "$1"
@@ -84,14 +84,14 @@ odoo_dev() {
   cd "$pwd"
 }
 
-odoo_origin() {
+weth_origin() {
   if [ -z "$1" ]; then
-    odoo_help
+    weth_help
     return
   fi
   pwd=$(pwd)
-  cd /home/pi/odoo
-  sudo -u weth git remote set-url origin https://github.com/weth/odoo.git  # ensure odoo repository
+  cd /home/pi/weth
+  sudo -u weth git remote set-url origin https://github.com/weth/weth.git  # ensure weth repository
   sudo -u weth git fetch origin "$1" --depth=1 --prune
   sudo -u weth git reset --hard FETCH_HEAD
   sudo -u weth git branch -m "$1"
@@ -102,7 +102,7 @@ odoo_origin() {
 
 pip() {
   if [[ -z "$1" || -z "$2" ]]; then
-    odoo_help
+    weth_help
     return 1
   fi
   additional_arg=""
@@ -168,7 +168,7 @@ curl -fsSL https://pkgs.tailscale.com/stable/raspbian/bullseye.tailscale-keyring
 apt-get update
 
 # At the first start it is necessary to configure a password
-# This will be modified by a unique password on the first start of Odoo
+# This will be modified by a unique password on the first start of Weth
 password="$(openssl rand -base64 12)"
 echo "pi:${password}" | chpasswd
 echo TrustedUserCAKeys /etc/ssh/ca.pub >> /etc/ssh/sshd_config
@@ -194,26 +194,26 @@ pip3 install \
     --break-system-package \
     -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt
 
-# Create Odoo user for odoo service and disable password login
-adduser --disabled-password --gecos "" --shell /usr/sbin/nologin odoo
+# Create WETH user for weth service and disable password login
+adduser --disabled-password --gecos "" --shell /usr/sbin/nologin weth
 
-# odoo user doesn't need to type its password to run sudo commands
-echo "odoo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010_odoo-nopasswd
-chmod 440 /etc/sudoers.d/010_odoo-nopasswd
+# weth user doesn't need to type its password to run sudo commands
+echo "weth ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010_weth-nopasswd
+chmod 440 /etc/sudoers.d/010_weth-nopasswd
 
 # copy the weth.conf file to the overwrite directory
 mv -v "/home/pi/weth/setup/iot_box_builder/configuration/weth.conf" "/home/pi/"
 chown weth:weth "/home/pi/weth.conf"
 
 groupadd usbusers
-usermod -a -G usbusers odoo
-usermod -a -G video odoo
-usermod -a -G render odoo
-usermod -a -G lp odoo
-usermod -a -G input odoo
-usermod -a -G dialout odoo
-usermod -a -G pi odoo
-install -d -o odoo -g odoo /var/log/weth
+usermod -a -G usbusers weth
+usermod -a -G video weth
+usermod -a -G render weth
+usermod -a -G lp weth
+usermod -a -G input weth
+usermod -a -G dialout weth
+usermod -a -G pi weth
+install -d -o weth -g weth /var/log/weth
 chown weth:weth -R /home/pi/weth/
 
 # logrotate is very picky when it comes to file permissions

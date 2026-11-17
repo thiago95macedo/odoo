@@ -60,7 +60,7 @@
 
 // Invisible modifier (can be inside the view, the button area, ...)
 .o_invisible_modifier {
-    display: none!important;
+    display: none !important;
 }
 
 // Status
@@ -87,10 +87,12 @@
 }
 
 .state_selection_field_menu .dropdown-item {
-    > .o_status, > .oi {
-        width: $o-bubble-color-size;
-        height: $o-bubble-color-size;
-        font-size: $o-bubble-color-size;
+
+    >.o_status,
+    >.oi {
+        width: $w-bubble-color-size;
+        height: $w-bubble-color-size;
+        font-size: $w-bubble-color-size;
         transform: translateX(-50%);
         text-align: center;
     }
@@ -98,8 +100,10 @@
 
 .o_status_changes_requested {
     color: $warning;
+
     &.o_status {
         color: $white;
+
         &::before {
             // Adjust the exclamation mark to fit the status circle
             transform: scale(0.7);

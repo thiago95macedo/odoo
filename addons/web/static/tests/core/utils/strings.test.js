@@ -24,8 +24,8 @@ test("escapeRegExp", () => {
     expect(escapeRegExp("")).toBe("");
     expect(escapeRegExp("wowl")).toBe("wowl");
     expect(escapeRegExp("[wowl]")).toBe("\\[wowl\\]");
-    expect(escapeRegExp("[wowl.odoo]")).toBe("\\[wowl\\.odoo\\]");
-    expect(escapeRegExp("^odoo.define([.]*)$")).toBe("\\^odoo\\.define\\(\\[\\.\\]\\*\\)\\$");
+    expect(escapeRegExp("[wowl.weth]")).toBe("\\[wowl\\.weth\\]");
+    expect(escapeRegExp("^weth.define([.]*)$")).toBe("\\^weth\\.define\\(\\[\\.\\]\\*\\)\\$");
     expect(escapeRegExp("[.*+?^${}()|[]\\")).toBe("\\[\\.\\*\\+\\?\\^\\$\\{\\}\\(\\)\\|\\[\\]\\\\");
 });
 
@@ -115,8 +115,8 @@ test("capitalize", () => {
 test("isEmail", () => {
     expect(isEmail("")).toBe(false);
     expect(isEmail("test")).toBe(false);
-    expect(isEmail("test@odoo")).toBe(false);
-    expect(isEmail("test@odoo@weth.com.br")).toBe(false);
+    expect(isEmail("test@weth")).toBe(false);
+    expect(isEmail("test@weth@weth.com.br")).toBe(false);
     expect(isEmail("te st@weth.com.br")).toBe(false);
 
     expect(isEmail("test@weth.com.br")).toBe(true);

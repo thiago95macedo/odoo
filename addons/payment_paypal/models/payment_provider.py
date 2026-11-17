@@ -263,13 +263,13 @@ class PaymentProvider(models.Model):
 
     def _paypal_get_oauth_partner_id(self):
         if self.is_live:
-            return const.OAUTH_ODOO_PARTNER_ID
-        return const.OAUTH_ODOO_TEST_PARTNER_ID
+            return const.OAUTH_WETH_PARTNER_ID
+        return const.OAUTH_WETH_TEST_PARTNER_ID
 
     def _paypal_get_oauth_client_id(self):
         if self.is_live:
-            return const.OAUTH_ODOO_CLIENT_ID
-        return const.OAUTH_ODOO_TEST_CLIENT_ID
+            return const.OAUTH_WETH_CLIENT_ID
+        return const.OAUTH_WETH_TEST_CLIENT_ID
 
     def _build_request_headers(
         self,
@@ -291,8 +291,8 @@ class PaymentProvider(models.Model):
                 **kwargs,
             )
         headers = {
-            # PayPal requires a reference specific to Odoo to be able to track Odoo customers
-            "PayPal-Partner-Attribution-Id": "ODOO_SP_DIRECT"
+            # PayPal requires a reference specific to WETH to be able to track WETH customers
+            "PayPal-Partner-Attribution-Id": "WETH_SP_DIRECT"
         }
         if paypal_onboarding_shared_id or paypal_onboarding_access_token:  # Onboarding request
             headers["Content-Type"] = "application/x-www-form-urlencoded"

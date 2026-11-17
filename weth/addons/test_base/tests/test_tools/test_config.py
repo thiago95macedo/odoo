@@ -10,7 +10,7 @@ from weth.tools import file_open, file_open_temporary_directory, file_path
 from weth.tools.config import configmanager
 
 EMPTY_CONFIG_PATH = file_path('test_base/tests/test_tools/config/empty.conf')
-PROJECT_PATH = weth.tools.config.root_path.removesuffix('/odoo')
+PROJECT_PATH = weth.tools.config.root_path.removesuffix('/weth')
 DEFAULT_DATADIR = weth.tools.config._default_options['data_dir']
 
 
@@ -105,7 +105,7 @@ class TestConfigManager(TransactionCase):
             'test_enable': False,
             'test_tags': None,
             'screencasts': '',
-            'screenshots': '/tmp/odoo_tests',
+            'screenshots': '/tmp/weth_tests',
 
             # logging
             'log_config': '',
@@ -141,7 +141,7 @@ class TestConfigManager(TransactionCase):
             'db_template': 'template0',
             'db_replica_host': None,
             'db_replica_port': None,
-            'db_app_name': 'odoo-{pid}',
+            'db_app_name': 'weth-{pid}',
 
             # i18n
             'load_language': None,
@@ -261,7 +261,7 @@ class TestConfigManager(TransactionCase):
             'db_template': 'backup1706',
             'db_replica_host': 'db2.localhost',
             'db_replica_port': 2038,
-            'db_app_name': 'odoo-{pid}',
+            'db_app_name': 'weth-{pid}',
 
             # i18n
             'load_language': 'fr_FR',  # blacklist for save, read from the config file
@@ -295,7 +295,7 @@ class TestConfigManager(TransactionCase):
             'limit_request': 100,
         })
         self.assertEqual(capture.output, [
-            "WARNING:weth.tools.config:option addons_path, no such directory '/tmp/odoo', skipped",
+            "WARNING:weth.tools.config:option addons_path, no such directory '/tmp/weth', skipped",
             "WARNING:weth.tools.config:option upgrade_path, no such directory '/tmp/upgrade', skipped",
             "WARNING:weth.tools.config:option pre_upgrade_scripts, no such file '/tmp/pre-custom.py', skipped",
         ])
@@ -316,8 +316,8 @@ class TestConfigManager(TransactionCase):
                 )
                 self.assertEqual(config_content.splitlines(), save_content.splitlines())
 
-    def test_04_odoo16_config_file(self):
-        # test that loading the Odoo 16.0 generated default config works
+    def test_04_weth16_config_file(self):
+        # test that loading the WETH 16.0 generated default config works
         # with a modern version
         config_path = file_path('test_base/tests/test_tools/config/16.0.conf')
         with self.assertLogs('weth.tools.config', 'WARNING') as capture:
@@ -369,7 +369,7 @@ class TestConfigManager(TransactionCase):
             'proxy_mode': False,
             'reportgz': False,
             'screencasts': '',
-            'screenshots': '/tmp/odoo_tests',
+            'screenshots': '/tmp/weth_tests',
             'server_wide_modules': ['base', 'web'],
             'smtp_password': '',
             'smtp_port': 25,
@@ -422,7 +422,7 @@ class TestConfigManager(TransactionCase):
             'db_maxconn_gevent': None,
             'db_replica_host': None,
             'db_replica_port': None,
-            'db_app_name': 'odoo-{pid}',
+            'db_app_name': 'weth-{pid}',
             'geoip_country_db': '/usr/share/GeoIP/GeoLite2-Country.mmdb',
             'from_filter': '',
             'gevent_port': 8072,

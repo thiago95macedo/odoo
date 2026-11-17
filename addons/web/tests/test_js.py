@@ -37,7 +37,7 @@ class HootCommon(weth.tests.HttpCase):
     def _check_forbidden_statements(self, bundle):
         # As we currently are not in a request context, we cannot render `web.layout`.
         # We then re-define it as a minimal proxy template.
-        self.env.ref('web.layout').write({'arch_db': '<t t-name="web.layout"><html><head><meta charset="utf-8"/><link/><script id="web.layout.odooscript"/><meta/><t t-out="head"/></head><body><t t-out="0"/></body></html></t>'})
+        self.env.ref('web.layout').write({'arch_db': '<t t-name="web.layout"><html><head><meta charset="utf-8"/><link/><script id="web.layout.wethscript"/><meta/><t t-out="head"/></head><body><t t-out="0"/></body></html></t>'})
         for asset in self._get_bundle_assets(bundle):
             filename = asset['filename']
             if not filename.endswith('.test.js'):

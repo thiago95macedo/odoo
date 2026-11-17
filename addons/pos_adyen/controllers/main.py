@@ -36,7 +36,7 @@ class PosAdyenController(http.Controller):
         response_name = 'PaymentResponse' if msg_header.get('MessageCategory') == 'Payment' else 'ReversalResponse'
         adyen_pm_sudo = request.env['pos.payment.method'].sudo().search([('adyen_terminal_identifier', '=', terminal_identifier)], limit=1)
         if not adyen_pm_sudo:
-            _logger.warning('Received an Adyen event notification for a terminal not registered in Odoo: %s', terminal_identifier)
+            _logger.warning('Received an Adyen event notification for a terminal not registered in Weth: %s', terminal_identifier)
             return
 
         try:

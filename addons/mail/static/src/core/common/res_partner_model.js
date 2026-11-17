@@ -104,7 +104,7 @@ export class ResPartner extends Record {
     }
 
     get isBot() {
-        return this.eq(this.store.odoobot);
+        return this.eq(this.store.wethbot);
     }
 }
 

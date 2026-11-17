@@ -189,7 +189,7 @@ export class NavBar extends Component {
 
         // Restore (needed to get offset widths)
         const sections = [
-            ...sectionsMenu.querySelectorAll(":scope > *:not(.o_menu_sections_more)"),
+            ...sectionsMenu.querySelectorAll(":scope > *:not(.w_menu_sections_more)"),
         ];
         for (const section of sections) {
             section.classList.remove("d-none");

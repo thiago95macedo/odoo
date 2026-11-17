@@ -257,13 +257,13 @@ def _generate_routing_rules(modules: Collection[str], nodb_only: bool, converter
         """
         Create dummy controllers that inherit only from the controllers
         defined at the given ``modules`` (often system wide modules or
-        installed modules). Modules in this context are Odoo addons.
+        installed modules). Modules in this context are WETH addons.
         """
-        # Controllers defined outside of odoo addons are outside of the
+        # Controllers defined outside of weth addons are outside of the
         # controller inheritance/extension mechanism.
         yield from (ctrl() for ctrl in Controller.children_classes.get('', []))
 
-        # Controllers defined inside of odoo addons can be extended in
+        # Controllers defined inside of weth addons can be extended in
         # other installed addons. Rebuild the class inheritance here.
         highest_controllers = []
         for module in modules:

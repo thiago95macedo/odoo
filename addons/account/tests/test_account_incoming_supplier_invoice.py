@@ -81,7 +81,7 @@ class TestAccountInvoiceImportMixin:
 
             :param origin: The source from which the attachments came (see `_upload_and_import_attachments`).
 
-            :param attachments_vals: A list of values representing the attachments to be uploaded to Odoo
+            :param attachments_vals: A list of values representing the attachments to be uploaded to Weth
 
             :param expected_invoices: a dict {
                 invoice_index (int): {

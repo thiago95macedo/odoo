@@ -1,10 +1,10 @@
 .product {
-    --btn-border-color: #{$o-gray-200};
+    --btn-border-color: #{$w-gray-200};
 
     @media (hover: hover) {
         &:hover {
             border: $border-width solid $border-color;
-            --btn-hover-bg: #{$o-view-background-color};
+            --btn-hover-bg: #{$w-view-background-color};
         }
     }
 
@@ -14,7 +14,7 @@
         &:where(.product:not(:has(.product-img))) {
             min-height: 6rem;
 
-            @include media-breakpoint-up(lg){
+            @include media-breakpoint-up(lg) {
                 min-height: 5rem;
             }
         }
@@ -40,7 +40,7 @@
         aspect-ratio: 16 / 9;
     }
 
-    > .qty {
+    >.qty {
         min-width: 1.5rem;
     }
 }
@@ -62,9 +62,11 @@
     left: 19px;
     top: 3px;
 }
+
 .red-tag {
     border-color: transparent #e75b5b63 transparent transparent;
 }
+
 .favorite-product {
     border-color: transparent #f3cc00 transparent transparent;
 }

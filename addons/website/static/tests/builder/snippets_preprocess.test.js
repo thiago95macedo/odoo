@@ -25,7 +25,7 @@ test("preprocess modifies the snippet", async () => {
         onIframeLoaded: (iframe) => (iframeEl = iframe),
     });
     const { moveTo, drop } = await contains(
-        ".o-snippets-menu #snippet_groups .o_snippet_thumbnail"
+        ".w-snippets-menu #snippet_groups .o_snippet_thumbnail"
     ).drag();
     await moveTo(iframeEl);
     await drop(getDragHelper());

@@ -2382,7 +2382,7 @@ class TestMany2oneJoin(TransactionCase):
 
         # Since `top_rel.mid_rel_id` is required and `mid_rel.bot_rel_req_id` is optional,
         # it should use LEFT JOIN twice as we can not optimize the second LEFT JOIN to JOIN.
-        # See commit odoo/odoo#239467
+        # See commit weth/weth#239467
         with self.assertQueries(["""
                SELECT "test_orm_search_top_rel"."id"
                  FROM "test_orm_search_top_rel"

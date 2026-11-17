@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/auth_totp_portal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: auth_totp_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_portal/static/src/interactions/totp_enable.js:0
 msgid " Copy"
 msgstr " Copiar"
@@ -75,13 +75,13 @@ msgid "<strong>Trusted Device</strong>"
 msgstr "<strong>Dispositivo confiável</strong>"
 
 #. module: auth_totp_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_portal/static/src/interactions/totp_enable.js:0
 msgid "Activate"
 msgstr "Ativar"
 
 #. module: auth_totp_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_portal/static/src/components/totp_confirmation_dialog.js:0
 msgid "Copied!"
 msgstr "Copiado."
@@ -102,7 +102,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: auth_totp_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_portal/static/src/interactions/totp_enable.js:0
 msgid "Operation failed for unknown reason."
 msgstr "A operação falhou por um motivo desconhecido."
@@ -128,7 +128,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: auth_totp_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_portal/static/src/interactions/totp_enable.js:0
 msgid "Verification failed, please double-check the 6-digit code"
 msgstr "A verificação falhou, confira o código de 6 dígitos"

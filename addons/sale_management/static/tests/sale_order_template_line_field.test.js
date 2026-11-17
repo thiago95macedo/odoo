@@ -311,12 +311,12 @@ test("Can't mark section hidden if optional and vice versa", async () => {
     );
 
     await contains(".o_data_row:contains(Sec1) .o_list_section_options button").click();
-    expect(".o-dropdown-item:contains(Set Optional)").toHaveClass("disabled", {
+    expect(".w-dropdown-item:contains(Set Optional)").toHaveClass("disabled", {
         message: "Section with hidden prices can't be optional",
     });
 
     await contains(".o_data_row:contains(Sec2) .o_list_section_options button").click();
-    expect(".o-dropdown-item:contains(Set Optional)").toHaveClass("disabled", {
+    expect(".w-dropdown-item:contains(Set Optional)").toHaveClass("disabled", {
         message: "Hidden section can't be optional",
     });
 });
@@ -354,13 +354,13 @@ test("Setting section optional should reset some fields", async () => {
     );
 
     await contains(".o_data_row:contains(Sec3-sub2) .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Hide Composition)").click();
+    await contains(".w-dropdown-item:contains(Hide Composition)").click();
 
     await contains(".o_data_row:contains(Sec3-sub1) .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Hide Prices)").click();
+    await contains(".w-dropdown-item:contains(Hide Prices)").click();
 
     await contains(".o_data_row:contains(Sec3) .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Set Optional)").click();
+    await contains(".w-dropdown-item:contains(Set Optional)").click();
 
     await clickSave();
     expect.verifySteps(["web_save"]);
@@ -418,7 +418,7 @@ test("Unsetting optional section should reset quantity", async () => {
     });
 
     await contains(".o_data_row:contains(Sec3) .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Unset Optional)").click();
+    await contains(".w-dropdown-item:contains(Unset Optional)").click();
 
     await clickSave();
     expect.verifySteps(["web_save"]);
@@ -527,7 +527,7 @@ test("Changing a section's UoM applies the factor to its template lines", async 
 
     await contains(".o_data_row:contains(Sec4):first [name=product_and_description]").click();
     await contains(".o_selected_row [name=section_uom_id] input", { visible: false }).click();
-    await contains(".o-autocomplete--dropdown-item:contains(Dozens)").click();
+    await contains(".w-autocomplete--dropdown-item:contains(Dozens)").click();
 
     expect(".o_data_row:contains(Sec4-r1) td[name=sotl_qty]").toHaveText("12.00");
     expect(".o_data_row:contains(Sec4-sub1):first td[name=sotl_qty]").toHaveText("12.00");
@@ -616,7 +616,7 @@ test("Changing a section's UoM to an incompatible one doesn't change its templat
 
     await contains(".o_data_row:contains(Sec3-sub2):first [name=product_and_description]").click();
     await contains(".o_selected_row [name=section_uom_id] input", { visible: false }).click();
-    await contains(".o-autocomplete--dropdown-item:contains(kg)").click();
+    await contains(".w-autocomplete--dropdown-item:contains(kg)").click();
     await clickSave();
 
     expect.verifySteps(["web_save"]);

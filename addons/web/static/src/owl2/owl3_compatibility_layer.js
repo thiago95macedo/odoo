@@ -296,4 +296,4 @@ async function mount(C, target, config = {}) {
 }
 owl.mount = mount;
 
-owl.__ODOO_COMPATIBILITY_LAYER_ADDED__ = true;
+owl.__WETH_COMPATIBILITY_LAYER_ADDED__ = true;

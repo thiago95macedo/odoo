@@ -15,8 +15,8 @@
     // customized by themes, the user or anything else (so there is no file to
     // parse to get them). Those will be printed here as CSS variables.
 
-    @include print-variable('support-13-0-color-system', $o-support-13-0-color-system);
-    @include print-variable('has-customized-13-0-color-system', $o-has-customized-13-0-color-system);
+    @include print-variable('support-13-0-color-system', $w-support-13-0-color-system);
+    @include print-variable('has-customized-13-0-color-system', $w-has-customized-13-0-color-system);
 
     // 1) Handle default values
     @include print-variable('header-font-size', $font-size-base);
@@ -32,23 +32,23 @@
     // we have color variables which can contain a reference to a color
     // combination and that is the info we want in that case.
     @each $key in ('menu', 'header-sales_one', 'header-sales_two', 'header-sales_three', 'header-sales_four', 'footer', 'breadcrumb', 'copyright', 'portal-card') {
-        $-value: map-get($o-color-palette, $key);
+        $-value: map-get($w-color-palette, $key);
 
         @if type-of($-value)=='number' {
             @include print-variable($key, $-value);
         }
     }
 
-    // 4) The Odoo values map, $o-website-values, must be printed.
-    @each $key, $value in $o-website-values {
+    // 4) The WETH values map, $w-website-values, must be printed.
+    @each $key, $value in $w-website-values {
         @include print-variable($key, $value);
     }
 
     // 5) Use final value used by the theme
-    @include print-variable('logo-height', $o-theme-navbar-logo-height);
-    @include print-variable('fixed-logo-height', $o-theme-navbar-fixed-logo-height);
+    @include print-variable('logo-height', $w-theme-navbar-logo-height);
+    @include print-variable('fixed-logo-height', $w-theme-navbar-fixed-logo-height);
 
-    $-font-names: map-keys($o-theme-font-configs);
+    $-font-names: map-keys($w-theme-font-configs);
     @include print-variable('number-of-fonts', length($-font-names));
     $i: 1;
 
@@ -70,7 +70,7 @@
     @include print-variable('display-2-line-height', $display-2-line-height);
     @include print-variable('display-3-line-height', $display-3-line-height);
     @include print-variable('display-4-line-height', $display-4-line-height);
-    // We cannot rely on $o-theme-hx-font because they contain the list of
+    // We cannot rely on $w-theme-hx-font because they contain the list of
     // fallback fonts (unicode...).
     $-headings-or-main-font: o-website-value('headings-font') or o-website-value('font');
     @include print-variable('h2-font', o-website-value('h2-font') or $-headings-or-main-font);
@@ -174,15 +174,15 @@
     @include print-variable('input-border-radius-sm', $input-border-radius-sm);
     @include print-variable('input-border-radius-lg', $input-border-radius-lg);
 
-    @include print-variable('color-palettes-name', $o-original-color-palette-name);
+    @include print-variable('color-palettes-name', $w-original-color-palette-name);
 
-    @include print-variable('has-customized-colors', $o-has-customized-colors);
+    @include print-variable('has-customized-colors', $w-has-customized-colors);
 
     // 6) Get list of colorpalette custom colors
     $custom-colors: (
     );
 
-@each $key, $value in $o-color-palette {
+@each $key, $value in $w-color-palette {
     $custom-colors: append($custom-colors, $key);
 }
 
@@ -227,9 +227,9 @@
 
 // Manage custom offcanvas such as the one used for mobile mega menu nav
 // where a dropdown behaves as offcanvas.
-$o-mega-menu-nav-height: 3rem !default;
-$o-mega-menu-zindex: $zindex-offcanvas !default;
-$o-mega-menu-btn-close-zindex: $o-mega-menu-zindex + 1 !default;
+$w-mega-menu-nav-height: 3rem !default;
+$w-mega-menu-zindex: $zindex-offcanvas !default;
+$w-mega-menu-btn-close-zindex: $w-mega-menu-zindex + 1 !default;
 
 @mixin force-opaque-bg-color($color, $if-necessary, $background: white) {
     $alpha: alpha($color);
@@ -243,7 +243,7 @@ body {
 
     // The color behind the boxed layout is forced by WETH. The box background
     // color uses the `$body-bg` variable.
-    // grep: BOXED_BODY_BG_ODOO
+    // grep: BOXED_BODY_BG_WETH
     //
     // In any case, remove the transparency of the background color to apply as
     // body background color to prevent the fallback iframe used for navigation
@@ -368,7 +368,7 @@ h6,
         >main {
             // The color behind the boxed layout is forced by WETH. The box
             // background color uses the `$body-bg` variable.
-            // grep: BOXED_BODY_BG_ODOO
+            // grep: BOXED_BODY_BG_WETH
             background-color: $body-bg;
         }
 
@@ -526,13 +526,13 @@ h6,
 .navbar .nav-link,
 .navbar a.js_change_lang span,
 .navbar a.o_add_language {
-    @if $o-theme-navbar-font !=$o-theme-font {
-        font-family: $o-theme-navbar-font;
+    @if $w-theme-navbar-font !=$w-theme-font {
+        font-family: $w-theme-navbar-font;
     }
 }
 
 .navbar-light {
-    // Style only navbar-light which Odoo is only supposed to use in standard
+    // Style only navbar-light which WETH is only supposed to use in standard
     // anyway. Automatically mimic navbar-dark if the user's menu color is dark.
     // Note: this only works because navbar-light is defined before navbar-dark,
     // we may want to use a safest way when possible.
@@ -648,7 +648,7 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
                 }
             }
 
-            // Replace the default chevron with our Odoo UI icon so it adapts to
+            // Replace the default chevron with our WETH UI icon so it adapts to
             // the theme colors.
             &:after {
                 height: 100%;
@@ -683,7 +683,7 @@ $-navbar-mobile-bg-color: o-color('menu-custom') or o-color('menu');
 
     // Make offcanvas close btn above mega menu
     .btn-close {
-        z-index: $o-mega-menu-btn-close-zindex;
+        z-index: $w-mega-menu-btn-close-zindex;
     }
 
     @include accordion-style-vertical-menu;
@@ -714,14 +714,14 @@ $-header-nav-link-height: $nav-link-height;
     }
 }
 
-@if $o-theme-navbar-logo-height {
+@if $w-theme-navbar-logo-height {
 
     // With default values, this makes it slightly bigger than standard
     // navbar-brand, which is what we want
     header .navbar-brand {
-        font-size: $o-theme-navbar-logo-height / $line-height-base;
+        font-size: $w-theme-navbar-logo-height / $line-height-base;
 
-        $-logo-padding-y: max(0, $-header-nav-link-height - $o-theme-navbar-logo-height) / 2;
+        $-logo-padding-y: max(0, $-header-nav-link-height - $w-theme-navbar-logo-height) / 2;
 
         &,
         &.logo {
@@ -850,8 +850,8 @@ h6 {
 }
 
 .btn {
-    @if ($o-theme-buttons-font !=$o-theme-font) {
-        font-family: $o-theme-buttons-font;
+    @if ($w-theme-buttons-font !=$w-theme-font) {
+        font-family: $w-theme-buttons-font;
     }
 }
 
@@ -1024,17 +1024,17 @@ font[class*='bg-'] {
     }
 }
 
-@for $-size from 1 through length($o-colors) {
+@for $-size from 1 through length($w-colors) {
     .o_color_#{$-size - 1} {
         // Compute background-color and text-color values for different uses,
         // allowing to apply the value from colorfield on desired UI elements.
         // this set of variables covers all the possible scenarios.
 
-        $-color: nth($o-colors, $-size);
+        $-color: nth($w-colors, $-size);
 
-        $-bg-lightness-adjusted: if($o-website-palette-is-dark, -40%, 0%);
+        $-bg-lightness-adjusted: if($w-website-palette-is-dark, -40%, 0%);
 
-        $-background-color: if($o-website-palette-is-dark, adjust-color($-color, $lightness: $-bg-lightness-adjusted, $saturation: 5%), tint-color($-color, 90%));
+        $-background-color: if($w-website-palette-is-dark, adjust-color($-color, $lightness: $-bg-lightness-adjusted, $saturation: 5%), tint-color($-color, 90%));
 
         --background-color: #{$-background-color};
         --color: #{increase-contrast($-color, $-background-color)};
@@ -2169,10 +2169,10 @@ $-transition-duration: 200ms;
 
     &.o_header_is_scrolled {
         .navbar-brand {
-            @include font-size($o-theme-navbar-fixed-logo-height / $line-height-base);
+            @include font-size($w-theme-navbar-fixed-logo-height / $line-height-base);
 
             img {
-                height: $o-theme-navbar-fixed-logo-height;
+                height: $w-theme-navbar-fixed-logo-height;
             }
         }
     }
@@ -2578,7 +2578,7 @@ header {
     .o_mega_nav,
     .o_mega_menu {
         @include transition(opacity $offcanvas-transition-duration ease-in-out, visibility $offcanvas-transition-duration ease-in-out);
-        z-index: $o-mega-menu-zindex;
+        z-index: $w-mega-menu-zindex;
         max-width: $offcanvas-horizontal-width !important;
         opacity: 0;
         pointer-events: none;
@@ -2608,7 +2608,7 @@ header {
 
     .o_mega_nav {
         padding-left: $grid-gutter-width * .5;
-        height: $o-mega-menu-nav-height;
+        height: $w-mega-menu-nav-height;
         background-color: o-color('menu-custom') or o-color('menu');
     }
 
@@ -2618,9 +2618,9 @@ header {
         inset: 0 0 0 auto !important;
         display: block;
         visibility: hidden;
-        margin-top: $o-mega-menu-nav-height !important;
+        margin-top: $w-mega-menu-nav-height !important;
         border: none;
-        height: calc(100dvh - #{$o-mega-menu-nav-height});
+        height: calc(100dvh - #{$w-mega-menu-nav-height});
         max-height: 100vh;
         background-color: o-color('menu-custom') or o-color('menu');
         overflow-x: hidden;
@@ -2984,7 +2984,7 @@ span.list-inline-item.o_add_language:last-child {
 
     .figure-caption {
         @include o-position-absolute(auto, 0, 0, 0);
-        @include o-bg-color(rgba(map-get($theme-colors, 'dark'), $o-theme-figcaption-opacity));
+        @include o-bg-color(rgba(map-get($theme-colors, 'dark'), $w-theme-figcaption-opacity));
         padding: $tooltip-padding-y $tooltip-padding-x;
         font-weight: $font-weight-bold;
 
@@ -3000,7 +3000,7 @@ span.list-inline-item.o_add_language:last-child {
     }
 }
 
-@each $media, $color in $o-social-colors {
+@each $media, $color in $w-social-colors {
     @include text-emphasis-variant(".text-#{$media}", $color);
 }
 
@@ -3135,11 +3135,11 @@ $ribbon-padding: 100px;
 
 
 .o_searchbar_form {
-    $o-searchbar-muted-color: color-mix(in srgb, color-contrast($light) 60%, transparent);
+    $w-searchbar-muted-color: color-mix(in srgb, color-contrast($light) 60%, transparent);
 
     .form-control {
         &::placeholder {
-            color: $o-searchbar-muted-color;
+            color: $w-searchbar-muted-color;
         }
     }
 
@@ -3155,7 +3155,7 @@ $ribbon-padding: 100px;
         &:disabled {
             --btn-disabled-opacity: 1;
             --btn-disabled-bg: var(--btn-bg);
-            --btn-disabled-color:#{$o-searchbar-muted-color};
+            --btn-disabled-color:#{$w-searchbar-muted-color};
         }
     }
 
@@ -3254,7 +3254,7 @@ $ribbon-padding: 100px;
 }
 
 ul.o_checklist>li.o_checked::after {
-    left: - ($o-checklist-margin-left - $o-checklist-checkmark-width) - 1;
+    left: - ($w-checklist-margin-left - $w-checklist-checkmark-width) - 1;
     top: 0;
 }
 
@@ -4271,7 +4271,7 @@ input[value*="data-oe-translation-source-sha"] {
     animation-delay: 2500ms;
 }
 
-// Odoo dropdown menu
+// WETH dropdown menu
 .o_dropdown_menu {
     @extend .dropdown-menu;
 }

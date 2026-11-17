@@ -15,21 +15,21 @@ label.o_wbooth_category_unavailable {
 
     position: relative;
 
-    & > input {
+    &>input {
         visibility: hidden;
         position: absolute;
     }
 
-    &:not(.o_wbooth_category_unavailable) > input + div {
+    &:not(.o_wbooth_category_unavailable)>input+div {
         cursor: pointer;
     }
 
-    &:not(.o_wbooth_category_unavailable):hover > input + div {
+    &:not(.o_wbooth_category_unavailable):hover>input+div {
         opacity: .8;
     }
 
-    & > input:checked + div,
-    &:hover > input:checked + div {
+    &>input:checked+div,
+    &:hover>input:checked+div {
         --o-border-color: #{$primary};
 
         box-shadow: 0 0 0 ($border-width * 2) $primary;
@@ -41,16 +41,16 @@ label.o_wbooth_category_unavailable {
 
 }
 
-.o_wbooth_booths .form-check{
+.o_wbooth_booths .form-check {
     position: relative;
     padding-left: 0;
 
-    & > input {
+    &>input {
         visibility: hidden;
         position: absolute;
     }
 
-    & > input + label {
+    &>input+label {
         padding: map-get($spacers, 2) map-get($spacers, 3);
         border: $card-border-width solid $card-border-color;
         border-radius: $btn-border-radius;
@@ -58,14 +58,14 @@ label.o_wbooth_category_unavailable {
         color: $card-color;
     }
 
-    & > input:checked + label,
-    &:hover > input:checked + label {
+    &>input:checked+label,
+    &:hover>input:checked+label {
         --o-border-color: #{$primary};
 
-            box-shadow: 0 0 0 ($border-width) $primary;
+        box-shadow: 0 0 0 ($border-width) $primary;
     }
 }
 
 .o_wevent_booth_category {
-    background-color: $o-wevent-bg-color-light;
+    background-color: $w-wevent-bg-color-light;
 }

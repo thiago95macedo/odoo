@@ -83,15 +83,15 @@ export class Homepage extends Component {
         }, Math.min(this.loadDataDelay, 30 * 60 * 1000));
     }
 
-    async restartOdooService() {
+    async restartWethService() {
         try {
             await this.store.rpc({
-                url: "/iot_drivers/restart_odoo_service",
+                url: "/iot_drivers/restart_weth_service",
             });
 
             this.waitRestart.set(true);
         } catch {
-            console.warn("Error while restarting Odoo Service");
+            console.warn("Error while restarting WETH Service");
         }
     }
 
@@ -118,7 +118,7 @@ export class Homepage extends Component {
                             t-on-click="this.toggleAdvanced"
                             t-esc="this.store.advanced() ? 'Show less' : 'Show more'"
                         />
-                        <div class="d-flex align-items-center justify-content-center btn btn-sm btn-primary" t-on-click="this.restartOdooService">
+                        <div class="d-flex align-items-center justify-content-center btn btn-sm btn-primary" t-on-click="this.restartWethService">
                             <i class="oi oi-fw me-1" t-att-data-icon="'power_settings_new'" aria-hidden="true"></i> Restart
                         </div>
                     </div>
@@ -151,12 +151,12 @@ export class Homepage extends Component {
                         <WifiDialog />
                     </t>
                 </SingleData>
-                <SingleData t-if="!this.store.base().is_access_point_up" name="'Odoo database connected'" value="this.store.base().server_status" icon="'link'">
+                <SingleData t-if="!this.store.base().is_access_point_up" name="'WETH database connected'" value="this.store.base().server_status" icon="'link'">
                     <t t-set-slot="button">
                         <DatabaseDialog />
                     </t>
                 </SingleData>
-                <SingleData t-if="this.store.base().pairing_code and !this.store.base().is_access_point_up and !this.store.base().pairing_code_expired" name="'Pairing Code'" value="this.store.base().pairing_code + ' - Enter this code in the IoT app in your Odoo database'" icon="'code'"/>
+                <SingleData t-if="this.store.base().pairing_code and !this.store.base().is_access_point_up and !this.store.base().pairing_code_expired" name="'Pairing Code'" value="this.store.base().pairing_code + ' - Enter this code in the IoT app in your WETH database'" icon="'code'"/>
                 <SingleData t-if="this.store.base().pairing_code_expired" name="'Pairing Code'" value="'Code has expired - restart the IoT Box to generate a new one'" icon="'code'"/>
                 <SingleData  t-if="this.store.advanced() and !this.store.base().is_access_point_up" name="'Six terminal'" value="this.store.base().six_terminal" icon="'payments'">
                     <t t-set-slot="button">

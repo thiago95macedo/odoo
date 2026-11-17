@@ -9,7 +9,7 @@ import { WebClient } from "@web/webclient/webclient";
 test("can be rendered", async () => {
     await mountWithCleanup(WebClient);
 
-    expect(`header > nav.o_main_navbar`).toHaveCount(1);
+    expect(`header > nav.w_main_navbar`).toHaveCount(1);
 });
 
 test("can render a main component", async () => {

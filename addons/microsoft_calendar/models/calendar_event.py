@@ -94,7 +94,7 @@ class CalendarEvent(models.Model):
     def create(self, vals_list):
         notify_context = self.env.context.get('dont_notify', False)
 
-        # Forbid recurrence creation in Odoo, suggest its creation in Outlook due to the spam limitation.
+        # Forbid recurrence creation in WETH, suggest its creation in Outlook due to the spam limitation.
         recurrency_in_batch = any(vals.get('recurrency') for vals in vals_list)
         if self._check_microsoft_sync_status() and not notify_context and recurrency_in_batch:
             self._forbid_recurrence_creation()
@@ -124,7 +124,7 @@ class CalendarEvent(models.Model):
             if not sender_sync_status and current_sync_status:
                 raise ValidationError(
                     _("For having a different organizer in your event, it is necessary that "
-                      "the organizer have its Odoo Calendar synced with Outlook Calendar."))
+                      "the organizer have its WETH Calendar synced with Outlook Calendar."))
             elif sender_sync_status and not partner_included:
                 raise ValidationError(
                     _("It is necessary adding the proposed organizer as attendee before saving the event."))
@@ -171,10 +171,10 @@ class CalendarEvent(models.Model):
         """
         error_msg = _("Due to an Outlook Calendar limitation, recurrence updates must be done directly in Outlook Calendar.")
         if any(not record.ms_universal_event_id for record in self):
-            # If any event is not synced, suggest deleting it in Odoo and recreating it in Outlook.
+            # If any event is not synced, suggest deleting it in WETH and recreating it in Outlook.
             error_msg = _(
                 "Due to an Outlook Calendar limitation, recurrence updates must be done directly in Outlook Calendar.\n"
-                "If this recurrence is not shown in Outlook Calendar, you must delete it in Odoo Calendar and recreate it in Outlook Calendar.")
+                "If this recurrence is not shown in Outlook Calendar, you must delete it in WETH Calendar and recreate it in Outlook Calendar.")
 
         raise UserError(error_msg)
 
@@ -189,7 +189,7 @@ class CalendarEvent(models.Model):
         recurrence_update_setting = values.get('recurrence_update')
         notify_context = self.env.context.get('dont_notify', False)
 
-        # Forbid recurrence updates through Odoo and suggest user to update it in Outlook.
+        # Forbid recurrence updates through WETH and suggest user to update it in Outlook.
         if not notify_context:
             recurrency_in_batch = self.filtered(lambda ev: ev.recurrency)
             recurrence_update_attempt = recurrence_update_setting or 'recurrency' in values or recurrency_in_batch and len(recurrency_in_batch) > 0
@@ -310,7 +310,7 @@ class CalendarEvent(models.Model):
         lower_bound = fields.Datetime.subtract(fields.Datetime.now(), days=day_range)
         upper_bound = fields.Datetime.add(fields.Datetime.now(), days=day_range)
 
-        # Define 'custom_lower_bound_range' param for limiting old events updates in Odoo and avoid spam on Microsoft.
+        # Define 'custom_lower_bound_range' param for limiting old events updates in WETH and avoid spam on Microsoft.
         custom_lower_bound_range = ICP.get_int('microsoft_calendar.sync.lower_bound_range')
         if custom_lower_bound_range:
             lower_bound = fields.Datetime.subtract(fields.Datetime.now(), days=custom_lower_bound_range)
@@ -333,7 +333,7 @@ class CalendarEvent(models.Model):
         return self._extend_microsoft_domain(domain)
 
     @api.model
-    def _microsoft_to_odoo_values(self, microsoft_event, default_reminders=(), default_values=None, with_ids=False, create=False):
+    def _microsoft_to_weth_values(self, microsoft_event, default_reminders=(), default_values=None, with_ids=False, create=False):
         if microsoft_event.is_cancelled():
             return {'active': False}
 
@@ -343,7 +343,7 @@ class CalendarEvent(models.Model):
             'confidential': 'confidential',
         }
 
-        commands_attendee, commands_partner = self._odoo_attendee_commands_m(microsoft_event)
+        commands_attendee, commands_partner = self._weth_attendee_commands_m(microsoft_event)
         timeZone_start = ZoneInfo(microsoft_event.start.get('timeZone'))
         timeZone_stop = ZoneInfo(microsoft_event.end.get('timeZone'))
         start = parse(microsoft_event.start.get('dateTime')).astimezone(timeZone_start).replace(tzinfo=None)
@@ -399,14 +399,14 @@ class CalendarEvent(models.Model):
         if microsoft_event.is_recurrent():
             values['microsoft_recurrence_master_id'] = microsoft_event.seriesMasterId
 
-        alarm_commands = self._odoo_reminders_commands_m(microsoft_event)
+        alarm_commands = self._weth_reminders_commands_m(microsoft_event)
         if alarm_commands:
             values['alarm_ids'] = alarm_commands
 
         return values
 
     @api.model
-    def _microsoft_to_odoo_recurrence_values(self, microsoft_event, default_values=None):
+    def _microsoft_to_weth_recurrence_values(self, microsoft_event, default_values=None):
         timeZone_start = ZoneInfo(microsoft_event.start.get('timeZone'))
         timeZone_stop = ZoneInfo(microsoft_event.end.get('timeZone'))
         start = parse(microsoft_event.start.get('dateTime')).astimezone(timeZone_start).replace(tzinfo=None)
@@ -425,7 +425,7 @@ class CalendarEvent(models.Model):
         return values
 
     @api.model
-    def _odoo_attendee_commands_m(self, microsoft_event):
+    def _weth_attendee_commands_m(self, microsoft_event):
         commands_attendee = []
         commands_partner = []
 
@@ -436,9 +436,9 @@ class CalendarEvent(models.Model):
             if email_normalize(a.get('emailAddress').get('address'))
         ]
         existing_attendees = self.env['calendar.attendee']
-        if microsoft_event.match_with_odoo_events(self.env):
+        if microsoft_event.match_with_weth_events(self.env):
             existing_attendees = self.env['calendar.attendee'].search([
-                ('event_id', '=', microsoft_event.odoo_id(self.env)),
+                ('event_id', '=', microsoft_event.weth_id(self.env)),
                 ('partner_id.email_normalized', 'in', emails)])
         elif self.env.user.partner_id.email_normalized not in emails:
             commands_attendee += [(0, 0, {'state': 'accepted', 'partner_id': self.env.user.partner_id.id})]
@@ -467,18 +467,18 @@ class CalendarEvent(models.Model):
                 commands_partner += [(4, partner.id)]
                 if attendee_info.get('emailAddress').get('name') and not partner.name:
                     partner.name = attendee_info.get('emailAddress').get('name')
-        for odoo_attendee in attendees_by_emails.values():
+        for weth_attendee in attendees_by_emails.values():
             # Remove old attendees
-            if odoo_attendee.partner_id.email_normalized not in emails:
-                commands_attendee += [(2, odoo_attendee.id)]
-                commands_partner += [(3, odoo_attendee.partner_id.id)]
+            if weth_attendee.partner_id.email_normalized not in emails:
+                commands_attendee += [(2, weth_attendee.id)]
+                commands_partner += [(3, weth_attendee.partner_id.id)]
         return commands_attendee, commands_partner
 
     @api.model
-    def _odoo_reminders_commands_m(self, microsoft_event):
+    def _weth_reminders_commands_m(self, microsoft_event):
         reminders_commands = []
         if microsoft_event.isReminderOn:
-            event_id = self.browse(microsoft_event.odoo_id(self.env))
+            event_id = self.browse(microsoft_event.weth_id(self.env))
             alarm_type_label = _("Notification")
 
             minutes = microsoft_event.reminderMinutesBeforeStart or 0
@@ -524,7 +524,7 @@ class CalendarEvent(models.Model):
                 reminders_commands += [(3, a.id) for a in alarm_to_rm]
 
         else:
-            event_id = self.browse(microsoft_event.odoo_id(self.env))
+            event_id = self.browse(microsoft_event.weth_id(self.env))
             alarm_to_rm = event_id.alarm_ids.filtered(lambda a: a.alarm_type == 'notification')
             if alarm_to_rm:
                 reminders_commands = [(3, a.id) for a in alarm_to_rm]
@@ -685,7 +685,7 @@ class CalendarEvent(models.Model):
                               for event in invalid_event_ids]
             invalid_events = '\n'.join(invalid_events)
             details = "(%d/%d)" % (list_length_limit, total_invalid_events) if list_length_limit < total_invalid_events else "(%d)" % total_invalid_events
-            raise ValidationError(_("For a correct synchronization between Odoo and Outlook Calendar, "
+            raise ValidationError(_("For a correct synchronization between WETH and Outlook Calendar, "
                                     "all attendees must have an email address. However, some events do "
                                     "not respect this condition. As long as the events are incorrect, "
                                     "the calendars will not be synchronized."
@@ -713,8 +713,8 @@ class CalendarEvent(models.Model):
         """
         Cancel an Microsoft event.
         There are 2 cases:
-          1) the organizer is an Odoo user: he's the only one able to delete the Odoo event. Attendees can just decline.
-          2) the organizer is NOT an Odoo user: any attendee should remove the Odoo event.
+          1) the organizer is an WETH user: he's the only one able to delete the WETH event. Attendees can just decline.
+          2) the organizer is NOT an WETH user: any attendee should remove the WETH event.
         """
         user = self.env.user
         records = self.filtered(lambda e: not e.user_id or e.user_id == user or user.partner_id in e.partner_ids)

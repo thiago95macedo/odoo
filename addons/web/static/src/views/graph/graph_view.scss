@@ -4,7 +4,7 @@
         display: block;
     }
 
-    :not(.o-dashboard-action) > & .o_graph_canvas_container {
+    :not(.w-dashboard-action)>& .o_graph_canvas_container {
         min-height: 50vh;
     }
 }

@@ -7,7 +7,7 @@
                 <button class="btn" t-on-click="() => this.state.showSidebar = !this.state.showSidebar" title="Toggle Left Sidebar" data-hotkey="l">
                     <i class="oi" data-icon="dock_to_right" aria-hidden="true"></i>
                 </button>
-                <h2 class="m-0">Odoo Runtime Doc</h2>
+                <h2 class="m-0">WETH Runtime Doc</h2>
             </div>
             <div>
                 <input

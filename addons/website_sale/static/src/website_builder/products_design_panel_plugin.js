@@ -57,7 +57,7 @@ export class ProductsDesignPanelPlugin extends Plugin {
 
     async onSave() {
         const dirtyProductDesignListEls = Array.from(
-            this.editable.querySelectorAll(".o_dirty_product_design_list")
+            this.editable.querySelectorAll(".w_dirty_product_design_list")
         );
         for (const el of dirtyProductDesignListEls) {
             const updateData = {};

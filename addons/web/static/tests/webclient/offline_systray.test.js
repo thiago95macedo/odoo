@@ -15,31 +15,31 @@ test.tags("desktop");
 test("offline systray item: basic rendering (desktop)", async () => {
     const setOffline = mockOffline();
     await mountWithCleanup(WebClient);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(0);
     await setOffline(true);
 
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(1);
-    expect(`.o_menu_systray .o_nav_entry:first`).toHaveText("Working offline");
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(1);
+    expect(`.w_menu_systray .w_nav_entry:first`).toHaveText("Working offline");
 
     await setOffline(false);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(0);
 });
 
 test.tags("mobile");
 test("offline systray item: basic rendering (mobile)", async () => {
     const setOffline = mockOffline();
     await mountWithCleanup(WebClient);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(0);
     await setOffline(true);
 
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(1);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']:first`).toHaveAttribute(
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(1);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']:first`).toHaveAttribute(
         "data-tooltip",
         "Working offline"
     );
 
     await setOffline(false);
-    expect(`.o_menu_systray .o_nav_entry[data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry[data-icon='link_off']`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -52,10 +52,10 @@ test("offline systray item: click to check connection (desktop)", async () => {
     await mountWithCleanup(WebClient);
     await setOffline(true);
 
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).click();
     expect.verifySteps(["version_info"]);
     expect(getService(OfflinePlugin).isOffline()).toBe(false);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(0);
 });
 
 test.tags("mobile");
@@ -68,10 +68,10 @@ test("offline systray item: click to check connection (mobile)", async () => {
     await mountWithCleanup(WebClient);
     await setOffline(true);
 
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).click();
     expect.verifySteps(["version_info"]);
     expect(getService(OfflinePlugin).isOffline()).toBe(false);
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(0);
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -139,12 +139,12 @@ test("scheduledORM", async () => {
     );
 
     await animationFrame();
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(1);
-    expect(queryAllTexts`.o_menu_systray .o_nav_entry`).toEqual(["Working offline", ""]);
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
-    expect(".o-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(3);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual(
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(1);
+    expect(queryAllTexts`.w_menu_systray .w_nav_entry`).toEqual(["Working offline", ""]);
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).click();
+    expect(".w-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(3);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual(
         [
             "CONTACTS",
             "Nice plop",
@@ -160,19 +160,19 @@ test("scheduledORM", async () => {
         ],
         { message: "The scheduled orm are grouped by action Name!" }
     );
-    expect(`.o-dropdown--menu .o-dropdown-item:not(.o_cursor_auto)`).toHaveCount(1, {
+    expect(`.w-dropdown--menu .w-dropdown-item:not(.w_cursor_auto)`).toHaveCount(1, {
         message: "We can click on the one with viewType 'form' and previously visited",
     });
     // The one that is not viewType form, can't be clicked on, and have text muted !
     // The one that is not previously visited, can't be clickend on, and have text muted !
-    expect(`.o-dropdown--menu .o-dropdown-item.o_cursor_auto`).toHaveCount(2);
-    expect(`.o-dropdown--menu .o-dropdown-item div.text-muted`).toHaveCount(2);
+    expect(`.w-dropdown--menu .w-dropdown-item.w_cursor_auto`).toHaveCount(2);
+    expect(`.w-dropdown--menu .w-dropdown-item div.text-muted`).toHaveCount(2);
 
     // remove one.
-    await contains(`.o-dropdown--menu .o-dropdown-item:nth-child(3) button.btn`).click();
+    await contains(`.w-dropdown--menu .w-dropdown-item:nth-child(3) button.btn`).click();
     await contains(`.modal-dialog .modal-footer button.btn-primary`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual([
         "CONTACTS",
         "Nice plop",
         "Created",
@@ -184,7 +184,7 @@ test("scheduledORM", async () => {
     ]);
 
     // click on one
-    await contains(`.o-dropdown--menu .o-dropdown-item`).click();
+    await contains(`.w-dropdown--menu .w-dropdown-item`).click();
     expect.verifySteps([
         {
             action: 22,
@@ -244,12 +244,12 @@ test("scheduledORM: inError", async () => {
     );
 
     await animationFrame();
-    expect(`.o_menu_systray .o_nav_entry [data-icon='error']`).toHaveCount(1);
-    expect(queryAllTexts`.o_menu_systray .o_nav_entry`).toEqual(["Working offline", ""]);
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='error']`).click();
-    expect(".o-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(`.w_menu_systray .w_nav_entry [data-icon='error']`).toHaveCount(1);
+    expect(queryAllTexts`.w_menu_systray .w_nav_entry`).toEqual(["Working offline", ""]);
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='error']`).click();
+    expect(".w-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual([
         "CONTACTS",
         "Nice plop",
         "Created",
@@ -259,12 +259,12 @@ test("scheduledORM: inError", async () => {
         "Created",
         "",
     ]);
-    expect(`.o-dropdown--menu .o-dropdown-item [data-icon='error']`).toHaveCount(1);
-    expect(`.o-dropdown--menu .o-dropdown-item div.text-danger`).toHaveCount(1);
-    expect(queryAllTexts`.o-dropdown--menu .o-dropdown-item div.text-danger`).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item [data-icon='error']`).toHaveCount(1);
+    expect(`.w-dropdown--menu .w-dropdown-item div.text-danger`).toHaveCount(1);
+    expect(queryAllTexts`.w-dropdown--menu .w-dropdown-item div.text-danger`).toEqual([
         "Cedric Lards Ennais",
     ]);
-    expect(`.o-dropdown--menu .o-dropdown-item div.text-danger`).toHaveAttribute("data-tooltip");
+    expect(`.w-dropdown--menu .w-dropdown-item div.text-danger`).toHaveAttribute("data-tooltip");
 });
 
 test.tags("mobile");
@@ -332,15 +332,15 @@ test("scheduledORM: mobile", async () => {
     );
 
     await animationFrame();
-    expect(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).toHaveCount(1);
-    expect(queryAllTexts`.o_menu_systray .o_nav_entry`).toEqual(["", ""], {
+    expect(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).toHaveCount(1);
+    expect(queryAllTexts`.w_menu_systray .w_nav_entry`).toEqual(["", ""], {
         message: "no text on mobile",
     });
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='link_off']`).click();
     await animationFrame();
-    expect(".o-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(3);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual(
+    expect(".w-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(3);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual(
         [
             "CONTACTS",
             "Nice plop",
@@ -356,18 +356,18 @@ test("scheduledORM: mobile", async () => {
         ],
         { message: "The scheduled orm are grouped by action Name!" }
     );
-    expect(`.o-dropdown--menu .o-dropdown-item:not(.o_cursor_auto)`).toHaveCount(1, {
+    expect(`.w-dropdown--menu .w-dropdown-item:not(.w_cursor_auto)`).toHaveCount(1, {
         message: "We can click on the one with viewType 'form' and previously visited",
     });
     // The one that is not viewType form, can't clicked on, and have text muted !
-    expect(`.o-dropdown--menu .o-dropdown-item.o_cursor_auto`).toHaveCount(2);
-    expect(`.o-dropdown--menu .o-dropdown-item div.text-muted`).toHaveCount(2);
+    expect(`.w-dropdown--menu .w-dropdown-item.w_cursor_auto`).toHaveCount(2);
+    expect(`.w-dropdown--menu .w-dropdown-item div.text-muted`).toHaveCount(2);
 
     // remove one.
-    await contains(`.o-dropdown--menu .o-dropdown-item:nth-child(3) button.btn`).click();
+    await contains(`.w-dropdown--menu .w-dropdown-item:nth-child(3) button.btn`).click();
     await contains(`.modal-dialog .modal-footer button.btn-primary`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual([
         "CONTACTS",
         "Nice plop",
         "Created",
@@ -379,7 +379,7 @@ test("scheduledORM: mobile", async () => {
     ]);
 
     // click on one
-    await contains(`.o-dropdown--menu .o-dropdown-item`).click();
+    await contains(`.w-dropdown--menu .w-dropdown-item`).click();
     expect.verifySteps([
         {
             action: 22,
@@ -439,15 +439,15 @@ test("scheduledORM: inError mobile", async () => {
     );
 
     await animationFrame();
-    expect(`.o_menu_systray .o_nav_entry [data-icon='error']`).toHaveCount(1);
-    expect(queryAllTexts`.o_menu_systray .o_nav_entry`).toEqual(["", ""], {
+    expect(`.w_menu_systray .w_nav_entry [data-icon='error']`).toHaveCount(1);
+    expect(queryAllTexts`.w_menu_systray .w_nav_entry`).toEqual(["", ""], {
         message: "no text in mobile",
     });
-    await contains(`.o_menu_systray .o_nav_entry [data-icon='error']`).click();
+    await contains(`.w_menu_systray .w_nav_entry [data-icon='error']`).click();
     await animationFrame();
-    expect(".o-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(".w-dropdown--menu:visible").toHaveCount(1, { message: "dropdown should be visible" });
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual([
         "CONTACTS",
         "Nice plop",
         "Created",
@@ -457,9 +457,9 @@ test("scheduledORM: inError mobile", async () => {
         "Created",
         "",
     ]);
-    expect(`.o-dropdown--menu .o-dropdown-item [data-icon='error']`).toHaveCount(1);
-    expect(`.o-dropdown--menu .o-dropdown-item div.text-danger`).toHaveCount(1);
-    expect(queryAllTexts`.o-dropdown--menu .o-dropdown-item div.text-danger`).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item [data-icon='error']`).toHaveCount(1);
+    expect(`.w-dropdown--menu .w-dropdown-item div.text-danger`).toHaveCount(1);
+    expect(queryAllTexts`.w-dropdown--menu .w-dropdown-item div.text-danger`).toEqual([
         "Cedric Lards Ennais",
     ]);
 });

@@ -30,10 +30,10 @@ test("Can open lead from internal link", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "/lead My Lead");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await contains(".o-mail-ChatWindow", { count: 0 });
-    await click('.o-mail-NotificationMessage a[data-oe-model="crm.lead"]');
-    await contains(".o-mail-ChatWindow-header", { text: "Visitor" });
-    await contains(".o_form_view .o_last_breadcrumb_item span", { text: "My Lead" });
+    await insertText(".w-mail-Composer-input", "/lead My Lead");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await contains(".w-mail-ChatWindow", { count: 0 });
+    await click('.w-mail-NotificationMessage a[data-oe-model="crm.lead"]');
+    await contains(".w-mail-ChatWindow-header", { text: "Visitor" });
+    await contains(".w_form_view .w_last_breadcrumb_item span", { text: "My Lead" });
 });

@@ -16,11 +16,11 @@ websocket.enableTrace(True, level=logging.getLevelName(_logger.getEffectiveLevel
 
 @helpers.require_db
 def send_to_controller(params, method="send_websocket", server_url=None):
-    """Confirm the operation's completion by sending a response back to the Odoo server
+    """Confirm the operation's completion by sending a response back to the WETH server
 
     :param params: the parameters to send back to the server
     :param method: method to call on the IoT box controller
-    :param server_url: URL of the Odoo server (provided by decorator).
+    :param server_url: URL of the WETH server (provided by decorator).
     """
     request_path = f"{server_url}/iot/box/{method}"
     try:
@@ -72,7 +72,7 @@ class WebsocketClient(Thread):
         """This class will not be instantiated if no db is connected.
 
         :param channel: WebSocket channel provided by db, used for retro compatibility (optional).
-        :param server_url: URL of the Odoo server.
+        :param server_url: URL of the WETH server.
         """
         self.channel = channel
         self.server_url = server_url
@@ -99,7 +99,7 @@ class WebsocketClient(Thread):
             _logger.exception("Failed to get session ID")
 
         self.ws = websocket.WebSocketApp(self.websocket_url,
-            header={"User-Agent": "OdooIoTBox/1.0", "Cookie": f"session_id={self.session_id}"},
+            header={"User-Agent": "WethIoTBox/1.0", "Cookie": f"session_id={self.session_id}"},
             on_open=self.on_open, on_message=self.on_message,
             on_error=on_error, on_close=self.on_close)
 

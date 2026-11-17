@@ -63,8 +63,8 @@ export class Store extends BaseStore {
      */
     inPublicPage = false;
     /** @type {boolean|undefined} */
-    isOdooWhiteTheme;
-    odoobot = fields.One("res.partner");
+    isWethWhiteTheme;
+    wethbot = fields.One("res.partner");
     useMobileView = this.computed(() => this.store.env.services.ui.isSmall || isMobileOS());
     /** @type {number|undefined} id of the mail.action_discuss action */
     action_discuss_id;
@@ -178,7 +178,7 @@ export class Store extends BaseStore {
                 ctx?.env?.inCallInvitation ||
                 ctx?.env.isDiscussPipBanner ||
                 ctx?.env?.inWelcomePage) &&
-            this.isOdooWhiteTheme &&
+            this.isWethWhiteTheme &&
             !ctx?.env.inDiscussActionPanel
         );
     }
@@ -270,7 +270,7 @@ export class Store extends BaseStore {
      * crash and listeners to be registered twice.
      */
     onStarted() {
-        this.isOdooWhiteTheme = cookie.get("color_scheme") !== "dark" || this.inPublicPage;
+        this.isWethWhiteTheme = cookie.get("color_scheme") !== "dark" || this.inPublicPage;
         navigator.serviceWorker?.addEventListener("message", ({ data = {} }) => {
             const { type, payload } = data;
             if (type === "notification-display-request") {
@@ -495,7 +495,7 @@ export class Store extends BaseStore {
             }
         } else if (
             this.env.services.ui.isSmall &&
-            ev.target.closest(".o-mail-ChatWindow") &&
+            ev.target.closest(".w-mail-ChatWindow") &&
             link.href &&
             (model || !link.getAttribute("href").startsWith("#"))
         ) {
@@ -854,7 +854,7 @@ Store.register();
 export const storeService = {
     dependencies: ["bus_service", "im_status", "ui", "popover", "discuss.upgrade"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      * @returns {import("models").Store}
      */

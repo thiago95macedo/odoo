@@ -17,20 +17,20 @@ export async function openClosePersistedChannel() {
     getService("bus_service").subscribe("discuss.channel/new_message", () =>
         expect.step("discuss.channel/new_message")
     );
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("How can I help?");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
-    await contains(".o-mail-Message-content", { text: "How can I help?" });
+    await contains(".w-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Message-content", { text: "How can I help?" });
     await expect.waitForSteps(["discuss.channel/new_message"]);
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
+    await click(".w-livechat-CloseConfirmation-leave");
     // Leaving posts the "Visitor left the conversation." message: wait for its
     // bus notification so it does not race teardown as an unverified step.
     await expect.waitForSteps(["discuss.channel/new_message"]);
-    await contains(".o-mail-ChatWindow", { text: "Did we correctly answer your question?" });
+    await contains(".w-mail-ChatWindow", { text: "Did we correctly answer your question?" });
     await click("[title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
-    await contains(".o-livechat-LivechatButton", { count: 1 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
+    await contains(".w-livechat-LivechatButton", { count: 1 });
 }

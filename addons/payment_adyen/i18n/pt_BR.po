@@ -21,7 +21,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_adyen/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgid "A Dutch payment provider covering Europe and the US."
 msgstr "Um provedor de pagamento holandês que atende a Europa e aos EUA."
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid "A request was sent to void the transaction %(reference)s."
 msgstr "Foi enviado um pedido para anular a transação %(reference)s."
@@ -155,7 +155,7 @@ msgid "Bizum"
 msgstr "Bizum"
 
 #. module: payment_adyen
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_adyen/static/src/interactions/payment_form.js:0
 msgid "Cannot display the payment form"
 msgstr "Não é possível exibir o formulário de pagamento"
@@ -277,7 +277,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: payment_adyen
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_adyen/static/src/interactions/payment_form.js:0
 msgid "Incorrect payment details"
 msgstr "Informações de pagamento incorretas"
@@ -423,7 +423,7 @@ msgid "Payment Transaction"
 msgstr "Transação do pagamento"
 
 #. module: payment_adyen
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_adyen/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -459,13 +459,13 @@ msgid "Ratepay"
 msgstr "Ratepay"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid "Received data with invalid payment state: %s"
 msgstr "Dados recebidos com estado de pagamento inválido: %s"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/controllers/main.py:0
 msgid "Received tampered payment request data."
 msgstr "Dados da solicitação de pagamento recebidos alterados."
@@ -501,7 +501,7 @@ msgid "The HMAC key of the webhook"
 msgstr "A chave HMAC do webhook"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid ""
 "The amount processed by Adyen for the transaction %s is different than the "
@@ -516,7 +516,7 @@ msgid "The base URL for the API endpoints"
 msgstr "O URL de base dos endpoints da API"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid "The capture of the transaction %s failed."
 msgstr "A captura da transação %s falhou."
@@ -531,7 +531,7 @@ msgstr ""
 "                    processada pelo Adyen e refletida no WETH."
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid ""
 "The capture request of %(amount)s for transaction %(ref)s has been sent."
@@ -559,7 +559,7 @@ msgid "The unique reference of the partner owning this token"
 msgstr "A referência exclusiva do usuário a quem pertence o token"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid "The void of the transaction %s failed."
 msgstr "O cancelamento da transação %s falhou."
@@ -625,7 +625,7 @@ msgid "Wero"
 msgstr "Wero"
 
 #. module: payment_adyen
-#. odoo-python
+#. weth-python
 #: code:addons/payment_adyen/models/payment_transaction.py:0
 msgid "Your payment was refused. Please try again."
 msgstr "Seu pagamento foi recusado. Tente novamente."

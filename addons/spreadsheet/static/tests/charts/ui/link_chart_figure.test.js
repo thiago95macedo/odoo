@@ -24,7 +24,7 @@ let serverData = /** @type {ServerData} */ ({});
  * able to interact with it.
  */
 async function showChartMenu(fixture) {
-    const chartMenu = fixture.querySelector(".o-chart-menu-item");
+    const chartMenu = fixture.querySelector(".w-chart-menu-item");
     chartMenu.style.display = "flex";
     await animationFrame();
 }
@@ -32,7 +32,7 @@ async function showChartMenu(fixture) {
 /** Click on external link of the first chart found in the page*/
 async function clickChartExternalLink(fixture) {
     await showChartMenu(fixture);
-    const chartMenuItem = fixture.querySelector(".o-chart-menu-item[data-id='chartOdooLink']");
+    const chartMenuItem = fixture.querySelector(".w-chart-menu-item[data-id='chartWethLink']");
     await click(chartMenuItem);
     await animationFrame();
 }
@@ -107,38 +107,38 @@ beforeEach(() => {
     serverState.userId = 1;
 });
 
-test("icon external link isn't on the chart when its not linked to an odoo menu", async function () {
+test("icon external link isn't on the chart when its not linked to an weth menu", async function () {
     const { model } = await createModelWithDataSource({
         serverData,
     });
     const fixture = await mountSpreadsheet(model);
     createBasicChart(model, chartId);
     await animationFrame();
-    const odooMenu = model.getters.getChartOdooLink(chartId);
-    expect(odooMenu).toBe(undefined, { message: "No menu linked with the chart" });
+    const wethMenu = model.getters.getChartWethLink(chartId);
+    expect(wethMenu).toBe(undefined, { message: "No menu linked with the chart" });
 
-    const externalRefIcon = fixture.querySelector(".o-chart-menu-item[data-id='chartOdooLink']");
+    const externalRefIcon = fixture.querySelector(".w-chart-menu-item[data-id='chartWethLink']");
     expect(externalRefIcon).toBe(null);
 });
 
-test("icon external link is on the chart when its linked to an odoo menu", async function () {
+test("icon external link is on the chart when its linked to an weth menu", async function () {
     const { model } = await createModelWithDataSource({
         serverData,
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: 1 },
+        wethLink: { type: "wethMenu", wethMenuId: 1 },
     });
 
-    const dataSourceLink = model.getters.getChartOdooLink(chartId);
+    const dataSourceLink = model.getters.getChartWethLink(chartId);
     expect(dataSourceLink).toMatchObject(
-        { type: "odooMenu", odooMenuId: 1 },
-        { message: "Odoo Menu is linked to chart" }
+        { type: "wethMenu", wethMenuId: 1 },
+        { message: "WETH Menu is linked to chart" }
     );
     await animationFrame();
-    expect(".o-chart-menu-item[data-id='chartOdooLink']").toHaveCount(1);
+    expect(".w-chart-menu-item[data-id='chartWethLink']").toHaveCount(1);
 });
 
 test("icon external link is not on the chart when its linked to a wrong menu", async function () {
@@ -147,35 +147,35 @@ test("icon external link is not on the chart when its linked to a wrong menu", a
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: "menu which does not exist" },
+        wethLink: { type: "wethMenu", wethMenuId: "menu which does not exist" },
     });
-    const chartMenu = model.getters.getChartOdooLink(chartId);
+    const chartMenu = model.getters.getChartWethLink(chartId);
     expect(chartMenu).toBe(undefined, { message: "cannot get a wrong menu" });
     await animationFrame();
-    expect(".o-chart-menu-item[data-id='chartOdooLink']").toHaveCount(0);
+    expect(".w-chart-menu-item[data-id='chartWethLink']").toHaveCount(0);
 });
 
-test("icon external link is on the chart when its linked to an odoo datasource", async function () {
+test("icon external link is on the chart when its linked to an weth datasource", async function () {
     const { model } = await createModelWithDataSource({
         serverData,
     });
     await mountSpreadsheet(model);
     const dataSourceCoreId = insertChartInSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
+        wethLink: { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
     });
 
-    const dataSourceLink = model.getters.getChartOdooLink(chartId);
+    const dataSourceLink = model.getters.getChartWethLink(chartId);
     expect(dataSourceLink).toMatchObject(
         { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
-        { message: "Odoo datasource is linked to chart" }
+        { message: "WETH datasource is linked to chart" }
     );
     await animationFrame();
-    expect(".o-chart-menu-item[data-id='chartOdooLink']").toHaveCount(1);
+    expect(".w-chart-menu-item[data-id='chartWethLink']").toHaveCount(1);
 });
 
 test("icon external link is not on the chart when its linked to an invalid datasource", async function () {
@@ -184,18 +184,18 @@ test("icon external link is not on the chart when its linked to an invalid datas
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: {
+        wethLink: {
             type: "dataSource",
             dataSourceCoreId: "ds which does not exist",
             dataSourceType: "pivot",
         },
     });
-    const chartLink = model.getters.getChartOdooLink(chartId);
+    const chartLink = model.getters.getChartWethLink(chartId);
     expect(chartLink).toBe(undefined, { message: "cannot get an inexisting datasource" });
     await animationFrame();
-    expect(".o-chart-menu-item[data-id='chartOdooLink']").toHaveCount(0);
+    expect(".w-chart-menu-item[data-id='chartWethLink']").toHaveCount(0);
 });
 
 test("icon external link isn't on the chart in dashboard mode", async function () {
@@ -205,23 +205,23 @@ test("icon external link isn't on the chart in dashboard mode", async function (
     await mountSpreadsheet(model);
     const dataSourceCoreId = insertChartInSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
+        wethLink: { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
     });
-    const chartLink = model.getters.getChartOdooLink(chartId);
+    const chartLink = model.getters.getChartWethLink(chartId);
     expect(chartLink).toEqual(
         { dataSourceCoreId, type: "dataSource", dataSourceType: "chart" },
-        { message: "Odoo menu is linked to chart" }
+        { message: "WETH menu is linked to chart" }
     );
     model.updateMode("dashboard");
     await animationFrame();
-    expect(".o-chart-menu-item[data-id='chartOdooLink']").toHaveCount(0, {
+    expect(".w-chart-menu-item[data-id='chartWethLink']").toHaveCount(0, {
         message: "No link icon in dashboard",
     });
 });
 
-test("click on icon external link on chart redirect to the odoo menu", async function () {
+test("click on icon external link on chart redirect to the weth menu", async function () {
     const doActionStep = "doAction";
     mockActionService(doActionStep);
 
@@ -231,14 +231,14 @@ test("click on icon external link on chart redirect to the odoo menu", async fun
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: 2 },
+        wethLink: { type: "wethMenu", wethMenuId: 2 },
     });
-    const chartMenu = model.getters.getChartOdooLink(chartId);
+    const chartMenu = model.getters.getChartWethLink(chartId);
     expect(chartMenu).toEqual(
-        { type: "odooMenu", odooMenuId: 2 },
-        { message: "Odoo menu is linked to chart" }
+        { type: "wethMenu", wethMenuId: 2 },
+        { message: "WETH menu is linked to chart" }
     );
     await animationFrame();
 
@@ -255,9 +255,9 @@ test("can use menus xmlIds instead of menu ids", async function () {
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: "spreadsheet.test.menu2" },
+        wethLink: { type: "wethMenu", wethMenuId: "spreadsheet.test.menu2" },
     });
     await animationFrame();
 
@@ -281,9 +281,9 @@ test("Trying to open a menu without an action sends a notification to the user",
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: "spreadsheet.test.menu_without_action" },
+        wethLink: { type: "wethMenu", wethMenuId: "spreadsheet.test.menu_without_action" },
     });
     await animationFrame();
 
@@ -306,14 +306,14 @@ test("click on icon external link on chart redirect to the datasource action", a
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { dataSourceCoreId: pivotId, type: "dataSource", dataSourceType: "pivot" },
+        wethLink: { dataSourceCoreId: pivotId, type: "dataSource", dataSourceType: "pivot" },
     });
-    const chartLink = model.getters.getChartOdooLink(chartId);
+    const chartLink = model.getters.getChartWethLink(chartId);
     expect(chartLink).toEqual(
         { dataSourceCoreId: pivotId, type: "dataSource", dataSourceType: "pivot" },
-        { message: "Odoo menu is linked to chart" }
+        { message: "WETH menu is linked to chart" }
     );
     await animationFrame();
 

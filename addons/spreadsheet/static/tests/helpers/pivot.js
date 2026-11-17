@@ -1,5 +1,5 @@
 import { PivotArchParser } from "@web/views/pivot/pivot_arch_parser";
-import { OdooPivot } from "@spreadsheet/pivot/odoo_pivot";
+import { WethPivot } from "@spreadsheet/pivot/weth_pivot";
 import { addEmptyGranularity } from "@spreadsheet/pivot/pivot_helpers";
 import { getBasicPivotArch, getPyEnv } from "@spreadsheet/../tests/helpers/data";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
@@ -9,14 +9,14 @@ import { constants } from "@weth/o-spreadsheet";
 const { PIVOT_INSERT_TABLE_STYLE_ID } = constants;
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").WethSpreadsheetModel} WethSpreadsheetModel
  * @typedef {import("@spreadsheet").Zone} Zone
  */
 
 async function insertStaticPivot(model, pivotId, params) {
     const ds = model.getters.getPivot(pivotId);
-    if (!(ds instanceof OdooPivot)) {
-        throw new Error("The pivot data source is not an OdooPivot");
+    if (!(ds instanceof WethPivot)) {
+        throw new Error("The pivot data source is not an WethPivot");
     }
     const [col, row] = params.anchor || [0, 0];
     await ds.load();
@@ -48,7 +48,7 @@ function insertDynamicPivot(model, pivotId, params) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {WethSpreadsheetModel} model
  * @param {string} pivotId
  * @param {object} params
  * @param {string} [params.arch]
@@ -64,7 +64,7 @@ export async function insertPivotInSpreadsheet(model, pivotId, params) {
 
     const pyEnv = getPyEnv();
     const pivot = {
-        type: "ODOO",
+        type: "WETH",
         domain: [],
         context: {},
         measures: archInfo.activeMeasures.map((measure) => ({
@@ -98,7 +98,7 @@ export async function insertPivotInSpreadsheet(model, pivotId, params) {
  * @param {object} [params.serverData]
  * @param {function} [params.mockRPC]
  * @param {"dynamic"|"static"} [params.pivotType]
- * @returns {Promise<{ model: OdooSpreadsheetModel, env: object, pivotId: string}>}
+ * @returns {Promise<{ model: WethSpreadsheetModel, env: object, pivotId: string}>}
  */
 export async function createSpreadsheetWithPivot(params = {}) {
     const { model, env } = await createModelWithDataSource({

@@ -1,6 +1,7 @@
 // This file regroups the fixes and styling related to table inside reports
 
 table.table {
+
     // Fix alignment in PDF (default bs inheritance doesn't seem to apply)
     td {
         vertical-align: $table-cell-vertical-align;
@@ -11,18 +12,22 @@ table.table {
         vertical-align: middle;
     }
 
-    .o_line_section {
-        border-top: $border-width solid $o-gray-400;
+    .w_line_section {
+        border-top: $border-width solid $w-gray-400;
     }
 
-    .o_line_section {
-        td, td.o_price_total {
+    .w_line_section {
+
+        td,
+        td.w_price_total {
             background-color: $gray-200;
         }
     }
 
-    .o_line_subsection {
-        td, td.o_price_total {
+    .w_line_subsection {
+
+        td,
+        td.w_price_total {
             background-color: $gray-100;
         }
     }
@@ -33,47 +38,54 @@ div#total {
     page-break-inside: avoid;
 }
 
-// Table styling of the reports, apply the styling class .o_table_x
+// Table styling of the reports, apply the styling class .w_table_x
 // to the .article bloc of the report to change the table style.
 
-.o_table_standard,
-.o_table_compact {
-    table:not(.o_ignore_layout_styling) {
+.w_table_standard,
+.w_table_compact {
+    table:not(.w_ignore_layout_styling) {
         thead {
-            border-bottom: $border-width solid $o-gray-900;
+            border-bottom: $border-width solid $w-gray-900;
         }
 
-        th:first-child, td:first-child {
+        th:first-child,
+        td:first-child {
             padding-left: map-get($spacers, 1);
         }
 
-        th:last-child, td:last-child {
+        th:last-child,
+        td:last-child {
             padding-right: map-get($spacers, 1);
         }
 
-        td, th {
+        td,
+        th {
             padding-top: $table-cell-padding-y * .5;
             padding-bottom: $table-cell-padding-y * .5;
         }
     }
 
-    .o_total_table:not(.o_ignore_layout_styling),
-    .o_total_table:not(.o_ignore_layout_styling) .o_total {
+    .w_total_table:not(.w_ignore_layout_styling),
+    .w_total_table:not(.w_ignore_layout_styling) .w_total {
         border-top: $border-width solid $border-color;
     }
 }
 
-.o_table_compact {
-    table:not(.o_ignore_layout_styling) {
-        th:first-child, td:first-child {
+.w_table_compact {
+    table:not(.w_ignore_layout_styling) {
+
+        th:first-child,
+        td:first-child {
             padding-left: 0;
         }
 
-        th:last-child, td:last-child {
+        th:last-child,
+        td:last-child {
             padding-right: 0;
         }
 
-        td, th {
+        td,
+        th {
             padding-top: $table-cell-padding-y * .25;
             padding-bottom: $table-cell-padding-y * .25;
         }
@@ -84,18 +96,20 @@ div#total {
     }
 }
 
-.o_table_bold {
-    table:not(.o_ignore_layout_styling) {
+.w_table_bold {
+    table:not(.w_ignore_layout_styling) {
 
-        td:first-child, th:first-child {
+        td:first-child,
+        th:first-child {
             padding-left: map-get($spacers, 1);
         }
 
-        td:last-child, th:last-child {
+        td:last-child,
+        th:last-child {
             padding-right: map-get($spacers, 1);
         }
 
-        &:not(.o_total_table) {
+        &:not(.w_total_table) {
             th:first-child {
                 padding-left: map-get($spacers, 1);
             }
@@ -115,16 +129,17 @@ div#total {
             border-bottom: $border-width solid;
         }
 
-        .o_line_section, .o_line_subsection {
+        .w_line_section,
+        .w_line_subsection {
             border-top: $border-width solid;
         }
     }
 }
 
-.o_table_striped {
-    table:not(.o_ignore_layout_styling) {
+.w_table_striped {
+    table:not(.w_ignore_layout_styling) {
         tbody tr {
-            &.o_line_section {
+            &.w_line_section {
                 border: none;
             }
 
@@ -140,14 +155,14 @@ div#total {
                 border-bottom: $border-width solid;
             }
 
-            &.o_total strong {
+            &.w_total strong {
                 color: $body-color;
             }
         }
     }
 }
 
-.o_table_boxed table:not(.o_ignore_layout_styling) {
+.w_table_boxed table:not(.w_ignore_layout_styling) {
     thead {
         text-transform: uppercase;
 
@@ -163,12 +178,14 @@ div#total {
     @return url('data:image/gif,GIF89a%01%00%01%00%80%00%00%#{str-slice($hex, 4, 5)}%#{str-slice($hex, 6, 7)}%#{str-slice($hex, 8, 9)}%00%00%00,%00%00%00%00%01%00%01%00%00%02%02D%01%00;');
 }
 
-.o_table_boxed, .o_table_boxed-rounded {
-    table:not(.o_ignore_layout_styling) {
+.w_table_boxed,
+.w_table_boxed-rounded {
+    table:not(.w_ignore_layout_styling) {
         border-collapse: separate;
         border-spacing: 0;
 
-        th, td {
+        th,
+        td {
             // Right and bottom inner lines, hidden under the frame on the outer cells
             background-image: o-table-line($gray-400), o-table-line($gray-400);
             background-origin: border-box;
@@ -177,15 +194,17 @@ div#total {
             background-repeat: no-repeat;
         }
 
-        th:first-child, td:first-child {
+        th:first-child,
+        td:first-child {
             border-left: $border-width solid $gray-700;
         }
 
-        th:last-child, td:last-child {
+        th:last-child,
+        td:last-child {
             border-right: $border-width solid $gray-700;
         }
 
-        &:not(.o_total_table) tbody:first-child tr:first-child td {
+        &:not(.w_total_table) tbody:first-child tr:first-child td {
             border-top: $border-width solid $gray-700;
         }
 
@@ -199,40 +218,43 @@ div#total {
                 border-bottom: $border-width solid $gray-700;
             }
 
-            &.o_line_section td,
-            &.o_line_note td,
+            &.w_line_section td,
+            &.w_line_note td,
             &.is-subtotal td {
                 border-top: $border-width solid $gray-700;
                 border-bottom: $border-width solid $gray-700;
             }
 
-            tr:not(.o_line_section):not(.o_line_subsection):not(.o_line_combo) td.o_price_total,
-            .o_taxes td {
+            tr:not(.w_line_section):not(.w_line_subsection):not(.w_line_combo) td.w_price_total,
+            .w_taxes td {
                 background-color: rgba($gray-200, .5);
             }
         }
     }
 
-    .o_total_table:not(.o_ignore_layout_styling) {
+    .w_total_table:not(.w_ignore_layout_styling) {
         td {
             background-image: none, o-table-line($gray-400);
         }
     }
 
-    .mt-5 .o_total_table:not(.o_ignore_layout_styling) {
+    .mt-5 .w_total_table:not(.w_ignore_layout_styling) {
         tbody:first-child tr:first-child td {
             border-top: $border-width solid $border-color;
         }
     }
 }
 
-.o_table_boxed-rounded {
-    table:not(.o_ignore_layout_styling) {
-        th:first-child, &:not(.o_total_table) tbody:first-child tr:first-child td:first-child {
+.w_table_boxed-rounded {
+    table:not(.w_ignore_layout_styling) {
+
+        th:first-child,
+        &:not(.w_total_table) tbody:first-child tr:first-child td:first-child {
             border-top-left-radius: $border-radius-lg;
         }
 
-        th:last-child, &:not(.o_total_table) tbody:first-child tr:first-child td:last-child {
+        th:last-child,
+        &:not(.w_total_table) tbody:first-child tr:first-child td:last-child {
             border-top-right-radius: $border-radius-lg;
         }
 
@@ -240,7 +262,7 @@ div#total {
             border-bottom-left-radius: $border-radius-lg;
         }
 
-        &:not(.o_has_total_table) tbody:last-child tr:last-child td:last-child {
+        &:not(.w_has_total_table) tbody:last-child tr:last-child td:last-child {
             border-bottom-right-radius: $border-radius-lg;
         }
 
@@ -250,18 +272,20 @@ div#total {
     }
 }
 
-.o_table_column {
-    table:not(.o_ignore_layout_styling) {
+.w_table_column {
+    table:not(.w_ignore_layout_styling) {
 
-        td:first-child, th:first-child {
+        td:first-child,
+        th:first-child {
             padding-left: map-get($spacers, 1);
         }
 
-        td:last-child, th:last-child {
+        td:last-child,
+        th:last-child {
             padding-right: map-get($spacers, 1);
         }
 
-        &:not(.o_total_table) {
+        &:not(.w_total_table) {
             th:first-child {
                 padding-left: map-get($spacers, 1);
             }
@@ -271,15 +295,17 @@ div#total {
             }
 
             td:not(:last-child) {
-                border-right: $border-width solid $o-gray-400;
+                border-right: $border-width solid $w-gray-400;
             }
         }
 
-        border-bottom: $border-width solid $o-gray-400;
+        border-bottom: $border-width solid $w-gray-400;
 
-        .o_line_section, .o_line_subsection, .o_line_combo {
-            border-bottom: $border-width solid $o-gray-400;
-            border-top: $border-width solid $o-gray-400;
+        .w_line_section,
+        .w_line_subsection,
+        .w_line_combo {
+            border-bottom: $border-width solid $w-gray-400;
+            border-top: $border-width solid $w-gray-400;
         }
     }
 }

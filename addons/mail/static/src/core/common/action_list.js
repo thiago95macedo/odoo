@@ -11,7 +11,7 @@ const actionListProps = [
     "dropdown?",
     "fw?",
     "hasBtnBg?",
-    "odooControlPanelSwitchStyle?",
+    "wethControlPanelSwitchStyle?",
 ];
 
 const actionListPropsSchema = {
@@ -19,7 +19,7 @@ const actionListPropsSchema = {
     fw: t.boolean().optional(true),
     hasBtnBg: t.boolean().optional(),
     inline: t.boolean().optional(),
-    odooControlPanelSwitchStyle: t.boolean().optional(),
+    wethControlPanelSwitchStyle: t.boolean().optional(),
 };
 
 class Action extends Component {
@@ -59,7 +59,7 @@ class Action extends Component {
 
     get hasBtnBg() {
         return (
-            this.props.odooControlPanelSwitchStyle ||
+            this.props.wethControlPanelSwitchStyle ||
             this.props.hasBtnBg ||
             this.props.action.hasBtnBg
         );
@@ -141,6 +141,6 @@ export class ActionList extends Component {
     });
 
     get hasBtnBg() {
-        return this.props.odooControlPanelSwitchStyle || this.props.hasBtnBg;
+        return this.props.wethControlPanelSwitchStyle || this.props.hasBtnBg;
     }
 }

@@ -417,7 +417,7 @@ export class CalendarCommonRenderer extends Component {
         let forceAllDay = false;
         // allDay should change if the event was dropped in an "allday" section
         // from a regular section or conversely. This ensures `allDay` fullcalendar events
-        // that are not all_day in odoo keep their value when simply moved around.
+        // that are not all_day in weth keep their value when simply moved around.
         if (info.oldEvent.allDay !== info.event.allDay) {
             forceAllDay = true;
         }
@@ -444,7 +444,7 @@ export class CalendarCommonRenderer extends Component {
      *
      * @param {object} event fullcalendar event
      * @param {boolean} forceAllDay if true, set the all_day to the value of allDay, otherwise keep the original record value
-     * @returns {object} odoo record values
+     * @returns {object} weth record values
      */
     fcEventToRecord(event, forceAllDay = false) {
         const { id, date, start, end } = event;
@@ -461,8 +461,8 @@ export class CalendarCommonRenderer extends Component {
             res.isAllDay = forceAllDay ? event.allDay : existingRecord.isAllDay;
         }
         // allday fullcalendar events are start-inclusive but end-exclusive for the date (`[start, end[`)
-        // whereas odoo is normally inclusive for both (`[start, end]`)
-        // This means fullcalendar [2000-01-01, 2000-01-02[ is actually equivalent to odoo [2000-01-01, 2000-01-01]
+        // whereas weth is normally inclusive for both (`[start, end]`)
+        // This means fullcalendar [2000-01-01, 2000-01-02[ is actually equivalent to weth [2000-01-01, 2000-01-01]
         if (["week", "month"].includes(this.props.model.scale)) {
             // case where the event is only visually "allday"
             if (existingRecord && !res.isAllDay && event.allDay) {

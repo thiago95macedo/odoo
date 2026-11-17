@@ -37,10 +37,10 @@ test("openChat: open new chat for user", async () => {
     const partnerId = pyEnv["res.partner"].create({});
     pyEnv["res.users"].create({ partner_id: partnerId });
     await start();
-    await contains(".o-mail-ChatHub");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatHub");
+    await contains(".w-mail-ChatWindow", { count: 0 });
     getService("mail.store").openChat({ partnerId });
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
 });
 
 test.tags("focus required");
@@ -57,7 +57,7 @@ test("openChat: open existing chat for user", async () => {
     });
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow .o-mail-Composer-input:not(:focus)");
+    await contains(".w-mail-ChatWindow .w-mail-Composer-input:not(:focus)");
     getService("mail.store").openChat({ partnerId });
-    await contains(".o-mail-ChatWindow .o-mail-Composer-input:focus");
+    await contains(".w-mail-ChatWindow .w-mail-Composer-input:focus");
 });

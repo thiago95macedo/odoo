@@ -31,13 +31,13 @@ test("can set foreground color", async () => {
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
     await click(".o_color_button[data-color='#6BADDE']");
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(".o_font_color_selector").toHaveCount(0); // selector closed
     expect(getContent(el)).toBe(`<p><font style="color: rgb(107, 173, 222);">[test]</font></p>`);
 });
@@ -48,13 +48,13 @@ test("can set background color", async () => {
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-select-color-background");
+    await click(".w-select-color-background");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
     await click(".o_color_button[data-color='#6BADDE']");
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(".o_font_color_selector").toHaveCount(0); // selector closed
     expect(getContent(el)).toBe(
         `<p><font style="background-color: rgba(107, 173, 222, 0.6);">[test]</font></p>`
@@ -67,11 +67,11 @@ test("should add opacity to custom background colors but not to theme colors", a
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await contains(".o-select-color-background").click();
+    await contains(".w-select-color-background").click();
     expect(".o_font_color_selector").toHaveCount(1);
 
     await contains(".o_color_button[data-color='#FF0000']").click(); // Select a custom color.
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(".o_font_color_selector").toHaveCount(0);
     // Verify custom color applies RGBA with 0.6 opacity.
     expect(getContent(el)).toBe(
@@ -80,12 +80,12 @@ test("should add opacity to custom background colors but not to theme colors", a
     // Verify paintbrush border bottom color has no opacity.
     expect("i[data-icon='colors']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
 
-    await contains(".o-select-color-background").click();
+    await contains(".w-select-color-background").click();
     expect(".o_font_color_selector").toHaveCount(1);
     expect(".o_color_button[data-color='#FF0000']").toHaveClass("selected");
 
     await contains(".o_color_button[data-color='o-color-1']").click(); // Select a theme color
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect(getContent(el)).toBe(`<p><font class="bg-o-color-1">[test]</font></p>`);
     // Verify computed background color has no opacity.
     expect(queryFirst("p font", { root: el })).toHaveStyle({
@@ -99,13 +99,13 @@ test("default opacity should get applied when applying background color to icon"
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-select-color-background");
+    await click(".w-select-color-background");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
     await click(".o_color_button[data-color='#FF0000']");
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(".o_font_color_selector").toHaveCount(0); // selector closed
     expect(getContent(el)).toBe(
         `<p><font style="background-color: rgba(255, 0, 0, 0.6);">[ab\ufeff<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>\ufeffcd]</font></p>`
@@ -117,7 +117,7 @@ test("can render and apply color theme", async () => {
 
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     expect("button[data-color='o-color-1']").toHaveCount(1);
@@ -136,7 +136,7 @@ test("can render and apply gradient color", async () => {
     await setupEditor("<p>[test]</p>");
 
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect("button[data-color='o-color-1']").toHaveStyle(
         { "background-color": "var(--o-color-1)" },
@@ -168,7 +168,7 @@ test("custom text-colors used in the editor are shown in the colorpicker", async
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click(".btn:contains('Custom')");
     await animationFrame();
@@ -197,7 +197,7 @@ test("custom background colors used in the editor are shown in the colorpicker",
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-background");
+    await click(".w-we-toolbar .w-select-color-background");
     await animationFrame();
     await click(".btn:contains('Custom')");
     await animationFrame();
@@ -222,7 +222,7 @@ test("applied custom color should be shown in colorpicker after switching tab", 
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-background");
+    await click(".w-we-toolbar .w-select-color-background");
     await animationFrame();
     await click(".btn:contains('Custom')");
     await animationFrame();
@@ -253,7 +253,7 @@ test("select hex color and apply it", async () => {
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
@@ -273,7 +273,7 @@ test("select hex color and apply it", async () => {
     expect("button[data-color='#017E84']").toHaveStyle({ backgroundColor: "rgb(1, 126, 132)" });
     expect(getContent(el)).toBe(`<p><font style="color: rgb(1, 126, 132);">[test]</font></p>`);
 
-    await click(".odoo-editor-editable");
+    await click(".weth-editor-editable");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(0);
     expect(getContent(el)).toBe(`<p><font style="color: rgb(1, 126, 132);">[test]</font></p>`);
@@ -284,7 +284,7 @@ test("should be able to apply hex color with opacity component", async () => {
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
@@ -308,7 +308,7 @@ test("should be able to apply hex color with opacity component", async () => {
         `<p><font style="color: rgba(1, 126, 132, 0.5);">[test]</font></p>`
     );
 
-    await click(".odoo-editor-editable");
+    await click(".weth-editor-editable");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(0);
     expect(getContent(el)).toBe(
@@ -321,7 +321,7 @@ test("custom color tab should be opened by default if selected color is a custom
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     expect(".btn:contains('Custom')").toHaveClass("active");
@@ -334,7 +334,7 @@ test("gradient tab should be opened by default if selected color is a gradient c
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     expect(".btn:contains('Gradient')").toHaveClass("active");
@@ -345,7 +345,7 @@ test("solid color tab should be opened by default if selected color is a theme c
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
 
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     expect(".btn:contains('Solid')").toHaveClass("active");
@@ -356,7 +356,7 @@ test("always show the current custom color", async () => {
     const styleContent = `* {color: ${defaultTextColor};}`;
     await setupEditor(`<p>[test]</p>`, { styleContent });
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
 
     await click(".btn:contains('Custom')");
@@ -393,7 +393,7 @@ test("always show the current custom color", async () => {
 test("show applied text color selected in solid color tab", async () => {
     setupEditor(`<p><font style="color: rgb(255, 0, 0);">[test]</font></p>`);
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_color_section .o_color_button.selected").toHaveCount(1);
     expect(".o_color_section .o_color_button.selected").toHaveStyle({
@@ -401,7 +401,7 @@ test("show applied text color selected in solid color tab", async () => {
     });
     await contains("button[data-color='#0000FF']").click();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground"); // Open color selector again
+    await click(".w-we-toolbar .w-select-color-foreground"); // Open color selector again
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     expect(".o_color_section .o_color_button.selected").toHaveCount(1);
@@ -419,7 +419,7 @@ test("Can reset a color", async () => {
     await expandToolbar();
     expect("font[style='color: rgb(255, 0, 0);']").toHaveCount(1);
     expect(".tested").not.toHaveInnerHTML("test");
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[data-icon='delete'].oi-filled");
     await animationFrame();
@@ -440,8 +440,8 @@ test("can reset a font color when both color and background-color are applied", 
             </p>
         `)
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await expectElementCount(".w-we-toolbar", 1);
+    await click(".w-we-toolbar .w-select-color-foreground");
     await contains(".o_font_color_selector button[data-icon='delete']").click();
     await animationFrame();
     expect(getContent(el)).toBe(
@@ -459,8 +459,8 @@ test("can reset a text gradient on partial selection when background gradient an
             </p>
         `)
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await expectElementCount(".w-we-toolbar", 1);
+    await click(".w-we-toolbar .w-select-color-foreground");
     await contains(".o_font_color_selector button[data-icon='delete']").click();
     await animationFrame();
     expect(getContent(el)).toBe(
@@ -487,7 +487,7 @@ test("can reset a background color when both color and background-color are appl
         `)
     );
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-background");
+    await click(".w-we-toolbar .w-select-color-background");
     await contains(".o_font_color_selector button[data-icon='delete']").click();
     await animationFrame();
     expect(getContent(el)).toBe(
@@ -506,7 +506,7 @@ test("can reset a background gradient on partial selection when background gradi
         `)
     );
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-background");
+    await click(".w-we-toolbar .w-select-color-background");
     await contains(".o_font_color_selector button[data-icon='delete']").click();
     await animationFrame();
     expect(getContent(el)).toBe(
@@ -536,14 +536,14 @@ test("selected text color is shown in the toolbar and update when hovering", asy
     expect(".o_font_color_selector").toHaveCount(0);
     await animationFrame();
     expect("i[data-icon='A']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     // Hover a color
     await hover("button[data-color='#FF00FF']");
     await animationFrame();
     expect("i[data-icon='A']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 255)" });
     // Hover out
-    await hover(".o-we-toolbar .o-select-color-foreground");
+    await hover(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect("i[data-icon='A']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
 });
@@ -559,7 +559,7 @@ test("selected text color is shown in the toolbar and update when clicking", asy
     expect(".o_font_color_selector").toHaveCount(0);
     await animationFrame();
     expect("i[data-icon='A']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[data-color='#FF00FF']");
     await animationFrame();
@@ -646,7 +646,7 @@ test("selected background color is shown in the toolbar and update when clicking
     await expandToolbar();
     await animationFrame();
     expect("i[data-icon='colors']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
-    await click(".o-select-color-background");
+    await click(".w-select-color-background");
     await animationFrame();
     await click("button[data-color='#FF00FF']");
     await animationFrame();
@@ -656,13 +656,13 @@ test("selected background color is shown in the toolbar and update when clicking
 test.tags("desktop");
 test("colorpicker should stay open when hovering colors in an empty unbreakable node", async () => {
     const { el } = await setupEditor(`<p>a</p><div class="oe_unbreakable">[<br></div><p>]b</p>`);
-    await expectElementCount(".o-we-toolbar", 1);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await expectElementCount(".w-we-toolbar", 1);
+    await click(".w-we-toolbar .w-select-color-foreground");
     await waitFor(".o_font_color_selector");
     await hover(queryOne("button[data-color='o-color-1']"));
     // Allow the debounced toolbar update triggered by selectionchange.
     await advanceTime(400);
-    expect(".o-we-toolbar").toHaveCount(1);
+    expect(".w-we-toolbar").toHaveCount(1);
     expect(".o_font_color_selector").toHaveCount(1);
     expect(getContent(el)).toBe(
         `<p>a</p><div class="oe_unbreakable"><font class="text-o-color-1">[<br></font></div><p>]b</p>`
@@ -673,7 +673,7 @@ test("clicking on button color parent does not crash", async () => {
     const { el } = await setupEditor("<p>[test]</p>");
 
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click(".o_colorpicker_section");
     await animationFrame();
@@ -686,7 +686,7 @@ test("gradient picker should be closed by default when switching gradient tab", 
     await setupEditor("<p>[test]</p>");
 
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
     await click(".btn:contains('Gradient')");
@@ -706,7 +706,7 @@ test("gradient picker correctly shows the current selected gradient", async () =
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[title='Define a custom gradient']");
     await animationFrame();
@@ -726,7 +726,7 @@ test("custom colorpicker should show default color when selected text has gradie
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await expectElementCount(".o_font_color_selector", 1);
     await click(".btn:contains('Custom')");
     await animationFrame();
@@ -743,7 +743,7 @@ test("gradient picker does change the selector gradient color", async () => {
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[title='Define a custom gradient']");
     await animationFrame();
@@ -767,7 +767,7 @@ test("gradient picker allow adding gradient color", async () => {
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[title='Define a custom gradient']");
     await animationFrame();
@@ -791,7 +791,7 @@ test("clicking on the angle input does not close the dropdown", async () => {
     );
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click("button[title='Define a custom gradient']");
     await animationFrame();
@@ -808,7 +808,7 @@ test("clicking on the angle input does not close the dropdown", async () => {
 test("should be able to select farthest-corner option in radial gradient", async () => {
     await setupEditor(`<p>a[bcd]e</p>`);
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".btn:contains('Gradient')").toHaveCount(1);
     await click(".btn:contains('Gradient')");
@@ -833,7 +833,7 @@ test("should be able to show preview when hovering radial type button", async ()
         `<p>a<font style="background-color: transparent; background-image: ${gradientBefore};">[bcd]</font>e</p>`
     );
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-background");
+    await click(".w-we-toolbar .w-select-color-background");
     await animationFrame();
     expect(".btn:contains('Gradient')").toHaveCount(1);
     await click(".btn:contains('Gradient')");
@@ -854,7 +854,7 @@ test("should be able to show preview when hovering radial type button", async ()
     expect("button[title='Extend to the farthest side']").not.toHaveClass("active");
 
     // Hover out
-    await hover(".o-we-toolbar .o-select-color-foreground");
+    await hover(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     expect(".o_custom_gradient_button").toHaveStyle({ backgroundImage: gradientBefore });
     expect(getContent(el)).toBe(
@@ -867,7 +867,7 @@ test("should be able to show preview when hovering radial type button", async ()
     await animationFrame();
     await click("button[title='Extend to the farthest side']");
     await animationFrame();
-    await hover(".o-we-toolbar .o-select-color-foreground");
+    await hover(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
 
     expect(".o_custom_gradient_button").toHaveStyle({ backgroundImage: gradientAfter });
@@ -880,7 +880,7 @@ test("should be able to show preview when hovering radial type button", async ()
 test("solid tab color navigation using keys", async () => {
     const { el } = await setupEditor("<p>[test]</p>");
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await press("Tab");
     expect('.o_font_color_selector button:contains("Custom")').toBeFocused();
@@ -907,11 +907,11 @@ test("solid tab color navigation using keys", async () => {
 test("custom tab color navigation using keys", async () => {
     const { el } = await setupEditor("<p>[test]</p>");
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click(".o_color_button[data-color='#FF0000']");
     await animationFrame();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await press("Tab");
     expect('.o_font_color_selector button:contains("Custom")').toBeFocused();
@@ -939,7 +939,7 @@ describe("keyboard navigation", () => {
             </p>`
         );
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await press("Tab");
         expect('.o_font_color_selector button:contains("Custom")').toBeFocused();
@@ -978,7 +978,7 @@ describe("keyboard navigation", () => {
             </p>`
         );
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await press("Tab");
         expect('.o_font_color_selector button:contains("Custom")').toBeFocused();
@@ -1031,7 +1031,7 @@ describe("keyboard navigation", () => {
             </p>`
         );
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await press("Tab");
         expect('.o_font_color_selector button:contains("Custom")').toBeFocused();
@@ -1070,7 +1070,7 @@ describe("keyboard navigation", () => {
     test("click on saturation and brightness picker sets implicit focus on it", async () => {
         await setupEditor("<p>[test]</p>");
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await contains('.o_font_color_selector button:contains("Custom")').click();
         await contains(".o_font_color_selector .o_color_pick_area").click();
@@ -1097,7 +1097,7 @@ describe("keyboard navigation", () => {
             </p>`
         );
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await contains('.o_font_color_selector button:contains("Custom")').click();
         await contains(".o_font_color_selector .o_color_slider").click();
@@ -1121,7 +1121,7 @@ describe("keyboard navigation", () => {
             </p>`
         );
         await expandToolbar();
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await contains('.o_font_color_selector button:contains("Custom")').click();
         expect(".o_opacity_pointer").toHaveAttribute("aria-valuenow", "100.00");
@@ -1147,13 +1147,13 @@ describe("color preview", () => {
 
         await expandToolbar();
         expect(".o_font_color_selector").toHaveCount(0);
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await hover("button[data-color='o-color-1']");
         await animationFrame();
         expect("font").toHaveCount(1);
         expect("font").toHaveClass("text-o-color-1");
-        await hover(".o-we-toolbar .o-select-color-foreground");
+        await hover(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         expect("font").toHaveCount(0);
     });
@@ -1163,7 +1163,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         expect(".o_font_color_selector").toHaveCount(0);
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await hover("button[data-color='o-color-1']");
         await animationFrame();
@@ -1179,7 +1179,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         expect(".o_font_color_selector").toHaveCount(0);
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await hover("button[data-color='o-color-1']");
         await animationFrame();
@@ -1206,7 +1206,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         expect(".o_font_color_selector").toHaveCount(0);
-        await click(".o-we-toolbar .o-select-color-foreground");
+        await click(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         await hover("button[data-color='o-color-1']");
         await animationFrame();
@@ -1247,7 +1247,7 @@ describe("color preview", () => {
         );
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-background");
+        await click(".w-select-color-background");
         await animationFrame();
         // Hover a color
         await hover("button[data-color='#CE0000']");
@@ -1268,7 +1268,7 @@ describe("color preview", () => {
             </table></div><p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>
         `);
         // Hover out
-        await hover(".o-we-toolbar .o-select-color-foreground");
+        await hover(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         expect(getContent(el)).toBe(`
             <p data-selection-placeholder=""><br></p><div class="o_table_wrapper"><table class="table table-bordered o_table o_selected_table">
@@ -1286,7 +1286,7 @@ describe("color preview", () => {
                 </tbody>
             </table></div><p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>
         `);
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("should preview color in table on hover in custom tab", async () => {
@@ -1313,7 +1313,7 @@ describe("color preview", () => {
         );
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-background");
+        await click(".w-select-color-background");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1336,7 +1336,7 @@ describe("color preview", () => {
             </table></div><p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>
         `);
         // Hover out
-        await hover(".o-we-toolbar .o-select-color-foreground");
+        await hover(".w-we-toolbar .w-select-color-foreground");
         await animationFrame();
         expect(getContent(el)).toBe(`
             <p data-selection-placeholder=""><br></p><div class="o_table_wrapper"><table class="table table-bordered o_table o_selected_table">
@@ -1354,7 +1354,7 @@ describe("color preview", () => {
                 </tbody>
             </table></div><p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>
         `);
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("should preview selected text color when tabbing", async () => {
@@ -1367,7 +1367,7 @@ describe("color preview", () => {
         await expandToolbar();
         await animationFrame();
         expect("i[data-icon='A']").toHaveStyle({ borderBottomColor: "rgb(255, 0, 0)" });
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await press("Tab"); // Tab to Custom
         await animationFrame();
@@ -1386,7 +1386,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1402,7 +1402,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1426,7 +1426,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1460,7 +1460,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1484,7 +1484,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1501,7 +1501,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1518,7 +1518,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1544,7 +1544,7 @@ describe("color preview", () => {
         await expandToolbar();
         await animationFrame();
         const gradient = queryOne("p font").style.backgroundImage;
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1566,7 +1566,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1588,7 +1588,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await animationFrame();
         await click(".btn:contains('Custom')");
         await animationFrame();
@@ -1607,7 +1607,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await contains(".btn:contains('Gradient')").click();
         await contains(".o_custom_gradient_button").click(); // Click previews the default gradient.
         const initialGradient = queryOne(".o_custom_gradient_button").style.backgroundImage;
@@ -1629,7 +1629,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await contains(".btn:contains('Gradient')").click();
         await contains(".o_custom_gradient_button").click();
         const angleInputEl = await getIframeInput(
@@ -1658,7 +1658,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await contains(".btn:contains('Gradient')").click();
         await contains(".o_custom_gradient_button").click();
         const angleInputEl = await getIframeInput(
@@ -1683,7 +1683,7 @@ describe("color preview", () => {
 
         await expandToolbar();
         await animationFrame();
-        await click(".o-select-color-foreground");
+        await click(".w-select-color-foreground");
         await contains(".btn:contains('Gradient')").click();
         await contains(".o_custom_gradient_button").click();
 
@@ -1720,8 +1720,8 @@ test("Should not close the color picker on icon color change", async () => {
         focusNode: icon.nextSibling,
         focusOffset: 0,
     });
-    await waitFor(".o-select-color-foreground");
-    await click(".o-select-color-foreground");
+    await waitFor(".w-select-color-foreground");
+    await click(".w-select-color-foreground");
     await waitFor('[data-color="o-color-1"]');
     await hover('[data-color="o-color-1"]');
     expectElementCount('[data-color="o-color-1"]', 1);
@@ -1736,10 +1736,10 @@ test("Should not close the color picker on icon color change", async () => {
 test.tags("desktop");
 test("should move focus to next element when pressing Tab after selecting custom gradient", async () => {
     await setupEditor(`<p>This is a [test].</p>`);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 
     // Open the color picker and select the graident tab
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await expectElementCount(".o_font_color_selector", 1);
     await click(".btn:contains('Gradient')");
     await expectElementCount(".o_custom_gradient_button", 1);
@@ -1757,10 +1757,10 @@ test("should move focus to next element when pressing Tab after selecting custom
 test.tags("desktop");
 test("should close the color picker and return focus to the toolbar color button on escape", async () => {
     const { el } = await setupEditor(`<p>[test]</p>`);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 
     // Open the color picker and select the graident tab
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await expectElementCount(".o_font_color_selector", 1);
     expect("button.solid-tab").toBeFocused();
 
@@ -1768,17 +1768,17 @@ test("should close the color picker and return focus to the toolbar color button
     // focus should return to the toolbar color button
     await press("Escape");
     expectElementCount(".o_font_color_selector", 0); // selector closed
-    expect(".o-select-color-foreground").toBeFocused();
+    expect(".w-select-color-foreground").toBeFocused();
     expect(getContent(el)).toBe(`<p>[test]</p>`);
 });
 
 test.tags("desktop");
 test("should close the color picker and return focus to the editable on selecting a color", async () => {
     const { el } = await setupEditor(`<p>[test]</p>`);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 
     // Open the color picker and select the graident tab
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await expectElementCount(".o_font_color_selector", 1);
     expect("button.solid-tab").toBeFocused();
 

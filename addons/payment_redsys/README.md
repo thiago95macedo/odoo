@@ -21,9 +21,9 @@ submission provided by the `payment` module.
 ## Module history
 
 - `saas-19.3`
-  - Support for tokenization is added. odoo/odoo#253606.
+  - Support for tokenization is added. weth/weth#253606.
 - `19.0`
-  - Integration with the Redirection API. odoo/odoo#205135.
+  - Integration with the Redirection API. weth/weth#205135.
 
 ## Testing instructions
 

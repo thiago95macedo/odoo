@@ -1,44 +1,44 @@
-.o-FileViewer {
+.w-FileViewer {
     z-index: -1;
     outline: none;
 }
 
-.o-FileViewer-navigation {
+.w-FileViewer-navigation {
     width: 40px;
     height: 40px;
 }
 
-.o-FileViewer-header {
+.w-FileViewer-header {
     color: #fff;
-    background-color: var(--FileViewer-toolbarBgColor, #{$o-gray-800});
-    height: $o-navbar-height;
+    background-color: var(--FileViewer-toolbarBgColor, #{$w-gray-800});
+    height: $w-navbar-height;
 }
 
-.o-FileViewer-main {
+.w-FileViewer-main {
     z-index: -1;
-    padding: ($o-navbar-height * 1.125) 0;
+    padding: ($w-navbar-height * 1.125) 0;
 
-    &:has(.o-FileViewer-loading) {
+    &:has(.w-FileViewer-loading) {
         cursor: wait;
     }
 }
 
-.o-FileViewer-zoomer {
-    padding: ($o-navbar-height * 1.125) 0;
+.w-FileViewer-zoomer {
+    padding: ($w-navbar-height * 1.125) 0;
 }
 
-.o-FileViewer-headerButton:hover {
+.w-FileViewer-headerButton:hover {
     background-color: rgba($white, 0.1);
     color: lighten($gray-400, 15%);
 }
 
-.o-FileViewer-toolbar {
+.w-FileViewer-toolbar {
     bottom: map-get($spacers, 2);
-    --border-color: var(--FileViewer-toolbarBorder, #{mix($o-gray-600, $o-gray-700)});
+    --border-color: var(--FileViewer-toolbarBorder, #{mix($w-gray-600, $w-gray-700)});
 }
 
-.o-FileViewer-toolbarButton {
-    background-color: var(--FileViewer-toolbarBgColor, #{$o-gray-800});
+.w-FileViewer-toolbarButton {
+    background-color: var(--FileViewer-toolbarBgColor, #{$w-gray-800});
     color: #fff;
 
     &:hover {
@@ -46,15 +46,15 @@
     }
 }
 
-.o-FileViewer-view {
+.w-FileViewer-view {
     background-color: #000000;
     box-shadow: 0 0 40px #000000;
     outline: none;
 
-    &.o-isText {
+    &.w-isText {
         background: $white;
 
-        &.o-FileViewer-loading {
+        &.w-FileViewer-loading {
             background: $black;
             opacity: 50%;
             pointer-events: none;

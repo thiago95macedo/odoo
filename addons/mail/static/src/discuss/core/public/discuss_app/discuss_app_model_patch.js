@@ -7,7 +7,7 @@ patch(DiscussApp.prototype, {
     /**
      * The public page has no backend router/action stack, so `activeId` can't be
      * persisted as a `router.pushState` query param the way the backend does (it
-     * would rewrite the path to `/odoo`). Instead, a channel selection is reflected
+     * would rewrite the path to `/weth`). Instead, a channel selection is reflected
      * in the URL path (e.g. `/discuss/channel/10`), while anything else (e.g. a
      * sidebar tab) has no channel to route to, so it goes to the channel-less
      * `/discuss` route with the tab as an `active_id` query param.

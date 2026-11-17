@@ -115,9 +115,9 @@ describe("AccountFileUploader", () => {
             resId: 7,
         });
 
-        expect(".o_widget_account_file_uploader").toHaveCount(1);
+        expect(".w_widget_account_file_uploader").toHaveCount(1);
         const file = new File(["test"], "fake_file.txt", { type: "text/plain" });
-        await contains(".o_widget_account_file_uploader a").click();
+        await contains(".w_widget_account_file_uploader a").click();
         await setInputFiles([file]);
         await expect.waitForSteps([
             "create ir.attachment",
@@ -145,8 +145,8 @@ describe("AccountMoveUploadKanbanView", () => {
             resModel: "partner",
         });
 
-        expect(".o_control_panel .o_button_upload_bill:visible").toHaveCount(1);
-        expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(1);
+        expect(".w_control_panel .w_button_upload_bill:visible").toHaveCount(1);
+        expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(1);
     });
 });
 
@@ -167,22 +167,22 @@ describe("PaymentTermsLineWidget", () => {
             </form>
             `,
         });
-        expect(".o_data_row").toHaveCount(2);
+        expect(".w_data_row").toHaveCount(2);
         // click the add button
-        await contains(".o_field_x2many_list_row_add > button").click();
+        await contains(".w_field_x2many_list_row_add > button").click();
         // make sure the new record is added
-        expect(".o_data_row").toHaveCount(3);
+        expect(".w_data_row").toHaveCount(3);
         // global click
-        await contains(".o_form_view").click();
+        await contains(".w_form_view").click();
         // make sure the new record is still there
-        expect(".o_data_row").toHaveCount(3);
+        expect(".w_data_row").toHaveCount(3);
         // click the add button again
-        await contains(".o_field_x2many_list_row_add > button").click();
+        await contains(".w_field_x2many_list_row_add > button").click();
         // make sure the new record is added
-        expect(".o_data_row").toHaveCount(4);
+        expect(".w_data_row").toHaveCount(4);
         // click on an existing record
-        await contains(".o_data_row .o_data_cell").click();
+        await contains(".w_data_row .w_data_cell").click();
         // make sure the new record is still there
-        expect(".o_data_row").toHaveCount(4);
+        expect(".w_data_row").toHaveCount(4);
     });
 });

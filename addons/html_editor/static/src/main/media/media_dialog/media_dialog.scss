@@ -35,10 +35,10 @@
         }
 
         .o_existing_attachment_remove {
-            border-radius: 0 0 0 $o-we-item-border-radius;
+            border-radius: 0 0 0 $w-we-item-border-radius;
 
             &:hover {
-                color: $o-we-color-danger;
+                color: $w-we-color-danger;
             }
         }
     }
@@ -50,7 +50,7 @@
     .o_we_load_more {
         scroll-margin: $modal-inner-padding;
 
-        &.o_hide_loading > * {
+        &.o_hide_loading>* {
             display: none;
         }
     }

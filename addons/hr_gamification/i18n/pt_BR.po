@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-01 22:29+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_gamification/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -240,7 +240,7 @@ msgid "Public Employee"
 msgstr "Funcionário público"
 
 #. module: hr_gamification
-#. odoo-python
+#. weth-python
 #: code:addons/hr_gamification/models/gamification.py:0
 msgid "Received Badge"
 msgstr "Distintivo recebido"
@@ -256,7 +256,7 @@ msgid "Save"
 msgstr "Salvar"
 
 #. module: hr_gamification
-#. odoo-python
+#. weth-python
 #: code:addons/hr_gamification/models/gamification.py:0
 msgid "The selected employee does not correspond to the selected user."
 msgstr "O funcionário selecionado não corresponde ao usuário selecionado."
@@ -284,7 +284,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: hr_gamification
-#. odoo-python
+#. weth-python
 #: code:addons/hr_gamification/models/gamification.py:0
 msgid "View Your Badge"
 msgstr "Ver sua medalha"
@@ -295,7 +295,7 @@ msgid "What are you thankful for?"
 msgstr "Pelo que você é grato?"
 
 #. module: hr_gamification
-#. odoo-python
+#. weth-python
 #: code:addons/hr_gamification/wizard/gamification_badge_user_wizard.py:0
 msgid "You can not send a badge to yourself."
 msgstr "Você não pode enviar uma medalha para si mesmo."

@@ -6,7 +6,7 @@ import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
 
 /**
- * @param {import("@web/env").OdooEnv} env
+ * @param {import("@web/env").WethEnv} env
  * @param {object} action
  */
 async function downloadSpreadsheet(env, action) {

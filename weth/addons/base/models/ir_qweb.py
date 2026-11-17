@@ -65,7 +65,7 @@ in the IrQweb class.
 
 .. code-block:: rst
 
-    Odoo
+    Weth
      ┗━► _render (returns MarkupSafe)
         ┗━► _compile (returns function)                                        ◄━━━━━━━━━━┓
            ┗━► _compile_node (returns code string array)                       ◄━━━━━━━━┓ ┃
@@ -184,10 +184,10 @@ Only validate the **input**, the compilation if inside the ``t-if`` directive.
 
 ``t-groups`` (``groups`` is an alias)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Values**: name of the allowed odoo user group, or preceded by ``!`` for
+**Values**: name of the allowed weth user group, or preceded by ``!`` for
 prohibited groups
 
-The generated code uses ``has_group`` Odoo method from ``res.users`` model.
+The generated code uses ``has_group`` WETH method from ``res.users`` model.
 
 ``t-foreach``
 ~~~~~~~~~~~~~
@@ -868,7 +868,7 @@ class IrQweb(models.AbstractModel):
                     error.qweb.ref = frame.params.view_ref
                 qweb_error_info = error.qweb
             elif not isinstance(error, UserError):
-                # If is not an odoo Exception check if the current error is raise from
+                # If is not an weth Exception check if the current error is raise from
                 # IrQweb (models or computed code). In this case, convert it into an QWebError.
                 isQweb = False
 
@@ -2823,7 +2823,7 @@ class IrQweb(models.AbstractModel):
         elif debugger in SUPPORTED_DEBUGGER:
             warnings.warn(
                 "Using t-debug with an explicit debugger is deprecated "
-                "since Odoo 17.0, keep the value empty and configure the "
+                "since WETH 17.0, keep the value empty and configure the "
                 "``breakpoint`` builtin instead.",
                 category=DeprecationWarning,
                 stacklevel=2,

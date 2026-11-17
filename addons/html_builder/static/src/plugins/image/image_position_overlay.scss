@@ -4,7 +4,7 @@
     z-index: 1;
 
     .o_we_overlay_mask {
-        background-color: rgba(0,0,0,.7);
+        background-color: rgba(0, 0, 0, .7);
         width: 100%;
         height: 100%;
     }
@@ -23,10 +23,11 @@
 
     .o_we_overlay_buttons {
         .btn-primary {
-            @include button-variant($o-brand-primary, $o-brand-primary);
+            @include button-variant($w-brand-primary, $w-brand-primary);
         }
+
         .btn-secondary {
-            @include button-variant($o-we-color-danger, $o-we-color-danger);
+            @include button-variant($w-we-color-danger, $w-we-color-danger);
         }
     }
 }

@@ -4,7 +4,7 @@
     'name': 'Test Full Crm Flow',
     'category': 'Hidden/Tests',
     'description': """
-This module is intended to test the main crm flows of Odoo, both frontend and
+This module is intended to test the main crm flows of WETH, both frontend and
 backend. """,
     'depends': [
         'crm',

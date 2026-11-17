@@ -34,9 +34,9 @@ test("message translation in livechat (agent is member)", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("[title='Expand']");
-    await contains(".o-dropdown-item:contains('Translate')");
+    await contains(".w-dropdown-item:contains('Translate')");
 });
 
 test("message translation in livechat (agent is not member)", async () => {
@@ -57,9 +57,9 @@ test("message translation in livechat (agent is not member)", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("[title='Expand']");
-    await contains(".o-dropdown-item:contains('Translate')");
+    await contains(".w-dropdown-item:contains('Translate')");
 });
 
 test("click 'translate' on message prompts for auto-translate of new messages", async () => {
@@ -104,9 +104,9 @@ test("click 'translate' on message prompts for auto-translate of new messages", 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
-    await click(".o-mail-Message [title='Expand']");
-    await click(".o-dropdown-item:contains('Translate')");
+    await contains(".w-mail-Message");
+    await click(".w-mail-Message [title='Expand']");
+    await click(".w-dropdown-item:contains('Translate')");
     await contains(".o_notification_body span:contains('Auto-translate future messages?')");
     await click(".o_notification_body button:contains('Enable')");
     await withGuest(guestId, async () => {
@@ -121,15 +121,15 @@ test("click 'translate' on message prompts for auto-translate of new messages", 
         });
     });
     await contains(
-        ".o-mail-Message-body:text('Never put pineapple on pizza! (Translated from: Italian)')"
+        ".w-mail-Message-body:text('Never put pineapple on pizza! (Translated from: Italian)')"
     );
     await contains(
-        ".o-mail-Message-body:text('The weather is nice today! (Translated from: Italian)')"
+        ".w-mail-Message-body:text('The weather is nice today! (Translated from: Italian)')"
     );
     await click(
-        ".o-mail-Message:contains('The weather is nice today! (Translated from: Italian)') [title='Expand']"
+        ".w-mail-Message:contains('The weather is nice today! (Translated from: Italian)') [title='Expand']"
     );
-    await click(".o-dropdown-item:contains('Initial Language')");
+    await click(".w-dropdown-item:contains('Initial Language')");
     await contains(".o_notification_body span:contains('Cancel auto-translate?')");
     await click(".o_notification_body button:contains('Disable')");
 
@@ -144,5 +144,5 @@ test("click 'translate' on message prompts for auto-translate of new messages", 
             thread_model: "discuss.channel",
         });
     });
-    await contains(".o-mail-Message-body:text('Ach, il tempo è cambiato.')");
+    await contains(".w-mail-Message-body:text('Ach, il tempo è cambiato.')");
 });

@@ -5,7 +5,7 @@
     'description': """
 The translation mode is available when several languages are installed. Select the language to translate,
 enable the interactive translation mode from the command palette then browse the screens to translate.
-By default, the translate feature redirects to the Odoo official translation project powered by Weblate.
+By default, the translate feature redirects to the WETH official translation project powered by Weblate.
 In the settings, a custom Weblate project can be targeted.
 
 WARNING:

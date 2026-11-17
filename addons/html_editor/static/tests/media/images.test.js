@@ -27,7 +27,7 @@ test("Can replace an image", async () => {
     expect("img[src='/web/static/img/logo.png']").toHaveCount(1);
     await click("img");
     await tick(); // selectionchange
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("button[name='replace_image']").toHaveCount(1);
     await click("button[name='replace_image']");
     await animationFrame();
@@ -53,14 +53,14 @@ test("Replace an image with link by a document should remove the link", async ()
     expect("img[src='/web/static/img/logo.png']").toHaveCount(1);
     await click("img");
     await tick(); // selectionchange
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("button[name='replace_image']").toHaveCount(1);
     await click("button[name='replace_image']");
     await animationFrame();
     await click(".nav-link:contains('Documents')");
     await animationFrame();
     await click(".o_we_attachment_highlight .o_button_area");
-    expect(".odoo-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
+    expect(".weth-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
     expect("img[src='/web/static/img/logo.png']").toHaveCount(0);
     expect("p a[href='http://test.com']").toHaveCount(0);
 });
@@ -72,7 +72,7 @@ test("Replace an image by icon should remove invalid classes", async () => {
     expect("img[src='/web/static/img/logo.png']").toHaveClass("img-fluid w-100");
     await click("img");
     await tick(); // selectionchange
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("button[name='replace_image']").toHaveCount(1);
     await click("button[name='replace_image']");
     await animationFrame();
@@ -102,7 +102,7 @@ test("Selection is collapsed after the image after replacing it", async () => {
         `<p>abc<img class="img-fluid" src="/web/static/img/logo.png">def</p>`
     );
     await click("img");
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("button[name='replace_image']").toHaveCount(1);
     await click("button[name='replace_image']");
     await animationFrame();
@@ -119,7 +119,7 @@ test("should not preserve image styles when replacing an image with an icon", as
     expect("img[src='/web/static/img/logo.png']").toHaveCount(1);
     await click("img");
     await tick(); // selectionchange
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect("button[name='replace_image']").toHaveCount(1);
     await click("button[name='replace_image']");
     await animationFrame();
@@ -140,7 +140,7 @@ test("should not preserve image shape classes when replacing an image with an ic
     expect("img[src='/web/static/img/logo.png']").toHaveCount(1);
     await click("img");
     await tick(); // selectionchange
-    await expectElementCount(".o-we-toolbar button[name='replace_image']", 1);
+    await expectElementCount(".w-we-toolbar button[name='replace_image']", 1);
     await click("button[name='replace_image']");
     await animationFrame();
     await click(".nav-link:contains('Icons')");
@@ -167,7 +167,7 @@ test("Can insert an image, and selection should be collapsed after it", async ()
     const { editor, el } = await setupEditor("<p>a[]bc</p>");
     await insertText(editor, "/image");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
     await animationFrame();
     await click(".o_existing_attachment_cell .o_button_area");
@@ -180,7 +180,7 @@ test("press escape to close media dialog", async () => {
     onRpc("ir.attachment", "search_read", () => []);
     const { editor, el } = await setupEditor("<p>a[]bc</p>");
     await insertText(editor, "/image");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await press("Enter");
     await animationFrame();
     expect(".modal .o_select_media_dialog .o_we_search").toBeFocused();
@@ -198,7 +198,7 @@ describe("Powerbox search keywords", () => {
         for (const word of ["image", "icon"]) {
             await insertText(editor, word);
             await animationFrame();
-            expect(".active .o-we-command-name").toHaveText("Media");
+            expect(".active .w-we-command-name").toHaveText("Media");
             // delete the keyword to try the next one
             for (let i = 0; i < word.length; i++) {
                 await press("backspace");
@@ -216,9 +216,9 @@ describe("(non-)editable media", () => {
             );
             await click("img");
             await animationFrame();
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-toolbar", 1);
             // Now pressing the delete button should remove the image.
-            await click(".o-we-toolbar button[name='image_delete']");
+            await click(".w-we-toolbar button[name='image_delete']");
             cleanHints(editor);
             expect(getContent(editor.editable)).toBe(
                 `<div contenteditable="true" class="o-paragraph">[]<br></div>`
@@ -230,7 +230,7 @@ describe("(non-)editable media", () => {
             );
             await click("img");
             await animationFrame();
-            await expectElementCount(".o-we-toolbar", 0);
+            await expectElementCount(".w-we-toolbar", 0);
             expect(getContent(editor.editable)).toBe(
                 `<p data-selection-placeholder=""><br></p><div contenteditable="false">[<img src="${base64Img}">]</div><p data-selection-placeholder=""><br></p>`
             );
@@ -241,9 +241,9 @@ describe("(non-)editable media", () => {
             );
             await click("img");
             await animationFrame();
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-toolbar", 1);
             // Now pressing the delete button should remove the image.
-            await click(".o-we-toolbar button[name='image_delete']");
+            await click(".w-we-toolbar button[name='image_delete']");
             await tick(); // selectionchange
             expect(getContent(editor.editable)).toBe(
                 `<p data-selection-placeholder=""><br></p><div contenteditable="false">[]<br></div><p data-selection-placeholder=""><br></p>`
@@ -336,7 +336,7 @@ test("cropper should not open for external image", async () => {
     }));
 
     await setupEditor(
-        `<p>[<img src="https://download.odoocdn.com/icons/website/static/description/icon.png">]</p>`
+        `<p>[<img src="https://download.wethcdn.com/icons/website/static/description/icon.png">]</p>`
     );
     const imageCrop = await waitFor('.btn[name="image_crop"]');
     imageCrop.click();
@@ -369,7 +369,7 @@ test("Image cropper disappear on backspace", async () => {
         };
     });
     await setupEditor(`<p>[<img src="${base64Image}">]</p>`);
-    const cropButton = await waitFor(".o-we-toolbar .btn[name='image_crop']");
+    const cropButton = await waitFor(".w-we-toolbar .btn[name='image_crop']");
     cropButton.click();
     await waitFor(".o_we_crop_widget", { timeout: 1500 });
     expect("img.o_we_cropper_img").toHaveCount(1);
@@ -401,7 +401,7 @@ test("double-click on image in Media Dialog executes onClickAttachment only once
 
     await setupEditor(`<p><img class="img-fluid" src="/web/static/img/logo.png"></p>`);
     await click("img");
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await click("button[name='replace_image']");
     await animationFrame();
     await dblclick(".o_existing_attachment_cell .o_button_area");

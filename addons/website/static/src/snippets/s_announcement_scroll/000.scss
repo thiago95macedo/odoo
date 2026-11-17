@@ -15,12 +15,14 @@
 
     // Item options
     .s_announcement_scroll_heading_family .s_announcement_scroll_marquee_item {
-        font-family: $o-theme-headings-font;
+        font-family: $w-theme-headings-font;
         font-weight: $headings-font-weight;
     }
+
     &.s_announcement_scroll_direction_right {
         --marquee-animation: o-marquee-scroll-right;
     }
+
     &.s_announcement_scroll_direction_none {
         --marquee-animation: none;
     }
@@ -38,6 +40,7 @@
                 var(--marquee-animation, o-marquee-scroll-left) linear infinite var(--marquee-animation-time),
                 var(--marquee-animation, o-marquee-scroll-left) linear infinite calc(var(--marquee-animation-time) * var(--marquee-animation-hover-multiplier, 1)) reverse paused;
         }
+
         &.s_announcement_scroll_hover_slow .s_announcement_scroll_marquee_item {
             --marquee-animation-hover-multiplier: 2;
         }
@@ -49,9 +52,11 @@
                 &.s_announcement_scroll_hover_pause .s_announcement_scroll_marquee_item {
                     animation-play-state: paused;
                 }
+
                 &.s_announcement_scroll_hover_slow .s_announcement_scroll_marquee_item {
                     animation-play-state: running;
                 }
+
                 &.s_announcement_scroll_hover_direction .s_announcement_scroll_marquee_item {
                     animation-play-state: paused, running;
                 }
@@ -72,6 +77,7 @@
         transform: translateX(-100%);
     }
 }
+
 @keyframes o-marquee-scroll-right {
     from {
         transform: translateX(-100%);

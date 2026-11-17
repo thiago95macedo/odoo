@@ -1,11 +1,11 @@
 .o_activity_view {
-    > table {
-        thead > tr > th:first-of-type {
+    >table {
+        thead>tr>th:first-of-type {
             min-width: 300px;
         }
 
         thead {
-            > tr {
+            >tr {
                 position: sticky;
                 top: 0;
                 border-top: 0;
@@ -14,7 +14,7 @@
             }
 
             th {
-                --table-bg: linear-gradient(to bottom, #{$o-webclient-background-color}, #{rgba($o-webclient-background-color, .75)});
+                --table-bg: linear-gradient(to bottom, #{$w-webclient-background-color}, #{rgba($w-webclient-background-color, .75)});
 
                 // Temporary workaround: We replace the border with a box-shadow to simulate the border bottom so it keeps visible when scrolling.
                 border: 0;
@@ -28,52 +28,65 @@
             }
         }
 
-        tbody > tr:first-child {
+        tbody>tr:first-child {
             border-top: 0;
         }
 
-        .o_optional_columns .o-dropdown {
+        .o_optional_columns .w-dropdown {
             --gradient: none;
         }
     }
+
     .o_activity_summary_cell {
-        .o-mail-ActivityCell-counter {
+        .w-mail-ActivityCell-counter {
             color: map-get($theme-colors, 'dark');
         }
+
         &.planned {
             background-color: map-get($theme-colors, 'success');
             color: map-get($theme-colors, 'light');
+
             a {
                 color: map-get($theme-colors, 'light');
+
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
+
         &.overdue {
             background-color: map-get($theme-colors, 'danger');
             color: map-get($theme-colors, 'light');
+
             a {
                 color: map-get($theme-colors, 'light');
+
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
+
         &.today {
             background-color: map-get($theme-colors, 'warning');
             color: map-get($theme-colors, 'light');
+
             a {
                 color: map-get($theme-colors, 'light');
+
                 &:hover {
                     text-decoration: underline;
                 }
             }
         }
+
         &.done {
             background-color: $gray-300;
+
             a {
                 color: map-get($theme-colors, 'dark');
+
                 &:hover {
                     text-decoration: underline;
                 }
@@ -82,7 +95,7 @@
     }
 
     // it contains a kanban card representing the record
-    .o_activity_record > div {
+    .o_activity_record>div {
         display: flex;
         flex: 1 1 auto;
         align-items: center;
@@ -97,23 +110,28 @@
             }
         }
 
-        .o_m2o_avatar > img, > img {
+        .o_m2o_avatar>img,
+        >img {
             object-fit: cover;
             width: 32px;
             height: 32px;
             max-height: 32px;
         }
 
-        .o_m2m_avatar, .o_m2m_avatar_empty {
+        .o_m2m_avatar,
+        .o_m2m_avatar_empty {
             width: 32px !important;
             height: 32px !important;
         }
+
         .o_m2o_avatar {
             margin-right: 16px;
         }
+
         .o_m2o_avatar .o_delete {
             font-size: initial !important;
         }
+
         .o_m2m_avatar_empty {
             padding-top: 2px;
             font-size: large;
@@ -134,40 +152,49 @@
     }
 
     .o_activity_filter_planned {
-        background-color: mix(map-get($theme-colors, 'success'), $o-webclient-background-color, 5%);
+        background-color: mix(map-get($theme-colors, 'success'), $w-webclient-background-color, 5%);
     }
+
     .o_activity_filter_today {
-        background-color: mix(map-get($theme-colors, 'warning'), $o-webclient-background-color, 5%);
+        background-color: mix(map-get($theme-colors, 'warning'), $w-webclient-background-color, 5%);
     }
+
     .o_activity_filter_overdue {
-        background-color: mix(map-get($theme-colors, 'danger'), $o-webclient-background-color, 5%);
+        background-color: mix(map-get($theme-colors, 'danger'), $w-webclient-background-color, 5%);
     }
+
     .o_activity_type_cell {
-        min-width:100px;
+        min-width: 100px;
+
         .oi[data-icon="more_vert"] {
             cursor: pointer;
         }
 
         .o_template_element {
             white-space: nowrap;
-            padding:5px;
+            padding: 5px;
             cursor: pointer;
+
             &:hover {
                 color: o-text-color('success');
             }
         }
+
         .o_activity_counter {
             margin: 5px 0 0 0;
-            > .o_column_progress {
+
+            >.o_column_progress {
                 width: 100%;
-                > div.active {
+
+                >div.active {
                     border: 1px solid;
                 }
             }
         }
     }
+
     .o_activity_view_table_footer {
-        background-color: map-get($grays, '100' );
+        background-color: map-get($grays, '100');
     }
 }
 

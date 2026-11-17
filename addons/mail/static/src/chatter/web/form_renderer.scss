@@ -2,10 +2,12 @@
 // Layout
 // ------------------------------------------------------------------
 
-.o-mail-ChatterContainer, .o-mail-Form-chatter {
-    background-color: $o-webclient-background-color;
+.w-mail-ChatterContainer,
+.w-mail-Form-chatter {
+    background-color: $w-webclient-background-color;
     --Chatter-asideExtraWidth: 0px; // to take into account more items, e.g. "close" chatter feature
-    &.o-aside {
+
+    &.w-aside {
         @media (max-width: 1920px) {
             --ChatterAsideForm-padding-left: #{map-get($spacers, 2)};
         }
@@ -13,29 +15,29 @@
         flex-shrink: 0;
         flex-grow: 1;
         padding: map-get($spacers, 0);
-        width: calc(#{$o-mail-Chatter-minWidth} + var(--Chatter-asideExtraWidth));
+        width: calc(#{$w-mail-Chatter-minWidth} + var(--Chatter-asideExtraWidth));
     }
 
-    &.o-isInFormSheetBg {
+    &.w-isInFormSheetBg {
         margin-left: calc(var(--formView-sheetBg-padding-x) * -1);
         margin-right: calc(var(--formView-sheetBg-padding-x) * -1);
     }
 
-    &:not(.o-aside):not(.o-full-width) .o-mail-Chatter {
+    &:not(.w-aside):not(.w-full-width) .w-mail-Chatter {
         margin-left: auto;
         margin-right: auto;
     }
 }
 
 // Reduce horizontal spacing if the next sibling is an aside chatter
-.o_form_sheet_bg:has(+ .o-mail-Form-chatter.o-aside) {
+.o_form_sheet_bg:has(+ .w-mail-Form-chatter.w-aside) {
     @media screen and (max-width: 1920px) {
         --formView-sheetBg-padding-right: #{map-get($spacers, 2)};
     }
 }
 
 // Disable scroll anchoring when chatter is not in aside mode to prevent unwanted layout shifts
-.o_content:has(.o-mail-Form-chatter:not(.o-aside)) {
+.o_content:has(.w-mail-Form-chatter:not(.w-aside)) {
     overflow-anchor: none;
 }
 
@@ -43,22 +45,25 @@
 // Style
 // ------------------------------------------------------------------
 
-.o-mail-ChatterContainer, .o-mail-Form-chatter {
+.w-mail-ChatterContainer,
+.w-mail-Form-chatter {
     display: flex;
     margin: 0 auto;
     padding-bottom: map-get($spacers, 5);
     width: 100%;
 }
 
-.o-mail-Chatter-top {
+.w-mail-Chatter-top {
     padding-top: var(--Chatter-top-padding-top, #{map-get($spacers, 2)});
 }
 
-.o-mail-Chatter-topbar {
-    margin: -$focus-ring-width (-$focus-ring-width) 0;
-    padding: $focus-ring-width $focus-ring-width map-get($spacers, 2);
+.w-mail-Chatter-topbar {
+    margin: -$focus-ring-width (
+        -$focus-ring-width) 0;
+    padding: $focus-ring-width $focus-ring-width map-get($spacers, 2
+    );
 }
 
-.o-mail-Chatter-topbar button.btn-link.text-muted:hover {
-    color: $o-action !important;
+.w-mail-Chatter-topbar button.btn-link.text-muted:hover {
+    color: $w-action !important;
 }

@@ -1491,7 +1491,7 @@ describe("create with powerbox", () => {
             config: getConfig([toggleBlockEmbedding]),
         });
         await insertText(editor, "/toggle");
-        await waitFor(".o-we-powerbox");
+        await waitFor(".w-we-powerbox");
         await press("Enter");
         expect("[data-embedded='toggleBlock'] [data-embedded-editable='title']").toHaveInnerHTML(
             `<h1><font style="color: #ff0000">abc</font></h1>`

@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-22 20:58+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/account_fleet/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgid "Accounting/Fleet bridge"
 msgstr "Ponte entre Financeiro e Frota"
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/fleet_vehicle_log_services.py:0
 msgid "Bill"
 msgstr "Conta"
@@ -158,13 +158,13 @@ msgid "Requires vehicle"
 msgstr "Requer veículo"
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/account_move.py:0
 msgid "Service Vendor Bill: %s"
 msgstr "Conta de serviços: %s"
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/account_move.py:0
 #: model:ir.model.fields,field_description:account_fleet.field_account_bank_statement_line__service_count
 #: model:ir.model.fields,field_description:account_fleet.field_account_move__service_count
@@ -200,7 +200,7 @@ msgid "Vendor Bill"
 msgstr "Conta de fornecedor"
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/fleet_vehicle_log_services.py:0
 msgid ""
 "You cannot delete log services records because one or more of them were bill "
@@ -210,7 +210,7 @@ msgstr ""
 "foram criados por fatura."
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/fleet_vehicle_log_services.py:0
 msgid ""
 "You cannot modify the amount of services linked to a journal item. Do it on "
@@ -220,7 +220,7 @@ msgstr ""
 "diário. Faça isso na entrada contábil relacionada."
 
 #. module: account_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/account_fleet/models/account_move.py:0
 msgid "account_move_line_id"
 msgstr "account_move_line_id"

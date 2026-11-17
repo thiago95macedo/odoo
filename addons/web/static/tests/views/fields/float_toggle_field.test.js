@@ -43,31 +43,31 @@ test("basic flow in form view", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget").toHaveText("0.056", {
+    expect(".w_field_widget").toHaveText("0.056", {
         message: "The formatted time value should be displayed properly.",
     });
-    expect("button.o_field_float_toggle").toHaveText("0.056", {
+    expect("button.w_field_float_toggle").toHaveText("0.056", {
         message: "The value should be rendered correctly on the button.",
     });
 
-    await contains("button.o_field_float_toggle").click();
+    await contains("button.w_field_float_toggle").click();
 
-    expect("button.o_field_float_toggle").toHaveText("0.000", {
+    expect("button.w_field_float_toggle").toHaveText("0.000", {
         message: "The value should be rendered correctly on the button.",
     });
 
     // note, 0 will not be written, it's kept in the _changes of the datapoint.
     // because save has not been clicked.
 
-    await contains("button.o_field_float_toggle").click();
+    await contains("button.w_field_float_toggle").click();
 
-    expect("button.o_field_float_toggle").toHaveText("1.000", {
+    expect("button.w_field_float_toggle").toHaveText("1.000", {
         message: "The value should be rendered correctly on the button.",
     });
 
     await clickSave();
 
-    expect(".o_field_widget").toHaveText("1.000", {
+    expect(".w_field_widget").toHaveText("1.000", {
         message: "The new value should be saved and displayed properly.",
     });
 
@@ -88,13 +88,13 @@ test("kanban view (readonly) with option force_button", async () => {
             </kanban>`,
     });
 
-    expect("button.o_field_float_toggle").toHaveCount(2, {
+    expect("button.w_field_float_toggle").toHaveCount(2, {
         message: "should have rendered toggle button",
     });
 
-    const value = queryText("button.o_field_float_toggle:eq(0)");
-    await contains("button.o_field_float_toggle").click();
-    expect("button.o_field_float_toggle").not.toHaveText(value, {
+    const value = queryText("button.w_field_float_toggle:eq(0)");
+    await contains("button.w_field_float_toggle").click();
+    expect("button.w_field_float_toggle").not.toHaveText(value, {
         message: "float_field field value should be changed",
     });
 });
@@ -109,7 +109,7 @@ test("with 'hide_trailing_zeros' option", async () => {
                 <field name="float_field" widget="float_toggle" options="{'range': [0, 1, 0.75, 0.5, 0.25], 'hide_trailing_zeros': true}"/>
             </form>`,
     });
-    expect(".o_field_widget").toHaveText("1", {
+    expect(".w_field_widget").toHaveText("1", {
         message: "The field would show 1.00 without the option",
     });
 });

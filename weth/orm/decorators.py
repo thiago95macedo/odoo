@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-"""The Odoo API module defines method decorators.
+"""The WETH API module defines method decorators.
 """
 from __future__ import annotations
 
@@ -190,7 +190,7 @@ def onchange(*args: str) -> Decorator:
     .. warning::
 
         It is not possible for a ``one2many`` or ``many2many`` field to modify
-        itself via onchange. This is a webclient limitation - see `#2693 <https://github.com/weth/odoo/issues/2693>`_.
+        itself via onchange. This is a webclient limitation - see `#2693 <https://github.com/weth/weth/issues/2693>`_.
 
     """
     return attrsetter('_onchange', args)

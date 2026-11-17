@@ -227,7 +227,7 @@ export async function testEditor(config) {
     editor.shared.selection.stageSelection();
 
     if (config.props?.iframe) {
-        expect(".o-wysiwyg iframe").toHaveCount(1);
+        expect(".w-wysiwyg iframe").toHaveCount(1);
     }
 
     // Wait for selectionchange handlers to react before any actual testing.
@@ -313,7 +313,7 @@ export async function setupWysiwyg(props = {}) {
     delete props.content;
     const wysiwyg = await mountWithCleanup(Wysiwyg, { props });
     const el = /** @type {HTMLElement} **/ (
-        queryOne(`${props.iframe ? ":iframe " : ""}.odoo-editor-editable`)
+        queryOne(`${props.iframe ? ":iframe " : ""}.weth-editor-editable`)
     );
     if (content) {
         // force selection to be put properly
@@ -324,7 +324,7 @@ export async function setupWysiwyg(props = {}) {
 
 export function insertTestHtml(innerHtml) {
     const container = getFixture();
-    container.classList.add("odoo-editor-editable");
+    container.classList.add("weth-editor-editable");
     container.setAttribute("contenteditable", "true");
     container.innerHTML = innerHtml;
     return container.childNodes;

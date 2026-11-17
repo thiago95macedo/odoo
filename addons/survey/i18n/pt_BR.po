@@ -22,7 +22,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/survey/pt_BR/>\n"
+"weth-20/survey/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,25 +68,25 @@ msgid "# Questions Randomly Picked"
 msgstr "Nº de perguntas escolhidas aleatoriamente"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "%(participant)s just participated in \"%(survey_title)s\"."
 msgstr "%(participant)s acabou de participar do \"%(survey_title)s\"."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "%s Votes"
 msgstr "%s Votes"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "%s certification passed"
 msgstr "Passou na certificação de %s"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "%s challenge certification"
 msgstr "Certificação do desafio %s"
@@ -581,7 +581,7 @@ msgid "<span>Registered</span>"
 msgstr "<span>Registrado</span>"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "A label must be attached to only one question."
 msgstr "Um rótulo deve ser anexado a apenas uma pergunta."
@@ -621,19 +621,19 @@ msgstr ""
 "nulas indicam respostas erradas"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "A problem has occurred"
 msgstr "Ocorreu um problema"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "A question can either be skipped or answered, not both."
 msgstr "Uma pergunta pode ser ignorada ou respondida, mas não os dois."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "A scored survey needs at least one question that gives points.\n"
@@ -895,7 +895,7 @@ msgid "Ask something..."
 msgstr "Pergunte algo..."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__survey_type__assessment
 msgid "Assessment"
@@ -1026,7 +1026,7 @@ msgid "Beware of leap years!"
 msgstr "Atenção aos anos bissextos!"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Blue Pen"
 msgstr "Caneta azul"
@@ -1047,7 +1047,7 @@ msgid "Burger Quiz"
 msgstr "Questionário sobre hambúrguer"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "But first, keep listening to the host."
 msgstr "Mas, primeiro, ouça o apresentador."
@@ -1073,7 +1073,7 @@ msgid "Can Humans ever directly see a photon?"
 msgstr "Os seres humanos conseguem ver um fóton a olho nu?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/res_lang.py:0
 msgid ""
 "Cannot deactivate a language currently used by survey(s) only supporting "
@@ -1083,7 +1083,7 @@ msgstr ""
 "suportam apenas esse idioma."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/res_lang.py:0
 msgid ""
 "Cannot deactivate languages currently used by survey(s) only supporting "
@@ -1103,7 +1103,7 @@ msgid "Certificate of achievement for"
 msgstr "Certificado de conquista para"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 #: model_terms:ir.ui.view,arch_db:survey.certification_report_view_general
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_kanban
@@ -1122,7 +1122,7 @@ msgid "Certification Badge "
 msgstr "Medalha de certificação "
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "Certification Badge is not configured for the survey %(survey_name)s"
 msgstr ""
@@ -1199,7 +1199,7 @@ msgid "Charts"
 msgstr "Gráficos"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Cheating on your neighbors will not help!"
 msgstr "Colar dos seus colegas não vai ajudar!"
@@ -1212,7 +1212,7 @@ msgstr ""
 "Marque essa opção se você quiser limitar o número de tentativas por usuário"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/boolean_update_flag_field/boolean_update_flag_fields.js:0
 msgid "Checkbox updating comparison flag"
 msgstr "Caixa de seleção que atualiza o sinalizador de comparação"
@@ -1258,7 +1258,7 @@ msgid "Classic #2 Black"
 msgstr "Clássico #2 Preto"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Click to copy link"
 msgstr "Clique para copiar o link"
@@ -1291,7 +1291,7 @@ msgid "Color Index"
 msgstr "Índice de cores"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "Combining roaming and \"Scoring with answers after each page\" is not "
@@ -1350,7 +1350,7 @@ msgid "Conditional display"
 msgstr "Exibição condicional"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/survey_question_trigger/survey_question_trigger.js:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_question_form
 msgid ""
@@ -1396,20 +1396,20 @@ msgid "Contents"
 msgstr "Conteúdo"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_fill_form_in_progress
 msgid "Continue"
 msgstr "Continuar"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "Continue here"
 msgstr "Continuar aqui"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Copied!"
 msgstr "Copiado."
@@ -1425,8 +1425,8 @@ msgid "Corner Desk Right Sit"
 msgstr "Mesa de canto (à direita)"
 
 #. module: survey
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 #: model:ir.model.fields,field_description:survey.field_survey_question_answer__is_correct
@@ -1506,13 +1506,13 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "Creating test token is not allowed for you."
 msgstr "A criação de tokens de teste não é permitida para você."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "Creating token for anybody else than employees is not allowed for internal "
@@ -1522,13 +1522,13 @@ msgstr ""
 "não sejam funcionários."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "Creating token for closed/archived surveys is not allowed."
 msgstr "Não é permitido criar tokens para pesquisas arquivadas/encerradas."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "Creating token for external people is not allowed for surveys requesting "
@@ -1695,7 +1695,7 @@ msgid "Display Progress as"
 msgstr "Exibir progresso como"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/survey_question_trigger/survey_question_trigger.js:0
 msgid "Displayed if \"%s\"."
 msgstr "Exibido se \"%s\"."
@@ -1758,7 +1758,7 @@ msgid "End date and time"
 msgstr "Data e hora de término"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "End of Survey"
 msgstr "Fim da pesquisa"
@@ -1814,14 +1814,14 @@ msgid "Fanta"
 msgstr "Fanta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 #: model:survey.survey,title:survey.survey_feedback
 msgid "Feedback Form"
 msgstr "Formulário de feedback"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/xml/survey_paginated_results_rows_template.xml:0
 #: model_terms:ir.ui.view,arch_db:survey.question_result_choice
 #: model_terms:ir.ui.view,arch_db:survey.question_result_matrix
@@ -1861,7 +1861,7 @@ msgid "Food Preferences"
 msgstr "Preferências alimentares"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "For this question, you can only select one answer."
 msgstr "Para esta pergunta, você só pode selecionar uma resposta."
@@ -1897,7 +1897,7 @@ msgid "Gamification Challenge"
 msgstr "Desafio de Gamificação"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Gather feedbacks from your employees and customers"
 msgstr "Reúna feedbacks de seus funcionários e clientes"
@@ -1924,7 +1924,7 @@ msgid "Go to previous question"
 msgstr "Ir para a pergunta anterior"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Good luck!"
 msgstr "Boa sorte!"
@@ -1951,7 +1951,7 @@ msgid "Handle existing"
 msgstr "Lidar com existentes"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Handle quiz & certifications"
 msgstr "Gerir questionários e certificações"
@@ -1978,7 +1978,7 @@ msgid "Hemiunu"
 msgstr "Hemiunu"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Here, you can view the participants."
 msgstr "Aqui, você pode ver os participantes."
@@ -2000,19 +2000,19 @@ msgid "How frequently do you buy products online?"
 msgstr "Com que frequência você faz compras on-line?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "How frequently do you use our products?"
 msgstr "Com que frequência você usa nossos produtos?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "How good of a presenter are you? Let's find out!"
 msgstr "Você é um bom apresentador? Mostre-nos!"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "How likely are you to recommend the following products to a friend?"
 msgstr "Você recomendaria os seguintes produtos para um amigo?"
@@ -2036,7 +2036,7 @@ msgid "How many days is our money-back guarantee?"
 msgstr "A nossa garantia de devolução de dinheiro é válida por quantos dias?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "How many orders did you pass during the last 6 months?"
 msgstr "Quantos pedidos você fez durante os últimos seis meses?"
@@ -2235,7 +2235,7 @@ msgid "Image Filename"
 msgstr "Nome de arquivo da imagem"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_image_zoomer_templates.xml:0
 msgid "Image Zoom Dialog"
 msgstr "Caixa de diálogo de ampliação da imagem"
@@ -2267,8 +2267,8 @@ msgstr ""
 "resposta e sua pontuação para ser considerada."
 
 #. module: survey
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 #: model_terms:ir.ui.view,arch_db:survey.question_simple_choice
@@ -2286,7 +2286,7 @@ msgid "Input must be an email"
 msgstr "A entrada deve ser um e-mail"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/integer_update_flag_field/integer_update_flag_fields.js:0
 msgid "Integer updating comparison flag"
 msgstr "Sinalizador de comparação de atualização de nº inteiro"
@@ -2364,31 +2364,31 @@ msgid "It depends"
 msgstr "Depende"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It does not mean anything specific"
 msgstr "Não tem nenhum significado específico"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It helps attendees focus on what you are saying"
 msgstr "Ajuda os participantes a se concentrarem no que você está dizendo"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It helps attendees remember the content of your presentation"
 msgstr "Ajuda os participantes a lembrarem do conteúdo da sua apresentação"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It is a small bit of text, displayed to help participants answer"
 msgstr "É um trecho de texto exibido para ajudar os participantes a responder"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It is an option that can be different for each Survey"
 msgstr "É uma opção que pode ser diferente em cada pesquisa"
@@ -2399,13 +2399,13 @@ msgid "It is easy to find the product that I want"
 msgstr "É fácil encontrar o produto que eu quero"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It is more engaging for your audience"
 msgstr "É mais interessante para o público"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "It's a Belgian word for \"Management\""
 msgstr "É uma palavra belga para \"Gerenciamento\""
@@ -2450,7 +2450,7 @@ msgid "Label Sequence order"
 msgstr "Ordem de sequência de rótulo"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "Label for %s"
 msgstr "Rótulo para %s"
@@ -2552,31 +2552,31 @@ msgid "Legs"
 msgstr "Pernas"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Let's get started!"
 msgstr "Vamos começar!"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Let's give it a spin!"
 msgstr "Vamos fazer um tour!"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Let's have a look at your answers!"
 msgstr "Vamos conferir suas respostas."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Let's open the survey you just submitted."
 msgstr "Vamos abrir a pesquisa que você acabou de enviar."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Likely"
 msgstr "É provável"
@@ -2593,7 +2593,7 @@ msgid "Limited number of attempts"
 msgstr "Número limitado de tentativas"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_form
 msgid "Live Session"
@@ -2620,7 +2620,7 @@ msgid "Live session available"
 msgstr "Sessão ao vivo disponível"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Load a <b>sample Survey</b> to get started quickly."
 msgstr "Carregue uma <b>amostra de pesquisa</b> para começar rapidamente."
@@ -2641,7 +2641,7 @@ msgid "Mail Template"
 msgstr "Modelo de e-mail"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Make your presentations more fun by sharing questions live"
 msgstr "Divirta-se nas apresentações compartilhando as perguntas ao vivo"
@@ -2851,13 +2851,13 @@ msgid "MyCompany Vendor Certification"
 msgstr "Certificação de fornecedor MyCompany"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Neutral"
 msgstr "Neutro"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Never (less than once a month)"
 msgstr "Nunca (menos de uma vez por mês)"
@@ -2885,7 +2885,7 @@ msgid "New participation completed."
 msgstr "Nova participação concluída."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_fill_form_in_progress
 msgid "Next"
@@ -2939,7 +2939,7 @@ msgid "No Questions yet!"
 msgstr "Nenhuma pergunta ainda."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/components/survey_survey_action_helper/survey_survey_action_helper.xml:0
 msgid "No Survey Found"
 msgstr "Nenhuma pergunta encontrada"
@@ -2951,7 +2951,7 @@ msgid "No answers yet!"
 msgstr "Nenhuma resposta ainda."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "No attempts left."
 msgstr "Não há mais tentativas."
@@ -2987,19 +2987,19 @@ msgid "No, it's too small for the human eye."
 msgstr "Não, é pequeno demais para ser visto a olho nu."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "No, wait a minute"
 msgstr "Não, espere um minuto"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Now that you are done, submit your form."
 msgstr "Agora que está pronto, envie seu formulário."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Now, use this shortcut to go back to the survey."
 msgstr "Agora, use este atalho para voltar à pesquisa."
@@ -3053,7 +3053,7 @@ msgid "Numerical answer"
 msgstr "Resposta numérica"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Object-Directed Open Organization"
 msgstr "Organização aberta orientada a objetos"
@@ -3065,14 +3065,14 @@ msgstr "Ocorrência"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.certification_report_view_general
-msgid "Odoo"
-msgstr "Odoo"
+msgid "Weth"
+msgstr "Weth"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
-msgid "Odoo Certification"
-msgstr "Certficação Odoo"
+msgid "WETH Certification"
+msgstr "Certficação Weth"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_2_choice_5
@@ -3080,13 +3080,13 @@ msgid "Office Chair Black"
 msgstr "Cadeira de escritório preta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Often (1-3 times per week)"
 msgstr "Frequentemente (1 a 3 vezes por semana)"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
 "On Survey questions, one can define \"placeholders\". But what are they for?"
@@ -3120,13 +3120,13 @@ msgid "One choice per row"
 msgstr "Uma opção por linha"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "One needs to answer at least half the questions correctly"
 msgstr "É necessário responder corretamente a pelo menos metade das perguntas"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "One needs to get 50% of the total score"
 msgstr "É necessário alcançar 50% da pontuação total"
@@ -3147,13 +3147,13 @@ msgid "One page with all the questions"
 msgstr "Uma página com todas as perguntas"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Only a single question left!"
 msgstr "Falta apenas uma pergunta!"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/xml/survey_paginated_results_rows_template.xml:0
 #: model_terms:ir.ui.view,arch_db:survey.question_result_choice
 #: model_terms:ir.ui.view,arch_db:survey.question_result_matrix
@@ -3161,7 +3161,7 @@ msgid "Only show survey results having selected this answer"
 msgstr "Mostrar somente resultados de pesquisa com a seleção desta resposta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "Only survey users can manage sessions."
 msgstr "Somente os usuários da pesquisa podem gerenciar sessões."
@@ -3188,7 +3188,7 @@ msgid "Open Session Manager"
 msgstr "Abrir gerenciador de sessões"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/question_page/description_page_field.xml:0
 msgid "Open section"
 msgstr "Abrir sessão"
@@ -3232,13 +3232,13 @@ msgid "Options"
 msgstr "Opções"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Organizational Development for Operation Officers"
 msgstr "Desenvolvimento organizacional para Oficiais de Operações"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "Other (see comments)"
 msgstr "Outros (ver comentários)"
@@ -3249,7 +3249,7 @@ msgid "Outgoing mail server"
 msgstr "Servidor de envio de e-mail"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 msgid "Overall Performance"
 msgstr "Desempenho geral"
@@ -3280,8 +3280,8 @@ msgid "Papyrus"
 msgstr "Papiro"
 
 #. module: survey
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 msgid "Partially"
@@ -3301,7 +3301,7 @@ msgid "Participants"
 msgstr "Participantes"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "Participate to %(survey_name)s"
 msgstr "Participar de %(survey_name)s"
@@ -3354,7 +3354,7 @@ msgid "Percentage left"
 msgstr "Porcentagem restante"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 msgid "Performance by Section"
 msgstr "Desempenho por seção"
@@ -3380,7 +3380,7 @@ msgid "Pick a Template..."
 msgstr "Escolha um modelo…"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/components/survey_survey_action_helper/survey_survey_action_helper.xml:0
 msgid "Pick a sample or"
 msgstr "Escolha um exemplo ou"
@@ -3405,7 +3405,7 @@ msgid "Placeholder"
 msgstr "Marcador de posição"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
 "Please complete this very short survey to let us know how satisfied your are "
@@ -3415,7 +3415,7 @@ msgstr ""
 "nossos produtos."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "Please enter at least one valid recipient."
 msgstr "Insira pelo menos um destinatário válido."
@@ -3445,7 +3445,7 @@ msgid "Poor quality"
 msgstr "Baixa qualidade"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Practice in front of a mirror"
 msgstr "Treinar na frente do espelho"
@@ -3542,7 +3542,7 @@ msgid "Question Type"
 msgstr "Tipo de pergunta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "Question type should be empty for these pages: %s"
 msgstr "O tipo de pergunta deve estar em branco para estas páginas: %s"
@@ -3580,7 +3580,7 @@ msgid "Quiz passed"
 msgstr "Questionário aprovado"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/radio_selection_with_filter/radio_selection_field_with_filter.js:0
 msgid "Radio for Selection With Filter"
 msgstr "Botão de seleção com filtro"
@@ -3591,7 +3591,7 @@ msgid "Randomized per Section"
 msgstr "Em aleatório por seção"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Rarely (1-3 times per month)"
 msgstr "Raramente (1 a 3 vezes por mês)"
@@ -3608,7 +3608,7 @@ msgid "Ready"
 msgstr "Pronto"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Ready to change the way you <b>gather data</b>?"
 msgstr "Pronto para mudar o modo como você <b>coleta dados</b>?"
@@ -3619,7 +3619,7 @@ msgid "Recipients"
 msgstr "Destinatários"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Red Pen"
 msgstr "Caneta vermelha"
@@ -3976,7 +3976,7 @@ msgid "Share"
 msgstr "Compartilhar"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "Share a Survey"
 msgstr "Compartilhar uma pesquisa"
@@ -4003,37 +4003,37 @@ msgid "Show Comments Field"
 msgstr "Mostrar campo de comentários"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Correct Answer(s)"
 msgstr "Mostrar resposta(s) correta(s)"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Final Leaderboard"
 msgstr "Mostrar classificação final"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Final Scoreboard"
 msgstr "Mostrar placar final"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Leaderboard"
 msgstr "Mostrar tabela de classificação"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Results"
 msgstr "Mostrar resultados"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 msgid "Show Scoreboard"
 msgstr "Mostrar placar"
@@ -4049,7 +4049,7 @@ msgid "Show all records whose next activity date is past"
 msgstr "Mostrar todos os registros cuja data da próxima atividade já passou"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Show them slides with a ton of text they need to read fast"
 msgstr "Mostrar slides com um monte de texto que eles têm que ler muito rápido"
@@ -4060,7 +4060,7 @@ msgid "Single-Select"
 msgstr "Seleção única"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: model:ir.model.fields,field_description:survey.field_survey_user_input_line__skipped
 #: model_terms:ir.ui.view,arch_db:survey.survey_page_print
@@ -4068,13 +4068,13 @@ msgid "Skipped"
 msgstr "Ignorados"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "Some emails you just entered are incorrect: %s"
 msgstr "Alguns e-mails que você acabou de inserir estão incorretos: %s"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "Someone just participated in \"%(survey_title)s\"."
 msgstr "Alguém acaba de participar de \"%(survey_title)s\"."
@@ -4090,19 +4090,19 @@ msgid "Sorry, you have not been fast enough."
 msgstr "Desculpe, você não foi rápido o suficiente."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Speak softly so that they need to focus to hear you"
 msgstr "Falar baixinho para que eles tenham que se concentrar muito para ouvir"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Speak too fast"
 msgstr "Falar bem rápido"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_session_manage.js:0
 #: model:survey.question,title:survey.survey_demo_burger_quiz_p1
 msgid "Start"
@@ -4129,7 +4129,7 @@ msgid "Start date and time"
 msgstr "Data e hora de início"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/components/survey_survey_action_helper/survey_survey_action_helper.xml:0
 msgid "Start from scratch"
 msgstr "Começar do zero"
@@ -4174,7 +4174,7 @@ msgid "Subject..."
 msgstr "Assunto…"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_fill_form_in_progress
 #: model_terms:ir.ui.view,arch_db:survey.survey_navigation
@@ -4182,13 +4182,13 @@ msgid "Submit"
 msgstr "Enviar"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "Submit survey"
 msgstr "Enviar pesquisa"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid ""
 "Submit your survey? Once it's out, it is like a letter in the mail: it "
@@ -4238,7 +4238,7 @@ msgid "Suggestion"
 msgstr "Sugestão"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 #: model:ir.model,name:survey.model_survey_survey
 #: model:ir.model.fields,field_description:survey.field_gamification_badge__survey_id
@@ -4343,7 +4343,7 @@ msgid "Survey User inputs"
 msgstr "Opiniões do usuário da pesquisa"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/res_lang.py:0
 msgid "Survey(s): %(surveys_list)s"
 msgstr "Pesquisa(s): %(surveys_list)s"
@@ -4425,13 +4425,13 @@ msgid "Text answer"
 msgstr "Resposta de texto"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Thank you for your participation, hope you had a blast!"
 msgstr "Agradecemos por sua participação. Esperamos que tenha se divertido!"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Thank you very much for your feedback. We highly value your opinion!"
 msgstr "Agradecemos por seu feedback. Sua opinião é muito importante para nós!"
@@ -4443,13 +4443,13 @@ msgid "Thank you!"
 msgstr "Agradecemos!"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Thank you. We will contact you soon."
 msgstr "Agradecemos! Entraremos em contato com você em breve."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "The access of the following surveys is restricted. Make sure their "
@@ -4461,20 +4461,20 @@ msgstr ""
 "%(survey_names)s\n"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "The answer deadline should be after the email schedule date."
 msgstr ""
 "O prazo de resposta deve ser posterior à data de agendamento do e-mail."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "The answer must be in the right type"
 msgstr "A resposta deve ser do tipo adequado"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 #: model_terms:ir.ui.view,arch_db:survey.question_container
 msgid "The answer you entered is not valid."
@@ -4516,19 +4516,19 @@ msgstr ""
 "a pesquisa."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "The following customers have already received an invite"
 msgstr "Os seguintes clientes já receberam um convite"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "The following emails have already received an invite"
 msgstr "Os seguintes e-mails já receberam um convite"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid ""
 "The following recipients have no user account: %s. You should create user "
@@ -4575,7 +4575,7 @@ msgid "The session did not start yet."
 msgstr "A sessão ainda não iniciou."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/controllers/main.py:0
 msgid "The survey has already started."
 msgstr "A pesquisa já começou."
@@ -4608,46 +4608,46 @@ msgid "The tool to compare the products is useful to make a choice"
 msgstr "A ferramenta para comparação é útil para ajudar a escolher os produtos"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/controllers/main.py:0
 msgid "The user has not succeeded the certification"
 msgstr "O usuário não obteve êxito na certificação"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 #: model_terms:ir.ui.view,arch_db:survey.survey_fill_form
 msgid "There was an error during the validation of the survey."
 msgstr "Ocorreu um erro ao validar esta pesquisa."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "They are a default answer, used if the participant skips the question"
 msgstr "Resposta padrão usada se o participante ignorar a pergunta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
 "They are technical parameters that guarantees the responsiveness of the page"
 msgstr "Parâmetros técnicos que asseguram a reatividade da página"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "This answer cannot be overwritten."
 msgstr "Esta resposta não pode ser substituída."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 #: code:addons/survey/tests/test_survey.py:0
 msgid "This answer must be an email address"
 msgstr "Essa resposta deve ser um endereço de e-mail"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "This answer must be an email address."
 msgstr "Essa resposta deve ser um endereço de e-mail."
@@ -4672,8 +4672,8 @@ msgid "This is a Test Survey Entry."
 msgstr "Esta é uma entrada de pesquisa de teste."
 
 #. module: survey
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 #: code:addons/survey/tests/test_survey.py:0
@@ -4681,7 +4681,7 @@ msgid "This is not a date"
 msgstr "Isso não é uma data"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 #: code:addons/survey/tests/test_survey.py:0
 msgid "This is not a number"
@@ -4693,7 +4693,7 @@ msgid "This message will be displayed when survey is completed"
 msgstr "Esta mensagem será exibida quando a pesquisa estiver concluída"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 #: model_terms:ir.ui.view,arch_db:survey.question_container
 #: model_terms:ir.ui.view,arch_db:survey.survey_question_form
@@ -4726,7 +4726,7 @@ msgstr ""
 "    Respondê-la nos ajuda a melhorar sua experiência."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid ""
 "This survey does not allow external people to participate. You should create "
@@ -4783,7 +4783,7 @@ msgid "To"
 msgstr "Para:"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "To take this survey, please close all other tabs on %(hostname)s"
 msgstr ""
@@ -4830,7 +4830,7 @@ msgid "Triggering Questions"
 msgstr "Perguntas de acionamento"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/views/widgets/survey_question_trigger/survey_question_trigger.js:0
 msgid ""
 "Triggers based on the following questions will not work because they are "
@@ -4858,7 +4858,7 @@ msgid "Types of answers"
 msgstr "Tipos de respostas"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/wizard/survey_invite.py:0
 msgid "Unable to post message, please configure the sender's email address."
 msgstr ""
@@ -4866,15 +4866,15 @@ msgstr ""
 "remetente."
 
 #. module: survey
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/interactions/survey_result_chart.js:0
 msgid "Unanswered"
 msgstr "Sem resposta"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_user_input.py:0
 msgid "Uncategorized"
 msgstr "Sem categoria"
@@ -4895,7 +4895,7 @@ msgid "Unique"
 msgstr "Único"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Unlikely"
 msgstr "improvável"
@@ -4906,19 +4906,19 @@ msgid "Upcoming Activities"
 msgstr "Próximas atividades"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Use a fun visual support, like a live presentation"
 msgstr "Use um suporte visual divertido, como uma apresentação ao vivo"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Use humor and make jokes"
 msgstr "Traga humor e faça piadas"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
 msgid "Use the breadcrumbs to quickly go back to the dashboard."
 msgstr "Usar a navegação hierárquica para voltar rapidamente ao painel."
@@ -4995,7 +4995,7 @@ msgid "Validate entry"
 msgstr "Validar entrada"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/question_page/question_page_one2many_field.js:0
 #: model:ir.model.fields,field_description:survey.field_survey_question__validation_error_msg
 msgid "Validation Error"
@@ -5027,7 +5027,7 @@ msgid "Waiting for attendees..."
 msgstr "Aguardando os participantes…"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/controllers/main.py:0
 msgid "We do not accept submissions for this question anymore."
 msgstr "Não aceitamos mais envios para esta pergunta."
@@ -5042,10 +5042,10 @@ msgstr ""
 "próxima pergunta."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
-"Welcome to this Odoo certification. You will receive 2 random questions out "
+"Welcome to this WETH certification. You will receive 2 random questions out "
 "of a pool of 3."
 msgstr ""
 "Boas-vindas à Certificação do WETH. Você receberá aleatoriamente duas "
@@ -5079,25 +5079,25 @@ msgid "What do you think about our prices (not rated)?"
 msgstr "O que você achados nossos preços? (Não avaliada)"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
-msgid "What does \"ODOO\" stand for?"
-msgstr "O que \"ODOO\" quer dizer?"
+msgid "What does \"WETH\" stand for?"
+msgstr "O que \"WETH\" quer dizer?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
-msgid "What does one need to get to pass an Odoo Survey?"
-msgstr "O que é necessário para ser aprovado em uma pesquisa da Odoo?"
+msgid "What does one need to get to pass an WETH Survey?"
+msgstr "O que é necessário para ser aprovado em uma pesquisa da Weth?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "What is a frequent mistake public speakers do?"
 msgstr "Que erro é frequentemente cometido por oradores?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "What is the best way to catch the attention of an audience?"
 msgstr "Qual é a melhor forma de prender a atenção do público?"
@@ -5123,10 +5123,10 @@ msgid "When is your date of birth?"
 msgstr "Qual é a sua data de nascimento?"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/js/tours/survey_tour.js:0
-msgid "Whenever you pick an answer, Odoo saves it for you."
-msgstr "Sempre que selecionar uma opção, o Odoo salvará a sua escolha."
+msgid "Whenever you pick an answer, WETH saves it for you."
+msgstr "Sempre que selecionar uma opção, o WETH salvará a sua escolha."
 
 #. module: survey
 #: model:survey.question,title:survey.survey_feedback_p1_q1
@@ -5181,7 +5181,7 @@ msgstr ""
 "neutrinos, que mostra que os neutrinos têm massa?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
 "Why should you consider making your presentation more fun with a small quiz?"
@@ -5205,7 +5205,7 @@ msgid "Would you prefer a veggie meal if possible?"
 msgstr "Você preferiria uma refeição vegetariana, se possível?"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid "Yellow Pen"
 msgstr "Caneta amarela"
@@ -5218,7 +5218,7 @@ msgid "Yes"
 msgstr "Sim"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_form.js:0
 msgid "Yes, submit"
 msgstr "Sim, enviar"
@@ -5246,7 +5246,7 @@ msgstr ""
 "convite, apresentação ao vivo…"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid ""
 "You cannot delete questions from surveys \"%(survey_names)s\" while live "
@@ -5256,7 +5256,7 @@ msgstr ""
 "as sessões ao vivo estiverem em andamento."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "You cannot send an invitation for a \"One page per section\" survey if the "
@@ -5266,7 +5266,7 @@ msgstr ""
 "ela não tiver seções."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid ""
 "You cannot send an invitation for a \"One page per section\" survey if the "
@@ -5276,13 +5276,13 @@ msgstr ""
 "ela contiver apenas seções em branco."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "You cannot send an invitation for a survey that has no questions."
 msgstr "Você não pode enviar convites para uma pesquisa que não tem perguntas."
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_survey.py:0
 msgid "You cannot send invitations for closed surveys."
 msgstr "Você não pode enviar convites para pesquisas encerradas."
@@ -5298,7 +5298,7 @@ msgid "You scored"
 msgstr "Você marcou"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/templates/survey_survey.py:0
 msgid ""
 "Your responses will help us improve our product range to serve you even "
@@ -5308,25 +5308,25 @@ msgstr ""
 "atender você."
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_image_zoomer_templates.xml:0
 msgid "Zoom in"
 msgstr "Mais zoom"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_image_zoomer_templates.xml:0
 msgid "Zoom out"
 msgstr "Menos zoom"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_image_zoomer_templates.xml:0
 msgid "Zoomed Image"
 msgstr "Imagem ampliada"
 
 #. module: survey
-#. odoo-python
+#. weth-python
 #: code:addons/survey/models/survey_question.py:0
 msgid "[Question Title]"
 msgstr "[Título da pergunta]"
@@ -5347,7 +5347,7 @@ msgid "by"
 msgstr "por"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_image_zoomer_templates.xml:0
 msgid "close"
 msgstr "encerrar"
@@ -5415,19 +5415,19 @@ msgid "of"
 msgstr "de"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_enter_tooltip.js:0
 msgid "or press CTRL+Enter"
 msgstr "ou pressione CTRL+Enter"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_enter_tooltip.js:0
 msgid "or press Enter"
 msgstr "ou pressione Enter"
 
 #. module: survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/survey/static/src/interactions/survey_enter_tooltip.js:0
 msgid "or press ⌘+Enter"
 msgstr "ou pressione ⌘+Enter"

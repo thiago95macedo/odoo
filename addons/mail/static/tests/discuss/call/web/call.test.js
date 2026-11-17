@@ -37,9 +37,9 @@ test("no auto-call on joining chat", async () => {
     );
     await contains(".o_command_name", { count: 2 });
     await click(".o_command_name:text('Mario')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mario'))");
-    await contains(".o-mail-Message", { count: 0 });
-    await contains(".o-discuss-Call", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mario'))");
+    await contains(".w-mail-Message", { count: 0 });
+    await contains(".w-discuss-Call", { count: 0 });
 });
 
 test.tags("desktop");
@@ -54,13 +54,13 @@ test("no auto-call on joining group chat", async () => {
     await openDiscuss();
     await triggerHotkey("control+k");
     await click(".o_command_name:text(Mario)");
-    await contains(".o-mail-DiscussContent-threadName[title='Mario']");
+    await contains(".w-mail-DiscussContent-threadName[title='Mario']");
     await click("[title='Invite People']");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text(Luigi))");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text(Luigi))");
     await click("button:text('Create Group Chat')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mitchell Admin, Mario, and Luigi'))");
-    await contains(".o-mail-Message", { count: 0 });
-    await contains(".o-discuss-Call", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mitchell Admin, Mario, and Luigi'))");
+    await contains(".w-mail-Message", { count: 0 });
+    await contains(".w-discuss-Call", { count: 0 });
 });
 
 test.tags("desktop");
@@ -96,19 +96,19 @@ test("Can push-to-talk", async () => {
     await subscribed;
     await click("[title='Start Call']");
     await advanceTime(1000);
-    await contains(".o-discuss-Call");
-    await click(".o-discuss-Call");
+    await contains(".w-discuss-Call");
+    await click(".w-discuss-Call");
     await advanceTime(1000);
     await keyDown("f");
     await advanceTime(PTT_RELEASE_DURATION);
-    await contains(".o-discuss-CallParticipantCard .o-isTalking");
+    await contains(".w-discuss-CallParticipantCard .w-isTalking");
     // switching tab while PTT key still pressed then released on other tab should eventually release PTT
     browser.dispatchEvent(new Event("blur"));
     await advanceTime(PTT_RELEASE_DURATION + 1000);
-    await contains(".o-discuss-CallParticipantCard:not(:has(.o-isTalking))");
-    await click(".o-discuss-Call");
+    await contains(".w-discuss-CallParticipantCard:not(:has(.w-isTalking))");
+    await click(".w-discuss-Call");
     await advanceTime(1000);
     await keyDown("f");
     await advanceTime(PTT_RELEASE_DURATION);
-    await contains(".o-discuss-CallParticipantCard .o-isTalking");
+    await contains(".w-discuss-CallParticipantCard .w-isTalking");
 });

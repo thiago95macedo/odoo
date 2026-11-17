@@ -35,10 +35,10 @@ export class PaymentRazorpay extends PaymentInterface {
     _callRazorpay(data, action) {
         return this.env.services.orm.silent
             .call("pos.payment.method", action, [[this.payment_method_id.id], data])
-            .catch(this._handleOdooConnectionFailure.bind(this));
+            .catch(this._handleWethConnectionFailure.bind(this));
     }
 
-    _handleOdooConnectionFailure(data = {}) {
+    _handleWethConnectionFailure(data = {}) {
         // handle timeout
         const line = this.pendingRazorpayline();
         if (line) {
@@ -46,7 +46,7 @@ export class PaymentRazorpay extends PaymentInterface {
         }
         this._showError(
             _t(
-                "Could not connect to the Odoo server, please check your internet connection and try again."
+                "Could not connect to the WETH server, please check your internet connection and try again."
             )
         );
 

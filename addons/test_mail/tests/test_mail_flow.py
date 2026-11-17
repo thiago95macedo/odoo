@@ -455,7 +455,7 @@ class TestMailFlow(MailCommon, TestRecipients):
                         'subject': f'Re: Re: {lead.name}',
                         'subtype_id': self.env.ref('mail.mt_comment'),
                     },
-                    # portal was already in email_to, hence not notified twice through odoo
+                    # portal was already in email_to, hence not notified twice through weth
                     'notif': [
                         {'partner': self.partner_employee, 'type': 'inbox'},
                         {'partner': self.partner_employee_2, 'type': 'email'},

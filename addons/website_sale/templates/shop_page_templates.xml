@@ -515,7 +515,7 @@
                         </div>
                     </div>
 
-                    <t t-call="website_sale.o_wsale_offcanvas"/>
+                    <t t-call="website_sale.w_wsale_offcanvas"/>
                 </div>
                 <div class="oe_structure oe_empty oe_structure_not_nearest" id="oe_structure_website_sale_products_2"/>
             </div>
@@ -944,7 +944,7 @@
     </template>
 
     <!-- OffCanvas Nav -->
-    <template id="website_sale.o_wsale_offcanvas" name="Offcanvas">
+    <template id="website_sale.w_wsale_offcanvas" name="Offcanvas">
         <aside id="o_wsale_offcanvas"
                class="o_website_offcanvas offcanvas offcanvas-end p-0">
             <div id="o_wsale_offcanvas_content" class="accordion accordion-flush flex-grow-1 overflow-auto">

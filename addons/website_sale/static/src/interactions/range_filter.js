@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { Multirange } from "@website/../lib/multirange/multirange_custom";
 
 export class RangeFilter extends Interaction {
-    static selector = ".o_attr_range[multiple]";
+    static selector = ".w_attr_range[multiple]";
 
     setup() {
         const input = this.el;

@@ -11,7 +11,7 @@ beforeEach(() => {
     });
 });
 
-/** @type {typeof OdooModuleLoader} */
+/** @type {typeof WethModuleLoader} */
 const ModuleLoader = Object.getPrototypeOf(weth.loader.constructor);
 
 test.tags("headless");

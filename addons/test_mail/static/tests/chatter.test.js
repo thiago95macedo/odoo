@@ -73,16 +73,16 @@ test("Send message button activation (access rights dependent)", async () => {
             await waitStoreFetch("mail.thread");
         }
         if (enabled) {
-            await contains(".o-mail-Chatter-topbar button:enabled", { text: "Send message" });
-            await contains(".o-mail-Chatter-topbar button:enabled", { text: "Log note" });
+            await contains(".w-mail-Chatter-topbar button:enabled", { text: "Send message" });
+            await contains(".w-mail-Chatter-topbar button:enabled", { text: "Log note" });
             if (activities) {
-                await contains(".o-mail-Chatter-topbar button:enabled", { text: "Activity" });
+                await contains(".w-mail-Chatter-topbar button:enabled", { text: "Activity" });
             }
         } else {
-            await contains(".o-mail-Chatter-topbar button:disabled", { text: "Send message" });
-            await contains(".o-mail-Chatter-topbar button:disabled", { text: "Log note" });
+            await contains(".w-mail-Chatter-topbar button:disabled", { text: "Send message" });
+            await contains(".w-mail-Chatter-topbar button:disabled", { text: "Log note" });
             if (activities) {
-                await contains(".o-mail-Chatter-topbar button:disabled", { text: "Activity" });
+                await contains(".w-mail-Chatter-topbar button:disabled", { text: "Activity" });
             }
         }
     }
@@ -148,12 +148,12 @@ test("basic chatter rendering with a model without activities", async () => {
     });
     await start();
     await openFormView("mail.test.simple", recordId);
-    await contains(".o-mail-Chatter");
-    await contains(".o-mail-Chatter-topbar");
+    await contains(".w-mail-Chatter");
+    await contains(".w-mail-Chatter-topbar");
     await contains("button[aria-label='Attach files']");
     await contains("button", { count: 0, text: "Activities" });
-    await contains(".o-mail-Followers");
-    await contains(".o-mail-Thread");
+    await contains(".w-mail-Followers");
+    await contains(".w-mail-Thread");
 });
 
 test("opened attachment box should remain open after adding a new attachment", async (assert) => {
@@ -185,17 +185,17 @@ test("opened attachment box should remain open after adding a new attachment", a
             </form>`,
     });
     await contains(".o_attachment_preview");
-    await click(".o-mail-Chatter-attachFiles");
-    await contains(".o-mail-AttachmentBox");
+    await click(".w-mail-Chatter-attachFiles");
+    await contains(".w-mail-AttachmentBox");
     await click("button", { text: "Send message" });
-    await inputFiles(".o-mail-Composer .o_input_file", [
+    await inputFiles(".w-mail-Composer .o_input_file", [
         new File(["image"], "testing.jpeg", { type: "image/jpeg" }),
     ]);
-    await click(".o-mail-Composer-send:enabled");
+    await click(".w-mail-Composer-send:enabled");
     await contains(".o_move_next");
     await click("button", { text: "Send message" });
-    await insertText(".o-mail-Composer-input", "test");
+    await insertText(".w-mail-Composer-input", "test");
     triggerHotkey("control+Enter");
-    await contains(".o-mail-Message-body", { text: "test" });
-    await contains(".o-mail-AttachmentBox .o-mail-AttachmentImage", { count: 2 });
+    await contains(".w-mail-Message-body", { text: "test" });
+    await contains(".w-mail-AttachmentBox .w-mail-AttachmentImage", { count: 2 });
 });

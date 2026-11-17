@@ -19,11 +19,11 @@ defineMailModels();
 test("base rendering not editable", async () => {
     await start();
     await openFormView("res.partner", undefined, {});
-    await contains(".o-mail-Followers");
-    await contains(".o-mail-Followers-button:disabled");
-    await contains(".o-mail-Followers-dropdown", { count: 0 });
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Followers-dropdown", { count: 0 });
+    await contains(".w-mail-Followers");
+    await contains(".w-mail-Followers-button:disabled");
+    await contains(".w-mail-Followers-dropdown", { count: 0 });
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Followers-dropdown", { count: 0 });
 });
 
 test("base rendering editable", async () => {
@@ -31,12 +31,12 @@ test("base rendering editable", async () => {
     const partnerId = pyEnv["res.partner"].create({});
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Followers");
-    await contains(".o-mail-Followers-button");
-    await contains(".o-mail-Followers-button:first:enabled");
-    await contains(".o-mail-Followers-dropdown", { count: 0 });
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Followers-dropdown");
+    await contains(".w-mail-Followers");
+    await contains(".w-mail-Followers-button");
+    await contains(".w-mail-Followers-button:first:enabled");
+    await contains(".w-mail-Followers-dropdown", { count: 0 });
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Followers-dropdown");
 });
 
 test('click on "add followers" button', async () => {
@@ -76,18 +76,18 @@ test('click on "add followers" button', async () => {
     });
     await start();
     await openFormView("res.partner", partnerId_1);
-    await contains(".o-mail-Followers");
-    await contains(".o-mail-Followers-counter:text('1')");
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Followers-dropdown");
+    await contains(".w-mail-Followers");
+    await contains(".w-mail-Followers-counter:text('1')");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Followers-dropdown");
     await click("a:text('Add Followers')");
-    await contains(".o-mail-Followers-dropdown", { count: 0 });
+    await contains(".w-mail-Followers-dropdown", { count: 0 });
     await expect.waitForSteps(["action:open_view"]);
-    await contains(".o-mail-Followers-counter:text('2')");
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower", { count: 2 });
-    await contains(".o-mail-Follower:eq(0):text('François Perusse')");
-    await contains(".o-mail-Follower:eq(1):text('Partner3')");
+    await contains(".w-mail-Followers-counter:text('2')");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower", { count: 2 });
+    await contains(".w-mail-Follower:eq(0):text('François Perusse')");
+    await contains(".w-mail-Follower:eq(1):text('Partner3')");
 });
 
 test("click on remove follower", async () => {
@@ -106,11 +106,11 @@ test("click on remove follower", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId_1);
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Follower");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Follower");
     await click("[title='Remove this follower']");
-    await contains(".o-mail-Follower", { count: 0 });
-    await contains(".o-mail-Followers-dropdown");
+    await contains(".w-mail-Follower", { count: 0 });
+    await contains(".w-mail-Followers-dropdown");
 });
 
 test("Load 100 followers at once", async () => {
@@ -130,14 +130,14 @@ test("Load 100 followers at once", async () => {
     await openFormView("res.partner", partnerIds[0]);
     await contains("button[title='Show Followers']:text('210')");
     await click("[title='Show Followers']");
-    await contains(".o-mail-Follower", { count: 100 });
-    await contains(".o-mail-Followers-dropdown:has(:text('Load more'))");
-    await scroll(".o-mail-Followers-dropdown", "bottom");
-    await contains(".o-mail-Follower", { count: 200 });
+    await contains(".w-mail-Follower", { count: 100 });
+    await contains(".w-mail-Followers-dropdown:has(:text('Load more'))");
+    await scroll(".w-mail-Followers-dropdown", "bottom");
+    await contains(".w-mail-Follower", { count: 200 });
     await tick(); // give enough time for the useVisible hook to register load more as hidden
-    await scroll(".o-mail-Followers-dropdown", "bottom");
-    await contains(".o-mail-Follower", { count: 209 });
-    await contains(".o-mail-Followers-dropdown:has(:text('Load more'))", { count: 0 });
+    await scroll(".w-mail-Followers-dropdown", "bottom");
+    await contains(".w-mail-Follower", { count: 209 });
+    await contains(".w-mail-Followers-dropdown:has(:text('Load more'))", { count: 0 });
 });
 
 test("Load 100 recipients at once", async () => {
@@ -184,9 +184,9 @@ test('Show "Add follower" and subtypes edition/removal buttons on all followers 
     ]);
     await start();
     await openFormView("res.partner", partnerId_1);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await contains("a:text('Add Followers')");
-    await contains(":nth-child(1 of .o-mail-Follower)", {
+    await contains(":nth-child(1 of .w-mail-Follower)", {
         contains: [["[title='Edit Notification Preferences']"], ["[title='Remove this follower']"]],
     });
 });
@@ -196,6 +196,6 @@ test('Show "No Followers" dropdown-item if there are no followers and user does 
     const partnerId = pyEnv["res.partner"].create({ hasWriteAccess: false });
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await contains("div.disabled:text('No Followers')");
 });

@@ -1,4 +1,4 @@
-.o-we-hint {
+.w-we-hint {
     position: relative;
 
     &:after {
@@ -18,7 +18,7 @@
     }
 }
 
-div.o-we-hint[class*="col-"] {
+div.w-we-hint[class*="col-"] {
     &:after {
         left: calc(var(--gutter-x, 0)* .5);
     }

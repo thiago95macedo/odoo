@@ -3,21 +3,24 @@
         border: 0 !important
     }
 
-    .o_select_menu,.o_input_dropdown,.o_PurchaseSuggestInput {
-        background-color: $o-view-background-color;
+    .o_select_menu,
+    .o_input_dropdown,
+    .o_PurchaseSuggestInput {
+        background-color: $w-view-background-color;
         font-size: .75rem;
         border: 0;
         box-shadow: none;
         padding: .25rem .25rem;
         margin: 0 .25rem;
-        border-bottom: $border-width solid $o-black !important;
+        border-bottom: $border-width solid $w-black !important;
         border-radius: 0;
-        color: $o-black;
+        color: $w-black;
         background-position: right 0 center;
         background-size: .5rem;
     }
 
-    .o_select_menu,.o_input_dropdown {
+    .o_select_menu,
+    .o_input_dropdown {
         width: 7rem !important;
     }
 

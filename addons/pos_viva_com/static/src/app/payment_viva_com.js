@@ -53,18 +53,18 @@ export class PaymentVivaCom extends PaymentInterface {
 
     _call_viva_com(data, action, paymentLine) {
         return this.callPaymentMethod(action, [[this.payment_method_id.id], data]).catch(
-            this._handleOdooConnectionFailure.bind(this, paymentLine)
+            this._handleWethConnectionFailure.bind(this, paymentLine)
         );
     }
 
-    _handleOdooConnectionFailure(paymentLine, data = {}) {
+    _handleWethConnectionFailure(paymentLine, data = {}) {
         // handle timeout
         if (!paymentLine.isDone()) {
             paymentLine.setPaymentStatus("retry");
         }
         this._show_error(
             _t(
-                "Could not connect to the Odoo server, please check your internet connection and try again."
+                "Could not connect to the WETH server, please check your internet connection and try again."
             )
         );
 
@@ -143,7 +143,7 @@ export class PaymentVivaCom extends PaymentInterface {
      */
     handleVivaComStatusResponse(paymentLine, notification) {
         if (!notification) {
-            this._handleOdooConnectionFailure(paymentLine);
+            this._handleWethConnectionFailure(paymentLine);
             return;
         }
 

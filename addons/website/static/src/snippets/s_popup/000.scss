@@ -2,8 +2,9 @@
 .s_popup_main:not([data-vcss]) {
     .s_popup_content {
         // keep lower than <p> height (cookies bar)
-        min-height: $o-font-size-base * $o-line-height-base;
+        min-height: $w-font-size-base * $w-line-height-base;
         box-shadow: $modal-content-box-shadow-sm-up;
+
         .container {
             // keep margin when fixed bottom
             @include make-container();
@@ -15,6 +16,7 @@
     }
 
     $popup-close-size: 1.5rem;
+
     .s_popup_close {
         position: absolute;
         background: white;
@@ -26,7 +28,7 @@
         border-radius: $popup-close-size / 2;
         right: 0px;
         top: 0px;
-        box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+        box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
         cursor: pointer;
         text-align: center;
         z-index: 1;
@@ -36,6 +38,7 @@
     &.s_popup_center {
         .s_popup_full {
             @include o-position-absolute(0, 0, 0, 0);
+
             &.modal-dialog {
                 max-width: 100%;
                 padding: 0 !important;
@@ -47,6 +50,7 @@
                     justify-content: center;
                 }
             }
+
             .s_popup_close {
                 @include font-size(60px);
                 margin: 10px;
@@ -59,34 +63,42 @@
     &.s_popup_fixed {
         &.s_popup_fixed_top {
             .s_popup_content {
-                top: $o-navbar-height;
+                top: $w-navbar-height;
             }
         }
+
         &:not(.s_popup_fixed_top) {
             .s_popup_content {
                 bottom: 0;
             }
         }
+
         .s_popup_content {
             z-index: $zindex-modal;
             position: fixed;
             right: 20px;
         }
+
         .modal-sm .s_popup_content {
             width: $modal-sm;
         }
+
         .modal-md .s_popup_content {
-            width: $o-modal-md;
+            width: $w-modal-md;
         }
+
         .modal-lg .s_popup_content {
-            width: $o-modal-lg;
+            width: $w-modal-lg;
         }
+
         .modal-xl .s_popup_content {
             width: $modal-xl;
         }
+
         .s_popup_full .s_popup_content {
             right: 0;
             left: 0;
+
             .s_popup_close {
                 box-shadow: none;
                 @include font-size(60px);

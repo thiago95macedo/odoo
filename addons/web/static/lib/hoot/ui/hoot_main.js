@@ -78,7 +78,7 @@ export class HootMain extends Component {
                     <nav class="hoot-controls py-1 px-2">
                         <h1
                             class="hoot-logo m-0 select-none"
-                            title="Hierarchically Organized Odoo Tests"
+                            title="Hierarchically Organized WETH Tests"
                         >
                             <strong class="flex">HOOT</strong>
                         </h1>

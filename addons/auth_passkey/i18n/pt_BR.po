@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/auth_passkey/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgid "Create"
 msgstr "Criar"
 
 #. module: auth_passkey
-#. odoo-python
+#. weth-python
 #: code:addons/auth_passkey/models/res_users.py:0
 msgid "Create Passkey"
 msgstr "Criar chave de acesso"
@@ -134,7 +134,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: auth_passkey
-#. odoo-python
+#. weth-python
 #: code:addons/auth_passkey/models/res_users_identitycheck.py:0
 msgid ""
 "Incorrect Passkey. Please provide a valid passkey or use a different "
@@ -177,7 +177,7 @@ msgid "Or choose a different method:"
 msgstr "Ou escolha um método diferente:"
 
 #. module: auth_passkey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey/static/src/services/check_identity/check_identity.xml:0
 #: model:ir.model,name:auth_passkey.model_auth_passkey_key
 #: model:ir.model.fields.selection,name:auth_passkey.selection__res_users_identitycheck__auth_method__webauthn
@@ -207,7 +207,7 @@ msgid "Rename"
 msgstr "Renomear"
 
 #. module: auth_passkey
-#. odoo-python
+#. weth-python
 #: code:addons/auth_passkey/models/auth_passkey_key.py:0
 msgid "Rename Passkey"
 msgstr "Renomear chave de acesso"
@@ -218,7 +218,7 @@ msgid "Save"
 msgstr "Salvar"
 
 #. module: auth_passkey
-#. odoo-python
+#. weth-python
 #: code:addons/auth_passkey/models/res_users_identitycheck.py:0
 msgid "Security Control"
 msgstr "Controle de segurança"
@@ -234,7 +234,7 @@ msgid "The credential identifier should be unique."
 msgstr "O identificador da credencial deve ser exclusivo."
 
 #. module: auth_passkey
-#. odoo-python
+#. weth-python
 #: code:addons/auth_passkey/models/res_users.py:0
 msgid "Unknown passkey"
 msgstr "Chave de acesso desconhecida"
@@ -250,7 +250,7 @@ msgid "Use a Passkey"
 msgstr "Usar chave de acesso"
 
 #. module: auth_passkey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey/static/src/services/check_identity/check_identity.xml:0
 msgid "Use passkey"
 msgstr "Usar chave de acesso"
@@ -261,7 +261,7 @@ msgid "Use password"
 msgstr "Usar senha"
 
 #. module: auth_passkey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey/static/src/services/check_identity/check_identity.xml:0
 msgid "Use your passkey"
 msgstr "Use sua senha"
@@ -272,7 +272,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: auth_passkey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey/static/src/services/check_identity/check_identity.xml:0
 msgid "When you are ready, authenticate using the button below."
 msgstr "Quando estiver pronto, autentique-se usando o botão abaixo."

@@ -35,7 +35,7 @@ test("Do not show bot IM status", async () => {
     });
     setupChatHub({ folded: [channelId1, channelId2] });
     await start({ authenticateAs: { login: "paul", password: "paul" } });
-    await contains(".o-mail-ChatBubble[name='Mitchell'] .o-mail-ImStatus");
-    await contains(".o-mail-ChatBubble[name='Dummy']");
-    await contains(".o-mail-ChatBubble[name='Dummy'] .o-mail-ImStatus", { count: 0 });
+    await contains(".w-mail-ChatBubble[name='Mitchell'] .w-mail-ImStatus");
+    await contains(".w-mail-ChatBubble[name='Dummy']");
+    await contains(".w-mail-ChatBubble[name='Dummy'] .w-mail-ImStatus", { count: 0 });
 });

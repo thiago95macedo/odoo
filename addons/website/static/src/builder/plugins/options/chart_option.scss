@@ -8,12 +8,13 @@
         max-width: 100%;
 
         // First row / First column
-        .o_builder_matrix_sticky_left, .o_builder_matrix_sticky_top {
+        .o_builder_matrix_sticky_left,
+        .o_builder_matrix_sticky_top {
             position: sticky;
-            background-color: $o-we-bg-lighter;
+            background-color: $w-we-bg-lighter;
 
-            & > div {
-                background-color: $o-we-bg-dark;
+            &>div {
+                background-color: $w-we-bg-dark;
             }
         }
 
@@ -33,14 +34,15 @@
             z-index: 1;
         }
 
-        td, th {
+        td,
+        th {
             text-align: center;
 
             > :is(div, button) {
                 width: 100% !important;
             }
 
-            > div {
+            >div {
                 padding: 0;
                 border-radius: 0;
             }
@@ -49,7 +51,8 @@
                 padding: unset;
             }
 
-            .o-hb-input-number, .o-hb-input-base {
+            .w-hb-input-number,
+            .w-hb-input-base {
                 margin-right: 0;
                 padding: 1px 3px;
                 border-radius: 0;

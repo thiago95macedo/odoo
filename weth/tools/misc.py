@@ -1668,7 +1668,7 @@ class frozendict[K, V]:
 
 def ReadonlyDict(mapping=(), /, **kw) -> MappingProxyType:
     warnings.warn(
-        "ReadonlyDict is deprecated starting Odoo 20, use frozendict",
+        "ReadonlyDict is deprecated starting WETH, use frozendict",
         category=DeprecationWarning,
         stacklevel=2,
     )

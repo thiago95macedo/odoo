@@ -38,7 +38,7 @@ test("livechat note is loaded when opening the channel info list", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList textarea", { value: "Initial note\nSecond line" });
+    await contains(".w-livechat-ChannelInfoList textarea", { value: "Initial note\nSecond line" });
 });
 
 test("chatbot answers are listed in channel info list", async () => {
@@ -71,8 +71,8 @@ test("chatbot answers are listed in channel info list", async () => {
     await start();
     await openDiscuss(channelId);
     await contains("h6:text('Chatbot answers')");
-    await contains(".o-livechat-ChannelInfoList-chatbotAnswer:text('I have a technical issue')");
-    await contains(".o-livechat-ChannelInfoList-chatbotAnswer:text('test@example.com')");
+    await contains(".w-livechat-ChannelInfoList-chatbotAnswer:text('I have a technical issue')");
+    await contains(".w-livechat-ChannelInfoList-chatbotAnswer:text('test@example.com')");
 });
 
 test("free input chatbot answer is rendered as plain text", async () => {
@@ -94,7 +94,7 @@ test("free input chatbot answer is rendered as plain text", async () => {
     await start();
     await openDiscuss(channelId);
     // markup would add a block element, breaking centering with the icon and truncation
-    await contains(".o-livechat-ChannelInfoList-chatbotAnswer:text('Ticket 344'):not(:has(*))");
+    await contains(".w-livechat-ChannelInfoList-chatbotAnswer:text('Ticket 344'):not(:has(*))");
 });
 
 test("shows country and language in channel info list", async () => {
@@ -146,17 +146,17 @@ test("editing livechat note is synced between tabs", async () => {
     const tab2 = await start({ asTab: true, waitUntilSubscribe: false });
     await openDiscuss(channelId, { target: tab1 });
     await openDiscuss(channelId, { target: tab2 });
-    await contains(`${tab1.selector} .o-livechat-ChannelInfoList textarea`, {
+    await contains(`${tab1.selector} .w-livechat-ChannelInfoList textarea`, {
         value: "Initial note",
     });
-    await contains(`${tab2.selector} .o-livechat-ChannelInfoList textarea`, {
+    await contains(`${tab2.selector} .w-livechat-ChannelInfoList textarea`, {
         value: "Initial note",
     });
-    await insertText(`${tab1.selector} .o-livechat-ChannelInfoList textarea`, "Updated note", {
+    await insertText(`${tab1.selector} .w-livechat-ChannelInfoList textarea`, "Updated note", {
         replace: true,
     });
-    document.querySelector(`${tab1.selector} .o-livechat-ChannelInfoList textarea`).blur(); // Trigger the blur event to save the note
-    await contains(`${tab2.selector} .o-livechat-ChannelInfoList textarea`, {
+    document.querySelector(`${tab1.selector} .w-livechat-ChannelInfoList textarea`).blur(); // Trigger the blur event to save the note
+    await contains(`${tab2.selector} .w-livechat-ChannelInfoList textarea`, {
         value: "Updated note",
     }); // Note should be synced with bus
 });
@@ -183,11 +183,11 @@ test("shows live chat status in discuss sidebar", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList button.active:text('In progress')");
-    await click(".o-livechat-ChannelInfoList button", { text: "Looking for help" });
-    await contains(".o-livechat-ChannelInfoList button.active", { text: "Looking for help" });
+    await contains(".w-livechat-ChannelInfoList button.active:text('In progress')");
+    await click(".w-livechat-ChannelInfoList button", { text: "Looking for help" });
+    await contains(".w-livechat-ChannelInfoList button.active", { text: "Looking for help" });
     await contains(
-        ".o-mail-MessagingMenuItem:has(:text('Visitor #20')) [title='Looking for help']"
+        ".w-mail-MessagingMenuItem:has(:text('Visitor #20')) [title='Looking for help']"
     );
 });
 
@@ -215,19 +215,19 @@ test("editing livechat status is synced between tabs", async () => {
     const tab2 = await start({ asTab: true, waitUntilSubscribe: false });
     await openDiscuss(channelId, { target: tab1 });
     await openDiscuss(channelId, { target: tab2 });
-    await contains(`${tab1.selector} .o-livechat-ChannelInfoList button.active`, {
+    await contains(`${tab1.selector} .w-livechat-ChannelInfoList button.active`, {
         text: "In progress",
     });
-    await contains(`${tab2.selector} .o-livechat-ChannelInfoList button.active`, {
+    await contains(`${tab2.selector} .w-livechat-ChannelInfoList button.active`, {
         text: "In progress",
     });
-    await click(`${tab1.selector} .o-livechat-ChannelInfoList button`, {
+    await click(`${tab1.selector} .w-livechat-ChannelInfoList button`, {
         text: "Looking for help",
     });
-    await contains(`${tab1.selector} .o-livechat-ChannelInfoList button.active`, {
+    await contains(`${tab1.selector} .w-livechat-ChannelInfoList button.active`, {
         text: "Looking for help",
     });
-    await contains(`${tab2.selector} .o-livechat-ChannelInfoList button.active`, {
+    await contains(`${tab2.selector} .w-livechat-ChannelInfoList button.active`, {
         text: "Looking for help",
     }); // Status should be synced with bus
 });
@@ -253,18 +253,18 @@ test("Manage expertises from channel info list", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList .o_tag", { text: "pricing" });
-    await insertText(".o-livechat-ExpertiseTagsAutocomplete input", "events");
+    await contains(".w-livechat-ChannelInfoList .o_tag", { text: "pricing" });
+    await insertText(".w-livechat-ExpertiseTagsAutocomplete input", "events");
     await click("a", { text: 'Create "events"' });
-    await contains(".o-livechat-ChannelInfoList .o_tag", { text: "events" });
-    await click(".o-livechat-ExpertiseTagsAutocomplete input");
+    await contains(".w-livechat-ChannelInfoList .o_tag", { text: "events" });
+    await click(".w-livechat-ExpertiseTagsAutocomplete input");
     await press("Backspace");
-    await contains(".o-livechat-ChannelInfoList .o_tag", { text: "events", count: 0 });
+    await contains(".w-livechat-ChannelInfoList .o_tag", { text: "events", count: 0 });
     await press("Backspace");
-    await contains(".o-livechat-ChannelInfoList .o_tag", { text: "pricing", count: 0 });
-    await contains(".o-livechat-ExpertiseTagsAutocomplete input[placeholder='Add expertise']");
+    await contains(".w-livechat-ChannelInfoList .o_tag", { text: "pricing", count: 0 });
+    await contains(".w-livechat-ExpertiseTagsAutocomplete input[placeholder='Add expertise']");
     await click("a", { text: "events" });
-    await contains(".o-livechat-ChannelInfoList .o_tag", { text: "events" });
+    await contains(".w-livechat-ChannelInfoList .o_tag", { text: "events" });
 });
 
 test("Can download transcript from channel info panel", async () => {
@@ -297,10 +297,10 @@ test("Disable actions for non-livechat users", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await waitFor(".o-livechat-LivechatStatusSelection button:text(In progress):disabled");
-    await waitFor(".o-livechat-LivechatStatusSelection button:text(Looking for help):disabled");
+    await waitFor(".w-livechat-LivechatStatusSelection button:text(In progress):disabled");
+    await waitFor(".w-livechat-LivechatStatusSelection button:text(Looking for help):disabled");
     await waitFor("textarea[placeholder='Add your notes here...']:disabled");
-    await waitFor(".o-livechat-ExpertiseTagsAutocomplete.o-disabled");
+    await waitFor(".w-livechat-ExpertiseTagsAutocomplete.w-disabled");
 });
 
 test("info panel toggle state persists across chats", async () => {
@@ -333,18 +333,18 @@ test("info panel toggle state persists across chats", async () => {
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem:has(:text('Visitor 1'))");
-    await contains(".o-livechat-ChannelInfoList");
+    await click(".w-mail-NotificationItem:has(:text('Visitor 1'))");
+    await contains(".w-livechat-ChannelInfoList");
     await click("button[name='livechat-info']");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
-    await click(".o-mail-NotificationItem:has(:text('Visitor 2'))");
-    await contains(".o-mail-DiscussContent-threadName[title='Visitor 2']");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
+    await click(".w-mail-NotificationItem:has(:text('Visitor 2'))");
+    await contains(".w-mail-DiscussContent-threadName[title='Visitor 2']");
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
     await click("button[name='livechat-info']");
-    await contains(".o-livechat-ChannelInfoList");
-    await click(".o-mail-NotificationItem:has(:text('Visitor 1'))");
-    await contains(".o-mail-DiscussContent-threadName[title='Visitor 1']");
-    await contains(".o-livechat-ChannelInfoList");
+    await contains(".w-livechat-ChannelInfoList");
+    await click(".w-mail-NotificationItem:has(:text('Visitor 1'))");
+    await contains(".w-mail-DiscussContent-threadName[title='Visitor 1']");
+    await contains(".w-livechat-ChannelInfoList");
 });
 
 test("auto-open of livechat info & members panels should combine", async () => {
@@ -368,32 +368,32 @@ test("auto-open of livechat info & members panels should combine", async () => {
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-discuss-ChannelMemberList");
-    await click(".o-mail-MessagingMenu-tab[data-id='livechat']");
-    await click(".o-mail-NotificationItem:has(:text('Visitor'))");
-    await contains(".o-discuss-ChannelMemberList", { count: 0 });
-    await contains(".o-livechat-ChannelInfoList");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-discuss-ChannelMemberList");
+    await click(".w-mail-MessagingMenu-tab[data-id='livechat']");
+    await click(".w-mail-NotificationItem:has(:text('Visitor'))");
+    await contains(".w-discuss-ChannelMemberList", { count: 0 });
+    await contains(".w-livechat-ChannelInfoList");
     await click("button[name='livechat-info']");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
-    await contains(".o-discuss-ChannelMemberList", { count: 0 });
-    await click(".o-mail-MessagingMenu-tab[data-id='channel']");
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-discuss-ChannelMemberList");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
+    await contains(".w-discuss-ChannelMemberList", { count: 0 });
+    await click(".w-mail-MessagingMenu-tab[data-id='channel']");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-discuss-ChannelMemberList");
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
     await click("button[name='member-list']");
-    await contains(".o-discuss-ChannelMemberList", { count: 0 });
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
-    await click(".o-mail-MessagingMenu-tab[data-id='livechat']");
-    await click(".o-mail-NotificationItem:has(:text('Visitor'))");
+    await contains(".w-discuss-ChannelMemberList", { count: 0 });
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
+    await click(".w-mail-MessagingMenu-tab[data-id='livechat']");
+    await click(".w-mail-NotificationItem:has(:text('Visitor'))");
     await click("button[name='livechat-info']");
-    await contains(".o-livechat-ChannelInfoList");
-    await contains(".o-discuss-ChannelMemberList", { count: 0 });
+    await contains(".w-livechat-ChannelInfoList");
+    await contains(".w-discuss-ChannelMemberList", { count: 0 });
     await click("button[name='member-list']");
-    await contains(".o-discuss-ChannelMemberList");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
-    await click(".o-mail-MessagingMenu-tab[data-id='channel']");
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-discuss-ChannelMemberList");
-    await contains(".o-livechat-ChannelInfoList", { count: 0 });
+    await contains(".w-discuss-ChannelMemberList");
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
+    await click(".w-mail-MessagingMenu-tab[data-id='channel']");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-discuss-ChannelMemberList");
+    await contains(".w-livechat-ChannelInfoList", { count: 0 });
 });

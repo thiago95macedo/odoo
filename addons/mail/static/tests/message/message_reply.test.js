@@ -39,10 +39,10 @@ test("click on message in reply to highlight the parent message", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-MessageInReply-message", {
-        parent: [".o-mail-Message:has(:text('Reply to Hey'))"],
+    await click(".w-mail-MessageInReply-message", {
+        parent: [".w-mail-Message:has(:text('Reply to Hey'))"],
     });
-    await contains(".o-mail-Message.o-highlighted .o-mail-Message-content:has(:text('Hey lol'))");
+    await contains(".w-mail-Message.w-highlighted .w-mail-Message-content:has(:text('Hey lol'))");
 });
 
 test("click on message in reply to scroll to the parent message", async () => {
@@ -66,10 +66,10 @@ test("click on message in reply to scroll to the parent message", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-MessageInReply-message", {
-        parent: [".o-mail-Message:has(:text('Response to first message'))"],
+    await click(".w-mail-MessageInReply-message", {
+        parent: [".w-mail-Message:has(:text('Response to first message'))"],
     });
-    await contains(":nth-child(1 of .o-mail-Message)", { visible: true });
+    await contains(":nth-child(1 of .w-mail-Message)", { visible: true });
 });
 
 test("reply shows correct author avatar", async () => {
@@ -94,7 +94,7 @@ test("reply shows correct author avatar", async () => {
     await start();
     await openDiscuss(channelId);
     await contains(
-        `.o-mail-MessageInReply-avatar[data-src='${`${getOrigin()}/web/image/res.partner/${serverState.partnerId
+        `.w-mail-MessageInReply-avatar[data-src='${`${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}`}`
     );
 });
@@ -118,9 +118,9 @@ test("click on message in reply highlights original message", async () => {
     await start();
     await openDiscuss(channelId);
     await click(
-        ".o-mail-Message:contains('Response to deleted message') .o-mail-MessageInReply:contains('Original message was deleted') .cursor-pointer"
+        ".w-mail-Message:contains('Response to deleted message') .w-mail-MessageInReply:contains('Original message was deleted') .cursor-pointer"
     );
-    await contains(".o-mail-Message.o-highlighted:contains('This message has been removed')");
+    await contains(".w-mail-Message.w-highlighted:contains('This message has been removed')");
 });
 
 test("can reply to logged note in chatter", async () => {
@@ -147,19 +147,19 @@ test("can reply to logged note in chatter", async () => {
     ]);
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-Message [title='Expand']");
-    await contains(".o-dropdown-item:contains('Reply')");
+    await click(".w-mail-Message [title='Expand']");
+    await contains(".w-dropdown-item:contains('Reply')");
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Message:contains('Test message from B') [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
+    await click(".w-mail-Message:contains('Test message from B') [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
     await contains("button.active:text('Log note')");
-    await contains(".o-mail-Composer.o-focused .o-mail-Composer-input", { value: "@Partner B " });
-    await click(".o-mail-Composer-send:enabled");
-    await contains(".o-mail-Message a.o_mail_redirect:text('@Partner B')");
-    await click(".o-mail-Message:contains('@Partner B') [title='Expand']");
-    await contains(".o-dropdown-item:text('Edit')");
-    await contains(".o-dropdown-item:contains('Delete')");
-    await contains(".o-dropdown-item:contains('Reply')", { count: 0 });
+    await contains(".w-mail-Composer.w-focused .w-mail-Composer-input", { value: "@Partner B " });
+    await click(".w-mail-Composer-send:enabled");
+    await contains(".w-mail-Message a.o_mail_redirect:text('@Partner B')");
+    await click(".w-mail-Message:contains('@Partner B') [title='Expand']");
+    await contains(".w-dropdown-item:text('Edit')");
+    await contains(".w-dropdown-item:contains('Delete')");
+    await contains(".w-dropdown-item:contains('Reply')", { count: 0 });
 });
 
 test.tags("html composer");
@@ -178,21 +178,21 @@ test("reply to logged note in chatter keeps prefilled mention in html composer",
     await start();
     getService("mail.composer").setHtmlComposer();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Message:contains('Test message from B') [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
+    await click(".w-mail-Message:contains('Test message from B') [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
     await contains("button.active:text('Log note')");
-    await contains(".o-mail-Composer.o-focused .o-mail-Composer-html.odoo-editor-editable");
+    await contains(".w-mail-Composer.w-focused .w-mail-Composer-html.weth-editor-editable");
     await contains(
-        ".o-mail-Composer-html.odoo-editor-editable a.o_mail_redirect:text('@Partner B')"
+        ".w-mail-Composer-html.weth-editor-editable a.o_mail_redirect:text('@Partner B')"
     );
     const editor = {
         document,
-        editable: queryFirst(".o-mail-Composer-html.odoo-editor-editable"),
+        editable: queryFirst(".w-mail-Composer-html.weth-editor-editable"),
     };
     await htmlInsertText(editor, "Hello");
-    await contains(".o-mail-Composer-send:enabled");
-    await click(".o-mail-Composer-send:enabled");
-    await contains(".o-mail-Message:contains('Hello') a.o_mail_redirect:text('@Partner B')");
+    await contains(".w-mail-Composer-send:enabled");
+    await click(".w-mail-Composer-send:enabled");
+    await contains(".w-mail-Message:contains('Hello') a.o_mail_redirect:text('@Partner B')");
 });
 
 test("Replying to a message containing line breaks should be correctly inlined", async () => {
@@ -216,7 +216,7 @@ test("Replying to a message containing line breaks should be correctly inlined",
     await start();
     await openDiscuss(channelId);
     await contains(
-        ".o-mail-MessageInReply-message:text('Message first line. Message second line. Message third line.')"
+        ".w-mail-MessageInReply-message:text('Message first line. Message second line. Message third line.')"
     );
 });
 
@@ -243,7 +243,7 @@ test("Replying to a message containing attachments should display an attachment 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageInReply [data-icon='description']");
+    await contains(".w-mail-MessageInReply [data-icon='description']");
 });
 
 test("reply with only attachment shows parent message context", async () => {
@@ -269,7 +269,7 @@ test("reply with only attachment shows parent message context", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessageInReply-message:text('Original message content')");
+    await contains(".w-mail-MessageInReply-message:text('Original message content')");
 });
 
 test("replying to a note restores focus on an already open composer", async () => {
@@ -287,12 +287,12 @@ test("replying to a note restores focus on an already open composer", async () =
     await start();
     await openFormView("res.partner", serverState.partnerId);
     await click("button:not(.active):text('Log note')");
-    await contains(".o-mail-Composer.o-focused");
-    queryFirst(".o-mail-Composer-input").blur();
-    await contains(".o-mail-Composer.o-focused", { count: 0 });
-    await click(".o-mail-Message-actions [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
-    await contains(".o-mail-Composer.o-focused");
+    await contains(".w-mail-Composer.w-focused");
+    queryFirst(".w-mail-Composer-input").blur();
+    await contains(".w-mail-Composer.w-focused", { count: 0 });
+    await click(".w-mail-Message-actions [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
+    await contains(".w-mail-Composer.w-focused");
 });
 
 test.tags("focus required", "html composer");
@@ -313,26 +313,26 @@ test("Click reply to note again preserves composer content", async () => {
     const composerService = getService("mail.composer");
     composerService.setHtmlComposer();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Message:contains(I am Justice) [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
-    await contains(".o-mail-Composer.o-focused");
+    await click(".w-mail-Message:contains(I am Justice) [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
+    await contains(".w-mail-Composer.w-focused");
     const editor = {
         document,
-        editable: document.querySelector(".o-mail-Composer-html.odoo-editor-editable"),
+        editable: document.querySelector(".w-mail-Composer-html.weth-editor-editable"),
     };
     pasteHtml(editor, "<strong>Strong Text</strong>");
     await contains(
-        ".o-mail-Composer-html.odoo-editor-editable:text('@Batman Strong Text'):has(a.o_mail_redirect:text('@Batman')):has(strong:text('Strong Text'))"
+        ".w-mail-Composer-html.weth-editor-editable:text('@Batman Strong Text'):has(a.o_mail_redirect:text('@Batman')):has(strong:text('Strong Text'))"
     );
     // check the exact textContent because :text() validates the rendered text, not the NBSP separator.
     expect(editor.editable.textContent).toBe("\uFEFF@Batman\uFEFF\u00A0Strong Text");
     await click("button.active:text('Log note')");
-    await contains(".o-mail-Composer", { count: 0 });
-    await click(".o-mail-Message:contains(I am Justice) [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
-    await contains(".o-mail-Composer.o-focused");
+    await contains(".w-mail-Composer", { count: 0 });
+    await click(".w-mail-Message:contains(I am Justice) [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
+    await contains(".w-mail-Composer.w-focused");
     await contains(
-        ".o-mail-Composer-html.odoo-editor-editable:text('@Batman Strong Text'):has(a.o_mail_redirect:text('@Batman')):has(strong:text('Strong Text'))"
+        ".w-mail-Composer-html.weth-editor-editable:text('@Batman Strong Text'):has(a.o_mail_redirect:text('@Batman')):has(strong:text('Strong Text'))"
     );
     expect(editor.editable.textContent).toBe("\uFEFF@Batman\uFEFF\u00A0Strong Text");
 });
@@ -356,7 +356,7 @@ test("preserve the link formatting for message in reply", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(`.o-mail-Message-richBody a[href="https://weth.com.br/"]`);
-    await contains(`.o-mail-MessageInReply-message a[href="https://weth.com.br/"]`);
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(`.w-mail-Message-richBody a[href="https://weth.com.br/"]`);
+    await contains(`.w-mail-MessageInReply-message a[href="https://weth.com.br/"]`);
 });

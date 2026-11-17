@@ -535,7 +535,7 @@ class IrHttp(models.AbstractModel):
 
     @api.autovacuum
     def _gc_sessions(self):
-        if os.getenv("ODOO_SKIP_GC_SESSIONS"):
+        if os.getenv("WETH_SKIP_GC_SESSIONS"):
             return
         session_store().vacuum(max_lifetime=get_session_max_inactivity(self.env))
 

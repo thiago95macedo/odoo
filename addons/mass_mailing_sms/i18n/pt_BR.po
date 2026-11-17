@@ -20,7 +20,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/mass_mailing_sms/pt_BR/>\n"
+"weth-20/mass_mailing_sms/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,32 +30,32 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: mass_mailing_sms
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mass_mailing_sms/static/src/components/sms_widget/fields_sms_widget.js:0
 msgid " (including link trackers and opt-out link)"
 msgstr ""
 " (incluindo rastreadores de links e links de cancelamento de inscrição)"
 
 #. module: mass_mailing_sms
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mass_mailing_sms/static/src/components/sms_widget/fields_sms_widget.js:0
 msgid " (including link trackers)"
 msgstr " (incluindo rastreadores de links)"
 
 #. module: mass_mailing_sms
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mass_mailing_sms/static/src/components/sms_widget/fields_sms_widget.js:0
 msgid " (including opt-out link)"
 msgstr " (incluindo links de cancelamento de inscrição)"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/mailing_contact_to_list.py:0
 msgid "%(count)s ignored (no email/phone)"
 msgstr "%(count)s ignorado (sem e-mail/telefone)"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "24H Stats of %(mailing_type)s \"%(mailing_name)s\""
 msgstr "Estatísticas de 24h de %(mailing_type)s “%(mailing_name)s”"
@@ -162,7 +162,7 @@ msgid "A/B Test Mailings SMS #"
 msgstr "Nº de mensagens SMS de distribuição para teste A/B"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "A/B Test: %s"
 msgstr "Teste A/B: %s"
@@ -178,7 +178,7 @@ msgid "Add (Mailing) Contacts to Mailing List"
 msgstr "Adicionar Contatos (de Envio) à Lista de Distribuição"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/mailing_sms_test.py:0
 msgid "An error occurred."
 msgstr "Ocorreu um erro."
@@ -206,13 +206,13 @@ msgid "Average of Clicked"
 msgstr "Média de cliques"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "BOUNCED (%i)"
 msgstr "DEVOLVIDOS (%i)"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/controllers/main.py:0
 msgid ""
 "Blacklist through SMS Marketing unsubscribe (mailing ID: %(mailing_id)s - "
@@ -243,7 +243,7 @@ msgid "Bounced (%)"
 msgstr "Devolvido (%)"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "CLICKED (%i)"
 msgstr "CLICADOS (%i)"
@@ -375,7 +375,7 @@ msgid "Duplicate"
 msgstr "Duplicar"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/res_users.py:0
 msgid "Email Marketing"
 msgstr "Marketing por e-mail"
@@ -682,7 +682,7 @@ msgstr "Sem dados ainda!"
 #: model_terms:ir.actions.act_window,help:mass_mailing_sms.mailing_list_action_sms
 msgid ""
 "No need to import mailing lists, you can send SMS to contacts saved in other "
-"Odoo apps."
+"WETH apps."
 msgstr ""
 "Não é necessário importar listas de distribuição, você pode enviar SMSs para "
 "contatos salvos em outros aplicativos WETH."
@@ -741,13 +741,13 @@ msgstr ""
 "Envie essas mensagens e eles chegarão fazendo todos os celulares vibrar!"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/controllers/main.py:0
 msgid "Oops! Number not found"
 msgstr "Ops! Número não encontrado"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/controllers/main.py:0
 msgid ""
 "Oops! The phone number seems to be incorrect. Please make sure to include "
@@ -794,7 +794,7 @@ msgid "Please confirm your phone number to unsubscribe :"
 msgstr "Confirme seu número de telefone para cancelar a assinatura:"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "RECEIVED (%i)"
 msgstr "RECEBIDOS (%i)"
@@ -821,7 +821,7 @@ msgid "Rejected"
 msgstr "Rejeitado"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "Report for %(expected)i %(mailing_type)s Sent"
 msgstr "Relatório para %(mailing_type)s %(expected)i enviado"
@@ -868,7 +868,7 @@ msgid "SMS ID"
 msgstr "ID de SMS"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/res_users.py:0
 #: model:ir.actions.act_window,name:mass_mailing_sms.mailing_mailing_action_sms
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_sms
@@ -894,7 +894,7 @@ msgid "SMS Template"
 msgstr "Modelo de SMS"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "SMS Text Message"
 msgstr "Mensagem de texto SMS"
@@ -921,7 +921,7 @@ msgid "SMS Winner Selection"
 msgstr "Seleção do SMS ganhador"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/sms_composer.py:0
 msgid "STOP SMS: %(unsubscribe_url)s"
 msgstr "INTERROMPER SMS: %(unsubscribe_url)s"
@@ -997,7 +997,7 @@ msgid "Test"
 msgstr "Teste"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 #: model:ir.actions.act_window,name:mass_mailing_sms.mailing_sms_test_action
 msgid "Test Mailing"
@@ -1009,20 +1009,20 @@ msgid "Test SMS Mailing"
 msgstr "Distribuição de SMS de teste"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/mailing_sms_test.py:0
 msgid "Test SMS could not be sent to %(destination)s: %(state)s"
 msgstr "Não foi possível enviar o SMS de teste para %(destination)s: %(state)s"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/mailing_sms_test.py:0
 msgid "Test SMS skipped those numbers as they appear invalid: %(numbers)s"
 msgstr ""
 "O SMS de teste ignorou esses números pois parecem inválidos: %(numbers)s"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/wizard/mailing_sms_test.py:0
 msgid "Test SMS successfully sent to %s"
 msgstr "SMS de teste enviado com sucesso para %s"
@@ -1085,7 +1085,7 @@ msgid "Unsubscribe"
 msgstr "Cancelar a inscrição"
 
 #. module: mass_mailing_sms
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_sms/models/mailing_mailing.py:0
 msgid "Unsupported %s for mass SMS"
 msgstr "%s não suportado para SMS em massa"

@@ -7,6 +7,7 @@
     border-radius: inherit;
     background-color: inherit;
     box-shadow: $box-shadow;
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -23,12 +24,15 @@
 .o_color_picker_button {
     @extend %o-preview-alpha-background;
 
-    &::before, &::after {
+    &::before,
+    &::after {
         border-radius: 1px;
     }
 
-    &:focus, &:hover, &.selected {
-        outline: 2px solid var(--o-color-picker-active-color, $o-enterprise-action-color);
+    &:focus,
+    &:hover,
+    &.selected {
+        outline: 2px solid var(--o-color-picker-active-color, $w-enterprise-action-color);
         outline-offset: -2px;
     }
 
@@ -68,7 +72,7 @@
 
         &:focus-visible {
             z-index: 1;
-            outline: 1px solid var(--o-color-picker-active-color, $o-enterprise-action-color);
+            outline: 1px solid var(--o-color-picker-active-color, $w-enterprise-action-color);
         }
     }
 }
@@ -79,7 +83,9 @@
 
 .o_font_color_selector {
     --o-color-picker-grid-columns: 8;
-    .o_colorpicker_section, .o_color_section {
+
+    .o_colorpicker_section,
+    .o_color_section {
         display: grid;
         grid-template-columns: repeat(var(--o-color-picker-grid-columns), 1fr);
     }
@@ -88,6 +94,7 @@
 .o_font_color_selector .o_colorpicker_widget {
     width: 100%;
     margin-top: 2px;
+
     .o_hex_input {
         border: 1px solid !important;
         padding: 0 2px !important;

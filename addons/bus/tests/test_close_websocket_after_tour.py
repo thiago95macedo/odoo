@@ -42,7 +42,7 @@ class TestCloseWebsocketAfterTour(WebsocketCase):
             patch.object(websocket_module, "_websocket_instances", WeakSet()),
             patch.object(websocket_module.Websocket, "_disconnect", _disconnect),
         ):
-            self.browser_js("/odoo", "")
+            self.browser_js("/weth", "")
             self.assertTrue(websocket_created)
             self.wait_for_event(disconnect_called_ev, timeout=None)
             # serve_forever_patch prevent websocket instances from being collected. Stop it now.

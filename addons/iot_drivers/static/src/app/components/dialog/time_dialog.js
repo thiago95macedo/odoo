@@ -10,20 +10,20 @@ export class TimeDialog extends Component {
 
     store = useStore();
 
-    odooUptimeSeconds = signal(this.store.base().odoo_uptime_seconds);
+    wethUptimeSeconds = signal(this.store.base().weth_uptime_seconds);
     systemUptimeSeconds = signal(this.store.base().system_uptime_seconds);
 
     setup() {
         setInterval(() => {
-            this.odooUptimeSeconds.set(this.odooUptimeSeconds() + 1);
+            this.wethUptimeSeconds.set(this.wethUptimeSeconds() + 1);
             this.systemUptimeSeconds.set(this.systemUptimeSeconds() + 1);
         }, 1000);
     }
 
     startDateFromSeconds(uptimeInSeconds) {
         const currentTimeMs = new Date().getTime();
-        const odooUptimeMs = uptimeInSeconds * 1000;
-        return new Date(currentTimeMs - odooUptimeMs).toUTCString();
+        const wethUptimeMs = uptimeInSeconds * 1000;
+        return new Date(currentTimeMs - wethUptimeMs).toUTCString();
     }
 
     secondsToHumanReadable(periodInSeconds) {
@@ -51,9 +51,9 @@ export class TimeDialog extends Component {
             <t t-set-slot="body">
                 <div class="d-flex flex-column gap-4">
                   <div>
-                    <h5>Odoo Service</h5>
-                    <div>Running for <b t-out="this.secondsToHumanReadable(this.odooUptimeSeconds())"/></div>
-                    <div class="text-secondary">Started at <b t-out="this.startDateFromSeconds(this.odooUptimeSeconds())"/></div>
+                    <h5>WETH Service</h5>
+                    <div>Running for <b t-out="this.secondsToHumanReadable(this.wethUptimeSeconds())"/></div>
+                    <div class="text-secondary">Started at <b t-out="this.startDateFromSeconds(this.wethUptimeSeconds())"/></div>
                   </div>
                   <div t-if="this.store.isLinux()">
                     <h5>Operating System</h5>

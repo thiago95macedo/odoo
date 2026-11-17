@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/cloud_storage_azure/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: cloud_storage_azure
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_azure/models/ir_attachment.py:0
 msgid "%s is not a valid Azure Blob Storage URL."
 msgstr "%s não é uma URL válida do Azure Blob Storage."
@@ -94,7 +94,7 @@ msgid "Invalidate Cached Azure User Delegation Key"
 msgstr "Invalidar a chave de delegação de usuário do Azure em cache"
 
 #. module: cloud_storage_azure
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_azure/models/res_config_settings.py:0
 msgid ""
 "Some Azure attachments are in use, please migrate their cloud storages "
@@ -109,7 +109,7 @@ msgid "Store chatter attachments in the Azure cloud"
 msgstr "Armazenar anexos de chatter na nuvem do Azure"
 
 #. module: cloud_storage_azure
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_azure/models/res_config_settings.py:0
 msgid ""
 "The connection string is not allowed to download blobs from the container.\n"
@@ -119,7 +119,7 @@ msgstr ""
 "%s"
 
 #. module: cloud_storage_azure
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_azure/models/res_config_settings.py:0
 msgid ""
 "The connection string is not allowed to upload blobs to the container.\n"

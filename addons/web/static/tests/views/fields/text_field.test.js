@@ -14,7 +14,7 @@ import {
 } from "@web/../tests/web_test_helpers";
 
 function fieldTextArea(name) {
-    return contains(`.o_field_widget[name='${name}'] textarea`);
+    return contains(`.w_field_widget[name='${name}'] textarea`);
 }
 
 class Product extends models.Model {
@@ -33,8 +33,8 @@ test("basic rendering", async () => {
         resId: 1,
         arch: '<form><field name="description"/></form>',
     });
-    expect(".o_field_text textarea").toHaveCount(1);
-    expect(".o_field_text textarea").toHaveValue("Description as text");
+    expect(".w_field_text textarea").toHaveCount(1);
+    expect(".w_field_text textarea").toHaveValue("Description as text");
 });
 
 test("doesn't have a scrollbar with long content", async () => {
@@ -45,7 +45,7 @@ test("doesn't have a scrollbar with long content", async () => {
         resId: 1,
         arch: '<form><field name="description"/></form>',
     });
-    const textarea = queryOne(".o_field_text textarea");
+    const textarea = queryOne(".w_field_text textarea");
     expect(textarea.clientHeight).toBe(textarea.scrollHeight);
 });
 
@@ -58,8 +58,8 @@ test("basic rendering char field", async () => {
         resId: 1,
         arch: '<form><field name="name" widget="text"/></form>',
     });
-    expect(".o_field_text textarea").toHaveCount(1);
-    expect(".o_field_text textarea").toHaveValue("Description\nas\ntext");
+    expect(".w_field_text textarea").toHaveCount(1);
+    expect(".w_field_text textarea").toHaveValue("Description\nas\ntext");
 });
 
 test("char field with widget='text' trims trailing spaces", async () => {
@@ -70,7 +70,7 @@ test("char field with widget='text' trims trailing spaces", async () => {
         arch: '<form><field name="name" widget="text"/></form>',
     });
     await fieldTextArea("name").edit("test  ");
-    expect(".o_field_text textarea").toHaveValue("test");
+    expect(".w_field_text textarea").toHaveValue("test");
 });
 
 test("render following an onchange", async () => {
@@ -87,7 +87,7 @@ test("render following an onchange", async () => {
         resId: 1,
         arch: `<form><field name="description"/><field name="name"/></form>`,
     });
-    const textarea = queryOne(".o_field_text textarea");
+    const textarea = queryOne(".w_field_text textarea");
     const initialHeight = textarea.offsetHeight;
     await fieldInput("name").edit("Let's trigger the onchange");
     await animationFrame();
@@ -105,11 +105,11 @@ test("no scroll bar in editable list", async () => {
         resModel: "product",
         arch: '<list editable="top"><field name="description"/></list>',
     });
-    await contains(".o_data_row .o_data_cell").click();
-    const textarea = queryOne(".o_field_text textarea");
+    await contains(".w_data_row .w_data_cell").click();
+    const textarea = queryOne(".w_field_text textarea");
     expect(textarea.clientHeight).toBe(textarea.scrollHeight);
-    await contains("tr:not(.o_data_row)").click();
-    const cell = queryOne(".o_data_row .o_data_cell");
+    await contains("tr:not(.w_data_row)").click();
+    const cell = queryOne(".w_data_row .w_data_cell");
     expect(cell.clientHeight).toBe(cell.scrollHeight);
 });
 
@@ -121,7 +121,7 @@ test("set row on text fields", async () => {
         resId: 1,
         arch: `<form><field name="description" rows="40"/><field name="description"/></form>`,
     });
-    const textareas = queryAll(".o_field_text textarea");
+    const textareas = queryAll(".w_field_text textarea");
     expect(textareas[0].rows).toBe(40);
     expect(textareas[0].clientHeight).toBeGreaterThan(textareas[1].clientHeight);
 });
@@ -143,10 +143,10 @@ test("is translatable", async () => {
         resId: 1,
         arch: `<form><sheet><group><field name="description"/></group></sheet></form>`,
     });
-    expect(".o_field_text textarea").toHaveClass("o_field_translate");
-    await contains(".o_field_text textarea").click();
-    expect(".o_field_text .btn.o_field_translate").toHaveCount(1);
-    await contains(".o_field_text .btn.o_field_translate").click();
+    expect(".w_field_text textarea").toHaveClass("o_field_translate");
+    await contains(".w_field_text textarea").click();
+    expect(".w_field_text .btn.w_field_translate").toHaveCount(1);
+    await contains(".w_field_text .btn.w_field_translate").click();
     expect(".modal").toHaveCount(1);
 });
 
@@ -161,7 +161,7 @@ test("is translatable on new record", async () => {
         resModel: "product",
         arch: `<form><sheet><group><field name="description"/></group></sheet></form>`,
     });
-    expect(".o_field_text .btn.o_field_translate").toHaveCount(1);
+    expect(".w_field_text .btn.w_field_translate").toHaveCount(1);
 });
 
 test("press enter inside editable list", async () => {
@@ -174,16 +174,16 @@ test("press enter inside editable list", async () => {
                 <field name="description" />
             </list>`,
     });
-    await contains(".o_data_row .o_data_cell").click();
-    expect("textarea.o_input").toHaveCount(1);
-    expect("textarea.o_input").toHaveValue("Description as text");
-    expect("textarea.o_input").toBeFocused();
-    expect("textarea.o_input").toHaveValue("Description as text");
+    await contains(".w_data_row .w_data_cell").click();
+    expect("textarea.w_input").toHaveCount(1);
+    expect("textarea.w_input").toHaveValue("Description as text");
+    expect("textarea.w_input").toBeFocused();
+    expect("textarea.w_input").toHaveValue("Description as text");
     // clear selection before enter
     await fieldTextArea("description").press(["right", "Enter"]);
-    expect("textarea.o_input").toHaveValue("Description as text\n");
-    expect("textarea.o_input").toBeFocused();
-    expect("tr.o_data_row").toHaveCount(1);
+    expect("textarea.w_input").toHaveValue("Description as text\n");
+    expect("textarea.w_input").toBeFocused();
+    expect("tr.w_data_row").toHaveCount(1);
 });
 
 test("in editable list view", async () => {
@@ -193,7 +193,7 @@ test("in editable list view", async () => {
         resModel: "product",
         arch: '<list editable="top"><field name="description"/></list>',
     });
-    await contains(".o_list_button_add").click();
+    await contains(".w_list_button_add").click();
     expect("textarea").toBeFocused();
 });
 
@@ -209,7 +209,7 @@ test("placeholder_field shows as placeholder", async () => {
             <field name="char"/>
         </form>`,
     });
-    expect(`.o_field_text textarea`).toHaveAttribute("placeholder", "My Placeholder");
+    expect(`.w_field_text textarea`).toHaveAttribute("placeholder", "My Placeholder");
 });
 
 test.tags("desktop");
@@ -236,10 +236,10 @@ test("with dynamic placeholder", async () => {
                 </sheet>
             </form>`,
     });
-    expect(".o_popover .o_model_field_selector_popover").toHaveCount(0);
+    expect(".w_popover .w_model_field_selector_popover").toHaveCount(0);
     await press(["alt", "#"]);
     await animationFrame();
-    expect(".o_popover .o_model_field_selector_popover").toHaveCount(1);
+    expect(".w_popover .w_model_field_selector_popover").toHaveCount(1);
 });
 
 test.tags("mobile");
@@ -266,11 +266,11 @@ test("with dynamic placeholder in mobile", async () => {
                 </sheet>
             </form>`,
     });
-    expect(".o_popover .o_model_field_selector_popover").toHaveCount(0);
+    expect(".w_popover .w_model_field_selector_popover").toHaveCount(0);
     await fieldTextArea("description").focus();
     await press(["alt", "#"]);
     await animationFrame();
-    expect(".o_popover .o_model_field_selector_popover").toHaveCount(1);
+    expect(".w_popover .w_model_field_selector_popover").toHaveCount(1);
 });
 
 test("text field without line breaks", async () => {
@@ -282,16 +282,16 @@ test("text field without line breaks", async () => {
         arch: `<form><field name="description" options="{'line_breaks': False}"/></form>`,
     });
 
-    expect(".o_field_text textarea").toHaveCount(1);
-    expect(".o_field_text textarea").toHaveValue("Description as text");
-    await contains(".o_field_text textarea").click();
+    expect(".w_field_text textarea").toHaveCount(1);
+    expect(".w_field_text textarea").toHaveValue("Description as text");
+    await contains(".w_field_text textarea").click();
     await press("Enter");
-    expect(".o_field_text textarea").toHaveValue("Description as text");
+    expect(".w_field_text textarea").toHaveValue("Description as text");
 
-    await contains(".o_field_text textarea").clear({ confirm: false });
+    await contains(".w_field_text textarea").clear({ confirm: false });
     await navigator.clipboard.writeText("text\nwith\nline\nbreaks\n"); // copy
     await press(["ctrl", "v"]); // paste
-    expect(".o_field_text textarea").toHaveValue("text with line breaks ", {
+    expect(".w_field_text textarea").toHaveValue("text with line breaks ", {
         message: "no line break should appear",
     });
 });

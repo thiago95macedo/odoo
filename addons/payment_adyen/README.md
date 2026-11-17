@@ -43,28 +43,28 @@ implement tokenization and handle 3DS redirects.
 
 - `17.0`
   - The Web Drop-in SDK is replaced by the Web Components SDK (version 5.39.0); the Checkout and
-    Recurring APIs are updated to versions 70 and 68. odoo/odoo#120446
+    Recurring APIs are updated to versions 70 and 68. weth/weth#120446
   - The 'Checkout API URL' and 'Recurring API URL' fields are replaced by the 'API URL Prefix'
-    field. odoo/odoo#126831
+    field. weth/weth#126831
 - `16.4`
-  - The responses of webhook notifications are sent with the proper HTTP code. odoo/odoo#117940
+  - The responses of webhook notifications are sent with the proper HTTP code. weth/weth#117940
 - `16.2`
-  - The support for partial manual capture is added. odoo/odoo#87251
+  - The support for partial manual capture is added. weth/weth#87251
 - `16.0`
-  - Archiving a token no longer deactivates the related payment method on Adyen. odoo/odoo#93774
+  - Archiving a token no longer deactivates the related payment method on Adyen. weth/weth#93774
 - `15.3`
-  - The support for manual capture is added. odoo/odoo#70591
+  - The support for manual capture is added. weth/weth#70591
 - `15.2`
   - An HTTP 404 "Forbidden" error is raised instead of a Validation error when the authenticity of
-    the webhook notification cannot be verified. odoo/odoo#81607
+    the webhook notification cannot be verified. weth/weth#81607
 - `15.0`
-  - The support for both full and partial refunds is added. odoo/odoo#70881
+  - The support for both full and partial refunds is added. weth/weth#70881
   - The Web Drop-in SDK is migrated to version 4.7.3 and the Checkout API to version 67 to switch
-    from relying on origin keys and use client keys instead. odoo/odoo#74827
+    from relying on origin keys and use client keys instead. weth/weth#74827
 - `14.3`
   - The previous Hosted Payment Pages API that allowed for redirect payments is replaced by a
     combination of the Web Drop-in SDK (version 3.9.4) and the Checkout (version 53) and Recurring
-    (version 49) APIs. odoo/odoo#141661
+    (version 49) APIs. weth/weth#141661
 
 ## Testing instructions
 

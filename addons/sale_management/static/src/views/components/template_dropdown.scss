@@ -4,7 +4,8 @@
             visibility: hidden;
         }
 
-        &:hover, &.focus {
+        &:hover,
+        &.focus {
             .o_template_icon_group {
                 visibility: visible;
 
@@ -16,7 +17,7 @@
                     }
 
                     &[data-icon='delete']:hover {
-                        color: $o-danger !important;
+                        color: $w-danger !important;
                     }
                 }
             }

@@ -165,13 +165,13 @@ weth.define('@spreadsheet/o_spreadsheet/o_spreadsheet', ['@weth/owl'], function 
 		return !!ev.target && parent.contains(ev.target);
 	}
 	function gridOverlayPosition(zoom = 1) {
-		const spreadsheetElement = document.querySelector(".o-grid-overlay:not(.o-figure-container .o-grid-overlay)");
+		const spreadsheetElement = document.querySelector(".w-grid-overlay:not(.w-figure-container .w-grid-overlay)");
 		const result = spreadsheetElement && zoomCorrectedElementRect(spreadsheetElement, zoom);
 		if (!result) throw new Error("Can't find spreadsheet position");
 		return result;
 	}
 	function zoomCorrectedElementRect(el, zoomLevel) {
-		const zoomedElement = el.closest(".o-zoomable");
+		const zoomedElement = el.closest(".w-zoomable");
 		let targetEl;
 		let zoom = 1;
 		if (zoomedElement) {
@@ -222,7 +222,7 @@ weth.define('@spreadsheet/o_spreadsheet/o_spreadsheet', ['@weth/owl'], function 
 		if (el.hasChildNodes()) for (const child of el.childNodes) yield* iterateChildren(child);
 	}
 	function getOpenedMenus() {
-		return Array.from(document.querySelectorAll(".o-spreadsheet .o-menu"));
+		return Array.from(document.querySelectorAll(".w-spreadsheet .w-menu"));
 	}
 	function getCurrentSelection(el) {
 		const { startElement, endElement, startSelectionOffset, endSelectionOffset } = getStartAndEndSelection(el);
@@ -355,7 +355,7 @@ weth.define('@spreadsheet/o_spreadsheet/o_spreadsheet', ['@weth/owl'], function 
 	function isMobileOS() {
 		return isAndroid() || isIOS() || isOtherMobileOS();
 	}
-	const INTERACTIVE_ELEMENT_SELECTOR = "select, input, textarea, button, .o-select, .os-input, .o-input, .o-button, .o-button-icon, .o-button-link, .o-composer";
+	const INTERACTIVE_ELEMENT_SELECTOR = "select, input, textarea, button, .w-select, .os-input, .w-input, .w-button, .w-button-icon, .w-button-link, .w-composer";
 	/** Check if there is an interactive element (input, select, button, ...) between the event.target and event.currentTarget (inclusive)*/
 	function hasInteractiveElementInEventTree(event) {
 		const target = event.target;
@@ -2693,8 +2693,8 @@ stores.inject(MyMetaStore, storeInstance);
 	*
 	* The end goal is to eliminate all compatibility shims.
 	*/
-	const { __ODOO_COMPATIBILITY_LAYER_ADDED__, blockDom: blockDom$1, useConfig: useConfig$1, onMounted: onMounted$1, onPatched: onPatched$1, onWillUnmount: onWillUnmount$1, App: OwlApp, Component: OwlComponent, EnvPlugin: OwlEnvPlugin, useComponent: OwlUseComponent, useEnv: OwlUseEnv, useLayoutEffect: OwlUseLayoutEffect, useSubEnv: OwlUseSubEnv, Plugin: Plugin$1, usePlugin: usePlugin$1, useProps: useProps$1, providePlugins: providePlugins$1, useScope: useScope$1, xml: xml$1 } = owl;
-	const isOdooCompatLoaded = __ODOO_COMPATIBILITY_LAYER_ADDED__ === true;
+	const { __WETH_COMPATIBILITY_LAYER_ADDED__, blockDom: blockDom$1, useConfig: useConfig$1, onMounted: onMounted$1, onPatched: onPatched$1, onWillUnmount: onWillUnmount$1, App: OwlApp, Component: OwlComponent, EnvPlugin: OwlEnvPlugin, useComponent: OwlUseComponent, useEnv: OwlUseEnv, useLayoutEffect: OwlUseLayoutEffect, useSubEnv: OwlUseSubEnv, Plugin: Plugin$1, usePlugin: usePlugin$1, useProps: useProps$1, providePlugins: providePlugins$1, useScope: useScope$1, xml: xml$1 } = owl;
+	const isWethCompatLoaded = __WETH_COMPATIBILITY_LAYER_ADDED__ === true;
 	var _Component = class extends OwlComponent {
 		env;
 		constructor(node) {
@@ -2895,13 +2895,13 @@ stores.inject(MyMetaStore, storeInstance);
 			return super.createRoot(component, config);
 		}
 	};
-	const Component = isOdooCompatLoaded ? OwlComponent : _Component;
-	const useComponent = isOdooCompatLoaded ? OwlUseComponent : _useComponent;
-	const useLayoutEffect = isOdooCompatLoaded ? OwlUseLayoutEffect : _useLayoutEffect;
-	const EnvPlugin = isOdooCompatLoaded ? OwlEnvPlugin : _EnvPlugin;
-	const useEnv = isOdooCompatLoaded ? OwlUseEnv : _useEnv;
-	const useSubEnv = isOdooCompatLoaded ? OwlUseSubEnv : _useSubEnv;
-	const App$1 = isOdooCompatLoaded ? OwlApp : _App;
+	const Component = isWethCompatLoaded ? OwlComponent : _Component;
+	const useComponent = isWethCompatLoaded ? OwlUseComponent : _useComponent;
+	const useLayoutEffect = isWethCompatLoaded ? OwlUseLayoutEffect : _useLayoutEffect;
+	const EnvPlugin = isWethCompatLoaded ? OwlEnvPlugin : _EnvPlugin;
+	const useEnv = isWethCompatLoaded ? OwlUseEnv : _useEnv;
+	const useSubEnv = isWethCompatLoaded ? OwlUseSubEnv : _useSubEnv;
+	const App$1 = isWethCompatLoaded ? OwlApp : _App;
 	//#endregion
 	//#region src/helpers/event_bus.ts
 	/**
@@ -21779,7 +21779,7 @@ stores.inject(MyMetaStore, storeInstance);
 	};
 	/**
 	* Versions used to be an incremented integer.
-	* This was later changed to match release versions (matching Odoo release names).
+	* This was later changed to match release versions (matching WETH release names).
 	*/
 	function isLegacyVersioning(data) {
 		return typeof data.version === "number";
@@ -24056,7 +24056,7 @@ stores.inject(MyMetaStore, storeInstance);
 		});
 		let spreadsheetElement = null;
 		function updatePosition() {
-			if (!spreadsheetElement) spreadsheetElement = document.querySelector(".o-spreadsheet");
+			if (!spreadsheetElement) spreadsheetElement = document.querySelector(".w-spreadsheet");
 			if (spreadsheetElement) {
 				const { top, left, width, height } = spreadsheetElement.getBoundingClientRect();
 				position.x = left;
@@ -36077,10 +36077,10 @@ stores.inject(MyMetaStore, storeInstance);
 	//#endregion
 	//#region src/helpers/figures/charts/runtime/chart_custom_tooltip.ts
 	/**
-	* Custom tooltip for the charts. Mostly copied from Odoo's custom tooltip, with some slight changes to make it work
+	* Custom tooltip for the charts. Mostly copied from WETH's custom tooltip, with some slight changes to make it work
 	* with o-spreadsheet chart data and CSS.
 	*
-	* https://github.com/weth/odoo/blob/18.0/addons/web/static/src/views/graph/graph_renderer.xml
+	* https://github.com/weth/weth/blob/18.0/addons/web/static/src/views/graph/graph_renderer.xml
 	*/
 	const templates = `
 <templates>
@@ -36396,7 +36396,7 @@ stores.inject(MyMetaStore, storeInstance);
 		return (dataset[dataIndex] / total * 100).toFixed(2);
 	}
 	function customTooltipHandler({ chart, tooltip }) {
-		chart.canvas.parentNode.querySelector("div.o-chart-custom-tooltip")?.remove();
+		chart.canvas.parentNode.querySelector("div.w-chart-custom-tooltip")?.remove();
 		if (tooltip.opacity === 0 || tooltip.dataPoints.length === 0) return;
 		const tooltipItems = tooltip.body.map((body, index) => {
 			let label = body.before[0];
@@ -38778,7 +38778,7 @@ stores.inject(MyMetaStore, storeInstance);
 	}
 	//#endregion
 	//#region src/helpers/search.ts
-	/** Methods from Odoo Web Utils  */
+	/** Methods from WETH Web Utils  */
 	/**
 	* This function computes a score that represent the fact that the
 	* string contains the pattern, or not
@@ -42721,7 +42721,7 @@ stores.inject(MyMetaStore, storeInstance);
 		const gridTop = gridRect.y / zoom;
 		const gridWidth = gridRect.width / zoom;
 		const gridHeight = gridRect.height / zoom;
-		const spreadsheet = document.querySelector(".o-spreadsheet");
+		const spreadsheet = document.querySelector(".w-spreadsheet");
 		if (!spreadsheet) return;
 		const figureSize = getDefaultChartFigureSize(definition.type);
 		const halfWidth = figureSize.width / 2;
@@ -54277,7 +54277,7 @@ stores.inject(MyMetaStore, storeInstance);
 	//#endregion
 	//#region src/helpers/owl3_helpers.ts
 	/**
-	* Comes from https://github.com/weth/odoo/blob/master/addons/web/static/src/owl2/utils.js
+	* Comes from https://github.com/weth/weth/blob/master/addons/web/static/src/owl2/utils.js
 	*/
 	function render(component, deep = false) {
 		component.__owl__.render(deep);
@@ -54661,7 +54661,7 @@ stores.inject(MyMetaStore, storeInstance);
 		}
 		isMenuClick(ev) {
 			const target = ev.target;
-			if (target && target instanceof Element) return !!target.closest(".o-figure-menu");
+			if (target && target instanceof Element) return !!target.closest(".w-figure-menu");
 			return false;
 		}
 		startDraggingFigure(figureUI, ev) {
@@ -66112,7 +66112,7 @@ stores.inject(MyMetaStore, storeInstance);
 	* no implementation, but this plugin can be replaced by another one to provide
 	* a real implementation.
 	*
-	* For example, in Odoo, the plugin is replaced by a plugin that used the
+	* For example, in WETH, the plugin is replaced by a plugin that used the
 	* module namespace to dynamically translate terms.
 	*/
 	var DynamicTranslate = class extends EvaluationPlugin {
@@ -72121,7 +72121,7 @@ stores.inject(MyMetaStore, storeInstance);
 			});
 		}
 		onExternalClick(ev) {
-			if (!ev.target.closest(".o-color-picker")) this.state.openedPicker = void 0;
+			if (!ev.target.closest(".w-color-picker")) this.state.openedPicker = void 0;
 		}
 		focusInputAndSelectContent() {
 			const el = this.sheetNameRef();
@@ -72603,7 +72603,7 @@ stores.inject(MyMetaStore, storeInstance);
 			return this.dragAndDrop.itemsStyle[sheetId] || "";
 		}
 		getSheetItemRects() {
-			return Array.from(this.bottomBarRef().querySelectorAll(`.o-sheet`)).map((sheetEl) => sheetEl.getBoundingClientRect()).map((rect) => ({
+			return Array.from(this.bottomBarRef().querySelectorAll(`.w-sheet`)).map((sheetEl) => sheetEl.getBoundingClientRect()).map((rect) => ({
 				x: rect.x,
 				width: rect.width - 1,
 				y: rect.y,
@@ -73422,7 +73422,7 @@ stores.inject(MyMetaStore, storeInstance);
     min-width: min-content; /* Ensure the body does not shrink smaller than its content */
   }
 
-  .o-print-page {
+  .w-print-page {
     display: flex;
     justify-content: center;
     flex-shrink: 0;
@@ -73432,7 +73432,7 @@ stores.inject(MyMetaStore, storeInstance);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
 
-  .o-empty-print-page {
+  .w-empty-print-page {
     align-items: center;
     color: #5f636f;
     font-style: italic;
@@ -73444,7 +73444,7 @@ stores.inject(MyMetaStore, storeInstance);
       background-color: transparent;
     }
 
-    .o-print-page {
+    .w-print-page {
       margin: 0 !important;
       padding: 0 !important;
       width: 100% !important;
@@ -73453,11 +73453,11 @@ stores.inject(MyMetaStore, storeInstance);
       break-after: page;
     }
 
-    .o-print-page:last-child {
+    .w-print-page:last-child {
       break-after: auto;
     }
 
-    .o-empty-print-page {
+    .w-empty-print-page {
       display: none;
     }
   }
@@ -73501,7 +73501,7 @@ stores.inject(MyMetaStore, storeInstance);
 		}
 		function syncPages(doc) {
 			const pageCount = args.pageCount();
-			const isEmptyPage = !!doc.body.querySelector(".o-empty-print-page");
+			const isEmptyPage = !!doc.body.querySelector(".w-empty-print-page");
 			if (pageCount === 0) {
 				if (!isEmptyPage) doc.body.replaceChildren(createEmptyPageElement());
 			} else {
@@ -75276,10 +75276,10 @@ stores.inject(MyMetaStore, storeInstance);
 			const getHeight = (s) => el.querySelector(s) && zoomCorrectedElementRect(el.querySelector(s), zoom).height || 0;
 			const getWidth = (s) => el.querySelector(s) && zoomCorrectedElementRect(el.querySelector(s), zoom).width || 0;
 			const rect = el.getBoundingClientRect();
-			const topBarHeight = getHeight(".o-spreadsheet-topbar-wrapper");
-			const bottomBarHeight = getHeight(".o-spreadsheet-bottombar-wrapper");
-			const colGroupHeight = getHeight(".o-column-groups");
-			const gridWidth = getWidth(".o-grid");
+			const topBarHeight = getHeight(".w-spreadsheet-topbar-wrapper");
+			const bottomBarHeight = getHeight(".w-spreadsheet-bottombar-wrapper");
+			const colGroupHeight = getHeight(".w-column-groups");
+			const gridWidth = getWidth(".w-grid");
 			const gridHeight = rect.height - colGroupHeight - topBarHeight - bottomBarHeight;
 			return {
 				width: Math.max(gridWidth / zoom - scrollbarWidth, 0),

@@ -20,7 +20,7 @@ test("Start Call in a channel stays inline (not fullscreen)", async () => {
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Call']");
-    await contains(".o-mail-Discuss .o-discuss-Call");
+    await contains(".w-mail-Discuss .w-discuss-Call");
 });
 
 test("Start Video Call in a channel opens the fullscreen meeting view", async () => {
@@ -30,7 +30,7 @@ test("Start Video Call in a channel opens the fullscreen meeting view", async ()
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Video Call']");
-    await contains(".o-mail-Meeting .o-discuss-Call");
+    await contains(".w-mail-Meeting .w-discuss-Call");
 });
 
 test("channel video conference exposes Members as a side action", async () => {
@@ -40,8 +40,8 @@ test("channel video conference exposes Members as a side action", async () => {
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Video Call']");
-    await contains(".o-mail-MeetingSideActions button[title='Members']");
-    await contains(".o-mail-MeetingSideActions button[title='Chat']");
+    await contains(".w-mail-MeetingSideActions button[title='Members']");
+    await contains(".w-mail-MeetingSideActions button[title='Chat']");
 });
 
 test("Start Call in a group chat stays inline (not fullscreen)", async () => {
@@ -57,7 +57,7 @@ test("Start Call in a group chat stays inline (not fullscreen)", async () => {
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Call']");
-    await contains(".o-mail-Discuss .o-discuss-Call");
+    await contains(".w-mail-Discuss .w-discuss-Call");
 });
 
 test("Start Call in a chat stays inline (not fullscreen)", async () => {
@@ -73,7 +73,7 @@ test("Start Call in a chat stays inline (not fullscreen)", async () => {
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Call']");
-    await contains(".o-mail-Discuss .o-discuss-Call");
+    await contains(".w-mail-Discuss .w-discuss-Call");
 });
 
 test("Start Video Call in a group chat opens the fullscreen meeting view", async () => {
@@ -90,5 +90,5 @@ test("Start Video Call in a group chat opens the fullscreen meeting view", async
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Video Call']");
-    await contains(".o-mail-Meeting .o-discuss-Call");
+    await contains(".w-mail-Meeting .w-discuss-Call");
 });

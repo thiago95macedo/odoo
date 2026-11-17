@@ -24,8 +24,8 @@ test("simple rendering", async () => {
     mainComponentsRegistry.add("MainComponentA", { Component: MainComponentA, props: {} });
     mainComponentsRegistry.add("MainComponentB", { Component: MainComponentB, props: {} });
     await mountWithCleanup(MainComponentsContainer);
-    expect("div.o-main-components-container").toHaveCount(1);
-    expect(".o-main-components-container").toHaveInnerHTML(`
+    expect("div.w-main-components-container").toHaveCount(1);
+    expect(".w-main-components-container").toHaveInnerHTML(`
         <span>MainComponentA</span>
         <span>MainComponentB</span>
         <div class="o-overlay-container"></div>
@@ -59,8 +59,8 @@ test("unmounts erroring main component", async () => {
     mainComponentsRegistry.add("MainComponentA", { Component: MainComponentA, props: {} });
     mainComponentsRegistry.add("MainComponentB", { Component: MainComponentB, props: {} });
     await mountWithCleanup(MainComponentsContainer);
-    expect("div.o-main-components-container").toHaveCount(1);
-    expect(".o-main-components-container").toHaveInnerHTML(`
+    expect("div.w-main-components-container").toHaveCount(1);
+    expect(".w-main-components-container").toHaveInnerHTML(`
         <span>MainComponentA</span><span>MainComponentB</span>
         <div class="o-overlay-container"></div>
         <div></div>
@@ -71,8 +71,8 @@ test("unmounts erroring main component", async () => {
     expect.verifySteps(["BOOM"]);
     expect.verifyErrors(["BOOM"]);
 
-    expect(".o-main-components-container > span").toHaveCount(1);
-    expect(".o-main-components-container > span").toHaveInnerHTML("MainComponentB");
+    expect(".w-main-components-container > span").toHaveCount(1);
+    expect(".w-main-components-container > span").toHaveInnerHTML("MainComponentB");
 });
 
 test("unmounts erroring main component: variation", async () => {
@@ -100,8 +100,8 @@ test("unmounts erroring main component: variation", async () => {
     mainComponentsRegistry.add("MainComponentA", { Component: MainComponentA, props: {} });
     mainComponentsRegistry.add("MainComponentB", { Component: MainComponentB, props: {} });
     await mountWithCleanup(MainComponentsContainer);
-    expect("div.o-main-components-container").toHaveCount(1);
-    expect(".o-main-components-container").toHaveInnerHTML(`
+    expect("div.w-main-components-container").toHaveCount(1);
+    expect(".w-main-components-container").toHaveInnerHTML(`
         <span>MainComponentA</span><span>MainComponentB</span>
         <div class="o-overlay-container"></div>
         <div></div>
@@ -111,8 +111,8 @@ test("unmounts erroring main component: variation", async () => {
     await animationFrame();
     expect.verifySteps(["BOOM"]);
     expect.verifyErrors(["BOOM"]);
-    expect(".o-main-components-container > span").toHaveCount(1);
-    expect(".o-main-components-container > span").toHaveInnerHTML("MainComponentA");
+    expect(".w-main-components-container > span").toHaveCount(1);
+    expect(".w-main-components-container > span").toHaveInnerHTML("MainComponentA");
 });
 
 test("MainComponentsContainer re-renders when the registry changes", async () => {

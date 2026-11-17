@@ -14,7 +14,7 @@ patch(Animation.prototype, {
      * it is the only main scrollable element of the page).
      */
     findScrollingElement() {
-        const articleContent = document.querySelector(".o_wslide_fs_article_content");
+        const articleContent = document.querySelector(".w_wslide_fs_article_content");
         return articleContent ? articleContent : super.findScrollingElement(...arguments);
     },
 });

@@ -11,7 +11,7 @@ APIs:
 
 This module uses the generic payment with redirection flow based on form submission provided by the
 `payment` module for every payment method, including `Card`: the customer is redirected to a
-Xendit-hosted payment link created through the Payment Sessions API, and Xendit notifies Odoo of the
+Xendit-hosted payment link created through the Payment Sessions API, and Xendit notifies WETH of the
 outcome through a webhook.
 
 For `Card` payments, if the customer opts to save the payment method, the Payment Tokens API token
@@ -35,11 +35,11 @@ or dropped.
 - `18.0`
   - The redirect flow is migrated to Xendit's Payment Sessions and Payment Requests/Tokens v3 APIs;
     the inline `Card` form, the Xendit.js SDK, and the `xendit_public_key` credential (kept on
-    existing databases for backward compatibility, but no longer used) are dropped. odoo/odoo#277626
+    existing databases for backward compatibility, but no longer used) are dropped. weth/weth#277626
 - `17.4`
-  - The support for tokenization via `Card` is added. odoo/odoo#158445
+  - The support for tokenization via `Card` is added. weth/weth#158445
 - `17.0`
-  - The first version of the module is merged. odoo/odoo#141661
+  - The first version of the module is merged. weth/weth#141661
 
 ## Testing instructions
 

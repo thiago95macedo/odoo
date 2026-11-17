@@ -535,7 +535,7 @@ describe("Selection collapsed", () => {
                 const editableSelection =
                     editor.shared.selection.getSelectionData().editableSelection;
                 if (findInSelection(editableSelection, "a:not([href])")) {
-                    await waitFor(".o-we-linkpopover");
+                    await waitFor(".w-we-linkpopover");
                 }
                 editor.shared.selection.focusEditable();
                 await tick();

@@ -17,7 +17,7 @@ const fetchErrorMessages = [
 ];
 
 /**
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}
@@ -38,7 +38,7 @@ errorHandlerRegistry.add("offlineFailToFetchErrorHandler", offlineFailToFetchErr
 // -----------------------------------------------------------------------------
 
 /**
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}

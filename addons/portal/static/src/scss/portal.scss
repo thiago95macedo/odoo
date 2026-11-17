@@ -4,19 +4,19 @@
 ///
 
 // ======  Variables =========
-$o-theme-navbar-logo-height: $nav-link-height !default;
-$o-theme-navbar-fixed-logo-height: $nav-link-height !default;
+$w-theme-navbar-logo-height: $nav-link-height !default;
+$w-theme-navbar-fixed-logo-height: $nav-link-height !default;
 
 // Portal toolbar (filters, search bar)
-$o-portal-mobile-toolbar: true; // Enable/Disable custom design
-$o-portal-mobile-toolbar-border: $border-color;
-$o-portal-mobile-toolbar-bg: $gray-200;
+$w-portal-mobile-toolbar: true; // Enable/Disable custom design
+$w-portal-mobile-toolbar-border: $border-color;
+$w-portal-mobile-toolbar-bg: $gray-200;
 
 // Portal Tables
-$o-portal-table-th-pt: map-get($spacers, 1) !default;
-$o-portal-table-th-pb: map-get($spacers, 1) !default;
-$o-portal-table-td-pt: map-get($spacers, 2) !default;
-$o-portal-table-td-pb: map-get($spacers, 2) !default;
+$w-portal-table-th-pt: map-get($spacers, 1) !default;
+$w-portal-table-th-pb: map-get($spacers, 1) !default;
+$w-portal-table-td-pt: map-get($spacers, 2) !default;
+$w-portal-table-td-pb: map-get($spacers, 2) !default;
 
 // Frontend general
 body {
@@ -45,49 +45,55 @@ header {
                 object-fit: contain;
                 display: block;
                 width: auto;
-                height: $o-theme-navbar-logo-height;
+                height: $w-theme-navbar-logo-height;
 
                 @include media-breakpoint-down(md) {
-                    max-height: min($o-theme-navbar-logo-height, 5rem);
+                    max-height: min($w-theme-navbar-logo-height, 5rem);
                 }
             }
         }
     }
+
     .nav-link {
         white-space: nowrap;
     }
 }
+
 .navbar {
     margin-bottom: 0;
+
     .nav.navbar-nav.float-end {
         @include media-breakpoint-down(md) {
-            float: none!important;
+            float: none !important;
         }
     }
 }
+
 @include media-breakpoint-up(md) {
-    .navbar-expand-md ul.nav > li.divider {
+    .navbar-expand-md ul.nav>li.divider {
         display: list-item;
     }
 }
-ul.flex-column > li > a {
+
+ul.flex-column>li>a {
     padding: 2px 15px;
 }
 
 // Link without text but an icon
-a, .btn-link {
+a,
+.btn-link {
     &.oi:hover {
-        text-decoration: $o-theme-btn-icon-hover-decoration;
+        text-decoration: $w-theme-btn-icon-hover-decoration;
     }
 }
 
-// Odoo options classes
+// WETH options classes
 .jumbotron {
     margin-bottom: 0;
 }
 
 // Typography
-li > p {
+li>p {
     margin: 0;
 }
 
@@ -96,37 +102,51 @@ li > p {
     padding-right: 0;
     padding-left: 0;
 }
+
 .container {
-    .container, .container-fluid {
+
+    .container,
+    .container-fluid {
         @extend %o-double-container-no-padding;
     }
 }
+
 .container-fluid .container-fluid {
     @extend %o-double-container-no-padding;
 }
+
 #wrap {
-    .container, .container-fluid {
+
+    .container,
+    .container-fluid {
+
         // BS3 used to do this on all containers so that margins and floats are
-        // cleared inside containers. As lots of current odoo layouts may rely
+        // cleared inside containers. As lots of current weth layouts may rely
         // on this for some alignments, this is restored (at least for a while)
         // here only for main containers of the frontend.
-        &::before, &::after {
+        &::before,
+        &::after {
             content: "";
             display: table;
             clear: both;
         }
     }
+
     .navbar %container-flex-properties {
+
         // Bootstrap set-up flex alignment to "space-between" here. The hack
         // made above to restore the BS3 protection has to be disabled.
-        &::before, &::after {
+        &::before,
+        &::after {
             display: none;
         }
     }
 }
+
 [class^="col-lg-"] {
     min-height: 24px;
 }
+
 // TODO this was added a compatibility layer for old layouts when we switched
 // to Bootstrap 4. It should be removed at some point, to not have to support
 // invalid-feedback with that awful :where selector.
@@ -150,15 +170,19 @@ li > p {
     border-bottom-style: solid;
     border-bottom-color: $border-color;
 }
+
 .o_page_header {
     @extend %o-page-header;
 }
 
 // Images spacing
-img, .media_iframe_video, .o_image {
+img,
+.media_iframe_video,
+.o_image {
     &.float-end {
         margin-left: $grid-gutter-width / 2;
     }
+
     &.float-start {
         margin-right: $grid-gutter-width / 2;
     }
@@ -168,9 +192,11 @@ img, .media_iframe_video, .o_image {
 ::-moz-selection {
     background: rgba(150, 150, 220, 0.3);
 }
+
 ::selection {
     background: rgba(150, 150, 220, 0.3);
 }
+
 .oe_search_box {
     text-overflow: ellipsis;
 }
@@ -179,9 +205,11 @@ img, .media_iframe_video, .o_image {
 .para_large {
     font-size: 120%;
 }
+
 .jumbotron .para_large p {
     font-size: 150%;
 }
+
 .readable {
     font-size: 120%;
     max-width: 700px;
@@ -199,55 +227,70 @@ img, .media_iframe_video, .o_image {
 .oe_dark {
     background-color: rgba(200, 200, 200, 0.14);
 }
+
 .oe_black {
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
 }
+
 .oe_green {
     background-color: #169C78;
     color: white;
+
     .text-muted {
         color: #ddd !important;
     }
 }
+
 .oe_blue_light {
     background-color: #41b6ab;
     color: white;
+
     .text-muted {
         color: #ddd !important;
     }
 }
+
 .oe_blue {
     background-color: #34495e;
     color: white;
 }
+
 .oe_orange {
     background-color: #f05442;
     color: white;
+
     .text-muted {
         color: #ddd !important;
     }
 }
+
 .oe_purple {
     background-color: #b163a3;
     color: white;
+
     .text-muted {
         color: #ddd !important;
     }
 }
+
 .oe_red {
     background-color: #9C1b31;
     color: white;
+
     .text-muted {
         color: #ddd !important;
     }
 }
+
 .oe_none {
     background-color: #FFFFFF;
 }
+
 .oe_yellow {
     background-color: #A2A51B;
 }
+
 .oe_green {
     background-color: #149F2C;
 }
@@ -257,13 +300,13 @@ img, .media_iframe_video, .o_image {
         @extend %o-portal-breadcrumbs;
     }
 
-    > tbody.o_portal_report_tbody {
+    >tbody.o_portal_report_tbody {
         vertical-align: middle;
     }
 }
 
 .o_portal_wrap {
-    .o_portal_my_home > .o_page_header > a:hover {
+    .o_portal_my_home>.o_page_header>a:hover {
         text-decoration: none;
     }
 
@@ -277,19 +320,20 @@ img, .media_iframe_video, .o_image {
 
     .o_portal_my_doc_table {
         th {
-            padding-top: $o-portal-table-th-pt;
-            padding-bottom: $o-portal-table-th-pb;
+            padding-top: $w-portal-table-th-pt;
+            padding-bottom: $w-portal-table-th-pb;
             max-width: 500px;
         }
 
         td {
-            padding-top: $o-portal-table-td-pt;
-            padding-bottom: $o-portal-table-td-pb;
+            padding-top: $w-portal-table-td-pt;
+            padding-bottom: $w-portal-table-td-pb;
             max-width: 10rem;
 
         }
 
-        td, th {
+        td,
+        th {
             vertical-align: middle;
             white-space: nowrap;
             overflow: hidden;
@@ -297,24 +341,26 @@ img, .media_iframe_video, .o_image {
         }
     }
 
-    .o_my_sidebar div[itemprop="address"] > div {
+    .o_my_sidebar div[itemprop="address"]>div {
         margin-top: 0.5em;
     }
 
-    @if ($o-portal-mobile-toolbar) {
+    @if ($w-portal-mobile-toolbar) {
         #o_portal_navbar_content {
             @include media-breakpoint-down(lg) {
                 margin: $navbar-padding-y 0 0;
-                padding: $navbar-padding-y ($grid-gutter-width / 2);
-                border-top: $border-width solid $o-portal-mobile-toolbar-border;
-                background-color: $o-portal-mobile-toolbar-bg;
-            }
+                padding: $navbar-padding-y (
+                    $grid-gutter-width / 2
+                );
+            border-top: $border-width solid $w-portal-mobile-toolbar-border;
+            background-color: $w-portal-mobile-toolbar-bg;
         }
     }
+}
 
-    table.table tr {
-        word-wrap: break-word;
-    }
+table.table tr {
+    word-wrap: break-word;
+}
 }
 
 .o_portal_profile_card {
@@ -339,7 +385,7 @@ img, .media_iframe_video, .o_image {
         font-weight: $font-weight-bold;
     }
 
-    div[itemprop="address"] > div {
+    div[itemprop="address"]>div {
         position: relative;
 
         span[itemprop="streetAddress"] {
@@ -349,9 +395,10 @@ img, .media_iframe_video, .o_image {
 
         .oi {
             line-height: $line-height-base;
-            color: $o-gray-500;
+            color: $w-gray-500;
 
-            + span, + div {
+            +span,
+            +div {
                 display: block;
             }
         }
@@ -366,7 +413,8 @@ img, .media_iframe_video, .o_image {
         gap: map-get($spacers, 2);
     }
 
-    span[itemprop="streetAddress"], .o_address_card_vat {
+    span[itemprop="streetAddress"],
+    .o_address_card_vat {
         color: var(--#{$prefix}secondary-color);
     }
 }
@@ -402,7 +450,7 @@ img, .media_iframe_video, .o_image {
 .o_portal_chatter {
     padding: 10px;
 
-    .o_portal_chatter_avatar{
+    .o_portal_chatter_avatar {
         --Avatar-size: 45px;
     }
 
@@ -420,7 +468,7 @@ img, .media_iframe_video, .o_image {
         word-break: break-word;
 
         .o_portal_chatter_message {
-            div.flex-grow-1 > p:not(.o_portal_chatter_puslished_date):last-of-type {
+            div.flex-grow-1>p:not(.o_portal_chatter_puslished_date):last-of-type {
                 margin-bottom: 5px;
             }
         }
@@ -482,13 +530,16 @@ img, .media_iframe_video, .o_image {
             max-width: initial;
             margin: initial;
         }
-        label, button {
+
+        label,
+        button {
             white-space: nowrap;
         }
     }
+
     section[name="portal_deactivate_account"] {
         label {
-            white-space: normal!important;
+            white-space: normal !important;
         }
     }
 }
@@ -507,7 +558,7 @@ img, .media_iframe_video, .o_image {
 
 .oe_clear_stucture {
 
-    > .oe_structure {
+    >.oe_structure {
         clear: both;
     }
 }
@@ -517,13 +568,16 @@ img, .media_iframe_video, .o_image {
     .o_footer_copyright_name {
         vertical-align: middle;
     }
+
     .js_language_selector {
         display: inline-block;
     }
+
     @include media-breakpoint-up(md) {
         .row {
             display: flex;
-            > div {
+
+            >div {
                 margin: auto 0;
             }
         }

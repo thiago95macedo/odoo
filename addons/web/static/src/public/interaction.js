@@ -130,7 +130,7 @@ export class Interaction {
      * instead.
      *
      * @param {HTMLElement} el
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {Object} metadata
      */
     constructor(el, env, metadata) {

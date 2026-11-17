@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_landed_costs/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgid "Manufacturing"
 msgstr "Fabricação"
 
 #. module: mrp_landed_costs
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_landed_costs/models/stock_landed_cost.py:0
 #: model:ir.model.fields.selection,name:mrp_landed_costs.selection__stock_landed_cost__target_model__manufacturing
 msgid "Manufacturing Orders"

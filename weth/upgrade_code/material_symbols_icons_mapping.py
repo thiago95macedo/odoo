@@ -1,6 +1,6 @@
 """Legacy icon names to their ``(material icon, filled)`` counterpart.
 
-Icons prefixed with ``oi_`` are served by the odoo icon font instead of Material
+Icons prefixed with ``oi_`` are served by the weth icon font instead of Material
 Symbols. Extracted from the SCSS maps that used to live in
 web/static/src/webclient/icons_mappings/ (dropped in 19.5).
 """
@@ -875,7 +875,7 @@ OI_TO_MATERIAL = frozendict({
     'view-pivot': ('oi_view-pivot', False),
     'view-cohort': ('oi_view-cohort', False),
     'studio': ('oi_studio', False),
-    'odoo': ('oi_odoo', False),
+    'weth': ('oi_weth', False),
 })
 
 

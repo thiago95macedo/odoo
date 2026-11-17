@@ -53,12 +53,12 @@ SAFE_HTTP_METHODS = ('GET', 'HEAD', 'OPTIONS', 'TRACE')
 MISSING_CSRF_WARNING = """\
 No CSRF validation token provided for path %r
 
-Odoo URLs are CSRF-protected by default (when accessed with unsafe
+WETH URLs are CSRF-protected by default (when accessed with unsafe
 HTTP methods). See
 https://www.weth.com.br/documentation/latest/developer/reference/addons/http.html#csrf
 for more details.
 
-* if this endpoint is accessed through Odoo via py-QWeb form, embed a CSRF
+* if this endpoint is accessed through WETH via py-QWeb form, embed a CSRF
   token in the form, Tokens are available via `request.csrf_token()`
   can be provided through a hidden input and must be POST-ed named
   `csrf_token` e.g. in your form add:
@@ -393,7 +393,7 @@ class JsonRPCDispatcher(Dispatcher):
             error['message'] = "404: Not Found"
         elif isinstance(exc, SessionExpiredException):
             error['code'] = 100
-            error['message'] = "Odoo Session Expired"
+            error['message'] = "WETH Session Expired"
 
         return self._response(error=error)
 

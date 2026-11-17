@@ -882,12 +882,12 @@ describe("LTR - RTL compatibility", () => {
     test("Iframe and Builder LTR", async () => {
         await setupHTMLBuilder(`<div class="selector">Hello</div>`);
         await contains(":iframe .selector").click();
-        expect(".o-hb-button-group .o-hb-btn:eq(0)").toHaveAttribute("title", "Left");
-        expect(".o-hb-button-group .o-hb-btn:eq(1)").toHaveAttribute("title", "Right");
-        await contains(".o-hb-button-group .o-hb-btn:eq(0)").click();
+        expect(".w-hb-button-group .w-hb-btn:eq(0)").toHaveAttribute("title", "Left");
+        expect(".w-hb-button-group .w-hb-btn:eq(1)").toHaveAttribute("title", "Right");
+        await contains(".w-hb-button-group .w-hb-btn:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
-        await contains(".o-hb-button-group .o-hb-btn:eq(1)").click();
+        await contains(".w-hb-button-group .w-hb-btn:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
     });
@@ -909,12 +909,12 @@ describe("LTR - RTL compatibility", () => {
 
         await setupHTMLBuilder(`<div class="selector">Hello</div>`, { iframeLangDir: "rtl" });
         await contains(":iframe .selector").click();
-        expect(".o-hb-button-group .o-hb-btn:eq(0)").toHaveAttribute("title", "Right");
-        expect(".o-hb-button-group .o-hb-btn:eq(1)").toHaveAttribute("title", "Left");
-        await contains(".o-hb-button-group .o-hb-btn:eq(0)").click();
+        expect(".w-hb-button-group .w-hb-btn:eq(0)").toHaveAttribute("title", "Right");
+        expect(".w-hb-button-group .w-hb-btn:eq(1)").toHaveAttribute("title", "Left");
+        await contains(".w-hb-button-group .w-hb-btn:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
-        await contains(".o-hb-button-group .o-hb-btn:eq(1)").click();
+        await contains(".w-hb-button-group .w-hb-btn:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
     });
@@ -936,12 +936,12 @@ describe("LTR - RTL compatibility", () => {
 
         await setupHTMLBuilder(`<div class="selector">Hello</div>`);
         await contains(":iframe .selector").click();
-        expect(".o-hb-button-group .o-hb-btn:eq(0)").toHaveAttribute("title", "Right");
-        expect(".o-hb-button-group .o-hb-btn:eq(1)").toHaveAttribute("title", "Left");
-        await contains(".o-hb-button-group .o-hb-btn:eq(0)").click();
+        expect(".w-hb-button-group .w-hb-btn:eq(0)").toHaveAttribute("title", "Right");
+        expect(".w-hb-button-group .w-hb-btn:eq(1)").toHaveAttribute("title", "Left");
+        await contains(".w-hb-button-group .w-hb-btn:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
-        await contains(".o-hb-button-group .o-hb-btn:eq(1)").click();
+        await contains(".w-hb-button-group .w-hb-btn:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
     });
@@ -949,12 +949,12 @@ describe("LTR - RTL compatibility", () => {
     test("Iframe RTL and Builder LTR", async () => {
         await setupHTMLBuilder(`<div class="selector">Hello</div>`, { iframeLangDir: "rtl" });
         await contains(":iframe .selector").click();
-        expect(".o-hb-button-group .o-hb-btn:eq(0)").toHaveAttribute("title", "Left");
-        expect(".o-hb-button-group .o-hb-btn:eq(1)").toHaveAttribute("title", "Right");
-        await contains(".o-hb-button-group .o-hb-btn:eq(0)").click();
+        expect(".w-hb-button-group .w-hb-btn:eq(0)").toHaveAttribute("title", "Left");
+        expect(".w-hb-button-group .w-hb-btn:eq(1)").toHaveAttribute("title", "Right");
+        await contains(".w-hb-button-group .w-hb-btn:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
-        await contains(".o-hb-button-group .o-hb-btn:eq(1)").click();
+        await contains(".w-hb-button-group .w-hb-btn:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
     });

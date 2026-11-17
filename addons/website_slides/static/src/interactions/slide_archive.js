@@ -6,7 +6,7 @@ import { rpc } from "@web/core/network/rpc";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
 export class SlideArchive extends Interaction {
-    static selector = ".o_wslides_js_slide_archive";
+    static selector = ".w_wslides_js_slide_archive";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.openDialog,
@@ -25,12 +25,12 @@ export class SlideArchive extends Interaction {
                  */
                 const isArchived = await this.waitFor(rpc("/slides/slide/archive", { slide_id: slideId, }));
                 if (isArchived) {
-                    this.el.closest(".o_wslides_slides_list_slide")?.remove();
-                    const categories = document.querySelectorAll(".o_wslides_slide_list_category");
+                    this.el.closest(".w_wslides_slides_list_slide")?.remove();
+                    const categories = document.querySelectorAll(".w_wslides_slide_list_category");
                     for (const category of categories) {
-                        const categoryHeaderEl = category.querySelector(".o_wslides_slide_list_category_header");
-                        const categorySlideEl = category.querySelector(".o_wslides_slides_list_slide:not(.o_not_editable)");
-                        const emptyFlagContainerEl = categoryHeaderEl.querySelector(".o_wslides_slides_list_drag");
+                        const categoryHeaderEl = category.querySelector(".w_wslides_slide_list_category_header");
+                        const categorySlideEl = category.querySelector(".w_wslides_slides_list_slide:not(.w_not_editable)");
+                        const emptyFlagContainerEl = categoryHeaderEl.querySelector(".w_wslides_slides_list_drag");
                         const emptyFlagEl = emptyFlagContainerEl.querySelector("small");
 
                         if (!categorySlideEl && !emptyFlagEl) {

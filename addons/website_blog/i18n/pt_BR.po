@@ -21,7 +21,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:42+0000\n"
 "PO-Revision-Date: 2026-10-28 16:46+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_blog/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -57,25 +57,25 @@ msgid "-- Unpublished"
 msgstr "-- Não publicado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "2 Columns"
 msgstr "2 colunas"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "3 Columns"
 msgstr "3 colunas"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "4 Columns"
 msgstr "4 colunas"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "<b>Publish your blog post</b> to make it visible to your visitors."
 msgstr "<b>Publique seu post</b> para torná-lo visível aos seus visitantes."
@@ -86,7 +86,7 @@ msgid "<b>Sign in</b>"
 msgstr "<b>Faça login</b>"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid ""
 "<b>Write your story here.</b> Use the top toolbar to style your text: add an "
@@ -683,7 +683,7 @@ msgid "AI's Impact on Society"
 msgstr "O impacto da IA na sociedade"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "About Us"
 msgstr "Sobre nós"
@@ -727,13 +727,13 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Adapt the size of the blog post page"
 msgstr "Adaptar o tamanho da página da publicação de blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Add a filter on the highligthed blog post"
 msgstr "Adicionar um filtro no post de blog destacado"
@@ -755,7 +755,7 @@ msgid "All Blogs"
 msgstr "Todos os blogs"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option_plugin.js:0
 #: model_terms:ir.ui.view,arch_db:website_blog.blogs_nav
 msgid "All blog posts"
@@ -767,13 +767,13 @@ msgid "All dates"
 msgstr "Todas as datas"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/interactions/website_blog.js:0
 msgid "Amazing blog article: %(title)s! Check it live: %(url)s"
 msgstr "Artigo de blog incrível: %(title)s! Confira: %(url)s"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_blog.blog_post_content_footer_archive
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_blog_post_archive_display
@@ -789,7 +789,7 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_sidebar_blog_index_archives
 msgid "Archives"
@@ -861,7 +861,7 @@ msgstr ""
 "mas também o bem-estar."
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 #: model:blog.tag,name:website_blog.blog_tag_12
 msgid "Asia"
@@ -929,7 +929,7 @@ msgid "Attachment Count"
 msgstr "Contagem de anexos"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
@@ -944,7 +944,7 @@ msgid "Author Name"
 msgstr "Nome do autor"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Authors"
 msgstr "Autores"
@@ -975,7 +975,7 @@ msgid "Blockchain"
 msgstr "Blockchain"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website.py:0
 #: model:ir.model,name:website_blog.model_blog_blog
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__blog_id
@@ -991,7 +991,7 @@ msgid "Blog"
 msgstr "Blog"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_blog.py:0
 msgid "Blog Articles"
 msgstr "Artigos do blog"
@@ -1013,7 +1013,7 @@ msgid "Blog Name"
 msgstr "Nome do blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Blog Page"
 msgstr "Página do blog"
@@ -1064,8 +1064,8 @@ msgid "Blog Post Views History"
 msgstr "Histórico de visualizações da postagem do blog"
 
 #. module: website_blog
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/website_blog/models/website_blog.py:0
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_option.xml:0
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__blog_post_ids
@@ -1116,8 +1116,8 @@ msgid "Blog navigation"
 msgstr "Navegação do blog"
 
 #. module: website_blog
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/website_blog/controllers/main.py:0
 #: code:addons/website_blog/models/website.py:0
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
@@ -1129,25 +1129,25 @@ msgid "Blogs"
 msgstr "Blogs"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Blogs List"
 msgstr "Lista de blogs"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Blogs Page"
 msgstr "Página de blogs"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Bottom"
 msgstr "Inferior"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Breadcrumb"
 msgstr "Trilha de Navegação"
@@ -1192,26 +1192,26 @@ msgid "Can Publish"
 msgstr "Pode publicar"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Cards Design"
 msgstr "Design de cartões"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 #: model:ir.model.fields,field_description:website_blog.field_blog_tag__category_id
 msgid "Category"
 msgstr "Categoria"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Choose an image from the library."
 msgstr "Escolha uma imagem da biblioteca."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Click here to add new content to your website."
 msgstr "Clique aqui para adicionar novo conteúdo ao seu site."
@@ -1226,7 +1226,7 @@ msgstr ""
 "publicação no blog."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Click on the <b>cover</b> to edit it."
 msgstr "Clique na <b>capa</b> para editá-la."
@@ -1247,7 +1247,7 @@ msgid "Comment count"
 msgstr "Contagem de comentários"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_blog.blog_post_comment_count
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_blog_post_comment
@@ -1270,7 +1270,7 @@ msgstr ""
 "videochamadas constantes ou microgerenciamento."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Compact"
 msgstr "Compacto"
@@ -1308,13 +1308,13 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Container Size"
 msgstr "Tamanho do container"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__content
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__content
@@ -1323,13 +1323,13 @@ msgid "Content"
 msgstr "Conteúdo"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Content Width"
 msgstr "Largura do conteúdo"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Cover Image"
 msgstr "Imagem de capa"
@@ -1367,32 +1367,32 @@ msgid "Cybersecurity"
 msgstr "Segurança cibernética de TI"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Date"
 msgstr "Data"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_searchbar_option_plugin.js:0
 msgid "Date (new to old)"
 msgstr "Data (novo a antigo)"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_searchbar_option_plugin.js:0
 msgid "Date (old to new)"
 msgstr "Data (antigo a novo)"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Decoration"
 msgstr "Decoração"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Dexter"
 msgstr "Dexter"
@@ -1421,7 +1421,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid ""
 "Display the blog's cover image and subtitle at the top of each blog page"
@@ -1429,13 +1429,13 @@ msgstr ""
 "Exibir a imagem de capa e o subtítulo do blog no topo de cada página do blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Display the number of comments and views for each blog post"
 msgstr "Exibir o número de comentários e visualizações de cada postagem do blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Display the title on the 'All blogs' page"
 msgstr "Exibir o título na página 'Todos os blogs'"
@@ -1474,19 +1474,19 @@ msgid "Edit in backend"
 msgstr "Editar no backend"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Edit your title, the subtitle is optional."
 msgstr "Escreva um título, o subtítulo é opcional."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Emphasize the most recent post in the blog posts list"
 msgstr "Dar destaque à postagem mais recente na lista de postagens do blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Enter your post's title"
 msgstr "Insira o título da sua publicação"
@@ -1511,7 +1511,7 @@ msgstr ""
 "mas também proporciona uma experiência de viagem mais rica e pessoal."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Filter"
 msgstr "Filtrar"
@@ -1541,7 +1541,7 @@ msgid "Finding balance, focus, and routine"
 msgstr "Encontrando equilíbrio, foco e rotina"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_sidebar_blog_index_follow_us
 msgid "Follow Us"
@@ -1663,20 +1663,20 @@ msgstr ""
 "mais calor, autenticidade e espaço para respirar."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Full"
 msgstr "Cheio"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Full Width"
 msgstr "Largura total"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Full Width Cover"
 msgstr "Capa com largura total"
@@ -1687,7 +1687,7 @@ msgid "Future"
 msgstr "Futuro"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Grid"
 msgstr "Grade"
@@ -1704,19 +1704,19 @@ msgid "Header Visible"
 msgstr "Cabeçalho visível"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Homeworking"
 msgstr "Trabalho remoto"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Hover Effect"
 msgstr "Efeito ao passar o mouse"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "How to make them relevant"
 msgstr "Como torná-los relevantes"
@@ -1728,7 +1728,7 @@ msgid "How to start your own business with no money"
 msgstr "Como iniciar seu próprio negócio sem dinheiro"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "How to stay productive"
 msgstr "Como manter-se produtivo"
@@ -1792,7 +1792,7 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Se marcado, algumas mensagens têm um erro de entrega."
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Improve your everyday life"
 msgstr "Melhore o seu dia a dia"
@@ -1860,7 +1860,7 @@ msgid "Is Published"
 msgstr "Está publicado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Large"
 msgstr "Grande"
@@ -1909,7 +1909,7 @@ msgstr ""
 "ideia e determinação."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Layout"
@@ -1956,13 +1956,13 @@ msgstr ""
 "esperaria em regiões mais turísticas."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Marley"
 msgstr "Marley"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Meetings"
 msgstr "Reuniões"
@@ -1995,7 +1995,7 @@ msgid "Meta Title"
 msgstr "Metatítulo"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Minimal"
 msgstr "Minimalista"
@@ -2082,7 +2082,7 @@ msgid "New Blog Post"
 msgstr "Nova publicação no blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "New Tag"
 msgstr "Novo marcador"
@@ -2137,19 +2137,19 @@ msgid "No tags defined yet."
 msgstr "Nenhum marcador definido ainda."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "None"
 msgstr "Nenhum"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Normal"
 msgstr "Normal"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Normal picture"
 msgstr "Imagem normal"
@@ -2186,13 +2186,13 @@ msgstr "Número de mensagens com erro de entrega"
 #. module: website_blog
 #: model:ir.module.module,description:base.module_website_blog
 msgid ""
-"Odoo Blog\n"
+"WETH Blog\n"
 "----------\n"
 "\n"
 "Write, Design, Promote and Engage with <a href=\"https://www.weth.com.br/app/"
-"blog\">Odoo Blog</a>.\n"
+"blog\">WETH Blog</a>.\n"
 "\n"
-"Express yourself with the Odoo enterprise grade blogging platform. Write\n"
+"Express yourself with the WETH enterprise grade blogging platform. Write\n"
 "beautiful blog posts, engage with visitors, translate content and moderate\n"
 "social streams.\n"
 "\n"
@@ -2246,18 +2246,18 @@ msgid ""
 "Google Analytics Integration\n"
 "----------------------------\n"
 "\n"
-"Get a clear visibility of your sales funnel. Odoo's Google Analytics "
+"Get a clear visibility of your sales funnel. WETH's Google Analytics "
 "trackers\n"
 "are configured by default to track all kinds of events related to shopping\n"
 "carts, call-to-actions, etc.\n"
 "\n"
-"As Odoo marketing tools (mass mailing, campaigns, etc) are also linked with\n"
+"As WETH marketing tools (mass mailing, campaigns, etc) are also linked with\n"
 "Google Analytics, you get a 360° view of your business.\n"
 "\n"
 "SEO Optimized Blog Posts\n"
 "------------------------\n"
 "\n"
-"SEO tools are ready to use, with no configuration required. Odoo suggests\n"
+"SEO tools are ready to use, with no configuration required. WETH suggests\n"
 "keywords for your titles according to Google's most searched terms, Google\n"
 "Analytics tracks interests of your visitors, sitemaps are created "
 "automatically\n"
@@ -2288,15 +2288,15 @@ msgid ""
 "\n"
 "Other access rights are related to business objects (products, people, "
 "events,\n"
-"etc) and directly following Odoo's standard access rights management, so you "
+"etc) and directly following WETH's standard access rights management, so you "
 "do\n"
 "not have to configure things twice.\n"
 msgstr ""
-"Blog Odoo\n"
+"Blog Weth\n"
 "----------\n"
 "\n"
 "Escreva, crie, promova e envolva-se com o <a href=\"https://www.weth.com.br/app/"
-"blog\">Blog Odoo</a>.\n"
+"blog\">Blog Weth</a>.\n"
 "\n"
 "Expresse-se com a plataforma de blogs de nível empresarial do WETH. Escreva "
 "posts de blog bonitos, envolva-se com visitantes, traduza conteúdo e modere "
@@ -2349,11 +2349,11 @@ msgstr ""
 "----------------------------\n"
 "\n"
 "Obtenha uma visibilidade clara do seu funil de vendas. Os rastreadores do "
-"Google Analytics do Odoo estão configurados por padrão para rastrear todos "
+"Google Analytics do WETH estão configurados por padrão para rastrear todos "
 "os tipos de eventos relacionados a carrinhos de compras, call-to-actions, "
 "etc.\n"
 "\n"
-"Como as ferramentas de marketing do Odoo (e-mail em massa, campanhas, etc) "
+"Como as ferramentas de marketing do WETH (e-mail em massa, campanhas, etc) "
 "também estão vinculadas ao Google Analytics, você obtém uma visão 360° do "
 "seu negócio.\n"
 "\n"
@@ -2361,7 +2361,7 @@ msgstr ""
 "------------------------\n"
 "\n"
 "As ferramentas de SEO estão prontas para uso, sem necessidade de "
-"configuração. O Odoo sugere palavras-chave para seus títulos de acordo com "
+"configuração. O WETH sugere palavras-chave para seus títulos de acordo com "
 "os termos mais pesquisados do Google, o Google Analytics rastreia os "
 "interesses de seus visitantes, sitemaps são criados automaticamente para "
 "indexação rápida no Google, etc.\n"
@@ -2390,7 +2390,7 @@ msgstr ""
 "\n"
 "Outros direitos de acesso estão relacionados a objetos de negócios "
 "(produtos, pessoas, eventos, etc) e seguem diretamente o gerenciamento "
-"padrão de direitos de acesso do Odoo, então você não precisa configurar as "
+"padrão de direitos de acesso do WETH, então você não precisa configurar as "
 "coisas duas vezes.\n"
 
 #. module: website_blog
@@ -2404,7 +2404,7 @@ msgid "On this page"
 msgstr "esta página"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid ""
 "Once you have reviewed the content on mobile, you can switch back to the "
@@ -2473,7 +2473,7 @@ msgid "Photo by Thought Catalog, @thoughtcatalog"
 msgstr "Foto por Thought Catalog, @thoughtcatalog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Picture Size"
 msgstr "Tamanho da imagem"
@@ -2512,13 +2512,13 @@ msgid "Productivity"
 msgstr "Produtividade"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Promote Last"
 msgstr "Promover por último"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Promote a post"
 msgstr "Promover um post"
@@ -2597,13 +2597,13 @@ msgid "Recommended Next Post"
 msgstr "Próximo post recomendado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Recommended Post"
 msgstr "Post recomendado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Regular"
@@ -2615,7 +2615,7 @@ msgid "Remote work"
 msgstr "Trabalho remoto"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Reset to default post"
 msgstr "Redefinir para o post padrão"
@@ -2669,7 +2669,7 @@ msgid "Scheduled"
 msgstr "Agendado"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Search for an image. (eg: type \"business\")"
 msgstr "Pesquise uma imagem (ex: digite “negócios”)"
@@ -2680,13 +2680,13 @@ msgid "Select Blog"
 msgstr "Selecionar blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Select the blog you want to add the post to."
 msgstr "Selecione o blog onde você deseja adicionar a publicação."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Select this menu item to create a new blog post."
 msgstr "Selecione este item de menu para criar uma nova publicação."
@@ -2709,7 +2709,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Set a blog post <b>cover</b>."
 msgstr "Defina uma <b>capa</b> para a publicação."
@@ -2723,7 +2723,7 @@ msgid "Share"
 msgstr "Compartilhar"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Share Links"
 msgstr "Compartilhar links"
@@ -2734,7 +2734,7 @@ msgid "Share this post"
 msgstr "Compartilhar esta publicação"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Show Title"
 msgstr "Exibir título"
@@ -2745,44 +2745,44 @@ msgid "Shown as a preview on the /blog page"
 msgstr "Exibido como uma pré-visualização na página /blog"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Sidebar"
 msgstr "Barra lateral"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Silly-Chico"
 msgstr "Silly-Chico"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Size"
 msgstr "Tamanho"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Small"
 msgstr "Pequeno"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Smaller"
 msgstr "Menor"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 msgid "Smaller picture"
 msgstr "Imagem menor"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Smart Homes"
 msgstr "Casas inteligentes"
@@ -2835,19 +2835,19 @@ msgid "Social Media"
 msgstr "Redes sociais"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Split"
 msgstr "Dividir"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Split Cover"
 msgstr "Capa dividida"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_blog.py:0
 msgid "Start writing here..."
 msgstr "Comece a escrever aqui..."
@@ -2884,7 +2884,7 @@ msgid "Startups"
 msgstr "Startups"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Stats"
 msgstr "Estado"
@@ -2898,7 +2898,7 @@ msgstr ""
 "tecnologia."
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Stay minimalist"
 msgstr "Mantenha o minimalismo"
@@ -2915,7 +2915,7 @@ msgstr ""
 "pode levar a uma maior autonomia, foco melhorado e melhor satisfação geral."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Style"
@@ -2938,7 +2938,7 @@ msgid "Subtitle"
 msgstr "Subtítulo"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Table of Contents"
 msgstr "Índice"
@@ -2985,7 +2985,7 @@ msgid "Tag name already exists!"
 msgstr "Já existe um marcador com este nome."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/blog_post_tags_option.xml:0
@@ -2999,13 +2999,13 @@ msgid "Tags"
 msgstr "Marcadores"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Tags List"
 msgstr "Lista de marcadores"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 #: code:addons/website_blog/static/src/website_builder/dynamic_snippet_blog_posts_shared_option.xml:0
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__teaser
@@ -3018,7 +3018,7 @@ msgid "Teaser Content"
 msgstr "Conteúdo da prévia"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 #: model:blog.blog,name:website_blog.blog_blog_2
 #: model:blog.tag,name:website_blog.blog_tag_3
@@ -3030,7 +3030,7 @@ msgid "Technology"
 msgstr "Tecnologia"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Text & Content"
 msgstr "Texto e conteúdo"
@@ -3043,7 +3043,7 @@ msgid "The benefits of a minimalist lifestyle"
 msgstr "Os benefícios de um estilo de vida minimalista"
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "The control in your hands"
 msgstr "O controlo nas suas mãos"
@@ -3141,7 +3141,7 @@ msgstr ""
 "as casas tornar-se-ão mais intuitivas, sustentáveis e seguras."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option_plugin.js:0
 msgid "This blog post"
 msgstr "Esta publicação de blog"
@@ -3152,7 +3152,7 @@ msgid "Threats"
 msgstr "Ameaças"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Thumbnails"
 msgstr "Miniaturas"
@@ -3168,13 +3168,13 @@ msgid "Title"
 msgstr "Título"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Title Above Cover"
 msgstr "Título acima da capa"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_page_option.xml:0
 msgid "Title Inside Cover"
 msgstr "Título dentro da capa"
@@ -3189,7 +3189,7 @@ msgid "Top 10 underrated travel destinations in Asia"
 msgstr "Os 10 destinos de viagem subestimados na Ásia"
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/website_builder/blog_post_page_option.xml:0
 msgid "Top Banner"
 msgstr "Banner superior"
@@ -3247,7 +3247,7 @@ msgstr ""
 "sem esgotar as suas poupanças."
 
 #. module: website_blog
-#. odoo-python
+#. weth-python
 #: code:addons/website_blog/models/website_snippet_filter.py:0
 msgid "Underrated destinations"
 msgstr "Destinos subestimados"
@@ -3272,7 +3272,7 @@ msgstr ""
 "moderna."
 
 #. module: website_blog
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_blog/static/src/tours/website_blog.js:0
 msgid "Use this icon to preview your blog post on <b>mobile devices</b>."
 msgstr ""

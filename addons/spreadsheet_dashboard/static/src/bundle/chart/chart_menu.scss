@@ -1,4 +1,4 @@
-.o-spreadsheet .o-figure {
+.w-spreadsheet .w-figure {
     select {
         display: flex;
         align-items: center;
@@ -11,11 +11,13 @@
         box-shadow: none;
     }
 
-    select, ::picker(select) {
+    select,
+    ::picker(select) {
         appearance: base-select;
     }
 
-    select:hover, select:open {
+    select:hover,
+    select:open {
         color: $black;
     }
 
@@ -48,7 +50,7 @@
         width: 7px;
         height: 4px;
         background-color: currentColor;
-        mask: $o-caret-down center / contain no-repeat;
+        mask: $w-caret-down center / contain no-repeat;
         transition: rotate 0.4s;
     }
 

@@ -24,7 +24,7 @@ import { OverlayPlugin } from "@web/core/overlay/overlay_plugin";
 
 test("simple case", async () => {
     await mountWithCleanup(MainComponentsContainer);
-    expect(".o-overlay-container").toHaveCount(1);
+    expect(".w-overlay-container").toHaveCount(1);
 
     class MyComp extends Component {
         static template = xml`
@@ -34,11 +34,11 @@ test("simple case", async () => {
 
     const remove = getService(OverlayPlugin).add(MyComp, {});
     await animationFrame();
-    expect(".o-overlay-container .overlayed").toHaveCount(1);
+    expect(".w-overlay-container .overlayed").toHaveCount(1);
 
     remove();
     await animationFrame();
-    expect(".o-overlay-container .overlayed").toHaveCount(0);
+    expect(".w-overlay-container .overlayed").toHaveCount(0);
 });
 
 test("shadow DOM overlays are visible when registered before main component is mounted", async () => {
@@ -61,7 +61,7 @@ test("shadow DOM overlays are visible when registered before main component is m
     });
     await animationFrame();
 
-    expect("#my-root-id:shadow .o-overlay-container .overlayed").toHaveCount(1);
+    expect("#my-root-id:shadow .w-overlay-container .overlayed").toHaveCount(1);
 });
 
 test("onRemove callback", async () => {
@@ -92,20 +92,20 @@ test("multiple overlays", async () => {
     const remove3 = getService(OverlayPlugin).add(MyComp, { className: "o3" });
     await animationFrame();
     expect(".overlayed").toHaveCount(3);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o1");
-    expect(".o-overlay-container :nth-child(2) .overlayed").toHaveClass("o2");
-    expect(".o-overlay-container :nth-child(3) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o1");
+    expect(".w-overlay-container :nth-child(2) .overlayed").toHaveClass("o2");
+    expect(".w-overlay-container :nth-child(3) .overlayed").toHaveClass("o3");
 
     remove1();
     await animationFrame();
     expect(".overlayed").toHaveCount(2);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o2");
-    expect(".o-overlay-container :nth-child(2) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o2");
+    expect(".w-overlay-container :nth-child(2) .overlayed").toHaveClass("o3");
 
     remove2();
     await animationFrame();
     expect(".overlayed").toHaveCount(1);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
 
     remove3();
     await animationFrame();
@@ -126,20 +126,20 @@ test("sequence", async () => {
     const remove3 = getService(OverlayPlugin).add(MyComp, { className: "o3" }, { sequence: 40 });
     await animationFrame();
     expect(".overlayed").toHaveCount(3);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
-    expect(".o-overlay-container :nth-child(2) .overlayed").toHaveClass("o1");
-    expect(".o-overlay-container :nth-child(3) .overlayed").toHaveClass("o2");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(2) .overlayed").toHaveClass("o1");
+    expect(".w-overlay-container :nth-child(3) .overlayed").toHaveClass("o2");
 
     remove1();
     await animationFrame();
     expect(".overlayed").toHaveCount(2);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
-    expect(".o-overlay-container :nth-child(2) .overlayed").toHaveClass("o2");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(2) .overlayed").toHaveClass("o2");
 
     remove2();
     await animationFrame();
     expect(".overlayed").toHaveCount(1);
-    expect(".o-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
+    expect(".w-overlay-container :nth-child(1) .overlayed").toHaveClass("o3");
 
     remove3();
     await animationFrame();
@@ -172,8 +172,8 @@ test("allow scope as option", async () => {
     }
 
     await mountWithCleanup(Parent);
-    expect(".o-overlay-container li:nth-child(1)").toHaveText("A=foo");
-    expect(".o-overlay-container li:nth-child(2)").toHaveText("B=bar");
+    expect(".w-overlay-container li:nth-child(1)").toHaveText("A=foo");
+    expect(".w-overlay-container li:nth-child(2)").toHaveText("B=bar");
 });
 
 test("add() does not leak as a reactive dependency into an unrelated caller's effect", async () => {
@@ -196,12 +196,12 @@ test("add() does not leak as a reactive dependency into an unrelated caller's ef
     });
     await animationFrame();
     expect(runCount).toBe(1);
-    expect(".o-overlay-container .overlayed").toHaveCount(1);
+    expect(".w-overlay-container .overlayed").toHaveCount(1);
 
     const removeOther = plugin.add(OtherComp, {});
     await animationFrame();
     expect(runCount).toBe(1);
-    expect(".o-overlay-container .overlayed").toHaveCount(1);
+    expect(".w-overlay-container .overlayed").toHaveCount(1);
 
     removeOther();
     await animationFrame();

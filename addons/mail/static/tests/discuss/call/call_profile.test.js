@@ -92,7 +92,7 @@ async function joinCall({
     // What the "Join Call" button of the channel does. Joining gives self a session too, so
     // `participantCount` is remotes + 1.
     await store.rtc.toggleCall(channel);
-    await contains(".o-discuss-Call");
+    await contains(".w-discuss-Call");
     let other;
     if (otherChannelId) {
         other = await store["discuss.channel"].getOrFetch(otherChannelId);

@@ -43,7 +43,7 @@ def remove_control_characters(byte_node):
 
 
 class weth_resolver(etree.Resolver):
-    """Odoo specific file resolver that can be added to the XML Parser.
+    """WETH specific file resolver that can be added to the XML Parser.
 
     It will search filenames in the ir.attachments
     """

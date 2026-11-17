@@ -218,7 +218,7 @@ test("crm team switcher rendering", async () => {
     expect(".o_kanban_record").toHaveCount(5);
     expect(".o_kanban_group").toHaveCount(4);
     // Selected team should be the default one on quick create (using search context)
-    await contains(".o-kanban-button-new").click();
+    await contains(".w-kanban-button-new").click();
     await animationFrame();
     expect(".o_kanban_quick_create .o_field_many2one[name='team_id'] input").toHaveValue("Hyrule");
     await contains(".o_kanban_cancel").click();

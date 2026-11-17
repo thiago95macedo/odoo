@@ -98,20 +98,20 @@ test("basic search panel rendering", async () => {
         searchViewId: false,
     });
 
-    expect(".o_search_panel .o-dropdown").toHaveCount(1);
-    expect(".o_search_panel .o-dropdown").toHaveText("category");
+    expect(".o_search_panel .w-dropdown").toHaveCount(1);
+    expect(".o_search_panel .w-dropdown").toHaveText("category");
 
-    await contains(".o_search_panel .o-dropdown").click();
+    await contains(".o_search_panel .w-dropdown").click();
     expect(".o_search_panel_section.o_search_panel_category").toHaveCount(1);
     expect(".o_search_panel_category_value").toHaveCount(3);
     expect(queryAllTexts(".o_search_panel_field li")).toEqual(["All", "gold", "silver"]);
 
     await contains(".o_search_panel_category_value:nth-of-type(2) header").click();
-    expect(".o_search_panel .o-dropdown").toHaveText("gold");
+    expect(".o_search_panel .w-dropdown").toHaveText("gold");
     expect(".o_search_panel a").toHaveCount(1);
 
     await contains(".o_search_panel a").click();
-    expect(".o_search_panel .o-dropdown").toHaveText("category");
+    expect(".o_search_panel .w-dropdown").toHaveText("category");
 });
 
 test("Dropdown closes on category selection", async () => {
@@ -125,10 +125,10 @@ test("Dropdown closes on category selection", async () => {
         searchViewId: false,
     });
 
-    expect(".o-dropdown--menu").toHaveCount(0);
-    await contains(".o_search_panel .o-dropdown").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu").toHaveCount(0);
+    await contains(".o_search_panel .w-dropdown").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
 
     await contains(".o_search_panel_category_value:nth-of-type(2) header").click();
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
 });

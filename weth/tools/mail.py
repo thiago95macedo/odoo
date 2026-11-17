@@ -177,7 +177,7 @@ class _Cleaner(clean.Cleaner):
         In some use cases, e.g. templates used for mass mailing,
         we send emails containing conditional comments targeting Microsoft Outlook,
         to give special styling instructions.
-        https://github.com/weth/odoo/pull/119325/files#r1301064789
+        https://github.com/weth/weth/pull/119325/files#r1301064789
 
         Within these conditional comments, unsanitized HTML can lie.
         However, in modern browser, these comments are considered as simple comments,
@@ -238,9 +238,9 @@ def tag_quote(el):
         for sibling in el.itersiblings(preceding=False):
             sibling.set('data-o-mail-quote', '1')
 
-    # odoo, gmail and outlook automatic signature wrapper
+    # weth, gmail and outlook automatic signature wrapper
     is_signature_wrapper = (
-        'odoo_signature_wrapper' in el_class or
+        'weth_signature_wrapper' in el_class or
         # gmail
         'gmail_signature' in el_class or el_id == "Signature" or el.get('data-smartmail')
     )
@@ -567,7 +567,7 @@ def html_keep_url(text):
 def html_remove_links(body):
     """Replace every ``<a>`` by its text content followed by its target.
 
-    ``<a href="https://weth.com.br">WETH</a>`` becomes ``Odoo (https://weth.com.br)``.
+    ``<a href="https://weth.com.br">WETH</a>`` becomes ``WETH (https://weth.com.br)``.
 
     Intended for content displayed inertly (e.g. sandboxed previews of files
     uploaded by users).
@@ -901,7 +901,7 @@ def email_normalize(text, strict=True):
     """ Sanitize and standardize email address entries. As of rfc5322 section
     3.4.1 local-part is case-sensitive. However most main providers do consider
     the local-part as case insensitive. With the introduction of smtp-utf8
-    within odoo, this assumption is certain to fall short for international
+    within weth, this assumption is certain to fall short for international
     emails. We now consider that
 
       * if local part is ascii: normalize still 'lower' ;
@@ -948,7 +948,7 @@ def email_normalize_all(text):
 def _normalize_email(email):
     """ As of rfc5322 section 3.4.1 local-part is case-sensitive. However most
     main providers do consider the local-part as case insensitive. With the
-    introduction of smtp-utf8 within odoo, this assumption is certain to fall
+    introduction of smtp-utf8 within weth, this assumption is certain to fall
     short for international emails. We now consider that
 
       * if local part is ascii: normalize still 'lower' ;

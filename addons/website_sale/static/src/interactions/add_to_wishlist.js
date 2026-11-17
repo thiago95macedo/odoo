@@ -5,7 +5,7 @@ import wSaleUtils from '@website_sale/js/website_sale_utils';
 import wishlistUtils from '@website_sale/js/wishlist_utils';
 
 export class AddToWishlist extends Interaction {
-    static selector = '.o_add_wishlist, .o_add_wishlist_dyn';
+    static selector = '.w_add_wishlist, .w_add_wishlist_dyn';
     dynamicSelectors = {
         ...this.dynamicSelectors,
         _productEl: () => this.el.closest('.js_product'),
@@ -65,7 +65,7 @@ export class AddToWishlist extends Interaction {
      * @param {CustomEvent} event
      */
     onProductChanged(event) {
-        const button = event.currentTarget.querySelector('.o_add_wishlist_dyn');
+        const button = event.currentTarget.querySelector('.w_add_wishlist_dyn');
         if (button) {
             const { productId } = event.detail;
             button.disabled = wishlistUtils.getWishlistProductIds().includes(parseInt(productId));

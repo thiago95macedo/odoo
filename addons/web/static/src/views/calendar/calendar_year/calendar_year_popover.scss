@@ -20,7 +20,7 @@
             &:before {
                 margin-right: map-get($spacers, 1);
                 font-family: 'Material Symbols Outlined';
-                font-size: $o-font-size-base-smaller;
+                font-size: $w-font-size-base-smaller;
                 color: var(--o-cw-popover-color, #{$info});
                 content: '\f111';
             }
@@ -28,9 +28,9 @@
         }
     }
 
-    @for $i from 1 through length($o-colors-complete) {
-        $color: nth($o-colors-complete, $i);
-        $color-subtle: mix($o-white, $color, 55%);
+    @for $i from 1 through length($w-colors-complete) {
+        $color: nth($w-colors-complete, $i);
+        $color-subtle: mix($w-white, $color, 55%);
 
         &.o_calendar_color_#{$i - 1} {
             --o-cw-popover-color: #{$color};

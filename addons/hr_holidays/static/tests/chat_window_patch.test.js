@@ -32,8 +32,8 @@ test("shows 'Back on' in chat window header of dm chat", async () => {
     });
     await start();
     await openMessagingMenu();
-    await click(".o-mail-NotificationItem");
+    await click(".w-mail-NotificationItem");
     await contains(
-        ".o-mail-ChatWindow-header .o-mail-ChatWindow-outOfOffice:text('Back on Jan 1, 2023')"
+        ".w-mail-ChatWindow-header .w-mail-ChatWindow-outOfOffice:text('Back on Jan 1, 2023')"
     );
 });

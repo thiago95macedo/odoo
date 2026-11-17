@@ -30,15 +30,15 @@ test("unknown channel can be displayed and interacted with", async () => {
         expect.step("discuss.channel/new_message")
     );
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem", { count: 0 });
     await openDiscuss(channelId);
     await waitForChannels([`discuss.channel_${channelId}`]);
-    await contains(".o-mail-NotificationItem.o-active:has(:text('Not So Secret'))");
-    await insertText(".o-mail-Composer-input", "Hello", { replace: true });
+    await contains(".w-mail-NotificationItem.w-active:has(:text('Not So Secret'))");
+    await insertText(".w-mail-Composer-input", "Hello", { replace: true });
     await press("Enter");
-    await contains(".o-mail-Message:has(:text('Hello'))");
+    await contains(".w-mail-Message:has(:text('Hello'))");
     await expect.waitForSteps(["discuss.channel/new_message"]);
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:text(Hide)");
-    await contains(".o-mail-MessagingMenuItem", { count: 0 });
+    await click(".w-dropdown-item:text(Hide)");
+    await contains(".w-mail-MessagingMenuItem", { count: 0 });
 });

@@ -10,8 +10,8 @@ _logger = logging.getLogger(__name__)
 REQUEST_TIMEOUT = 10
 MERCADO_PAGO_API_ENDPOINT = 'https://api.mercadopago.com'
 
-# Not secret: identifies Odoo as the integrator so Mercado Pago can quantify
-# the number of Odoo users on their backend. Sent in the order body under
+# Not secret: identifies WETH as the integrator so Mercado Pago can quantify
+# the number of WETH users on their backend. Sent in the order body under
 # `integration_data` as documented by the Orders API.
 MERCADO_PAGO_PLATFORM_ID = "dev_cdf1cfac242111ef9fdebe8d845d0987"
 

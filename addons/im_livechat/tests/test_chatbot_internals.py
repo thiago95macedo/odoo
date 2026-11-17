@@ -352,7 +352,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
                         "discuss.channel": [
                             {
                                 "id": discuss_channel.id,
-                                "name": "OdooBot Ernest Employee",
+                                "name": "WethBot Ernest Employee",
                             },
                         ],
                     },
@@ -375,7 +375,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
             ]
         with self.assertBus(notifications):
             discuss_channel._forward_human_operator(self.step_forward_operator, users=self.user_employee)
-        self.assertEqual(discuss_channel.name, "OdooBot Ernest Employee")
+        self.assertEqual(discuss_channel.name, "WethBot Ernest Employee")
         self.assertEqual(discuss_channel.livechat_agent_partner_ids, self.partner_employee)
         self.assertEqual(discuss_channel.livechat_outcome, "no_answer")
         self.assertTrue(

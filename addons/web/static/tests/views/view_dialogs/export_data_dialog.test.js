@@ -24,19 +24,19 @@ import {
 import { download } from "@web/core/network/download";
 
 async function exportAllAction() {
-    await contains(".o_cp_action_menus .dropdown-toggle").click();
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    await contains(".w_cp_action_menus .dropdown-toggle").click();
+    await contains(".w-dropdown--menu .dropdown-item").click();
 }
 const openExportDialog = async () => {
     if (isSmall()) {
-        await pointerDown(".o_data_row:nth-child(1), .o_kanban_record:nth-child(1)");
+        await pointerDown(".w_data_row:nth-child(1), .w_kanban_record:nth-child(1)");
         await runAllTimers();
-    } else if (queryFirst(".o_kanban_view")) {
-        await contains(".o_kanban_record").click({ altKey: true });
+    } else if (queryFirst(".w_kanban_view")) {
+        await contains(".w_kanban_record").click({ altKey: true });
     } else {
-        await contains(".o_list_record_selector input[type='checkbox']").click();
+        await contains(".w_list_record_selector input[type='checkbox']").click();
     }
-    await contains(".o_control_panel .o_cp_action_menus .dropdown-toggle").click();
+    await contains(".w_control_panel .w_cp_action_menus .dropdown-toggle").click();
     await contains(".dropdown-menu span:contains(Export)").click();
     await animationFrame();
 };
@@ -195,26 +195,26 @@ test("Export dialog UI test", async () => {
     });
 
     await openExportDialog();
-    expect(`.o_dialog`).toHaveCount(1);
-    expect(`.o_dialog .o_export_tree_item`).toHaveCount(3, {
+    expect(`.w_dialog`).toHaveCount(1);
+    expect(`.w_dialog .w_export_tree_item`).toHaveCount(3, {
         message: "There should be only three items visible",
     });
-    await contains(".modal .o_export_search_input").edit("ac");
-    expect(`.modal .o_export_tree_item`).toHaveCount(1, {
+    await contains(".modal .w_export_search_input").edit("ac");
+    expect(`.modal .w_export_tree_item`).toHaveCount(1, {
         message: "Only matching item is visible",
     });
-    await contains(".modal .o_export_tree_item .o_add_field").click();
-    expect(`.modal .o_export_field`).toHaveCount(2, {
+    await contains(".modal .w_export_tree_item .w_add_field").click();
+    expect(`.modal .w_export_field`).toHaveCount(2, {
         message: "There should be two fields in export field list",
     });
-    expect(".modal .o_export_field:nth-child(2)").toHaveText("Activities");
-    expect(".o_export_search_input").toHaveValue("ac", {
+    expect(".modal .w_export_field:nth-child(2)").toHaveText("Activities");
+    expect(".w_export_search_input").toHaveValue("ac", {
         message: "Search input still contains the search string",
     });
-    await contains(".modal .o_export_search_input").edit("");
-    expect(".modal .o_export_tree_item:nth-child(2) .o_tree_column").toHaveClass("fw-bolder");
-    await contains(".modal .o_export_field:first-child .o_remove_field").click();
-    expect(`.modal .o_export_field`).toHaveCount(1);
+    await contains(".modal .w_export_search_input").edit("");
+    expect(".modal .w_export_tree_item:nth-child(2) .w_tree_column").toHaveClass("fw-bolder");
+    await contains(".modal .w_export_field:first-child .w_remove_field").click();
+    expect(`.modal .w_export_field`).toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -278,91 +278,91 @@ test("Export dialog: interacting with export templates", async () => {
 
     await openExportDialog();
 
-    expect(`.o_dialog`).toHaveCount(1);
-    expect(".o_export_tree_item:nth-child(2) .o_add_field").toHaveCount(0, {
+    expect(`.w_dialog`).toHaveCount(1);
+    expect(".w_export_tree_item:nth-child(2) .w_add_field").toHaveCount(0, {
         message: "fields already selected cannot be added anymore",
     });
-    expect(".o_create_exported_list").toHaveCount(1, {
+    expect(".w_create_exported_list").toHaveCount(1, {
         message: "the 'save as template' icon is visible when no template is selected",
     });
 
     // load a template which contains the activity_ids field
-    await select("1", { target: ".o_exported_lists_select" });
+    await select("1", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(`.o_fields_list .o_export_field`).toHaveCount(1);
-    expect(`.o_fields_list .o_export_field`).toHaveText("Activities");
-    expect(".o_edit_exported_list").toHaveCount(1);
-    expect(".o_delete_exported_list").toHaveCount(1);
+    expect(`.w_fields_list .w_export_field`).toHaveCount(1);
+    expect(`.w_fields_list .w_export_field`).toHaveText("Activities");
+    expect(".w_edit_exported_list").toHaveCount(1);
+    expect(".w_delete_exported_list").toHaveCount(1);
 
     // modifying the export list while a template is selected (out of edition mode)
     // detaches from it: the current (unsaved) selection is kept, but no template
     // is linked to it anymore
-    await contains(".o_export_tree_item:nth-child(2) .o_add_field").click();
-    expect(`.o_exported_lists_select`).toHaveValue("", {
+    await contains(".w_export_tree_item:nth-child(2) .w_add_field").click();
+    expect(`.w_exported_lists_select`).toHaveValue("", {
         message: "the template is no longer selected",
     });
-    expect(".o_create_exported_list").toHaveCount(1);
-    expect(".o_edit_exported_list").toHaveCount(0);
-    expect(`.o_fields_list .o_export_field`).toHaveCount(2, {
+    expect(".w_create_exported_list").toHaveCount(1);
+    expect(".w_edit_exported_list").toHaveCount(0);
+    expect(`.w_fields_list .w_export_field`).toHaveCount(2, {
         message: "the field added before detaching is kept in the working export list",
     });
 
     // re-selecting the template reloads its saved (unmodified) content
-    await select("1", { target: ".o_exported_lists_select" });
+    await select("1", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(`.o_fields_list .o_export_field`).toHaveCount(1, {
+    expect(`.w_fields_list .w_export_field`).toHaveCount(1, {
         message: "the template was never modified, its saved content has a single field",
     });
-    expect(".o_edit_exported_list").toHaveCount(1);
+    expect(".w_edit_exported_list").toHaveCount(1);
 
     // explicitly editing the template: rename it and change its fields. Changes
     // made in edition mode do not detach from the template being edited
-    await contains(".o_edit_exported_list").click();
-    expect(`.o_save_list_name`).toHaveValue("Activities template");
-    expect(`.o_save_list_btn`).toBeEnabled({
+    await contains(".w_edit_exported_list").click();
+    expect(`.w_save_list_name`).toHaveValue("Activities template");
+    expect(`.w_save_list_btn`).toBeEnabled({
         message: "apply button is enabled as long as the name is not empty",
     });
-    await contains(".o_save_list_name").edit("Activities template (renamed)", { confirm: false });
-    await contains(".o_export_tree_item:nth-child(3) .o_add_field").click();
-    expect(`.o_fields_list .o_export_field`).toHaveCount(2, {
+    await contains(".w_save_list_name").edit("Activities template (renamed)", { confirm: false });
+    await contains(".w_export_tree_item:nth-child(3) .w_add_field").click();
+    expect(`.w_fields_list .w_export_field`).toHaveCount(2, {
         message: "changing fields while editing the template does not discard the edition",
     });
-    await contains(".o_save_list_name").focus();
+    await contains(".w_save_list_name").focus();
     await press("enter");
     await animationFrame();
-    expect(`.o_exported_lists_select`).toHaveValue("1", {
+    expect(`.w_exported_lists_select`).toHaveValue("1", {
         message: "the (updated) template is still selected after applying the changes",
     });
-    expect(`.o_exported_lists_select option[value="1"]`).toHaveText(
+    expect(`.w_exported_lists_select option[value="1"]`).toHaveText(
         "Activities template (renamed)",
         { message: "the template name has been updated in the list" }
     );
 
     // deselecting a template shows the 'save as template' icon again, and does not
     // change the currently displayed export list
-    await select("", { target: ".o_exported_lists_select" });
+    await select("", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(".o_create_exported_list").toHaveCount(1);
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Activities", "Bar"], {
+    expect(".w_create_exported_list").toHaveCount(1);
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Activities", "Bar"], {
         message: "unselecting an export template has not changed the export list",
     });
 
     // building a new template on top of the current (unlinked) selection does not
     // alter the existing "Activities template (renamed)"
-    await contains(".o_export_tree_item:nth-child(2) .o_add_field").click();
-    await contains(".o_create_exported_list").click();
-    expect(`.o_save_list_name`).toHaveValue("");
-    expect(`.o_save_list_btn`).not.toBeEnabled({
+    await contains(".w_export_tree_item:nth-child(2) .w_add_field").click();
+    await contains(".w_create_exported_list").click();
+    expect(`.w_save_list_name`).toHaveValue("");
+    expect(`.w_save_list_btn`).not.toBeEnabled({
         message: "apply button is disabled while the template name is empty",
     });
-    await contains(".o_save_list_name").edit("Export template", { confirm: false });
-    expect(`.o_save_list_btn`).toBeEnabled();
-    await contains(".o_save_list_btn").click();
+    await contains(".w_save_list_name").edit("Export template", { confirm: false });
+    expect(`.w_save_list_btn`).toBeEnabled();
+    await contains(".w_save_list_btn").click();
     await animationFrame();
-    expect(`.o_exported_lists_select`).toHaveValue("2", {
+    expect(`.w_exported_lists_select`).toHaveValue("2", {
         message: "the new template is now selected",
     });
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual([
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual([
         "Activities",
         "Bar",
         "Foo",
@@ -370,29 +370,29 @@ test("Export dialog: interacting with export templates", async () => {
 
     // resequencing the fields of the selected template also counts as a change:
     // it detaches from the template just like adding/removing a field would
-    await contains(".o_fields_list .o_export_field:first-child").dragAndDrop(
-        queryFirst(".o_fields_list .o_export_field:nth-child(2)")
+    await contains(".w_fields_list .w_export_field:first-child").dragAndDrop(
+        queryFirst(".w_fields_list .w_export_field:nth-child(2)")
     );
-    expect(".o_create_exported_list").toHaveCount(1, {
+    expect(".w_create_exported_list").toHaveCount(1, {
         message: "resequencing fields detaches from the selected template",
     });
-    expect(".o_edit_exported_list").toHaveCount(0);
-    expect(`.o_fields_list .o_export_field`).toHaveCount(3, {
+    expect(".w_edit_exported_list").toHaveCount(0);
+    expect(`.w_fields_list .w_export_field`).toHaveCount(3, {
         message: "resequencing only reorders the fields, it does not add/remove any",
     });
 
     // deleting the selected template
-    await select("2", { target: ".o_exported_lists_select" });
+    await select("2", { target: ".w_exported_lists_select" });
     await animationFrame();
-    await contains(".o_delete_exported_list").click();
-    expect(queryAll(".o_dialog .modal-body")[1]).toHaveText(
+    await contains(".w_delete_exported_list").click();
+    expect(queryAll(".w_dialog .modal-body")[1]).toHaveText(
         "Do you really want to delete this export template?"
     );
-    await contains(".o-overlay-item:nth-child(2) .btn-primary").click();
-    expect(".o_create_exported_list").toHaveCount(1, {
+    await contains(".w-overlay-item:nth-child(2) .btn-primary").click();
+    expect(".w_create_exported_list").toHaveCount(1, {
         message: "the template list has been reset",
     });
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Foo"]);
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Foo"]);
 });
 
 test("Export dialog: interacting with export templates in debug", async () => {
@@ -425,11 +425,11 @@ test("Export dialog: interacting with export templates in debug", async () => {
 
     await openExportDialog();
 
-    expect(".o_fields_list .o_export_field").toHaveText("Foo (foo)");
-    await select("1", { target: ".o_exported_lists_select" });
+    expect(".w_fields_list .w_export_field").toHaveText("Foo (foo)");
+    await select("1", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(".o_fields_list .o_export_field").toHaveCount(1);
-    expect(".o_fields_list .o_export_field").toHaveText("Activities (activity_ids)");
+    expect(".w_fields_list .w_export_field").toHaveCount(1);
+    expect(".w_fields_list .w_export_field").toHaveText("Activities (activity_ids)");
 });
 
 test.tags("desktop");
@@ -455,59 +455,59 @@ test("Export dialog: interacting with available fields", async () => {
 
     await openExportDialog();
 
-    const firstField = ".o_left_field_panel .o_export_tree_item:first-child ";
+    const firstField = ".w_left_field_panel .w_export_tree_item:first-child ";
     await contains(firstField).click();
 
     // show then hide content for the 'partner_ids' field. Then show it again
-    await contains(firstField + ".o_export_tree_item").click();
-    await contains(firstField + ".o_export_tree_item").click();
-    await contains(firstField + ".o_export_tree_item").click();
+    await contains(firstField + ".w_export_tree_item").click();
+    await contains(firstField + ".w_export_tree_item").click();
+    await contains(firstField + ".w_export_tree_item").click();
     // we should only make one rpc to fetch fields
     expect.verifySteps(["fetch fields for 'partner_ids'"]);
     expect(
-        ".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids'] .o_expand_parent"
+        ".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids'] .w_expand_parent"
     ).toHaveCount(0, {
         message: "available fields are limited to 2 levels of subfields",
     });
-    await dblclick(".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']");
+    await dblclick(".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']");
     await animationFrame();
     expect(
-        ".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids'] .o_add_field"
+        ".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids'] .w_add_field"
     ).toHaveCount(0, {
         message: "field has been added by double clicking on it and cannot be added anymore",
     });
-    await contains(firstField + ".o_add_field").click();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual([
+    await contains(firstField + ".w_add_field").click();
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual([
         "Foo",
         "Company",
         "Activities",
     ]);
-    await dblclick(".o_export_tree_item[data-field_id='activity_ids']");
+    await dblclick(".w_export_tree_item[data-field_id='activity_ids']");
     await animationFrame();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(
         ["Foo", "Company", "Activities"],
         {
             message: "double clicking on an expandable field does not add the field",
         }
     );
-    await contains(".o_export_field:first-child").dragAndDrop(
-        queryFirst(".o_export_field:nth-child(2)")
+    await contains(".w_export_field:first-child").dragAndDrop(
+        queryFirst(".w_export_field:nth-child(2)")
     );
-    await contains(".o_export_field:nth-child(3)").dragAndDrop(
-        queryFirst(".o_export_field:first-child")
+    await contains(".w_export_field:nth-child(3)").dragAndDrop(
+        queryFirst(".w_export_field:first-child")
     );
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual([
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual([
         "Activities",
         "Company",
         "Foo",
     ]);
-    await contains(".modal .o_export_field:nth-child(2) .o_remove_field").click();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Activities", "Foo"]);
+    await contains(".modal .w_export_field:nth-child(2) .w_remove_field").click();
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Activities", "Foo"]);
     await contains(
         firstField +
-        ".o_export_tree_item[data-field_id='activity_ids/partner_ids/name'] .o_add_field"
+        ".w_export_tree_item[data-field_id='activity_ids/partner_ids/name'] .w_add_field"
     ).click();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual([
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual([
         "Activities",
         "Foo",
         "Partner name",
@@ -544,17 +544,17 @@ test("Export dialog: compatible and export type options", async () => {
     });
 
     await openExportDialog();
-    expect(".o_export_format option").toHaveCount(3);
-    expect(".o_export_format").toHaveValue("csv");
-    expect(".o_export_format option:nth-of-type(3)").toHaveText("WOW");
-    await select("wow", { target: ".o_export_format" });
+    expect(".w_export_format option").toHaveCount(3);
+    expect(".w_export_format").toHaveValue("csv");
+    expect(".w_export_format option:nth-of-type(3)").toHaveText("WOW");
+    await select("wow", { target: ".w_export_format" });
     await animationFrame();
-    expect(".o_export_tree_item").toHaveCount(3);
-    await contains(".o_export_compatible .form-check-input:first").click();
-    expect(".o_export_tree_item").toHaveCount(3);
+    expect(".w_export_tree_item").toHaveCount(3);
+    await contains(".w_export_compatible .form-check-input:first").click();
+    expect(".w_export_tree_item").toHaveCount(3);
     def.resolve();
     await animationFrame();
-    await contains(".o_select_button").click();
+    await contains(".w_select_button").click();
     // download file has been called with the correct url
     expect.verifySteps(["/web/export/wow"]);
 });
@@ -585,10 +585,10 @@ test("toggling import compatibility after adding an expanded field", async () =>
     await openExportDialog();
 
     await contains("[data-field_id='activity_ids']").click();
-    await contains("[data-field_id='activity_ids/partner_ids'] .o_add_field").click();
-    await contains(".o_export_compatible .form-check-input:first").click();
+    await contains("[data-field_id='activity_ids/partner_ids'] .w_add_field").click();
+    await contains(".w_export_compatible .form-check-input:first").click();
     await contains("[data-field_id='activity_ids']").click();
-    await contains(".o_select_button").click();
+    await contains(".w_select_button").click();
     // download file has been called with the correct url
     expect.verifySteps(["/web/export/csv"]);
 });
@@ -605,15 +605,15 @@ test("toggling 'Updatable fields only' keeps the export list", async () => {
     });
 
     await openExportDialog();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Foo"]);
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Foo"]);
 
-    await contains(".o_left_field_panel .o_export_tree_item:first .o_add_field").click();
-    await contains(".o_right_field_panel .o_export_field:first .o_remove_field").click();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Activities"]);
+    await contains(".w_left_field_panel .w_export_tree_item:first .w_add_field").click();
+    await contains(".w_right_field_panel .w_export_field:first .w_remove_field").click();
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Activities"]);
 
-    await contains(".o_export_compatible .form-check-input:first").click();
+    await contains(".w_export_compatible .form-check-input:first").click();
     await animationFrame();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Activities"], {
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Activities"], {
         message: "toggling 'Updatable fields only' has no impact on the export list",
     });
 });
@@ -683,8 +683,8 @@ test("Export dialog in list view: export list with 'exportable: false'", async (
 
     await openExportDialog();
 
-    expect(".o_export_field").toHaveCount(2);
-    expect(".o_fields_list").toHaveText("Foo\nExportable");
+    expect(".w_export_field").toHaveCount(2);
+    expect(".w_fields_list").toHaveText("Foo\nExportable");
 });
 
 test("Export dialog in kanban view: export list with 'exportable: false'", async () => {
@@ -729,8 +729,8 @@ test("Export dialog in kanban view: export list with 'exportable: false'", async
 
     await openExportDialog();
 
-    expect(".o_export_field").toHaveCount(2);
-    expect(".o_fields_list").toHaveText("Foo\nExportable");
+    expect(".w_export_field").toHaveCount(2);
+    expect(".w_fields_list").toHaveText("Foo\nExportable");
 });
 
 test.tags("desktop");
@@ -753,8 +753,8 @@ test("Export dialog: sortable on desktop", async () => {
 
     await openExportDialog();
 
-    await contains(".modal .o_export_tree_item .o_add_field").click();
-    expect(".o_export_field_sortable").toHaveCount(2, {
+    await contains(".modal .w_export_tree_item .w_add_field").click();
+    expect(".w_export_field_sortable").toHaveCount(2, {
         message: "exported fields can be sorted by drag and drop",
     });
 });
@@ -779,8 +779,8 @@ test("Export dialog: non-sortable on mobile", async () => {
 
     await openExportDialog();
 
-    await contains(".modal .o_export_tree_item .o_add_field").click();
-    expect(".o_export_field_sortable").toHaveCount(0, {
+    await contains(".modal .w_export_tree_item .w_add_field").click();
+    expect(".w_export_field_sortable").toHaveCount(0, {
         message: "exported fields can't be sorted by drag and drop",
     });
 });
@@ -826,16 +826,16 @@ test("ExportDialog: export all records of the domain", async () => {
 
     await openExportDialog();
 
-    await contains(".o_select_button").click();
-    await contains(".o_form_button_cancel").click();
+    await contains(".w_select_button").click();
+    await contains(".w_form_button_cancel").click();
 
     isDomainSelected = true;
-    await contains(".o_select_domain").click();
-    await contains(".o_control_panel .o_cp_action_menus .dropdown-toggle").click();
+    await contains(".w_select_domain").click();
+    await contains(".w_control_panel .w_cp_action_menus .dropdown-toggle").click();
     await contains(".dropdown-menu span:contains(Export)").click();
-    await contains(".o_select_button").click();
+    await contains(".w_select_button").click();
 
-    const firstField = ".o_left_field_panel .o_export_tree_item:first-child ";
+    const firstField = ".w_left_field_panel .w_export_tree_item:first-child ";
     await contains(firstField).click();
 
     expect.verifySteps([
@@ -946,7 +946,7 @@ test("Export list with modified context", async () => {
         </search>`,
     });
     await toggleSearchBarMenu();
-    await contains(".o-dropdown-item:contains(OwO)").click();
+    await contains(".w-dropdown-item:contains(OwO)").click();
     await exportAllAction();
     expect.verifySteps(["Export records"]);
 });
@@ -999,7 +999,7 @@ test("Direct export list take optional fields into account on desktop", async ()
         loadActionMenus: true,
     });
 
-    await contains("table .o_optional_columns .dropdown-toggle").click();
+    await contains("table .w_optional_columns .dropdown-toggle").click();
     await contains("span.dropdown-item:first-child").click();
     expect("th").toHaveCount(3, {
         message: "should have 3 th, 1 for selector, 1 for columns, 1 for optional columns",
@@ -1030,7 +1030,7 @@ test("Direct export list take optional fields into account on mobile", async () 
         loadActionMenus: true,
     });
 
-    await contains("table .o_optional_columns .dropdown-toggle").click();
+    await contains("table .w_optional_columns .dropdown-toggle").click();
     await contains("span.dropdown-item:first-child").click();
     expect("th").toHaveCount(2, {
         message: "should have 2 th, 1 for columns, 1 for optional columns",
@@ -1054,11 +1054,11 @@ test("Export dialog with duplicated fields on desktop", async () => {
         loadActionMenus: true,
     });
 
-    expect(".o_list_table th:nth-child(2)").toHaveText("Foo");
-    expect(".o_list_table th:nth-child(3)").toHaveText("duplicate of Foo");
+    expect(".w_list_table th:nth-child(2)").toHaveText("Foo");
+    expect(".w_list_table th:nth-child(3)").toHaveText("duplicate of Foo");
     await openExportDialog();
-    expect(".modal .o_export_field").toHaveCount(1);
-    expect(".modal .o_export_field").toHaveText("Foo", {
+    expect(".modal .w_export_field").toHaveCount(1);
+    expect(".modal .w_export_field").toHaveText("Foo", {
         message: "the only field to export corresponds to the field displayed in the list view",
     });
 });
@@ -1079,11 +1079,11 @@ test("Export dialog with duplicated fields on mobile", async () => {
         loadActionMenus: true,
     });
 
-    expect(".o_list_table th:nth-child(1)").toHaveText("Foo");
-    expect(".o_list_table th:nth-child(2)").toHaveText("duplicate of Foo");
+    expect(".w_list_table th:nth-child(1)").toHaveText("Foo");
+    expect(".w_list_table th:nth-child(2)").toHaveText("duplicate of Foo");
     await openExportDialog();
-    expect(".modal .o_export_field").toHaveCount(1);
-    expect(".modal .o_export_field").toHaveText("Foo", {
+    expect(".modal .w_export_field").toHaveCount(1);
+    expect(".modal .w_export_field").toHaveText("Foo", {
         message: "the only field to export corresponds to the field displayed in the list view",
     });
 });
@@ -1118,8 +1118,8 @@ test("Export dialog: export list contains field with 'default_export: true'", as
     });
 
     await openExportDialog();
-    expect(".modal .o_export_field").toHaveCount(2);
-    expect(".o_fields_list").toHaveText("Foo\nDefault exportable");
+    expect(".modal .w_export_field").toHaveCount(2);
+    expect(".w_fields_list").toHaveText("Foo\nDefault exportable");
 });
 
 test("Export dialog: search subfields", async () => {
@@ -1140,14 +1140,14 @@ test("Export dialog: search subfields", async () => {
     });
 
     await openExportDialog();
-    const firstField = ".o_left_field_panel .o_export_tree_item:first-child ";
+    const firstField = ".w_left_field_panel .w_export_tree_item:first-child ";
     await contains(firstField).click();
     // show then hide content for the 'partner_ids' field.
     // this will load subfields and make them available to search
-    await contains(firstField + ".o_export_tree_item").click();
-    await contains(firstField + ".o_export_tree_item").click();
-    await contains(".o_export_search_input").edit("company");
-    expect(".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
+    await contains(firstField + ".w_export_tree_item").click();
+    await contains(firstField + ".w_export_tree_item").click();
+    await contains(".w_export_search_input").edit("company");
+    expect(".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
         1,
         {
             message: "subfield that was known has been found and is displayed",
@@ -1173,20 +1173,20 @@ test("Export dialog: expand subfields after search", async () => {
     });
 
     await openExportDialog();
-    const firstField = ".o_left_field_panel .o_export_tree_item:first-child ";
+    const firstField = ".w_left_field_panel .w_export_tree_item:first-child ";
     await contains(firstField).click();
     // show then hide content for the 'partner_ids' field.
     // this will load subfields and make them available to search
     await contains(firstField).click();
     await contains(firstField).click();
-    await contains(".o_export_search_input").edit("Attendants");
-    expect(".o_export_tree_item[data-field_id='activity_ids/partner_ids']").toHaveCount(1, {
+    await contains(".w_export_search_input").edit("Attendants");
+    expect(".w_export_tree_item[data-field_id='activity_ids/partner_ids']").toHaveCount(1, {
         message: "subfield that was known has been found and is displayed",
     });
-    await contains(".o_export_tree_item[data-field_id='activity_ids/partner_ids']").click();
+    await contains(".w_export_tree_item[data-field_id='activity_ids/partner_ids']").click();
     // 'Company' should be shown even if the company_ids string doesn't match the search string
     // since the toggle was done by the user to show subfields
-    expect(".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
+    expect(".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
         1,
         {
             message: "subfield has been loaded and is displayed",
@@ -1214,10 +1214,10 @@ test("Export dialog: search in debug", async () => {
     });
 
     await openExportDialog();
-    await contains(".o_left_field_panel .o_export_tree_item:first-child").click();
-    await contains(".o_export_tree_item:first-child .o_export_tree_item").click();
-    await contains(".o_export_search_input").edit("company_ids");
-    expect(".o_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
+    await contains(".w_left_field_panel .w_export_tree_item:first-child").click();
+    await contains(".w_export_tree_item:first-child .w_export_tree_item").click();
+    await contains(".w_export_search_input").edit("company_ids");
+    expect(".w_export_tree_item[data-field_id='activity_ids/partner_ids/company_ids']").toHaveCount(
         1,
         {
             message: "subfield has been found with its technical name and is displayed",
@@ -1245,17 +1245,17 @@ test("Export dialog: search with display names containing slashes", async () => 
     });
 
     await openExportDialog();
-    await contains(".o_left_field_panel .o_export_tree_item:first-child").click();
+    await contains(".w_left_field_panel .w_export_tree_item:first-child").click();
 
     // Search using display name format (with spaces and slashes).
     // Both pattern and field.string must be reversed for this to match.
-    await contains(".o_export_search_input").edit("Activities/Email templates");
-    expect(".o_export_tree_item[data-field_id='activity_ids/mail_template_ids']").toHaveCount(1, {
+    await contains(".w_export_search_input").edit("Activities/Email templates");
+    expect(".w_export_tree_item[data-field_id='activity_ids/mail_template_ids']").toHaveCount(1, {
         message: "field should be found when searching with display name containing slashes",
     });
 
-    await contains(".o_export_search_input").edit("Email templates");
-    expect(".o_export_tree_item[data-field_id='activity_ids/mail_template_ids']").toHaveCount(1, {
+    await contains(".w_export_search_input").edit("Email templates");
+    expect(".w_export_tree_item[data-field_id='activity_ids/mail_template_ids']").toHaveCount(1, {
         message: "field should be found when searching with partial display name",
     });
 });
@@ -1276,12 +1276,12 @@ test("Export dialog: disable button during export", async () => {
     });
 
     await openExportDialog();
-    expect(".o_select_button").toBeEnabled();
-    await contains(".o_select_button").click();
-    expect(".o_select_button").not.toBeEnabled();
+    expect(".w_select_button").toBeEnabled();
+    await contains(".w_select_button").click();
+    expect(".w_select_button").not.toBeEnabled();
     def.resolve();
     await animationFrame();
-    expect(".o_select_button").toBeEnabled();
+    expect(".w_select_button").toBeEnabled();
 });
 
 test("Export dialog: no column_invisible fields in default export list", async () => {
@@ -1300,8 +1300,8 @@ test("Export dialog: no column_invisible fields in default export list", async (
     });
 
     await openExportDialog();
-    expect(".modal .o_export_field").toHaveCount(1);
-    expect(".modal .o_export_field").toHaveText("Foo");
+    expect(".modal .w_export_field").toHaveCount(1);
+    expect(".modal .w_export_field").toHaveText("Foo");
 });
 
 test("Export dialog: fields displayed in same Order as list view when export", async () => {
@@ -1332,10 +1332,10 @@ test("Export dialog: fields displayed in same Order as list view when export", a
     });
 
     await openExportDialog();
-    expect(".modal .o_export_field:first-child").toHaveText("Demo", {
+    expect(".modal .w_export_field:first-child").toHaveText("Demo", {
         message: "Field demo should appear first in the export list",
     });
-    expect(".modal .o_export_field:nth-child(2)").toHaveText("Abc", {
+    expect(".modal .w_export_field:nth-child(2)").toHaveText("Abc", {
         message: "Field abc should appear second in the export list",
     });
 });
@@ -1398,11 +1398,11 @@ test("Export dialog in list view: excludes raw properties field, includes enable
         loadActionMenus: true,
     });
 
-    await contains(".o_optional_columns .dropdown-toggle").click();
-    await contains(".o-dropdown-item:nth-child(1) span:contains('My Char')").click();
+    await contains(".w_optional_columns .dropdown-toggle").click();
+    await contains(".w-dropdown-item:nth-child(1) span:contains('My Char')").click();
 
     await openExportDialog();
-    expect(queryAllTexts(".o_left_field_panel .o_export_tree_item")).toEqual([
+    expect(queryAllTexts(".w_left_field_panel .w_export_tree_item")).toEqual([
         "Activities",
         "Foo",
         "Bar",
@@ -1410,7 +1410,7 @@ test("Export dialog in list view: excludes raw properties field, includes enable
         "My Char",
         "My Int",
     ]);
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Foo", "My Char"]);
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Foo", "My Char"]);
 });
 
 test("Export dialog in kanban view: no raw properties fields in default export list", async () => {
@@ -1466,14 +1466,14 @@ test("Export dialog in kanban view: no raw properties fields in default export l
     });
 
     await openExportDialog();
-    expect(queryAllTexts(".o_left_field_panel .o_export_tree_item")).toEqual([
+    expect(queryAllTexts(".w_left_field_panel .w_export_tree_item")).toEqual([
         "Activities",
         "Foo",
         "Bar",
         "Properties",
         "My Char",
     ]);
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Foo", "My Char"]);
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Foo", "My Char"]);
 });
 
 test("Export dialog: translations select is hidden when a single language is installed", async () => {
@@ -1488,7 +1488,7 @@ test("Export dialog: translations select is hidden when a single language is ins
     });
 
     await openExportDialog();
-    expect(".o_export_languages").toHaveCount(0);
+    expect(".w_export_languages").toHaveCount(0);
 });
 
 test("Export dialog: translations select is hidden when no exported field is translatable", async () => {
@@ -1508,17 +1508,17 @@ test("Export dialog: translations select is hidden when no exported field is tra
     });
 
     await openExportDialog();
-    expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Foo"]);
-    expect(".o_export_languages").toHaveCount(0, {
+    expect(queryAllTexts(".w_right_field_panel .w_export_field")).toEqual(["Foo"]);
+    expect(".w_export_languages").toHaveCount(0, {
         message: "no exported field is translatable",
     });
 
     // adding a translatable field makes the languages relevant again
-    await contains(".o_left_field_panel [data-field_id='bar'] .o_add_field").click();
-    expect(".o_export_languages").toHaveCount(1);
+    await contains(".w_left_field_panel [data-field_id='bar'] .w_add_field").click();
+    expect(".w_export_languages").toHaveCount(1);
 
-    await contains(".o_right_field_panel [data-field_id='bar'] .o_remove_field").click();
-    expect(".o_export_languages").toHaveCount(0);
+    await contains(".w_right_field_panel [data-field_id='bar'] .w_remove_field").click();
+    expect(".w_export_languages").toHaveCount(0);
 });
 
 test("Export dialog: translatable fields are exported in the selected languages", async () => {
@@ -1546,19 +1546,19 @@ test("Export dialog: translatable fields are exported in the selected languages"
     });
 
     const addLanguage = async (label) => {
-        await contains(".o_export_languages .o-autocomplete input").click();
+        await contains(".w_export_languages .w-autocomplete input").click();
         await runAllTimers();
-        await contains(`.o-autocomplete--dropdown-item:contains(${label})`).click();
+        await contains(`.w-autocomplete--dropdown-item:contains(${label})`).click();
     };
 
     await openExportDialog();
-    expect(".o_export_languages").toHaveCount(1);
+    expect(".w_export_languages").toHaveCount(1);
     await addLanguage("French / Français");
-    expect(".o_export_languages .o_tag").toHaveText("French / Français");
-    await contains(".o_export_languages .o_tag .o_delete").click();
-    expect(".o_export_languages .o_tag").toHaveCount(0);
+    expect(".w_export_languages .w_tag").toHaveText("French / Français");
+    await contains(".w_export_languages .w_tag .w_delete").click();
+    expect(".w_export_languages .w_tag").toHaveCount(0);
     await addLanguage("French / Français");
-    await contains(".o_select_button").click();
+    await contains(".w_select_button").click();
     expect.verifySteps(["/web/export/csv"]);
 });
 
@@ -1602,29 +1602,29 @@ test("Export dialog: export templates remember the selected languages", async ()
     });
 
     await openExportDialog();
-    expect(".o_export_languages .o_tag").toHaveCount(0);
+    expect(".w_export_languages .w_tag").toHaveCount(0);
 
-    await select("1", { target: ".o_exported_lists_select" });
+    await select("1", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(".o_export_languages .o_tag").toHaveText("French / Français");
+    expect(".w_export_languages .w_tag").toHaveText("French / Français");
 
     // removing a language detaches from the selected template; re-selecting it
     // reloads its saved (unmodified) languages
-    await contains(".o_export_languages .o_tag .o_delete").click();
-    expect(".o_export_languages .o_tag").toHaveCount(0);
-    expect(".o_exported_lists_select").toHaveValue("", {
+    await contains(".w_export_languages .w_tag .w_delete").click();
+    expect(".w_export_languages .w_tag").toHaveCount(0);
+    expect(".w_exported_lists_select").toHaveValue("", {
         message: "the template is no longer selected",
     });
-    await select("1", { target: ".o_exported_lists_select" });
+    await select("1", { target: ".w_exported_lists_select" });
     await animationFrame();
-    expect(".o_export_languages .o_tag").toHaveText("French / Français");
+    expect(".w_export_languages .w_tag").toHaveText("French / Français");
 
     // saving a new template persists the selected languages
-    await select("", { target: ".o_exported_lists_select" });
+    await select("", { target: ".w_exported_lists_select" });
     await animationFrame();
-    await contains(".o_create_exported_list").click();
-    await contains(".o_save_list_name").edit("Translated template copy", { confirm: false });
-    await contains(".o_save_list_btn").click();
+    await contains(".w_create_exported_list").click();
+    await contains(".w_save_list_name").edit("Translated template copy", { confirm: false });
+    await contains(".w_save_list_btn").click();
     expect.verifySteps(["create template"]);
 });
 
@@ -1641,7 +1641,7 @@ test("Export dialog: clicking on 'save as template' focuses the template name in
     });
 
     await openExportDialog();
-    await contains(".o_create_exported_list").click();
+    await contains(".w_create_exported_list").click();
     await animationFrame();
-    expect(".o_save_list_name").toBeFocused();
+    expect(".w_save_list_name").toBeFocused();
 });

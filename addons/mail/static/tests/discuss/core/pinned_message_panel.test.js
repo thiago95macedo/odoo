@@ -35,9 +35,9 @@ test("Opening Pinned Messages Panel twice from notification only needs one click
     await start();
     await openDiscuss(channelId);
     await click(".o_mail_notification a[data-oe-type='pin-menu']");
-    await contains(".o-discuss-PinnedMessagesPanel");
+    await contains(".w-discuss-PinnedMessagesPanel");
     await click(".o_mail_notification a[data-oe-type='pin-menu']");
-    await contains(".o-discuss-PinnedMessagesPanel");
+    await contains(".w-discuss-PinnedMessagesPanel");
     await click("button[name='pinned-messages'].active");
-    await contains(".o-discuss-PinnedMessagesPanel", { count: 0 });
+    await contains(".w-discuss-PinnedMessagesPanel", { count: 0 });
 });

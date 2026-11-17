@@ -142,14 +142,14 @@ export class Message extends Component {
             () => {
                 if (this.shadowBody()) {
                     this.shadowRoot.set(this.shadowBody().attachShadow({ mode: "open" }));
-                    const color = this.store.isOdooWhiteTheme ? "dark" : "white";
+                    const color = this.store.isWethWhiteTheme ? "dark" : "white";
                     loadCssFromBundle(this.shadowRoot(), "mail.assets_message_email");
                     const shadowStyle = document.createElement("style");
                     shadowStyle.textContent = `
                     * {
                         color: ${color} !important;
                     }
-                    *:not(.o-mail-ellipsis) {
+                    *:not(.w-mail-ellipsis) {
                         background-color: transparent !important;
                     }
                     a, a * {
@@ -158,15 +158,15 @@ export class Message extends Component {
                     a:hover, a *:hover {
                         color: ${this.constructor.SHADOW_LINK_HOVER_COLOR} !important;
                     }
-                    .o-mail-Message-searchHighlight {
+                    .w-mail-Message-searchHighlight {
                         background: ${this.constructor.SHADOW_HIGHLIGHT_COLOR} !important;
                     }
                 `;
-                    if (!this.store.isOdooWhiteTheme) {
+                    if (!this.store.isWethWhiteTheme) {
                         this.shadowRoot().appendChild(shadowStyle);
                     }
                     if (isMobileOS()) {
-                        // Equivalent to .o-disable-safari-native-long-press
+                        // Equivalent to .w-disable-safari-native-long-press
                         const touchCalloutStyle = document.createElement("style");
                         touchCalloutStyle.textContent = `
                         * {
@@ -179,7 +179,7 @@ export class Message extends Component {
                     }
                     const ellipsisStyle = document.createElement("style");
                     ellipsisStyle.textContent = `
-                    .o-mail-ellipsis {
+                    .w-mail-ellipsis {
                         min-width: 2.7ch;
                         background-color: ButtonFace;
                         border-radius: 50rem;
@@ -521,7 +521,7 @@ export class Message extends Component {
         if (!bodyEl) {
             return;
         }
-        const editedEl = bodyEl.querySelector(".o-mail-Message-edited");
+        const editedEl = bodyEl.querySelector(".w-mail-Message-edited");
         editedEl?.replaceChildren(
             renderToElement("mail.Message.edited", { message: this.message })
         );

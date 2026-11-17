@@ -54,15 +54,15 @@ class TestWebsiteAssets(weth.tests.HttpCase):
         #      "GET /web HTTP/1.1" 200 - 11 0.004 0.007   <--  11 Queries, ~10ms
         #      "GET /web HTTP/1.1" 200 - 11 0.003 0.005   <--  11 Queries, ~10ms
         #      "GET /web HTTP/1.1" 200 - 11 0.003 0.008   <--  11 Queries, ~10ms
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/weth')
         check_asset()
-        self.url_open(domain_2 + '/odoo')
+        self.url_open(domain_2 + '/weth')
         check_asset()
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/weth')
         check_asset()
-        self.url_open(domain_2 + '/odoo')
+        self.url_open(domain_2 + '/weth')
         check_asset()
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/weth')
         check_asset()
 
     def test_02_t_cache_invalidation(self):

@@ -34,7 +34,7 @@ export class ContentExpandablePlugin extends Plugin {
         if (
             ev.type === "click" &&
             ev.target &&
-            closestElement(ev.target, ".o-mail-Message-viewMore-btn")
+            closestElement(ev.target, ".w-mail-Message-viewMore-btn")
         ) {
             // Allow clicking on the viewMore button even if it is protected.
             return true;
@@ -58,7 +58,7 @@ export class ContentExpandablePlugin extends Plugin {
             element.removeAttribute("style");
         }
         const buttonTemplate = renderToElement("mail.ExpandableButton");
-        const button = buttonTemplate.querySelector(".o-mail-Message-viewMore-btn");
+        const button = buttonTemplate.querySelector(".w-mail-Message-viewMore-btn");
         this.addDomListener(button, "click", this.onClickViewButton);
         ele.prepend(buttonTemplate);
     }
@@ -71,7 +71,7 @@ export class ContentExpandablePlugin extends Plugin {
         for (const subEl of ele.querySelectorAll(":scope > .o_mail_reply_content")) {
             subEl.classList.toggle("d-none");
         }
-        closestElement(ev.target, ".o-mail-Message-viewMore-container")?.remove();
+        closestElement(ev.target, ".w-mail-Message-viewMore-container")?.remove();
     }
 
     cleanForSave(root) {
@@ -81,7 +81,7 @@ export class ContentExpandablePlugin extends Plugin {
                 delete subEl.dataset.oeProtected;
                 subEl.classList.remove("d-none");
             }
-            el.querySelector(".o-mail-Message-viewMore-container")?.remove();
+            el.querySelector(".w-mail-Message-viewMore-container")?.remove();
             el.setAttribute("data-o-mail-quote", "1");
         }
         return root;

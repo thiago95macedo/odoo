@@ -580,8 +580,8 @@ describe(parseUrl(import.meta.url), () => {
                 </div>
             `);
             expectSelector(
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
             ).toEqualNodes("");
         });
 
@@ -596,8 +596,8 @@ describe(parseUrl(import.meta.url), () => {
                 </div>
             `);
             expectSelector(
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
             ).toEqualNodes("we-toggler");
         });
 
@@ -612,8 +612,8 @@ describe(parseUrl(import.meta.url), () => {
                 </div>
             `);
             expectSelector(
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
-                `.o_we_customize_panel:not(:has(.o_we_so_color_palette.o_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] we-select[data-name="shape_img_opt"] we-toggler`,
+                `.w_we_customize_panel:not(:has(.w_we_so_color_palette.w_we_widget_opened)) we-customizeblock-option[class='snippet-option-ImageTools'] [title='we-select[data-name="shape_img_opt"] we-toggler']`
             ).toEqualNodes("div[title]");
         });
 
@@ -631,7 +631,7 @@ describe(parseUrl(import.meta.url), () => {
                 </nav>
             `);
             expectSelector(
-                `.o_menu_sections .dropdown-item:contains('Products'), nav.o_burger_menu_content li[data-menu-xmlid='sale.menu_product_template_action']`
+                `.w_menu_sections .dropdown-item:contains('Products'), nav.w_burger_menu_content li[data-menu-xmlid='sale.menu_product_template_action']`
             ).toEqualNodes(".dropdown-item,li");
         });
 
@@ -776,8 +776,8 @@ describe(parseUrl(import.meta.url), () => {
             `);
 
             expectSelector(
-                `.o_content:has(.o_field_widget[name=messages]):has(td:text(bbb)):has(td:contains(/^\\[test_trigger\\] Mitchell Admin/))`
-            ).toEqualNodes(".o_content");
+                `.w_content:has(.w_field_widget[name=messages]):has(td:text(bbb)):has(td:contains(/^\\[test_trigger\\] Mitchell Admin/))`
+            ).toEqualNodes(".w_content");
         });
 
         test(":eq in the middle of a selector", async () => {
@@ -789,7 +789,7 @@ describe(parseUrl(import.meta.url), () => {
                     <li class="oe_overlay o_draggable"></li>
                 </ul>
             `);
-            expectSelector(`.oe_overlay.o_draggable:eq(2).oe_active`).toEqualNodes(
+            expectSelector(`.oe_overlay.w_draggable:eq(2).oe_active`).toEqualNodes(
                 "li:nth-child(3)"
             );
         });
@@ -823,12 +823,12 @@ describe(parseUrl(import.meta.url), () => {
             `);
 
             expectSelector(`
-                .s_cover span.o_text_highlight:has(
-                    .o_text_highlight_item
+                .s_cover span.w_text_highlight:has(
+                    .w_text_highlight_item
                     + br
-                    + .o_text_highlight_item
+                    + .w_text_highlight_item
                 )
-            `).toEqualNodes(".o_text_highlight");
+            `).toEqualNodes(".w_text_highlight");
         });
 
         test(":last", async () => {
@@ -851,8 +851,8 @@ describe(parseUrl(import.meta.url), () => {
                 </div>
             `);
             expectSelector(
-                `.o_field_widget[name=messages] .o_data_row td.o_list_record_remove button:visible:last`
-            ).toEqualNodes(".o_data_row:last-child button");
+                `.w_field_widget[name=messages] .w_data_row td.w_list_record_remove button:visible:last`
+            ).toEqualNodes(".w_data_row:last-child button");
         });
 
         test("select :contains & :value", async () => {

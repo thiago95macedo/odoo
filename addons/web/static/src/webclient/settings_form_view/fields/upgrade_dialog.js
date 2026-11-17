@@ -17,7 +17,7 @@ export class UpgradeDialog extends Component {
             [["share", "=", false]],
         ]);
         window.open(
-            "https://www.weth.com.br/odoo-enterprise/upgrade?num_users=" + usersCount,
+            "https://www.weth.com.br/weth-enterprise/upgrade?num_users=" + usersCount,
             "_blank"
         );
         this.props.close();

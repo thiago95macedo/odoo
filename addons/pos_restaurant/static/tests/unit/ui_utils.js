@@ -7,7 +7,7 @@ export async function clickTable(name, store = false) {
     if (store) {
         await waitUntilOrdersSynced(store);
     }
-    await contains(`.o_fp_canvas .o_fp_table:has(.o_fp_table_number:contains("${name}"))`).click();
+    await contains(`.w_fp_canvas .w_fp_table:has(.w_fp_table_number:contains("${name}"))`).click();
     await animationFrame();
 }
 
@@ -15,7 +15,7 @@ export async function clickTableById(tableId, store = false) {
     if (store) {
         await waitUntilOrdersSynced(store);
     }
-    await contains(`.o_fp_table[data-table_id='${tableId}']`).click();
+    await contains(`.w_fp_table[data-table_id='${tableId}']`).click();
     await animationFrame();
 }
 

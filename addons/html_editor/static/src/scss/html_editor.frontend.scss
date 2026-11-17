@@ -4,6 +4,7 @@
     min-height: 100px;
     color: transparent;
 }
+
 .o_wysiwyg_loading {
     @include o-position-absolute($top: 50%, $left: 50%);
     transform: translate(-50%, -50%)
@@ -14,12 +15,15 @@
         display: none;
     }
 }
+
 .o_we_flip_x {
     transform: scaleX(-1);
 }
+
 .o_we_flip_y {
     transform: scaleY(-1);
 }
+
 .o_we_flip_x.o_we_flip_y {
     transform: scale(-1);
 }
@@ -30,10 +34,11 @@
         // No horizontal gap in mobile view.
         column-gap: 0px !important;
     }
+
     --grid-item-padding-y: 10px;
     --grid-item-padding-x: 10px;
 
-    > * {
+    >* {
         padding: var(--grid-item-padding-y) var(--grid-item-padding-x) !important;
 
         @include media-breakpoint-down(lg) {
@@ -47,7 +52,7 @@
                 --mobile-grid-item-padding-x: clamp(0px, calc(var(--grid-item-padding-x) * 100000), calc(0.5 * var(--gutter-x)));
                 padding: var(--grid-item-padding-y) var(--mobile-grid-item-padding-x) !important;
 
-                > img {
+                >img {
                     max-width: 100%;
                 }
             }
@@ -78,21 +83,21 @@
         // Adapt the horizontal margins of a direct row child of a grid item, to
         // make them compensate the grid item horizontal padding (to avoid an
         // overflow).
-        .o_grid_item > .row,
-        .o_grid_item > .o_text_columns > .row {
+        .o_grid_item>.row,
+        .o_grid_item>.o_text_columns>.row {
             --grid-inner-row-gutter-x: clamp(0px, 2 * var(--grid-item-padding-x), #{$grid-gutter-width});
             margin-left: calc(-0.5 * var(--grid-inner-row-gutter-x));
             margin-right: calc(-0.5 * var(--grid-inner-row-gutter-x));
         }
 
-        > * {
+        >* {
             margin: 0 !important;
             width: 100%;
             min-width: 0;
         }
     }
 
-    .container-fluid > .o_grid_mode {
+    .container-fluid>.o_grid_mode {
         --gutter-x: #{$grid-gutter-width};
     }
 
@@ -103,7 +108,9 @@
     }
 
     .o_grid_item_image {
-        img, .media_iframe_video {
+
+        img,
+        .media_iframe_video {
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
@@ -116,8 +123,8 @@
 
         // Allowing "cover" for some hover effects.
         &:not(.o_grid_item_image_contain) img[data-shape$="geo_square"] {
-            &:not(
-                [data-hover-effect="dolly_zoom"],
+
+            &:not([data-hover-effect="dolly_zoom"],
                 [data-hover-effect="outline"],
                 [data-hover-effect="image_mirror_blur"],
             ) {
@@ -126,7 +133,7 @@
         }
 
         // Needed when "a" is "display: block".
-        > a {
+        >a {
             width: 100%;
             height: 100%;
         }
@@ -137,7 +144,7 @@
 // prevents selected images from being covered with a blue filter in edit mode
 // (Website, Email Marketing). This allows to see the correct final rendering
 // of an image when it is edited.
-body.editor_enable:not(.o_basic_theme) .odoo-editor-editable {
+body.editor_enable:not(.o_basic_theme) .weth-editor-editable {
     img::selection {
         background-color: transparent !important;
     }
@@ -171,11 +178,9 @@ body.editor_enable:not(.o_basic_theme) .odoo-editor-editable {
     // CSS_SHORTHANDS when it comes to CSS variables.
 
     border-width:
-        var(--box-border-top-width)
-        var(--box-border-right-width)
-        var(--box-border-bottom-width)
-        var(--box-border-left-width) !important;
+        var(--box-border-top-width) var(--box-border-right-width) var(--box-border-bottom-width) var(--box-border-left-width) !important;
 }
+
 // TODO this should probably be done for all bootstrap "border" *sizes* classes
 // like "rounded" classes below. At the moment, it was not done because builder
 // options do not allow to set those yet, but layouts could(?).
@@ -202,11 +207,9 @@ body.editor_enable:not(.o_basic_theme) .odoo-editor-editable {
     // CSS_SHORTHANDS when it comes to CSS variables.
 
     border-radius:
-        var(--box-border-top-left-radius)
-        var(--box-border-top-right-radius)
-        var(--box-border-bottom-right-radius)
-        var(--box-border-bottom-left-radius) !important;
+        var(--box-border-top-left-radius) var(--box-border-top-right-radius) var(--box-border-bottom-right-radius) var(--box-border-bottom-left-radius) !important;
 }
+
 // Note: we do not support partial border-radius classes using CSS variables
 // just yet. We could (at the cost of dividing the `%box-border-radius-rules`
 // into 4 or 5 parts), but this is not necessary at the moment. They can be used
@@ -215,7 +218,8 @@ body.editor_enable:not(.o_basic_theme) .odoo-editor-editable {
 // the 4 directions, by switching to the `rounded` or a `rounded-{SIZE}` class.
 // See ROUNDED_SIZES_CLASSES_ONLY.
 @each $size, $value in map-get(map-get($utilities, 'rounded'), 'values') {
-    $class-suffix: if($size == null, "", "-#{$size}");
+    $class-suffix: if($size ==null, "", "-#{$size}");
+
     .rounded#{$class-suffix} {
         @extend %box-border-radius-rules;
     }
@@ -233,17 +237,14 @@ body.editor_enable:not(.o_basic_theme) .odoo-editor-editable {
 // without requiring overflow: hidden on the parent.
 %o-we-inner-border-radius {
     border-radius:
-        calc(var(--box-border-top-left-radius, 0px) - max(var(--box-border-top-width, 0px), var(--box-border-left-width, 0px)))
-        calc(var(--box-border-top-right-radius, 0px) - max(var(--box-border-top-width, 0px), var(--box-border-right-width, 0px)))
-        calc(var(--box-border-bottom-right-radius, 0px) - max(var(--box-border-bottom-width, 0px), var(--box-border-right-width, 0px)))
-        calc(var(--box-border-bottom-left-radius, 0px) - max(var(--box-border-bottom-width, 0px), var(--box-border-left-width, 0px)));
+        calc(var(--box-border-top-left-radius, 0px) - max(var(--box-border-top-width, 0px), var(--box-border-left-width, 0px))) calc(var(--box-border-top-right-radius, 0px) - max(var(--box-border-top-width, 0px), var(--box-border-right-width, 0px))) calc(var(--box-border-bottom-right-radius, 0px) - max(var(--box-border-bottom-width, 0px), var(--box-border-right-width, 0px))) calc(var(--box-border-bottom-left-radius, 0px) - max(var(--box-border-bottom-width, 0px), var(--box-border-left-width, 0px)));
 }
 
 // Needed to prevent the emoji picker from inheriting theme colors
-.o-EmojiPicker {
+.w-EmojiPicker {
     --EmojiPicker-background-color: white;
     --EmojiPicker-font-size: 1rem;
     --EmojiPicker-emoji-font-size: 1.5rem;
-    --EmojiPicker-text-color: #{rgba(black, $o-opacity-muted)};
+    --EmojiPicker-text-color: #{rgba(black, $w-opacity-muted)};
     --EmojiPicker-input-color: black;
 }

@@ -6,9 +6,9 @@ from weth.tests import tagged
 from weth.tools import mute_logger
 
 
-@tagged("odoobot")
+@tagged("wethbot")
 @tagged('at_install', '-post_install')  # LEGACY at_install
-class TestOdoobot(MailCommon, TestRecipients):
+class TestWethbot(MailCommon, TestRecipients):
 
     @classmethod
     def setUpClass(cls):
@@ -19,7 +19,7 @@ class TestOdoobot(MailCommon, TestRecipients):
             'substitution': 'Hello, how may I help you?',
         })
 
-        cls.odoobot = cls.env.ref("base.partner_root")
+        cls.wethbot = cls.env.ref("base.partner_root")
         cls.message_post_default_kwargs = {
             'body': '',
             'attachment_ids': [],
@@ -27,49 +27,49 @@ class TestOdoobot(MailCommon, TestRecipients):
             'partner_ids': [],
             'subtype_xmlid': 'mail.mt_comment'
         }
-        cls.odoobot_ping_body = f'<a href="http://weth.com.br/weth/res.partner/{cls.odoobot.id}" class="o_mail_redirect" data-oe-id="{cls.odoobot.id}" data-oe-model="res.partner" target="_blank">@OdooBot</a>'
+        cls.wethbot_ping_body = f'<a href="http://weth.com.br/weth/res.partner/{cls.wethbot.id}" class="o_mail_redirect" data-oe-id="{cls.wethbot.id}" data-oe-model="res.partner" target="_blank">@WethBot</a>'
         cls.test_record_employe = cls.test_record.with_user(cls.user_employee)
 
     @mute_logger('weth.addons.mail.models.mail_mail')
     def test_fetch_listener(self):
-        channel = self.user_employee.with_user(self.user_employee)._init_odoobot()
-        odoobot = self.env.ref("base.partner_root")
-        odoobot_in_fetch_listeners = self.env['discuss.channel.member'].search([('channel_id', '=', channel.id), ('partner_id', '=', odoobot.id)])
-        self.assertEqual(len(odoobot_in_fetch_listeners), 1, 'odoobot should appear only once in channel_fetch_listeners')
+        channel = self.user_employee.with_user(self.user_employee)._init_wethbot()
+        wethbot = self.env.ref("base.partner_root")
+        wethbot_in_fetch_listeners = self.env['discuss.channel.member'].search([('channel_id', '=', channel.id), ('partner_id', '=', wethbot.id)])
+        self.assertEqual(len(wethbot_in_fetch_listeners), 1, 'wethbot should appear only once in channel_fetch_listeners')
 
     @mute_logger('weth.addons.mail.models.mail_mail')
-    def test_odoobot_ping(self):
+    def test_wethbot_ping(self):
         kwargs = self.message_post_default_kwargs.copy()
-        kwargs.update({'body': self.odoobot_ping_body, 'partner_ids': [self.odoobot.id, self.user_admin.partner_id.id]})
+        kwargs.update({'body': self.wethbot_ping_body, 'partner_ids': [self.wethbot.id, self.user_admin.partner_id.id]})
 
         with patch('random.choice', lambda x: x[0]):
             self.assertNextMessage(
                 self.test_record_employe.with_context({'mail_post_autofollow': True}).message_post(**kwargs),
-                sender=self.odoobot,
+                sender=self.wethbot,
                 answer=False
             )
-        # Odoobot should not be a follower but user_employee and user_admin should
+        # Wethbot should not be a follower but user_employee and user_admin should
         follower = self.test_record.message_follower_ids.mapped('partner_id')
-        self.assertNotIn(self.odoobot, follower)
+        self.assertNotIn(self.wethbot, follower)
         self.assertIn(self.user_employee.partner_id, follower)
         self.assertIn(self.user_admin.partner_id, follower)
 
     @mute_logger('weth.addons.mail.models.mail_mail')
     def test_onboarding_flow(self):
         kwargs = self.message_post_default_kwargs.copy()
-        channel = self.user_employee.with_user(self.user_employee)._init_odoobot()
+        channel = self.user_employee.with_user(self.user_employee)._init_wethbot()
 
         kwargs['body'] = 'tagada 😊'
         self.assertNextMessage(
             channel.message_post(**kwargs),
-            sender=self.odoobot,
-            answer=("@OdooBot",)
+            sender=self.wethbot,
+            answer=("@WethBot",)
         )
         kwargs['body'] = ''
         kwargs['partner_ids'] = [self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")]
         self.assertNextMessage(
             channel.message_post(**kwargs),
-            sender=self.odoobot,
+            sender=self.wethbot,
             answer=("attachment",)
         )
         attachment = self.env['ir.attachment'].with_user(self.user_employee).create({
@@ -79,52 +79,52 @@ class TestOdoobot(MailCommon, TestRecipients):
         })
         kwargs['attachment_ids'] = [attachment.id]
         channel.message_post(**kwargs)
-        self.assertNotEqual(self.user_employee.odoobot_state, 'onboarding_attachement')
+        self.assertNotEqual(self.user_employee.wethbot_state, 'onboarding_attachement')
         kwargs['attachment_ids'] = []
         kwargs['body'] = 'Thanks'
         last_message = self.assertNextMessage(
             self.assertNextMessage(
                 channel.with_context(canned_response_ids=[self.canned_response.id]).message_post(**kwargs),
-                sender=self.odoobot,
+                sender=self.wethbot,
                 answer=("canned responses",)
             ),
-            sender=self.odoobot,
+            sender=self.wethbot,
             answer=("/help",)
         )
         # The 'help' command is the last step of the onboarding flow
         # (which can be extended by other apps like livechat).
         channel.execute_command_help()
         self.assertNextMessage(
-            last_message,  # No message is posted with 'help' command, so use the last odoobot message instead.
-            sender=self.odoobot,
+            last_message,  # No message is posted with 'help' command, so use the last wethbot message instead.
+            sender=self.wethbot,
             answer=("close this conversation",)
         )
         # Test miscellaneous messages
-        self.user_employee.odoobot_state = "idle"
+        self.user_employee.wethbot_state = "idle"
         kwargs['partner_ids'] = []
         kwargs['body'] = "I love you"
         self.assertNextMessage(
             channel.message_post(**kwargs),
-            sender=self.odoobot,
+            sender=self.wethbot,
             answer=("too human for me",)
         )
         kwargs['body'] = "Go fuck yourself"
         self.assertNextMessage(
             channel.message_post(**kwargs),
-            sender=self.odoobot,
+            sender=self.wethbot,
             answer=("I have feelings",)
         )
         kwargs['body'] = "help me"
         self.assertNextMessage(
             channel.message_post(**kwargs),
-            sender=self.odoobot,
+            sender=self.wethbot,
             answer=("If you need help",)
         )
 
     @mute_logger('weth.addons.mail.models.mail_mail')
-    def test_odoobot_no_default_answer(self):
+    def test_wethbot_no_default_answer(self):
         kwargs = self.message_post_default_kwargs.copy()
-        kwargs.update({'body': "I'm not talking to @odoobot right now", 'partner_ids': []})
+        kwargs.update({'body': "I'm not talking to @wethbot right now", 'partner_ids': []})
         self.assertNextMessage(
             self.test_record_employe.message_post(**kwargs),
             answer=False

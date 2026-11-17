@@ -15,7 +15,7 @@ from weth.tests.common import users, tagged, HttpCase, warmup
 @tagged("is_query_count")
 class TestDiscussFullPerformance(HttpCase, MailCommon):
     # Queries for _query_count_init_store (in order):
-    #   1: search res_partner (odooot ref exists)
+    #   1: search res_partner (wethot ref exists)
     #   1: search res_groups (internalUserGroupId ref exists)
     #   5: settings:
     #       - search res_users_settings (_find_or_create_for_user)
@@ -28,7 +28,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
     #       - search_count mail_canned_response
     #   [enterprise] search_fetch mail_activity_type (voip_config)
     #   [enterprise] search_count voip_call (_get_number_of_missed_calls)
-    #   11: store add odoobot:
+    #   11: store add wethbot:
     #       - fetch res_partner (_read_format)
     #         [enterprise] search ai_agent (_compute_im_status ai override)
     #       - search res_users (_compute_im_status)
@@ -195,7 +195,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 'login': 'emp',
                 'name': 'Ernest Employee',
                 'notification_type': 'inbox',
-                'odoobot_state': 'disabled',
+                'wethbot_state': 'disabled',
                 'password': self.password,
                 'signature': '--\nErnest',
                 'tz': 'Europe/Brussels',
@@ -481,11 +481,11 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                     "active": False,
                     "agent_ids": [],
                     "avatar_128_access_token": self.partner_root._get_avatar_128_access_token(),
-                    "email": "odoobot@example.com",
+                    "email": "wethbot@example.com",
                     "id": self.partner_root.id,
                     "is_company": False,
                     "main_user_id": self.user_root.id,
-                    "name": "OdooBot",
+                    "name": "WethBot",
                     "partner_share": False,
                     "tz": "Europe/Brussels",
                     "user_ids": [],
@@ -550,7 +550,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 "mt_comment": self.env.ref("mail.mt_comment").id,
                 "mt_important_notification": self.env.ref("mail.mt_important_notification").id,
                 "mt_note": self.env.ref("mail.mt_note").id,
-                "odoobot": self.user_root.partner_id.id,
+                "wethbot": self.user_root.partner_id.id,
                 "self_user": self.users[0].id,
             },
         }
@@ -1634,7 +1634,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 "create_date": create_date,
                 "date": date,
                 "default_subject": "group restricted channel 1",
-                "email_from": '"OdooBot" <odoobot@example.com>',
+                "email_from": '"WethBot" <wethbot@example.com>',
                 "id": last_message.id,
                 "incoming_email_cc": False,
                 "incoming_email_to": False,
@@ -1652,7 +1652,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 "rating_id": False,
                 "reactions": [],
                 "record_name": "group restricted channel 1",
-                "reply_to": '"OdooBot" <catchall.test@test.mycompany.com>',
+                "reply_to": '"WethBot" <catchall.test@test.mycompany.com>',
                 "res_id": channel.id,
                 "scheduledDatetime": False,
                 "is_bookmarked": False,
@@ -2031,7 +2031,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 "id": user.partner_id.id,
                 "is_company": False,
                 "main_user_id": user.id,
-                "name": "OdooBot",
+                "name": "WethBot",
                 "write_date": fields.Datetime.to_string(user.partner_id.write_date),
             }
         if guest:

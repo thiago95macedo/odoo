@@ -1029,7 +1029,7 @@ class PosSession(models.Model):
 
         After posting, one account.payment is created per payment method
         and reconciled against the matching payment_term line, marking
-        the receipt as fully paid via standard Odoo reconciliation.
+        the receipt as fully paid via standard WETH reconciliation.
 
         Returns the pm_data_list (list of dicts) for payment creation
         in _validate_session_accounting.

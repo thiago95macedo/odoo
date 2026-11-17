@@ -119,7 +119,7 @@ export class MessagingMenu extends Component {
     }
 
     /**
-     * Whether the OdooBot extras (delivery failures, push permission request) may be
+     * Whether the WethBot extras (delivery failures, push permission request) may be
      * shown for the active tab.
      */
     get showNotificationHubExtras() {
@@ -127,7 +127,7 @@ export class MessagingMenu extends Component {
         return (
             !this.state().searchTerm &&
             !this.state().selectedFilter &&
-            this.state().activeTab.eq(menu.odooBotNotificationsTab)
+            this.state().activeTab.eq(menu.wethBotNotificationsTab)
         );
     }
 
@@ -139,7 +139,7 @@ export class MessagingMenu extends Component {
         return {
             body: _t("Stay tuned! Enable push notifications to never miss a message."),
             displayName: _t("Turn on notifications"),
-            partner: this.store.odoobot,
+            partner: this.store.wethbot,
         };
     }
 

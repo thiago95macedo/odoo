@@ -1,30 +1,30 @@
 // = Main Navbar Variables
 // ============================================================================
-$o-navbar-height: 46px !default;
-$o-navbar-padding-v: 10px !default;
-$o-navbar-font-size: $o-font-size-base !default;
+$w-navbar-height: 46px !default;
+$w-navbar-padding-v: 10px !default;
+$w-navbar-font-size: $w-font-size-base !default;
 
-$o-navbar-background: $o-brand-odoo !default;
+$w-navbar-background: $w-brand-weth !default;
 
-$o-navbar-entry-margin-h: 0 !default;
-$o-navbar-entry-padding-h: $o-spacer * .5 !default;
-$o-navbar-entry-border-radius: $o-border-radius !default;
-$o-navbar-entry-color: rgba($o-white, .9) !default;
-$o-navbar-entry-color--hover: $o-white !default;
-$o-navbar-entry-font-size: 1em !default;
-$o-navbar-entry-bg--hover: rgba($o-black, .08) !default;
+$w-navbar-entry-margin-h: 0 !default;
+$w-navbar-entry-padding-h: $w-spacer * .5 !default;
+$w-navbar-entry-border-radius: $w-border-radius !default;
+$w-navbar-entry-color: rgba($w-white, .9) !default;
+$w-navbar-entry-color--hover: $w-white !default;
+$w-navbar-entry-font-size: 1em !default;
+$w-navbar-entry-bg--hover: rgba($w-black, .08) !default;
 
-$o-navbar-entry-color--active: $o-navbar-entry-color--hover !default;
-$o-navbar-entry-bg--active: $o-navbar-entry-bg--hover !default;
+$w-navbar-entry-color--active: $w-navbar-entry-color--hover !default;
+$w-navbar-entry-bg--active: $w-navbar-entry-bg--hover !default;
 
-$o-navbar-brand-font-size: 1.2em !default;
-$o-navbar-brand-color: $o-navbar-entry-color !default;
+$w-navbar-brand-font-size: 1.2em !default;
+$w-navbar-brand-color: $w-navbar-entry-color !default;
 
-$o-navbar-badge-size: 11px !default;
-$o-navbar-badge-padding: 4px !default;
-$o-navbar-badge-bg: $o-success !default;
-$o-navbar-badge-color: inherit !default;
-$o-navbar-badge-text-shadow: 1px 1px 0 rgba($o-black, .3) !default;
+$w-navbar-badge-size: 11px !default;
+$w-navbar-badge-padding: 4px !default;
+$w-navbar-badge-bg: $w-success !default;
+$w-navbar-badge-color: inherit !default;
+$w-navbar-badge-text-shadow: 1px 1px 0 rgba($w-black, .3) !default;
 
 // = % PseudoClasses
 //
@@ -35,24 +35,22 @@ $o-navbar-badge-text-shadow: 1px 1px 0 rgba($o-black, .3) !default;
     display: flex;
     align-items: center;
     width: auto;
-    height: var(--Navbar-entry-height, calc(var(--o-navbar-height) - #{$o-navbar-padding-v} * 2));
-    border-radius: var(--NavBar-entry-borderRadius, #{$o-navbar-entry-border-radius});
+    height: var(--Navbar-entry-height, calc(var(--o-navbar-height) - #{$w-navbar-padding-v} * 2));
+    border-radius: var(--NavBar-entry-borderRadius, #{$w-navbar-entry-border-radius});
     user-select: none;
     background-color: inherit;
-    font-size: $o-navbar-entry-font-size;
+    font-size: $w-navbar-entry-font-size;
 
-    @include o-hover-text-color(
-        var(--NavBar-entry-color, #{$o-navbar-entry-color}),
-        var(--NavBar-entry-color--hover, #{$o-navbar-entry-color--hover})
-    );
+    @include o-hover-text-color(var(--NavBar-entry-color, #{$w-navbar-entry-color}),
+        var(--NavBar-entry-color--hover, #{$w-navbar-entry-color--hover}));
 }
 
 %-main-navbar-entry-spacing {
     margin: var(--Navbar-entry-margin, 0);
-    margin-left: var(--NavBar-entry-margin-left, #{$o-navbar-entry-margin-h});
-    margin-right: var(--NavBar-entry-margin-right, #{$o-navbar-entry-margin-h});
+    margin-left: var(--NavBar-entry-margin-left, #{$w-navbar-entry-margin-h});
+    margin-right: var(--NavBar-entry-margin-right, #{$w-navbar-entry-margin-h});
     padding: 0;
-    padding-left: var(--NavBar-entry-padding-left, #{$o-navbar-entry-padding-h});
-    padding-right: var(--NavBar-entry-padding-right, #{$o-navbar-entry-padding-h});
-    line-height: calc(var(--o-navbar-height) - #{$o-navbar-padding-v * 2});
+    padding-left: var(--NavBar-entry-padding-left, #{$w-navbar-entry-padding-h});
+    padding-right: var(--NavBar-entry-padding-right, #{$w-navbar-entry-padding-h});
+    line-height: calc(var(--o-navbar-height) - #{$w-navbar-padding-v * 2});
 }

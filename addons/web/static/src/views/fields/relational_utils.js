@@ -20,7 +20,7 @@ import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { SIZES } from "@web/core/ui/ui_utils";
 import { KeepLast } from "@web/core/utils/concurrency";
 import { useBus, useOwnedDialogs, useService } from "@web/core/utils/hooks";
-import { highlightText, odoomark } from "@web/core/utils/html";
+import { highlightText, wethmark } from "@web/core/utils/html";
 import { deepEqual } from "@web/core/utils/objects";
 import { createElement, parseXML } from "@web/core/utils/xml";
 import { extractFieldsFromArchInfo, useRecordObserver } from "@web/model/relational_model/utils";
@@ -542,7 +542,7 @@ export class Many2XAutocomplete extends Component {
         return {
             data: { record, slotName: "autoCompleteItem" },
             label: label
-                ? highlightText(request, odoomark(label), "text-primary fw-bold")
+                ? highlightText(request, wethmark(label), "text-primary fw-bold")
                 : _t("Unnamed"),
             onSelect: () => this.props.update([record]),
         };

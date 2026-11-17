@@ -11,7 +11,7 @@ export class ProductTemplateOptionPlugin extends Plugin {
             SetTagsAction,
         },
         builder_options_render_context: {
-            productTemplateOptionSelector: ".o_wsale_product_page:has(.variant_attribute)",
+            productTemplateOptionSelector: ".w_wsale_product_page:has(.variant_attribute)",
         },
     };
 }
@@ -35,7 +35,7 @@ export class SetTagsAction extends BuilderAction {
     }
 
     applyTags(editingElement, oldTags, newTags) {
-        const tagListEl = editingElement.querySelector(".o_product_tags");
+        const tagListEl = editingElement.querySelector(".w_product_tags");
         const addedTags = newTags.filter(
             (tag) => !oldTags.some((current) => current.id === tag.id)
         );

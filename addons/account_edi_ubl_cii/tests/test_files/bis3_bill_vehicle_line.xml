@@ -48,7 +48,7 @@
     <cac:Party>
       <cbc:EndpointID schemeID="0208">0477472701</cbc:EndpointID>
       <cac:PartyName>
-        <cbc:Name>ODOO SA</cbc:Name>
+        <cbc:Name>WETH SA</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:StreetName>CHAUSSEE DE NAMUR 40</cbc:StreetName>
@@ -65,10 +65,10 @@
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>ODOO SA</cbc:RegistrationName>
+        <cbc:RegistrationName>WETH SA</cbc:RegistrationName>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>ODOO SA</cbc:Name>
+        <cbc:Name>WETH SA</cbc:Name>
         <cbc:ElectronicMail>finance@weth.com.br</cbc:ElectronicMail>
       </cac:Contact>
     </cac:Party>

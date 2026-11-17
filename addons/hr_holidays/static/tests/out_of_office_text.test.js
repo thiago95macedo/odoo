@@ -42,7 +42,7 @@ test("Show 'back on' in avatar card", async () => {
     });
     await start();
     await openFormView("res.fake", fakeId);
-    await click(".o-mail-Message-avatar");
+    await click(".w-mail-Message-avatar");
     await contains(".o_avatar_card span", { text: "Back on Apr 11" });
 });
 
@@ -62,8 +62,8 @@ test("Show 'back on' in mention list", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "@");
-    await contains(".o-mail-NavigableList-item span", { text: "Back on Apr 11" });
+    await insertText(".w-mail-Composer-input", "@");
+    await contains(".w-mail-NavigableList-item span", { text: "Back on Apr 11" });
 });
 
 test("Show year when 'back on' is on different year than now", async () => {
@@ -87,7 +87,7 @@ test("Show year when 'back on' is on different year than now", async () => {
     });
     await start();
     await openFormView("res.fake", fakeId);
-    await click(".o-mail-Message-avatar");
+    await click(".w-mail-Message-avatar");
     await contains(".o_avatar_card span", { text: "Back on Jan 4, 2025" });
 });
 
@@ -104,7 +104,7 @@ test("Discuss Sidebar shows out of office indication", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-NotificationItem .text-warning", { text: "Back on Apr 11" });
+    await contains(".w-mail-NotificationItem .text-warning", { text: "Back on Apr 11" });
 });
 
 test("CTRL+K command shows out of office indication", async () => {
@@ -120,9 +120,9 @@ test("CTRL+K command shows out of office indication", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Discuss[data-active]");
+    await contains(".w-mail-Discuss[data-active]");
     await press(["ctrl", "k"]);
-    await contains(".o-mail-DiscussCommand .text-warning", {
+    await contains(".w-mail-DiscussCommand .text-warning", {
         text: "Back on Apr 11",
     });
 });

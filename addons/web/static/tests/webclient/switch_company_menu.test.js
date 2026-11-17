@@ -28,7 +28,7 @@ function patchUserActiveCompanies(cids) {
 
 describe.current.tags("desktop");
 
-const clickConfirm = () => contains(".o_switch_company_menu_buttons button:first").click();
+const clickConfirm = () => contains(".w_switch_company_menu_buttons button:first").click();
 
 const openCompanyMenu = () => contains(".dropdown-toggle").click();
 
@@ -52,8 +52,8 @@ beforeEach(() => {
 test("basic rendering", async () => {
     await createSwitchCompanyMenu();
 
-    expect("button.o_switch_company_menu").toHaveCount(1);
-    expect("button.o_switch_company_menu").toHaveText("Hermit");
+    expect("button.w_switch_company_menu").toHaveCount(1);
+    expect("button.w_switch_company_menu").toHaveText("Hermit");
 
     await openCompanyMenu();
 
@@ -450,20 +450,20 @@ test("show confirm and reset buttons only when selection has changed", async () 
     await createSwitchCompanyMenu();
     await openCompanyMenu();
 
-    expect(".o_switch_company_menu_buttons").toHaveCount(0);
+    expect(".w_switch_company_menu_buttons").toHaveCount(0);
 
     await toggleCompany(1);
-    expect(".o_switch_company_menu_buttons button").toHaveCount(2);
+    expect(".w_switch_company_menu_buttons button").toHaveCount(2);
 
     await toggleCompany(1);
-    expect(".o_switch_company_menu_buttons").toHaveCount(0);
+    expect(".w_switch_company_menu_buttons").toHaveCount(0);
 });
 
 test("show search input when more than 1 company", async () => {
     await createSwitchCompanyMenu();
 
     await openCompanyMenu();
-    expect(".o-dropdown--menu [role='searchbox']").toHaveCount(1);
+    expect(".w-dropdown--menu [role='searchbox']").toHaveCount(1);
 });
 
 test("show search input when more than 1 company & search filters items but ignore case and spaces", async () => {
@@ -483,15 +483,15 @@ test("show search input when more than 1 company & search filters items but igno
     await createSwitchCompanyMenu();
 
     await openCompanyMenu();
-    expect(".o-dropdown--menu [role='searchbox']").toHaveCount(1);
-    expect(".o-dropdown--menu [role='searchbox']").toBeFocused();
-    expect(".o-dropdown--menu .o_switch_company_item").toHaveCount(10);
+    expect(".w-dropdown--menu [role='searchbox']").toHaveCount(1);
+    expect(".w-dropdown--menu [role='searchbox']").toBeFocused();
+    expect(".w-dropdown--menu .w_switch_company_item").toHaveCount(10);
 
     await edit("omcom");
     await animationFrame();
-    expect(".o-dropdown--menu .o_switch_company_item").toHaveCount(3);
+    expect(".w-dropdown--menu .w_switch_company_item").toHaveCount(3);
 
-    expect(queryAllTexts(".o-dropdown--menu .o_switch_company_item")).toEqual([
+    expect(queryAllTexts(".w-dropdown--menu .w_switch_company_item")).toEqual([
         "Random Company a",
         "Random Company aa",
         "Random Company ab",
@@ -516,8 +516,8 @@ test("navigation with search input", async () => {
     await createSwitchCompanyMenu();
     await openCompanyMenu();
 
-    expect(".o-dropdown--menu [role='searchbox']").toBeFocused();
-    expect(".o_switch_company_item.focus").toHaveCount(0);
+    expect(".w-dropdown--menu [role='searchbox']").toBeFocused();
+    expect(".w_switch_company_item.focus").toHaveCount(0);
 
     const navigationSteps = [
         { hotkey: "arrowdown", focused: 1, selectedCompanies: [3] }, // Go to first item
@@ -549,13 +549,13 @@ test("navigation with search input", async () => {
         await animationFrame();
         await runAllTimers();
 
-        expect(`.o_popover .o-navigable:eq(${focused})`).toHaveClass("focus");
-        expect(`.o_popover .o-navigable:eq(${focused})`).toBeFocused();
+        expect(`.w_popover .w-navigable:eq(${focused})`).toHaveClass("focus");
+        expect(`.w_popover .w-navigable:eq(${focused})`).toBeFocused();
 
         if (selectedCompanies) {
             expect(
                 queryAllAttributes(
-                    ".o_switch_company_item:has(input[type='checkbox']:checked)",
+                    ".w_switch_company_item:has(input[type='checkbox']:checked)",
                     "data-company-id"
                 ).map(Number)
             ).toEqual(selectedCompanies);
@@ -566,7 +566,7 @@ test("navigation with search input", async () => {
     await animationFrame();
 
     expect(cookie.get("cids")).toEqual("3-2");
-    expect(".o_switch_company_item").toHaveCount(0);
+    expect(".w_switch_company_item").toHaveCount(0);
     expect.verifySteps(navigationSteps);
 });
 
@@ -584,17 +584,17 @@ test("select and de-select all", async () => {
     await contains("input[type='checkbox'][title='Deselect all']").click();
     // No company is selected, there should be a empty check box
     expect("input[type='checkbox'][title='Select all']:not(:checked)").toHaveCount(1);
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
 
     await contains("input[type='checkbox'][title='Select all']").click();
     // All companies are selected, there should be a checked check box
     expect("input[type='checkbox'][title='Deselect all']:checked").toHaveCount(1);
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(5);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(5);
 
     await contains("input[type='checkbox'][title='Deselect all']").click();
     // No company is selected, there should be a empty check box
     expect("input[type='checkbox'][title='Select all']").toHaveCount(1);
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
 });
 
 test("de-select only changes visible companies", async () => {
@@ -604,7 +604,7 @@ test("de-select only changes visible companies", async () => {
     // Show search
     await edit(" ");
     await toggleCompany(4);
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(2);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(2);
 
     // Show search
     await contains("[role='searchbox']").edit("m");
@@ -612,24 +612,24 @@ test("de-select only changes visible companies", async () => {
 
     // One company is selected, unselect all
     await contains("input[type='checkbox'][title='Deselect all']").click();
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(0);
 
     // Hidden company is still selected
     await contains("[role='searchbox']").clear();
     await animationFrame();
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(1);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(1);
 
     // Filter and select all visible companies
     await contains("[role='searchbox']").edit("m");
     await animationFrame();
     await contains("input[type='checkbox'][title='Select all']").click();
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(3);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(3);
 
     // Hidden company is unchanged
     await contains("[role='searchbox']").clear();
     await animationFrame();
-    expect(".o_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(4);
-    expect(".o_switch_company_item:has(input[type='checkbox']:not(:checked))").toHaveCount(1);
+    expect(".w_switch_company_item:has(input[type='checkbox']:checked)").toHaveCount(4);
+    expect(".w_switch_company_item:has(input[type='checkbox']:not(:checked))").toHaveCount(1);
 });
 
 test("disallowed companies in between allowed companies are not enabled", async () => {

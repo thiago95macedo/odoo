@@ -41,7 +41,7 @@ export class HintPlugin extends Plugin {
 
         /** Predicates */
         should_show_power_buttons_predicates: ({ anchorNode }) => {
-            if (!closestElement(anchorNode, ".o-we-hint")) {
+            if (!closestElement(anchorNode, ".w-we-hint")) {
                 return false;
             }
         },
@@ -150,7 +150,7 @@ export class HintPlugin extends Plugin {
     }
 
     clearHints(root = this.editable) {
-        for (const elem of selectElements(root, ".o-we-hint")) {
+        for (const elem of selectElements(root, ".w-we-hint")) {
             this.removeHint(elem);
         }
         return root;

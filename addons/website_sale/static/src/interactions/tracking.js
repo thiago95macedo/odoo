@@ -44,7 +44,7 @@ export class Tracking extends Interaction {
      * @private
      */
     _trackGa() {
-        const websiteGA = window.gtag || (() => {});
+        const websiteGA = window.gtag || (() => { });
         websiteGA.apply(this, arguments);
     }
 
@@ -124,7 +124,7 @@ export class Tracking extends Interaction {
     onOrderPayment() {
         const paymentMethod = this.el.querySelector(
             '#payment_method input[name="o_payment_radio"]:checked'
-        )?.parentElement?.querySelector('.o_payment_option_label')?.textContent;
+        )?.parentElement?.querySelector('.w_payment_option_label')?.textContent;
         this._vpv('/stats/ecom/order_payment/' + paymentMethod);
 
         const paymentTrackingElement = this.el.querySelector("#payment_tracking_info");

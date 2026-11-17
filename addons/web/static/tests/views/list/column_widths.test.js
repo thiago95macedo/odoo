@@ -132,7 +132,7 @@ beforeEach(() => {
 });
 
 function getColumnWidths() {
-    return queryAllProperties(".o_list_table thead th", "offsetWidth");
+    return queryAllProperties(".w_list_table thead th", "offsetWidth");
 }
 
 function expectedColumnWidthsToBeCloseTo(expectedColumnWidths) {
@@ -258,7 +258,7 @@ test(`width computation: with records, lot of fields, grouped`, async () => {
         `,
         groupBy: ["int_field"],
     });
-    expect(`.o_resize`).toHaveCount(9);
+    expect(`.w_resize`).toHaveCount(9);
     expectedColumnWidthsToBeCloseTo([40, 29, 89, 80, 89, 102, 99, 188, 114, 34, 32]);
 });
 
@@ -401,7 +401,7 @@ test(`width computation: editable list, overflowing table`, async () => {
             </list>
         `,
     });
-    expect(`table`).toHaveRect(queryRect`.o_list_renderer`, {
+    expect(`table`).toHaveRect(queryRect`.w_list_renderer`, {
         message: "Table should not be stretched by its content",
     });
     expect(getColumnWidths()).toEqual([40, 89, 671]);
@@ -534,7 +534,7 @@ test(`width computation: datetime in numeric, am/pm format`, async () => {
             </list>`,
     });
 
-    expect(queryAllTexts(".o_data_row:eq(0) .o_data_cell")).toEqual([
+    expect(queryAllTexts(".w_data_row:eq(0) .w_data_cell")).toEqual([
         "yop",
         "01/25/2017",
         "12/12/2016 11:55:05 AM",
@@ -631,7 +631,7 @@ test(`width computation: x2many, column_invisible`, async () => {
     const fooWidth = columnWidths[1];
     expect(fooWidth).toBeGreaterThan(380);
 
-    await contains(".o_field_widget[name=bar] input").click();
+    await contains(".w_field_widget[name=bar] input").click();
     columnWidths = getColumnWidths();
     expect(columnWidths[2]).toBeLessThan(fooWidth);
     expect(columnWidths[2]).toBeGreaterThan(220);
@@ -680,10 +680,10 @@ test(`width computation: x2many, editable list, initially invisible, overflowing
         `,
         resId: 1,
     });
-    expect(`.o_field_one2many`).toHaveCount(0);
+    expect(`.w_field_one2many`).toHaveCount(0);
 
     await contains(`.nav-item:eq(-1) .nav-link`).click();
-    expect(`.o_field_one2many`).toHaveCount(1);
+    expect(`.w_field_one2many`).toHaveCount(1);
     const columnWidths = getColumnWidths();
     expect(columnWidths[1]).toBeGreaterThan(500);
 });
@@ -726,10 +726,10 @@ test(`width computation: x2many, editable list, with invisible modifier on x2man
         `,
         resId: 1,
     });
-    expect(`.o_field_one2many`).toHaveCount(0);
+    expect(`.w_field_one2many`).toHaveCount(0);
 
-    await contains(`.o_field_boolean input`).click();
-    expect(`.o_field_one2many`).toHaveCount(1);
+    await contains(`.w_field_boolean input`).click();
+    expect(`.w_field_one2many`).toHaveCount(1);
     const columnWidths = getColumnWidths();
     expect(columnWidths[1]).toBeGreaterThan(500);
 });
@@ -777,7 +777,7 @@ test(`width computation: widths are re-computed on parent resize`, async () => {
 
     expect(getColumnWidths()).toEqual([40, 80, 680]);
 
-    queryOne(".o_list_renderer").style.width = "600px";
+    queryOne(".w_list_renderer").style.width = "600px";
     await runAllTimers();
     expect(getColumnWidths()).toEqual([40, 80, 480]);
 });
@@ -799,7 +799,7 @@ test(`width computation: button columns don't have a max width`, async () => {
         `,
     });
 
-    expect(queryAllProperties(".o_list_table", "offsetWidth")[0]).toBe(800);
+    expect(queryAllProperties(".w_list_table", "offsetWidth")[0]).toBe(800);
     let columnWidths = getColumnWidths();
     expect(columnWidths[1]).toBeGreaterThan(130);
     expect(columnWidths[2]).toBeGreaterThan(330);
@@ -808,7 +808,7 @@ test(`width computation: button columns don't have a max width`, async () => {
     await resize({ width: 300 });
     await runAllTimers();
     await animationFrame();
-    const tableWidth = queryAllProperties(".o_list_table", "offsetWidth")[0];
+    const tableWidth = queryAllProperties(".w_list_table", "offsetWidth")[0];
     expect(tableWidth).toBeGreaterThan(300);
     expect(tableWidth).toBeLessThan(800);
     columnWidths = getColumnWidths();
@@ -854,8 +854,8 @@ test(`freeze widths: add first record`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(`.o_list_button_add`).click();
-    expect(`.o_data_row`).toHaveCount(1);
+    await contains(`.w_list_button_add`).click();
+    expect(`.w_data_row`).toHaveCount(1);
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -873,15 +873,15 @@ test(`freeze widths: edit a record`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(`.o_data_row:eq(0) > .o_data_cell:eq(1)`).click();
-    expect(`.o_selected_row`).toHaveCount(1);
+    await contains(`.w_data_row:eq(0) > .w_data_cell:eq(1)`).click();
+    expect(`.w_selected_row`).toHaveCount(1);
     const longVal =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
         "Sed blandit, justo nec tincidunt feugiat, mi justo suscipit libero, sit amet tempus " +
         "ipsum purus bibendum est.";
-    await contains(`.o_field_widget[name=text] .o_input`).edit(longVal, { confirm: false });
-    await contains(`.o_list_button_save`).click();
-    expect(`.o_selected_row`).toHaveCount(0);
+    await contains(`.w_field_widget[name=text] .w_input`).edit(longVal, { confirm: false });
+    await contains(`.w_list_button_save`).click();
+    expect(`.w_selected_row`).toHaveCount(0);
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -898,12 +898,12 @@ test(`freeze widths: switch records in edition`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(`.o_data_row:eq(0) > .o_data_cell:eq(1)`).click();
-    expect(`.o_data_row:eq(0)`).toHaveClass("o_selected_row");
+    await contains(`.w_data_row:eq(0) > .w_data_cell:eq(1)`).click();
+    expect(`.w_data_row:eq(0)`).toHaveClass("o_selected_row");
     expect(getColumnWidths()).toEqual(initialWidths);
 
-    await contains(`.o_data_row:eq(1) > .o_data_cell:eq(1)`).click();
-    expect(`.o_data_row:eq(1)`).toHaveClass("o_selected_row");
+    await contains(`.w_data_row:eq(1) > .w_data_cell:eq(1)`).click();
+    expect(`.w_data_row:eq(1)`).toHaveClass("o_selected_row");
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -925,12 +925,12 @@ test(`freeze widths: switch mode`, async () => {
     const startWidth = queryRect(`table`).width;
 
     // start edition of first row
-    await contains(`td:not(.o_list_record_selector)`).click();
+    await contains(`td:not(.w_list_record_selector)`).click();
     const editionWidths = getColumnWidths();
     const editionWidth = queryRect(`table`).width;
 
     // leave edition
-    await contains(`.o_list_button_save`).click();
+    await contains(`.w_list_button_save`).click();
     const readonlyWidths = getColumnWidths();
     const readonlyWidth = queryRect(`table`).width;
     expect(editionWidth).toBe(startWidth, {
@@ -976,19 +976,19 @@ test(`freeze widths: switch mode (lot of fields)`, async () => {
             </list>
         `,
     });
-    const startHeight = queryRect(`.o_data_row:eq(0)`).height;
-    const startWidth = queryRect(`.o_data_row:eq(0)`).width;
+    const startHeight = queryRect(`.w_data_row:eq(0)`).height;
+    const startWidth = queryRect(`.w_data_row:eq(0)`).width;
 
     // start edition of first row
-    await contains(`.o_data_row > td:not(.o_list_record_selector)`).click();
-    expect(`.o_data_row:eq(0)`).toHaveClass("o_selected_row");
-    const editionHeight = queryRect(`.o_data_row:eq(0)`).height;
-    const editionWidth = queryRect(`.o_data_row:eq(0)`).width;
+    await contains(`.w_data_row > td:not(.w_list_record_selector)`).click();
+    expect(`.w_data_row:eq(0)`).toHaveClass("o_selected_row");
+    const editionHeight = queryRect(`.w_data_row:eq(0)`).height;
+    const editionWidth = queryRect(`.w_data_row:eq(0)`).width;
 
     // leave edition
-    await contains(`.o_list_button_save`).click();
-    const readonlyHeight = queryRect(`.o_data_row:eq(0)`).height;
-    const readonlyWidth = queryRect(`.o_data_row:eq(0)`).width;
+    await contains(`.w_list_button_save`).click();
+    const readonlyHeight = queryRect(`.w_data_row:eq(0)`).height;
+    const readonlyWidth = queryRect(`.w_data_row:eq(0)`).width;
     expect(startHeight).toBe(editionHeight);
     expect(startHeight).toBe(readonlyHeight);
     expect(startWidth).toBe(editionWidth);
@@ -1070,12 +1070,12 @@ test(`freeze widths: empty list, remove a filter s.t. records appear`, async () 
         },
     });
 
-    expect(".o_data_row").toHaveCount(0);
+    expect(".w_data_row").toHaveCount(0);
 
     const initialWidths = getColumnWidths();
     await toggleSearchBarMenu();
     await toggleMenuItem("My Filter");
-    expect(".o_data_row").toHaveCount(4);
+    expect(".w_data_row").toHaveCount(4);
     expect(getColumnWidths()).not.toEqual(initialWidths);
 });
 
@@ -1095,11 +1095,11 @@ test(`freeze widths: grouped list, open a group`, async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_data_row").toHaveCount(0);
+    expect(".w_data_row").toHaveCount(0);
 
     const initialWidths = getColumnWidths();
-    await contains(".o_group_header").click();
-    expect(".o_data_row").toHaveCount(1);
+    await contains(".w_group_header").click();
+    expect(".w_data_row").toHaveCount(1);
     expect(getColumnWidths()).not.toEqual(initialWidths);
 });
 
@@ -1128,12 +1128,12 @@ test(`freeze widths: toggle a filter, vertical scrollbar appears`, async () => {
         },
     });
 
-    expect(".o_data_row").toHaveCount(3);
-    const renderer = queryOne(".o_list_renderer");
+    expect(".w_data_row").toHaveCount(3);
+    const renderer = queryOne(".w_list_renderer");
     expect(renderer.scrollHeight).toBe(renderer.clientHeight);
 
     await removeFacet("My Filter");
-    expect(".o_data_row").toHaveCount(14);
+    expect(".w_data_row").toHaveCount(14);
     expect(renderer.scrollHeight).toBeGreaterThan(renderer.clientHeight); // there must be a vertical scrollbar
     expect(renderer.scrollWidth).toBe(renderer.clientWidth); // there must be no horizontal scrollbar
 });
@@ -1153,19 +1153,19 @@ test(`freeze widths: add a record in empty list`, async () => {
         `,
         noContentHelp: '<p class="hello">click to add a foo</p>',
     });
-    expect(`.o_view_nocontent`).toHaveCount(1, { message: "should have no content help" });
+    expect(`.w_view_nocontent`).toHaveCount(1, { message: "should have no content help" });
     const initialWidths = getColumnWidths();
 
     // click on create button
-    await contains(`.o_list_button_add`).click();
+    await contains(`.w_list_button_add`).click();
     expect(getColumnWidths()).toEqual(initialWidths);
 
     // creating one record
-    await contains(`.o_selected_row [name='foo'] input`).edit(
+    await contains(`.w_selected_row [name='foo'] input`).edit(
         "Some very very long value for a char field",
         { confirm: false }
     );
-    await contains(`.o_list_button_save`).click();
+    await contains(`.w_list_button_save`).click();
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1183,16 +1183,16 @@ test(`freeze widths: add a record in empty list with handle widget`, async () =>
         `,
         noContentHelp: '<p class="hello">click to add a foo</p>',
     });
-    expect(`.o_view_nocontent`).toHaveCount(1, { message: "should have no content help" });
+    expect(`.w_view_nocontent`).toHaveCount(1, { message: "should have no content help" });
     const initialWidths = getColumnWidths();
 
     // click on create button
-    await contains(`.o_list_button_add`).click();
+    await contains(`.w_list_button_add`).click();
     expect(getColumnWidths()).toEqual(initialWidths);
 
     // creating one record
-    await contains(`.o_selected_row [name='foo'] input`).edit("test_foo", { confirm: false });
-    await contains(`.o_list_button_save`).click();
+    await contains(`.w_selected_row [name='foo'] input`).edit("test_foo", { confirm: false });
+    await contains(`.w_list_button_save`).click();
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1211,20 +1211,20 @@ test(`freeze widths: edit multiple records`, async () => {
     const initialWidths = getColumnWidths();
 
     // select two records and edit
-    await contains(`.o_data_row:eq(0) .o_list_record_selector input`).click();
-    await contains(`.o_data_row:eq(1) .o_list_record_selector input`).click();
-    await contains(`.o_data_row:eq(0) .o_data_cell:eq(1)`).click();
-    expect(`.o_selected_row`).toHaveCount(1);
+    await contains(`.w_data_row:eq(0) .w_list_record_selector input`).click();
+    await contains(`.w_data_row:eq(1) .w_list_record_selector input`).click();
+    await contains(`.w_data_row:eq(0) .w_data_cell:eq(1)`).click();
+    expect(`.w_selected_row`).toHaveCount(1);
 
     const longVal =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit, " +
         "justo nec tincidunt feugiat, mi justo suscipit libero, sit amet tempus ipsum purus " +
         "bibendum est.";
-    await contains(`.o_field_widget[name=text] textarea`).edit(longVal);
+    await contains(`.w_field_widget[name=text] textarea`).edit(longVal);
     expect(`.modal`).toHaveCount(1);
 
     await contains(`.modal .btn-primary`).click();
-    expect(`.o_selected_row`).toHaveCount(0);
+    expect(`.w_selected_row`).toHaveCount(0);
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1246,7 +1246,7 @@ test(`freeze widths: toggle optional fields`, async () => {
 
     expectedColumnWidthsToBeCloseTo([40, 99, 440, 188, 32]);
 
-    await contains(".o_optional_columns_dropdown_toggle").click();
+    await contains(".w_optional_columns_dropdown_toggle").click();
     await contains(".dropdown-item input:eq(0)").click();
     expectedColumnWidthsToBeCloseTo([40, 99, 337, 102, 189, 32]);
 
@@ -1276,8 +1276,8 @@ test(`freeze widths: x2many, add first record`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(".o_field_x2many_list_row_add button").click();
-    expect(".o_data_row").toHaveCount(1);
+    await contains(".w_field_x2many_list_row_add button").click();
+    expect(".w_data_row").toHaveCount(1);
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1300,14 +1300,14 @@ test(`freeze widths: x2many, edit a record`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(".o_data_row .o_data_cell").click();
+    await contains(".w_data_row .w_data_cell").click();
     expect(getColumnWidths()).toEqual(initialWidths);
 
     const longVal =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit, " +
         "justo nec tincidunt feugiat, mi justo suscipit libero, sit amet tempus ipsum " +
         "purus bibendum est.";
-    await contains(".o_field_widget[name=foo] input").edit(longVal);
+    await contains(".w_field_widget[name=foo] input").edit(longVal);
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1330,7 +1330,7 @@ test(`freeze widths: x2many, remove last record`, async () => {
     });
 
     const initialWidths = getColumnWidths();
-    await contains(".o_data_row .o_list_record_remove").click();
+    await contains(".w_data_row .w_list_record_remove").click();
     expect(getColumnWidths()).toEqual(initialWidths);
 });
 
@@ -1356,10 +1356,10 @@ test(`freeze widths: x2many, toggle optional field`, async () => {
 
     // create a record to store the current widths, but discard it directly to keep
     // the list empty (otherwise, the browser automatically computes the optimal widths)
-    await contains(".o_field_x2many_list_row_add button").click();
+    await contains(".w_field_x2many_list_row_add button").click();
     expect(getColumnWidths()).toEqual([110, 626, 32]);
 
-    await contains(".o_optional_columns_dropdown_toggle").click();
+    await contains(".w_optional_columns_dropdown_toggle").click();
     await contains(".dropdown-item input").click();
     expect(getColumnWidths()).toEqual([110, 545, 80, 32]);
 });
@@ -1416,7 +1416,7 @@ test(`resize, reorder, resize again`, async () => {
 
     // 1. Resize column foo to middle of column int_field.
     const originalWidths = getColumnWidths();
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     let widthsAfterResize = getColumnWidths();
     expect(widthsAfterResize[0]).toBe(originalWidths[0]);
     expect(widthsAfterResize[1]).toBeGreaterThan(originalWidths[1]);
@@ -1428,7 +1428,7 @@ test(`resize, reorder, resize again`, async () => {
     expect(widthsAfterResize[1]).toBe(widthsAfterReorder[1]);
 
     // 3. Resize again, this time check sizes while dragging and after drop.
-    const { moveTo, drop } = await contains(`th:eq(1) .o_resize`, { visible: false }).drag();
+    const { moveTo, drop } = await contains(`th:eq(1) .w_resize`, { visible: false }).drag();
     await moveTo(`th:eq(2)`);
     widthsAfterResize = getColumnWidths();
     expect(widthsAfterResize[1]).toBeGreaterThan(widthsAfterReorder[1]);
@@ -1450,11 +1450,11 @@ test(`resize column and toggle one checkbox`, async () => {
     });
 
     // 1. Resize column foo to middle of column int_field.
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     const widthsAfterResize = getColumnWidths();
 
     // 2. Column size should be the same after selecting a row
-    await contains(`tbody .o_list_record_selector`).click();
+    await contains(`tbody .w_list_record_selector`).click();
     expect(getColumnWidths()).toEqual(widthsAfterResize, {
         message: "Width must not have been changed after selecting a row",
     });
@@ -1475,7 +1475,7 @@ test(`resize column, then resize window`, async () => {
     expect(getColumnWidths()).toEqual([40, 80, 680]);
 
     // Resize column foo to middle of column int_field.
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     expect(getColumnWidths()).toEqual([40, 520, 679]);
 
     // Resize the window
@@ -1485,7 +1485,7 @@ test(`resize column, then resize window`, async () => {
     expect(getColumnWidths()).toEqual([40, 80, 1080]); // all available space should be used again
 
     // Reduce size of column foo
-    await contains(`th:eq(2) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(2) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     expect(getColumnWidths()).toEqual([40, 80, 591]);
 
     // Resize the window
@@ -1508,11 +1508,11 @@ test(`resize column and toggle check all`, async () => {
     });
 
     // 1. Resize column foo to middle of column int_field.
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     const widthsAfterResize = getColumnWidths();
 
     // 2. Column size should be the same after selecting all
-    await contains(`thead .o_list_record_selector`).click();
+    await contains(`thead .w_list_record_selector`).click();
     expect(getColumnWidths()).toEqual(widthsAfterResize, {
         message: "Width must not have been changed after selecting all",
     });
@@ -1532,7 +1532,7 @@ test("resize column headers in editable list", async () => {
 
     const originalWidths = getColumnWidths();
 
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
 
     const finalWidths = getColumnWidths();
     expect(finalWidths[0]).toBe(originalWidths[0]);
@@ -1559,7 +1559,7 @@ test("resize column headers in editable list (2)", async () => {
 
     const originalWidths = getColumnWidths();
 
-    await contains(".o_resize:first", { visible: false }).dragAndDrop("th[data-name=foo]", {
+    await contains(".w_resize:first", { visible: false }).dragAndDrop("th[data-name=foo]", {
         position: { x: 100 },
         relative: true,
     });
@@ -1597,22 +1597,22 @@ test(`resize column with several x2many lists in form group`, async () => {
         `,
         resId: 1,
     });
-    const initialWidth0 = queryRect(`.o_field_x2many_list table:eq(0)`).width;
-    const initialWidth1 = queryRect(`.o_field_x2many_list table:eq(1)`).width;
+    const initialWidth0 = queryRect(`.w_field_x2many_list table:eq(0)`).width;
+    const initialWidth1 = queryRect(`.w_field_x2many_list table:eq(1)`).width;
     expect(initialWidth0).toBe(initialWidth1, {
         message: "both table columns have same width",
     });
 
-    await contains(`th:eq(0) .o_resize`, { visible: false }).dragAndDrop(`th:eq(1)`, {
+    await contains(`th:eq(0) .w_resize`, { visible: false }).dragAndDrop(`th:eq(1)`, {
         position: "right",
     });
-    expect(`.o_field_x2many_list table:eq(0)`).not.toHaveRect(
+    expect(`.w_field_x2many_list table:eq(0)`).not.toHaveRect(
         { width: initialWidth0 },
         {
             message: "first o2m table is resized and width of table has changed",
         }
     );
-    expect(`.o_field_x2many_list table:eq(1)`).toHaveRect(
+    expect(`.w_field_x2many_list table:eq(1)`).toHaveRect(
         { width: initialWidth1 },
         {
             message: "second o2m table should not be impacted on first o2m in group resized",
@@ -1647,11 +1647,11 @@ test(`resize column with x2many list with several fields in form notebook`, asyn
         resId: 1,
     });
 
-    const listInitialWidth = queryRect(`.o_list_renderer`).width;
-    await contains(`th:eq(0) .o_resize`, { visible: false }).dragAndDrop(`th:eq(1)`, {
+    const listInitialWidth = queryRect(`.w_list_renderer`).width;
+    await contains(`th:eq(0) .w_resize`, { visible: false }).dragAndDrop(`th:eq(1)`, {
         position: "right",
     });
-    expect(`.o_list_renderer`).toHaveRect(
+    expect(`.w_list_renderer`).toHaveRect(
         { width: listInitialWidth },
         {
             message: "resizing the column should not impact the width of list",
@@ -1680,13 +1680,13 @@ test(`resize: unnamed columns cannot be resized`, async () => {
         `,
         resId: 1,
     });
-    expect(Math.floor(queryRect(`.o_field_one2many th:eq(0)`).right)).toBe(
-        Math.floor(queryRect(`.o_field_one2many th:eq(0) .o_resize`).right),
+    expect(Math.floor(queryRect(`.w_field_one2many th:eq(0)`).right)).toBe(
+        Math.floor(queryRect(`.w_field_one2many th:eq(0) .w_resize`).right),
         {
             message: "First resize handle should be attached at the end of the first header",
         }
     );
-    expect(`.o_field_one2many th:eq(1) .o_resize`).toHaveCount(0, {
+    expect(`.w_field_one2many th:eq(1) .w_resize`).toHaveCount(0, {
         message: "Columns without name should not have a resize handle",
     });
 });
@@ -1703,12 +1703,12 @@ test(`dblclick on resize handle to force a recomputation of all widths`, async (
     });
 
     const originalWidths = getColumnWidths();
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     const widthsAfterResize = getColumnWidths();
     expect(widthsAfterResize[0]).toBe(originalWidths[0]);
     expect(widthsAfterResize[1]).toBeGreaterThan(originalWidths[1]);
 
-    await contains(".o_list_table th .o_resize", { visible: false }).dblclick();
+    await contains(".w_list_table th .w_resize", { visible: false }).dblclick();
     expect(getColumnWidths()).toEqual(originalWidths);
 });
 
@@ -1728,7 +1728,7 @@ test(`resize: column_group column can be resized`, async () => {
     });
 
     const originalWidths = getColumnWidths();
-    await contains(`th:eq(1) .o_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
+    await contains(`th:eq(1) .w_resize`, { visible: false }).dragAndDrop(`th:eq(2)`);
     const widthsAfterResize = getColumnWidths();
     expect(widthsAfterResize[0]).toBe(originalWidths[0]);
     expect(widthsAfterResize[1]).toBeGreaterThan(originalWidths[1]);

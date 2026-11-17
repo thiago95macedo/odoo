@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class GoogleEvent(GoogleApiResource):
     """This helper class holds the values of a Google event.
-    Inspired by Odoo recordset, one instance can be a single Google event or a
+    Inspired by WETH recordset, one instance can be a single Google event or a
     (immutable) set of Google events.
     All usual set operations are supported (union, intersection, etc).
 
@@ -31,39 +31,39 @@ class GoogleEvent(GoogleApiResource):
         if any('RRULE' in item for item in self.recurrence):
             return next(item for item in self.recurrence if 'RRULE' in item)
 
-    def _meta_odoo_id(self, dbname):
-        """Returns the Odoo id stored in the Google Event metadata.
+    def _meta_weth_id(self, dbname):
+        """Returns the WETH id stored in the Google Event metadata.
         This id might not actually exists in the database.
         """
         properties = self.extendedProperties and (self.extendedProperties.get('shared', {}) or self.extendedProperties.get('private', {})) or {}
-        o_id = properties.get('%s_odoo_id' % dbname)
+        o_id = properties.get('%s_weth_id' % dbname)
         if o_id:
             return int(o_id)
 
-    def _load_odoo_ids_from_metadata(self, env, model):
-        unsure_odoo_ids = tuple(e._meta_odoo_id(env.cr.dbname) for e in self)
-        odoo_events = model.browse(_id for _id in unsure_odoo_ids if _id)
+    def _load_weth_ids_from_metadata(self, env, model):
+        unsure_weth_ids = tuple(e._meta_weth_id(env.cr.dbname) for e in self)
+        weth_events = model.browse(_id for _id in unsure_weth_ids if _id)
 
         # Extended properties are copied when splitting a recurrence Google side.
-        # Hence, we may have two Google recurrences linked to the same Odoo id.
-        # Therefore, we only consider Odoo records without google id when trying
+        # Hence, we may have two Google recurrences linked to the same WETH id.
+        # Therefore, we only consider WETH records without google id when trying
         # to match events.
-        o_ids = odoo_events.exists().filtered(lambda e: not e.google_id).ids
+        o_ids = weth_events.exists().filtered(lambda e: not e.google_id).ids
         for e in self:
-            odoo_id = e._meta_odoo_id(env.cr.dbname)
-            if odoo_id in o_ids:
-                e._items[e.id]['_odoo_id'] = odoo_id
+            weth_id = e._meta_weth_id(env.cr.dbname)
+            if weth_id in o_ids:
+                e._items[e.id]['_weth_id'] = weth_id
 
     def owner(self, env):
         # Owner/organizer could be desynchronised between Google and WETH.
         # Let userA, userB be two new users (never synced to Google before).
-        # UserA creates an event in Odoo (they are the owner) but userB syncs first.
+        # UserA creates an event in WETH (they are the owner) but userB syncs first.
         # There is no way to insert the event into userA's calendar since we don't have
         # any authentication access. In this case, we don't allow the event to be inserted
-        # until the odoo owner syncs.
+        # until the weth owner syncs.
         # In the past, however, we used to store the real owner in the extended properties:
         # The event was inserted into userB's calendar (they are the organizer in Google).
-        # The "real" owner (in Odoo) was stored as an extended property.
+        # The "real" owner (in Weth) was stored as an extended property.
         # There is currently no support to "transfer" ownership when
         # userA syncs their calendar the first time.
         # Some events may have been created with this old approach, so we should still support it here.
@@ -81,7 +81,7 @@ class GoogleEvent(GoogleApiResource):
         elif self.creator and self.creator.get('self'):
             return env.user
         elif self.creator and self.creator.get('email'):
-            # In Google: 1 email = 1 user; but in Odoo several users might have the same email :/
+            # In Google: 1 email = 1 user; but in WETH several users might have the same email :/
             org_email = email_normalize(self.creator.get('email'))
             return env['res.users'].search([('email_normalized', '=', org_email)], limit=1)
         else:
@@ -89,7 +89,7 @@ class GoogleEvent(GoogleApiResource):
 
     def clear_type_ambiguity(self, env):
         ambiguous_events = self.filter(GoogleEvent._is_type_ambiguous)
-        recurrences = ambiguous_events._load_odoo_ids_from_db(env, env['calendar.recurrence'])
+        recurrences = ambiguous_events._load_weth_ids_from_db(env, env['calendar.recurrence'])
         for recurrence in recurrences:
             self._items[recurrence.id]['recurrence'] = True
         for event in ambiguous_events - recurrences:
@@ -156,10 +156,10 @@ class GoogleEvent(GoogleApiResource):
     def exists(self, env) -> 'GoogleEvent':
         recurrences = self.filter(GoogleEvent.is_recurrence)
         events = self - recurrences
-        recurrences.odoo_ids(env)
-        events.odoo_ids(env)
+        recurrences.weth_ids(env)
+        events.weth_ids(env)
 
-        return self.filter(lambda e: e._odoo_id)
+        return self.filter(lambda e: e._weth_id)
 
     def _is_type_ambiguous(self):
         """For cancelled events/recurrences, Google only send the id and
@@ -183,8 +183,8 @@ class GoogleEvent(GoogleApiResource):
     def is_available(self):
         return self.transparency == 'transparent'
 
-    def get_odoo_event(self, env):
+    def get_weth_event(self, env):
         if self._get_model(env)._name == 'calendar.event':
-            return env['calendar.event'].browse(self.odoo_id(self.env))
+            return env['calendar.event'].browse(self.weth_id(self.env))
         else:
-            return env['calendar.recurrence'].browse(self.odoo_id(self.env)).base_event_id
+            return env['calendar.recurrence'].browse(self.weth_id(self.env)).base_event_id

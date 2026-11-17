@@ -186,7 +186,7 @@
         >
             <BuilderSelect
                 action="'productPageImageGridSpacing'"
-                applyTo="'#o-grid-product .o_wsale_product_page_grid_row'"
+                applyTo="'#o-grid-product .w_wsale_product_page_grid_row'"
             >
                 <t t-set="noneLabel"><em>None</em></t>
                 <t t-set="smallLabel">Small</t>

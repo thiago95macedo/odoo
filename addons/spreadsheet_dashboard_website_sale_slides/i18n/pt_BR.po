@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/spreadsheet_dashboard_website_sale_slides/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -22,66 +22,66 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "Attendees"
 msgstr "Participantes"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Attendees by Course"
 msgstr "Participantes por curso"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "Content"
 msgstr "Conteúdo"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "Courses"
 msgstr "Cursos"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Current"
 msgstr "Atual"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Period"
 msgstr "Período"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Previous"
 msgstr "Anterior"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "Rating"
 msgstr "Avaliação"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "Revenue"
 msgstr "Receita"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Revenues"
 msgstr "Receitas"
@@ -98,7 +98,7 @@ msgid "Spreadsheet dashboard for eLearning"
 msgstr "Painel de planilhas para e-Learning"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 msgid "Views by Course"
 msgstr "Visualizações por curso"
@@ -109,7 +109,7 @@ msgid "eLearning"
 msgstr "e-Learning"
 
 #. module: spreadsheet_dashboard_website_sale_slides
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_website_sale_slides/data/files/elearning_sample_dashboard.json:0
 msgid "since last period"

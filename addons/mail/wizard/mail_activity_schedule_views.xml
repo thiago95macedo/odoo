@@ -113,7 +113,7 @@
                                     nolabel="1" class="w-100" required="not activity_user_id" domain="[('user_ids', '!=', False)]"/>
                             </div>
                             <div class="o_outlined d-flex align-items-baseline mb-2 gap-2" invisible="id or context.get('active_model')">
-                                <i class="oi" data-icon="oi_odoo" title="Link to"/>
+                                <i class="oi" data-icon="oi_weth" title="Link to"/>
                                 <field name="res_model" widget="activity_model_selector" string="Link to" nolabel="1"
                                     class="w-100" required="not activity_role_id and activity_user_id != context.get('uid')"/>
                             </div>

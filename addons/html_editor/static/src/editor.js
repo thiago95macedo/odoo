@@ -215,7 +215,7 @@ export class Editor {
             allowInlineAtRoot: !!this.config.allowInlineAtRoot,
             wrapInlinesInBlocks: this.shared.dom.wrapInlinesInBlocks,
         });
-        editable.classList.add("odoo-editor-editable");
+        editable.classList.add("weth-editor-editable");
         if (this.config.classList) {
             editable.classList.add(...this.config.classList);
         }
@@ -534,7 +534,7 @@ export class Editor {
                 // element will be removed, no need to make changes that may require the browser
                 // to recompute the layout
                 this.editable.removeAttribute("contenteditable");
-                removeClass(this.editable, "odoo-editor-editable");
+                removeClass(this.editable, "weth-editor-editable");
             }
             this.editable = null;
         }

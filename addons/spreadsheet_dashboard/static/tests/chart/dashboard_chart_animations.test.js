@@ -3,7 +3,7 @@ import { animationFrame } from "@weth/hoot-dom";
 import { Model, components, stores } from "@weth/o-spreadsheet";
 import { createBasicChart } from "@spreadsheet/../tests/helpers/commands";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import { createDashboardActionWithData } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import { defineSpreadsheetDashboardModels } from "@spreadsheet_dashboard/../tests/helpers/data";
 import { getMockEnv, patchWithCleanup } from "@web/../tests/web_test_helpers";
@@ -28,25 +28,25 @@ test("Charts are animated only at first render", async () => {
     await makeSpreadsheetMockEnv();
     const setupModel = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     createBasicChart(setupModel, "chartId");
     const charts = spyCharts();
     const { env } = await createDashboardActionWithData(setupModel.exportData());
     const viewStore = env.getStore(ViewportsStore);
 
-    expect(".o-figure").toHaveCount(1);
+    expect(".w-figure").toHaveCount(1);
     expect(charts["chartId"].config.options.animation.animateRotate).toBe(true);
 
     // Scroll the figure out of the viewport and back in
     viewStore.setViewportOffset({ offsetX: 0, offsetY: 500 });
     await animationFrame();
     await animationFrame();
-    expect(".o-figure").toHaveCount(0);
+    expect(".w-figure").toHaveCount(0);
 
     viewStore.setViewportOffset({ offsetX: 0, offsetY: 0 });
     await animationFrame();
-    expect(".o-figure").toHaveCount(1);
+    expect(".w-figure").toHaveCount(1);
     expect(charts["chartId"].config.options.animation).toBe(false);
 });
 
@@ -54,13 +54,13 @@ test("Charts are animated when chart type changes", async () => {
     await makeSpreadsheetMockEnv();
     const setupModel = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     createBasicChart(setupModel, "chartId");
     const charts = spyCharts();
     const { model } = await createDashboardActionWithData(setupModel.exportData());
 
-    expect(".o-figure").toHaveCount(1);
+    expect(".w-figure").toHaveCount(1);
     expect(charts["chartId"].config.options.animation.animateRotate).toBe(true);
     delete charts["chartId"];
 

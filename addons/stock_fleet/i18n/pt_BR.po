@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/stock_fleet/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -23,19 +23,19 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: stock_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/stock_fleet/models/fleet_vehicle_model.py:0
 msgid "%(display_name)s (%(load_capacity)s)"
 msgstr "%(display_name)s (%(load_capacity)s)"
 
 #. module: stock_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/stock_fleet/models/fleet_vehicle_model.py:0
 msgid "%(volume_capacity)s %(volume_uom)s"
 msgstr "%(volume_capacity)s %(volume_uom)s"
 
 #. module: stock_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/stock_fleet/models/fleet_vehicle_model.py:0
 msgid "%(weight_capacity)s %(weight_uom)s"
 msgstr "%(weight_capacity)s %(weight_uom)s"
@@ -330,10 +330,10 @@ msgstr "ID"
 #. module: stock_fleet
 #: model:ir.model.fields,help:stock_fleet.field_stock_picking_type__auto_print_cmr_report
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the Consignment "
+"If this checkbox is ticked, WETH will automatically print the Consignment "
 "Note (CMR) of a delivery when it is validated."
 msgstr ""
-"Se esta caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se esta caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "Nota de Remessa (CMR) de uma entrega quando ela for validada."
 
 #. module: stock_fleet

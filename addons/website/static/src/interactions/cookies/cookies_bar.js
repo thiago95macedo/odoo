@@ -25,8 +25,8 @@ export class CookiesBar extends Popup {
             "t-on-click": this.onAcceptClick,
         },
         // Override to avoid side effects on hide.
-        ".js_close_popup": { "t-on-click": () => {} },
-        ".btn-primary": { "t-on-click": () => {} },
+        ".js_close_popup": { "t-on-click": () => { } },
+        ".btn-primary": { "t-on-click": () => { } },
         ".modal": {
             "t-on-keydown.capture": (ev) => {
                 if (ev.key === "Escape") {
@@ -85,10 +85,10 @@ export class CookiesBar extends Popup {
         super.onHideModal();
         const params = new URLSearchParams(window.location.search);
         const trackingFields = {
-            utm_campaign: "odoo_utm_campaign",
-            utm_source: "odoo_utm_source",
-            utm_medium: "odoo_utm_medium",
-            utm_reference: "odoo_utm_reference",
+            utm_campaign: "weth_utm_campaign",
+            utm_source: "weth_utm_source",
+            utm_medium: "weth_utm_medium",
+            utm_reference: "weth_utm_reference",
         };
         for (const [key, value] of params) {
             if (key in trackingFields) {

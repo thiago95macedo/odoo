@@ -21,7 +21,7 @@
         color: $white;
         font-size: var(--Ribbon-font-size, var(--Ribbon-font-size-default));
         line-height: var(--Ribbon-height, var(--Ribbon-height-default));
-        font-weight: $o-font-weight-bold;
+        font-weight: $w-font-weight-bold;
         font-family: 'Lato', sans-serif;
         text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
         text-transform: uppercase;
@@ -30,9 +30,11 @@
         user-select: none;
         transform-origin: left bottom;
         pointer-events: none;
+
         &.o_small {
             font-size: $font-size-sm
         }
+
         &.o_medium {
             font-size: $font-size-base;
         }
@@ -58,13 +60,14 @@
 // have widgets on right end, add margin-right so ribbon not overlap on it
 .ribbon {
     &:not(.o_invisible_modifier) {
-        ~ .oe_title, ~ .o_field_widget {
+
+        ~.oe_title,
+        ~.o_field_widget {
             margin-right: 100px;
         }
     }
 }
 
-.modal .modal-dialog .o_form_sheet_bg:not(:has(> .o_form_statusbar))
-    > .o_form_sheet:has(> .o_widget_web_ribbon) {
+.modal .modal-dialog .o_form_sheet_bg:not(:has(> .o_form_statusbar))>.o_form_sheet:has(> .o_widget_web_ribbon) {
     position: static !important;
 }

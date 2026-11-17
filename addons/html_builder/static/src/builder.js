@@ -352,7 +352,7 @@ export class Builder extends Component {
             this.state.pendingTab = tab;
             clearTimeout(this.tabTransitionFallbackTimeout);
             // Set a timeout to ensure the tab switch even when transitions
-            // are disabled on .o-tab-content
+            // are disabled on .w-tab-content
             this.tabTransitionFallbackTimeout = setTimeout(
                 () => this.completeTabSwitch(),
                 TAB_TRANSITION_FALLBACK_DELAY

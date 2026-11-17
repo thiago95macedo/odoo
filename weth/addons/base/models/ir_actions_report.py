@@ -422,7 +422,7 @@ class IrActionsReport(models.Model):
         return view_obj._render_template(template, values).encode()
 
     def _handle_merge_pdfs_error(self, error=None, error_stream=None):
-        raise UserError(_("Odoo is unable to merge the generated PDFs."))
+        raise UserError(_("WETH is unable to merge the generated PDFs."))
 
     @api.model
     def _merge_pdfs(self, streams, handle_error=None):
@@ -441,7 +441,7 @@ class IrActionsReport(models.Model):
         try:
             writer.write(result_stream)
         except PdfReadError:
-            raise UserError(_("Odoo is unable to merge the generated PDFs."))
+            raise UserError(_("WETH is unable to merge the generated PDFs."))
         return result_stream
 
     def _render_qweb_pdf_prepare_streams(self, report_ref, data, res_ids=None):
@@ -731,7 +731,7 @@ class IrActionsReport(models.Model):
                     'res_id': error_record_ids[0],
                 })
             raise RedirectWarning(
-                message=_('Odoo is unable to merge the generated PDFs because of %(num_errors)s corrupted file(s)', num_errors=num_errors),
+                message=_('WETH is unable to merge the generated PDFs because of %(num_errors)s corrupted file(s)', num_errors=num_errors),
                 action=action,
                 button_text=_('View Problematic Record(s)'),
             )

@@ -6,6 +6,6 @@ declare module "@spreadsheet" {
     }
 
     interface ExtendedEvalContext extends EvalContext {
-        getters: OdooGetters;
+        getters: WethGetters;
     }
 }

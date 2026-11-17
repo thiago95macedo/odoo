@@ -1024,7 +1024,7 @@ class PaymentTransaction(models.Model):
             self._set_error(error_message, extra_allowed_states=("done",))
             return
 
-        # Negate the amount for refunds, as refunds have a negative amount in Odoo, but all
+        # Negate the amount for refunds, as refunds have a negative amount in WETH, but all
         # providers send a positive one.
         if self.operation == "refund":
             amount = -amount

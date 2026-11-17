@@ -134,10 +134,10 @@ export const NO_RECORD_AT_THIS_POSITION = "__NO_RECORD_AT_THIS_POSITION__";
  * This class is an extension of PivotModel with some additional information
  * that we need in spreadsheet (display_name, isUsedInSheet, ...)
  */
-export class OdooPivotModel extends PivotModel {
+export class WethPivotModel extends PivotModel {
     /**
-     * @param {import("@web/env").OdooEnv} env
-     * @param {import("@spreadsheet").OdooPivotModelParams} params
+     * @param {import("@web/env").WethEnv} env
+     * @param {import("@spreadsheet").WethPivotModelParams} params
      * @param {import("@spreadsheet").PivotModelServices} services
      */
     constructor(env, params, services) {
@@ -157,13 +157,13 @@ export class OdooPivotModel extends PivotModel {
         this.serverData = services.serverData;
 
         /**
-         * @type {import("@spreadsheet").OdooGetters}
+         * @type {import("@spreadsheet").WethGetters}
          */
         this.getters = services.getters;
     }
 
     /**
-     * @param {import("@spreadsheet").OdooPivotModelParams} params
+     * @param {import("@spreadsheet").WethPivotModelParams} params
      * @param {import("@spreadsheet").PivotModelServices} services
      */
     setup(params, services) {
@@ -326,7 +326,7 @@ export class OdooPivotModel extends PivotModel {
     //--------------------------------------------------------------------------
 
     /**
-     * Get the Odoo domain corresponding to the given domain
+     * Get the WETH domain corresponding to the given domain
      * @param {PivotDomain} domain
      */
     getPivotCellDomain(domain) {

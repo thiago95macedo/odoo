@@ -2058,13 +2058,13 @@ class CalendarEvent(models.Model):
         """Build sanitized HTML with the organizer details and the details
         of the contact partner (only when there is a single non-organizer attendee).
         """
-        odoobot = self.env.ref('base.user_root')
+        wethbot = self.env.ref('base.user_root')
         contact_description = []
         # Organizer
-        if organizer and organizer != odoobot:
+        if organizer and organizer != wethbot:
             contact_description.extend(self._prepare_partner_contact_details_html(_("Organized by"), organizer.partner_id))
         # First contact partner
-        contact_partners = partners.filtered(lambda partner: partner not in (odoobot.partner_id + organizer.partner_id))
+        contact_partners = partners.filtered(lambda partner: partner not in (wethbot.partner_id + organizer.partner_id))
         if len(contact_partners) == 1:
             if contact_description:
                 contact_description.append("")  # To add a blank line between the organizer and partner details

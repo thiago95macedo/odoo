@@ -3,11 +3,11 @@
     margin: 1rem 0;
 
     &.active {
-        border: 4px solid $o-brand-primary;
+        border: 4px solid $w-brand-primary;
         box-shadow: 3px 3px 5px gray;
     }
 }
 
-.o_image_radio > div:has(.o_image_radio_option_checkbox:focus-visible) {
-    outline: 2px solid lighten($o-brand-primary, 30%);
+.o_image_radio>div:has(.o_image_radio_option_checkbox:focus-visible) {
+    outline: 2px solid lighten($w-brand-primary, 30%);
 }

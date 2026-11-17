@@ -14,7 +14,7 @@ msgstr ""
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/pos_glory_cash/pt_BR/>\n"
+"weth-20/pos_glory_cash/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,25 +23,25 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Calculating change"
 msgstr "Calcular a mudança"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/components/cancel_dialog.xml:0
 msgid "Cancel Operation"
 msgstr "Cancelar operação"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Cancelling payment"
 msgstr "Cancelando pagamento"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "Cash Machine Error"
 msgstr "Erro no caixa"
@@ -68,39 +68,39 @@ msgid "Cash Machine Username"
 msgstr "Nome de usuário do caixa"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/components/cancel_dialog.xml:0
 #: code:addons/pos_glory_cash/static/src/app/components/glory_error_dialog.xml:0
 msgid "Cash machine error"
 msgstr "Erro no caixa"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.js:0
 msgid "Cash machine is disconnected"
 msgstr "Caixa desconectado"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid "Cash machine status:"
 msgstr "Status do caixa:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/components/cancel_dialog.xml:0
 #: code:addons/pos_glory_cash/static/src/app/components/glory_error_dialog.xml:0
 msgid "Close"
 msgstr "Fechar"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Collection in progress"
 msgstr "Coleta em andamento"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid ""
 "Consider emptying the cash machine, the following coins/bills are nearly "
@@ -109,31 +109,31 @@ msgstr ""
 "Considere esvaziar o caixa, as seguintes moedas/notas estão quase cheias:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Counting"
 msgstr "Número"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Counting replenished cash"
 msgstr "Contagem de dinheiro reposto"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.xml:0
 msgid "Current cash machine status:"
 msgstr "Status atual do caixa eletrônico:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Disconnected"
 msgstr "Desconectado"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Dispensing"
 msgstr "Dispensação"
@@ -144,37 +144,37 @@ msgid "Display Name"
 msgstr "Exibir Nome"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.xml:0
 msgid "Download Logs"
 msgstr "Logs de download"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Error"
 msgstr "Erro"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/components/glory_error_dialog.xml:0
 msgid "Error code:"
 msgstr "Erro de código:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Failed to authenticate"
 msgstr "Falha na autenticação"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "Failed to cancel cash machine transaction."
 msgstr "Falha ao cancelar a transação do caixa eletrônico."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "Failed to connect to Glory cash machine, please ensure it is switched on and "
@@ -184,7 +184,7 @@ msgstr ""
 "que ela esteja ligada e conectada à rede."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "Failed to login to Glory cash machine, please check the configured username "
@@ -204,13 +204,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Idle"
 msgstr "Inativo"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Initializing"
 msgstr "Inicializando"
@@ -224,7 +224,7 @@ msgstr ""
 "Glory"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/socket_io.js:0
 msgid ""
 "Local Network Access for the Glory machine is not supported on this browser. "
@@ -232,13 +232,13 @@ msgid ""
 msgstr ""
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "Only managers can withdraw cash from the cash machine."
 msgstr "Somente os gerentes podem sacar dinheiro do caixa eletrônico."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.xml:0
 msgid "Open Admin Page"
 msgstr "Abrir página de administração"
@@ -250,14 +250,14 @@ msgid "POS Glory Cash Machines"
 msgstr "Caixas eletrônicos PDV Glory"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.js:0
 #, fuzzy
 msgid "Please configure the IP address before opening the admin page"
 msgstr "Configure o endereço IP antes de abrir a página de administração"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "Please remove the cash from the exit of the cash machine before starting a "
@@ -272,55 +272,55 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento no Ponto de Venda"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/components/glory_error_dialog.xml:0
 msgid "Reset"
 msgstr "Redefinir"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.xml:0
 msgid "Reset Cash Machine"
 msgstr "Reiniciar caixa"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.js:0
 msgid "Reset complete"
 msgstr "Reinicialização concluída"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Resetting"
 msgstr "Redefinindo"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/backend/glory_admin_buttons/glory_admin_buttons.js:0
 msgid "Resetting cash machine..."
 msgstr "Reiniciando o caixa..."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Starting payment"
 msgstr "Início do pagamento"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "The cash machine has an error, please consult its display for details."
 msgstr "Erro no caixa. Consulte o visor para obter mais detalhes."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid "The cash machine has run out of the following coins/bills:"
 msgstr "O caixa ficou sem as seguintes moedas/notas:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The cash machine is busy counting its inventory, please wait a few seconds "
@@ -330,14 +330,14 @@ msgstr ""
 "alguns segundos e tente novamente."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The cash machine is busy with another operation. Do you want to cancel it?"
 msgstr "O caixa está ocupado com outra operação. Quer cancelar?"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The cash machine is currently in collection/replenishment mode, please "
@@ -347,19 +347,19 @@ msgstr ""
 "Conclua esse processo na máquina antes de efetuar o pagamento."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "The cash machine is disconnected."
 msgstr "A caixa registradora está desconectada."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "The cash machine is in use by another POS."
 msgstr "A caixa registradora está sendo usada por outro PDV."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The cash machine is not ready to start a transaction. Check all the covers "
@@ -369,13 +369,13 @@ msgstr ""
 "todas as tampas estão fechadas e tente novamente."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid "The cash machine is running low on the following coins/bills:"
 msgstr "O caixa está ficando sem as seguintes moedas/notas:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The cash machine is unable to return the inserted cash, please refund the "
@@ -385,14 +385,14 @@ msgstr ""
 "reembolse o cliente por outro método."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid "The cash machine must be emptied, the following coins/bills are full:"
 msgstr ""
 "O caixa deve ser esvaziado, as seguintes moedas/notas estão no limite máximo:"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "The payment failed due to an unrecoverable error - see the cash machine "
@@ -402,13 +402,13 @@ msgstr ""
 "para obter detalhes."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid "The payment failed for an unknown reason: %s"
 msgstr "O pagamento falhou por um motivo desconhecido: %s"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "There is insufficient cash in the machine to give change. You will need to "
@@ -418,7 +418,7 @@ msgstr ""
 "reembolsar a diferença por outro método."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/app/payment_glory.js:0
 msgid ""
 "There is insufficient change in the cash machine to handle the payment. It "
@@ -428,43 +428,43 @@ msgstr ""
 "cancelar para continuar."
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for cancellation"
 msgstr "Aguardando cancelamento"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for cash to be removed"
 msgstr "Aguardando a retirada do dinheiro"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for cash to be replenished"
 msgstr "Aguardando a reposição do dinheiro"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for coin overflow removal"
 msgstr "Aguardando a remoção do excesso de moedas"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for error recovery"
 msgstr "Aguardando recuperação de erro"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for insertion of cash"
 msgstr "Aguardando inserção de dinheiro"
 
 #. module: pos_glory_cash
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_glory_cash/static/src/utils/constants.js:0
 msgid "Waiting for inventory"
 msgstr "Aguardando estoque"

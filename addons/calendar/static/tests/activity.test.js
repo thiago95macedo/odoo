@@ -76,11 +76,11 @@ test("Can delete activity linked to an event", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Activity .btn", { text: "View" });
+    await click(".w-mail-Activity .btn", { text: "View" });
     await contains(".o_calendar_view");
     await animationFrame();
     await clickEvent(calendaMeetingId);
-    await click(".o-overlay-container .o_cw_popover_delete");
+    await click(".w-overlay-container .o_cw_popover_delete");
     await click(".o_dialog .modal-footer button.btn.btn-danger");
     await contains(`.o_event[data-event-id="${calendaMeetingId}"]`, { count: 0 });
 });

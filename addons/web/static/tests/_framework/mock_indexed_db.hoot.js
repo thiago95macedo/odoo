@@ -15,7 +15,7 @@ class Mutex {
 
 /**
  * @param {string} name
- * @param {OdooModuleFactory} factory
+ * @param {WethModuleFactory} factory
  */
 export function mockIndexedDBFactory(name, { fn }) {
     return function mockIndexedDB(requireModule, ...args) {

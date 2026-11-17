@@ -57,24 +57,24 @@ test("autocomplete should shown and able to edit the link", async () => {
 
     const { el } = await setupEditor('<p>this is a <a href="http://test.com/">li[]nk</a></p>');
 
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await click(".o_we_edit_link");
     await animationFrame();
     // the url input should be autocomplete
-    await contains(".o-autocomplete--input").focus();
+    await contains(".w-autocomplete--input").focus();
 
     // autocomplete dropdown should be there
     await press(["ctrl", "a"]);
     await press("c");
     // Should update preview with typed URL.
     expect(cleanLinkArtifacts(getContent(el))).toBe('<p>this is a <a href="c">link</a></p>');
-    await waitFor(".o-autocomplete--dropdown-menu", { timeout: 3000 });
+    await waitFor(".w-autocomplete--dropdown-menu", { timeout: 3000 });
     expect.verifySteps(["/website/get_suggested_links"]);
 
     expect(".ui-autocomplete-category").toHaveCount(1);
-    expect(".o-autocomplete--dropdown-item img").toHaveCount(1);
+    expect(".w-autocomplete--dropdown-item img").toHaveCount(1);
 
-    await click(".o-autocomplete--dropdown-item:first");
+    await click(".w-autocomplete--dropdown-item:first");
     // Should update preview with selected item.
     expect(cleanLinkArtifacts(getContent(el))).toBe(
         '<p>this is a <a href="/contactus">link</a></p>'
@@ -88,14 +88,14 @@ test("autocomplete should shown and able to edit the link", async () => {
     await waitFor(".o_we_edit_link");
     await click(".o_we_edit_link");
     await animationFrame();
-    await contains(".o-autocomplete--input").focus();
+    await contains(".w-autocomplete--input").focus();
 
     await press(["ctrl", "a"]);
     await press("#");
-    await waitFor(".o-autocomplete--dropdown-menu", { timeout: 3000 });
+    await waitFor(".w-autocomplete--dropdown-menu", { timeout: 3000 });
     // check the default page anchors are in the autocomplete dropdown
-    expect(".o-autocomplete--dropdown-item:first").toHaveText("#top");
-    expect(".o-autocomplete--dropdown-item:last").toHaveText("#bottom");
+    expect(".w-autocomplete--dropdown-item:first").toHaveText("#top");
+    expect(".w-autocomplete--dropdown-item:last").toHaveText("#bottom");
 });
 
 test("autocomplete suggestions for image links don’t update preview until applied", async () => {
@@ -129,24 +129,24 @@ test("autocomplete suggestions for image links don’t update preview until appl
         `<p><a href="http://test.test/">[<img src="${base64Img}">]</a></p>`
     );
 
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await click(".o_we_edit_link");
     await animationFrame();
     // the url input should be autocomplete
-    await contains(".o-autocomplete--input").focus();
+    await contains(".w-autocomplete--input").focus();
 
     // autocomplete dropdown should be there
     await press(["ctrl", "a"]);
     await press("c");
     // typing URL shouldn’t change image link preview.
     expect(getContent(el)).toBe(`<p><a href="http://test.test/"><img src="${base64Img}"></a></p>`);
-    await waitFor(".o-autocomplete--dropdown-menu", { timeout: 3000 });
+    await waitFor(".w-autocomplete--dropdown-menu", { timeout: 3000 });
     expect.verifySteps(["/website/get_suggested_links"]);
 
     expect(".ui-autocomplete-category").toHaveCount(1);
-    expect(".o-autocomplete--dropdown-item img").toHaveCount(1);
+    expect(".w-autocomplete--dropdown-item img").toHaveCount(1);
 
-    await click(".o-autocomplete--dropdown-item:first");
+    await click(".w-autocomplete--dropdown-item:first");
     // selecting suggestion shouldn’t change image link preview.
     expect(getContent(el)).toBe(`<p><a href="http://test.test/"><img src="${base64Img}"></a></p>`);
     await click(".o_we_apply_link");
@@ -172,15 +172,15 @@ test("LinkPopover opens in full composer", async () => {
     await openFormView("res.partner", serverState.partnerId);
     await mailClick("button", { text: "Log note" });
     await mailClick("button[title='Open Full Composer']");
-    await waitFor(".odoo-editor-editable");
+    await waitFor(".weth-editor-editable");
     htmlEditor.editable.focus();
     await insertText(htmlEditor, "test");
-    const node = queryOne(".odoo-editor-editable div");
+    const node = queryOne(".weth-editor-editable div");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
-    await mailClick(".o-we-toolbar [data-icon='link']");
-    await waitFor(".o-we-linkpopover");
+    await mailClick(".w-we-toolbar [data-icon='link']");
+    await waitFor(".w-we-linkpopover");
     await animationFrame();
-    expect(".o-we-linkpopover").toHaveCount(1);
+    expect(".w-we-linkpopover").toHaveCount(1);
 });
 
 test("link redirection should be prefixed for url of website pages only", async () => {
@@ -197,30 +197,30 @@ test("link redirection should be prefixed for url of website pages only", async 
 
     // website pages should be prefixed with /@
     const { el } = await setupEditor('<p>this is a <a href="/contactus">li[]nk</a></p>');
-    await waitFor(".o-we-linkpopover");
-    await click(".o-we-linkpopover a");
+    await waitFor(".w-we-linkpopover");
+    await click(".w-we-linkpopover a");
     expect.verifySteps(["website page url prefixed"]);
 
     // other backend urls and external urls should not be prefixed
     setContent(el, `<p>this is a[] <a href="/weth/project/1">link</a></p>`);
-    await waitForNone(".o-we-linkpopover");
+    await waitForNone(".w-we-linkpopover");
     setContent(el, `<p>this is a <a href="/weth/project/1">li[]nk</a></p>`);
-    await waitFor(".o-we-linkpopover");
-    await click(".o-we-linkpopover a");
+    await waitFor(".w-we-linkpopover");
+    await click(".w-we-linkpopover a");
     expect.verifySteps([]);
 
     setContent(el, `<p>this is a[] <a href="/web/project/1">link</a></p>`);
-    await waitForNone(".o-we-linkpopover");
+    await waitForNone(".w-we-linkpopover");
     setContent(el, `<p>this is a <a href="/web/project/1">li[]nk</a></p>`);
-    await waitFor(".o-we-linkpopover");
-    await click(".o-we-linkpopover a");
+    await waitFor(".w-we-linkpopover");
+    await click(".w-we-linkpopover a");
     expect.verifySteps([]);
 
     setContent(el, `<p>this is a[] <a href="http://test.test">link</a></p>`);
-    await waitForNone(".o-we-linkpopover");
+    await waitForNone(".w-we-linkpopover");
     setContent(el, `<p>this is a <a href="http://test.test">li[]nk</a></p>`);
-    await waitFor(".o-we-linkpopover");
-    await click(".o-we-linkpopover a");
+    await waitFor(".w-we-linkpopover");
+    await click(".w-we-linkpopover a");
     expect.verifySteps([]);
 });
 
@@ -241,8 +241,8 @@ test("link redirection should not be prefixed when the current page is not a web
 
     // website pages should not be prefixed with /@
     await setupEditor('<p>this is a <a href="/contactus">li[]nk</a></p>');
-    await waitFor(".o-we-linkpopover");
-    await click(".o-we-linkpopover a");
+    await waitFor(".w-we-linkpopover");
+    await click(".w-we-linkpopover a");
     // the open method should not be called from onClickForcePreviewMode
     expect.verifySteps([]);
 });
@@ -251,11 +251,11 @@ test("Focus should be on label when adding a new URL", async () => {
     const { editor } = await setupEditor("<p>ab[]</p>");
     await insertText(editor, "/link");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Link");
-    await click(".o-we-command-name:first");
+    expect(".active .w-we-command-name").toHaveText("Link");
+    await click(".w-we-command-name:first");
     await animationFrame();
-    expect(".o-we-linkpopover").toHaveCount(1);
-    expect(".o-we-linkpopover input.o_we_label_link").toBeFocused({
+    expect(".w-we-linkpopover").toHaveCount(1);
+    expect(".w-we-linkpopover input.o_we_label_link").toBeFocused({
         message: "should focus label input by default",
     });
 });
@@ -271,11 +271,11 @@ test("should open seo advanced popup when gear icon is clicked", async () => {
         anchorNode: linkText.firstChild,
         anchorOffset: 1,
     });
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_edit_link").click();
     await waitFor(".o_we_href_input_link");
     await contains(".o_we_href_input_link").click();
-    await contains(".o-we-linkpopover [data-icon='settings']").click();
+    await contains(".w-we-linkpopover [data-icon='settings']").click();
     expect(".o_advance_option_panel").toHaveCount(1);
     expect(".o_advance_option_panel .o_seo_option_row").toHaveCount(4);
 });
@@ -291,15 +291,15 @@ test("should add rel='nofollow' when checkbox is selected and applied", async ()
         anchorNode: linkText.firstChild,
         anchorOffset: 1,
     });
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_edit_link").click();
     await waitFor(".o_we_href_input_link");
     await contains(".o_we_href_input_link").click();
-    await contains(".o-we-linkpopover [data-icon='settings']").click();
+    await contains(".w-we-linkpopover [data-icon='settings']").click();
     expect(".o_advance_option_panel").toHaveCount(1);
     await contains(".o_seo_option_row:nth-of-type(1) input[type='checkbox']").click();
     await contains(".o_advance_option_panel [data-icon='keyboard_arrow_left']").click();
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_apply_link").click();
     expect(linkText).toHaveAttribute("rel", "nofollow");
 });
@@ -315,17 +315,17 @@ test("should add multipule relAttribute in anchor tag when checkbox is selected 
         anchorNode: linkText.firstChild,
         anchorOffset: 1,
     });
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_edit_link").click();
     await waitFor(".o_we_href_input_link");
     await contains(".o_we_href_input_link").click();
-    await contains(".o-we-linkpopover [data-icon='settings']").click();
+    await contains(".w-we-linkpopover [data-icon='settings']").click();
     expect(".o_advance_option_panel").toHaveCount(1);
     await contains(".o_seo_option_row:nth-of-type(1) input[type='checkbox']").click();
     await contains(".o_seo_option_row:nth-of-type(2) input[type='checkbox']").click();
     await contains(".o_seo_option_row:nth-of-type(3) input[type='checkbox']").click();
     await contains(".o_advance_option_panel [data-icon='keyboard_arrow_left']").click();
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_apply_link").click();
     expect(linkText).toHaveAttribute("rel", "nofollow noreferrer sponsored");
 });
@@ -341,16 +341,16 @@ test("should add _blank attribute on open in a new window is checked", async () 
         anchorNode: linkText.firstChild,
         anchorOffset: 1,
     });
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_edit_link").click();
     await waitFor(".o_we_href_input_link");
     await contains(".o_we_href_input_link").click();
-    await contains(".o-we-linkpopover [data-icon='settings']").click();
+    await contains(".w-we-linkpopover [data-icon='settings']").click();
     expect(".o_advance_option_panel").toHaveCount(1);
     await contains(".o_seo_option_row:nth-of-type(4) input[type='checkbox']").click();
     await contains(".o_seo_option_row:nth-of-type(5) input[type='checkbox']").click();
     await click(".o_advance_option_panel [data-icon='keyboard_arrow_left']");
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_apply_link").click();
     expect(linkText).toHaveAttribute("target", "_blank");
     expect(linkText).toHaveAttribute("rel", "noopener");
@@ -369,18 +369,18 @@ test("should allow target _blank on custom button", async () => {
         anchorOffset: 0,
         focusOffset: 5,
     });
-    await waitFor(".o-we-toolbar");
-    await click(".o-we-toolbar [data-icon='link']");
+    await waitFor(".w-we-toolbar");
+    await click(".w-we-toolbar [data-icon='link']");
     await waitFor(".o_we_href_input_link");
     await contains(".o_we_href_input_link").click();
-    await contains(".o-we-linkpopover input.o_we_href_input_link").edit("http://test.test/", {
+    await contains(".w-we-linkpopover input.o_we_href_input_link").edit("http://test.test/", {
         confirm: false,
     });
-    await contains(".o-we-linkpopover [data-icon='settings']").click();
+    await contains(".w-we-linkpopover [data-icon='settings']").click();
     expect(".o_advance_option_panel").toHaveCount(1);
     await contains(".o_seo_option_row:nth-of-type(4) input[type='checkbox']").click();
     await click(".o_advance_option_panel [data-icon='keyboard_arrow_left']");
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await contains(".o_we_apply_link").click();
     const anchor = editor.editable.querySelector("a");
     expect(anchor).toHaveAttribute("target", "_blank");

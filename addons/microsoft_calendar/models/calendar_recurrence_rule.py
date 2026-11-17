@@ -23,7 +23,7 @@ class CalendarRecurrence(models.Model):
     def _inverse_rrule(self):
         # Note: 'need_sync_m' is set to False to avoid syncing the updated recurrence with
         # Outlook, as this update mainly comes from Outlook (the 'rrule' field is not directly
-        # modified in Odoo but computed from other fields).
+        # modified in WETH but computed from other fields).
         for recurrence in self.filtered('rrule'):
             values = self._rrule_parse(recurrence.rrule, recurrence.dtstart)
             until = values.get('until')
@@ -102,10 +102,10 @@ class CalendarRecurrence(models.Model):
         current_rrule = self.rrule
         original_dtstart = self.dtstart
         current_parsed_rrule = self._rrule_parse(current_rrule, original_dtstart)
-        # event_tz is written on event in Microsoft but on recurrence in Odoo
+        # event_tz is written on event in Microsoft but on recurrence in Weth
         vals['event_tz'] = microsoft_event.start.get('timeZone')
         super()._write_from_microsoft(microsoft_event, vals)
-        new_event_values = self.env["calendar.event"]._microsoft_to_odoo_values(microsoft_event)
+        new_event_values = self.env["calendar.event"]._microsoft_to_weth_values(microsoft_event)
         # Edge case:  if the base event was deleted manually in 'self_only' update, skip applying recurrence.
         # Also skip when the base event is an exception (follow_recurrence=False), because its
         # modified time will differ from the seriesMaster pattern without the master having changed,
@@ -151,7 +151,7 @@ class CalendarRecurrence(models.Model):
             detached_events.unlink()
 
     def _get_microsoft_sync_domain(self):
-        # Do not sync Odoo recurrences with Outlook Calendar anymore.
+        # Do not sync WETH recurrences with Outlook Calendar anymore.
         return self._extend_microsoft_domain(Domain.FALSE)
 
     def _cancel_microsoft(self):
@@ -162,7 +162,7 @@ class CalendarRecurrence(models.Model):
         events_to_cancel._cancel_microsoft()
 
     @api.model
-    def _microsoft_to_odoo_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False, create=False):
+    def _microsoft_to_weth_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False, create=False):
         recurrence = microsoft_recurrence.get_recurrence()
 
         if with_ids:

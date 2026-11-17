@@ -24,7 +24,7 @@ class TestSaleMrpProcurement(TransactionCase):
         warehouse0 = self.env.ref('stock.warehouse0')
         route_mto = warehouse0.mto_pull_id.route_id
         route_mto.active = True
-        # In order to test the sale_mrp module in OpenERP, I start by creating a new product 'Slider Mobile'
+        # In order to test the sale_mrp module in WETH, I start by creating a new product 'Slider Mobile'
         # I define product category Mobile Products Sellable.
 
         with mute_logger('weth.tests.common.onchange'):

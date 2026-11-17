@@ -20,12 +20,12 @@ test("Handle livechat history command", async () => {
         return true;
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-Composer-input").edit("Hello World!", { confirm: false });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-Composer-input").edit("Hello World!", { confirm: false });
     const subscribed = waitUntilSubscribe();
     await press("Enter");
     await subscribed;
-    await waitFor(".o-mail-Message:contains(Hello World!)");
+    await waitFor(".w-mail-Message:contains(Hello World!)");
     const thread = [...getService("mail.store")["mail.thread"].records.values()].at(-1);
     const guestId = pyEnv.cookie.get("dgid");
     const [guest] = pyEnv["mail.guest"].read(guestId);

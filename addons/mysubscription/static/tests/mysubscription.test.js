@@ -70,16 +70,16 @@ test("show the database section when show_database_action is true", async () => 
     mockDashboardData({ enterpriseCode: "123-456-789", hasSubscription: true, showDatabaseAction: true });
     await mountWithCleanup(MySubscriptionDashboard);
 
-    expect(".o_mysub_title").toHaveCount(2);
-    expect(queryAllTexts(".o_mysub_title")).toEqual(["Current Plan", "Database"]);
+    expect(".w_mysub_title").toHaveCount(2);
+    expect(queryAllTexts(".w_mysub_title")).toEqual(["Current Plan", "Database"]);
 });
 
 test("hide the database section when show_database_action is false", async () => {
     mockDashboardData({ enterpriseCode: "123-456-789", hasSubscription: true, showDatabaseAction: false });
     await mountWithCleanup(MySubscriptionDashboard);
 
-    expect(".o_mysub_title").toHaveCount(1);
-    expect(queryAllTexts(".o_mysub_title")).toEqual(["Current Plan"]);
+    expect(".w_mysub_title").toHaveCount(1);
+    expect(queryAllTexts(".w_mysub_title")).toEqual(["Current Plan"]);
 });
 
 function mountNavBar(props = {}) {
@@ -111,12 +111,12 @@ test("community: shows the standard apps dropdown, with the app name once", asyn
     defineMenus([{ id: 1, actionID: 1 }]);
     await mountNavBar();
 
-    expect(".o_navbar_apps_menu button.dropdown-toggle").toHaveCount(1);
-    expect("a.o_menu_toggle").toHaveCount(0);
-    expect(".o_menu_brand").toHaveCount(1);
-    expect(".o_menu_brand").toHaveText("My Subscription");
+    expect(".w_navbar_apps_menu button.dropdown-toggle").toHaveCount(1);
+    expect("a.w_menu_toggle").toHaveCount(0);
+    expect(".w_menu_brand").toHaveCount(1);
+    expect(".w_menu_brand").toHaveText("My Subscription");
 
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
     expect(".dropdown-menu").toHaveCount(1);
 });
 
@@ -125,12 +125,12 @@ test("enterprise: replaces the dropdown with a home-menu link showing the app ic
     mockEnterprise();
     await mountNavBar();
 
-    expect(".o_navbar_apps_menu").toHaveCount(0);
-    expect("a.o_menu_toggle").toHaveCount(1);
-    expect("a.o_menu_toggle").toHaveClass("hasImage");
-    expect(".o_menu_brand_icon").toHaveAttribute("data-src", "/mysubscription/static/src/img/weth_logo.svg");
-    expect(".o_menu_brand").toHaveCount(1);
-    expect("a.o_menu_toggle .o_menu_brand").toHaveCount(1);
+    expect(".w_navbar_apps_menu").toHaveCount(0);
+    expect("a.w_menu_toggle").toHaveCount(1);
+    expect("a.w_menu_toggle").toHaveClass("hasImage");
+    expect(".w_menu_brand_icon").toHaveAttribute("data-src", "/mysubscription/static/src/img/weth_logo.svg");
+    expect(".w_menu_brand").toHaveCount(1);
+    expect("a.w_menu_toggle .w_menu_brand").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -138,6 +138,6 @@ test("enterprise: clicking the apps icon opens the home menu instead of navigati
     const toggleCalls = mockEnterprise();
     await mountNavBar();
 
-    await contains("a.o_menu_toggle").click();
+    await contains("a.w_menu_toggle").click();
     expect(toggleCalls).toEqual([true]);
 });

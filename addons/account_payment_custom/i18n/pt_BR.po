@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 17:40+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/account_payment_custom/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: account_payment_custom
-#. odoo-python
+#. weth-python
 #: code:addons/account_payment_custom/const.py:0
 msgid "Not available for invoices"
 msgstr "Não disponível para faturas"

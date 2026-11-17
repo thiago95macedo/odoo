@@ -37,11 +37,11 @@ test("Should open the search panel when search button is clicked", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessagesPanel");
-    await contains(".o-mail-ActionPanel-header .o-mail-SearchMessageInput");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
+    await contains(".w-mail-SearchMessagesPanel");
+    await contains(".w-mail-ActionPanel-header .w-mail-SearchMessageInput");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
 });
 
 test.tags("desktop");
@@ -58,9 +58,9 @@ test("Should open the search panel with hotkey 'f'", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await press("alt+f");
-    await contains(".o-mail-SearchMessagesPanel");
+    await contains(".w-mail-SearchMessagesPanel");
 });
 
 test.tags("desktop");
@@ -77,19 +77,19 @@ test("Search a message", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
     await editInput(
         document.body,
-        ".o-mail-SearchMessageInput .o-mail-SearchInput input",
+        ".w-mail-SearchMessageInput .w-mail-SearchInput input",
         "message"
     );
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message");
-    expect(".o-mail-SearchMessageInput .o-mail-SearchInput input").toHaveValue("message");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message");
+    expect(".w-mail-SearchMessageInput .w-mail-SearchInput input").toHaveValue("message");
     await click("button[aria-label='Clear']");
-    await contains(".o-mail-SearchMessagesPanel:not(:has(.o-mail-Message))");
-    expect(".o-mail-SearchMessageInput .o-mail-SearchInput input").toHaveValue("");
+    await contains(".w-mail-SearchMessagesPanel:not(:has(.w-mail-Message))");
+    expect(".w-mail-SearchMessageInput .w-mail-SearchInput input").toHaveValue("");
 });
 
 test.tags("desktop");
@@ -115,7 +115,7 @@ test("Searching messages shows spinner icon", async () => {
     await start();
     await openDiscuss(channelId);
     blockedFetchMessages.resolve();
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await waitStoreFetch([
         [
             "/discuss/channel/messages",
@@ -123,15 +123,15 @@ test("Searching messages shows spinner icon", async () => {
         ],
     ]);
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
     await editInput(
         document.body,
-        ".o-mail-SearchMessageInput .o-mail-SearchInput input",
+        ".w-mail-SearchMessageInput .w-mail-SearchInput input",
         "message"
     );
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput.o-searching");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput i.oi.oi-spin");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput i.oi[data-icon='search']", {
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput.w-searching");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput i.oi.oi-spin");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput i.oi[data-icon='search']", {
         count: 0,
     });
     blockedFetchMessages.resolve();
@@ -144,10 +144,10 @@ test("Searching messages shows spinner icon", async () => {
             },
         ],
     ]);
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput:not(.o-searching)");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput i.oi[data-icon='search']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput i.oi.oi-spin", { count: 0 });
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput:not(.w-searching)");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput i.oi[data-icon='search']");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput i.oi.oi-spin", { count: 0 });
 });
 
 test.tags("desktop");
@@ -173,7 +173,7 @@ test("Clearing message input while pending search should empty message results",
     await start();
     await openDiscuss(channelId);
     blockedFetchMessages.resolve();
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await waitStoreFetch([
         [
             "/discuss/channel/messages",
@@ -181,13 +181,13 @@ test("Clearing message input while pending search should empty message results",
         ],
     ]);
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
     await editInput(
         document.body,
-        ".o-mail-SearchMessageInput .o-mail-SearchInput input",
+        ".w-mail-SearchMessageInput .w-mail-SearchInput input",
         "This is"
     );
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput.o-searching");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput.w-searching");
     blockedFetchMessages.resolve();
     await waitStoreFetch([
         [
@@ -198,16 +198,16 @@ test("Clearing message input while pending search should empty message results",
             },
         ],
     ]);
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput:not(.o-searching)");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput:not(.w-searching)");
+    await contains(".w-mail-SearchMessageResult .w-mail-Message");
     await editInput(
         document.body,
-        ".o-mail-SearchMessageInput .o-mail-SearchInput input",
+        ".w-mail-SearchMessageInput .w-mail-SearchInput input",
         "This is a message"
     );
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput.o-searching");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput.w-searching");
     await click("button[aria-label='Clear']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input", { value: "" });
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input", { value: "" });
     blockedFetchMessages.resolve();
     await waitStoreFetch([
         [
@@ -219,8 +219,8 @@ test("Clearing message input while pending search should empty message results",
         ],
     ]);
     await animationFrame();
-    await contains(".o-mail-SearchMessageResult .o-mail-Message", { count: 0 });
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input", { value: "" });
+    await contains(".w-mail-SearchMessageResult .w-mail-Message", { count: 0 });
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input", { value: "" });
 });
 
 test.tags("desktop");
@@ -246,7 +246,7 @@ test("Clearing message input while a search is queued should not show its result
     await start();
     await openDiscuss(channelId);
     blockedFetchMessages.resolve();
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await waitStoreFetch([
         [
             "/discuss/channel/messages",
@@ -254,17 +254,17 @@ test("Clearing message input while a search is queued should not show its result
         ],
     ]);
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
-    await editInput(document.body, ".o-mail-SearchMessageInput .o-mail-SearchInput input", "This");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput.o-searching");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
+    await editInput(document.body, ".w-mail-SearchMessageInput .w-mail-SearchInput input", "This");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput.w-searching");
     await editInput(
         document.body,
-        ".o-mail-SearchMessageInput .o-mail-SearchInput input",
+        ".w-mail-SearchMessageInput .w-mail-SearchInput input",
         "This is"
     );
     await animationFrame();
     await click("button[aria-label='Clear']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input", { value: "" });
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input", { value: "" });
     blockedFetchMessages.resolve();
     await waitStoreFetch([
         [
@@ -275,8 +275,8 @@ test("Clearing message input while a search is queued should not show its result
     blockedFetchMessages.resolve();
     await animationFrame();
     expect.verifySteps([]);
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input", { value: "" });
-    await contains(".o-mail-SearchMessageResult .o-mail-Message", { count: 0 });
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input", { value: "" });
+    await contains(".w-mail-SearchMessageResult .w-mail-Message", { count: 0 });
 });
 
 test.tags("desktop");
@@ -293,11 +293,11 @@ test("Search should be hightlighted", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "message");
-    await contains(`.o-mail-SearchMessagesPanel .o-mail-Message .${HIGHLIGHT_CLASS}`);
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "message");
+    await contains(`.w-mail-SearchMessagesPanel .w-mail-Message .${HIGHLIGHT_CLASS}`);
 });
 
 test.tags("desktop");
@@ -306,10 +306,10 @@ test("Should close the search panel when search button is clicked again", async 
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("[title='Search Messages']");
     await click("[title='Close Search']");
-    await contains(".o-mail-SearchMessagesPanel");
+    await contains(".w-mail-SearchMessagesPanel");
 });
 
 test.tags("desktop");
@@ -328,14 +328,14 @@ test("Search a message in 60 messages should return 30 message first", async () 
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
+    await contains(".w-mail-Message", { count: 30 });
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "message");
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message", { count: 30 });
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "message");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message", { count: 30 });
     // give enough time to useVisible to potentially load more (unexpected) messages
     await tick();
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message", { count: 30 });
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message", { count: 30 });
 });
 
 test.tags("desktop");
@@ -354,16 +354,16 @@ test("Scrolling to the bottom should load more searched message", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
+    await contains(".w-mail-Message", { count: 30 });
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "message");
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message", { count: 30 });
-    await scroll(".o-mail-SearchMessagesPanel .o-mail-ActionPanel", "bottom");
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message", { count: 60 });
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "message");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message", { count: 30 });
+    await scroll(".w-mail-SearchMessagesPanel .w-mail-ActionPanel", "bottom");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message", { count: 60 });
     // give enough time to useVisible to potentially load more (unexpected) messages
     await tick();
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message", { count: 60 });
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message", { count: 60 });
 });
 
 test.tags("desktop");
@@ -380,11 +380,11 @@ test("Search a message containing round brackets", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "(message");
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message");
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "(message");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message");
 });
 
 test.tags("desktop");
@@ -400,9 +400,9 @@ test("Search a message containing single quotes", async () => {
     await start();
     await openDiscuss(channelId);
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "can't");
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message");
+    await contains(".w-mail-SearchMessageInput");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "can't");
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message");
 });
 
 test.tags("mobile");
@@ -413,11 +413,11 @@ test("Close message search panel when navigating back on mobile", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-ChatWindow-moreActions");
+    await click(".w-mail-ChatWindow-moreActions");
     await click("button:text('Search Messages')");
-    await contains(".o-mail-SearchMessagesPanel");
+    await contains(".w-mail-SearchMessagesPanel");
     history.back();
-    await contains(".o-mail-SearchMessagesPanel", { count: 0 });
+    await contains(".w-mail-SearchMessagesPanel", { count: 0 });
 });
 
 test.tags("desktop");
@@ -426,13 +426,13 @@ test("Search should trigger a single store fetch", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "This is a message");
-    await click(".o-sendMessageActive:enabled");
-    await contains(".o-mail-Message");
+    await insertText(".w-mail-Composer-input", "This is a message");
+    await click(".w-sendMessageActive:enabled");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
+    await contains(".w-mail-SearchMessageInput");
     listenStoreFetch("/discuss/channel/messages");
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "message");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "message");
     await waitStoreFetch("/discuss/channel/messages");
     await waitStoreFetch();
 });
@@ -454,7 +454,7 @@ test("Empty search should not trigger rpc", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await click("button[title='Search Messages']");
     await waitStoreFetch([
         [
@@ -462,11 +462,11 @@ test("Empty search should not trigger rpc", async () => {
             { channel_id: channelId, fetch_params: { limit: 60, around: 0 } },
         ],
     ]);
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
-    await editInput(document.body, ".o-mail-SearchMessageInput .o-mail-SearchInput input", "          ");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
+    await editInput(document.body, ".w-mail-SearchMessageInput .w-mail-SearchInput input", "          ");
     await animationFrame();
-    await insertText(".o-mail-SearchMessageInput .o-mail-SearchInput input", "m", { replace: true });
-    await contains(".o-mail-SearchMessagesPanel .o-mail-Message");
+    await insertText(".w-mail-SearchMessageInput .w-mail-SearchInput input", "m", { replace: true });
+    await contains(".w-mail-SearchMessagesPanel .w-mail-Message");
     await waitStoreFetch([
         [
             "/discuss/channel/messages",

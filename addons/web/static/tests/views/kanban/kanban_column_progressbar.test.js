@@ -267,7 +267,7 @@ test("column progressbars properly work", async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_counter").toHaveCount(2, {
+    expect(".w_kanban_counter").toHaveCount(2, {
         message: "kanban counters should have been created",
     });
 
@@ -301,28 +301,28 @@ test("filter on progressbar in new groups", async () => {
             </kanban>`,
     });
 
-    expect(".o_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group").toHaveCount(2);
 
     await quickCreateKanbanColumn();
     await editKanbanColumnName("new column 1");
     await validateKanbanColumn();
     await editKanbanColumnName("new column 2");
     await validateKanbanColumn();
-    expect(".o_kanban_group").toHaveCount(4);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(2) })).toHaveCount(0);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(3) })).toHaveCount(0);
+    expect(".w_kanban_group").toHaveCount(4);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(2) })).toHaveCount(0);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(3) })).toHaveCount(0);
 
     await quickCreateKanbanRecord(2);
-    await contains(".o_field_widget[name=foo] input").edit("new record 1");
+    await contains(".w_field_widget[name=foo] input").edit("new record 1");
     await quickCreateKanbanRecord(3);
-    await contains(".o_field_widget[name=foo] input").edit("new record 2");
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(2) })).toHaveCount(1);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(3) })).toHaveCount(1);
+    await contains(".w_field_widget[name=foo] input").edit("new record 2");
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(2) })).toHaveCount(1);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(3) })).toHaveCount(1);
 
-    expect(".o_kanban_group_show_300").toHaveCount(0);
+    expect(".w_kanban_group_show_300").toHaveCount(0);
 
-    await contains(".o_column_progress .progress-bar", { root: getKanbanColumn(2) }).click();
-    expect(".o_kanban_group_show_300").toHaveCount(1);
+    await contains(".w_column_progress .progress-bar", { root: getKanbanColumn(2) }).click();
+    expect(".w_kanban_group_show_300").toHaveCount(1);
     expect(getKanbanColumn(2)).toHaveClass("o_kanban_group_show_300");
 });
 
@@ -352,22 +352,22 @@ test('column progressbars: "false" bar is clickable', async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group").toHaveCount(2);
     expect(getKanbanCounters()).toEqual(["1", "4"]);
-    expect(".o_kanban_group:last-child .o_column_progress .progress-bar").toHaveCount(4);
-    expect(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300").toHaveCount(1, {
+    expect(".w_kanban_group:last-child .w_column_progress .progress-bar").toHaveCount(4);
+    expect(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300").toHaveCount(1, {
         message: "should have false kanban color",
     });
-    expect(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300:first").toHaveClass(
+    expect(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300:first").toHaveClass(
         "bg-300"
     );
 
-    await contains(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300").click();
+    await contains(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300").click();
 
-    expect(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300:first").toHaveClass(
+    expect(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300:first").toHaveClass(
         "progress-bar-animated"
     );
-    expect(".o_kanban_group:last-child").toHaveClass("o_kanban_group_show_300");
+    expect(".w_kanban_group:last-child").toHaveClass("o_kanban_group_show_300");
     expect(getKanbanCounters()).toEqual(["1", "1"]);
     expect.verifySteps([
         "/web/webclient/translations",
@@ -408,12 +408,12 @@ test('column progressbars: "false" bar with sum_field', async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group").toHaveCount(2);
     expect(getKanbanCounters()).toEqual(["-4", "51"]);
 
-    await contains(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300").click();
+    await contains(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300").click();
 
-    expect(".o_kanban_group:last-child .o_column_progress .progress-bar.bg-300:first").toHaveClass(
+    expect(".w_kanban_group:last-child .w_column_progress .progress-bar.bg-300:first").toHaveClass(
         "progress-bar-animated"
     );
     expect(getKanbanCounters()).toEqual(["-4", "15"]);
@@ -477,14 +477,14 @@ test("column progressbars: creating a new column should create a new progressbar
             </kanban>`,
     });
 
-    expect(".o_kanban_counter").toHaveCount(2);
+    expect(".w_kanban_counter").toHaveCount(2);
 
     // Create a new column: this should create an empty progressbar
     await quickCreateKanbanColumn();
     await editKanbanColumnName("test");
     await validateKanbanColumn();
 
-    expect(".o_kanban_counter").toHaveCount(3, {
+    expect(".w_kanban_counter").toHaveCount(3, {
         message: "a new column with a new column progressbar should have been created",
     });
     expect.verifySteps([
@@ -606,7 +606,7 @@ test("column progressbars with an active filter are working with load more", asy
         groupBy: ["bar"],
     });
 
-    await contains(".o_column_progress .progress-bar.bg-success").click();
+    await contains(".w_column_progress .progress-bar.bg-success").click();
 
     expect(getKanbanRecordTexts()).toEqual(["5"]);
 
@@ -658,15 +658,15 @@ test("column progressbars on archiving records update counter", async () => {
     // archive all records of the second columns except one
     await keyDown("alt");
     await animationFrame();
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(1)").click();
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(1)").click();
     await keyUp("alt");
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(2)").click();
-    await contains(".o_cp_action_menus button").click();
-    await contains(".o_menu_item:contains(Archive)").click();
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(2)").click();
+    await contains(".w_cp_action_menus button").click();
+    await contains(".w_menu_item:contains(Archive)").click();
     await contains(".modal-footer .btn-primary").click();
 
     expect(getKanbanCounters()).toEqual(["-4", "17"]);
-    expect(queryAll(".progress-bar.o_bar_has_records", { root: getKanbanColumn(1) })).toHaveCount(
+    expect(queryAll(".progress-bar.w_bar_has_records", { root: getKanbanColumn(1) })).toHaveCount(
         1,
         {
             message: "the counter progressbars should have been correctly updated",
@@ -712,10 +712,10 @@ test("kanban with progressbars: correctly update env when archiving records", as
     // archive all records of the first column
     await keyDown("alt");
     await animationFrame();
-    await contains(".o_kanban_group:nth-of-type(1) .o_kanban_record:nth-of-type(1)").click();
+    await contains(".w_kanban_group:nth-of-type(1) .w_kanban_record:nth-of-type(1)").click();
     await keyUp("alt");
-    await contains(".o_cp_action_menus button").click();
-    await contains(".o_menu_item:contains(Archive)").click();
+    await contains(".w_cp_action_menus button").click();
+    await contains(".w_menu_item:contains(Archive)").click();
     await contains(".modal-footer .btn-primary").click();
 
     expect(getKanbanRecordTexts()).toEqual(["1", "2", "3"]);
@@ -751,21 +751,21 @@ test("kanban with progressbars: slow read_progress_bar", async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group:nth-child(2) .o_column_progress").toHaveCount(1);
-    expect(".o_kanban_group:nth-child(2) .o_column_progress .progress-bar").toHaveCount(0);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_header").toHaveText("Yes");
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group:nth-child(2) .w_column_progress").toHaveCount(1);
+    expect(".w_kanban_group:nth-child(2) .w_column_progress .progress-bar").toHaveCount(0);
+    expect(".w_kanban_group:nth-child(2) .w_kanban_header").toHaveText("Yes");
 
     def.resolve();
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group:nth-child(2) .o_column_progress").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group:nth-child(2) .w_column_progress").toHaveCount(1);
     expect(
-        ".o_kanban_group:nth-child(2) .o_column_progress .progress-bar.o_bar_has_records"
+        ".w_kanban_group:nth-child(2) .w_column_progress .progress-bar.w_bar_has_records"
     ).toHaveCount(3);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_header").toHaveText("Yes\n36");
+    expect(".w_kanban_group:nth-child(2) .w_kanban_header").toHaveText("Yes\n36");
 });
 
 test("RPCs when (re)loading kanban view progressbars", async () => {
@@ -890,20 +890,20 @@ test("drag & drop records grouped by m2o with progressbar", async () => {
 
     expect(getKanbanCounters()).toEqual(["1", "1", "2"]);
 
-    await contains(".o_kanban_group:first-child .o_kanban_record").dragAndDrop(
-        ".o_kanban_group:nth-child(2)"
+    await contains(".w_kanban_group:first-child .w_kanban_record").dragAndDrop(
+        ".w_kanban_group:nth-child(2)"
     );
 
     expect(getKanbanCounters()).toEqual(["0", "2", "2"]);
 
-    await contains(".o_kanban_group:nth-child(2) .o_kanban_record").dragAndDrop(
-        ".o_kanban_group:first-child"
+    await contains(".w_kanban_group:nth-child(2) .w_kanban_record").dragAndDrop(
+        ".w_kanban_group:first-child"
     );
 
     expect(getKanbanCounters()).toEqual(["1", "1", "2"]);
 
-    await contains(".o_kanban_group:first-child .o_kanban_record").dragAndDrop(
-        ".o_kanban_group:nth-child(3)"
+    await contains(".w_kanban_group:first-child .w_kanban_record").dragAndDrop(
+        ".w_kanban_group:nth-child(3)"
     );
 
     expect(getKanbanCounters()).toEqual(["0", "1", "3"]);
@@ -962,8 +962,8 @@ test("d&d records grouped by date with progressbar with aggregates", async () =>
 
     expect(getKanbanCounters()).toEqual(["13", "19"]);
 
-    await contains(".o_kanban_group:first-child .o_kanban_record").dragAndDrop(
-        ".o_kanban_group:nth-child(2)"
+    await contains(".w_kanban_group:first-child .w_kanban_record").dragAndDrop(
+        ".w_kanban_group:nth-child(2)"
     );
 
     expect(getKanbanCounters()).toEqual(["-4", "36"]);
@@ -1002,7 +1002,7 @@ test("progress bar subgroup count recompute", async () => {
 
     expect(getKanbanCounters()).toEqual(["1", "3"]);
 
-    await contains(".o_kanban_group:nth-child(2) .bg-success").click();
+    await contains(".w_kanban_group:nth-child(2) .bg-success").click();
 
     expect(getKanbanCounters()).toEqual(["1", "1"]);
     expect.verifySteps([
@@ -1040,8 +1040,8 @@ test("progress bar recompute after d&d to and from other column", async () => {
     expect(getKanbanCounters()).toEqual(["1", "3"]);
 
     // Drag the last kanban record to the first column
-    await contains(".o_kanban_group:last-child .o_kanban_record:nth-child(4)").dragAndDrop(
-        ".o_kanban_group:first-child"
+    await contains(".w_kanban_group:last-child .w_kanban_record:nth-child(4)").dragAndDrop(
+        ".w_kanban_group:first-child"
     );
 
     expect(getKanbanColumnTooltips()).toEqual(["1 gnap", "1 blip", "1 yop", "1 blip"]);
@@ -1198,13 +1198,13 @@ test("progress bar with monetary aggregate and multi currencies", async () => {
         groupBy: ["product_id"],
     });
 
-    expect(".o_kanban_counter .o_animated_number").toHaveCount(2);
-    expect(".o_kanban_counter:last .o_animated_number").toHaveText("$ 3,722");
-    expect(".o_kanban_counter:first .o_animated_number").toHaveText("$ 4,050?");
+    expect(".w_kanban_counter .w_animated_number").toHaveCount(2);
+    expect(".w_kanban_counter:last .w_animated_number").toHaveText("$ 3,722");
+    expect(".w_kanban_counter:first .w_animated_number").toHaveText("$ 4,050?");
 
-    await toggleMultiCurrencyPopover(".o_kanban_counter:first .o_animated_number sup");
-    expect(".o_multi_currency_popover").toHaveCount(1);
-    expect(".o_multi_currency_popover").toHaveText(
+    await toggleMultiCurrencyPopover(".w_kanban_counter:first .w_animated_number sup");
+    expect(".w_multi_currency_popover").toHaveCount(1);
+    expect(".w_multi_currency_popover").toHaveText(
         "8,100.00 € at $ 0.50 on Jun 13\n16,200.00 AED at $ 0.25 on Mar 17, 2017"
     );
 });
@@ -1233,7 +1233,7 @@ test("progress bar with a monetary aggregate in the company currency", async () 
         groupBy: ["product_id"],
     });
 
-    expect(".o_kanban_counter:last .o_animated_number").toHaveText("$ 3,722");
+    expect(".w_kanban_counter:last .w_animated_number").toHaveText("$ 3,722");
 });
 
 test("progress bar with monetary aggregate and multi currencies: quick create record", async () => {
@@ -1261,16 +1261,16 @@ test("progress bar with monetary aggregate and multi currencies: quick create re
         groupBy: ["product_id"],
     });
 
-    expect(".o_kanban_counter .o_animated_number").toHaveCount(1);
-    expect(".o_kanban_counter:last .o_animated_number").toHaveText("300 €");
+    expect(".w_kanban_counter .w_animated_number").toHaveCount(1);
+    expect(".w_kanban_counter:last .w_animated_number").toHaveText("300 €");
 
     await quickCreateKanbanRecord();
-    expect(".o_kanban_quick_create").toHaveCount(1);
-    expect(".o_kanban_quick_create .o_field_widget[name=currency_id] input").toHaveValue("USD");
+    expect(".w_kanban_quick_create").toHaveCount(1);
+    expect(".w_kanban_quick_create .w_field_widget[name=currency_id] input").toHaveValue("USD");
 
     await editKanbanRecordQuickCreateInput("salary", 1000);
     await validateKanbanRecord();
-    expect(".o_kanban_counter:last .o_animated_number").toHaveText("$ 1,300?");
+    expect(".w_kanban_counter:last .w_animated_number").toHaveText("$ 1,300?");
 });
 
 test("progress bar with aggregates: activate bars (grouped by boolean)", async () => {
@@ -1418,14 +1418,14 @@ test("progress bar with aggregates: Archive all in a column", async () => {
     expect(getKanbanCounters()).toEqual(["268", "15"]);
     await keyDown("alt");
     await animationFrame();
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(1)").click();
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(1)").click();
     await keyUp("alt");
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(2)").click();
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(3)").click();
-    await contains(".o_kanban_group:nth-of-type(2) .o_kanban_record:nth-of-type(4)").click();
-    await contains(".o_cp_action_menus button").click();
-    await contains(".o_menu_item:contains(Archive)").click();
-    expect(".o_dialog").toHaveCount(1);
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(2)").click();
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(3)").click();
+    await contains(".w_kanban_group:nth-of-type(2) .w_kanban_record:nth-of-type(4)").click();
+    await contains(".w_cp_action_menus button").click();
+    await contains(".w_menu_item:contains(Archive)").click();
+    expect(".w_dialog").toHaveCount(1);
     def = Promise.withResolvers();
     await contains(".modal-footer .btn-primary").click();
     expect(getKanbanColumnTooltips(1)).toEqual(["2 yop", "1 gnap", "1 blip"]);
@@ -1509,7 +1509,7 @@ test("progressbars and active filter with quick_create_view", async () => {
 
     await contains(".progress-bar.bg-danger", { root: getKanbanColumn(0) }).click();
 
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(1);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(1);
     expect(queryAll(".oe_kanban_card_danger", { root: getKanbanColumn(0) })).toHaveCount(1);
     expect(getKanbanCounters()).toEqual(["-4", "36"]);
 
@@ -1520,14 +1520,14 @@ test("progressbars and active filter with quick_create_view", async () => {
     // fill it with a record that satisfies the active filter
     await editKanbanRecordQuickCreateInput("int_field", 44);
     await editKanbanRecordQuickCreateInput("foo", "blip");
-    await contains(".o_kanban_quick_create .o_kanban_add").click();
+    await contains(".w_kanban_quick_create .w_kanban_add").click();
 
     // fill it again with another record that DOES NOT satisfy the active filter
     await editKanbanRecordQuickCreateInput("int_field", 1000);
     await editKanbanRecordQuickCreateInput("foo", "yop");
-    await contains(".o_kanban_quick_create .o_kanban_add").click();
+    await contains(".w_kanban_quick_create .w_kanban_add").click();
 
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(3);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(3);
     expect(queryAll(".oe_kanban_card_danger", { root: getKanbanColumn(0) })).toHaveCount(2);
     expect(queryAll(".oe_kanban_card_success", { root: getKanbanColumn(0) })).toHaveCount(1);
     expect(getKanbanCounters()).toEqual(["40", "36"], {
@@ -1586,35 +1586,35 @@ test("progressbar filter state is kept unchanged when domain is updated (records
     });
 
     // Check that we have 2 columns and check their progressbar's state
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
 
     // Apply an active filter
-    await contains(".o_kanban_group:nth-child(2) .progress-bar.bg-success").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar.bg-success").click();
 
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
 
     // Add searchdomain to something restricting progressbars' values (records still in filtered group)
     await toggleSearchBarMenu();
     await toggleMenuItem("My Filter");
 
     // Check that we have now 1 column only and check its progressbar's state
-    expect(".o_kanban_group").toHaveCount(1);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["Yes"]);
+    expect(".w_kanban_group").toHaveCount(1);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["Yes"]);
     expect(getKanbanColumnTooltips()).toEqual(["1 yop"]);
 
     // Undo searchdomain
     await toggleMenuItem("My Filter");
 
     // Check that we have 2 columns back and check their progressbar's state
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
     expect.verifySteps([
@@ -1658,19 +1658,19 @@ test("progressbar filter state is kept unchanged when domain is updated (emptyin
     });
 
     // Check that we have 2 columns, check their progressbar's state and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
     expect(getKanbanRecordTexts(1)).toEqual(["1yop", "2blip", "3gnap"]);
 
     // Apply an active filter
-    await contains(".o_kanban_group:nth-child(2) .progress-bar.bg-success").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar.bg-success").click();
 
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
     expect(getKanbanRecordTexts(1)).toEqual(["1yop"]);
 
@@ -1679,9 +1679,9 @@ test("progressbar filter state is kept unchanged when domain is updated (emptyin
     await toggleMenuItem("My Filter");
 
     // Check that we still have 2 columns, check their progressbar's state and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 blip"]);
@@ -1691,9 +1691,9 @@ test("progressbar filter state is kept unchanged when domain is updated (emptyin
     await toggleMenuItem("My Filter");
 
     // Check that we still have 2 columns and check their progressbar's state
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
@@ -1737,32 +1737,32 @@ test("filtered column counters when dropping in non-matching record", async () =
     });
 
     // Check that we have 2 columns, check their progressbar's state, and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
     expect(getKanbanRecordTexts(1)).toEqual(["1yop", "2blip", "3gnap"]);
 
     // Apply an active filter
-    await contains(".o_kanban_group:nth-child(2) .progress-bar.bg-success").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar.bg-success").click();
 
     expect(getKanbanColumn(1)).toHaveClass("o_kanban_group_show");
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
-    expect(".o_kanban_group.o_kanban_group_show .o_kanban_record").toHaveCount(1);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group.w_kanban_group_show .w_kanban_record").toHaveCount(1);
     expect(getKanbanRecordTexts(1)).toEqual(["1yop"]);
 
     // Drop in the non-matching record from first column
-    await contains(".o_kanban_group:first-child .o_kanban_record").dragAndDrop(
-        queryFirst(".o_kanban_group.o_kanban_group_show")
+    await contains(".w_kanban_group:first-child .w_kanban_record").dragAndDrop(
+        queryFirst(".w_kanban_group.w_kanban_group_show")
     );
 
     // Check that we have 2 columns, check their progressbar's state, and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual([]);
     expect(getKanbanRecordTexts(0)).toEqual([]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "2 blip", "1 Other"]);
@@ -1804,9 +1804,9 @@ test("filtered column is reloaded when dragging out its last record", async () =
     });
 
     // Check that we have 2 columns, check their progressbar's state, and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 yop", "1 blip", "1 Other"]);
@@ -1821,24 +1821,24 @@ test("filtered column is reloaded when dragging out its last record", async () =
     ]);
 
     // Apply an active filter
-    await contains(".o_kanban_group:nth-child(2) .progress-bar.bg-success").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar.bg-success").click();
 
     expect(getKanbanColumn(1)).toHaveClass("o_kanban_group_show");
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(1);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
-    expect(".o_kanban_group.o_kanban_group_show .o_kanban_record").toHaveCount(1);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(1);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group.w_kanban_group_show .w_kanban_record").toHaveCount(1);
     expect(getKanbanRecordTexts(1)).toEqual(["1yop"]);
     expect.verifySteps(["web_search_read", "read_progress_bar"]);
 
     // Drag out its only record onto the first column
-    await contains(".o_kanban_group.o_kanban_group_show .o_kanban_record").dragAndDrop(
-        queryFirst(".o_kanban_group:first-child")
+    await contains(".w_kanban_group.w_kanban_group_show .w_kanban_record").dragAndDrop(
+        queryFirst(".w_kanban_group:first-child")
     );
 
     // Check that we have 2 columns, check their progressbar's state, and check records
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group.o_kanban_group_show").toHaveCount(0);
-    expect(queryAllTexts(".o_column_title")).toEqual(["No", "Yes"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group.w_kanban_group_show").toHaveCount(0);
+    expect(queryAllTexts(".w_column_title")).toEqual(["No", "Yes"]);
     expect(getKanbanColumnTooltips(0)).toEqual(["1 yop", "1 blip"]);
     expect(getKanbanRecordTexts(0)).toEqual(["4blip", "1yop"]);
     expect(getKanbanColumnTooltips(1)).toEqual(["1 blip", "1 Other"]);
@@ -1886,7 +1886,7 @@ test("filter groups kept when leaving/coming back", async () => {
 
     // open a record
     await contains(getKanbanRecord({ index: 1 })).click();
-    expect(".o_form_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
 
     // go back to kanban view
     await contains(".breadcrumb-item a").click();
@@ -1895,10 +1895,10 @@ test("filter groups kept when leaving/coming back", async () => {
 
     // open a record
     await contains(getKanbanRecord({ index: 1 })).click();
-    expect(".o_form_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
 
     // select another state
-    await contains(queryAll("input.o_radio_input")[1]).click();
+    await contains(queryAll("input.w_radio_input")[1]).click();
     // go back to kanban view
     await contains(".breadcrumb-item a").click();
     expect(getKanbanRecordTexts(0)).toEqual(["4"]);
@@ -1925,35 +1925,35 @@ test("Color '200' (gray) can be used twice (for false value and another value) i
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_group:nth-child(1) .progress-bar.o_bar_has_records").toHaveCount(2);
+    expect(".w_kanban_group:nth-child(1) .progress-bar.w_bar_has_records").toHaveCount(2);
     expect(
-        queryAll(".o_kanban_group:nth-child(1) .progress-bar.o_bar_has_records").map(
+        queryAll(".w_kanban_group:nth-child(1) .progress-bar.w_bar_has_records").map(
             (el) => el.dataset.tooltip
         )
     ).toEqual(["1 blip", "1 Other"]);
-    expect(".o_kanban_group:nth-child(2) .progress-bar").toHaveCount(4);
+    expect(".w_kanban_group:nth-child(2) .progress-bar").toHaveCount(4);
     expect(
-        queryAll(".o_kanban_group:nth-child(2) .progress-bar").map((el) => el.dataset.tooltip)
+        queryAll(".w_kanban_group:nth-child(2) .progress-bar").map((el) => el.dataset.tooltip)
     ).toEqual(["1 yop", "1 gnap", "1 blip", "1 Other"]);
     expect(getKanbanCounters()).toEqual(["2", "4"]);
 
-    await contains(".o_kanban_group:nth-child(2) .progress-bar").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar").click();
 
     expect(getKanbanCounters()).toEqual(["2", "1"]);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_record").toHaveText("ABC");
-    expect(".o_kanban_group:nth-child(2) .o_kanban_load_more").toHaveCount(0);
+    expect(".w_kanban_group:nth-child(2) .w_kanban_record").toHaveText("ABC");
+    expect(".w_kanban_group:nth-child(2) .w_kanban_load_more").toHaveCount(0);
 
-    await contains(".o_kanban_group:nth-child(2) .progress-bar:nth-child(2)").click();
-
-    expect(getKanbanCounters()).toEqual(["2", "1"]);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_record").toHaveText("GHI");
-    expect(".o_kanban_group:nth-child(2) .o_kanban_load_more").toHaveCount(0);
-
-    await contains(".o_kanban_group:nth-child(2) .progress-bar:nth-child(4)").click();
+    await contains(".w_kanban_group:nth-child(2) .progress-bar:nth-child(2)").click();
 
     expect(getKanbanCounters()).toEqual(["2", "1"]);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_record").toHaveText("");
-    expect(".o_kanban_group:nth-child(2) .o_kanban_load_more").toHaveCount(0);
+    expect(".w_kanban_group:nth-child(2) .w_kanban_record").toHaveText("GHI");
+    expect(".w_kanban_group:nth-child(2) .w_kanban_load_more").toHaveCount(0);
+
+    await contains(".w_kanban_group:nth-child(2) .progress-bar:nth-child(4)").click();
+
+    expect(getKanbanCounters()).toEqual(["2", "1"]);
+    expect(".w_kanban_group:nth-child(2) .w_kanban_record").toHaveText("");
+    expect(".w_kanban_group:nth-child(2) .w_kanban_load_more").toHaveCount(0);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -1993,9 +1993,9 @@ test("update field on which progress bars are computed", async () => {
 
     // Initial state: 2 columns, the "Yes" column contains 2 records "abc", 1 "def" and 1 "ghi"
     expect(getKanbanCounters()).toEqual(["1", "4"]);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(4);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(4);
     expect(
-        queryAll(".o_column_progress .progress-bar.o_bar_has_records", { root: getKanbanColumn(1) })
+        queryAll(".w_column_progress .progress-bar.w_bar_has_records", { root: getKanbanColumn(1) })
     ).toHaveCount(3);
     expect(getKanbanProgressBars(1)[0].style.width).toBe("50%"); // abc: 2
     expect(getKanbanProgressBars(1)[1].style.width).toBe("25%"); // def: 1
@@ -2005,9 +2005,9 @@ test("update field on which progress bars are computed", async () => {
     await contains(getKanbanProgressBars(1)[0]).click();
 
     expect(getKanbanCounters()).toEqual(["1", "2"]);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
     expect(
-        queryAll(".o_column_progress .progress-bar.o_bar_has_records", { root: getKanbanColumn(1) })
+        queryAll(".w_column_progress .progress-bar.w_bar_has_records", { root: getKanbanColumn(1) })
     ).toHaveCount(3);
     expect(getKanbanProgressBars(1)[0].style.width).toBe("50%"); // abc: 2
     expect(getKanbanProgressBars(1)[1].style.width).toBe("25%"); // def: 1
@@ -2015,15 +2015,15 @@ test("update field on which progress bars are computed", async () => {
 
     // Changes the state of the first record of the "Yes" column to "def"
     // The updated record should remain visible
-    await contains(".o_status", { root: getKanbanRecord({ index: 2 }) }).click();
-    await contains(".o-dropdown-item:nth-child(2)", {
+    await contains(".w_status", { root: getKanbanRecord({ index: 2 }) }).click();
+    await contains(".w-dropdown-item:nth-child(2)", {
         root: getDropdownMenu(getKanbanRecord({ index: 2 })),
     }).click();
 
     expect(getKanbanCounters()).toEqual(["1", "1"]);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
     expect(
-        queryAll(".o_column_progress .progress-bar.o_bar_has_records", { root: getKanbanColumn(1) })
+        queryAll(".w_column_progress .progress-bar.w_bar_has_records", { root: getKanbanColumn(1) })
     ).toHaveCount(3);
     expect(getKanbanProgressBars(1)[0].style.width).toBe("25%"); // abc: 1
     expect(getKanbanProgressBars(1)[1].style.width).toBe("50%"); // def: 2
@@ -2033,7 +2033,7 @@ test("update field on which progress bars are computed", async () => {
     await contains(getKanbanProgressBars(1)[1]).click();
 
     expect(getKanbanCounters()).toEqual(["1", "2"]);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(2);
     expect(getKanbanProgressBars(1)[0].style.width).toBe("25%"); // abc: 1
     expect(getKanbanProgressBars(1)[1].style.width).toBe("50%"); // def: 2
     expect(getKanbanProgressBars(1)[2].style.width).toBe("25%"); // ghi: 1
@@ -2042,7 +2042,7 @@ test("update field on which progress bars are computed", async () => {
     await contains(getKanbanProgressBars(1)[0]).click();
 
     expect(getKanbanCounters()).toEqual(["1", "1"]);
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(1);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(1) })).toHaveCount(1);
     expect(getKanbanProgressBars(1)[0].style.width).toBe("25%"); // abc: 1
     expect(getKanbanProgressBars(1)[1].style.width).toBe("50%"); // def: 2
     expect(getKanbanProgressBars(1)[2].style.width).toBe("25%"); // ghi: 1
@@ -2098,7 +2098,7 @@ test("load more button shouldn't be visible when unfiltering column", async () =
     def = Promise.withResolvers();
     // UnFiltered the "Yes" column
     await contains(getKanbanProgressBars(1)[0]).click();
-    expect(".o_kanban_load_more").toHaveCount(0, {
+    expect(".w_kanban_load_more").toHaveCount(0, {
         message: "The load more button should not be visible",
     });
 
@@ -2107,7 +2107,7 @@ test("load more button shouldn't be visible when unfiltering column", async () =
 
     // Return to initial state
     expect(getKanbanCounters()).toEqual(["1", "4"]);
-    expect(".o_kanban_load_more").toHaveCount(0, {
+    expect(".w_kanban_load_more").toHaveCount(0, {
         message: "The load more button should not be visible",
     });
 });
@@ -2152,12 +2152,12 @@ test("click on the progressBar of a new column", async () => {
     await editKanbanRecordQuickCreateInput("display_name", "new product");
     await validateKanbanRecord();
 
-    expect(".o_kanban_record").toHaveCount(1);
+    expect(".w_kanban_record").toHaveCount(1);
 
     // Togggle the progressBar
     await contains(getKanbanProgressBars(0)[0]).click();
 
-    expect(".o_kanban_record").toHaveCount(1);
+    expect(".w_kanban_record").toHaveCount(1);
     expect.verifySteps(["web_search_read"]);
 });
 
@@ -2182,9 +2182,9 @@ test("drag record to folded column, with progressbars", async () => {
         groupBy: ["bar"],
     });
 
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(".o_kanban_group:first-child .o_kanban_record").toHaveCount(2);
-    expect(".o_kanban_group:nth-child(2) .o_kanban_record").toHaveCount(2);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(".w_kanban_group:first-child .w_kanban_record").toHaveCount(2);
+    expect(".w_kanban_group:nth-child(2) .w_kanban_record").toHaveCount(2);
     expect(getKanbanProgressBars(0).map((pb) => pb.style.width)).toEqual(["50%", "50%"]);
     expect(getKanbanProgressBars(1).map((pb) => pb.style.width)).toEqual(["50%", "50%"]);
     expect(getKanbanCounters()).toEqual(["6", "26"]);
@@ -2193,15 +2193,15 @@ test("drag record to folded column, with progressbars", async () => {
     clickColumnAction("Fold");
     await animationFrame();
 
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(2);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(2);
     expect(getKanbanColumn(1)).toHaveClass("o_column_folded");
     expect(getKanbanColumn(1)).toHaveText("Yes\n(2)");
 
-    await contains(".o_kanban_group:first-child .o_kanban_record").dragAndDrop(
-        ".o_kanban_group:nth-child(2)"
+    await contains(".w_kanban_group:first-child .w_kanban_record").dragAndDrop(
+        ".w_kanban_group:nth-child(2)"
     );
 
-    expect(queryAll(".o_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(1);
+    expect(queryAll(".w_kanban_record", { root: getKanbanColumn(0) })).toHaveCount(1);
     expect(getKanbanColumn(1)).toHaveText("Yes\n(3)");
     expect(getKanbanProgressBars(0)).toHaveStyle({ width: "100%" }, { inline: true });
     expect(getKanbanCounters()).toEqual(["-4"]);
@@ -2239,10 +2239,10 @@ test("scroll on group unfold and progressbar click", async () => {
     });
 
     expect.verifySteps(["get_views", "read_progress_bar", "web_read_group", "has_group"]);
-    queryOne(".o_content").style.maxHeight = "80px";
-    on(".o_content", "scroll", () => expect.step("scrolled"));
+    queryOne(".w_content").style.maxHeight = "80px";
+    on(".w_content", "scroll", () => expect.step("scrolled"));
 
-    await scroll(".o_content", { top: 50 }); // scroll down to allow auto-scroll to top
+    await scroll(".w_content", { top: 50 }); // scroll down to allow auto-scroll to top
     await contains(getKanbanProgressBars(0)[0]).click();
 
     expect.verifySteps([
@@ -2255,7 +2255,7 @@ test("scroll on group unfold and progressbar click", async () => {
     ]);
     expect(getKanbanColumn(1)).toHaveClass("o_column_folded");
 
-    await scroll(".o_content", { top: 50 }); // scroll down to allow auto-scroll to top
+    await scroll(".w_content", { top: 50 }); // scroll down to allow auto-scroll to top
     await contains(getKanbanColumn(1)).click();
 
     expect.verifySteps(["scrolled", "web_search_read"]);
@@ -2321,7 +2321,7 @@ test("Correct values for progress bar with toggling filter and slow RPC", async 
             </search>`,
     });
 
-    expect(".o_kanban_record").toHaveCount(4);
+    expect(".w_kanban_record").toHaveCount(4);
     // abc: 1, ghi: 1
     expect(getKanbanProgressBars(1).map((pb) => pb.style.width)).toEqual(["50%", "50%"]);
 
@@ -2335,7 +2335,7 @@ test("Correct values for progress bar with toggling filter and slow RPC", async 
     def.resolve();
     await animationFrame();
     // After the call to read_progress_bar has resolved, the values should be updated correctly
-    expect(".o_kanban_record").toHaveCount(2);
+    expect(".w_kanban_record").toHaveCount(2);
     // abc: 1
     expect(getKanbanProgressBars(1).map((pb) => pb.style.width)).toEqual(["100%"]);
 });
@@ -2366,36 +2366,36 @@ test("[Offline] search in kanban with progressbar", async () => {
         config: { actionId: 234 },
     });
 
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(queryAllTexts(".o_kanban_counter")).toEqual(["-4", "36"]);
-    expect(queryAllTexts(".o_kanban_record")).toEqual(["blip", "yop", "blip", "gnap"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(queryAllTexts(".w_kanban_counter")).toEqual(["-4", "36"]);
+    expect(queryAllTexts(".w_kanban_record")).toEqual(["blip", "yop", "blip", "gnap"]);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("First filter");
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(queryAllTexts(".o_kanban_counter")).toEqual(["-4", "9"]);
-    expect(queryAllTexts(".o_kanban_record")).toEqual(["blip", "blip"]);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(queryAllTexts(".w_kanban_counter")).toEqual(["-4", "9"]);
+    expect(queryAllTexts(".w_kanban_record")).toEqual(["blip", "blip"]);
 
     // switch offline and remove/re-add the filter => should retrieve and display data from cache
     await setOffline(true);
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(queryAllTexts(".o_kanban_counter")).toEqual(["-4", "9"]);
-    expect(queryAllTexts(".o_kanban_record")).toEqual(["blip", "blip"]);
-    expect(".o_kanban_record.o_disabled_offline").toHaveCount(2);
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(queryAllTexts(".w_kanban_counter")).toEqual(["-4", "9"]);
+    expect(queryAllTexts(".w_kanban_record")).toEqual(["blip", "blip"]);
+    expect(".w_kanban_record.w_disabled_offline").toHaveCount(2);
 
-    await contains(".o_searchview_facet [data-icon='close']").click();
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(queryAllTexts(".o_kanban_counter")).toEqual(["", ""]);
-    expect(".o_column_progress").toHaveClass("opacity-50 pe-none");
-    expect(queryAllTexts(".o_kanban_record")).toEqual(["blip", "yop", "blip", "gnap"]);
-    expect(".o_kanban_record.o_disabled_offline").toHaveCount(4);
+    await contains(".w_searchview_facet [data-icon='close']").click();
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(queryAllTexts(".w_kanban_counter")).toEqual(["", ""]);
+    expect(".w_column_progress").toHaveClass("opacity-50 pe-none");
+    expect(queryAllTexts(".w_kanban_record")).toEqual(["blip", "yop", "blip", "gnap"]);
+    expect(".w_kanban_record.w_disabled_offline").toHaveCount(4);
 
     await toggleSearchBarMenu();
-    await contains(".o_search_bar_menu_offline .o-dropdown-item").click();
-    expect(".o_kanban_group").toHaveCount(2);
-    expect(queryAllTexts(".o_kanban_counter")).toEqual(["", ""]);
-    expect(".o_column_progress").toHaveClass("opacity-50 pe-none");
-    expect(queryAllTexts(".o_kanban_record")).toEqual(["blip", "blip"]);
+    await contains(".w_search_bar_menu_offline .w-dropdown-item").click();
+    expect(".w_kanban_group").toHaveCount(2);
+    expect(queryAllTexts(".w_kanban_counter")).toEqual(["", ""]);
+    expect(".w_column_progress").toHaveClass("opacity-50 pe-none");
+    expect(queryAllTexts(".w_kanban_record")).toEqual(["blip", "blip"]);
 
     expect.verifyErrors([
         `Connection to "/web/dataset/call_kw/partner/web_read_group" couldn't be established`,

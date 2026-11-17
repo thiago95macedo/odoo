@@ -550,7 +550,7 @@
                     name="add_to_cart"
                     t-attf-class="btn btn-primary flex-grow-1"
                     data-action="add_to_cart"
-                    data-animation-selector=".o_wsale_product_images"
+                    data-animation-selector=".w_wsale_product_images"
                     t-att-data-product-category-id="product.public_categ_ids.ids and product.public_categ_ids.ids[0]"
                     t-att-data-product-id="product_variant.id"
                     t-att-data-product-template-id="product.id"

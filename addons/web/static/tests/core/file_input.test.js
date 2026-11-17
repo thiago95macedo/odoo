@@ -31,7 +31,7 @@ async function createFileInput({ mockPost, mockAdd, props }) {
 // -----------------------------------------------------------------------------
 
 beforeEach(() => {
-    patchWithCleanup(odoo, { csrf_token: "dummy" });
+    patchWithCleanup(weth, { csrf_token: "dummy" });
 });
 
 test("Upload a file: default props", async () => {
@@ -49,17 +49,17 @@ test("Upload a file: default props", async () => {
         props: {},
     });
 
-    expect(".o_file_input").toHaveText("Choose File", {
+    expect(".w_file_input").toHaveText("Choose File", {
         message: "File input total text should match its given inner element's text",
     });
-    expect(".o_file_input input").toHaveAttribute("accept", "*", {
+    expect(".w_file_input input").toHaveAttribute("accept", "*", {
         message: "Input should accept all files by default",
     });
 
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([]);
 
-    expect(".o_file_input input").not.toHaveAttribute("multiple", null, {
+    expect(".w_file_input input").not.toHaveAttribute("multiple", null, {
         message: "'multiple' attribute should not be set",
     });
     expect.verifySteps(["/web/binary/upload_attachment"]);
@@ -93,14 +93,14 @@ test("Upload a file: custom attachment", async () => {
         },
     });
 
-    expect(".o_file_input input").toHaveAttribute("accept", ".png", {
+    expect(".w_file_input input").toHaveAttribute("accept", ".png", {
         message: "Input should now only accept pngs",
     });
 
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([]);
 
-    expect(".o_file_input input").toHaveAttribute("multiple", null, {
+    expect(".w_file_input input").toHaveAttribute("multiple", null, {
         message: "'multiple' attribute should be set",
     });
 
@@ -112,7 +112,7 @@ test("Hidden file input", async () => {
         props: { hidden: true },
     });
 
-    expect(".o_file_input").not.toBeVisible();
+    expect(".w_file_input").not.toBeVisible();
 });
 
 test("uploading the same file twice triggers the onChange twice", async () => {
@@ -126,12 +126,12 @@ test("uploading the same file twice triggers the onChange twice", async () => {
     });
 
     const file = new File(["test"], "fake_file.txt", { type: "text/plain" });
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([file]);
     await animationFrame();
     expect.verifySteps(["fake_file.txt"]);
 
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([file]);
     await animationFrame();
     expect.verifySteps(["fake_file.txt"]);
@@ -157,7 +157,7 @@ test("uploading a file that is too heavy will send a notification", async () => 
     });
 
     const file = new File(["test"], "fake_file.txt", { type: "text/plain" });
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([file]);
     await animationFrame();
     expect.verifySteps(["notification"]);
@@ -175,18 +175,18 @@ test("Upload button is disabled if attachment upload is not finished", async () 
         props: {},
     });
     //enable button
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([]);
     await animationFrame();
 
     //disable button
-    expect(".o_file_input input").not.toBeEnabled({
+    expect(".w_file_input input").not.toBeEnabled({
         message: "the upload button should be disabled on upload",
     });
 
     uploadedPromise.resolve();
     await animationFrame();
-    expect(".o_file_input input").toBeEnabled({
+    expect(".w_file_input input").toBeEnabled({
         message: "the upload button should be enabled for upload",
     });
 });
@@ -202,7 +202,7 @@ test("support preprocessing of files via props", async () => {
         mockPost: (route, params) => JSON.stringify([{ name: params.ufile[0].name }]),
     });
 
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([new File(["test"], "fake_file.txt", { type: "text/plain" })]);
     await animationFrame();
 
@@ -236,14 +236,14 @@ test("an upload that ends after the component is destroyed does not call onUploa
     const parent = await mountWithCleanup(Parent);
 
     const file = new File(["test"], "fake_file.txt", { type: "text/plain" });
-    await contains(".o_file_input input", { visible: false }).click();
+    await contains(".w_file_input input", { visible: false }).click();
     await setInputFiles([file]);
     await animationFrame();
 
     // The dialog holding the input closes while the upload is in flight.
     parent.mounted.set(false);
     await animationFrame();
-    expect(".o_file_input").toHaveCount(0);
+    expect(".w_file_input").toHaveCount(0);
 
     uploadedPromise.resolve();
     await animationFrame();

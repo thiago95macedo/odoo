@@ -49,23 +49,23 @@ test("many2many: find tag, select tag, unselect tag", async () => {
     expect("table tr").toHaveCount(0);
     expect(editableContent).toHaveInnerHTML(`<div class="test-options-target">b</div>`);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     expect("input").toHaveCount(1);
     await contains("input").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(3);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(3);
+    await contains("span.w-dropdown-item").click();
     expect(editableContent).toHaveInnerHTML(
         `<div class="test-options-target" data-test="[{&quot;id&quot;:1,&quot;display_name&quot;:&quot;First&quot;,&quot;name&quot;:&quot;First&quot;}]">b</div>`
     );
     expect("table tr").toHaveCount(1);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(2);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(2);
+    await contains("span.w-dropdown-item").click();
     expect(editableContent).toHaveInnerHTML(
         `<div class="test-options-target" data-test="[{&quot;id&quot;:1,&quot;display_name&quot;:&quot;First&quot;,&quot;name&quot;:&quot;First&quot;},{&quot;id&quot;:2,&quot;display_name&quot;:&quot;Second&quot;,&quot;name&quot;:&quot;Second&quot;}]">b</div>`
     );
@@ -116,12 +116,12 @@ test("many2many: async load", async () => {
 
     await contains(":iframe .test-options-target").click();
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     expect("input").toHaveCount(1);
     await contains("input").click();
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(3);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(3);
+    await contains("span.w-dropdown-item").click();
     expect.verifySteps(["load"]);
     expect(editableContent).toHaveInnerHTML(`<div class="test-options-target">b</div>`);
     defWillLoad.resolve();

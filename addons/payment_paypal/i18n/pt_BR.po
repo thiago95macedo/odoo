@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_paypal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/controllers/main.py:0
 msgid "3D Secure authentication failed."
 msgstr "A autenticação 3D Secure falhou."
@@ -117,7 +117,7 @@ msgid "Bancontact"
 msgstr "Bancontact"
 
 #. module: payment_paypal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_paypal/static/src/interactions/payment_form.js:0
 msgid "Cannot display the payment form"
 msgstr "Não é possível exibir o formulário de pagamento"
@@ -148,7 +148,7 @@ msgid "Connect"
 msgstr "Conectar"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_provider.py:0
 msgid "Could not generate a new access token."
 msgstr "Não foi possível gerar um novo token de acesso."
@@ -181,7 +181,7 @@ msgid "Email"
 msgstr "E-mail"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/controllers/onboarding.py:0
 msgid "Failed to retrieve access token."
 msgstr "Falha ao recuperar o token de acesso."
@@ -214,7 +214,7 @@ msgid "MasterCard"
 msgstr "MasterCard"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_provider.py:0
 msgid "Missing Account ID. Cannot check onboarding status."
 msgstr "ID da conta ausente. Não é possível verificar o status de integração."
@@ -292,7 +292,7 @@ msgid "PayPal Webhook ID"
 msgstr "PayPal – ID do Webhook"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_provider.py:0
 msgid ""
 "PayPal credentials are missing. Please click the \"Connect\" button or fill "
@@ -302,7 +302,7 @@ msgstr ""
 "preencha-as manualmente para configurar sua conta."
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/controllers/onboarding.py:0
 msgid "PayPal did not return the authorization code or the shared id."
 msgstr "O PayPal não retornou o código de autorização ou o ID compartilhado."
@@ -328,7 +328,7 @@ msgid "Payment Transaction"
 msgstr "Transação de pagamento"
 
 #. module: payment_paypal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_paypal/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -354,13 +354,13 @@ msgid "Paypal Seller Nonce"
 msgstr "Nonce de vendedor do Paypal"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_transaction.py:0
 msgid "Received data with invalid payment status: %s"
 msgstr "Dados recebidos com status de pagamento inválido: %s"
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_transaction.py:0
 msgid "The customer left the payment page."
 msgstr "O cliente saiu da página de pagamento."
@@ -371,7 +371,7 @@ msgid "The moment at which the access token becomes invalid."
 msgstr "O momento em que o token de acesso se torna inválido."
 
 #. module: payment_paypal
-#. odoo-python
+#. weth-python
 #: code:addons/payment_paypal/models/payment_transaction.py:0
 msgid "The payment was declined by PayPal."
 msgstr "O pagamento foi recusado pelo PayPal."

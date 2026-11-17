@@ -31,11 +31,11 @@ import { PivotController } from "@web/views/pivot/pivot_controller";
 import { WebClient } from "@web/webclient/webclient";
 
 function getCurrentValues() {
-    return queryAllTexts(".o_pivot_cell_value div").join();
+    return queryAllTexts(".w_pivot_cell_value div").join();
 }
 
 async function removeFacet() {
-    await contains("div.o_searchview_facet:eq(0) .o_facet_remove").click();
+    await contains("div.w_searchview_facet:eq(0) .w_facet_remove").click();
 }
 
 async function toggleMultiCurrencyPopover(el) {
@@ -243,7 +243,7 @@ test('pivot view with "class" attribute', async () => {
         resModel: "partner",
         arch: `<pivot class="foobar-class"/>`,
     });
-    expect(".o_pivot_view").toHaveClass("foobar-class");
+    expect(".w_pivot_view").toHaveClass("foobar-class");
 });
 
 test("simple pivot rendering", async () => {
@@ -259,9 +259,9 @@ test("simple pivot rendering", async () => {
 		`,
     });
 
-    expect(".o_pivot_view").toHaveClass("o_view_controller");
+    expect(".w_pivot_view").toHaveClass("o_view_controller");
     expect("table").toHaveClass("o_enable_linking");
-    expect("td.o_pivot_cell_value:contains(32)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(32)").toHaveCount(1);
 });
 
 test("all measures should be displayed with a pivot_measures context", async () => {
@@ -280,8 +280,8 @@ test("all measures should be displayed with a pivot_measures context", async () 
     });
 
     await contains("button:contains(Measures)").click();
-    expect(".o-dropdown--menu.o-dropdown--menu.dropdown-menu").toHaveCount(1);
-    const measures = queryAllTexts(".o-dropdown-item");
+    expect(".w-dropdown--menu.w-dropdown--menu.dropdown-menu").toHaveCount(1);
+    const measures = queryAllTexts(".w-dropdown-item");
     expect(measures).toEqual(["bouh", "Computed and not stored", "Foo", "Count"]);
 });
 
@@ -299,8 +299,8 @@ test("measures with help text should have a tooltip attribute", async () => {
     });
 
     await contains("button:contains(Measures)").click();
-    expect(".o-dropdown--menu.o-dropdown--menu.dropdown-menu").toHaveCount(1);
-    expect('.o-dropdown-item:contains("bouh")').toHaveAttribute("data-tooltip", "bouh help");
+    expect(".w-dropdown--menu.w-dropdown--menu.dropdown-menu").toHaveCount(1);
+    expect('.w-dropdown-item:contains("bouh")').toHaveAttribute("data-tooltip", "bouh help");
 });
 
 test("pivot rendering with widget", async () => {
@@ -313,7 +313,7 @@ test("pivot rendering with widget", async () => {
 			</pivot>
 		`,
     });
-    expect("td.o_pivot_cell_value:contains(32h)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(32h)").toHaveCount(1);
 });
 
 test("pivot rendering with widget and options", async () => {
@@ -326,7 +326,7 @@ test("pivot rendering with widget and options", async () => {
 			</pivot>
 		`,
     });
-    expect("td.o_pivot_cell_value:contains(32:00)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(32:00)").toHaveCount(1);
 });
 
 test("pivot rendering with widget and options from model field", async () => {
@@ -341,7 +341,7 @@ test("pivot rendering with widget and options from model field", async () => {
 			</pivot>
 		`,
     });
-    expect("td.o_pivot_cell_value:contains(33.33%)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(33.33%)").toHaveCount(1);
 });
 
 test("pivot rendering with widget and options from field attrs", async () => {
@@ -356,7 +356,7 @@ test("pivot rendering with widget and options from field attrs", async () => {
 			</pivot>
 		`,
     });
-    expect("td.o_pivot_cell_value:contains(0.3333)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(0.3333)").toHaveCount(1);
 });
 
 test("pivot rendering with string attribute on field", async () => {
@@ -372,10 +372,10 @@ test("pivot rendering with string attribute on field", async () => {
 		`,
     });
 
-    const toggler = ".o_pivot_buttons button.dropdown-toggle";
+    const toggler = ".w_pivot_buttons button.dropdown-toggle";
     await contains(toggler).click();
-    expect(".o-dropdown-item:first").toHaveText("BAR");
-    expect(".o_pivot_measure_row").toHaveText("BAR");
+    expect(".w-dropdown-item:first").toHaveText("BAR");
+    expect(".w_pivot_measure_row").toHaveText("BAR");
 });
 
 test("Pivot with integer row group by with 0 as header", async () => {
@@ -394,9 +394,9 @@ test("Pivot with integer row group by with 0 as header", async () => {
 			</pivot>
 		`,
     });
-    expect(".o_pivot table tr td.o_pivot_cell_value").toHaveCount(2);
-    expect(".o_pivot table tbody tr:eq(0) th:eq(0)").toHaveText("Total");
-    expect(".o_pivot table tbody tr:eq(0) td:eq(0)").toHaveText("0");
+    expect(".w_pivot table tr td.w_pivot_cell_value").toHaveCount(2);
+    expect(".w_pivot table tbody tr:eq(0) th:eq(0)").toHaveText("Total");
+    expect(".w_pivot table tbody tr:eq(0) td:eq(0)").toHaveText("0");
 });
 
 test("pivot groupby id shows label, not empty cell", async () => {
@@ -412,7 +412,7 @@ test("pivot groupby id shows label, not empty cell", async () => {
 
     const rows = queryAllTexts("tbody th");
     expect(rows).toEqual(["Total", "Raoul", "Steven", "Taylor", "Zara"]);
-    expect(".o_pivot_cell_value").toHaveCount(5);
+    expect(".w_pivot_cell_value").toHaveCount(5);
 });
 
 test("Pivot with integer col group by with 0 as header", async () => {
@@ -429,7 +429,7 @@ test("Pivot with integer col group by with 0 as header", async () => {
 				<field name="foo" type="col"/>
 			</pivot>`,
     });
-    expect(".o_pivot table thead tr:eq(1) th").toHaveText("0");
+    expect(".w_pivot table thead tr:eq(1) th").toHaveText("0");
 });
 
 test("pivot rendering with string attribute on non stored field", async () => {
@@ -446,7 +446,7 @@ test("pivot rendering with string attribute on non stored field", async () => {
 			</pivot>
 		`,
     });
-    expect(".o_pivot table thead tr:eq(1) th").toHaveText("fubar");
+    expect(".w_pivot table thead tr:eq(1) th").toHaveText("fubar");
 });
 
 test("pivot rendering with invisible attribute on field", async () => {
@@ -471,14 +471,14 @@ test("pivot rendering with invisible attribute on field", async () => {
     });
 
     // there should be only one displayed measure as the other one is invisible
-    expect(".o_pivot_measure_row").toHaveCount(1);
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    expect(".w_pivot_measure_row").toHaveCount(1);
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     // there should be only one measure besides count, as the other one is invisible
     expect(".dropdown-item").toHaveCount(2);
     expect(".dropdown-item:first").toHaveText("Foo");
     // the invisible field souldn't be in the groupable fields neither
-    await contains(".o_pivot_header_cell_closed").click();
-    expect('.o-dropdown--menu a[data-field="foo2"]').toHaveCount(0);
+    await contains(".w_pivot_header_cell_closed").click();
+    expect('.w-dropdown--menu a[data-field="foo2"]').toHaveCount(0);
 });
 
 test("group headers should have a tooltip", async () => {
@@ -493,8 +493,8 @@ test("group headers should have a tooltip", async () => {
 		`,
     });
 
-    expect(queryAll("tbody .o_pivot_header_cell_closed").at(0).dataset.tooltip).toBe("Date");
-    expect(queryAll("thead .o_pivot_header_cell_closed").at(1).dataset.tooltip).toBe("Product");
+    expect(queryAll("tbody .w_pivot_header_cell_closed").at(0).dataset.tooltip).toBe("Date");
+    expect(queryAll("thead .w_pivot_header_cell_closed").at(1).dataset.tooltip).toBe("Product");
 });
 
 test("pivot view add computed fields explicitly defined as measure", async () => {
@@ -507,9 +507,9 @@ test("pivot view add computed fields explicitly defined as measure", async () =>
 			</pivot>`,
     });
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     expect(".dropdown-item:contains(Computed and not stored)").toHaveCount(1);
-    expect(".o_pivot_measure_row").toHaveText("Computed and not stored");
+    expect(".w_pivot_measure_row").toHaveText("Computed and not stored");
 });
 
 test("pivot view do not add number field without aggregator", async () => {
@@ -521,7 +521,7 @@ test("pivot view do not add number field without aggregator", async () => {
 				<field name="price_nonaggregable"/>
 			</pivot>`,
     });
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     expect(".dropdown-item:contains(Price non-aggregable)").toHaveCount(0);
 });
 
@@ -577,7 +577,7 @@ test("clicking on a cell triggers a doAction", async () => {
     });
 
     expect("table").toHaveClass("o_enable_linking");
-    await contains(".o_pivot_cell_value:eq(1)").click(); // should trigger a do_action
+    await contains(".w_pivot_cell_value:eq(1)").click(); // should trigger a do_action
 });
 
 test.tags("desktop");
@@ -597,20 +597,20 @@ test("row and column are highlighted when hovering a cell", async () => {
 
     // check column highlighting
     // hover third measure
-    await contains("th.o_pivot_measure_row:nth-of-type(3)").hover();
-    expect(".o_cell_hover").toHaveCount(3);
+    await contains("th.w_pivot_measure_row:nth-of-type(3)").hover();
+    expect(".w_cell_hover").toHaveCount(3);
     expect(`tbody tr td:nth-of-type(3)`).toHaveCount(3);
     expect(`tbody tr td:nth-of-type(3)`).toHaveClass("o_cell_hover");
-    await contains(".o_pivot_buttons button.dropdown-toggle").hover();
-    expect(".o_cell_hover").toHaveCount(0);
+    await contains(".w_pivot_buttons button.dropdown-toggle").hover();
+    expect(".w_cell_hover").toHaveCount(0);
 
     // hover second cell, second row
     await contains("tbody tr:nth-of-type(1) td:nth-of-type(2)").hover();
-    expect(".o_cell_hover").toHaveCount(3);
+    expect(".w_cell_hover").toHaveCount(3);
     expect(`tbody tr td:nth-of-type(2)`).toHaveCount(3);
     expect(`tbody tr td:nth-of-type(2)`).toHaveClass("o_cell_hover");
-    await contains(".o_pivot_buttons button.dropdown-toggle").hover();
-    expect(".o_cell_hover").toHaveCount(0);
+    await contains(".w_pivot_buttons button.dropdown-toggle").hover();
+    expect(".w_cell_hover").toHaveCount(0);
 });
 
 test('pivot view with disable_linking="True"', async () => {
@@ -630,9 +630,9 @@ test('pivot view with disable_linking="True"', async () => {
     });
 
     expect("table").not.toHaveClass("o_enable_linking");
-    expect(".o_pivot_cell_value").toHaveCount(1);
-    expect(".o_pivot_cell_value").not.toHaveClass("cursor-pointer");
-    await contains(".o_pivot_cell_value").click(); // should not trigger a do_action
+    expect(".w_pivot_cell_value").toHaveCount(1);
+    expect(".w_pivot_cell_value").not.toHaveClass("cursor-pointer");
+    await contains(".w_pivot_cell_value").click(); // should not trigger a do_action
 });
 
 test('clicking on the "Total" cell with time range activated', async () => {
@@ -663,7 +663,7 @@ test('clicking on the "Total" cell with time range activated', async () => {
     });
 
     expect("table").toHaveClass("o_enable_linking");
-    await contains(".o_pivot_cell_value").click();
+    await contains(".w_pivot_cell_value").click();
 });
 
 test("pivot view grouped by date field", async () => {
@@ -702,8 +702,8 @@ test("without measures, pivot view uses __count by default", async () => {
         arch: "<pivot></pivot>",
     });
 
-    await contains(".o_pivot_buttons .dropdown-toggle").click();
-    const dropdownMenu = getDropdownMenu(".o_pivot_buttons button.dropdown-toggle");
+    await contains(".w_pivot_buttons .dropdown-toggle").click();
+    const dropdownMenu = getDropdownMenu(".w_pivot_buttons button.dropdown-toggle");
     expect(queryAll(".dropdown-item", { root: dropdownMenu })).toHaveCount(1);
     const measure = dropdownMenu.querySelector(".dropdown-item");
     expect(measure).toHaveText("Count");
@@ -721,9 +721,9 @@ test("pivot view grouped by many2one field", async () => {
 			</pivot>`,
     });
 
-    expect(".o_pivot_header_cell_opened").toHaveCount(1);
-    expect(".o_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
-    expect(".o_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
+    expect(".w_pivot_header_cell_opened").toHaveCount(1);
+    expect(".w_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
+    expect(".w_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
 });
 
 test("pivot view can be reloaded", async () => {
@@ -740,11 +740,11 @@ test("pivot view can be reloaded", async () => {
 				<filter name="some_filter" string="Some Filter" domain="[('foo', '>', 10)]"/>
 			</search>`,
     });
-    expect("td.o_pivot_cell_value:contains(4)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(4)").toHaveCount(1);
     expect(readGroupCount).toBe(1);
     await toggleSearchBarMenu();
     await toggleMenuItem("Some Filter");
-    expect("td.o_pivot_cell_value:contains(2)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(2)").toHaveCount(1);
     expect(readGroupCount).toBe(2);
 });
 
@@ -767,12 +767,12 @@ test("basic folding/unfolding", async () => {
 
     expect("tbody tr").toHaveCount(3);
     // click on the opened header to close it
-    await contains(".o_pivot_header_cell_opened").click();
+    await contains(".w_pivot_header_cell_opened").click();
     expect("tbody tr").toHaveCount(1);
     // click on closed header to open dropdown
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
-    expect(queryAllTexts(".o-dropdown--menu .o-dropdown-item")).toEqual([
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
+    expect(queryAllTexts(".w-dropdown--menu .w-dropdown-item")).toEqual([
         "Customer",
         "Date",
         "Other product",
@@ -780,8 +780,8 @@ test("basic folding/unfolding", async () => {
         "bar",
     ]);
     // open the Date sub dropdown
-    await contains(".o-dropdown--menu .dropdown-toggle.o_menu_item").hover();
-    const subDropdownMenu = getDropdownMenu(".o-dropdown--menu .dropdown-toggle.o_menu_item");
+    await contains(".w-dropdown--menu .dropdown-toggle.w_menu_item").hover();
+    const subDropdownMenu = getDropdownMenu(".w-dropdown--menu .dropdown-toggle.w_menu_item");
     expect(subDropdownMenu).toHaveText("Year\nQuarter\nMonth\nWeek\nDay");
 
     await contains(queryOne(".dropdown-item:eq(2)", { root: subDropdownMenu })).click();
@@ -802,14 +802,14 @@ test("more folding/unfolding", async () => {
     });
 
     // open dropdown to zoom into first row
-    await contains("tbody .o_pivot_header_cell_closed").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
     // click on date by day
-    await contains(".o-dropdown--menu .dropdown-toggle").hover();
-    const subDropdownMenu = getDropdownMenu(".o-dropdown--menu .dropdown-toggle");
+    await contains(".w-dropdown--menu .dropdown-toggle").hover();
+    const subDropdownMenu = getDropdownMenu(".w-dropdown--menu .dropdown-toggle");
     await contains(queryOne("span:nth-child(5)", { root: subDropdownMenu })).click();
 
     // open dropdown to zoom into second row
-    await contains("tbody th.o_pivot_header_cell_closed:eq(1)").click();
+    await contains("tbody th.w_pivot_header_cell_closed:eq(1)").click();
     expect("tbody tr").toHaveCount(7);
 });
 
@@ -827,12 +827,12 @@ test("fold and unfold header group", async () => {
     expect("thead tr").toHaveCount(3);
 
     // fold opened col group
-    await contains("thead .o_pivot_header_cell_opened").click();
+    await contains("thead .w_pivot_header_cell_opened").click();
     expect("thead tr").toHaveCount(2);
 
     // unfold it
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu span:nth-child(5)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu span:nth-child(5)").click();
     expect("thead tr").toHaveCount(3);
 });
 
@@ -852,8 +852,8 @@ test("unfold second header group", async () => {
     expect(getCurrentValues()).toBe(values.join(","));
 
     // unfold it
-    await contains("thead .o_pivot_header_cell_closed:last-child").click();
-    await contains(".o-dropdown--menu span:nth-child(1)").click();
+    await contains("thead .w_pivot_header_cell_closed:last-child").click();
+    await contains(".w-dropdown--menu span:nth-child(1)").click();
     expect("thead tr").toHaveCount(4);
     values = ["12", "2", "18", "32"];
     expect(getCurrentValues()).toBe(values.join(","));
@@ -880,15 +880,15 @@ test("pivot renders group dropdown same as search groupby dropdown if group bys 
 
     // open group by dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(6);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(1);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(6);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(1);
     // click on closed header to open dropdown
-    await contains("tbody tr:last-child .o_pivot_header_cell_closed").click();
+    await contains("tbody tr:last-child .w_pivot_header_cell_closed").click();
     expect(".dropdown-menu > .dropdown-item").toHaveCount(4);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(1);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(1);
     // check custom groupby selection has groupable fields only
-    expect(".o_add_custom_group_menu option:not([disabled])").toHaveCount(5);
-    const optionDescriptions = queryAllTexts(".o_add_custom_group_menu option:not([disabled])");
+    expect(".w_add_custom_group_menu option:not([disabled])").toHaveCount(5);
+    const optionDescriptions = queryAllTexts(".w_add_custom_group_menu option:not([disabled])");
     expect(optionDescriptions).toEqual(["Customer", "Date", "Other product", "Product", "bar"]);
 });
 
@@ -904,30 +904,30 @@ test("headers group dropdown should close on selection", async () => {
     });
     // 1. with first-level dropdown groupby
     // open a header group dropdown
-    await contains("tbody tr .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
+    await contains("tbody tr .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
     // select an item
-    await contains(".o-dropdown-item").click();
-    expect(".o-dropdown--menu").toHaveCount(0);
+    await contains(".w-dropdown-item").click();
+    expect(".w-dropdown--menu").toHaveCount(0);
 
     // 2. with sub dropdown groupby
     // open a header group dropdown
-    await contains("tbody tr .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
+    await contains("tbody tr .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
     // open a subdropdown
-    await contains(".o-dropdown--menu .dropdown-toggle").click();
-    expect(".o-dropdown--menu").toHaveCount(2);
+    await contains(".w-dropdown--menu .dropdown-toggle").click();
+    expect(".w-dropdown--menu").toHaveCount(2);
     // select an item
-    const subDropdownMenu = getDropdownMenu(".o-dropdown--menu .dropdown-toggle");
-    await contains(queryFirst(".o-dropdown-item", { root: subDropdownMenu })).click();
-    expect(".o-dropdown--menu").toHaveCount(0);
+    const subDropdownMenu = getDropdownMenu(".w-dropdown--menu .dropdown-toggle");
+    await contains(queryFirst(".w-dropdown-item", { root: subDropdownMenu })).click();
+    expect(".w-dropdown--menu").toHaveCount(0);
 
     // 3. with custom groupby
     // open a header group dropdown
-    await contains("tbody tr .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
-    await contains(`.o_add_custom_group_menu`).select("date");
-    expect(".o-dropdown--menu").toHaveCount(0);
+    await contains("tbody tr .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
+    await contains(`.w_add_custom_group_menu`).select("date");
+    expect(".w-dropdown--menu").toHaveCount(0);
 });
 
 test("pivot group dropdown sync with search groupby dropdown", async () => {
@@ -948,23 +948,23 @@ test("pivot group dropdown sync with search groupby dropdown", async () => {
 
     // open group by dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(5);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(5);
     // click on closed header to open dropdown
-    await contains("tbody tr:last-child .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(3);
+    await contains("tbody tr:last-child .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(3);
     // add a custom group in searchview groupby
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(5);
-    await contains("tbody tr:last-child .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(3);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(5);
+    await contains("tbody tr:last-child .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(3);
     // add a custom group in pivot groupby
-    await contains(`.o_add_custom_group_menu`).select("date");
+    await contains(`.w_add_custom_group_menu`).select("date");
     // click on closed header to open groupby selection dropdown
-    await contains("tbody tr:last-child .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(4);
+    await contains("tbody tr:last-child .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(4);
     // applying custom groupby in pivot groupby dropdown will not update search dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(5);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(5);
 });
 
 test("pivot custom groupby: grouping on date field use default interval month", async () => {
@@ -993,9 +993,9 @@ test("pivot custom groupby: grouping on date field use default interval month", 
     });
 
     // click on closed header to open dropdown and apply groupby on date field
-    await contains("thead .o_pivot_header_cell_closed").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
     checkReadGroup = true;
-    await contains(`.o_add_custom_group_menu`).select("date");
+    await contains(`.w_add_custom_group_menu`).select("date");
 });
 
 test("pivot groupby dropdown renders custom search at the end with separator", async () => {
@@ -1016,20 +1016,20 @@ test("pivot groupby dropdown renders custom search at the end with separator", a
 
     // open group by dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(5);
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(5);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(5);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(5);
     // click on closed header to open dropdown
-    await contains("tbody .o_pivot_header_cell_closed:eq(1)").click();
-    let items = queryAll(".o_menu_item:not(select)");
+    await contains("tbody .w_pivot_header_cell_closed:eq(1)").click();
+    let items = queryAll(".w_menu_item:not(select)");
     expect(queryAllTexts(items)).toEqual(["bar", "product"]);
-    expect(".o-dropdown--menu .dropdown-divider").toHaveCount(1);
+    expect(".w-dropdown--menu .dropdown-divider").toHaveCount(1);
     expect(items[items.length - 1].nextElementSibling).toHaveClass("dropdown-divider");
     // add a custom group in pivot groupby
-    await contains(`.o_add_custom_group_menu`).select("customer");
-    await contains("tbody .o_pivot_header_cell_closed:eq(1)").click();
-    items = queryAll(".o_menu_item:not(select)");
+    await contains(`.w_add_custom_group_menu`).select("customer");
+    await contains("tbody .w_pivot_header_cell_closed:eq(1)").click();
+    items = queryAll(".w_menu_item:not(select)");
     expect(queryAllTexts(items)).toEqual(["bar", "product", "Customer"]);
-    expect(".o-dropdown--menu .dropdown-divider").toHaveCount(2);
+    expect(".w-dropdown--menu .dropdown-divider").toHaveCount(2);
     expect(items[items.length - 1].previousElementSibling).toHaveClass("dropdown-divider");
     expect(items[items.length - 1].nextElementSibling).toHaveClass("dropdown-divider");
 });
@@ -1047,12 +1047,12 @@ test("pivot view without group by specified in search arch", async () => {
 
     // open group by dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(3);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(1);
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(3);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(1);
     // click on closed header to open dropdown
-    await contains("tbody .o_pivot_header_cell_closed:eq(1)").click();
-    expect(".o-dropdown--menu .o_menu_item").toHaveCount(6);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(1);
+    await contains("tbody .w_pivot_header_cell_closed:eq(1)").click();
+    expect(".w-dropdown--menu .w_menu_item").toHaveCount(6);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(1);
 });
 
 test("pivot view do not show custom group selection if there are no groupable fields", async () => {
@@ -1090,13 +1090,13 @@ test("pivot view do not show custom group selection if there are no groupable fi
 
     // open group by dropdown
     await toggleSearchBarMenu();
-    expect(".o-dropdown--menu .dropdown-item").toHaveCount(3);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(0);
+    expect(".w-dropdown--menu .dropdown-item").toHaveCount(3);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(0);
 
     // click on closed header to open dropdown
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveCount(1);
-    expect(".o-dropdown--menu .o_add_custom_group_menu").toHaveCount(0);
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveCount(1);
+    expect(".w-dropdown--menu .w_add_custom_group_menu").toHaveCount(0);
 });
 
 test("can toggle extra measure", async () => {
@@ -1115,16 +1115,16 @@ test("can toggle extra measure", async () => {
     });
 
     rpcCount = 0;
-    expect(".o_pivot_cell_value").toHaveCount(3);
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    expect(".w_pivot_cell_value").toHaveCount(3);
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     expect(".dropdown-item:contains(Count)").not.toHaveClass("selected");
     await contains(".dropdown-item:contains(Count):eq(0").click();
     expect(".dropdown-item:contains(Count)").toHaveClass("selected");
-    expect(".o_pivot_cell_value").toHaveCount(6);
+    expect(".w_pivot_cell_value").toHaveCount(6);
     expect(rpcCount).toBe(1);
     await contains(".dropdown-item:contains(Count):eq(0)").click();
     expect(".dropdown-item:contains(Count):eq(0)").not.toHaveClass("selected");
-    expect(".o_pivot_cell_value").toHaveCount(3);
+    expect(".w_pivot_cell_value").toHaveCount(3);
     expect(rpcCount).toBe(1);
 });
 
@@ -1135,13 +1135,13 @@ test("no content helper when no active measure", async () => {
         arch: `<pivot/>`,
     });
 
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(0);
     expect("table").toHaveCount(1);
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     await contains(".dropdown-item:contains(Count):eq(0)").click();
 
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
     expect("table").toHaveCount(0);
 });
 
@@ -1156,13 +1156,13 @@ test("no content helper when no data", async () => {
 			</search>`,
     });
 
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(0);
     expect("table").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("Some Filter");
 
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
     expect("table").toHaveCount(0);
 });
 
@@ -1175,7 +1175,7 @@ test("no content helper when no data, part 2", async () => {
         arch: "<pivot/>",
     });
 
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -1194,26 +1194,26 @@ test("no content helper when no data, part 3", async () => {
         },
     });
 
-    expect(".o_searchview .o_searchview_facet").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_searchview .w_searchview_facet").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("Some Filter");
-    expect(".o_searchview .o_searchview_facet").toHaveCount(2);
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_searchview .w_searchview_facet").toHaveCount(2);
+    expect(".w_view_nocontent").toHaveCount(1);
 
     await toggleMenuItem("Some Filter");
-    expect(".o_searchview .o_searchview_facet").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_searchview .w_searchview_facet").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
 
-    await contains(".o_facet_remove").click();
-    expect(".o_searchview .o_searchview_facet").toHaveCount(0);
-    expect(".o_view_nocontent").toHaveCount(0);
+    await contains(".w_facet_remove").click();
+    expect(".w_searchview .w_searchview_facet").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(0);
 
     // tries to open a field selection menu, to make sure it was not
     // removed from the dom.
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
 });
 
 test("tries to restore previous state after domain change", async () => {
@@ -1235,8 +1235,8 @@ test("tries to restore previous state after domain change", async () => {
 			</search>`,
     });
 
-    expect(".o_pivot_cell_value").toHaveCount(3);
-    expect(".o_pivot_measure_row:contains(Foo)").toHaveCount(1);
+    expect(".w_pivot_cell_value").toHaveCount(3);
+    expect(".w_pivot_measure_row:contains(Foo)").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("My Filter");
@@ -1247,8 +1247,8 @@ test("tries to restore previous state after domain change", async () => {
 
     expect("table").toHaveCount(1);
     expect(rpcCount).toBe(1);
-    expect(".o_pivot_cell_value").toHaveCount(3);
-    expect(".o_pivot_measure_row:contains(Foo)").toHaveCount(1);
+    expect(".w_pivot_cell_value").toHaveCount(3);
+    expect(".w_pivot_measure_row:contains(Foo)").toHaveCount(1);
 });
 
 test("can be grouped with the search view", async () => {
@@ -1265,13 +1265,13 @@ test("can be grouped with the search view", async () => {
 			</search>`,
     });
 
-    expect(".o_pivot_cell_value").toHaveCount(1);
+    expect(".w_pivot_cell_value").toHaveCount(1);
     expect("tbody tr").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("Product");
 
-    expect(".o_pivot_cell_value").toHaveCount(3);
+    expect(".w_pivot_cell_value").toHaveCount(3);
     expect("tbody tr").toHaveCount(3);
 });
 
@@ -1289,12 +1289,12 @@ test("can sort data in a column by clicking on header", async () => {
     let values = ["32", "12", "20"];
     expect(getCurrentValues()).toBe(values.join(","));
 
-    await contains("th.o_pivot_measure_row").click();
+    await contains("th.w_pivot_measure_row").click();
 
     values = ["32", "12", "20"];
     expect(getCurrentValues()).toBe(values.join(","));
 
-    await contains("th.o_pivot_measure_row").click();
+    await contains("th.w_pivot_measure_row").click();
 
     values = ["32", "20", "12"];
     expect(getCurrentValues()).toBe(values.join(","));
@@ -1334,14 +1334,14 @@ test("can expand all rows", async () => {
     expect("tbody tr").toHaveCount(8);
 
     // collapse the first two rows
-    await contains("tbody .o_pivot_header_cell_opened:eq(2)").click();
-    await contains("tbody .o_pivot_header_cell_opened:eq(1)").click();
+    await contains("tbody .w_pivot_header_cell_opened:eq(2)").click();
+    await contains("tbody .w_pivot_header_cell_opened:eq(1)").click();
 
     expect("tbody tr").toHaveCount(6);
 
     // expand all
     nbReadGroups = 0;
-    await contains(".o_pivot_expand_button").click();
+    await contains(".w_pivot_expand_button").click();
 
     expect(nbReadGroups).toBe(1);
     expect("tbody tr").toHaveCount(8);
@@ -1373,14 +1373,14 @@ test("expand all with a delay", async () => {
     expect("tbody tr").toHaveCount(8);
 
     // collapse the first two rows
-    await contains("tbody .o_pivot_header_cell_opened:eq(2)").click();
-    await contains("tbody .o_pivot_header_cell_opened:eq(1)").click();
+    await contains("tbody .w_pivot_header_cell_opened:eq(2)").click();
+    await contains("tbody .w_pivot_header_cell_opened:eq(1)").click();
 
     expect("tbody tr").toHaveCount(6);
 
     // expand all
     def = Promise.withResolvers();
-    await contains(".o_pivot_expand_button").click();
+    await contains(".w_pivot_expand_button").click();
     expect("tbody tr").toHaveCount(6);
     def.resolve();
     await animationFrame();
@@ -1407,7 +1407,7 @@ test("can download a file", async () => {
 			</pivot>`,
     });
 
-    await contains(".o_pivot_download").click();
+    await contains(".w_pivot_download").click();
 });
 
 test("download a file with single measure, measure row displayed in table", async () => {
@@ -1435,7 +1435,7 @@ test("download a file with single measure, measure row displayed in table", asyn
 				</pivot>`,
     });
 
-    await contains(".o_pivot_download").click();
+    await contains(".w_pivot_download").click();
     await downloadDef?.promise;
 });
 
@@ -1452,7 +1452,7 @@ test("download button is disabled when there is no data", async () => {
 			</pivot>`,
     });
 
-    expect(".o_pivot_download").not.toBeEnabled();
+    expect(".w_pivot_download").not.toBeEnabled();
 });
 
 test("correctly save measures and groupbys to favorite", async () => {
@@ -1485,8 +1485,8 @@ test("correctly save measures and groupbys to favorite", async () => {
     await saveFavorite();
 
     // expand header on field customer
-    await contains("thead .o_pivot_header_cell_closed:eq(1)").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(0)").click();
+    await contains("thead .w_pivot_header_cell_closed:eq(1)").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(0)").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: ["date:day", "customer"],
@@ -1499,8 +1499,8 @@ test("correctly save measures and groupbys to favorite", async () => {
     await saveFavorite();
 
     // expand row on field product_id
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(3)").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(3)").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: ["date:day", "customer"],
@@ -1570,7 +1570,7 @@ test("correctly remove pivot_ keys from the context", async () => {
     await saveFavorite();
 
     // Let's get rid of the rows groupBy
-    await contains("tbody .o_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_opened").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: ["customer"],
@@ -1583,8 +1583,8 @@ test("correctly remove pivot_ keys from the context", async () => {
     await saveFavorite();
 
     // And now, get rid of both col and row groupby
-    //await contains("tbody .o_pivot_header_cell_opened").click(); //It was already removed
-    await contains("thead .o_pivot_header_cell_opened").click();
+    //await contains("tbody .w_pivot_header_cell_opened").click(); //It was already removed
+    await contains("thead .w_pivot_header_cell_opened").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: [],
@@ -1597,8 +1597,8 @@ test("correctly remove pivot_ keys from the context", async () => {
     await saveFavorite();
 
     // Group row by product_id
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu span:nth-child(4)").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu span:nth-child(4)").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: [],
@@ -1611,8 +1611,8 @@ test("correctly remove pivot_ keys from the context", async () => {
     await saveFavorite();
 
     // Group column by customer
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu span:nth-child(1)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu span:nth-child(1)").click();
     expectedContext = {
         group_by: [],
         pivot_column_groupby: ["customer"],
@@ -1641,20 +1641,20 @@ test("Apply two groupby, and remove facet", async () => {
         views: [[false, "pivot"]],
     });
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("First");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("First");
 
     // Apply both groupbys
     await toggleSearchBarMenu();
     await toggleMenuItem("Product");
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("xphone");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("xphone");
 
     await toggleMenuItem("Bar");
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("Yes");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("Yes");
 
     // remove filter
     await removeFacet();
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("Yes");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("Yes");
 });
 
 test("Add a group by on the CP when a favorite already exists", async () => {
@@ -1681,21 +1681,21 @@ test("Add a group by on the CP when a favorite already exists", async () => {
         views: [[false, "pivot"]],
     });
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("April 2016");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("April 2016");
 
     // Apply BAR groupbys
     await toggleSearchBarMenu();
     await toggleMenuItem("Bar");
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("No");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("No");
 
     // remove groupBy
     await toggleMenuItem("Bar");
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("April 2016");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("April 2016");
 
     // remove all facets
     await removeFacet();
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("April 2016");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("April 2016");
 });
 
 test("Adding a Favorite at anytime should modify the row/column groupby", async () => {
@@ -1724,39 +1724,39 @@ test("Adding a Favorite at anytime should modify the row/column groupby", async 
         views: [[false, "pivot"]],
     });
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("First");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("First");
 
-    expect(queryFirst("thead .o_pivot_header_cell_closed")).toHaveText("April 2016");
+    expect(queryFirst("thead .w_pivot_header_cell_closed")).toHaveText("April 2016");
 
     // activate the unique existing favorite
     await toggleSearchBarMenu();
     await toggleMenuItem("my favorite");
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("xphone");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("xphone");
 
-    expect(queryFirst("thead .o_pivot_header_cell_closed")).toHaveText("No");
+    expect(queryFirst("thead .w_pivot_header_cell_closed")).toHaveText("No");
 
     // desactivate the unique existing favorite
     await toggleMenuItem("my favorite");
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("xphone");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("xphone");
 
-    expect(queryFirst("thead .o_pivot_header_cell_closed")).toHaveText("No");
+    expect(queryFirst("thead .w_pivot_header_cell_closed")).toHaveText("No");
 
     // Let's get rid of the rows and columns groupBy
-    await contains("tbody .o_pivot_header_cell_opened").click();
-    await contains("thead .o_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_opened").click();
+    await contains("thead .w_pivot_header_cell_opened").click();
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("Total");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("Total");
 
-    expect(queryFirst("thead .o_pivot_header_cell_closed")).toHaveText("Total");
+    expect(queryFirst("thead .w_pivot_header_cell_closed")).toHaveText("Total");
 
     // activate AGAIN the unique existing favorite
     await toggleSearchBarMenu();
     await toggleMenuItem("my favorite");
 
-    expect(queryFirst("tbody .o_pivot_header_cell_closed")).toHaveText("xphone");
+    expect(queryFirst("tbody .w_pivot_header_cell_closed")).toHaveText("xphone");
 
-    expect(queryFirst("thead .o_pivot_header_cell_closed")).toHaveText("No");
+    expect(queryFirst("thead .w_pivot_header_cell_closed")).toHaveText("No");
 });
 
 test("Unload Filter, reset display, load another filter", async () => {
@@ -1794,12 +1794,12 @@ test("Unload Filter, reset display, load another filter", async () => {
     });
 
     // Check Columns
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
     expect('thead tr:contains("First")').toHaveCount(1);
     expect('thead tr:contains("Second")').toHaveCount(1);
 
     // Check Rows
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
     expect('tbody tr:contains("xphone")').toHaveCount(1);
     expect('tbody tr:contains("xpad")').toHaveCount(1);
 
@@ -1807,16 +1807,16 @@ test("Unload Filter, reset display, load another filter", async () => {
     await toggleSearchBarMenu();
     await toggleMenuItem("My fake favorite");
     // collapse all headers
-    await contains(".o_pivot_header_cell_opened:first-child").click();
-    await contains(".o_pivot_header_cell_opened").click();
+    await contains(".w_pivot_header_cell_opened:first-child").click();
+    await contains(".w_pivot_header_cell_opened").click();
 
     // Check Columns
-    expect("thead .o_pivot_header_cell_closed").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed").toHaveCount(1);
     expect('thead tr:contains("First")').toHaveCount(0);
     expect('thead tr:contains("Second")').toHaveCount(0);
 
     // Check Rows
-    expect("tbody .o_pivot_header_cell_closed").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed").toHaveCount(1);
     expect('tbody tr:contains("xphone")').toHaveCount(0);
     expect('tbody tr:contains("xpad")').toHaveCount(0);
 
@@ -1826,12 +1826,12 @@ test("Unload Filter, reset display, load another filter", async () => {
     await toggleMenuItem("My fake favorite 2");
 
     // Check Columns
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
     expect('thead tr:contains("First")').toHaveCount(1);
     expect('thead tr:contains("Second")').toHaveCount(1);
 
     // Check Rows
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
     expect('tbody tr:contains("xphone")').toHaveCount(1);
     expect('tbody tr:contains("xpad")').toHaveCount(1);
 });
@@ -1858,8 +1858,8 @@ test("Reload, group by columns, reload", async () => {
     });
 
     // Set a column groupby
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(0)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(0)").click();
 
     // Set a domain
     await toggleSearchBarMenu();
@@ -1878,8 +1878,8 @@ test("Reload, group by columns, reload", async () => {
 
     // Set a column groupby
     await removeFacet(); // remove previously saved favorite
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(3)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(3)").click();
 
     // Set a domain
     await toggleSearchBarMenu();
@@ -1915,15 +1915,15 @@ test("folded groups remain folded at reload", async () => {
     expect(getCurrentValues()).toBe(values.join(","));
 
     // expand a col group
-    await contains("thead .o_pivot_header_cell_closed:eq(0)").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(0)").click();
+    await contains("thead .w_pivot_header_cell_closed:eq(0)").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(0)").click();
 
     values = ["14", "18", "32", "12", "12", "2", "18", "20"];
     expect(getCurrentValues()).toBe(values.join(","));
 
     // expand a row group
-    await contains("tbody .o_pivot_header_cell_closed:eq(0)").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(4)").click();
+    await contains("tbody .w_pivot_header_cell_closed:eq(0)").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(4)").click();
 
     values = ["14", "18", "32", "12", "12", "12", "12", "2", "18", "20"];
     expect(getCurrentValues()).toBe(values.join(","));
@@ -1934,7 +1934,7 @@ test("folded groups remain folded at reload", async () => {
 
     expect(getCurrentValues()).toBe(values.join(","));
 
-    await contains(".o_pivot_expand_button").click();
+    await contains(".w_pivot_expand_button").click();
 
     // sanity check of what the table should look like if all groups are
     // expanded, to ensure that the former asserts are pertinent
@@ -1969,8 +1969,8 @@ test("Empty results keep groupbys", async () => {
     });
 
     // Set a column groupby
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(0)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(0)").click();
 
     expect("table").toHaveCount(1);
 
@@ -2018,12 +2018,12 @@ test("correctly uses pivot_ keys from the context", async () => {
         },
     });
 
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(First)").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(First)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
     expect("tbody tr td:eq(2)").toHaveText("32");
 });
 
@@ -2036,24 +2036,24 @@ test("clear table cells data after closeGroup", async () => {
         groupBy: ["product_id"],
     });
 
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-toggle").hover();
-    await contains(".o-overlay-item:nth-child(2) .o-dropdown--menu .dropdown-item:eq(3)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-toggle").hover();
+    await contains(".w-overlay-item:nth-child(2) .w-dropdown--menu .dropdown-item:eq(3)").click();
 
     // close and reopen row groupings after changing value
     MockServer.env["partner"].find((r) => r.product_id === 37).date = "2016-10-27";
 
-    await contains("tbody .o_pivot_header_cell_opened").click();
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(3)").click();
-    expect(".o_pivot_cell_value:eq(4)").toHaveText(""); // xphone December 2016
+    await contains("tbody .w_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(3)").click();
+    expect(".w_pivot_cell_value:eq(4)").toHaveText(""); // xphone December 2016
 
     // invert axis, and reopen column groupings
-    await contains(".o_pivot_buttons .o_pivot_flip_button").click();
-    await contains("thead .o_pivot_header_cell_opened").click();
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(3)").click();
-    expect(".o_pivot_cell_value:eq(3)").toHaveText(""); // December 2016 xphone
+    await contains(".w_pivot_buttons .w_pivot_flip_button").click();
+    await contains("thead .w_pivot_header_cell_opened").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(3)").click();
+    expect(".w_pivot_cell_value:eq(3)").toHaveText(""); // December 2016 xphone
 });
 
 test("correctly group data after flip (1)", async () => {
@@ -2073,14 +2073,14 @@ test("correctly group data after flip (1)", async () => {
 
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "xpad"]);
     // flip axis
-    await contains(".o_pivot_flip_button").click();
+    await contains(".w_pivot_flip_button").click();
     expect(queryAllTexts("tbody th")).toEqual(["Total"]);
     // select filter "Bayou" in control panel
     await toggleSearchBarMenu();
     await toggleMenuItem("Bayou");
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "xpad"]);
     // close row header "Total"
-    await contains("tbody .o_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_opened").click();
     expect(queryAllTexts("tbody th")).toEqual(["Total"]);
 });
 
@@ -2105,14 +2105,14 @@ test("correctly group data after flip (2)", async () => {
     await toggleMenuItem("Bayou");
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "xpad"]);
     // flip axis
-    await contains(".o_pivot_flip_button").click();
+    await contains(".w_pivot_flip_button").click();
     expect(queryAllTexts("tbody th")).toEqual(["Total"]);
     // unselect filter "Bayou" in control panel
     await toggleSearchBarMenu();
     await toggleMenuItem("Bayou");
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "xpad"]);
     // close row header "Total"
-    await contains("tbody .o_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_opened").click();
     expect(queryAllTexts("tbody th")).toEqual(["Total"]);
 });
 
@@ -2146,15 +2146,15 @@ test("correctly uses pivot_ keys from the context (at reload)", async () => {
 			</search>`,
     });
 
-    expect("tbody tr td.o_pivot_cell_value:eq(4)").toHaveText("0.00");
+    expect("tbody tr td.w_pivot_cell_value:eq(4)").toHaveText("0.00");
     await toggleSearchBarMenu();
     await toggleMenuItem("My fake favorite");
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(First)").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(First)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
     expect("tbody tr td:eq(2)").toHaveText("32");
 });
 
@@ -2170,13 +2170,13 @@ test("correctly use group_by key from the context", async () => {
         groupBy: ["product_id"],
     });
 
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(First)").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(First)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
 
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
 
     expect("tbody tr td:eq(2)").toHaveText("32");
 });
@@ -2199,14 +2199,14 @@ test("correctly uses pivot_row_groupby key with default groupBy from the context
         },
     });
 
-    expect("thead .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(First)").toHaveCount(1);
-    expect("thead .o_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(First)").toHaveCount(1);
+    expect("thead .w_pivot_header_cell_closed:contains(Second)").toHaveCount(1);
 
     // With pivot_row_groupby, groupBy customer should replace and eventually display product_id
-    expect("tbody .o_pivot_header_cell_opened").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_opened").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xphone)").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed:contains(xpad)").toHaveCount(1);
 });
 
 test("pivot still handles __count__ measure", async () => {
@@ -2239,8 +2239,8 @@ test("pivot still handles __count__ measure", async () => {
         },
     });
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
-    const dropdownMenu = getDropdownMenu(".o_pivot_buttons button.dropdown-toggle");
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
+    const dropdownMenu = getDropdownMenu(".w_pivot_buttons button.dropdown-toggle");
     expect(queryAll(".dropdown-item", { root: dropdownMenu })).toHaveLength(1);
     expect(queryOne(".dropdown-item")).toHaveText("Count");
     expect(queryOne(".dropdown-item")).toHaveClass("selected");
@@ -2268,8 +2268,8 @@ test("not use a many2one as a measure by default", async () => {
 				<field name="date" interval="month" type="col"/>
 			</pivot>`,
     });
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
-    const dropdownMenu = getDropdownMenu(".o_pivot_buttons button.dropdown-toggle");
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
+    const dropdownMenu = getDropdownMenu(".w_pivot_buttons button.dropdown-toggle");
     expect(queryAll(".dropdown-item", { root: dropdownMenu })).toHaveLength(1);
     expect(queryText(".dropdown-item", { root: dropdownMenu })).toBe("Count");
     expect(queryOne(".dropdown-item", { root: dropdownMenu })).toHaveClass("selected");
@@ -2313,12 +2313,12 @@ test("m2o as measure, drilling down into data", async () => {
 				<field name="product_id" type="measure"/>
 			</pivot>`,
     });
-    await contains("tbody .o_pivot_header_cell_closed").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
     // click on date by month
-    const dropdownMenu = getDropdownMenu("tbody .o_pivot_header_cell_closed");
+    const dropdownMenu = getDropdownMenu("tbody .w_pivot_header_cell_closed");
     await contains(queryFirst(".dropdown-toggle", { root: dropdownMenu })).hover();
-    await contains(queryOne(".o-dropdown-item:contains(Month)")).click();
-    expect(queryAllTexts(".o_pivot_cell_value")).toEqual(["2", "1", "1", "2"]);
+    await contains(queryOne(".w-dropdown-item:contains(Month)")).click();
+    expect(queryAllTexts(".w_pivot_cell_value")).toEqual(["2", "1", "1", "2"]);
 });
 
 test("Row and column groupbys plus a domain", async () => {
@@ -2350,19 +2350,19 @@ test("Row and column groupbys plus a domain", async () => {
     });
 
     // Set a column groupby
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(0)").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(0)").click();
 
     // Set a Row groupby
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(3)").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(3)").click();
 
     // Add a filter
     await toggleSearchBarMenu();
     await toggleMenuItem("Some Filter");
 
-    expect("tbody .o_pivot_header_cell_closed").toHaveCount(1);
-    expect("tbody .o_pivot_header_cell_closed").toHaveText("xpad");
+    expect("tbody .w_pivot_header_cell_closed").toHaveCount(1);
+    expect("tbody .w_pivot_header_cell_closed").toHaveText("xpad");
 
     // Save current search to favorite
     await toggleSaveFavorite();
@@ -2387,7 +2387,7 @@ test("parallel data loading should discard all but the last one", async () => {
 				</search>`,
     });
 
-    expect(".o_pivot_cell_value").toHaveCount(1);
+    expect(".w_pivot_cell_value").toHaveCount(1);
     expect("tbody tr").toHaveCount(1);
 
     def = Promise.withResolvers();
@@ -2395,13 +2395,13 @@ test("parallel data loading should discard all but the last one", async () => {
     await toggleMenuItem("Product");
     await toggleMenuItem("Customer");
 
-    expect(".o_pivot_cell_value").toHaveCount(1);
+    expect(".w_pivot_cell_value").toHaveCount(1);
     expect("tbody tr").toHaveCount(1);
 
     def.resolve();
     await animationFrame();
 
-    expect(".o_pivot_cell_value").toHaveCount(6);
+    expect(".w_pivot_cell_value").toHaveCount(6);
     expect("tbody tr").toHaveCount(6);
 });
 
@@ -2431,8 +2431,8 @@ test("pivot measures should be alphabetically sorted", async () => {
 			</pivot>`,
     });
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
-    expect(queryAllTexts(".o-dropdown--menu .dropdown-item")).toEqual([
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
+    expect(queryAllTexts(".w-dropdown--menu .dropdown-item")).toEqual([
         "bouh",
         "Foo",
         "modd",
@@ -2451,7 +2451,7 @@ test("pivot view should use default order for auto sorting", async () => {
 			</pivot>`,
     });
 
-    expect("thead th.o_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
+    expect("thead th.w_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
 });
 
 test("pivot view can be flipped", async () => {
@@ -2473,7 +2473,7 @@ test("pivot view can be flipped", async () => {
     expect(getCurrentValues()).toBe(values.join());
 
     rpcCount = 0;
-    await contains(".o_pivot_flip_button").click();
+    await contains(".w_pivot_flip_button").click();
 
     expect(rpcCount).toBe(0);
     expect("tbody tr").toHaveCount(1, {
@@ -2496,21 +2496,21 @@ test("Click on the measure list but not on a menu item", async () => {
         arch: `<pivot><field name="foo" type="measure"/></pivot>`,
     });
 
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
 
     // open the "Measures" menu
-    await contains(".o_pivot_buttons .dropdown-toggle").click();
-    expect(".o-dropdown--menu").toHaveCount(1);
+    await contains(".w_pivot_buttons .dropdown-toggle").click();
+    expect(".w-dropdown--menu").toHaveCount(1);
 
     // click on the divider in the "Measures" menu does not crash
-    await contains(".o-dropdown--menu .dropdown-divider").click();
+    await contains(".w-dropdown--menu .dropdown-divider").click();
     // the menu should still be open
-    expect(".o-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu").toHaveCount(1);
 
     // click on the measure list but not on a menu item or the separator
-    await contains(".o-dropdown--menu").click();
+    await contains(".w-dropdown--menu").click();
     // the menu should still be open
-    expect(".o-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2554,11 +2554,11 @@ test("Navigation list view for a group and back with breadcrumbs", async () => {
     await toggleMenuItem("Bayou");
     await animationFrame();
 
-    await contains(".o_pivot_cell_value:eq(1)").click();
+    await contains(".w_pivot_cell_value:eq(1)").click();
 
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
-    await contains(".o_control_panel ol.breadcrumb li.breadcrumb-item").click();
+    await contains(".w_control_panel ol.breadcrumb li.breadcrumb-item").click();
 
     expect.verifySteps([
         "formatted_read_grouping_sets",
@@ -2591,7 +2591,7 @@ test("correctly compute group domain when a date field has false value", async (
 				</pivot>`,
     });
 
-    await contains(".o_value:eq(1)").click();
+    await contains(".w_value:eq(1)").click();
 });
 
 test("Does not identify 'false' with false as keys when creating group trees", async () => {
@@ -2629,17 +2629,17 @@ test("group bys added via control panel and expand Header do not stack", async (
     expect(queryAllTexts("tbody th")).toEqual(["Total"]);
     // open group by menu and add new groupby
     await toggleSearchBarMenu();
-    await contains(`.o_add_custom_group_menu`).select("product_id");
+    await contains(`.w_add_custom_group_menu`).select("product_id");
 
     // Set a Row groupby
-    await contains("tbody tr:nth-child(2) .o_pivot_header_cell_closed").click();
+    await contains("tbody tr:nth-child(2) .w_pivot_header_cell_closed").click();
 
     expect(queryAllTexts("thead th")).toEqual(["", "Total", "Foo"]);
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "xpad"]);
 
     // open groupby menu generator and add a new groupby
     await toggleSearchBarMenu();
-    await contains(`.o_add_custom_group_menu`).select("bar");
+    await contains(`.w_add_custom_group_menu`).select("bar");
 
     expect(queryAllTexts("thead th")).toEqual(["", "Total", "Foo"]);
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "Yes", "xpad", "No", "Yes"]);
@@ -2657,12 +2657,12 @@ test("display only one dropdown menu", async () => {
     });
 
     // add a col groupby on Product
-    await contains("thead th.o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(5)").click();
+    await contains("thead th.w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(5)").click();
 
     // Click on the header dropdown togglers
-    await contains("thead th.o_pivot_header_cell_closed:eq(0)").click();
-    await contains("thead th.o_pivot_header_cell_closed:eq(0)").click();
+    await contains("thead th.w_pivot_header_cell_closed:eq(0)").click();
+    await contains("thead th.w_pivot_header_cell_closed:eq(0)").click();
 });
 
 test("Server order is kept by default", async () => {
@@ -2753,10 +2753,10 @@ test("empty pivot view with action helper", async () => {
         },
     });
 
-    expect(".o_view_nocontent .abc").toHaveCount(1);
+    expect(".w_view_nocontent .abc").toHaveCount(1);
     expect("table").toHaveCount(0);
     await removeFacet();
-    expect(".o_view_nocontent .abc").toHaveCount(0);
+    expect(".w_view_nocontent .abc").toHaveCount(0);
     expect("table").toHaveCount(1);
 });
 
@@ -2780,11 +2780,11 @@ test("empty pivot view with sample data", async () => {
         },
     });
 
-    expect(".o_pivot_view .o_content").toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent .abc").toHaveCount(1);
+    expect(".w_pivot_view .w_content").toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent .abc").toHaveCount(1);
     await removeFacet();
-    expect(".o_pivot_view .o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent .abc").toHaveCount(0);
+    expect(".w_pivot_view .w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent .abc").toHaveCount(0);
     expect("table").toHaveCount(1);
 });
 
@@ -2806,13 +2806,13 @@ test("non empty pivot view with sample data", async () => {
         },
     });
 
-    expect(".o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent .abc").toHaveCount(0);
+    expect(".w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent .abc").toHaveCount(0);
     expect("table").toHaveCount(1);
     await toggleSearchBarMenu();
     await toggleMenuItem("Small Than 0");
-    expect(".o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent .abc").toHaveCount(1);
+    expect(".w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent .abc").toHaveCount(1);
     expect("table").toHaveCount(0);
 });
 
@@ -2840,21 +2840,21 @@ test("pivot is reloaded when leaving and coming back", async () => {
         ],
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["4", "2", "2"].join(","));
 
     expect.verifySteps(["/web/webclient/load_menus", "get_views", "formatted_read_grouping_sets"]);
 
     // switch to list view
-    await contains(".o_control_panel .o_switch_view.o_list").click();
+    await contains(".w_control_panel .w_switch_view.w_list").click();
 
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
     expect.verifySteps(["web_search_read"]);
 
     // switch back to pivot
-    await contains(".o_control_panel .o_switch_view.o_pivot").click();
+    await contains(".w_control_panel .w_switch_view.w_pivot").click();
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["4", "2", "2"].join(","));
 
     expect.verifySteps(["formatted_read_grouping_sets"]);
@@ -2877,24 +2877,24 @@ test("expanded groups are kept when leaving and coming back", async () => {
         ],
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["4", "2", "2"].join(","));
 
     // drill down first row group (group by product_id)
-    await contains("tbody .o_pivot_header_cell_closed:eq(0)").click();
-    await contains(".o-dropdown--menu .dropdown-item:eq(4)").click();
+    await contains("tbody .w_pivot_header_cell_closed:eq(0)").click();
+    await contains(".w-dropdown--menu .dropdown-item:eq(4)").click();
 
     expect(getCurrentValues()).toBe(["4", "2", "1", "1", "2"].join(","));
 
     // switch to list view
-    await contains(".o_control_panel .o_switch_view.o_list").click();
+    await contains(".w_control_panel .w_switch_view.w_list").click();
 
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // switch back to pivot
-    await contains(".o_control_panel .o_switch_view.o_pivot").click();
+    await contains(".w_control_panel .w_switch_view.w_pivot").click();
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["4", "2", "1", "1", "2"].join(","));
 });
 
@@ -2916,24 +2916,24 @@ test("sorted rows are kept when leaving and coming back", async () => {
         ],
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["32", "12", "20"].join(","));
 
     // sort the first group
-    await contains("th.o_pivot_measure_row").click();
-    await contains("th.o_pivot_measure_row").click();
+    await contains("th.w_pivot_measure_row").click();
+    await contains("th.w_pivot_measure_row").click();
 
     expect(getCurrentValues()).toBe(["32", "20", "12"].join(","));
 
     // switch to list view
-    await contains(".o_control_panel .o_switch_view.o_list").click();
+    await contains(".w_control_panel .w_switch_view.w_list").click();
 
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // switch back to pivot
-    await contains(".o_control_panel .o_switch_view.o_pivot").click();
+    await contains(".w_control_panel .w_switch_view.w_pivot").click();
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["32", "20", "12"].join(","));
 });
 
@@ -2967,19 +2967,19 @@ test("correctly handle concurrent reloads", async () => {
         ],
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     expect(getCurrentValues()).toBe(["32", "12", "20"].join(","));
 
     // drill down first row group (group by company_type)
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item").click();
 
     expect(getCurrentValues()).toBe(["32", "12", "12", "20"].join(","));
 
     // reload twice by clicking on pivot view switcher
     def = Promise.withResolvers();
-    await contains(".o_control_panel .o_switch_view.o_pivot").click();
-    await contains(".o_control_panel .o_switch_view.o_pivot").click();
+    await contains(".w_control_panel .w_switch_view.w_pivot").click();
+    await contains(".w_control_panel .w_switch_view.w_pivot").click();
 
     def.resolve();
     await animationFrame();
@@ -3049,7 +3049,7 @@ test("flip axis while loading a filter", async () => {
     expect(getCurrentValues()).toBe(values.join(","));
 
     // Flip axis
-    await contains(".o_pivot_flip_button").click();
+    await contains(".w_pivot_flip_button").click();
     expect(getCurrentValues()).toBe(values.join(","));
 
     def.resolve();
@@ -3085,7 +3085,7 @@ test("sort rows while loading a filter", async () => {
 
     // Sort rows (this operation should be ignored as it concerns the old
     // table, which will be replaced soon)
-    await contains("th.o_pivot_measure_row").click();
+    await contains("th.w_pivot_measure_row").click();
     expect(getCurrentValues()).toBe(["32", "12", "20"].join(","));
 
     def.resolve();
@@ -3122,7 +3122,7 @@ test("close a group while loading a filter", async () => {
 
     // Close a group (this operation should be ignored as it concerns the old
     // table, which will be replaced soon)
-    await contains("tbody .o_pivot_header_cell_opened").click();
+    await contains("tbody .w_pivot_header_cell_opened").click();
     expect(getCurrentValues()).toBe(["32", "12", "20"].join(","));
 
     def.resolve();
@@ -3158,8 +3158,8 @@ test("add a groupby while loading a filter", async () => {
 
     // Add a groupby (this operation should be ignored as it concerns the old
     // table, which will be replaced soon)
-    await contains("thead .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    await contains("thead .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item").click();
     expect(getCurrentValues()).toBe(["32", "12", "20"].join(","));
 
     def.resolve();
@@ -3187,8 +3187,8 @@ test("expand a group while loading a filter", async () => {
     });
 
     // Add a groupby, to have a group to expand afterwards
-    await contains("tbody .o_pivot_header_cell_closed").click();
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    await contains("tbody .w_pivot_header_cell_closed").click();
+    await contains(".w-dropdown--menu .dropdown-item").click();
 
     expect(getCurrentValues()).toBe(["32", "12", "12", "20"].join(","));
 
@@ -3200,7 +3200,7 @@ test("expand a group while loading a filter", async () => {
 
     // Expand a group (this operation should be ignored as it concerns the old
     // table, which will be replaced soon)
-    await contains("tbody .o_pivot_header_cell_closed:eq(1)").click();
+    await contains("tbody .w_pivot_header_cell_closed:eq(1)").click();
     expect(getCurrentValues()).toBe(["32", "12", "12", "20"].join(","));
 
     def.resolve();
@@ -3300,9 +3300,9 @@ test("'Measures' menu when there is no measurable fields", async () => {
     await toggleMenu("Measures");
 
     // "Count" is the only measure available
-    expect(queryAllTexts(".o-dropdown--menu .o_menu_item")).toEqual(["Count"]);
+    expect(queryAllTexts(".w-dropdown--menu .w_menu_item")).toEqual(["Count"]);
     // No separator should be displayed in the menu "Measures"
-    expect(".o-dropdown--menu div.dropdown-divider").toHaveCount(0);
+    expect(".w-dropdown--menu div.dropdown-divider").toHaveCount(0);
 });
 
 test("pivot_row_groupby should be also used after first load", async () => {
@@ -3344,7 +3344,7 @@ test("pivot_row_groupby should be also used after first load", async () => {
     expect(queryAllTexts("th").slice(3)).toEqual(["Total", "No", "Yes"]);
     await contains("tbody th").click(); // click on row header "Total"
     await contains("tbody th").click(); // click on row header "Total"
-    await contains(".o-dropdown--menu .o_menu_item").click(); // select "Product"
+    await contains(".w-dropdown--menu .w_menu_item").click(); // select "Product"
     expect(queryAllTexts("th").slice(3)).toEqual(["Total", "xphone", "xpad"]);
     await toggleSearchBarMenu();
     await toggleSaveFavorite();
@@ -3367,7 +3367,7 @@ test("pivot_row_groupby should be also used after first load", async () => {
     ]);
     await contains("tbody th").click(); // click on row header "Total"
     await contains("tbody th").click(); // click on row header "Total"
-    await contains(".o-dropdown--menu .o_menu_item:eq(1)").click(); // select "Customer"
+    await contains(".w-dropdown--menu .w_menu_item:eq(1)").click(); // select "Customer"
     expect(queryAllTexts("th").slice(3)).toEqual(["Total", "First", "Second"]);
     await toggleSearchBarMenu();
     await toggleSaveFavorite();
@@ -3544,7 +3544,7 @@ test("filter -> sort -> unfilter should not crash", async () => {
     expect(getFacetTexts()).toEqual(["xphone"]);
     expect(queryAllTexts("tbody th")).toEqual(["Total", "xphone", "Yes"]);
     expect(getCurrentValues()).toBe(["1", "1", "1"].join());
-    await contains(".o_pivot_measure_row").click();
+    await contains(".w_pivot_measure_row").click();
     await toggleSearchBarMenu();
     await toggleMenuItem("xphone");
     expect(getFacetTexts()).toEqual([]);
@@ -3564,12 +3564,12 @@ test("no class 'o_view_sample_data' when real data are presented", async () => {
 			`,
     });
 
-    expect(".o_pivot_view .o_view_sample_data").toHaveCount(1);
-    expect(".o_pivot_view table").toHaveCount(1);
+    expect(".w_pivot_view .w_view_sample_data").toHaveCount(1);
+    expect(".w_pivot_view table").toHaveCount(1);
     await toggleMenu("Measures");
     await toggleMenuItem("Foo");
-    expect(".o_pivot_view .o_view_sample_data").toHaveCount(0);
-    expect(".o_pivot_view table").toHaveCount(0);
+    expect(".w_pivot_view .w_view_sample_data").toHaveCount(0);
+    expect(".w_pivot_view table").toHaveCount(0);
 });
 
 test("group by properties in pivot view", async () => {
@@ -3614,31 +3614,31 @@ test("group by properties in pivot view", async () => {
 		`,
     });
 
-    expect(".o_value").toHaveCount(1);
-    expect(".o_value").toHaveText("4");
+    expect(".w_value").toHaveCount(1);
+    expect(".w_value").toHaveText("4");
 
     await contains(".border-top-0 span").click();
     expect.verifySteps([]);
 
-    expect(".o_accordion_toggle").toHaveText("Properties");
-    await contains(".o_accordion_toggle:contains(Properties)").click();
+    expect(".w_accordion_toggle").toHaveText("Properties");
+    await contains(".w_accordion_toggle:contains(Properties)").click();
 
     await animationFrame();
     expect.verifySteps(["fetch_definition"]);
 
-    await contains(".o_accordion_values .o_menu_item").click();
+    await contains(".w_accordion_values .w_menu_item").click();
 
     await animationFrame();
     expect.verifySteps(["formatted_read_grouping_sets"]);
 
-    const cells = queryAll(".o_value");
+    const cells = queryAll(".w_value");
     expect(cells).toHaveLength(4);
     expect(cells[0]).toHaveText("2");
     expect(cells[1]).toHaveText("1");
     expect(cells[2]).toHaveText("1");
     expect(cells[3]).toHaveText("4");
 
-    const columns = queryAll(".o_pivot_header_cell_closed");
+    const columns = queryAll(".w_pivot_header_cell_closed");
     expect(columns).toHaveLength(4);
     expect(columns[0]).toHaveText("None");
     expect(columns[1]).toHaveText("aaa");
@@ -3669,14 +3669,14 @@ test("Close header dropdown when a simple groupby is selected", async function (
         resModel: "partner",
         arch: `<pivot/>`,
     });
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(0);
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(0);
     expect(queryAllTexts("thead th")).toEqual(["", "Total", "Count"]);
 
-    await contains("thead .o_pivot_header_cell_closed").click();
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(1);
+    await contains("thead .w_pivot_header_cell_closed").click();
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(1);
 
-    await contains(".o-overlay-container .o-dropdown--menu .dropdown-item").click();
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(0);
+    await contains(".w-overlay-container .w-dropdown--menu .dropdown-item").click();
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(0);
     expect(queryAllTexts("thead th")).toEqual([
         "",
         "Total",
@@ -3696,18 +3696,18 @@ test("Close header dropdown when a simple date groupby option is selected", asyn
         resModel: "partner",
         arch: `<pivot/>`,
     });
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(0);
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(0);
     expect(queryAllTexts("thead th")).toEqual(["", "Total", "Count"]);
 
-    await contains("thead .o_pivot_header_cell_closed").click();
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(1);
+    await contains("thead .w_pivot_header_cell_closed").click();
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(1);
 
     // open the Date sub dropdown
-    await contains(".o-dropdown--menu .dropdown-toggle.o_menu_item").hover();
-    const subDropdownMenu = getDropdownMenu(".o-dropdown--menu .dropdown-toggle.o_menu_item");
+    await contains(".w-dropdown--menu .dropdown-toggle.w_menu_item").hover();
+    const subDropdownMenu = getDropdownMenu(".w-dropdown--menu .dropdown-toggle.w_menu_item");
 
     await contains(queryOne(".dropdown-item:eq(2)", { root: subDropdownMenu })).click();
-    expect(".o-overlay-container .dropdown-menu").toHaveCount(0);
+    expect(".w-overlay-container .dropdown-menu").toHaveCount(0);
     expect(queryAllTexts("thead th")).toEqual([
         "",
         "Total",
@@ -3880,7 +3880,7 @@ test("middle clicking on a cell triggers a doAction", async () => {
     });
 
     expect("table").toHaveClass("o_enable_linking");
-    await contains(".o_pivot_cell_value:eq(1)").click({ ctrlKey: true }); // should trigger a do_action
+    await contains(".w_pivot_cell_value:eq(1)").click({ ctrlKey: true }); // should trigger a do_action
 });
 
 test("display '0' for false group, when grouped by int field", async () => {
@@ -3930,13 +3930,13 @@ test("pivot views make their control panel available directly", async () => {
         groupBy: ["product_id"],
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
-    expect(".o_pivot_view .o_control_panel .o_searchview").toHaveCount(1);
-    expect(".o_pivot_view .o_pivot").toHaveCount(0);
+    expect(".w_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view .w_control_panel .w_searchview").toHaveCount(1);
+    expect(".w_pivot_view .w_pivot").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o_pivot_view .o_pivot").toHaveCount(1);
+    expect(".w_pivot_view .w_pivot").toHaveCount(1);
 });
 
 test("pivot view with monetary with multiple currencies", async () => {
@@ -3956,23 +3956,23 @@ test("pivot view with monetary with multiple currencies", async () => {
 			</pivot>`,
         groupBy: ["currency_id"],
     });
-    expect(".o_pivot table tbody tr").toHaveCount(3);
-    expect(".o_pivot table tbody tr:first").toHaveText("Total \n$ 1,400.00?");
-    expect(".o_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 1,000.00");
-    expect(".o_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
+    expect(".w_pivot table tbody tr").toHaveCount(3);
+    expect(".w_pivot table tbody tr:first").toHaveText("Total \n$ 1,400.00?");
+    expect(".w_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 1,000.00");
+    expect(".w_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
 
     // multi currencies popover
-    await toggleMultiCurrencyPopover(".o_pivot table tbody tr:first .o_value sup");
-    expect(".o_multi_currency_popover").toHaveCount(1);
-    expect(".o_multi_currency_popover").toHaveText("2,800.00 € at $ 0.50 on Jun 13");
+    await toggleMultiCurrencyPopover(".w_pivot table tbody tr:first .w_value sup");
+    expect(".w_multi_currency_popover").toHaveCount(1);
+    expect(".w_multi_currency_popover").toHaveText("2,800.00 € at $ 0.50 on Jun 13");
 
     // test sorting
-    await contains("th.o_pivot_measure_row").click();
-    expect(".o_pivot table tbody tr:eq(1)").toHaveText("EUR \n400.00 €");
-    expect(".o_pivot table tbody tr:last").toHaveText("USD \n$ 1,000.00");
-    await contains("th.o_pivot_measure_row").click();
-    expect(".o_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 1,000.00");
-    expect(".o_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
+    await contains("th.w_pivot_measure_row").click();
+    expect(".w_pivot table tbody tr:eq(1)").toHaveText("EUR \n400.00 €");
+    expect(".w_pivot table tbody tr:last").toHaveText("USD \n$ 1,000.00");
+    await contains("th.w_pivot_measure_row").click();
+    expect(".w_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 1,000.00");
+    expect(".w_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
 });
 
 test("pivot view with a monetary measure aggregated in the company currency", async () => {
@@ -3994,8 +3994,8 @@ test("pivot view with a monetary measure aggregated in the company currency", as
 			</pivot>`,
         groupBy: ["currency_id"],
     });
-    expect(".o_pivot table tbody tr:first").toHaveText("Total \n$ 1,400.00");
-    expect(".o_pivot table tbody tr:last").toHaveText("EUR \n$ 1,400.00");
+    expect(".w_pivot table tbody tr:first").toHaveText("Total \n$ 1,400.00");
+    expect(".w_pivot table tbody tr:last").toHaveText("EUR \n$ 1,400.00");
 });
 
 test("pivot view with a monetary measure that is not a sum", async () => {
@@ -4018,9 +4018,9 @@ test("pivot view with a monetary measure that is not a sum", async () => {
 			</pivot>`,
         groupBy: ["currency_id"],
     });
-    expect(".o_pivot table tbody tr:first").toHaveText("Total \n500.00");
-    expect(".o_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 500.00");
-    expect(".o_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
+    expect(".w_pivot table tbody tr:first").toHaveText("Total \n500.00");
+    expect(".w_pivot table tbody tr:eq(1)").toHaveText("USD \n$ 500.00");
+    expect(".w_pivot table tbody tr:last").toHaveText("EUR \n400.00 €");
 });
 
 test.tags("desktop");
@@ -4054,23 +4054,23 @@ test("scroll position is restored when coming back to pivot view", async () => {
         },
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     // simulate a scroll in the pivot view
-    queryOne(".o_content").scrollTop = 200;
+    queryOne(".w_content").scrollTop = 200;
 
     await getService("action").switchView("list");
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // the pivot is "lazy", so it displays the control panel directly, and the renderer later with
     // the data => simulate this and check that the scroll position is correctly restored
     def = Promise.withResolvers();
     await getService("action").switchView("pivot");
-    expect(".o_pivot_view").toHaveCount(1);
-    expect(".o_content .o_pivot").toHaveCount(0);
+    expect(".w_pivot_view").toHaveCount(1);
+    expect(".w_content .w_pivot").toHaveCount(0);
     def.resolve();
     await animationFrame();
-    expect(".o_content .o_pivot").toHaveCount(1);
-    expect(".o_content").toHaveProperty("scrollTop", 200);
+    expect(".w_content .w_pivot").toHaveCount(1);
+    expect(".w_content").toHaveProperty("scrollTop", 200);
 });
 
 test.tags("desktop");
@@ -4098,16 +4098,16 @@ test("restored scroll position is not reapplied when the pivot is updated", asyn
             [false, "list"],
         ],
     });
-    queryOne(".o_content").scrollTop = 200;
+    queryOne(".w_content").scrollTop = 200;
     await getService("action").switchView("list");
     await getService("action").switchView("pivot");
     await animationFrame();
-    expect(".o_content").toHaveProperty("scrollTop", 200);
+    expect(".w_content").toHaveProperty("scrollTop", 200);
 
     // the user scrolls back to the top, then sorts the rows by clicking on the measure
-    queryOne(".o_content").scrollTop = 0;
-    await contains("th.o_pivot_measure_row").click();
-    expect(".o_content").toHaveProperty("scrollTop", 0);
+    queryOne(".w_content").scrollTop = 0;
+    await contains("th.w_pivot_measure_row").click();
+    expect(".w_content").toHaveProperty("scrollTop", 0);
 });
 
 test.tags("mobile");
@@ -4140,23 +4140,23 @@ test("scroll position is restored when coming back to pivot view (mobile)", asyn
         },
     });
 
-    expect(".o_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view").toHaveCount(1);
     // simulate a scroll in the pivot view
-    queryOne(".o_pivot_view").scrollTop = 200;
+    queryOne(".w_pivot_view").scrollTop = 200;
 
     await getService("action").switchView("list");
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // the pivot is "lazy", so it displays the control panel directly, and the renderer later with
     // the data => simulate this and check that the scroll position is correctly restored
     def = Promise.withResolvers();
     await getService("action").switchView("pivot");
-    expect(".o_pivot_view").toHaveCount(1);
-    expect(".o_content .o_pivot").toHaveCount(0);
+    expect(".w_pivot_view").toHaveCount(1);
+    expect(".w_content .w_pivot").toHaveCount(0);
     def.resolve();
     await animationFrame();
-    expect(".o_content .o_pivot").toHaveCount(1);
-    expect(".o_pivot_view").toHaveProperty("scrollTop", 200);
+    expect(".w_content .w_pivot").toHaveCount(1);
+    expect(".w_pivot_view").toHaveProperty("scrollTop", 200);
 });
 
 test("Measure from arch is not lost after update", async () => {
@@ -4179,20 +4179,20 @@ test("Measure from arch is not lost after update", async () => {
     });
 
     expect(readGroupCount).toBe(1);
-    expect("td.o_pivot_cell_value:contains(2)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(2)").toHaveCount(1);
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     expect(".dropdown-menu .dropdown-item:contains(Product)").toHaveCount(1);
 
     await contains(".dropdown-item:contains(Product)").click();
     await contains(".dropdown-item:contains(Count)").click();
-    expect("td.o_pivot_cell_value:contains(4)").toHaveCount(1);
+    expect("td.w_pivot_cell_value:contains(4)").toHaveCount(1);
     expect(readGroupCount).toBe(2);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("Some Filter");
     expect(readGroupCount).toBe(3);
 
-    await contains(".o_pivot_buttons button.dropdown-toggle").click();
+    await contains(".w_pivot_buttons button.dropdown-toggle").click();
     expect(".dropdown-menu .dropdown-item:contains(Product)").toHaveCount(1);
 });

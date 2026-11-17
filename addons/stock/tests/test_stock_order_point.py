@@ -105,5 +105,5 @@ class TestStockOrderpointActivity(TestStockCommon):
         self.assertEqual(
             activity.create_uid.id,
             SUPERUSER_ID,
-            "The activity creator leaked! It must be created by OdooBot (ID 1), not the portal user.",
+            "The activity creator leaked! It must be created by WethBot (ID 1), not the portal user.",
         )

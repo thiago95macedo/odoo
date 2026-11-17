@@ -206,7 +206,7 @@ test("Changing a section's UoM marks the order as dirty and applies the factor t
 
     await contains(".o_data_row:contains(Sec3-sub2):first [name=product_and_description]").click();
     await contains(".o_selected_row [name=section_uom_id] input", { visible: false }).click();
-    await contains(".o-autocomplete--dropdown-item:contains(Dozens)").click();
+    await contains(".w-autocomplete--dropdown-item:contains(Dozens)").click();
 
     expect(".o_form_button_save").toBeVisible({
         message: "The order should be dirty after changing the section's UoM",
@@ -264,7 +264,7 @@ test("Changing a section's UoM applies the factor to its lines", async () => {
 
     await contains(".o_data_row:contains(Sec4):first [name=product_and_description]").click();
     await contains(".o_selected_row [name=section_uom_id] input", { visible: false }).click();
-    await contains(".o-autocomplete--dropdown-item:contains(Dozens)").click();
+    await contains(".w-autocomplete--dropdown-item:contains(Dozens)").click();
 
     expect.verifySteps(["batch_onchange_sol"]);
     expect(".o_data_row:contains(Sec4-r1) td[name=sol_qty]").toHaveText("12.00");
@@ -369,7 +369,7 @@ test("Changing a section's UoM to an incompatible one doesn't change its lines",
 
     await contains(".o_data_row:contains(Sec3-sub2):first [name=product_and_description]").click();
     await contains(".o_selected_row [name=section_uom_id] input", { visible: false }).click();
-    await contains(".o-autocomplete--dropdown-item:contains(kg)").click();
+    await contains(".w-autocomplete--dropdown-item:contains(kg)").click();
     await clickSave();
 
     expect.verifySteps(["web_save"]);

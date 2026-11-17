@@ -51,14 +51,14 @@ test("systray in translate mode", async () => {
         },
     });
     await setupWebsiteBuilder(`<h1> Homepage </h1>`, { openEditor: false });
-    await contains(".o-website-btn-custo-primary").click();
+    await contains(".w-website-btn-custo-primary").click();
     expect(".o_popover .o_translate_website_dropdown_item:contains('Translate')").toHaveCount(1);
     expect(".o_popover .o_edit_website_dropdown_item:contains('Edit')").toHaveCount(1);
 });
 
 test("hide snippets menu in translate mode", async () => {
     await setupSidebarBuilderForTranslation({ websiteContent: `<h1> Homepage </h1>` });
-    expect(".o-snippets-tabs").toHaveCount(0);
+    expect(".w-snippets-tabs").toHaveCount(0);
 });
 
 test("invisible elements in translate mode", async () => {
@@ -108,7 +108,7 @@ test("translate text", async () => {
     const textNode = editor.editable.querySelector("span").firstChild;
     setSelection({ anchorNode: textNode, anchorOffset: 1 });
     await insertText(editor, "1");
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect(resultSave.length).toBe(1);
     expect(resultSave[0]).toBe("H1ello");
 });
@@ -153,7 +153,7 @@ test("translate field", async () => {
     expect(":iframe [data-oe-model='test']").toHaveClass("o_savable");
     setSelection({ anchorNode: queryOne(":iframe #sectionId"), anchorOffset: 0 });
     await insertText(editor, "New");
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect.verifySteps([
         `<div data-oe-model="test" data-oe-field="field" data-oe-id="1" class=""><p id="sectionId">NewTitle</p></div>`,
     ]);
@@ -209,7 +209,7 @@ test("404 page in translate mode", async () => {
         },
     });
     await setupWebsiteBuilder(`<h1> Homepage </h1>`, { openEditor: false });
-    await contains(".o-website-btn-custo-primary").click();
+    await contains(".w-website-btn-custo-primary").click();
     expect(
         ".o_popover .o_translate_website_dropdown_item:contains('Translate 404 page')"
     ).toHaveCount(1);
@@ -263,7 +263,7 @@ test("translate attribute", async () => {
     await contains(
         ".options-container [data-action-id='translateAttribute'][data-action-param='title'] input"
     ).edit("titre");
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect(resultSave.length).toBe(1);
     expect(resultSave[0]).toBe("titre");
 });
@@ -290,7 +290,7 @@ test("translate attribute history", async () => {
         `<img src="/web/image/website.landscape_md_9" class="img img-fluid o_savable_attribute o_translatable_attribute${translated ? " oe_translated" : ""
         }" loading="lazy" title="${titleName}" style="" data-oe-translation-state="to_translate">`;
     expect(wrapEl).toHaveInnerHTML(getImg({ titleName: "titre", translated: true }));
-    await contains(".o-snippets-menu button[data-icon='undo']").click();
+    await contains(".w-snippets-menu button[data-icon='undo']").click();
     expect(wrapEl).toHaveInnerHTML(getImg({ titleName: "title", translated: false }));
     await contains(":iframe img").click();
     expect(
@@ -396,7 +396,7 @@ test("test that powerbox should not open in translate mode", async () => {
     // Simulate typing `/`
     await insertText(editor, "/");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
 });
 
 test("copy of a translated span should not copy branding attributes", async () => {
@@ -436,7 +436,7 @@ describe("save translation", () => {
         ).firstChild;
         setSelection({ anchorNode: textSecondNode, anchorOffset: 1 });
         await insertText(editor, "1");
-        await contains(".o-snippets-top-actions button:contains(Save)").click();
+        await contains(".w-snippets-top-actions button:contains(Save)").click();
     }
 
     test("save translation of contents of the same view", async () => {

@@ -186,13 +186,13 @@ test("tooltip with a template, no info", async () => {
     assignTestEnv({ tooltip_text: "tooltip" });
     await mountWithCleanup(MyComponent);
 
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover("button");
     await runAllTimers();
 
-    expect(".o-tooltip").toHaveCount(1);
-    expect(".o-tooltip").toHaveInnerHTML("<i>tooltip</i>");
+    expect(".w-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveInnerHTML("<i>tooltip</i>");
 });
 
 test.tags("desktop");
@@ -221,13 +221,13 @@ test("tooltip with a template and info", async () => {
     );
     await mountWithCleanup(MyComponent);
 
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover("button");
     await runAllTimers();
 
-    expect(".o-tooltip").toHaveCount(1);
-    expect(".o-tooltip").toHaveInnerHTML("<ul><li>X: 3</li><li>Y: abc</li></ul>");
+    expect(".w-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveInnerHTML("<ul><li>X: 3</li><li>Y: abc</li></ul>");
 });
 
 test.tags("desktop");
@@ -240,10 +240,10 @@ test("empty tooltip, no template", async () => {
     }
 
     await mountWithCleanup(MyComponent);
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
     await hover("button");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -253,13 +253,13 @@ test("tooltip with a delay", async () => {
     }
 
     await mountWithCleanup(MyComponent);
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover("button.myBtn");
     await advanceTime(OPEN_DELAY);
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
     await advanceTime(2000 - OPEN_DELAY);
-    expect(".o-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveCount(1);
 });
 
 test.tags("desktop");

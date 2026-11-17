@@ -61,7 +61,7 @@ export class PaymentAdyen extends PaymentInterface {
         return ["mc", "visa", "amex", "discover"].includes(line.card_type);
     }
 
-    _handleOdooConnectionFailure(data = {}) {
+    _handleWethConnectionFailure(data = {}) {
         // handle timeout
         var line = this.pendingAdyenline();
         if (line) {
@@ -69,7 +69,7 @@ export class PaymentAdyen extends PaymentInterface {
         }
         this._show_error(
             _t(
-                "Could not connect to the Odoo server, please check your internet connection and try again."
+                "Could not connect to the WETH server, please check your internet connection and try again."
             )
         );
 
@@ -81,7 +81,7 @@ export class PaymentAdyen extends PaymentInterface {
             [this.payment_method_id.id],
             data,
             operation,
-        ]).catch(this._handleOdooConnectionFailure.bind(this));
+        ]).catch(this._handleWethConnectionFailure.bind(this));
     }
 
     _adyenGetSaleId() {
@@ -354,7 +354,7 @@ export class PaymentAdyen extends PaymentInterface {
         ]);
 
         if (!notification) {
-            this._handleOdooConnectionFailure();
+            this._handleWethConnectionFailure();
             return;
         }
         const line = this.pendingAdyenline();

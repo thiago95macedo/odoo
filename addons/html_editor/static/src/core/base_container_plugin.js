@@ -93,7 +93,7 @@ export class BaseContainerPlugin extends Plugin {
             },
         ],
         system_classes: [BASE_CONTAINER_CLASS],
-        paste_odoo_editor_html_processors: this.convertBaseContainers.bind(this),
+        paste_weth_editor_html_processors: this.convertBaseContainers.bind(this),
     };
 
     createBaseContainer({ nodeName = this.getDefaultNodeName(), children } = {}) {
@@ -174,7 +174,7 @@ export class BaseContainerPlugin extends Plugin {
      * avoid an infinite loop:
      * Considering a `DIV`,
      * - During `is_node_splittable_predicates`, one predicate should return false
-     *   if the `DIV` is NOT a baseContainer candidate (Odoo specification),
+     *   if the `DIV` is NOT a baseContainer candidate (WETH specification),
      *   therefore `is_valid_for_base_container_predicates` should be evaluated.
      * - During `is_valid_for_base_container_predicates`, one predicate should
      *   return false if the `DIV` is unsplittable, because a node has to be

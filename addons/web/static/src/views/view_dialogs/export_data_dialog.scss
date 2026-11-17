@@ -1,5 +1,6 @@
 .o_export_data_dialog .modal-body {
     display: flex;
+
     @include media-breakpoint-down(md) {
         display: block;
     }
@@ -19,14 +20,15 @@
             grid-template-columns: minmax(0, 1fr);
             grid-template-rows: none;
 
-            .o_left_field_panel, .o_right_field_panel {
+            .o_left_field_panel,
+            .o_right_field_panel {
                 min-height: 8rem;
                 max-height: 35vh;
             }
         }
     }
 
-    .o_export_search_input:not(:placeholder-shown) + .oi {
+    .o_export_search_input:not(:placeholder-shown)+.oi {
         display: none;
     }
 
@@ -34,7 +36,7 @@
         @include border-radius($input-border-radius);
     }
 
-    .o_export_languages .o-autocomplete {
+    .o_export_languages .w-autocomplete {
         flex: 1 0 80px;
 
         .o_input {
@@ -44,7 +46,8 @@
         }
     }
 
-    .o_left_field_panel, .o_right_field_panel {
+    .o_left_field_panel,
+    .o_right_field_panel {
         user-select: none;
 
         .o_export_tree_item {

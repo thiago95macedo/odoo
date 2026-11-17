@@ -8,50 +8,50 @@ import {
     UpdatePivotCommand,
     CancelledReason,
 } from "@weth/o-spreadsheet";
-import * as OdooCancelledReason from "@spreadsheet/o_spreadsheet/cancelled_reason";
+import * as WethCancelledReason from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
 type CoreDispatch = CorePlugin["dispatch"];
 type UIDispatch = UIPlugin["dispatch"];
 type CoreCommand = Parameters<CorePlugin["allowDispatch"]>[0];
 type Command = Parameters<UIPlugin["allowDispatch"]>[0];
 
-// TODO look for a way to remove this and use the real import * as OdooCancelledReason
-type OdooCancelledReason = string;
+// TODO look for a way to remove this and use the real import * as WethCancelledReason
+type WethCancelledReason = string;
 
 declare module "@spreadsheet" {
-    interface OdooCommandDispatcher {
-        dispatch<T extends OdooCommandTypes, C extends Extract<OdooCommand, { type: T }>>(
+    interface WethCommandDispatcher {
+        dispatch<T extends WethCommandTypes, C extends Extract<WethCommand, { type: T }>>(
             type: {} extends Omit<C, "type"> ? T : never
-        ): OdooDispatchResult;
-        dispatch<T extends OdooCommandTypes, C extends Extract<OdooCommand, { type: T }>>(
+        ): WethDispatchResult;
+        dispatch<T extends WethCommandTypes, C extends Extract<WethCommand, { type: T }>>(
             type: T,
             r: Omit<C, "type">
-        ): OdooDispatchResult;
+        ): WethDispatchResult;
     }
 
-    interface OdooCoreCommandDispatcher {
-        dispatch<T extends OdooCoreCommandTypes, C extends Extract<OdooCoreCommand, { type: T }>>(
+    interface WethCoreCommandDispatcher {
+        dispatch<T extends WethCoreCommandTypes, C extends Extract<WethCoreCommand, { type: T }>>(
             type: {} extends Omit<C, "type"> ? T : never
-        ): OdooDispatchResult;
-        dispatch<T extends OdooCoreCommandTypes, C extends Extract<OdooCoreCommand, { type: T }>>(
+        ): WethDispatchResult;
+        dispatch<T extends WethCoreCommandTypes, C extends Extract<WethCoreCommand, { type: T }>>(
             type: T,
             r: Omit<C, "type">
-        ): OdooDispatchResult;
+        ): WethDispatchResult;
     }
 
-    interface OdooDispatchResult extends DispatchResult {
-        readonly reasons: (CancelledReason | OdooCancelledReason)[];
-        isCancelledBecause(reason: CancelledReason | OdooCancelledReason): boolean;
+    interface WethDispatchResult extends DispatchResult {
+        readonly reasons: (CancelledReason | WethCancelledReason)[];
+        isCancelledBecause(reason: CancelledReason | WethCancelledReason): boolean;
     }
 
-    type OdooCommandTypes = OdooCommand["type"];
-    type OdooCoreCommandTypes = OdooCoreCommand["type"];
+    type WethCommandTypes = WethCommand["type"];
+    type WethCoreCommandTypes = WethCoreCommand["type"];
 
-    type OdooDispatch = UIDispatch & OdooCommandDispatcher["dispatch"];
-    type OdooCoreDispatch = CoreDispatch & OdooCoreCommandDispatcher["dispatch"];
+    type WethDispatch = UIDispatch & WethCommandDispatcher["dispatch"];
+    type WethCoreDispatch = CoreDispatch & WethCoreCommandDispatcher["dispatch"];
 
 
-    type OdooListCoreDefinition = {
+    type WethListCoreDefinition = {
         model: string;
         domain: Array<Array<string>>;
         orderBy: Array<string>;
@@ -96,7 +96,7 @@ declare module "@spreadsheet" {
 
     // this command is deprecated. use UPDATE_PIVOT instead
     export interface UpdatePivotDomainCommand {
-        type: "UPDATE_ODOO_PIVOT_DOMAIN";
+        type: "UPDATE_WETH_PIVOT_DOMAIN";
         pivotId: string;
         domain: Array;
     }
@@ -124,11 +124,11 @@ declare module "@spreadsheet" {
         delta: number;
     }
 
-    export interface SetOdooLinkToChartCommand {
-        type: "UPDATE_ODOO_LINK_TO_CHART";
+    export interface SetWethLinkToChartCommand {
+        type: "UPDATE_WETH_LINK_TO_CHART";
         chartId: string;
-        odooLink:
-        | { type: "odooMenu"; odooMenuId: number | string }
+        wethLink:
+        | { type: "wethMenu"; wethMenuId: number | string }
         | {
             type: "dataSource";
             dataSourceCoreId: string;
@@ -155,9 +155,9 @@ declare module "@spreadsheet" {
     }
 
     export interface InsertListCommand {
-        type: "INSERT_ODOO_LIST";
+        type: "INSERT_WETH_LIST";
         listId: string;
-        definition: OdooListCoreDefinition;
+        definition: WethListCoreDefinition;
         sheetId: string;
         col: number;
         row: number;
@@ -166,7 +166,7 @@ declare module "@spreadsheet" {
     }
 
     export interface ReinsertListCommand {
-        type: "RE_INSERT_ODOO_LIST";
+        type: "RE_INSERT_WETH_LIST";
         listId: string;
         sheetId: string;
         col: number;
@@ -176,7 +176,7 @@ declare module "@spreadsheet" {
         mode: "static" | "dynamic";
     }
 
-    type OdooCoreCommand =
+    type WethCoreCommand =
         | ExtendedAddPivotCommand
         | ExtendedUpdatePivotCommand
         | UpdatePivotDomainCommand
@@ -190,14 +190,14 @@ declare module "@spreadsheet" {
         | InsertListCommand
         | ReinsertListCommand;
 
-    export type AllCoreCommand = OdooCoreCommand | CoreCommand;
+    export type AllCoreCommand = WethCoreCommand | CoreCommand;
 
-    type OdooLocalCommand =
+    type WethLocalCommand =
         | RefreshAllDataSourcesCommand
         | SetGlobalFilterValueCommand
         | SetManyGlobalFilterValueCommand;
 
-    type OdooCommand = OdooCoreCommand | OdooLocalCommand;
+    type WethCommand = WethCoreCommand | WethLocalCommand;
 
-    export type AllCommand = OdooCommand | Command;
+    export type AllCommand = WethCommand | Command;
 }

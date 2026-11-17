@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-08-31 16:29+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "s19-4/cloud_storage_migration/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgid "Attachment"
 msgstr "Anexo"
 
 #. module: cloud_storage_migration
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_migration/models/ir_attachment.py:0
 msgid ""
 "Attachment (%s) does not have a stored filename and cannot be migrated to "
@@ -45,7 +45,7 @@ msgstr ""
 "para o armazenamento em nuvem."
 
 #. module: cloud_storage_migration
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_migration/models/ir_attachment.py:0
 msgid ""
 "Attachment (%s) is not a binary attachment and cannot be migrated to cloud "
@@ -88,7 +88,7 @@ msgid "Cloud Storage Migration Report"
 msgstr "Relatório de migração para armazenamento em nuvem"
 
 #. module: cloud_storage_migration
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_migration/models/ir_attachment.py:0
 msgid "Cloud storage provider is not configured"
 msgstr "O provedor de armazenamento em nuvem não está configurado"
@@ -111,7 +111,7 @@ msgid "Display Name"
 msgstr "Nome de exibição"
 
 #. module: cloud_storage_migration
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_migration/models/ir_attachment.py:0
 msgid "Failed to upload attachment %(id)s to cloud storage: %(code)s"
 msgstr "Falha ao carregar o anexo %(id)s no armazenamento em nuvem: %(code)s"
@@ -227,7 +227,7 @@ msgid "No attachment data found"
 msgstr "Não foram encontrados dados anexados"
 
 #. module: cloud_storage_migration
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage_migration/models/ir_attachment.py:0
 msgid "No model for cloud storage migration"
 msgstr "Não há modelo para migração de armazenamento em nuvem"

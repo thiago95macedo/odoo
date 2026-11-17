@@ -359,7 +359,7 @@ export class MassMailingHtmlField extends HtmlField {
             this.activeElement && !this.activeElement.contains(ev.target);
         const ignoredTargetContainer =
             isTargetOutsideActiveElement &&
-            ev.target?.closest(".o-main-components-container, .o_form_status_indicator_buttons");
+            ev.target?.closest(".w-main-components-container, .o_form_status_indicator_buttons");
         const shouldIgnoreTarget =
             ignoredTargetContainer && !ignoredTargetContainer.contains(this.activeElement);
         if (isTargetOutsideActiveElement && !shouldIgnoreTarget) {

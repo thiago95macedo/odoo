@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_dpo/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgid "American Express"
 msgstr "American Express"
 
 #. module: payment_dpo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_dpo/models/payment_transaction.py:0
 msgid ""
 "An error occurred during processing of your payment (code %(code)s: %"
@@ -120,7 +120,7 @@ msgid "The technical code of this payment provider."
 msgstr "O código técnico deste provedor de pagamento."
 
 #. module: payment_dpo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_dpo/models/payment_transaction.py:0
 msgid "Unknown status code: %s"
 msgstr "Código de status desconhecido: %s"

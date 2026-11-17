@@ -54,9 +54,9 @@ test("Confirmation dialog on delete contains a warning", async () => {
             </sheet>
         </form>`,
     });
-    await contains(".o_cp_action_menus button").click();
-    await contains(".o_menu_item:contains(Delete)").click();
-    expect(".o_dialog div.alert.alert-warning").toHaveText(
+    await contains(".w_cp_action_menus button").click();
+    await contains(".w_menu_item:contains(Delete)").click();
+    expect(".w_dialog div.alert.alert-warning").toHaveText(
         "This operation will create a gap in the sequence.",
         { message: "warning message has been added in the dialog" }
     );
@@ -115,9 +115,9 @@ test("Update description on product line", async () => {
         </form>`,
     });
 
-    await click(".o_many2one");
+    await click(".w_many2one");
     await insertText("textarea[placeholder='Enter a description']", "testDescription");
-    await click(".o_form_button_save");
+    await click(".w_form_button_save");
     await expect.waitForSteps(["save"]);
 
     const line = pyEnv["account.move.line"].browse([1])[0];

@@ -4,7 +4,7 @@
         flex-wrap: wrap;
         align-items: center;
         padding: 12px 24px;
-        border-bottom: 1px solid $o-gray-300;
+        border-bottom: 1px solid $w-gray-300;
 
         td {
             border: 0;
@@ -13,13 +13,13 @@
             background-color: transparent;
         }
     }
-    
-    .partner-line-balance{
+
+    .partner-line-balance {
         order: 3;
     }
 
-    .partner-line .pos-right-align{
-        text-align: left ;
+    .partner-line .pos-right-align {
+        text-align: left;
     }
 
     .edit-partner-button-cell {
@@ -28,21 +28,22 @@
 
     .partner-info {
         &.selected {
-            background-color: $o-component-active-bg;
-            color: $o-action;
+            background-color: $w-component-active-bg;
+            color: $w-action;
         }
     }
-    
+
 }
 
 .partner-line {
     &:hover i[data-icon='chevron_forward'] {
         transition: $transition-base;
         transform: translateX(.5rem);
-        color: $o-main-link-color;
+        color: $w-main-link-color;
     }
+
     &.selected {
-        background-color: $o-component-active-bg;
-        color: $o-action;
+        background-color: $w-component-active-bg;
+        color: $w-action;
     }
 }

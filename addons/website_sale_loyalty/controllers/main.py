@@ -37,7 +37,7 @@ class WebsiteSale(main.WebsiteSale):
     def activate_coupon(self, code, r="/shop", **_kwargs):
         url_parts = url_parse(r)
         url_query = url_parts.decode_query()
-        url_query.pop("coupon_error", False)  # trust only Odoo error message
+        url_query.pop("coupon_error", False)  # trust only WETH error message
         url_query.pop("coupon_error_type", False)
         code = code.strip()
 

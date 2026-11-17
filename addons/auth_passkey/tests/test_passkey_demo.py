@@ -482,8 +482,8 @@ class PasskeyTest(HttpCaseWithUserDemo):
                 'password': '',
             })
 
-            # Login successful, redirected to /odoo
-            self.assertTrue(response.url.endswith('/odoo'))
+            # Login successful, redirected to /weth
+            self.assertTrue(response.url.endswith('/weth'))
 
     def test_android_digital_asset_links(self):
         response = self.url_open('/.well-known/assetlinks.json')

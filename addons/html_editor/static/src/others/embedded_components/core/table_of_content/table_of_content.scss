@@ -5,12 +5,13 @@ $embedded-toc-bg--active: #1ba1e4;
     margin-right: 2px;
     margin-top: 16px;
     margin-bottom: 16px;
-    outline: 1px solid $o-gray-300;
+    outline: 1px solid $w-gray-300;
     outline-offset: -1px;
     border-radius: 5px;
-    background-color: $o-gray-100;
+    background-color: $w-gray-100;
+
     & .o_embedded_toc_content {
-        background-color: $o-view-background-color;
+        background-color: $w-view-background-color;
 
         a[class*="o_embedded_toc_link_depth_"] {
             font-family: $font-family-base !important;
@@ -38,16 +39,24 @@ $embedded-toc-bg--active: #1ba1e4;
     }
 
     & .o_embedded_toc_label {
-        color: $o-gray-600;
+        color: $w-gray-600;
     }
 
 }
 
 .o_field_html {
-    .odoo-editor-editable,
+
+    .weth-editor-editable,
     .o_readonly {
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             transition: background-color 0.5s ease;
+
             &.o_embedded_toc_header_highlight {
                 border-radius: 0.25rem;
                 background-color: rgba($embedded-toc-bg--active, 0.2);

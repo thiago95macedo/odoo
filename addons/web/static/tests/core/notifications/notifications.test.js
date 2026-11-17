@@ -365,7 +365,7 @@ test("notification must be on the bottom of the screen in mobile", async () => {
         window.innerHeight || 0
     );
 
-    // $o-navbar-height (46px) x 0.25 = 11.5
+    // $w-navbar-height (46px) x 0.25 = 11.5
     // we use 15 to have a buffer in case of inconsistent browser computation
     expect(viewportHeight - notificationManagerRect.bottom).toBeLessThan(15);
 });

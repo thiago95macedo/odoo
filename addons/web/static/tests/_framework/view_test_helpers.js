@@ -32,7 +32,7 @@ import { isSmall } from "./ui_test_helpers";
  * @typedef {ViewProps & {
  *  archs?: Record<string, string>
  *  config?: Config;
- *  env?: import("@web/env").OdooEnv;
+ *  env?: import("@web/env").WethEnv;
  *  resId?: number;
  *  [key: string]: any;
  * }} MountViewParams
@@ -128,7 +128,7 @@ export async function clickButton(options) {
  * @param {SelectorOptions} [options]
  */
 export async function clickCancel(options) {
-    await contains(buildSelector(`.o_form_button_cancel:enabled`, options)).click();
+    await contains(buildSelector(`.w_form_button_cancel:enabled`, options)).click();
 }
 
 /**
@@ -149,7 +149,7 @@ export async function clickFieldDropdown(fieldName, options) {
  */
 export async function clickFieldDropdownItem(fieldName, itemContent, options) {
     if (isSmall()) {
-        await contains(`.o_kanban_record:contains('${itemContent}')`).click();
+        await contains(`.w_kanban_record:contains('${itemContent}')`).click();
         return;
     }
     const dropdowns = queryAll(
@@ -180,14 +180,14 @@ export async function clickModalButton(options) {
  * @param {SelectorOptions} [options]
  */
 export async function clickSave(options) {
-    await contains(buildSelector(`.o_form_button_save:enabled`, options)).click();
+    await contains(buildSelector(`.w_form_button_save:enabled`, options)).click();
 }
 
 /**
  * @param {SelectorOptions} [options]
  */
 export async function clickViewButton(options) {
-    await contains(buildSelector(`.o_view_controller .btn:enabled`, options)).click();
+    await contains(buildSelector(`.w_view_controller .btn:enabled`, options)).click();
 }
 
 /**
@@ -210,7 +210,7 @@ export function expectMarkup(value) {
  * @param {SelectorOptions} options
  */
 export function fieldInput(name, options) {
-    return contains(buildSelector(`.o_field_widget[name='${name}'] input`, options));
+    return contains(buildSelector(`.w_field_widget[name='${name}'] input`, options));
 }
 
 /**
@@ -321,7 +321,7 @@ export async function hideTab() {
  */
 export async function editSelectMenu(selector, { value, index }) {
     async function selectItem(value) {
-        const elementToSelect = queryFirst(`.o_select_menu_item:contains(${value})`);
+        const elementToSelect = queryFirst(`.w_select_menu_item:contains(${value})`);
         if (elementToSelect) {
             await click(elementToSelect);
             return;
@@ -332,22 +332,22 @@ export async function editSelectMenu(selector, { value, index }) {
         }
     }
     let inputSelector = buildSelector(selector);
-    const selectMenuId = queryFirst(inputSelector).closest(".o_select_menu").dataset.id;
-    if (!queryFirst(`.o_select_menu_menu [data-id='${selectMenuId}']`)) {
+    const selectMenuId = queryFirst(inputSelector).closest(".w_select_menu").dataset.id;
+    if (!queryFirst(`.w_select_menu_menu [data-id='${selectMenuId}']`)) {
         await contains(inputSelector).click();
     }
-    if (queryFirst(".o_select_menu_menu input")) {
-        inputSelector = ".o_select_menu_menu input";
+    if (queryFirst(".w_select_menu_menu input")) {
+        inputSelector = ".w_select_menu_menu input";
         await contains(inputSelector).click();
     }
     if (index !== undefined) {
-        return await contains(`.o_select_menu_item:nth-of-type(${index + 1})`).click();
+        return await contains(`.w_select_menu_item:nth-of-type(${index + 1})`).click();
     }
     if (value === "") {
         // Because this helper must work even when no input is editable (searchable=false),
         // we unselect the currently selected value with the 'X' button
         const clearButton = queryFirst(
-            `.o_select_menu[data-id='${selectMenuId}'] .o_select_menu_toggler_clear, .o_select_menu_menu .o_clear_button`
+            `.w_select_menu[data-id='${selectMenuId}'] .w_select_menu_toggler_clear, .w_select_menu_menu .w_clear_button`
         );
         if (clearButton) {
             await click(clearButton);

@@ -1708,7 +1708,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "create_date": fields.Datetime.to_string(message.create_date),
                                     "date": fields.Datetime.to_string(message.date),
                                     "default_subject": "Test",
-                                    "email_from": '"OdooBot" <odoobot@example.com>',
+                                    "email_from": '"WethBot" <wethbot@example.com>',
                                     "id": message.id,
                                     "incoming_email_cc": False,
                                     "incoming_email_to": False,
@@ -1724,7 +1724,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "rating_id": False,
                                     "reactions": [],
                                     "record_name": "Test",
-                                    "reply_to": '"OdooBot" <catchall.test@test.mycompany.com>',
+                                    "reply_to": '"WethBot" <catchall.test@test.mycompany.com>',
                                     "res_id": record.id,
                                     "scheduledDatetime": False,
                                     "is_bookmarked": False,
@@ -1776,7 +1776,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "id": self.env.user.partner_id.id,
                                     "is_company": False,
                                     "main_user_id": self.env.user.id,
-                                    "name": "OdooBot",
+                                    "name": "WethBot",
                                     "write_date": fields.Datetime.to_string(
                                         self.env.user.partner_id.write_date
                                     ),
@@ -1827,7 +1827,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "create_date": fields.Datetime.to_string(message.create_date),
                                     "date": fields.Datetime.to_string(message.date),
                                     "default_subject": "Test",
-                                    "email_from": '"OdooBot" <odoobot@example.com>',
+                                    "email_from": '"WethBot" <wethbot@example.com>',
                                     "id": message.id,
                                     "incoming_email_cc": False,
                                     "incoming_email_to": False,
@@ -1844,7 +1844,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "reactions": [],
                                     "record_name": "Test",
                                     "res_id": record.id,
-                                    "reply_to": '"OdooBot" <catchall.test@test.mycompany.com>',
+                                    "reply_to": '"WethBot" <catchall.test@test.mycompany.com>',
                                     "scheduledDatetime": False,
                                     "is_bookmarked": False,
                                     "subject": False,
@@ -1895,7 +1895,7 @@ class TestMessageToStorePerformance(BaseMailPerformance):
                                     "id": self.env.user.partner_id.id,
                                     "is_company": False,
                                     "main_user_id": self.env.user.id,
-                                    "name": "OdooBot",
+                                    "name": "WethBot",
                                     "write_date": fields.Datetime.to_string(
                                         self.env.user.partner_id.write_date
                                     ),

@@ -37,19 +37,19 @@ test("can create a lead from the thread action after the conversation ends", asy
     });
     await start();
     await openDiscuss(channel_id);
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
-    await click(".o-mail-DiscussContent-header button[title='Create Lead']");
-    await insertText(".o-livechat-LivechatCommandDialog-form input", "testlead");
-    await click(".o-mail-ActionPanel button", { text: "Create Lead" });
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await click(".w-mail-DiscussContent-header button[title='Create Lead']");
+    await insertText(".w-livechat-LivechatCommandDialog-form input", "testlead");
+    await click(".w-mail-ActionPanel button", { text: "Create Lead" });
     const [{ date }] = pyEnv["mail.message"].search_read([["res_id", "=", channel_id]]);
     const time = deserializeDateTime(date).toLocaleString(luxon.DateTime.TIME_SIMPLE, {
         locale: user.lang,
     });
     await contains(
-        `.o-mail-NotificationMessage:text('${serverState.partnerName} created a new lead: testlead${time}')`
+        `.w-mail-NotificationMessage:text('${serverState.partnerName} created a new lead: testlead${time}')`
     );
     const [leadId] = pyEnv["crm.lead"].search([["name", "=", "testlead"]]);
     await contains(
-        `.o-mail-NotificationMessage a[href='/mail/view?model=crm.lead&res_id=${leadId}'][data-oe-model='crm.lead'][data-oe-id='${leadId}']:text('testlead')`
+        `.w-mail-NotificationMessage a[href='/mail/view?model=crm.lead&res_id=${leadId}'][data-oe-model='crm.lead'][data-oe-id='${leadId}']:text('testlead')`
     );
 });

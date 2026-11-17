@@ -75,7 +75,7 @@ export class AccountProductCatalogSearchPanel extends ProductCatalogSearchPanel 
                 }
 
                 const targetParentId =
-                    placeHolder.parentElement?.closest("li.o_section")?.dataset.id || false;
+                    placeHolder.parentElement?.closest("li.w_section")?.dataset.id || false;
 
                 // allow only if both are same level (section <-> section OR
                 // subsection <-> subsection)

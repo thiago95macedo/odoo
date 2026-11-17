@@ -79,12 +79,12 @@
                         "axesDesign": {
                             "x": {
                                 "title": {
-                                    "text": "Odoo Chart horizontal axis title"
+                                    "text": "WETH Chart horizontal axis title"
                                 }
                             },
                             "y": {
                                 "title": {
-                                    "text": "Odoo Chart vertical axis title"
+                                    "text": "WETH Chart vertical axis title"
                                 }
                             }
                         },
@@ -102,44 +102,61 @@
                             "groupBy": [],
                             "orderBy": []
                         },
-                        "type": "odoo_bar",
+                        "type": "weth_bar",
                         "verticalAxisPosition": "left",
                         "stacked": true
                     }
                 },
                 {
-                  "id": "4",
-                  "tag": "carousel",
-                  "data": {
-                    "chartDefinitions": {
-                        "42": {
-                            "title": {
-                                "text": "My Chart 42"
+                    "id": "4",
+                    "tag": "carousel",
+                    "data": {
+                        "chartDefinitions": {
+                            "42": {
+                                "title": {
+                                    "text": "My Chart 42"
+                                }
                             }
+                        },
+                        "items": [
+                            {
+                                "type": "chart",
+                                "title": "My Chart",
+                                "chartId": "42"
+                            },
+                            {
+                                "type": "carouselDataView",
+                                "title": "My Data View"
+                            }
+                        ],
+                        "title": {
+                            "text": "My Carousel"
                         }
-                    },
-                    "items": [
-                        { "type": "chart", "title": "My Chart", "chartId": "42" },
-                        { "type": "carouselDataView", "title": "My Data View" }
-                    ],
-                    "title": {
-                      "text": "My Carousel"
                     }
-                  }
                 }
             ],
             "areGridLinesVisible": true,
             "isVisible": true
         }
     ],
-    "odooVersion": 4,
+    "wethVersion": 4,
     "lists": {
         "1": {
             "translateHeaders": true,
-            "columns": [{ "name": "name", "string": "My Column" }]
+            "columns": [
+                {
+                    "name": "name",
+                    "string": "My Column"
+                }
+            ]
         },
         "2": {
-            "columns": [{ "name": "name", "string": "My Column not translated" }]
+            "columns": [
+                {
+                    "name": "name",
+                    "string": "My Column not translated"
+                }
+            ]
         }
     },
     "pivots": {}

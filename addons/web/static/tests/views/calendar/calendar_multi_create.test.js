@@ -217,12 +217,12 @@ beforeEach(() => {
 // Utils function
 
 async function multiCreateClickAddButton() {
-    await click(".o_multi_selection_buttons .btn:contains(Add)");
+    await click(".w_multi_selection_buttons .btn:contains(Add)");
     await animationFrame();
 }
 
 async function multiCreatePopoverClickAddButton() {
-    await click(".o_multi_create_popover .popover-footer .btn:contains(Add)");
+    await click(".w_multi_create_popover .popover-footer .btn:contains(Add)");
     await animationFrame();
 }
 
@@ -247,26 +247,26 @@ test("multi_create: render and basic creation (simple use case)", async () => {
     expect(".fc .fc-event").toHaveCount(5, {
         message: "All events of this month should be visible",
     });
-    expect(".o_calendar_filter_item").toHaveCount(0, {
+    expect(".w_calendar_filter_item").toHaveCount(0, {
         message: "No filters should be visible",
     });
 
     const { drop, moveTo } = await contains(".fc-day[data-date='2019-03-04']").drag();
     await moveTo(".fc-day[data-date='2019-03-14']");
     await animationFrame();
-    expect(".fc-day.o-highlight").toHaveCount(8);
+    expect(".fc-day.w-highlight").toHaveCount(8);
     await drop();
     await animationFrame();
 
-    expect(".o_selection_box").toHaveText("4\nselected");
+    expect(".w_selection_box").toHaveText("4\nselected");
 
     await multiCreateClickAddButton();
-    expect(".o_multi_create_popover").toHaveCount(1);
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    expect(".w_multi_create_popover").toHaveCount(1);
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Time off");
     await multiCreatePopoverClickAddButton();
 
-    expect(".o_multi_create_popover").toHaveCount(0);
+    expect(".w_multi_create_popover").toHaveCount(0);
     expect.verifySteps([
         "Time off_2019-03-04",
         "Time off_2019-03-05",
@@ -284,8 +284,8 @@ test("multi_create: render and basic creation (simple use case)", async () => {
     await click(".fc-event[data-event-id='12']");
     await runAllTimers();
     await animationFrame();
-    expect(".o_popover").toHaveCount(1);
-    expect(".o_popover .o_field_widget[name='name']").toHaveText("Time off");
+    expect(".w_popover").toHaveCount(1);
+    expect(".w_popover .w_field_widget[name='name']").toHaveText("Time off");
 });
 
 test.tags("desktop");
@@ -310,20 +310,20 @@ test("multi_create: render and basic functionalities (complex with filters use c
     const { drop, moveTo } = await contains(".fc-day[data-date='2019-03-04']").drag();
     await moveTo(".fc-day[data-date='2019-03-14']");
     await animationFrame();
-    expect(".fc-day.o-highlight").toHaveCount(8);
+    expect(".fc-day.w-highlight").toHaveCount(8);
     await drop();
     await animationFrame();
 
     await multiCreateClickAddButton();
 
-    expect(".o_multi_create_popover .o_form_view").toBeVisible();
-    expect(".o_multi_create_popover .o_form_view [name='name'] input").toHaveValue("Sick", {
+    expect(".w_multi_create_popover .w_form_view").toBeVisible();
+    expect(".w_multi_create_popover .w_form_view [name='name'] input").toHaveValue("Sick", {
         message: "should have a default value from the context",
     });
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Time off");
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 3')").click();
     await multiCreatePopoverClickAddButton();
 
     expect.verifySteps([
@@ -351,18 +351,18 @@ test("multi_create: render and basic functionalities (complex with filters use c
     await click(".fc-event[data-event-id='12']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
-    await expect(".o_popover .o_field_widget[name='name']").toHaveText("Time off");
-    await expect(".o_popover .o_field_widget[name='type']").toHaveText("Event Type 3");
-    await expect(".o_popover .o_field_widget[name='user_id']").toHaveText("user 1");
+    await expect(".w_popover").toHaveCount(1);
+    await expect(".w_popover .w_field_widget[name='name']").toHaveText("Time off");
+    await expect(".w_popover .w_field_widget[name='type']").toHaveText("Event Type 3");
+    await expect(".w_popover .w_field_widget[name='user_id']").toHaveText("user 1");
 
     await click(".fc-event[data-event-id='13']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
-    await expect(".o_popover .o_field_widget[name='user_id']").toHaveText("user 3");
+    await expect(".w_popover").toHaveCount(1);
+    await expect(".w_popover .w_field_widget[name='user_id']").toHaveText("user 3");
 
-    await click(".o_calendar_filter_item[data-value='3'] input");
+    await click(".w_calendar_filter_item[data-value='3'] input");
     await animationFrame();
     await advanceTime(CalendarModel.DEBOUNCED_LOAD_DELAY);
     expect(".fc .fc-event").toHaveCount(10, { message: "events should be filter" });
@@ -400,34 +400,34 @@ test("multi_create: basic creation (datetime field)", async () => {
     const { drop, moveTo } = await contains(".fc-day[data-date='2019-03-04']").drag();
     await moveTo(".fc-day[data-date='2019-03-14']");
     await animationFrame();
-    expect(".fc-day.o-highlight").toHaveCount(8);
+    expect(".fc-day.w-highlight").toHaveCount(8);
     await drop();
     await animationFrame();
 
     await multiCreateClickAddButton();
 
-    expect(".o_multi_create_popover .o_time_picker_input").toHaveCount(2);
+    expect(".w_multi_create_popover .w_time_picker_input").toHaveCount(2);
 
-    await click(".o_time_picker_input:eq(0)");
+    await click(".w_time_picker_input:eq(0)");
     await animationFrame();
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
-    await click(".o_time_picker_option:contains(8:00)");
-    await animationFrame();
-
-    await click(".o_time_picker_input:eq(1)");
-    await animationFrame();
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
-    await click(".o_time_picker_option:contains(11:30)");
+    expect(".w-dropdown--menu.w_time_picker_dropdown").toHaveCount(1);
+    await click(".w_time_picker_option:contains(8:00)");
     await animationFrame();
 
-    expect(".o_multi_create_popover .o_form_view").toBeVisible();
-    expect(".o_multi_create_popover .o_form_view [name='name'] input").toHaveValue("Sick", {
+    await click(".w_time_picker_input:eq(1)");
+    await animationFrame();
+    expect(".w-dropdown--menu.w_time_picker_dropdown").toHaveCount(1);
+    await click(".w_time_picker_option:contains(11:30)");
+    await animationFrame();
+
+    expect(".w_multi_create_popover .w_form_view").toBeVisible();
+    expect(".w_multi_create_popover .w_form_view [name='name'] input").toHaveValue("Sick", {
         message: "should have a default value from the context",
     });
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Time off");
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 3')").click();
 
     await multiCreatePopoverClickAddButton();
 
@@ -456,26 +456,26 @@ test("multi_create: basic creation (datetime field)", async () => {
     await click(".fc-event[data-event-id='12']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
-    await expect(".o_popover .o_popover_body div:eq(1) [data-icon='schedule']").toHaveCount(1);
-    await expect(".o_popover .o_popover_body div:eq(1)").toHaveText(
+    await expect(".w_popover").toHaveCount(1);
+    await expect(".w_popover .w_popover_body div:eq(1) [data-icon='schedule']").toHaveCount(1);
+    await expect(".w_popover .w_popover_body div:eq(1)").toHaveText(
         "08:00 - 11:30\n(3 hours, 30 minutes)"
     );
-    await expect(".o_popover .o_field_widget[name='name']").toHaveText("Time off");
-    await expect(".o_popover .o_field_widget[name='type']").toHaveText("Event Type 3");
-    await expect(".o_popover .o_field_widget[name='user_id']").toHaveText("user 1");
+    await expect(".w_popover .w_field_widget[name='name']").toHaveText("Time off");
+    await expect(".w_popover .w_field_widget[name='type']").toHaveText("Event Type 3");
+    await expect(".w_popover .w_field_widget[name='user_id']").toHaveText("user 1");
 
     await click(".fc-event[data-event-id='13']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
-    await expect(".o_popover .o_popover_body div:eq(1) [data-icon='schedule']").toHaveCount(1);
-    await expect(".o_popover .o_popover_body div:eq(1)").toHaveText(
+    await expect(".w_popover").toHaveCount(1);
+    await expect(".w_popover .w_popover_body div:eq(1) [data-icon='schedule']").toHaveCount(1);
+    await expect(".w_popover .w_popover_body div:eq(1)").toHaveText(
         "08:00 - 11:30\n(3 hours, 30 minutes)"
     );
-    await expect(".o_popover .o_field_widget[name='user_id']").toHaveText("user 3");
+    await expect(".w_popover .w_field_widget[name='user_id']").toHaveText("user 3");
 
-    await click(".o_calendar_filter_item[data-value='3'] input");
+    await click(".w_calendar_filter_item[data-value='3'] input");
     await animationFrame();
     await advanceTime(CalendarModel.DEBOUNCED_LOAD_DELAY);
     expect(".fc .fc-event").toHaveCount(10, { message: "events should be filter" });
@@ -519,7 +519,7 @@ test("multi_create: input validation (datetime field)", async () => {
     await multiCreateClickAddButton();
 
     // No time range
-    await click(".o_time_picker_input:eq(1)");
+    await click(".w_time_picker_input:eq(1)");
     await edit("", { confirm: "enter" });
 
     await multiCreatePopoverClickAddButton();
@@ -528,14 +528,14 @@ test("multi_create: input validation (datetime field)", async () => {
 
     await multiCreateClickAddButton();
     // Start time before end time
-    await click(".o_time_picker_input:eq(0)");
+    await click(".w_time_picker_input:eq(0)");
     await animationFrame();
-    await click(".o_time_picker_option:contains(11:30)");
+    await click(".w_time_picker_option:contains(11:30)");
     await animationFrame();
 
-    await click(".o_time_picker_input:eq(1)");
+    await click(".w_time_picker_input:eq(1)");
     await animationFrame();
-    await click(".o_time_picker_option:contains(8:00)");
+    await click(".w_time_picker_option:contains(8:00)");
     await animationFrame();
 
     await multiCreatePopoverClickAddButton();
@@ -543,9 +543,9 @@ test("multi_create: input validation (datetime field)", async () => {
     expect.verifySteps(["Start time should be before end time"]);
 
     // Valid input
-    await click(".o_time_picker_input:eq(1)");
+    await click(".w_time_picker_input:eq(1)");
     await animationFrame();
-    await click(".o_time_picker_option:contains(12:00)");
+    await click(".w_time_picker_option:contains(12:00)");
     await animationFrame();
 
     await multiCreatePopoverClickAddButton();
@@ -581,30 +581,30 @@ test("multi_create: use state to keep values of inputs", async () => {
 
     await multiCreateClickAddButton();
 
-    await click(".o_time_picker_input:eq(0)");
+    await click(".w_time_picker_input:eq(0)");
     await animationFrame();
-    await click(".o_time_picker_option:contains(1:30)");
-    await animationFrame();
-
-    await click(".o_time_picker_input:eq(1)");
-    await animationFrame();
-    await click(".o_time_picker_option:contains(8:00)");
+    await click(".w_time_picker_option:contains(1:30)");
     await animationFrame();
 
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_time_picker_input:eq(1)");
+    await animationFrame();
+    await click(".w_time_picker_option:contains(8:00)");
+    await animationFrame();
+
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await animationFrame();
     await edit("Test state");
 
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 3')").click();
 
-    await contains(".o_multi_create_popover .o_form_view [name='user_ids'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('user 1')").click();
-    await contains(".o_multi_create_popover .o_form_view [name='user_ids'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('user 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='user_ids'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('user 1')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='user_ids'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('user 3')").click();
 
     // Navigate to the many2one record
-    await click(".o_form_view [name='type'] .o_external_button");
+    await click(".w_form_view [name='type'] .w_external_button");
     await animationFrame();
     await animationFrame();
 
@@ -619,11 +619,11 @@ test("multi_create: use state to keep values of inputs", async () => {
 
     await multiCreateClickAddButton();
 
-    expect(".o_time_picker_input:eq(0)").toHaveValue("1:30");
-    expect(".o_time_picker_input:eq(1)").toHaveValue("8:00");
-    expect(".o_form_view [name='name'] input").toHaveValue("Test state");
-    expect(".o_form_view [name='type'] input").toHaveValue("Event Type 3");
-    expect(queryAllTexts(".o_form_view [name='user_ids'] .o_tag")).toEqual(["user 1", "user 3"]);
+    expect(".w_time_picker_input:eq(0)").toHaveValue("1:30");
+    expect(".w_time_picker_input:eq(1)").toHaveValue("8:00");
+    expect(".w_form_view [name='name'] input").toHaveValue("Test state");
+    expect(".w_form_view [name='type'] input").toHaveValue("Event Type 3");
+    expect(queryAllTexts(".w_form_view [name='user_ids'] .w_tag")).toEqual(["user 1", "user 3"]);
 });
 
 test.tags("desktop");
@@ -649,29 +649,29 @@ test("multi_create: state keeps the whole x2many restricting another field", asy
     await selectDateRange("2019-03-04", "2019-03-05");
     await multiCreateClickAddButton();
 
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    expect(queryAllTexts(".o-autocomplete--dropdown-item:not(.o_m2o_dropdown_option)")).toEqual([
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    expect(queryAllTexts(".w-autocomplete--dropdown-item:not(.w_m2o_dropdown_option)")).toEqual([
         "Event Type 1",
         "Event Type 2",
         "Event Type 3",
     ]);
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 2')").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 2')").click();
     await multiCreatePopoverClickAddButton();
 
     expect.verifySteps(["2019-03-04_2", "2019-03-05_2"]);
 
     // Delete the entry created on the first day of the selection.
     await contains(".fc-day[data-date='2019-03-04']").click();
-    await contains(".o_multi_selection_buttons .btn [data-icon='delete'].oi-filled").click();
-    await contains(".o_dialog footer button:contains(Ok)").click();
+    await contains(".w_multi_selection_buttons .btn [data-icon='delete'].oi-filled").click();
+    await contains(".w_dialog footer button:contains(Ok)").click();
 
     // Reopening the popover reuses the values kept from the previous creation:
     // they must still contain every allowed type.
     await contains(".fc-day[data-date='2019-03-04']").click();
     await multiCreateClickAddButton();
 
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    expect(queryAllTexts(".o-autocomplete--dropdown-item:not(.o_m2o_dropdown_option)")).toEqual([
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    expect(queryAllTexts(".w-autocomplete--dropdown-item:not(.w_m2o_dropdown_option)")).toEqual([
         "Event Type 1",
         "Event Type 2",
         "Event Type 3",
@@ -693,27 +693,27 @@ test("multi_create: delete", async () => {
     await click(".fc-event[data-event-id='2']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
+    await expect(".w_popover").toHaveCount(1);
 
-    await click(".o_calendar_header"); // Hide the popover
+    await click(".w_calendar_header"); // Hide the popover
     await animationFrame();
 
     const { drop } = await contains(".fc-day[data-date='2019-02-26']").drag();
     await drop(".fc-day[data-date='2019-04-03']");
     await animationFrame();
 
-    await contains(".o_multi_selection_buttons .btn [data-icon='delete'].oi-filled").click();
+    await contains(".w_multi_selection_buttons .btn [data-icon='delete'].oi-filled").click();
     await animationFrame();
-    expect(".o_dialog .modal-body").toHaveText(
+    expect(".w_dialog .modal-body").toHaveText(
         "Are you sure you want to delete the 3 selected records?"
     );
-    await contains(".o_dialog footer button:contains(Ok)").click();
+    await contains(".w_dialog footer button:contains(Ok)").click();
     await animationFrame();
 
     expect.verifySteps([[2, 3, 5]]);
     expect(".fc .fc-event").toHaveCount(1, { message: "selected events should be deleted" });
 
-    await click(".o_calendar_filter_item[data-value='3'] input");
+    await click(".w_calendar_filter_item[data-value='3'] input");
     await animationFrame();
     await advanceTime(CalendarModel.DEBOUNCED_LOAD_DELAY);
     expect(".fc .fc-event").toHaveCount(0, { message: "events should be filter" });
@@ -732,7 +732,7 @@ test("multi_create: test onChange on form with no blur (input text)", async () =
 
     await multiCreateClickAddButton();
 
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Test onChange");
 
     await multiCreatePopoverClickAddButton();
@@ -740,8 +740,8 @@ test("multi_create: test onChange on form with no blur (input text)", async () =
     await click(".fc-event[data-event-id='12']");
     await runAllTimers();
     await animationFrame();
-    await expect(".o_popover").toHaveCount(1);
-    await expect(".o_popover .o_field_widget[name='name']").toHaveText("Test onChange");
+    await expect(".w_popover").toHaveCount(1);
+    await expect(".w_popover .w_field_widget[name='name']").toHaveText("Test onChange");
 });
 
 test.tags("desktop");
@@ -781,15 +781,15 @@ test("multi_create: test onChange on TimePicker with no blur (input text)", asyn
 
     await multiCreateClickAddButton();
 
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Test onChange");
 
-    await click(".o_time_picker_input:eq(0)");
+    await click(".w_time_picker_input:eq(0)");
     await animationFrame();
-    await click(".o_time_picker_option:contains(1:30)");
+    await click(".w_time_picker_option:contains(1:30)");
     await animationFrame();
 
-    await click(".o_time_picker_input:eq(1)");
+    await click(".w_time_picker_input:eq(1)");
     await animationFrame();
     await edit("8:00");
     await animationFrame();
@@ -809,13 +809,13 @@ test("multi_create: test popover", async () => {
         type: "calendar",
     });
 
-    expect(".o_popover").toHaveCount(0);
+    expect(".w_popover").toHaveCount(0);
 
     await click(".fc-event[data-event-id='2']");
     await runAllTimers();
     await animationFrame();
 
-    expect(".o_popover").toHaveCount(1);
+    expect(".w_popover").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -839,27 +839,27 @@ test("multi_create: avoid trigger add/del event on specific element", async () =
     await click(".fc-event[data-event-id='1']");
     await runAllTimers();
     await animationFrame();
-    expect(".o_popover").toHaveCount(1);
+    expect(".w_popover").toHaveCount(1);
 
-    await click(".o_calendar_button_today");
+    await click(".w_calendar_button_today");
     await runAllTimers();
     await animationFrame();
-    expect(".o_popover").toHaveCount(0);
+    expect(".w_popover").toHaveCount(0);
 
     await click(".fc-more-cell a");
     await animationFrame();
     expect(".fc-more-popover").toHaveCount(1);
-    expect(".o_multi_selection_buttons").toHaveCount(0);
+    expect(".w_multi_selection_buttons").toHaveCount(0);
 
     await click(".fc-popover-title");
     await animationFrame();
     expect(".fc-more-popover").toHaveCount(1);
-    expect(".o_multi_selection_buttons").toHaveCount(0);
+    expect(".w_multi_selection_buttons").toHaveCount(0);
 
     await click(".fc-popover-close");
     await animationFrame();
     expect(".fc-more-popover").toHaveCount(0);
-    expect(".o_multi_selection_buttons").toHaveCount(0);
+    expect(".w_multi_selection_buttons").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -888,7 +888,7 @@ test("multi_create: test required attribute in form", async () => {
     await animationFrame();
     await multiCreateClickAddButton();
     await multiCreatePopoverClickAddButton();
-    expect(".o_multi_create_popover .o_form_view [name='name']").toHaveClass("o_required_modifier");
+    expect(".w_multi_create_popover .w_form_view [name='name']").toHaveClass("o_required_modifier");
     expect.verifySteps(["Missing required fields"]);
 
     const { drop: dropOk } = await contains(".fc-day[data-date='2019-03-04']").drag();
@@ -896,7 +896,7 @@ test("multi_create: test required attribute in form", async () => {
     await dropOk();
     await animationFrame();
     await multiCreateClickAddButton();
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Test required");
     await multiCreatePopoverClickAddButton();
     expect.verifySteps(["Test required_2019-03-04", "Test required_2019-03-04"]);
@@ -912,8 +912,8 @@ test(`multi_create: no button "Delete" if no record selected`, async () => {
     expect("o_multi_selection_buttons").toHaveCount(0);
 
     await contains(".fc-day[data-date='2019-03-04']").click();
-    expect(".o_multi_selection_buttons").toHaveCount(1);
-    expect(".o_multi_selection_buttons .btn [data-icon='delete'].oi-filled").toHaveCount(0);
+    expect(".w_multi_selection_buttons").toHaveCount(1);
+    expect(".w_multi_selection_buttons .btn [data-icon='delete'].oi-filled").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -943,18 +943,18 @@ test("multi_create: selection with ctrl", async () => {
     await contains(".fc-day[data-date='2019-03-16']").click();
     await keyUp("Control");
 
-    expect(".fc-day.o-highlight").toHaveCount(14);
+    expect(".fc-day.w-highlight").toHaveCount(14);
 
     await multiCreateClickAddButton();
 
-    expect(".o_multi_create_popover .o_form_view").toBeVisible();
-    expect(".o_multi_create_popover .o_form_view [name='name'] input").toHaveValue("Sick", {
+    expect(".w_multi_create_popover .w_form_view").toBeVisible();
+    expect(".w_multi_create_popover .w_form_view [name='name'] input").toHaveValue("Sick", {
         message: "should have a default value from the context",
     });
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Time off");
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 3')").click();
     await multiCreatePopoverClickAddButton();
 
     expect.verifySteps([
@@ -1016,8 +1016,8 @@ test("multi_create: selection with shift", async () => {
     await contains(".fc-day[data-date='2019-03-16']").click();
     await keyUp("Shift");
 
-    expect(".o_selection_box").toHaveText("1\nselected");
-    expect(queryAll(".fc-day.o-highlight").map((el) => el.dataset.date)).toEqual([
+    expect(".w_selection_box").toHaveText("1\nselected");
+    expect(queryAll(".fc-day.w-highlight").map((el) => el.dataset.date)).toEqual([
         "2019-03-16",
         "2019-03-17",
         "2019-03-18",
@@ -1027,14 +1027,14 @@ test("multi_create: selection with shift", async () => {
 
     await multiCreateClickAddButton();
 
-    expect(".o_multi_create_popover .o_form_view").toBeVisible();
-    expect(".o_multi_create_popover .o_form_view [name='name'] input").toHaveValue("Sick", {
+    expect(".w_multi_create_popover .w_form_view").toBeVisible();
+    expect(".w_multi_create_popover .w_form_view [name='name'] input").toHaveValue("Sick", {
         message: "should have a default value from the context",
     });
-    await click(".o_multi_create_popover .o_form_view [name='name'] input");
+    await click(".w_multi_create_popover .w_form_view [name='name'] input");
     await edit("Time off");
-    await contains(".o_multi_create_popover .o_form_view [name='type'] input").click();
-    await contains(".o-autocomplete--dropdown-item:contains('Event Type 3')").click();
+    await contains(".w_multi_create_popover .w_form_view [name='type'] input").click();
+    await contains(".w-autocomplete--dropdown-item:contains('Event Type 3')").click();
     await multiCreatePopoverClickAddButton();
 
     expect.verifySteps([
@@ -1058,8 +1058,8 @@ test("multi_create: selection with shift", async () => {
     await contains(".fc-day[data-date='2019-03-20']").click();
     await contains(".fc-day[data-date='2019-03-14']").click();
 
-    expect(".o_selection_box").toHaveText("2\nselected");
-    expect(queryAll(".fc-day.o-highlight").map((el) => el.dataset.date)).toEqual([
+    expect(".w_selection_box").toHaveText("2\nselected");
+    expect(queryAll(".fc-day.w-highlight").map((el) => el.dataset.date)).toEqual([
         "2019-03-14",
         "2019-03-15",
         "2019-03-16",
@@ -1067,8 +1067,8 @@ test("multi_create: selection with shift", async () => {
 
     await contains(".fc-day[data-date='2019-03-13']").click();
 
-    expect(".o_selection_box").toHaveText("3\nselected");
-    expect(queryAll(".fc-day.o-highlight").map((el) => el.dataset.date)).toEqual([
+    expect(".w_selection_box").toHaveText("3\nselected");
+    expect(queryAll(".fc-day.w-highlight").map((el) => el.dataset.date)).toEqual([
         "2019-03-13",
         "2019-03-14",
         "2019-03-15",
@@ -1081,8 +1081,8 @@ test("multi_create: selection with shift", async () => {
     await contains(".fc-day[data-date='2019-03-11']").click();
     await keyUp("Shift");
 
-    expect(".o_selection_box").toHaveText("3\nselected");
-    expect(queryAll(".fc-day.o-highlight").map((el) => el.dataset.date)).toEqual([
+    expect(".w_selection_box").toHaveText("3\nselected");
+    expect(queryAll(".fc-day.w-highlight").map((el) => el.dataset.date)).toEqual([
         "2019-03-11",
         "2019-03-12",
         "2019-03-13",
@@ -1095,8 +1095,8 @@ test("multi_create: selection with shift", async () => {
     await keyUp("Shift");
     await contains(".fc-day[data-date='2019-03-13']").click();
 
-    expect(".o_selection_box").toHaveText("1\nselected");
-    expect(queryAll(".fc-day.o-highlight").map((el) => el.dataset.date)).toEqual(["2019-03-13"]);
+    expect(".w_selection_box").toHaveText("1\nselected");
+    expect(queryAll(".fc-day.w-highlight").map((el) => el.dataset.date)).toEqual(["2019-03-13"]);
 });
 
 test.tags("desktop");
@@ -1114,6 +1114,6 @@ test("multi_create: translatable field in the popover", async () => {
     await multiCreateClickAddButton();
 
     // the records aren't created from the popover record, so it can't be translated
-    expect(".o_multi_create_popover .o_form_view [name='name'] input").toHaveCount(1);
-    expect(".o_multi_create_popover .o_form_view [name='name'] .o-translate-button").toHaveCount(0);
+    expect(".w_multi_create_popover .w_form_view [name='name'] input").toHaveCount(1);
+    expect(".w_multi_create_popover .w_form_view [name='name'] .w-translate-button").toHaveCount(0);
 });

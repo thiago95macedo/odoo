@@ -39,7 +39,7 @@ test("FloatTimeTzField displays the value in the user timezone", async () => {
     await mountView({ type: "form", resModel: "foo", arch: TZ_ARCH, resId: 5 });
 
     // stored 9.1 (9:06 UTC) + 2h => 11:06
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("11:06");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("11:06");
 });
 
 test("FloatTimeTzField does not shift the value it just parsed", async () => {
@@ -54,13 +54,13 @@ test("FloatTimeTzField does not shift the value it just parsed", async () => {
 
     await mountView({ type: "form", resModel: "foo", arch: TZ_ARCH, resId: 5 });
 
-    await contains(".o_field_float_time_tz[name=qux] input").edit("10:00");
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("10:00", {
+    await contains(".w_field_float_time_tz[name=qux] input").edit("10:00");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("10:00", {
         message: "the value entered by the user should not be offset again on re-render",
     });
 
     await clickSave();
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("10:00", {
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("10:00", {
         message: "the saved value should be displayed back in the user timezone",
     });
 });
@@ -77,9 +77,9 @@ test("FloatTimeTzField wraps around midnight", async () => {
 
     await mountView({ type: "form", resModel: "foo", arch: TZ_ARCH, resId: 5 });
 
-    await contains(".o_field_float_time_tz[name=qux] input").edit("01:00");
+    await contains(".w_field_float_time_tz[name=qux] input").edit("01:00");
     await clickSave();
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("1:00");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("1:00");
 });
 
 test("FloatTimeTzField uses the default timezone when the user timezone is unset", async () => {
@@ -91,11 +91,11 @@ test("FloatTimeTzField uses the default timezone when the user timezone is unset
     });
 
     await mountView({ type: "form", resModel: "foo", arch: TZ_ARCH, resId: 5 });
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("11:06");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("11:06");
 
-    await contains(".o_field_float_time_tz[name=qux] input").edit("4");
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("4:00");
+    await contains(".w_field_float_time_tz[name=qux] input").edit("4");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("4:00");
 
     await clickSave();
-    expect(".o_field_float_time_tz[name=qux] input").toHaveValue("4:00");
+    expect(".w_field_float_time_tz[name=qux] input").toHaveValue("4:00");
 });

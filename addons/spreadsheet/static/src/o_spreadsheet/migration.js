@@ -4,30 +4,30 @@ const { migrationStepRegistry } = spreadsheet.registries;
 const { schemeToColorScale } = helpers;
 
 const MAP_V1 = {
-    PIVOT: "ODOO.PIVOT",
-    "PIVOT.HEADER": "ODOO.PIVOT.HEADER",
-    "PIVOT.POSITION": "ODOO.PIVOT.POSITION",
-    "FILTER.VALUE": "ODOO.FILTER.VALUE",
-    LIST: "ODOO.LIST",
-    "LIST.HEADER": "ODOO.LIST.HEADER",
+    PIVOT: "WETH.PIVOT",
+    "PIVOT.HEADER": "WETH.PIVOT.HEADER",
+    "PIVOT.POSITION": "WETH.PIVOT.POSITION",
+    "FILTER.VALUE": "WETH.FILTER.VALUE",
+    LIST: "WETH.LIST",
+    "LIST.HEADER": "WETH.LIST.HEADER",
 };
 
 const MAP_FN_NAMES_V10 = {
-    "ODOO.PIVOT": "PIVOT.VALUE",
-    "ODOO.PIVOT.HEADER": "PIVOT.HEADER",
-    "ODOO.PIVOT.TABLE": "PIVOT",
+    "WETH.PIVOT": "PIVOT.VALUE",
+    "WETH.PIVOT.HEADER": "PIVOT.HEADER",
+    "WETH.PIVOT.TABLE": "PIVOT",
 };
 
 const dmyRegex = /^([0|1|2|3][1-9])\/(0[1-9]|1[0-2])\/(\d{4})$/i;
 
 migrationStepRegistry.add("17.3.1", {
     migrate(data) {
-        return migrateOdooData(data);
+        return migrateWethData(data);
     },
 });
 migrationStepRegistry.add("18.1.2", {
     migrate(data) {
-        const version = data.odooVersion || 0;
+        const version = data.wethVersion || 0;
         if (version < 13) {
             data = migrate12to13(data);
         }
@@ -41,7 +41,7 @@ migrationStepRegistry.add("18.3.2", {
             for (const figure of sheet.figures || []) {
                 if (
                     figure.tag === "chart" &&
-                    ["odoo_bar", "odoo_line", "odoo_pie"].includes(figure.data.type) &&
+                    ["weth_bar", "weth_line", "weth_pie"].includes(figure.data.type) &&
                     !("cumulatedStart" in figure.data)
                 ) {
                     const isCumulative = figure.data.cumulative || false;
@@ -156,12 +156,12 @@ migrationStepRegistry.add("18.5.10", {
                 }
             }
         }
-        const re = /ODOO\.FILTER\.VALUE/gi;
+        const re = /WETH\.FILTER\.VALUE/gi;
         for (const sheet of data.sheets || []) {
             for (const xc in sheet.cells || {}) {
                 const content = sheet.cells[xc];
                 if (re.test(content)) {
-                    sheet.cells[xc] = content.replaceAll(re, "ODOO.FILTER.LABEL");
+                    sheet.cells[xc] = content.replaceAll(re, "WETH.FILTER.LABEL");
                 }
             }
         }
@@ -171,12 +171,12 @@ migrationStepRegistry.add("18.5.10", {
 
 migrationStepRegistry.add("19.1.1", {
     migrate(data) {
-        const odooDataSourceRefs = {};
-        for (const [chartId, menuId] of Object.entries(data.chartOdooMenusReferences || {})) {
-            odooDataSourceRefs[chartId] = { type: "odooMenu", odooMenuId: menuId };
+        const wethDataSourceRefs = {};
+        for (const [chartId, menuId] of Object.entries(data.chartWethMenusReferences || {})) {
+            wethDataSourceRefs[chartId] = { type: "wethMenu", wethMenuId: menuId };
         }
-        delete data.chartOdooMenusReferences;
-        data.odooLinkReferences = odooDataSourceRefs;
+        delete data.chartWethMenusReferences;
+        data.wethLinkReferences = wethDataSourceRefs;
         return data;
     },
 });
@@ -185,14 +185,14 @@ migrationStepRegistry.add("19.1.2", {
     migrate(data) {
         for (const sheet of data.sheets || []) {
             for (const figure of sheet.figures || []) {
-                if (figure.tag === "chart" && figure.data.type === "odoo_geo") {
+                if (figure.tag === "chart" && figure.data.type === "weth_geo") {
                     if ("colorScale" in figure.data && typeof figure.data.colorScale === "string") {
                         figure.data.colorScale = schemeToColorScale(figure.data.colorScale);
                     }
                 }
                 if (figure.tag === "carousel") {
                     for (const definition of Object.values(figure.data.chartDefinitions) || []) {
-                        if (definition.type === "odoo_geo") {
+                        if (definition.type === "weth_geo") {
                             if (
                                 "colorScale" in definition &&
                                 typeof definition.colorScale === "string"
@@ -213,12 +213,12 @@ migrationStepRegistry.add("19.3.10", {
         for (const list of Object.values(data.lists || {})) {
             list.columns = list.columns?.map((col) => ({ name: col })) || [];
         }
-        renameFunctions(data, { "ODOO.LIST": "ODOO.LIST.VALUE" });
+        renameFunctions(data, { "WETH.LIST": "WETH.LIST.VALUE" });
 
         function migrateDefinition(definition) {
-            definition.type = definition.type.replace("odoo_", "");
+            definition.type = definition.type.replace("weth_", "");
             definition.dataSource = {
-                type: "odoo",
+                type: "weth",
                 actionXmlId: definition.actionXmlId,
                 cumulatedStart: definition.cumulatedStart,
                 metaData: definition.metaData,
@@ -231,12 +231,12 @@ migrationStepRegistry.add("19.3.10", {
         }
         for (const sheet of data.sheets || []) {
             for (const figure of sheet.figures || []) {
-                if (figure.tag === "chart" && figure.data.type.startsWith("odoo_")) {
+                if (figure.tag === "chart" && figure.data.type.startsWith("weth_")) {
                     migrateDefinition(figure.data);
                 }
                 if (figure.tag === "carousel") {
                     for (const definition of Object.values(figure.data.chartDefinitions) || []) {
-                        if (definition.type.startsWith("odoo_")) {
+                        if (definition.type.startsWith("weth_")) {
                             migrateDefinition(definition);
                         }
                     }
@@ -247,8 +247,8 @@ migrationStepRegistry.add("19.3.10", {
     },
 });
 
-function migrateOdooData(data) {
-    const version = data.odooVersion || 0;
+function migrateWethData(data) {
+    const version = data.wethVersion || 0;
     if (version < 1) {
         data = migrate0to1(data);
     }
@@ -483,7 +483,7 @@ function migrate4to5(data) {
 function migratePivotDaysParameters(formulaString) {
     const ast = parse(formulaString);
     const convertedAst = convertAstNodes(ast, "FUNCALL", (ast) => {
-        if (["ODOO.PIVOT", "ODOO.PIVOT.HEADER"].includes(ast.value.toUpperCase())) {
+        if (["WETH.PIVOT", "WETH.PIVOT.HEADER"].includes(ast.value.toUpperCase())) {
             for (const subAst of ast.args) {
                 if (subAst.type === "STRING") {
                     const date = subAst.value.match(dmyRegex);
@@ -515,7 +515,7 @@ function migrate5to6(data) {
 }
 
 /**
- * Migrate the pivot data to add the type, by default "ODOO". And replace the
+ * Migrate the pivot data to add the type, by default "WETH". And replace the
  * pivot with a new object that contains type and definition (the old pivot).
  */
 function migrate6to7(data) {
@@ -525,7 +525,7 @@ function migrate6to7(data) {
             const fieldMatching = definition.fieldMatching;
             delete definition.fieldMatching;
             data.pivots[id] = {
-                type: "ODOO",
+                type: "WETH",
                 definition,
                 fieldMatching,
             };
@@ -576,7 +576,7 @@ function migrate10to11(data) {
 }
 
 function migrate11to12(data) {
-    // remove the calls to ODOO.PIVOT.POSITION and replace
+    // remove the calls to WETH.PIVOT.POSITION and replace
     // the previous argument to a relative position
     for (const sheet of data.sheets || []) {
         for (const xc in sheet.cells || []) {
@@ -584,24 +584,24 @@ function migrate11to12(data) {
             if (
                 cell.content &&
                 cell.content.startsWith("=") &&
-                cell.content.includes("ODOO.PIVOT.POSITION")
+                cell.content.includes("WETH.PIVOT.POSITION")
             ) {
                 const tokens = tokenize(cell.content);
-                /* given that odoo.pivot.position is automatically set, we know that:
-                1) it is always on the form of ODOO.PIVOT.POSITION(1, ...)
+                /* given that weth.pivot.position is automatically set, we know that:
+                1) it is always on the form of WETH.PIVOT.POSITION(1, ...)
                 2) it is always preceded by a dimension of a pivot or header, inside another pivot formula
-                3) there is only one odoo.pivot.position per cell
-                4) odoo.pivot.position can only exist after the 3rd token and needs at least 7 tokens to be valid*/
+                3) there is only one weth.pivot.position per cell
+                4) weth.pivot.position can only exist after the 3rd token and needs at least 7 tokens to be valid*/
                 for (let i = 2; i < tokens.length - 7; i++) {
                     const token = tokens[i];
                     if (
                         token.type === "SYMBOL" &&
-                        token.value.toUpperCase() === "ODOO.PIVOT.POSITION"
+                        token.value.toUpperCase() === "WETH.PIVOT.POSITION"
                     ) {
                         const order = tokens[i + 6];
                         tokens[i - 2].value = '"#' + tokens[i - 2].value.slice(1); // "dimension" becomes "#dimension"
-                        tokens.splice(i, 7); // remove "ODOO.PIVOT.POSITION", "(", "1", ",", "dimension", ", ", order
-                        // tokens[i-1] is the comma before odoo.pivot.position
+                        tokens.splice(i, 7); // remove "WETH.PIVOT.POSITION", "(", "1", ",", "dimension", ", ", order
+                        // tokens[i-1] is the comma before weth.pivot.position
                         tokens[i] = order;
                         cell.content = tokensToString(tokens);
                     }
@@ -613,7 +613,7 @@ function migrate11to12(data) {
 }
 
 /**
- * Change pivot sortedColumn of the odoo's pivot model to the sortedColumn of o-spreadsheet
+ * Change pivot sortedColumn of the weth's pivot model to the sortedColumn of o-spreadsheet
  */
 function migrate12to13(data) {
     if (data.pivots) {

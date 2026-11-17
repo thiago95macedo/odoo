@@ -17,7 +17,7 @@ test("Call has Picture-in-picture feature", async () => {
     await start();
     await openDiscuss(channelId);
     await click("[title='Start Call']");
-    await contains(".o-discuss-Call");
-    await click(".o-discuss-CallActionList button[title='More']");
+    await contains(".w-discuss-Call");
+    await click(".w-discuss-CallActionList button[title='More']");
     await contains("[name='picture-in-picture']");
 });

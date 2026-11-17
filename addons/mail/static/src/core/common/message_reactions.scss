@@ -1,12 +1,12 @@
-.o-mail-MessageReaction {
+.w-mail-MessageReaction {
     line-height: 1.75;
 
-    &:not(.o-selfReacted):hover {
-        border-color: rgba($o-action, var(--mail-MessageReaction-selfReactedBorderOpacity, 1)) !important;
+    &:not(.w-selfReacted):hover {
+        border-color: rgba($w-action, var(--mail-MessageReaction-selfReactedBorderOpacity, 1)) !important;
     }
 
-    &.o-selfReacted {
+    &.w-selfReacted {
         --border-opacity: #{var(--mail-MessageReaction-selfReactedBorderOpacity, 1)};
-        background: $o-view-background-color;
+        background: $w-view-background-color;
     }
 }

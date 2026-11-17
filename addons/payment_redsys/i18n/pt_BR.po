@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_redsys/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "American Express"
 msgstr "American Express"
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Authentication failed."
 msgstr "Falha na autenticação."
@@ -70,13 +70,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Insufficient funds or limit exceeded."
 msgstr "Saldo insuficiente ou limite excedido."
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Invalid card details."
 msgstr "Dados do cartão inválidos."
@@ -102,7 +102,7 @@ msgid "Merchant Terminal"
 msgstr "Terminal do comerciante"
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Operation not allowed for this card or payment method."
 msgstr "Operação não permitida para este cartão ou forma de pagamento."
@@ -148,7 +148,7 @@ msgid "Secret Key"
 msgstr "Chave secreta"
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Technical error. Please try again later."
 msgstr "Erro técnico. Por favor, tente novamente mais tarde."
@@ -159,7 +159,7 @@ msgid "The technical code of this payment provider."
 msgstr "O código técnico deste provedor de pagamento."
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/const.py:0
 msgid "Transaction declined by the bank."
 msgstr "Transação recusada pelo banco."
@@ -170,7 +170,7 @@ msgid "UnionPay"
 msgstr "UnionPay"
 
 #. module: payment_redsys
-#. odoo-python
+#. weth-python
 #: code:addons/payment_redsys/models/payment_transaction.py:0
 msgid "Unknown status code: %s"
 msgstr "Código de status desconhecido: %s"

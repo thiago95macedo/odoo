@@ -65,7 +65,7 @@ class ConnectionManager(Thread):
 
     def _should_poll_to_connect_database(self):
         return (
-            not helpers.get_odoo_server_url() and
+            not helpers.get_weth_server_url() and
             system.get_ip() and
             not wifi.is_access_point() and
             not self.pairing_code_expired
@@ -82,7 +82,7 @@ class ConnectionManager(Thread):
 
         try:
             req = requests.post(
-                'https://iot-proxy.weth.com.br/odoo-enterprise/iot/connect-box',
+                'https://iot-proxy.weth.com.br/weth-enterprise/iot/connect-box',
                 json=data,
                 timeout=5,
             )
@@ -110,7 +110,7 @@ class ConnectionManager(Thread):
         # Switch git branch before restarting, this avoids restarting twice
         upgrade.check_git_branch()
         # Restart to get a certificate, load the IoT handlers...
-        helpers.odoo_restart(2)
+        helpers.weth_restart(2)
 
 
 connection_manager = ConnectionManager()

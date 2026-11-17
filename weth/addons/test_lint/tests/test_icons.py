@@ -9,7 +9,7 @@ from .common import LintCase
 # matches the `fa` and `fa-*` classes of the FontAwesome icon set
 FA_CLASS_RE = re.compile(r'(?<![\w-])fa(?:-[\w-]+)*(?![\w-])')
 
-# `oi` alone flags an element as an Odoo icon, and a limited set of `oi-*`
+# `oi` alone flags an element as an WETH icon, and a limited set of `oi-*`
 # classes are still supported to tweak how it is rendered (sizing, animations,
 # stacking, ...). Any other `oi-*` class is an obsolete icon-name class, which
 # must be replaced by the `data-icon` attribute.
@@ -67,8 +67,8 @@ class TestIcons(LintCase):
                 )
                 self.assertFalse(
                     found_old_oi_icons,
-                    f"Obsolete Odoo icon class(es) {', '.join(sorted(found_old_oi_icons))} found in {path}.\n"
-                    "Please use the new Odoo icons set using the "
+                    f"Obsolete WETH icon class(es) {', '.join(sorted(found_old_oi_icons))} found in {path}.\n"
+                    "Please use the new WETH icons set using the "
                     "`data-icon` attribute instead, e.g. `<i class=\"oi\" data-icon=\"oi_view-kanban\"/>`.\n"
-                    "See https://www.weth.com.br/documentation/latest/developer/reference/user_interface/icons.html#odoo-ui-icons for more information.",
+                    "See https://www.weth.com.br/documentation/latest/developer/reference/user_interface/icons.html#weth-ui-icons for more information.",
                 )

@@ -50,7 +50,7 @@ from . import mail_template
 from . import mail_ice_server
 from . import mail_canned_response
 
-# odoo models
+# weth models
 from . import ir_access
 from . import ir_action_act_window
 from . import ir_actions_server

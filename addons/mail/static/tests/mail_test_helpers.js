@@ -272,8 +272,8 @@ export async function openDiscuss(activeIdOrTabId, { target } = {}) {
         type: "ir.actions.client",
     });
     if (tabId) {
-        await click(`.o-mail-Discuss .o-mail-MessagingMenu-tab[data-id=${tabId}]`);
-        await contains(`.o-mail-Discuss .o-mail-MessagingMenu-tab[data-id=${tabId}].active`);
+        await click(`.w-mail-Discuss .w-mail-MessagingMenu-tab[data-id=${tabId}]`);
+        await contains(`.w-mail-Discuss .w-mail-MessagingMenu-tab[data-id=${tabId}].active`);
     }
 }
 
@@ -340,7 +340,7 @@ async function addSwitchTabDropdownItem(rootTarget, tabTarget) {
     }
     globalTabs.add(tabTarget);
     const zIndexMainTab = 100000;
-    let dropdownDiv = rootTarget.querySelector(".o-mail-multi-tab-dropdown");
+    let dropdownDiv = rootTarget.querySelector(".w-mail-multi-tab-dropdown");
     const onClickDropdownItem = (e) => {
         const dropdownToggle = dropdownDiv.querySelector(".dropdown-toggle");
         dropdownToggle.innerText = `Switch Tab (${e.target.innerText})`;
@@ -385,7 +385,7 @@ let discussAsTabId = 0;
  * @param {{
  *  asTab?: boolean;
  *  authenticateAs?: any | { login: string; password: string; };
- *  env?: Partial<OdooEnv>;
+ *  env?: Partial<WethEnv>;
  *  waitUntilSubscribe?: boolean;
  * }} [options]
  */
@@ -439,7 +439,7 @@ export async function start(options) {
         target.dataset.asTabId = discussAsTabId;
         rootTarget.appendChild(target);
         addSwitchTabDropdownItem(rootTarget, target);
-        const selector = `.o-mail-Discuss-asTabContainer[data-as-tab-id="${target.dataset.asTabId}"]`;
+        const selector = `.w-mail-Discuss-asTabContainer[data-as-tab-id="${target.dataset.asTabId}"]`;
         assignTestEnv({ discussAsTabId, selector });
         await makeTestApp({ forceNew: true });
     }
@@ -723,7 +723,7 @@ function preventActualMediaUsage() {
  * as other participants changing the state of their microphone, sharing screen,...
  *
  * @param {Object} param0
- * @param {Partial<OdooEnv>} param0.env
+ * @param {Partial<WethEnv>} param0.env
  * @param {number} param0.channelId
  * @returns {Promise<MockNetwork>}
  */
@@ -944,14 +944,14 @@ export async function isInViewportOf(childSelector, parentSelector) {
 
 /** @param {MenuTabId} [tabId] */
 export async function openMessagingMenu(tabId) {
-    if (!queryFirst(".o-mail-MessagingMenuInDropdown")) {
+    if (!queryFirst(".w-mail-MessagingMenuInDropdown")) {
         await click(".o_menu_systray i[aria-label='Messages']");
     }
     if (tabId) {
         const id = tabId.slice("discuss.tab_".length);
-        await click(`.o-mail-MessagingMenuInDropdown .o-mail-MessagingMenu-tab[data-id='${id}']`);
+        await click(`.w-mail-MessagingMenuInDropdown .w-mail-MessagingMenu-tab[data-id='${id}']`);
         await click(
-            `.o-mail-MessagingMenuInDropdown .o-mail-MessagingMenu-tab[data-id='${id}'].active`
+            `.w-mail-MessagingMenuInDropdown .w-mail-MessagingMenu-tab[data-id='${id}'].active`
         );
     }
 }
@@ -1186,14 +1186,14 @@ export function mockPermissionsPrompt() {
  * @param {Number} count
  */
 export async function assertChatBubbleAndWindowImStatus(conversationName, count) {
-    await contains(`.o-mail-ChatBubble[name=${conversationName}]`);
-    expect(`.o-mail-ChatBubble[name=${conversationName}] .o-mail-ImStatus`).toHaveCount(count);
-    await click(`.o-mail-ChatBubble[name=${conversationName}]`);
-    await contains(`.o-mail-ChatWindow-header:has(:text(${conversationName}))`);
+    await contains(`.w-mail-ChatBubble[name=${conversationName}]`);
+    expect(`.w-mail-ChatBubble[name=${conversationName}] .w-mail-ImStatus`).toHaveCount(count);
+    await click(`.w-mail-ChatBubble[name=${conversationName}]`);
+    await contains(`.w-mail-ChatWindow-header:has(:text(${conversationName}))`);
     expect(
-        `.o-mail-ChatWindow-header:has(:text(${conversationName})) .o-mail-ImStatus`
+        `.w-mail-ChatWindow-header:has(:text(${conversationName})) .w-mail-ImStatus`
     ).toHaveCount(count);
-    await click(`.o-mail-ChatWindow-header:has(:text(${conversationName}))`);
+    await click(`.w-mail-ChatWindow-header:has(:text(${conversationName}))`);
 }
 
 /** Sends an update presence for the given record through the bus. */

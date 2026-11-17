@@ -14,10 +14,10 @@ export const RATING = Object.freeze({
     BAD: 1,
 });
 
-export const ODOO_VERSION_KEY = `${location.origin.replace(
+export const WETH_VERSION_KEY = `${location.origin.replace(
     /:\/{0,2}/g,
     "_"
-)}_im_livechat.odoo_version`;
+)}_im_livechat.weth_version`;
 
 const OPERATOR_STORAGE_KEY = "im_livechat_previous_operator";
 
@@ -29,7 +29,7 @@ export class LivechatService {
     }
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {{
      * "mail.store": import("@mail/core/common/store_service").Store
      * }} services

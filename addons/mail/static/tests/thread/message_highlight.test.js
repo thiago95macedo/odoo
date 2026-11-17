@@ -37,9 +37,9 @@ test("can highlight messages that are not yet loaded", async () => {
     await start();
     await openDiscuss(channelId);
     await tick(); // Wait for the scroll to first unread to complete.
-    await isInViewportOf(".o-mail-Message:contains(message 199)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 199)", ".w-mail-Thread");
     await click("a[data-oe-type='highlight']");
-    await isInViewportOf(".o-mail-Message:contains(message 100)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 100)", ".w-mail-Thread");
 });
 
 test("highlight scroll is not stopped by the scrollend of a previous scroll", async () => {
@@ -62,15 +62,15 @@ test("highlight scroll is not stopped by the scrollend of a previous scroll", as
             super.scrollIntoView(options);
             if (options?.behavior === "smooth") {
                 // Simulate the late scrollend of the previous scroll.
-                this.closest(".o-mail-Thread").dispatchEvent(new Event("scrollend"));
+                this.closest(".w-mail-Thread").dispatchEvent(new Event("scrollend"));
             }
         },
     });
     await start();
     await openDiscuss(channelId);
-    await isInViewportOf(".o-mail-Message:contains(message 199)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 199)", ".w-mail-Thread");
     await click("a[data-oe-type='highlight']");
-    await isInViewportOf(".o-mail-Message:contains(message 100)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 100)", ".w-mail-Thread");
 });
 
 test("can highlight message (slow ref registration)", async () => {
@@ -100,11 +100,11 @@ test("can highlight message (slow ref registration)", async () => {
     await start();
     await openDiscuss(channelId);
     await tick(); // Wait for the scroll to first unread to complete.
-    await isInViewportOf(".o-mail-Message:contains(message 199)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 199)", ".w-mail-Thread");
     await click("a[data-oe-type='highlight']");
     await advanceTime(1000);
     resolveRefRegistration();
-    await isInViewportOf(".o-mail-Message:contains(message 100)", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains(message 100)", ".w-mail-Thread");
 });
 
 test("highlight scrolls to beginning of long message", async () => {
@@ -126,14 +126,14 @@ test("highlight scrolls to beginning of long message", async () => {
     await pyEnv["discuss.channel"].set_message_pin(channelId, messageId1, true);
     await start();
     await openDiscuss(channelId);
-    await waitFor(".o-mail-Message:contains('short message')");
-    await isInViewportOf(".o-mail-Message:contains('short message')", ".o-mail-Thread");
+    await waitFor(".w-mail-Message:contains('short message')");
+    await isInViewportOf(".w-mail-Message:contains('short message')", ".w-mail-Thread");
     await click("a[data-oe-type='highlight']");
     await advanceTime(1000);
-    await isInViewportOf(".o-mail-Message:contains('long message')", ".o-mail-Thread");
+    await isInViewportOf(".w-mail-Message:contains('long message')", ".w-mail-Thread");
     await isInViewportOf(
-        ".o-mail-Message:contains('long message') .o-mail-Message-avatar", // avatar is at beginning of message
-        ".o-mail-Thread"
+        ".w-mail-Message:contains('long message') .w-mail-Message-avatar", // avatar is at beginning of message
+        ".w-mail-Thread"
     );
 });
 
@@ -157,5 +157,5 @@ test("Chatter jumps when navigating to a specific message link", async () => {
         { sync: true }
     );
     routerBus.trigger("ROUTE_CHANGE");
-    await contains(".o-mail-Message.o-highlighted .o-mail-Message-content", { text: "message 0" });
+    await contains(".w-mail-Message.w-highlighted .w-mail-Message-content", { text: "message 0" });
 });

@@ -14,12 +14,12 @@ test("A link in a dashboard should be clickable", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: "[Odoo](https://weth.com.br)" },
+                cells: { A1: "[Weth](https://weth.com.br)" },
             },
         ],
     };
     await createDashboardActionWithData(data);
-    expect(".o-dashboard-clickable-cell").toHaveCount(1);
+    expect(".w-dashboard-clickable-cell").toHaveCount(1);
 });
 
 test("Invalid pivot/list formulas should not be clickable", async () => {
@@ -28,13 +28,13 @@ test("Invalid pivot/list formulas should not be clickable", async () => {
             {
                 cells: {
                     A1: '=PIVOT.VALUE("1", "measure")',
-                    A2: '=ODOO.LIST.VALUE("1", 1, "name")',
+                    A2: '=WETH.LIST.VALUE("1", 1, "name")',
                 },
             },
         ],
     };
     await createDashboardActionWithData(data);
-    expect(".o-dashboard-clickable-cell").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell").toHaveCount(0);
 });
 
 test("pivot/list formulas should be clickable", async () => {
@@ -44,7 +44,7 @@ test("pivot/list formulas should be clickable", async () => {
             {
                 cells: {
                     A1: { content: '=PIVOT.VALUE("1", "probability", "bar", "false")' },
-                    A2: { content: '=ODOO.LIST.VALUE(1, 1, "foo")' },
+                    A2: { content: '=WETH.LIST.VALUE(1, 1, "foo")' },
                 },
             },
         ],
@@ -70,7 +70,7 @@ test("pivot/list formulas should be clickable", async () => {
         },
     };
     await createDashboardActionWithData(data);
-    expect(".o-dashboard-clickable-cell").toHaveCount(2);
+    expect(".w-dashboard-clickable-cell").toHaveCount(2);
 });
 
 test("list sorting clickable cell", async () => {
@@ -80,9 +80,9 @@ test("list sorting clickable cell", async () => {
         sheets: [
             {
                 cells: {
-                    A1: '=ODOO.LIST.HEADER(1, "foo")',
-                    A2: '=ODOO.LIST.VALUE(1, 1, "foo")',
-                    A3: "=ODOO.LIST(1, 1)",
+                    A1: '=WETH.LIST.HEADER(1, "foo")',
+                    A2: '=WETH.LIST.VALUE(1, 1, "foo")',
+                    A3: "=WETH.LIST(1, 1)",
                 },
             },
         ],
@@ -99,39 +99,39 @@ test("list sorting clickable cell", async () => {
     };
     const { model } = await createDashboardActionWithData(data);
     expect(getCellIcons(model, "A1")).toHaveLength(0);
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(2);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(2);
 
-    await click(queryFirst(".o-dashboard-clickable-cell .sorting-icon"));
+    await click(queryFirst(".w-dashboard-clickable-cell .sorting-icon"));
     expect(model.getters.getListDefinition(1).orderBy).toEqual([{ name: "foo", asc: true }]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toMatchObject([{ type: "list_dashboard_sorting_asc" }]);
     expect(getCellIcons(model, "A3")).toMatchObject([{ type: "list_dashboard_sorting_asc" }]);
 
-    await click(queryFirst(".o-dashboard-clickable-cell"));
+    await click(queryFirst(".w-dashboard-clickable-cell"));
     expect(model.getters.getListDefinition(1).orderBy).toEqual([{ name: "foo", asc: false }]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toMatchObject([{ type: "list_dashboard_sorting_desc" }]);
     expect(getCellIcons(model, "A3")).toMatchObject([{ type: "list_dashboard_sorting_desc" }]);
 
-    await click(queryFirst(".o-dashboard-clickable-cell"));
+    await click(queryFirst(".w-dashboard-clickable-cell"));
     expect(model.getters.getListDefinition(1).orderBy).toEqual([]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toHaveLength(0);
     expect(getCellIcons(model, "A3")).toHaveLength(0);
 
-    await click(queryAll(".o-dashboard-clickable-cell .sorting-icon")[1]);
+    await click(queryAll(".w-dashboard-clickable-cell .sorting-icon")[1]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([{ name: "foo", asc: true }]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toMatchObject([{ type: "list_dashboard_sorting_asc" }]);
     expect(getCellIcons(model, "A3")).toMatchObject([{ type: "list_dashboard_sorting_asc" }]);
 
-    await click(queryAll(".o-dashboard-clickable-cell")[2]);
+    await click(queryAll(".w-dashboard-clickable-cell")[2]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([{ name: "foo", asc: false }]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toMatchObject([{ type: "list_dashboard_sorting_desc" }]);
     expect(getCellIcons(model, "A3")).toMatchObject([{ type: "list_dashboard_sorting_desc" }]);
 
-    await click(queryAll(".o-dashboard-clickable-cell")[2]);
+    await click(queryAll(".w-dashboard-clickable-cell")[2]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([]);
     await animationFrame();
     expect(getCellIcons(model, "A1")).toHaveLength(0);
@@ -145,8 +145,8 @@ test("list sort multiple fields", async () => {
         sheets: [
             {
                 cells: {
-                    A1: '=ODOO.LIST.HEADER(1, "foo")',
-                    A2: '=ODOO.LIST.HEADER(1, "bar")',
+                    A1: '=WETH.LIST.HEADER(1, "foo")',
+                    A2: '=WETH.LIST.HEADER(1, "bar")',
                 },
             },
         ],
@@ -162,31 +162,31 @@ test("list sort multiple fields", async () => {
     };
     const { model } = await createDashboardActionWithData(data);
 
-    await click(queryAll(".o-dashboard-clickable-cell")[0]);
+    await click(queryAll(".w-dashboard-clickable-cell")[0]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([{ name: "foo", asc: true }]);
     await animationFrame();
 
-    await click(queryAll(".o-dashboard-clickable-cell")[1]);
+    await click(queryAll(".w-dashboard-clickable-cell")[1]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([
         { name: "bar", asc: true },
         { name: "foo", asc: true },
     ]);
 
-    await click(queryAll(".o-dashboard-clickable-cell")[0]);
+    await click(queryAll(".w-dashboard-clickable-cell")[0]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([
         { name: "foo", asc: true },
         { name: "bar", asc: true },
     ]);
     await animationFrame();
 
-    await click(queryAll(".o-dashboard-clickable-cell")[0]);
+    await click(queryAll(".w-dashboard-clickable-cell")[0]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([
         { name: "foo", asc: false },
         { name: "bar", asc: true },
     ]);
     await animationFrame();
 
-    await click(queryAll(".o-dashboard-clickable-cell")[0]);
+    await click(queryAll(".w-dashboard-clickable-cell")[0]);
     expect(model.getters.getListDefinition(1).orderBy).toEqual([]);
     await animationFrame();
 });
@@ -199,8 +199,8 @@ test("Clickable ignores spill and empty cells for list sorting", async () => {
                     A1: "foo",
                     B1: "bar",
                     // spill cells
-                    A2: "=ODOO.LIST.HEADER(1, A1:B1)",
-                    A3: '=ODOO.LIST.VALUE(1, sequence(2), "foo")',
+                    A2: "=WETH.LIST.HEADER(1, A1:B1)",
+                    A3: '=WETH.LIST.VALUE(1, sequence(2), "foo")',
                 },
             },
         ],
@@ -216,17 +216,17 @@ test("Clickable ignores spill and empty cells for list sorting", async () => {
     };
     const { model } = await createDashboardActionWithData(data);
     expect(getCellIcons(model, "A2")).toHaveLength(0);
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(0);
 
     expect(getCellIcons(model, "B2")).toHaveLength(0);
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(0);
 
     expect(getCellIcons(model, "A3")).toHaveLength(0);
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(0);
 
     expect(getCellIcons(model, "A4")).toHaveLength(0);
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(0);
 
     expect(getCellIcons(model, "C10")).toHaveLength(0); // unrelated empty cell
-    expect(".o-dashboard-clickable-cell .sorting-icon .o-icon").toHaveCount(0);
+    expect(".w-dashboard-clickable-cell .sorting-icon .w-icon").toHaveCount(0);
 });

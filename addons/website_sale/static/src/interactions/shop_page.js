@@ -7,22 +7,22 @@ import { _t } from "@web/core/l10n/translation";
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 
 export class ShopPage extends Interaction {
-    static selector = '.o_wsale_products_page';
+    static selector = '.w_wsale_products_page';
     dynamicContent = {
         'form.js_attributes input, form.js_attributes select': {
             't-on-change.prevent': this.onChangeAttribute,
         },
-        '.o_wsale_products_searchbar_form': { 't-on-submit': this.onSearch },
-        '.o_wsale_ribbon_filter': { 't-on-click.prevent': this.onRibbonFilter },
-        '.o_wsale_filmstrip_wrapper': {
+        '.w_wsale_products_searchbar_form': { 't-on-submit': this.onSearch },
+        '.w_wsale_ribbon_filter': { 't-on-click.prevent': this.onRibbonFilter },
+        '.w_wsale_filmstrip_wrapper': {
             't-on-mousedown': this.onMouseDown,
             't-on-mouseleave': this.onMouseLeave,
             't-on-mouseup': this.onMouseUp,
             't-on-mousemove': this.onMouseMove,
             't-on-click': this.onMouseClick,
         },
-        '.o_wsale_attribute_search_bar': { 't-on-input': this.searchAttributeValues },
-        '.o_wsale_view_more_btn': { 't-on-click': this.onToggleViewMoreLabel },
+        '.w_wsale_attribute_search_bar': { 't-on-input': this.searchAttributeValues },
+        '.w_wsale_view_more_btn': { 't-on-click': this.onToggleViewMoreLabel },
     };
 
     setup() {
@@ -35,7 +35,7 @@ export class ShopPage extends Interaction {
     start() {
         // This allows conditional styling for the filmstrip.
         const filmstripContainer = this.el.querySelector('#o_wsale_categories_filmstrip');
-        const filmstripWrapper = this.el.querySelector('.o_wsale_filmstrip_wrapper');
+        const filmstripWrapper = this.el.querySelector('.w_wsale_filmstrip_wrapper');
         const isFilmstripScrollable = filmstripWrapper
             ? filmstripWrapper.scrollWidth > filmstripWrapper.clientWidth
             : false;
@@ -65,7 +65,7 @@ export class ShopPage extends Interaction {
             filter => filter.name === 'attribute_value' && filter.value
         ).map(filter => filter.value);
         // Ignore the ghost input created by Multirange.
-        form.querySelectorAll(".o_attr_range.original").forEach((range) => {
+        form.querySelectorAll(".w_attr_range.original").forEach((range) => {
             const min = range.valueLow;
             const max = range.valueHigh;
             const { attributeSlug, valueSlugs } = range.dataset;

@@ -24,7 +24,7 @@ MAIL_SERVER_DEACTIVATE_TIME = datetime.timedelta(days=5)  # deactivate cron when
 poplib._MAXLINE = 65536
 
 
-class OdooIMAP4(IMAP4):
+class WethIMAP4(IMAP4):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._unread_messages = None
@@ -53,11 +53,11 @@ class OdooIMAP4(IMAP4):
         self.logout()
 
 
-class OdooIMAP4_SSL(OdooIMAP4, IMAP4_SSL):
+class WethIMAP4_SSL(WethIMAP4, IMAP4_SSL):
     pass
 
 
-class OdooPOP3(POP3):
+class WethPOP3(POP3):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._unread_messages = None
@@ -82,7 +82,7 @@ class OdooPOP3(POP3):
         self.quit()
 
 
-class OdooPOP3_SSL(OdooPOP3, POP3_SSL):
+class WethPOP3_SSL(WethPOP3, POP3_SSL):
     pass
 
 
@@ -187,11 +187,11 @@ weth_mailgate: "|/path/to/weth-mailgate.py --host=localhost -u %(uid)d -p PASSWO
         connection_type = self._get_connection_type()
         if connection_type == 'imap':
             server, port, is_ssl = self.server, int(self.port), self.is_ssl
-            connection = OdooIMAP4_SSL(server, port, timeout=MAIL_TIMEOUT) if is_ssl else OdooIMAP4(server, port, timeout=MAIL_TIMEOUT)
+            connection = WethIMAP4_SSL(server, port, timeout=MAIL_TIMEOUT) if is_ssl else WethIMAP4(server, port, timeout=MAIL_TIMEOUT)
             self._imap_login__(connection)
         elif connection_type == 'pop':
             server, port, is_ssl = self.server, int(self.port), self.is_ssl
-            connection = OdooPOP3_SSL(server, port, timeout=MAIL_TIMEOUT) if is_ssl else OdooPOP3(server, port, timeout=MAIL_TIMEOUT)
+            connection = WethPOP3_SSL(server, port, timeout=MAIL_TIMEOUT) if is_ssl else WethPOP3(server, port, timeout=MAIL_TIMEOUT)
             #TODO: use this to remove only unread messages
             #connection.user("recent:"+server.user)
             connection.user(self.user)

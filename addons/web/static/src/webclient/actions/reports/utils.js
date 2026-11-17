@@ -43,7 +43,7 @@ function getPdfEngineMessage(status) {
             "You should upgrade your version of the PDF engine in order to get a correct render it.",
         ),
         workers: _t(
-            "You need to start Odoo with at least two workers to print a pdf version of the reports."
+            "You need to start WETH with at least two workers to print a pdf version of the reports."
         ),
     };
     return _status[status];
@@ -65,7 +65,7 @@ export async function downloadReport(rpc, action, type, userContext, engineName)
         // Cache the engine status on the function. In prod this means is only
         // checked once, but we can reset it between tests to test multiple statuses.
         let params = {};
-        if (engineName){
+        if (engineName) {
             params.engine_name = engineName;
         }
         downloadReport.reportingEngineStatusProm ||= rpc("/report/get_pdf_engine_state", params);

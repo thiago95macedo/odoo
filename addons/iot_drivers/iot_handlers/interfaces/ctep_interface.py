@@ -23,7 +23,7 @@ def _configure_ctep_lib(lib_name: str) -> bool:
     :param lib_name: Name of the CTEP library file.
     :return: True if the library was successfully configured, False otherwise.
     """
-    drivers_path = path_file("odoo/addons/iot_drivers/iot_handlers/drivers")
+    drivers_path = path_file("weth/addons/iot_drivers/iot_handlers/drivers")
     unzip_path = drivers_path / "ctep" if IS_WINDOWS else drivers_path
     source_zip_name = "worldline-ctepv21_07.zip" if IS_RPI else "worldline-ctepv23_02_w.zip"
     if (unzip_path / lib_name).exists():

@@ -1,4 +1,4 @@
-.o-mail-Composer {
+.w-mail-Composer {
     grid-template-areas:
         "sidebar-header core-header"
         "sidebar-main core-main"
@@ -9,53 +9,54 @@
     // Text input vertical padding, used to derive the single-line pill radius below.
     --o-mail-Composer-vPadding: 10px;
 
-    &.o-chatWindow, &.o-isUiSmall {
-        --o-mail-Composer-vPadding: #{$o-mail-Composer-chatWindowVPadding};
+    &.w-chatWindow,
+    &.w-isUiSmall {
+        --o-mail-Composer-vPadding: #{$w-mail-Composer-chatWindowVPadding};
     }
 
-    &.o-isUiSmall:not(.o-editing) {
+    &.w-isUiSmall:not(.w-editing) {
         --o-mail-Composer-vPadding: 12px;
     }
 
-    &.o-hasSelfAvatar {
-        grid-template-columns: $o-mail-Message-sidebarWidth 1fr;
+    &.w-hasSelfAvatar {
+        grid-template-columns: $w-mail-Message-sidebarWidth 1fr;
     }
 
-    .o-mail-Composer-sidebarMain {
+    .w-mail-Composer-sidebarMain {
         padding-top: 0.3125rem; // avatar centered with composer text input: 32px (avatar) + 2*5px (this value) = 20px + 2 * { 10px (padding) + 1px (border) }
-        width: $o-mail-Message-sidebarWidth;
+        width: $w-mail-Message-sidebarWidth;
     }
 
-    .o-mail-Composer-coreHeader {
+    .w-mail-Composer-coreHeader {
         grid-area: core-header;
     }
 
-    .o-mail-Composer-coreMain {
+    .w-mail-Composer-coreMain {
         grid-area: core-main;
     }
 
-    .o-mail-Composer-sidebarMain {
+    .w-mail-Composer-sidebarMain {
         grid-area: sidebar-main;
     }
 
-    .o-mail-Composer-footer {
+    .w-mail-Composer-footer {
         grid-area: core-footer;
     }
 
-    .o-mail-Composer-mainActions {
+    .w-mail-Composer-mainActions {
         margin-top: map-get($spacers, 1) * 5 / 4;
     }
 
-    &.o-chatWindow .o-mail-Composer-mainActions {
+    &.w-chatWindow .w-mail-Composer-mainActions {
         margin-top: map-get($spacers, 1) / 2;
     }
 
-    &.o-isUiSmall:not(.o-editing) .o-mail-Composer-mainActions {
+    &.w-isUiSmall:not(.w-editing) .w-mail-Composer-mainActions {
         margin-top: map-get($spacers, 1) * 6 / 4;
     }
 
-    &.o-focused {
-        .o-mail-Composer-mainActions button:not(.active) {
+    &.w-focused {
+        .w-mail-Composer-mainActions button:not(.active) {
             opacity: 85%;
 
             &:disabled {
@@ -63,55 +64,68 @@
             }
         }
     }
-    &:not(.o-focused) {
-        .o-mail-Composer-input::placeholder {
+
+    &:not(.w-focused) {
+        .w-mail-Composer-input::placeholder {
             opacity: 50%;
         }
-        .o-mail-Composer-mainActions button:not(.active) {
+
+        .w-mail-Composer-mainActions button:not(.active) {
             opacity: 50%;
         }
     }
 }
 
-.o-mail-Composer-actions {
+.w-mail-Composer-actions {
 
     button {
         --btn-border-color: transparent;
         --btn-hover-border-color: transparent;
         --btn-active-bg: var(--btn-hover-bg);
 
-        &.o-small {
+        &.w-small {
             margin: 0 !important;
             padding: map-get($spacers, 1) !important;
         }
-        &.o-large {
+
+        &.w-large {
             margin: 0 !important;
             padding: map-get($spacers, 2) !important;
         }
-        &.o-sendMessageActive {
+
+        &.w-sendMessageActive {
             --btn-bg: #{lighten($primary, 7.5%)};
             --btn-border-color: #{$primary};
             opacity: 100% !important;
+
             &:focus-visible {
-                outline: darken($o-action, 15%) solid 1px;
+                outline: darken($w-action, 15%) solid 1px;
             }
         }
+
         i[data-icon="send"] {
             transform: translate(1px);
         }
-        &:hover, &:focus, &.active {
+
+        &:hover,
+        &:focus,
+        &.active {
             opacity: 100% !important;
             color: var(--mail-Composer-actionHoverColor, black);
+
             &::before {
                 backdrop-filter: invert(.025);
             }
         }
-        &.o-mail-Composer-send.btn-link:not(:disabled) {
-            background-color: rgba($o-action, .75);
+
+        &.w-mail-Composer-send.btn-link:not(:disabled) {
+            background-color: rgba($w-action, .75);
             opacity: 100% !important;
+
             &:focus-visible {
-                outline: darken($o-action, 15%) solid 1px;
+                outline: darken($w-action, 15%) solid 1px;
             }
+
             i[data-icon="send"] {
                 color: #FFF;
                 transform: translate(-1px);
@@ -121,123 +135,127 @@
     }
 }
 
-.o-mail-Composer-bg {
-    background-color: var(--mail-Composer-bg, $o-view-background-color);
+.w-mail-Composer-bg {
+    background-color: var(--mail-Composer-bg, $w-view-background-color);
 
     &:disabled {
-        background-color: var(--mail-Composer-bg, $o-view-background-color);
+        background-color: var(--mail-Composer-bg, $w-view-background-color);
     }
 }
 
-.o-mail-Composer-inputStyle, .o-mail-Composer-html {
+.w-mail-Composer-inputStyle,
+.w-mail-Composer-html {
     padding-top: var(--o-mail-Composer-vPadding);
     padding-bottom: var(--o-mail-Composer-vPadding);
     padding-left: map-get($spacers, 1);
     padding-right: map-get($spacers, 1);
-    border-radius: calc(var(--o-mail-Composer-vPadding) + #{$o-mail-Composer-pillRadiusBase}); // Matches the outer container's pill radius
-    line-height: $o-mail-Composer-lineHeight !important;
+    border-radius: calc(var(--o-mail-Composer-vPadding) + #{$w-mail-Composer-pillRadiusBase}); // Matches the outer container's pill radius
+    line-height: $w-mail-Composer-lineHeight !important;
 
-    .o-mail-Composer.o-editing & {
+    .w-mail-Composer.w-editing & {
         padding-left: map-get($spacers, 2);
         padding-right: map-get($spacers, 2);
     }
 
-    .o-mail-Composer.o-extended & {
+    .w-mail-Composer.w-extended & {
         padding-left: map-get($spacers, 2) + map-get($spacers, 1);
         padding-right: map-get($spacers, 2);
         // Always multi-line: pill radius would look out of place, use rounded-3 instead.
         border-radius: $border-radius-lg;
     }
 
-    .o-mail-Composer.o-chatWindow & {
+    .w-mail-Composer.w-chatWindow & {
         padding-left: map-get($spacers, 1) / 2;
         padding-right: map-get($spacers, 1) / 2;
     }
 }
 
-.o-mail-Composer-input, .o-mail-Composer-html {
+.w-mail-Composer-input,
+.w-mail-Composer-html {
     max-height: Min(400px, 60vh);
     resize: none;
 
-    .o-mail-Composer.o-chatWindow & {
+    .w-mail-Composer.w-chatWindow & {
         @media (min-height: 325px) {
             max-height: Min(350px, 70vh);
         }
     }
-    .o-mail-Composer.o-chatWindowBig & {
+
+    .w-mail-Composer.w-chatWindowBig & {
         @media (min-height: 325px) {
             max-height: Min(550px, 70vh);
         }
     }
 
-    .o-mail-Composer.o-discussApp & {
+    .w-mail-Composer.w-discussApp & {
         @media (min-height: 425px) {
             max-height: 50vh;
         }
     }
 
-    .o-mail-Composer.o-extended & {
+    .w-mail-Composer.w-extended & {
         max-height: Min(400px, 30vh);
     }
 
     &::placeholder {
         opacity: 40%;
 
-        .o-mail-Composer.o-focused & {
+        .w-mail-Composer.w-focused & {
             opacity: 50%;
         }
+
         @include text-truncate();
     }
 }
 
-.o-mail-Composer-quickActions {
+.w-mail-Composer-quickActions {
     margin-right: map-get($spacers, 1);
-    
-    .o-mail-Composer.o-chatWindow & {
+
+    .w-mail-Composer.w-chatWindow & {
         margin-right: 1px;
     }
 }
 
-.o-mail-Composer-avatar {
-    --Avatar-size: #{$o-mail-Avatar-size};
+.w-mail-Composer-avatar {
+    --Avatar-size: #{$w-mail-Avatar-size};
 }
 
-.o-mail-Composer-fake {
+.w-mail-Composer-fake {
     height: 0;
     left: -10000px;
     top: -10000px;
     visibility: hidden;
 }
 
-.o-mail-Composer-inputContainer {
+.w-mail-Composer-inputContainer {
     --border-color: #{rgba($dark, var(--mail-Composer-inputContainerUnfocusedBorderOpacity, .2))};
-    border-radius: calc(var(--o-mail-Composer-vPadding) + #{$o-mail-Composer-pillRadiusBase}); // Keep the single-line pill radius when the composer grows.
+    border-radius: calc(var(--o-mail-Composer-vPadding) + #{$w-mail-Composer-pillRadiusBase}); // Keep the single-line pill radius when the composer grows.
 
-    .o-mail-Composer.o-extended & {
+    .w-mail-Composer.w-extended & {
         border-radius: $border-radius-lg;
     }
 
     &:has(textarea:focus) {
-        --border-color: #{rgba($o-component-active-border, .65)};
+        --border-color: #{rgba($w-component-active-border, .65)};
     }
 
-    &:has(.o-mail-Composer-html:focus) {
-        --border-color: #{$o-component-active-border};
+    &:has(.w-mail-Composer-html:focus) {
+        --border-color: #{$w-component-active-border};
     }
 }
 
-.o-mail-Composer-pickerContainer.o-active {
+.w-mail-Composer-pickerContainer.w-active {
     height: 50vh;
 }
 
-.o-mail-Composer-replyingToJumpClickable:hover {
+.w-mail-Composer-replyingToJumpClickable:hover {
     backdrop-filter: contrast(.8);
 }
 
-.o-mail-Composer-suggestionList:has(.o-open) {
+.w-mail-Composer-suggestionList:has(.w-open) {
     border: $border-width solid $border-color;
 }
 
-.o-mail-Composer-suggestionPartner-name.o-has-email {
+.w-mail-Composer-suggestionPartner-name.w-has-email {
     max-width: 70%;
 }

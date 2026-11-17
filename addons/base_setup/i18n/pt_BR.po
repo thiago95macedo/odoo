@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/base_setup/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -153,10 +153,10 @@ msgstr "Chaves de API"
 #. module: base_setup
 #: model_terms:ir.ui.view,arch_db:base_setup.res_config_settings_view_form
 msgid ""
-"API Keys allow your users to access Odoo with external tools when multi-"
+"API Keys allow your users to access WETH with external tools when multi-"
 "factor authentication is enabled."
 msgstr ""
-"As chaves de API permitem que seus usuários acessem o Odoo com ferramentas "
+"As chaves de API permitem que seus usuários acessem o WETH com ferramentas "
 "externas quando a autenticação multifator estiver ativada."
 
 #. module: base_setup
@@ -165,7 +165,7 @@ msgid "About"
 msgstr "Sobre"
 
 #. module: base_setup
-#. odoo-python
+#. weth-python
 #: code:addons/base_setup/controllers/main.py:0
 msgid "Access Denied"
 msgstr "Acesso negado"
@@ -298,7 +298,7 @@ msgid "Default Access Rights"
 msgstr "Direitos padrões de acesso"
 
 #. module: base_setup
-#. odoo-python
+#. weth-python
 #: code:addons/base_setup/models/res_config_settings.py:0
 msgid "Default access for new users"
 msgstr "Acesso padrão para novos usuários"
@@ -327,7 +327,7 @@ msgid "Edit Layout"
 msgstr "Editar layout"
 
 #. module: base_setup
-#. odoo-python
+#. weth-python
 #: code:addons/base_setup/models/res_config_settings.py:0
 msgid "Edit new user default group"
 msgstr "Editar novo grupo padrão de usuários"
@@ -493,8 +493,8 @@ msgstr "Autenticação OAuth"
 
 #. module: base_setup
 #: model_terms:ir.ui.view,arch_db:base_setup.res_config_settings_view_form
-msgid "Odoo"
-msgstr "Odoo"
+msgid "Weth"
+msgstr "Weth"
 
 #. module: base_setup
 #: model:ir.model.fields,field_description:base_setup.field_res_config_settings__module_partner_autocomplete
@@ -542,7 +542,7 @@ msgid "Protect your forms with CF Turnstile."
 msgstr "Proteja seus formulários com o CF Turnstile."
 
 #. module: base_setup
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/base_setup/static/src/views/module_views.xml:0
 msgid "Reset Updating States"
 msgstr "Redefinir estados de atualização"
@@ -589,10 +589,10 @@ msgstr ""
 #. module: base_setup
 #: model_terms:ir.ui.view,arch_db:base_setup.res_config_settings_view_form
 msgid ""
-"This name will be used for the application when Odoo is installed through "
+"This name will be used for the application when WETH is installed through "
 "the browser."
 msgstr ""
-"Este nome será usado para o aplicativo quando o Odoo for instalado pelo "
+"Este nome será usado para o aplicativo quando o WETH for instalado pelo "
 "navegador."
 
 #. module: base_setup
@@ -631,7 +631,7 @@ msgid "Users"
 msgstr "Usuários"
 
 #. module: base_setup
-#. odoo-python
+#. weth-python
 #: code:addons/base_setup/models/res_config_settings.py:0
 msgid "VAT"
 msgstr "CPF/CNPJ"
@@ -639,16 +639,16 @@ msgstr "CPF/CNPJ"
 #. module: base_setup
 #: model_terms:ir.ui.view,arch_db:base_setup.res_config_settings_view_form
 msgid ""
-"When populating your address book, Odoo provides a list of matching "
+"When populating your address book, WETH provides a list of matching "
 "companies. When selecting one item, the company data and logo are auto-"
 "filled."
 msgstr ""
-"Ao preencher seu catálogo de endereços, o Odoo fornece uma lista de empresas "
+"Ao preencher seu catálogo de endereços, o WETH fornece uma lista de empresas "
 "correspondentes. Ao selecionar um item, os dados e o logotipo da empresa são "
 "preenchidos automaticamente."
 
 #. module: base_setup
-#. odoo-python
+#. weth-python
 #: code:addons/base_setup/models/res_users.py:0
 msgid "You have to install the Discuss application to use this feature."
 msgstr "Você precisa instalar o aplicativo Mensagens para usar esse recurso."

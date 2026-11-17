@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:38+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/repair/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr ""
 "* Notas para o técnico e para o cliente final\n"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_warehouse.py:0
 msgid "%(name)s Sequence repair"
 msgstr "%(name)s Sequência de reparo"
@@ -264,7 +264,7 @@ msgid "Any Part is late"
 msgstr "Alguma peça está atrasada"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/product.py:0
 msgid ""
 "As other units of measure (ex : %(problem_uom)s) than %(uom)s have already "
@@ -282,14 +282,14 @@ msgid "Attachment Count"
 msgstr "Total de anexos"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 #: model:ir.model.fields.selection,name:repair.selection__repair_order__parts_availability_state__available
 msgid "Available"
 msgstr "Disponível"
 
 #. module: repair
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/repair/static/src/components/product_catalog/kanban_controller.js:0
 msgid "Back to Repair"
 msgstr "Retornar para reparo"
@@ -317,7 +317,7 @@ msgid "Can Create Sale Or Invoice"
 msgstr "Pode criar vendas ou faturas"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_warehouse.py:0
 msgid "Can't find any production location."
 msgstr "Não foi possível encontrar um local de produção."
@@ -392,7 +392,7 @@ msgid "Confirm Repair"
 msgstr "Confirmar reparo"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_picking.py:0
 #: model:ir.model.fields.selection,name:repair.selection__repair_order__state__confirmed
 #: model_terms:ir.ui.view,arch_db:repair.view_repair_order_form_filter
@@ -416,7 +416,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_picking.py:0
 #: model:ir.actions.server,name:repair.action_create_repair_order
 msgid "Create Repair"
@@ -530,7 +530,7 @@ msgid "End Repair"
 msgstr "Finalizar reparo"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "Exp %s"
 msgstr "Prev %s"
@@ -797,7 +797,7 @@ msgid "My Activity Deadline"
 msgstr "Prazo da minha atividade"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 #: model:ir.model.fields.selection,name:repair.selection__repair_order__state__draft
 #: model_terms:ir.ui.view,arch_db:repair.stock_repair_type_kanban
@@ -826,7 +826,7 @@ msgid "Next Activity Type"
 msgstr "Tipo da próxima atividade"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_warehouse.py:0
 msgid "No location of type Inventory Loss found"
 msgstr "Não foi encontrado nenhum local do tipo Perda de inventário"
@@ -842,13 +842,13 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "Not Available"
 msgstr "Não disponível"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid ""
 "Note that the warehouses of the return and repair locations don't match!"
@@ -953,7 +953,7 @@ msgid "Picking Type Visible"
 msgstr "Tipo de separação Visível"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "Please set the first Serial Number or a default sequence"
 msgstr "Defina o primeiro número de série ou uma sequência padrão"
@@ -1166,7 +1166,7 @@ msgid "Repair Order(s)"
 msgstr "Ordens de reparo"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/res_partner.py:0
 #: code:addons/repair/models/sale_order.py:0
 #: code:addons/repair/models/stock_picking.py:0
@@ -1232,14 +1232,14 @@ msgid "Repair damaged products"
 msgstr "Repare produtos danificados"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 #, fuzzy
 msgid "Repair must be confirmed in order to end reparation."
 msgstr "O reparo deve ser confirmado para finalizar a reparação."
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_lot.py:0
 msgid "Repair orders of %s"
 msgstr "Ordens de reparo de %s"
@@ -1255,7 +1255,7 @@ msgid "Repaired count"
 msgstr "Contagem de reparos feitos"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_warehouse.py:0
 #: model:ir.module.module,shortdesc:base.module_repair
 #: model:ir.ui.menu,name:repair.menu_repair_order
@@ -1273,7 +1273,7 @@ msgid "Repairs order"
 msgstr "Ordem de reparo"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_warehouse.py:0
 msgid "Replenish on Order (MTO)"
 msgstr "Reposição por pedido (sob demanda)"
@@ -1371,7 +1371,7 @@ msgid "Sequence"
 msgstr "Seqüência"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "Serial number is required for product to repair : %s"
 msgstr "O número de série é necessário para o produto a ser reparado: %s"
@@ -1545,7 +1545,7 @@ msgid "This is the location where the repaired product is located."
 msgstr "Esse é o local onde o produto reparado está localizado."
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair_service_line.py:0
 #: code:addons/repair/models/stock_move.py:0
 #, fuzzy
@@ -1654,7 +1654,7 @@ msgid "Warehouse"
 msgstr "Armazém"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "Warning"
 msgstr "Aviso"
@@ -1676,7 +1676,7 @@ msgid "Yesterday"
 msgstr "Ontem"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_lot.py:0
 msgid ""
 "You are not allowed to create a lot or serial number with this operation "
@@ -1688,20 +1688,20 @@ msgstr ""
 "novos lotes/números de série'."
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "You can not enter negative quantities."
 msgstr "Não é possível inserir quantidades negativas."
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid "You cannot cancel a Repair Order that's already been completed"
 msgstr ""
 "Não é possível cancelar uma ordem de reparo que já tenha sido concluída"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid ""
 "You cannot create a quotation for a repair order that is already linked to "
@@ -1724,7 +1724,7 @@ msgstr ""
 "produtos."
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/repair.py:0
 msgid ""
 "You need to define a customer for a repair order in order to create an "
@@ -1738,13 +1738,13 @@ msgstr ""
 "%(ref_str)s"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/stock_picking.py:0
 msgid "id"
 msgstr "id"
 
 #. module: repair
-#. odoo-python
+#. weth-python
 #: code:addons/repair/models/sale_order.py:0
 msgid "sale_order_id"
 msgstr "sale_order_id"

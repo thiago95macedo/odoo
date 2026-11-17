@@ -261,8 +261,8 @@ test("Adding new DataSource will set its fieldMatching according to other ones w
     expect(fieldMatching.offset).toBe(undefined);
 
     insertChartInSpreadsheet(model);
-    const chartId = model.getters.getOdooChartIds()[0];
-    fieldMatching = model.getters.getOdooChartFieldMatching(chartId, filterId);
+    const chartId = model.getters.getWethChartIds()[0];
+    fieldMatching = model.getters.getWethChartFieldMatching(chartId, filterId);
     expect(fieldMatching.chain).toBe("created_on");
     expect(fieldMatching.type).toBe("date");
     expect(fieldMatching.offset).toBe(undefined);
@@ -346,7 +346,7 @@ test("Domain of simple date filter", async function () {
     mockDate("2022-07-14 00:00:00");
     const { model } = await createSpreadsheetWithPivotAndList();
     insertChartInSpreadsheet(model);
-    const chartId = model.getters.getOdooChartIds()[0];
+    const chartId = model.getters.getWethChartIds()[0];
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER, {
         pivot: { "PIVOT#1": { chain: "date", type: "date" } },
         list: { 1: { chain: "date", type: "date" } },
@@ -402,7 +402,7 @@ test("Domain of date filter with quarter offset on list field", async function (
 test("Domain of date filter with month offset on graph field", async function () {
     mockDate("2022-07-14 00:00:00");
     const { model } = await createSpreadsheetWithChart();
-    const chartId = model.getters.getOdooChartIds()[0];
+    const chartId = model.getters.getWethChartIds()[0];
     /** @type GlobalFilter */
     const filter = {
         ...THIS_YEAR_GLOBAL_FILTER,
@@ -430,7 +430,7 @@ test("Can import/export filters", async function () {
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:avg", fieldName: "probability", aggregator: "avg" }],
@@ -1024,9 +1024,9 @@ test("Get active filters with date filter enabled", async function () {
     expect(model.getters.getActiveFilterCount()).toBe(1);
 });
 
-test("ODOO.FILTER.VALUE text filter", async function () {
+test("WETH.FILTER.VALUE text filter", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A10", `=ODOO.FILTER.VALUE("Text Filter")`);
+    setCellContent(model, "A10", `=WETH.FILTER.VALUE("Text Filter")`);
     await animationFrame();
     expect(getCellValue(model, "A10")).toBe("#ERROR");
     await addGlobalFilter(model, {
@@ -1050,9 +1050,9 @@ test("ODOO.FILTER.VALUE text filter", async function () {
     expect(getCellValue(model, "A10")).toBe("Hello, World");
 });
 
-test("ODOO.FILTER.VALUE numeric filter", async function () {
+test("WETH.FILTER.VALUE numeric filter", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A10", `=ODOO.FILTER.VALUE("Numeric Filter")`);
+    setCellContent(model, "A10", `=WETH.FILTER.VALUE("Numeric Filter")`);
     await animationFrame();
     expect(getCellValue(model, "A10")).toBe("#ERROR");
     await addGlobalFilter(model, {
@@ -1077,10 +1077,10 @@ test("ODOO.FILTER.VALUE numeric filter", async function () {
     expect(getCellValue(model, "B10")).toBe(99);
 });
 
-test("ODOO.FILTER.VALUE date filter", async function () {
+test("WETH.FILTER.VALUE date filter", async function () {
     mockDate("2022-03-10 00:00:00");
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A10", `=ODOO.FILTER.VALUE("Date Filter")`);
+    setCellContent(model, "A10", `=WETH.FILTER.VALUE("Date Filter")`);
     await animationFrame();
     await addGlobalFilter(model, {
         id: "42",
@@ -1129,21 +1129,21 @@ test("ODOO.FILTER.VALUE date filter", async function () {
     expect(getCellValue(model, "B10")).toBe(``);
 });
 
-test("ODOO.FILTER.VALUE date from/to without values", async function () {
+test("WETH.FILTER.VALUE date from/to without values", async function () {
     const { model } = await createModelWithDataSource();
     await addGlobalFilter(model, {
         id: "42",
         type: "date",
         label: "Date Filter",
     });
-    setCellContent(model, "A1", `=ODOO.FILTER.VALUE("Date Filter")`);
+    setCellContent(model, "A1", `=WETH.FILTER.VALUE("Date Filter")`);
     expect(getEvaluatedCell(model, "A1").value).toBe("");
     expect(getEvaluatedCell(model, "B1").value).toBe("");
 });
 
-test("ODOO.FILTER.VALUE date from/to with only from defined", async function () {
+test("WETH.FILTER.VALUE date from/to with only from defined", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A1", `=ODOO.FILTER.VALUE("Date Filter")`);
+    setCellContent(model, "A1", `=WETH.FILTER.VALUE("Date Filter")`);
     await addGlobalFilter(model, {
         id: "42",
         type: "date",
@@ -1162,9 +1162,9 @@ test("ODOO.FILTER.VALUE date from/to with only from defined", async function () 
     expect(getEvaluatedCell(model, "B1").value).toBe("");
 });
 
-test("ODOO.FILTER.VALUE date from/to with only to defined", async function () {
+test("WETH.FILTER.VALUE date from/to with only to defined", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A1", `=ODOO.FILTER.VALUE("Date Filter")`);
+    setCellContent(model, "A1", `=WETH.FILTER.VALUE("Date Filter")`);
     await addGlobalFilter(model, {
         id: "42",
         type: "date",
@@ -1183,9 +1183,9 @@ test("ODOO.FILTER.VALUE date from/to with only to defined", async function () {
     expect(getEvaluatedCell(model, "B1").formattedValue).toBe("1/1/2020");
 });
 
-test("ODOO.FILTER.VALUE date from/to with from and to defined", async function () {
+test("WETH.FILTER.VALUE date from/to with from and to defined", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A1", `=ODOO.FILTER.VALUE("Date Filter")`);
+    setCellContent(model, "A1", `=WETH.FILTER.VALUE("Date Filter")`);
     await addGlobalFilter(model, {
         id: "42",
         type: "date",
@@ -1207,9 +1207,9 @@ test("ODOO.FILTER.VALUE date from/to with from and to defined", async function (
     expect(getEvaluatedCell(model, "B1").formattedValue).toBe("1/1/2021");
 });
 
-test("ODOO.FILTER.VALUE relation filter", async function () {
+test("WETH.FILTER.VALUE relation filter", async function () {
     const { model } = await createModelWithDataSource();
-    setCellContent(model, "A10", `=ODOO.FILTER.VALUE("Relation Filter")`);
+    setCellContent(model, "A10", `=WETH.FILTER.VALUE("Relation Filter")`);
     await animationFrame();
     await addGlobalFilter(model, {
         id: "42",
@@ -1241,7 +1241,7 @@ test("ODOO.FILTER.VALUE relation filter", async function () {
     expect(getCellValue(model, "A10")).toBe("2");
 });
 
-test("ODOO.FILTER.VALUE with escaped quotes in the filter label", async function () {
+test("WETH.FILTER.VALUE with escaped quotes in the filter label", async function () {
     const { model } = await createModelWithDataSource();
     await addGlobalFilter(model, {
         id: "42",
@@ -1249,11 +1249,11 @@ test("ODOO.FILTER.VALUE with escaped quotes in the filter label", async function
         label: 'my "special" filter',
         defaultValue: { operator: "ilike", strings: ["Jean-Jacques"] },
     });
-    setCellContent(model, "A1", '=ODOO.FILTER.VALUE("my \\"special\\" filter")');
+    setCellContent(model, "A1", '=WETH.FILTER.VALUE("my \\"special\\" filter")');
     expect(getCellValue(model, "A1")).toBe("Jean-Jacques");
 });
 
-test("ODOO.FILTER.VALUE formulas are updated when filter label is changed", async function () {
+test("WETH.FILTER.VALUE formulas are updated when filter label is changed", async function () {
     const { model } = await createModelWithDataSource();
     await addGlobalFilter(model, {
         id: "42",
@@ -1263,7 +1263,7 @@ test("ODOO.FILTER.VALUE formulas are updated when filter label is changed", asyn
     setCellContent(
         model,
         "A10",
-        `=ODOO.FILTER.VALUE("Cuillère") & ODOO.FILTER.VALUE( "Cuillère" )`
+        `=WETH.FILTER.VALUE("Cuillère") & WETH.FILTER.VALUE( "Cuillère" )`
     );
     const [filter] = model.getters.getGlobalFilters();
     const newFilter = {
@@ -1273,7 +1273,7 @@ test("ODOO.FILTER.VALUE formulas are updated when filter label is changed", asyn
     };
     await editGlobalFilter(model, newFilter);
     expect(getCellFormula(model, "A10")).toBe(
-        `=ODOO.FILTER.VALUE("Interprete")&ODOO.FILTER.VALUE("Interprete")`
+        `=WETH.FILTER.VALUE("Interprete")&WETH.FILTER.VALUE("Interprete")`
     );
 });
 
@@ -1413,7 +1413,7 @@ test("load data only once if filter is not active (without default value)", asyn
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -1455,7 +1455,7 @@ test("load data only once if filter is active (with a default value)", async fun
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -1499,7 +1499,7 @@ test("don't reload data if an empty filter is added", async function () {
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -1534,7 +1534,7 @@ test("don't load data if a filter is added but the data is not needed", async fu
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -1577,7 +1577,7 @@ test("don't load data if a filter is activated but the data is not needed", asyn
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -2584,7 +2584,7 @@ test("field matching is removed when list is deleted", async function () {
         type: "date",
     };
     expect(model.getters.getListFieldMatching(listId, filter.id)).toEqual(matching);
-    model.dispatch("REMOVE_ODOO_LIST", { listId });
+    model.dispatch("REMOVE_WETH_LIST", { listId });
     expect(() => model.getters.getListFieldMatching(listId, filter.id)).toThrow(undefined, {
         message: "List does not exist",
     });
@@ -2596,7 +2596,7 @@ test("field matching is removed when list is deleted", async function () {
     });
 });
 
-test("field matching is removed when an Odoo chart is deleted", async function () {
+test("field matching is removed when an WETH chart is deleted", async function () {
     const { model } = await createSpreadsheetWithChart({ type: "pie" });
     const sheetId = model.getters.getActiveSheetId();
     const [chartId] = model.getters.getChartIds(sheetId);
@@ -2608,18 +2608,18 @@ test("field matching is removed when an Odoo chart is deleted", async function (
         chain: "date",
         type: "date",
     };
-    expect(model.getters.getOdooChartFieldMatching(chartId, filter.id)).toEqual(matching);
+    expect(model.getters.getWethChartFieldMatching(chartId, filter.id)).toEqual(matching);
     model.dispatch("DELETE_FIGURE", {
         figureId: model.getters.getFigureIdFromChartId(chartId),
         sheetId,
     });
-    expect(() => model.getters.getOdooChartFieldMatching(chartId, filter.id)).toThrow(undefined, {
+    expect(() => model.getters.getWethChartFieldMatching(chartId, filter.id)).toThrow(undefined, {
         message: "Chart does not exist",
     });
     model.dispatch("REQUEST_UNDO");
-    expect(model.getters.getOdooChartFieldMatching(chartId, filter.id)).toEqual(matching);
+    expect(model.getters.getWethChartFieldMatching(chartId, filter.id)).toEqual(matching);
     model.dispatch("REQUEST_REDO");
-    expect(() => model.getters.getOdooChartFieldMatching(chartId, filter.id)).toThrow(undefined, {
+    expect(() => model.getters.getWethChartFieldMatching(chartId, filter.id)).toThrow(undefined, {
         message: "Chart does not exist",
     });
 });
@@ -2627,7 +2627,7 @@ test("field matching is removed when an Odoo chart is deleted", async function (
 test("Reject date filters with invalid field Matchings", async () => {
     const { model } = await createSpreadsheetWithPivotAndList();
     insertChartInSpreadsheet(model);
-    const chartId = model.getters.getOdooChartIds()[0];
+    const chartId = model.getters.getWethChartIds()[0];
 
     const filter = (label) => ({
         id: "42",
@@ -2762,7 +2762,7 @@ test("Updating the pivot domain should keep the global filter domain", async () 
     expect(computedDomain.toString()).toBe(
         `["&", ("date", ">=", "2022-01-01"), ("date", "<=", "2022-12-31")]`
     );
-    model.dispatch("UPDATE_ODOO_PIVOT_DOMAIN", {
+    model.dispatch("UPDATE_WETH_PIVOT_DOMAIN", {
         pivotId,
         domain: [["foo", "in", [55]]],
     });
@@ -2812,7 +2812,7 @@ test("Updating the pivot should keep the global filter domain", async () => {
     );
 });
 
-test("Updating a non-odoo pivot should not crash on global filter", async () => {
+test("Updating a non-weth pivot should not crash on global filter", async () => {
     const grid = {
         A1: "Customer",
         B1: "Price",
@@ -2864,7 +2864,7 @@ test("Updating the list domain should keep the global filter domain", async () =
         `["&", ("date", ">=", "2022-01-01"), ("date", "<=", "2022-12-31")]`
     );
     const [listId] = model.getters.getListIds();
-    model.dispatch("UPDATE_ODOO_LIST_DOMAIN", {
+    model.dispatch("UPDATE_WETH_LIST_DOMAIN", {
         listId,
         domain: [["foo", "in", [55]]],
     });

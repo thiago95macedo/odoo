@@ -14,12 +14,12 @@ class TestIcons(BaseCase):
         """
         `icons.py` is generated with `generate_icons.py`.
         This test ensures that the icons listed in `ICONS` match the combined
-        set of icons from the wishlist and the Odoo UI icons configuration.
+        set of icons from the wishlist and the WETH UI icons configuration.
         """
 
         with (
             file_open('web/tooling/icons/icons_wishlist.txt') as wishlist_file,
-            file_open('web/tooling/icons/odoo_ui_icons_config.json') as config_file,
+            file_open('web/tooling/icons/weth_ui_icons_config.json') as config_file,
         ):
             wishlist = {
                 line.strip() for line in wishlist_file
@@ -27,8 +27,8 @@ class TestIcons(BaseCase):
             }
 
             config = json.load(config_file)
-            odoo_ui_icons = {
+            weth_ui_icons = {
                 config['css_prefix_text'] + icon['css']
                 for icon in config['glyphs'] if icon.get('selected', True)
             }
-            self.assertEqual(set(ICONS), wishlist | odoo_ui_icons)
+            self.assertEqual(set(ICONS), wishlist | weth_ui_icons)

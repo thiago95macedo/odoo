@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h4>Tired of copy-pasting emails?</h4>
-                    <p class="m-0 mt-3">Bring Odoo into your inbox:</p>
+                    <p class="m-0 mt-3">Bring WETH into your inbox:</p>
                     <ul class="ps-3 mb-0">
                         <li>Connect to Gmail or Outlook accounts.</li>
                         <li>Create Contacts, Leads, Tickets, Projects and Tasks.</li>
-                        <li>Find any Odoo record without leaving your inbox.</li>
+                        <li>Find any WETH record without leaving your inbox.</li>
                         <li>Preview records and open their forms in one click.</li>
                         <li>Save emails and attachments directly to WETH.</li>
                     </ul>
@@ -27,15 +27,15 @@
                 <t t-set-slot="footer">
                     <div class="d-flex flex-wrap gap-2">
                         <a title="Gmail" role="button" class="btn btn-secondary"
-                            href="https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990"
+                            href="https://workspace.google.com/marketplace/app/weth_inbox_addin/546131068990"
                             target="_blank">
-                            <img src="https://download.odoocdn.com/digests/mail_plugin/static/src/img/gmail.png" style="width: 20px; margin-right: 5px;"/>
+                            <img src="https://download.wethcdn.com/digests/mail_plugin/static/src/img/gmail.png" style="width: 20px; margin-right: 5px;"/>
                             Get it for Gmail
                         </a>
                         <a title="Outlook" role="button" class="btn btn-secondary"
                             href="https://marketplace.microsoft.com/en-us/product/WA200009923"
                             target="_blank">
-                            <img src="https://download.odoocdn.com/digests/mail_plugin/static/src/img/outlook.png" style="width: 20px; margin-right: 5px;"/>
+                            <img src="https://download.wethcdn.com/digests/mail_plugin/static/src/img/outlook.png" style="width: 20px; margin-right: 5px;"/>
                             Get it for Outlook
                         </a>
                     </div>

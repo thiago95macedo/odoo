@@ -33,7 +33,7 @@ export const notificationPermissionService = {
     },
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     async start(env, services) {
@@ -66,12 +66,12 @@ export const notificationPermissionService = {
                         await browser.Notification.requestPermission()
                     );
                     if (state.permission === "denied") {
-                        notification.add(_t("Odoo will not send notifications on this device."), {
+                        notification.add(_t("WETH will not send notifications on this device."), {
                             type: "warning",
                             title: _t("Notifications blocked"),
                         });
                     } else if (state.permission === "granted") {
-                        notification.add(_t("Odoo will send notifications on this device!"), {
+                        notification.add(_t("WETH will send notifications on this device!"), {
                             type: "success",
                             title: _t("Notifications allowed"),
                         });

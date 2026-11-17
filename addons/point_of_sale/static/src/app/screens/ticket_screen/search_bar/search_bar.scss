@@ -10,9 +10,10 @@
     z-index: 2;
     box-shadow: $popover-box-shadow;
     overflow: auto;
-    
-    li:hover, .highlight {    
-        background: var(--search-selected-bg, $o-gray-200);
+
+    li:hover,
+    .highlight {
+        background: var(--search-selected-bg, $w-gray-200);
     }
 }
 

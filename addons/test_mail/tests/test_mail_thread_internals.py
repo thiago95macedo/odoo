@@ -907,7 +907,7 @@ class TestAPI(ThreadRecipients):
                 'name': self.user_portal.name,
                 'partner_id': self.user_portal.partner_id.id,
                 'recipient_type': 'to',
-            },  # and not author, as it is odoobot's email
+            },  # and not author, as it is wethbot's email
         ], strict=True):
             with self.subTest():
                 self.assertDictEqual(recipient, expected)
@@ -1186,7 +1186,7 @@ class TestChatterTweaks(ThreadRecipients):
             headers = {
                 'Return-Path': f'{self.mail_alias_domain.bounce_email}',
                 'X-Custom': 'Done',  # model override
-                'X-Odoo-Objects': f'{test_record._name}-{test_record.id}',
+                'X-Weth-Objects': f'{test_record._name}-{test_record.id}',
             }
             if has_header:
                 headers['X-Msg-To-Add'] = f'{self.test_partner.email_formatted},{self.test_partner_catchall.email_formatted}'

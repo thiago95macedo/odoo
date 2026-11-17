@@ -60,21 +60,21 @@ test("model many2many: find tag, select tag, unselect tag", async () => {
     expect("table tr").toHaveCount(0);
     expect(modelEdit.get("rel")).toEqual([]);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     expect("input").toHaveCount(1);
     await contains("input").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(3);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(3);
+    await contains("span.w-dropdown-item").click();
     expect(modelEdit.get("rel")).toEqual([{ id: 1, name: "First", display_name: "First" }]);
     expect("table tr").toHaveCount(1);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(2);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(2);
+    await contains("span.w-dropdown-item").click();
     expect(modelEdit.get("rel")).toEqual([
         { id: 1, name: "First", display_name: "First" },
         { id: 2, name: "Second", display_name: "Second" },
@@ -86,7 +86,7 @@ test("model many2many: find tag, select tag, unselect tag", async () => {
     expect("table tr").toHaveCount(1);
     expect("table input").toHaveValue("Second");
 
-    await contains(".o-snippets-tabs button").click();
+    await contains(".w-snippets-tabs button").click();
     await contains(":iframe .test-options-target").click();
     expect("table tr").toHaveCount(1);
     expect("table input").toHaveValue("Second");

@@ -24,7 +24,7 @@ test("avatar card preview with hr", async () => {
     const { env } = await makeMockServer();
     const partnerId = env["res.partner"].create({
         name: "Mario",
-        email: "Mario@odoo.test",
+        email: "Mario@weth.test",
         phone: "+7878698799",
     });
     const jobId = env["hr.job"].create({
@@ -35,7 +35,7 @@ test("avatar card preview with hr", async () => {
     });
     const employeeId = env["hr.employee"].create({
         version_id: versionId,
-        work_email: "Mario@odoo.pro",
+        work_email: "Mario@weth.pro",
         work_location_type: "office",
         work_phone: "+585555555",
     });
@@ -66,7 +66,7 @@ test("avatar card preview with hr", async () => {
     await mailContains(".o_avatar_card");
     expect(queryAllTexts(".o_card_user_infos > *:not(.o_avatar_card_buttons)")).toEqual([
         "Mario",
-        "Mario@odoo.pro",
+        "Mario@weth.pro",
         "+585555555",
     ]);
     await contains(".o_action_manager:eq(0)").click();
@@ -84,7 +84,7 @@ test("avatar card activates the employee's company before opening the profile", 
     const employeeId = env["hr.employee"].create({
         company_id: 2,
         work_contact_id: partnerId,
-        work_email: "mario@odoo.pro",
+        work_email: "mario@weth.pro",
     });
     const userId = env["res.users"].create({
         partner_id: partnerId,
@@ -117,7 +117,7 @@ test("avatar card activates the employee's company before opening the profile", 
     await mailContains(".o_avatar_card_buttons button", { count: 2 });
     await mailContains(".o_avatar_card_buttons button", { text: "Send message" });
     await contains(".o_avatar_card_buttons button.dropdown-toggle").click();
-    await contains(".o-dropdown-item", {
+    await contains(".w-dropdown-item", {
         text: "Open Employee Profile (activates company)",
     }).click();
     expect.verifySteps(["get_record_default_action"]);
@@ -127,7 +127,7 @@ test("avatar card preview with hr (partner_id field)", async () => {
     const { env } = await makeMockServer();
     const partnerId = env["res.partner"].create({
         name: "Mario",
-        email: "Mario@odoo.test",
+        email: "Mario@weth.test",
         phone: "+7878698799",
     });
     const jobId = env["hr.job"].create({
@@ -138,7 +138,7 @@ test("avatar card preview with hr (partner_id field)", async () => {
     });
     const employeeId = env["hr.employee"].create({
         version_id: versionId,
-        work_email: "Mario@odoo.pro",
+        work_email: "Mario@weth.pro",
         work_location_type: "office",
         work_phone: "+585555555",
     });
@@ -162,7 +162,7 @@ test("avatar card preview with hr (partner_id field)", async () => {
     await mailContains(".o_avatar_card");
     expect(queryAllTexts(".o_card_user_infos > *:not(.o_avatar_card_buttons)")).toEqual([
         "Mario",
-        "Mario@odoo.pro",
+        "Mario@weth.pro",
         "+585555555",
     ]);
     await contains(".o_action_manager:eq(0)").click();

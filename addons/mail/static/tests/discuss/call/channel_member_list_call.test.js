@@ -55,24 +55,24 @@ test("call participants and invitees are grouped in their own box", async () => 
     await start();
     await openDiscuss(channelId);
     await click("[title='Join Call']");
-    await contains(".o-discuss-ChannelMemberList");
+    await contains(".w-discuss-ChannelMemberList");
     await contains(
-        ".o-discuss-ChannelMemberList-group h6:text('In this call - 2') + div .o-discuss-ChannelMember:text('Mitchell Admin')"
+        ".w-discuss-ChannelMemberList-group h6:text('In this call - 2') + div .w-discuss-ChannelMember:text('Mitchell Admin')"
     );
     await contains(
-        ".o-discuss-ChannelMemberList-group h6:text('In this call - 2') + div .o-discuss-ChannelMember:text('Alice')"
+        ".w-discuss-ChannelMemberList-group h6:text('In this call - 2') + div .w-discuss-ChannelMember:text('Alice')"
     );
     await contains(
-        ".o-discuss-ChannelMemberList-group h6:text('Also invited - 1') + div .o-discuss-ChannelMember:text('Laurie')"
+        ".w-discuss-ChannelMemberList-group h6:text('Also invited - 1') + div .w-discuss-ChannelMember:text('Laurie')"
     );
     await contains(
-        ".o-discuss-ChannelMemberList h6:text('Online - 1') + div .o-discuss-ChannelMember:text('Bob')"
+        ".w-discuss-ChannelMemberList h6:text('Online - 1') + div .w-discuss-ChannelMember:text('Bob')"
     );
-    await contains(".o-discuss-ChannelMemberList-group h6:text('In this call - 2')");
-    await contains(".o-discuss-ChannelMemberList-group h6:text('Also invited - 1')");
-    await contains(".o-discuss-ChannelMemberList-group h6", { count: 2 });
+    await contains(".w-discuss-ChannelMemberList-group h6:text('In this call - 2')");
+    await contains(".w-discuss-ChannelMemberList-group h6:text('Also invited - 1')");
+    await contains(".w-discuss-ChannelMemberList-group h6", { count: 2 });
     // Every member is listed exactly once across the call box and the Online section.
-    await contains(".o-discuss-ChannelMember", { count: 4 });
+    await contains(".w-discuss-ChannelMember", { count: 4 });
 });
 
 test("can see who is talking among call participants", async () => {
@@ -107,5 +107,5 @@ test("can see who is talking among call participants", async () => {
     // Talking indicator shows up while Alice is actually talking.
     const store = getService("mail.store");
     store["discuss.channel.rtc.session"].get(aliceSessionId).isTalking = true;
-    await contains(".o-discuss-ChannelMember:has(:text('Alice')) .o-discuss-TalkingAudioBars");
+    await contains(".w-discuss-ChannelMember:has(:text('Alice')) .w-discuss-TalkingAudioBars");
 });

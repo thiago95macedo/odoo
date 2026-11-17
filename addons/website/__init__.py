@@ -10,7 +10,7 @@ from weth.http import request
 def uninstall_hook(env):
     # Force remove ondelete='cascade' elements,
     # This might be prevented by another ondelete='restrict' field
-    # TODO: This should be an Odoo generic fix, not a website specific one
+    # TODO: This should be an WETH generic fix, not a website specific one
     website_domain = [('website_id', '!=', False)]
     env['ir.asset'].search(website_domain).unlink()
     env['ir.ui.view'].search(website_domain).with_context(active_test=False, force_delete=True).unlink()

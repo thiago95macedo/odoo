@@ -44,7 +44,7 @@ patch(PortalComposer.prototype, {
         super.setup();
         this.bootstrap = usePlugin(BootstrapInstance);
         patchDynamicContent(this.dynamicContent, {
-            ".o-mail-Composer-stars i": {
+            ".w-mail-Composer-stars i": {
                 "t-on-click": this.onClickStar.bind(this),
                 "t-on-mousemove": this.onMoveStar.bind(this),
                 "t-on-mouseleave": this.onMoveLeaveStar.bind(this),
@@ -68,7 +68,7 @@ patch(PortalComposer.prototype, {
         this.userClick = false; // user has click or not
         this.starValue = this.options.default_rating_value;
         // rating stars
-        this.starListEls = this.el.querySelectorAll(".o-mail-Composer-stars i");
+        this.starListEls = this.el.querySelectorAll(".w-mail-Composer-stars i");
     },
 
     /**

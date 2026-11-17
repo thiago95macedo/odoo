@@ -44,7 +44,7 @@ test("hr.timesheet (form): FloatToggleField is not used when current company uom
         resModel: "account.analytic.line",
         resId: 1,
     });
-    expect('div[name="unit_amount"] .o_field_float_toggle').not.toHaveCount(null, {
+    expect('div[name="unit_amount"] .w_field_float_toggle').not.toHaveCount(null, {
         message: "unit_amount shouldn't be displayed as float toggle",
     });
     expect('div[name="unit_amount"] input[inputmode="decimal"]').toBeVisible({
@@ -68,7 +68,7 @@ test("FloatFactorField is used when the current_company uom is not part of the s
     expect('div[name="unit_amount"] input').toHaveValue("1", {
         message: "unit_amount shouldn't be displayed as float and not as time",
     });
-    expect('div[name="unit_amount"].o_field_float_toggle').not.toHaveCount(null, {
+    expect('div[name="unit_amount"].w_field_float_toggle').not.toHaveCount(null, {
         message: "unit_amount shouldn't be displayed as float toggle",
     });
 });

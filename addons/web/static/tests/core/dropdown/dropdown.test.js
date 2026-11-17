@@ -35,9 +35,9 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useActiveElement } from "@web/core/ui/ui_plugin";
 import { useService } from "@web/core/utils/hooks";
 
-const DROPDOWN_TOGGLE = ".o-dropdown.dropdown-toggle";
-const DROPDOWN_MENU = ".o-dropdown--menu.dropdown-menu";
-const DROPDOWN_ITEM = ".o-dropdown-item.dropdown-item:not(.o-dropdown)";
+const DROPDOWN_TOGGLE = ".w-dropdown.dropdown-toggle";
+const DROPDOWN_MENU = ".w-dropdown--menu.dropdown-menu";
+const DROPDOWN_ITEM = ".w-dropdown-item.dropdown-item:not(.w-dropdown)";
 
 class SimpleDropdown extends Component {
     static components = { Dropdown, DropdownItem };
@@ -564,13 +564,13 @@ test("navigationProps changes navigation behaviour", async () => {
 
     // Toggler is focused, no focus in dropdown
     expect(DROPDOWN_TOGGLE).toBeFocused();
-    expect(".o-dropdown-item:nth-child(1)").not.toHaveClass("focus");
+    expect(".w-dropdown-item:nth-child(1)").not.toHaveClass("focus");
 
     // After arrow down, toggler is still focused, virtual focus in dropdown
     await press("arrowdown");
 
     expect(DROPDOWN_TOGGLE).toBeFocused();
-    expect(".o-dropdown-item:nth-child(1)").toHaveClass("focus");
+    expect(".w-dropdown-item:nth-child(1)").toHaveClass("focus");
 
     expect.verifySteps([]);
 
@@ -578,7 +578,7 @@ test("navigationProps changes navigation behaviour", async () => {
     await press("arrowup");
 
     expect(DROPDOWN_TOGGLE).toBeFocused();
-    expect(".o-dropdown-item:nth-child(1)").toHaveClass("focus");
+    expect(".w-dropdown-item:nth-child(1)").toHaveClass("focus");
     expect.verifySteps(["arrowup"]);
 });
 
@@ -679,7 +679,7 @@ test("tooltip on toggler", async () => {
 
     await hover(DROPDOWN_TOGGLE);
     await runAllTimers();
-    expect(".o-tooltip").toHaveText("My tooltip");
+    expect(".w-tooltip").toHaveText("My tooltip");
 });
 
 test("date picker inside does not close when a click occurs in date picker", async () => {
@@ -1059,7 +1059,7 @@ test("multi-level dropdown: close on item selection", async () => {
     expect(DROPDOWN_MENU).toHaveCount(2);
     expect(DROPDOWN_ITEM).toHaveCount(2);
 
-    await click(".o-dropdown-item.item-b");
+    await click(".w-dropdown-item.item-b");
     await animationFrame();
     expect(DROPDOWN_MENU).toHaveCount(0);
 });
@@ -1405,7 +1405,7 @@ test("multi-level dropdown: submenu keeps position when patched", async () => {
             let previousMenuRect;
             onPatched(() => {
                 expect.step(`submenu dropdown patched`);
-                const subMenuRect = queryRect(".o-dropdown--menu-submenu");
+                const subMenuRect = queryRect(".w-dropdown--menu-submenu");
                 if (previousMenuRect) {
                     expect(subMenuRect.top).toBe(previousMenuRect.top);
                     expect(subMenuRect.left).toBe(previousMenuRect.left);

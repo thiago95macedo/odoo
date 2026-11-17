@@ -58,9 +58,9 @@ class PaymentTransaction(models.Model):
             "amount": {"value": converted_amount, "currency": self.currency_id.name},
             "applicationInfo": {
                 "externalPlatform": {
-                    "name": "Odoo",
+                    "name": "Weth",
                     "version": release.version,
-                    "integrator": "Odoo SA",
+                    "integrator": "WETH SA",
                 }
             },
             "countryCode": partner_country_code,
@@ -238,7 +238,7 @@ class PaymentTransaction(models.Model):
                 )
                 if tx and tx.amount != converted_notification_amount:
                     # If the void was requested expecting a certain amount but, in the meantime,
-                    # others captures that Odoo was unaware of were done, the amount voided will
+                    # others captures that WETH was unaware of were done, the amount voided will
                     # be different from the amount of the existing transaction.
                     tx.with_context(
                         payment_safe_write=True  # No API call was made; safe to replay

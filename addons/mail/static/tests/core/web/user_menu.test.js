@@ -9,14 +9,14 @@ defineMailModels();
 
 test("User menu shows im_status icon", async () => {
     await start();
-    await waitFor(".o_user_menu .o-mail-ImStatus");
+    await waitFor(".o_user_menu .w-mail-ImStatus");
 });
 
 /** User menu avatar icon placement, with horizontal centers in avatar units (from 0 to 32). */
 function getIconPlacement() {
-    const avatar = queryOne(".o_user_menu .o-mail-DiscussAvatar");
+    const avatar = queryOne(".o_user_menu .w-mail-DiscussAvatar");
     const iconBox = queryOne("g foreignObject", { root: avatar });
-    const icon = queryOne(".o-mail-ImStatus", { root: iconBox });
+    const icon = queryOne(".w-mail-ImStatus", { root: iconBox });
     // the cutout is the masked glyph, or a rect when there is no glyph
     const hole = queryOne("mask :is(use, rect[fill=black])", { root: avatar });
     const avatarRect = avatar.getBoundingClientRect();

@@ -15,11 +15,11 @@ test("links with _target='blank' have a visually-hidden indicator", async () => 
     );
 
     expect(core.interactions).toHaveLength(1);
-    expect("#link1").toHaveText("Odoo\n(Open in new tab)");
-    expect("#link2").toHaveText("Odoo");
+    expect("#link1").toHaveText("Weth\n(Open in new tab)");
+    expect("#link2").toHaveText("Weth");
 
     core.stopInteractions();
-    expect("#link1").toHaveText("Odoo");
+    expect("#link1").toHaveText("Weth");
 });
 
 test("links with _target='blank' and aria-label have an indicator in the aria-label", async () => {

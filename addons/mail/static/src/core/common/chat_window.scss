@@ -1,53 +1,61 @@
-.o-mail-ChatWindow {
-    width: $o-mail-ChatWindow-width;
+.w-mail-ChatWindow {
+    width: $w-mail-ChatWindow-width;
 
     z-index: $zindex-sticky;
-    &.o-mobile {
+
+    &.w-mobile {
         z-index: var(--mail-ChatWindow-mobileZindex, $zindex-sticky - 2) !important;
     }
-    &:not(.o-mobile) {
+
+    &:not(.w-mobile) {
         --border-opacity: var(--mail-ChatWindow-desktopBorderOpacity, .15);
-        height: Min(95vh, $o-mail-ChatWindow-width * 15 / 9);
-        border-radius: calc(#{$o-mail-Composer-chatWindowVPadding} + #{$o-mail-Composer-pillRadiusBase});
+        height: Min(95vh, $w-mail-ChatWindow-width * 15 / 9);
+        border-radius: calc(#{$w-mail-Composer-chatWindowVPadding} + #{$w-mail-Composer-pillRadiusBase});
     }
+
     outline: none;
 
     transition: box-shadow 2.0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    &.o-highlighted {
-        box-shadow: 0 0 1.5rem #{$o-component-active-border} !important;
+
+    &.w-highlighted {
+        box-shadow: 0 0 1.5rem #{$w-component-active-border} !important;
     }
 }
 
-.o-mail-ChatWindow-moreActions {
+.w-mail-ChatWindow-moreActions {
     color: inherit !important;
     background-color: inherit !important;
-    &:hover, &.o-active, &.o-hover {
+
+    &:hover,
+    &.w-active,
+    &.w-hover {
         color: var(--mail-ChatWindow-moreActionsHoverColor, black) !important;
         backdrop-filter: invert(.025);
         border-color: transparent !important;
     }
-    &:not(.o-active):not(.o-hover) [data-icon="arrow_drop_down"] {
+
+    &:not(.w-active):not(.w-hover) [data-icon="arrow_drop_down"] {
         opacity: 50%;
     }
 }
 
-.o-mail-ChatWindow-closePanel {
+.w-mail-ChatWindow-closePanel {
     z-index: 2;
 }
 
-.o-mail-ChatWindow-counter {
+.w-mail-ChatWindow-counter {
     margin-bottom: map-get($spacers, 1) / 2;
 }
 
-.o-mail-ChatWindow-country {
+.w-mail-ChatWindow-country {
     width: 24px;
 }
 
-.o-mail-ChatWindow-header {
+.w-mail-ChatWindow-header {
     --o-btn-circle-height: 0;
     --border-opacity: var(--mail-ChatWindow-headerBorderOpacity, .15);
 
-    .o-mail-ActionList-group {
+    .w-mail-ActionList-group {
         gap: map-get($spacers, 3);
 
         button:not(:hover):not(:focus-visible):not(:active):not(.btn-success) {
@@ -59,23 +67,23 @@
         }
     }
 
-    .o-mail-ChatWindow-threadAvatar img {
-        height: $o-mail-Avatar-sizeSmall;
-        width: $o-mail-Avatar-sizeSmall;
+    .w-mail-ChatWindow-threadAvatar img {
+        height: $w-mail-Avatar-sizeSmall;
+        width: $w-mail-Avatar-sizeSmall;
     }
 
-    button:not(.o-tag-JOIN_LEAVE_CALL) {
+    button:not(.w-tag-JOIN_LEAVE_CALL) {
         --gradient: transparent;
         padding: 0;
     }
 }
 
-.o-mail-ChatWindow-imStatus {
+.w-mail-ChatWindow-imStatus {
     bottom: -1px;
     right: -2px;
 }
 
-.o-mail-ChatWindow-typing {
+.w-mail-ChatWindow-typing {
     font-size: $small-font-size * 0.9;
-    z-index: $o-mail-NavigableList-zIndex - 2;
+    z-index: $w-mail-NavigableList-zIndex - 2;
 }

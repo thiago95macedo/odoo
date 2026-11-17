@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 
 export class WebsiteSlidesNonFullscreen extends WebsiteSlidesCommon {
-    static selector = ".o_wslides_lesson_main";
+    static selector = ".w_wslides_lesson_main";
     setup() {
         super.setup();
         this.bindedOnQuizNextSlide = this.onQuizNextSlide.bind(this);
@@ -16,7 +16,7 @@ export class WebsiteSlidesNonFullscreen extends WebsiteSlidesCommon {
     }
 
     onQuizNextSlide() {
-        const url = this.el.querySelector(".o_wslides_js_lesson_quiz").dataset.nextSlideUrl;
+        const url = this.el.querySelector(".w_wslides_js_lesson_quiz").dataset.nextSlideUrl;
         redirect(url);
     }
 
@@ -27,7 +27,7 @@ export class WebsiteSlidesNonFullscreen extends WebsiteSlidesCommon {
         }
         // The quiz has been submitted in a documentation and in non fullscreen view,
         // should update the button "Mark Done" to "Mark To Do"
-        const doneButtonEl = this.el.querySelector(".o_wslides_done_button");
+        const doneButtonEl = this.el.querySelector(".w_wslides_done_button");
         if (doneButtonEl && slide.completed) {
             doneButtonEl.classList.remove(
                 "o_wslides_done_button",

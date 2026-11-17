@@ -52,8 +52,8 @@ test("component rendering: less than 3 records on field", async () => {
         resId: 1,
         type: "form",
     });
-    expect(".o_field_x2many_buttons").toHaveCount(1);
-    expect(".o_field_x2many_buttons button").toHaveCount(2);
+    expect(".w_field_x2many_buttons").toHaveCount(1);
+    expect(".w_field_x2many_buttons button").toHaveCount(2);
 });
 
 test("component rendering: exactly 3 records on field", async () => {
@@ -64,8 +64,8 @@ test("component rendering: exactly 3 records on field", async () => {
         resId: 4,
         type: "form",
     });
-    expect(".o_field_x2many_buttons").toHaveCount(1);
-    expect(".o_field_x2many_buttons button").toHaveCount(3);
+    expect(".w_field_x2many_buttons").toHaveCount(1);
+    expect(".w_field_x2many_buttons button").toHaveCount(3);
 });
 
 test("component rendering: more than 3 records on field", async () => {
@@ -76,9 +76,9 @@ test("component rendering: more than 3 records on field", async () => {
         resId: 6,
         type: "form",
     });
-    expect(".o_field_x2many_buttons").toHaveCount(1);
-    expect(".o_field_x2many_buttons button").toHaveCount(4);
-    expect(".o_field_x2many_buttons button:eq(3)").toHaveText("... (View all)");
+    expect(".w_field_x2many_buttons").toHaveCount(1);
+    expect(".w_field_x2many_buttons button").toHaveCount(4);
+    expect(".w_field_x2many_buttons button:eq(3)").toHaveText("... (View all)");
 });
 
 test("edit record and check if edits get discarded when click on one of the buttons and redirects to proper record", async () => {
@@ -101,7 +101,7 @@ test("edit record and check if edits get discarded when click on one of the butt
 
     await contains("[name='ref'] input").edit("new ref");
     expect("[name='ref'] input").toHaveValue("new ref");
-    await contains(".o_field_x2many_buttons button").click();
+    await contains(".w_field_x2many_buttons button").click();
     expect("[name='ref'] input").toHaveValue("b1");
     expect.verifySteps(["action_open_business_doc"]);
 });
@@ -133,6 +133,6 @@ test("redirect to list view and discards edits when clicking on last button with
     });
     await contains("[name='ref'] input").edit("new ref");
     expect("[name='ref'] input").toHaveValue("new ref");
-    await contains(".o_field_x2many_buttons button:eq(3)").click();
+    await contains(".w_field_x2many_buttons button:eq(3)").click();
     expect("[name='ref'] input").toHaveValue("b6");
 });

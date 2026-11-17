@@ -17,7 +17,7 @@ from weth.tools.urls import urljoin as url_join
 
 _logger = logging.getLogger(__name__)
 
-ODOO_ICONS_CDN_URL = 'https://download.odoocdn.com/icons'
+WETH_ICONS_CDN_URL = 'https://download.wethcdn.com/icons'
 OVERRIDDEN_ICON_BY_MODULE = {'base': '/base/static/description/settings.png'}
 
 
@@ -309,7 +309,7 @@ class DigestDigest(models.Model):
         module_by_digest_field = {field_name: self._fields[field_name]._module for field_name in digest_fields}
         module_by_digest_field.update(kpi_settings_module)
         icon_by_digest_field = {
-            field_name: f"{ODOO_ICONS_CDN_URL}{OVERRIDDEN_ICON_BY_MODULE.get(module_name)
+            field_name: f"{WETH_ICONS_CDN_URL}{OVERRIDDEN_ICON_BY_MODULE.get(module_name)
                                                or modules.module.get_module_icon(module_name)}"
             for field_name, module_name in module_by_digest_field.items()
         }

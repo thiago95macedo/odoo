@@ -54,13 +54,13 @@ test("card content", async () => {
     expect(".self_order_product_name span").toHaveText(product.name);
     // Hoot serves a placeholder for images, so only the element itself is asserted.
     expect(".o_self_product_card_img").toHaveCount(1);
-    expect(".o-so-tabular-nums").toHaveCount(1);
+    expect(".w-so-tabular-nums").toHaveCount(1);
     expect(".o_self_product_card .badge").toHaveCount(0);
     expect(".product_info_icon").toHaveCount(0);
 
     // hidePrice drops the price, as the combo page needs.
     await setProps({ hidePrice: true });
-    expect(".o-so-tabular-nums").toHaveCount(0);
+    expect(".w-so-tabular-nums").toHaveCount(0);
 
     // Only a positive qty renders a badge.
     await setProps({ hidePrice: false, qty: 3 });

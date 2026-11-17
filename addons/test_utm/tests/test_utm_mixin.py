@@ -44,10 +44,10 @@ class TestUTMMixin(TestUTMCommon, HttpCaseWithUserDemo):
 
         # assign proper UTM cookies, UTM values should be set
         self.opener.cookies.update({
-            'odoo_utm_source': 'Test Source',
-            'odoo_utm_medium': 'Test Medium',
-            'odoo_utm_campaign': 'Test Campaign',
-            'odoo_utm_reference': f'test.utm.mailing,{self.test_mailing.id}',
+            'weth_utm_source': 'Test Source',
+            'weth_utm_medium': 'Test Medium',
+            'weth_utm_campaign': 'Test Campaign',
+            'weth_utm_reference': f'test.utm.mailing,{self.test_mailing.id}',
         })
 
         test_so = self._create_fake_sale_order()
@@ -62,10 +62,10 @@ class TestUTMMixin(TestUTMCommon, HttpCaseWithUserDemo):
         self.assertEqual(self.env['utm.campaign'].search_count([('name', '=', 'UTM Campaign New')]), 0)
 
         self.opener.cookies.update({
-            'odoo_utm_source': 'UTM Source New',
-            'odoo_utm_medium': 'UTM Medium New',
-            'odoo_utm_campaign': 'UTM Campaign New',
-            'odoo_utm_reference': 'invalid_reference,77',
+            'weth_utm_source': 'UTM Source New',
+            'weth_utm_medium': 'UTM Medium New',
+            'weth_utm_campaign': 'UTM Campaign New',
+            'weth_utm_reference': 'invalid_reference,77',
         })
         test_so = self._create_fake_sale_order()
         self.assertEqual(test_so.source_id.name, 'UTM Source New')

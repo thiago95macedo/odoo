@@ -55,20 +55,20 @@ test("keep new message separator when message is deleted", async () => {
     ]);
     await start();
     await openDiscuss(generalId);
-    await contains(".o-mail-Message", { count: 2 });
-    queryFirst(".o-mail-Composer-input").blur();
+    await contains(".w-mail-Message", { count: 2 });
+    queryFirst(".w-mail-Composer-input").blur();
     await click("[title='Expand']", {
-        parent: [".o-mail-Message:has(:text('message 0'))"],
+        parent: [".w-mail-Message:has(:text('message 0'))"],
     });
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('message 0'))");
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('message 0'))");
     await click("[title='Expand']", {
-        parent: [".o-mail-Message:has(:text('message 0'))"],
+        parent: [".w-mail-Message:has(:text('message 0'))"],
     });
-    await click(".o-dropdown-item:contains('Delete')");
+    await click(".w-dropdown-item:contains('Delete')");
     await click(".modal button:text('Delete')");
-    await contains(".o-mail-Message:has(:text('message 0'))", { count: 0 });
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('message 1'))");
+    await contains(".w-mail-Message:has(:text('message 0'))", { count: 0 });
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('message 1'))");
 });
 
 test("new message separator is not shown if all messages are new", async () => {
@@ -86,8 +86,8 @@ test("new message separator is not shown if all messages are new", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 5 });
-    await contains(".o-mail-Thread-newMessage span:text('New')", { count: 0 });
+    await contains(".w-mail-Message", { count: 5 });
+    await contains(".w-mail-Thread-newMessage span:text('New')", { count: 0 });
 });
 
 test("new message separator is shown after first mark as read, on receiving new message", async () => {
@@ -109,8 +109,8 @@ test("new message separator is shown after first mark as read, on receiving new 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('Message 0'))");
-    await contains(".o-mail-Thread-newMessage:has(:text('New'))", { count: 0 });
+    await contains(".w-mail-Message:has(:text('Message 0'))");
+    await contains(".w-mail-Thread-newMessage:has(:text('New'))", { count: 0 });
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -122,8 +122,8 @@ test("new message separator is shown after first mark as read, on receiving new 
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('Message 1'))");
-    await contains(".o-mail-Thread-newMessage:has(:text('New'))");
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('Message 1'))");
+    await contains(".w-mail-Thread-newMessage:has(:text('New'))");
 });
 
 test("keep new message separator until user goes back to the thread", async () => {
@@ -163,24 +163,24 @@ test("keep new message separator until user goes back to the thread", async () =
     pyEnv["discuss.channel.member"].write([memberId], { new_message_separator: messageIds[0] + 1 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread");
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('Message body 2'))");
-    await contains(".o-mail-Thread-newMessage:contains('New')");
+    await contains(".w-mail-Thread");
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('Message body 2'))");
+    await contains(".w-mail-Thread-newMessage:contains('New')");
     await hootClick(document.body); // Force "focusin" back on the textarea
-    await hootClick(".o-mail-Composer-input");
+    await hootClick(".w-mail-Composer-input");
     await waitNotifications([
         "mail.record/insert",
         (n) => n["discuss.channel.member"][0].new_message_separator,
     ]);
-    await click(".o-mail-NotificationItem:has(:text('Other'))");
-    await contains(".o-mail-DiscussContent-threadName", { value: "Other" });
-    await click(".o-mail-NotificationItem:has(:text('test'))");
-    await contains(".o-mail-DiscussContent-threadName", { value: "test" });
-    await contains(".o-mail-Message:has(:text('Message body 2'))");
-    await contains(".o-mail-Thread-newMessage:contains('New')", { count: 0 });
+    await click(".w-mail-NotificationItem:has(:text('Other'))");
+    await contains(".w-mail-DiscussContent-threadName", { value: "Other" });
+    await click(".w-mail-NotificationItem:has(:text('test'))");
+    await contains(".w-mail-DiscussContent-threadName", { value: "test" });
+    await contains(".w-mail-Message:has(:text('Message body 2'))");
+    await contains(".w-mail-Thread-newMessage:contains('New')", { count: 0 });
 });
 
-test("show new message separator on receiving new message when out of odoo focus", async () => {
+test("show new message separator on receiving new message when out of weth focus", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({ name: "Foreigner partner" });
     const userId = pyEnv["res.users"].create({
@@ -208,8 +208,8 @@ test("show new message separator on receiving new message when out of odoo focus
     pyEnv["discuss.channel.member"].write([memberId], { new_message_separator: messageId + 1 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread");
-    await contains(".o-mail-Thread-newMessage:contains('New')", { count: 0 });
+    await contains(".w-mail-Thread");
+    await contains(".w-mail-Thread-newMessage:contains('New')", { count: 0 });
     // simulate receiving a message
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -218,9 +218,9 @@ test("show new message separator on receiving new message when out of odoo focus
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message:has(:text('hu'))");
-    await contains(".o-mail-Thread-newMessage:contains('New')");
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('hu'))");
+    await contains(".w-mail-Message:has(:text('hu'))");
+    await contains(".w-mail-Thread-newMessage:contains('New')");
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('hu'))");
 });
 
 test("keep new message separator until current user sends a message", async () => {
@@ -228,16 +228,16 @@ test("keep new message separator until current user sends a message", async () =
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "hello");
+    await insertText(".w-mail-Composer-input", "hello");
     await triggerHotkey("Enter");
-    await contains(".o-mail-Message:has(:text('hello'))");
-    await click(".o-mail-Message [title='Expand']");
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-newMessage:contains('New')");
-    await insertText(".o-mail-Composer-input", "hey!");
+    await contains(".w-mail-Message:has(:text('hello'))");
+    await click(".w-mail-Message [title='Expand']");
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-newMessage:contains('New')");
+    await insertText(".w-mail-Composer-input", "hey!");
     await press("Enter");
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(".o-mail-Thread-newMessage:contains('New')", { count: 0 });
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(".w-mail-Thread-newMessage:contains('New')", { count: 0 });
 });
 
 test("keep new message separator when switching between chat window and discuss of same thread", async () => {
@@ -245,21 +245,21 @@ test("keep new message separator when switching between chat window and discuss 
     pyEnv["discuss.channel"].create({ channel_type: "channel", name: "General" });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem-name:text('General')");
-    await insertText(".o-mail-Composer-input", "Very important message!");
+    await click(".w-mail-NotificationItem-name:text('General')");
+    await insertText(".w-mail-Composer-input", "Very important message!");
     await triggerHotkey("Enter");
-    await click(".o-mail-Message [title='Expand']");
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-newMessage");
+    await click(".w-mail-Message [title='Expand']");
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-newMessage");
     // dropdown requires an extra delay before click (because handler is registered in useEffect)
     await contains("[title='Open Actions Menu']");
     await click("[title='Open Actions Menu']");
-    await click(".o-dropdown-item:text('Open in Discuss')");
-    await contains(".o-mail-DiscussContent-threadName", { value: "General" });
-    await contains(".o-mail-Thread-newMessage");
+    await click(".w-dropdown-item:text('Open in Discuss')");
+    await contains(".w-mail-DiscussContent-threadName", { value: "General" });
+    await contains(".w-mail-Thread-newMessage");
     await openFormView("res.partner", serverState.partnerId);
-    await contains(".o-mail-ChatWindow-header:has(:text('General'))");
-    await contains(".o-mail-Thread-newMessage");
+    await contains(".w-mail-ChatWindow-header:has(:text('General'))");
+    await contains(".w-mail-Thread-newMessage");
 });
 
 test("show new message separator when message is received in chat window", async () => {
@@ -298,10 +298,10 @@ test("show new message separator when message is received in chat window", async
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatWindow");
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(".o-mail-Thread-newMessage:contains('New'):contains('New')");
-    await contains(".o-mail-Thread-newMessage + .o-mail-Message:has(:text('hu'))");
+    await contains(".w-mail-ChatWindow");
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(".w-mail-Thread-newMessage:contains('New'):contains('New')");
+    await contains(".w-mail-Thread-newMessage + .w-mail-Message:has(:text('hu'))");
 });
 
 test("show new message separator when message is received while chat window is closed", async () => {
@@ -334,8 +334,8 @@ test("show new message separator when message is received while chat window is c
     await start();
     await waitStoreFetch(["init_messaging", "/discuss/channel/messages"]);
 
-    await click(".o-mail-ChatWindow-header [title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await click(".w-mail-ChatWindow-header [title*='Close Chat Window']");
+    await contains(".w-mail-ChatWindow", { count: 0 });
     // send after init_messaging because bus subscription is done after init_messaging
     // simulate receiving a message
     await withUser(userId, () =>
@@ -345,10 +345,10 @@ test("show new message separator when message is received while chat window is c
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatBubble");
-    await contains(".o-mail-ChatBubble-counter:text('1')");
-    await click(".o-mail-ChatBubble");
-    await contains(".o-mail-Thread-newMessage:contains('New')");
+    await contains(".w-mail-ChatBubble");
+    await contains(".w-mail-ChatBubble-counter:text('1')");
+    await click(".w-mail-ChatBubble");
+    await contains(".w-mail-Thread-newMessage:contains('New')");
 });
 
 test("new member's separator should be at the bottom of existing messages after being invited", async () => {
@@ -431,16 +431,16 @@ test("pending mark as read does not revert a later mark as unread", async () => 
     pyEnv["discuss.channel.member"].write([memberId], { new_message_separator: messageId + 1 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('Hello everyone!'))");
+    await contains(".w-mail-Message:has(:text('Hello everyone!'))");
     await expect.waitForSteps(["handle_mark_as_read", "mark_as_read_rpc"]);
     // Request a second mark as read, queued until the first one completes.
-    queryFirst(".o-mail-Composer-input").blur();
-    await click(".o-mail-Composer-input");
+    queryFirst(".w-mail-Composer-input").blur();
+    await click(".w-mail-Composer-input");
     await click("[title='Expand']", {
-        parent: [".o-mail-Message:has(:text('Hello everyone!'))"],
+        parent: [".w-mail-Message:has(:text('Hello everyone!'))"],
     });
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-newMessage");
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-newMessage");
     firstMarkAsReadDef.resolve();
     await expect.waitForSteps(["set_new_message_separator"]);
     await waitUntil(
@@ -487,13 +487,13 @@ test("mark as unread waits for the mark as read in flight", async () => {
     pyEnv["discuss.channel.member"].write([memberId], { new_message_separator: messageId + 1 });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('Hello everyone!'))");
+    await contains(".w-mail-Message:has(:text('Hello everyone!'))");
     await expect.waitForSteps(["mark_as_read"]);
     await click("[title='Expand']", {
-        parent: [".o-mail-Message:has(:text('Hello everyone!'))"],
+        parent: [".w-mail-Message:has(:text('Hello everyone!'))"],
     });
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-newMessage");
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-newMessage");
     expect.verifySteps([]);
     markAsReadDef.resolve();
     await expect.waitForSteps(["set_new_message_separator"]);
@@ -502,5 +502,5 @@ test("mark as unread waits for the mark as read in flight", async () => {
             pyEnv["discuss.channel.member"].search_read([["id", "=", memberId]])[0]
                 .new_message_separator === messageId
     );
-    await contains(".o-mail-Thread-newMessage");
+    await contains(".w-mail-Thread-newMessage");
 });

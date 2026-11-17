@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 18:27+0000\n"
 "PO-Revision-Date: 2026-10-20 20:29+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/l10n_br/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgid ""
 "Avatax Brazil (l10n_br_avatax)\n"
 "------------------------------\n"
 "Add Brazilian tax calculation via Avatax and all necessary fields needed to\n"
-"configure Odoo in order to properly use Avatax and send the needed fiscal\n"
+"configure WETH in order to properly use Avatax and send the needed fiscal\n"
 "information to retrieve the correct taxes.\n"
 "\n"
 "Avatax for SOs in Brazil (l10n_br_avatax_sale)\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Avatax Brasil (l10n_br_avatax)\n"
 "------------------------------\n"
 "Adiciona o cálculo de impostos brasileiros via Avatax e todos os campos "
-"necessários para configurar o Odoo a fim de usar adequadamente o Avatax e "
+"necessários para configurar o WETH a fim de usar adequadamente o Avatax e "
 "enviar as informações fiscais necessárias para buscar os impostos corretos.\n"
 "\n"
 "Avatax para pedidos de venda no Brasil (l10n_br_avatax_sale)\n"
@@ -112,13 +112,13 @@ msgstr ""
 "Criar faturas eletrônicas de vendas com o Avatax.\n"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid "%s is not a valid CPF or CNPJ (don't include periods or dashes)."
 msgstr "%s não é um CPF ou CNPJ válido (não inclua pontos ou travessões)."
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid "%s is not a valid email."
 msgstr "%s não é um e-mail válido"
@@ -207,7 +207,7 @@ msgid "Brazilian city zip range"
 msgstr "Intervalo de CEPs de cidades brasileiras"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/tools/partner_identifiers.py:0
 msgid "Brazilian individual identification number."
 msgstr "Número de identificação individual brasileiro."
@@ -354,7 +354,7 @@ msgid "COFINS"
 msgstr "COFINS"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/tools/partner_identifiers.py:0
 msgid "CPF"
 msgstr "CPF"
@@ -375,7 +375,7 @@ msgid "CSLL"
 msgstr "CSLL"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid "Can't generate a Pix QR code with a currency other than BRL."
 msgstr "Não é possível gerar o código QR de Pix com moedas diferentes do BRL"
@@ -918,7 +918,7 @@ msgid "Interstate Fiscal Position Type"
 msgstr "Tipo de posição fiscal interestadual"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/l10n_br_zip_range.py:0
 msgid ""
 "Invalid zip range format: %(start)s %(end)s. It should follow this format: "
@@ -1030,7 +1030,7 @@ msgid "NIRE"
 msgstr "NIRE"
 
 #. module: l10n_br
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/l10n_br/static/src/interactions/address.js:0
 #: model_terms:ir.ui.view,arch_db:l10n_br.br_partner_address_form
 msgid "Neighborhood"
@@ -1057,7 +1057,7 @@ msgid "PIS"
 msgstr "PIS"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 #: model_terms:ir.ui.view,arch_db:l10n_br.res_config_settings_view_form
 msgid "Pix QR Code"
@@ -1116,7 +1116,7 @@ msgid "South/Southeast selling to North/Northeast/Midwest"
 msgstr "Sul/Sudeste vendendo para Norte/Nordeste/Centro-Oeste"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/l10n_br_zip_range.py:0
 msgid "Start should be less than end: %(start)s %(end)s"
 msgstr "O início deve ser menor que o fim: %(start)s %(end)s"
@@ -1180,7 +1180,7 @@ msgid "The \"to\" zip must be unique."
 msgstr "O arquivo ZIP “to” deve ser único."
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid ""
 "The account identifier type must be Email Address, Mobile Number, CPF/CNPJ "
@@ -1201,7 +1201,7 @@ msgstr ""
 "conta."
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid ""
 "The mobile number %s is invalid. It must start with +55, contain a 2 digit "
@@ -1211,7 +1211,7 @@ msgstr ""
 "2 dígitos e o número de 9 dígitos."
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid ""
 "The random key %s is invalid, the format looks like this: "
@@ -1226,7 +1226,7 @@ msgid "To"
 msgstr "Até"
 
 #. module: l10n_br
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_br/models/res_partner_bank.py:0
 msgid ""
 "To generate a Pix code the account identifier type for %s must be Email "

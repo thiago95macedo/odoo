@@ -36,7 +36,7 @@ export class CartNotificationContainer extends Component {
     _adaptToHeaderChange() {
         let position = 0;
 
-        for (const el of document.querySelectorAll('.o_top_fixed_element')) {
+        for (const el of document.querySelectorAll('.w_top_fixed_element')) {
             const { height, top } = el.getBoundingClientRect()
             // Add the element’s visible height; top < 0 for the portion scrolled out
             position += height + top;

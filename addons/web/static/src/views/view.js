@@ -38,7 +38,7 @@ import { session } from "@web/session";
  * @property {typeof Component} Banner
  *
  * @typedef {import("@web/core/context").Context} Context
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  * @typedef {import("@web/search/utils/order_by").OrderTerm} OrderTerm
  *
  * @typedef ViewProps
@@ -193,7 +193,7 @@ const STANDARD_PROPS = [
 
 const ACTIONS = ["create", "delete", "edit", "group_create", "group_delete", "group_edit"];
 
-/** @extends {Component<ViewProps, import("@web/env").OdooEnv>} */
+/** @extends {Component<ViewProps, import("@web/env").WethEnv>} */
 export const viewProps = {
     display: t.any().optional({}),
     context: t.any().optional({}),

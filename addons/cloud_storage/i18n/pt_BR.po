@@ -12,7 +12,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/cloud_storage/pt_BR/>\n"
+"weth-20/cloud_storage/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,20 +43,20 @@ msgid "Cloud Storage Provider for new attachments"
 msgstr "Provedor de armazenamento em nuvem para novos anexos"
 
 #. module: cloud_storage
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage/models/ir_attachment.py:0
 msgid "Cloud Storage is not enabled"
 msgstr "O armazenamento em nuvem não está ativado"
 
 #. module: cloud_storage
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage/controllers/attachment.py:0
 msgid "Cloud storage configuration has been changed. Please refresh the page."
 msgstr ""
 "A configuração do armazenamento em nuvem foi alterada. Atualize a página."
 
 #. module: cloud_storage
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/cloud_storage/static/src/core/public_web/attachment_upload_service_patch.js:0
 msgid "Cloud storage error"
 msgstr "Erro de armazenamento em nuvem"
@@ -74,7 +74,7 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: cloud_storage
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage/models/ir_attachment.py:0
 msgid ""
 "Failed to download attachment (%(id)s) from cloud: %(code)s - %(reason)s"
@@ -114,7 +114,7 @@ msgid "Minimum size for attachments to be stored in the cloud storage"
 msgstr "Tamanho mínimo dos anexos para armazenamento em nuvem"
 
 #. module: cloud_storage
-#. odoo-python
+#. weth-python
 #: code:addons/cloud_storage/models/res_config_settings.py:0
 msgid "Please configure the Cloud Storage before enabling it"
 msgstr "Configure o armazenamento em nuvem antes de ativá-lo"
@@ -146,7 +146,7 @@ msgid "Upload record attachments to the cloud storage"
 msgstr "Carregar anexos de registros para o armazenamento em nuvem"
 
 #. module: cloud_storage
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/cloud_storage/static/src/core/public_web/attachment_upload_service_patch.js:0
 msgid "You are not allowed to upload file to the cloud storage"
 msgstr ""

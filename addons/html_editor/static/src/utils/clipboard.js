@@ -14,7 +14,7 @@ function prependOriginToImages(doc, origin) {
 
 /**
  * Fills clipboard or dataTransfer data, including the
- * application/vnd.odoo.odoo-editor MIME type so it can be recognized
+ * application/vnd.weth.weth-editor MIME type so it can be recognized
  * when pasted or dropped inside an editor.
  *
  * @param {ClipboardEvent | DragEvent} ev - The event on which to set the data.
@@ -41,6 +41,6 @@ export function fillHtmlTransferData(
     }
     ev[transferObjectProperty].setData("text/html", htmlContent);
     if (setEditorTransferData) {
-        ev[transferObjectProperty].setData("application/vnd.odoo.odoo-editor", htmlContent);
+        ev[transferObjectProperty].setData("application/vnd.weth.weth-editor", htmlContent);
     }
 }

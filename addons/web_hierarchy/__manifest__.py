@@ -5,7 +5,7 @@
     'category': 'Hidden',
     'description':
         """
-Odoo Web Hierarchy view
+WETH Web Hierarchy view
 =======================
 
 This module adds a new view called to be able to define a view to display

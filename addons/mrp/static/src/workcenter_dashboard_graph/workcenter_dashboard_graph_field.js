@@ -4,12 +4,12 @@ import { getColor, hexToRGBA, darkenColor } from "@web/core/colors/colors";
 import { registry } from "@web/core/registry";
 import { JournalDashboardGraphField } from "@web/views/fields/journal_dashboard_graph/journal_dashboard_graph_field";
 
-export class WorkcenterDashboardGraphField extends JournalDashboardGraphField{
+export class WorkcenterDashboardGraphField extends JournalDashboardGraphField {
     getBarChartConfig() {
         const labels = this.data[0].labels;
-        const color19 = getColor(1, cookie.get("color_scheme"), "odoo");
-        const color13 = getColor(2, cookie.get("color_scheme"), "odoo");
-        const color10 = getColor(3, cookie.get("color_scheme"), "odoo");
+        const color19 = getColor(1, cookie.get("color_scheme"), "weth");
+        const color13 = getColor(2, cookie.get("color_scheme"), "weth");
+        const color10 = getColor(3, cookie.get("color_scheme"), "weth");
         const loadBarColor = this.data[0].is_sample_data ? hexToRGBA(color19, 0.1) : color19;
         const excessBarColor = this.data[0].is_sample_data ? hexToRGBA(color13, 0.1) : color13;
         const maxLoadLineColor = this.data[0].is_sample_data ? hexToRGBA(color10, 0.1) : hexToRGBA(color10, 0.5);
@@ -24,7 +24,7 @@ export class WorkcenterDashboardGraphField extends JournalDashboardGraphField{
                         // normally the line stops in the middle of the first and last columns, which is ugly
                         // to make it go through all the graph, the single point has been configured as a line
                         // in the middle of the graph and extended. The real line is not shown.
-                        data: [,,this.data[0].values[1]],
+                        data: [, , this.data[0].values[1]],
                         showLine: false,
                         pointStyle: 'line',
                         pointRadius: 500,
@@ -40,8 +40,8 @@ export class WorkcenterDashboardGraphField extends JournalDashboardGraphField{
                         label: "Total Load",
                         borderWidth: 0,
                         stack: 'mainStack',
-                        hoverBackgroundColor: function(ctx, options) {
-                            return (ctx.parsed._stacks.y[2] !== 0) ? excessBarColor :  darkColorOnHover;
+                        hoverBackgroundColor: function (ctx, options) {
+                            return (ctx.parsed._stacks.y[2] !== 0) ? excessBarColor : darkColorOnHover;
                         },
                     },
                     {
@@ -71,20 +71,20 @@ export class WorkcenterDashboardGraphField extends JournalDashboardGraphField{
                         mode: 'nearest',
                         position: 'nearest',
                         caretSize: 0,
-                        filter: function(ctx) {
+                        filter: function (ctx) {
                             if (ctx.dataset.type !== 'line') {
                                 return ctx;
                             }
                         },
                         callbacks: {
-                            label: function(ctx) {
+                            label: function (ctx) {
                                 if (ctx.datasetIndex === 1) {
-                                    const totalLoadValue = Object.values(ctx.parsed._stacks.y._visualValues).reduce((accu, curr) => {return accu + curr}, 0);
+                                    const totalLoadValue = Object.values(ctx.parsed._stacks.y._visualValues).reduce((accu, curr) => { return accu + curr }, 0);
                                     return _t(ctx.dataset.label + ": " + totalLoadValue + " hours");
                                 }
                                 return _t(ctx.dataset.label + ": " + ctx.parsed.y + " hours");
                             },
-                            title: function(ctx) {
+                            title: function (ctx) {
                                 return "";
                             },
                         },

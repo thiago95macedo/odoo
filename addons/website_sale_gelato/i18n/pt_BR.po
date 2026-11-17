@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_sale_gelato/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgid "Max 35 characters"
 msgstr "Máximo de 35 caracteres"
 
 #. module: website_sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_gelato/models/product_template.py:0
 msgid "Print images must be set on products before they can be published."
 msgstr ""
@@ -87,7 +87,7 @@ msgid "Product Document"
 msgstr "Documento do produto"
 
 #. module: website_sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_gelato/models/product_document.py:0
 msgid "Products must be unpublished before print images can be removed."
 msgstr ""
@@ -100,7 +100,7 @@ msgid "Sales Order"
 msgstr "Pedido de venda"
 
 #. module: website_sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_gelato/models/sale_order.py:0
 msgid ""
 "The product %(product_name)s cannot be added to the cart as it requires "

@@ -74,13 +74,13 @@ export class Message extends Record {
     /** @type {boolean} */
     edited = this.computed(() =>
         Boolean(
-            // ".o-mail-Message-edited" is the class added by the mail.thread in _message_update_content
+            // ".w-mail-Message-edited" is the class added by the mail.thread in _message_update_content
             // when the message is edited
-            this.bodyEl?.querySelector(".o-mail-Message-edited")
+            this.bodyEl?.querySelector(".w-mail-Message-edited")
         )
     );
     editedDate = this.computed(() => {
-        const editedDate = this.bodyEl?.querySelector(".o-mail-Message-edited")?.dataset.oDatetime;
+        const editedDate = this.bodyEl?.querySelector(".w-mail-Message-edited")?.dataset.oDatetime;
         return editedDate ? deserializeDateTime(editedDate) : undefined;
     });
     /** attachments not already clearly visible in the body, unlike inlined images */
@@ -664,8 +664,8 @@ export class Message extends Record {
     async edit(body, attachments = [], { mentionedPartners = [], mentionedRoles = [] } = {}) {
         const messageBodyEl = createElementWithContent("div", this.body);
         const updatedBodyEl = createElementWithContent("div", body);
-        messageBodyEl.querySelector("span.o-mail-Message-edited")?.remove();
-        updatedBodyEl.querySelector("span.o-mail-Message-edited")?.remove();
+        messageBodyEl.querySelector("span.w-mail-Message-edited")?.remove();
+        updatedBodyEl.querySelector("span.w-mail-Message-edited")?.remove();
         // The editor drops HTML comments (e.g. MSO ones) on parse; ignore them here too.
         removeHtmlComments(messageBodyEl, updatedBodyEl);
         if (
@@ -713,7 +713,7 @@ export class Message extends Record {
 
     enterEditMode() {
         const validRoles = Array.from(
-            this.bodyEl?.querySelectorAll(".o-discuss-mention[data-oe-model='res.role']") ?? []
+            this.bodyEl?.querySelectorAll(".w-discuss-mention[data-oe-model='res.role']") ?? []
         ).map((el) => this.store["res.role"].get(el.dataset.oeId));
         const text = convertBrToLineBreak(this.body);
         if (this.thread?.messageInEdition) {
@@ -756,7 +756,7 @@ export class Message extends Record {
 
     /**
      * @param {Object} owner
-     * @param {import("@web/env").OdooEnv} owner.env
+     * @param {import("@web/env").WethEnv} owner.env
      */
     onShowDeleteConfirm(owner) {
         this.remove({ removeFromThread: this.shouldHideFromMessageListOnDelete(owner.env) });
@@ -878,7 +878,7 @@ export class Message extends Record {
         await this.store.fetchStoreData("add_bookmark", { message_id: this.id });
     }
 
-    /** @param {import("@web/env").OdooEnv} env */
+    /** @param {import("@web/env").WethEnv} env */
     async removeBookmark(env) {
         await this.store.fetchStoreData("remove_bookmark", { message_id: this.id });
         if (!env.inMessagingMenu) {

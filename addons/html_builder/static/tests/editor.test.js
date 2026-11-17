@@ -33,7 +33,7 @@ test("should add an icon from the media modal dialog", async () => {
     });
     await insertText(editor, "/image");
     await animationFrame();
-    await contains(".o-we-command").click();
+    await contains(".w-we-command").click();
     await contains(".modal .modal-body .nav-item:nth-child(3) button").click();
     await contains(".modal .modal-body [data-icon='favorite']").click();
     expect(p).toHaveInnerHTML(
@@ -113,15 +113,15 @@ test("should preserve iframe in the toolbar's font size input", async () => {
         focusNode: p2.firstChild,
         focusOffset: 9,
     });
-    await waitFor(".o-we-toolbar [name='font_size'] iframe");
+    await waitFor(".w-we-toolbar [name='font_size'] iframe");
     // Get the font size selector input.
-    let iframeEl = queryOne(".o-we-toolbar [name='font_size'] iframe");
+    let iframeEl = queryOne(".w-we-toolbar [name='font_size'] iframe");
     let inputEl = iframeEl.contentWindow.document?.querySelector("input");
     // Change the font style from paragraph to paragraph.
-    await contains(".o-we-toolbar .btn[name='font_type'].dropdown-toggle").click();
+    await contains(".w-we-toolbar .btn[name='font_type'].dropdown-toggle").click();
     await waitFor(".btn[name='font_type'].dropdown-toggle.show");
     await contains(".dropdown-menu [name='p']").click();
-    iframeEl = queryOne(".o-we-toolbar [name='font_size'] iframe");
+    iframeEl = queryOne(".w-we-toolbar [name='font_size'] iframe");
     let newInputEl = iframeEl.contentWindow.document?.querySelector("input");
     expect(newInputEl).toBe(inputEl); // The input shouldn't have been changed.
 
@@ -132,15 +132,15 @@ test("should preserve iframe in the toolbar's font size input", async () => {
         focusNode: p.firstChild,
         focusOffset: 9,
     });
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     // Get the font size selector input.
-    iframeEl = queryOne(".o-we-toolbar [name='font_size'] iframe");
+    iframeEl = queryOne(".w-we-toolbar [name='font_size'] iframe");
     inputEl = iframeEl.contentWindow.document?.querySelector("input");
     // Change the font style from paragraph to header 1.
-    await contains(".o-we-toolbar .btn[name='font_type'].dropdown-toggle").click();
+    await contains(".w-we-toolbar .btn[name='font_type'].dropdown-toggle").click();
     await waitFor(".btn[name='font_type'].dropdown-toggle.show");
     await contains(".dropdown-menu [name='h2']").click();
-    iframeEl = queryOne(".o-we-toolbar [name='font_size'] iframe");
+    iframeEl = queryOne(".w-we-toolbar [name='font_size'] iframe");
     newInputEl = iframeEl.contentWindow.document?.querySelector("input");
     expect(newInputEl).toBe(inputEl); // The input shouldn't have been changed.
 });
@@ -202,7 +202,7 @@ describe("toolbar dropdowns", () => {
         const editor = getEditor();
         const p = editor.editable.querySelector("p");
         setSelection({ anchorNode: p, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await expandToolbar();
         return { editor, p };
     };
@@ -222,7 +222,7 @@ describe("toolbar dropdowns", () => {
 
     test("list dropdown should close on click", async () => {
         const { editor } = await setup();
-        click(".o-we-toolbar .btn[name='list_selector']");
+        click(".w-we-toolbar .btn[name='list_selector']");
         const bulletedListButtonSelector = ".dropdown-menu button[name='bulleted_list']";
         await focusAndClick(bulletedListButtonSelector);
         await animationFrame();
@@ -232,7 +232,7 @@ describe("toolbar dropdowns", () => {
 
     test("text alignment dropdown should close on click", async () => {
         const { p } = await setup();
-        click(".o-we-toolbar .btn[name='text_align']");
+        click(".w-we-toolbar .btn[name='text_align']");
         const alignCenterButtonSelector = ".dropdown-menu button[data-icon='format_align_center']";
         await focusAndClick(alignCenterButtonSelector);
         await animationFrame();
@@ -242,7 +242,7 @@ describe("toolbar dropdowns", () => {
 
     test("font style dropdown should close only after click", async () => {
         const { editor } = await setup();
-        click(".o-we-toolbar .btn[name='font_type']");
+        click(".w-we-toolbar .btn[name='font_type']");
         await focusAndClick(".dropdown-menu .dropdown-item[name='h2']");
         await animationFrame();
         expect(!!editor.editable.querySelector("h2")).toBe(true);
@@ -255,7 +255,7 @@ describe("toolbar dropdowns", () => {
             },
         });
         const { p } = await setup();
-        click(".o-we-toolbar .btn[name='font_size']");
+        click(".w-we-toolbar .btn[name='font_size']");
         await focusAndClick(".dropdown-menu .dropdown-item");
         await animationFrame();
         expect(p.firstChild).toHaveClass("test-font-size");
@@ -263,9 +263,9 @@ describe("toolbar dropdowns", () => {
 
     test("font selector dropdown should not have normal as an option", async () => {
         await setup();
-        click(".o-we-toolbar .btn[name='font_type']");
+        click(".w-we-toolbar .btn[name='font_type']");
         await animationFrame();
-        expect(".o_font_type_selector_menu .o-dropdown-item[name='div']").toHaveCount(0);
+        expect(".o_font_type_selector_menu .w-dropdown-item[name='div']").toHaveCount(0);
     });
 });
 
@@ -275,8 +275,8 @@ describe("font types", () => {
         const editor = getEditor();
         const p = editor.editable.querySelector("p");
         setSelection({ anchorNode: p, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar");
-        click(".o-we-toolbar .btn[name='font_type']");
+        await waitFor(".w-we-toolbar");
+        click(".w-we-toolbar .btn[name='font_type']");
         await waitFor(".o_font_type_selector_menu");
         const expectedButtons = [
             "Header 1 Display 1",
@@ -285,7 +285,7 @@ describe("font types", () => {
             "Header 1 Display 4",
         ];
         expectedButtons.forEach((button) => {
-            expect(`.o_font_type_selector_menu .o-dropdown-item:contains('${button}')`).toHaveCount(
+            expect(`.o_font_type_selector_menu .w-dropdown-item:contains('${button}')`).toHaveCount(
                 1
             );
         });
@@ -295,13 +295,13 @@ describe("font types", () => {
         const editor = getEditor();
         const p = editor.editable.querySelector("p");
         setSelection({ anchorNode: p, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar");
-        click(".o-we-toolbar .btn[name='font_type']");
+        await waitFor(".w-we-toolbar");
+        click(".w-we-toolbar .btn[name='font_type']");
         await waitFor(".o_font_type_selector_menu");
-        expect(`.o_font_type_selector_menu .o-dropdown-item:contains('Light')`).toHaveCount(1);
-        click(".o_font_type_selector_menu .o-dropdown-item:contains('Light')");
+        expect(`.o_font_type_selector_menu .w-dropdown-item:contains('Light')`).toHaveCount(1);
+        click(".o_font_type_selector_menu .w-dropdown-item:contains('Light')");
         await waitForNone(".o_font_type_selector_menu");
-        expect(".o-we-toolbar .btn[name='font_type']").toHaveText("Light");
+        expect(".w-we-toolbar .btn[name='font_type']").toHaveText("Light");
         expect(editor.editable.querySelector("p")).toHaveClass("lead");
     });
     test("'Small' is available", async () => {
@@ -309,13 +309,13 @@ describe("font types", () => {
         const editor = getEditor();
         const p = editor.editable.querySelector("p");
         setSelection({ anchorNode: p, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar");
-        click(".o-we-toolbar .btn[name='font_type']");
+        await waitFor(".w-we-toolbar");
+        click(".w-we-toolbar .btn[name='font_type']");
         await waitFor(".o_font_type_selector_menu");
-        expect(`.o_font_type_selector_menu .o-dropdown-item:contains('Small')`).toHaveCount(1);
-        click(".o_font_type_selector_menu .o-dropdown-item:contains('Small')");
+        expect(`.o_font_type_selector_menu .w-dropdown-item:contains('Small')`).toHaveCount(1);
+        click(".o_font_type_selector_menu .w-dropdown-item:contains('Small')");
         await waitForNone(".o_font_type_selector_menu");
-        expect(".o-we-toolbar .btn[name='font_type']").toHaveText("Small");
+        expect(".w-we-toolbar .btn[name='font_type']").toHaveText("Small");
         expect(editor.editable.querySelector("p")).toHaveClass("small");
     });
 
@@ -324,9 +324,9 @@ describe("font types", () => {
         const editor = getEditor();
         const h1 = editor.editable.querySelector("h1");
         setSelection({ anchorNode: h1, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await expandToolbar();
-        expect(".o-we-toolbar .btn[name='font']").toHaveCount(0);
+        expect(".w-we-toolbar .btn[name='font']").toHaveCount(0);
     });
 
     test("should cleanup whitespace after last element removal", async () => {
@@ -360,9 +360,9 @@ describe("font size", () => {
         const editor = getEditor();
         const p = editor.editable.querySelector("p");
         setSelection({ anchorNode: p, anchorOffset: 0, focusOffset: 1 });
-        await waitFor(".o-we-toolbar button[name='font_size'] iframe");
+        await waitFor(".w-we-toolbar button[name='font_size'] iframe");
 
-        const iframeEl = queryOne(".o-we-toolbar button[name='font_size'] iframe");
+        const iframeEl = queryOne(".w-we-toolbar button[name='font_size'] iframe");
         const inputEl = iframeEl.contentWindow.document?.querySelector("input");
         await contains(inputEl).click();
         await animationFrame();

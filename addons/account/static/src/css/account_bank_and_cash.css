@@ -1,31 +1,40 @@
 .weth .oe_force_bold {
   font-weight: bold !important;
 }
-.weth label.oe_open_balance{
-    margin-right: -18px;
+
+.weth label.oe_open_balance {
+  margin-right: -18px;
 }
-.weth label.oe_subtotal_footer_separator{
-    float:right;
-    width: 184px !important;
+
+.weth label.oe_subtotal_footer_separator {
+  float: right;
+  width: 184px !important;
 }
-.weth label.oe_mini_subtotal_footer_separator{
-    margin-right: -14px;
+
+.weth label.oe_mini_subtotal_footer_separator {
+  margin-right: -14px;
 }
-.weth .oe_account_total, .weth .oe_pos_total {
-    margin-left: -2px;
+
+.weth .oe_account_total,
+.weth .oe_pos_total {
+  margin-left: -2px;
 }
-.weth label.oe_real_closing_balance{
-    min-width: 184px !important;
+
+.weth label.oe_real_closing_balance {
+  min-width: 184px !important;
 }
-.weth label.oe_difference, .weth label.oe_pos_difference {
-    margin-right: -10px;
-    padding-left: 10px !important;
-    min-width: 195px !important;
+
+.weth label.oe_difference,
+.weth label.oe_pos_difference {
+  margin-right: -10px;
+  padding-left: 10px !important;
+  min-width: 195px !important;
 }
-.weth .oe_opening_total{
+
+.weth .oe_opening_total {
   margin-right: 4px;
 }
 
-.o_payment_label{
+.w_payment_label {
   padding-right: 20px;
 }

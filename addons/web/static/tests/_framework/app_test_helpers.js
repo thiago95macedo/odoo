@@ -21,7 +21,7 @@ import { MockServer, makeMockServer, onRpc } from "./mock_server/mock_server";
 /**
  * @typedef {Record<keyof Services, any>} Dependencies
  *
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  *
  * @typedef {import("@web/core/registry").Registry} Registry
  *
@@ -232,7 +232,7 @@ export async function makeTestApp(options) {
  * @template {keyof Services} T
  * @param {T} name
  * @param {Partial<Services[T]> |
- *  (env: OdooEnv, dependencies: Dependencies) => Services[T]
+ *  (env: WethEnv, dependencies: Dependencies) => Services[T]
  * } serviceFactory
  */
 export function mockService(name, serviceFactory) {

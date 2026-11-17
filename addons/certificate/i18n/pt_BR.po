@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/certificate/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "A private key is required to decrypt data."
 msgstr "É necessária uma chave privada para descriptografar os dados."
@@ -231,13 +231,13 @@ msgid "Loading error"
 msgstr "Erro de carregamento"
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "Make sure to use a private key to sign documents."
 msgstr "Certifique-se de usar uma chave privada para assinar documentos."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "Make sure to use a public key to verify the signature of documents."
 msgstr ""
@@ -266,7 +266,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid ""
 "No private key linked to the certificate, it is required to sign documents."
@@ -360,13 +360,13 @@ msgstr ""
 "Use este campo para fazer uma busca."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid "The certificate and private key are not compatible."
 msgstr "O certificado e a chave privada não são compatíveis."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid "The certificate and public key are not compatible."
 msgstr "O certificado e a chave pública não são compatíveis."
@@ -382,31 +382,31 @@ msgid "The date on which the certificate starts to be valid"
 msgstr "A data em que o certificado começa a ser válido"
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "The key size should be at least 512 bytes."
 msgstr "O tamanho da chave deve ser de pelo menos 512 bytes."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "The private key could not be loaded."
 msgstr "A chave privada não pôde ser carregada."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "The public exponent should be 65537 (or 3 for legacy purposes)."
 msgstr "O expoente público deve ser 65537 (ou 3 para fins de legado)."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid "The public key could not be loaded."
 msgstr "A chave pública não pôde ser carregada."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid "The public key from the certificate could not be loaded."
 msgstr "A chave pública do certificado não pôde ser carregada."
@@ -417,7 +417,7 @@ msgid "The serial number to add to electronic documents"
 msgstr "O número de série a ser adicionado aos documentos eletrônicos"
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid ""
 "This certificate could not be loaded. Either the content or the password is "
@@ -427,7 +427,7 @@ msgstr ""
 "incorreto."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid ""
 "This certificate could not be loaded. Please provide the certificate "
@@ -436,13 +436,13 @@ msgstr ""
 "Não foi possível carregar este certificado. Forneça a senha do certificado."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/certificate.py:0
 msgid "This certificate is not valid, its validity has expired."
 msgstr "Este certificado não é válido; a validade expirou."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 #: code:addons/certificate/tests/test_keys_certificates.py:0
 msgid ""
@@ -452,7 +452,7 @@ msgstr ""
 "Essa chave não pôde ser carregada. A senha ou o conteúdo está incorreto."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid ""
 "Unsupported asymmetric cryptography algorithm '%s'. Currently supported for "
@@ -462,7 +462,7 @@ msgstr ""
 "suporte para descriptografia: RSA."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid ""
 "Unsupported asymmetric cryptography algorithm '%s'. Currently supported for "
@@ -472,7 +472,7 @@ msgstr ""
 "suporte para assinatura: EC e RSA."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid ""
 "Unsupported asymmetric cryptography algorithm '%s'. Currently supported for "
@@ -482,7 +482,7 @@ msgstr ""
 "suportado para assinatura: ED25519, EC e RSA."
 
 #. module: certificate
-#. odoo-python
+#. weth-python
 #: code:addons/certificate/models/key.py:0
 msgid ""
 "Unsupported asymmetric cryptography algorithm '%s'. Currently supported: EC, "

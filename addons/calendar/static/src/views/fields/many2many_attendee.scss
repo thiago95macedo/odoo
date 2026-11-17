@@ -6,7 +6,7 @@
 
     img:hover {
         cursor: context-menu;
-        outline: $border-width solid $o-action;
+        outline: $border-width solid $w-action;
     }
 
     .attendee_tag_status {
@@ -19,15 +19,18 @@
         background-color: tint-color($success, 80%);
         color: $success;
     }
+
     .o_attendee_status_declined {
         background-color: tint-color($danger, 80%);
         color: $danger;
     }
+
     .o_attendee_status_tentative {
         background-color: $gray-200;
         color: $dark;
     }
 }
+
 .o_touch_device .o_form_view .o_field_widget.o_field_many2manyattendee:has(.o_tag):has(.o_field_many2many_selection) input {
     position: initial;
 }

@@ -15,7 +15,7 @@
         'security/ir.access.csv',
     ],
     "assets": {
-        "spreadsheet.o_spreadsheet": [
+        "spreadsheet.w_spreadsheet": [
             "spreadsheet_dashboard/static/src/bundle/**/*.js",
             "spreadsheet_dashboard/static/src/bundle/**/*.xml",
         ],

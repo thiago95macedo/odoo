@@ -206,7 +206,7 @@ beforeEach(() => {
     patchWithCleanup(location, {
         origin: "http://example.com",
     });
-    redirect("/odoo");
+    redirect("/weth");
 });
 
 describe(`new urls`, () => {
@@ -216,7 +216,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveText("App1");
+        expect(`.w_menu_brand`).toHaveText("App1");
         expect(browser.sessionStorage.getItem("menu_id")).toBe("1");
         expect(location.href).toBe("http://example.com/weth/action-1001", {
             message: "url did not change",
@@ -232,7 +232,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveText("App1");
+        expect(`.w_menu_brand`).toHaveText("App1");
         expect(browser.sessionStorage.getItem("menu_id")).toBe("1");
         expect(location.href).toBe("http://example.com/weth/action-1001", {
             message: "url changed",
@@ -241,12 +241,12 @@ describe(`new urls`, () => {
     });
 
     test(`menu loading`, async () => {
-        redirect("/odoo?menu_id=2");
+        redirect("/weth?menu_id=2");
         logHistoryInteractions();
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_Id 2");
-        expect(`.o_menu_brand`).toHaveText("App2");
+        expect(`.w_menu_brand`).toHaveText("App2");
         expect(browser.sessionStorage.getItem("menu_id")).toBe("2");
         expect(location.href).toBe("http://example.com/weth/action-1002", {
             message: "url now points to the default action of the menu",
@@ -260,7 +260,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_Id 1");
-        expect(`.o_menu_brand`).toHaveText("App2");
+        expect(`.w_menu_brand`).toHaveText("App2");
         expect(browser.sessionStorage.getItem("menu_id")).toBe("2");
         expect(router.current).toEqual({
             action: 1001,
@@ -288,7 +288,7 @@ describe(`new urls`, () => {
         logHistoryInteractions();
         await mountWebClient();
 
-        expect(`.o_menu_brand`).toHaveText("App2");
+        expect(`.w_menu_brand`).toHaveText("App2");
         expect.verifySteps([
             "Update the state without updating URL, nextState: actionStack,action",
         ]);
@@ -355,13 +355,13 @@ describe(`new urls`, () => {
     test(`fallback on home action if no action found`, async () => {
         logHistoryInteractions();
         patchWithCleanup(user, { homeActionId: 1001 });
-        expect(location.href).toBe("http://example.com/odoo");
+        expect(location.href).toBe("http://example.com/weth");
 
         await mountWebClient();
         expect(location.href).toBe("http://example.com/weth/action-1001");
         expect.verifySteps(["pushState http://example.com/weth/action-1001"]);
         expect(`.test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveText("App1");
+        expect(`.w_menu_brand`).toHaveText("App1");
     });
 
     test(`correctly sends additional context`, async () => {
@@ -400,7 +400,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_xmlId");
-        expect(`.o_menu_brand`).toHaveCount(0);
+        expect(`.w_menu_brand`).toHaveCount(0);
         expect(location.href).toBe(
             // FIXME should we canonicalize the URL? If yes, shouldn't we use the client action tag instead? {
             "http://example.com/weth/action-1099",
@@ -430,7 +430,7 @@ describe(`new urls`, () => {
         await mountWebClient();
         expect(`.test_client_action`).toHaveCount(1);
         expect(`.modal .test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveCount(0);
+        expect(`.w_menu_brand`).toHaveCount(0);
         expect(location.href).toBe("http://example.com/weth/action-wowl.client_action", {
             message: "action in target new doesn't affect the URL",
         });
@@ -443,7 +443,7 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_action_manager`).toHaveText("", { message: "should display nothing" });
+        expect(`.w_action_manager`).toHaveText("", { message: "should display nothing" });
         expect.verifySteps(["/web/webclient/translations", "/web/webclient/load_menus"]);
         expect(location.href).toBe("http://example.com/weth/m-partner?view_type=list", {
             message: "the url did not change",
@@ -463,7 +463,7 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/HelloWorldTest", {
@@ -497,7 +497,7 @@ describe(`new urls`, () => {
                 },
             ],
         });
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/my-action");
@@ -526,14 +526,14 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/HelloWorldTest/12", {
             message: "the url did not change",
         });
         // Breadcrumb should have only one item, the client action don't have a LazyController (a multi-record view)
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Client Action DisplayName",
         ]);
         expect.verifySteps([
@@ -564,14 +564,14 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/HelloWorldTest/12", {
             message: "the url did change (the resId was added)",
         });
         // Breadcrumb should have only one item, the client action don't have a LazyController (a multi-record view)
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Client Action DisplayName",
         ]);
         expect.verifySteps([
@@ -600,12 +600,12 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/my_client/12");
         // Breadcrumb should have only one item, the client action don't have a LazyController (a multi-record view)
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Client Action DisplayName",
         ]);
         expect.verifySteps([
@@ -635,12 +635,12 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/my_client/12");
         // Breadcrumb should have only one item, the client action don't have a LazyController (a multi-record view)
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Client Action DisplayName",
         ]);
         expect.verifySteps([
@@ -665,12 +665,12 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect(location.href).toBe("http://example.com/weth/my_client");
         // Breadcrumb should have only one item, the client action don't have a LazyController (a multi-record view)
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "translatable displayname",
         ]);
         expect.verifySteps([
@@ -686,8 +686,8 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_control_panel`).toHaveCount(1);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_control_panel`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect(location.href).toBe("http://example.com/weth/action-1", {
             message: "the url did not change",
         });
@@ -708,11 +708,11 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect(location.href).toBe("http://example.com/weth/m-partner/2", {
             message: "the url did not change",
         });
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Second record"]);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Second record"]);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -730,9 +730,9 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveCount(0);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Second record"]);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(`.w_menu_brand`).toHaveCount(0);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Second record"]);
         expect(location.href).toBe("http://example.com/weth/m-partner/2", {
             message: "the url did not change",
         });
@@ -751,7 +751,7 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect(location.href).toBe("http://example.com/weth/action-3/new", {
             message: "the url did not change",
         });
@@ -771,8 +771,8 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(0);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(0);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect(location.href).toBe("http://example.com/weth/action-3?view_type=kanban", {
             message: "the url did not change",
         });
@@ -794,9 +794,9 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(0);
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(`.w_list_view`).toHaveCount(0);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners",
             "Second record",
         ]);
@@ -813,9 +813,9 @@ describe(`new urls`, () => {
         ]);
 
         // go back to List
-        await contains(`.o_control_panel .breadcrumb a`).click();
-        expect(`.o_list_view`).toHaveCount(1);
-        expect(`.o_form_view`).toHaveCount(0);
+        await contains(`.w_control_panel .breadcrumb a`).click();
+        expect(`.w_list_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(0);
         expect.verifySteps([
             "web_search_read",
             "has_group",
@@ -832,7 +832,7 @@ describe(`new urls`, () => {
         await animationFrame(); // pushState is debounced
         expect(location.href).toBe("http://example.com/weth/action-4");
         expect.verifySteps(["pushState http://example.com/weth/action-4"]);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners Action 4",
         ]);
 
@@ -840,7 +840,7 @@ describe(`new urls`, () => {
             props: { resId: 2 },
             viewType: "form",
         });
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners Action 4",
             "Second record",
         ]);
@@ -854,8 +854,8 @@ describe(`new urls`, () => {
         ]);
 
         // go back to previous action
-        await contains(`.o_control_panel .breadcrumb .o_back_button a`).click();
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        await contains(`.w_control_panel .breadcrumb .w_back_button a`).click();
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners Action 4",
         ]);
 
@@ -875,15 +875,15 @@ describe(`new urls`, () => {
         onRpc("web_read", () => Promise.reject());
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(0);
-        expect(`.o_list_view`).toHaveCount(1); // Show the lazy loaded list view
+        expect(`.w_form_view`).toHaveCount(0);
+        expect(`.w_list_view`).toHaveCount(1); // Show the lazy loaded list view
         expect(location.href).toBe("http://example.com/weth/action-3", {
             message: "url reflects that we are not on the failing record",
         });
         expect.verifySteps(["pushState http://example.com/weth/action-3"]);
 
         await getService("action").doAction(1);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
 
         await animationFrame(); // pushState is debounced
         expect(location.href).toBe("http://example.com/weth/action-3/action-1");
@@ -915,7 +915,7 @@ describe(`new urls`, () => {
             "Update the state without updating URL, nextState: actionStack,action",
         ]);
 
-        await contains(`tr .o_data_cell`).click();
+        await contains(`tr .w_data_cell`).click();
         await animationFrame(); // pushState is debounced
         expect(router.current).toEqual({
             action: 3,
@@ -945,13 +945,13 @@ describe(`new urls`, () => {
     test(`load state supports being given menu_id alone`, async () => {
         defineMenus([{ id: 666, actionID: 1 }]);
 
-        redirect("/odoo?menu_id=666");
+        redirect("/weth?menu_id=666");
         logHistoryInteractions();
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_kanban_view`).toHaveCount(1, { message: "should display a kanban view" });
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(`.w_kanban_view`).toHaveCount(1, { message: "should display a kanban view" });
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners Action 1",
         ]);
         expect(location.href).toBe("http://example.com/weth/action-1");
@@ -984,8 +984,8 @@ describe(`new urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Partner", "New"]);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Partner", "New"]);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -994,7 +994,7 @@ describe(`new urls`, () => {
             "onchange",
             "Update the state without updating URL, nextState: actionStack,resId,action",
         ]);
-        expect(`.o_form_view .o_form_editable`).toHaveCount(1);
+        expect(`.w_form_view .w_form_editable`).toHaveCount(1);
         expect(location.href).toBe("http://example.com/weth/action-999/new");
     });
 
@@ -1017,8 +1017,8 @@ describe(`new urls`, () => {
         logHistoryInteractions();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(1);
-        expect(`.o_notification_body`).toHaveCount(1, { message: "should have a notification" });
+        expect(`.w_list_view`).toHaveCount(1);
+        expect(`.w_notification_body`).toHaveCount(1, { message: "should have a notification" });
         expect(location.href).toBe("http://example.com/weth/action-1000", {
             message: "url reflects that we are not on the record",
         });
@@ -1090,7 +1090,7 @@ describe(`new urls`, () => {
             ],
             resId: 2,
         });
-        expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+        expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
             "Partners",
             "Second record",
         ]);
@@ -1137,12 +1137,12 @@ describe(`new urls`, () => {
             "Update the state without updating URL, nextState: actionStack,resId,action",
         ]);
 
-        await contains(`.o_control_panel .breadcrumb-item`).click();
-        expect(`.o_list_view .o_data_row`).toHaveCount(5);
+        await contains(`.w_control_panel .breadcrumb-item`).click();
+        expect(`.w_list_view .w_data_row`).toHaveCount(5);
 
         await toggleSearchBarMenu();
         await toggleMenuItem("Filter");
-        expect(`.o_list_view .o_data_row`).toHaveCount(1);
+        expect(`.w_list_view .w_data_row`).toHaveCount(1);
 
         await animationFrame(); // pushState is debounced
         expect(location.href).toBe("http://example.com/weth/action-3");
@@ -1176,14 +1176,14 @@ describe(`new urls`, () => {
 
         await animationFrame();
         expect.verifyErrors(["my error"]);
-        expect(`.o_error_dialog`).toHaveCount(1);
+        expect(`.w_error_dialog`).toHaveCount(1);
 
         await contains(`.modal-header .btn-close`).click();
-        expect(`.o_error_dialog`).toHaveCount(0);
+        expect(`.w_error_dialog`).toHaveCount(0);
 
-        await contains(`nav .o_navbar_apps_menu .dropdown-toggle`).click();
-        expect(`.dropdown-item.o_app`).toHaveCount(3);
-        expect(`.o_action_manager`).toHaveText("");
+        await contains(`nav .w_navbar_apps_menu .dropdown-toggle`).click();
+        expect(`.dropdown-item.w_app`).toHaveCount(3);
+        expect(`.w_action_manager`).toHaveText("");
 
         await animationFrame(); // pushState is debounced
         expect(router.current).toEqual({
@@ -1222,7 +1222,7 @@ describe(`new urls`, () => {
             "web_read",
         ]);
         expect.verifyErrors([/RPC_ERROR/, /RPC_ERROR/]);
-        expect(queryFirst(`.o_action_manager`).childElementCount).toBe(0);
+        expect(queryFirst(`.w_action_manager`).childElementCount).toBe(0);
     });
 
     test(`initial loading with multiple path segments loads the breadcrumbs`, async () => {
@@ -1278,17 +1278,17 @@ describe(`new urls`, () => {
         ]);
 
         await contains(`.breadcrumb .dropdown-toggle`).click();
-        expect(`.o-overlay-container .dropdown-menu`).toHaveText(
+        expect(`.w-overlay-container .dropdown-menu`).toHaveText(
             "Second record\nPartners Action 27"
         );
-        expect(queryAllTexts`.breadcrumb-item a, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item a, .w_breadcrumb .active`).toEqual([
             "Partners Action 28",
             "First record",
         ]);
-        expect(queryAllAttributes(".o-overlay-container .dropdown-menu a", "data-tooltip")).toEqual(
+        expect(queryAllAttributes(".w-overlay-container .dropdown-menu a", "data-tooltip")).toEqual(
             ["Back to “Second record” form", "Back to “Partners Action 27”"]
         );
-        expect(queryAllAttributes(".o_breadcrumb li.breadcrumb-item a", "data-tooltip")).toEqual([
+        expect(queryAllAttributes(".w_breadcrumb li.breadcrumb-item a", "data-tooltip")).toEqual([
             'Back to "Partners Action 28"',
         ]);
     });
@@ -1309,8 +1309,8 @@ describe(`new urls`, () => {
             </form>
         `;
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
             "Partners",
             "Second record",
         ]);
@@ -1329,19 +1329,19 @@ describe(`new urls`, () => {
         // Open the dialog
         await contains(`.clickMe`).click();
         await animationFrame();
-        expect(`.o_dialog .o_form_view`).toHaveCount(1);
+        expect(`.w_dialog .w_form_view`).toHaveCount(1);
         expect.verifySteps(["/web/action/load", "get_views", "onchange"]);
         expect(location.href).toBe("http://example.com/weth/action-3/2", {
             message: "url did not change",
         });
 
         // Close te dialog
-        await contains(`.o_dialog .o_form_button_cancel`).click();
+        await contains(`.w_dialog .w_form_button_cancel`).click();
 
         // Go back to the multi-record view
         await contains(`.breadcrumb-item`).click();
         await animationFrame();
-        expect(`.o_list_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(1);
         expect.verifySteps([
             "web_search_read",
             "has_group",
@@ -1361,7 +1361,7 @@ describe(`new urls`, () => {
         onRpc("web_read", () => Promise.reject());
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(1);
         expect.verifyErrors([/RPC_ERROR/]);
         expect.verifySteps([
             "/web/webclient/translations",
@@ -1403,12 +1403,12 @@ describe(`new urls`, () => {
             views: [[false, "form"]],
         });
 
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
 
-        await contains(`.o_statusbar_buttons .btn-secondary[type='object']`).click();
+        await contains(`.w_statusbar_buttons .btn-secondary[type='object']`).click();
         await animationFrame();
 
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-null",
@@ -1428,7 +1428,7 @@ describe(`new urls`, () => {
         routerBus.trigger("ROUTE_CHANGE");
         await animationFrame();
         await animationFrame();
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-en",
@@ -1472,7 +1472,7 @@ describe(`new urls`, () => {
         await mountWebClient();
         await getService("action").doAction(100);
 
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
 
         //add a domain to an existing action.
         await getService("action").doAction({
@@ -1484,8 +1484,8 @@ describe(`new urls`, () => {
         });
         await animationFrame();
 
-        expect(`.o_kanban_view`).toHaveCount(1);
-        expect(`.o_kanban_record:not(.o_kanban_ghost)`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_record:not(.w_kanban_ghost)`).toHaveCount(1);
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-null",
@@ -1509,8 +1509,8 @@ describe(`new urls`, () => {
 
         await animationFrame();
         await animationFrame();
-        expect(`.o_kanban_view`).toHaveCount(1);
-        expect(`.o_kanban_record:not(.o_kanban_ghost)`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_record:not(.w_kanban_ghost)`).toHaveCount(1);
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-en",
@@ -1550,7 +1550,7 @@ describe(`new urls`, () => {
         );
         await animationFrame();
 
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
 
         expect.verifySteps([
             "get menu_id-null",
@@ -1568,7 +1568,7 @@ describe(`new urls`, () => {
         routerBus.trigger("ROUTE_CHANGE");
         await animationFrame();
         await animationFrame();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-en",
@@ -1624,7 +1624,7 @@ describe(`new urls`, () => {
 
         redirect("/weth/m-partner/1");
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect.verifySteps([
             'set current_action-{"id":9001,"name":"Partners","type":"ir.actions.act_window","res_model":"partner","views":[[false,"list"],[666,"form"]],"context":{}}',
             "get menu_id-null",
@@ -1680,14 +1680,14 @@ describe(`new urls`, () => {
         logHistoryInteractions();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(1);
 
         // Step 2: Emulate F5 reload
         routerBus.trigger("ROUTE_CHANGE");
         await animationFrame();
         await animationFrame();
 
-        expect(`.o_list_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(1);
 
         expect.verifySteps([
             "get menu_id-null",
@@ -1764,16 +1764,16 @@ describe(`new urls`, () => {
         await getService("action").doAction(100);
 
         await animationFrame();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect(location.href).toBe(
             "http://example.com/weth/action-200/5/action-300/action-100/1"
         );
-        expect(queryAllTexts`.breadcrumb-item a, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item a, .w_breadcrumb .active`).toEqual([
             "List Partners with active id",
             "First record",
         ]);
         await contains(`.breadcrumb .dropdown-toggle`).click();
-        expect(`.o-overlay-container .dropdown-menu`).toHaveText("Kanban Partners");
+        expect(`.w-overlay-container .dropdown-menu`).toHaveText("Kanban Partners");
         expect(router.current.actionStack).toEqual([
             {
                 action: 200,
@@ -1857,12 +1857,12 @@ describe(`new urls`, () => {
         expect(location.href).toBe(
             "http://example.com/weth/action-200/5/action-300/action-100/1"
         );
-        expect(queryAllTexts`.breadcrumb-item a, .o_breadcrumb .active`).toEqual([
+        expect(queryAllTexts`.breadcrumb-item a, .w_breadcrumb .active`).toEqual([
             "List Partners with active id",
             "First record",
         ]);
         await contains(`.breadcrumb .dropdown-toggle`).click();
-        expect(`.o-overlay-container .dropdown-menu`).toHaveText("Kanban Partners");
+        expect(`.w-overlay-container .dropdown-menu`).toHaveText("Kanban Partners");
         expect.verifySteps([
             "get menu_id-null",
             "get current_lang-en",
@@ -1888,17 +1888,17 @@ describe(`new urls`, () => {
         });
 
         await runAllTimers(); // wait for router pushState
-        expect(`.o_list_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(1);
 
-        await contains(".o_data_cell").click();
+        await contains(".w_data_cell").click();
         await runAllTimers(); // wait for router pushState
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
 
-        await contains(".o_field_widget[name=foo] input").edit("");
+        await contains(".w_field_widget[name=foo] input").edit("");
         browser.history.back(); // Click on back button
         await animationFrame();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(`.o_field_widget[name=foo]`).toHaveClass("o_field_invalid");
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(`.w_field_widget[name=foo]`).toHaveClass("o_field_invalid");
         // In webclient, we listen to the "ROUTE_CHANGE" event to load the new state,
         // and we set `pointer-events: none` during the loadState. In this case,
         // we assert that the rule has been correctly removed.
@@ -1935,7 +1935,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         await getService("action").doAction(100);
-        await contains(".o_data_cell").click();
+        await contains(".w_data_cell").click();
         await getService("action").doAction(200);
         expect.verifySteps(["/web/action/load", "/web/action/load"]);
 
@@ -1980,7 +1980,7 @@ describe(`new urls`, () => {
 
         await mountWebClient();
         await getService("action").doAction(100);
-        await contains(".o_data_cell").click();
+        await contains(".w_data_cell").click();
         await getService("action").doAction(200);
         expect.verifySteps(["/web/action/load", "/web/action/load"]);
 
@@ -2000,15 +2000,15 @@ describe(`new urls`, () => {
         redirect("/weth/action-3/2");
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
             "Partners",
             "Second record",
         ]);
 
         await getService("action").switchView("form", { resId: 5 });
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
             "Partners",
             "Fifth record",
         ]);
@@ -2021,7 +2021,7 @@ describe(`legacy urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveText("App1");
+        expect(`.w_menu_brand`).toHaveText("App1");
     });
 
     test(`menu loading`, async () => {
@@ -2029,7 +2029,7 @@ describe(`legacy urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_Id 2");
-        expect(`.o_menu_brand`).toHaveText("App2");
+        expect(`.w_menu_brand`).toHaveText("App2");
     });
 
     test(`action and menu loading`, async () => {
@@ -2037,7 +2037,7 @@ describe(`legacy urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_Id 1");
-        expect(`.o_menu_brand`).toHaveText("App2");
+        expect(`.w_menu_brand`).toHaveText("App2");
         expect(router.current).toEqual({
             action: 1001,
             actionStack: [
@@ -2098,7 +2098,7 @@ describe(`legacy urls`, () => {
 
         await mountWebClient();
         expect(`.test_client_action`).toHaveText("ClientAction_xmlId");
-        expect(`.o_menu_brand`).toHaveCount(0);
+        expect(`.w_menu_brand`).toHaveCount(0);
     });
 
     test(`supports opening action in dialog`, async () => {
@@ -2120,7 +2120,7 @@ describe(`legacy urls`, () => {
         await mountWebClient();
         expect(`.test_client_action`).toHaveCount(1);
         expect(`.modal .test_client_action`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveCount(0);
+        expect(`.w_menu_brand`).toHaveCount(0);
     });
 
     test(`should not crash on invalid state`, async () => {
@@ -2128,7 +2128,7 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_action_manager`).toHaveText("", { message: "should display nothing" });
+        expect(`.w_action_manager`).toHaveText("", { message: "should display nothing" });
         expect.verifySteps(["/web/webclient/translations", "/web/webclient/load_menus"]);
     });
 
@@ -2142,7 +2142,7 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_client_action_test`).toHaveText("Hello World", {
+        expect(`.w_client_action_test`).toHaveText("Hello World", {
             message: "should have correctly rendered the client action",
         });
         expect.verifySteps(["/web/webclient/translations", "/web/webclient/load_menus"]);
@@ -2153,8 +2153,8 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_control_panel`).toHaveCount(1);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_control_panel`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2170,8 +2170,8 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Second record"]);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Second record"]);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2187,9 +2187,9 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(`.o_menu_brand`).toHaveCount(0);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Second record"]);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(`.w_menu_brand`).toHaveCount(0);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Second record"]);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2203,7 +2203,7 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(1);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2218,8 +2218,8 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(0);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_list_view`).toHaveCount(0);
+        expect(`.w_kanban_view`).toHaveCount(1);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2235,17 +2235,17 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(0);
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(`.w_list_view`).toHaveCount(0);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners",
             "Second record",
         ]);
 
         // go back to List
-        await contains(`.o_control_panel .breadcrumb a`).click();
-        expect(`.o_list_view`).toHaveCount(1);
-        expect(`.o_form_view`).toHaveCount(0);
+        await contains(`.w_control_panel .breadcrumb a`).click();
+        expect(`.w_list_view`).toHaveCount(1);
+        expect(`.w_form_view`).toHaveCount(0);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2266,11 +2266,11 @@ describe(`legacy urls`, () => {
         await mountWebClient();
 
         expect.verifyErrors([Error]);
-        expect(`.o_form_view`).toHaveCount(0);
-        expect(`.o_list_view`).toHaveCount(1); // Show the lazy loaded list view
+        expect(`.w_form_view`).toHaveCount(0);
+        expect(`.w_list_view`).toHaveCount(1); // Show the lazy loaded list view
 
         await getService("action").doAction(1);
-        expect(`.o_kanban_view`).toHaveCount(1);
+        expect(`.w_kanban_view`).toHaveCount(1);
     });
 
     test(`should push the correct state at the right time`, async () => {
@@ -2296,7 +2296,7 @@ describe(`legacy urls`, () => {
         // loading the initial state shouldn't push the state
         expect.verifySteps([]);
 
-        await contains(`tr .o_data_cell`).click();
+        await contains(`tr .w_data_cell`).click();
         await animationFrame();
         expect(router.current).toEqual({
             action: 3,
@@ -2332,8 +2332,8 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_kanban_view`).toHaveCount(1, { message: "should display a kanban view" });
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual([
+        expect(`.w_kanban_view`).toHaveCount(1, { message: "should display a kanban view" });
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual([
             "Partners Action 1",
         ]);
         expect.verifySteps([
@@ -2366,9 +2366,9 @@ describe(`legacy urls`, () => {
         stepAllNetworkCalls();
 
         await mountWebClient();
-        expect(`.o_form_view`).toHaveCount(1);
-        expect(`.o_form_view .o_form_editable`).toHaveCount(1);
-        expect(queryAllTexts`.breadcrumb-item, .o_breadcrumb .active`).toEqual(["Partner", "New"]);
+        expect(`.w_form_view`).toHaveCount(1);
+        expect(`.w_form_view .w_form_editable`).toHaveCount(1);
+        expect(queryAllTexts`.breadcrumb-item, .w_breadcrumb .active`).toEqual(["Partner", "New"]);
         expect.verifySteps([
             "/web/webclient/translations",
             "/web/webclient/load_menus",
@@ -2399,8 +2399,8 @@ describe(`legacy urls`, () => {
         redirect("/web#action=1000&view_type=form&id=999");
 
         await mountWebClient();
-        expect(`.o_list_view`).toHaveCount(1);
-        expect(`.o_notification_body`).toHaveCount(1, { message: "should have a notification" });
+        expect(`.w_list_view`).toHaveCount(1);
+        expect(`.w_notification_body`).toHaveCount(1, { message: "should have a notification" });
         expect.verifyErrors([
             /It seems the records with IDs 999 cannot be found. They might have been deleted./,
         ]);
@@ -2430,12 +2430,12 @@ describe(`legacy urls`, () => {
         redirect("/web#action=3&model=partner&view_type=form");
 
         await mountWebClient();
-        await contains(`.o_control_panel .breadcrumb-item`).click();
-        expect(`.o_list_view .o_data_row`).toHaveCount(5);
+        await contains(`.w_control_panel .breadcrumb-item`).click();
+        expect(`.w_list_view .w_data_row`).toHaveCount(5);
 
         await toggleSearchBarMenu();
         await toggleMenuItem("Filter");
-        expect(`.o_list_view .o_data_row`).toHaveCount(1);
+        expect(`.w_list_view .w_data_row`).toHaveCount(1);
     });
 
     test(`initial action crashes`, async () => {
@@ -2458,15 +2458,15 @@ describe(`legacy urls`, () => {
 
         await animationFrame();
         expect.verifyErrors(["my error"]);
-        expect(`.o_error_dialog`).toHaveCount(1);
+        expect(`.w_error_dialog`).toHaveCount(1);
 
         await contains(`.modal-header .btn-close`).click();
-        expect(`.o_error_dialog`).toHaveCount(0);
+        expect(`.w_error_dialog`).toHaveCount(0);
 
-        await contains(`nav .o_navbar_apps_menu .dropdown-toggle`).click();
-        expect(`.dropdown-item.o_app`).toHaveCount(3);
-        expect(`.o_menu_brand`).toHaveText("App1");
-        expect(`.o_action_manager`).toHaveText("");
+        await contains(`nav .w_navbar_apps_menu .dropdown-toggle`).click();
+        expect(`.dropdown-item.w_app`).toHaveCount(3);
+        expect(`.w_menu_brand`).toHaveText("App1");
+        expect(`.w_action_manager`).toHaveText("");
         expect(router.current).toEqual({
             action: "__test__client__action__",
             menu_id: 1,

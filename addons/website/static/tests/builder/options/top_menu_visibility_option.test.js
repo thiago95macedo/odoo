@@ -22,7 +22,7 @@ test("TopMenuVisibility option should appear without overTheContent", async () =
     await waitFor("[data-label='Header Position']");
     expect("[data-label='Header Position']").toBeVisible();
     await contains("[data-label='Header Position'] .dropdown").click();
-    expect(".o-overlay-container [data-action-value='overTheContent']").not.toHaveCount();
+    expect(".w-overlay-container [data-action-value='overTheContent']").not.toHaveCount();
 });
 
 test("TopMenuVisibility option should appear with overTheContent", async () => {
@@ -40,7 +40,7 @@ test("TopMenuVisibility option should appear with overTheContent", async () => {
     await waitFor("[data-label='Header Position']");
     expect("[data-label='Header Position']").toBeVisible();
     await contains("[data-label='Header Position'] .dropdown").click();
-    expect(".o-overlay-container [data-action-value='overTheContent']").toBeVisible();
+    expect(".w-overlay-container [data-action-value='overTheContent']").toBeVisible();
 });
 
 test("page is not customisable, TopMenuVisibility option should not appear", async () => {
@@ -70,7 +70,7 @@ test("undo overTheContent visibility", async () => {
     await contains(":iframe #wrapwrap > header").click();
     const precedentWrapwrap = queryOne(":iframe #wrapwrap").outerHTML;
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='overTheContent']").click();
+    await contains(".w-overlay-container [data-action-value='overTheContent']").click();
     undo(editor);
     redo(editor);
     undo(editor);
@@ -93,14 +93,14 @@ test("undo and comeback to a custom overTheContent color", async () => {
     const editor = getEditor();
     await contains(":iframe #wrapwrap > header").click();
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='overTheContent']").click();
+    await contains(".w-overlay-container [data-action-value='overTheContent']").click();
     await contains(
         "[data-label='Header Position'] ~ [data-label='Background'].hb-row-sublevel-1 .o_we_color_preview"
     ).click();
     await contains("[data-color='600']").click();
     const precedentWrapwrap = queryOne(":iframe #wrapwrap").outerHTML;
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='regular']").click();
+    await contains(".w-overlay-container [data-action-value='regular']").click();
     undo(editor);
     redo(editor);
     undo(editor);
@@ -122,7 +122,7 @@ test("undo hidden and come back to regular", async () => {
     await contains(":iframe #wrapwrap > header").click();
     const precedentWrapwrap = queryOne(":iframe #wrapwrap").outerHTML;
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='hidden']").click();
+    await contains(".w-overlay-container [data-action-value='hidden']").click();
     undo(editor);
     const modifiedWrapwrap = queryOne(":iframe #wrapwrap");
     expect(modifiedWrapwrap).toHaveOuterHTML(precedentWrapwrap);
@@ -141,10 +141,10 @@ test("regular -> hidden -> regular", async () => {
     await contains(":iframe #wrapwrap > header").click();
     const precedentWrapwrap = queryOne(":iframe #wrapwrap").outerHTML;
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='hidden']").click();
+    await contains(".w-overlay-container [data-action-value='hidden']").click();
     await contains(":iframe #wrapwrap > header").click();
     await contains("[data-label='Header Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='regular']").click();
+    await contains(".w-overlay-container [data-action-value='regular']").click();
     const modifiedWrapwrap = queryOne(":iframe #wrapwrap");
     expect(modifiedWrapwrap).toHaveOuterHTML(precedentWrapwrap);
 });

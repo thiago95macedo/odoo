@@ -11,16 +11,16 @@
     justify-content: center;
     text-align: center;
     font-family: Lato;
-    color: $o-gray-600;
+    color: $w-gray-600;
     transition: opacity 0.3s ease-out;
 
     .pos-error {
-      text-align: left;
-      width: 80%;
-      align-self: center;
-      position: absolute;
-      left: 10%;
-      top: 20%;
+        text-align: left;
+        width: 80%;
+        align-self: center;
+        position: absolute;
+        left: 10%;
+        top: 20%;
     }
 
     .pos-loader-content {
@@ -42,7 +42,7 @@
         height: 3px;
         border-radius: 3px;
         overflow: hidden;
-        background: $o-gray-200;
+        background: $w-gray-200;
 
         &::after {
             content: "";
@@ -91,10 +91,12 @@
 }
 
 @keyframes pos-loader-breathe {
+
     0%,
     100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.06);
     }
@@ -104,12 +106,14 @@
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(250%);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .pos-loader .pos-loader-logo,
     .pos-loader .pos-loader-bar::after {
         animation-duration: 3.6s;

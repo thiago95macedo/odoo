@@ -490,7 +490,7 @@ export class SearchBar extends Component {
             getItems: () => {
                 if (this.root() && this.inputRef()) {
                     return [
-                        ...this.root().querySelectorAll(":scope .o_searchview_facet"),
+                        ...this.root().querySelectorAll(":scope .w_searchview_facet"),
                         this.inputRef(),
                     ];
                 }
@@ -564,7 +564,7 @@ export class SearchBar extends Component {
 
         return {
             virtualFocus: true,
-            getItems: () => this.menuRef()?.querySelectorAll(":scope .o-dropdown-item") ?? [],
+            getItems: () => this.menuRef()?.querySelectorAll(":scope .w-dropdown-item") ?? [],
             isNavigationAvailable: ({ navigator, target }) =>
                 this.inputDropdownState.isOpen &&
                 (this.facetContainerRef()?.contains(target) || navigator.contains(target)),

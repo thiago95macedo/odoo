@@ -5,7 +5,7 @@ import { exprToBoolean } from "@web/core/utils/strings";
 import { SlideShareDialog } from "../js/public/components/slide_share_dialog/slide_share_dialog";
 
 export class Share extends Interaction {
-    static selector = ".o_wslides_share";
+    static selector = ".w_wslides_share";
     dynamicContent = {
         _root: { "t-on-click.prevent.stop": this.onClick },
     };
@@ -18,11 +18,11 @@ export class Share extends Interaction {
     }
 
     isFullscreen() {
-        return document.querySelector(".o_wslides_fs_main");
+        return document.querySelector(".w_wslides_fs_main");
     }
 
     getDocumentMaxPage() {
-        const iframe = document.querySelector("iframe.o_wslides_iframe_viewer");
+        const iframe = document.querySelector("iframe.w_wslides_iframe_viewer");
         const iframeDocument = iframe.contentWindow.document;
         return parseInt(iframeDocument.querySelector("#page_count").innerText);
     }
@@ -38,18 +38,18 @@ export class Share extends Interaction {
                 ? this.isFullscreen()
                     ? slide.embedUrl
                     : slide.embedCode.slice(
-                          slide.embedCode.indexOf('src="') + 5,
-                          slide.embedCode.indexOf('"', slide.embedCode.indexOf('src="') + 5)
-                      )
+                        slide.embedCode.indexOf('src="') + 5,
+                        slide.embedCode.indexOf('"', slide.embedCode.indexOf('src="') + 5)
+                    )
                 : undefined;
         this.services.dialog.add(SlideShareDialog, {
             category: slide.category,
             documentMaxPage:
                 Number(
                     isDocumentSlide &&
-                        embedUrl &&
-                        new URL(embedUrl, window.location.href).origin === window.location.origin &&
-                        this.getDocumentMaxPage()
+                    embedUrl &&
+                    new URL(embedUrl, window.location.href).origin === window.location.origin &&
+                    this.getDocumentMaxPage()
                 ) || 0,
             emailSharing:
                 typeof slide.emailSharing === "string"

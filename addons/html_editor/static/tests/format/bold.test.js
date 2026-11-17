@@ -95,7 +95,7 @@ test("bold is active when the selection wraps a bold qweb node", async () => {
         config: { includePlugins: [QWebPlugin] },
     });
     await animationFrame();
-    await expectElementCount('.o-we-toolbar [name="bold"].active', 1);
+    await expectElementCount('.w-we-toolbar [name="bold"].active', 1);
 });
 
 test("bold is inactive when the selection contains a non-bold qweb node", async () => {
@@ -104,7 +104,7 @@ test("bold is inactive when the selection contains a non-bold qweb node", async 
         { config: { includePlugins: [QWebPlugin] } }
     );
     await animationFrame();
-    await expectElementCount('.o-we-toolbar [name="bold"]:not(.active)', 1);
+    await expectElementCount('.w-we-toolbar [name="bold"]:not(.active)', 1);
 });
 
 test.tags("desktop");
@@ -383,13 +383,13 @@ test("create bold with shortcut + selected with arrow", async () => {
     await tick(); // await selectionchange
     // wait for the debounced toolbar update
     await advanceTime(500);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(getContent(el)).toBe(`<p>ab[c]d</p>`);
 
     await simulateArrowKeyPress(editor, ["Shift", "ArrowLeft"]);
     await tick(); // await selectionchange
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
     expect(getContent(el)).toBe(`<p>ab[]cd</p>`);
 });
 
@@ -531,8 +531,8 @@ test("Should properly apply bold format if closest element is bold but not close
         }
     );
     await animationFrame();
-    await expectElementCount('.o-we-toolbar [name="bold"].active', 1);
-    await click('.o-we-toolbar [name="bold"].active');
+    await expectElementCount('.w-we-toolbar [name="bold"].active', 1);
+    await click('.w-we-toolbar [name="bold"].active');
     await animationFrame();
     expect(el).toHaveInnerHTML(
         unformat(
@@ -543,8 +543,8 @@ test("Should properly apply bold format if closest element is bold but not close
             </blockquote>`
         )
     );
-    await expectElementCount('.o-we-toolbar [name="bold"]:not(.active)', 1);
-    await click('.o-we-toolbar [name="bold"]:not(.active)');
+    await expectElementCount('.w-we-toolbar [name="bold"]:not(.active)', 1);
+    await click('.w-we-toolbar [name="bold"]:not(.active)');
     await animationFrame();
     expect(el).toHaveInnerHTML(
         unformat(

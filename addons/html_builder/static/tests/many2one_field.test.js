@@ -40,7 +40,7 @@ test("Preview changes of many2one option", async () => {
     await contains(":iframe .span-1").click();
     expect("button.btn.dropdown").toHaveCount(1);
     await contains("button.btn.dropdown").click();
-    await contains("span.o-dropdown-item.dropdown-item").hover();
+    await contains("span.w-dropdown-item.dropdown-item").hover();
     expect(":iframe span.span-1 > span").toHaveText("The Name of 1");
     expect(":iframe span.span-2 > span").toHaveText("The Address of 1");
     expect(":iframe span.span-3 > span").toHaveText("The Address of 3"); // author of other post is not changed
@@ -70,6 +70,6 @@ test("Many2OneOption: add null_text option in dropdown", async () => {
     await contains(":iframe .many2oneoption_dropdown").click();
     expect("button.btn.dropdown").toHaveCount(1);
     await contains("button.btn.dropdown").click();
-    await contains("span.o-dropdown-item.dropdown-item:contains('Remote')").click();
+    await contains("span.w-dropdown-item.dropdown-item:contains('Remote')").click();
     expect(":iframe div.many2oneoption_dropdown").toHaveText("Remote");
 });

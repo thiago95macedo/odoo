@@ -12,7 +12,7 @@ import { fuzzyLookup } from "@web/core/utils/search";
 
 export class SuggestionService {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     constructor(env, services) {
@@ -241,11 +241,11 @@ export class SuggestionService {
      */
     isPartnerSuggestionValid(partner, { composerType, thread } = {}) {
         if (composerType === COMPOSER_TYPES.NOTE) {
-            return partner.partner_share === false && partner.notEq(this.store.odoobot);
+            return partner.partner_share === false && partner.notEq(this.store.wethbot);
         }
         return (
             (this.store.self_user?.share === false || partner.mention_token) &&
-            partner.notEq(this.store.odoobot)
+            partner.notEq(this.store.wethbot)
         );
     }
 
@@ -341,7 +341,7 @@ export class SuggestionService {
 export const suggestionService = {
     dependencies: ["orm", "mail.store", "mail.composer"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

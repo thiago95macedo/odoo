@@ -291,30 +291,30 @@ test("properly handle case when action id does not exist", async () => {
     expect.errors(1);
     await mountWithCleanup(WebClient);
     getService("action").doAction(4448);
-    await waitFor(".o_error_dialog");
+    await waitFor(".w_error_dialog");
     expect.verifyErrors(["RPC_ERROR"]);
-    expect(`.modal .o_error_dialog`).toHaveCount(1);
-    expect(".o_error_dialog .modal-body").toHaveText("The action 4448 does not exist");
+    expect(`.modal .w_error_dialog`).toHaveCount(1);
+    expect(".w_error_dialog .modal-body").toHaveText("The action 4448 does not exist");
 });
 
 test("properly handle case when action path does not exist", async () => {
     expect.errors(1);
     await mountWithCleanup(WebClient);
     getService("action").doAction("plop");
-    await waitFor(".o_error_dialog");
+    await waitFor(".w_error_dialog");
     expect.verifyErrors(["RPC_ERROR"]);
-    expect(`.modal .o_error_dialog`).toHaveCount(1);
-    expect(".o_error_dialog .modal-body").toHaveText('The action "plop" does not exist');
+    expect(`.modal .w_error_dialog`).toHaveCount(1);
+    expect(".w_error_dialog .modal-body").toHaveText('The action "plop" does not exist');
 });
 
 test("properly handle case when action xmlId does not exist", async () => {
     expect.errors(1);
     await mountWithCleanup(WebClient);
     getService("action").doAction("not.found.action");
-    await waitFor(".o_error_dialog");
+    await waitFor(".w_error_dialog");
     expect.verifyErrors(["RPC_ERROR"]);
-    expect(`.modal .o_error_dialog`).toHaveCount(1);
-    expect(".o_error_dialog .modal-body").toHaveText(
+    expect(`.modal .w_error_dialog`).toHaveCount(1);
+    expect(".w_error_dialog .modal-body").toHaveText(
         'The action "not.found.action" does not exist'
     );
 });
@@ -418,14 +418,14 @@ test('action with "no_breadcrumbs" set to true', async () => {
     ]);
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_breadcrumb").toHaveCount(1);
+    expect(".w_breadcrumb").toHaveCount(1);
     // push another action flagged with 'no_breadcrumbs=true'
     await getService("action").doAction(42);
-    await waitFor(".o_kanban_view");
-    expect(".o_breadcrumb").toHaveCount(0);
-    await contains(".o_switch_view.o_list").click();
-    await waitFor(".o_list_view");
-    expect(".o_breadcrumb").toHaveCount(0);
+    await waitFor(".w_kanban_view");
+    expect(".w_breadcrumb").toHaveCount(0);
+    await contains(".w_switch_view.w_list").click();
+    await waitFor(".w_list_view");
+    expect(".w_breadcrumb").toHaveCount(0);
 });
 
 test("document's title is updated when an action is executed", async () => {
@@ -471,7 +471,7 @@ test("document's title is updated when an action is executed", async () => {
         ],
     });
 
-    await contains(".o_data_row .o_data_cell").click();
+    await contains(".w_data_row .w_data_cell").click();
     await animationFrame();
     currentTitle = getService("title").getParts();
     expect(currentTitle).toEqual({ action: "Twilight Sparkle" });
@@ -513,11 +513,11 @@ test('handles "history_back" event', async () => {
     await getService("action").doAction(4);
     await getService("action").doAction(3);
     expect("ol.breadcrumb").toHaveCount(1);
-    expect(".o_breadcrumb span").toHaveCount(1);
+    expect(".w_breadcrumb span").toHaveCount(1);
     list.env.config.historyBack();
     await animationFrame();
-    expect(".o_breadcrumb span").toHaveCount(1);
-    expect(".o_breadcrumb").toHaveText("Partners Action 4", {
+    expect(".w_breadcrumb span").toHaveCount(1);
+    expect(".w_breadcrumb").toHaveText("Partners Action 4", {
         message: "breadcrumbs should display the display_name of the action",
     });
 });
@@ -542,15 +542,15 @@ test("stores and restores scroll position (in kanban)", async () => {
     await mountWithCleanup(WebClient, { target: container });
     // execute a first action
     await getService("action").doAction(10);
-    expect(".o_content").toHaveProperty("scrollTop", 0);
+    expect(".w_content").toHaveProperty("scrollTop", 0);
     // simulate a scroll
-    await scroll(".o_content", { top: 100 });
+    await scroll(".w_content", { top: 100 });
     // execute a second action (in which we don't scroll)
     await getService("action").doAction(4);
-    expect(".o_content").toHaveProperty("scrollTop", 0);
+    expect(".w_content").toHaveProperty("scrollTop", 0);
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_content").toHaveProperty("scrollTop", 100);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_content").toHaveProperty("scrollTop", 100);
 });
 
 test.tags("desktop");
@@ -565,17 +565,17 @@ test("stores and restores scroll position (in list)", async () => {
     await mountWithCleanup(WebClient, { target: container });
     // execute a first action
     await getService("action").doAction(3);
-    expect(".o_content").toHaveProperty("scrollTop", 0);
-    expect(queryOne(".o_list_renderer").scrollTop).toBe(0);
+    expect(".w_content").toHaveProperty("scrollTop", 0);
+    expect(queryOne(".w_list_renderer").scrollTop).toBe(0);
     // simulate a scroll
-    queryOne(".o_list_renderer").scrollTop = 100;
+    queryOne(".w_list_renderer").scrollTop = 100;
     // execute a second action (in which we don't scroll)
     await getService("action").doAction(4);
-    expect(".o_content").toHaveProperty("scrollTop", 0);
+    expect(".w_content").toHaveProperty("scrollTop", 0);
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_content").toHaveProperty("scrollTop", 0);
-    expect(queryOne(".o_list_renderer").scrollTop).toBe(100);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_content").toHaveProperty("scrollTop", 0);
+    expect(queryOne(".w_list_renderer").scrollTop).toBe(100);
 });
 
 test.tags("desktop");
@@ -589,11 +589,11 @@ test('executing an action with target != "new" closes all dialogs', async () => 
         </form>`;
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    await contains(".o_list_view .o_data_row .o_list_char").click();
-    expect(".o_form_view").toHaveCount(1);
-    await contains(".o_form_view .o_data_row .o_data_cell").click();
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
+    await contains(".w_list_view .w_data_row .w_list_char").click();
+    expect(".w_form_view").toHaveCount(1);
+    await contains(".w_form_view .w_data_row .w_data_cell").click();
+    expect(".modal .w_form_view").toHaveCount(1);
     await getService("action").doAction(1); // target != 'new'
     await animationFrame(); // wait for the dialog to be closed
     expect(".modal").toHaveCount(0);
@@ -610,13 +610,13 @@ test('executing an action with target "new" does not close dialogs', async () =>
         </form>`;
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    await contains(".o_list_view .o_data_row .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    await contains(".o_form_view .o_data_row .o_data_cell").click();
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
+    await contains(".w_list_view .w_data_row .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    await contains(".w_form_view .w_data_row .w_data_cell").click();
+    expect(".modal .w_form_view").toHaveCount(1);
     await getService("action").doAction(5); // target 'new'
-    expect(".modal .o_form_view").toHaveCount(2);
+    expect(".modal .w_form_view").toHaveCount(2);
 });
 
 test.tags("desktop");
@@ -774,19 +774,19 @@ test("action is removed while waiting for another action with selectMenu", async
     await mountWithCleanup(WebClient);
     // starting point: a kanban view
     await getService("action").doAction(4);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
     // select app in navbar menu
     def = Promise.withResolvers();
-    await contains(".o_navbar_apps_menu .dropdown-toggle").click();
-    const appsMenu = getDropdownMenu(".o_navbar_apps_menu");
-    await contains(".o_app:contains(App1)", { root: appsMenu }).click();
+    await contains(".w_navbar_apps_menu .dropdown-toggle").click();
+    const appsMenu = getDropdownMenu(".w_navbar_apps_menu");
+    await contains(".w_app:contains(App1)", { root: appsMenu }).click();
 
     // check that the action manager is empty, even though client action is loading
-    expect(".o_action_manager").toHaveText("");
+    expect(".w_action_manager").toHaveText("");
 
     // resolve onwillstart so client action is ready
     def.resolve();
     await animationFrame();
-    expect(".o_action_manager").toHaveText("My client action");
+    expect(".w_action_manager").toHaveText("My client action");
 });

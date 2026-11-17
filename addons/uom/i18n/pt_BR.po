@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/uom/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgid "Parent Path"
 msgstr "Caminho primário"
 
 #. module: uom
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/uom/static/src/components/many2one_uom/many2one_uom_field.js:0
 #: code:addons/uom/static/src/components/many2x_uom_tags/many2x_uom_tags.js:0
 msgid "Product Field Name"
@@ -171,7 +171,7 @@ msgid "Quantity"
 msgstr "Quantidade"
 
 #. module: uom
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/uom/static/src/components/many2one_uom/many2one_uom_field.js:0
 #: code:addons/uom/static/src/components/many2x_uom_tags/many2x_uom_tags.js:0
 msgid "Quantity Field Name"
@@ -184,7 +184,7 @@ msgid "Reference Unit"
 msgstr "Unidade de referência"
 
 #. module: uom
-#. odoo-python
+#. weth-python
 #: code:addons/uom/models/uom_uom.py:0
 msgid "Reference unit of measure is missing."
 msgstr "A unidade de medida de referência está faltando."
@@ -205,7 +205,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: uom
-#. odoo-python
+#. weth-python
 #: code:addons/uom/models/uom_uom.py:0
 msgid ""
 "Some critical fields have been modified on %s.\n"
@@ -230,7 +230,7 @@ msgid "The conversion ratio for a unit of measure cannot be 0!"
 msgstr "A taxa de conversão para uma unidade de medida não pode ser 0."
 
 #. module: uom
-#. odoo-python
+#. weth-python
 #: code:addons/uom/models/uom_uom.py:0
 msgid ""
 "The following units of measure are used by the system and cannot be deleted: "
@@ -275,13 +275,13 @@ msgid "Units of measure"
 msgstr "Unidades de medida"
 
 #. module: uom
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/uom/static/src/components/many2one_uom/many2one_uom_field.js:0
 msgid "Unnamed"
 msgstr "Sem nome"
 
 #. module: uom
-#. odoo-python
+#. weth-python
 #: code:addons/uom/models/uom_uom.py:0
 msgid "Warning for %s"
 msgstr "Aviso para %s"

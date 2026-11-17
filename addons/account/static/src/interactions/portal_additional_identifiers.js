@@ -8,11 +8,11 @@ const COUNTRY_CHANGED_EVENT = 'additional-identifiers-country-changed';
 
 export class PortalAdditionalIdentifiers extends Interaction {
     // /shop/address & /my/address
-    static selector = '.o_additional_identifiers_portal';
+    static selector = '.w_additional_identifiers_portal';
     dynamicContent = {
-        '.o_add_identifier_item': { 't-on-click.prevent': this.onAddIdentifier },
-        '.o_remove_identifier': { 't-on-click.prevent': this.onRemoveIdentifier },
-        '.o_additional_identifier_field input': { 't-on-change': this.onChangeValue },
+        '.w_add_identifier_item': { 't-on-click.prevent': this.onAddIdentifier },
+        '.w_remove_identifier': { 't-on-click.prevent': this.onRemoveIdentifier },
+        '.w_additional_identifier_field input': { 't-on-change': this.onChangeValue },
         _root: { [`t-on-${COUNTRY_CHANGED_EVENT}`]: this.onCountryChanged },
     };
 
@@ -41,7 +41,7 @@ export class PortalAdditionalIdentifiers extends Interaction {
      * @param {Event} ev
      */
     onRemoveIdentifier(ev) {
-        const field = ev.currentTarget.closest('.o_additional_identifier_field');
+        const field = ev.currentTarget.closest('.w_additional_identifier_field');
         this._removeField(field);
     }
 
@@ -52,7 +52,7 @@ export class PortalAdditionalIdentifiers extends Interaction {
      */
     onChangeValue(ev) {
         if (ev.currentTarget.value.trim() !== '') return;
-        this._removeField(ev.currentTarget.closest('.o_additional_identifier_field'));
+        this._removeField(ev.currentTarget.closest('.w_additional_identifier_field'));
     }
 
     /**
@@ -86,26 +86,26 @@ export class PortalAdditionalIdentifiers extends Interaction {
     }
 
     _getField(key) {
-        return this.el.querySelector(`.o_additional_identifier_field[data-identifier-key="${key}"]`);
+        return this.el.querySelector(`.w_additional_identifier_field[data-identifier-key="${key}"]`);
     }
 
     _toggleDropdownItem(key, show) {
-        const item = this.el.querySelector(`.o_add_identifier_item[data-identifier-key="${key}"]`);
+        const item = this.el.querySelector(`.w_add_identifier_item[data-identifier-key="${key}"]`);
         if (item) {
             item.classList.toggle('d-none', !show);
         }
     }
 
     _updateDropdownVisibility() {
-        const dropdown = this.el.querySelector('.o_add_identifier_dropdown');
+        const dropdown = this.el.querySelector('.w_add_identifier_dropdown');
         if (!dropdown) return;
-        const hasAvailable = !!this.el.querySelector('.o_add_identifier_item:not(.d-none)');
+        const hasAvailable = !!this.el.querySelector('.w_add_identifier_item:not(.d-none)');
         dropdown.classList.toggle('d-none', !hasAvailable);
     }
 
     /** Hide the dropdown entry of every identifier whose field is already shown (prefilled). */
     _syncDropdown() {
-        this.el.querySelectorAll('.o_additional_identifier_field').forEach((field) => {
+        this.el.querySelectorAll('.w_additional_identifier_field').forEach((field) => {
             if (field.style.display !== 'none') {
                 this._toggleDropdownItem(field.dataset.identifierKey, false);
             }
@@ -200,7 +200,7 @@ registry
 patch(CustomerAddress.prototype, {
     async onChangeCountry() {
         const data = await super.onChangeCountry();
-        const container = this.el.querySelector('.o_additional_identifiers_portal');
+        const container = this.el.querySelector('.w_additional_identifiers_portal');
         container?.dispatchEvent(new CustomEvent(COUNTRY_CHANGED_EVENT, {
             detail: { metadata: data?.additional_identifiers_metadata || {} },
         }));

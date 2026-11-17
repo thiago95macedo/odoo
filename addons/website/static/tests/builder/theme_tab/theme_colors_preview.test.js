@@ -11,8 +11,8 @@ defineWebsiteModels();
 test("theme colors preview modal", async () => {
     await setupWebsiteBuilder("");
 
-    await contains(".o-snippets-tabs button[data-name=theme]").click();
-    await contains(".o-tab-content .o-hb-theme-color-slider-btn").click();
+    await contains(".w-snippets-tabs button[data-name=theme]").click();
+    await contains(".w-tab-content .w-hb-theme-color-slider-btn").click();
     await contains(".o_theme_tab button[title='Colors preview']").click();
     await animationFrame();
     expect(".o_theme_colors_preview_dialog iframe").toHaveCount(1);
@@ -46,11 +46,11 @@ test("theme colors preview modal", async () => {
     await contains(".hb-sliding-panel-label button[aria-label='close']").click();
     await waitForNone(".o_theme_colors_preview_dialog");
 
-    await contains(".o-tab-content .o-hb-theme-color-slider-btn").click();
+    await contains(".w-tab-content .w-hb-theme-color-slider-btn").click();
     await contains(".o_theme_tab button[title='Colors preview']").click();
     await animationFrame();
     expect(".o_theme_colors_preview_dialog iframe").toHaveCount(1);
 
-    await contains(".o-snippets-tabs button[data-name=blocks]").click();
+    await contains(".w-snippets-tabs button[data-name=blocks]").click();
     await waitForNone(".o_theme_colors_preview_dialog");
 });

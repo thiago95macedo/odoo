@@ -32,7 +32,7 @@ test("Unknown visitor", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await contains(".o-mail-MessagingMenuItem:has(:text('Visitor 11'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Visitor 11'))");
 });
 
 test("Do not show channel when visitor is typing", async () => {
@@ -58,7 +58,7 @@ test("Do not show channel when visitor is typing", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
     // simulate livechat visitor typing
     const channel = pyEnv["discuss.channel"].search_read([["id", "=", channelId]])[0];
     await withGuest(guestId, () =>
@@ -69,7 +69,7 @@ test("Do not show channel when visitor is typing", async () => {
     );
     // weak test, no guaranteed that we waited long enough for the livechat to potentially appear
     await tick();
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
 });
 
 test("Smiley face avatar for livechat item linked to a guest", async () => {
@@ -86,7 +86,7 @@ test("Smiley face avatar for livechat item linked to a guest", async () => {
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
     const guest = pyEnv["mail.guest"].search_read([["id", "=", guestId]])[0];
     await contains(
-        `.o-mail-MessagingMenuItem img[data-src='${url(
+        `.w-mail-MessagingMenuItem img[data-src='${url(
             `/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
             }`
         )}']`
@@ -107,7 +107,7 @@ test("Partner profile picture for livechat item linked to a partner", async () =
     await openDiscuss(channelId);
     const partner = pyEnv["res.partner"].search_read([["id", "=", partnerId]])[0];
     await contains(
-        `.o-mail-MessagingMenuItem img[data-src='${url(
+        `.w-mail-MessagingMenuItem img[data-src='${url(
             `/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
             }`
         )}']`
@@ -134,15 +134,15 @@ test("Clicking on leave button leaves the channel", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await contains(".o-mail-MessagingMenuItem:has(:text('Visitor 11'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Visitor 11'))");
     await click("[title='Chat Actions']");
-    await click(".o-dropdown-item:contains('Close Conversation')");
+    await click(".w-dropdown-item:contains('Close Conversation')");
     await contains(
         ".modal-header:has(:text('Closing this will end the live chat with Visitor 11. Are you sure you want to proceed?'))"
     );
-    await contains(".modal-body .o-mail-Message-body:has(:text('Last message from Visitor'))");
+    await contains(".modal-body .w-mail-Message-body:has(:text('Last message from Visitor'))");
     await click("button:contains(Close Conversation)");
-    await contains(".o-mail-MessagingMenuEmpty");
+    await contains(".w-mail-MessagingMenuEmpty");
 });
 
 test("Message unread counter", async () => {
@@ -177,7 +177,7 @@ test("Message unread counter", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Live Chats')) .badge:text(1)");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Live Chats')) .badge:text(1)");
 });
 
 test("looking for help shows self chats first", async () => {
@@ -226,8 +226,8 @@ test("looking for help shows self chats first", async () => {
     await openDiscuss(nonSelfChannelId);
     await click("button:text('Help needed')");
     await waitFor(`
-        .o-mail-MessagingMenuItem:has(:text('Visitor #2'))
-        + .o-mail-MessagingMenuItem:has(:text('Visitor #1'))
+        .w-mail-MessagingMenuItem:has(:text('Visitor #2'))
+        + .w-mail-MessagingMenuItem:has(:text('Visitor #1'))
     `);
 });
 
@@ -252,35 +252,35 @@ test("show looking for help duration in the sidebar", async () => {
     await start();
     await openDiscuss(channelId);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(< 1m)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(< 1m)"
     );
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer[data-tooltip='Looking for help for: < 1m']"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer[data-tooltip='Looking for help for: < 1m']"
     );
     await advanceTime(60_000);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(1m)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(1m)"
     );
     await advanceTime(60_000 * 9);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(10m)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(10m)"
     );
     await advanceTime(60_000 * 50);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(1h)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(1h)"
     );
     await advanceTime(60_000 * 60 * 23);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(1d)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(1d)"
     );
     await advanceTime(60_000 * 60 * 24);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(2d)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(2d)"
     );
     await click("button[name='join-channel']");
-    await contains(".o-livechat-LivechatStatusSelection .active:text('In Progress')");
+    await contains(".w-livechat-LivechatStatusSelection .active:text('In Progress')");
     await waitForNone(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer"
     );
 });
 
@@ -307,7 +307,7 @@ test("show looking for help duration when the agent is a member of the chat", as
     await start();
     await openDiscuss(channelId);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(Visitor #1)) .o-livechat-LookingForHelp-timer:text(< 1m)"
+        ".w-mail-MessagingMenuItem:has(:text(Visitor #1)) .w-livechat-LookingForHelp-timer:text(< 1m)"
     );
 });
 
@@ -319,16 +319,16 @@ test("sidebar: leave non-livechat channel removes it from sidebar", async () => 
     });
     await start();
     await openDiscuss();
-    await click(".o-mail-NotificationItem:has(:text('General'))");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
     await click(
-        ".o-mail-NotificationItem:has(:text('General')) .o-mail-MessagingMenu-actions button"
+        ".w-mail-NotificationItem:has(:text('General')) .w-mail-MessagingMenu-actions button"
     );
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await contains(
         ".modal-body:text('You are about to leave this group conversation and will no longer have access to it unless you are invited again. Are you sure you want to continue?')"
     );
     await click("button:text('Leave Conversation')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
 });
 
 test("show visitor language and country flag in sidebar", async () => {
@@ -348,6 +348,6 @@ test("show visitor language and country flag in sidebar", async () => {
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
     await contains(
-        ".o-mail-MessagingMenuItem:has(:text('Batman GU')) .o-mail-CountryFlag[title='Gotham']"
+        ".w-mail-MessagingMenuItem:has(:text('Batman GU')) .w-mail-CountryFlag[title='Gotham']"
     );
 });

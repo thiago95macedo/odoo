@@ -43,7 +43,7 @@ export function defineLivechatModels() {
  * @param {string} text
  */
 export async function postLivechatMessage(text) {
-    await insertText(".o-mail-Composer-input:enabled", text);
+    await insertText(".w-mail-Composer-input:enabled", text);
     await triggerHotkey("Enter");
 }
 

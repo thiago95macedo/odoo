@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_buckaroo/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgid "Code"
 msgstr "Código"
 
 #. module: payment_buckaroo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_buckaroo/models/payment_transaction.py:0
 msgid "Code: %s"
 msgstr "Código: %s"
@@ -193,7 +193,7 @@ msgid "PostePay"
 msgstr "PostePay"
 
 #. module: payment_buckaroo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_buckaroo/models/payment_transaction.py:0
 msgid "Received data with missing transaction keys"
 msgstr "Dados recebidos sem chaves de transação"
@@ -229,7 +229,7 @@ msgid "Trustly"
 msgstr "Trustly"
 
 #. module: payment_buckaroo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_buckaroo/models/payment_transaction.py:0
 msgid "Unknown status code: %s."
 msgstr "Código de status desconhecido: %s."
@@ -256,7 +256,7 @@ msgid "Wero"
 msgstr "Wero"
 
 #. module: payment_buckaroo
-#. odoo-python
+#. weth-python
 #: code:addons/payment_buckaroo/models/payment_transaction.py:0
 msgid "Your payment was refused (code %s). Please try again."
 msgstr "Seu pagamento foi recusado (código %s). Tente novamente."

@@ -76,16 +76,16 @@ export const checkTooltip = (view, { title, lines }, index, datasetIndex = null)
         lineValues.push(String(line.value));
     }
 
-    expect(`.o_graph_custom_tooltip`).toHaveCount(1);
-    expect(`table thead tr th.o_measure`).toHaveText(title || "Count");
-    expect(queryAllTexts(`table tbody tr td small.o_label`)).toEqual(lineLabels);
-    expect(queryAllTexts(`table tbody tr td.o_value`)).toEqual(lineValues);
+    expect(`.w_graph_custom_tooltip`).toHaveCount(1);
+    expect(`table thead tr th.w_measure`).toHaveText(title || "Count");
+    expect(queryAllTexts(`table tbody tr td small.w_label`)).toEqual(lineLabels);
+    expect(queryAllTexts(`table tbody tr td.w_value`)).toEqual(lineValues);
 };
 
 /**
  * @param {"asc" | "desc"} direction
  */
-export const clickSort = (direction) => contains(`.o_sort_${direction}`).click();
+export const clickSort = (direction) => contains(`.w_sort_${direction}`).click();
 
 /**
  * @param {GraphView} view
@@ -100,7 +100,7 @@ export const getGraphModelMetaData = (view) => getGraphModel(view).metaData;
 /**
  * @param {GraphMode} mode
  */
-export const getModeButton = (mode) => queryOne`.o_graph_button[data-mode=${mode}]`;
+export const getModeButton = (mode) => queryOne`.w_graph_button[data-mode=${mode}]`;
 
 /**
  * @param {GraphView} view
@@ -147,7 +147,7 @@ export function checkLegend(view, expectedLabels) {
 }
 
 export function checkMeasure(expectedMeasure) {
-    expect(`.o_report_measures`).toHaveText(expectedMeasure, {
+    expect(`.w_report_measures`).toHaveText(expectedMeasure, {
         message: `Measure should be ${expectedMeasure}`,
     });
 }

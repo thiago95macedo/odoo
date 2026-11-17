@@ -18,7 +18,7 @@ export const TEST_LOCALES = {
         formulaArgSeparator: ";",
     },
     od_OO: {
-        name: "Odooland",
+        name: "Wethland",
         code: "od_OO",
         thousandsSeparator: "*",
         decimalSeparator: ".",

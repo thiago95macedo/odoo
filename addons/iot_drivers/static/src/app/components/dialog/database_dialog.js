@@ -58,7 +58,7 @@ export class DatabaseDialog extends Component {
         </LoadingFullScreen>
 
         <Dialog
-            name="'Configure Odoo Database'"
+            name="'Configure WETH Database'"
             help="'https://www.weth.com.br/documentation/latest/applications/general/iot/connect.html'"
             btnName="'Configure'">
             <t t-set-slot="body">

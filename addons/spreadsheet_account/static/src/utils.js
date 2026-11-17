@@ -3,10 +3,10 @@
 /**
  * @typedef {import("@weth/o-spreadsheet").CompiledFormula} CompiledFormula
  * @typedef {import("@weth/o-spreadsheet").CoreGetters} CoreGetters
- * @typedef  {import("@spreadsheet/helpers/odoo_functions_helpers").OdooFunctionDescription} OdooFunctionDescription
+ * @typedef  {import("@spreadsheet/helpers/weth_functions_helpers").WethFunctionDescription} WethFunctionDescription
  */
 
-const ALL_ACCOUNTING_FUNCTIONS = ["ODOO.BALANCE", "ODOO.CREDIT", "ODOO.DEBIT", "ODOO.RESIDUAL", "ODOO.PARTNER.BALANCE", "ODOO.BALANCE.TAG"];
+const ALL_ACCOUNTING_FUNCTIONS = ["WETH.BALANCE", "WETH.CREDIT", "WETH.DEBIT", "WETH.RESIDUAL", "WETH.PARTNER.BALANCE", "WETH.BALANCE.TAG"];
 
 /**
  * @param {CompiledFormula} compiledFormula
@@ -21,7 +21,7 @@ export function hasAccountingFormula(compiledFormula) {
  *
  * @param {CompiledFormula} compiledFormula
  * @param {CoreGetters} getters
- * @returns {OdooFunctionDescription | undefined}
+ * @returns {WethFunctionDescription | undefined}
  */
 export function getFirstAccountFunction(compiledFormula, getters) {
     return compiledFormula.getFunctionsFromTokens(ALL_ACCOUNTING_FUNCTIONS, getters)[0];

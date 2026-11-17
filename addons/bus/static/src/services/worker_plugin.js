@@ -53,7 +53,7 @@ export class WorkerPlugin extends Plugin {
         }
         const workerClass = this.isUsingSharedWorker ? browser.SharedWorker : browser.Worker;
         this.worker = new workerClass(workerURL, {
-            name: this.isUsingSharedWorker ? "odoo:bus_shared_worker" : "odoo:bus_worker",
+            name: this.isUsingSharedWorker ? "weth:bus_shared_worker" : "weth:bus_worker",
         });
         this.worker.onerror = (e) => this.onInitError(e);
         this._registerHandler((ev) => {

@@ -96,11 +96,11 @@ test("Can be updated from autocomplete", async () => {
 
     expect(".o_multi_record_selector input").toHaveValue("");
     expect(".o_tag").toHaveCount(0);
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(0);
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(0);
     await click(".o_multi_record_selector input");
     await animationFrame();
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(1);
-    await click("li.o-autocomplete--dropdown-item:eq(1)");
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(1);
+    await click("li.w-autocomplete--dropdown-item:eq(1)");
     await animationFrame();
     expect(".o_tag").toHaveCount(1);
     expect(".o_tag").toHaveText("Bob");
@@ -115,16 +115,16 @@ test("Can display avatars with the right model", async () => {
 
     expect(".o_multi_record_selector input").toHaveValue("");
     expect(".o_tag").toHaveCount(0);
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(0);
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(0);
     await click(".o_multi_record_selector input");
     await animationFrame();
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(1);
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(1);
     expect("span.o_avatar img").toHaveCount(3);
     expect("span.o_avatar img:eq(1)").toHaveAttribute(
         "data-src",
         "/web/image/res.partner/2/avatar_128"
     );
-    await click("li.o-autocomplete--dropdown-item:eq(1)");
+    await click("li.w-autocomplete--dropdown-item:eq(1)");
     await animationFrame();
     expect(".o_tag").toHaveCount(1);
     expect(".o_tag").toHaveText("Bob");
@@ -182,7 +182,7 @@ test("Support placeholder", async () => {
     expect(".o_multi_record_selector input").toHaveAttribute("placeholder", "Select a partner");
     await click(".o_multi_record_selector input");
     await animationFrame();
-    await contains("li.o-autocomplete--dropdown-item:eq(0)").click();
+    await contains("li.w-autocomplete--dropdown-item:eq(0)").click();
     expect(".o_multi_record_selector input").toHaveAttribute("placeholder", "");
 });
 
@@ -262,7 +262,7 @@ test("Backspace do nothing when the input is currently edited", async () => {
         resModel: "partner",
         resIds: [1, 2],
     });
-    await click(".o-autocomplete input");
+    await click(".w-autocomplete input");
     await animationFrame();
 
     await fill("a");
@@ -291,7 +291,7 @@ test("Can pass domain to search more", async () => {
         resIds: [],
         domain: [["id", "not in", [1]]],
     });
-    await click(".o-autocomplete input");
+    await click(".w-autocomplete input");
     await animationFrame();
 
     await click(".o_multi_record_selector .o_m2o_dropdown_option");
@@ -322,7 +322,7 @@ test("Quick search dialog uses 1000 records limit when clicking search more", as
         resIds: [],
     });
 
-    await contains(".o-autocomplete input").edit("Partner", { confirm: false });
+    await contains(".w-autocomplete input").edit("Partner", { confirm: false });
     await runAllTimers();
     expect.verifySteps(["name_search"]);
     expect(searchLimit).toBe(8, {

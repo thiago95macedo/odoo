@@ -42,7 +42,7 @@ export class HotkeyPlugin extends Plugin {
     nextToken = 0;
     /** @private */
     overlaysVisible = false;
-    // Be aware that all odoo hotkeys are designed with this modifier in mind, so
+    // Be aware that all weth hotkeys are designed with this modifier in mind, so
     // changing the overlay modifier may conflict with some shortcuts.
     overlayModifier = "alt";
     /** @private @type {[EventTarget, string, Function][]} */

@@ -4,13 +4,13 @@
 
 API: [Paymob API Checkout](https://developers.paymob.com/egypt/api-reference-guide)
 
-API Backend: [Paymob Internal Odoo APIs](https://www.weth.com.br/weth/project/4106/tasks/4196623)
+API Backend: [Paymob Internal WETH APIs](https://www.weth.com.br/weth/project/4106/tasks/4196623)
 
 This module required two integrations from Paymob. The backend API allows to modify payment methods
 on their portal to set callback URLs and indicate which ones are enabled on WETH.
 
 As initial setup, user must click on synchronize payment methods buttons to synchronize between
-payment methods of paymob and Odoo
+payment methods of paymob and Weth
 
 This module follows the generic payment with redirection flow based on form submission provided by
 the `payment` module.
@@ -23,7 +23,7 @@ the `payment` module.
 ## Module history
 
 - `18.4`
-  - The first version of the module is merged. odoo/odoo#193107
+  - The first version of the module is merged. weth/weth#193107
 
 ## Testing instructions
 

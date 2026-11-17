@@ -1285,7 +1285,7 @@ test("should not autoscroll if selection is partially visible in viewport", asyn
     });
 
     const scrollableElement = queryOne(".o_content");
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".weth-editor-editable");
     const lastParagraph = editable.lastElementChild;
     const fifthLastParagraph = editable.children[45];
 

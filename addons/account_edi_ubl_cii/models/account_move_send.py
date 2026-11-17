@@ -7,7 +7,7 @@ from lxml import etree
 from weth import _, api, fields, models, tools, SUPERUSER_ID
 from weth.addons.account_edi_ubl_cii.models.account_edi_common import SUPPORTED_FILE_TYPES
 from weth.tools import cleanup_xml_node
-from weth.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
+from weth.tools.pdf import WethPdfFileReader, WethPdfFileWriter
 from weth.addons.account.tools import dict_to_xml
 
 _logger = logging.getLogger(__name__)
@@ -88,7 +88,7 @@ class AccountMoveSend(models.AbstractModel):
         if b'%PDF-' not in pdf_content[:1024]:
             return False
         try:
-            reader = OdooPdfFileReader(io.BytesIO(pdf_content), strict=False)
+            reader = WethPdfFileReader(io.BytesIO(pdf_content), strict=False)
             return 'factur-x.xml' in (name.lower() for name, _data in reader.get_attachments())
         except Exception:  # noqa: BLE001
             return False
@@ -220,10 +220,10 @@ class AccountMoveSend(models.AbstractModel):
         pdf_values = (not self.env.context.get('custom_template_facturx') and invoice.invoice_pdf_report_id) or \
             invoice_data.get('pdf_attachment_values') or invoice_data['proforma_pdf_attachment_values']
         reader_buffer = io.BytesIO(pdf_values['raw'])
-        reader = OdooPdfFileReader(reader_buffer, strict=False)
+        reader = WethPdfFileReader(reader_buffer, strict=False)
 
         # Post-process.
-        writer = OdooPdfFileWriter()
+        writer = WethPdfFileWriter()
         writer.clone_reader_document_root(reader)
 
         writer.add_attachment('factur-x.xml', xml_facturx, subtype='text/xml', afrelationship='/Alternative')

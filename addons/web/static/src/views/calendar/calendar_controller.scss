@@ -1,11 +1,12 @@
 // Variables
-$o-cw-filter-avatar-size: 20px;
+$w-cw-filter-avatar-size: 20px;
 
 // Animations
 @keyframes backgroundfade {
     from {
         background-color: rgba($info, 0.5);
     }
+
     to {
         background-color: rgba($info, 0.1);
     }
@@ -33,37 +34,41 @@ $o-cw-filter-avatar-size: 20px;
         }
     }
 
-    .o_actionswiper_right_swipe_area, .o_actionswiper_left_swipe_area {
+    .o_actionswiper_right_swipe_area,
+    .o_actionswiper_left_swipe_area {
         max-width: unset !important;
+
         .o_calendar_widget {
             width: 100%;
         }
     }
 
-    .o_actionswiper, .o_actionswiper_overflow_container , .o_actionswiper_target_container {
+    .o_actionswiper,
+    .o_actionswiper_overflow_container,
+    .o_actionswiper_target_container {
         height: 100%;
     }
 }
 
 .o_calendar_sidepanel_container {
-    --Avatar-size: #{$o-cw-filter-avatar-size};
+    --Avatar-size: #{$w-cw-filter-avatar-size};
 
     flex: 0 0 auto;
 
     .o_calendar_unschedule_zone {
-        width: $o-datetime-picker-reduced-width;
+        width: $w-datetime-picker-reduced-width;
         height: stretch;
         min-height: 200px; // Fallback for firefox < 146
-        border: 1px solid rgba($o-enterprise-action-color, 0.4);
-        background-color: mix($o-enterprise-action-color, $o-view-background-color, 10%);
+        border: 1px solid rgba($w-enterprise-action-color, 0.4);
+        background-color: mix($w-enterprise-action-color, $w-view-background-color, 10%);
     }
 
     .o_calendar_sidepanel {
-        width: $o-datetime-picker-reduced-width;
+        width: $w-datetime-picker-reduced-width;
 
         // Inlined in the panel: it spans the full width, the panel handles the
         // horizontal spacing.
-        > .o_datetime_picker {
+        >.o_datetime_picker {
             --DateTimePicker-padding: #{map-get($spacers, 2)} 0;
         }
 
@@ -81,12 +86,15 @@ $o-cw-filter-avatar-size: 20px;
             // style when needed (unlike with bootstrap's d-flex)
             display: flex;
             cursor: grab;
+
             .o_event_to_schedule_handle {
                 color: #adb5bd;
+
                 &:hover {
                     color: #666666;
                 }
             }
+
             &.o_dragged .o_event_to_schedule_handle {
                 color: #666666;
             }
@@ -109,11 +117,19 @@ $o-cw-filter-avatar-size: 20px;
                 border-top: 0;
             }
 
-            .o_actionswiper, .o_actionswiper_overflow_container, .o_actionswiper_target_container, .o_calendar_widget, .fc .fc-daygrid-body, .fc-daygrid-body, .fc-scrollgrid-sync-table {
+            .o_actionswiper,
+            .o_actionswiper_overflow_container,
+            .o_actionswiper_target_container,
+            .o_calendar_widget,
+            .fc .fc-daygrid-body,
+            .fc-daygrid-body,
+            .fc-scrollgrid-sync-table {
                 height: 100% !important;
             }
 
-            .fc-col-header, .fc-daygrid-body, .fc-scrollgrid-sync-table {
+            .fc-col-header,
+            .fc-daygrid-body,
+            .fc-scrollgrid-sync-table {
                 width: 100% !important;
             }
         }

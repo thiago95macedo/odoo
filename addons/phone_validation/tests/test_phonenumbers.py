@@ -53,7 +53,7 @@ class TestPhonenumbers(BaseCase):
     def test_phone_format_e164_brazil(self):
         """ In the new brazilian phone numbers system, phone numbers add a '9'
             in front of the last 8 digits of mobile numbers.
-            Phonenumbers metadata is patched in odoo, however, when E164 is selected,
+            Phonenumbers metadata is patched in weth, however, when E164 is selected,
             phone numbers aren't formatted, thus patched metadata not being applied.
             See format_number in phonenumbers "Early exit for E164 case"
         """
@@ -69,7 +69,7 @@ class TestPhonenumbers(BaseCase):
     def test_phone_format_e164_mexico(self):
         """ In the new mexican phone numbers system, phone numbers remove a '1'
             in front of the mobile numbers.
-            Phonenumbers metadata is patched in odoo, however, when E164 is selected,
+            Phonenumbers metadata is patched in weth, however, when E164 is selected,
             phone numbers aren't formatted, thus patched metadata not being applied.
             See format_number in phonenumbers "Early exit for E164 case"
         """

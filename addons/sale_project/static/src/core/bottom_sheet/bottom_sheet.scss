@@ -1,10 +1,10 @@
 .o_bottom_sheet .o_bottom_sheet_sheet {
-    .o-dropdown-item {
+    .w-dropdown-item {
         .oe_stat_button[name="action_view_project_ids"] {
-            > .o_stat_info {
+            >.o_stat_info {
                 flex-direction: column;
 
-                > .o_row {
+                >.o_row {
                     display: flex;
                     gap: inherit;
                     padding-block: map-get($spacers, 1);

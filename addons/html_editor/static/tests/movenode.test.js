@@ -11,7 +11,7 @@ import { EMBEDDED_COMPONENT_PLUGINS, MAIN_PLUGINS } from "@html_editor/plugin_se
 describe.current.tags("desktop");
 
 const styles = `
-.odoo-editor-editable {
+.weth-editor-editable {
     position: fixed;
     top: 0;
     left: 30px;
@@ -470,7 +470,7 @@ describe("click", () => {
         await click(".oe-sidewidget-move");
         await animationFrame();
         expect(getContent(el)).toBe(`<p>[some text]</p><p>other text</p>`);
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("should select the table when clicked on a hook", async () => {
@@ -513,7 +513,7 @@ describe("click", () => {
                 <p><br></p>
             `)
         );
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("should select the table with empty fonts when clicked on a hook", async () => {
@@ -556,7 +556,7 @@ describe("click", () => {
                 <p><br></p>
             `)
         );
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("should select a non-editable element completely when clicked on a hook", async () => {
@@ -590,6 +590,6 @@ describe("click", () => {
                 </div>]<p>def</p>
             `)
         );
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 });

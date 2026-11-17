@@ -1,5 +1,7 @@
-:not(.dropstart) > .dropdown-item {
-    &.active, &.selected {
+:not(.dropstart)>.dropdown-item {
+
+    &.active,
+    &.selected {
         &:not(.dropdown-item_active_noarrow)::before {
             display: unset;
             top: 50%;
@@ -13,13 +15,13 @@
     display: none;
 }
 
-.o-hb-select-wrapper {
+.w-hb-select-wrapper {
     flex: 1 0 0;
     min-width: 7ch; // Approx 4 characters + caret
     max-width: 100%;
     display: flex;
 
-    .o-hb-select-toggle.o-hb-btn.btn.o-dropdown.dropdown-toggle {
+    .w-hb-select-toggle.w-hb-btn.btn.w-dropdown.dropdown-toggle {
         display: block;
         flex: 1;
         min-width: 0;
@@ -29,10 +31,10 @@
         &.show {
             color: var(--btn-hover-color);
             background-color: var(--btn-hover-bg);
-            border-color: var(--o-hb-btn-active-color, $o-we-color-accent);
+            border-color: var(--o-hb-btn-active-color, $w-we-color-accent);
         }
 
-        > img {
+        >img {
             max-width: 100%;
         }
 
@@ -46,7 +48,7 @@
     }
 
     &:first-child {
-        .o-hb-select-toggle {
+        .w-hb-select-toggle {
             --btn-padding-x: #{map-get($spacers , 2)};
         }
     }
@@ -56,21 +58,22 @@
 // on the same row. In this situation, we want to show as much of the buttons’
 // text as possible. (For Animation: "onScroll" or Layout: "Column")
 .hb-row-content {
-    &:has(.o-hb-button-group) > .o-hb-select-wrapper {
+    &:has(.w-hb-button-group)>.w-hb-select-wrapper {
         flex: 1 0 auto;
         max-width: 50%;
     }
 
-    &:has(.o-hb-select-wrapper) > .o-hb-button-group .o-hb-btn {
+    &:has(.w-hb-select-wrapper)>.w-hb-button-group .w-hb-btn {
         min-width: 6ch;
     }
 }
 
 // Image format badge.
-.o-hb-select-toggle.dropdown-toggle, .o-hb-select-dropdown-item {
-    > div > .badge {
-        color: $o-we-item-clickable-color;
-        background-color: $o-we-bg-darker;
+.w-hb-select-toggle.dropdown-toggle,
+.w-hb-select-dropdown-item {
+    >div>.badge {
+        color: $w-we-item-clickable-color;
+        background-color: $w-we-bg-darker;
     }
 }
 
@@ -78,20 +81,20 @@
 // TODO: review the SelectMenu template to allow both light/dark backgrounds and
 // remove most '!important' needed here to override Bootstrap classes. See
 // implementations of Many2X builder components for examples.
-.o-hb-select-dropdown {
-    --o-hb-select-bg: #{$o-we-item-clickable-bg};
-    --o-hb-select-color: #{$o-we-fg-light};
-    --o-hb-select-bg-hover: #{$o-we-bg-lighter};
-    --o-hb-select-color-hover: #{$o-we-fg-lighter};
-    --o-hb-border-color: #{$o-we-bg-darker};
+.w-hb-select-dropdown {
+    --o-hb-select-bg: #{$w-we-item-clickable-bg};
+    --o-hb-select-color: #{$w-we-fg-light};
+    --o-hb-select-bg-hover: #{$w-we-bg-lighter};
+    --o-hb-select-color-hover: #{$w-we-fg-lighter};
+    --o-hb-border-color: #{$w-we-bg-darker};
 
     --border-color: var(--o-hb-border-color);
     --#{$prefix}popover-border-radius: #{map-get($spacers, 2)};
     --#{$prefix}popover-inner-border-radius: calc(var(--#{$prefix}popover-border-radius) - var(--#{$prefix}popover-border-width));
     --#{$prefix}dropdown-item-border-radius: 0;
 
-    font-family: $o-we-font-family;
-    font-size: $o-we-font-size;
+    font-family: $w-we-font-family;
+    font-size: $w-we-font-size;
     border-color: var(--border-color);
     background-color: var(--o-hb-select-bg) !important;
     padding: 0;
@@ -100,11 +103,11 @@
         --dropdown-item-padding-y: 0;
         --gradient: none;
 
-        $active-color: var(--o-hb-select-item-active-color, $o-we-sidebar-content-field-toggle-active-bg);
+        $active-color: var(--o-hb-select-item-active-color, $w-we-sidebar-content-field-toggle-active-bg);
 
         color: var(--o-hb-select-color, $white);
         line-height: 2rem;
-        border-bottom: $o-we-border-width solid var(--border-color);
+        border-bottom: $w-we-border-width solid var(--border-color);
 
         &.focus {
             background-color: var(--o-hb-select-bg-hover) !important;
@@ -146,17 +149,17 @@
 }
 
 .o_builder_open {
-    &:has(.o-snippets-tabs [data-name='theme'].active) {
-        .o-hb-select-dropdown {
-            --o-hb-select-item-active-color: #{$o-we-color-global};
+    &:has(.w-snippets-tabs [data-name='theme'].active) {
+        .w-hb-select-dropdown {
+            --o-hb-select-item-active-color: #{$w-we-color-global};
         }
     }
 }
 
-.o-hb-select-toggle .o-hb-theme-tab-link {
+.w-hb-select-toggle .w-hb-theme-tab-link {
     display: none;
 }
 
-.o-hb-select-dropdown-item:has(.o-hb-theme-tab-link) {
+.w-hb-select-dropdown-item:has(.w-hb-theme-tab-link) {
     padding-right: 0;
 }

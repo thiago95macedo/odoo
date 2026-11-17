@@ -305,12 +305,12 @@ test("Use isActiveItem for an option in the BuilderSearchSelect", async () => {
     await setupHTMLBuilder(`<div class="test-options-target class_0">Content...</div>`);
     await contains(":iframe .test-options-target").click();
     expect(".options-container").toBeVisible();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(1);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(1);
     expect("[data-label='Test'] .dropdown-toggle").toHaveText("Option 0");
     expect(".dependency").toHaveCount(0);
 
     await contains("[data-label='Test'] .dropdown-toggle").click();
-    expect(".o-dropdown-item:visible").toHaveCount(2);
+    expect(".w-dropdown-item:visible").toHaveCount(2);
     await contains("[data-choice-index='1']").click();
     expect(".dependency").toHaveCount(1);
 });
@@ -350,11 +350,11 @@ test("Consider the priority of BuilderSearchSelect items", async () => {
     expect("[data-label='Test'] .dropdown-toggle").toHaveText("Style 1");
 
     await contains("[data-label='Test'] .dropdown-toggle").click();
-    await contains(".o-overlay-item [data-choice-index='0']").click();
+    await contains(".w-overlay-item [data-choice-index='0']").click();
     expect("[data-label='Test'] .dropdown-toggle").toHaveText("None");
 
     await contains("[data-label='Test'] .dropdown-toggle").click();
-    await contains(".o-overlay-item [data-choice-index='2']").click();
+    await contains(".w-overlay-item [data-choice-index='2']").click();
     expect("[data-label='Test'] .dropdown-toggle").toHaveText("Style 2");
 });
 
@@ -419,11 +419,11 @@ test("Preview BuilderSearchSelect options (on hover)", async () => {
     await contains(":iframe .test-options-target").click();
     expect(":iframe .test-options-target").not.toHaveAttribute("title");
     await contains("[data-label='Test'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu span.o-dropdown-item:contains('Option 1')").hover();
+    await contains(".w-dropdown--menu span.w-dropdown-item:contains('Option 1')").hover();
     expect(":iframe .test-options-target").toHaveAttribute("title", "Title 1");
     await contains(".we-bg-options-container").hover();
     expect(":iframe .test-options-target").not.toHaveAttribute("title");
-    await contains(".o-dropdown--menu span.o-dropdown-item:contains('Option 0')").hover();
+    await contains(".w-dropdown--menu span.w-dropdown-item:contains('Option 0')").hover();
     expect(":iframe .test-options-target").toHaveAttribute("title", "Title 0");
     await click(".we-bg-options-container");
     expect(":iframe .test-options-target").not.toHaveAttribute("title");

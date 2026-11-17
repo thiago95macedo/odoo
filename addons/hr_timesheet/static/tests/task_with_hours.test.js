@@ -16,14 +16,14 @@ defineTimesheetModels();
 describe.current.tags("desktop");
 
 async function _expectCreateAndEdit(rowN) {
-    const taskField = `.o_list_table .o_data_row:nth-of-type(${rowN}) .o_list_many2one[name=task_id]`;
+    const taskField = `.w_list_table .w_data_row:nth-of-type(${rowN}) .w_list_many2one[name=task_id]`;
     await click(taskField);
     await animationFrame();
     await edit("NonExistingTask", { confirm: false });
     await click(`${taskField} input`);
     await animationFrame();
     return expect(
-        '.o_list_many2one[name=task_id] .dropdown ul li:contains(Create "NonExistingTask")'
+        '.w_list_many2one[name=task_id] .dropdown ul li:contains(Create "NonExistingTask")'
     );
 }
 
@@ -48,7 +48,7 @@ test("hr.timesheet (tree): the text of the task includes hours in the drop down 
         resModel: "account.analytic.line",
         type: "list",
     });
-    const taskField = ".o_list_table .o_data_row:first-of-type .o_list_many2one[name=task_id]";
+    const taskField = ".w_list_table .w_data_row:first-of-type .w_list_many2one[name=task_id]";
     expect(taskField).toHaveText("Task 3");
     await click(taskField);
     await animationFrame();
@@ -70,13 +70,13 @@ test("project.task (tree): progress bar color", async () => {
         `,
     });
 
-    expect("div.o_progressbar .bg-success").toHaveCount(1, {
+    expect("div.w_progressbar .bg-success").toHaveCount(1, {
         message: "Task 1 having progress = 50 < 80 => green color",
     });
-    expect("div.o_progressbar .bg-warning").toHaveCount(1, {
+    expect("div.w_progressbar .bg-warning").toHaveCount(1, {
         message: "Task 2 having progress = 80 >= 80 => orange color",
     });
-    expect("div.o_progressbar .bg-danger").toHaveCount(1, {
+    expect("div.w_progressbar .bg-danger").toHaveCount(1, {
         message: "Task 3 having progress = 104 > 100 => red color",
     });
 });

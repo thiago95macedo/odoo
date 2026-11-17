@@ -6,7 +6,7 @@ export class AutopopupService {
     static STORAGE_KEY = "im_livechat_auto_popup";
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {{
      * "im_livechat.livechat": import("@im_livechat/embed/common/livechat_service").LivechatService,
      * "mail.store": import("@mail/core/common/store_service").Store,
@@ -32,10 +32,10 @@ export class AutopopupService {
     get allowAutoPopup() {
         return Boolean(
             !expirableStorage.getItem(AutopopupService.STORAGE_KEY) &&
-                !this.ui.isSmall &&
-                this.store.livechat_rule?.action === "auto_popup" &&
-                this.store.livechat_available &&
-                this.store.activeVisitorLivechats.length === 0
+            !this.ui.isSmall &&
+            this.store.livechat_rule?.action === "auto_popup" &&
+            this.store.livechat_available &&
+            this.store.activeVisitorLivechats.length === 0
         );
     }
 }

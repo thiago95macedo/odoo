@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_links/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -34,19 +34,19 @@ msgid ""
 "Generate short links with analytics trackers (UTM) to share your pages "
 "through marketing campaigns.\n"
 "Those trackers can be used in Google Analytics to track clicks and visitors, "
-"or in Odoo reports to analyze the efficiency of those campaigns in terms of "
+"or in WETH reports to analyze the efficiency of those campaigns in terms of "
 "lead generation, related revenues (sales orders), recruitment, etc.\n"
 msgstr ""
 "\n"
 "Gere links curtos com rastreadores de análise (UTM) para compartilhar suas "
 "páginas através de campanhas de marketing.\n"
 "Esses rastreadores podem ser usados no Google Analytics para monitorar "
-"cliques e visitantes, ou nos relatórios do Odoo para analisar a eficiência "
+"cliques e visitantes, ou nos relatórios do WETH para analisar a eficiência "
 "dessas campanhas em termos de geração de leads, receitas relacionadas "
 "(pedidos de Vendas), Recrutamento, etc.\n"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_charts.js:0
 msgid "# of clicks"
 msgstr "Nº de cliques"
@@ -181,7 +181,7 @@ msgid "Campaign"
 msgstr "Campanha"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/xml/recent_link.xml:0
 msgid "Copy"
 msgstr "Copiar"
@@ -197,7 +197,7 @@ msgid "Create another Tracker"
 msgstr "Criar outro rastreador"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/xml/website_links_tags_wrapper.xml:0
 msgid "Create option \""
 msgstr "Criar opção \""
@@ -244,7 +244,7 @@ msgid "Last Week"
 msgstr "Semana passada"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links.js:0
 #: code:addons/website_links/static/src/interactions/website_links_code_editor.js:0
 msgid "Link Copied!"
@@ -279,7 +279,7 @@ msgid "Number of Clicks"
 msgstr "Número de cliques"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_code_editor.js:0
 msgid ""
 "Only letters (A–Z, a–z), numbers (0–9), underscores (_) and hyphens (-) are "
@@ -319,19 +319,19 @@ msgid "Target Link"
 msgstr "Link de destino"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_code_editor.js:0
 msgid "The code cannot be left empty"
 msgstr "O código não pode ficar em branco"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_charts.js:0
 msgid "There is no data to show"
 msgstr "Não há dados para exibir"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_code_editor.js:0
 msgid "This code is already taken"
 msgstr "Este código já foi usado"
@@ -340,10 +340,10 @@ msgstr "Este código já foi usado"
 #: model_terms:ir.ui.view,arch_db:website_links.create_shorten_url
 msgid ""
 "Those trackers can be used in Google Analytics to track clicks and visitors, "
-"or in Odoo reports to track opportunities and related revenues."
+"or in WETH reports to track opportunities and related revenues."
 msgstr ""
 "Esses rastreadores podem ser utilizados no Google Analytics para rastrear "
-"cliques e visitantes, ou no Odoo em relatórios para rastrear oportunidades e "
+"cliques e visitantes, ou no WETH em relatórios para rastrear oportunidades e "
 "suas receitas correspondentes."
 
 #. module: website_links
@@ -352,19 +352,19 @@ msgid "Tracked Link"
 msgstr "Link rastreado"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_charts.js:0
 msgid "Undefined"
 msgstr "Indefinido"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/xml/recent_link.xml:0
 msgid "Visit Link"
 msgstr "Visitar link"
 
 #. module: website_links
-#. odoo-python
+#. weth-python
 #: code:addons/website_links/models/link_tracker.py:0
 msgid "Visit Webpage Statistics"
 msgstr "Estatísticas de visitas à página da web"
@@ -375,14 +375,14 @@ msgid "Your tracked links"
 msgstr "Seus links rastreados"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_charts.js:0
 #: code:addons/website_links/static/src/xml/recent_link.xml:0
 msgid "clicks"
 msgstr "cliques"
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links_charts.js:0
 msgid "countries"
 msgstr "países"
@@ -393,19 +393,19 @@ msgid "e.g. \"Black Friday Mailing Campaign\""
 msgstr "ex.: \"Black Friday - Campanha de comunicação\""
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links.js:0
 msgid "e.g. InMails, Ads, Social, ..."
 msgstr "ex.: InMails, Ads, Social..."
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links.js:0
 msgid "e.g. June Sale, Paris Roadshow, ..."
 msgstr "ex.: June Sale, Paris Roadshow..."
 
 #. module: website_links
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_links/static/src/interactions/website_links.js:0
 msgid "e.g. LinkedIn, Facebook, Leads, ..."
 msgstr "ex.: LinkedIn, Facebook, Leads..."

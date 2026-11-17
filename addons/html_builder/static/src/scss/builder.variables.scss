@@ -6,18 +6,18 @@
 // HTML Builder Variables
 //------------------------------------------------------------------------------
 
-$o-we-colors: (
-    "primary": $o-we-color-primary,
-    "global": $o-we-color-global,
-    "accent": $o-we-color-accent,
+$w-we-colors: (
+    "primary": $w-we-color-primary,
+    "global": $w-we-color-global,
+    "accent": $w-we-color-accent,
 
-    "info": $o-we-color-info,
-    "success": $o-we-color-success,
-    "danger": $o-we-color-danger,
-    "warning": $o-we-color-warning,
-) !default;
+    "info": $w-we-color-info,
+    "success": $w-we-color-success,
+    "danger": $w-we-color-danger,
+    "warning": $w-we-color-warning,
+    ) !default;
 
-$o-social-colors: (
+$w-social-colors: (
     'facebook': #3B5999,
     'twitter': #000000,
     'linkedin': #0077B5,
@@ -36,70 +36,70 @@ $o-social-colors: (
     "threads": #000000,
 );
 
-$o-we-contrast-border-color: mix(white, $o-we-color-accent, 40%) !default;
+$w-we-contrast-border-color: mix(white, $w-we-color-accent, 40%) !default;
 
 // Needed to be changed to be high enough to not overflow when a user
 // has a page with a lot of content (10000px was proven to be too small)
-$o-we-handles-offset-to-hide: 100000px !default;
-$o-we-handles-btn-size: 14px !default;
-$o-we-handles-accent-color: $o-we-color-accent !default;
-$o-we-handles-accent-color-preview: $o-enterprise-color !default;
-$o-we-handle-edge-size: $o-we-handles-btn-size !default;
-$o-we-handle-border-width: 2px !default;
-$o-we-handle-contrast-border: 1px solid $o-we-contrast-border-color !default;
+$w-we-handles-offset-to-hide: 100000px !default;
+$w-we-handles-btn-size: 14px !default;
+$w-we-handles-accent-color: $w-we-color-accent !default;
+$w-we-handles-accent-color-preview: $w-enterprise-color !default;
+$w-we-handle-edge-size: $w-we-handles-btn-size !default;
+$w-we-handle-border-width: 2px !default;
+$w-we-handle-contrast-border: 1px solid $w-we-contrast-border-color !default;
 
-$o-we-hover-overlay-color: $o-we-contrast-border-color !default;
+$w-we-hover-overlay-color: $w-we-contrast-border-color !default;
 
-$o-we-dropzone-size: 30px !default; // $grid-gutter-width (todo: allow to use the variable)
-$o-we-dropzone-border-width: 1px !default;
-$o-we-dropzone-border: $o-we-dropzone-border-width dashed $o-we-contrast-border-color !default;
-$o-we-dropzone-border-radius: 3px !default;
-$o-we-dropzone-accent-color: $o-we-color-accent !default;
-$o-we-dropzone-bg-color: rgba($o-we-dropzone-accent-color, .5) !default;
-$o-we-dropzone-z-index: 1029 !default;
-$o-we-dropzone-font-size: 18px !default;
-$o-we-dropzone-text-color: white !default;
-$o-we-dropzone-sanitized-color: rgba(#646464, .5) !default;
+$w-we-dropzone-size: 30px !default; // $grid-gutter-width (todo: allow to use the variable)
+$w-we-dropzone-border-width: 1px !default;
+$w-we-dropzone-border: $w-we-dropzone-border-width dashed $w-we-contrast-border-color !default;
+$w-we-dropzone-border-radius: 3px !default;
+$w-we-dropzone-accent-color: $w-we-color-accent !default;
+$w-we-dropzone-bg-color: rgba($w-we-dropzone-accent-color, .5) !default;
+$w-we-dropzone-z-index: 1029 !default;
+$w-we-dropzone-font-size: 18px !default;
+$w-we-dropzone-text-color: white !default;
+$w-we-dropzone-sanitized-color: rgba(#646464, .5) !default;
 
-$o-we-inner-content-dropzone-size: 4px !default;
-$o-we-inner-content-dropzone-border: $o-we-inner-content-dropzone-size/2 solid $o-we-contrast-border-color, !default;
+$w-we-inner-content-dropzone-size: 4px !default;
+$w-we-inner-content-dropzone-border: $w-we-inner-content-dropzone-size/2 solid $w-we-contrast-border-color, !default;
 
 @mixin o-we-dropzone-base-style {
-    background: $o-we-dropzone-bg-color;
-    outline: $o-we-dropzone-border;
-    outline-offset: -$o-we-dropzone-border-width;
-    border: 1px solid $o-we-dropzone-accent-color;
-    border-radius: $o-we-dropzone-border-radius;
+    background: $w-we-dropzone-bg-color;
+    outline: $w-we-dropzone-border;
+    outline-offset: -$w-we-dropzone-border-width;
+    border: 1px solid $w-we-dropzone-accent-color;
+    border-radius: $w-we-dropzone-border-radius;
 }
 
-$o-we-toolbar-height: 40px !default;
-$o-we-toolbar-color-accent: #018597 !default;
+$w-we-toolbar-height: 40px !default;
+$w-we-toolbar-color-accent: #018597 !default;
 
-$o-we-item-standup-color-light: $o-we-fg-lighter;
-$o-we-item-standup-color-dark: $o-we-bg-darkest;
-$o-we-item-standup-top: inset 0 1px 0;
-$o-we-item-standup-bottom: inset 0 -1px 0;
+$w-we-item-standup-color-light: $w-we-fg-lighter;
+$w-we-item-standup-color-dark: $w-we-bg-darkest;
+$w-we-item-standup-top: inset 0 1px 0;
+$w-we-item-standup-bottom: inset 0 -1px 0;
 
-$o-we-dropdown-spacing: $o-we-item-spacing !default;
-$o-we-dropdown-bg: $o-we-bg-darker !default;
-$o-we-dropdown-border-width: 1px !default;
-$o-we-dropdown-border-color: $o-we-bg-darkest !default;
-$o-we-dropdown-shadow: 0 2px 8px 0 rgba(black, 0.5) !default;
-$o-we-dropdown-item-height: 34px !default;
-$o-we-dropdown-item-spacing: 1px !default;
-$o-we-dropdown-item-bg: $o-we-bg-lightest !default;
-$o-we-dropdown-item-bg-hover: $o-we-bg-light !default;
-$o-we-dropdown-item-color: $o-we-fg-dark !default;
-$o-we-dropdown-item-hover-color: $o-we-fg-light !default;
-$o-we-dropdown-item-active-bg: mix($o-we-dropdown-item-bg, $o-we-dropdown-item-bg-hover) !default;
-$o-we-dropdown-item-active-color: $o-we-fg-lighter !default;
-$o-we-dropdown-caret-spacing: 2px !default;
+$w-we-dropdown-spacing: $w-we-item-spacing !default;
+$w-we-dropdown-bg: $w-we-bg-darker !default;
+$w-we-dropdown-border-width: 1px !default;
+$w-we-dropdown-border-color: $w-we-bg-darkest !default;
+$w-we-dropdown-shadow: 0 2px 8px 0 rgba(black, 0.5) !default;
+$w-we-dropdown-item-height: 34px !default;
+$w-we-dropdown-item-spacing: 1px !default;
+$w-we-dropdown-item-bg: $w-we-bg-lightest !default;
+$w-we-dropdown-item-bg-hover: $w-we-bg-light !default;
+$w-we-dropdown-item-color: $w-we-fg-dark !default;
+$w-we-dropdown-item-hover-color: $w-we-fg-light !default;
+$w-we-dropdown-item-active-bg: mix($w-we-dropdown-item-bg, $w-we-dropdown-item-bg-hover) !default;
+$w-we-dropdown-item-active-color: $w-we-fg-lighter !default;
+$w-we-dropdown-caret-spacing: 2px !default;
 
-$o-we-sidebar-bg: $o-we-bg !default;
-$o-we-sidebar-color: $o-we-color !default;
-$o-we-sidebar-font-size: 12px !default;
-$o-we-sidebar-border-width: $o-we-border-width !default;
-$o-we-sidebar-border-color: $o-we-border-color !default;
+$w-we-sidebar-bg: $w-we-bg !default;
+$w-we-sidebar-color: $w-we-color !default;
+$w-we-sidebar-font-size: 12px !default;
+$w-we-sidebar-border-width: $w-we-border-width !default;
+$w-we-sidebar-border-color: $w-we-border-color !default;
 
 // This sidebar width cannot be increased at the moment, it is at the maximum
 // value it can have, given our current specs, which is 1920px / 150% - 992px.
@@ -127,125 +127,130 @@ $o-we-sidebar-border-color: $o-we-border-color !default;
 // website in "desktop" mode no matter what but this did not give great results.
 // On problematic devices, the user still has the possibility to de-zoom its
 // browser by himself.
-$o-we-sidebar-width: 288px !default; // This includes $o-we-sidebar-border-width
+$w-we-sidebar-width: 288px !default; // This includes $w-we-sidebar-border-width
 
-$o-we-sidebar-top-height: 46px !default;
+$w-we-sidebar-top-height: 46px !default;
 
-$o-we-sidebar-tabs-size-ratio: 1 !default;
-$o-we-sidebar-tabs-height: 3rem;
-$o-we-sidebar-tabs-bg: $o-we-bg-darker !default;
-$o-we-sidebar-tabs-color: $o-we-sidebar-color !default;
-$o-we-sidebar-tabs-disabled-color: $o-we-fg-darker !default;
-$o-we-sidebar-tabs-active-border-width: 2px !default;
-$o-we-sidebar-tabs-active-border-color: $o-we-color-accent !default;
-$o-we-sidebar-tabs-active-background-color: rgba($o-we-color-accent, .15) !default;
-$o-we-sidebar-tabs-active-color: $o-we-fg-lighter !default;
+$w-we-sidebar-tabs-size-ratio: 1 !default;
+$w-we-sidebar-tabs-height: 3rem;
+$w-we-sidebar-tabs-bg: $w-we-bg-darker !default;
+$w-we-sidebar-tabs-color: $w-we-sidebar-color !default;
+$w-we-sidebar-tabs-disabled-color: $w-we-fg-darker !default;
+$w-we-sidebar-tabs-active-border-width: 2px !default;
+$w-we-sidebar-tabs-active-border-color: $w-we-color-accent !default;
+$w-we-sidebar-tabs-active-background-color: rgba($w-we-color-accent, .15) !default;
+$w-we-sidebar-tabs-active-color: $w-we-fg-lighter !default;
 
-$o-we-sidebar-blocks-content-bg: $o-we-bg-dark !default;
-$o-we-sidebar-blocks-content-spacing: 10px !default;
-$o-we-sidebar-blocks-content-snippet-spacing: 2px !default;
-$o-we-sidebar-blocks-content-snippet-bg: $o-we-bg-lighter !default;
+$w-we-sidebar-blocks-content-bg: $w-we-bg-dark !default;
+$w-we-sidebar-blocks-content-spacing: 10px !default;
+$w-we-sidebar-blocks-content-snippet-spacing: 2px !default;
+$w-we-sidebar-blocks-content-snippet-bg: $w-we-bg-lighter !default;
 
-$o-we-sidebar-content-highlight-bar-width: 2px !default;
-$o-we-sidebar-content-highlight-bar-color: $o-we-color-accent !default;
+$w-we-sidebar-content-highlight-bar-width: 2px !default;
+$w-we-sidebar-content-highlight-bar-color: $w-we-color-accent !default;
 
-$o-we-sidebar-content-gutter-item-indent: 5px !default;
-$o-we-sidebar-content-padding-base: 10px !default;
-$o-we-sidebar-content-indent: $o-we-sidebar-content-gutter-item-indent + $o-we-sidebar-content-padding-base !default;
-$o-we-sidebar-content-backdrop-bg: rgba(black, 0.2) !default;
-$o-we-sidebar-content-available-room: $o-we-sidebar-width - $o-we-sidebar-content-padding-base - $o-we-sidebar-content-indent !default;
+$w-we-sidebar-content-gutter-item-indent: 5px !default;
+$w-we-sidebar-content-padding-base: 10px !default;
+$w-we-sidebar-content-indent: $w-we-sidebar-content-gutter-item-indent + $w-we-sidebar-content-padding-base !default;
+$w-we-sidebar-content-backdrop-bg: rgba(black, 0.2) !default;
+$w-we-sidebar-content-available-room: $w-we-sidebar-width - $w-we-sidebar-content-padding-base - $w-we-sidebar-content-indent !default;
 
-$o-we-sidebar-content-main-title-height: 32px !default;
-$o-we-sidebar-content-main-title-color: $o-we-fg-lighter !default;
-$o-we-sidebar-content-main-title-font-size: 13px !default;
+$w-we-sidebar-content-main-title-height: 32px !default;
+$w-we-sidebar-content-main-title-color: $w-we-fg-lighter !default;
+$w-we-sidebar-content-main-title-font-size: 13px !default;
 
-$o-we-sidebar-content-block-spacing: 10px !default;
+$w-we-sidebar-content-block-spacing: 10px !default;
 
-$o-we-sidebar-content-fold-block-bg: $o-we-bg-lighter !default;
+$w-we-sidebar-content-fold-block-bg: $w-we-bg-lighter !default;
 
-$o-we-sidebar-content-field-spacing: $o-we-item-spacing !default;
-$o-we-sidebar-content-field-color: $o-we-fg-darker !default;
-$o-we-sidebar-content-field-control-item-color: $o-we-fg-darker !default;
-$o-we-sidebar-content-field-control-item-size: 1em !default;
-$o-we-sidebar-content-field-control-item-spacing: 0.5em !default;
-$o-we-sidebar-content-field-label-spacing: 6px !default;
+$w-we-sidebar-content-field-spacing: $w-we-item-spacing !default;
+$w-we-sidebar-content-field-color: $w-we-fg-darker !default;
+$w-we-sidebar-content-field-control-item-color: $w-we-fg-darker !default;
+$w-we-sidebar-content-field-control-item-size: 1em !default;
+$w-we-sidebar-content-field-control-item-spacing: 0.5em !default;
+$w-we-sidebar-content-field-label-spacing: 6px !default;
 
-$o-we-sidebar-content-field-label-width: $o-we-sidebar-content-available-room * .4 !default;
-$o-we-sidebar-content-field-multi-spacing: $o-we-sidebar-content-field-label-spacing * .5 !default;
-$o-we-sidebar-content-field-height: 22px !default;
+$w-we-sidebar-content-field-label-width: $w-we-sidebar-content-available-room * .4 !default;
+$w-we-sidebar-content-field-multi-spacing: $w-we-sidebar-content-field-label-spacing * .5 !default;
+$w-we-sidebar-content-field-height: 22px !default;
 
-$o-we-sidebar-content-field-border-width: $o-we-item-border-width !default;
-$o-we-sidebar-content-field-border-color:$o-we-item-border-color !default;
-$o-we-sidebar-content-field-border-radius: $o-we-item-border-radius !default;
-$o-we-sidebar-content-field-disabled-color: $o-we-sidebar-content-field-control-item-color !default;
-$o-we-sidebar-content-field-clickable-bg: $o-we-item-clickable-bg !default;
-$o-we-sidebar-content-field-clickable-color: $o-we-item-clickable-color !default;
-$o-we-sidebar-content-field-clickable-spacing: $o-we-sidebar-content-field-label-spacing !default;
-$o-we-sidebar-content-field-pressed-bg: $o-we-item-pressed-bg !default;
-$o-we-sidebar-content-field-pressed-color: $o-we-item-pressed-color !default;
+$w-we-sidebar-content-field-border-width: $w-we-item-border-width !default;
+$w-we-sidebar-content-field-border-color: $w-we-item-border-color !default;
+$w-we-sidebar-content-field-border-radius: $w-we-item-border-radius !default;
+$w-we-sidebar-content-field-disabled-color: $w-we-sidebar-content-field-control-item-color !default;
+$w-we-sidebar-content-field-clickable-bg: $w-we-item-clickable-bg !default;
+$w-we-sidebar-content-field-clickable-color: $w-we-item-clickable-color !default;
+$w-we-sidebar-content-field-clickable-spacing: $w-we-sidebar-content-field-label-spacing !default;
+$w-we-sidebar-content-field-pressed-bg: $w-we-item-pressed-bg !default;
+$w-we-sidebar-content-field-pressed-color: $w-we-item-pressed-color !default;
 
-$o-we-sidebar-content-field-dropdown-spacing: $o-we-dropdown-spacing !default;
-$o-we-sidebar-content-field-dropdown-bg: $o-we-dropdown-bg !default;
-$o-we-sidebar-content-field-dropdown-border-width: $o-we-dropdown-border-width !default;
-$o-we-sidebar-content-field-dropdown-border-color: $o-we-dropdown-border-color !default;
-$o-we-sidebar-content-field-dropdown-shadow: $o-we-dropdown-shadow !default;
-$o-we-sidebar-content-field-dropdown-item-height: $o-we-dropdown-item-height !default;
-$o-we-sidebar-content-field-dropdown-item-spacing: $o-we-dropdown-item-spacing !default;
-$o-we-sidebar-content-field-dropdown-item-bg: $o-we-dropdown-item-bg !default;
-$o-we-sidebar-content-field-dropdown-item-bg-hover: $o-we-dropdown-item-bg-hover !default;
-$o-we-sidebar-content-field-dropdown-item-color: $o-we-dropdown-item-color !default;
-$o-we-sidebar-content-field-dropdown-item-hover-color: $o-we-dropdown-item-hover-color !default;
-$o-we-sidebar-content-field-dropdown-item-active-bg: $o-we-dropdown-item-active-bg !default;
-$o-we-sidebar-content-field-dropdown-item-active-color: $o-we-dropdown-item-active-color !default;
-$o-we-sidebar-content-field-dropdown-grid-item-height: 60px !default;
-$o-we-sidebar-content-field-dropdown-grid-item-width: 80px !default;
+$w-we-sidebar-content-field-dropdown-spacing: $w-we-dropdown-spacing !default;
+$w-we-sidebar-content-field-dropdown-bg: $w-we-dropdown-bg !default;
+$w-we-sidebar-content-field-dropdown-border-width: $w-we-dropdown-border-width !default;
+$w-we-sidebar-content-field-dropdown-border-color: $w-we-dropdown-border-color !default;
+$w-we-sidebar-content-field-dropdown-shadow: $w-we-dropdown-shadow !default;
+$w-we-sidebar-content-field-dropdown-item-height: $w-we-dropdown-item-height !default;
+$w-we-sidebar-content-field-dropdown-item-spacing: $w-we-dropdown-item-spacing !default;
+$w-we-sidebar-content-field-dropdown-item-bg: $w-we-dropdown-item-bg !default;
+$w-we-sidebar-content-field-dropdown-item-bg-hover: $w-we-dropdown-item-bg-hover !default;
+$w-we-sidebar-content-field-dropdown-item-color: $w-we-dropdown-item-color !default;
+$w-we-sidebar-content-field-dropdown-item-hover-color: $w-we-dropdown-item-hover-color !default;
+$w-we-sidebar-content-field-dropdown-item-active-bg: $w-we-dropdown-item-active-bg !default;
+$w-we-sidebar-content-field-dropdown-item-active-color: $w-we-dropdown-item-active-color !default;
+$w-we-sidebar-content-field-dropdown-grid-item-height: 60px !default;
+$w-we-sidebar-content-field-dropdown-grid-item-width: 80px !default;
 
-$o-we-sidebar-content-field-colorpicker-size: 20px !default;
-$o-we-sidebar-content-field-colorpicker-size-large: 26px !default;
-$o-we-sidebar-content-field-colorpicker-shadow: inset 0 0 0 1px rgba(white, 0.5) !default;
-$o-we-sidebar-content-field-colorpicker-dropdown-bg: $o-we-bg-lighter !default;
-$o-we-sidebar-content-field-colorpicker-dropdown-color: $o-we-fg-light !default;
-$o-we-sidebar-content-field-colorpicker-dropdown-active-color: $o-we-fg-lighter !default;
-$o-we-sidebar-content-field-colorpicker-cc-width: 208px !default;
-$o-we-sidebar-content-field-colorpicker-cc-height: 26px !default;
+$w-we-sidebar-content-field-colorpicker-size: 20px !default;
+$w-we-sidebar-content-field-colorpicker-size-large: 26px !default;
+$w-we-sidebar-content-field-colorpicker-shadow: inset 0 0 0 1px rgba(white, 0.5) !default;
+$w-we-sidebar-content-field-colorpicker-dropdown-bg: $w-we-bg-lighter !default;
+$w-we-sidebar-content-field-colorpicker-dropdown-color: $w-we-fg-light !default;
+$w-we-sidebar-content-field-colorpicker-dropdown-active-color: $w-we-fg-lighter !default;
+$w-we-sidebar-content-field-colorpicker-cc-width: 208px !default;
+$w-we-sidebar-content-field-colorpicker-cc-height: 26px !default;
 
-$o-we-sidebar-content-field-input-max-width: 60px !default;
-$o-we-sidebar-content-field-input-bg: $o-we-bg-light !default;
-$o-we-sidebar-content-field-input-font-family: $o-we-font-family !default;
-$o-we-sidebar-content-field-input-unit-font-size: 11px !default;
-$o-we-sidebar-content-field-input-border-color: $o-we-color-accent !default;
+$w-we-sidebar-content-field-input-max-width: 60px !default;
+$w-we-sidebar-content-field-input-bg: $w-we-bg-light !default;
+$w-we-sidebar-content-field-input-font-family: $w-we-font-family !default;
+$w-we-sidebar-content-field-input-unit-font-size: 11px !default;
+$w-we-sidebar-content-field-input-border-color: $w-we-color-accent !default;
 
-$o-we-sidebar-content-field-button-group-button-spacing: $o-we-sidebar-content-field-clickable-spacing;
+$w-we-sidebar-content-field-button-group-button-spacing: $w-we-sidebar-content-field-clickable-spacing;
 
-$o-we-sidebar-content-field-progress-height: 4px !default;
-$o-we-sidebar-content-field-progress-control-height: 10px !default;
-$o-we-sidebar-content-field-progress-color: $o-we-fg-darker !default;
-$o-we-sidebar-content-field-progress-active-color: $o-we-color-accent !default;
+$w-we-sidebar-content-field-progress-height: 4px !default;
+$w-we-sidebar-content-field-progress-control-height: 10px !default;
+$w-we-sidebar-content-field-progress-color: $w-we-fg-darker !default;
+$w-we-sidebar-content-field-progress-active-color: $w-we-color-accent !default;
 
-$o-we-sidebar-content-field-toggle-width: 20px !default;
-$o-we-sidebar-content-field-toggle-height: 12px !default;
-$o-we-sidebar-content-field-toggle-bg: $o-we-fg-darker !default;
-$o-we-sidebar-content-field-toggle-active-bg: $o-we-color-accent !default;
-$o-we-sidebar-content-field-toggle-control-width: 11px !default;
-$o-we-sidebar-content-field-toggle-control-height: $o-we-sidebar-content-field-toggle-height - 2px !default;
-$o-we-sidebar-content-field-toggle-control-bg: $o-we-fg-lighter !default;
+$w-we-sidebar-content-field-toggle-width: 20px !default;
+$w-we-sidebar-content-field-toggle-height: 12px !default;
+$w-we-sidebar-content-field-toggle-bg: $w-we-fg-darker !default;
+$w-we-sidebar-content-field-toggle-active-bg: $w-we-color-accent !default;
+$w-we-sidebar-content-field-toggle-control-width: 11px !default;
+$w-we-sidebar-content-field-toggle-control-height: $w-we-sidebar-content-field-toggle-height - 2px !default;
+$w-we-sidebar-content-field-toggle-control-bg: $w-we-fg-lighter !default;
 
 // Apply colors according to the given identifier. Can either be a preset
 // number, a color name or a css color.
 @mixin o-apply-colors($identifier, $with-extras: true, $background: $body-bg) {
     $-related-color: o-related-color($identifier, $max-recursions: 10);
-    @if type-of($-related-color) == 'number' {
+
+    @if type-of($-related-color)=='number' {
         // This is a preset to be applied, just extend it. This should probably
         // be avoided and use the class in XML if possible.
         @extend .o_cc;
         @extend .o_cc#{$-related-color};
-    } @else {
+    }
+
+    @else {
         $-color: o-color($-related-color);
+
         @if $-color {
             // Remove the background image so manually set backgrounds (color or
             // gradient) take precedence over a theme preset with a gradient.
             background-image: none;
         }
+
         @include o-bg-color($-color, $with-extras: $with-extras, $background: $background, $important: false);
     }
 }
@@ -261,61 +266,60 @@ $o-we-sidebar-content-field-toggle-control-bg: $o-we-fg-lighter !default;
         'o-color-5': change-color(#2e1414, $hue: hue($-primary), $saturation: min(saturation($-primary), saturation(#2e1414))),
     );
 
-    // Check if primary/dark contrast is enough. If not adapt cc4 & cc5 schemes accordingly
-    @if not (has-enough-contrast(map-get($-palette, 'o-color-5'), map-get($-palette, 'o-color-1'), 300)) {
-        @each $-cc in (4, 5) {
-            $-palette: map-merge($-palette, (
-                'o-cc#{$-cc}-btn-primary': 'o-color-4',
-                'o-cc#{$-cc}-btn-secondary': 'o-color-2',
-                'o-cc#{$-cc}-text': 'o-color-3',
-                'o-cc#{$-cc}-link': 'o-color-4'
-            ));
-        }
+// Check if primary/dark contrast is enough. If not adapt cc4 & cc5 schemes accordingly
+@if not (has-enough-contrast(map-get($-palette, 'o-color-5'), map-get($-palette, 'o-color-1'), 300)) {
+    @each $-cc in (4, 5) {
+        $-palette: map-merge($-palette, ('o-cc#{$-cc}-btn-primary': 'o-color-4',
+                    'o-cc#{$-cc}-btn-secondary': 'o-color-2',
+                    'o-cc#{$-cc}-text': 'o-color-3',
+                    'o-cc#{$-cc}-link': 'o-color-4'
+                ));
     }
+}
 
-    @if $-overrides-map {
-        $-palette: map-merge($-palette, $-overrides-map);
-    }
+@if $-overrides-map {
+    $-palette: map-merge($-palette, $-overrides-map);
+}
 
-    @return $-palette;
+@return $-palette;
 }
 
 // ------------------------------------------------------------------
 // Shapes
 // ------------------------------------------------------------------
 
-$o_shape_connection_size_tiny: 2rem !default;
-$o_shape_connection_size_regular: 4rem !default;
-$o_shape_connection_size_big: 15rem !default;
-$o_shape_angular_size_regular: 15rem !default;
-$o_shape_wavy_size_regular: 15rem !default;
-$o_shape_pattern_size_tiny: o-to-rem(200px) !default;
-$o_shape_pattern_size_regular: o-to-rem(800px) !default;
-$o_shape_miscellaneous_size_tiny: MAX(6rem, 5vw) !default;
-$o_shape_miscellaneous_size_regular: 10rem !default;
-$o_shape_miscellaneous_size_big: 50rem !default;
-$o_shape_nature_size_tiny: 10rem !default;
-$o_shape_nature_size_regular: MAX(130px, 15vw) !default;
-$o_shape_nature_size_big: MAX(200px, 20vw) !default;
-$o_shape_travel_size_regular: 10rem !default;
-$o_shape_travel_size_big: MAX(800px, 100vw) !default;
+$w_shape_connection_size_tiny: 2rem !default;
+$w_shape_connection_size_regular: 4rem !default;
+$w_shape_connection_size_big: 15rem !default;
+$w_shape_angular_size_regular: 15rem !default;
+$w_shape_wavy_size_regular: 15rem !default;
+$w_shape_pattern_size_tiny: o-to-rem(200px) !default;
+$w_shape_pattern_size_regular: o-to-rem(800px) !default;
+$w_shape_miscellaneous_size_tiny: MAX(6rem, 5vw) !default;
+$w_shape_miscellaneous_size_regular: 10rem !default;
+$w_shape_miscellaneous_size_big: 50rem !default;
+$w_shape_nature_size_tiny: 10rem !default;
+$w_shape_nature_size_regular: MAX(130px, 15vw) !default;
+$w_shape_nature_size_big: MAX(200px, 20vw) !default;
+$w_shape_travel_size_regular: 10rem !default;
+$w_shape_travel_size_big: MAX(800px, 100vw) !default;
 
 .o_we_shape {
-    --ShapeConnections--size-tiny: #{$o_shape_connection_size_tiny};
-    --ShapeConnections--size-regular: #{$o_shape_connection_size_regular};
-    --ShapeConnections--size-big: #{$o_shape_connection_size_big};
-    --ShapeAngular--size-regular: #{$o_shape_angular_size_regular};
-    --ShapeWavy--size-regular: #{$o_shape_wavy_size_regular};
-    --ShapePattern--size-tiny: #{$o_shape_pattern_size_tiny};
-    --ShapePattern--size-regular: #{$o_shape_pattern_size_regular};
-    --ShapeMiscellaneous--size-tiny: #{$o_shape_miscellaneous_size_tiny};
-    --ShapeMiscellaneous--size-regular: #{$o_shape_miscellaneous_size_regular};
-    --ShapeMiscellaneous--size-big: #{$o_shape_miscellaneous_size_big};
-    --ShapeNature--size-tiny: #{$o_shape_nature_size_tiny};
-    --ShapeNature--size-regular: #{$o_shape_nature_size_regular};
-    --ShapeNature--size-big: #{$o_shape_nature_size_big};
-    --ShapeTravel--size-regular: #{$o_shape_travel_size_regular};
-    --ShapeTravel--size-big: #{$o_shape_travel_size_big};
+    --ShapeConnections--size-tiny: #{$w_shape_connection_size_tiny};
+    --ShapeConnections--size-regular: #{$w_shape_connection_size_regular};
+    --ShapeConnections--size-big: #{$w_shape_connection_size_big};
+    --ShapeAngular--size-regular: #{$w_shape_angular_size_regular};
+    --ShapeWavy--size-regular: #{$w_shape_wavy_size_regular};
+    --ShapePattern--size-tiny: #{$w_shape_pattern_size_tiny};
+    --ShapePattern--size-regular: #{$w_shape_pattern_size_regular};
+    --ShapeMiscellaneous--size-tiny: #{$w_shape_miscellaneous_size_tiny};
+    --ShapeMiscellaneous--size-regular: #{$w_shape_miscellaneous_size_regular};
+    --ShapeMiscellaneous--size-big: #{$w_shape_miscellaneous_size_big};
+    --ShapeNature--size-tiny: #{$w_shape_nature_size_tiny};
+    --ShapeNature--size-regular: #{$w_shape_nature_size_regular};
+    --ShapeNature--size-big: #{$w_shape_nature_size_big};
+    --ShapeTravel--size-regular: #{$w_shape_travel_size_regular};
+    --ShapeTravel--size-big: #{$w_shape_travel_size_big};
 }
 
 .o_we_shape_btn_content .o_we_shape {
@@ -338,7 +342,7 @@ $o_shape_travel_size_big: MAX(800px, 100vw) !default;
 
 // Regroups bg shapes available in the Web editor
 // format: (shape_filename: ('position': X, 'size': Y, 'colors': (1, [3], ...)), ...))
-$o-bg-shapes-current: (
+$w-bg-shapes-current: (
     'Airy/01_001': ('position': bottom, 'size': 100% auto, 'colors': (5)),
     'Airy/02_001': ('position': top, 'size': 100% 100%, 'colors': (5)),
     'Airy/06_001': ('position': left bottom, 'size': 100% auto, 'colors': (5)),
@@ -369,9 +373,9 @@ $o-bg-shapes-current: (
     'Blobs/05_001': ('position': bottom, 'size': 100% auto, 'colors': (1)),
     'Blobs/06_001': ('position': top, 'size': 100% auto, 'colors': (1)),
     'Blobs/10_002': ('position': right, 'size': 100% 100%, 'colors': (5)),
-    'Blobs/13': ('position': bottom, 'size': 100% 100%, 'colors': (1,5)),
-    'Blobs/14': ('position': bottom, 'size': 100% auto, 'colors': (1,5)),
-    'Blobs/15': ('position': top, 'size': 100% auto, 'colors': (1,5)),
+    'Blobs/13': ('position': bottom, 'size': 100% 100%, 'colors': (1, 5)),
+    'Blobs/14': ('position': bottom, 'size': 100% auto, 'colors': (1, 5)),
+    'Blobs/15': ('position': top, 'size': 100% auto, 'colors': (1, 5)),
     'Blobs/16': ('position': top, 'size': 100% 100%, 'colors': (5)),
     'Blobs/17': ('position': center, 'size': 100% 100%, 'colors': (5)),
     'Blobs/18': ('position': center, 'size': 100% 100%, 'colors': (5)),
@@ -380,12 +384,12 @@ $o-bg-shapes-current: (
     'Blocks/04': ('position': bottom, 'size': 100% auto, 'colors': (1, 2, 3, 5)),
     'Blurry/01': ('position': center, 'size': 100% 100%, 'colors': (1)),
     'Blurry/02': ('position': center, 'size': 100% 100%, 'colors': (1)),
-    'Blurry/03': ('position': bottom, 'size': 100% auto, 'colors': (1,2,3,4)),
-    'Blurry/04': ('position': top, 'size': 100% auto, 'colors': (1,2,3)),
-    'Blurry/05': ('position': center, 'size': 100% 100%, 'colors': (1,2,4)),
-    'Blurry/06': ('position': center, 'size': 100% 100%, 'colors': (1,4)),
-    'Blurry/07': ('position': top, 'size': 100% auto, 'colors': (1,2,3)),
-    'Blurry/08': ('position': center, 'size': 100% 100%, 'colors': (1,2)),
+    'Blurry/03': ('position': bottom, 'size': 100% auto, 'colors': (1, 2, 3, 4)),
+    'Blurry/04': ('position': top, 'size': 100% auto, 'colors': (1, 2, 3)),
+    'Blurry/05': ('position': center, 'size': 100% 100%, 'colors': (1, 2, 4)),
+    'Blurry/06': ('position': center, 'size': 100% 100%, 'colors': (1, 4)),
+    'Blurry/07': ('position': top, 'size': 100% auto, 'colors': (1, 2, 3)),
+    'Blurry/08': ('position': center, 'size': 100% 100%, 'colors': (1, 2)),
     'Blurry/09': ('position': bottom, 'size': 100% 100%, 'colors': (1)),
     'Blurry/10': ('position': bottom, 'size': 100% 100%, 'colors': (1)),
     'Blurry/11': ('position': bottom, 'size': 100% 100%, 'colors': (1)),
@@ -467,17 +471,17 @@ $o-bg-shapes-current: (
     'Lines/08': ('position': bottom, 'size': 100% auto, 'colors': (1), 'repeat-y': true),
     'Miscellaneous/01': ('position': center, 'size': 100% auto, 'colors': (1)),
     'Miscellaneous/02': ('position': bottom, 'size': auto var(--ShapeMiscellaneous--size-regular), 'colors': (1), 'repeat-x': true),
-    'Miscellaneous/03': ('position': bottom, 'size': auto var(--ShapeMiscellaneous--size-tiny), 'colors': (1,4), 'repeat-x': true),
+    'Miscellaneous/03': ('position': bottom, 'size': auto var(--ShapeMiscellaneous--size-tiny), 'colors': (1, 4), 'repeat-x': true),
     'Miscellaneous/04': ('position': left center, 'size': 100% auto, 'colors': (1)),
-    'Miscellaneous/05': ('position': bottom, 'size': auto var(--ShapeMiscellaneous--size-big), 'colors': (3,4), 'repeat-x': true),
+    'Miscellaneous/05': ('position': bottom, 'size': auto var(--ShapeMiscellaneous--size-big), 'colors': (3, 4), 'repeat-x': true),
     'Nature/01': ('position': bottom, 'size': auto var(--ShapeNature--size-regular), 'colors': (1)),
     'Nature/02': ('position': bottom right, 'size': auto var(--ShapeNature--size-big), 'colors': (1)),
     'Nature/03': ('position': bottom, 'size': auto var(--ShapeNature--size-tiny), 'colors': (1)),
     'Nature/04': ('position': bottom, 'size': auto var(--ShapeNature--size-tiny), 'colors': (1), 'repeat-x': true),
     'Nature/05': ('position': bottom, 'size': auto var(--ShapeNature--size-tiny), 'colors': (1), 'repeat-x': true),
-    'Nature/06': ('position': bottom, 'size': auto var(--ShapeNature--size-tiny), 'colors': (1,3,5), 'repeat-x': true),
+    'Nature/06': ('position': bottom, 'size': auto var(--ShapeNature--size-tiny), 'colors': (1, 3, 5), 'repeat-x': true),
     'Nature/07': ('position': right center, 'size': auto 100%, 'colors': (1)),
-    'Nature/08': ('position': right center, 'size': auto 100%, 'colors': (1,2,5)),
+    'Nature/08': ('position': right center, 'size': auto 100%, 'colors': (1, 2, 5)),
     'Patterns/01': ('position': top, 'size': var(--ShapePattern--size-regular) auto, 'colors': (5), 'repeat-y': true, 'repeat-x': true),
     'Patterns/02': ('position': top, 'size': var(--ShapePattern--size-regular) auto, 'colors': (5), 'repeat-y': true, 'repeat-x': true),
     'Patterns/03': ('position': top, 'size': var(--ShapePattern--size-regular) auto, 'colors': (5), 'repeat-y': true, 'repeat-x': true),
@@ -491,11 +495,11 @@ $o-bg-shapes-current: (
     'Rainy/09_001': ('position': top, 'size': 100% auto, 'colors': (1)),
     'Rainy/10': ('position': center, 'size': 100% auto, 'colors': (1, 3)),
     'Travel/01': ('position': bottom, 'size': auto var(--ShapeTravel--size-regular), 'colors': (1), 'repeat-x': true),
-    'Travel/02': ('position': bottom, 'size': auto var(--ShapeTravel--size-regular), 'colors': (1,3,5), 'repeat-x': true),
-    'Travel/03': ('position': bottom right, 'size': var(--ShapeTravel--size-big), 'colors': (1,3,5)),
-    'Travel/04': ('position': bottom right, 'size': var(--ShapeTravel--size-big), 'colors': (1,3,5)),
-    'Travel/05': ('position': bottom, 'size': 100% auto, 'colors': (1,2,4)),
-    'Travel/06': ('position': top, 'size': 100% auto, 'colors': (1,4)),
+    'Travel/02': ('position': bottom, 'size': auto var(--ShapeTravel--size-regular), 'colors': (1, 3, 5), 'repeat-x': true),
+    'Travel/03': ('position': bottom right, 'size': var(--ShapeTravel--size-big), 'colors': (1, 3, 5)),
+    'Travel/04': ('position': bottom right, 'size': var(--ShapeTravel--size-big), 'colors': (1, 3, 5)),
+    'Travel/05': ('position': bottom, 'size': 100% auto, 'colors': (1, 2, 4)),
+    'Travel/06': ('position': top, 'size': 100% auto, 'colors': (1, 4)),
     'Travel/07': ('position': center, 'size': cover, 'colors': (1)),
     'Travel/08': ('position': center, 'size': 100% 100%, 'colors': (1)),
     'Wavy/03': ('position': top, 'size': 100% auto, 'colors': (1, 2)),
@@ -518,7 +522,7 @@ $o-bg-shapes-current: (
 // TODO: Ensures that discontinued shapes are not imported into new databases
 // Regroups old bg shapes kept for compatibility
 // format: (shape_filename: ('position': X, 'size': Y, 'colors': (1, [3], ...)), ...))
-$o-bg-shapes-discontinued: (
+$w-bg-shapes-discontinued: (
     'Airy/01': ('position': bottom, 'size': 100% auto, 'colors': (1)),
     'Airy/02': ('position': top, 'size': 100% auto, 'colors': (1)),
     'Airy/03': ('position': top, 'size': 100% auto, 'colors': (5)),
@@ -643,51 +647,48 @@ $o-bg-shapes-discontinued: (
 
 // Combines current and old bg shapes in a single map
 // format: (module_name: (shape_filename: ('position': X, 'size': Y, 'colors': (1, [3], ...)), ...))
-$o-bg-shapes: (
-    'web_editor': (map-merge($o-bg-shapes-current, $o-bg-shapes-discontinued)),
-    'html_builder': (map-merge($o-bg-shapes-current, $o-bg-shapes-discontinued)),
+$w-bg-shapes: (
+    'web_editor': (map-merge($w-bg-shapes-current, $w-bg-shapes-discontinued)),
+    'html_builder': (map-merge($w-bg-shapes-current, $w-bg-shapes-discontinued)),
 );
 
-@function change-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $o-bg-shapes) {
+@function change-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $w-bg-shapes) {
     $-module-shapes: map-get($shapes, $module);
-    $-modified-module-shapes: map-merge($-module-shapes, (
-        $shape-name: map-merge(map-get($-module-shapes, $shape-name), ('color-to-cc-bg-map': $mapping)),
-    ));
-    @return map-merge($shapes, (
-        $module: $-modified-module-shapes,
-    ));
+    $-modified-module-shapes: map-merge($-module-shapes, ($shape-name: map-merge(map-get($-module-shapes, $shape-name), ('color-to-cc-bg-map': $mapping)),
+            ));
+    @return map-merge($shapes, ($module: $-modified-module-shapes,
+        ));
 }
 
-@function add-extra-shape-colors-mapping($module, $shape-name, $mapping-name, $mapping, $shapes: $o-bg-shapes) {
+@function add-extra-shape-colors-mapping($module, $shape-name, $mapping-name, $mapping, $shapes: $w-bg-shapes) {
     $-module-shapes: map-get($shapes, $module);
     $-shape-data: map-get($-module-shapes, $shape-name);
     $-extra-mappings: map-get($-shape-data, 'extra-mappings') or ();
-    $-modified-module-shapes: map-merge($-module-shapes, (
-        $shape-name: map-merge($-shape-data, ('extra-mappings': map-merge($-extra-mappings, ($mapping-name: $mapping)))),
-    ));
-    @return map-merge($shapes, (
-        $module: $-modified-module-shapes,
-    ));
+    $-modified-module-shapes: map-merge($-module-shapes, ($shape-name: map-merge($-shape-data, ('extra-mappings': map-merge($-extra-mappings, ($mapping-name: $mapping)))),
+            ));
+    @return map-merge($shapes, ($module: $-modified-module-shapes,
+        ));
 }
 
-@function add-header-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $o-bg-shapes) {
+@function add-header-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $w-bg-shapes) {
     @return add-extra-shape-colors-mapping($module, $shape-name, 'header', $mapping, $shapes);
 }
 
-@function add-footer-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $o-bg-shapes) {
+@function add-footer-shape-colors-mapping($module, $shape-name, $mapping, $shapes: $w-bg-shapes) {
     @return add-extra-shape-colors-mapping($module, $shape-name, 'footer', $mapping, $shapes);
 }
 
 %o-hb-input-base {
-    border: $o-we-sidebar-content-field-border-width solid $o-we-sidebar-content-field-border-color;
-    border-radius: $o-we-sidebar-content-field-border-radius;
-    background-color: var(--o-hb-field-input-bg, #{$o-we-sidebar-content-field-input-bg});
-    padding: 0.15rem $o-we-sidebar-content-field-clickable-spacing;
+    border: $w-we-sidebar-content-field-border-width solid $w-we-sidebar-content-field-border-color;
+    border-radius: $w-we-sidebar-content-field-border-radius;
+    background-color: var(--o-hb-field-input-bg, #{$w-we-sidebar-content-field-input-bg});
+    padding: 0.15rem $w-we-sidebar-content-field-clickable-spacing;
     color: inherit;
 
-    &:focus, &:focus-within {
-        border-color: var(--o-hb-input-active-border, #{$o-we-sidebar-content-field-input-border-color});
-        color: var(--o-hb-row-color-active, #{$o-we-fg-lighter});
+    &:focus,
+    &:focus-within {
+        border-color: var(--o-hb-input-active-border, #{$w-we-sidebar-content-field-input-border-color});
+        color: var(--o-hb-row-color-active, #{$w-we-fg-lighter});
     }
 }
 
@@ -695,19 +696,20 @@ $-editor-messages-margin-x: 2%;
 
 @mixin o-editor-messages {
     @include o-we-dropzone-base-style;
-    min-height: $o-we-dropzone-size;
+    min-height: $w-we-dropzone-size;
     text-align: center;
 
-    &, &.text-muted {
-        color: $o-we-dropzone-text-color !important;
+    &,
+    &.text-muted {
+        color: $w-we-dropzone-text-color !important;
     }
 
     &:before {
         content: attr(data-editor-message);
         display: block;
-        font-size: $o-we-dropzone-font-size;
-         // Required to prevent the theme font family from being applied.
-        font-family: $o-we-font-family;
+        font-size: $w-we-dropzone-font-size;
+        // Required to prevent the theme font family from being applied.
+        font-family: $w-we-font-family;
     }
 
     // Show the default editor message only for "empty" elements
@@ -720,11 +722,12 @@ $-editor-messages-margin-x: 2%;
     &:after {
         content: attr(data-editor-sub-message);
         display: block;
-        font-size: $o-we-dropzone-font-size - 2;
-        font-family: $o-we-font-family;
+        font-size: $w-we-dropzone-font-size - 2;
+        font-family: $w-we-font-family;
     }
 
-    &::before, &::after {
-        text-shadow: 0 0 5px $o-we-dropzone-accent-color;
+    &::before,
+    &::after {
+        text-shadow: 0 0 5px $w-we-dropzone-accent-color;
     }
 }

@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_event_track_quiz/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgid "All Events"
 msgstr "Todos os eventos"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/interactions/quiz.js:0
 msgid "All questions must be answered!"
 msgstr "Todas as perguntas devem ser respondidas!"
@@ -69,13 +69,13 @@ msgid "Answer"
 msgstr "Resposta"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Check answers"
 msgstr "Verificar respostas"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Check your answers"
 msgstr "Verificar suas respostas"
@@ -91,7 +91,7 @@ msgid "Concrete Blocks Wall"
 msgstr "Parede de blocos de concreto"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Congratulations, you scored a total of"
 msgstr "Parabéns! Você fez um total de"
@@ -112,7 +112,7 @@ msgid "Correct Answer"
 msgstr "Resposta correta"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Correct."
 msgstr "Correto."
@@ -232,7 +232,7 @@ msgstr ""
 "durante o transporte."
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Incorrect."
 msgstr "Incorreto."
@@ -313,7 +313,7 @@ msgid "Number of Points"
 msgstr "Número de pontos"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Oopsie, you did not score any point on this quiz."
 msgstr "Ops, você não fez pontos neste questionário."
@@ -329,13 +329,13 @@ msgid "OpenWood is not an Open Source congres about Apps."
 msgstr "OpenWood não é um congresso de código aberto sobre aplicativos."
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Point"
 msgstr "Ponto"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 #: model:ir.model.fields,field_description:website_event_track_quiz.field_event_quiz_answer__awarded_points
 msgid "Points"
@@ -353,7 +353,7 @@ msgid "Question"
 msgstr "Pergunta"
 
 #. module: website_event_track_quiz
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_track_quiz/models/event_quiz.py:0
 msgid ""
 "Question \"%s\" must have 1 correct answer and at least 1 incorrect answer "
@@ -363,7 +363,7 @@ msgstr ""
 "incorreta para ser válida."
 
 #. module: website_event_track_quiz
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_track_quiz/models/event_quiz.py:0
 msgid "Question \"%s\" must have 1 correct answer to be valid."
 msgstr "A pergunta “%s” deve ter uma resposta correta para ser válida."
@@ -407,7 +407,7 @@ msgid "Quiz Questions"
 msgstr "Perguntas do questionário"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/interactions/quiz.js:0
 msgid "Quiz validation error"
 msgstr "Erro de validação de questionário"
@@ -431,7 +431,7 @@ msgid "Quizzes on tracks"
 msgstr "Quizzes on tracks"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "Reset"
 msgstr "Redefinir"
@@ -483,7 +483,7 @@ msgid "Take the Quiz"
 msgstr "Responda ao questionário"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "The correct answer was:"
 msgstr "A resposta correta era:"
@@ -494,7 +494,7 @@ msgid "There is currently no leaderboard available"
 msgstr "Não tem placar de líderes disponível ainda"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/interactions/quiz.js:0
 msgid "There was an error validating this quiz."
 msgstr "Ocorreu um erro ao validar este questionário."
@@ -513,7 +513,7 @@ msgstr ""
 "entender porque essa resposta está correta/incorreta."
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/interactions/quiz.js:0
 msgid "This quiz is already done. Retaking it is not possible."
 msgstr "O questionário já foi concluído. Não é possível fazê-lo novamente."
@@ -615,13 +615,13 @@ msgid "e.g. What is Joe's favorite motto?"
 msgstr "ex., qual é o lema favorito do Joel?"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "point!"
 msgstr "ponto!"
 
 #. module: website_event_track_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_quiz/static/src/xml/quiz_templates.xml:0
 msgid "points!"
 msgstr "pontos!"

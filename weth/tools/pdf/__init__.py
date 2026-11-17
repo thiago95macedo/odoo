@@ -213,11 +213,11 @@ def extract_page(attachment, num_page=0) -> io.BytesIO | None:
 
 
 def add_banner(pdf_stream: io.BytesIO, text: str, logo: bool = False, thickness: float | Sentinel = SENTINEL) -> io.BytesIO:
-    """ Add a banner on a PDF in the upper right corner, with Odoo's logo (optionally).
+    """ Add a banner on a PDF in the upper right corner, with WETH's logo (optionally).
 
     :param pdf_stream:    The PDF stream where the banner will be applied.
     :param text:              The text to be displayed.
-    :param logo:             Whether to display Odoo's logo in the banner.
+    :param logo:             Whether to display WETH's logo in the banner.
     :param thickness:       The thickness of the banner in pixels (default: 2cm).
     :return:              The modified PDF stream.
     """
@@ -321,7 +321,7 @@ def reshape_text(text):
     return text
 
 
-class OdooPdfFileReader(PdfFileReader):
+class WethPdfFileReader(PdfFileReader):
     # OVERRIDE of PdfFileReader to add the management of multiple embedded files.
 
     ''' Returns the files inside the PDF.
@@ -360,7 +360,7 @@ class OdooPdfFileReader(PdfFileReader):
         self.get_attachments()
 
 
-class OdooPdfFileWriter(PdfFileWriter):
+class WethPdfFileWriter(PdfFileWriter):
 
     def __init__(self, *args, **kwargs):
         """
@@ -452,7 +452,7 @@ class OdooPdfFileWriter(PdfFileWriter):
     addAttachment = add_attachment
 
     def embed_weth_attachment(self, attachment, subtype=None, afrelationship='/Data'):
-        assert attachment, "embed_odoo_attachment cannot be called without attachment."
+        assert attachment, "embed_weth_attachment cannot be called without attachment."
         self.add_attachment(attachment.name, attachment.raw, subtype=subtype or attachment.mimetype, afrelationship=afrelationship)
 
     def clone_reader_document_root(self, reader):

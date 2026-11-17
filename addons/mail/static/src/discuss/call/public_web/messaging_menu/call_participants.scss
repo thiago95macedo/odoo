@@ -1,4 +1,4 @@
-.o-mail-MessagingMenuCallParticipants-expandBtn {
+.w-mail-MessagingMenuCallParticipants-expandBtn {
     aspect-ratio: 1;
     opacity: 75%;
     transform: translateY(50%);
@@ -9,15 +9,15 @@
     }
 }
 
-.o-mail-MessagingMenuCallParticipants-name {
+.w-mail-MessagingMenuCallParticipants-name {
     opacity: 60%;
 
-    &.o-isTalking {
+    &.w-isTalking {
         opacity: 100%;
     }
 }
 
-.o-mail-MessagingMenuCallParticipants-status .o-live {
+.w-mail-MessagingMenuCallParticipants-status .w-live {
     font-size: 0.6rem;
     padding: map-get($spacers, 1) / 2;
 }

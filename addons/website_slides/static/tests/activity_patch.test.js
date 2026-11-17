@@ -23,7 +23,7 @@ test("grant course access", async () => {
     });
     await start();
     await openFormView("slide.channel", channelId);
-    await contains(".o-mail-Activity");
+    await contains(".w-mail-Activity");
     await click("button", { text: "Grant Access" });
 });
 
@@ -39,6 +39,6 @@ test("refuse course access", async () => {
     });
     await start();
     await openFormView("slide.channel", channelId);
-    await contains(".o-mail-Activity");
+    await contains(".w-mail-Activity");
     await click("button", { text: "Refuse Access" });
 });

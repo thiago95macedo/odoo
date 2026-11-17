@@ -12,7 +12,7 @@ from weth.tests.common import tagged, TransactionCase
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestFetchmailOutlook(TransactionCase):
 
-    @patch('weth.addons.mail.models.fetchmail.OdooIMAP4_SSL')
+    @patch('weth.addons.mail.models.fetchmail.WethIMAP4_SSL')
     def test_connect(self, mock_imap):
         """Test that the connect method will use the right
         authentication method with the right arguments.

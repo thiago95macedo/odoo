@@ -16,7 +16,7 @@ export class ResUsers extends webModels.ResUsers {
     notification_type = fields.Selection({
         selection: [
             ["email", "Handle by Emails"],
-            ["inbox", "Handle in Odoo"],
+            ["inbox", "Handle in Weth"],
         ],
         default: "email",
     });
@@ -48,8 +48,8 @@ export class ResUsers extends webModels.ResUsers {
                 "mt_note",
                 MailMessageSubtype._filter([["subtype_xmlid", "=", "mail.mt_note"]])[0].id
             );
-            res.one("odoobot", "_store_partner_fields", {
-                value: ResPartner.browse(serverState.odoobotId),
+            res.one("wethbot", "_store_partner_fields", {
+                value: ResPartner.browse(serverState.wethbotId),
             });
             if (!this._is_public(this.env.uid)) {
                 res.one("self_user", "_store_init_fields", {

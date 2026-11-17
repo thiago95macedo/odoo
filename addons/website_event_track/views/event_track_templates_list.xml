@@ -88,7 +88,7 @@
                             <button class="accordion-button collapsed"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                t-att-data-bs-target="'.o_wevent_offcanvas_tag_%s' % tag_category.name"
+                                t-att-data-bs-target="'.w_wevent_offcanvas_tag_%s' % tag_category.name"
                                 aria-expanded="false">
                                 <t t-out="tag_category.name"/>
                             </button>

@@ -255,7 +255,7 @@ test("basic ungrouped rendering", async () => {
 
     expect(".o_kanban_view").toHaveClass("o_kanban_test");
     expect(".o_kanban_renderer").toHaveClass("o_kanban_ungrouped");
-    expect(".o_control_panel_main_buttons button.o-kanban-button-new").toHaveCount(1);
+    expect(".o_control_panel_main_buttons button.w-kanban-button-new").toHaveCount(1);
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(4);
     expect(".o_kanban_ghost").toHaveCount(6);
     expect(".o_kanban_record:contains(gnap)").toHaveCount(1);
@@ -341,25 +341,25 @@ test("Hide tooltip when user click inside a kanban headers item", async () => {
     });
     expect(".o_kanban_renderer").toHaveClass("o_kanban_grouped");
     expect(".o_column_title").toHaveCount(2);
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover(".o_kanban_group:first-child .o_kanban_header_title .o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveCount(1);
 
     await contains(
         ".o_kanban_group:first-child .o_kanban_header_title .o_kanban_quick_add"
     ).click();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover(".o_kanban_group:first-child .o_kanban_header_title .o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveCount(1);
 
     await contains(".o_kanban_group:first-child .o_kanban_header_title [data-icon='settings']", {
         visible: false,
     }).click();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -388,7 +388,7 @@ test("basic grouped rendering", async () => {
 
     expect(".o_kanban_view").toHaveClass("o_kanban_test");
     expect(".o_kanban_renderer").toHaveClass("o_kanban_grouped");
-    expect(".o_control_panel_main_buttons button.o-kanban-button-new").toHaveCount(1);
+    expect(".o_control_panel_main_buttons button.w-kanban-button-new").toHaveCount(1);
     expect(".o_kanban_group").toHaveCount(2);
     expect(".o_kanban_group:first-child .o_kanban_record").toHaveCount(1);
     expect(".o_kanban_group:nth-child(2) .o_kanban_record").toHaveCount(3);
@@ -397,7 +397,7 @@ test("basic grouped rendering", async () => {
     await toggleKanbanColumnActions(0);
 
     // check available actions in kanban header's config dropdown
-    expect(".o-dropdown--menu .o_kanban_toggle_fold").toHaveCount(1);
+    expect(".w-dropdown--menu .o_kanban_toggle_fold").toHaveCount(1);
     expect(".o_kanban_header:first-child .o_group_config .o_group_edit").toHaveCount(0);
     expect(".o_kanban_header:first-child .o_group_config .o_group_delete").toHaveCount(0);
     expect(".o_kanban_header:first-child .o_group_config .o_column_archive_records").toHaveCount(0);
@@ -434,7 +434,7 @@ test("basic grouped rendering with no record", async () => {
     });
     expect(".o_kanban_grouped").toHaveCount(1);
     expect(".o_view_nocontent").toHaveCount(1);
-    expect(".o_control_panel_main_buttons button.o-kanban-button-new").toHaveCount(1, {
+    expect(".o_control_panel_main_buttons button.w-kanban-button-new").toHaveCount(1, {
         message:
             "There should be a 'New' button even though there is no column when groupby is not a many2one",
     });
@@ -2509,7 +2509,7 @@ test("kanban view with create=False", async () => {
             </kanban>`,
     });
 
-    expect(".o-kanban-button-new").toHaveCount(0);
+    expect(".w-kanban-button-new").toHaveCount(0);
 });
 
 test("kanban view with create=False and groupby", async () => {
@@ -2527,7 +2527,7 @@ test("kanban view with create=False and groupby", async () => {
         groupBy: ["product_id"],
     });
 
-    expect(".o-kanban-button-new").toHaveCount(0);
+    expect(".w-kanban-button-new").toHaveCount(0);
     expect(".o_kanban_group").toHaveCount(2);
     expect(".o_kanban_quick_add").toHaveCount(0);
 });
@@ -4317,13 +4317,13 @@ test("bounce create button when no data and click on empty area", async () => {
     });
 
     await contains(".o_kanban_view").click();
-    expect(".o-kanban-button-new").not.toHaveClass("o_catch_attention");
+    expect(".w-kanban-button-new").not.toHaveClass("o_catch_attention");
 
     await toggleSearchBarMenu();
     await toggleMenuItem("Match nothing");
 
     await contains(".o_kanban_renderer").click();
-    expect(".o-kanban-button-new").toHaveClass("o_catch_attention");
+    expect(".w-kanban-button-new").toHaveClass("o_catch_attention");
 });
 
 test("button executes action and check domain", async () => {
@@ -4503,11 +4503,11 @@ test("open config dropdown on kanban with records and groups draggable off", asy
     });
 
     expect(".o_kanban_group .o_group_config").toHaveCount(2);
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
 
     await toggleKanbanColumnActions(0);
 
-    expect(".o-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu").toHaveCount(1);
 });
 
 test("kanban with color attribute", async () => {
@@ -4741,10 +4741,10 @@ test("update buttons after column creation", async () => {
         groupBy: ["product_id"],
     });
 
-    expect(".o-kanban-button-new").not.toBeEnabled();
+    expect(".w-kanban-button-new").not.toBeEnabled();
     await editKanbanColumnName("new column");
     await validateKanbanColumn();
-    expect(".o-kanban-button-new").toBeEnabled();
+    expect(".w-kanban-button-new").toBeEnabled();
 });
 
 test.tags("desktop");
@@ -4798,7 +4798,7 @@ test("group_by_tooltip option when grouping on a many2one", async () => {
 
     await hover(".o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(0, {
+    expect(".w-tooltip").toHaveCount(0, {
         message:
             "tooltip of first column should not defined, since group_by_tooltip title and the many2one field has no value",
     });
@@ -4807,11 +4807,11 @@ test("group_by_tooltip option when grouping on a many2one", async () => {
 
     await hover(".o_column_title:eq(1)");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(1, {
+    expect(".w-tooltip").toHaveCount(1, {
         message:
             "second column should have a tooltip with the group_by_tooltip title and many2one field value",
     });
-    expect(".o-tooltip:first").toHaveText("Kikou\nhello");
+    expect(".w-tooltip:first").toHaveText("Kikou\nhello");
     expect(".o_kanban_group:nth-child(2) .o_column_title").toHaveText("hello\n(2)", {
         message: "second column should have a title with a value from the many2one",
     });
@@ -4845,21 +4845,21 @@ test("asynchronous tooltips when grouped", async () => {
 
     await hover(".o_kanban_group .o_kanban_header_title .o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await leave();
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     await hover(".o_kanban_group .o_kanban_header_title .o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(0);
+    expect(".w-tooltip").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
 
-    expect(".o-tooltip").toHaveCount(1);
-    expect(".o-tooltip").toHaveText("Name\nhello");
+    expect(".w-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveText("Name\nhello");
     expect.verifySteps(["read: product"]);
 });
 
@@ -4885,18 +4885,18 @@ test("loads data tooltips only when first opening", async () => {
 
     await hover(".o_kanban_group .o_kanban_header_title .o_column_title");
     await await runAllTimers();
-    expect(".o-tooltip").toHaveCount(1);
-    expect(".o-tooltip").toHaveText("Name\nhello");
+    expect(".w-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveText("Name\nhello");
     expect.verifySteps(["read: product"]);
 
     await leave();
     await animationFrame();
-    expect(".o-tooltip").toHaveCount(0, { message: "tooltip should be closed" });
+    expect(".w-tooltip").toHaveCount(0, { message: "tooltip should be closed" });
 
     await hover(".o_kanban_group .o_kanban_header_title .o_column_title");
     await runAllTimers();
-    expect(".o-tooltip").toHaveCount(1);
-    expect(".o-tooltip").toHaveText("Name\nhello");
+    expect(".w-tooltip").toHaveCount(1);
+    expect(".w-tooltip").toHaveText("Name\nhello");
     expect.verifySteps([]);
 });
 
@@ -5126,7 +5126,7 @@ test("keynav: down, with focus is inside a card", async () => {
             </kanban>`,
     });
 
-    await pointerDown(getKanbanRecord({ index: 0 }).querySelector(".o-this-is-focussable"));
+    await pointerDown(getKanbanRecord({ index: 0 }).querySelector(".w-this-is-focussable"));
     await press("ArrowDown");
 
     expect(getKanbanRecord({ index: 1 })).toBeFocused();
@@ -6398,15 +6398,15 @@ test("dropdown is closed on item click", async () => {
             </kanban>`,
     });
 
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
 
     await toggleKanbanRecordDropdown();
 
-    expect(".o-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu").toHaveCount(1);
 
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    await contains(".w-dropdown--menu .dropdown-item").click();
 
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -8334,7 +8334,7 @@ test(`kanban with custom cog action that has a confirmation target="new" action`
     await contains(".o_kanban_record:nth-of-type(1)").click();
     expect(".o_selection_box").toHaveCount(1);
     await contains(`.o_cp_action_menus button[data-hotkey='u']`).click();
-    await contains(`.o-dropdown-item:contains(Sort of confirmation dialog)`).click();
+    await contains(`.w-dropdown-item:contains(Sort of confirmation dialog)`).click();
     expect(".o_dialog").toHaveCount(1);
 
     await contains(".o_dialog footer button:contains(Do it)").click();
@@ -9230,7 +9230,7 @@ test("limit is reset when restoring a view after ungrouping", async () => {
     expect.verifySteps(["limit=40"]);
 });
 
-test(`groupby use odoomark`, async () => {
+test(`groupby use wethmark`, async () => {
     patchWithCleanup(Partner.prototype, {
         _getFormattedDisplayName(record) {
             return `**${record.name}** \`tag\``;
@@ -9279,20 +9279,20 @@ test("add o-navigable to buttons with dropdown-item class and view buttons", asy
             </kanban>`,
     });
 
-    expect(".o-dropdown--menu").toHaveCount(0);
+    expect(".w-dropdown--menu").toHaveCount(0);
     await toggleKanbanRecordDropdown();
-    expect(".o-dropdown--menu .dropdown-item.o-navigable").toHaveCount(3);
-    expect(".o-dropdown--menu .dropdown-item.o-navigable.focus").toHaveCount(0);
+    expect(".w-dropdown--menu .dropdown-item.w-navigable").toHaveCount(3);
+    expect(".w-dropdown--menu .dropdown-item.w-navigable.focus").toHaveCount(0);
 
     // Check that navigation is working
-    await hover(".o-dropdown--menu .dropdown-item.o-navigable");
-    expect(".o-dropdown--menu .dropdown-item.o-navigable.focus").toHaveCount(1);
+    await hover(".w-dropdown--menu .dropdown-item.w-navigable");
+    expect(".w-dropdown--menu .dropdown-item.w-navigable.focus").toHaveCount(1);
 
     await press("arrowdown");
-    expect(".o-dropdown--menu .dropdown-item.o-navigable:nth-child(2)").toHaveClass("focus");
+    expect(".w-dropdown--menu .dropdown-item.w-navigable:nth-child(2)").toHaveClass("focus");
 
     await press("arrowdown");
-    expect(".o-dropdown--menu .dropdown-item.o-navigable:nth-child(3)").toHaveClass("focus");
+    expect(".w-dropdown--menu .dropdown-item.w-navigable:nth-child(3)").toHaveClass("focus");
 });
 
 test.tags("desktop");
@@ -9389,13 +9389,13 @@ test(`[Offline] use offline searchbar`, async () => {
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(4);
 
     await toggleSearchBarMenu();
-    expect(".o_search_bar_menu_offline .o-dropdown-item").toHaveCount(2);
-    expect(queryAllTexts(".o_search_bar_menu_offline .o-dropdown-item")).toEqual([
+    expect(".o_search_bar_menu_offline .w-dropdown-item").toHaveCount(2);
+    expect(queryAllTexts(".o_search_bar_menu_offline .w-dropdown-item")).toEqual([
         "GroupBy Blip\nFilter Blip",
         "GroupBy Blip",
     ]);
 
-    await contains(".o_search_bar_menu_offline .o-dropdown-item:eq(1)").click();
+    await contains(".o_search_bar_menu_offline .w-dropdown-item:eq(1)").click();
     expect(".o_offline_search_bar .o_searchview_facet").toHaveCount(2); // groupby and close
     expect(queryAllTexts(".o_offline_search_bar .o_facet_values")).toEqual(["GroupBy Blip"]);
     expect(".o_kanban_group").toHaveCount(3);
@@ -9451,11 +9451,11 @@ test(`[Offline] keep facets name when coming back online`, async () => {
     // Switch offline and visit available filters
     await setOffline(true);
     await toggleSearchBarMenu();
-    await contains(".o_search_bar_menu_offline .o-dropdown-item:eq(1)").click();
+    await contains(".o_search_bar_menu_offline .w-dropdown-item:eq(1)").click();
     expect(".o_kanban_group").toHaveCount(0);
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
     await toggleSearchBarMenu();
-    await contains(".o_search_bar_menu_offline .o-dropdown-item:eq(0)").click();
+    await contains(".o_search_bar_menu_offline .w-dropdown-item:eq(0)").click();
     expect(".o_kanban_group").toHaveCount(1);
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
 
@@ -9474,7 +9474,7 @@ test(`[Offline] keep facets name when coming back online`, async () => {
     // Switch offline again and check the name of available filters
     await setOffline(true);
     await toggleSearchBarMenu();
-    expect(queryAllTexts(".o_search_bar_menu_offline .o-dropdown-item")).toEqual([
+    expect(queryAllTexts(".o_search_bar_menu_offline .w-dropdown-item")).toEqual([
         "Foo\nboo\nor\nblip\nFilter Blip",
         "Foo\nboo\nor\nblip\nFilter Blip\nGroupBy Blip",
         "Foo\nboo\nor\nblip",
@@ -9531,7 +9531,7 @@ test(`[Offline] keep facets name when coming back online (favorite filter)`, asy
     await contains(".o_searchview_facet [data-icon='close']").click();
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(4);
     await toggleSearchBarMenu();
-    await contains(".o_search_bar_menu_offline .o-dropdown-item:eq(0)").click();
+    await contains(".o_search_bar_menu_offline .w-dropdown-item:eq(0)").click();
     expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
 
     // Switch back online
@@ -9547,7 +9547,7 @@ test(`[Offline] keep facets name when coming back online (favorite filter)`, asy
     // Switch offline again and check the name of available filters
     await setOffline(true);
     await toggleSearchBarMenu();
-    expect(queryAllTexts(".o_search_bar_menu_offline .o-dropdown-item")).toEqual([
+    expect(queryAllTexts(".o_search_bar_menu_offline .w-dropdown-item")).toEqual([
         "My favorite\nGroupBy Blip",
         "My favorite",
     ]);
@@ -9594,7 +9594,7 @@ test("[Offline] disable new button if not previously visited", async () => {
 
     await setOffline(true);
 
-    expect("button.o-kanban-button-new").toHaveClass("o_disabled_offline");
+    expect("button.w-kanban-button-new").toHaveClass("o_disabled_offline");
 });
 
 test.tags("desktop");
@@ -9639,7 +9639,7 @@ test("[Offline] create record when offline (quickCreate)", async () => {
     await contains(`.o_kanban_cancel`).click();
 
     await setOffline(true);
-    expect("button.o-kanban-button-new").not.toHaveClass("o_disabled_offline");
+    expect("button.w-kanban-button-new").not.toHaveClass("o_disabled_offline");
 
     //Open the quickCreate Offline
     await createKanbanRecord();
@@ -9648,7 +9648,7 @@ test("[Offline] create record when offline (quickCreate)", async () => {
 
     // The edited record will be save the next time we are online
     await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(queryAllTexts`.w-dropdown--menu .o_offline_systray_content div`).toEqual([
         "PARTNERS ACTION",
         "Record",
         "Created",
@@ -9716,7 +9716,7 @@ test("[Offline] create record when offline (form view)", async () => {
     await contains(`.o_back_button`).click();
 
     await setOffline(true);
-    expect("button.o-kanban-button-new").not.toHaveClass("o_disabled_offline");
+    expect("button.w-kanban-button-new").not.toHaveClass("o_disabled_offline");
 
     //Open the form view Offline
     await createKanbanRecord();
@@ -9726,7 +9726,7 @@ test("[Offline] create record when offline (form view)", async () => {
 
     // The edited record will be save the next time we are online
     await contains(`.o_menu_systray .o_nav_entry [data-icon='link_off']`).click();
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    expect(queryAllTexts`.w-dropdown--menu .o_offline_systray_content div`).toEqual([
         "PARTNERS ACTION",
         "Record",
         "Created",
@@ -9809,7 +9809,7 @@ test("[Offline] disable new button even if previously visited (on_create)", asyn
     await contains(`.btn-close`).click();
 
     await setOffline(true);
-    expect("button.o-kanban-button-new").toHaveClass("o_disabled_offline");
+    expect("button.w-kanban-button-new").toHaveClass("o_disabled_offline");
 });
 
 test("widgets in kanban view: verify immediate autosave", async () => {

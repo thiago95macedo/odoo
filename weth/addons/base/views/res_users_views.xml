@@ -356,7 +356,7 @@
                         <group class="d-flex flex-column gap-0">
                             <label for="name"/>
                             <h1>
-                                <field name="name" string="Key Name — your only way to identify that key" placeholder='e.g. "Odoo MCP"'/>
+                                <field name="name" string="Key Name — your only way to identify that key" placeholder='e.g. "WETH MCP"'/>
                             </h1>
                         </group>
                         <group>
@@ -400,7 +400,7 @@
                                     import requests<br/><br/>
                                     url = "<field name="base_url"/>"<br/>
                                     # Store the API key securely, not in the code.<br/>
-                                    mcp_key = os.environ["ODOO_MCP_KEY"]<br/><br/>
+                                    mcp_key = os.environ["WETH_MCP_KEY"]<br/><br/>
                                     headers = {<br/>
                                         "Authorization": f"bearer {mcp_key}",<br/>
                                         "Content-Type": "application/json",<br/>

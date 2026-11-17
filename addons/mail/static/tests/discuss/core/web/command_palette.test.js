@@ -28,7 +28,7 @@ test("can open DM from @username in command palette", async () => {
         "Mario"
     );
     await click(".o_command.focused:has(:text('Mario')");
-    await contains(".o-mail-ChatWindow-displayName:text('Mario')");
+    await contains(".w-mail-ChatWindow-displayName:text('Mario')");
 });
 
 test("can open channel from @channel_name in command palette", async () => {
@@ -59,7 +59,7 @@ test("can open channel from @channel_name in command palette", async () => {
     await contains(".o_command:eq(1):text('general')");
     await contains(".o_command:eq(2):text('Mitchell Admin')"); // self-conversation
     await click(".o_command.focused:text('project')");
-    await contains(".o-mail-ChatWindow-displayName:text('project')");
+    await contains(".w-mail-ChatWindow-displayName:text('project')");
 });
 
 test("Conversation mentions in the command palette with @", async () => {
@@ -99,7 +99,7 @@ test("Conversation mentions in the command palette with @", async () => {
         contains: [[".o_command_name:text('Mitchell Admin')"]],
     });
     await click(".o_command.focused");
-    await contains(".o-mail-ChatWindow:has(:text('Mitchell Admin and Mario'))");
+    await contains(".w-mail-ChatWindow:has(:text('Mitchell Admin and Mario'))");
 });
 
 test("Max 3 most recent conversations in command palette of Discuss", async () => {
@@ -135,7 +135,7 @@ test("hide conversations in recent if they have mentions", async () => {
     const channelId = pyEnv["discuss.channel"].create({
         channel_member_ids: [
             Command.create({ partner_id: serverState.partnerId }),
-            Command.create({ partner_id: serverState.odoobotId }),
+            Command.create({ partner_id: serverState.wethbotId }),
         ],
         channel_type: "chat",
     });
@@ -143,7 +143,7 @@ test("hide conversations in recent if they have mentions", async () => {
         author_id: serverState.partnerId,
         model: "discuss.channel",
         res_id: channelId,
-        body: "@OdooBot",
+        body: "@WethBot",
     });
     // Load the channel as channels are not returned alongside partners to invite, in which
     // case the unread state of the chat is unknown.
@@ -152,7 +152,7 @@ test("hide conversations in recent if they have mentions", async () => {
     triggerHotkey("control+k");
     await insertText(".o_command_palette_search input", "@", { replace: true });
     await contains(".o_command_category span.fw-bold:text('Mentions')");
-    await contains(".o_command_palette .o_command_category .o_command_name:text('OdooBot')", {
+    await contains(".o_command_palette .o_command_category .o_command_name:text('WethBot')", {
         count: 1,
     });
 });

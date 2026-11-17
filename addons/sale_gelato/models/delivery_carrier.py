@@ -76,7 +76,7 @@ class ProviderGelato(models.Model):
         # Fetch the delivery price from Gelato.
         payload = {
             "orderReferenceId": order.id,
-            "customerReferenceId": f"Odoo Partner #{order.partner_id.id}",
+            "customerReferenceId": f"WETH Partner #{order.partner_id.id}",
             "currency": order.currency_id.name,
             "allowMultipleQuotes": "true",
             "products": order._gelato_prepare_items_payload(),

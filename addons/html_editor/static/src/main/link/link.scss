@@ -1,4 +1,4 @@
-.odoo-editor-editable a.o_link_in_selection:not(.btn) {
+.weth-editor-editable a.o_link_in_selection:not(.btn) {
     background-color: #a6e3e2;
     color: black !important;
     border: 1px dashed #008f8c;
@@ -6,9 +6,13 @@
     -webkit-text-fill-color: black;
 }
 
-.odoo-editor-editable {
-    &[contenteditable=true], [contenteditable=true] {
-        &.btn, .btn {
+.weth-editor-editable {
+
+    &[contenteditable=true],
+    [contenteditable=true] {
+
+        &.btn,
+        .btn {
             user-select: auto;
             cursor: text;
         }
@@ -27,10 +31,12 @@
             font-family: unset;
             font-size: unset;
         }
+
         a:not(.btn) {
             font-size: inherit !important;
         }
     }
+
     font[class^="text-o-"] a,
     font[style*="color"] a {
         color: inherit !important;

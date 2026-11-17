@@ -99,13 +99,13 @@ describe("new", () => {
 
         await mountWithCleanup(WebClient);
         await getService("action").doAction(5);
-        expect(".o_technical_modal .o_form_view").toHaveCount(1, {
+        expect(".w_technical_modal .w_form_view").toHaveCount(1, {
             message: "should have rendered a form view in a modal",
         });
-        expect(".o_technical_modal .modal-body").toHaveClass("o_act_window", {
+        expect(".w_technical_modal .modal-body").toHaveClass("o_act_window", {
             message: "dialog main element should have classname 'o_act_window'",
         });
-        expect(".o_technical_modal .o_form_view .o_form_editable").toHaveCount(1, {
+        expect(".w_technical_modal .w_form_view .w_form_editable").toHaveCount(1, {
             message: "form view should be in edit mode",
         });
         expect.verifySteps([
@@ -146,10 +146,10 @@ describe("new", () => {
 
         await mountWithCleanup(WebClient);
         await getService("action").doAction(5);
-        expect(".o_technical_modal .modal-body button.infooter").toHaveCount(0, {
+        expect(".w_technical_modal .modal-body button.infooter").toHaveCount(0, {
             message: "the button should not be in the body",
         });
-        expect(".o_technical_modal .modal-footer button.infooter").toHaveCount(1, {
+        expect(".w_technical_modal .modal-footer button.infooter").toHaveCount(1, {
             message: "the button should be in the footer",
         });
         expect(".modal-footer button:visible").toHaveCount(1, {
@@ -265,7 +265,7 @@ describe("new", () => {
         expect.verifySteps(["/web/webclient/translations", "/web/webclient/load_menus"]);
         await getService("action").doAction(4);
         expect.verifySteps(["/web/action/load", "get_views", "onchange"]);
-        await contains(`.o_cp_action_menus button:has([data-icon="more_vert"])`).click();
+        await contains(`.w_cp_action_menus button:has([data-icon="more_vert"])`).click();
         await contains(`button[name="5"]`).click();
         expect.verifySteps(["web_save", "/web/action/load", "get_views", "onchange"]);
         expect(".modal").toHaveCount(1);
@@ -302,16 +302,16 @@ describe("new", () => {
 
         await mountWithCleanup(WebClient);
         await getService("action").doAction(5);
-        expect('.o_technical_modal .modal-body button[special="save"]').toHaveCount(0);
-        expect(".o_technical_modal .modal-body button.infooter").toHaveCount(0);
-        expect(".o_technical_modal .modal-footer button.infooter").toHaveCount(1);
-        expect(".o_technical_modal .modal-footer button:visible").toHaveCount(1);
+        expect('.w_technical_modal .modal-body button[special="save"]').toHaveCount(0);
+        expect(".w_technical_modal .modal-body button.infooter").toHaveCount(0);
+        expect(".w_technical_modal .modal-footer button.infooter").toHaveCount(1);
+        expect(".w_technical_modal .modal-footer button:visible").toHaveCount(1);
         await getService("action").doAction(25);
-        expect(".o_technical_modal .modal-body button.infooter").toHaveCount(0);
-        expect(".o_technical_modal .modal-footer button.infooter").toHaveCount(0);
-        expect('.o_technical_modal .modal-body button[special="save"]').toHaveCount(0);
-        expect('.o_technical_modal .modal-footer button[special="save"]').toHaveCount(1);
-        expect(".o_technical_modal .modal-footer button:visible").toHaveCount(1);
+        expect(".w_technical_modal .modal-body button.infooter").toHaveCount(0);
+        expect(".w_technical_modal .modal-footer button.infooter").toHaveCount(0);
+        expect('.w_technical_modal .modal-body button[special="save"]').toHaveCount(0);
+        expect('.w_technical_modal .modal-footer button[special="save"]').toHaveCount(1);
+        expect(".w_technical_modal .modal-footer button:visible").toHaveCount(1);
     });
 
     test('button with confirm attribute in act_window action in target="new"', async () => {
@@ -353,7 +353,7 @@ describe("new", () => {
         //  - 1 to close the ConfirmationDialog, once the next action is executed
         await animationFrame();
         expect(".modal").toHaveCount(1);
-        expect(".modal main .o_content").toHaveText("Another action");
+        expect(".modal main .w_content").toHaveText("Another action");
     });
 
     test('actions in target="new" do not update page title', async () => {
@@ -431,7 +431,7 @@ describe("new", () => {
 
         await contains(".modal-body button.btn-link").click();
         await contains(".modal-body summary.link-info").click();
-        expect(queryText(".modal-body .o_error_detail")).toInclude("my error");
+        expect(queryText(".modal-body .w_error_detail")).toInclude("my error");
         expect.verifyErrors(["my error"]);
 
         await contains(".modal-footer .btn-primary").click();
@@ -452,7 +452,7 @@ describe("new", () => {
 
         // execute an action in target="current"
         await getService("action").doAction(1);
-        expect(queryAllTexts(".o_breadcrumb span")).toEqual(["Partners Action 1"]);
+        expect(queryAllTexts(".w_breadcrumb span")).toEqual(["Partners Action 1"]);
 
         // execute an action in target="new" and a list view (s.t. there is a control panel)
         await getService("action").doAction({
@@ -463,7 +463,7 @@ describe("new", () => {
             type: "ir.actions.act_window",
             views: [[false, "list"]],
         });
-        expect(".modal .o_breadcrumb").toHaveCount(0);
+        expect(".modal .w_breadcrumb").toHaveCount(0);
     });
 
     test('no view switcher in actions in target="new"', async () => {
@@ -471,7 +471,7 @@ describe("new", () => {
 
         // execute an action in target="current"
         await getService("action").doAction(4);
-        expect(".o_cp_switch_buttons").toHaveCount(1);
+        expect(".w_cp_switch_buttons").toHaveCount(1);
 
         // execute an action in target="new" with several views (s.t. there could
         // be a view switcher), even though switching view isn't supported
@@ -486,8 +486,8 @@ describe("new", () => {
                 [false, "kanban"],
             ],
         });
-        expect(".modal .o_list_view").toHaveCount(1);
-        expect(".modal .o_cp_switch_buttons").toHaveCount(0);
+        expect(".modal .w_list_view").toHaveCount(1);
+        expect(".modal .w_cp_switch_buttons").toHaveCount(0);
     });
 
     test('call switchView in an action in target="new"', async () => {
@@ -495,7 +495,7 @@ describe("new", () => {
 
         // execute an action in target="current"
         await getService("action").doAction(4);
-        expect(".o_kanban_view").toHaveCount(1);
+        expect(".w_kanban_view").toHaveCount(1);
 
         // execute an action in target="new" and a list view (s.t. we can call switchView)
         await getService("action").doAction({
@@ -506,14 +506,14 @@ describe("new", () => {
             type: "ir.actions.act_window",
             views: [[false, "list"]],
         });
-        expect(".modal .o_list_view").toHaveCount(1);
-        expect(".o_kanban_view").toHaveCount(1);
+        expect(".modal .w_list_view").toHaveCount(1);
+        expect(".w_kanban_view").toHaveCount(1);
 
         // click on a record in the dialog -> should do nothing as we can't switch view
         // in the dialog, and we don't want to switch view behind the dialog
-        await contains(".modal .o_data_row .o_data_cell").click();
-        expect(".modal .o_list_view").toHaveCount(1);
-        expect(".o_kanban_view").toHaveCount(1);
+        await contains(".modal .w_data_row .w_data_cell").click();
+        expect(".modal .w_list_view").toHaveCount(1);
+        expect(".w_kanban_view").toHaveCount(1);
     });
 
     test("action with 'dialog_size' key in context", async () => {
@@ -527,19 +527,19 @@ describe("new", () => {
         await mountWithCleanup(WebClient);
 
         await getService("action").doAction(action);
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-lg");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-lg");
 
         await getService("action").doAction({ ...action, context: { dialog_size: "small" } });
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-sm");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-sm");
 
         await getService("action").doAction({ ...action, context: { dialog_size: "medium" } });
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-md");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-md");
 
         await getService("action").doAction({ ...action, context: { dialog_size: "large" } });
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-lg");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-lg");
 
         await getService("action").doAction({ ...action, context: { dialog_size: "extra-large" } });
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-xl");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-xl");
     });
 
     test("action in target='new' with 'dialog_size' attribute on the view's arch", async () => {
@@ -560,7 +560,7 @@ describe("new", () => {
 
         // the arch attribute takes precedence over the 'dialog_size' context key
         await getService("action").doAction({ ...action, context: { dialog_size: "large" } });
-        expect(".o_dialog .modal-dialog").toHaveClass("modal-sm");
+        expect(".w_dialog .modal-dialog").toHaveClass("modal-sm");
     });
 
     test('click on record in list view action in target="new"', async () => {
@@ -577,12 +577,12 @@ describe("new", () => {
         });
 
         // The list view has been opened in a dialog
-        expect(".o_dialog .modal-dialog .o_list_view").toHaveCount(1);
+        expect(".w_dialog .modal-dialog .w_list_view").toHaveCount(1);
 
         // click on a record in the dialog -> should do nothing as we can't switch view in the dialog
-        await contains(".modal .o_data_row .o_data_cell").click();
-        expect(".o_dialog .modal-dialog .o_list_view").toHaveCount(1);
-        expect(".o_form_view").toHaveCount(0);
+        await contains(".modal .w_data_row .w_data_cell").click();
+        expect(".w_dialog .modal-dialog .w_list_view").toHaveCount(1);
+        expect(".w_form_view").toHaveCount(0);
     });
 });
 
@@ -591,22 +591,22 @@ describe("fullscreen", () => {
         await mountWithCleanup(WebClient);
         await getService("action").doAction(15);
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect(".o_control_panel").toHaveCount(1, {
+        expect(".w_control_panel").toHaveCount(1, {
             message: "should have rendered a control panel",
         });
-        expect(".o_kanban_view").toHaveCount(1, { message: "should have rendered a kanban view" });
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_kanban_view").toHaveCount(1, { message: "should have rendered a kanban view" });
+        expect(".w_main_navbar").toHaveCount(0);
     });
 
     test('action after another in target="fullscreen" is not displayed in fullscreen mode', async () => {
         await mountWithCleanup(WebClient);
         await getService("action").doAction(15);
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_main_navbar").toHaveCount(0);
         await getService("action").doAction(1);
         await animationFrame(); // wait for the webclient template to be re-rendered
         // The navbar should be displayed again
-        expect(".o_main_navbar").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(1);
     });
 
     test.tags("desktop");
@@ -629,15 +629,15 @@ describe("fullscreen", () => {
 
         await mountWithCleanup(WebClient);
         await getService("action").doAction(6);
-        expect(".o_main_navbar").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(1);
 
         await contains("button[name='15']").click();
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_main_navbar").toHaveCount(0);
 
         await contains(".breadcrumb li a").click();
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect(".o_main_navbar").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(1);
     });
 
     test.tags("desktop");
@@ -661,15 +661,15 @@ describe("fullscreen", () => {
         await mountWithCleanup(WebClient);
         await getService("action").doAction(6);
         await animationFrame(); // for the webclient to react and remove the navbar
-        expect(".o_main_navbar").not.toHaveCount();
+        expect(".w_main_navbar").not.toHaveCount();
 
         await contains("button[name='15']").click();
         await animationFrame();
-        expect(".o_main_navbar").not.toHaveCount();
+        expect(".w_main_navbar").not.toHaveCount();
 
         await contains(".breadcrumb li a").click();
         await animationFrame();
-        expect(".o_main_navbar").not.toHaveCount();
+        expect(".w_main_navbar").not.toHaveCount();
     });
 
     test.tags("desktop");
@@ -710,21 +710,21 @@ describe("fullscreen", () => {
         await mountWithCleanup(WebClient);
         await animationFrame(); // wait for the load state (default app)
         await animationFrame(); // wait for the action to be mounted
-        expect("nav .o_menu_brand").toHaveCount(1);
-        expect("nav .o_menu_brand").toHaveText("MAIN APP");
+        expect("nav .w_menu_brand").toHaveCount(1);
+        expect("nav .w_menu_brand").toHaveText("MAIN APP");
 
         await contains("button[name='24']").click();
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect("nav .o_menu_brand").toHaveCount(1);
+        expect("nav .w_menu_brand").toHaveCount(1);
 
         await contains("button[name='15']").click();
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect("nav.o_main_navbar").toHaveCount(0);
+        expect("nav.w_main_navbar").toHaveCount(0);
 
         await contains(queryAll(".breadcrumb li a")[0]).click();
         await animationFrame(); // wait for the webclient template to be re-rendered
-        expect("nav .o_menu_brand").toHaveCount(1);
-        expect("nav .o_menu_brand").toHaveText("MAIN APP");
+        expect("nav .w_menu_brand").toHaveCount(1);
+        expect("nav .w_menu_brand").toHaveText("MAIN APP");
     });
 
     test("hide navbar during empty transition for fullscreen actions", async () => {
@@ -737,19 +737,19 @@ describe("fullscreen", () => {
         await animationFrame();
 
         // Navbar is hidden during transition before action loads
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_main_navbar").toHaveCount(0);
 
         slowRpcDef.resolve();
         await animationFrame();
 
-        expect(".o_kanban_view").toHaveCount(1);
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_kanban_view").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(0);
     });
 
     test("keep navbar visible on current action when navigating to a fullscreen action", async () => {
         await mountWithCleanup(WebClient);
         await getService("action").doAction(1);
-        expect(".o_main_navbar").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(1);
 
         const slowRpcDef = Promise.withResolvers();
         onRpc("web_search_read", () => slowRpcDef.promise);
@@ -758,13 +758,13 @@ describe("fullscreen", () => {
         await animationFrame();
 
         // Navbar stays visible while current view is displayed and next action is loading
-        expect(".o_main_navbar").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(1);
 
         slowRpcDef.resolve();
         await animationFrame();
 
-        expect(".o_kanban_view").toHaveCount(1);
-        expect(".o_main_navbar").toHaveCount(0);
+        expect(".w_kanban_view").toHaveCount(1);
+        expect(".w_main_navbar").toHaveCount(0);
     });
 });
 
@@ -773,9 +773,9 @@ describe("main", () => {
     test('can execute act_window actions in target="main"', async () => {
         await mountWithCleanup(WebClient);
         await getService("action").doAction(1);
-        expect(".o_kanban_view").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partners Action 1");
+        expect(".w_kanban_view").toHaveCount(1);
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partners Action 1");
 
         await getService("action").doAction({
             name: "Another Partner Action",
@@ -784,9 +784,9 @@ describe("main", () => {
             views: [[false, "list"]],
             target: "main",
         });
-        expect(".o_list_view").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Another Partner Action");
+        expect(".w_list_view").toHaveCount(1);
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Another Partner Action");
     });
 
     test.tags("desktop");
@@ -802,16 +802,16 @@ describe("main", () => {
             ],
             target: "main",
         });
-        expect(".o_list_view").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partner Action");
+        expect(".w_list_view").toHaveCount(1);
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partner Action");
 
         // open first record
-        await contains(".o_data_row .o_data_cell").click();
-        expect(".o_form_view").toHaveCount(1);
+        await contains(".w_data_row .w_data_cell").click();
+        expect(".w_form_view").toHaveCount(1);
         expect("ol.breadcrumb").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partner Action\nFirst record");
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partner Action\nFirst record");
     });
 
     test.tags("desktop");
@@ -827,27 +827,27 @@ describe("main", () => {
             ],
             target: "main",
         });
-        expect(".o_list_view").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partner Action");
+        expect(".w_list_view").toHaveCount(1);
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partner Action");
 
         // open first record
-        await contains(".o_data_row .o_data_cell").click();
-        expect(".o_form_view").toHaveCount(1);
+        await contains(".w_data_row .w_data_cell").click();
+        expect(".w_form_view").toHaveCount(1);
         expect("ol.breadcrumb").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partner Action\nFirst record");
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partner Action\nFirst record");
 
         await getService("action").doAction(1);
-        expect(".o_kanban_view").toHaveCount(1);
+        expect(".w_kanban_view").toHaveCount(1);
         expect("ol.breadcrumb").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
+        expect(".w_breadcrumb span").toHaveCount(1);
 
         // go back to form view
-        await contains("ol.breadcrumb .o_back_button").click();
-        expect(".o_form_view").toHaveCount(1);
+        await contains("ol.breadcrumb .w_back_button").click();
+        expect(".w_form_view").toHaveCount(1);
         expect("ol.breadcrumb").toHaveCount(1);
-        expect(".o_breadcrumb span").toHaveCount(1);
-        expect(".o_control_panel .o_breadcrumb").toHaveText("Partner Action\nFirst record");
+        expect(".w_breadcrumb span").toHaveCount(1);
+        expect(".w_control_panel .w_breadcrumb").toHaveText("Partner Action\nFirst record");
     });
 });

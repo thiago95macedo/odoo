@@ -3,7 +3,7 @@ import { registry } from '@web/core/registry';
 import { SIZES, utils as uiUtils } from '@web/core/ui/ui_utils';
 
 export class ScrollableTable extends Interaction {
-    static selector = '.o_wsale_scrollable_table';
+    static selector = '.w_wsale_scrollable_table';
     dynamicContent = {
         _root: {
             't-on-scroll': this.throttled(this.onScroll, 100),
@@ -15,11 +15,11 @@ export class ScrollableTable extends Interaction {
 
     setup() {
         // This class exists when there are more than 4 items in the cart.
-        this.badgeDesktopEl = this.el.querySelector('.o_wsale_scrollable_table_badge_desktop');
+        this.badgeDesktopEl = this.el.querySelector('.w_wsale_scrollable_table_badge_desktop');
         // On mobile the badge is in .offcanvas-footer, it's not a child of
-        // .o_wsale_scrollable_table (the scrollable element)
+        // .w_wsale_scrollable_table (the scrollable element)
         const offCanvasEl = this.el.closest('.offcanvas');
-        this.badgeMobileEl = offCanvasEl?.querySelector('.o_wsale_scrollable_table_badge_mobile');
+        this.badgeMobileEl = offCanvasEl?.querySelector('.w_wsale_scrollable_table_badge_mobile');
         this.updateMobileBadgeVisibility();
     }
 

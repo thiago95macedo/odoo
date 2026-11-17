@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/base_geolocalize/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgid "API"
 msgstr "API"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid ""
 "API key for GeoCoding (Places) required.\n"
@@ -96,7 +96,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid "Error with geolocation server: %s"
 msgstr "Erro com o servidor de geolocalização: %s"
@@ -171,14 +171,14 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/res_partner.py:0
 msgid "No match found for %(partner_names)s address(es)."
 msgstr ""
 "Nenhuma correspondência foi encontrada para endereços de %(partner_names)s."
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid "OpenStreetMap calls disabled in testing environment."
 msgstr "Chamadas do OpenStreetMap desativadas no ambiente de teste."
@@ -199,7 +199,7 @@ msgid "Provider"
 msgstr "Provedor"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid "Provider %s is not implemented for geolocation service."
 msgstr ""
@@ -223,7 +223,7 @@ msgid "Technical Name"
 msgstr "Nome técnico"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid ""
 "Unable to geolocate, received the error:\n"
@@ -243,7 +243,7 @@ msgstr ""
 "Geocoding, Maps Static, Maps Javascript.\n"
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/base_geocoder.py:0
 msgid "Unknown"
 msgstr "Desconhecido"
@@ -263,7 +263,7 @@ msgstr ""
 "key para mais informações."
 
 #. module: base_geolocalize
-#. odoo-python
+#. weth-python
 #: code:addons/base_geolocalize/models/res_partner.py:0
 msgid "Warning"
 msgstr "Aviso"

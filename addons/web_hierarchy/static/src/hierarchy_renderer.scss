@@ -1,4 +1,4 @@
-$o-chart-line-color: $o-gray-300;
+$w-chart-line-color: $w-gray-300;
 
 .o_hierarchy_renderer {
     .o_hierarchy_container {
@@ -22,16 +22,16 @@ $o-chart-line-color: $o-gray-300;
 
             .o_hierarchy_line_left {
                 &:before {
-                    border-top: 2px solid $o-chart-line-color;
-                    border-left: 2px solid $o-chart-line-color;
+                    border-top: 2px solid $w-chart-line-color;
+                    border-left: 2px solid $w-chart-line-color;
                     border-top-left-radius: 8px;
                     margin-left: -10%;
                     margin-top: -2px;
                 }
 
                 &:after {
-                    border-bottom: 2px solid $o-chart-line-color;
-                    border-right: 2px solid $o-chart-line-color;
+                    border-bottom: 2px solid $w-chart-line-color;
+                    border-right: 2px solid $w-chart-line-color;
                     border-bottom-right-radius: 6px;
                     margin-left: 30%;
                     margin-top: -12px;
@@ -40,16 +40,16 @@ $o-chart-line-color: $o-gray-300;
 
             .o_hierarchy_line_right {
                 &:before {
-                    border-bottom: 2px solid $o-chart-line-color;
-                    border-left: 2px solid $o-chart-line-color;
+                    border-bottom: 2px solid $w-chart-line-color;
+                    border-left: 2px solid $w-chart-line-color;
                     border-bottom-left-radius: 6px;
                     margin-left: calc(-10% - 1px);
                     margin-top: -12px;
                 }
 
                 &:after {
-                    border-top: 2px solid $o-chart-line-color;
-                    border-right: 2px solid $o-chart-line-color;
+                    border-top: 2px solid $w-chart-line-color;
+                    border-right: 2px solid $w-chart-line-color;
                     border-top-right-radius: 8px;
                     margin-left: 30%;
                     margin-top: -2px;
@@ -57,12 +57,13 @@ $o-chart-line-color: $o-gray-300;
             }
 
             .o_hierarchy_line_part {
-                border-top: 2px solid $o-chart-line-color;
+                border-top: 2px solid $w-chart-line-color;
                 margin: 0 10%;
                 width: 30%;
             }
 
-            .o_hierarchy_line_part:before, .o_hierarchy_line_part:after {
+            .o_hierarchy_line_part:before,
+            .o_hierarchy_line_part:after {
                 content: "";
                 width: calc(10% + 1px);
                 height: 12px;

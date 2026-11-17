@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_calendar/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "<i class=\"oi oi-fw me-1\" data-icon=\"location_on\" title=\"Location\"/>"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid ""
 "An administrator first needs to link your user to an employee in order to "
@@ -40,13 +40,13 @@ msgstr ""
 "definir os locais de trabalho."
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Are you sure you want to delete this exception?"
 msgstr "Tem certeza de que quer excluir essa exceção?"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 #: model_terms:ir.ui.view,arch_db:hr_calendar.homework_location_wizard_view_form
 msgid "Are you sure you want to delete this location?"
@@ -63,13 +63,13 @@ msgid "Calendar Event"
 msgstr "Evento no calendário"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Close"
 msgstr "Fechar"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Confirmation"
 msgstr "Confirmação"
@@ -80,7 +80,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Create Employee"
 msgstr "Criar Funcionário"
@@ -168,7 +168,7 @@ msgid "Last Updated on"
 msgstr "Última atualização em"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/calendar_common_renderer.xml:0
 #: model:ir.model.fields,field_description:hr_calendar.field_homework_location_wizard__work_location_id
 #: model_terms:ir.ui.view,arch_db:hr_calendar.homework_location_wizard_view_form
@@ -186,7 +186,7 @@ msgid "Location name"
 msgstr "Nome do local"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Missing Employee"
 msgstr "Funcionário ausente"
@@ -197,7 +197,7 @@ msgid "My Team"
 msgstr "Minha equipe"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/hr_homeworking_calendar_controller.js:0
 msgid "Ok"
 msgstr "Ok"
@@ -208,7 +208,7 @@ msgid "Repeat every"
 msgstr "Repetir a cada"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/calendar_common_renderer.xml:0
 msgid "Set"
 msgstr "Definir"
@@ -225,7 +225,7 @@ msgid "Set Location"
 msgstr "Definir local"
 
 #. module: hr_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_calendar/static/src/calendar/common/calendar_common_renderer.xml:0
 msgid "Set location"
 msgstr "Definir local"

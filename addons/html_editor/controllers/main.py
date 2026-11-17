@@ -695,7 +695,7 @@ class HTML_Editor(Controller):
             record_id = int(words.pop())
             action_name = words.pop()
             if (action_name.startswith('m-') or '.' in action_name) and action_name in request.env and not request.env[action_name]._abstract:
-                # if path format is `odoo/<model>/<record_id>` so we use `action_name` as model name
+                # if path format is `weth/<model>/<record_id>` so we use `action_name` as model name
                 model_name = action_name.removeprefix('m-')
                 model = request.env[model_name].with_context(context)
             else:

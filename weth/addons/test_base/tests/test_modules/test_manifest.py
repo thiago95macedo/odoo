@@ -16,7 +16,7 @@ import weth.addons
 class TestModuleManifest(BaseCase):
     @classmethod
     def setUpClass(cls):
-        cls._tmp_dir = tempfile.TemporaryDirectory(prefix='odoo_test_addons_')
+        cls._tmp_dir = tempfile.TemporaryDirectory(prefix='weth_test_addons_')
         cls.addClassCleanup(cls._tmp_dir.cleanup)
         cls.addons_path = cls._tmp_dir.name
 
@@ -24,7 +24,7 @@ class TestModuleManifest(BaseCase):
         cls.startClassPatcher(patcher)
 
     def setUp(self):
-        self.module_root = tempfile.mkdtemp(prefix='odoo_test_module_', dir=self.addons_path)
+        self.module_root = tempfile.mkdtemp(prefix='weth_test_module_', dir=self.addons_path)
         self.module_name = os.path.basename(self.module_root)
 
     def test_default_manifest(self):

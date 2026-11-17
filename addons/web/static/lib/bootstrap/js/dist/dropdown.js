@@ -5,9 +5,10 @@
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core'), require('./base-component.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./dom/selector-engine.js'), require('./util/index.js')) :
-  typeof define === 'function' && define.amd ? define(['@popperjs/core', './base-component', './dom/event-handler', './dom/manipulator', './dom/selector-engine', './util/index'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Dropdown = factory(global.Popper, global.BaseComponent, global.EventHandler, global.Manipulator, global.SelectorEngine, global.Index));
-})(this, (function (Popper, BaseComponent, EventHandler, Manipulator, SelectorEngine, index_js) { 'use strict';
+    typeof define === 'function' && define.amd ? define(['@popperjs/core', './base-component', './dom/event-handler', './dom/manipulator', './dom/selector-engine', './util/index'], factory) :
+      (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Dropdown = factory(global.Popper, global.BaseComponent, global.EventHandler, global.Manipulator, global.SelectorEngine, global.Index));
+})(this, (function (Popper, BaseComponent, EventHandler, Manipulator, SelectorEngine, index_js) {
+  'use strict';
 
   function _interopNamespaceDefault(e) {
     const n = Object.create(null, { [Symbol.toStringTag]: { value: 'Module' } });
@@ -65,9 +66,9 @@
   const CLASS_NAME_DROPDOWN_CENTER = 'dropdown-center';
   const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
   const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE}.${CLASS_NAME_SHOW}`;
-  const SELECTOR_MENU = '.dropdown-menu:not(.o-dropdown--menu)'; // Odoo fix task-2764821
+  const SELECTOR_MENU = '.dropdown-menu:not(.w-dropdown--menu)'; // WETH fix task-2764821
   const SELECTOR_NAVBAR = '.navbar';
-  const SELECTOR_MENU_NOT_SUB = '.dropdown-menu:not(.o-dropdown--menu):not(.o_wysiwyg_submenu)';
+  const SELECTOR_MENU_NOT_SUB = '.dropdown-menu:not(.w-dropdown--menu):not(.w_wysiwyg_submenu)';
   const SELECTOR_NAVBAR_NAV = '.navbar-nav';
   const SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
   const PLACEMENT_TOP = index_js.isRTL() ? 'top-end' : 'top-start';

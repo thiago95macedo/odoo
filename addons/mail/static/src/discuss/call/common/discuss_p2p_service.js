@@ -6,7 +6,7 @@ import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 export const discussP2P = {
     dependencies: ["bus_service"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

@@ -283,15 +283,15 @@ test(`resource calendar week move recurrent event opens popover with multiple sa
     await moveEventToTime(1, "2025-01-01 14:00:00");
     await animationFrame();
     await waitFor(".o_cw_popover");
-    expect(".popover-footer .o-dropdown-caret:contains('Save')").toHaveCount(1, {
+    expect(".popover-footer .w-dropdown-caret:contains('Save')").toHaveCount(1, {
         message: "Save should be a dropdown (multiple options) for a recurrent record",
     });
     expect(".popover-footer .btn:contains('Discard')").toHaveCount(1, {
         message: "Discard button should be shown (record is dirty after the drag)",
     });
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    expect(".o-dropdown-item").toHaveCount(2, {
+    expect(".w-dropdown-item").toHaveCount(2, {
         message: "Save dropdown should offer multiple options for a recurrent record",
     });
     await click(".popover-footer .btn:contains('Discard')");
@@ -331,9 +331,9 @@ test(`resource calendar move recurrent occurrence "This event" sends original da
     await moveEventToTime(1, "2025-01-02 14:00:00");
     await animationFrame();
     await waitFor(".o_cw_popover");
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('This event')");
+    await click(".w-dropdown-item:contains('This event')");
     await animationFrame();
     expect.verifySteps(["create_ad_hoc"]);
 });
@@ -377,9 +377,9 @@ test(`resource calendar move recurrent occurrence "This and following" sends ori
     await moveEventToTime(1, "2025-01-03 14:00:00");
     await animationFrame();
     await waitFor(".o_cw_popover");
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('This and following events')");
+    await click(".w-dropdown-item:contains('This and following events')");
     await animationFrame();
     expect.verifySteps(["create_new_recurrency"]);
 });
@@ -422,9 +422,9 @@ test(`resource calendar click virtual recurrent occurrence (no drag) "This event
     await animationFrame();
     await clickEvent(1);
     await waitFor(".o_cw_popover");
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('This event')");
+    await click(".w-dropdown-item:contains('This event')");
     await animationFrame();
     expect.verifySteps(["create_ad_hoc"]);
 });
@@ -467,9 +467,9 @@ test(`resource calendar click virtual recurrent occurrence (no drag) "This and f
     await animationFrame();
     await clickEvent(1);
     await waitFor(".o_cw_popover");
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('This and following events')");
+    await click(".w-dropdown-item:contains('This and following events')");
     await animationFrame();
     expect.verifySteps(["create_new_recurrency"]);
 });
@@ -505,9 +505,9 @@ test(`resource calendar drag source recurrent event "All events" writes the move
     await moveEventToTime(1, "2025-01-02 14:00:00");
     await animationFrame();
     await waitFor(".o_cw_popover");
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('All events')");
+    await click(".w-dropdown-item:contains('All events')");
     await animationFrame();
     expect.verifySteps(["web_save"]);
 });
@@ -552,9 +552,9 @@ test(`resource calendar modify virtual occurrence (no drag) "All events" does no
     await waitFor(".o_cw_popover");
     await contains("div[name=hour_from] input").edit(9);
     await animationFrame();
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    await click(".o-dropdown-item:contains('All events')");
+    await click(".w-dropdown-item:contains('All events')");
     await animationFrame();
     expect.verifySteps(["web_save"]);
 });
@@ -584,15 +584,15 @@ test(`resource calendar week resize recurrent event opens popover with multiple 
     await resizeEventToTime(1, "2025-01-01 16:00:00");
     await animationFrame();
     await waitFor(".o_cw_popover");
-    expect(".popover-footer .o-dropdown-caret:contains('Save')").toHaveCount(1, {
+    expect(".popover-footer .w-dropdown-caret:contains('Save')").toHaveCount(1, {
         message: "Save should be a dropdown (multiple options) for a recurrent record",
     });
     expect(".popover-footer .btn:contains('Discard')").toHaveCount(1, {
         message: "Discard button should be shown (record is dirty after the drag)",
     });
-    await click(".popover-footer .o-dropdown-caret:contains('Save')");
+    await click(".popover-footer .w-dropdown-caret:contains('Save')");
     await animationFrame();
-    expect(".o-dropdown-item").toHaveCount(2, {
+    expect(".w-dropdown-item").toHaveCount(2, {
         message: "Save dropdown should offer multiple options for a recurrent record",
     });
     await click(".popover-footer .btn:contains('Discard')");

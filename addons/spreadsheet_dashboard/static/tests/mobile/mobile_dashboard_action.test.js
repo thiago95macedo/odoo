@@ -92,7 +92,7 @@ test("displays figures in first sheet", async () => {
     ];
     await createMobileSpreadsheetDashboard({ serverData });
     await animationFrame();
-    expect(".o-chart-container").toHaveCount(1);
+    expect(".w-chart-container").toHaveCount(1);
 });
 
 test("scorecards are placed two per row", async () => {
@@ -133,12 +133,12 @@ test("scorecards are placed two per row", async () => {
     await createMobileSpreadsheetDashboard({ serverData });
     const figureRows = queryAll(".o_figure_row");
     expect(figureRows).toHaveLength(3);
-    expect(figureRows[0].querySelectorAll(".o-scorecard")).toHaveLength(2);
+    expect(figureRows[0].querySelectorAll(".w-scorecard")).toHaveLength(2);
 
-    expect(figureRows[1].querySelectorAll(".o-scorecard")).toHaveLength(1);
+    expect(figureRows[1].querySelectorAll(".w-scorecard")).toHaveLength(1);
     expect(figureRows[1].querySelectorAll(".o_empty_figure")).toHaveLength(1);
 
-    expect(figureRows[2].querySelectorAll(".o-figure-canvas")).toHaveLength(1);
+    expect(figureRows[2].querySelectorAll(".w-figure-canvas")).toHaveLength(1);
 });
 
 test("double clicking on a figure doesn't open the side panel", async () => {
@@ -180,11 +180,11 @@ test("double clicking on a figure doesn't open the side panel", async () => {
         },
     ];
     await createMobileSpreadsheetDashboard({ serverData });
-    await contains(".o-chart-container").focus();
-    await dblclick(".o-chart-container");
+    await contains(".w-chart-container").focus();
+    await dblclick(".w-chart-container");
     await animationFrame();
-    expect(".o-chart-container").toHaveCount(1);
-    expect(".o-sidePanel").toHaveCount(0);
+    expect(".w-chart-container").toHaveCount(1);
+    expect(".w-sidePanel").toHaveCount(0);
 });
 
 test("region switcher is visible on geo chart figures", async () => {
@@ -221,7 +221,7 @@ test("region switcher is visible on geo chart figures", async () => {
         },
     ];
     await createMobileSpreadsheetDashboard({ serverData });
-    expect(".o-chart-menu-item.o-select").toBeVisible();
+    expect(".w-chart-menu-item.w-select").toBeVisible();
 });
 
 test("can switch dashboard", async () => {
@@ -282,8 +282,8 @@ test("Figures are correctly sized", async () => {
         },
     ];
     await createMobileSpreadsheetDashboard({ serverData });
-    const container = queryOne(".o-spreadsheet");
-    const figures = queryAll(".o-mobile-figure");
+    const container = queryOne(".w-spreadsheet");
+    const figures = queryAll(".w-mobile-figure");
     expect(figures).toHaveLength(3); // One empty figure to fill the scorecard row
 
     const scorecardWidth = (container.clientWidth - 16) / 2;

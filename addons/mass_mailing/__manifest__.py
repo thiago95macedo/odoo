@@ -132,7 +132,7 @@
             ('include', 'html_editor.assets_editor'),
             ('include', 'mass_mailing.assets_iframe_style_base'),
         ],
-        # style assets used to view the mail content in Odoo, but not used
+        # style assets used to view the mail content in WETH, but not used
         # during html conversion, specific to the builder
         'mass_mailing.assets_inside_builder_iframe': [
             ('include', 'mass_mailing.assets_iframe_helpers'),

@@ -1,15 +1,14 @@
-
 // = Main Navbar
 // ============================================================================
-.o_main_navbar {
-    @include print-variable(o-navbar-height, $o-navbar-height);
+.w_main_navbar {
+    @include print-variable(o-navbar-height, $w-navbar-height);
 
     display: flex;
     height: var(--o-navbar-height);
-    padding-top: $o-navbar-padding-v;
-    padding-bottom: $o-navbar-padding-v;
-    background: $o-navbar-background;
-    font-size: $o-navbar-font-size;
+    padding-top: $w-navbar-padding-v;
+    padding-bottom: $w-navbar-padding-v;
+    background: $w-navbar-background;
+    font-size: $w-navbar-font-size;
 
     @include media-breakpoint-up(md) {
         min-width: min-content;
@@ -17,7 +16,7 @@
 
     // = Reset browsers defaults
     // --------------------------------------------------------------------------
-    > ul {
+    >ul {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -26,15 +25,16 @@
     // = General components & behaviours
     // --------------------------------------------------------------------------
 
-    .o_menu_toggle {
-        --NavBar-entry-padding-left: #{$o-horizontal-padding};
-        --NavBar-entry-padding-right: #{$o-horizontal-padding * .5};
+    .w_menu_toggle {
+        --NavBar-entry-padding-left: #{$w-horizontal-padding};
+        --NavBar-entry-padding-right: #{$w-horizontal-padding * .5};
 
         @extend %-main-navbar-entry-base;
         @extend %-main-navbar-entry-spacing;
-        color: var(--NavBar-entry-color, #{$o-navbar-entry-color});
+        color: var(--NavBar-entry-color, #{$w-navbar-entry-color});
 
-        rect, g {
+        rect,
+        g {
             transform-origin: 0 50%;
         }
 
@@ -46,26 +46,26 @@
                 height: 3px;
 
                 &:first-child {
-                    transform: translate(12%,0) #{"/* rtl:translate(-6%, 0) */"};
+                    transform: translate(12%, 0) #{"/* rtl:translate(-6%, 0) */"};
                     rx: 100%;
                 }
             }
 
             #o_menu_toggle_row_0 {
-                transform:  scale3d(.5, 1, 1) translate(0, 45%) skewY(-22deg) #{"/* rtl:scale3d(.5, 1, 1) translate(0, 41%) skewY(22deg) */"};
+                transform: scale3d(.5, 1, 1) translate(0, 45%) skewY(-22deg) #{"/* rtl:scale3d(.5, 1, 1) translate(0, 41%) skewY(22deg) */"};
 
-                + g rect {
+                +g rect {
                     width: 0;
                     height: 0;
                 }
             }
 
             #o_menu_toggle_row_2 {
-                transform:  scale3d(.5, 1, 1) translate(0, -37%) skewY(22deg) #{"/* rtl:scale3d(.5, 1, 1) translate(0, -35%) skewY(-22deg) */"};
+                transform: scale3d(.5, 1, 1) translate(0, -37%) skewY(22deg) #{"/* rtl:scale3d(.5, 1, 1) translate(0, -35%) skewY(-22deg) */"};
             }
         }
 
-        &.o_menu_toggle_back {
+        &.w_menu_toggle_back {
             @include o_main_navbar_toggler_toggled();
             transform: translateX(25%) rotateY(-180deg);
         }
@@ -73,18 +73,19 @@
         // Animate on large screen without 'reduced-motion' only.
         // --------------------------------------------------------------------
         @include media-breakpoint-up(md) {
-            &.hasImage:not(.o_menu_toggle_back),
-            &.hasFaIcon:not(.o_menu_toggle_back) {
-                .o_menu_toggle_icon {
+
+            &.hasImage:not(.w_menu_toggle_back),
+            &.hasFaIcon:not(.w_menu_toggle_back) {
+                .w_menu_toggle_icon {
                     opacity: 0;
                 }
 
                 &:hover {
-                    .o_menu_toggle_icon {
+                    .w_menu_toggle_icon {
                         opacity: 1;
                     }
 
-                    .o_menu_brand_icon {
+                    .w_menu_brand_icon {
                         opacity: 0;
                     }
                 }
@@ -95,7 +96,8 @@
                     @include o_main_navbar_toggler_toggled();
                 }
 
-                &, g {
+                &,
+                g {
                     transition: all .3s;
                 }
 
@@ -103,32 +105,34 @@
                     transition: all .1s;
                 }
 
-                &.hasImage:not(.o_menu_toggle_back),
-                &.hasFaIcon:not(.o_menu_toggle_back) {
+                &.hasImage:not(.w_menu_toggle_back),
+                &.hasFaIcon:not(.w_menu_toggle_back) {
                     transform: none;
                     transition: none;
 
-                    .o_menu_toggle_icon, .o_menu_brand_icon, .o_menu_brand {
+                    .w_menu_toggle_icon,
+                    .w_menu_brand_icon,
+                    .w_menu_brand {
                         will-change: transform;
                         transition: all 0.1s;
                     }
 
-                    .o_menu_toggle_icon {
+                    .w_menu_toggle_icon {
                         transform: translateX(75%);
                     }
 
                     &:hover {
-                        .o_menu_toggle_icon {
+                        .w_menu_toggle_icon {
                             transform: translateX(25%);
                             transition: all .4s;
                         }
 
-                        .o_menu_brand_icon {
+                        .w_menu_brand_icon {
                             transform: rotateY(-90deg);
                             transition: all .2s;
                         }
 
-                        .o_menu_brand {
+                        .w_menu_brand {
                             transform: translateX(-#{map-get($spacers, 2)});
                             transition: all .4s;
                         }
@@ -136,8 +140,8 @@
                 }
             }
 
-            .o_menu_brand_icon {
-                --MenuBrandIcon-width: calc(var(--o-navbar-height) - #{$o-navbar-padding-v * 2} + #{map-get($spacers, 1)});
+            .w_menu_brand_icon {
+                --MenuBrandIcon-width: calc(var(--o-navbar-height) - #{$w-navbar-padding-v * 2} + #{map-get($spacers, 1)});
 
                 width: var(--MenuBrandIcon-width);
                 font-size: var(--MenuBrandIcon-width);
@@ -150,83 +154,88 @@
         }
     }
 
-    .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo) {
+    .w_nav_entry,
+    .dropdown-toggle:not(.w-dropdown-toggle-custo) {
         @extend %-main-navbar-entry-base;
         @extend %-main-navbar-entry-spacing;
         border-color: transparent;
     }
 
-    .o_menu_sections, .o_menu_systray:where(:not(.o_home_menu_background .o_menu_systray)) {
+    .w_menu_sections,
+    .w_menu_systray:where(:not(.w_home_menu_background .w_menu_systray)) {
         .dropdown-toggle:disabled {
-            --NavBar-entry-color--hover: var(--NavBar-entry-color, #{$o-navbar-entry-color});
+            --NavBar-entry-color--hover: var(--NavBar-entry-color, #{$w-navbar-entry-color});
         }
 
-        .o_nav_entry, .dropdown-toggle:not(:disabled, .o-dropdown-toggle-custo) {
-            background: var(--NavBar-entry-backgroundColor, #{$o-navbar-background});
+        .w_nav_entry,
+        .dropdown-toggle:not(:disabled, .w-dropdown-toggle-custo) {
+            background: var(--NavBar-entry-backgroundColor, #{$w-navbar-background});
             border: $border-width solid transparent;
 
             &:hover {
-                background: var(--NavBar-entry-backgroundColor--hover, #{$o-navbar-entry-bg--hover});
+                background: var(--NavBar-entry-backgroundColor--hover, #{$w-navbar-entry-bg--hover});
             }
 
             &:focus {
-                background: var(--NavBar-entry-backgroundColor--focus, #{$o-navbar-entry-bg--hover});
+                background: var(--NavBar-entry-backgroundColor--focus, #{$w-navbar-entry-bg--hover});
             }
 
             &:active {
-                background: var(--NavBar-entry-backgroundColor--active, #{$o-navbar-entry-bg--active});
+                background: var(--NavBar-entry-backgroundColor--active, #{$w-navbar-entry-bg--active});
             }
         }
 
-        .dropdown.show.dropdown-toggle:not(.o-dropdown-toggle-custo) {
+        .dropdown.show.dropdown-toggle:not(.w-dropdown-toggle-custo) {
             border-color: var(--NavBar-entry-borderColor-active, transparent);
-            background: var(--NavBar-entry-backgroundColor--active, #{$o-navbar-entry-bg--active});
-            color: var(--NavBar-entry-color--active, #{$o-navbar-entry-color--active});
+            background: var(--NavBar-entry-backgroundColor--active, #{$w-navbar-entry-bg--active});
+            color: var(--NavBar-entry-color--active, #{$w-navbar-entry-color--active});
         }
     }
 
     .dropdown-header.dropdown-menu_group {
-      margin-top: 0;
+        margin-top: 0;
     }
 
-    .dropdown-item + .dropdown-header:not(.o_more_dropdown_section_group) {
-      margin-top: .3em;
+    .dropdown-item+.dropdown-header:not(.w_more_dropdown_section_group) {
+        margin-top: .3em;
     }
 
-    .o_dropdown_menu_group_entry.dropdown-item {
-        padding-left: $o-dropdown-hpadding * 1.5;
+    .w_dropdown_menu_group_entry.dropdown-item {
+        padding-left: $w-dropdown-hpadding * 1.5;
 
-        + .dropdown-item:not(.o_dropdown_menu_group_entry) {
+        +.dropdown-item:not(.w_dropdown_menu_group_entry) {
             margin-top: .8em;
         }
     }
 
     // = Navbar Sections & Children
     // --------------------------------------------------------------------------
-    .o_navbar_apps_menu .dropdown-toggle {
-        --NavBar-entry-padding-left: #{$o-horizontal-padding};
+    .w_navbar_apps_menu .dropdown-toggle {
+        --NavBar-entry-padding-left: #{$w-horizontal-padding};
 
         @extend %-main-navbar-entry-base;
-        font-size: $o-navbar-brand-font-size;
+        font-size: $w-navbar-brand-font-size;
     }
 
-    .o_menu_brand {
+    .w_menu_brand {
         @extend %-main-navbar-entry-base;
         @extend %-main-navbar-entry-spacing;
         padding-left: 0;
-        font-size: $o-navbar-brand-font-size;
+        font-size: $w-navbar-brand-font-size;
 
         &:hover {
             background: none;
         }
     }
 
-    .o_menu_brand, .o_navbar_breadcrumbs, .o_navbar_breadcrumbs .btn {
-        color: var(--NavBar-brand-color, #{$o-navbar-brand-color});
+    .w_menu_brand,
+    .w_navbar_breadcrumbs,
+    .w_navbar_breadcrumbs .btn {
+        color: var(--NavBar-brand-color, #{$w-navbar-brand-color});
     }
 
-    .o_menu_sections {
-        .o_more_dropdown_section_group {
+    .w_menu_sections {
+        .w_more_dropdown_section_group {
             margin-top: .8em;
 
             &:first-child {
@@ -236,41 +245,41 @@
         }
     }
 
-    .o_menu_systray {
-        --NavBar-entry-padding-left: #{$o-navbar-entry-padding-h * 0.5};
-        --NavBar-entry-padding-right: #{$o-navbar-entry-padding-h * 0.5};
+    .w_menu_systray {
+        --NavBar-entry-padding-left: #{$w-navbar-entry-padding-h * 0.5};
+        --NavBar-entry-padding-right: #{$w-navbar-entry-padding-h * 0.5};
 
         .badge {
             margin-right: -.5em;
             border: 0;
-            padding: ($o-navbar-badge-padding * .5) $o-navbar-badge-padding;
-            background-color: var(--o-navbar-badge-bg, #{$o-navbar-badge-bg});
-            font-size: $o-navbar-badge-size;
-            color: var(--o-navbar-badge-color, $o-navbar-badge-color);
-            text-shadow: var(--o-navbar-badge-text-shadow, #{$o-navbar-badge-text-shadow});
+            padding: ($w-navbar-badge-padding * .5) $w-navbar-badge-padding;
+            background-color: var(--o-navbar-badge-bg, #{$w-navbar-badge-bg});
+            font-size: $w-navbar-badge-size;
+            color: var(--o-navbar-badge-color, $w-navbar-badge-color);
+            text-shadow: var(--o-navbar-badge-text-shadow, #{$w-navbar-badge-text-shadow});
             transform: translate(-0.2em, -48%);
         }
     }
 }
 
-.o_more_dropdown_section {
+.w_more_dropdown_section {
     border-radius: var(--#{$prefix}dropdown-item-border-radius);
 }
 
 
 // = SuperUser Design
 // ============================================================================
-body.o_is_superuser .o_menu_systray {
+body.w_is_superuser .w_menu_systray {
     border-image: repeating-linear-gradient(135deg, #d9b904, #d9b904 10px, #373435 10px, #373435 20px) 2;
     border-image-width: map-get($border-widths, 2);
 }
 
-.o_app_menu_sidebar .o_burger_menu_content.o_burger_menu_app li {
+.w_app_menu_sidebar .w_burger_menu_content.w_burger_menu_app li {
     color: $dropdown-link-color;
     font-weight: 400;
 }
 
-.o-navbar-section {
+.w-navbar-section {
     color: $dropdown-header-color;
     font-weight: 500;
     @include font-size($font-size-sm);

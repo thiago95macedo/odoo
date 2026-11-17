@@ -67,14 +67,14 @@ test("ProgressBarField: max_value should update", async () => {
         resId: 1,
     });
 
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe(
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe(
         "10/\n2"
     );
-    await click(".o_field_widget[name=name] input");
+    await click(".w_field_widget[name=name] input");
     await edit("new name", { confirm: "enter" });
     await clickSave();
     await animationFrame();
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe(
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe(
         "999/\n5"
     );
 });
@@ -95,14 +95,14 @@ test("ProgressBarField: value should update in edit mode when typing in input", 
         resId: 1,
     });
 
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe("99%", {
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe("99%", {
         message: "Initial value should be correct",
     });
-    await click(".o_progressbar_value .o_input");
+    await click(".w_progressbar_value .w_input");
     // wait for apply dom change
     await animationFrame();
     await edit("69", { confirm: "enter" });
-    expect(".o_progressbar_value .o_input").toHaveValue("69", {
+    expect(".w_progressbar_value .w_input").toHaveValue("69", {
         message: "New value should be different after focusing out of the field",
     });
     // wait for apply dom change
@@ -110,7 +110,7 @@ test("ProgressBarField: value should update in edit mode when typing in input", 
     await clickSave();
     // wait for rpc
     await animationFrame();
-    expect(".o_progressbar_value .o_input").toHaveValue("69", {
+    expect(".w_progressbar_value .w_input").toHaveValue("69", {
         message: "New value is still displayed after save",
     });
 });
@@ -133,19 +133,19 @@ test("ProgressBarField: value should update in edit mode when typing in input wi
             </form>`,
         resId: 1,
     });
-    expect(".o_form_view .o_form_editable").toHaveCount(1, { message: "Form in edit mode" });
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe(
+    expect(".w_form_view .w_form_editable").toHaveCount(1, { message: "Form in edit mode" });
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe(
         "99/\n0",
         { message: "Initial value should be correct" }
     );
 
-    await click(".o_progressbar_value .o_input");
+    await click(".w_progressbar_value .w_input");
     await animationFrame();
     await edit("69", { confirm: "enter" });
     await animationFrame();
     await clickSave();
     await animationFrame();
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe(
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe(
         "69/\n0",
         { message: "New value should be different than initial after click" }
     );
@@ -166,14 +166,14 @@ test("ProgressBarField: Standard readonly mode is readonly", async () => {
         resId: 1,
     });
 
-    expect(".o_progressbar").toHaveText("99\n/\n0", {
+    expect(".w_progressbar").toHaveText("99\n/\n0", {
         message: "Initial value should be correct",
     });
 
     await click(".progress");
     await animationFrame();
 
-    expect(".o_progressbar_value .o_input").toHaveCount(0, {
+    expect(".w_progressbar_value .w_input").toHaveCount(0, {
         message: "no input in readonly mode",
     });
     expect.verifySteps(["get_views", "web_read"]);
@@ -191,16 +191,16 @@ test("ProgressBarField: clicking progress bar focuses input when editable", asyn
         resId: 1,
     });
 
-    expect(".o_progressbar_value .o_input").toHaveCount(1, {
+    expect(".w_progressbar_value .w_input").toHaveCount(1, {
         message: "Input should be present in editable mode",
     });
-    expect(document.activeElement).not.toBe(queryOne(".o_progressbar_value .o_input"), {
+    expect(document.activeElement).not.toBe(queryOne(".w_progressbar_value .w_input"), {
         message: "Input should not be focused initially",
     });
 
-    await click(".o_progressbar .progress");
+    await click(".w_progressbar .progress");
 
-    expect(document.activeElement).toBe(queryOne(".o_progressbar_value .o_input"), {
+    expect(document.activeElement).toBe(queryOne(".w_progressbar_value .w_input"), {
         message: "Clicking progress bar should focus the input",
     });
 });
@@ -224,8 +224,8 @@ test("ProgressBarField: force readonly in kanban", async (assert) => {
         </kanban>`,
         resId: 1,
     });
-    expect(".o_progressbar").toHaveText("99\n/\n100");
-    expect(".o_progressbar_value .o_input").toHaveCount(0);
+    expect(".w_progressbar").toHaveText("99\n/\n100");
+    expect(".w_progressbar_value .w_input").toHaveCount(0);
 });
 
 test("ProgressBarField: write float instead of int works, in locale", async () => {
@@ -250,19 +250,19 @@ test("ProgressBarField: write float instead of int works, in locale", async () =
         resId: 1,
     });
 
-    expect(queryValue(".o_progressbar_value .o_input") + queryText(".o_progressbar")).toBe("99%", {
+    expect(queryValue(".w_progressbar_value .w_input") + queryText(".w_progressbar")).toBe("99%", {
         message: "Initial value should be correct",
     });
 
-    expect(".o_form_view .o_form_editable").toHaveCount(1, { message: "Form in edit mode" });
+    expect(".w_form_view .w_form_editable").toHaveCount(1, { message: "Form in edit mode" });
 
-    await click(".o_field_widget input");
+    await click(".w_field_widget input");
     await animationFrame();
     await edit("1#037.9", { confirm: "enter" });
     await animationFrame();
     await clickSave();
     await animationFrame();
-    expect(".o_progressbar_value .o_input").toHaveValue("1k", {
+    expect(".w_progressbar_value .w_input").toHaveValue("1k", {
         message: "New value should be different than initial after click",
     });
 });
@@ -280,20 +280,20 @@ test("ProgressBarField: write gibberish instead of int throws warning", async ()
         resId: 1,
     });
 
-    expect(".o_progressbar_value .o_input").toHaveValue("99", {
+    expect(".w_progressbar_value .w_input").toHaveValue("99", {
         message: "Initial value in input is correct",
     });
 
-    await click(".o_progressbar_value .o_input");
+    await click(".w_progressbar_value .w_input");
     await animationFrame();
     await edit("trente sept virgule neuf", { confirm: "enter" });
     await animationFrame();
-    await click(".o_form_button_save");
+    await click(".w_form_button_save");
     await animationFrame();
-    expect(".o_form_status_indicator span.text-danger").toHaveCount(1, {
+    expect(".w_form_status_indicator span.text-danger").toHaveCount(1, {
         message: "The form has not been saved",
     });
-    expect(".o_form_button_save").toHaveProperty("disabled", true, {
+    expect(".w_form_button_save").toHaveProperty("disabled", true, {
         message: "save button is disabled",
     });
 });
@@ -309,7 +309,7 @@ test("ProgressBarField: color is correctly set when value > max value", async ()
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .bg-warning").toHaveCount(1, {
+    expect(".w_progressbar .bg-warning").toHaveCount(1, {
         message: "As the value has excedded the max value, the color should be set to bg-warning",
     });
 });
@@ -325,7 +325,7 @@ test("ProgressBarField: decoration-success applies green when condition is true"
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar.bg-success").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar.bg-success").toHaveCount(1, {
         message: "decoration-success should apply bg-success when condition is met",
     });
 });
@@ -341,7 +341,7 @@ test("ProgressBarField: decoration-danger applies red when condition is true", a
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar.bg-danger").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar.bg-danger").toHaveCount(1, {
         message: "decoration-danger should apply bg-danger when condition is met",
     });
 });
@@ -357,7 +357,7 @@ test("ProgressBarField: decoration-warning applies warning color", async () => {
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar.bg-warning").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar.bg-warning").toHaveCount(1, {
         message: "decoration-warning should apply bg-warning when condition is met",
     });
 });
@@ -376,7 +376,7 @@ test("ProgressBarField: multiple decorations - first matching wins", async () =>
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar.bg-success").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar.bg-success").toHaveCount(1, {
         message: "First matching decoration (success) should be applied",
     });
 });
@@ -394,7 +394,7 @@ test("ProgressBarField: no decoration applied when no condition matches", async 
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar:not(.bg-success):not(.bg-danger)").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar:not(.bg-success):not(.bg-danger)").toHaveCount(1, {
         message: "No decoration should be applied when no condition matches",
     });
 });
@@ -412,7 +412,7 @@ test("ProgressBarField: decoration with field comparison", async () => {
             </form>`,
         resId: 1,
     });
-    expect(".o_progressbar .progress-bar.bg-success").toHaveCount(1, {
+    expect(".w_progressbar .progress-bar.bg-success").toHaveCount(1, {
         message: "Decoration should support field comparisons in expressions",
     });
 });

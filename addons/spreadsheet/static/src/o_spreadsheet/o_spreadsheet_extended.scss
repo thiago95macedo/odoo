@@ -1,5 +1,5 @@
-.o-spreadsheet {
-    .o-sp-badge {
+.w-spreadsheet {
+    .w-sp-badge {
         background-color: #374151C2;
         color: #fff;
     }
@@ -14,18 +14,20 @@
     }
 }
 
-.o-sidePanel {
+.w-sidePanel {
     --o-spreadsheet-input-border-color: #D8DADD;
+
     .o_input {
         border-color: var(--os-gray-300);
         color: var(--os-gray-900);
+
         &::placeholder {
             color: var(--os-composer-placeholder-color);
         }
     }
 
     .o_required_modifier {
-        .o-input {
+        .w-input {
             border-color: var(--os-gray-900);
         }
     }

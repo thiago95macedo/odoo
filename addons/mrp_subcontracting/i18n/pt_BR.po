@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_subcontracting/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -28,19 +28,19 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 msgid "%(name)s Sequence Resupply Subcontractor"
 msgstr "%(name)s Sequência de reposições por subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 msgid "%(name)s Sequence subcontracting"
 msgstr "%(name)s Sequência de subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/report/mrp_report_bom_structure.py:0
 msgid "%(qty)s To %(route)s"
 msgstr "%(qty)s Para %(route)s"
@@ -56,7 +56,7 @@ msgid "<span class=\"o_stat_text\">Overview</span>"
 msgstr "<span class=\"o_stat_text\">Visão geral</span>"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 msgid "All"
 msgstr "Tudo"
@@ -67,7 +67,7 @@ msgid "Assign serial numbers to production order"
 msgstr "Atribuir números de série à ordem de produção"
 
 #. module: mrp_subcontracting
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_subcontracting/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 msgid "Availabilities on subcontract location."
 msgstr "Disponibilidades no local de subcontratação."
@@ -126,7 +126,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: mrp_subcontracting
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_subcontracting/static/src/components/subcontracting_production_form_controller.js:0
 msgid "Create New Production"
 msgstr "Criar nova produção"
@@ -183,7 +183,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:mrp_subcontracting.subcontracting_portal_production_form_view
 msgid "Done"
@@ -216,7 +216,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_location.py:0
 msgid ""
 "In order to manage stock accurately, subcontracting locations must be type "
@@ -266,7 +266,7 @@ msgid "MRP Subcontracting"
 msgstr "Subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_move_line.py:0
 msgid ""
 "Make sure you validate or adapt the related resupply picking to your "
@@ -292,13 +292,13 @@ msgid "Manufacturing Reference"
 msgstr "Referência de fabricação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 msgid "Name"
 msgstr "Nome"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 msgid "Newest"
 msgstr "Mais recente"
@@ -314,7 +314,7 @@ msgid "Order"
 msgstr "Pedido"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_production.py:0
 msgid ""
 "Please set a lot/serial for the currently opened subcontracting MO first."
@@ -323,7 +323,7 @@ msgstr ""
 "atualmente aberta."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_move.py:0
 msgid ""
 "Portal users cannot create a stock move with a state 'Done' or change the "
@@ -354,7 +354,7 @@ msgid "Quant"
 msgstr "Quant"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 msgid "Ready"
 msgstr "Pronto"
@@ -365,26 +365,26 @@ msgid "Register components for subcontracted product"
 msgstr "Registrar componentes para produtos de subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 msgid "Replenish on Order (MTO)"
 msgstr "Reposição por pedido (sob demanda)"
 
 #. module: mrp_subcontracting
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_subcontracting/static/src/components/subcontracting_production_form_controller.js:0
 msgid "Reserve"
 msgstr "Reservas"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 #: model:ir.model.fields,field_description:mrp_subcontracting.field_stock_warehouse__subcontracting_route_id
 msgid "Resupply Subcontractor"
 msgstr "Reposição para subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 #: model:stock.route,name:mrp_subcontracting.route_resupply_subcontractor_mto
 msgid "Resupply Subcontractor on Order"
@@ -448,13 +448,13 @@ msgid "Subcontracted Productions"
 msgstr "Produções subcontratadas"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_production.py:0
 msgid "Subcontracted manufacturing orders cannot be merged."
 msgstr "As ordens de produção subcontratadas não podem ser mescladas."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/res_company.py:0
 #: code:addons/mrp_subcontracting/models/stock_warehouse.py:0
 #: model:ir.model.fields.selection,name:mrp_subcontracting.selection__mrp_bom__type__subcontract
@@ -472,7 +472,7 @@ msgid "Subcontracting Locations"
 msgstr "Locais de subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_move.py:0
 #: code:addons/mrp_subcontracting/models/stock_picking.py:0
 msgid "Subcontracting MOs"
@@ -504,13 +504,13 @@ msgid "Subcontracting Resupply Operation Type"
 msgstr "Tipo de operação de reposição subcontratada"
 
 #. module: mrp_subcontracting
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_subcontracting/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
 msgid "Subcontracting:"
 msgstr "Subcontratação:"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/report/mrp_report_bom_structure.py:0
 msgid "Subcontracting: %s"
 msgstr "Subcontratação: %s"
@@ -530,7 +530,7 @@ msgid "Subcontractor Location"
 msgstr "Local da subcontratação"
 
 #. module: mrp_subcontracting
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_subcontracting/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp_subcontracting/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp_subcontracting.mo_overview_content
@@ -565,7 +565,7 @@ msgstr ""
 "esse contato durante um processo de subcontratação."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_production.py:0
 msgid "The subcontracted goods have already been received."
 msgstr "Os produtos subcontratados já foram recebidos."
@@ -576,7 +576,7 @@ msgid "There are currently no productions for your account."
 msgstr "Não há produções para sua conta no momento."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/report/mrp_report_mo_overview.py:0
 msgid "To Order"
 msgstr "Para pedir"
@@ -610,7 +610,7 @@ msgid "Warehouse"
 msgstr "Armazém"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_bom.py:0
 msgid ""
 "You can not set a Bill of Material with operations or by-product line as "
@@ -620,19 +620,19 @@ msgstr ""
 "subproduto como subcontratação."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_unbuild.py:0
 msgid "You can't unbuild a subcontracted Manufacturing Order."
 msgstr "Não é possível desfazer uma ordem de Fabricação subcontratada."
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/stock_location.py:0
 msgid "You cannot alter the company's subcontracting location"
 msgstr "Não é possível alterar o local de subcontratação da empresa"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/models/mrp_production.py:0
 msgid "You cannot write on fields %s in mrp.production."
 msgstr "Você não pode escrever nos campos %s em mrp.production."
@@ -643,7 +643,7 @@ msgid "e.g. PO0032"
 msgstr "ex.: PC0032"
 
 #. module: mrp_subcontracting
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting/controllers/portal.py:0
 msgid "state"
 msgstr "estado"

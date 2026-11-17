@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 17:40+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_event_track_live/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -90,13 +90,13 @@ msgid "Replay"
 msgstr "Replay"
 
 #. module: website_event_track_live
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live/static/src/xml/website_event_track_live_templates.xml:0
 msgid "Replay Video"
 msgstr "Replay do vídeo"
 
 #. module: website_event_track_live
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live/static/src/xml/website_event_track_live_templates.xml:0
 msgid "Starts in"
 msgstr "Começa em"
@@ -108,13 +108,13 @@ msgid "Support live tracks: streaming, participation, youtube"
 msgstr "Suporte para sessões ao vivo: streaming, participação, YouTube"
 
 #. module: website_event_track_live
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live/static/src/xml/website_event_track_live_templates.xml:0
 msgid "Up Next:"
 msgstr "Próximo:"
 
 #. module: website_event_track_live
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live/static/src/xml/website_event_track_live_templates.xml:0
 msgid "You just watched:"
 msgstr "Você acabou de assistir a:"

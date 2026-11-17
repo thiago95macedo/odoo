@@ -14,7 +14,7 @@ from weth.tools.misc import file_path
 Data = E.data
 Field = E.field
 Function = E.function
-Odoo = E.odoo
+WETH = E.weth
 Record = E.record
 Value = E.value
 
@@ -349,7 +349,7 @@ class TestEnv(common.TransactionCase):
 
     def test_uid_data_record(self):
         self.importer(
-            Odoo(
+            Weth(
                 Record(
                     Field("a", name="name"),
                     model="test_tools.convert.usered",
@@ -366,7 +366,7 @@ class TestEnv(common.TransactionCase):
 
     def test_uid_data_function(self):
         self.importer(
-            Odoo(
+            Weth(
                 Function(
                     model="test_tools.convert.usered",
                     name="create",
@@ -383,7 +383,7 @@ class TestEnv(common.TransactionCase):
 
     def test_uid_record(self):
         self.importer(
-            Odoo(
+            Weth(
                 Record(
                     Field('c', name="name"),
                     model="test_tools.convert.usered",
@@ -401,7 +401,7 @@ class TestEnv(common.TransactionCase):
 
     def test_uid_function(self):
         self.importer(
-            Odoo(
+            Weth(
                 Function(
                     model="test_tools.convert.usered",
                     name="create",
@@ -419,7 +419,7 @@ class TestEnv(common.TransactionCase):
     def test_context_data_function(self):
         self.env.user.tz = 'UTC'
         self.importer(
-            Odoo(
+            Weth(
                 Function(
                     model="test_tools.convert.usered",
                     name="create",
@@ -435,7 +435,7 @@ class TestEnv(common.TransactionCase):
     def test_context_function(self):
         self.env.user.tz = 'UTC'
         self.importer(
-            Odoo(
+            Weth(
                 Function(
                     model="test_tools.convert.usered",
                     name="create",
@@ -452,7 +452,7 @@ class TestEnv(common.TransactionCase):
     def test_context_data_record(self):
         self.env.user.tz = 'UTC'
         self.importer(
-            Odoo(
+            Weth(
                 Record(
                     Field("f", name="name"),
                     model="test_tools.convert.usered",
@@ -467,7 +467,7 @@ class TestEnv(common.TransactionCase):
     def test_context_record(self):
         self.env.user.tz = 'UTC'
         self.importer(
-            Odoo(
+            Weth(
                 Record(
                     Field("f", name="name"),
                     model="test_tools.convert.usered",

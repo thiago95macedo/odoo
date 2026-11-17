@@ -1,57 +1,58 @@
-.o-hb-colorpicker-popover {
-    --popover-bg: #{$o-we-bg-darker};
-    --popover-border-color: #{$o-we-bg-darker};
+.w-hb-colorpicker-popover {
+    --popover-bg: #{$w-we-bg-darker};
+    --popover-border-color: #{$w-we-bg-darker};
 }
 
 .o_custom_gradient_button {
-    border: 1px solid $o-we-item-clickable-color;
+    border: 1px solid $w-we-item-clickable-color;
 
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
         color: #000000;
     }
 
     &[style*="background-image"] {
-        color: $o-we-item-clickable-color;
+        color: $w-we-item-clickable-color;
     }
 }
 
-.o-hb-colorpicker {
-    --o-hb-colorpicker-active-bg: #{rgba($o-we-color-accent, .15)};
-    --o-color-picker-active-color: var(--o-hb-select-item-active-color, #{$o-we-sidebar-content-field-toggle-active-bg});
+.w-hb-colorpicker {
+    --o-hb-colorpicker-active-bg: #{rgba($w-we-color-accent, .15)};
+    --o-color-picker-active-color: var(--o-hb-select-item-active-color, #{$w-we-sidebar-content-field-toggle-active-bg});
 
-    --o-color-picker-bg: #{$o-we-item-clickable-bg};
+    --o-color-picker-bg: #{$w-we-item-clickable-bg};
 
-    background-color: $o-we-item-clickable-bg;
+    background-color: $w-we-item-clickable-bg;
     color: $white;
 
     .o_color_button {
-        box-shadow: inset 0 0 0 1px rgba($o-we-fg-light, .5);
+        box-shadow: inset 0 0 0 1px rgba($w-we-fg-light, .5);
     }
 
-    &:has(.theme-tab){
+    &:has(.theme-tab) {
         width: 255px;
     }
 
-    & > div:first-child {
-        background-color: $o-we-bg-darker;
+    &>div:first-child {
+        background-color: $w-we-bg-darker;
         padding-block: 0.5em;
     }
 
-    & > div:not(:first-child) {
-        .btn:not(.o-hb-theme-tab-link) {
-            @include button-variant(
-                $background: $o-we-item-clickable-bg,
+    &>div:not(:first-child) {
+        .btn:not(.w-hb-theme-tab-link) {
+            @include button-variant($background: $w-we-item-clickable-bg,
                 $border: transparent,
-                $color: $o-we-item-clickable-color,
-                $hover-background: $o-we-item-clickable-hover-bg,
+                $color: $w-we-item-clickable-color,
+                $hover-background: $w-we-item-clickable-hover-bg,
                 $hover-border: transparent,
-                $hover-color: $o-we-item-clickable-color,
+                $hover-color: $w-we-item-clickable-color,
                 $active-background: var(--o-hb-colorpicker-active-bg),
-                $active-border: var(--o-hb-select-item-active-color, $o-we-sidebar-content-field-toggle-active-bg),
-                $active-color: $o-we-fg-lighter,
-                $disabled-background: rgba($o-we-item-clickable-hover-bg, 0.5),
+                $active-border: var(--o-hb-select-item-active-color, $w-we-sidebar-content-field-toggle-active-bg),
+                $active-color: $w-we-fg-lighter,
+                $disabled-background: rgba($w-we-item-clickable-hover-bg, 0.5),
                 $disabled-border: transparent,
-                $disabled-color: $o-we-item-clickable-color,
+                $disabled-color: $w-we-item-clickable-color,
             );
         }
     }
@@ -61,35 +62,34 @@
     }
 
     .btn.o_color_picker_reset {
-        @include button-variant(
-            $background: $o-we-bg-light,
+        @include button-variant($background: $w-we-bg-light,
             $border: transparent,
-            $color: $o-we-item-clickable-color,
-            $hover-background: $o-we-bg-lighter,
+            $color: $w-we-item-clickable-color,
+            $hover-background: $w-we-bg-lighter,
             $hover-border: transparent,
-            $hover-color: $o-we-item-clickable-color,
-            $active-background: $o-we-bg-lighter,
+            $hover-color: $w-we-item-clickable-color,
+            $active-background: $w-we-bg-lighter,
             $active-border: transparent,
-            $active-color: $o-we-fg-lighter,
-            $disabled-background: rgba($o-we-item-clickable-hover-bg, 0.5),
+            $active-color: $w-we-fg-lighter,
+            $disabled-background: rgba($w-we-item-clickable-hover-bg, 0.5),
             $disabled-border: transparent,
-            $disabled-color: $o-we-item-clickable-color,
+            $disabled-color: $w-we-item-clickable-color,
         );
     }
+
     .btn-tab {
-        @include button-variant(
-            $background: $o-we-bg-darker,
+        @include button-variant($background: $w-we-bg-darker,
             $border: transparent,
-            $color: $o-we-item-clickable-color,
-            $hover-background: $o-we-bg-light,
+            $color: $w-we-item-clickable-color,
+            $hover-background: $w-we-bg-light,
             $hover-border: transparent,
-            $hover-color: $o-we-item-clickable-color,
+            $hover-color: $w-we-item-clickable-color,
             $active-background: var(--o-hb-colorpicker-active-bg),
-            $active-border: var(--o-hb-select-item-active-color, $o-we-sidebar-content-field-toggle-active-bg),
-            $active-color: $o-we-fg-lighter,
-            $disabled-background: rgba($o-we-item-clickable-hover-bg, 0.5),
+            $active-border: var(--o-hb-select-item-active-color, $w-we-sidebar-content-field-toggle-active-bg),
+            $active-color: $w-we-fg-lighter,
+            $disabled-background: rgba($w-we-item-clickable-hover-bg, 0.5),
             $disabled-border: transparent,
-            $disabled-color: $o-we-item-clickable-color,
+            $disabled-color: $w-we-item-clickable-color,
         );
     }
 
@@ -98,17 +98,17 @@
         z-index: 1;
     }
 
-    .o_cc_preview_wrapper > .d-flex {
-        margin-bottom: $o-hb-row-spacing * 0.5;
+    .o_cc_preview_wrapper>.d-flex {
+        margin-bottom: $w-hb-row-spacing * 0.5;
     }
 
     .color-combination-button {
         &.selected {
-            box-shadow: inset 0 0 0 $o-we-border-width rgba($o-we-fg-light, 0.3), 0 0 0 2px var(--o-color-picker-active-color);
+            box-shadow: inset 0 0 0 $w-we-border-width rgba($w-we-fg-light, 0.3), 0 0 0 2px var(--o-color-picker-active-color);
 
             h1::before {
                 content: "check";
-                margin-right: $o-we-item-spacing;
+                margin-right: $w-we-item-spacing;
                 font-size: 0.8em;
                 font-family: 'Material Symbols Outlined';
                 color: var(--o-color-picker-active-color);
@@ -118,8 +118,8 @@
 
         &:focus-visible {
             box-shadow:
-                inset 0 0 0 $o-we-border-width rgba($o-we-fg-light, 0.5),
-                0 0 0 1px $o-we-bg-darker,
+                inset 0 0 0 $w-we-border-width rgba($w-we-fg-light, 0.5),
+                0 0 0 1px $w-we-bg-darker,
                 0 0 0 3px var(--o-color-picker-active-color);
             outline: none;
         }
@@ -127,15 +127,16 @@
 
     // Gradients
     .o_custom_gradient_button {
-        color: $o-we-item-clickable-color;
+        color: $w-we-item-clickable-color;
     }
 
     .gradient-angle-thumb {
         background-color: $white;
     }
 
-    .o_color_picker_inputs, .o_color_gradient_input {
-        --o-iframe-input-color: #{$o-we-item-clickable-color};
+    .o_color_picker_inputs,
+    .o_color_gradient_input {
+        --o-iframe-input-color: #{$w-we-item-clickable-color};
         color: var(--o-iframe-input-color);
 
         & input {
@@ -144,6 +145,7 @@
     }
 
     .custom-gradient-configurator .o_boolean_toggle {
+
         &:hover .form-check-input,
         .form-check-input:focus {
             border-color: var(--o-color-picker-active-color);
@@ -156,7 +158,7 @@
             }
 
             &:checked {
-                --form-switch-bg: #{escape-svg($o-hb-form-switch-checked-bg-image)};
+                --form-switch-bg: #{escape-svg($w-hb-form-switch-checked-bg-image)};
 
                 background-color: var(--o-color-picker-active-color);
                 border-color: var(--o-color-picker-active-color);
@@ -165,10 +167,10 @@
     }
 }
 
-.o_builder_open:has(.o-snippets-tabs [data-name='theme'].active) {
-    .o-hb-colorpicker {
-        --o-hb-colorpicker-active-bg: #{rgba($o-we-color-global, .15)};
-        --o-hb-select-item-active-color: #{$o-we-color-global};
-        --o-color-picker-active-color: #{$o-we-color-global};
+.o_builder_open:has(.w-snippets-tabs [data-name='theme'].active) {
+    .w-hb-colorpicker {
+        --o-hb-colorpicker-active-bg: #{rgba($w-we-color-global, .15)};
+        --o-hb-select-item-active-color: #{$w-we-color-global};
+        --o-color-picker-active-color: #{$w-we-color-global};
     }
 }

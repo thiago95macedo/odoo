@@ -4,9 +4,9 @@ import comparisonUtils from '@website_sale/js/comparison_utils';
 import { redirect } from '@web/core/utils/urls';
 
 export class ComparisonPage extends Interaction {
-    static selector = '.o_wsale_comparison_page';
+    static selector = '.w_wsale_comparison_page';
     dynamicContent = {
-        '.o_comparelist_remove': { 't-on-click': this.removeProduct },
+        '.w_comparelist_remove': { 't-on-click': this.removeProduct },
         'button[name="comparison_clear_all_button"]': { 't-on-click': this.clearAllProducts },
     };
 
@@ -33,7 +33,7 @@ export class ComparisonPage extends Interaction {
         let position = 0;
 
         // Calculate total height of fixed elements at top
-        for (const el of this.el.ownerDocument.querySelectorAll(".o_top_fixed_element")) {
+        for (const el of this.el.ownerDocument.querySelectorAll(".w_top_fixed_element")) {
             position += el.offsetHeight;
         }
 

@@ -12,8 +12,8 @@ from weth.fields import Domain
 
 _logger = logging.getLogger(__name__)
 
-# The meaning of 'owner' is different in Google and WETH. See _get_odoo_access_role for more info.
-GOOGLE_TO_ODOO_ACCESS_ROLE = {
+# The meaning of 'owner' is different in Google and WETH. See _get_weth_access_role for more info.
+GOOGLE_TO_WETH_ACCESS_ROLE = {
     "freeBusyReader": "freeBusyReader",
     "reader": "reader",
     "writer": "writer",
@@ -47,8 +47,8 @@ class CalendarCalendar(models.Model):
     def _google_values(self):
         self.ensure_one()
         return {
-            google_field: self[odoo_field]
-            for odoo_field, google_field in self._get_google_synced_fields_map().items()
+            google_field: self[weth_field]
+            for weth_field, google_field in self._get_google_synced_fields_map().items()
         }
 
     def _google_patch_values(self):
@@ -98,27 +98,27 @@ class CalendarCalendar(models.Model):
         if new:
             # sudo is needed because we might create shared calendars where the user is only a reader and doesn't have create rights
             self.sudo().create([dict(
-                self._odoo_values(google_calendar, self.env['calendar.calendar']),
+                self._weth_values(google_calendar, self.env['calendar.calendar']),
                 need_sync=False
             ) for google_calendar in new])
 
         # Delete
-        deleted_odoo = self.browse(deleted.odoo_ids(self.env)).filtered(lambda c: not c.is_primary)
-        if deleted_odoo and deleted_odoo.calendar_user_id:
+        deleted_weth = self.browse(deleted.weth_ids(self.env)).filtered(lambda c: not c.is_primary)
+        if deleted_weth and deleted_weth.calendar_user_id:
             # Deleting the last calendar user also deletes the calendar, so we don't need to unlink it directly
-            deleted_odoo.calendar_user_id.unlink()
+            deleted_weth.calendar_user_id.unlink()
         # Update
         for calendar in updated:
-            odoo_record = self.browse(calendar.odoo_id(self.env))
+            weth_record = self.browse(calendar.weth_id(self.env))
             # Unlike for events, the calendar endpoints do not return an 'updated' timestamp, meaning we can't
             # rely on last write date to determine which update wins in case of a conflict - we have to decide
-            # which side is authoritative. In this case -> Odoo
-            if odoo_record.need_sync:
+            # which side is authoritative. In this case -> Weth
+            if weth_record.need_sync:
                 # The record must have been edited or deleted in the meantime
                 continue
 
             # This update may cause a change in the access role (e.g., grant the user higher privilege) -> sudo is needed
-            odoo_record.sudo().with_context(dont_notify=True).write(dict(self.env['calendar.calendar']._odoo_values(calendar, odoo_record), need_sync=False))
+            weth_record.sudo().with_context(dont_notify=True).write(dict(self.env['calendar.calendar']._weth_values(calendar, weth_record), need_sync=False))
 
         return bool(new)
 
@@ -136,15 +136,15 @@ class CalendarCalendar(models.Model):
                 calendar._google_calendar_patch(calendar_service)
 
     @api.model
-    def _odoo_values(self, google_record: GoogleCalendar, odoo_calendar):
-        new_access_role = self._get_odoo_access_role(google_record)
-        # Multiple odoo users can sync with the same Google account, which could lead to multiple calendar owners.
+    def _weth_values(self, google_record: GoogleCalendar, weth_calendar):
+        new_access_role = self._get_weth_access_role(google_record)
+        # Multiple weth users can sync with the same Google account, which could lead to multiple calendar owners.
         # We want to restrict calendars to have a single owner, so in this edge case, we demote the second one to a writer.
-        if new_access_role == 'owner' and odoo_calendar.calendar_user_ids.filtered(
+        if new_access_role == 'owner' and weth_calendar.calendar_user_ids.filtered(
                 lambda c: c.access_role == 'owner' and c.user_id != self.env.user):
             new_access_role = 'writer'
 
-        existing_calendar_user = odoo_calendar.calendar_user_id
+        existing_calendar_user = weth_calendar.calendar_user_id
         if existing_calendar_user:
             command = Command.update(existing_calendar_user.id, {
                 'access_role': new_access_role or existing_calendar_user.access_role,
@@ -165,12 +165,12 @@ class CalendarCalendar(models.Model):
             'calendar_user_ids': [command],
             'google_id': google_record.id,
             'calendar_default_privacy': 'members_only',
-            'is_import_pending': not odoo_calendar or odoo_calendar.is_import_pending,  # Hide the calendar until the user chooses to sync it
+            'is_import_pending': not weth_calendar or weth_calendar.is_import_pending,  # Hide the calendar until the user chooses to sync it
         }
 
     @api.model
-    def _get_odoo_access_role(self, google_record: GoogleCalendar):
-        """Map a Google Calendar ACL access role to the corresponding Odoo access role.
+    def _get_weth_access_role(self, google_record: GoogleCalendar):
+        """Map a Google Calendar ACL access role to the corresponding WETH access role.
 
         In Google, anyone with the access level of 'Make changes and manage sharing' is an owner
         Google docs: "The owner role is different from the calendar's data owner.
@@ -186,7 +186,7 @@ class CalendarCalendar(models.Model):
                 and google_record.dataOwner == self.env.user.google_account_email)):
             return 'owner'
         else:
-            return GOOGLE_TO_ODOO_ACCESS_ROLE.get(google_record.accessRole, False)
+            return GOOGLE_TO_WETH_ACCESS_ROLE.get(google_record.accessRole, False)
 
     @after_commit
     def _google_calendar_patch(self, calendar_service: GoogleCalendarService):

@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_partner/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgid "Drag blocks here to add them on all partners"
 msgstr "Arraste os blocos para cá para adicioná-los a todos os parceiros"
 
 #. module: website_partner
-#. odoo-python
+#. weth-python
 #: code:addons/website_partner/models/res_partner.py:0
 msgid "Find Resellers"
 msgstr "Encontrar revendedores"
@@ -100,7 +100,7 @@ msgid "Partner unpublished"
 msgstr "Parceiro Não publicado"
 
 #. module: website_partner
-#. odoo-python
+#. weth-python
 #: code:addons/website_partner/models/res_partner.py:0
 msgid "Resellers"
 msgstr "Revendedores"

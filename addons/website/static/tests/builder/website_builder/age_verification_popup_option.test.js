@@ -26,13 +26,13 @@ test("Age verification popup options works correctly", async () => {
     expect("[data-label='Minimum Age']").toHaveCount(0);
 
     await contains("[data-label='Confirmation'] .dropdown-toggle").click();
-    await contains(".o-dropdown-item:contains('Birth Year')").click();
+    await contains(".w-dropdown-item:contains('Birth Year')").click();
     expect(":iframe input[name='age_verification_birth_year']").toHaveCount(1);
     expect(":iframe .o_age_verification_year_btn.oe_unremovable").toHaveCount(1);
     expect("[data-label='Minimum Age'] input").toHaveValue(18);
 
     await contains("[data-label='Confirmation'] .dropdown-toggle").click();
-    await contains(".o-dropdown-item:contains('Birth Date')").click();
+    await contains(".w-dropdown-item:contains('Birth Date')").click();
     expect(":iframe input[name='age_verification_birth_date']").toHaveCount(1);
     expect(":iframe .o_age_verification_date_btn.oe_unremovable").toHaveCount(1);
     expect("[data-label='Minimum Age'] input").toHaveCount(1);

@@ -27,8 +27,8 @@ class IrHttp(models.AbstractModel):
         request.session.can_save = False  # the uid dropped below must not be saved
         request.session.uid = None
         cls._auth_method_public(routing)
-        # Cookies cannot be trusted here: odoo subdomains are same-site, so a
-        # call from A.odoo to B.odoo carries B's cookie. Trust only the token.
+        # Cookies cannot be trusted here: weth subdomains are same-site, so a
+        # call from A.weth to B.weth carries B's cookie. Trust only the token.
         request.cookies = {}
         if guest := request.env["mail.guest"]._get_guest_from_token(cls._get_guest_token(routing)):
             request.update_context(guest=guest)

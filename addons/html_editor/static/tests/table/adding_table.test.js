@@ -15,13 +15,13 @@ function expectContentToBe(el, html) {
 test.tags("desktop");
 test("can add a table using the powerbox and keyboard", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     expectContentToBe(el, `<p>a[]</p>`);
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablepicker", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablepicker", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -29,14 +29,14 @@ test("can add a table using the powerbox and keyboard", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablepicker");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // press enter to validate current dimension (3x3)
     await press("Enter");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
     expectContentToBe(
         el,
         `<p>a</p>
@@ -66,13 +66,13 @@ test("can add a table using the powerbox and keyboard", async () => {
 test.tags("mobile");
 test("can add a table using the powerbox and keyboard (mobile)", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     expectContentToBe(el, `<p>a[]</p>`);
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablesizepopover", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -80,14 +80,14 @@ test("can add a table using the powerbox and keyboard (mobile)", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablesizepopover");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablesizepopover");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // press enter to validate current dimension (3x3)
     await press("Enter");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablesizepopover", 0);
     expectContentToBe(
         el,
         `<p>a</p>
@@ -117,13 +117,13 @@ test("can add a table using the powerbox and keyboard (mobile)", async () => {
 test.tags("mobile");
 test("can add a table using the powerbox and apply (mobile)", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     expectContentToBe(el, `<p>a[]</p>`);
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablesizepopover", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -131,14 +131,14 @@ test("can add a table using the powerbox and apply (mobile)", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablesizepopover");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablesizepopover");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // click apply to validate current dimension (3x3)
-    await click(".o-we-tablesizepopover .btn-primary");
+    await click(".w-we-tablesizepopover .btn-primary");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablesizepopover", 0);
     expectContentToBe(
         el,
         `<p>a</p>
@@ -169,48 +169,48 @@ test.tags("desktop");
 test("can close table picker with escape", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await insertText(editor, "table");
     expectContentToBe(el, "<p>a/table[]</p>");
     await animationFrame();
     await press("Enter");
-    await expectElementCount(".o-we-tablepicker", 1);
+    await expectElementCount(".w-we-tablepicker", 1);
     expectContentToBe(el, "<p>a[]</p>");
     await press("escape");
     await animationFrame();
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
 });
 
 test.tags("mobile");
 test("can close table picker with escape (mobile)", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await insertText(editor, "table");
     expectContentToBe(el, "<p>a/table[]</p>");
     await animationFrame();
     await press("Enter");
-    await expectElementCount(".o-we-tablesizepopover", 1);
+    await expectElementCount(".w-we-tablesizepopover", 1);
     await press("escape");
     await animationFrame();
     expectContentToBe(el, "<p>a[]</p>");
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await expectElementCount(".w-we-tablesizepopover", 0);
 });
 
 test.tags("mobile");
 test("can close table picker with discard (mobile)", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await insertText(editor, "table");
     expectContentToBe(el, "<p>a/table[]</p>");
     await animationFrame();
     await press("Enter");
-    await expectElementCount(".o-we-tablesizepopover", 1);
-    await click(".o-we-tablesizepopover .btn-secondary");
+    await expectElementCount(".w-we-tablesizepopover", 1);
+    await click(".w-we-tablesizepopover .btn-secondary");
     await animationFrame();
     expectContentToBe(el, "<p>a[]</p>");
-    await expectElementCount(".o-we-tablesizepopover", 0);
+    await expectElementCount(".w-we-tablesizepopover", 0);
 });
 
 test.tags("iframe", "desktop");
@@ -218,14 +218,14 @@ test("in iframe, can add a table using the powerbox and keyboard", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>", {
         props: { iframe: true },
     });
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     expect(getContent(el)).toBe(`<p>a[]</p>`);
     expect(":iframe .o_table").toHaveCount(0);
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablepicker", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablepicker", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -233,14 +233,14 @@ test("in iframe, can add a table using the powerbox and keyboard", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablepicker");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // press enter to validate current dimension (3x3)
     await press("Enter");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
     expect(":iframe .o_table").toHaveCount(1);
 });
 
@@ -253,26 +253,26 @@ test("Expand columns in the correct direction in 'rtl'", async () => {
     });
     await insertText(editor, "/table");
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
+    await waitFor(".w-we-tablepicker");
 
     // Initially we have 3 columns
     const tablePickerOverlay = queryOne(".overlay");
     expect(tablePickerOverlay).toHaveStyle({ right: /px$/ });
     const right = tablePickerOverlay.style.right;
     const width3Columns = tablePickerOverlay.getBoundingClientRect().width;
-    expect(".o-we-cell.active").toHaveCount(9);
+    expect(".w-we-cell.active").toHaveCount(9);
 
     // Add one column -> we have 4 columns
     await press("ArrowLeft");
     await animationFrame();
     expect(tablePickerOverlay.getBoundingClientRect().width).toBeGreaterThan(width3Columns);
     expect(tablePickerOverlay).toHaveStyle({ right });
-    expect(".o-we-cell.active").toHaveCount(12);
+    expect(".w-we-cell.active").toHaveCount(12);
 
     // Remove one column -> we have 3 columns
     await press("ArrowRight");
     await animationFrame();
-    expect(".o-we-cell.active").toHaveCount(9);
+    expect(".w-we-cell.active").toHaveCount(9);
     expect(tablePickerOverlay).toHaveStyle({ right });
 
     // Remove one column -> we have 2 columns
@@ -280,7 +280,7 @@ test("Expand columns in the correct direction in 'rtl'", async () => {
     await animationFrame();
     expect(tablePickerOverlay.getBoundingClientRect().width).toBeLessThan(width3Columns);
     expect(tablePickerOverlay).toHaveStyle({ right });
-    expect(".o-we-cell.active").toHaveCount(6);
+    expect(".w-we-cell.active").toHaveCount(6);
 });
 
 test.tags("desktop");
@@ -289,8 +289,8 @@ test("add table inside empty list", async () => {
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablepicker", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablepicker", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -298,14 +298,14 @@ test("add table inside empty list", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablepicker");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // press enter to validate current dimension (3x3)
     await press("Enter");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
     expectContentToBe(
         el,
         `<ul>
@@ -342,8 +342,8 @@ test("add table inside non-empty list", async () => {
 
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
-    await expectElementCount(".o-we-tablepicker", 0);
+    await waitFor(".w-we-powerbox");
+    await expectElementCount(".w-we-tablepicker", 0);
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -351,14 +351,14 @@ test("add table inside non-empty list", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
-    await expectElementCount(".o-we-powerbox", 0);
+    await waitFor(".w-we-tablepicker");
+    await expectElementCount(".w-we-powerbox", 0);
 
     // press enter to validate current dimension (3x3)
     await press("Enter");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 0);
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-powerbox", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
     expectContentToBe(
         el,
         `<ul>
@@ -393,28 +393,28 @@ test.tags("desktop");
 test("should close the table picker when any key except arrow keys pressed", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await insertText(editor, "table");
     expectContentToBe(el, "<p>a/table[]</p>");
     await animationFrame();
     await press("Enter");
-    await expectElementCount(".o-we-tablepicker", 1);
+    await expectElementCount(".w-we-tablepicker", 1);
     expectContentToBe(el, "<p>a[]</p>");
     await insertText(editor, "b");
     await animationFrame();
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
     expectContentToBe(el, "<p>ab[]</p>");
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await insertText(editor, "table");
     expectContentToBe(el, "<p>ab/table[]</p>");
     await animationFrame();
     await press("Enter");
-    await expectElementCount(".o-we-tablepicker", 1);
+    await expectElementCount(".w-we-tablepicker", 1);
     expectContentToBe(el, "<p>ab[]</p>");
     await insertText(editor, "/");
     await animationFrame();
-    await expectElementCount(".o-we-tablepicker", 0);
+    await expectElementCount(".w-we-tablepicker", 0);
 });
 
 test.tags("desktop");
@@ -438,7 +438,7 @@ test("should not navigate table cells when table picker is open", async () => {
     );
     // open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
 
     // filter to get table command in first position
     await insertText(editor, "table");
@@ -446,7 +446,7 @@ test("should not navigate table cells when table picker is open", async () => {
 
     // press enter to open tablepicker
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
+    await waitFor(".w-we-tablepicker");
 
     // navigate to 1x3
     press("ArrowUp");
@@ -511,7 +511,7 @@ test("should not navigate table cells when powerbox is open", async () => {
 
     // Open powerbox
     await insertText(editor, "/");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
 
     // Cursor is in second td.
     const secondTd = el.querySelectorAll("td")[1];
@@ -565,7 +565,7 @@ describe("availability", () => {
         const { editor } = await setupEditor("<p><span>ab[]</span></p>");
         await insertText(editor, "/table");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toInclude("Table");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("Table");
     });
     test("table should not be available from span which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -573,7 +573,7 @@ describe("availability", () => {
         );
         await insertText(editor, "/table");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude("Table");
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude("Table");
     });
     test("table should not be available from p which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -581,7 +581,7 @@ describe("availability", () => {
         );
         await insertText(editor, "/table");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude("Table");
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude("Table");
     });
     test("table should be available from div which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -589,6 +589,6 @@ describe("availability", () => {
         );
         await insertText(editor, "/table");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toInclude("Table");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("Table");
     });
 });

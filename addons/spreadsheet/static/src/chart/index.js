@@ -1,14 +1,14 @@
 import * as spreadsheet from "@weth/o-spreadsheet";
-import { OdooChartCorePlugin } from "./plugins/odoo_chart_core_plugin";
-import { ChartOdooLinkPlugin } from "./plugins/chart_odoo_link_plugin";
-import { OdooChartCoreViewPlugin } from "./plugins/odoo_chart_core_view_plugin";
-import { chartJsOdooLinkPlugin } from "./odoo_link/chartjs/odoo_link_chartjs_plugin";
+import { WethChartCorePlugin } from "./plugins/weth_chart_core_plugin";
+import { ChartWethLinkPlugin } from "./plugins/chart_weth_link_plugin";
+import { WethChartCoreViewPlugin } from "./plugins/weth_chart_core_view_plugin";
+import { chartJsWethLinkPlugin } from "./weth_link/chartjs/weth_link_chartjs_plugin";
 
 const { chartJsExtensionRegistry } = spreadsheet.registries;
 
-chartJsExtensionRegistry.add("chartJsOdooLinkPlugin", {
-    register: (Chart) => Chart.register(chartJsOdooLinkPlugin),
-    unregister: (Chart) => Chart.unregister(chartJsOdooLinkPlugin),
+chartJsExtensionRegistry.add("chartJsWethLinkPlugin", {
+    register: (Chart) => Chart.register(chartJsWethLinkPlugin),
+    unregister: (Chart) => Chart.unregister(chartJsWethLinkPlugin),
 });
 
-export { OdooChartCorePlugin, ChartOdooLinkPlugin, OdooChartCoreViewPlugin };
+export { WethChartCorePlugin, ChartWethLinkPlugin, WethChartCoreViewPlugin };

@@ -40,7 +40,7 @@ test("event on targetDropdown does not crash when the inner input ref is gone", 
 
     // Detach the inner input subtree, then force a render so OWL sweeps the
     // now-disconnected ref to null (component and its listeners stay alive).
-    component.inputRef().closest(".o-autocomplete").remove();
+    component.inputRef().closest(".w-autocomplete").remove();
     render(component, true);
     await animationFrame();
     expect(component.inputRef()).toBe(null);

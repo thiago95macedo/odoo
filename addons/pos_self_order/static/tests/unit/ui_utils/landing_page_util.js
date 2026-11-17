@@ -18,11 +18,11 @@ export async function clickMyOrders() {
 }
 
 export async function checkIsClosed() {
-    await waitFor(".o-self-closed");
+    await waitFor(".w-self-closed");
 }
 
 export async function checkIsOpened() {
-    expect(".o-self-closed").toHaveCount(0);
+    expect(".w-self-closed").toHaveCount(0);
 }
 
 export async function checkCarouselAutoPlaying() {

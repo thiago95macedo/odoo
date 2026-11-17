@@ -1,5 +1,5 @@
 [Unit]
-Description=Odoo SOS service, meant to enable Tailscale on emergency
+Description=WETH SOS service, meant to enable Tailscale on emergency
 
 [Service]
 Type=simple

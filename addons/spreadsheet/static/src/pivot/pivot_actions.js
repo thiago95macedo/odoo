@@ -41,7 +41,7 @@ export const SEE_RECORDS_PIVOT = async (position, env, newWindow) => {
 
 /**
  * @param {import("@weth/o-spreadsheet").CellPosition} position
- * @param {import("@spreadsheet").OdooGetters} getters
+ * @param {import("@spreadsheet").WethGetters} getters
  * @returns {boolean}
  */
 export const SEE_RECORDS_PIVOT_VISIBLE = (position, getters) => {
@@ -60,7 +60,7 @@ export const SEE_RECORDS_PIVOT_VISIBLE = (position, getters) => {
         cell &&
         cell.isFormula &&
         getNumberOfPivotFunctions(cell.compiledFormula, getters) === 1 &&
-        getters.getPivotCoreDefinition(pivotId).type === "ODOO" &&
+        getters.getPivotCoreDefinition(pivotId).type === "WETH" &&
         getters.getPivot(pivotId).getPivotCellDomain(pivotCell.domain)
     );
 };

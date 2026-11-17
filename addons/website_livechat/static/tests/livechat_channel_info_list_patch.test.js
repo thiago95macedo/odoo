@@ -96,14 +96,14 @@ test("Show recent conversations in channel info list", async () => {
     ]);
     await start();
     await openDiscuss(channelIds.at(-1));
-    await contains(".o-livechat-LivechatChannelInfoList-recentConversation", {
+    await contains(".w-livechat-LivechatChannelInfoList-recentConversation", {
         count: 2,
         text: "Conversation ongoing",
     });
     await contains(
-        ".o-livechat-LivechatChannelInfoList-recentConversation :text('question about the discuss app')"
+        ".w-livechat-LivechatChannelInfoList-recentConversation :text('question about the discuss app')"
     );
     await contains(
-        ".o-livechat-LivechatChannelInfoList-recentConversation :text('question about the live chat app')"
+        ".w-livechat-LivechatChannelInfoList-recentConversation :text('question about the live chat app')"
     );
 });

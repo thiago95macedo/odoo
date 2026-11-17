@@ -63,7 +63,7 @@ class PaymentTransaction(models.Model):
                 {
                     "id": self.id,
                     "price": self.amount,
-                    "name": "Odoo purchase",
+                    "name": "WETH purchase",
                     "category1": "Service",
                     "itemType": "VIRTUAL",
                 }
@@ -90,7 +90,7 @@ class PaymentTransaction(models.Model):
             "currency": self.currency_id.name,
             "locale": "tr" if self.env.lang == "tr_TR" else "en",
             "paidPrice": self.amount,
-            "paymentSource": "ODOO",
+            "paymentSource": "WETH",
             "price": self.amount,
         }
 

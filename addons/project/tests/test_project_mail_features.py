@@ -252,7 +252,7 @@ class TestProjectMailFeatures(TestProjectCommon, MailCommon):
 
                 # second message: acknowledgment: sent to email author
                 acknowledgement = task.message_ids[0]
-                # task created by odoobot if not incoming user -> odoobot author of ack email
+                # task created by wethbot if not incoming user -> wethbot author of ack email
                 acknowledgement_author = test_user.partner_id if test_user else self.partner_root
                 self.assertMailNotifications(
                     acknowledgement,

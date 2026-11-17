@@ -59,7 +59,7 @@ export class CartService {
      * Initializes the service wiring up dependencies, setting up methods and initializing global
      * variables.
      *
-     * @param {import("@web/env").OdooEnv} _env - The environment object, not used here.
+     * @param {import("@web/env").WethEnv} _env - The environment object, not used here.
      * @param {import("services").ServiceFactories} services - An object containing instances of the
      *      required services specified in the {@link dependencies} array.
      *
@@ -544,7 +544,7 @@ export class CartService {
             if (cartQuantity === 0) {
                 cartQuantityElement.classList.add('d-none');
             } else {
-                const cartIconElement = document.querySelector('li.o_wsale_my_cart');
+                const cartIconElement = document.querySelector('li.w_wsale_my_cart');
                 cartIconElement.classList.remove('d-none');
                 cartQuantityElement.classList.remove('d-none');
                 cartQuantityElement.classList.add('o_mycart_zoom_animation');

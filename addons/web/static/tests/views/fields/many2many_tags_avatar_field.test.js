@@ -52,18 +52,18 @@ test("widget many2many_tags_avatar", async () => {
             </form>`,
         resId: 1,
     });
-    expect(queryAllTexts("[name='partner_ids'] .o_tag")).toEqual([]);
-    expect("[name='partner_ids'] .o_input_dropdown input").toHaveValue("");
+    expect(queryAllTexts("[name='partner_ids'] .w_tag")).toEqual([]);
+    expect("[name='partner_ids'] .w_input_dropdown input").toHaveValue("");
 
-    await contains("[name='partner_ids'] .o_input_dropdown input").fill("first record");
+    await contains("[name='partner_ids'] .w_input_dropdown input").fill("first record");
     await runAllTimers();
-    expect(queryAllTexts("[name='partner_ids'] .o_tag")).toEqual(["first record"]);
-    expect("[name='partner_ids'] .o_input_dropdown input").toHaveValue("");
+    expect(queryAllTexts("[name='partner_ids'] .w_tag")).toEqual(["first record"]);
+    expect("[name='partner_ids'] .w_input_dropdown input").toHaveValue("");
 
-    await contains("[name='partner_ids'] .o_input_dropdown input").fill("abc");
+    await contains("[name='partner_ids'] .w_input_dropdown input").fill("abc");
     await runAllTimers();
-    expect(queryAllTexts("[name='partner_ids'] .o_tag")).toEqual(["first record", "abc"]);
-    expect("[name='partner_ids'] .o_input_dropdown input").toHaveValue("");
+    expect(queryAllTexts("[name='partner_ids'] .w_tag")).toEqual(["first record", "abc"]);
+    expect("[name='partner_ids'] .w_input_dropdown input").toHaveValue("");
 });
 
 test("widget many2many_tags_avatar img src", async () => {
@@ -79,9 +79,9 @@ test("widget many2many_tags_avatar img src", async () => {
         resId: 2,
     });
 
-    expect(".o_field_many2many_tags_avatar.o_field_widget .o_avatar img").toHaveCount(2);
+    expect(".w_field_many2many_tags_avatar.w_field_widget .w_avatar img").toHaveCount(2);
     expect(
-        `.o_field_many2many_tags_avatar.o_field_widget .o_avatar:nth-child(1) img[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
+        `.w_field_many2many_tags_avatar.w_field_widget .w_avatar:nth-child(1) img[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
 });
 
@@ -112,64 +112,64 @@ test("widget many2many_tags_avatar in list view", async () => {
             </list>`,
     });
     expect(
-        `.o_data_row:nth-child(1) .o_field_many2many_tags_avatar .o_avatar img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
+        `.w_data_row:nth-child(1) .w_field_many2many_tags_avatar .w_avatar img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        ".o_data_row .o_many2many_tags_avatar_cell .o_field_many2many_tags_avatar:eq(0)"
+        ".w_data_row .w_many2many_tags_avatar_cell .w_field_many2many_tags_avatar:eq(0)"
     ).toHaveText("first record");
     expect(
-        ".o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:not(.o_m2m_avatar_empty) img"
+        ".w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:not(.w_m2m_avatar_empty) img"
     ).toHaveCount(4);
     expect(
-        ".o_data_row:nth-child(3) .o_field_many2many_tags_avatar .o_avatar:not(.o_m2m_avatar_empty) img"
+        ".w_data_row:nth-child(3) .w_field_many2many_tags_avatar .w_avatar:not(.w_m2m_avatar_empty) img"
     ).toHaveCount(5);
     expect(
-        ".o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(1);
     expect(
-        ".o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveText("+2");
     expect(
-        `.o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(1) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
+        `.w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(1) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        `.o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(2) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
+        `.w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(2) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        `.o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(3) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/4/avatar_128?unique=1676282400000']`
+        `.w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(3) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/4/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        `.o_data_row:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(4) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/5/avatar_128?unique=1676282400000']`
+        `.w_data_row:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(4) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/5/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        ".o_data_row:nth-child(3) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_data_row:nth-child(3) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(0);
     expect(
-        ".o_data_row:nth-child(4) .o_field_many2many_tags_avatar .o_avatar:not(.o_m2m_avatar_empty) img"
+        ".w_data_row:nth-child(4) .w_field_many2many_tags_avatar .w_avatar:not(.w_m2m_avatar_empty) img"
     ).toHaveCount(4);
     expect(
-        ".o_data_row:nth-child(4) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_data_row:nth-child(4) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(1);
     expect(
-        ".o_data_row:nth-child(4) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_data_row:nth-child(4) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveText("+9");
 
-    await contains(".o_data_row .o_many2many_tags_avatar_cell:eq(0)").click();
+    await contains(".w_data_row .w_many2many_tags_avatar_cell:eq(0)").click();
     await contains(
-        ".o_data_row .o_many2many_tags_avatar_cell:eq(0) .o-autocomplete--input"
+        ".w_data_row .w_many2many_tags_avatar_cell:eq(0) .w-autocomplete--input"
     ).click();
-    await contains(".o-autocomplete--dropdown-item:eq(1)").click();
-    await contains(".o_control_panel_main_buttons .o_list_button_save").click();
-    expect(".o_data_row:eq(0) .o_field_many2many_tags_avatar .o_avatar img").toHaveCount(2);
+    await contains(".w-autocomplete--dropdown-item:eq(1)").click();
+    await contains(".w_control_panel_main_buttons .w_list_button_save").click();
+    expect(".w_data_row:eq(0) .w_field_many2many_tags_avatar .w_avatar img").toHaveCount(2);
 
     // Edit first row
-    await contains(".o_data_row:nth-child(1) .o_data_cell").click();
+    await contains(".w_data_row:nth-child(1) .w_data_cell").click();
 
     // Only the first row should have tags with delete buttons.
-    expect(".o_data_row:nth-child(1) .o_field_tags span .o_delete").toHaveCount(2);
-    expect(".o_data_row:nth-child(2) .o_field_tags span .o_delete").toHaveCount(0);
-    expect(".o_data_row:nth-child(3) .o_field_tags span .o_delete").toHaveCount(0);
-    expect(".o_data_row:nth-child(4) .o_field_tags span .o_delete").toHaveCount(0);
+    expect(".w_data_row:nth-child(1) .w_field_tags span .w_delete").toHaveCount(2);
+    expect(".w_data_row:nth-child(2) .w_field_tags span .w_delete").toHaveCount(0);
+    expect(".w_data_row:nth-child(3) .w_field_tags span .w_delete").toHaveCount(0);
+    expect(".w_data_row:nth-child(4) .w_field_tags span .w_delete").toHaveCount(0);
 });
 
 test("widget many2many_tags_avatar list view - don't crash on keyboard navigation", async () => {
@@ -184,15 +184,15 @@ test("widget many2many_tags_avatar list view - don't crash on keyboard navigatio
     });
 
     // Edit second row
-    await contains(".o_data_row:nth-child(2) .o_data_cell").click();
+    await contains(".w_data_row:nth-child(2) .w_data_cell").click();
 
     // Pressing left arrow should focus on the right-most (second) tag.
     await press("arrowleft");
-    expect(".o_data_row:nth-child(2) .o_field_tags span:nth-child(2):first").toBeFocused();
+    expect(".w_data_row:nth-child(2) .w_field_tags span:nth-child(2):first").toBeFocused();
 
     // Pressing left arrow again should not crash and should focus on the first tag.
     await press("arrowleft");
-    expect(".o_data_row:nth-child(2) .o_field_tags span:nth-child(1):first").toBeFocused();
+    expect(".w_data_row:nth-child(2) .w_field_tags span:nth-child(1):first").toBeFocused();
 });
 
 test("widget many2many_tags_avatar in kanban view", async () => {
@@ -254,65 +254,65 @@ test("widget many2many_tags_avatar in kanban view", async () => {
             });
         },
     });
-    expect(".o_kanban_record:eq(0) .o_field_many2many_tags_avatar .o_quick_assign").toHaveCount(1);
+    expect(".w_kanban_record:eq(0) .w_field_many2many_tags_avatar .w_quick_assign").toHaveCount(1);
 
     expect(
-        ".o_kanban_record:nth-child(2) .o_field_many2many_tags_avatar .o_avatar img"
+        ".w_kanban_record:nth-child(2) .w_field_many2many_tags_avatar .w_avatar img"
     ).toHaveCount(2);
     expect(
-        ".o_kanban_record:nth-child(2) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_kanban_record:nth-child(2) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(0);
     expect(
-        ".o_kanban_record:nth-child(3) .o_field_many2many_tags_avatar .o_avatar img"
+        ".w_kanban_record:nth-child(3) .w_field_many2many_tags_avatar .w_avatar img"
     ).toHaveCount(1);
     expect(
-        `.o_kanban_record:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(1 of .o_tag) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
+        `.w_kanban_record:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(1 of .w_tag) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/1/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        `.o_kanban_record:nth-child(2) .o_field_many2many_tags_avatar .o_avatar:nth-child(2 of .o_tag) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
+        `.w_kanban_record:nth-child(2) .w_field_many2many_tags_avatar .w_avatar:nth-child(2 of .w_tag) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
     expect(
-        ".o_kanban_record:nth-child(3) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_kanban_record:nth-child(3) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(1);
     expect(
-        ".o_kanban_record:nth-child(3) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_kanban_record:nth-child(3) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveText("+3");
 
     expect(
-        ".o_kanban_record:nth-child(4) .o_field_many2many_tags_avatar .o_avatar img"
+        ".w_kanban_record:nth-child(4) .w_field_many2many_tags_avatar .w_avatar img"
     ).toHaveCount(1);
     expect(
-        ".o_kanban_record:nth-child(4) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_kanban_record:nth-child(4) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveCount(1);
     expect(
-        ".o_kanban_record:nth-child(4) .o_field_many2many_tags_avatar .o_m2m_avatar_empty"
+        ".w_kanban_record:nth-child(4) .w_field_many2many_tags_avatar .w_m2m_avatar_empty"
     ).toHaveText("+12");
-    expect(".o_field_many2many_tags_avatar .o_field_many2many_selection").toHaveCount(0);
-    await contains(".o_kanban_record:nth-child(2) .o_quick_assign", { visible: false }).click();
+    expect(".w_field_many2many_tags_avatar .w_field_many2many_selection").toHaveCount(0);
+    await contains(".w_kanban_record:nth-child(2) .w_quick_assign", { visible: false }).click();
     await animationFrame();
-    expect(".o-overlay-container input").toBeFocused();
-    expect(".o-overlay-container .o_tag").toHaveCount(2);
+    expect(".w-overlay-container input").toBeFocused();
+    expect(".w-overlay-container .w_tag").toHaveCount(2);
     // delete inside the popover
-    await contains(".o-overlay-container .o_tag .o_delete:eq(0)", {
+    await contains(".w-overlay-container .w_tag .w_delete:eq(0)", {
         visible: false,
         displayed: true,
     }).click();
-    expect(".o-overlay-container .o_tag").toHaveCount(1);
-    expect(".o_kanban_record:nth-child(2) .o_tag").toHaveCount(1);
+    expect(".w-overlay-container .w_tag").toHaveCount(1);
+    expect(".w_kanban_record:nth-child(2) .w_tag").toHaveCount(1);
     // select first non selected input
-    await contains(".o-overlay-container .o-autocomplete--dropdown-item:eq(4)").click();
-    expect(".o-overlay-container .o_tag").toHaveCount(2);
-    expect(".o_kanban_record:nth-child(2) .o_tag").toHaveCount(2);
+    await contains(".w-overlay-container .w-autocomplete--dropdown-item:eq(4)").click();
+    expect(".w-overlay-container .w_tag").toHaveCount(2);
+    expect(".w_kanban_record:nth-child(2) .w_tag").toHaveCount(2);
     // load more
-    await contains(".o-overlay-container .o_m2o_dropdown_option_search_more").click();
+    await contains(".w-overlay-container .w_m2o_dropdown_option_search_more").click();
     // first non already selected item
-    await contains(".o_dialog .o_list_table .o_data_row .o_data_cell:eq(3)").click();
-    expect(".o-overlay-container .o_tag").toHaveCount(3); // Should show full list above m2m autocomplete input
-    expect(".o_kanban_record:nth-child(2) .o_tag:not(.o_m2m_avatar_empty)").toHaveCount(1); // But keep truncate in the card
+    await contains(".w_dialog .w_list_table .w_data_row .w_data_cell:eq(3)").click();
+    expect(".w-overlay-container .w_tag").toHaveCount(3); // Should show full list above m2m autocomplete input
+    expect(".w_kanban_record:nth-child(2) .w_tag:not(.w_m2m_avatar_empty)").toHaveCount(1); // But keep truncate in the card
     expect(
-        `.o_kanban_record:nth-child(2) img.o_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
+        `.w_kanban_record:nth-child(2) img.w_m2m_avatar[data-src='${getOrigin()}/web/image/partner/2/avatar_128?unique=1676282400000']`
     ).toHaveCount(1);
-    await contains(".o_kanban_record .o_field_many2many_tags_avatar img.o_m2m_avatar").click();
+    await contains(".w_kanban_record .w_field_many2many_tags_avatar img.w_m2m_avatar").click();
 });
 
 test("widget many2many_tags_avatar add/remove tags in kanban view", async () => {
@@ -335,10 +335,10 @@ test("widget many2many_tags_avatar add/remove tags in kanban view", async () => 
                 </templates>
             </kanban>`,
     });
-    await contains(".o_kanban_record:eq(0) .o_quick_assign", { visible: false }).click();
+    await contains(".w_kanban_record:eq(0) .w_quick_assign", { visible: false }).click();
     // add and directly remove an item
-    await contains(".o_popover .o-autocomplete--dropdown-item:eq(0)").click();
-    await contains(".o_popover .o_tag .o_delete", { visible: false }).click();
+    await contains(".w_popover .w-autocomplete--dropdown-item:eq(0)").click();
+    await contains(".w_popover .w_tag .w_delete", { visible: false }).click();
     expect.verifySteps(["web_save: 4-1", "web_save: 3-1"]);
 });
 
@@ -355,15 +355,15 @@ test("widget many2many_tags_avatar delete tag", async () => {
             </form>`,
     });
 
-    expect(".o_field_many2many_tags_avatar.o_field_widget .o_tag").toHaveCount(2);
+    expect(".w_field_many2many_tags_avatar.w_field_widget .w_tag").toHaveCount(2);
 
-    await contains(".o_field_many2many_tags_avatar.o_field_widget .o_tag .o_delete", {
+    await contains(".w_field_many2many_tags_avatar.w_field_widget .w_tag .w_delete", {
         visible: false,
     }).click();
-    expect(".o_field_many2many_tags_avatar.o_field_widget .o_tag").toHaveCount(1);
+    expect(".w_field_many2many_tags_avatar.w_field_widget .w_tag").toHaveCount(1);
 
     await clickSave();
-    expect(".o_field_many2many_tags_avatar.o_field_widget .o_tag").toHaveCount(1);
+    expect(".w_field_many2many_tags_avatar.w_field_widget .w_tag").toHaveCount(1);
 });
 
 test("widget many2many_tags_avatar quick add tags and close in kanban view with keyboard navigation", async () => {
@@ -382,13 +382,13 @@ test("widget many2many_tags_avatar quick add tags and close in kanban view with 
                 </templates>
             </kanban>`,
     });
-    await contains(".o_kanban_record:eq(0) .o_quick_assign", { visible: false }).click();
+    await contains(".w_kanban_record:eq(0) .w_quick_assign", { visible: false }).click();
     // add and directly close the dropdown
     await press("Tab");
     await press("Enter");
     await animationFrame();
-    expect(".o_kanban_record:eq(0) .o_field_many2many_tags_avatar .o_tag").toHaveCount(1);
-    expect(".o_kanban_record:eq(0) .o_field_many2many_tags_avatar .o_popover").toHaveCount(0);
+    expect(".w_kanban_record:eq(0) .w_field_many2many_tags_avatar .w_tag").toHaveCount(1);
+    expect(".w_kanban_record:eq(0) .w_field_many2many_tags_avatar .w_popover").toHaveCount(0);
 });
 
 test("widget many2many_tags_avatar in kanban view missing access rights", async () => {
@@ -409,7 +409,7 @@ test("widget many2many_tags_avatar in kanban view missing access rights", async 
             </kanban>`,
     });
 
-    expect(".o_kanban_record:eq(0) .o_field_many2many_tags_avatar .o_quick_assign").toHaveCount(0);
+    expect(".w_kanban_record:eq(0) .w_field_many2many_tags_avatar .w_quick_assign").toHaveCount(0);
 });
 
 test("Many2ManyTagsAvatarField: make sure that the arch context is passed to the form view call", async () => {
@@ -433,8 +433,8 @@ test("Many2ManyTagsAvatarField: make sure that the arch context is passed to the
     await contains("div[name=partner_ids]").click();
     await contains(`div[name="partner_ids"] input`).edit("A new partner", { confirm: false });
     await runAllTimers();
-    await contains(".o_m2o_dropdown_option_create_edit").click();
+    await contains(".w_m2o_dropdown_option_create_edit").click();
 
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(1);
     expect.verifySteps(["onchange with context given"]);
 });

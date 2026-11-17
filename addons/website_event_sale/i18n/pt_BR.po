@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_event_sale/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr ""
 "                <span class=\"oi\" data-icon=\"login\"/>"
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/product_pricelist.py:0
 msgid ""
 "A pricelist item with a positive min. quantity cannot be applied to this "
@@ -186,14 +186,14 @@ msgid "Sell event tickets online"
 msgstr "Vender ingressos on-line"
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid "Sorry, The %(ticket)s tickets for the %(event)s event are sold out."
 msgstr ""
 "Sentimos muito, os ingressos %(ticket)s para o evento %(event)s já acabaram."
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid ""
 "Sorry, only %(remaining_seats)d seats are still available for the %(ticket)s "
@@ -203,31 +203,31 @@ msgstr ""
 "disponíveis para o evento %(event)s%(slot)s."
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid "The provided ticket doesn't exist"
 msgstr "O ingresso fornecido não existe"
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid "The provided ticket slot doesn't exist"
 msgstr "O horário do ingresso fornecido não existe"
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid "The ticket doesn't match with this product."
 msgstr "O ingresso não corresponde com este produto."
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/product_pricelist.py:0
 msgid "Warning"
 msgstr "Aviso"
 
 #. module: website_event_sale
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_sale/models/sale_order.py:0
 msgid "You cannot raise manually the event ticket quantity in your cart"
 msgstr ""

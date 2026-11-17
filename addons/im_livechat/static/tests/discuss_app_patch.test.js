@@ -43,7 +43,7 @@ test("add livechat in the sidebar on visitor sending first message", async () =>
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('No Livechat Session!'))");
     // simulate livechat visitor sending a message
     withGuest(guestId, () =>
         rpc("/mail/message/post", {
@@ -56,7 +56,7 @@ test("add livechat in the sidebar on visitor sending first message", async () =>
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-MessagingMenuItem:has(:text(Visitor))");
+    await contains(".w-mail-MessagingMenuItem:has(:text(Visitor))");
 });
 
 test("invite button should be present on livechat", async () => {
@@ -71,7 +71,7 @@ test("invite button should be present on livechat", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-livechat-ChannelInfoList"); // wait for auto-open of this panel
+    await contains(".w-livechat-ChannelInfoList"); // wait for auto-open of this panel
     await click("button[title='Members']");
     await contains("button[title='Add People']");
 });
@@ -90,7 +90,7 @@ test("command palette search finds livechats", async () => {
     await triggerHotkey("control+k");
     await insertText(".o_command_palette_search input", "@");
     await click("a", { text: "Visitor 11" });
-    await contains(".o-mail-ChatWindow-displayName:text('Visitor 11')");
+    await contains(".w-mail-ChatWindow-displayName:text('Visitor 11')");
 });
 
 test("open visitor's partner profile if visitor has one", async () => {
@@ -122,9 +122,9 @@ test("Conversation description works in livechat", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Composer-input:focus");
+    await contains(".w-mail-Composer-input:focus");
     await contains(
-        "input.o-mail-DiscussContent-threadDescription:value(Yup, that customer again...)"
+        "input.w-mail-DiscussContent-threadDescription:value(Yup, that customer again...)"
     );
 });
 
@@ -146,12 +146,12 @@ test("reply to message composer should disappear when livechat conversation ends
     });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-Message:has(:text('Hello, I need help!')) [title='Expand']");
-    await click(".o-dropdown-item:text('Reply')");
-    await contains(".o-mail-Composer:has(:text('Replying to Visitor'))");
+    await click(".w-mail-Message:has(:text('Hello, I need help!')) [title='Expand']");
+    await click(".w-dropdown-item:text('Reply')");
+    await contains(".w-mail-Composer:has(:text('Replying to Visitor'))");
     await withGuest(guestId, () =>
         rpc("/im_livechat/visitor_leave_session", { channel_id: channelId })
     );
     await contains("span:text('This live chat conversation has ended.')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
 });

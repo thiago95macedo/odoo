@@ -30,7 +30,7 @@ test("bus subscription updated when joining/leaving thread as non member", async
     await openDiscuss(channelId);
     await waitForChannels([`discuss.channel_${channelId}`]);
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:text(Hide)");
+    await click(".w-dropdown-item:text(Hide)");
     await waitForChannels([`discuss.channel_${channelId}`], { operation: "delete" });
 });
 
@@ -42,17 +42,17 @@ test("bus subscription updated when opening/closing chat window as a non member"
     });
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow:has(:text('Sales'))");
+    await contains(".w-mail-ChatWindow:has(:text('Sales'))");
     await waitForChannels([`discuss.channel_${channelId}`]);
     await click("[title*='Close Chat Window']", {
-        parent: [".o-mail-ChatWindow:has(:text('Sales'))"],
+        parent: [".w-mail-ChatWindow:has(:text('Sales'))"],
     });
-    await contains(".o-mail-ChatWindow:has(:text('Sales'))", { count: 0 });
+    await contains(".w-mail-ChatWindow:has(:text('Sales'))", { count: 0 });
     await waitForChannels([`discuss.channel_${channelId}`], { operation: "delete" });
     await press(["control", "k"]);
     await click(".o_command_palette_search input");
     await edit("@");
-    await click(".o-mail-DiscussCommand:text('Sales')");
+    await click(".w-mail-DiscussCommand:text('Sales')");
     await waitForChannels([`discuss.channel_${channelId}`]);
 });
 
@@ -65,10 +65,10 @@ test("bus subscription updated when joining non-member thread open in discuss", 
     await start();
     await openDiscuss(channelId);
     await waitForChannels([`discuss.channel_${channelId}`]);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("[title='Add People']");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('Mitchell Admin'))");
-    await click(".o-discuss-ChannelInvitation button:text('Invite'):enabled");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('Mitchell Admin'))");
+    await click(".w-discuss-ChannelInvitation button:text('Invite'):enabled");
     await waitForChannels([`discuss.channel_${channelId}`], { operation: "delete" });
 });
 
@@ -87,8 +87,8 @@ test("bus subscription is refreshed when channel is joined", async () => {
     patchWithCleanup(getService("mail.store"), {
         updateBusSubscription: () => expect.step("update_bus_subscription"),
     });
-    await click(".o-mail-DiscussCommand:has(:text('Sales'))");
-    await contains(".o-mail-DiscussContent-threadName[title='Sales']");
+    await click(".w-mail-DiscussCommand:has(:text('Sales'))");
+    await contains(".w-mail-DiscussContent-threadName[title='Sales']");
     await click("button:text('Add People')");
     await click("[name='selectablePartnerName']:text('Mitchell Admin')");
     await click("button:text('Invite')");
@@ -102,17 +102,17 @@ test("bus subscription is refreshed when channel is left", async () => {
     mockDate(later.toUTC().toFormat("yyyy-MM-dd HH:mm:ss"));
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-Discuss[data-active]");
+    await contains(".w-mail-Discuss[data-active]");
     await runAllTimers(); // settle the bus subscriptions from start/openDiscuss
     await openDiscuss();
     patchWithCleanup(getService("mail.store"), {
         updateBusSubscription: () => expect.step("update_bus_subscription"),
     });
-    await contains(".o-mail-MessagingMenuItem");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await click(".o_dialog button:text('Leave Conversation')");
-    await contains(".o-mail-MessagingMenuItem", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem", { count: 0 });
     await expect.waitForSteps(["update_bus_subscription"]);
 });

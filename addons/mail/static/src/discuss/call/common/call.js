@@ -514,7 +514,7 @@ export class Call extends Component {
     onMouseleaveMain(ev) {
         if (
             ev.relatedTarget &&
-            (ev.relatedTarget.closest(".o-dropdown--menu") ||
+            (ev.relatedTarget.closest(".w-dropdown--menu") ||
                 ev.relatedTarget.closest(".o_popover"))
         ) {
             // the overlay should not be hidden when the cursor leaves to enter the controller dropdown

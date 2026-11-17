@@ -308,12 +308,12 @@ export function unlinkByCommand(editor) {
 }
 
 export async function unlinkFromToolbar() {
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await click(".btn[name='unlink']");
 }
 
 export async function unlinkFromPopover() {
-    await waitFor(".o-we-linkpopover");
+    await waitFor(".w-we-linkpopover");
     await click(".o_we_edit_link");
     await animationFrame();
     await click(".o_we_remove_link");
@@ -415,8 +415,8 @@ export function pasteHtml(editor, html) {
  * @param {Editor} editor
  * @param {string} html
  */
-export function pasteOdooEditorHtml(editor, html) {
-    return pasteData(editor, html, "application/vnd.odoo.odoo-editor");
+export function pasteWethEditorHtml(editor, html) {
+    return pasteData(editor, html, "application/vnd.weth.weth-editor");
 }
 /**
  * For desktop use only.

@@ -69,13 +69,13 @@ test("set the label of the select from the active select item and be updated on 
     expect(".options-container").toBeVisible();
     expect(".we-bg-options-container .dropdown").toHaveText("A");
     await contains(".we-bg-options-container .dropdown").click();
-    await contains(".o-overlay-item [data-attribute-action-value='b']").click();
+    await contains(".w-overlay-item [data-attribute-action-value='b']").click();
     expect(".we-bg-options-container .dropdown").toHaveText("B");
     await animationFrame();
-    expect(".o-overlay-item [data-attribute-action-value='b']").not.toHaveCount();
-    await contains(".o-snippets-top-actions [data-icon='undo']").click();
+    expect(".w-overlay-item [data-attribute-action-value='b']").not.toHaveCount();
+    await contains(".w-snippets-top-actions [data-icon='undo']").click();
     expect(".we-bg-options-container .dropdown").toHaveText("A");
-    await contains(".o-snippets-top-actions [data-icon='redo']").click();
+    await contains(".w-snippets-top-actions [data-icon='redo']").click();
     expect(".we-bg-options-container .dropdown").toHaveText("B");
 });
 test("set the label of the select after SVG Image children are inserted", async () => {
@@ -133,11 +133,11 @@ test("consider the priority of the select item", async () => {
     expect(".we-bg-options-container .dropdown").toHaveText("A");
     await contains(".we-bg-options-container .dropdown").click();
 
-    await contains(".o-overlay-item [data-class-action='']").click();
+    await contains(".w-overlay-item [data-class-action='']").click();
     expect(".we-bg-options-container .dropdown").toHaveText("None");
     await contains(".we-bg-options-container .dropdown").click();
 
-    await contains(".o-overlay-item [data-class-action='a b']").click();
+    await contains(".w-overlay-item [data-class-action='a b']").click();
     expect(".we-bg-options-container .dropdown").toHaveText("A B");
 });
 test("hide/display BuilderSelect based on applyTo", async () => {
@@ -201,7 +201,7 @@ test("hide/display BuilderSelectItem base on applyTo", async () => {
     expect("[data-class-action='my-custom-class']").not.toHaveClass("active");
     expect(".options-container button.dropdown-toggle").toHaveCount(1);
     await contains(".options-container button.dropdown-toggle").click();
-    expect(queryAllTexts(".o-dropdown--menu div.o-dropdown-item")).toEqual(["A", "C"]);
+    expect(queryAllTexts(".w-dropdown--menu div.w-dropdown-item")).toEqual(["A", "C"]);
 
     await contains("[data-class-action='my-custom-class']").click();
     expect(editableContent).toHaveInnerHTML(
@@ -209,7 +209,7 @@ test("hide/display BuilderSelectItem base on applyTo", async () => {
     );
     expect("[data-class-action='my-custom-class']").toHaveClass("active");
     await contains(".options-container button.dropdown-toggle").click();
-    expect(queryAllTexts(".o-dropdown--menu div.o-dropdown-item")).toEqual(["A", "B", "C"]);
+    expect(queryAllTexts(".w-dropdown--menu div.w-dropdown-item")).toEqual(["A", "B", "C"]);
 });
 
 test("hide/display BuilderSelect base on applyTo in BuilderSelectItem", async () => {
@@ -250,13 +250,13 @@ test("use BuilderSelect with styleAction", async () => {
     expect(".we-bg-options-container .dropdown").toHaveText("none");
 
     await contains(".options-container button.dropdown-toggle").click();
-    expect(queryAllTexts(".o-dropdown--menu div.o-dropdown-item")).toEqual([
+    expect(queryAllTexts(".w-dropdown--menu div.w-dropdown-item")).toEqual([
         "dotted",
         "inset",
         "none",
     ]);
 
-    await contains(".o-dropdown--menu div.o-dropdown-item:contains(dotted)").click();
+    await contains(".w-dropdown--menu div.w-dropdown-item:contains(dotted)").click();
     expect(editableContent).toHaveInnerHTML(
         `<div class="parent-target" style="border-style: dotted;">b</div>`
     );
@@ -280,10 +280,10 @@ test("do not put inline style on an element which already has this style through
     await contains(":iframe .test").click();
     expect(".we-bg-options-container .dropdown").toHaveText("inset");
     await contains(".we-bg-options-container .dropdown").click();
-    await contains(".o-dropdown--menu div.o-dropdown-item:contains('dotted')").click();
+    await contains(".w-dropdown--menu div.w-dropdown-item:contains('dotted')").click();
     expect(":iframe hr").toHaveStyle({ "border-top-style": "dotted" });
     await contains(".we-bg-options-container .dropdown").click();
-    await contains(".o-dropdown--menu div.o-dropdown-item:contains('inset')").click();
+    await contains(".w-dropdown--menu div.w-dropdown-item:contains('inset')").click();
     expect(":iframe hr").not.toHaveStyle("border-top-style", { inline: true });
 });
 test("revert a preview when cancelling a BuilderSelect by clicking outside of it", async () => {
@@ -300,7 +300,7 @@ test("revert a preview when cancelling a BuilderSelect by clicking outside of it
     await contains(":iframe .test").click();
     expect(":iframe .test").not.toHaveAttribute("data-choice");
     await contains(".we-bg-options-container .dropdown").click();
-    await contains(".o-dropdown--menu div.o-dropdown-item:contains('0')").hover();
+    await contains(".w-dropdown--menu div.w-dropdown-item:contains('0')").hover();
     expect(":iframe .test").toHaveAttribute("data-choice", "0");
     await click(".we-bg-options-container");
     expect(":iframe .test").not.toHaveAttribute("data-choice");
@@ -319,7 +319,7 @@ test("revert a preview when cancelling a BuilderSelect with escape", async () =>
     await contains(":iframe .test").click();
     expect(":iframe .test").not.toHaveAttribute("data-choice");
     await contains(".we-bg-options-container .dropdown").click();
-    await contains(".o-dropdown--menu div.o-dropdown-item:contains('0')").hover();
+    await contains(".w-dropdown--menu div.w-dropdown-item:contains('0')").hover();
     expect(":iframe .test").toHaveAttribute("data-choice", "0");
     await press("escape");
     expect(":iframe .test").not.toHaveAttribute("data-choice");
@@ -356,7 +356,7 @@ test("revert a preview selected with the keyboard when cancelling with escape", 
     expect(":iframe .test").not.toHaveAttribute("data-choice");
     await contains(".we-bg-options-container .dropdown").press("enter");
     await press("arrowdown");
-    expect(".o-dropdown--menu div.o-dropdown-item:contains('0')").toBeFocused();
+    expect(".w-dropdown--menu div.w-dropdown-item:contains('0')").toBeFocused();
     await press("escape");
     await tick();
     expect(":iframe .test").not.toHaveAttribute("data-choice");
@@ -403,13 +403,13 @@ describe("LTR - RTL compatibility", () => {
         await setupHTMLBuilder(`<div class="selector">Hello</div>`);
         await contains(":iframe .selector").click();
         await contains(".we-bg-options-container .dropdown").click();
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(0)").toHaveAttribute("title", "Left");
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(1)").toHaveAttribute("title", "Right");
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(0)").click();
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(0)").toHaveAttribute("title", "Left");
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(1)").toHaveAttribute("title", "Right");
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
         await contains(".we-bg-options-container .dropdown").click();
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(1)").click();
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
     });
@@ -434,13 +434,13 @@ describe("LTR - RTL compatibility", () => {
         });
         await contains(":iframe .selector").click();
         await contains(".we-bg-options-container .dropdown").click();
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(0)").toHaveAttribute("title", "Right");
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(1)").toHaveAttribute("title", "Left");
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(0)").click();
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(0)").toHaveAttribute("title", "Right");
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(1)").toHaveAttribute("title", "Left");
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
         await contains(".we-bg-options-container .dropdown").click();
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(1)").click();
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
     });
@@ -463,13 +463,13 @@ describe("LTR - RTL compatibility", () => {
         await setupHTMLBuilder(`<div class="selector">Hello</div>`);
         await contains(":iframe .selector").click();
         await contains(".we-bg-options-container .dropdown").click();
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(0)").toHaveAttribute("title", "Right");
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(1)").toHaveAttribute("title", "Left");
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(0)").click();
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(0)").toHaveAttribute("title", "Right");
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(1)").toHaveAttribute("title", "Left");
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
         await contains(".we-bg-options-container .dropdown").click();
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(1)").click();
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
     });
@@ -480,13 +480,13 @@ describe("LTR - RTL compatibility", () => {
         });
         await contains(":iframe .selector").click();
         await contains(".we-bg-options-container .dropdown").click();
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(0)").toHaveAttribute("title", "Left");
-        expect(".o-dropdown--menu div.o-dropdown-item:eq(1)").toHaveAttribute("title", "Right");
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(0)").click();
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(0)").toHaveAttribute("title", "Left");
+        expect(".w-dropdown--menu div.w-dropdown-item:eq(1)").toHaveAttribute("title", "Right");
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(0)").click();
         expect(":iframe .selector").toHaveClass("class-b");
         expect(":iframe .selector").not.toHaveClass("class-a");
         await contains(".we-bg-options-container .dropdown").click();
-        await contains(".o-dropdown--menu div.o-dropdown-item:eq(1)").click();
+        await contains(".w-dropdown--menu div.w-dropdown-item:eq(1)").click();
         expect(":iframe .selector").toHaveClass("class-a");
         expect(":iframe .selector").not.toHaveClass("class-b");
     });

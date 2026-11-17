@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/maintenance/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -499,8 +499,8 @@ msgstr "Alias de e-mail dessa equipe de manutenção."
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_team__alias_domain
-msgid "Email domain e.g. 'example.com' in 'odoo@example.com'"
-msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'odoo@exemplo.com'"
+msgid "Email domain e.g. 'example.com' in 'weth@example.com'"
+msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'weth@exemplo.com'"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__repeat_until
@@ -508,7 +508,7 @@ msgid "End Date"
 msgstr "Data de término"
 
 #. module: maintenance
-#. odoo-python
+#. weth-python
 #: code:addons/maintenance/models/maintenance.py:0
 msgid "End date cannot be earlier than start date."
 msgstr "A data de término não pode ser anterior à data de início."
@@ -1340,7 +1340,7 @@ msgid "Scheduled Date"
 msgstr "Data agendada"
 
 #. module: maintenance
-#. odoo-python
+#. weth-python
 #: code:addons/maintenance/models/maintenance.py:0
 msgid ""
 "Scheduled Date and Scheduled End must either both be set or both be empty."
@@ -1488,11 +1488,11 @@ msgstr "Texto"
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_team__alias_model_id
 msgid ""
-"The model (Odoo Document Kind) to which this alias corresponds. Any incoming "
+"The model (WETH Document Kind) to which this alias corresponds. Any incoming "
 "email that does not reply to an existing record will cause the creation of a "
 "new record of this model (e.g. a Project Task)"
 msgstr ""
-"O modelo (tipo de documento do Odoo) ao qual esse alias corresponde. "
+"O modelo (tipo de documento do Weth) ao qual esse alias corresponde. "
 "Qualquer e-mail recebido que não responda a um registro existente causará a "
 "criação de um novo registro desse modelo (ex.: uma tarefa de projeto)"
 
@@ -1506,7 +1506,7 @@ msgstr ""
 "mails enviados a <empregos@suaempresa.com.br>"
 
 #. module: maintenance
-#. odoo-python
+#. weth-python
 #: code:addons/maintenance/models/maintenance.py:0
 msgid "The repeat interval cannot be less than 1."
 msgstr "O intervalo de repetição não pode ser menor que 1."
@@ -1634,7 +1634,7 @@ msgid "Years"
 msgstr "Anos"
 
 #. module: maintenance
-#. odoo-python
+#. weth-python
 #: code:addons/maintenance/models/maintenance.py:0
 msgid ""
 "You can’t delete an equipment category if some equipment or maintenance "

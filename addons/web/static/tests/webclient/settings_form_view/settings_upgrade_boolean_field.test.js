@@ -27,9 +27,9 @@ test("widget upgrade_boolean in a form view - dialog", async () => {
         resModel: "res.config.settings",
     });
 
-    await click(".o-checkbox .form-check-input");
+    await click(".w-checkbox .form-check-input");
     await animationFrame();
-    expect(".o_dialog .modal").toHaveCount(1, {
+    expect(".w_dialog .modal").toHaveCount(1, {
         message: "the 'Upgrade to Enterprise' dialog should be opened",
     });
 });
@@ -48,19 +48,19 @@ test("widget upgrade_boolean in a form view - label", async () => {
         resModel: "res.config.settings",
     });
 
-    expect(".o_field .badge").toHaveCount(0, {
+    expect(".w_field .badge").toHaveCount(0, {
         message: "the upgrade badge shouldn't be inside the field section",
     });
-    expect(".o_form_label .badge").toHaveCount(1, {
+    expect(".w_form_label .badge").toHaveCount(1, {
         message: "the upgrade badge should be inside the label section",
     });
-    expect(".o_form_label").toHaveText("Coucou\nEnterprise", {
+    expect(".w_form_label").toHaveText("Coucou\nEnterprise", {
         message: "the upgrade label should be inside the label section",
     });
 });
 
 test("widget upgrade_boolean in a form view - dialog (enterprise version)", async () => {
-    patchWithCleanup(odoo, { info: { isEnterprise: 1 } });
+    patchWithCleanup(weth, { info: { isEnterprise: 1 } });
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -72,16 +72,16 @@ test("widget upgrade_boolean in a form view - dialog (enterprise version)", asyn
         resModel: "res.config.settings",
     });
 
-    await click(".o-checkbox .form-check-input");
+    await click(".w-checkbox .form-check-input");
     await animationFrame();
 
-    expect(".o_dialog .modal").toHaveCount(0, {
+    expect(".w_dialog .modal").toHaveCount(0, {
         message: "the 'Upgrade to Enterprise' dialog shouldn't be opened",
     });
 });
 
 test("widget upgrade_boolean in a form view - label (enterprise version)", async () => {
-    patchWithCleanup(odoo, { info: { isEnterprise: 1 } });
+    patchWithCleanup(weth, { info: { isEnterprise: 1 } });
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -95,13 +95,13 @@ test("widget upgrade_boolean in a form view - label (enterprise version)", async
         resModel: "res.config.settings",
     });
 
-    expect(".o_field .badge").toHaveCount(0, {
+    expect(".w_field .badge").toHaveCount(0, {
         message: "the upgrade badge shouldn't be inside the field section",
     });
-    expect(".o_form_label .badge").toHaveCount(0, {
+    expect(".w_form_label .badge").toHaveCount(0, {
         message: "the upgrade badge shouldn't be inside the label section",
     });
-    expect(".o_form_label").toHaveText("Coucou", {
+    expect(".w_form_label").toHaveText("Coucou", {
         message: "the label shouldn't contains the upgrade label",
     });
 });

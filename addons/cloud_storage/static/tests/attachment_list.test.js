@@ -44,11 +44,11 @@ test("cloud storage text file is shown in the card and in the viewer", async () 
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-AttachmentCard iframe[data-src^='blob:']");
-    const thumbnailUrl = queryAttribute(".o-mail-AttachmentCard iframe", "data-src");
+    await contains(".w-mail-AttachmentCard iframe[data-src^='blob:']");
+    const thumbnailUrl = queryAttribute(".w-mail-AttachmentCard iframe", "data-src");
     expect(await blobTexts[thumbnailUrl]).toBe("a".repeat(4096));
-    await click(".o-mail-AttachmentCard-info:text('notes.txt')");
-    await contains(".o-FileViewer iframe.o-isText[data-src^='blob:']");
-    const viewerUrl = queryAttribute(".o-FileViewer iframe.o-isText", "data-src");
+    await click(".w-mail-AttachmentCard-info:text('notes.txt')");
+    await contains(".w-FileViewer iframe.w-isText[data-src^='blob:']");
+    const viewerUrl = queryAttribute(".w-FileViewer iframe.w-isText", "data-src");
     expect(await blobTexts[viewerUrl]).toBe(content);
 });

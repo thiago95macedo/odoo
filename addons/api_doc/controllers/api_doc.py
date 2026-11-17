@@ -88,7 +88,7 @@ class DocController(http.Controller):
                 {'modules': modules, 'models': models},
                 headers={
                     'Cache-Control': 'no-store',
-                    'Content-Disposition': content_disposition('odoo-doc-index.json'),
+                    'Content-Disposition': content_disposition('weth-doc-index.json'),
                     'Content-Language': py_to_js_locale(self.env.lang),
                 },
             )
@@ -111,7 +111,7 @@ class DocController(http.Controller):
 
         # Server cache, use an attachment because the index gets very
         # large (>1MiB) when there are many modules installed.
-        filename = f'odoo-doc-index-{db_registry_sequence}-{unique}.json'
+        filename = f'weth-doc-index-{db_registry_sequence}-{unique}.json'
         index_attach = self.env['ir.attachment'].sudo().search([('name', '=', filename)], limit=1)
         if not index_attach:
             modules, models = self._doc_index()

@@ -471,7 +471,7 @@ class IrHttp(models.AbstractModel):
                 token_or_partner_id=access_token,
                 website_id=website_id,
                 lang_id=request.lang.id,
-                country_code=request.geoip.country_code,  # GEOIP might return a country code unknown to odoo
+                country_code=request.geoip.country_code,  # GEOIP might return a country code unknown to weth
                 timezone=self.env['website.visitor']._get_visitor_timezone(),
                 **force_track_values
             )

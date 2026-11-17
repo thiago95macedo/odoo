@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_partnership/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgid "Can Publish"
 msgstr "Pode Publicar"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Categories"
 msgstr "Categorias"
@@ -92,13 +92,13 @@ msgid "Close"
 msgstr "Fechar"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Companies only"
 msgstr "Somente empresas"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/partner_page_option.xml:0
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Contact Details"
@@ -149,7 +149,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Image Format"
 msgstr "Formato da imagem"
@@ -170,20 +170,20 @@ msgid "Partner Grade"
 msgstr "Classe do Parceiro"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/partner_page_option.xml:0
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Partner Page"
 msgstr "Página de parceiros"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 msgid "Partner page"
 msgstr "Página de parceiros"
 
 #. module: website_partnership
-#. odoo-python
+#. weth-python
 #: code:addons/website_partnership/controllers/main.py:0
 #: code:addons/website_partnership/models/website.py:0
 #: model_terms:ir.ui.view,arch_db:website_partnership.index_layout
@@ -206,7 +206,7 @@ msgid "Published date"
 msgstr "Data da publicação"
 
 #. module: website_partnership
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_partnership/static/src/website_builder/website_partnership_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_partnership.search_setting
 msgid "Search"

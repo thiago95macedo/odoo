@@ -1,6 +1,6 @@
 import { animationFrame } from "@weth/hoot-mock";
 import { Model, stores } from "@weth/o-spreadsheet";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import {
     defineActions,
     defineMenus,
@@ -16,11 +16,11 @@ import { markRaw } from "@weth/owl";
 
 /**
  * @typedef {import("@spreadsheet/../tests/helpers/data").ServerData} ServerData
- * @typedef {import("@spreadsheet/helpers/model").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet/helpers/model").WethSpreadsheetModel} WethSpreadsheetModel
  */
 
 export function setupDataSourceEvaluation(model) {
-    model.config.custom.odooDataProvider.addEventListener("data-source-updated", () => {
+    model.config.custom.wethDataProvider.addEventListener("data-source-updated", () => {
         const sheetId = model.getters.getActiveSheetId();
         model.dispatch("EVALUATE_CELLS", { sheetId });
     });
@@ -34,7 +34,7 @@ export function setupDataSourceEvaluation(model) {
  * @param {object} [params.modelConfig]
  * @param {ServerData} [params.serverData] Data to be injected in the mock server
  * @param {function} [params.mockRPC] Mock rpc function
- * @returns {Promise<{ model: OdooSpreadsheetModel, env: Object }>}
+ * @returns {Promise<{ model: WethSpreadsheetModel, env: Object }>}
  */
 export async function createModelWithDataSource(params = {}) {
     await makeSpreadsheetMockEnv(params);
@@ -45,7 +45,7 @@ export async function createModelWithDataSource(params = {}) {
         ...config,
         custom: {
             env,
-            odooDataProvider: new OdooDataProvider(env),
+            wethDataProvider: new WethDataProvider(env),
             ...config?.custom,
         },
     });

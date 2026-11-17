@@ -170,7 +170,7 @@ class BlackBoxDriver(SerialDriver):
         }
 
     def send_blackbox_response(self, data, retry_nbr=0):
-        server_url = helpers.get_odoo_server_url() + "/pos_self_blackbox/confirmation"
+        server_url = helpers.get_weth_server_url() + "/pos_self_blackbox/confirmation"
         try:
             response = requests.post(server_url, json=data, timeout=5)
             response.raise_for_status()

@@ -112,8 +112,8 @@ test("Elements with withBSClass = false don't reset their style when width is ch
     await waitForNone(".o_popover");
 
     // set style to dotted
-    await click(queryOne("[data-label='Border'] .o-hb-select-toggle"));
-    await waitFor("[data-label='Border'] .o-hb-select-toggle.show", { timeout: 500 });
+    await click(queryOne("[data-label='Border'] .w-hb-select-toggle"));
+    await waitFor("[data-label='Border'] .w-hb-select-toggle.show", { timeout: 500 });
     await click(queryOne(".o_popover [data-action-value='dotted']"));
 
     // edit width and check that color and style have been kept

@@ -8,7 +8,7 @@ export const callPipService = {
     dependencies: ["mail.popout"],
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

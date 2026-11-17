@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_razorpay/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgid "Connect"
 msgstr "Conectar"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/controllers/onboarding.py:0
 msgid "Could not find Razorpay provider with id %s"
 msgstr "Não foi possível encontrar o provedor Razorpay com o id %s"
@@ -154,7 +154,7 @@ msgid "Netbanking"
 msgstr "Netbanking"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_provider.py:0
 msgid "Other Payment Providers"
 msgstr "Outros provedores de pagamento"
@@ -190,7 +190,7 @@ msgid "Payment Transaction"
 msgstr "Transação de pagamento"
 
 #. module: payment_razorpay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_razorpay/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -246,7 +246,7 @@ msgid "Razorpay Webhook Secret"
 msgstr "Segredo do webhook do Razorpay"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_provider.py:0
 msgid ""
 "Razorpay credentials are missing. Please fill them to set up your account."
@@ -254,7 +254,7 @@ msgstr ""
 "Faltam as credenciais do Razorpay. Preencha-as para configurar sua conta."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_provider.py:0
 msgid ""
 "Razorpay credentials are missing. Please set the state back to 'Disabled' "
@@ -264,7 +264,7 @@ msgstr ""
 "'Desativado' e clique no botão \"Conectar\" para configurar sua conta."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_provider.py:0
 msgid ""
 "Razorpay is not available in your country; please use another payment "
@@ -273,25 +273,25 @@ msgstr ""
 "O Razorpay não está disponível em seu país; use outro provedor de pagamento."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "Received data with invalid status: %s"
 msgstr "Dados recebidos com status inválido: %s"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "Received data with missing entity id."
 msgstr "Dados recebidos com ID de entidade ausente."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "Received data with missing status."
 msgstr "Dados recebidos com status ausente."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "Received incomplete refund data."
 msgstr "Recebeu dados de reembolso incompletos."
@@ -307,13 +307,13 @@ msgid "The key solely used to identify the account with Razorpay."
 msgstr "A chave usada exclusivamente para identificar a conta no Razorpay."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "The phone number is invalid."
 msgstr "O número de telefone é inválido."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "The phone number is missing."
 msgstr "O número de telefone está faltando."
@@ -329,7 +329,7 @@ msgid "This provider is linked with your Razorpay account."
 msgstr "Esse provedor está vinculado à sua conta Razorpay."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid "Transactions processed by Razorpay can't be manually voided from WETH."
 msgstr ""
@@ -372,7 +372,7 @@ msgstr ""
 "                    recomendado."
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_token.py:0
 msgid ""
 "You can not pay amounts greater than %(currency_symbol)s %(max_amount)s with "
@@ -382,13 +382,13 @@ msgstr ""
 "com essa forma de pagamento"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_provider.py:0
 msgid "Your Razorpay webhook was successfully set up!"
 msgstr "O webhook Razorpay foi configurado com sucesso!"
 
 #. module: payment_razorpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_razorpay/models/payment_transaction.py:0
 msgid ""
 "Your last payment %s will soon be processed. Please wait up to 24 hours "

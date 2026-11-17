@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
 <t t-name="website_sale.ProductsListPageOption">
-    <!-- Dummy element to allow styling this specific option container with .o_wsale_products_list_page_options -->
+    <!-- Dummy element to allow styling this specific option container with .w_wsale_products_list_page_options -->
     <div class="d-none o_wsale_products_list_page_options"/>
 
     <BuilderRow label.translate="Content Width">
@@ -78,7 +78,7 @@
                     previewClass: 'o_wsale_previewing_sidebar o_wsale_has_sidebar',
                     templateId: 'website_sale.editor_preview.sidebar',
                     placeBefore: '#products_grid',
-                    placeExcludeRootClosest: '#o_wsale_container.o_wsale_has_sidebar',
+                    placeExcludeRootClosest: '#o_wsale_container.w_wsale_has_sidebar',
                     }"
         >Sidebar</BuilderButton>
 
@@ -90,7 +90,7 @@
                     previewClass: 'o_wsale_previewing_filmstrip',
                     templateId: 'website_sale.editor_preview.filmstrip',
                     placeAfter: '#o_wsale_products_header h1',
-                    placeExcludeRootClosest: '#o_wsale_container.o_wsale_has_filmstrip',
+                    placeExcludeRootClosest: '#o_wsale_container.w_wsale_has_filmstrip',
                 }"
         >Top</BuilderButton>
     </BuilderRow>
@@ -183,7 +183,7 @@
                         previewClass: 'o_wsale_previewing_sidebar o_wsale_has_sidebar',
                         templateId: 'website_sale.editor_preview.sidebar',
                         placeBefore: '#products_grid',
-                        placeExcludeRootClosest: '#o_wsale_container.o_wsale_has_sidebar',
+                        placeExcludeRootClosest: '#o_wsale_container.w_wsale_has_sidebar',
                     }"
             >Sidebar</BuilderSelectItem>
             <BuilderSelectItem
@@ -239,8 +239,8 @@
                     views: ['website_sale.floating_bar'],
                     previewClass: 'o_wsale_previewing_floating_bar',
                     templateId: 'website_sale.editor_preview.floating_bar',
-                    placeExcludeRootClosest: '#o_wsale_container.o_wsale_has_floating_bar',
-                    placeAfter: '.o_wsale_products_main_row',
+                    placeExcludeRootClosest: '#o_wsale_container.w_wsale_has_floating_bar',
+                    placeAfter: '.w_wsale_products_main_row',
                 }"
         />
     </BuilderRow>

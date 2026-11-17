@@ -50,13 +50,13 @@ export class Toolbar extends Component {
             bypassEditableProtection: true,
             withOverlay: () =>
                 document.activeElement.closest(
-                    ".o-we-toolbar[data-namespace], [data-prevent-closing-overlay]"
+                    ".w-we-toolbar[data-namespace], [data-prevent-closing-overlay]"
                 )
                     ? null
                     : this.toolbarEl(),
             isAvailable: () =>
                 !document.activeElement.closest(
-                    ".o-we-toolbar[data-namespace], [data-prevent-closing-overlay]"
+                    ".w-we-toolbar[data-namespace], [data-prevent-closing-overlay]"
                 ),
         });
     }

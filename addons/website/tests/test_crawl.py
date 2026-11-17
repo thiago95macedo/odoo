@@ -16,7 +16,7 @@ _logger = logging.getLogger(__name__)
 
 @weth.tests.common.tagged('post_install', '-at_install', 'crawl')
 class Crawler(HttpCaseWithUserDemo):
-    """ Test suite crawling an Odoo CMS instance and checking that all
+    """ Test suite crawling an WETH CMS instance and checking that all
     internal links lead to a 200 response.
 
     If a username and a password are provided, authenticates the user before
@@ -26,13 +26,13 @@ class Crawler(HttpCaseWithUserDemo):
     def setUp(self):
         super(Crawler, self).setUp()
         self.env.ref('base.default_website').company_id.write({
-            'social_facebook': "https://www.facebook.com/Odoo",
-            'social_twitter': 'https://twitter.com/Odoo',
-            'social_linkedin': 'https://www.linkedin.com/company/odoo',
-            'social_youtube': 'https://www.youtube.com/user/OpenERPonline',
-            'social_github': 'https://github.com/odoo',
+            'social_facebook': "https://www.facebook.com/Weth",
+            'social_twitter': 'https://twitter.com/Weth',
+            'social_linkedin': 'https://www.linkedin.com/company/weth',
+            'social_youtube': 'https://www.youtube.com/@wethtecnologia',
+            'social_github': 'https://github.com/weth',
             'social_instagram': 'https://www.instagram.com/explore/tags/weth/',
-            'social_tiktok': 'https://www.tiktok.com/@odoo',
+            'social_tiktok': 'https://www.tiktok.com/@weth',
             'social_discord': 'https://discord.com/servers/discord-town-hall-169256939211980800',
         })
 
@@ -98,7 +98,7 @@ class Crawler(HttpCaseWithUserDemo):
                 # FIXME: handle relative link (not parts.path.startswith /)
                 if parts.netloc or \
                     not parts.path.startswith('/') or \
-                    parts.path == '/odoo' or\
+                    parts.path == '/weth' or\
                     parts.path.startswith('/web/') or \
                     parts.path.startswith('/en/') or \
                    (parts.scheme and parts.scheme not in ('http', 'https')):

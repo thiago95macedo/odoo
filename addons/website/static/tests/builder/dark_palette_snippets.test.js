@@ -70,9 +70,9 @@ test("snippet dialog uses dark palette content adaptations", async () => {
 
     // Switch the website from a light palette to a dark palette.
     await contains("#theme-tab").click();
-    await contains(".o-tab-content .o-hb-theme-color-slider-btn").click();
+    await contains(".w-tab-content .w-hb-theme-color-slider-btn").click();
     await contains(".o_theme_tab [data-icon='palette']").click();
-    await contains(`[data-action-value="'default-dark-1'"] .o-color-palette-card span`).click();
+    await contains(`[data-action-value="'default-dark-1'"] .w-color-palette-card span`).click();
     await reloadPromise.promise;
     expect(isDarkColorPalette(pageDocument)).toBe(true);
 

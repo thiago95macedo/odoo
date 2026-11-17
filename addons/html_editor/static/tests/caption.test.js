@@ -46,7 +46,7 @@ const setupEditorWithEmbeddedCaption = async (content) =>
     await setupEditor(content, { config: configWithEmbeddedCaption });
 const toggleCaption = async (editor, captionText) => {
     await click("img");
-    await waitFor(".o-we-toolbar button[name='image_caption']");
+    await waitFor(".w-we-toolbar button[name='image_caption']");
     await click("button[name='image_caption']");
     if (captionText) {
         await waitFor("figure > figcaption > span.o_caption_editable");
@@ -59,19 +59,19 @@ const toggleCaption = async (editor, captionText) => {
 };
 const addLinkToImage = async (url) => {
     await click("img");
-    await waitFor(".o-we-toolbar button[name='link']:not([disabled])");
-    await click(".o-we-toolbar button[name='link']");
+    await waitFor(".w-we-toolbar button[name='link']:not([disabled])");
+    await click(".w-we-toolbar button[name='link']");
     if (url) {
-        await waitFor(".o-we-linkpopover");
-        await contains(".o-we-linkpopover input.o_we_href_input_link", { timeout: 1500 }).edit(
+        await waitFor(".w-we-linkpopover");
+        await contains(".w-we-linkpopover input.o_we_href_input_link", { timeout: 1500 }).edit(
             "weth.com.br"
         );
     }
 };
 const removeLinkFromImage = async () => {
     await click("img");
-    await waitFor(".o-we-toolbar");
-    await click(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
+    await click(".w-we-toolbar");
     await click("button[name='unlink']");
 };
 const objectToAttributesString = (attributes) =>
@@ -238,7 +238,7 @@ test("clicking the caption button on an image with a caption doesn't removes the
             const span = queryOne("figure > figcaption > span.o_caption_editable");
             await toggleCaption(editor);
             expect(editor.document.activeElement).not.toBe(span);
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-toolbar", 1);
         },
         contentAfterEdit: unformat(
             `<p>[<img class="img-fluid test-image" src="${base64Img}" data-caption="${caption}">]</p>`
@@ -308,7 +308,7 @@ test("can't use the powerbox in a caption", async () => {
             expect(editor.document.activeElement).toBe(span);
             await insertText(editor, "/");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             const heading = queryOne("h1");
             await click(heading);
             editor.shared.selection.setCursorStart(heading);
@@ -338,7 +338,7 @@ test("can't use the toolbar in a caption", async () => {
             const span = queryOne("figure > figcaption > span.o_caption_editable");
             expect(editor.document.activeElement).toBe(span);
             await animationFrame();
-            await expectElementCount(".o-we-toolbar", 0);
+            await expectElementCount(".w-we-toolbar", 0);
             // Select all content of the span and replace it.
             const range = document.createRange();
             range.selectNodeContents(span);
@@ -435,8 +435,8 @@ test("remove an image with a caption", async () => {
         ),
         stepFunction: async () => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='image_delete']");
-            await click(".o-we-toolbar button[name='image_delete']");
+            await waitFor(".w-we-toolbar button[name='image_delete']");
+            await click(".w-we-toolbar button[name='image_delete']");
         },
         contentAfter: "<h1>[]Heading</h1>",
     });
@@ -530,7 +530,7 @@ test("replace an image with a caption", async () => {
         ),
         stepFunction: async () => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='replace_image']");
+            await waitFor(".w-we-toolbar button[name='replace_image']");
             await click("button[name='replace_image']");
             await waitFor(".o_select_media_dialog");
             await click(".o_existing_attachment_cell .o_button_area");
@@ -570,7 +570,7 @@ test("remove caption when replacing an image with other media", async () => {
         )
     );
     await click("img");
-    await waitFor(".o-we-toolbar button[name='replace_image']");
+    await waitFor(".w-we-toolbar button[name='replace_image']");
     await click("button[name='replace_image']");
     await waitFor(".o_select_media_dialog");
     await click(".modal .modal-body .nav-item:nth-child(3) button"); // Icons
@@ -604,7 +604,7 @@ test("edit caption after replacing image", async () => {
         ),
         stepFunction: async (editor) => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='replace_image']");
+            await waitFor(".w-we-toolbar button[name='replace_image']");
             await click("button[name='replace_image']");
             await waitFor(".o_select_media_dialog");
             await click(".o_existing_attachment_cell .o_button_area");
@@ -653,7 +653,7 @@ test("after replacing a captioned image, undo should revert to the original imag
         ),
         stepFunction: async () => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='replace_image']");
+            await waitFor(".w-we-toolbar button[name='replace_image']");
             await click("button[name='replace_image']");
             await waitFor(".o_select_media_dialog");
             await click(".o_existing_attachment_cell .o_button_area");
@@ -687,8 +687,8 @@ test("add a link to an image with a caption", async () => {
         ),
         stepFunction: async () => {
             await addLinkToImage("weth.com.br");
-            await expectElementCount(".o-we-linkpopover", 1);
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-linkpopover", 1);
+            await expectElementCount(".w-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p>
@@ -745,8 +745,8 @@ test("add a caption then a link to an image surrounded by text", async () => {
         stepFunction: async (editor) => {
             await toggleCaption(editor, "Hello");
             await addLinkToImage("weth.com.br");
-            await expectElementCount(".o-we-linkpopover", 1);
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-linkpopover", 1);
+            await expectElementCount(".w-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p>ab</p>
@@ -824,8 +824,8 @@ test("remove a link from an image with a caption", async () => {
         stepFunction: async () => {
             await removeLinkFromImage();
             await animationFrame();
-            await expectElementCount(".o-we-linkpopover", 0);
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-linkpopover", 0);
+            await expectElementCount(".w-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p><br></p>
@@ -869,8 +869,8 @@ test("remove a caption from an image with a link", async () => {
         ),
         stepFunction: async (editor) => {
             await toggleCaption(editor);
-            await expectElementCount(".o-we-linkpopover", 1);
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-linkpopover", 1);
+            await expectElementCount(".w-we-toolbar", 1);
         },
         contentAfter: unformat(
             `<p><br></p>
@@ -891,24 +891,24 @@ test("previewing an image with a caption shows the caption as title", async () =
 
     // Preview without a caption shows the file name.
     await click("img");
-    await waitFor(".o-we-toolbar");
-    await click(".o-we-toolbar button[name='image_preview']");
+    await waitFor(".w-we-toolbar");
+    await click(".w-we-toolbar button[name='image_preview']");
     await animationFrame();
-    let titleSpan = queryOne(".o-FileViewer .o-FileViewer-header span.text-truncate");
+    let titleSpan = queryOne(".w-FileViewer .w-FileViewer-header span.text-truncate");
     expect(titleSpan.textContent).toBe(base64Img.replaceAll("\n", "%0A"));
-    await click(".o-FileViewer-headerButton[title='Close (Esc)']");
+    await click(".w-FileViewer-headerButton[title='Close (Esc)']");
     await animationFrame();
 
     // Add a caption
     await toggleCaption(editor, "Hello");
-    await waitForNone(".o-we-toolbar button[name='image_caption']");
+    await waitForNone(".w-we-toolbar button[name='image_caption']");
 
     // Preview with a caption show the caption.
     await click("img");
-    await waitFor(".o-we-toolbar button[name='image_preview']");
-    await click(".o-we-toolbar button[name='image_preview']");
+    await waitFor(".w-we-toolbar button[name='image_preview']");
+    await click(".w-we-toolbar button[name='image_preview']");
     await animationFrame();
-    titleSpan = queryOne(".o-FileViewer .o-FileViewer-header span.text-truncate");
+    titleSpan = queryOne(".w-FileViewer .w-FileViewer-header span.text-truncate");
     expect(titleSpan.textContent).toBe("Hello");
 });
 
@@ -919,17 +919,17 @@ test("previewing an image without caption doesn't show the caption as title (eve
 
     // Preview without a caption shows the file name.
     await click("img");
-    await waitFor(".o-we-toolbar button[name='image_preview']");
-    await click(".o-we-toolbar button[name='image_preview']");
+    await waitFor(".w-we-toolbar button[name='image_preview']");
+    await click(".w-we-toolbar button[name='image_preview']");
     await animationFrame();
-    let titleSpan = queryOne(".o-FileViewer .o-FileViewer-header span.text-truncate");
+    let titleSpan = queryOne(".w-FileViewer .w-FileViewer-header span.text-truncate");
     expect(titleSpan.textContent).toBe(base64Img.replaceAll("\n", "%0A"));
-    await click(".o-FileViewer-headerButton[title='Close (Esc)']");
+    await click(".w-FileViewer-headerButton[title='Close (Esc)']");
     await animationFrame();
 
     // Add a caption
     await toggleCaption(editor, "Hello");
-    await waitForNone(".o-we-toolbar button[name='image_caption']");
+    await waitForNone(".w-we-toolbar button[name='image_caption']");
 
     // Remove the caption
     await toggleCaption(editor);
@@ -939,10 +939,10 @@ test("previewing an image without caption doesn't show the caption as title (eve
 
     // Preview without a caption still shows the file name.
     await click("img");
-    await waitFor(".o-we-toolbar button[name='image_preview']");
-    await click(".o-we-toolbar button[name='image_preview']");
+    await waitFor(".w-we-toolbar button[name='image_preview']");
+    await click(".w-we-toolbar button[name='image_preview']");
     await animationFrame();
-    titleSpan = queryOne(".o-FileViewer .o-FileViewer-header span.text-truncate");
+    titleSpan = queryOne(".w-FileViewer .w-FileViewer-header span.text-truncate");
     expect(titleSpan.textContent).toBe(base64Img.replaceAll("\n", "%0A"));
 });
 
@@ -979,14 +979,14 @@ test("should drag and drop image with its caption(1)", async () => {
     const dragdata = new DataTransfer();
     await manuallyDispatchProgrammaticEvent(imgElement, "dragstart", { dataTransfer: dragdata });
     await animationFrame();
-    const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+    const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
     const dropData = new DataTransfer();
     dropData.setData(
         "text/html",
         `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Img}">`
     );
-    // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-    dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+    // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+    dropData.setData("application/vnd.weth.weth-editor", imageHTML);
     await manuallyDispatchProgrammaticEvent(targetNodeForDrop, "drop", { dataTransfer: dropData });
     await animationFrame();
 
@@ -1031,14 +1031,14 @@ test("should drag and drop image with its caption(2)", async () => {
     const dragdata = new DataTransfer();
     await manuallyDispatchProgrammaticEvent(imgElement, "dragstart", { dataTransfer: dragdata });
     await animationFrame();
-    const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+    const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
     const dropData = new DataTransfer();
     dropData.setData(
         "text/html",
         `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Img}">`
     );
-    // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-    dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+    // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+    dropData.setData("application/vnd.weth.weth-editor", imageHTML);
     await manuallyDispatchProgrammaticEvent(targetNodeForDrop, "drop", { dataTransfer: dropData });
     await manuallyDispatchProgrammaticEvent(imgElement, "dragend");
     await animationFrame();
@@ -1087,12 +1087,12 @@ test("should drag and drop image with caption along with selected text", async (
     const dragdata = new DataTransfer();
     await manuallyDispatchProgrammaticEvent(imgElement, "dragstart", { dataTransfer: dragdata });
     await animationFrame();
-    const odooEditorData = dragdata.getData("application/vnd.odoo.odoo-editor");
+    const wethEditorData = dragdata.getData("application/vnd.weth.weth-editor");
     const textHtml = dragdata.getData("text/html");
     const dropData = new DataTransfer();
     dropData.setData("text/html", textHtml);
-    // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-    dropData.setData("application/vnd.odoo.odoo-editor", odooEditorData);
+    // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+    dropData.setData("application/vnd.weth.weth-editor", wethEditorData);
     await manuallyDispatchProgrammaticEvent(targetNodeForDrop, "drop", { dataTransfer: dropData });
     await animationFrame();
 
@@ -1154,7 +1154,7 @@ test("should cut an image and its caption as a single embedded figure", async ()
     );
 
     // Verify cut fragment stored inside clipboard data
-    const cutPayload = clipboard.getData("application/vnd.odoo.odoo-editor");
+    const cutPayload = clipboard.getData("application/vnd.weth.weth-editor");
     const fragment = parseHTML(editor.document, cutPayload);
 
     expect(getContent(fragment)).toBe(
@@ -1194,7 +1194,7 @@ test("should copy an image along with its caption", async () => {
 
     const clipboardData = new DataTransfer();
     await press(["ctrl", "c"], { dataTransfer: clipboardData });
-    const copiedContent = clipboardData.getData("application/vnd.odoo.odoo-editor");
+    const copiedContent = clipboardData.getData("application/vnd.weth.weth-editor");
     const fragment = parseHTML(editor.document, copiedContent);
     expect(getContent(fragment)).toBe(
         unformat(`
@@ -1254,8 +1254,8 @@ test("removing an image caption inside a table should wrap image in a base conta
         ),
         stepFunction: async () => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='image_caption']");
-            await click(".o-we-toolbar button[name='image_caption']");
+            await waitFor(".w-we-toolbar button[name='image_caption']");
+            await click(".w-we-toolbar button[name='image_caption']");
         },
         contentAfter: unformat(
             `<table class="table table-bordered o_table">
@@ -1335,8 +1335,8 @@ test("removing an image caption inside list item should wrap image in a base con
         ),
         stepFunction: async () => {
             await click("img");
-            await waitFor(".o-we-toolbar button[name='image_caption']");
-            await click(".o-we-toolbar button[name='image_caption']");
+            await waitFor(".w-we-toolbar button[name='image_caption']");
+            await click(".w-we-toolbar button[name='image_caption']");
         },
         contentAfter: unformat(
             `<ul>
@@ -1378,7 +1378,7 @@ test("Should be able to revert image replace", async () => {
     await animationFrame();
 
     await click("img");
-    await waitFor(".o-we-toolbar button[name='replace_image']");
+    await waitFor(".w-we-toolbar button[name='replace_image']");
     await click("button[name='replace_image']");
 
     // Select the image
@@ -1420,7 +1420,7 @@ test("should toggle caption on an image with display:block (add and remove capti
     // since the focus is not in it.
     const selection = editor.document.getSelection();
     selection.removeAllRanges();
-    await waitForNone(".o-we-toolbar");
+    await waitForNone(".w-we-toolbar");
     expect(getContent(el)).toBe(
         unformat(
             `<p data-selection-placeholder=""><br></p>
@@ -1434,7 +1434,7 @@ test("should toggle caption on an image with display:block (add and remove capti
         )
     );
     await click("img");
-    const captionButton = ".o-we-toolbar button[name='image_caption']";
+    const captionButton = ".w-we-toolbar button[name='image_caption']";
     await waitFor(captionButton);
     expect(captionButton).toHaveClass("active");
     await click(captionButton);
@@ -1457,7 +1457,7 @@ test("should select whole editable on 'ctrl+a' when image with caption is select
             await waitFor("figcaption > span.o_caption_editable");
 
             await click("figure > img");
-            await expectElementCount(".o-we-toolbar", 1);
+            await expectElementCount(".w-we-toolbar", 1);
 
             // Select whole figure with ctrl+a
             await press(["ctrl", "a"]);

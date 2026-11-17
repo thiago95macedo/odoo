@@ -218,10 +218,10 @@ test("Default duration rendering", async () => {
     expandCalendarView();
     await changeScale("week");
     await selectTimeStart("2016-12-15 15:00:00");
-    await contains(".o-calendar-quick-create--input").edit("Event with new duration", {
+    await contains(".w-calendar-quick-create--input").edit("Event with new duration", {
         confirm: false,
     });
-    await contains(".o-calendar-quick-create--create-btn").click();
+    await contains(".w-calendar-quick-create--create-btn").click();
     // This new event is the fourth
     await clickEvent(4);
     expect("div[name='start'] div").toHaveText("Dec 15, 3:00 PM");
@@ -277,23 +277,23 @@ test("Activity events rendering and popover", async () => {
     expect(".fc-event.o_activity_event").toHaveCount(3);
     // Check activity popover rendering
     await clickEvent("activity-event-2016-12-12");
-    await waitFor(".o_cw_activity_popover .o-mail-ActivityListPopoverItem");
-    expect(queryAllTexts(".o-mail-ActivityListPopoverItem-name")).toEqual([
+    await waitFor(".o_cw_activity_popover .w-mail-ActivityListPopoverItem");
+    expect(queryAllTexts(".w-mail-ActivityListPopoverItem-name")).toEqual([
         "Activity 2",
         "Activity 3",
     ]);
-    const a2_selector = ".o-mail-ActivityListPopoverItem:contains(Activity 2) ";
-    const a3_selector = ".o-mail-ActivityListPopoverItem:contains(Activity 3) ";
+    const a2_selector = ".w-mail-ActivityListPopoverItem:contains(Activity 2) ";
+    const a3_selector = ".w-mail-ActivityListPopoverItem:contains(Activity 3) ";
     expect(a2_selector + ".text-action").toHaveCount(0); // no res record link
     expect(a3_selector + ".text-action").toHaveText("Partner 2"); // res record link
     // Check activity popover done and reschedule actions
-    await contains(a2_selector + ".o-mail-ActivityListPopoverItem-markAsDone").click();
-    expect(a2_selector + ".o-mail-ActivityMarkAsDone").toHaveCount(1);
+    await contains(a2_selector + ".w-mail-ActivityListPopoverItem-markAsDone").click();
+    expect(a2_selector + ".w-mail-ActivityMarkAsDone").toHaveCount(1);
     await contains(a2_selector + "button:text(Done)").click(); // Activity 2 marked done
     expect(a2_selector).toHaveCount(0);
     expect.verifySteps(["calendar_fetch_activities"]);
-    await contains(a3_selector + ".o-mail-ActivityListPopoverItem-reschedulebtn").click();
-    await contains(".o_popover .o-dropdown-item:contains(Tomorrow)").click(); // Activity 3 rescheduled
+    await contains(a3_selector + ".w-mail-ActivityListPopoverItem-reschedulebtn").click();
+    await contains(".o_popover .w-dropdown-item:contains(Tomorrow)").click(); // Activity 3 rescheduled
     expect.verifySteps(["action_reschedule_tomorrow", "calendar_fetch_activities"]);
     expect(a3_selector).toHaveCount(0);
     // Check activity popover auto closing (no activity left for the day) and calendar view update

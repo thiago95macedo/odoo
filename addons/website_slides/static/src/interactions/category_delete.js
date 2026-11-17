@@ -5,7 +5,7 @@ import { _t } from "@web/core/l10n/translation";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
 export class CategoryDelete extends Interaction {
-    static selector = ".o_wslides_js_category_delete";
+    static selector = ".w_wslides_js_category_delete";
     dynamicContent = {
         _root: {
             "t-on-click": this.openDialog,

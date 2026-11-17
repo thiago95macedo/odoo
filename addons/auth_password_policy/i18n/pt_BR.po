@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/auth_password_policy/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgid "Implement basic password policy configuration & check"
 msgstr "Implemente configurações e verificações básicas de política de senha"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_meter.js:0
 msgid "Medium"
 msgstr "Médio"
@@ -65,7 +65,7 @@ msgstr ""
 "Número mínimo de caracteres que senhas devem conter. Use 0 para desabilitar."
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_field.js:0
 msgid "Password"
 msgstr "Senha"
@@ -76,7 +76,7 @@ msgid "Password Policy"
 msgstr "Política de senha"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_meter.js:0
 msgid ""
 "Required: %s\n"
@@ -90,7 +90,7 @@ msgstr ""
 "não alfabéticos."
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_meter.js:0
 msgid "Strong"
 msgstr "Forte"
@@ -101,13 +101,13 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_meter.js:0
 msgid "Weak"
 msgstr "Fraca"
 
 #. module: auth_password_policy
-#. odoo-python
+#. weth-python
 #: code:addons/auth_password_policy/models/res_users.py:0
 msgid ""
 "Your password must contain at least %(minimal_length)d characters and only "
@@ -117,25 +117,25 @@ msgstr ""
 "(current_count)d."
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_policy.js:0
 msgid "at least %s character classes"
 msgstr "pelo menos %s tipos de caracteres"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_policy.js:0
 msgid "at least %s characters"
 msgstr "pelo menos %s caracteres"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_policy.js:0
 msgid "at least %s words"
 msgstr "pelo menos %s palavras"
 
 #. module: auth_password_policy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_password_policy/static/src/password_meter.js:0
 msgid "no requirements"
 msgstr "sem requisitos"

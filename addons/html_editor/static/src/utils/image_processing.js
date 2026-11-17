@@ -45,7 +45,7 @@ export const removeOnImageChangeAttrs = [...cropperDataFields, ...modifierFields
 
 const cache = {};
 
-const placeholderHref = "/web/image/__odoo__unknown__src__/";
+const placeholderHref = "/web/image/__weth__unknown__src__/";
 
 function _getValidSrc(src) {
     if (src in cache) {

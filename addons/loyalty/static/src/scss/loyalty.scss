@@ -24,14 +24,15 @@
     }
 }
 
-.o_loyalty_program_list_view_view .o_list_renderer:has(.o_view_nocontent) > .o_list_table {
+.o_loyalty_program_list_view_view .o_list_renderer:has(.o_view_nocontent)>.o_list_table {
     display: none;
 }
 
 .loyalty-template {
     &:hover {
-        background: var(--LoyaltyTemplate-background--hover, #{$o-gray-200});
+        background: var(--LoyaltyTemplate-background--hover, #{$w-gray-200});
     }
+
     &:focus-visible {
         box-shadow: 0 0 0 #{$btn-focus-width} RGBA(#{$btn-link-focus-shadow-rgb}, .5);
         outline: none;
@@ -39,14 +40,15 @@
 }
 
 .loyalty-rule-form {
+
     // The base width for this field is 100px which is problematic for us.
-    .o_field_widget.o_field_monetary.o_input > input {
+    .o_field_widget.o_field_monetary.o_input>input {
         width: 100%;
     }
 }
 
-.o_loyalty_program_list_view_view .o_list_renderer .o_view_nocontent{
-    @include media-breakpoint-down(lg){
+.o_loyalty_program_list_view_view .o_list_renderer .o_view_nocontent {
+    @include media-breakpoint-down(lg) {
         height: fit-content;
     }
 }

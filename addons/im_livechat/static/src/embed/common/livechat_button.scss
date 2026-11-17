@@ -1,6 +1,6 @@
-.o-livechat-LivechatButton {
-    width: $o-mail-ChatBubble-sizeBig;
-    height: $o-mail-ChatBubble-sizeBig;
+.w-livechat-LivechatButton {
+    width: $w-mail-ChatBubble-sizeBig;
+    height: $w-mail-ChatBubble-sizeBig;
     font-size: 14px;
     z-index: 5;
     transition: filter 0.3s;
@@ -10,13 +10,13 @@
     }
 }
 
-.o-livechat-LivechatButton-notification {
+.w-livechat-LivechatButton-notification {
     transform-origin: 100% 100%;
     bottom: 2.5em;
     right: 4.5em;
 }
 
-.o-livechat-LivechatButton-animate {
+.w-livechat-LivechatButton-animate {
     animation: o-livechat-LivechatButton-notification-animation 0.6s ease-in-out forwards;
 }
 
@@ -25,16 +25,20 @@
         opacity: 0;
         transform: scale(0);
     }
+
     20% {
         opacity: 0;
         transform: scale(0.5);
     }
+
     50% {
         opacity: 1;
     }
+
     75% {
         transform: scale(1.05);
     }
+
     100% {
         transform: scale(1);
     }

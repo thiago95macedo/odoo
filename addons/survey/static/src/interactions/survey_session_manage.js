@@ -645,7 +645,7 @@ export class SurveySessionManage extends Interaction {
                     // Update the last question next screen tooltip depending on
                     // the selected answers. If a selected answer triggers a
                     // conditional question, the last question may no longer be
-                    // the last (see PR odoo/odoo#212890).
+                    // the last (see PR weth/weth#212890).
                     if (this.surveyLastTriggeringAnswers.length) {
                         this.isLastQuestion =
                             !questionResults.answer_count ||

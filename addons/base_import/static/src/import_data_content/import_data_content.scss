@@ -7,13 +7,13 @@
         width: fit-content;
     }
 
-    > table thead {
+    >table thead {
         box-shadow: inset 0 -1px 0 0 $border-color;
 
         th {
             min-width: 20rem;
 
-            &.o-translation {
+            &.w-translation {
                 min-width: 10rem;
             }
         }

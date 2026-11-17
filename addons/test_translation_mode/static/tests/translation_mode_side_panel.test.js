@@ -74,7 +74,7 @@ test("side panel is not rendered by default", async () => {
     `);
 
     expect(".sample-element:only").toHaveText("Component");
-    expect(".o-translate-side-panel").not.toHaveCount();
+    expect(".w-translate-side-panel").not.toHaveCount();
 });
 
 test("side panel with no translation", async () => {
@@ -92,10 +92,10 @@ test("side panel with no translation", async () => {
     expect(document.body).toHaveClass("o-body-with-translate-side-panel");
 
     expect(".sample-element:only").toHaveText("Component");
-    expect(".o-translate-side-panel:only").toHaveText(
+    expect(".w-translate-side-panel:only").toHaveText(
         "Translation highlighting has been disabled for this language."
     );
-    expect(".o-translate-side-panel .o-translate-card").not.toHaveCount();
+    expect(".w-translate-side-panel .w-translate-card").not.toHaveCount();
 });
 
 test("side panel with translations", async () => {
@@ -114,34 +114,34 @@ test("side panel with translations", async () => {
     expect(document.body).toHaveClass("o-body-with-translate-side-panel");
 
     expect(".sample-element:only").toHaveText("Composant");
-    expect(".o-translate-side-panel:only .o-translate-card:only").toHaveText(
+    expect(".w-translate-side-panel:only .w-translate-card:only").toHaveText(
         ["Text", "Translate", "Component", "Composant"].join("\n")
     );
-    expect(".o-translate-side-panel .o-translate-card a[href]").toHaveAttribute(
+    expect(".w-translate-side-panel .w-translate-card a[href]").toHaveAttribute(
         "href",
-        "www.example.com/translate/odoo-3/web/fr_FR/?checksum=25c3e74edddbe2ff"
+        "www.example.com/translate/weth-3/web/fr_FR/?checksum=25c3e74edddbe2ff"
     );
-    expect(queryAll(".o-translation-pointer", { root: document.body })).not.toHaveCount();
+    expect(queryAll(".w-translation-pointer", { root: document.body })).not.toHaveCount();
 
-    await click(".o-translate-card");
+    await click(".w-translate-card");
 
-    expect(queryAll(".o-translation-pointer", { root: document.body })).toHaveCount(1);
+    expect(queryAll(".w-translation-pointer", { root: document.body })).toHaveCount(1);
 
     await click(".sample-element");
 
-    expect(queryAll(".o-translation-pointer", { root: document.body })).not.toHaveCount();
+    expect(queryAll(".w-translation-pointer", { root: document.body })).not.toHaveCount();
 
     await click("[name='filter-translations']");
     await fill("aaaa");
     await animationFrame();
 
-    expect(".o-translate-side-panel .o-translate-card").not.toHaveCount();
+    expect(".w-translate-side-panel .w-translate-card").not.toHaveCount();
 
     await clear();
     await fill("comp");
     await animationFrame();
 
-    expect(".o-translate-side-panel .o-translate-card").toHaveCount(1);
+    expect(".w-translate-side-panel .w-translate-card").toHaveCount(1);
 });
 
 test("side panel links missing translations to the default language", async () => {
@@ -156,8 +156,8 @@ test("side panel links missing translations to the default language", async () =
     `);
 
     expect(".sample-element:only").toHaveText("Component");
-    expect(".o-translate-side-panel .o-translate-card:only a[href]").toHaveAttribute(
+    expect(".w-translate-side-panel .w-translate-card:only a[href]").toHaveAttribute(
         "href",
-        "www.example.com/translate/odoo-3/web/en/?checksum=25c3e74edddbe2ff"
+        "www.example.com/translate/weth-3/web/en/?checksum=25c3e74edddbe2ff"
     );
 });

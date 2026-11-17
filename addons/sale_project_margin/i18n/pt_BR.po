@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:43+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_project_margin/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 "======================================================\n"
 
 #. module: sale_project_margin
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_margin/models/project_project.py:0
 #, fuzzy
 msgid "%(name)s's Forecast Margins"

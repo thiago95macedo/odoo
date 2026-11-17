@@ -50,7 +50,7 @@ export class SearchableSetting extends Setting {
 
     get classNames() {
         const classNames = super.classNames;
-        classNames.o_searchable_setting = Boolean(this.labels.length);
+        classNames.w_searchable_setting = Boolean(this.labels.length);
         return { ...classNames, ...this.state.highlightClass };
     }
 

@@ -19,7 +19,7 @@ $primary: $blue !default;
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio: $o-frontend-min-contrast-ratio !default;
+$min-contrast-ratio: $w-frontend-min-contrast-ratio !default;
 
 // Options
 //
@@ -50,9 +50,10 @@ $component-active-color: color-contrast($component-active-bg) !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: o-add-unicode-support-font($o-system-fonts) !default;
+$font-family-sans-serif: o-add-unicode-support-font($w-system-fonts) !default;
 
-$font-size-base: (14 / 16) * 1rem !default;
+$font-size-base: (
+    14 / 16) * 1rem !default;
 
 $text-muted: mute-color($body-color) !default;
 
@@ -79,7 +80,9 @@ $btn-hover-bg-shade-amount: 15% !default;
 
 // Forms
 
-$input-transition: background-color .05s ease-in-out, border-color .05s ease-in-out, box-shadow .05s ease-in-out !default;
+$input-transition: background-color .05s ease-in-out,
+    border-color .05s ease-in-out,
+    box-shadow .05s ease-in-out !default;
 $input-color: $body-color !default;
 $input-bg: $body-bg !default;
 

@@ -24,16 +24,16 @@ test("project.task (kanban): check task state widget", async () => {
         `,
     });
 
-    expect(".o-dropdown--menu").toHaveCount(0, {
+    expect(".w-dropdown--menu").toHaveCount(0, {
         message: "If the state button has not been pressed yet, no dropdown should be displayed",
     });
     await click("div[name='state']:first-child button.dropdown-toggle");
     await animationFrame();
-    expect(".o-dropdown--menu").toHaveCount(1, {
+    expect(".w-dropdown--menu").toHaveCount(1, {
         message: "Once the button has been pressed the dropdown should appear",
     });
 
-    await click(".o-dropdown--menu span.text-danger");
+    await click(".w-dropdown--menu span.text-danger");
     await animationFrame();
     expect("div[name='state']:first-child button.dropdown-toggle i[data-icon='cancel']").toBeVisible({
         message:
@@ -42,7 +42,7 @@ test("project.task (kanban): check task state widget", async () => {
 
     await click("div[name='state'] i[data-icon='hourglass_empty']");
     await animationFrame();
-    expect(".o-dropdown--menu").toHaveCount(0, {
+    expect(".w-dropdown--menu").toHaveCount(0, {
         message: "When trying to click on the waiting icon, no dropdown menu should display",
     });
 });

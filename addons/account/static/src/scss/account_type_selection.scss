@@ -1,5 +1,7 @@
-.o_field_account_type_selection select {
-    option, optgroup {
+.w_field_account_type_selection select {
+
+    option,
+    optgroup {
         background-color: $dropdown-bg;
     }
 }

@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_livechat/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgid "Channel Name"
 msgstr "Nome do canal"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/im_livechat_channel.py:0
 msgid "Channel created: %(name)s"
 msgstr "Canal criado: %(name)s"
@@ -97,7 +97,7 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: website_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_livechat/static/src/core/web/livechat_channel_info_list_patch.xml:0
 msgid "Conversation ongoing"
 msgstr "Conversa em andamento"
@@ -146,7 +146,7 @@ msgid "In Conversation"
 msgstr "em conversa"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/discuss_channel.py:0
 msgid ""
 "Live chat conversation closed automatically: the visitor started a new "
@@ -166,7 +166,7 @@ msgid "New Channel"
 msgstr "Novo canal"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/website_visitor.py:0
 msgid "No Livechat Channel allows you to send a chat request for website %s."
 msgstr ""
@@ -184,19 +184,19 @@ msgid "Page"
 msgstr "Página"
 
 #. module: website_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_livechat/static/src/core/web/livechat_channel_info_list_patch.xml:0
 msgid "Recent conversations"
 msgstr "Conversas recentes"
 
 #. module: website_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_livechat/static/src/core/web/livechat_channel_info_list_patch.xml:0
 msgid "Recent page views"
 msgstr "Visualizações de página recentes"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/website_visitor.py:0
 msgid ""
 "Recipients are not available. Please refresh the page to get latest visitors "
@@ -231,7 +231,7 @@ msgid "Test"
 msgstr "Teste"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/controllers/chatbot.py:0
 msgid "Test %s"
 msgstr "Teste %s"
@@ -242,20 +242,20 @@ msgid "Visitor"
 msgstr "Visitante"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/discuss_channel.py:0
 msgid "Visitor #%(id)d left the conversation."
 msgstr "Visitante nº%(id)d saiu a conversa."
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/controllers/main.py:0
 #: code:addons/website_livechat/models/website_visitor.py:0
 msgid "Visitor #%d"
 msgstr "Visitante nº %d"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/models/discuss_channel.py:0
 msgid "Visitor left the conversation."
 msgstr "O visitante deixou a conversa."
@@ -276,7 +276,7 @@ msgid "Visitors"
 msgstr "Visitantes"
 
 #. module: website_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_livechat/static/src/core/web/livechat_channel_info_list_patch.xml:0
 #: model:ir.model,name:website_livechat.model_website
 msgid "Website"
@@ -298,7 +298,7 @@ msgid "Website Live Chat Channel"
 msgstr "Canal de chat ao vivo no site"
 
 #. module: website_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/website_livechat/tests/test_livechat_basic_flow.py:0
 #: model:ir.model,name:website_livechat.model_website_visitor
 msgid "Website Visitor"

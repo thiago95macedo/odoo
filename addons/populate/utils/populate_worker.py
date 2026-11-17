@@ -3,7 +3,7 @@
 This module is intentionally imported as top-level ``populate_worker`` by the
 parent process. Spawned workers must import their initializer before it runs, so
 the initializer cannot live behind ``weth.addons.populate``: that namespace may
-only be available after Odoo's addons' path is initialized.
+only be available after WETH's addons' path is initialized.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ def initialize(dbname: str, options: dict):
 
     The parent passes this function directly to ``ProcessPoolExecutor``. It must
     therefore be importable in a fresh Python process without relying on
-    ``weth.addons.populate``. Once imported, it restores the parent Odoo config,
+    ``weth.addons.populate``. Once imported, it restores the parent WETH config,
     initializes the addons' path, and loads the registry so regular populate job
     execution can safely import and use addon code.
     """

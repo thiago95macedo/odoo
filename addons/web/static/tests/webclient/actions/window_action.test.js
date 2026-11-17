@@ -50,7 +50,7 @@ import { WebClient } from "@web/webclient/webclient";
 const { ResCompany, ResPartner, ResUsers } = webModels;
 
 function clickListNew() {
-    return contains(".o_control_panel_main_buttons .o_list_button_add").click();
+    return contains(".w_control_panel_main_buttons .w_list_button_add").click();
 }
 
 class Partner extends models.Model {
@@ -224,8 +224,8 @@ test("can execute act_window actions from db ID", async () => {
     stepAllNetworkCalls();
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o_control_panel").toHaveCount(1, { message: "should have rendered a control panel" });
-    expect(".o_kanban_view").toHaveCount(1, { message: "should have rendered a kanban view" });
+    expect(".w_control_panel").toHaveCount(1, { message: "should have rendered a control panel" });
+    expect(".w_kanban_view").toHaveCount(1, { message: "should have rendered a kanban view" });
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -248,7 +248,7 @@ test("click on a list row when there is no form in the action", async () => {
         "web_search_read",
         "has_group",
     ]);
-    await contains(".o_data_row:eq(0) .o_data_cell").click();
+    await contains(".w_data_row:eq(0) .w_data_cell").click();
     expect.verifySteps([]);
 });
 
@@ -265,8 +265,8 @@ test("click on open form view button when there is no form in the action", async
         "web_search_read",
         "has_group",
     ]);
-    await contains(".o_data_row:eq(0) .o_list_record_open_form_view").click();
-    expect(".o_form_view").toHaveCount(1, { message: "should display the form view" });
+    await contains(".w_data_row:eq(0) .w_list_record_open_form_view").click();
+    expect(".w_form_view").toHaveCount(1, { message: "should display the form view" });
     expect.verifySteps(["get_views", "web_read"]);
 });
 
@@ -282,8 +282,8 @@ test("click on new record button in list when there is no form in the action", a
         "web_search_read",
         "has_group",
     ]);
-    await contains(".o_list_button_add").click();
-    expect(".o_form_view").toHaveCount(1, { message: "should display the form view" });
+    await contains(".w_list_button_add").click();
+    expect(".w_form_view").toHaveCount(1, { message: "should display the form view" });
     expect.verifySteps(["get_views", "onchange"]);
 });
 
@@ -302,11 +302,11 @@ test("sidebar is present in list view", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_cp_action_menus .o_dropdown_title").toHaveCount(0); // no action menu
+    expect(".w_cp_action_menus .w_dropdown_title").toHaveCount(0); // no action menu
 
     await contains("input.form-check-input").click();
-    expect('.o_cp_action_menus button.dropdown-toggle:contains("Print")').toBeVisible();
-    expect('.o_cp_action_menus button.dropdown-toggle:contains("Action")').toBeVisible();
+    expect('.w_cp_action_menus button.dropdown-toggle:contains("Print")').toBeVisible();
+    expect('.w_cp_action_menus button.dropdown-toggle:contains("Action")').toBeVisible();
 });
 
 test.tags("desktop");
@@ -315,32 +315,32 @@ test("can switch between views", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
 
     // switch to kanban view
     await switchView("kanban");
-    expect(".o_list_view").toHaveCount(0, { message: "should no longer display the list view" });
-    expect(".o_kanban_view").toHaveCount(1, { message: "should display the kanban view" });
+    expect(".w_list_view").toHaveCount(0, { message: "should no longer display the list view" });
+    expect(".w_kanban_view").toHaveCount(1, { message: "should display the kanban view" });
 
     // switch back to list view
     await switchView("list");
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
-    expect(".o_kanban_view").toHaveCount(0, {
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_kanban_view").toHaveCount(0, {
         message: "should no longer display the kanban view",
     });
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_list_view").toHaveCount(0, { message: "should no longer display the list view" });
-    expect(".o_form_view").toHaveCount(1, { message: "should display the form view" });
-    expect(".o_field_widget[name=foo] input").toHaveValue("yop", {
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_list_view").toHaveCount(0, { message: "should no longer display the list view" });
+    expect(".w_form_view").toHaveCount(1, { message: "should display the form view" });
+    expect(".w_field_widget[name=foo] input").toHaveValue("yop", {
         message: "should have opened the correct record",
     });
 
     // go back to list view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
-    expect(".o_form_view").toHaveCount(0, { message: "should no longer display the form view" });
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_form_view").toHaveCount(0, { message: "should no longer display the form view" });
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -381,12 +381,12 @@ test("switching into a view with mode=edit lands in edit mode", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(10);
-    expect(".o_kanban_view").toHaveCount(1, { message: "should display the kanban view" });
+    expect(".w_kanban_view").toHaveCount(1, { message: "should display the kanban view" });
     // quick create record and click Edit
     await createKanbanRecord();
     await editKanbanRecordQuickCreateInput("display_name", "New name");
     await editKanbanRecord();
-    expect(".o_form_view .o_form_editable").toHaveCount(1, {
+    expect(".w_form_view .w_form_editable").toHaveCount(1, {
         message: "should display the form view in edit mode",
     });
     expect.verifySteps([
@@ -445,9 +445,9 @@ test("orderedBy in context is not propagated when executing another action", asy
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
     // Sort records
-    await contains(".o_list_view th.o_column_sortable").click();
+    await contains(".w_list_view th.w_column_sortable").click();
     // Get to the form view of the model, on the first record
-    await contains(".o_data_cell").click();
+    await contains(".w_data_cell").click();
     // Execute another action by clicking on the button within the form
     await contains('button[name="8"]').click();
 });
@@ -456,40 +456,40 @@ test.tags("desktop");
 test("breadcrumbs are updated when switching between views", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_control_panel .breadcrumb-item").toHaveCount(0);
-    expect(".o_control_panel .o_breadcrumb .active").toHaveText("Partners");
+    expect(".w_control_panel .breadcrumb-item").toHaveCount(0);
+    expect(".w_control_panel .w_breadcrumb .active").toHaveText("Partners");
 
     // switch to kanban view
     await switchView("kanban");
-    expect(".o_control_panel .breadcrumb-item").toHaveCount(0);
-    expect(".o_control_panel .o_breadcrumb .active").toHaveText("Partners");
+    expect(".w_control_panel .breadcrumb-item").toHaveCount(0);
+    expect(".w_control_panel .w_breadcrumb .active").toHaveText("Partners");
 
     // open a record in form view
-    await contains(".o_kanban_view .o_kanban_record").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_kanban_view .w_kanban_record").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // go back to kanban view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 
     // switch back to list view
     await switchView("list");
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".w_list_view .w_data_cell").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // go back to list view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_list_view").toHaveCount(1, { message: "should be back on list view" });
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_list_view").toHaveCount(1, { message: "should be back on list view" });
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 });
 
 test.tags("desktop");
@@ -497,67 +497,67 @@ test("breadcrumb href includes debug param when in debug mode", async () => {
     serverState.debug = "assets";
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    await contains(".o_list_view .o_data_cell").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_list_view .w_data_cell").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
-    expect(".o_control_panel .breadcrumb a").toHaveAttribute("href", "/weth/action-3?debug=assets");
+    expect(".w_control_panel .breadcrumb a").toHaveAttribute("href", "/weth/action-3?debug=assets");
 });
 
 test.tags("desktop");
 test("switch buttons are updated when switching between views", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_control_panel button.o_switch_view").toHaveCount(2, {
+    expect(".w_control_panel button.w_switch_view").toHaveCount(2, {
         message: "should have two switch buttons (list and kanban)",
     });
-    expect(".o_control_panel button.o_switch_view.active").toHaveCount(1, {
+    expect(".w_control_panel button.w_switch_view.active").toHaveCount(1, {
         message: "should have only one active button",
     });
-    expect(".o_control_panel .o_switch_view:first").toHaveClass("o_list", {
+    expect(".w_control_panel .w_switch_view:first").toHaveClass("o_list", {
         message: "list switch button should be the first one",
     });
-    expect(".o_control_panel .o_switch_view.o_list").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_list").toHaveClass("active", {
         message: "list should be the active view",
     });
 
     // switch to kanban view
     await switchView("kanban");
-    expect(".o_control_panel .o_switch_view").toHaveCount(2, {
+    expect(".w_control_panel .w_switch_view").toHaveCount(2, {
         message: "should still have two switch buttons (list and kanban)",
     });
-    expect(".o_control_panel .o_switch_view.active").toHaveCount(1, {
+    expect(".w_control_panel .w_switch_view.active").toHaveCount(1, {
         message: "should still have only one active button",
     });
-    expect(".o_control_panel .o_switch_view:first").toHaveClass("o_list", {
+    expect(".w_control_panel .w_switch_view:first").toHaveClass("o_list", {
         message: "list switch button should still be the first one",
     });
-    expect(".o_control_panel .o_switch_view.o_kanban").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_kanban").toHaveClass("active", {
         message: "kanban should now be the active view",
     });
 
     // switch back to list view
     await switchView("list");
-    expect(".o_control_panel .o_switch_view").toHaveCount(2, {
+    expect(".w_control_panel .w_switch_view").toHaveCount(2, {
         message: "should still have two switch buttons (list and kanban)",
     });
-    expect(".o_control_panel .o_switch_view.o_list").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_list").toHaveClass("active", {
         message: "list should now be the active view",
     });
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_control_panel .o_switch_view").toHaveCount(0, {
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_control_panel .w_switch_view").toHaveCount(0, {
         message: "should not have any switch buttons",
     });
 
     // go back to list view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_control_panel .o_switch_view").toHaveCount(2, {
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_control_panel .w_switch_view").toHaveCount(2, {
         message: "should have two switch buttons (list and kanban)",
     });
-    expect(".o_control_panel .o_switch_view.o_list").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_list").toHaveClass("active", {
         message: "list should be the active view",
     });
 });
@@ -567,46 +567,46 @@ test("pager is updated when switching between views", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(4);
-    expect(".o_control_panel .o_pager_value").toHaveText("1-5", {
+    expect(".w_control_panel .w_pager_value").toHaveText("1-5", {
         message: "value should be correct for kanban",
     });
-    expect(".o_control_panel .o_pager_limit").toHaveText("5", {
+    expect(".w_control_panel .w_pager_limit").toHaveText("5", {
         message: "limit should be correct for kanban",
     });
 
     // switch to list view
     await switchView("list");
-    expect(".o_control_panel .o_pager_value").toHaveText("1-3", {
+    expect(".w_control_panel .w_pager_value").toHaveText("1-3", {
         message: "value should be correct for list",
     });
-    expect(".o_control_panel .o_pager_limit").toHaveText("5", {
+    expect(".w_control_panel .w_pager_limit").toHaveText("5", {
         message: "limit should be correct for list",
     });
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_control_panel .o_pager_value").toHaveText("1", {
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_control_panel .w_pager_value").toHaveText("1", {
         message: "value should be correct for form",
     });
-    expect(".o_control_panel .o_pager_limit").toHaveText("3", {
+    expect(".w_control_panel .w_pager_limit").toHaveText("3", {
         message: "limit should be correct for form",
     });
 
     // go back to list view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_control_panel .o_pager_value").toHaveText("1-3", {
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_control_panel .w_pager_value").toHaveText("1-3", {
         message: "value should be correct for list",
     });
-    expect(".o_control_panel .o_pager_limit").toHaveText("5", {
+    expect(".w_control_panel .w_pager_limit").toHaveText("5", {
         message: "limit should be correct for list",
     });
 
     // switch back to kanban view
     await switchView("kanban");
-    expect(".o_control_panel .o_pager_value").toHaveText("1-5", {
+    expect(".w_control_panel .w_pager_value").toHaveText("1-5", {
         message: "value should be correct for kanban",
     });
-    expect(".o_control_panel .o_pager_limit").toHaveText("5", {
+    expect(".w_control_panel .w_pager_limit").toHaveText("5", {
         message: "limit should be correct for kanban",
     });
 });
@@ -632,47 +632,47 @@ test("Props are updated and kept when switching/restoring views", async () => {
     await getService("action").doAction(3);
 
     // 5 records initially
-    expect(".o_data_row").toHaveCount(5);
+    expect(".w_data_row").toHaveCount(5);
 
-    await contains(".o_data_row:first-of-type .o_data_cell").click();
+    await contains(".w_data_row:first-of-type .w_data_cell").click();
 
     // Open 1 / 5
-    expect(".o_field_char input").toHaveValue("First record");
+    expect(".w_field_char input").toHaveValue("First record");
     expect(getPagerValue()).toEqual([1]);
     expect(getPagerLimit()).toBe(5);
 
-    await contains(".o_field_many2one .o_external_button", { visible: false }).click();
+    await contains(".w_field_many2one .w_external_button", { visible: false }).click();
 
     // Click on M2O -> 1 / 1
-    expect(".o_field_char input").toHaveValue("Third record");
+    expect(".w_field_char input").toHaveValue("Third record");
     expect(getPagerValue()).toEqual([1]);
     expect(getPagerLimit()).toBe(1);
 
-    await contains(".o_back_button").click();
+    await contains(".w_back_button").click();
 
     // Back to 1 / 5
-    expect(".o_field_char input").toHaveValue("First record");
+    expect(".w_field_char input").toHaveValue("First record");
     expect(getPagerValue()).toEqual([1]);
     expect(getPagerLimit()).toBe(5);
 
     await pagerNext();
 
     // Next page -> 2 / 5
-    expect(".o_field_char input").toHaveValue("Second record");
+    expect(".w_field_char input").toHaveValue("Second record");
     expect(getPagerValue()).toEqual([2]);
     expect(getPagerLimit()).toBe(5);
 
-    await contains(".o_field_many2one .o_external_button", { visible: false }).click();
+    await contains(".w_field_many2one .w_external_button", { visible: false }).click();
 
     // Click on M2O -> still 1 / 1
-    expect(".o_field_char input").toHaveValue("Third record");
+    expect(".w_field_char input").toHaveValue("Third record");
     expect(getPagerValue()).toEqual([1]);
     expect(getPagerLimit()).toBe(1);
 
-    await contains(".o_back_button").click();
+    await contains(".w_back_button").click();
 
     // Back to 2 / 5
-    expect(".o_field_char input").toHaveValue("Second record");
+    expect(".w_field_char input").toHaveValue("Second record");
     expect(getPagerValue()).toEqual([2]);
     expect(getPagerLimit()).toBe(5);
 });
@@ -695,24 +695,24 @@ test("domain is kept when switching between views", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(30);
-    expect(".o_data_row").toHaveCount(5);
+    expect(".w_data_row").toHaveCount(5);
 
     // activate a domain
     await toggleSearchBarMenu();
     await toggleMenuItem("M2O");
-    expect(".o_data_row").toHaveCount(3);
+    expect(".w_data_row").toHaveCount(3);
 
     // switch to kanban
     await switchView("kanban");
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(3);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(3);
 
     // remove the domain
-    await contains(".o_searchview .o_facet_remove").click();
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
+    await contains(".w_searchview .w_facet_remove").click();
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
 
     // switch back to list
     await switchView("list");
-    expect(".o_data_row").toHaveCount(5);
+    expect(".w_data_row").toHaveCount(5);
 });
 
 test.tags("desktop");
@@ -721,7 +721,7 @@ test("A deleted form view can be shown when history back", async () => {
     await mountWithCleanup(WebClient);
 
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1, { message: "The list view should be displayed" });
+    expect(".w_list_view").toHaveCount(1, { message: "The list view should be displayed" });
     expect(router.current).toEqual({
         action: 3,
         actionStack: [
@@ -734,18 +734,18 @@ test("A deleted form view can be shown when history back", async () => {
     });
 
     // Click on the first record
-    await contains(".o_list_view .o_data_row .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1, { message: "The form view should be displayed" });
-    expect(".o_last_breadcrumb_item").toHaveText("First record");
+    await contains(".w_list_view .w_data_row .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1, { message: "The form view should be displayed" });
+    expect(".w_last_breadcrumb_item").toHaveText("First record");
     expect(location.pathname).toBe("/weth/action-3/1");
 
     // Delete the current record
-    await contains(".o_cp_action_menus [data-icon='more_vert']").click();
-    await contains(".o_menu_item:contains(Delete)").click();
+    await contains(".w_cp_action_menus [data-icon='more_vert']").click();
+    await contains(".w_menu_item:contains(Delete)").click();
     expect(".modal").toHaveCount(1, { message: "a confirm modal should be displayed" });
     await contains(".modal-footer button.btn-danger").click();
     // The form view is automatically switched to the next record
-    expect(".o_last_breadcrumb_item").toHaveText("Second record");
+    expect(".w_last_breadcrumb_item").toHaveText("Second record");
     await runAllTimers();
     expect(location.pathname).toBe("/weth/action-3/2");
 
@@ -753,8 +753,8 @@ test("A deleted form view can be shown when history back", async () => {
     browser.history.back();
     await animationFrame();
 
-    expect(".o_form_view").toHaveCount(1, { message: "The form view should be displayed" });
-    expect(".o_last_breadcrumb_item").toHaveText("First record");
+    expect(".w_form_view").toHaveCount(1, { message: "The form view should be displayed" });
+    expect(".w_last_breadcrumb_item").toHaveText("First record");
     expect(location.pathname).toBe("/weth/action-3/1");
 
     expect.verifyErrors([
@@ -777,61 +777,61 @@ test("there is no flickering when switching between views", async () => {
     // switch to kanban view
     def = Promise.withResolvers();
     await switchView("kanban");
-    expect(".o_list_view").toHaveCount(0, { message: "shouldn't display the list anymore" });
-    expect(".o_kanban_view").toHaveCount(1, { message: "should display an empty kanban" });
-    expect(".o_kanban_view .o_kanban_record").toHaveCount(0);
+    expect(".w_list_view").toHaveCount(0, { message: "shouldn't display the list anymore" });
+    expect(".w_kanban_view").toHaveCount(1, { message: "should display an empty kanban" });
+    expect(".w_kanban_view .w_kanban_record").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(1, { message: "should display the kanban" });
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
+    expect(".w_kanban_view").toHaveCount(1, { message: "should display the kanban" });
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
 
     // switch back to list view
     def = Promise.withResolvers();
     await switchView("list");
-    expect(".o_kanban_view").toHaveCount(0, { message: "shouldn't display the kanban anymore" });
-    expect(".o_list_view").toHaveCount(1, { message: "should display an empty list view" });
-    expect(".o_list_view table").toHaveCount(1);
-    expect(".o_list_view table .o_data_row").toHaveCount(5); // Cached values
+    expect(".w_kanban_view").toHaveCount(0, { message: "shouldn't display the kanban anymore" });
+    expect(".w_list_view").toHaveCount(1, { message: "should display an empty list view" });
+    expect(".w_list_view table").toHaveCount(1);
+    expect(".w_list_view table .w_data_row").toHaveCount(5); // Cached values
 
     def.resolve();
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(0, {
+    expect(".w_kanban_view").toHaveCount(0, {
         message: "shouldn't display the kanban view anymore",
     });
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
-    expect(".o_list_view table .o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_list_view table .w_data_row").toHaveCount(5);
 
     // open a record in form view
     def = Promise.withResolvers();
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_list_view").toHaveCount(1, { message: "should still display the list view" });
-    expect(".o_form_view").toHaveCount(0, { message: "shouldn't display the form view yet" });
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_list_view").toHaveCount(1, { message: "should still display the list view" });
+    expect(".w_form_view").toHaveCount(0, { message: "shouldn't display the form view yet" });
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 
     def.resolve();
     await animationFrame();
-    expect(".o_list_view").toHaveCount(0, { message: "should no longer display the list view" });
-    expect(".o_form_view").toHaveCount(1, { message: "should display the form view" });
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    expect(".w_list_view").toHaveCount(0, { message: "should no longer display the list view" });
+    expect(".w_form_view").toHaveCount(1, { message: "should display the form view" });
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // go back to list view using the breadcrumbs
     def = Promise.withResolvers();
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_form_view").toHaveCount(0, { message: "shouldn't display the form anymore" });
-    expect(".o_list_view").toHaveCount(1, { message: "should display an empty list" });
-    expect(".o_list_view table").toHaveCount(1);
-    expect(".o_list_view table .o_data_row").toHaveCount(5); // Cached values
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_form_view").toHaveCount(0, { message: "shouldn't display the form anymore" });
+    expect(".w_list_view").toHaveCount(1, { message: "should display an empty list" });
+    expect(".w_list_view table").toHaveCount(1);
+    expect(".w_list_view table .w_data_row").toHaveCount(5); // Cached values
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 
     def.resolve();
     await animationFrame();
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
-    expect(".o_list_view table .o_data_row").toHaveCount(5);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners"]);
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_list_view table .w_data_row").toHaveCount(5);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners"]);
 });
 
 test.tags("desktop");
@@ -841,32 +841,32 @@ test("there is no flickering when reloading a view", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_list_view .o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_list_view .w_data_row").toHaveCount(5);
 
     MockServer.env["partner"].create([{ foo: "a new record" }]);
     // reload the list view
     def = Promise.withResolvers();
     await switchView("list");
-    expect(".o_list_view .o_data_row").toHaveCount(5);
+    expect(".w_list_view .w_data_row").toHaveCount(5);
 
     def.resolve();
     await animationFrame();
-    expect(".o_list_view .o_data_row").toHaveCount(6);
+    expect(".w_list_view .w_data_row").toHaveCount(6);
 
     // do the same in kanban view
     await switchView("kanban");
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(6);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(6);
 
     MockServer.env["partner"].create([{ foo: "yet another record" }]);
     def = Promise.withResolvers();
     await switchView("kanban");
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(6);
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(6);
 
     def.resolve();
     await animationFrame();
-    expect(".o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(7);
+    expect(".w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(7);
 });
 
 test.tags("desktop");
@@ -875,16 +875,16 @@ test("breadcrumbs are updated when display_name changes", async () => {
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".w_list_view .w_data_cell").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // change the display_name
-    await contains(".o_field_widget[name=display_name] input").edit("New name");
+    await contains(".w_field_widget[name=display_name] input").edit("New name");
     await clickSave();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "New name",
     ]);
@@ -896,22 +896,22 @@ test('reverse breadcrumb works on accesskey "b"', async () => {
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    await contains(".o_form_view button:contains(Execute action)").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_list_view .w_data_cell").click();
+    await contains(".w_form_view button:contains(Execute action)").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "First record",
         "Partners Action 4",
     ]);
-    expect(".breadcrumb-item.o_back_button").toHaveAttribute("data-hotkey", "b", {
+    expect(".breadcrumb-item.w_back_button").toHaveAttribute("data-hotkey", "b", {
         message: "previous breadcrumb should have accessKey 'b'",
     });
 
-    await contains(".breadcrumb-item.o_back_button").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".breadcrumb-item.w_back_button").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
-    expect(".breadcrumb-item.o_back_button").toHaveAttribute("data-hotkey", "b", {
+    expect(".breadcrumb-item.w_back_button").toHaveAttribute("data-hotkey", "b", {
         message: "previous breadcrumb should have accessKey 'b'",
     });
 });
@@ -924,13 +924,13 @@ test("reload previous controller when discarding a new record", async () => {
 
     // create a new record
     await clickListNew();
-    expect(".o_form_view .o_form_editable").toHaveCount(1, {
+    expect(".w_form_view .w_form_editable").toHaveCount(1, {
         message: "should have opened the form view in edit mode",
     });
 
     // discard
-    await contains(".o_control_panel .o_form_button_cancel").click();
-    expect(".o_list_view").toHaveCount(1, {
+    await contains(".w_control_panel .w_form_button_cancel").click();
+    expect(".w_list_view").toHaveCount(1, {
         message: "should have switched back to the list view",
     });
     expect.verifySteps([
@@ -965,14 +965,14 @@ test("execute_action of type object are handled", async () => {
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_field_widget[name=foo] input").toHaveValue("yop", {
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_field_widget[name=foo] input").toHaveValue("yop", {
         message: "check initial value of 'yop' field",
     });
 
     // click on 'Call method' button (should call an Object method)
-    await contains(".o_form_view button:contains(Call method)").click();
-    expect(".o_field_widget[name=foo] input").toHaveValue("value changed", {
+    await contains(".w_form_view button:contains(Call method)").click();
+    expect(".w_field_widget[name=foo] input").toHaveValue("value changed", {
         message: "'yop' has been changed by the server, and should be updated in the UI",
     });
     expect.verifySteps([
@@ -1023,23 +1023,23 @@ test("execute_action of type object: disable buttons (2)", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // open first record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
 
     // click on 'Execute action', to execute action 4 in a dialog
-    await contains('.o_form_view button[name="40"]').click();
-    expect(".o_form_button_create").not.toBeEnabled();
+    await contains('.w_form_view button[name="40"]').click();
+    expect(".w_form_button_create").not.toBeEnabled();
 
     def.resolve();
     await animationFrame();
-    expect(".modal .o_form_view").toHaveCount(1);
-    expect(".o_form_button_create").toBeEnabled();
+    expect(".modal .w_form_view").toHaveCount(1);
+    expect(".w_form_button_create").toBeEnabled();
 
     await contains(".modal .cancel-btn").click();
-    expect(".o_form_button_create").toBeEnabled();
+    expect(".w_form_button_create").toBeEnabled();
 });
 
 test.tags("desktop");
@@ -1057,23 +1057,23 @@ test("view button: block ui attribute", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // open first record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o-main-components-container .o_blockUI").toHaveCount(0);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w-main-components-container .w_blockUI").toHaveCount(0);
 
     // click on 'Execute action', to execute action 4
-    await contains('.o_form_view button[name="4"]').click();
-    expect(".o-main-components-container .o_blockUI").toHaveCount(1, {
+    await contains('.w_form_view button[name="4"]').click();
+    expect(".w-main-components-container .w_blockUI").toHaveCount(1, {
         message: "interface should be blocked during loading",
     });
 
     def.resolve();
     await animationFrame();
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o-main-components-container .o_blockUI").toHaveCount(0);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w-main-components-container .w_blockUI").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -1086,17 +1086,17 @@ test("execute_action of type object raises error: re-enables buttons", async () 
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3, { viewType: "form" });
-    expect(".o_form_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
 
     // save to ensure the presence of the create button
-    await contains(".o_form_button_save").click();
+    await contains(".w_form_button_save").click();
 
     // click on 'Execute action', to execute action 4 in a dialog
-    await click('.o_form_view button[name="object"]');
-    expect(".o_form_button_create").not.toBeEnabled();
+    await click('.w_form_view button[name="object"]');
+    expect(".w_form_button_create").not.toBeEnabled();
     await animationFrame();
     expect.verifyErrors(["RPC_ERROR"]);
-    expect(".o_form_button_create").toBeEnabled();
+    expect(".w_form_button_create").toBeEnabled();
 });
 
 test("execute_action of type object raises error in modal: re-enables buttons", async () => {
@@ -1115,13 +1115,13 @@ test("execute_action of type object raises error in modal: re-enables buttons", 
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(5);
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(1);
     await click('.modal footer button[name="object"]');
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(1);
     expect(".modal footer button").not.toBeEnabled();
     await animationFrame();
     expect.verifyErrors(["RPC_ERROR"]);
-    expect(".modal .o_form_view").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(1);
     expect(".modal footer button").toBeEnabled();
 });
 
@@ -1131,18 +1131,18 @@ test("execute_action of type action are handled", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
+    await contains(".w_list_view .w_data_cell").click();
     // click on 'Execute action' button (should execute an action)
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
-    await contains(".o_form_view button:contains(Execute action)").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_form_view button:contains(Execute action)").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "First record",
         "Partners Action 4",
     ]);
-    expect(".o_kanban_view").toHaveCount(1, {
+    expect(".w_kanban_view").toHaveCount(1, {
         message: "the returned action should have been executed",
     });
     expect.verifySteps([
@@ -1172,15 +1172,15 @@ test("execute smart button and back", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(2);
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
 
     await contains(".oe_stat_button").click();
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
     await contains(".breadcrumb-item").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
     expect.verifySteps(["web_read", "web_search_read", "web_read"]);
 });
 
@@ -1196,17 +1196,17 @@ test("execute smart button and fails on desktop", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(2);
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
 
     await contains("button.oe_stat_button").click();
-    expect(".o_form_view").toHaveCount(0);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(0);
+    expect(".w_kanban_view").toHaveCount(1);
 
     def.resolve();
     await animationFrame();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -1234,18 +1234,18 @@ test("execute smart button and fails on mobile", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(2);
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
 
-    await contains(".o-form-buttonbox .o_button_more").click();
+    await contains(".w-form-buttonbox .w_button_more").click();
     await contains("button.oe_stat_button").click();
-    expect(".o_form_view").toHaveCount(0);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(0);
+    expect(".w_kanban_view").toHaveCount(1);
 
     def.resolve();
     await animationFrame();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_button_create:not([disabled]):visible").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_button_create:not([disabled]):visible").toHaveCount(1);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -1271,21 +1271,21 @@ test("requests for execute_action of type object: disable buttons", async () => 
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
+    await contains(".w_list_view .w_data_cell").click();
 
     // click on 'Call method' button (should call an Object method)
     def = Promise.withResolvers();
-    await contains(".o_form_view button:contains(Call method)").click();
+    await contains(".w_form_view button:contains(Call method)").click();
 
     // Buttons should be disabled
-    expect(".o_form_view button:contains(Call method)").not.toBeEnabled();
+    expect(".w_form_view button:contains(Call method)").not.toBeEnabled();
 
     // Release the 'read' call
     def.resolve();
     await animationFrame();
 
     // Buttons should be enabled after the reload
-    expect(".o_form_view button:contains(Call method)").toBeEnabled();
+    expect(".w_form_view button:contains(Call method)").toBeEnabled();
 });
 
 test.tags("desktop");
@@ -1302,9 +1302,9 @@ test("action with html help returned by a call_button", async () => {
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_row .o_data_cell").click();
-    await contains(".o_statusbar_buttons button").click();
-    expect(".o_list_view .o_nocontent_help p").toHaveText("I am not a helper");
+    await contains(".w_list_view .w_data_row .w_data_cell").click();
+    await contains(".w_statusbar_buttons button").click();
+    expect(".w_list_view .w_nocontent_help p").toHaveText("I am not a helper");
 });
 
 test.tags("desktop");
@@ -1315,23 +1315,23 @@ test("can open different records from a multi record view", async () => {
     await getService("action").doAction(3);
 
     // open the first record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_breadcrumb .active").toHaveText("First record", {
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_breadcrumb .active").toHaveText("First record", {
         message: "breadcrumbs should contain the display_name of the opened record",
     });
-    expect(".o_field_widget[name=foo] input").toHaveValue("yop", {
+    expect(".w_field_widget[name=foo] input").toHaveValue("yop", {
         message: "should have opened the correct record",
     });
 
     // go back to list view using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
+    await contains(".w_control_panel .breadcrumb a").click();
 
     // open the second record in form view
-    await contains(".o_list_view .o_data_row:eq(1) .o_data_cell:first").click();
-    expect(".o_breadcrumb .active").toHaveText("Second record", {
+    await contains(".w_list_view .w_data_row:eq(1) .w_data_cell:first").click();
+    expect(".w_breadcrumb .active").toHaveText("Second record", {
         message: "breadcrumbs should contain the display_name of the opened record",
     });
-    expect(".o_field_widget[name=foo] input").toHaveValue("blip", {
+    expect(".w_field_widget[name=foo] input").toHaveValue("blip", {
         message: "should have opened the correct record",
     });
     expect.verifySteps([
@@ -1364,19 +1364,19 @@ test("restore previous view state when switching back", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(30);
-    expect(".o_graph_renderer [data-mode='bar']").toHaveClass("active");
-    expect(".o_graph_renderer [data-mode='line']").not.toHaveClass("active");
+    expect(".w_graph_renderer [data-mode='bar']").toHaveClass("active");
+    expect(".w_graph_renderer [data-mode='line']").not.toHaveClass("active");
 
     // display line chart
-    await contains(".o_graph_renderer [data-mode='line']").click();
-    expect(".o_graph_renderer [data-mode='line']").toHaveClass("active");
+    await contains(".w_graph_renderer [data-mode='line']").click();
+    expect(".w_graph_renderer [data-mode='line']").toHaveClass("active");
 
     // switch to kanban and back to graph view
     await switchView("kanban");
-    expect(".o_graph_renderer [data-mode='line']").toHaveCount(0);
+    expect(".w_graph_renderer [data-mode='line']").toHaveCount(0);
 
     await switchView("graph");
-    expect(".o_graph_renderer [data-mode='line']").toHaveClass("active");
+    expect(".w_graph_renderer [data-mode='line']").toHaveClass("active");
 });
 
 test.tags("desktop");
@@ -1385,18 +1385,18 @@ test("can't restore previous action if form is invalid", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     await clickListNew();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_field_widget[name=foo]").toHaveClass("o_required_modifier");
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_field_widget[name=foo]").toHaveClass("o_required_modifier");
 
-    await contains(".o_field_widget[name=display_name] input").edit("make record dirty");
-    await contains(".breadcrumb .o_back_button").click();
-    expect(".o_list_view").toHaveCount(0);
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_notification_manager .o_notification").toHaveCount(1);
-    expect(".o_field_widget[name=foo]").toHaveClass("o_field_invalid");
+    await contains(".w_field_widget[name=display_name] input").edit("make record dirty");
+    await contains(".breadcrumb .w_back_button").click();
+    expect(".w_list_view").toHaveCount(0);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_notification_manager .w_notification").toHaveCount(1);
+    expect(".w_field_widget[name=foo]").toHaveClass("o_field_invalid");
 });
 
 test.tags("desktop");
@@ -1416,19 +1416,19 @@ test("view switcher is properly highlighted in pivot view", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(30);
-    expect(".o_control_panel .o_switch_view.o_list").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_list").toHaveClass("active", {
         message: "list button in control panel is active",
     });
-    expect(".o_control_panel .o_switch_view.o_pivot").not.toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_pivot").not.toHaveClass("active", {
         message: "pivot button in control panel is not active",
     });
 
     // switch to pivot view
     await switchView("pivot");
-    expect(".o_control_panel .o_switch_view.o_list").not.toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_list").not.toHaveClass("active", {
         message: "list button in control panel is not active",
     });
-    expect(".o_control_panel .o_switch_view.o_pivot").toHaveClass("active", {
+    expect(".w_control_panel .w_switch_view.w_pivot").toHaveClass("active", {
         message: "pivot button in control panel is active",
     });
 });
@@ -1444,7 +1444,7 @@ test("can interact with search view", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_table").not.toHaveClass("o_list_table_grouped", {
+    expect(".w_list_table").not.toHaveClass("o_list_table_grouped", {
         message: "list view is not grouped",
     });
 
@@ -1452,7 +1452,7 @@ test("can interact with search view", async () => {
     await toggleSearchBarMenu();
     // click on foo link
     await toggleMenuItem("foo");
-    expect(".o_list_table").toHaveClass("o_list_table_grouped", {
+    expect(".w_list_table").toHaveClass("o_list_table_grouped", {
         message: "list view is now grouped",
     });
 });
@@ -1482,9 +1482,9 @@ test("can open a many2one external window", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
     // open first record in form view
-    await contains(".o_data_row .o_data_cell").click();
+    await contains(".w_data_row .w_data_cell").click();
     // click on external button for m2o
-    await contains(".o_external_button", { visible: false }).click();
+    await contains(".w_external_button", { visible: false }).click();
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -1509,13 +1509,13 @@ test('save when leaving a "dirty" view', async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(4);
     // open record in form view
-    await contains(".o_kanban_record").click();
-    await contains('.o_field_widget[name="foo"] input').edit("pinkypie");
+    await contains(".w_kanban_record").click();
+    await contains('.w_field_widget[name="foo"] input').edit("pinkypie");
     // go back to kanban view
-    await contains(".o_control_panel .breadcrumb-item a").click();
+    await contains(".w_control_panel .breadcrumb-item a").click();
     expect(".modal").toHaveCount(0, { message: "should not display a modal dialog" });
-    expect(".o_form_view").toHaveCount(0, { message: "should no longer be in form view" });
-    expect(".o_kanban_view").toHaveCount(1, { message: "should be in kanban view" });
+    expect(".w_form_view").toHaveCount(0, { message: "should no longer be in form view" });
+    expect(".w_kanban_view").toHaveCount(1, { message: "should be in kanban view" });
 });
 
 test.tags("desktop");
@@ -1531,11 +1531,11 @@ test("limit set in action is passed to each created controller", async () => {
             [false, "kanban"],
         ],
     });
-    expect(".o_data_row").toHaveCount(2);
+    expect(".w_data_row").toHaveCount(2);
 
     // switch to kanban view
     await switchView("kanban");
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
 });
 
 test.tags("desktop");
@@ -1544,37 +1544,37 @@ test("go back to a previous action using the breadcrumbs", async () => {
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".w_list_view .w_data_cell").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // push another action on top of the first one, and come back to the form view
     await getService("action").doAction(4);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "First record",
         "Partners Action 4",
     ]);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
 
     // push again the other action on top of the first one, and come back to the list view
     await getService("action").doAction(4);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "First record",
         "Partners Action 4",
     ]);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb .dropdown-toggle").click();
-    await contains(".o-overlay-container .dropdown-menu a:contains(Partners)").click();
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual(["Partners"]);
+    await contains(".w_control_panel .breadcrumb .dropdown-toggle").click();
+    await contains(".w-overlay-container .dropdown-menu a:contains(Partners)").click();
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual(["Partners"]);
 });
 
 test.tags("desktop");
@@ -1583,15 +1583,15 @@ test("form views are restored in edit when coming back in breadcrumbs", async ()
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 
     // do some other action
     await getService("action").doAction(4);
 
     // go back to form view
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -1600,7 +1600,7 @@ test("form views restore the correct id in url when coming back in breadcrumbs",
     await getService("action").doAction(3);
 
     // open a record in form view
-    await contains(".o_list_view .o_data_row .o_data_cell").click();
+    await contains(".w_list_view .w_data_row .w_data_cell").click();
     expect(router.current.resId).toBe(1);
 
     // do some other action
@@ -1608,7 +1608,7 @@ test("form views restore the correct id in url when coming back in breadcrumbs",
     expect(router.current).not.toInclude("resId");
 
     // go back to form view
-    await contains(".o_control_panel .breadcrumb a").click();
+    await contains(".w_control_panel .breadcrumb a").click();
     expect(router.current.resId).toBe(1);
 });
 
@@ -1632,22 +1632,22 @@ test("honor group_by specified in actions context", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(30);
-    expect(".o_list_table_grouped").toHaveCount(1, { message: "should be grouped" });
-    expect(".o_group_header").toHaveCount(2, {
+    expect(".w_list_table_grouped").toHaveCount(1, { message: "should be grouped" });
+    expect(".w_group_header").toHaveCount(2, {
         message: "should be grouped by 'bar' (two groups) at first load",
     });
 
     // groupby 'foo' using the searchview
     await toggleSearchBarMenu();
     await toggleMenuItem("Foo");
-    expect(".o_group_header").toHaveCount(5, {
+    expect(".w_group_header").toHaveCount(5, {
         message: "should be grouped by 'foo' (five groups)",
     });
 
     // remove the groupby in the searchview
-    await contains(".o_control_panel .o_searchview .o_facet_remove").click();
-    expect(".o_list_table_grouped").toHaveCount(1, { message: "should still be grouped" });
-    expect(".o_group_header").toHaveCount(2, {
+    await contains(".w_control_panel .w_searchview .w_facet_remove").click();
+    expect(".w_list_table_grouped").toHaveCount(1, { message: "should still be grouped" });
+    expect(".w_group_header").toHaveCount(2, {
         message: "should be grouped by 'bar' (two groups) at reload",
     });
 });
@@ -1673,11 +1673,11 @@ test("switch request to unknown view type", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(33);
-    expect(".o_list_view").toHaveCount(1, { message: "should display the list view" });
+    expect(".w_list_view").toHaveCount(1, { message: "should display the list view" });
     // try to open a record in a form view
-    contains(".o_list_view .o_data_row:first").click();
-    expect(".o_list_view").toHaveCount(1, { message: "should still display the list view" });
-    expect(".o_form_view").toHaveCount(0, { message: "should not display the form view" });
+    contains(".w_list_view .w_data_row:first").click();
+    expect(".w_list_view").toHaveCount(1, { message: "should still display the list view" });
+    expect(".w_form_view").toHaveCount(0, { message: "should not display the form view" });
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -1745,12 +1745,12 @@ test("save current search", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(33);
-    expect(".o_data_row").toHaveCount(5, { message: "should contain 5 records" });
+    expect(".w_data_row").toHaveCount(5, { message: "should contain 5 records" });
 
     // filter on bar
     await toggleSearchBarMenu();
     await toggleMenuItem("M2O");
-    expect(".o_data_row").toHaveCount(3);
+    expect(".w_data_row").toHaveCount(3);
 
     // save filter
     await toggleSaveFavorite();
@@ -1785,30 +1785,30 @@ test("list with default_order and favorite filter with no orderedBy", async () =
     ];
     await mountWithCleanup(WebClient);
     await getService("action").doAction(100);
-    expect(queryAllTexts(".o_data_row .o_data_cell")).toEqual(
+    expect(queryAllTexts(".w_data_row .w_data_cell")).toEqual(
         ["zoup", "yop", "plop", "gnap", "blip"],
         { message: "record should be in descending order as default_order applies" }
     );
 
     await toggleSearchBarMenu();
     await toggleMenuItem("favorite filter");
-    expect(".o_control_panel .o_facet_values").toHaveText("favorite filter", {
+    expect(".w_control_panel .w_facet_values").toHaveText("favorite filter", {
         message: "favorite filter should be applied",
     });
-    expect(queryAllTexts(".o_data_row .o_data_cell")).toEqual(["zoup", "plop", "gnap"], {
+    expect(queryAllTexts(".w_data_row .w_data_cell")).toEqual(["zoup", "plop", "gnap"], {
         message: "record should still be in descending order after default_order applied",
     });
 
     // go to formview and come back to listview
-    await contains(".o_list_view .o_data_row .o_data_cell").click();
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(queryAllTexts(".o_data_row .o_data_cell")).toEqual(["zoup", "plop", "gnap"], {
+    await contains(".w_list_view .w_data_row .w_data_cell").click();
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(queryAllTexts(".w_data_row .w_data_cell")).toEqual(["zoup", "plop", "gnap"], {
         message: "order of records should not be changed, while coming back through breadcrumb",
     });
 
     // remove filter
     await removeFacet("favorite filter");
-    expect(queryAllTexts(".o_data_row .o_data_cell")).toEqual(
+    expect(queryAllTexts(".w_data_row .w_data_cell")).toEqual(
         ["zoup", "yop", "plop", "gnap", "blip"],
         { message: "order of records should not be changed, after removing current filter" }
     );
@@ -1845,29 +1845,29 @@ test("action with default favorite and context.active_id", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(30);
 
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_searchview .o_searchview_facet").toHaveCount(1);
-    expect(".o_facet_value").toHaveText("favorite filter");
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_searchview .w_searchview_facet").toHaveCount(1);
+    expect(".w_facet_value").toHaveText("favorite filter");
 });
 
 test.tags("desktop");
 test("search menus are still available when switching between actions", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners Action 1"]);
-    expect(".o_searchview_dropdown_toggler").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners Action 1"]);
+    expect(".w_searchview_dropdown_toggler").toHaveCount(1);
 
     await getService("action").doAction(3);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners Action 1",
         "Partners",
     ]);
-    expect(".o_searchview_dropdown_toggler").toHaveCount(1);
+    expect(".w_searchview_dropdown_toggler").toHaveCount(1);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb-item a").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners Action 1"]);
-    expect(".o_searchview_dropdown_toggler").toHaveCount(1);
+    await contains(".w_control_panel .breadcrumb-item a").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners Action 1"]);
+    expect(".w_searchview_dropdown_toggler").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -1885,7 +1885,7 @@ test("current act_window action is stored in session_storage if possible", async
     // execute an action that can be stringified -> should be stored
     expectedAction = MockServer.current._findAction(3);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // execute an action that can't be stringified -> should not crash
     expectedAction = {};
@@ -1897,7 +1897,7 @@ test("current act_window action is stored in session_storage if possible", async
         views: [[false, "kanban"]],
         flags: { x },
     });
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 });
 
 test("stored action is restored correctly with domain", async () => {
@@ -1912,15 +1912,15 @@ test("stored action is restored correctly with domain", async () => {
         domain: [["id", "=", 4]],
     });
     await animationFrame();
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(1);
 
     // Emulate a Reload
     routerBus.trigger("ROUTE_CHANGE");
     await animationFrame();
 
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(1);
 });
 
 test("current_action doesn't contains _originalAction", async () => {
@@ -1964,16 +1964,16 @@ test("destroy action with lazy loaded controller", async () => {
 
     await mountWithCleanup(WebClient);
     await animationFrame(); // blank component
-    expect(".o_list_view").toHaveCount(0);
-    expect(".o_form_view").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    expect(".w_list_view").toHaveCount(0);
+    expect(".w_form_view").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Partners",
         "Second record",
     ]);
 
     await getService("action").doAction(1, { clearBreadcrumbs: true });
-    expect(".o_form_view").toHaveCount(0);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(0);
+    expect(".w_kanban_view").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -1999,23 +1999,23 @@ test("execute action from dirty, new record, and come back", async () => {
     // execute an action and create a new record
     await getService("action").doAction(3);
     await clickListNew();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(".o_form_uri:contains(First record)").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners", "New"]);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(".w_form_uri:contains(First record)").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners", "New"]);
 
     // set form view dirty and open m2o record
-    await contains('.o_field_widget[name="display_name"] input').edit("test");
-    await contains(".o_field_widget[name=foo] input").edit("val");
-    await contains(".o_form_uri").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains('.w_field_widget[name="display_name"] input').edit("test");
+    await contains(".w_field_widget[name=foo] input").edit("val");
+    await contains(".w_form_uri").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "test",
         "First record",
     ]);
     // go back to test using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb-item a").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners", "test"]);
+    await contains(".w_control_panel .breadcrumb-item a").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Partners", "test"]);
     expect.verifySteps([
         "/web/webclient/translations",
         "/web/webclient/load_menus",
@@ -2062,15 +2062,15 @@ test("execute a contextual action from a form view", async () => {
 
     // execute an action and open a record
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
-    await contains(".o_data_row .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
+    await contains(".w_data_row .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
 
     // execute the custom action from the action menu
-    await contains(".o_cp_action_menus [data-icon='more_vert']").click();
+    await contains(".w_cp_action_menus [data-icon='more_vert']").click();
     await toggleMenuItem("Favorite Ponies");
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2095,20 +2095,20 @@ test("go back to action with form view as main view, and res_id", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(999);
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Second record"]);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Second record"]);
 
     // push another action in the breadcrumb
-    await contains(".o_field_many2one .o_external_button", { visible: false }).click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".w_field_many2one .w_external_button", { visible: false }).click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Second record",
         "Third record",
     ]);
 
     // go back to the form view
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Second record"]);
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Second record"]);
 });
 
 test.tags("desktop");
@@ -2128,26 +2128,26 @@ test("action with res_id, load another res_id, do new action, restore previous",
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(999, { props: { resIds: [1, 2] } });
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["First record"]);
-    expect(".o_control_panel .o_pager_counter").toHaveText("1 / 2");
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["First record"]);
+    expect(".w_control_panel .w_pager_counter").toHaveText("1 / 2");
 
     // load another id on current action (through pager)
-    await contains(".o_pager_next").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Second record"]);
-    expect(".o_control_panel .o_pager_counter").toHaveText("2 / 2");
+    await contains(".w_pager_next").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Second record"]);
+    expect(".w_control_panel .w_pager_counter").toHaveText("2 / 2");
 
     // push another action in the breadcrumb
-    await contains(".o_field_many2one .o_external_button", { visible: false }).click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual([
+    await contains(".w_field_many2one .w_external_button", { visible: false }).click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual([
         "Second record",
         "Third record",
     ]);
 
     // restore previous action through breadcrumb
-    await contains(".o_control_panel .breadcrumb a").click();
-    expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Second record"]);
-    expect(".o_control_panel .o_pager_counter").toHaveText("2 / 2");
+    await contains(".w_control_panel .breadcrumb a").click();
+    expect(queryAllTexts(".breadcrumb-item, .w_breadcrumb .active")).toEqual(["Second record"]);
+    expect(".w_control_panel .w_pager_counter").toHaveText("2 / 2");
 });
 
 test.tags("desktop");
@@ -2156,21 +2156,21 @@ test("open a record, come back, and create a new record", async () => {
 
     // execute an action and open a record
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_list_view .o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_list_view .w_data_row").toHaveCount(5);
 
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb-item a").click();
-    expect(".o_list_view").toHaveCount(1);
+    await contains(".w_control_panel .breadcrumb-item a").click();
+    expect(".w_list_view").toHaveCount(1);
 
     // create a new record
     await clickListNew();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2179,25 +2179,25 @@ test("open form view, use the pager, execute action, and come back", async () =>
 
     // execute an action and open a record
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_list_view .o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_list_view .w_data_row").toHaveCount(5);
 
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_field_widget[name=display_name] input").toHaveValue("First record");
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_field_widget[name=display_name] input").toHaveValue("First record");
 
     // switch to second record
-    await contains(".o_pager_next").click();
-    expect(".o_field_widget[name=display_name] input").toHaveValue("Second record");
+    await contains(".w_pager_next").click();
+    expect(".w_field_widget[name=display_name] input").toHaveValue("Second record");
 
     // execute an action from the second record
-    await contains(".o_statusbar_buttons button[name='4']").click();
-    expect(".o_kanban_view").toHaveCount(1);
+    await contains(".w_statusbar_buttons button[name='4']").click();
+    expect(".w_kanban_view").toHaveCount(1);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb-item:eq(1) a").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_field_widget[name=display_name] input").toHaveValue("Second record");
+    await contains(".w_control_panel .breadcrumb-item:eq(1) a").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_field_widget[name=display_name] input").toHaveValue("Second record");
 });
 
 test.tags("desktop");
@@ -2206,25 +2206,25 @@ test("create a new record in a form view, execute action, and come back", async 
 
     // execute an action and create a new record
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     await clickListNew();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 
-    await contains(".o_field_widget[name=display_name] input").edit("another record");
-    await contains(".o_form_button_save").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    await contains(".w_field_widget[name=display_name] input").edit("another record");
+    await contains(".w_form_button_save").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 
     // execute an action from the second record
-    await contains(".o_statusbar_buttons button[name='4']").click();
-    expect(".o_kanban_view").toHaveCount(1);
+    await contains(".w_statusbar_buttons button[name='4']").click();
+    expect(".w_kanban_view").toHaveCount(1);
 
     // go back using the breadcrumbs
-    await contains(".o_control_panel .breadcrumb-item:eq(1) a").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
-    expect(".o_field_widget[name=display_name] input").toHaveValue("another record");
+    await contains(".w_control_panel .breadcrumb-item:eq(1) a").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
+    expect(".w_field_widget[name=display_name] input").toHaveValue("another record");
 });
 
 test("onClose should be called only once with right parameters", async () => {
@@ -2292,10 +2292,10 @@ test("Call twice clearUncommittedChanges in a row does not save twice", async ()
 
     // execute an action and edit existing record
     await getService("action").doAction(3);
-    await contains(".o_list_view .o_data_cell").click();
-    expect(".o_form_view .o_form_editable").toHaveCount(1);
+    await contains(".w_list_view .w_data_cell").click();
+    expect(".w_form_view .w_form_editable").toHaveCount(1);
 
-    await contains(".o_field_widget[name=foo] input").edit("val");
+    await contains(".w_field_widget[name=foo] input").edit("val");
     clearUncommittedChanges(getMockEnv().bus);
 
     await animationFrame();
@@ -2323,13 +2323,13 @@ test("executing a window action with onchange warning does not hide it", async (
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
     await clickListNew();
-    await waitFor(".modal.o_technical_modal");
-    expect(".modal.o_technical_modal").toHaveCount(1, {
+    await waitFor(".modal.w_technical_modal");
+    expect(".modal.w_technical_modal").toHaveCount(1, {
         message: "Warning modal should be opened",
     });
 
-    await contains(".modal.o_technical_modal button.btn-primary").click();
-    expect(".modal.o_technical_modal").toHaveCount(0, {
+    await contains(".modal.w_technical_modal button.btn-primary").click();
+    expect(".modal.w_technical_modal").toHaveCount(0, {
         message: "Warning modal should be closed",
     });
 });
@@ -2339,13 +2339,13 @@ test("do not call clearUncommittedChanges() when target=new and dialog is opened
 
     // Open Partner form view and enter some text
     await getService("action").doAction(3, { viewType: "form" });
-    expect(".o_action_manager .o_form_view .o_form_editable").toHaveCount(1);
+    expect(".w_action_manager .w_form_view .w_form_editable").toHaveCount(1);
 
-    await contains(".o_field_widget[name=display_name] input").edit("TEST");
+    await contains(".w_field_widget[name=display_name] input").edit("TEST");
     // Open dialog without saving should not ask to discard
     await getService("action").doAction(5);
-    expect(".o_action_manager .o_form_view .o_form_editable").toHaveCount(1);
-    expect(".o_dialog .o_view_controller").toHaveCount(1);
+    expect(".w_action_manager .w_form_view .w_form_editable").toHaveCount(1);
+    expect(".w_dialog .w_view_controller").toHaveCount(1);
 });
 
 test("do not pushState when target=new and dialog is opened", async () => {
@@ -2385,11 +2385,11 @@ test("do not restore after action button clicked", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3, { viewType: "form", props: { resId: 1 } });
     await contains("div[name='display_name'] input").edit("Edited value");
-    expect(".o_form_button_save").toBeVisible();
-    expect(".o_statusbar_buttons button[name=do_something]").toBeVisible();
+    expect(".w_form_button_save").toBeVisible();
+    expect(".w_statusbar_buttons button[name=do_something]").toBeVisible();
 
-    await contains(".o_statusbar_buttons button[name=do_something]").click();
-    expect(".o_control_panel_main_buttons .o_form_button_save").not.toHaveCount();
+    await contains(".w_statusbar_buttons button[name=do_something]").click();
+    expect(".w_control_panel_main_buttons .w_form_button_save").not.toHaveCount();
 });
 
 test("debugManager is active for views", async () => {
@@ -2397,9 +2397,9 @@ test("debugManager is active for views", async () => {
     onRpc("has_access", () => true);
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(".o-dropdown--menu .o-dropdown-item:contains('View: Kanban')").toHaveCount(0);
-    await contains(".o_debug_manager .dropdown-toggle").click();
-    expect(".o-dropdown--menu .o-dropdown-item:contains('View: Kanban')").toHaveCount(1);
+    expect(".w-dropdown--menu .w-dropdown-item:contains('View: Kanban')").toHaveCount(0);
+    await contains(".w_debug_manager .dropdown-toggle").click();
+    expect(".w-dropdown--menu .w-dropdown-item:contains('View: Kanban')").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2419,13 +2419,13 @@ test("reload a view via the view switcher keep state", async () => {
             [false, "list"],
         ],
     });
-    expect(".o_pivot_measure_row").not.toHaveClass("o_pivot_sort_order_asc");
+    expect(".w_pivot_measure_row").not.toHaveClass("o_pivot_sort_order_asc");
 
-    await contains(".o_pivot_measure_row").click();
-    expect(".o_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
+    await contains(".w_pivot_measure_row").click();
+    expect(".w_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
 
     await switchView("pivot");
-    expect(".o_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
+    expect(".w_pivot_measure_row").toHaveClass("o_pivot_sort_order_asc");
     expect.verifySteps([
         "formatted_read_grouping_sets", // initial formatted_read_grouping_sets
         "formatted_read_grouping_sets", // formatted_read_grouping_sets at reload after switch view
@@ -2482,8 +2482,8 @@ test("window action in target new fails (onchange)", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(2);
-    await contains(".o_form_view button[name='5']").click();
-    await expect(waitFor(".modal .o_error_dialog .modal-title")).resolves.toHaveText(
+    await contains(".w_form_view button[name='5']").click();
+    await expect(waitFor(".modal .w_error_dialog .modal-title")).resolves.toHaveText(
         "Validation Error"
     );
     expect.verifyErrors(["RPC_ERROR"]);
@@ -2516,8 +2516,8 @@ test("Uncaught error in target new is catch only once", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(2);
-    await contains(".o_form_view button[name='26']").click();
-    await expect(waitFor(".modal .o_error_dialog .modal-title")).resolves.toHaveText(
+    await contains(".w_form_view button[name='26']").click();
+    await expect(waitFor(".modal .w_error_dialog .modal-title")).resolves.toHaveText(
         "Validation Error"
     );
     expect.verifyErrors(["RPC_ERROR"]);
@@ -2535,11 +2535,11 @@ test("action and get_views rpcs are cached", async () => {
     expect.verifySteps(["/web/webclient/translations", "/web/webclient/load_menus"]);
 
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
     expect.verifySteps(["/web/action/load", "get_views", "web_search_read", "has_group"]);
 
     await getService("action").doAction(1);
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
 
     expect.verifySteps(["web_search_read"]);
 
@@ -2568,7 +2568,7 @@ test("get_views rpcs are cached (different context.active_id)", async () => {
         views: [[false, "kanban"]],
         context: { active_id: 33 },
     });
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
     expect.verifySteps(["get_views", "web_search_read", "has_group"]);
 
     await getService("action").doAction({
@@ -2578,7 +2578,7 @@ test("get_views rpcs are cached (different context.active_id)", async () => {
         views: [[false, "kanban"]],
         context: { active_id: 44 },
     });
-    expect(".o_kanban_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
     expect.verifySteps(["web_search_read"]);
 });
 
@@ -2590,10 +2590,10 @@ test("pushState also changes the title of the tab", async () => {
     const titleService = getService("title");
     expect(titleService.current).toBe("Partners");
 
-    await contains(".o_data_row .o_data_cell").click();
+    await contains(".w_data_row .w_data_cell").click();
     expect(titleService.current).toBe("First record");
 
-    await contains(".o_pager_next").click();
+    await contains(".w_pager_next").click();
     expect(titleService.current).toBe("Second record");
 });
 
@@ -2607,8 +2607,8 @@ test("action group_by of type string", async () => {
         views: [[3, "pivot"]],
         context: { group_by: "foo" },
     });
-    expect(".o_pivot_view").toHaveCount(1);
-    expect(".o_pivot_view tbody th").toHaveCount(6);
+    expect(".w_pivot_view").toHaveCount(1);
+    expect(".w_pivot_view tbody th").toHaveCount(6);
 });
 
 test("action help given to View in props if not empty", async () => {
@@ -2634,14 +2634,14 @@ test("action help given to View in props if not empty", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(14);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveText("Hello");
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveText("Hello");
     expect("table").toHaveCount(1);
 
     await getService("action").doAction(15);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
 });
 
 test("load a tree", async () => {
@@ -2657,7 +2657,7 @@ test("load a tree", async () => {
         res_model: "partner",
         views: [[false, "list"]],
     });
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2703,11 +2703,11 @@ test("sample server: populate groups", async () => {
         ],
     });
 
-    expect(".o_kanban_view .o_view_sample_data").toHaveCount(1);
-    expect(".o_column_title").toHaveText("December 2022");
+    expect(".w_kanban_view .w_view_sample_data").toHaveCount(1);
+    expect(".w_column_title").toHaveText("December 2022");
 
     await switchView("pivot");
-    expect(".o_pivot_view .o_view_sample_data").toHaveCount(1);
+    expect(".w_pivot_view .w_view_sample_data").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2720,42 +2720,42 @@ test("click on breadcrumb of a deleted record", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
-    await contains(".o_data_row .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
+    await contains(".w_data_row .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
 
     await contains(".my_btn").click();
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
-    await contains(".o_data_row .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    await contains(".w_data_row .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
     // open action menu and delete
-    await contains(".o_cp_action_menus [data-icon='more_vert']").click();
+    await contains(".w_cp_action_menus [data-icon='more_vert']").click();
     await toggleMenuItem("Delete");
-    expect(".o_dialog").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
 
     // confirm
-    await contains(".o_dialog .modal-footer .btn-danger").click();
+    await contains(".w_dialog .modal-footer .btn-danger").click();
 
-    expect(".o_form_view").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    expect(".w_form_view").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "Second record",
     ]);
-    expect(".o_breadcrumb .active").toHaveText("Second record");
+    expect(".w_breadcrumb .active").toHaveText("Second record");
 
     // click on "First record" in breadcrumbs, which doesn't exist anymore
     await contains(".breadcrumb .dropdown-toggle").click();
-    await contains(".o-overlay-container .dropdown-menu a:contains(First record)").click();
+    await contains(".w-overlay-container .dropdown-menu a:contains(First record)").click();
     await animationFrame();
 
-    expect(".o_form_view").toHaveCount(1);
-    expect(queryAllTexts(".breadcrumb-item a, .o_breadcrumb .active")).toEqual([
+    expect(".w_form_view").toHaveCount(1);
+    expect(queryAllTexts(".breadcrumb-item a, .w_breadcrumb .active")).toEqual([
         "Partners",
         "First record",
     ]);
@@ -2769,15 +2769,15 @@ test.tags("desktop");
 test("executing an action closes dialogs", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     getService("dialog").add(FormViewDialog, { resModel: "partner", resId: 1 });
     await animationFrame();
-    expect(".o_dialog .o_form_view").toHaveCount(1);
+    expect(".w_dialog .w_form_view").toHaveCount(1);
 
-    await contains(".o_dialog .o_form_view .o_statusbar_buttons button[name='4']").click();
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_dialog").toHaveCount(0);
+    await contains(".w_dialog .w_form_view .w_statusbar_buttons button[name='4']").click();
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(0);
 });
 
 test.tags("mobile");
@@ -2795,7 +2795,7 @@ test("execute a window action with mobile_view_mode", async () => {
             [false, "list"],
         ],
     });
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2807,45 +2807,45 @@ test("[Offline] navigate through window actions", async () => {
 
     // visit some actions and records to populate the caches
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
     await getService("action").doAction(4);
-    expect(".o_kanban_view").toHaveCount(1);
-    await contains(".o_cp_switch_buttons .o_list").click();
-    expect(".o_list_view").toHaveCount(1);
-    await contains(".o_data_row:eq(0) .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_field_widget[name=foo] input").toHaveValue("yop");
-    await contains(".o_breadcrumb .o_back_button").click();
-    expect(".o_list_view").toHaveCount(1);
-    await contains(".o_data_row:eq(2) .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_field_widget[name=foo] input").toHaveValue("gnap");
-    await contains(".o_pager_next").click();
-    expect(".o_field_widget[name=foo] input").toHaveValue("plop");
+    expect(".w_kanban_view").toHaveCount(1);
+    await contains(".w_cp_switch_buttons .w_list").click();
+    expect(".w_list_view").toHaveCount(1);
+    await contains(".w_data_row:eq(0) .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_field_widget[name=foo] input").toHaveValue("yop");
+    await contains(".w_breadcrumb .w_back_button").click();
+    expect(".w_list_view").toHaveCount(1);
+    await contains(".w_data_row:eq(2) .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_field_widget[name=foo] input").toHaveValue("gnap");
+    await contains(".w_pager_next").click();
+    expect(".w_field_widget[name=foo] input").toHaveValue("plop");
 
     // switch offline and start over
     await setOffline(true);
     await getService("action").doAction(3, { clearBreadcrumbs: true });
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(5);
-    expect(".o_data_row.o_disabled_offline").toHaveCount(5);
-    expect(".o_cp_switch_buttons .o_kanban").toHaveClass("o_disabled_offline");
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(5);
+    expect(".w_data_row.w_disabled_offline").toHaveCount(5);
+    expect(".w_cp_switch_buttons .w_kanban").toHaveClass("o_disabled_offline");
     await getService("action").doAction(4);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
-    expect(".o_cp_switch_buttons .o_list").not.toHaveClass("o_disabled_offline");
-    await contains(".o_cp_switch_buttons .o_list").click();
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(5);
-    expect(".o_data_row.o_disabled_offline").toHaveCount(2);
-    await contains(".o_data_row:eq(0) .o_data_cell").click();
-    expect(".o_form_view").toHaveCount(1);
-    expect(".o_pager").toHaveText("1 / 3"); // only 3 records are available offline
-    expect(".o_field_widget[name=foo] input").toHaveValue("yop");
-    await contains(".o_pager_next").click();
-    expect(".o_field_widget[name=foo] input").toHaveValue("gnap");
-    await contains(".o_pager_next").click();
-    expect(".o_field_widget[name=foo] input").toHaveValue("plop");
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
+    expect(".w_cp_switch_buttons .w_list").not.toHaveClass("o_disabled_offline");
+    await contains(".w_cp_switch_buttons .w_list").click();
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(5);
+    expect(".w_data_row.w_disabled_offline").toHaveCount(2);
+    await contains(".w_data_row:eq(0) .w_data_cell").click();
+    expect(".w_form_view").toHaveCount(1);
+    expect(".w_pager").toHaveText("1 / 3"); // only 3 records are available offline
+    expect(".w_field_widget[name=foo] input").toHaveValue("yop");
+    await contains(".w_pager_next").click();
+    expect(".w_field_widget[name=foo] input").toHaveValue("gnap");
+    await contains(".w_pager_next").click();
+    expect(".w_field_widget[name=foo] input").toHaveValue("plop");
 
     expect.verifyErrors([
         `Connection to "/web/dataset/call_kw/partner/web_search_read" couldn't be established`,
@@ -2864,7 +2864,7 @@ test("[Offline] execute unavailable action", async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     // switch offline
     await setOffline(true);
@@ -2881,7 +2881,7 @@ test("[Offline] execute unavailable action", async () => {
         type: "ir.actions.act_window",
     });
     await animationFrame();
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     expect.waitForErrors([
         `Connection to "/web/dataset/call_kw/partner/get_views" couldn't be established`,
@@ -2899,9 +2899,9 @@ test("[Offline] open the asked viewType", async () => {
 
     // visit some actions and records to populate the caches
     await getService("action").doAction(4);
-    expect(".o_kanban_view").toHaveCount(1);
-    await contains(".o_cp_switch_buttons .o_list").click();
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_kanban_view").toHaveCount(1);
+    await contains(".w_cp_switch_buttons .w_list").click();
+    expect(".w_list_view").toHaveCount(1);
 
     // switch offline
     await setOffline(true);
@@ -2909,7 +2909,7 @@ test("[Offline] open the asked viewType", async () => {
     // execute an action with viewType
     await getService("action").doAction(4, { viewType: "list" });
     await animationFrame();
-    expect(".o_list_view").toHaveCount(1);
+    expect(".w_list_view").toHaveCount(1);
 
     expect.waitForErrors([
         `Connection to "/web/dataset/call_kw/partner/web_search_read" couldn't be established`,
@@ -2931,36 +2931,36 @@ test("[Offline] switch view with unavailable search", async () => {
 
     // Populate the caches
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(5);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("My Filter");
-    expect(".o_data_row").toHaveCount(2);
+    expect(".w_data_row").toHaveCount(2);
 
     await switchView("kanban");
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
 
     // Switch offline
     await setOffline(true);
     await getService("action").doAction(3);
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(5);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(5);
 
     await switchView("kanban");
-    expect(".o_offline_search_bar .o_searchview_facet").toHaveCount(0);
-    expect(".o_kanban_record").toHaveCount(0);
-    expect(".o_view_nocontent").toHaveCount(1);
-    expect(".o_view_nocontent p:eq(1)").toHaveText(
+    expect(".w_offline_search_bar .w_searchview_facet").toHaveCount(0);
+    expect(".w_kanban_record").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent p:eq(1)").toHaveText(
         "There is no data to display offline for the given filters"
     );
-    expect(".o_view_nocontent button").toHaveCount(1);
+    expect(".w_view_nocontent button").toHaveCount(1);
 
-    await contains(".o_view_nocontent button").click();
-    expect(".o_offline_search_bar .o_searchview_facet").toHaveCount(2);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    await contains(".w_view_nocontent button").click();
+    expect(".w_offline_search_bar .w_searchview_facet").toHaveCount(2);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
 
     expect.waitForErrors([
         `Connection to "/web/dataset/call_kw/partner/web_search_read" couldn't be established`,
@@ -2984,34 +2984,34 @@ test("[Offline] switch view with unavailable search (mobile)", async () => {
 
     // Populate the caches
     await getService("action").doAction(3);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("My Filter");
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(2);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(2);
 
     await switchView("list");
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(2);
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(2);
 
     // Switch offline
     await setOffline(true);
     await getService("action").doAction(3);
-    expect(".o_kanban_view").toHaveCount(1);
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
+    expect(".w_kanban_view").toHaveCount(1);
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
 
     await switchView("list");
-    expect(".o_data_row").toHaveCount(0);
-    expect(".o_view_nocontent").toHaveCount(1);
-    expect(".o_view_nocontent p:eq(1)").toHaveText(
+    expect(".w_data_row").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(1);
+    expect(".w_view_nocontent p:eq(1)").toHaveText(
         "There is no data to display offline for the given filters"
     );
-    expect(".o_view_nocontent button").toHaveCount(1);
+    expect(".w_view_nocontent button").toHaveCount(1);
 
-    await contains(".o_view_nocontent button").click();
-    expect(".o_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(2);
+    await contains(".w_view_nocontent button").click();
+    expect(".w_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(2);
 
     expect.waitForErrors([
         `Connection to "/web/dataset/call_kw/partner/web_search_read" couldn't be established`,

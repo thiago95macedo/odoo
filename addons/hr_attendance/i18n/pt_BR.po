@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-30 17:38+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_attendance/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -45,25 +45,25 @@ msgstr ""
 "in/check-out) realizadas por eles.\n"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "\"Check Out\" time cannot be earlier than \"Check In\" time."
 msgstr "O registro de saída não pode ser anterior ao horário de entrada."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 msgid "%(hours)g h in %(month)s"
 msgstr "%(hours)g h em %(month)s"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "'Buy an RFID Device'"
 msgstr "\"Comprar um dispositivo RFID\""
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "'Read the Documentation'"
 msgstr "'Leia a documentação'"
@@ -229,7 +229,7 @@ msgid "Absence Management"
 msgstr "Gerenciamento de ausências"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "Absent"
 msgstr "Ausente"
@@ -262,7 +262,7 @@ msgstr ""
 "Para criar novos funcionários, vá até o menu Funcionários."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Add my break times"
 msgstr "Adicionar meus intervalos"
@@ -273,13 +273,13 @@ msgid "Administrator"
 msgstr "Administrador"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "All"
 msgstr "Tudo"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.js:0
 msgid "All departments"
 msgstr "Todos os departamentos"
@@ -310,7 +310,7 @@ msgid "Archived Employees"
 msgstr "Funcionários arquivados"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 msgid "Assign Badge"
 msgstr "Atribuir distintivo"
@@ -326,8 +326,8 @@ msgid "Attachment Count"
 msgstr "Contagem de anexos"
 
 #. module: hr_attendance
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
@@ -352,7 +352,7 @@ msgid "Attendance Based"
 msgstr "Baseado na frequência"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid "Attendance Error"
 msgstr "Erro de frequência"
@@ -416,14 +416,14 @@ msgid "Attendance Work Entry Type"
 msgstr "Tipo de registro de trabalho de Controle de Presença"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid "Attendance saved, but the display could not be refreshed."
 msgstr ""
 "O Controle de Presença foi salvo, mas a exibição não pôde ser atualizada."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Attendance with barcode"
 msgstr "Controle de presença com código de barras"
@@ -464,7 +464,7 @@ msgid "Attendances"
 msgstr "Controle de presença"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 msgid "Attendances This Month"
 msgstr "Presenças neste mês"
@@ -524,7 +524,7 @@ msgstr ""
 "os dias. Não se aplica a funcionários com horário de trabalho flexível."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "Back"
 msgstr "Voltar"
@@ -535,37 +535,37 @@ msgid "Back Camera"
 msgstr "Câmera traseira"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 msgid "Badge Number"
 msgstr "Número do crachá"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Badge Set-up"
 msgstr "Configuração do emblema"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Badge assigned successfully!"
 msgstr "Medalha atribuída com sucesso!"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.js:0
 msgid "Badge updated: "
 msgstr "Crachá atualizado: "
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Badge with Barcode"
 msgstr "Crachá com código de barras"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Badge with Barcode on Tablet"
 msgstr "Crachá com código de barras no tablet"
@@ -593,14 +593,14 @@ msgid "Based on GPS-Coordinates if available or on IP Address"
 msgstr "Com base nas coordenadas de GPS, se disponíveis, ou no endereço IP"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_inline_form/attendance_inline_form.xml:0
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Break"
 msgstr "Intervalo"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.js:0
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__break_duration
 msgid "Break Duration"
@@ -614,26 +614,26 @@ msgid "Break Management on Checkout"
 msgstr "Gerenciamento de intervalos ao registrar saída"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "Break duration cannot be negative."
 msgstr "A duração do intervalo não pode ser negativa."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.xml:0
 msgid "Break duration in minutes"
 msgstr "Duração do intervalo em minutos"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Break:"
 msgstr "Intervalo:"
 
 #. module: hr_attendance
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.js:0
 msgid "Breaks cannot be longer than the attendance time"
@@ -648,7 +648,7 @@ msgid "Browser"
 msgstr "Navegador"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/hooks/use_camera.js:0
 msgid "Camera Error"
 msgstr "Erro de câmera"
@@ -659,14 +659,14 @@ msgid "Can Edit"
 msgstr "Pode editar"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.xml:0
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.js:0
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "Cannot create new attendance record for %(empl_name)s, the employee hasn't "
@@ -676,7 +676,7 @@ msgstr ""
 "funcionário não registrou a saída desde %(datetime)s"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "Cannot create new attendance record for %(empl_name)s, the employee was "
@@ -686,7 +686,7 @@ msgstr ""
 "funcionário já registrou a entrada em %(datetime)s"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 msgid ""
 "Cannot perform check out on %(empl_name)s, could not find corresponding "
@@ -708,7 +708,7 @@ msgstr ""
 "armazenamento."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_inline_form/attendance_inline_form.xml:0
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
@@ -725,7 +725,7 @@ msgid "Check In/Out"
 msgstr "Entrada/Saída"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_inline_form/attendance_inline_form.xml:0
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__check_out
@@ -736,13 +736,13 @@ msgid "Check Out"
 msgstr "Saída"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Check in"
 msgstr "Entrada"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Check out"
 msgstr "Saída"
@@ -753,13 +753,13 @@ msgid "Check-In Image"
 msgstr "Imagem de check-in"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 msgid "Check-in image captured"
 msgstr "Imagem do check-in capturada"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 msgid "Check-in is recorded, but picture could not be captured"
 msgstr "O check-in foi registrado, mas não foi possível capturar a imagem"
@@ -770,7 +770,7 @@ msgid "Checked in"
 msgstr "Entrada registrada"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Checked in at"
 msgstr "Entrada em"
@@ -781,7 +781,7 @@ msgid "Checked out"
 msgstr "Saída registrada"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Checked out at"
 msgstr "Saída em"
@@ -792,13 +792,13 @@ msgid "Choose how long the greeting message will be displayed."
 msgstr "Selecione como a mensagem de saudação será exibida."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Choose how to record attendances"
 msgstr "Escolha como registrar as presenças"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Close"
 msgstr "Fechar"
@@ -809,7 +809,7 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Company Logo"
 msgstr "Logo da empresa"
@@ -825,38 +825,38 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.xml:0
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Connect an RFID reader, and scan a token."
 msgstr "Conecte um leitor RFID e escaneie um token."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid "Connection lost. Check in/out could not be recorded."
 msgstr "Conexão perdida. Não foi possível registrar o check-in/check-out."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.js:0
 msgid "Could not save break duration. Please identify again."
 msgstr "Não foi possível salvar a duração da pausa. Identifique novamente."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid "Could not update this attendance."
 msgstr "Não foi possível atualizar o Controle de Presença."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/calendar/attendance_calendar_controller.js:0
 msgid "Create"
 msgstr "Criar"
@@ -867,7 +867,7 @@ msgid "Create a new employee"
 msgstr "Criar um novo funcionário"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/many2one/many2one.js:0
 msgid "Create employee %s"
 msgstr "Criar funcionário %s"
@@ -943,7 +943,7 @@ msgid "Device & Location Tracking"
 msgstr "Rastreamento de dispositivos e localização"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_inline_form/attendance_inline_form.xml:0
 msgid "Discard"
 msgstr "Descartar"
@@ -975,7 +975,7 @@ msgid "Display Time"
 msgstr "Hora de exibição"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "Do not have access, user cannot edit the attendances that are not their own "
@@ -991,7 +991,7 @@ msgid "Draft"
 msgstr "Rascunho"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 #: model:ir.model,name:hr_attendance.model_hr_employee
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__employee_id
@@ -1002,7 +1002,7 @@ msgid "Employee"
 msgstr "Funcionário"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "Employee Avatar"
 msgstr "Avatar do funcionário"
@@ -1026,19 +1026,19 @@ msgid "Employee attendances"
 msgstr "Frequências de funcionários"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Employee created successfully!"
 msgstr "Funcionário criado com sucesso!"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Employee name is required."
 msgstr "O nome do funcionário é obrigatório."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 #: model:ir.actions.act_window,name:hr_attendance.hr_employee_attendance_action_kanban
 #: model:ir.actions.server,name:hr_attendance.action_attendance_employee_view_access
@@ -1047,43 +1047,43 @@ msgid "Employees"
 msgstr "Funcionários"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.js:0
 msgid "Enter a valid break duration in whole minutes."
 msgstr "Insira uma duração válida para o intervalo em minutos inteiros."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.js:0
 msgid "Enter the total break duration (in minutes) for %s."
 msgstr "Insira a duração total do intervalo (em minutos) para %s."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.js:0
 msgid "Enter the total break duration in minutes."
 msgstr "Insira a duração total do intervalo em minutos."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/calendar/attendance_calendar_controller.js:0
 msgid "Error"
 msgstr "Erro"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Error creating employee: "
 msgstr "Erro ao criar funcionário: "
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Error: "
 msgstr "Erro: "
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
 msgid "Error: could not find corresponding employee."
 msgstr "Erro: não foi possível encontrar este funcionário."
@@ -1094,7 +1094,7 @@ msgid "Errors"
 msgstr "Erros"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Extra hours"
 msgstr "Horas extras"
@@ -1105,13 +1105,13 @@ msgid "Extra unpaid break duration (hours)"
 msgstr "Duração extra do intervalo não remunerado (horas)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Failed to create employee."
 msgstr "Falha ao criar funcionário."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.js:0
 msgid "Failed to update badge: "
 msgstr "Falha ao atualizar o crachá: "
@@ -1127,7 +1127,7 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (usuários)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.xml:0
 msgid "For"
 msgstr "Para"
@@ -1153,7 +1153,7 @@ msgid "Generate new URL"
 msgstr "Gerar novo URL"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/card_layout/card_layout.xml:0
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
@@ -1163,7 +1163,7 @@ msgid "Go back"
 msgstr "Volte"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Goodbye"
 msgstr "Até logo"
@@ -1210,14 +1210,14 @@ msgid "Hours Last Month Overtime"
 msgstr "Horas do mês passado Horas extras"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__hours_previously_today
 msgid "Hours Previously Today"
 msgstr "Horas anteriores de hoje"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__hours_today
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__hours_today
@@ -1225,7 +1225,7 @@ msgid "Hours Today"
 msgstr "Horas hoje"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 msgid "Hours today:"
 msgstr "Horas hoje:"
@@ -1257,7 +1257,7 @@ msgid "IP Address"
 msgstr "Endereço IP"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Identify Manually"
 msgstr "Identificar manualmente"
@@ -1305,7 +1305,7 @@ msgid "In Location"
 msgstr "No local"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "In Progress"
 msgstr "Em andamento"
@@ -1321,7 +1321,7 @@ msgid "Input Mode (Out)"
 msgstr "Modo de entrada (saída)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Install"
 msgstr "Instalar"
@@ -1333,7 +1333,7 @@ msgid "Installation Manual"
 msgstr "Manual de instalação"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/controllers/main.py:0
 msgid ""
 "Invalid domain, use 'name' and/or 'department_id' fields with '=' and/or "
@@ -1343,7 +1343,7 @@ msgstr ""
 "operadores '=' e/ou 'ilike'."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Invalid request"
@@ -1429,7 +1429,7 @@ msgid "Latitude (Out)"
 msgstr "Latitude (saída)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.js:0
 msgid "Load Sample Data"
 msgstr "Carregar amostras de dados"
@@ -1440,7 +1440,7 @@ msgid "Load demo data"
 msgstr "Carregar dados de demonstração"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "Load sample data"
 msgstr "Carregar amostras de dados"
@@ -1493,13 +1493,13 @@ msgid "Manual"
 msgstr "Manual"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Manual Attendance"
 msgstr "Controle de presenças manual"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Manual Attendance or with barcode"
 msgstr "Controle de presenças manual ou com código de barras"
@@ -1510,7 +1510,7 @@ msgid "Manual Selection"
 msgstr "Seleção manual"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Manually (optional PIN)"
 msgstr "Manualmente (PIN opcional)"
@@ -1541,13 +1541,13 @@ msgid "Method"
 msgstr "Método"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Missing Data"
 msgstr "Dados ausentes"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.js:0
 msgid "Missing Employee ID"
 msgstr "ID do funcionário ausente"
@@ -1579,19 +1579,19 @@ msgid "My Team"
 msgstr "Minha equipe"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/calendar/attendance_calendar_controller.js:0
 msgid "New Attendance"
 msgstr "Nova Presença"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "New Set-up (Employee/Badge)"
 msgstr "Nova configuração (funcionário/crachá)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Next"
 msgstr "Próximo"
@@ -1602,7 +1602,7 @@ msgid "No"
 msgstr "Não"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 #: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_management_action
 #: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_reporting
@@ -1610,25 +1610,25 @@ msgid "No attendance records found"
 msgstr "Nenhum registro de presença encontrado"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.js:0
 msgid "No barcode received"
 msgstr "Não foi recebido nenhum código de barras"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "No break"
 msgstr "Sem intervalo"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.js:0
 msgid "No employee corresponding to Badge ID '%(barcode)s.'"
 msgstr "Nenhum empregado corresponde ao ID de crachá \"%(barcode)s\"."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Now"
 msgstr "Agora"
@@ -1654,13 +1654,13 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
-msgid "Odoo Logo"
-msgstr "Logo da Odoo"
+msgid "WETH Logo"
+msgstr "Logo da Weth"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/hr_presence_status/hr_attendance_presence_status.js:0
 msgid "Off-Hours"
 msgstr "Fora do horário comercial"
@@ -1676,7 +1676,7 @@ msgid "Officer: Manage attendances"
 msgstr "Administrador: gerenciar presenças"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "On site"
 msgstr "No local"
@@ -1687,7 +1687,7 @@ msgid "Onboarding"
 msgstr "Integração"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "Online"
 msgstr "Online"
@@ -1733,19 +1733,19 @@ msgid "Overtime Attendance"
 msgstr "Presença em horas extras"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Pending"
 msgstr "Pendente"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
 msgid "Please enter your PIN to"
 msgstr "Digite seu PIN para fazer"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
@@ -1753,37 +1753,37 @@ msgid "Please return to the main menu."
 msgstr "Rretorne ao menu principal."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Please select an employee and enter a badge number."
 msgstr "Selecione um funcionário e insira um número de crachá."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Powered by"
 msgstr "Desenvolvido por"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/hr_presence_status/hr_attendance_presence_status.js:0
 msgid "Present (untracked)"
 msgstr "Presente (não rastreado)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 msgid "Print"
 msgstr "Imprimir"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 msgid "Print Badge"
 msgstr "Imprimir crachá"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid "Proceed Anyway"
 msgstr "Continuar assim mesmo"
@@ -1794,13 +1794,13 @@ msgid "Public Employee"
 msgstr "Funcionário público"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "RFID Token with reader"
 msgstr "Token RFID com leitor"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "RFID Token with reader on tablet"
 msgstr "Token RFID com leitor no tablet"
@@ -1821,7 +1821,7 @@ msgid "Read a badge"
 msgstr "Ler um crachá"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "Ready to track attendances ?"
 msgstr "Vamos começar a controlar as presenças?"
@@ -1862,7 +1862,7 @@ msgid "Saturday"
 msgstr "Sábado"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_inline_form/attendance_inline_form.xml:0
 msgid "Save"
 msgstr "Salvar"
@@ -1873,25 +1873,25 @@ msgid "Save & Close"
 msgstr "Salvar e fechar"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.xml:0
 msgid "Scan Badge"
 msgstr "Emblema de verificação"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/badge_scanner/badge_scanner.xml:0
 msgid "Scan or Tap your badge"
 msgstr "Digitalize ou toque no seu crachá"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.xml:0
 msgid "Scan or enter badge number"
 msgstr "Digitalize ou digite o número do crachá"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Scan your badge"
 msgstr "Escaneie seu crachá"
@@ -1902,13 +1902,13 @@ msgid "Scanner"
 msgstr "Escanear"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/manual_selection/manual_selection.xml:0
 msgid "Search..."
 msgstr "Buscar..."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "Select on Tablet"
 msgstr "Selecionar no tablet"
@@ -1931,7 +1931,7 @@ msgid "Settings"
 msgstr "Definições"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
 msgid "Sign out"
 msgstr "Saída"
@@ -1995,7 +1995,7 @@ msgid "Technical"
 msgstr "Técnico"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "The attendance records of your employees will be displayed here."
 msgstr "O registro de presença do seu funcionário será mostrado aqui."
@@ -2052,7 +2052,7 @@ msgstr ""
 "funcionários em que ele estiver definido como gerente de presença"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.js:0
 msgid ""
 "This action will generate several fake records across multiple apps. Are you "
@@ -2062,7 +2062,7 @@ msgstr ""
 "certeza de que quer continuar?"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "This attendance was automatically checked out based on company specific time "
@@ -2072,7 +2072,7 @@ msgstr ""
 "configuração de horário específica da empresa."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "This attendance was automatically checked out because the employee exceeded "
@@ -2082,7 +2082,7 @@ msgstr ""
 "tempo permitido para suas horas de trabalho programadas."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid ""
 "This attendance was automatically created to cover an unjustified absence on "
@@ -2100,7 +2100,7 @@ msgstr ""
 "3 letras)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/calendar/attendance_calendar_controller.js:0
 msgid ""
 "This operation is not allowed as you are not linked to an employee in the "
@@ -2137,7 +2137,7 @@ msgid "To Validate"
 msgstr "A validar"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Today"
 msgstr "Hoje"
@@ -2153,7 +2153,7 @@ msgid "Tolerance"
 msgstr "Tolerância"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Total"
 msgstr "Total"
@@ -2175,19 +2175,19 @@ msgid "Try kiosk"
 msgstr "Testar quiosque"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "Try the backend and reporting:"
 msgstr "Experimentar o backend e os relatórios:"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "Try the kiosk"
 msgstr "Teste o quiosque"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "Try the top"
 msgstr "Teste o"
@@ -2198,13 +2198,13 @@ msgid "Tuesday"
 msgstr "Terça-feira"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/hooks/use_camera.js:0
 msgid "Unable to access camera"
 msgstr "Não é possível acessar a câmera"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.js:0
 msgid ""
 "Unable to get a valid location. Do you want to proceed with your check-in/"
@@ -2214,7 +2214,7 @@ msgstr ""
 "in/check-out mesmo assim?"
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/controllers/main.py:0
 msgid "Unknown"
 msgstr "Desconhecido"
@@ -2256,7 +2256,7 @@ msgid "Validated"
 msgstr "Validado"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/new_employee_dialog/new_employee_dialog.js:0
 msgid "Validation Error"
 msgstr "Erro de validação"
@@ -2278,19 +2278,19 @@ msgid "Wednesday"
 msgstr "Quarta-feira"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "Welcome"
 msgstr "Boas-vindas"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Welcome back"
 msgstr "Olá!"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Welcome,"
 msgstr "Boas-vindas,"
@@ -2326,7 +2326,7 @@ msgstr ""
 "mecanismo de regras de tempo."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/attendance_menu/attendance_menu.xml:0
 msgid "Worked"
 msgstr "Trabalhado"
@@ -2376,13 +2376,13 @@ msgid "Working Schedule"
 msgstr "Horário de trabalho"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.js:0
 msgid "Wrong Pin"
 msgstr "PIN incorreto"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/calendar/attendance_calendar_controller.js:0
 msgid ""
 "You are not linked to an employee in the current company, so you cannot view "
@@ -2392,7 +2392,7 @@ msgstr ""
 "pode visualizar seu Controle de Presença."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "You can only set a break duration once the employee has checked out."
 msgstr ""
@@ -2400,69 +2400,69 @@ msgstr ""
 "registrado a saída."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "You cannot duplicate an attendance."
 msgstr "Você não pode duplicar uma presença."
 
 #. module: hr_attendance
-#. odoo-python
+#. weth-python
 #: code:addons/hr_attendance/models/hr_attendance.py:0
 msgid "You don't have the rights to execute that action."
 msgstr "Você não tem os direitos para executar essa ação."
 
 #. module: hr_attendance
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_attendance/models/hr_employee.py:0
 #: code:addons/hr_attendance/static/src/components/greetings/greetings.xml:0
 msgid "You've already checked in."
 msgstr "Você já fez o check-in."
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
 msgid "check in"
 msgstr "entrada"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/pin_code/pin_code.xml:0
 msgid "check out"
 msgstr "saída"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 msgid "check-in"
 msgstr "entrada"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 msgid "check-out"
 msgstr "saída"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/confirmation/confirmation.xml:0
 msgid "for"
 msgstr "para"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "icon (e.g for work from home)"
 msgstr "o ícone superior (ex.: trabalho remoto)"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/components/break_duration_dialog/break_duration_dialog.xml:0
 msgid "minutes"
 msgstr "minutos"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/views/attendance_helper_view.xml:0
 msgid "or"
 msgstr "ou"
@@ -2473,7 +2473,7 @@ msgid "websocket message handling"
 msgstr "Tratamento de mensagens via WebSocket"
 
 #. module: hr_attendance
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_attendance/static/src/public_kiosk/public_kiosk_app.xml:0
 msgid "with optional PIN code"
 msgstr "com código PIN opcional"

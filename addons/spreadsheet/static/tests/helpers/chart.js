@@ -5,7 +5,7 @@ import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 
 /**
  * @typedef {import("@weth/o-spreadsheet").Model} Model
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").WethSpreadsheetModel} WethSpreadsheetModel
  */
 
 /**
@@ -42,7 +42,7 @@ export function insertChartInSpreadsheet(model, type = "bar", definition = {}) {
  * @param {string} [params.type]
  * @param {import("./data").ServerData} [params.serverData]
  *
- * @returns { Promise<{ model: OdooSpreadsheetModel, env: Object }>}
+ * @returns { Promise<{ model: WethSpreadsheetModel, env: Object }>}
  */
 export async function createSpreadsheetWithChart(params = {}) {
     const { model, env } = await createModelWithDataSource(params);
@@ -56,7 +56,7 @@ export async function createSpreadsheetWithChart(params = {}) {
 export function getChartDefinition(type) {
     return {
         dataSource: {
-            type: "odoo",
+            type: "weth",
             metaData: {
                 groupBy: ["foo", "bar"],
                 measure: "__count",

@@ -296,8 +296,8 @@ class Registry(Mapping[str, type["BaseModel"]]):
         self._database_translated_fields: dict[str, str] = {}  # names and translate function names of translated fields in database {"{model}.{field_name}": "translate_func"}
         self._database_company_dependent_fields: set[str] = set()  # names of company dependent fields in database
         if config['test_enable']:
-            from weth.tests.result import OdooTestResult  # noqa: PLC0415
-            self._assertion_report: OdooTestResult | None = OdooTestResult()
+            from weth.tests.result import WethTestResult  # noqa: PLC0415
+            self._assertion_report: WethTestResult | None = WethTestResult()
         else:
             self._assertion_report = None
         self._ordinary_tables: set[str] | None = None  # cached names of regular tables

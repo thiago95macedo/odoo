@@ -253,7 +253,7 @@ test("BuilderButton: no activation on preview", async () => {
     });
 
     // Open the builder select
-    await contains("button.o-hb-select-toggle").click();
+    await contains("button.w-hb-select-toggle").click();
 
     // Hover the builder button while the builder select is still open
     const builderButtonEl = queryOne("button[data-class-action=b2]");

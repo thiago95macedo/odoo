@@ -31,13 +31,13 @@ test("open channel in discuss from push notification", async () => {
     ]);
     await start();
     await openDiscuss(salesId);
-    await contains(".o-mail-DiscussContent-threadName[title='Sales']");
+    await contains(".w-mail-DiscussContent-threadName[title='Sales']");
     navigator.serviceWorker.dispatchEvent(
         new MessageEvent("message", {
             data: { action: "OPEN_CHANNEL", data: { id: generalId } },
         })
     );
-    await contains(".o-mail-DiscussContent-threadName[title='General']");
+    await contains(".w-mail-DiscussContent-threadName[title='General']");
 });
 
 test("notify message to user as non member", async () => {
@@ -70,7 +70,7 @@ test("notify message to user as non member", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message:has(:text('Hello!'))");
+    await contains(".w-mail-Message:has(:text('Hello!'))");
     expect.verifySteps(["push notification"]);
 });
 
@@ -88,7 +88,7 @@ test("show correspondent local time in DM header when timezones differ", async (
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header:has(:text('17:30 local time'))");
+    await contains(".w-mail-DiscussContent-header:has(:text('17:30 local time'))");
 });
 
 test("discard push notification of already seen channel message", async () => {
@@ -110,7 +110,7 @@ test("discard push notification of already seen channel message", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
     for (const [correlationId, messageId] of [
         ["unseen", unseenMessageId],
         ["seen", seenMessageId],

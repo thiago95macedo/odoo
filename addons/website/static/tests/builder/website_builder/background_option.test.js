@@ -58,12 +58,12 @@ test("change the background shape of elements", async () => {
             </div>
         </div>`);
     await contains(":iframe .selector").click();
-    await contains("div[data-label='Shape'] button.o-hb-btn").click();
+    await contains("div[data-label='Shape'] button.w-hb-btn").click();
     expect(
-        ".o_pager_container .o-hb-bg-shape-btn:nth-child(1) .btn.active[data-action-id='setBackgroundShape']"
+        ".o_pager_container .w-hb-bg-shape-btn:nth-child(1) .btn.active[data-action-id='setBackgroundShape']"
     ).toHaveCount();
     await contains(
-        ".o_pager_container .o-hb-bg-shape-btn:nth-child(2) .btn:not(.active)[data-action-id='setBackgroundShape']"
+        ".o_pager_container .w-hb-bg-shape-btn:nth-child(2) .btn:not(.active)[data-action-id='setBackgroundShape']"
     ).click();
     expect(":iframe .selector div#first").toHaveAttribute(
         "data-oe-shape-data",
@@ -201,14 +201,14 @@ test("Background position overlay behavior", async () => {
     const movement = 50;
     const positionStartDrag = { x: 100, y: 100 };
     const { startDrag, endDrag } = patchDragImage(
-        ".o-overlay-container .o_we_overlay_dragger",
+        ".w-overlay-container .o_we_overlay_dragger",
         positionStartDrag,
         { x: positionStartDrag.x + movement, y: positionStartDrag.y + movement }
     );
 
     const drag = async () => {
         const dragActions = await startDrag();
-        expect(".o-overlay-container .o_we_image_position_overlay").toHaveClass("o_we_grabbing");
+        expect(".w-overlay-container .o_we_image_position_overlay").toHaveClass("o_we_grabbing");
         await endDrag(dragActions);
     };
 
@@ -333,7 +333,7 @@ async function openBgPositionOverlay(editingElement, waitSidebarUpdated) {
     await contains(editingElement).click();
     await waitSidebarUpdated();
     await contains("button[data-action-id='backgroundPositionOverlay']").click();
-    await waitFor(".o-overlay-container .o_we_overlay_dragger", { timeout: 2000 });
+    await waitFor(".w-overlay-container .o_we_overlay_dragger", { timeout: 2000 });
 }
 
 async function dragAndDropBgImage(builderOptions = {}) {
@@ -348,7 +348,7 @@ async function dragAndDropBgImage(builderOptions = {}) {
     );
     await openBgPositionOverlay(":iframe section", waitSidebarUpdated);
     const { startDrag, endDrag } = patchDragImage(
-        ".o-overlay-container .o_we_overlay_dragger",
+        ".w-overlay-container .o_we_overlay_dragger",
         { x: 199, y: 199 },
         { x: 200, y: 200 }
     );
@@ -371,13 +371,13 @@ test("change the main color of a background image of type '/html_editor/shape'",
     await waitSidebarUpdated();
     await contains("[data-label='Main Color'] .o_we_color_preview").click();
     await contains(
-        ".o-main-components-container .o_colorpicker_section [data-color='o-color-5']"
+        ".w-main-components-container .o_colorpicker_section [data-color='o-color-5']"
     ).hover();
     expect(":iframe section").toHaveStyle({
         backgroundImage: `url("${window.location.origin}/html_editor/shape/http_routing/404.svg?c2=o-color-5")`,
     });
     await contains(
-        ".o-main-components-container .o_colorpicker_section [data-color='o-color-4']"
+        ".w-main-components-container .o_colorpicker_section [data-color='o-color-4']"
     ).hover();
     expect(":iframe section").toHaveStyle({
         backgroundImage: `url("${window.location.origin}/html_editor/shape/http_routing/404.svg?c2=o-color-4")`,
@@ -421,9 +421,9 @@ test("changing shape's background color doesn't hide the shape itself", async ()
         }
     );
     await contains(":iframe section").click();
-    await contains("div[data-label='Shape'] button.o-hb-btn").click();
+    await contains("div[data-label='Shape'] button.w-hb-btn").click();
     await contains(
-        ".o_pager_container .o-hb-bg-shape-btn [data-action-value='html_builder/Connections/01'][data-action-id='setBackgroundShape']"
+        ".o_pager_container .w-hb-bg-shape-btn [data-action-value='html_builder/Connections/01'][data-action-id='setBackgroundShape']"
     ).click();
     await waitSidebarUpdated();
     const backgroundImageValue = getComputedStyle(queryOne(":iframe .o_we_shape")).backgroundImage;
@@ -564,9 +564,9 @@ test("can customize background shape groups", async () => {
 
     await setupWebsiteBuilder(`<section>AAAA</section>`);
     await contains(":iframe section").click();
-    await contains("div[data-label='Shape'] button.o-hb-btn").click();
+    await contains("div[data-label='Shape'] button.w-hb-btn").click();
     expect(".o_pager_container").toHaveText(/Custom/);
-    expect("button.o-hb-select-pager-tab[data-group-id='extra']").toHaveCount(1);
+    expect("button.w-hb-select-pager-tab[data-group-id='extra']").toHaveCount(1);
     expect("[data-action-value='html_builder/Connections/01']").toHaveCount(1);
     expect("[data-action-value='html_builder/Connections/02']").toHaveCount(1);
     await contains("[data-action-value='html_builder/Connections/01']").click();

@@ -22,7 +22,7 @@ test("Toggle display of original/translated version of chatter message", async (
     pyEnv["mail.message"].create({
         model: "res.partner",
         body: "Al mal tiempo, buena cara.",
-        author_id: serverState.odoobotId,
+        author_id: serverState.wethbotId,
         res_id: partnerId,
     });
     onRpcBefore("/mail/message/translate", () => {
@@ -31,21 +31,21 @@ test("Toggle display of original/translated version of chatter message", async (
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Message [title='Expand']");
-    await contains(".o-dropdown-item:contains('Translate')");
-    await contains(".o-dropdown-item:contains('Initial Language')", { count: 0 });
+    await click(".w-mail-Message [title='Expand']");
+    await contains(".w-dropdown-item:contains('Translate')");
+    await contains(".w-dropdown-item:contains('Initial Language')", { count: 0 });
     // Click acts as a toogle affecting its appearence and the actual message content displayed.
-    await click(".o-dropdown-item:contains('Translate')");
+    await click(".w-dropdown-item:contains('Translate')");
     await contains(
-        ".o-mail-Message-body:text('To bad weather, good face. (Translated from: Spanish)')"
+        ".w-mail-Message-body:text('To bad weather, good face. (Translated from: Spanish)')"
     );
-    await click(".o-mail-Message [title='Expand']");
-    await contains(".o-dropdown-item:contains('Translate')", { count: 0 });
-    await contains(".o-dropdown-item:contains('Initial Language')");
-    await click(".o-dropdown-item:contains('Initial Language')");
-    await contains(".o-mail-Message:has(:text('Al mal tiempo, buena cara.'))");
-    await click(".o-mail-Message [title='Expand']");
-    await click(".o-dropdown-item:contains('Translate')");
+    await click(".w-mail-Message [title='Expand']");
+    await contains(".w-dropdown-item:contains('Translate')", { count: 0 });
+    await contains(".w-dropdown-item:contains('Initial Language')");
+    await click(".w-dropdown-item:contains('Initial Language')");
+    await contains(".w-mail-Message:has(:text('Al mal tiempo, buena cara.'))");
+    await click(".w-mail-Message [title='Expand']");
+    await click(".w-dropdown-item:contains('Translate')");
     // The translation button should not trigger more than one external request for a single message.
     await expect.waitForSteps(["Request"]);
 });
@@ -69,18 +69,18 @@ test("translation of email message", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await contains("span:text('Al mal tiempo, buena cara.')", {
-        parent: [".o-mail-Message-body > div", { shadowRoot: true }],
+        parent: [".w-mail-Message-body > div", { shadowRoot: true }],
     });
     await click("button[title='Expand']");
-    await click(".o-dropdown-item:contains('Translate')");
+    await click(".w-dropdown-item:contains('Translate')");
     await contains("span:text('To bad weather, good face.')", {
-        parent: [".o-mail-Message-body > div", { shadowRoot: true }],
+        parent: [".w-mail-Message-body > div", { shadowRoot: true }],
     });
-    await contains(".o-mail-Message-body:text('(Translated from: Spanish)')", {});
+    await contains(".w-mail-Message-body:text('(Translated from: Spanish)')", {});
     await click("button[title='Expand']");
-    await click(".o-dropdown-item:contains('Initial Language')");
+    await click(".w-dropdown-item:contains('Initial Language')");
     await contains("span:text('Al mal tiempo, buena cara.')", {
-        parent: [".o-mail-Message-body > div", { shadowRoot: true }],
+        parent: [".w-mail-Message-body > div", { shadowRoot: true }],
     });
 });
 
@@ -114,17 +114,17 @@ test("Do not show translate action if message body is empty", async () => {
     ]);
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message", { count: 3 });
-    await click(".o-mail-Message:eq(0) button[title='Expand']");
-    await waitFor(".o-dropdown-item:text('Pin')");
-    await waitFor(".o-dropdown-item:contains('Translate'):count(1)");
-    await click(".o-mail-Message:eq(0) button[title='Expand']");
+    await contains(".w-mail-Message", { count: 3 });
+    await click(".w-mail-Message:eq(0) button[title='Expand']");
+    await waitFor(".w-dropdown-item:text('Pin')");
+    await waitFor(".w-dropdown-item:contains('Translate'):count(1)");
+    await click(".w-mail-Message:eq(0) button[title='Expand']");
     // The attachment-only message has an empty body, so its menu must not offer translation.
-    await click(".o-mail-Message:eq(1) button[title='Expand']");
+    await click(".w-mail-Message:eq(1) button[title='Expand']");
     await waitFor(".dropdown-menu");
-    await waitForNone(".o-dropdown-item:contains('Translate')");
-    await click(".o-mail-Message:eq(2) button[title='Expand']");
-    await waitFor(".o-dropdown-item:text('Pin')");
+    await waitForNone(".w-dropdown-item:contains('Translate')");
+    await click(".w-mail-Message:eq(2) button[title='Expand']");
+    await waitFor(".w-dropdown-item:text('Pin')");
 });
 
 test.tags("mobile");
@@ -134,7 +134,7 @@ test("Toggle message translation on mobile", async () => {
     pyEnv["mail.message"].create({
         model: "res.partner",
         body: "Al mal tiempo, buena cara.",
-        author_id: serverState.odoobotId,
+        author_id: serverState.wethbotId,
         res_id: partnerId,
     });
     onRpcBefore("/mail/message/translate", () => ({
@@ -146,11 +146,11 @@ test("Toggle message translation on mobile", async () => {
     mockUserAgent("android");
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message");
-    await pointerDown(".o-mail-Message");
+    await contains(".w-mail-Message");
+    await pointerDown(".w-mail-Message");
     await advanceTime(LONG_PRESS_DELAY);
     await click("button:contains('Translate')");
     await contains(
-        ".o-mail-Message-body:text('To bad weather, good face. (Translated from: Spanish)')"
+        ".w-mail-Message-body:text('To bad weather, good face. (Translated from: Spanish)')"
     );
 });

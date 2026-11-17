@@ -57,11 +57,11 @@ export function isMobileOS() {
 }
 
 export function isIosApp() {
-    return /OdooMobile \(iOS\)/i.test(navigator.userAgent);
+    return /WethMobile \(iOS\)/i.test(navigator.userAgent);
 }
 
 export function isAndroidApp() {
-    return /OdooMobile.+Android/i.test(navigator.userAgent);
+    return /WethMobile.+Android/i.test(navigator.userAgent);
 }
 
 export function isDisplayStandalone() {

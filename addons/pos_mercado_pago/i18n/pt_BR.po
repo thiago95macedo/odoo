@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_mercado_pago/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -28,20 +28,20 @@ msgid "APP_USR-..."
 msgstr "APP_USR-..."
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/mercado_pago_pos_request.py:0
 msgid "Cannot decode Mercado Pago POS response. Error: %s"
 msgstr ""
 "Não foi possível decodificar a resposta do PDV do Mercado Pago. Erro: %s"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Cannot process transactions with negative amount."
 msgstr "Não é possível processar transações com valor negativo."
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Complete the action on the Point device to continue."
 msgstr "Conclua a ação no dispositivo Point para continuar."
@@ -52,7 +52,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/pos_payment_method.py:0
 msgid "Do not have access to fetch token from Mercado Pago"
 msgstr "Não tem acesso para buscar o token do Mercado Pago"
@@ -77,7 +77,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid ""
 "If the payment does not appear on the Point, press the 'Refresh' button on "
@@ -97,7 +97,7 @@ msgid "Mercado Pago"
 msgstr "Mercado Pago"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Mercado Pago %s"
 msgstr "Mercado Pago"
@@ -126,7 +126,7 @@ msgstr ""
 "integração: https://www.mercadopago.com.mx/developers/panel/app"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Mercado Pago requires cancellations directly on the terminal."
 msgstr ""
@@ -139,7 +139,7 @@ msgid "Mp Id Point Smart Complet"
 msgstr "ID completo do Mercado Mercado - Point Smart"
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/pos_payment_method.py:0
 msgid "Original Mercado Pago payment not found on order %s"
 msgstr "Pagamento original do Mercado Pago não encontrado no pedido %s"
@@ -150,37 +150,37 @@ msgid "POS Mercado Pago"
 msgstr "Mercado Pago"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Payment expired"
 msgstr "Pagamento vencido"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Payment has been canceled"
 msgstr "O pagamento foi cancelado"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Payment has been processed"
 msgstr "O pagamento foi processado"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Payment has been rejected"
 msgstr "O pagamento foi rejeitado"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Payment status could not be confirmed"
 msgstr "O status do pagamento não pôde ser confirmado"
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/pos_payment_method.py:0
 msgid "Please verify your production user token as it was rejected"
 msgstr "Seu token de usuário de produção foi rejeitado. Verifique o token."
@@ -201,13 +201,13 @@ msgid "Production user token"
 msgstr "Token do usuário de produção"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Refund failed"
 msgstr "Falha no reembolso"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "System error"
 msgstr "Erro de sistema"
@@ -218,19 +218,19 @@ msgid "Terminal S/N"
 msgstr "Nº de série do terminal"
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/pos_payment_method.py:0
 msgid "The terminal serial number is not registered on Mercado Pago"
 msgstr "O número de série do terminal não está registrado no Mercado Pago"
 
 #. module: pos_mercado_pago
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mercado_pago/models/pos_payment_method.py:0
 msgid "Unexpected Mercado Pago response: %s"
 msgstr "Resposta inesperada do Mercado Pago: %s"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "Unknown payment status"
 msgstr "Status de pagamento desconhecido"
@@ -241,7 +241,7 @@ msgid "Webhook Endpoint"
 msgstr "Endpoint de Webhook"
 
 #. module: pos_mercado_pago
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mercado_pago/static/src/app/utils/payment/payment_mercado_pago.js:0
 msgid "You can only refund an order that was paid for with Mercado Pago."
 msgstr "Você só pode reembolsar um pedido que foi pago com o Mercado Pago."

@@ -33,8 +33,8 @@ test("PercentageField in form view", async () => {
         resId: 1,
     });
 
-    expect(".o_field_widget[name=float_field] input").toHaveValue("44.4");
-    expect(".o_field_widget[name=float_field] span").toHaveText("%", {
+    expect(".w_field_widget[name=float_field] input").toHaveValue("44.4");
+    expect(".w_field_widget[name=float_field] span").toHaveText("%", {
         message: "The input should be followed by a span containing the percentage symbol.",
     });
 
@@ -44,7 +44,7 @@ test("PercentageField in form view", async () => {
 
     await clickSave();
 
-    expect(".o_field_widget input").toHaveValue("24");
+    expect(".w_field_widget input").toHaveValue("24");
 });
 
 test("PercentageField in form view without rounding error", async () => {
@@ -68,8 +68,8 @@ test("PercentageField with no_symbol option", async () => {
         resId: 1,
     });
 
-    expect(".o_field_widget[name=float_field] input").toHaveValue("44.4");
-    expect(".o_field_widget[name=float_field] span").toHaveCount(0, {
+    expect(".w_field_widget[name=float_field] input").toHaveValue("44.4");
+    expect(".w_field_widget[name=float_field] span").toHaveCount(0, {
         message: "The percentage symbol should not be displayed when no_symbol is true.",
     });
 });
@@ -82,7 +82,7 @@ test("PercentageField without no_symbol option shows percentage symbol", async (
         resId: 1,
     });
 
-    expect(".o_field_widget[name=float_field] input").toHaveValue("44.4");
-    expect(".o_field_widget[name=float_field] span").toHaveCount(1);
-    expect(".o_field_widget[name=float_field] span").toHaveText("%");
+    expect(".w_field_widget[name=float_field] input").toHaveValue("44.4");
+    expect(".w_field_widget[name=float_field] span").toHaveCount(1);
+    expect(".w_field_widget[name=float_field] span").toHaveText("%");
 });

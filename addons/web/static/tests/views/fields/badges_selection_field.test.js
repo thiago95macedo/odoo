@@ -58,14 +58,14 @@ test("BadgesSelectionField in a new record", async () => {
         type: "form",
         arch: `<form><field name="color" widget="badges_selection"/></form>`,
     });
-    expect("div.o_field_badges_selection").toHaveCount(1, {
+    expect("div.w_field_badges_selection").toHaveCount(1, {
         message: "should have rendered outer div",
     });
-    expect("span.o_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
-    expect("span.o_selection_badge:contains(Red)").toHaveCount(1, {
+    expect("span.w_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
+    expect("span.w_selection_badge:contains(Red)").toHaveCount(1, {
         message: "one of them should be Red",
     });
-    await contains("span.o_selection_badge:last").click();
+    await contains("span.w_selection_badge:last").click();
     await clickSave();
     expect.verifySteps(["saved color: black"]);
 });
@@ -76,7 +76,7 @@ test("BadgesSelectionField in a readonly mode", async () => {
         type: "form",
         arch: `<form><field name="color" widget="badges_selection" readonly="1"/></form>`,
     });
-    expect("div.o_readonly_modifier span").toHaveCount(1, {
+    expect("div.w_readonly_modifier span").toHaveCount(1, {
         message: "should have 1 possible value in readonly mode",
     });
 });
@@ -91,18 +91,18 @@ test("BadgesSelectionField: unchecking selected value", async () => {
         resModel: "res.partner",
         arch: '<form><field name="color" widget="badges_selection"/></form>',
     });
-    expect("div.o_field_badges_selection").toHaveCount(1, {
+    expect("div.w_field_badges_selection").toHaveCount(1, {
         message: "should have rendered outer div",
     });
-    expect("span.o_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
-    expect("span.o_selection_badge.active").toHaveCount(1, { message: "one is active" });
-    expect("span.o_selection_badge.active").toHaveText("Red", {
+    expect("span.w_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
+    expect("span.w_selection_badge.active").toHaveCount(1, { message: "one is active" });
+    expect("span.w_selection_badge.active").toHaveText("Red", {
         message: "the active one should be Red",
     });
     // click again on red option and save to update the server data
-    await contains("span.o_selection_badge.active").click();
+    await contains("span.w_selection_badge.active").click();
     expect.verifySteps([]);
-    await contains(".o_form_button_save").click();
+    await contains(".w_form_button_save").click();
     expect.verifySteps(["web_save"]);
     expect(MockServer.env["res.partner"].at(-1).color).toBe(false, {
         message: "the new value should be false as we have selected same value as default",
@@ -120,18 +120,18 @@ test("BadgesSelectionField: unchecking selected value (required field)", async (
         resModel: "res.partner",
         arch: '<form><field name="color" widget="badges_selection"/></form>',
     });
-    expect("div.o_field_badges_selection").toHaveCount(1, {
+    expect("div.w_field_badges_selection").toHaveCount(1, {
         message: "should have rendered outer div",
     });
-    expect("span.o_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
-    expect("span.o_selection_badge.active").toHaveCount(1, { message: "one is active" });
-    expect("span.o_selection_badge.active").toHaveText("Red", {
+    expect("span.w_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
+    expect("span.w_selection_badge.active").toHaveCount(1, { message: "one is active" });
+    expect("span.w_selection_badge.active").toHaveText("Red", {
         message: "the active one should be Red",
     });
     // click again on red option and save to update the server data
-    await contains("span.o_selection_badge.active").click();
+    await contains("span.w_selection_badge.active").click();
     expect.verifySteps([]);
-    await contains(".o_form_button_save").click();
+    await contains(".w_form_button_save").click();
     expect.verifySteps(["web_save"]);
 });
 
@@ -148,9 +148,9 @@ test("BadgesSelectionField: selection type with icon_mapping and default_icon", 
             </form>`,
     });
     // 'black' should use the mapping
-    expect("span.o_selection_badge:contains(Black) span[data-icon='dark_mode']").toHaveCount(1);
+    expect("span.w_selection_badge:contains(Black) span[data-icon='dark_mode']").toHaveCount(1);
     // 'red' should use the default icon
-    expect("span.o_selection_badge:contains(Red) span[data-icon='oi_gratipay']").toHaveCount(1);
+    expect("span.w_selection_badge:contains(Red) span[data-icon='oi_gratipay']").toHaveCount(1);
 });
 
 test("BadgesSelectionField: switching to SelectMenu when badge_limit is exceeded", async () => {
@@ -163,12 +163,12 @@ test("BadgesSelectionField: switching to SelectMenu when badge_limit is exceeded
             </form>`,
     });
 
-    expect("span.o_selection_badge").toHaveCount(2, {
+    expect("span.w_selection_badge").toHaveCount(2, {
         message: "Should render 1 badge and 1 overflow dropdown toggle",
     });
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 
-    await contains(".o_selection_badge.o-dropdown-caret").click();
+    await contains(".w_selection_badge.w-dropdown-caret").click();
     await animationFrame();
     expect(".dropdown-menu").toHaveCount(1);
 });
@@ -187,9 +187,9 @@ test("BadgesSelectionField: verify options are filtered via the allowed_selectio
             </form>`,
     });
     // Verify only the filtered option is rendered
-    expect("span.o_selection_badge:contains(Red)").toHaveCount(1);
+    expect("span.w_selection_badge:contains(Red)").toHaveCount(1);
     // Verify that the total number of badges is ONLY 1
-    expect("span.o_selection_badge").toHaveCount(1);
+    expect("span.w_selection_badge").toHaveCount(1);
 });
 
 test("BadgesSelectionField: verify handle falsy allowed selectionfield", async () => {
@@ -206,7 +206,7 @@ test("BadgesSelectionField: verify handle falsy allowed selectionfield", async (
             </form>`,
     });
     // Verify that the total number of badges is 0
-    expect("span.o_selection_badge").toHaveCount(0);
+    expect("span.w_selection_badge").toHaveCount(0);
 });
 
 test("BadgesSelectionField: placeholder attribute is used when provided", async () => {
@@ -223,8 +223,8 @@ test("BadgesSelectionField: placeholder attribute is used when provided", async 
     });
 
     // With 2 options and badge_limit 1: 1 visible badge + "+1" overflow dropdown toggle
-    expect("span.o_selection_badge").toHaveCount(2);
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect("span.w_selection_badge").toHaveCount(2);
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 });
 
 test("BadgesSelectionField: placeholder falls back to field label when not provided", async () => {
@@ -240,8 +240,8 @@ test("BadgesSelectionField: placeholder falls back to field label when not provi
     });
 
     // With 2 options and badge_limit 1: 1 visible badge + "+1" overflow dropdown toggle
-    expect("span.o_selection_badge").toHaveCount(2);
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect("span.w_selection_badge").toHaveCount(2);
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 });
 
 test("BaseBadgesSelectionField: keyboard navigation (Tab / Arrows / Backspace / Delete)", async () => {
@@ -259,32 +259,32 @@ test("BaseBadgesSelectionField: keyboard navigation (Tab / Arrows / Backspace / 
 
     await contains(".btn1").focus();
     await press("Tab");
-    expect(".o_selection_badge.o-navigable:first").toBeFocused();
+    expect(".w_selection_badge.w-navigable:first").toBeFocused();
 
     await press("Enter");
-    expect(".o_selection_badge.o-navigable:contains('Red')").toHaveClass("active");
+    expect(".w_selection_badge.w-navigable:contains('Red')").toHaveClass("active");
 
     await press("ArrowRight");
-    expect(".o_selection_badge.o-navigable:last").toBeFocused();
+    expect(".w_selection_badge.w-navigable:last").toBeFocused();
 
     await press("Space");
     await animationFrame();
-    expect(".o_selection_badge.o-navigable:contains('Black')").toHaveClass("active");
+    expect(".w_selection_badge.w-navigable:contains('Black')").toHaveClass("active");
 
     await press("ArrowLeft");
-    expect(".o_selection_badge.o-navigable:first").toBeFocused();
+    expect(".w_selection_badge.w-navigable:first").toBeFocused();
 
     await press("Backspace");
     await animationFrame();
-    expect(".o_selection_badge.o-navigable.active").toHaveCount(0);
+    expect(".w_selection_badge.w-navigable.active").toHaveCount(0);
 
     await press("Enter");
     await animationFrame();
-    expect(".o_selection_badge.o-navigable:contains('Red')").toHaveClass("active");
+    expect(".w_selection_badge.w-navigable:contains('Red')").toHaveClass("active");
 
     await press("Delete");
     await animationFrame();
-    expect(".o_selection_badge.o-navigable.active").toHaveCount(0);
+    expect(".w_selection_badge.w-navigable.active").toHaveCount(0);
 
     await press("Enter");
     await animationFrame();

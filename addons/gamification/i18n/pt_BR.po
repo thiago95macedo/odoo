@@ -17,7 +17,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-28 00:33+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/gamification/pt_BR/>\n"
+"weth-20/gamification/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgid ""
 "Gamification process\n"
 "====================\n"
 "The Gamification module provides ways to evaluate and motivate the users of "
-"Odoo.\n"
+"Weth.\n"
 "\n"
 "The users can be evaluated using goals and numerical objectives to reach.\n"
 "**Goals** are assigned through **challenges** to evaluate and compare "
@@ -45,13 +45,13 @@ msgid ""
 "\n"
 "Both goals and badges are flexibles and can be adapted to a large range of "
 "modules and actions. When installed, this module creates easy goals to help "
-"new users to discover Odoo and configure their user profile.\n"
+"new users to discover WETH and configure their user profile.\n"
 msgstr ""
 "\n"
 "Processo de gamificação\n"
 "====================\n"
 "O módulo de gamificação oferece maneiras de avaliar e motivar os usuários do "
-"Odoo.\n"
+"Weth.\n"
 "\n"
 "Os usuários podem ser avaliados por meio de metas e objetivos numéricos a "
 "serem alcançados.\n"
@@ -65,7 +65,7 @@ msgstr ""
 "\n"
 "Tanto as metas quanto os distintivos são flexíveis e podem ser adaptados a "
 "uma ampla variedade de módulos e ações. Quando instalado, este módulo cria "
-"metas simples para ajudar novos usuários a descobrir o Odoo e configurar seu "
+"metas simples para ajudar novos usuários a descobrir o WETH e configurar seu "
 "perfil de usuário.\n"
 
 #. module: gamification
@@ -75,13 +75,13 @@ msgid "# Users"
 msgstr "Nº de usuários"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "%s has joined the challenge"
 msgstr "%s está participando do desafio"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "%s has refused the challenge"
 msgstr "%s recusou o desafio"
@@ -567,7 +567,7 @@ msgstr ""
 "com condições específicas."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal_definition.py:0
 msgid "A field is required to compute the sum for '%s'."
 msgstr "É necessário um campo para calcular a soma para “%s ”."
@@ -641,7 +641,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_karma_tracking.py:0
 #: code:addons/gamification/models/res_users.py:0
 #: code:addons/gamification/tests/test_karma_tracking.py:0
@@ -800,7 +800,7 @@ msgid "Can not grant"
 msgstr "Não pode conceder"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal.py:0
 msgid "Can not modify the configuration of a started goal"
 msgstr "Não é possível modificar a configuração de um objetivo já iniciado"
@@ -911,7 +911,7 @@ msgid "Consolidated"
 msgstr "Consolidado"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_karma_tracking.py:0
 msgid "Consolidation from %(from_date)s to %(end_date)s"
 msgstr "Consolidação de %(from_date)s até %(end_date)s"
@@ -1615,7 +1615,7 @@ msgid "Karma Tracking"
 msgstr "Monitoramento de karma"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/res_users.py:0
 msgid "Karma Updates"
 msgstr "Atualizações do karma"
@@ -1847,7 +1847,7 @@ msgid "No one, assigned through challenges"
 msgstr "Ninguém. Atribuído através de desafios"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid ""
 "Nobody has succeeded to reach every goal, no badge is rewarded for this "
@@ -1857,7 +1857,7 @@ msgstr ""
 "desafio."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "Nobody reached the required conditions to receive special badges."
 msgstr ""
@@ -2159,7 +2159,7 @@ msgid "Responsible"
 msgstr "Responsável"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "Retrieving progress for personal challenge without user information"
 msgstr "Recuperando o progresso do desafio pessoal sem informações do usuário"
@@ -2170,7 +2170,7 @@ msgid "Reward"
 msgstr "Recompensa"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid ""
 "Reward (badge %(badge_name)s) for every succeeding user was sent to %"
@@ -2353,7 +2353,7 @@ msgid "Source Type"
 msgstr "Tipo da fonte"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid ""
 "Special rewards were sent to the top competing users. The ranking for this "
@@ -2430,7 +2430,7 @@ msgid "Target: less than"
 msgstr "Meta: menos de"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/tests/test_karma_tracking.py:0
 msgid "Test Reason"
 msgstr "Motivo do teste"
@@ -2441,7 +2441,7 @@ msgid "The action that will be called to update the goal value."
 msgstr "A ação que será executada para atualizar o valor do objetivo."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "The challenge %s is finished."
 msgstr "O desafio %s está concluído."
@@ -2478,7 +2478,7 @@ msgstr ""
 "objetivo."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal_definition.py:0
 msgid ""
 "The domain for the definition %(definition)s seems incorrect, please check "
@@ -2530,7 +2530,7 @@ msgid "The maximum number of time this badge can be sent per month per person."
 msgstr "O número máximo de medalhas que podem ser enviadas por mês por pessoa."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal_definition.py:0
 msgid ""
 "The model configuration for the definition %(name)s seems incorrect, please "
@@ -2543,7 +2543,7 @@ msgstr ""
 "%(error)s não encontrado"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal_definition.py:0
 msgid ""
 "The model configuration for the definition %(name)s seems incorrect, please "
@@ -2601,7 +2601,7 @@ msgid "The required karma has to be above 0."
 msgstr "O karma necessário deve ser superior a 0."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal_definition.py:0
 msgid "The sum cannot be computed for '%(definition)s' on '%(field)s'."
 msgstr "A soma não pode ser calculada para '%(definition)s' em '%(field)s'."
@@ -2649,7 +2649,7 @@ msgstr ""
 "menos um usuário."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge.py:0
 msgid "This badge can not be sent by users."
 msgstr "Esta medalha não pode ser enviada por usuários."
@@ -2716,13 +2716,13 @@ msgid "Update"
 msgstr "Atualizar"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_goal.py:0
 msgid "Update %s"
 msgstr "Atualizar %s"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_karma_tracking.py:0
 #: model:ir.model,name:gamification.model_res_users
 #: model:ir.model.fields,field_description:gamification.field_gamification_badge_user__user_id
@@ -2734,7 +2734,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/res_users.py:0
 msgid "User Creation"
 msgstr "Criação de usuário"
@@ -2787,19 +2787,19 @@ msgid "Yearly"
 msgstr "Anual"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge.py:0
 msgid "You are not in the user allowed list."
 msgstr "Você não está na lista de usuários permitidos."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/wizard/grant_badge.py:0
 msgid "You can not grant a badge to yourself."
 msgstr "Você não pode conceder uma medalha a si mesmo."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_challenge.py:0
 msgid "You can not reset a challenge with unfinished goals."
 msgstr "Você não pode reiniciar um desafio com objetivos inacabados."
@@ -2815,13 +2815,13 @@ msgid "You did great at your job."
 msgstr "Você fez um excelente trabalho."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge.py:0
 msgid "You do not have the required badges."
 msgstr "Você não tem as medalhas necessárias."
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge.py:0
 msgid "You have already sent this badge too many time this month."
 msgstr "Você já enviou esta medalha muitas vezes este mês."
@@ -2859,7 +2859,7 @@ msgid "You're a young padawan now. May the force be with you!"
 msgstr "Você é um jovem Padawan agora. Que a força esteja com você!"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge_user.py:0
 msgid "Your Badge"
 msgstr "Sua medalha"
@@ -2943,7 +2943,7 @@ msgid "this month"
 msgstr "este mês"
 
 #. module: gamification
-#. odoo-python
+#. weth-python
 #: code:addons/gamification/models/gamification_badge_user.py:0
 msgid "🎉 You've earned the %(badge)s badge!"
 msgstr "🎉 Você ganhou o emblema “ %(badge)s ”!"

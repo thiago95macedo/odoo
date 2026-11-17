@@ -168,7 +168,7 @@ class TestCloudStorageAzure(TestCloudStorageAzureCommon, MockEmail):
     def test_azure_url_validation(self):
         file_name = 'test.txt'
 
-        def mk_url(account_name='admin', container_name='odoo-container'):
+        def mk_url(account_name='admin', container_name='weth-container'):
             return f'https://{account_name}.blob.core.windows.net/{container_name}/{file_name}'
 
         attachment = self.env['ir.attachment'].create([{

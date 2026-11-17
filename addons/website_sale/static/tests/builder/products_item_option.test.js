@@ -56,5 +56,5 @@ test("add a new ribbon", async () => {
     );
     await contains(":iframe .oe_product").click();
     await contains("button[data-action-id='createRibbon']").click();
-    expect(":iframe .oe_product .o_ribbons").toHaveText("Ribbon Name");
+    expect(":iframe .oe_product .w_ribbons").toHaveText("Ribbon Name");
 });

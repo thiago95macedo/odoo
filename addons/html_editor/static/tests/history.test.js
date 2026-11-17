@@ -48,16 +48,16 @@ describe("reset", () => {
         await insertText(editor, "/tab");
         await press("enter");
         await animationFrame();
-        await expectElementCount(".o-we-tablepicker", 1);
+        await expectElementCount(".w-we-tablepicker", 1);
         expect(getContent(el)).toBe(
             `<p o-we-hint-text='Type "/" for commands' class="o-we-hint">[]</p>`
         );
         const domObserverPlugin = plugins.get("domObserver");
         expect(domObserverPlugin.mutations.length).toBe(0);
 
-        await click(".odoo-editor-editable p");
+        await click(".weth-editor-editable p");
         await animationFrame();
-        await expectElementCount(".o-we-tablepicker", 0);
+        await expectElementCount(".w-we-tablepicker", 0);
         expect(domObserverPlugin.mutations.length).toBe(0);
     });
 });

@@ -1,8 +1,9 @@
-.address-delivery-error .o-autocomplete--input {
+.address-delivery-error .w-autocomplete--input {
     border-color: $danger;
     background-color: mix(white, $danger, 85%);
 }
-.o-autocomplete--input {
+
+.w-autocomplete--input {
     display: block;
     width: 100%;
     font-weight: 400;

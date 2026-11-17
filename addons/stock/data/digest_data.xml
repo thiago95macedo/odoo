@@ -18,10 +18,10 @@
     <table class="tip_twocol">
         <tr>
             <td class="tip_twocol_left" style="width: 45%;">
-                <img src="https://download.odoocdn.com/digests/stock/static/src/img/barcode.gif" class="tip_twocol_img" width="240"/>
+                <img src="https://download.wethcdn.com/digests/stock/static/src/img/barcode.gif" class="tip_twocol_img" width="240"/>
             </td>
             <td style="width: 55%;">
-                <p class="tip_content" style="margin: 0;">Enjoy a quick-paced experience with the Odoo barcode app. It is blazing fast and works even without a stable internet connection. It supports all flows: inventory adjustments, batch picking, moving lots or pallets, low inventory checks, etc. Go to the "Apps" menu to activate the barcode interface.</p>
+                <p class="tip_content" style="margin: 0;">Enjoy a quick-paced experience with the WETH barcode app. It is blazing fast and works even without a stable internet connection. It supports all flows: inventory adjustments, batch picking, moving lots or pallets, low inventory checks, etc. Go to the "Apps" menu to activate the barcode interface.</p>
             </td>
         </tr>
     </table>
@@ -37,7 +37,7 @@
 <div>
     <p class="tip_title">Tip: Monitor Lot details</p>
     <p class="tip_content">Store and retrieve information regarding every Lot/Serial Number (condition, product info, ...).</p>
-    <img src="https://download.odoocdn.com/digests/stock/static/src/img/18-stock-property-fields.gif" width="540" class="illustration_border"/>
+    <img src="https://download.wethcdn.com/digests/stock/static/src/img/18-stock-property-fields.gif" width="540" class="illustration_border"/>
 </div>
             </field>
         </record>

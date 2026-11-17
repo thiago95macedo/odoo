@@ -269,12 +269,12 @@ test("cover image set to wide aspect ratio can be vertically aligned", async () 
     await contains(":iframe .s_card").click();
     await waitSidebarUpdated();
     await contains("[data-label='Position'] [data-action-id='coverImagePositionOverlay']").click();
-    await waitFor(".o-overlay-container .o_we_overlay_dragger", { timeout: 2000 });
+    await waitFor(".w-overlay-container .o_we_overlay_dragger", { timeout: 2000 });
 
     const movement = 200;
     const positionStartDrag = { x: 100, y: 100 };
     const { startDrag, endDrag } = patchDragImage(
-        ".o-overlay-container .o_we_overlay_dragger",
+        ".w-overlay-container .o_we_overlay_dragger",
         positionStartDrag,
         { x: positionStartDrag.x + movement, y: positionStartDrag.y + movement }
     );
@@ -303,10 +303,10 @@ test("cover image position overlay blocks the builder sidebar", async () => {
     await contains(":iframe .s_card").click();
     await waitSidebarUpdated();
     await contains("[data-label='Position'] [data-action-id='coverImagePositionOverlay']").click();
-    await waitFor(".o-overlay-container .o_we_image_position_overlay");
+    await waitFor(".w-overlay-container .o_we_image_position_overlay");
 
     const overlayRect = queryOne(
-        ".o-overlay-container .o_we_image_position_overlay"
+        ".w-overlay-container .o_we_image_position_overlay"
     ).getBoundingClientRect();
     expect(overlayRect.left).toBe(0);
     expect(overlayRect.top).toBe(0);
@@ -361,7 +361,7 @@ test("navigate between cards with keyboard", async () => {
     expect(":iframe p[data-selection-placeholder]").toHaveCount(0);
     await insertText(editor, "/table");
     await press("Enter");
-    await waitFor(".o-we-tablepicker");
+    await waitFor(".w-we-tablepicker");
     await press("Enter");
     const tableEl = await waitFor(":iframe table");
     expect(":iframe p[data-selection-placeholder]").toHaveCount(0);

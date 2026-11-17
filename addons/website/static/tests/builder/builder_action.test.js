@@ -88,9 +88,9 @@ test("getRecordInfo retrieves the info from the #wrap element", async () => {
         focusOffset: 4,
     });
 
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
-    await click(".o-we-toolbar .btn[name=test_btn]");
+    await click(".w-we-toolbar .btn[name=test_btn]");
 
     expect.verifySteps(['getRecordInfo {"resModel":"ir.ui.view","resId":"539","field":"arch"}']);
 });
@@ -112,7 +112,7 @@ test("elements within iframe can't be clicked while the builder is being set up"
     await contains(":iframe .test-section button").click();
     expect.verifySteps(["button clicked"]);
     // Reimplementation of openBuilderSidebar().
-    await click(".o-website-btn-custo-primary");
+    await click(".w-website-btn-custo-primary");
     // The button should not be clickable.
     await expect(click(":iframe .test-section button")).rejects.toThrow(
         `found 0 elements instead of 1: 1 matching ":iframe .test-section button" (1 iframe element), including 0 interactive elements`
@@ -164,8 +164,8 @@ describe("BuilderMany2One: exit editor when previewing", () => {
 
         await setupWebsiteBuilder(`<div class="test-options-target">Homepage</div>`);
         await contains(":iframe .test-options-target").click();
-        await contains(".btn.o-dropdown").click();
-        await waitFor(".o-dropdown-item:contains(First)");
+        await contains(".btn.w-dropdown").click();
+        await waitFor(".w-dropdown-item:contains(First)");
         await animationFrame();
         expect(":iframe .test-options-target").toHaveText("First", {
             message: "It should preview the first element",
@@ -231,15 +231,15 @@ test("Builder is disabled when reloading", async () => {
     await contains(":iframe .target").click();
     await waitSidebarUpdated();
     await contains(".options-container [data-action-id='testReload']").click();
-    expect(".o-website-builder_sidebar .o_builder_disabled").toHaveCount(1);
+    expect(".w-website-builder_sidebar .o_builder_disabled").toHaveCount(1);
     // when builder is disabled we can't go to another tab, or do anything else
     // in the builder
-    await contains(".o-snippets-tabs [data-name='blocks']").click();
-    expect(".o-snippets-tabs [data-name='customize']").toHaveClass("active");
+    await contains(".w-snippets-tabs [data-name='blocks']").click();
+    expect(".w-snippets-tabs [data-name='customize']").toHaveClass("active");
     // new instance of the builder shouldn't be disabled
     builderStart.resolve();
     await waitSidebarUpdated();
-    expect(".o-website-builder_sidebar .o_builder_disabled").toHaveCount(0);
-    await contains(".o-snippets-tabs [data-name='blocks']").click();
-    expect(".o-snippets-tabs [data-name='blocks']").toHaveClass("active");
+    expect(".w-website-builder_sidebar .o_builder_disabled").toHaveCount(0);
+    await contains(".w-snippets-tabs [data-name='blocks']").click();
+    expect(".w-snippets-tabs [data-name='blocks']").toHaveClass("active");
 });

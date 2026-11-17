@@ -1652,7 +1652,7 @@ export class Matcher {
      *  // Partial equality can be performed on nested objects
      *  expect({
      *      company: {
-     *          name: "Odoo",
+     *          name: "Weth",
      *          location: "Belgium",
      *      },
      *      employees: new Set([
@@ -1662,7 +1662,7 @@ export class Matcher {
      *          },
      *      ]),
      *  }).toMatchObject({
-     *      company: { name: "Odoo" }
+     *      company: { name: "Weth" }
      *      employees: new Set([{ age: 28 }]),
      *  });
      * @example
@@ -1960,9 +1960,9 @@ export class Matcher {
      * @param {number} [amount]
      * @param {typeof T_MATCHER_OPTIONS} [options]
      * @example
-     *  expect(".o_webclient").toHaveCount(1);
+     *  expect(".w_webclient").toHaveCount(1);
      * @example
-     *  expect(".o_form_view .o_field_widget").toHaveCount();
+     *  expect(".w_form_view .w_field_widget").toHaveCount();
      * @example
      *  expect("ul > li").toHaveCount(4);
      */

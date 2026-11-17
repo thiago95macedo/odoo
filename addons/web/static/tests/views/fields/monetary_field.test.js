@@ -75,21 +75,21 @@ test("basic flow in form view - float field", async () => {
             </form>`,
     });
 
-    expect(".o_field_monetary > div.text-nowrap").toHaveCount(1);
-    expect(".o_field_widget input").toHaveValue("9.10", {
+    expect(".w_field_monetary > div.text-nowrap").toHaveCount(1);
+    expect(".w_field_widget input").toHaveValue("9.10", {
         message: "The input should be rendered without the currency symbol.",
     });
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 
-    await contains(".o_field_monetary input").edit("108.2458938598598");
-    expect(".o_field_widget input").toHaveValue("108.25", {
+    await contains(".w_field_monetary input").edit("108.2458938598598");
+    expect(".w_field_widget input").toHaveValue("108.25", {
         message: "The new value should be rounded properly after the blur",
     });
 
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("108.25", {
+    expect(".w_field_widget input").toHaveValue("108.25", {
         message: "The new value should be rounded properly.",
     });
 });
@@ -106,20 +106,20 @@ test("basic flow in form view - monetary field", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("9.10", {
+    expect(".w_field_widget input").toHaveValue("9.10", {
         message: "The input should be rendered without the currency symbol.",
     });
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 
-    await contains(".o_field_monetary input").edit("108.2458938598598");
-    expect(".o_field_widget input").toHaveValue("108.25", {
+    await contains(".w_field_monetary input").edit("108.2458938598598");
+    expect(".w_field_widget input").toHaveValue("108.25", {
         message: "The new value should be rounded properly after the blur",
     });
 
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("108.25", {
+    expect(".w_field_widget input").toHaveValue("108.25", {
         message: "The new value should be rounded properly.",
     });
 });
@@ -137,9 +137,9 @@ test("rounding using formula in form view - float field", async () => {
     });
 
     // Test computation and rounding
-    await contains(".o_field_monetary input").edit("=100/3");
+    await contains(".w_field_monetary input").edit("=100/3");
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("33.33", {
+    expect(".w_field_widget input").toHaveValue("33.33", {
         message: "The new value should be calculated and rounded properly.",
     });
 });
@@ -157,9 +157,9 @@ test("rounding using formula in form view - monetary field", async () => {
     });
 
     // Test computation and rounding
-    await contains(".o_field_monetary input").edit("=100/3");
+    await contains(".w_field_monetary input").edit("=100/3");
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("33.33", {
+    expect(".w_field_widget input").toHaveValue("33.33", {
         message: "The new value should be calculated and rounded properly.",
     });
 });
@@ -196,20 +196,20 @@ test("with currency digits != 2 - float field", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("99.1234", {
+    expect(".w_field_widget input").toHaveValue("99.1234", {
         message: "The input should be rendered without the currency symbol.",
     });
-    expect(".o_field_widget .o_input span:eq(1)").toHaveText("Bs.F", {
+    expect(".w_field_widget .w_input span:eq(1)").toHaveText("Bs.F", {
         message: "The input should be superposed with a span containing the currency symbol.",
     });
 
-    await contains(".o_field_widget input").edit("99.111111111");
-    expect(".o_field_widget input").toHaveValue("99.1111", {
+    await contains(".w_field_widget input").edit("99.111111111");
+    expect(".w_field_widget input").toHaveValue("99.1111", {
         message: "The value should should be formatted on blur.",
     });
 
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("99.1111", {
+    expect(".w_field_widget input").toHaveValue("99.1111", {
         message: "The new value should be rounded properly.",
     });
 });
@@ -247,20 +247,20 @@ test("with currency digits != 2 - monetary field", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("99.1234", {
+    expect(".w_field_widget input").toHaveValue("99.1234", {
         message: "The input should be rendered without the currency symbol.",
     });
-    expect(".o_field_widget .o_input span:eq(1)").toHaveText("Bs.F", {
+    expect(".w_field_widget .w_input span:eq(1)").toHaveText("Bs.F", {
         message: "The input should be superposed with a span containing the currency symbol.",
     });
 
-    await contains(".o_field_widget input").edit("99.111111111");
-    expect(".o_field_widget input").toHaveValue("99.1111", {
+    await contains(".w_field_widget input").edit("99.111111111");
+    expect(".w_field_widget input").toHaveValue("99.1111", {
         message: "The value should should be formatted on blur.",
     });
 
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("99.1111", {
+    expect(".w_field_widget input").toHaveValue("99.1111", {
         message: "The new value should be rounded properly.",
     });
 });
@@ -308,31 +308,31 @@ test("basic flow in editable list view - float field", async () => {
     const euroValues = queryAll("td:contains(€)");
     expect(euroValues).toHaveLength(1, { message: "Only 1 line has euro as a currency." });
 
-    const noCurrencyValues = queryAll("td.o_data_cell").filter(
+    const noCurrencyValues = queryAll("td.w_data_cell").filter(
         (x) => !(x.textContent.includes("€") || x.textContent.includes("$"))
     );
     expect(noCurrencyValues).toHaveLength(1, { message: "Only 1 line has no currency." });
 
     // switch to edit mode
-    const dollarCell = queryFirst("td.o_field_cell");
+    const dollarCell = queryFirst("td.w_field_cell");
     await contains(dollarCell).click();
 
     expect(dollarCell.children).toHaveLength(1, {
         message: "The cell td should only contain the special div of monetary widget.",
     });
 
-    expect(".o_field_widget input").toHaveCount(1, {
+    expect(".w_field_widget input").toHaveCount(1, {
         message: "The view should have 1 input for editable monetary float.",
     });
-    expect(".o_field_widget input").toHaveValue("9.10", {
+    expect(".w_field_widget input").toHaveValue("9.10", {
         message: "The input should be rendered without the currency symbol.",
     });
 
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 
-    await contains(".o_field_widget input").edit("108.2458938598598", { confirm: "blur" });
+    await contains(".w_field_widget input").edit("108.2458938598598", { confirm: "blur" });
     expect(dollarCell).toHaveText("$ 108.25", { message: "The new value should be correct" });
 });
 
@@ -379,31 +379,31 @@ test("basic flow in editable list view - monetary field", async () => {
     const euroValues = queryAll("td:contains(€)");
     expect(euroValues).toHaveLength(1, { message: "Only 1 line has euro as a currency." });
 
-    const noCurrencyValues = queryAll("td.o_data_cell").filter(
+    const noCurrencyValues = queryAll("td.w_data_cell").filter(
         (x) => !(x.textContent.includes("€") || x.textContent.includes("$"))
     );
     expect(noCurrencyValues).toHaveLength(1, { message: "Only 1 line has no currency." });
 
     // switch to edit mode
-    const dollarCell = queryFirst("td.o_field_cell");
+    const dollarCell = queryFirst("td.w_field_cell");
     await contains(dollarCell).click();
 
     expect(dollarCell.children).toHaveLength(1, {
         message: "The cell td should only contain the special div of monetary widget.",
     });
 
-    expect(".o_field_widget input").toHaveCount(1, {
+    expect(".w_field_widget input").toHaveCount(1, {
         message: "The view should have 1 input for editable monetary float.",
     });
-    expect(".o_field_widget input").toHaveValue("9.10", {
+    expect(".w_field_widget input").toHaveValue("9.10", {
         message: "The input should be rendered without the currency symbol.",
     });
 
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 
-    await contains(".o_field_widget input").edit("108.2458938598598", { confirm: "blur" });
+    await contains(".w_field_widget input").edit("108.2458938598598", { confirm: "blur" });
     expect(dollarCell).toHaveText("$ 108.25", { message: "The new value should be correct" });
 });
 
@@ -429,9 +429,9 @@ test("Monetary field should update the o_monetary_ghost_value when its value is 
             </form>`,
     });
 
-    await contains(".o_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
+    await contains(".w_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
     await animationFrame();
-    expect(".o_monetary_ghost_value").toHaveText("22.00");
+    expect(".w_monetary_ghost_value").toHaveText("22.00");
 });
 
 test.tags("desktop");
@@ -456,16 +456,16 @@ test("changing currency updates the field - float field", async () => {
             </form>`,
     });
 
-    await contains(".o_field_many2one_selection input").click();
-    await contains(".o-autocomplete--dropdown-item:contains(EUR)").click();
-    expect(".o_field_widget .o_input span:eq(1)").toHaveText("€", {
+    await contains(".w_field_many2one_selection input").click();
+    await contains(".w-autocomplete--dropdown-item:contains(EUR)").click();
+    expect(".w_field_widget .w_input span:eq(1)").toHaveText("€", {
         message:
             "The input should be preceded by a span containing the currency symbol added on blur.",
     });
-    expect(".o_field_monetary input").toHaveValue("4.20");
+    expect(".w_field_monetary input").toHaveValue("4.20");
 
     await clickSave();
-    expect(".o_field_monetary input").toHaveValue("4.20", {
+    expect(".w_field_monetary input").toHaveValue("4.20", {
         message: "The new value should still be correct.",
     });
 });
@@ -492,17 +492,17 @@ test("changing currency updates the field - monetary field", async () => {
             </form>`,
     });
 
-    await contains(".o_field_many2one_selection input").click();
-    await contains(".o-autocomplete--dropdown-item:contains(EUR)").click();
+    await contains(".w_field_many2one_selection input").click();
+    await contains(".w-autocomplete--dropdown-item:contains(EUR)").click();
 
-    expect(".o_field_widget .o_input span:eq(1)").toHaveText("€", {
+    expect(".w_field_widget .w_input span:eq(1)").toHaveText("€", {
         message:
             "The input should be preceded by a span containing the currency symbol added on blur.",
     });
-    expect(".o_field_monetary input").toHaveValue("4.20");
+    expect(".w_field_monetary input").toHaveValue("4.20");
 
     await clickSave();
-    expect(".o_field_monetary input").toHaveValue("4.20", {
+    expect(".w_field_monetary input").toHaveValue("4.20", {
         message: "The new value should still be correct.",
     });
 });
@@ -526,7 +526,7 @@ test("MonetaryField with monetary field given in options", async () => {
         resId: 5,
     });
 
-    expect(".o_field_monetary").toHaveText("9.10 €", {
+    expect(".w_field_monetary").toHaveText("9.10 €", {
         message: "field monetary should be formatted with correct currency",
     });
 });
@@ -558,18 +558,18 @@ test("should keep the focus when being edited in x2many lists", async () => {
     });
 
     // test the monetary field inside the one2many
-    await contains(".o_field_x2many_list_row_add button").click();
-    await contains(".o_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
+    await contains(".w_field_x2many_list_row_add button").click();
+    await contains(".w_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
 
-    expect(".o_field_widget[name=p] .o_field_widget[name=float_field] span").toHaveInnerHTML(
+    expect(".w_field_widget[name=p] .w_field_widget[name=float_field] span").toHaveInnerHTML(
         "$&nbsp;22.00",
         { type: "html" }
     );
 
     // test the monetary field inside the many2many
-    await contains(".o_field_widget[name=m2m] .o_data_cell").click();
-    await contains(".o_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
-    expect(".o_field_widget[name=m2m] .o_field_widget[name=float_field] span").toHaveInnerHTML(
+    await contains(".w_field_widget[name=m2m] .w_data_cell").click();
+    await contains(".w_field_widget[name=float_field] input").edit("22", { confirm: "blur" });
+    expect(".w_field_widget[name=m2m] .w_field_widget[name=float_field] span").toHaveInnerHTML(
         "22.00&nbsp;€",
         { type: "html" }
     );
@@ -596,42 +596,42 @@ test("MonetaryField with currency set by an onchange", async () => {
             </list>`,
     });
 
-    await contains(".o_control_panel_main_buttons .o_list_button_add").click();
-    expect(".o_selected_row .o_field_widget[name=float_field] input").toHaveCount(1, {
+    await contains(".w_control_panel_main_buttons .w_list_button_add").click();
+    expect(".w_selected_row .w_field_widget[name=float_field] input").toHaveCount(1, {
         message: "monetary field should have been rendered correctly (without currency)",
     });
-    expect(".o_selected_row .o_field_widget[name=float_field] span").toHaveCount(2, {
+    expect(".w_selected_row .w_field_widget[name=float_field] span").toHaveCount(2, {
         message: "monetary field should have been rendered correctly (without currency)",
     });
 
     // set a value for int_field -> should set the currency and re-render float_field
-    await contains(".o_field_widget[name=int_field] input").edit("7", { confirm: "blur" });
-    await contains(".o_field_cell[name=int_field]").click();
-    expect(".o_selected_row .o_field_widget[name=float_field] input").toHaveCount(1, {
+    await contains(".w_field_widget[name=int_field] input").edit("7", { confirm: "blur" });
+    await contains(".w_field_cell[name=int_field]").click();
+    expect(".w_selected_row .w_field_widget[name=float_field] input").toHaveCount(1, {
         message: "monetary field should have been re-rendered correctly (with currency)",
     });
     expect(
-        queryAllTexts(".o_selected_row .o_field_widget[name=float_field] .o_input span")
+        queryAllTexts(".w_selected_row .w_field_widget[name=float_field] .w_input span")
     ).toEqual(["0.00", "€"], {
         message: "monetary field should have been re-rendered correctly (with currency)",
     });
-    await contains(".o_field_widget[name=float_field] input").click();
-    expect(".o_field_widget[name=float_field] input").toBeFocused({
+    await contains(".w_field_widget[name=float_field] input").click();
+    expect(".w_field_widget[name=float_field] input").toBeFocused({
         message: "focus should be on the float_field field's input",
     });
 
     // unset the value of int_field -> should unset the currency and re-render float_field
-    await contains(".o_field_widget[name=int_field]").click();
-    await contains(".o_field_widget[name=int_field] input").edit("0", { confirm: "blur" });
-    await contains(".o_field_cell[name=int_field]").click();
-    expect(".o_selected_row .o_field_widget[name=float_field] input").toHaveCount(1, {
+    await contains(".w_field_widget[name=int_field]").click();
+    await contains(".w_field_widget[name=int_field] input").edit("0", { confirm: "blur" });
+    await contains(".w_field_cell[name=int_field]").click();
+    expect(".w_selected_row .w_field_widget[name=float_field] input").toHaveCount(1, {
         message: "monetary field should have been re-rendered correctly (without currency)",
     });
-    expect(".o_selected_row .o_field_widget[name=float_field] span").toHaveCount(2, {
+    expect(".w_selected_row .w_field_widget[name=float_field] span").toHaveCount(2, {
         message: "monetary field should have been re-rendered correctly (without currency)",
     });
-    await contains(".o_field_widget[name=float_field] input").click();
-    expect(".o_field_widget[name=float_field] input").toBeFocused({
+    await contains(".w_field_widget[name=float_field] input").click();
+    expect(".w_field_widget[name=float_field] input").toBeFocused({
         message: "focus should be on the float_field field's input",
     });
 });
@@ -654,7 +654,7 @@ test("float widget on monetary field", async () => {
         resId: 1,
     });
 
-    expect(".o_field_widget[name=monetary]").toHaveText("9.99", {
+    expect(".w_field_widget[name=monetary]").toHaveText("9.99", {
         message: "value should be correctly formatted (with the float formatter)",
     });
 });
@@ -685,20 +685,20 @@ test("float field with monetary widget and decimal precision", async () => {
         resId: 1,
     });
 
-    expect(".o_field_widget[name=float_field] input").toHaveValue("-8.9", {
+    expect(".w_field_widget[name=float_field] input").toHaveValue("-8.9", {
         message: "The input should be rendered without the currency symbol.",
     });
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 
-    await contains(".o_field_monetary input").edit("109.2458938598598");
-    expect(".o_field_widget[name=float_field] input").toHaveValue("109.2", {
+    await contains(".w_field_monetary input").edit("109.2458938598598");
+    expect(".w_field_widget[name=float_field] input").toHaveValue("109.2", {
         message: "The value should should be formatted on blur.",
     });
 
     await clickSave();
-    expect(".o_field_widget input").toHaveValue("109.2", {
+    expect(".w_field_widget input").toHaveValue("109.2", {
         message: "The new value should be rounded properly.",
     });
 });
@@ -718,7 +718,7 @@ test("MonetaryField without currency symbol", async () => {
     });
 
     // Non-breaking space between the currency and the amount
-    expect(".o_field_widget[name=float_field] input").toHaveValue("9.10", {
+    expect(".w_field_widget[name=float_field] input").toHaveValue("9.10", {
         message: "The currency symbol is not displayed",
     });
 });
@@ -733,7 +733,7 @@ test("required monetary field with zero value", async () => {
             </form>`,
     });
 
-    expect(".o_form_editable").toHaveCount(1);
+    expect(".w_form_editable").toHaveCount(1);
     expect("[name=monetary_field] input").toHaveValue("0.00");
 });
 
@@ -749,8 +749,8 @@ test("uses 'currency_id' as currency field by default", async () => {
         resId: 6,
     });
 
-    expect(".o_form_editable").toHaveCount(1);
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_form_editable").toHaveCount(1);
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 });
@@ -774,8 +774,8 @@ test("automatically uses currency_field if defined", async () => {
         resId: 6,
     });
 
-    expect(".o_form_editable").toHaveCount(1);
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$", {
+    expect(".w_form_editable").toHaveCount(1);
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$", {
         message: "The input should be preceded by a span containing the currency symbol.",
     });
 });
@@ -802,11 +802,11 @@ test("monetary field with pending onchange", async () => {
         resId: 1,
     });
 
-    await contains(".o_field_widget[name='name'] input").edit("test", { confirm: "blur" });
-    await contains(".o_field_widget[name='float_field'] input").edit("1", { confirm: false });
+    await contains(".w_field_widget[name='name'] input").edit("test", { confirm: "blur" });
+    await contains(".w_field_widget[name='float_field'] input").edit("1", { confirm: false });
     def.resolve();
     await animationFrame();
-    expect(".o_field_monetary .o_monetary_ghost_value").toHaveText("1");
+    expect(".w_field_monetary .w_monetary_ghost_value").toHaveText("1");
 });
 
 test("with 'hide_trailing_zeros' option", async () => {
@@ -820,8 +820,8 @@ test("with 'hide_trailing_zeros' option", async () => {
                 <field name="currency_id" invisible="1"/>
             </form>`,
     });
-    expect(".o_field_widget input").toHaveValue("9.1");
-    expect(".o_field_widget .o_input span:eq(0)").toHaveText("$");
+    expect(".w_field_widget input").toHaveValue("9.1");
+    expect(".w_field_widget .w_input span:eq(0)").toHaveText("$");
 });
 
 test("currency without decimals: grouped amount is not read as decimals", async () => {
@@ -841,8 +841,8 @@ test("currency without decimals: grouped amount is not read as decimals", async 
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("2,000");
-    await contains(".o_field_widget input").edit("2,500");
+    expect(".w_field_widget input").toHaveValue("2,000");
+    await contains(".w_field_widget input").edit("2,500");
     await clickSave();
     expect.verifySteps([{ monetary_field: 2500 }]);
 });

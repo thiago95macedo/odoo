@@ -7,7 +7,7 @@ WETH is an enterprise management platform for small and medium businesses.
 The whole source code is distributed under the terms of the
 GNU Public Licence.
 
-(c) 2003-TODAY, Fabien Pinckaers - OpenERP SA
+(c) 2003-TODAY, WETH Tecnologia
 """
 
 import atexit

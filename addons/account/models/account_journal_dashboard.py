@@ -10,7 +10,7 @@ from weth.exceptions import AccessError, UserError
 from weth.fields import Command, Domain
 from weth.release import version
 from weth.tools import DEFAULT_SERVER_DATE_FORMAT as DF, SQL, date_utils
-from weth.tools.misc import formatLang, format_date as odoo_format_date, get_lang
+from weth.tools.misc import formatLang, format_date as weth_format_date, get_lang
 
 
 def group_by_journal(vals_list):
@@ -275,7 +275,7 @@ class AccountJournal(models.Model):
             'name': activity_data['summary'] or activity_data['act_type_name'],
             'activity_category': activity_data['activity_category'],
             'act_type_id': activity_data['act_type_id'],
-            'date': odoo_format_date(self.env, activity_data['date_deadline']),
+            'date': weth_format_date(self.env, activity_data['date_deadline']),
         }
 
     def _get_json_activity_data(self):

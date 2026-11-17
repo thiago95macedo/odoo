@@ -22,7 +22,7 @@ test("Error due to an automation rule", async () => {
         },
     };
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "WETH Client Error",
         message: "Message",
         context: errorContext,
         errorName: "automation error",
@@ -47,7 +47,7 @@ test("Error due to an automation rule", async () => {
 test("Error not due to an automation rule", async () => {
     expect.errors(1);
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "WETH Client Error",
         message: "Message",
         errorName: "non automation error",
     });
@@ -71,7 +71,7 @@ test("display automation rule id and name in Error dialog", async () => {
         },
     };
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "WETH Client Error",
         message: "Message",
         context: errorContext,
         errorName: "automation error",

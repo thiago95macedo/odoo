@@ -1,7 +1,7 @@
 import { markRaw, proxy } from "@weth/owl";
 import { Model } from "@weth/o-spreadsheet";
 import { registry } from "@web/core/registry";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import { createDefaultCurrency } from "@spreadsheet/currency/helpers";
 import { _t } from "@web/core/l10n/translation";
 import { cookie } from "@web/core/browser/cookie";
@@ -42,14 +42,14 @@ export const Status = {
  * @property {string} name
  * @property {Array<Dashboard>} dashboards
  *
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  *
  * @typedef {import("@web/core/orm_plugin").ORM} ORM
  */
 
 export class DashboardLoader {
     /**
-     * @param {OdooEnv} env
+     * @param {WethEnv} env
      * @param {ORM} orm
      */
     constructor(env, orm, geoJsonService) {
@@ -274,7 +274,7 @@ export class DashboardLoader {
     _createSpreadsheetModel(snapshot, revisions = [], config) {
         const model = new Model(snapshot, config, revisions);
         this._activateFirstSheet(model);
-        config.custom.odooDataProvider.addEventListener("data-source-updated", () =>
+        config.custom.wethDataProvider.addEventListener("data-source-updated", () =>
             model.dispatch("EVALUATE_CELLS")
         );
         markRaw(model);
@@ -282,12 +282,12 @@ export class DashboardLoader {
     }
 
     getModelConfig(serverResult) {
-        const odooDataProvider = new OdooDataProvider(this.env);
+        const wethDataProvider = new WethDataProvider(this.env);
         return {
             custom: {
                 env: this.env,
                 orm: this.orm,
-                odooDataProvider,
+                wethDataProvider,
                 translationNamespace: serverResult.translation_namespace,
             },
             mode: "dashboard",

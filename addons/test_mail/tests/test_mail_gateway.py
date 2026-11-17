@@ -157,7 +157,7 @@ class TestEmailParsing(MailCommon):
 
     def test_message_parse_eml_bounce_headers(self):
         # Test Text/RFC822-Headers MIME content-type
-        msg_id = '<861878175823148.1577183525.736005783081055-openerp-19177-account.invoice@mycompany.example.com>'
+        msg_id = '<861878175823148.1577183525.736005783081055-weth-19177-account.invoice@mycompany.example.com>'
         mail = self.format(
             test_mail_data.MAIL_EML_ATTACHMENT_BOUNCE_HEADERS,
             email_from='MAILER-DAEMON@example.com (Mail Delivery System)',
@@ -178,7 +178,7 @@ class TestEmailParsing(MailCommon):
             'email':'rdesfrdgtfdrfesd@outlook.com'
         })
         message = self.env['mail.message'].create({
-            'message_id' : '<368396033905967.1673346177.695352554321289-openerp-11-sale.order@eupp00>'
+            'message_id' : '<368396033905967.1673346177.695352554321289-weth-11-sale.order@eupp00>'
         })
         incoming_bounce = self.format(
             test_mail_data.MAIL_BOUNCE_QP_RFC822_HEADERS,
@@ -288,7 +288,7 @@ class MailGatewayCommon(MailCommon):
             'date': cls.env.cr.now(),
             'email_from': cls.partner_1.email_formatted,
             'body': '<p>Generic body</p>',
-            'message_id': f'<{msg_id_prefix}-openerp-{record.id}-{record._name}@{socket.gethostname()}>',
+            'message_id': f'<{msg_id_prefix}-weth-{record.id}-{record._name}@{socket.gethostname()}>',
             'message_type': 'email',
             'model': record._name,
             'res_id': record.id,
@@ -348,7 +348,7 @@ class TestMailgateway(MailGatewayCommon):
 
     @mute_logger('weth.addons.mail.models.mail_thread')
     def test_message_process_followers(self):
-        """ Incoming email: recognized author not archived and not odoobot:
+        """ Incoming email: recognized author not archived and not wethbot:
         added as follower. Also test corner cases: archived. """
         partner_archived = self.env['res.partner'].create({
             'active': False,
@@ -394,20 +394,20 @@ class TestMailgateway(MailGatewayCommon):
                          'message_process: archived partner -> no follower')
 
         # partner_root -> never again
-        odoobot = self.env.ref('base.partner_root')
-        odoobot.active = True
-        odoobot.email = 'odoobot@example.com'
+        wethbot = self.env.ref('base.partner_root')
+        wethbot.active = True
+        wethbot.email = 'wethbot@example.com'
         with self.mock_mail_gateway():
             record4 = self.format_and_process(
-                MAIL_TEMPLATE, odoobot.email_formatted, f'groups@{self.alias_domain}',
-                subject='Odoobot Automatic Answer')
+                MAIL_TEMPLATE, wethbot.email_formatted, f'groups@{self.alias_domain}',
+                subject='Wethbot Automatic Answer')
 
-        self.assertEqual(record4.message_ids[0].author_id, odoobot)
-        self.assertEqual(record4.message_ids[0].email_from, odoobot.email_formatted)
+        self.assertEqual(record4.message_ids[0].author_id, wethbot)
+        self.assertEqual(record4.message_ids[0].email_from, wethbot.email_formatted)
         self.assertEqual(record4.message_follower_ids.partner_id, self.env['res.partner'],
-                         'message_process: odoobot -> no follower')
+                         'message_process: wethbot -> no follower')
         self.assertEqual(record4.message_partner_ids, self.env['res.partner'],
-                         'message_process: odoobot -> no follower')
+                         'message_process: wethbot -> no follower')
 
         # internal user -> ok
         with self.mock_mail_gateway():
@@ -557,7 +557,7 @@ class TestMailgateway(MailGatewayCommon):
 
         messages = test_record.message_ids
 
-        self.assertFalse(self.user_root.active, 'notification logic relies on odoobot being archived')
+        self.assertFalse(self.user_root.active, 'notification logic relies on wethbot being archived')
 
         test_users = [self.user_employee, self.user_root]
         email_tos = [f'author-partner@{self.alias_domain}', f'some_non_aliased_email@{self.alias_domain}']
@@ -572,7 +572,7 @@ class TestMailgateway(MailGatewayCommon):
 
                 self.assertEqual(len(new_messages), 1)
                 self.assertEqual(new_messages.create_uid, self.user_root,
-                                 'Odoobot should be creating the message')
+                                 'Wethbot should be creating the message')
 
                 # Make sure the alias owner is notified if they are a follower
                 self.assertNotified(new_messages, [{
@@ -1472,7 +1472,7 @@ class TestMailgateway(MailGatewayCommon):
             extra=f'References: {bot_notification_message.message_id}'
         )
         new_msg = self.test_record.message_ids[0]
-        self.assertFalse(new_msg.is_internal, "Responses to messages sent by odoobot should always be public.")
+        self.assertFalse(new_msg.is_internal, "Responses to messages sent by wethbot should always be public.")
         self.assertEqual(new_msg.parent_id, bot_notification_message)
         self.assertEqual(new_msg.subtype_id, self.env.ref('mail.mt_comment'))
 
@@ -1491,7 +1491,7 @@ class TestMailgateway(MailGatewayCommon):
             extra=f'References: {some_notification_message.message_id}'
         )
         new_msg = self.test_record.message_ids[0]
-        self.assertTrue(new_msg.is_internal, "Responses to messages sent by anyone but odoobot should keep"
+        self.assertTrue(new_msg.is_internal, "Responses to messages sent by anyone but wethbot should keep"
                         "the 'is_internal' value of the parent.")
         self.assertEqual(new_msg.parent_id, some_notification_message)
         self.assertEqual(new_msg.subtype_id, self.env.ref('mail.mt_note'))
@@ -1677,7 +1677,7 @@ class TestMailgateway(MailGatewayCommon):
 
     @mute_logger('weth.addons.mail.models.mail_thread')
     def test_message_process_references_external(self):
-        """ Incoming email being a reply to an external email processed by odoo should update thread accordingly """
+        """ Incoming email being a reply to an external email processed by weth should update thread accordingly """
         new_message_id = '<ThisIsTooMuchFake.MonsterEmail.789@agrolait.com>'
         self.fake_email.write({
             'message_id': new_message_id
@@ -1694,7 +1694,7 @@ class TestMailgateway(MailGatewayCommon):
     def test_message_process_references_external_buggy_message_id(self):
         """
         Incoming email being a reply to an external email processed by
-        odoo should update thread accordingly. Special case when the
+        weth should update thread accordingly. Special case when the
         external mail service wrongly folds the message_id on several
         lines.
         """
@@ -1877,21 +1877,21 @@ class TestMailgateway(MailGatewayCommon):
 
     @mute_logger('weth.addons.mail.models.mail_thread', 'weth.models')
     def test_message_process_extra_model_res_id(self):
-        """ Incoming email with ref holding model / res_id but that does not match any message in the thread: must raise since OpenERP saas-3 """
+        """ Incoming email with ref holding model / res_id but that does not match any message in the thread: must raise since early versions """
         self.assertRaises(ValueError,
                           self.format_and_process, MAIL_TEMPLATE,
                           self.partner_1.email_formatted, f'noone@{self.alias_domain}', subject='spam',
-                          extra=f'In-Reply-To: <12321321-openerp-{self.test_record.id}-{self.test_record._name}@{socket.gethostname()}>')
+                          extra=f'In-Reply-To: <12321321-weth-{self.test_record.id}-{self.test_record._name}@{socket.gethostname()}>')
 
         # when 6.1 messages are present, compat mode is available
-        # Odoo 10 update: compat mode has been removed and should not work anymore
+        # WETH 10 update: compat mode has been removed and should not work anymore
         self.fake_email.write({'message_id': False})
         # Do: compat mode accepts partial-matching emails
         self.assertRaises(
             ValueError,
             self.format_and_process, MAIL_TEMPLATE,
             self.partner_1.email_formatted, f'noone@{self.alias_domain}>', subject='spam',
-            extra=f'In-Reply-To: <12321321-openerp-{self.test_record.id}-mail.test.gateway@{socket.gethostname()}>')
+            extra=f'In-Reply-To: <12321321-weth-{self.test_record.id}-mail.test.gateway@{socket.gethostname()}>')
 
         # Test created messages
         self.assertEqual(len(self.test_record.message_ids), 1)
@@ -1965,7 +1965,7 @@ class TestMailgateway(MailGatewayCommon):
     def test_message_hebrew_iso8859_8_i(self):
         # This subject was found inside an email of one of our customer.
         # The charset is iso-8859-8-i which isn't natively supported by
-        # python, check that Odoo is still capable of decoding it.
+        # python, check that WETH is still capable of decoding it.
         subject = "בוקר טוב! צריך איימק ושתי מסכים"
         encoded_subject = "=?iso-8859-8-i?B?4eX3+CDo5eEhIPb46eog4Onp7vcg5fn66SDu8evp7Q==?="
 
@@ -1994,7 +1994,7 @@ class TestMailgateway(MailGatewayCommon):
     def test_message_windows_874(self):
         # Email for Thai customers who use Microsoft email service.
         # The charset is windows-874 which isn't natively supported by
-        # python, check that Odoo is still capable of decoding it.
+        # python, check that WETH is still capable of decoding it.
         # windows-874 is the Microsoft equivalent of cp874.
         with self.mock_mail_gateway(), \
              RecordCapturer(self.env['mail.test.gateway']) as capture:
@@ -2299,7 +2299,7 @@ class TestMailGatewayLoops(MailGatewayCommon):
 
     @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_routing_loop_auto_notif(self):
-        """ Test Odoo servers talking to each other """
+        """ Test WETH servers talking to each other """
         with self.mock_mail_gateway():
             record = self.format_and_process(
                 MAIL_TEMPLATE,
@@ -2359,7 +2359,7 @@ class TestMailGatewayLoops(MailGatewayCommon):
             )
         self.assertSentEmail(self.user_employee.email_formatted, [self.alias_partner.email_formatted])
 
-        # simulate this email coming back to the same Odoo server -> msg_id is
+        # simulate this email coming back to the same WETH server -> msg_id is
         # a duplicate, hence rejected
         with RecordCapturer(self.env['mail.test.ticket']) as capture_ticket, \
              RecordCapturer(self.env['mail.test.gateway']) as capture_gateway:
@@ -2509,7 +2509,7 @@ class TestMailGatewayReplies(MailGatewayCommon):
         gateway_record._message_log(body='Some log')
         with self.mock_mail_gateway():
             gateway_record.with_user(self.user_employee).message_post(
-                body='Odoo Reply',
+                body='WETH Reply',
                 message_type='comment',
                 partner_ids=self.partner_1.ids,
                 subtype_id=self.env.ref('mail.mt_comment').id,
@@ -2518,10 +2518,10 @@ class TestMailGatewayReplies(MailGatewayCommon):
         self.assertMailNotifications(
             reply,
             [{
-                'content': 'Odoo Reply',
+                'content': 'WETH Reply',
                 'email_values': {
                     'message_id': reply.message_id,
-                    'references': f'{email.message_id} {log.message_id} {reply.message_id}',  # should contain reference to OdooExternal message, logs to fill up history
+                    'references': f'{email.message_id} {log.message_id} {reply.message_id}',  # should contain reference to WethExternal message, logs to fill up history
                 },
                 'mail_mail_values': {
                     'notified_partner_ids': self.partner_1,
@@ -2534,22 +2534,22 @@ class TestMailGatewayReplies(MailGatewayCommon):
         )
 
     def test_routing_reply_internal_messages(self):
-        """ Test routing notably between two Odoos when internal messages
+        """ Test routing notably between two Weths when internal messages
         are involved. We don't know which message is the ancestor one and
         we should ensure some shared message IDs are present in references
         to help thread formation.
 
-        Action                  Odoo1                   Odoo2
+        Action                  Weth1                   Weth2
         RFQ-like                                        creation log
                                                         initial_msg
-        Odoo2 replies           creation log
+        Weth2 replies           creation log
                                 reply                   reply
         -some internal work-                            user_notification
-        Odoo1 replies           reply_2                 reply_2 (incoming email)
+        Weth1 replies           reply_2                 reply_2 (incoming email)
         -some internal work-                            log
-        Odoo2 replies           reply_3                 reply_3 (outgoing email)
+        Weth2 replies           reply_3                 reply_3 (outgoing email)
 
-        Purpose: have references from Odoo2 containing message IDs to try to
+        Purpose: have references from Weth2 containing message IDs to try to
         correclty route thread.
         """
         gateway_record = self.env['mail.test.gateway'].create({
@@ -2559,19 +2559,19 @@ class TestMailGatewayReplies(MailGatewayCommon):
         self.assertEqual(gateway_record.message_partner_ids, self.partner_admin)
         gateway_record.message_post(
             author_id=self.env.ref('base.partner_root').id,
-            body='OdooExternal Inquiry',
+            body='WethExternal Inquiry',
             email_from=self.partner_1.email_normalized,
             message_type='comment',
             subtype_id=self.env.ref('mail.mt_comment').id,
         )
         self.assertEqual(gateway_record.message_partner_ids, self.partner_admin)
-        log, odooext_msg = gateway_record.message_ids[1], gateway_record.message_ids[0]
-        self.assertEqual(odooext_msg.parent_id, log, 'Log serves as thread ancestor')
+        log, wethext_msg = gateway_record.message_ids[1], gateway_record.message_ids[0]
+        self.assertEqual(wethext_msg.parent_id, log, 'Log serves as thread ancestor')
 
-        # Odoo2 reply
+        # Weth2 reply
         with self.mock_mail_gateway():
             gateway_record.with_user(self.user_employee).message_post(
-                body='Odoo Reply',
+                body='WETH Reply',
                 message_type='comment',
                 partner_ids=self.partner_1.ids,
                 subtype_id=self.env.ref('mail.mt_comment').id,
@@ -2581,14 +2581,14 @@ class TestMailGatewayReplies(MailGatewayCommon):
         self.assertMailNotifications(
             reply,
             [{
-                'content': 'Odoo Reply',
+                'content': 'WETH Reply',
                 'email_values': {
                     'message_id': reply.message_id,
-                    'references': f'{log.message_id} {odooext_msg.message_id} {reply.message_id}',  # should contain reference to OdooExternal message
+                    'references': f'{log.message_id} {wethext_msg.message_id} {reply.message_id}',  # should contain reference to WethExternal message
                 },
                 'mail_mail_values': {
                     'notified_partner_ids': self.partner_1 + self.partner_admin,
-                    'parent_id': odooext_msg,  # attached to last comment / email when possible
+                    'parent_id': wethext_msg,  # attached to last comment / email when possible
                 },
                 'notif': [
                     {'partner': self.partner_1, 'type': 'email',},
@@ -2603,13 +2603,13 @@ class TestMailGatewayReplies(MailGatewayCommon):
             subtype_id=self.env.ref('mail.mt_comment').id,
         )
 
-        # coming from Odoo1: their reply as an incoming email
+        # coming from Weth1: their reply as an incoming email
         with self.mock_mail_gateway():
             self.format_and_process(
                 MAIL_TEMPLATE, self.email_from, reply.reply_to,
                 subject='Gateway Creation',
                 date=datetime.now(),
-                extra=f'References: {reply.message_id} <msg1@odoo1>',
+                extra=f'References: {reply.message_id} <msg1@weth1>',
                 debug_log=True,
             )
         reply_2 = gateway_record.message_ids[0]
@@ -2620,7 +2620,7 @@ class TestMailGatewayReplies(MailGatewayCommon):
                 'email_values': {
                     'email_from': self.email_from,
                     'message_id': reply_2.message_id,
-                    'references': f'{log.message_id} {odooext_msg.message_id} {reply.message_id} {reply_2.message_id}',  # should contain reference to OdooExternal message
+                    'references': f'{log.message_id} {wethext_msg.message_id} {reply.message_id} {reply_2.message_id}',  # should contain reference to WethExternal message
                 },
                 'mail_mail_values': {
                     'author_id': self.env['res.partner'],
@@ -2641,7 +2641,7 @@ class TestMailGatewayReplies(MailGatewayCommon):
 
         with self.mock_mail_gateway():
             gateway_record.with_user(self.user_employee).message_post(
-                body='Odoo Reply 2',
+                body='WETH Reply 2',
                 message_type='comment',
                 partner_ids=self.partner_1.ids,
                 subtype_id=self.env.ref('mail.mt_comment').id,
@@ -2651,10 +2651,10 @@ class TestMailGatewayReplies(MailGatewayCommon):
         self.assertMailNotifications(
             reply_3,
             [{
-                'content': 'Odoo Reply 2',
+                'content': 'WETH Reply 2',
                 'email_values': {
                     'message_id': reply_3.message_id,
-                    'references': f'{odooext_msg.message_id} {reply.message_id} {reply_2.message_id} {reply_3.message_id}',  # should contain reference to OdooExternal message
+                    'references': f'{wethext_msg.message_id} {reply.message_id} {reply_2.message_id} {reply_3.message_id}',  # should contain reference to WethExternal message
                 },
                 'mail_mail_values': {
                     'notified_partner_ids': self.partner_1 + self.partner_admin,

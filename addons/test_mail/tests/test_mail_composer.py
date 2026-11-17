@@ -1978,7 +1978,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                     [f'user.from@{self.alias_domain}', 'user@other.domain.com'],
                     self.env['ir.mail_server'],
                     {'default_from': f'notifications@{self.alias_domain}', 'from_filter': self.alias_domain}
-                ),  # odoo-style configuration
+                ),  # weth-style configuration
             ], [
                 (
                     [f'{self.alias_bounce}@{self.alias_domain}', f'{self.alias_bounce}@{self.alias_domain}'],
@@ -2464,7 +2464,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                             email_values={
                                 'headers': {
                                     'Return-Path': f'{exp_alias_domain.bounce_email}',
-                                    'X-Odoo-Objects': f'{record._name}-{record.id}',
+                                    'X-Weth-Objects': f'{record._name}-{record.id}',
                                     'X-Msg-To-Add': headers_recipients,
                                     'X-Msg-Cc-Add': '',
                                 },
@@ -2473,7 +2473,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                             fields_values={
                                 'headers': {
                                     'Return-Path': f'{exp_alias_domain.bounce_email}',
-                                    'X-Odoo-Objects': f'{record._name}-{record.id}',
+                                    'X-Weth-Objects': f'{record._name}-{record.id}',
                                     'X-Msg-To-Add': headers_recipients,
                                     'X-Msg-Cc-Add': '',
                                 },
@@ -3406,14 +3406,14 @@ class TestComposerResultsMass(TestMailComposer):
                         email_values={
                             'headers': {
                                 'Return-Path': f'{exp_alias_domain.bounce_email}',
-                                'X-Odoo-Objects': f'{record._name}-{record.id}',
+                                'X-Weth-Objects': f'{record._name}-{record.id}',
                             },
                             'subject': f'TemplateSubject {record.name}',
                         },
                         fields_values={
                             'headers': {
                                 'Return-Path': f'{exp_alias_domain.bounce_email}',
-                                'X-Odoo-Objects': f'{record._name}-{record.id}',
+                                'X-Weth-Objects': f'{record._name}-{record.id}',
                             },
                             'mail_server_id': self.env['ir.mail_server'],
                             'record_alias_domain_id': exp_alias_domain,

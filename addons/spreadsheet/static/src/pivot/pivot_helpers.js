@@ -40,12 +40,12 @@ const AGGREGATORS_BY_FIELD_TYPE = {
     reference: ["count_distinct", "count"],
 };
 
-export const ODOO_AGGREGATORS = {};
+export const WETH_AGGREGATORS = {};
 
 for (const type in AGGREGATORS_BY_FIELD_TYPE) {
-    ODOO_AGGREGATORS[type] = {};
+    WETH_AGGREGATORS[type] = {};
     for (const aggregator of AGGREGATORS_BY_FIELD_TYPE[type]) {
-        ODOO_AGGREGATORS[type][aggregator] = AGGREGATOR_NAMES[aggregator];
+        WETH_AGGREGATORS[type][aggregator] = AGGREGATOR_NAMES[aggregator];
     }
 }
 
@@ -54,15 +54,15 @@ for (const type in AGGREGATORS_BY_FIELD_TYPE) {
 //--------------------------------------------------------------------------
 
 /**
- * @typedef {import("@spreadsheet").OdooField} OdooField
+ * @typedef {import("@spreadsheet").WethField} WethField
  */
 
 /**
  * Parses the positional char (#), the field and operator string of pivot group.
  * e.g. "create_date:month"
- * @param {Record<string, OdooField | undefined>} allFields
+ * @param {Record<string, WethField | undefined>} allFields
  * @param {string} groupFieldString
- * @returns {{field: OdooField, granularity: Granularity, isPositional: boolean, dimensionWithGranularity: string}}
+ * @returns {{field: WethField, granularity: Granularity, isPositional: boolean, dimensionWithGranularity: string}}
  */
 export function parseGroupField(allFields, groupFieldString) {
     let fieldName = groupFieldString;

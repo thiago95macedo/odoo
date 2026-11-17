@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_sale_stock/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Em seguida, ele pode ser definido especificamente no nível do produto.\n"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/product_card/product_card.js:0
 msgid "All available quantity selected"
 msgstr "Quantidade disponível selecionada"
@@ -79,20 +79,20 @@ msgid "Change location"
 msgstr "Alterar local"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
 msgid "Choose a pick-up point"
 msgstr "Escolher um ponto de retirada"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 #: code:addons/website_sale_stock/static/src/js/location_selector/map_container/map_container.js:0
 msgid "Choose this location"
 msgstr "Escolher este local"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_schedule/location_schedule.js:0
 msgid "Closed"
 msgstr "Encerrado"
@@ -154,13 +154,13 @@ msgid "Is Published"
 msgstr "Está publicado"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "List view"
 msgstr "Visualização de lista"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "Loading..."
 msgstr "Carregando…"
@@ -171,32 +171,32 @@ msgid "Manage product inventory & availability"
 msgstr "Gerenciar inventário e disponibilidade do produto"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "Map view"
 msgstr "Visualização de mapa"
 
 #. module: website_sale_stock
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_stock/models/delivery_carrier.py:0
 msgid "No pick-up points are available for this delivery address."
 msgstr "Não há pontos de retirada disponíveis para esse endereço de entrega."
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "No result"
 msgstr "Sem resultados"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location/location.js:0
 #: code:addons/website_sale_stock/static/src/js/location_selector/map_container/map_container.js:0
 msgid "Opening hours"
 msgstr "Horário de funcionamento"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/product_card/product_card.xml:0
 msgid "Out of Stock"
 msgstr "Esgotado"
@@ -208,7 +208,7 @@ msgid "Pickup Delivery Method"
 msgstr "Método de entrega"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
 msgid "Pickup Location"
 msgstr "Local da retirada"
@@ -227,7 +227,7 @@ msgid "Pickup point"
 msgstr "Ponto de retirada"
 
 #. module: website_sale_stock
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_stock/wizard/choose_delivery_carrier.py:0
 msgid "Please select a pickup point before adding a delivery method"
 msgstr "Selecione um ponto de retirada antes de adicionar um método de entrega"
@@ -263,7 +263,7 @@ msgid "Sales Order"
 msgstr "Pedido de venda"
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "Search"
 msgstr "Pesquisar"
@@ -298,7 +298,7 @@ msgid "The full relative URL to access the document through the website."
 msgstr "O URL relativo completo para acessar o documento através do site."
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/map_container/map_container.js:0
 msgid "There was an error loading the map"
 msgstr "Ocorreu um erro ao carregar o mapa"
@@ -343,14 +343,14 @@ msgid "Website where this order has been placed, for eCommerce orders."
 msgstr "Site onde esse pedido foi feito, para pedidos de e-commerce."
 
 #. module: website_sale_stock
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_stock/models/stock_picking.py:0
 msgid "You must select a pickup address with this delivery method."
 msgstr ""
 "Você deve selecionar um endereço de retirada com este método de entrega."
 
 #. module: website_sale_stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
 msgid "Zip or City"
 msgstr "CEP ou cidade"

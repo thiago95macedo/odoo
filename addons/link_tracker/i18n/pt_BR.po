@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:45+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/link_tracker/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgid "Codes"
 msgstr "Códigos"
 
 #. module: link_tracker
-#. odoo-python
+#. weth-python
 #: code:addons/link_tracker/models/link_tracker.py:0
 msgid ""
 "Combinations of Link Tracker values (URL, campaign, medium, source, "
@@ -140,7 +140,7 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: link_tracker
-#. odoo-python
+#. weth-python
 #: code:addons/link_tracker/models/link_tracker.py:0
 msgid "Creating a Link Tracker without URL is not possible"
 msgstr "Não é possível criar um rastreador de URL sem URL"
@@ -279,7 +279,7 @@ msgid "Page Title"
 msgstr "Título da página"
 
 #. module: link_tracker
-#. odoo-python
+#. weth-python
 #: code:addons/link_tracker/models/link_tracker.py:0
 msgid "Please enter valid short URL code."
 msgstr "Insira um código URL curto válido."
@@ -386,7 +386,7 @@ msgid "Visit Page"
 msgstr "Visitar página"
 
 #. module: link_tracker
-#. odoo-python
+#. weth-python
 #: code:addons/link_tracker/models/link_tracker.py:0
 msgid "Visit Webpage"
 msgstr "Visitar página da web"
@@ -397,7 +397,7 @@ msgid "Website Link"
 msgstr "Link do site"
 
 #. module: link_tracker
-#. odoo-python
+#. weth-python
 #: code:addons/link_tracker/models/link_tracker.py:0
 msgid "“%s” is not a valid link, links cannot redirect to the current page."
 msgstr ""

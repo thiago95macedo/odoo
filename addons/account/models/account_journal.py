@@ -65,7 +65,7 @@ class AccountJournal(models.Model):
             for model in self._fields['invoice_reference_model'].get_values(self.env):
                 if model.startswith(country_code):
                     return model
-        return 'odoo'
+        return 'weth'
 
     def _get_default_account_domain(self):
         return """[
@@ -152,12 +152,12 @@ class AccountJournal(models.Model):
         string="Communication Standard",
         required=True,
         selection=[
-            ('odoo', "Full Reference (INV/2024/00001)"),
+            ('weth', "Full Reference (INV/2024/00001)"),
             ('euro', "European (RF83INV202400001)"),
             ('number', "Numbers only (202400001)"),
         ],
         default=_default_invoice_reference_model,
-        help="You can choose different models for each type of reference. The default one is the Odoo reference.",
+        help="You can choose different models for each type of reference. The default one is the WETH reference.",
     )
 
     currency_id = fields.Many2one('res.currency', help='The currency used to enter statement', string="Currency")
@@ -252,7 +252,7 @@ class AccountJournal(models.Model):
     # alias configuration for journals
     alias_name = fields.Char(help="Send one separate email for each invoice.\n"
                                   "Any file extension will be accepted.\n"
-                                  "Only PDF and XML files will be interpreted by Odoo")
+                                  "Only PDF and XML files will be interpreted by Weth")
 
     journal_group_id = fields.Many2one(
         comodel_name='account.journal.group',

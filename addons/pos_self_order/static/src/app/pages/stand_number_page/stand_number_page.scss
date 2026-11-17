@@ -1,20 +1,18 @@
-
-
 .numpad-so {
-    background-color: $o-white;
+    background-color: $w-white;
     border-radius: $border-radius-xl;
 
     & button {
-        background-color: $o-white;
+        background-color: $w-white;
         min-height: 5vh;
         font-size: 1.8rem !important;
 
         &::after {
-            border: $border-width solid $o-gray-200;
+            border: $border-width solid $w-gray-200;
         }
 
         &:disabled {
-            background-color: lighten($o-gray-300, 5%)
+            background-color: lighten($w-gray-300, 5%)
         }
     }
 }

@@ -74,16 +74,16 @@ test("BadgesMany2OneField in a new record", async () => {
         arch: `<form><field name="product_id" widget="badges_many2one"/></form>`,
     });
 
-    expect(`div.o_field_badges_many2one`).toHaveCount(1, {
+    expect(`div.w_field_badges_many2one`).toHaveCount(1, {
         message: "should have rendered outer div",
     });
-    expect(`span.o_selection_badge`).toHaveCount(2, { message: "should have 2 possible choices" });
-    expect(`span.o_selection_badge:contains(xphone)`).toHaveCount(1, {
+    expect(`span.w_selection_badge`).toHaveCount(2, { message: "should have 2 possible choices" });
+    expect(`span.w_selection_badge:contains(xphone)`).toHaveCount(1, {
         message: "one of them should be xphone",
     });
     expect(`span.active`).toHaveCount(0, { message: "none of the input should be checked" });
 
-    await contains(`span.o_selection_badge`).click();
+    await contains(`span.w_selection_badge`).click();
     expect(`span.active`).toHaveCount(1, { message: "one of the input should be checked" });
 
     await clickSave();
@@ -109,9 +109,9 @@ test("BadgesMany2OneField: verify icons are fetched via search_read and displaye
     });
 
     // Check if icons are rendered
-    expect("span.o_selection_badge:eq(0) span[data-icon='settings']").toHaveCount(1);
-    expect("span.o_selection_badge:eq(1) span[data-icon='smartphone']").toHaveCount(1);
-    expect("span.o_selection_badge:eq(2) span[data-icon='check']").toHaveCount(1);
+    expect("span.w_selection_badge:eq(0) span[data-icon='settings']").toHaveCount(1);
+    expect("span.w_selection_badge:eq(1) span[data-icon='smartphone']").toHaveCount(1);
+    expect("span.w_selection_badge:eq(2) span[data-icon='check']").toHaveCount(1);
 
     expect.verifySteps(["search_read_triggered"]);
 });
@@ -124,14 +124,14 @@ test("BadgesMany2OneField: unchecking selected value (required field)", async ()
         resId: 2,
         arch: '<form><field name="product_id" widget="badges_many2one"/></form>',
     });
-    expect("span.o_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
-    expect("span.o_selection_badge.active").toHaveCount(1, { message: "one is active" });
-    expect("span.o_selection_badge.active").toHaveText("xphone", {
+    expect("span.w_selection_badge").toHaveCount(2, { message: "should have 2 possible choices" });
+    expect("span.w_selection_badge.active").toHaveCount(1, { message: "one is active" });
+    expect("span.w_selection_badge.active").toHaveText("xphone", {
         message: "the active one should be xphone",
     });
     // click again on the active badge - it should NOT deselect since field is required
-    await contains("span.o_selection_badge.active").click();
-    expect("span.o_selection_badge.active").toHaveCount(1, {
+    await contains("span.w_selection_badge.active").click();
+    expect("span.w_selection_badge.active").toHaveCount(1, {
         message: "active badge should remain selected for required field",
     });
 });
@@ -151,16 +151,16 @@ test("BadgesMany2OneField: with domain and badge_limit option", async () => {
             </form>`,
     });
 
-    expect("span.o_selection_badge").toHaveCount(2);
+    expect("span.w_selection_badge").toHaveCount(2);
     expect(".dropdown-menu").toHaveCount(0);
 
-    await contains(".o_field_widget[name=product_min_id] input").edit("0", { confirm: "enter" });
+    await contains(".w_field_widget[name=product_min_id] input").edit("0", { confirm: "enter" });
     await animationFrame();
 
-    expect("span.o_selection_badge").toHaveCount(3);
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect("span.w_selection_badge").toHaveCount(3);
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 
-    await contains(".o_selection_badge.o-dropdown-caret").click();
+    await contains(".w_selection_badge.w-dropdown-caret").click();
     await animationFrame();
 
     expect(".dropdown-menu").toHaveCount(1);
@@ -170,7 +170,7 @@ test("BadgesMany2OneField: with domain and badge_limit option", async () => {
     await contains(".dropdown-menu .dropdown-item").click();
     await animationFrame();
 
-    expect(".o_selection_badge.active").toHaveCount(1);
+    expect(".w_selection_badge.active").toHaveCount(1);
 });
 
 test("BadgesMany2OneField: placeholder attribute is used when provided", async () => {
@@ -185,8 +185,8 @@ test("BadgesMany2OneField: placeholder attribute is used when provided", async (
             </form>`,
     });
 
-    expect("span.o_selection_badge").toHaveCount(2);
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect("span.w_selection_badge").toHaveCount(2);
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 });
 
 test("BadgesMany2OneField: placeholder falls back to field label when not provided", async () => {
@@ -200,8 +200,8 @@ test("BadgesMany2OneField: placeholder falls back to field label when not provid
             </form>`,
     });
 
-    expect("span.o_selection_badge").toHaveCount(2);
-    expect(".o_selection_badge.o-dropdown-caret").toHaveText("+1");
+    expect("span.w_selection_badge").toHaveCount(2);
+    expect(".w_selection_badge.w-dropdown-caret").toHaveText("+1");
 });
 
 test("[Offline] BadgesMany2OneField: verify badges are displayed in offline mode", async () => {
@@ -220,8 +220,8 @@ test("[Offline] BadgesMany2OneField: verify badges are displayed in offline mode
     });
 
     // Verify the field doesn't crash and displays the fallback name
-    expect(".o_selection_badge").toHaveCount(1);
-    expect(".o_selection_badge:contains(xphone)").toHaveCount(1);
+    expect(".w_selection_badge").toHaveCount(1);
+    expect(".w_selection_badge:contains(xphone)").toHaveCount(1);
 
     expect.verifySteps(["name_search"]);
 });
@@ -261,32 +261,32 @@ test("BadgesMany2OneField: variant_id options update correctly after Save & New 
     });
     await animationFrame();
 
-    expect(".o_dialog .o_form_view").toHaveCount(1);
-    expect(".o_dialog .modal-footer .o_form_button_save_new").toHaveCount(1, {
+    expect(".w_dialog .w_form_view").toHaveCount(1);
+    expect(".w_dialog .modal-footer .w_form_button_save_new").toHaveCount(1, {
         message: "Save & New button should be present in the footer",
     });
 
-    await click("span.o_selection_badge:contains(xphone)");
+    await click("span.w_selection_badge:contains(xphone)");
     await animationFrame();
 
-    expect(queryAllTexts(".o_field_widget[name=variant_id] .o_selection_badge span")).toEqual(
+    expect(queryAllTexts(".w_field_widget[name=variant_id] .w_selection_badge span")).toEqual(
         ["xphone Black", "xphone Red"],
         {
             message: "xphone selected — variant_id should show xphone Black and xphone Red",
         }
     );
 
-    await click(".o_dialog .modal-footer .o_form_button_save_new");
+    await click(".w_dialog .modal-footer .w_form_button_save_new");
     await animationFrame();
 
-    expect(".o_dialog .o_form_view").toHaveCount(1, {
+    expect(".w_dialog .w_form_view").toHaveCount(1, {
         message: "dialog should remain open after Save & New",
     });
 
-    await click("span.o_selection_badge:contains(xpad)");
+    await click("span.w_selection_badge:contains(xpad)");
     await animationFrame();
 
-    expect(queryAllTexts(".o_field_widget[name=variant_id] .o_selection_badge span")).toEqual(
+    expect(queryAllTexts(".w_field_widget[name=variant_id] .w_selection_badge span")).toEqual(
         ["xpad Pro", "xpad Lite"],
         {
             message:

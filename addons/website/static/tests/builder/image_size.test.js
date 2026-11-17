@@ -74,7 +74,7 @@ test("images can be resized by slider, text input and button", async () => {
     expect(".options-container [data-action-id='mediaSizeSlider'] input").toHaveValue(99);
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 
@@ -114,7 +114,7 @@ test("images can be resized by slider, text input and button", async () => {
     expect(queryOne(":iframe .test-options-target img").style.width).toBe("");
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 
@@ -129,7 +129,7 @@ test("images can be resized by slider, text input and button", async () => {
     );
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(65);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(1);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").not.toHaveClass(
         "active"
@@ -144,7 +144,7 @@ test("images can be resized by slider, text input and button", async () => {
     expect(queryOne(":iframe .test-options-target img").style.width).toBe("");
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 });
@@ -162,7 +162,7 @@ test("videos can be resized by slider, text input and button", async () => {
     expect(".options-container [data-action-id='mediaSizeSlider'] input").toHaveValue(99);
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 
@@ -199,7 +199,7 @@ test("videos can be resized by slider, text input and button", async () => {
     expect(queryOne(":iframe .media_iframe_video").style.width).toBe("");
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 
@@ -214,7 +214,7 @@ test("videos can be resized by slider, text input and button", async () => {
     );
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(65);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(1);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").not.toHaveClass(
         "active"
@@ -229,7 +229,7 @@ test("videos can be resized by slider, text input and button", async () => {
     expect(queryOne(":iframe .media_iframe_video").style.width).toBe("");
     expect(".options-container [data-action-id='mediaSizeText'] input").toHaveValue(NaN);
     expect(
-        ".options-container [data-action-id='mediaSizeText'] .o-hb-input-field-unit"
+        ".options-container [data-action-id='mediaSizeText'] .w-hb-input-field-unit"
     ).toHaveCount(0);
     expect(".options-container button[data-action-id='setMediaSizeAuto']").toHaveClass("active");
 });

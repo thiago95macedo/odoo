@@ -1,13 +1,14 @@
-.o-discuss-PipBanner {
-    background-color: $o-mail-CallMenu-bgColor-darker;
+.w-discuss-PipBanner {
+    background-color: $w-mail-CallMenu-bgColor-darker;
     color: rgba(white, 0.8) !important;
 
-    .o-discuss-PipBannerButton {
-      border: 1px solid black;
-      background-color: $o-mail-CallMenu-bgColor;
-      color: rgba(white, 0.8) !important;
+    .w-discuss-PipBannerButton {
+        border: 1px solid black;
+        background-color: $w-mail-CallMenu-bgColor;
+        color: rgba(white, 0.8) !important;
+
         &:hover {
-            background-color: $o-mail-CallMenu-bgColor-lighter;
+            background-color: $w-mail-CallMenu-bgColor-lighter;
         }
     }
 }

@@ -71,7 +71,7 @@ class PaymentTransaction(models.Model):
             ),
             "PaymentType": "aio",
             "TotalAmount": int(self.amount),
-            "TradeDesc": "ECPay from Odoo",
+            "TradeDesc": "ECPay from Weth",
             "ItemName": self.reference,
             "ReturnURL": urljoin(base_url, const.WEBHOOK_ROUTE),
             "ChoosePayment": "ALL",

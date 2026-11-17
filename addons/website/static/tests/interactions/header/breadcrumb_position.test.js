@@ -7,7 +7,7 @@ setupInteractionWhiteList("website.page_breadcrumb");
 
 test("Breadcrumb adjusts its position on header resize", async () => {
     const { core } = await startInteractions(
-        `<div id="wrapwrap" contenteditable="false" class="odoo-editor-editable">
+        `<div id="wrapwrap" contenteditable="false" class="weth-editor-editable">
             <header id="top" data-anchor="true" data-name="Header" class="o_header_standard o_top_fixed_element">
                     Header Content
             </header>

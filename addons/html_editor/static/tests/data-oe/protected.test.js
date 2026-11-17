@@ -285,19 +285,19 @@ test("select a protected element shouldn't open the toolbar", async () => {
     const { el } = await setupEditor(
         `<div><p>[a]</p></div><div data-oe-protected="true"><p>b</p><div data-oe-protected="false">c</div></div>`
     );
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 
     setContent(
         el,
         `<div><p>a</p></div><div data-oe-protected="true"><p>[b]</p><div data-oe-protected="false">c</div></div>`
     );
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 
     setContent(
         el,
         `<div><p>a</p></div><div data-oe-protected="true"><p>b</p><div data-oe-protected="false">[c]</div></div>`
     );
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 });
 
 const configWithoutSelectionPlaceholder = {

@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:46+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_crm/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgid "Do not link to a customer"
 msgstr "Não vincular a um cliente"
 
 #. module: sale_crm
-#. odoo-python
+#. weth-python
 #: code:addons/sale_crm/models/crm_lead.py:0
 msgid "Expected revenue has been updated based on the linked Sales Orders."
 msgstr ""
@@ -205,7 +205,7 @@ msgid "Sale Orders"
 msgstr "Pedidos de venda"
 
 #. module: sale_crm
-#. odoo-python
+#. weth-python
 #: code:addons/sale_crm/models/crm_team.py:0
 msgid "Sales Analysis"
 msgstr "Análise de vendas"
@@ -242,7 +242,7 @@ msgid "Who should be linked to this new Quotation?"
 msgstr "Quem deve ser vinculado a esta nova Cotação?"
 
 #. module: sale_crm
-#. odoo-python
+#. weth-python
 #: code:addons/sale_crm/wizard/crm_opportunity_to_quotation.py:0
 msgid "You can only apply this action from a lead."
 msgstr "Você só pode aplicar esta ação à partir de um lead."

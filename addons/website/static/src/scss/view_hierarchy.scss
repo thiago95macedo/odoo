@@ -11,6 +11,7 @@
     .o_text_orange {
         color: $orange;
     }
+
     .o_text_pink {
         color: $pink;
     }
@@ -70,7 +71,7 @@
             }
 
             &:last-child:before {
-                background: $o-webclient-background-color;
+                background: $w-webclient-background-color;
                 bottom: 0;
                 height: auto;
                 top: 1em;

@@ -57,7 +57,7 @@ test("default params, click on suggestion to select time", async () => {
     await click(".o_time_picker_input");
     await animationFrame();
 
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
+    expect(".w-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
     expect(queryAllTexts(".o_time_picker_option")).toEqual(getTimeOptions(15));
 
     await click(".o_time_picker_option:contains(12:15)");
@@ -79,7 +79,7 @@ test("when opening, select the suggestion equals to the props value", async () =
     await click(".o_time_picker_input");
     await animationFrame();
 
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
+    expect(".w-dropdown--menu.o_time_picker_dropdown").toHaveCount(1);
     expect(queryAllTexts(".o_time_picker_option")).toEqual(getTimeOptions(15));
     expect(".o_time_picker_option:contains(12:30)").toHaveClass("focus");
 });
@@ -100,7 +100,7 @@ test("onChange only triggers if the value has changed", async () => {
     await click(".o_time_picker_option:contains(12:15)");
     await animationFrame();
 
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
+    expect(".w-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
     expect(queryFirst(".o_time_picker_input").value).toBe("12:15");
     expect.verifySteps([]);
 
@@ -109,7 +109,7 @@ test("onChange only triggers if the value has changed", async () => {
     await click(".o_time_picker_option:contains(12:30)");
     await animationFrame();
 
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
+    expect(".w-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
     expect(queryFirst(".o_time_picker_input").value).toBe("12:30");
     expect.verifySteps(["12:30"]);
 });
@@ -344,7 +344,7 @@ test("click-out triggers onChange", async () => {
 
     await click(".outside");
     await animationFrame();
-    expect(".o-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
+    expect(".w-dropdown--menu.o_time_picker_dropdown").toHaveCount(0);
     expect.verifySteps(["12:30"]);
 });
 

@@ -84,7 +84,7 @@ test("Add an element on the invisible elements tab", async () => {
     });
     await click(
         queryFirst(
-            ".o-snippets-menu #snippet_groups .o_snippet_thumbnail .o_snippet_thumbnail_area"
+            ".w-snippets-menu #snippet_groups .o_snippet_thumbnail .o_snippet_thumbnail_area"
         )
     );
     await waitForSnippetDialog();
@@ -234,7 +234,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetConditionalInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             expect(
@@ -247,7 +247,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetDesktopInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             expect(
@@ -260,7 +260,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetInnerDesktopInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=a] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             expect(
@@ -275,7 +275,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetMobileInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             await waitFor(".o_add_snippet_dialog :iframe .o_custom_snippet_edit");
@@ -289,7 +289,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetDesktopInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             await waitFor(".o_add_snippet_dialog :iframe .o_custom_snippet_edit");
@@ -303,7 +303,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetConditionalInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             await waitFor(".o_add_snippet_dialog :iframe .o_custom_snippet_edit");
@@ -317,7 +317,7 @@ describe("drop invisible elements", () => {
                 snippets: getSnippetInfos(snippetDesktopAndConditionalInvisible),
             });
             await contains(
-                ".o-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
+                ".w-snippets-menu #snippet_groups div[data-snippet-group=custom] .o_snippet_thumbnail .o_snippet_thumbnail_area"
             ).click();
             await waitForSnippetDialog();
             await waitFor(".o_add_snippet_dialog :iframe .o_custom_snippet_edit");

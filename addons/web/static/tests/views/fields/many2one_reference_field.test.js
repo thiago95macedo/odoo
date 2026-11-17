@@ -79,10 +79,10 @@ test("Many2OneReferenceField in form view", async () => {
                 <field name="res_id"/>
             </form>`,
     });
-    expect(".o_field_widget input").toHaveValue("gold");
-    expect(".o_field_widget[name=res_id] .o_external_button").toHaveCount(1);
+    expect(".w_field_widget input").toHaveValue("gold");
+    expect(".w_field_widget[name=res_id] .w_external_button").toHaveCount(1);
 
-    await contains(".o_field_widget[name=res_id] .o_external_button", { visible: false }).click();
+    await contains(".w_field_widget[name=res_id] .w_external_button", { visible: false }).click();
     expect.verifySteps(["opening partner.type 10", "doAction"]);
 });
 
@@ -98,7 +98,7 @@ test("Many2OneReferenceField in list view", async () => {
             </list>`,
     });
 
-    expect(queryAllTexts(".o_data_cell")).toEqual(["gold", "", ""]);
+    expect(queryAllTexts(".w_data_cell")).toEqual(["gold", "", ""]);
 });
 
 test("Many2OneReferenceField with no_open option", async () => {
@@ -113,8 +113,8 @@ test("Many2OneReferenceField with no_open option", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("gold");
-    expect(".o_field_widget[name=res_id] .o_external_button").toHaveCount(0);
+    expect(".w_field_widget input").toHaveValue("gold");
+    expect(".w_field_widget[name=res_id] .w_external_button").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -130,15 +130,15 @@ test("Many2OneReferenceField with model_field change in form view", async () => 
             </form>`,
     });
 
-    await contains(".o_field_widget[name=model] input").edit("partner.type");
+    await contains(".w_field_widget[name=model] input").edit("partner.type");
     await animationFrame();
     await clickFieldDropdown("res_id");
-    expect(".o_field_widget[name=res_id] .o-autocomplete--dropdown-item").toHaveCount(3);
+    expect(".w_field_widget[name=res_id] .w-autocomplete--dropdown-item").toHaveCount(3);
 
-    await contains(".o_field_widget[name=model] input").edit("job.title");
+    await contains(".w_field_widget[name=model] input").edit("job.title");
     await animationFrame();
     await clickFieldDropdown("res_id");
-    expect(".o_field_widget[name=res_id] .o-autocomplete--dropdown-item").toHaveCount(4);
+    expect(".w_field_widget[name=res_id] .w-autocomplete--dropdown-item").toHaveCount(4);
 });
 
 test("Many2OneReferenceField server value in form view", async () => {
@@ -152,7 +152,7 @@ test("Many2OneReferenceField server value in form view", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget[name=res_id] .o_many2one").toHaveText("");
+    expect(".w_field_widget[name=res_id] .w_many2one").toHaveText("");
 });
 
 test.tags("desktop");
@@ -174,14 +174,14 @@ test("Many2OneReferenceField edition: unset", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget[name=res_id] input").toHaveCount(0);
+    expect(".w_field_widget[name=res_id] input").toHaveCount(0);
 
-    await contains(".o_field_widget[name=model] input").edit("partner.type");
+    await contains(".w_field_widget[name=model] input").edit("partner.type");
 
-    expect(".o_field_widget[name=res_id] input").toHaveCount(1);
+    expect(".w_field_widget[name=res_id] input").toHaveCount(1);
 
     await selectFieldDropdownItem("res_id", "silver");
-    expect(".o_field_widget[name=res_id] input").toHaveValue("silver");
+    expect(".w_field_widget[name=res_id] input").toHaveValue("silver");
 
     await clickSave();
 });
@@ -217,12 +217,12 @@ test("Many2OneReferenceField set value with search more", async () => {
             </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("type 1");
+    expect(".w_field_widget input").toHaveValue("type 1");
     await selectFieldDropdownItem("res_id", "Search more...");
-    expect(".o_dialog .o_list_view").toHaveCount(1);
-    await contains(".o_data_row .o_data_cell:eq(6)").click();
-    expect(".o_dialog .o_list_view").toHaveCount(0);
-    expect(".o_field_widget input").toHaveValue("type 7");
+    expect(".w_dialog .w_list_view").toHaveCount(1);
+    await contains(".w_data_row .w_data_cell:eq(6)").click();
+    expect(".w_dialog .w_list_view").toHaveCount(0);
+    expect(".w_field_widget input").toHaveValue("type 7");
     expect.verifySteps([
         "get_views", // form view
         "web_read", // partner id 1
@@ -250,15 +250,15 @@ test("Many2OneReferenceField: quick create a value", async () => {
                 </form>`,
     });
 
-    expect(".o_field_widget input").toHaveValue("gold");
+    expect(".w_field_widget input").toHaveValue("gold");
 
-    await contains(".o_field_widget[name='res_id'] input").edit("new value", { confirm: false });
+    await contains(".w_field_widget[name='res_id'] input").edit("new value", { confirm: false });
     await runAllTimers();
     expect(
-        ".o_field_widget[name='res_id'] .dropdown-menu .o_m2o_dropdown_option_create"
+        ".w_field_widget[name='res_id'] .dropdown-menu .w_m2o_dropdown_option_create"
     ).toHaveCount(1);
     await clickFieldDropdownItem("res_id", `Create "new value"`);
-    expect(".o_field_widget input").toHaveValue("new value");
+    expect(".w_field_widget input").toHaveValue("new value");
     expect.verifySteps(["get_views", "web_read", "web_name_search", "name_create"]);
 });
 
@@ -274,9 +274,9 @@ test("Many2OneReferenceField with no_create option", async () => {
             </form>`,
     });
 
-    await contains(".o_field_widget[name='res_id'] input").edit("new value", { confirm: false });
+    await contains(".w_field_widget[name='res_id'] input").edit("new value", { confirm: false });
     await runAllTimers();
     expect(
-        ".o_field_widget[name='res_id'] .dropdown-menu .o_m2o_dropdown_option_create"
+        ".w_field_widget[name='res_id'] .dropdown-menu .w_m2o_dropdown_option_create"
     ).toHaveCount(0);
 });

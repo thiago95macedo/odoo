@@ -7,7 +7,7 @@ import { rpc } from "@web/core/network/rpc";
  * Run the PayPal seller onboarding in a PayPal-hosted mini browser.
  *
  * The onboarding is driven by PayPal's partner SDK: it opens the mini browser on the onboarding
- * URL, then calls back into Odoo with the OAuth values once the seller has linked their account.
+ * URL, then calls back into WETH with the OAuth values once the seller has linked their account.
  *
  * @param {Object} env - The environment of the client action
  * @param {Object} action - The client action
@@ -32,7 +32,7 @@ async function paypalOnboardingAction(env, action) {
         } catch (error) {
             // Manually catch RPC errors to prevent the SDK handler from consuming them, then
             // display them in the dialog the error service would have used.
-            env.services.dialog.add(RPCErrorDialog, { ...error, traceback: error.stack});
+            env.services.dialog.add(RPCErrorDialog, { ...error, traceback: error.stack });
             return;  // Don't reload, as `doAction` closes all the open dialogs
         }
         env.services.action.doAction("soft_reload");  // Show the account linked status

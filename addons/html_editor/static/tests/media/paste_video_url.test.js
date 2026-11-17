@@ -32,7 +32,7 @@ for (const [platform, platformClass] of Object.entries(PLATFORMS)) {
             mockFetch(() => '{"data": "mockFetch api result data"}');
             pasteText(editor, videoUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Validate powerbox on the default first choice
             await press("Enter");
             await animationFrame();
@@ -57,7 +57,7 @@ for (const [platform, platformClass] of Object.entries(PLATFORMS)) {
             mockFetch(() => '{"data": "mockFetch api result data"}');
             pasteText(editor, videoUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Force powerbox validation on the default first choice
             await press("Enter");
 
@@ -89,7 +89,7 @@ describe("generic paste video url behaviors", () => {
         );
         pasteText(editor, videoUrl);
         // Ensure the powerbox is active
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
         const powerbox = plugins.get("powerbox");
         expect(powerbox.overlay.isOpen).not.toBe(true);
         expect(cleanLinkArtifacts(getContent(el))).toBe(
@@ -102,7 +102,7 @@ describe("generic paste video url behaviors", () => {
         });
         pasteText(editor, videoUrl);
         await animationFrame();
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         // Pick the second command (Paste as URL)
         await press("ArrowDown");
         await press("Enter");
@@ -118,7 +118,7 @@ describe("generic paste video url behaviors", () => {
         pasteText(editor, "*should not disappear*");
         pasteText(editor, videoUrl);
         await animationFrame();
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         // Pick the second command (Paste as URL)
         await press("ArrowDown");
         await press("Enter");
@@ -132,7 +132,7 @@ describe("generic paste video url behaviors", () => {
         });
         pasteText(editor, videoUrl);
         await animationFrame();
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         // Force powerbox validation on the default first choice
         await press("Enter");
         // Undo
@@ -146,7 +146,7 @@ describe("generic paste video url behaviors", () => {
         });
         pasteText(editor, videoUrl);
         await animationFrame();
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         // Pick the second command (Paste as URL)
         await press("ArrowDown");
         await press("Enter");
@@ -162,9 +162,9 @@ describe("generic paste video url behaviors", () => {
         expect(getContent(el)).toBe(`<p>ax[]b</p>`);
         pasteText(editor, videoUrl);
         await animationFrame();
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         undo(editor);
-        await waitForNone(".o-we-powerbox");
+        await waitForNone(".w-we-powerbox");
         expect(getContent(el)).toBe(`<p>ax[]b</p>`);
     });
 });

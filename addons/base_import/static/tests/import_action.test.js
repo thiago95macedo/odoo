@@ -634,7 +634,7 @@ describe("Import view", () => {
         const { moveTo, drop } = await drag(".o_nocontent_help", { files: [file] });
         await moveTo(".o_import_action");
         await animationFrame();
-        await drop(".o-Dropzone");
+        await drop(".w-Dropzone");
         await animationFrame();
         expect(".o_import_action .o_import_data_content").toHaveCount(1);
         expect.verifySteps(["/base_import/set_file"]);
@@ -767,9 +767,9 @@ describe("Import view", () => {
         await contains(".o_import_data_content .o_select_menu").selectDropdownItem("Display name");
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -811,9 +811,9 @@ describe("Import view", () => {
         await contains(".o_import_data_content .o_select_menu").selectDropdownItem("Selection");
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -876,9 +876,9 @@ describe("Import view", () => {
         await contains(".o_import_data_content .o_select_menu").selectDropdownItem("Bar");
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -948,9 +948,9 @@ describe("Import view", () => {
         await contains(".o_import_field_many2many select").select("import_skip_records");
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -1106,9 +1106,9 @@ describe("Import view", () => {
         await contains("input#o_import_batch_limit").edit(1);
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -1238,9 +1238,9 @@ describe("Import view", () => {
 
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:contains('Import')").click();
+            await contains(".w-dropdown--menu button:contains('Import')").click();
         } else {
             await contains(".o_control_panel_main_buttons button:contains('Import')").click();
         }
@@ -1458,9 +1458,9 @@ describe("Import view", () => {
         await contains(".o_import_data_content .o_select_menu").selectDropdownItem("Many2Many");
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:nth-child(2)").click();
         }
@@ -1512,9 +1512,9 @@ describe("Import view", () => {
 
         if (isSmall()) {
             await contains(
-                ".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown"
+                ".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown"
             ).click();
-            await contains(".o-dropdown--menu button:visible").click();
+            await contains(".w-dropdown--menu button:visible").click();
         } else {
             await contains(".o_control_panel_main_buttons button:contains(Import):eq(0)").click();
         }
@@ -1712,7 +1712,7 @@ describe("Import view", () => {
         await contains(
             ".o_import_data_content table tr:nth-child(3) td:nth-child(3) button"
         ).click();
-        await contains(`.o-dropdown-item :contains("French / Français")`).click();
+        await contains(`.w-dropdown-item :contains("French / Français")`).click();
 
         await contains(".o_control_panel_main_buttons button:first-child").click();
         expect.verifySteps(["execute_import"]);
@@ -1779,8 +1779,8 @@ test("locale separators only apply to CSV, not to other formats", async () => {
 
     const xlsxFile = new File(["fake_file"], "data.xlsx", { type: "text/plain" });
     if (isSmall()) {
-        await contains(".o_control_panel_main_buttons button.o-control-panel-adaptive-dropdown").click();
-        await contains(".o-dropdown--menu .o_file_input_trigger").click();
+        await contains(".o_control_panel_main_buttons button.w-control-panel-adaptive-dropdown").click();
+        await contains(".w-dropdown--menu .o_file_input_trigger").click();
     } else {
         await contains(".o_control_panel_main_buttons .o_file_input button").click();
     }
@@ -1791,7 +1791,7 @@ test("locale separators only apply to CSV, not to other formats", async () => {
 
     const csvFile2 = new File(["fake_file"], "data.csv", { type: "text/plain" });
     if (isSmall()) {
-        await contains(".o-dropdown--menu .o_file_input_trigger").click();
+        await contains(".w-dropdown--menu .o_file_input_trigger").click();
     } else {
         await contains(".o_control_panel_main_buttons .o_file_input button").click();
     }

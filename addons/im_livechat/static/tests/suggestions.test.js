@@ -31,12 +31,12 @@ test("Suggestions are shown after delimiter was used in text (::)", async () => 
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "::");
-    await contains(".o-mail-Composer-suggestion strong", { text: "hello" });
-    await insertText(".o-mail-Composer-input", ")");
-    await contains(".o-mail-Composer-suggestion strong", { count: 0 });
-    await insertText(".o-mail-Composer-input", " ::");
-    await contains(".o-mail-Composer-suggestion strong", { text: "hello" });
+    await insertText(".w-mail-Composer-input", "::");
+    await contains(".w-mail-Composer-suggestion strong", { text: "hello" });
+    await insertText(".w-mail-Composer-input", ")");
+    await contains(".w-mail-Composer-suggestion strong", { count: 0 });
+    await insertText(".w-mail-Composer-input", " ::");
+    await contains(".w-mail-Composer-suggestion strong", { text: "hello" });
 });
 
 test("Internal user mention shows their live chat username", async () => {
@@ -55,9 +55,9 @@ test("Internal user mention shows their live chat username", async () => {
     pyEnv["res.users"]._applyComputesAndValidate();
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "@");
-    await click('.o-mail-Composer-suggestion:contains(Mitchell Admin "Batman")');
-    await contains(".o-mail-Composer-input:value(@Batman)");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await contains(".o-mail-Message a.o_mail_redirect", { text: "@Batman" });
+    await insertText(".w-mail-Composer-input", "@");
+    await click('.w-mail-Composer-suggestion:contains(Mitchell Admin "Batman")');
+    await contains(".w-mail-Composer-input:value(@Batman)");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await contains(".w-mail-Message a.o_mail_redirect", { text: "@Batman" });
 });

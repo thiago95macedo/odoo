@@ -71,9 +71,9 @@ test("CallDebrief: basic render without artifacts", async () => {
     });
     await start();
     await _openDebriefView(pyEnv, discussCallHistoryId);
-    await contains(".o-CallDebrief");
+    await contains(".w-CallDebrief");
     // No media artifacts, hence the timeline should not be rendered
-    await contains(".o-CallDebriefTimeline", { count: 0 });
+    await contains(".w-CallDebriefTimeline", { count: 0 });
     await contains(".text-danger", { count: 0 });
 });
 
@@ -91,9 +91,9 @@ test("CallDebrief: active call uses the current time", async () => {
     freezeTime();
     await _openDebriefView(pyEnv, discussCallHistoryId);
 
-    await contains(".o-CallDebriefTimeline-media-segment");
+    await contains(".w-CallDebriefTimeline-media-segment");
     await contains(".text-danger", { count: 0 });
-    const segment = queryOne(".o-CallDebriefTimeline-media-segment");
+    const segment = queryOne(".w-CallDebriefTimeline-media-segment");
     expect(parseFloat(segment.style.width)).toBeCloseTo(50, { margin: 0.1 });
 });
 
@@ -117,10 +117,10 @@ test("CallDebrief: pending uploads have no playback controls", async () => {
     await _openDebriefView(pyEnv, discussCallHistoryId);
     await expect.waitForSteps(["recordings loaded"]);
     await animationFrame();
-    await contains(".o-CallDebrief");
-    await contains(".o-CallDebrief video, .o-CallDebrief audio", { count: 0 });
-    await contains(".o-CallDebriefTimeline", { count: 0 });
-    await contains(".o-CallDebriefMediaControls", { count: 0 });
+    await contains(".w-CallDebrief");
+    await contains(".w-CallDebrief video, .w-CallDebrief audio", { count: 0 });
+    await contains(".w-CallDebriefTimeline", { count: 0 });
+    await contains(".w-CallDebriefMediaControls", { count: 0 });
     await contains(".text-danger", { count: 0 });
 });
 
@@ -141,12 +141,12 @@ test("CallDebrief: renders video with playback", async () => {
     await _openDebriefView(pyEnv, discussCallHistoryId);
 
     await contains(
-        ".o-CallDebrief-media-container:not(.o-CallDebrief-media-container--no-video)"
+        ".w-CallDebrief-media-container:not(.w-CallDebrief-media-container--no-video)"
     );
-    await contains(".o-CallDebrief-video video");
+    await contains(".w-CallDebrief-video video");
 
     // Mute first to avoid noise
-    await click("button.o-CallDebrief-muteBtn");
+    await click("button.w-CallDebrief-muteBtn");
 
     // Start playback
     const video = queryOne("video");
@@ -186,11 +186,11 @@ test("CallDebrief: timeline-media synchronization", async () => {
 
     // Move playhead -> Seeks audio
     // Clicking the timeline defaults to center (50%). Total duration 180s -> 90s (01:30).
-    await click(".o-CallDebriefTimeline");
+    await click(".w-CallDebriefTimeline");
     // One animationFrame: OWL renders new <audio> (segment 2) and useEffect sets currentTime=30
     await animationFrame();
 
-    const timestampText = queryOne(".o-CallDebriefTimeline-timestamp").innerText;
+    const timestampText = queryOne(".w-CallDebriefTimeline-timestamp").innerText;
     const [minutes, seconds] = timestampText.split(":").map(Number);
     const totalSeconds = minutes * 60 + seconds;
     expect(Math.abs(totalSeconds - 90) <= 2).toBe(true, {
@@ -212,7 +212,7 @@ test("CallDebrief: timeline-media synchronization", async () => {
     await animationFrame();
 
     const finalTimestampText = queryOne(
-        ".o-CallDebriefMediaControls-timeLabel .o_current_time"
+        ".w-CallDebriefMediaControls-timeLabel .o_current_time"
     ).innerText;
     const [finalM, finalS] = finalTimestampText.split(":").map(Number);
     const finalTotalSeconds = finalM * 60 + finalS;
@@ -244,28 +244,28 @@ test("CallDebrief: generates silence gaps in timeline", async () => {
     await _openDebriefView(pyEnv, discussCallHistoryId);
 
     // Timeline track is rendered
-    await contains(".o-CallDebriefTimeline-track");
+    await contains(".w-CallDebriefTimeline-track");
 
     // There should be 4 segments total:
     // 1. Media segment (0s to 60s) -> 25% width
     // 2. Silence segment (60s to 120s) -> 25% width
     // 3. Media segment (120s to 180s) -> 25% width
     // 4. Silence segment (180s to 240s) -> 25% width
-    await contains(".o-CallDebriefTimeline-segment", { count: 4 });
-    await contains(".o-CallDebriefTimeline-media-segment", { count: 2 });
-    await contains(".o-CallDebriefTimeline-silence-segment", { count: 2 });
+    await contains(".w-CallDebriefTimeline-segment", { count: 4 });
+    await contains(".w-CallDebriefTimeline-media-segment", { count: 2 });
+    await contains(".w-CallDebriefTimeline-silence-segment", { count: 2 });
 
     // Verify coordinates
-    const segments = document.querySelectorAll(".o-CallDebriefTimeline-segment");
+    const segments = document.querySelectorAll(".w-CallDebriefTimeline-segment");
     expect(segments[0].style.width).toBe("25%");
-    await contains(".o-CallDebriefTimeline-segment:eq(0).o-CallDebriefTimeline-media-segment");
+    await contains(".w-CallDebriefTimeline-segment:eq(0).w-CallDebriefTimeline-media-segment");
 
     expect(segments[1].style.width).toBe("25%");
-    await contains(".o-CallDebriefTimeline-segment:eq(1).o-CallDebriefTimeline-silence-segment");
+    await contains(".w-CallDebriefTimeline-segment:eq(1).w-CallDebriefTimeline-silence-segment");
 
     expect(segments[2].style.width).toBe("25%");
-    await contains(".o-CallDebriefTimeline-segment:eq(2).o-CallDebriefTimeline-media-segment");
+    await contains(".w-CallDebriefTimeline-segment:eq(2).w-CallDebriefTimeline-media-segment");
 
     expect(segments[3].style.width).toBe("25%");
-    await contains(".o-CallDebriefTimeline-segment:eq(3).o-CallDebriefTimeline-silence-segment");
+    await contains(".w-CallDebriefTimeline-segment:eq(3).w-CallDebriefTimeline-silence-segment");
 });

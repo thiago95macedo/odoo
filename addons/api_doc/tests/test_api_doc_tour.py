@@ -5,7 +5,7 @@ from weth.tests import HttpCase, tagged
 class TestApiDocTour(HttpCase):
 
     def test_api_doc_simple_start(self):
-        wait_for_app_to_load = "document.querySelector('.o-doc-client-root') !== null"
+        wait_for_app_to_load = "document.querySelector('.w-doc-client-root') !== null"
 
         test_script = """
             const searchInput = document.querySelector('header input[placeholder="Find anything..."]');

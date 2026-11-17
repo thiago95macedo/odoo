@@ -13,7 +13,7 @@ define("ace/mode/qweb_highlight_rules", ["require", "exports", "module", "ace/li
             const attrRegx = options.readonlyAttributes.join("|");
             attributes_display_custom.push({
                 regex: `(${attrRegx})(=)(\\s*)(")([^"]*)(")`,
-                token: ["entity.other.attribute-name.xml.odoo_attr_readonly", "keyword.operator.attribute-equals.xml.odoo_attr_readonly", "text.odoo_attr_readonly", "string.attribute-value.xml.start.odoo_attr_readonly", "string.attribute-value.xml.code.odoo_attr_readonly", "string.attribute-value.xml.end.odoo_attr_readonly"],
+                token: ["entity.other.attribute-name.xml.weth_attr_readonly", "keyword.operator.attribute-equals.xml.weth_attr_readonly", "text.weth_attr_readonly", "string.attribute-value.xml.start.weth_attr_readonly", "string.attribute-value.xml.code.weth_attr_readonly", "string.attribute-value.xml.end.weth_attr_readonly"],
             })
         }
 
@@ -25,7 +25,7 @@ define("ace/mode/qweb_highlight_rules", ["require", "exports", "module", "ace/li
                 attributes: [{
                     include: "attributes_display_custom",
                 }, {
-                    include: "attributes_odoo",
+                    include: "attributes_weth",
                 }, {
                     include: "attributes_qweb",
                 }, {
@@ -36,11 +36,11 @@ define("ace/mode/qweb_highlight_rules", ["require", "exports", "module", "ace/li
 
                 attributes_display_custom,
 
-                attributes_odoo: [{
-                    token: ["entity.other.attribute-name.xml.odoo", "keyword.operator.attribute-equals.xml", "text", "string.attribute-value.xml.start", "string.attribute-value.xml.code", "string.attribute-value.xml.end"],
+                attributes_weth: [{
+                    token: ["entity.other.attribute-name.xml.weth", "keyword.operator.attribute-equals.xml", "text", "string.attribute-value.xml.start", "string.attribute-value.xml.code", "string.attribute-value.xml.end"],
                     regex: '(domain|attrs|options)(=)(\\s*)(")([^"]*)(")',
                 }, {
-                    token: ["entity.other.attribute-name.xml.odoo", "keyword.operator.attribute-equals.xml", "text", "string.attribute-value.xml.start", "string.attribute-value.xml.code", "string.attribute-value.xml.end"],
+                    token: ["entity.other.attribute-name.xml.weth", "keyword.operator.attribute-equals.xml", "text", "string.attribute-value.xml.start", "string.attribute-value.xml.code", "string.attribute-value.xml.end"],
                     regex: "(domain|attrs|options)(=)(\\s*)(')([^']*)(')",
                 }],
 
@@ -88,12 +88,12 @@ define("ace/mode/qweb_highlight_rules", ["require", "exports", "module", "ace/li
                     token: ["meta.tag.punctuation.tag-open.xml", "meta.tag.punctuation.end-tag-open.xml", "meta.tag.tag-name.xml"],
                     regex: "(?:(<)|(</))((?:" + tagRegex + ":)?" + tagRegex + ")",
                     next: [{
-                            include: "attributes",
-                        }, {
-                            token: ["meta.tag.punctuation.end-tag-close.xml", "meta.tag.punctuation.tag-close.xml"],
-                            regex: "(/>)|(>)",
-                            next: "start",
-                        },
+                        include: "attributes",
+                    }, {
+                        token: ["meta.tag.punctuation.end-tag-close.xml", "meta.tag.punctuation.tag-close.xml"],
+                        regex: "(/>)|(>)",
+                        next: "start",
+                    },
                     ],
                 }],
             },
@@ -109,7 +109,7 @@ define("ace/mode/qweb_highlight_rules", ["require", "exports", "module", "ace/li
     exports.QWebHighlightRules = QWebHighlightRules;
 });
 
-define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang","ace/mode/text","ace/mode/qweb_highlight_rules","ace/mode/behaviour/xml","ace/mode/folding/xml","ace/worker/worker_client"], function(require, exports, module) {
+define("ace/mode/qweb", ["require", "exports", "module", "ace/lib/oop", "ace/lib/lang", "ace/mode/text", "ace/mode/qweb_highlight_rules", "ace/mode/behaviour/xml", "ace/mode/folding/xml", "ace/worker/worker_client"], function (require, exports, module) {
     "use strict";
 
     var oop = require("../lib/oop");
@@ -143,7 +143,7 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
     }
 
     // See issue https://github.com/ajaxorg/ace/issues/5877
-    function intersects(r1, r2, exludeEnd=true) {
+    function intersects(r1, r2, exludeEnd = true) {
         if (exludeEnd) {
             r1 = new AceRange(r1.start.row, r1.start.column, r1.end.row, r1.end.column - 1)
             r2 = new AceRange(r2.start.row, r2.start.column, r2.end.row, r2.end.column - 1)
@@ -167,7 +167,7 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
             if (token.type === "meta.tag.punctuation.tag-close.xml" || token.type === "meta.tag.punctuation.end-tag-close.xml") {
                 currentTagRo = null;
             }
-            if (token.type?.includes(".odoo_attr_readonly")) {
+            if (token.type?.includes(".weth_attr_readonly")) {
                 (currentTagRo || readOnlys).push(token);
             }
         }
@@ -177,7 +177,7 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
         return readOnlys.flat();
     }
 
-    var Mode = function(options) {
+    var Mode = function (options) {
         this.HighlightRules = QWebHighlightRules;
         this.$behaviour = new XmlBehaviour();
 
@@ -186,7 +186,7 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
             ...(options?.highlightRulesConfig || {}),
         };
         if (highlightRulesConfig.readonlyAttributes?.length) {
-            this.$highlightRuleConfig = {...highlightRulesConfig };
+            this.$highlightRuleConfig = { ...highlightRulesConfig };
             this.$behaviour.add("readonly_attr", "insertion", (state, action, editor, session, text) => {
                 const range = editor.getSelectionRange();
                 const tokensInRange = [...getTokensInRange(session, range)];
@@ -199,7 +199,7 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
 
                 // Make sure we insert a space before a readonly attribute
                 const lastToken = tokensInRange.at(-1);
-                if (lastToken?.edge && !text.endsWith(" ") && lastToken?.type?.includes(".odoo_attr_readonly")) {
+                if (lastToken?.edge && !text.endsWith(" ") && lastToken?.type?.includes(".weth_attr_readonly")) {
                     return { text: text + " ", selection: [text.length, text.length] };
                 }
             });
@@ -218,21 +218,21 @@ define("ace/mode/qweb",["require","exports","module","ace/lib/oop","ace/lib/lang
 
     oop.inherits(Mode, TextMode);
 
-    (function() {
+    (function () {
 
         this.voidElements = lang.arrayToMap([]);
 
-        this.blockComment = {start: "<!--", end: "-->"};
+        this.blockComment = { start: "<!--", end: "-->" };
 
-        this.createWorker = function(session) {
+        this.createWorker = function (session) {
             var worker = new WorkerClient(["ace"], "ace/mode/xml_worker", "Worker");
             worker.attachToDocument(session.getDocument());
 
-            worker.on("error", function(e) {
+            worker.on("error", function (e) {
                 session.setAnnotations(e.data);
             });
 
-            worker.on("terminate", function() {
+            worker.on("terminate", function () {
                 session.clearAnnotations();
             });
 

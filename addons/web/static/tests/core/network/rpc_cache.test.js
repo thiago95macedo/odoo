@@ -36,12 +36,12 @@ test("isRPCCacheDisabled: depends on the 'cache' url param", async () => {
         startRouter();
         return isRPCCacheDisabled();
     }
-    expect(loadUrl("/odoo")).toBe(false);
-    expect(loadUrl("/odoo?cache=0")).toBe(true);
-    expect(loadUrl("/odoo?cache=false")).toBe(true);
+    expect(loadUrl("/weth")).toBe(false);
+    expect(loadUrl("/weth?cache=0")).toBe(true);
+    expect(loadUrl("/weth?cache=false")).toBe(true);
     // the router serializes falsy values as an empty string
-    expect(loadUrl("/odoo?cache=")).toBe(true);
-    expect(loadUrl("/odoo?cache=1")).toBe(false);
+    expect(loadUrl("/weth?cache=")).toBe(true);
+    expect(loadUrl("/weth?cache=1")).toBe(false);
 });
 
 test("RamCache: can cache a simple call", async () => {

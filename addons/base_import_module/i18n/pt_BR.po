@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:42+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/base_import_module/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -44,14 +44,14 @@ msgstr ""
 "personalização.\n"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "\n"
 "You may need the Enterprise version to install the data module. Please visit "
 "https://www.weth.com.br/pricing-plan for more information.\n"
 "If you need Website themes, it can be downloaded from https://github.com/"
-"odoo/design-themes.\n"
+"weth/design-themes.\n"
 msgstr ""
 "\n"
 "Pode ser que você precise da versão Enterprise para instalar esse módulo de "
@@ -67,7 +67,7 @@ msgid "Activate"
 msgstr "Ativar"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 #: model_terms:ir.ui.view,arch_db:base_import_module.view_module_filter_apps_inherit
 msgid "Apps"
@@ -84,7 +84,7 @@ msgid "Close"
 msgstr "Fechar"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "Connection to %(url)s failed, the module %(module)s cannot be downloaded."
@@ -92,7 +92,7 @@ msgstr ""
 "Falha na conexão com %(url)s. Não foi possível baixar o módulo %(module)s."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "Connection to %s failed The list of industry modules cannot be fetched"
 msgstr ""
@@ -100,7 +100,7 @@ msgstr ""
 "setor"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/controllers/main.py:0
 msgid "Could not select database '%s'"
 msgstr "Não foi possível selecionar a base de dados '%s'"
@@ -124,7 +124,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "Error while importing module '%(module)s'.\n"
@@ -143,7 +143,7 @@ msgid "Extra lines of Code"
 msgstr "Linhas extras de código"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "File '%s' exceed maximum allowed file size"
 msgstr "O arquivo '%s' excede o tamanho máximo permitido"
@@ -206,7 +206,7 @@ msgid "Install"
 msgstr "Instalar"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "Install an Industry"
 msgstr "Instalar um Segmento"
@@ -232,7 +232,7 @@ msgid "Load demo data"
 msgstr "Carregar dados de demonstração"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "Load demo data to test the industry's features with sample records. Do not "
@@ -267,13 +267,13 @@ msgid "Modules Dependencies"
 msgstr "Dependências de módulos"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "No file sent."
 msgstr "Nenhum arquivo enviado."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "No manifest found in '%(modules)s'. Can't import the zip file."
 msgstr ""
@@ -306,19 +306,19 @@ msgid "Official Apps"
 msgstr "Aplicativos oficiais"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "Only administrators can install data modules."
 msgstr "Somente administradores podem instalar módulos de dados."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/controllers/main.py:0
 msgid "Only administrators can upload a module"
 msgstr "Somente administradores podem fazer o upload de um módulo"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "Only zip files are supported."
 msgstr "Somente arquivos zip são suportados."
@@ -329,14 +329,14 @@ msgid "Status"
 msgstr "Status"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
-msgid "Studio customizations require the Odoo Studio app."
+msgid "Studio customizations require the WETH Studio app."
 msgstr ""
-"Personalizações do Estúdio requerem a instalação do aplicativo Odoo Estúdio."
+"Personalizações do Estúdio requerem a instalação do aplicativo WETH Estúdio."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "The assets path in the manifest of imported module '%(module_name)s' cannot "
@@ -346,7 +346,7 @@ msgstr ""
 "não pode conter caracteres curinga globais (ex.: *, **)."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "The installation of the data module would fail as the following dependencies "
@@ -356,7 +356,7 @@ msgstr ""
 "não são encontradas no addons-path:\n"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid ""
 "The list of industry applications cannot be fetched. Please try again later"
@@ -365,13 +365,13 @@ msgstr ""
 "mais tarde."
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "The module %s cannot be downloaded"
 msgstr "Não foi possível baixar o módulo %s"
 
 #. module: base_import_module
-#. odoo-python
+#. weth-python
 #: code:addons/base_import_module/models/ir_module.py:0
 msgid "Unknown module dependencies:"
 msgstr "Dependências de módulo desconhecidas:"

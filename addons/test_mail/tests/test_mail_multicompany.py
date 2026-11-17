@@ -54,7 +54,7 @@ class TestMailMCCommon(MailCommon, TestRecipients):
             'message_type': 'email',
             'subtype_id': cls.env.ref('mail.mt_comment').id,
             'author_id': cls.partner_1.id,
-            'message_id': '<123456-openerp-%s-mail.test.gateway@%s>' % (cls.test_record.id, socket.gethostname()),
+            'message_id': '<123456-weth-%s-mail.test.gateway@%s>' % (cls.test_record.id, socket.gethostname()),
         })
 
         cls._create_portal_user()

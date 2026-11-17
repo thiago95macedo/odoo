@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mail_bot/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Aaaaaw that's really cute but, you know, bots don't work that way. You're "
@@ -40,11 +40,11 @@ msgstr ""
 
 #. module: mail_bot
 #: model:ir.module.module,summary:base.module_mail_bot
-msgid "Add OdooBot in discussions"
-msgstr "Adicionar o OdooBot nas discussões"
+msgid "Add WethBot in discussions"
+msgstr "Adicionar o WethBot nas discussões"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__disabled
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__disabled
 msgid "Disabled"
 msgstr "Desabilitado"
 
@@ -61,13 +61,13 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/res_users.py:0
 msgid "Go ahead - Try sending me an emoji 😊"
 msgstr "Vá em frente - Tente me enviar um emoji 😊"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Great! You can customize %(bold_start)scanned responses%(bold_end)s in the "
@@ -77,25 +77,25 @@ msgstr ""
 "s nas configurações do aplicativo Mensagens."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/res_users.py:0
 msgid "Hello 👋"
 msgstr "Olá 👋"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "Hmmm..."
 msgstr "Hmmm..."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "I'm afraid I don't understand. Sorry!"
 msgstr "Acho que não entendi. Desculpe!"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "I'm not smart enough to answer your question.%(new_line)sTo follow my guide, "
@@ -113,12 +113,12 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__idle
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__idle
 msgid "Idle"
 msgstr "Inativo"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "It looks like you're not sure what to do next. Please type %(command_start)s/"
@@ -135,12 +135,12 @@ msgid "Mail Bot"
 msgstr "Bot de e-mail"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__not_initialized
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__not_initialized
 msgid "Not initialized"
 msgstr "Não inicializado"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Not quite. To continue the tour, please send an emoji by typing %"
@@ -152,7 +152,7 @@ msgstr ""
 "%(smile_icon)s para escolher um."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Not sure what you're doing? Please type %(command_start)s::%(command_end)s "
@@ -162,57 +162,57 @@ msgstr ""
 "ver respostas automáticas. Selecione uma e pressione Enter."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/res_users.py:0
 msgid ""
-"Odoo's Discuss application helps employees collaborate efficiently. I'm here "
+"WETH's Discuss application helps employees collaborate efficiently. I'm here "
 "to help you explore its features."
 msgstr ""
-"O aplicativo Mensagens do Odoo ajuda os funcionários a colaborar de forma "
+"O aplicativo Mensagens do WETH ajuda os funcionários a colaborar de forma "
 "eficiente. Estou aqui para ajudá-lo a explorar seus recursos."
 
 #. module: mail_bot
 #: model:ir.module.module,shortdesc:base.module_mail_bot
-msgid "OdooBot"
-msgstr "OdooBot"
+msgid "WethBot"
+msgstr "WethBot"
 
 #. module: mail_bot
-#: model:ir.model.fields,field_description:mail_bot.field_res_users__odoobot_state
-msgid "OdooBot Status"
-msgstr "Status do OdooBot"
+#: model:ir.model.fields,field_description:mail_bot.field_res_users__wethbot_state
+msgid "WethBot Status"
+msgstr "Status do WethBot"
 
 #. module: mail_bot
-#: model:ir.model.fields,field_description:mail_bot.field_res_users__odoobot_failed
-msgid "Odoobot Failed"
-msgstr "OdooBot falhou"
+#: model:ir.model.fields,field_description:mail_bot.field_res_users__wethbot_failed
+msgid "Wethbot Failed"
+msgstr "WethBot falhou"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__onboarding_attachement
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__onboarding_attachement
 msgid "Onboarding attachment"
 msgstr "Anexo de integração"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__onboarding_canned
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__onboarding_canned
 msgid "Onboarding canned"
 msgstr "Integração empacotada"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__onboarding_command
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__onboarding_command
 msgid "Onboarding command"
 msgstr "Comando de integração"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__onboarding_emoji
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__onboarding_emoji
 msgid "Onboarding emoji"
 msgstr "Emoji de integração"
 
 #. module: mail_bot
-#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__odoobot_state__onboarding_ping
+#: model:ir.model.fields.selection,name:mail_bot.selection__res_users__wethbot_state__onboarding_ping
 msgid "Onboarding ping"
 msgstr "Ping de integração"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Sorry I'm sleepy. Or not! Maybe I'm just trying to hide my unawareness of "
@@ -224,49 +224,49 @@ msgstr ""
 "recursos se você escrever: %(command_start)siniciar o tour%(command_end)s."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Sorry, I'm not listening right now. To get my attention, %"
-"(bold_start)smention me%(bold_end)s by typing %(command_start)s@OdooBot%"
+"(bold_start)smention me%(bold_end)s by typing %(command_start)s@WethBot%"
 "(command_end)s and selecting me."
 msgstr ""
 "Desculpe, não estou ouvindo no momento. Para chamar minha atenção, %"
-"(bold_start)smencione-me%(bold_end)s digitando %(command_start)s@OdooBot%"
+"(bold_start)smencione-me%(bold_end)s digitando %(command_start)s@WethBot%"
 "(command_end)s e selecionando-me."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "Thanks"
 msgstr "Obrigado"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "Thanks for your feedback. Goodbye!"
 msgstr "Agradecemos por seu feedback!"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "That's not nice! I'm a bot but I have feelings... 💔"
 msgstr "Isso não é legal! Eu sou um bot, mas tenho sentimentos... 💔"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "That's the end of this overview. You can %(bold_start)sclose this "
 "conversation%(bold_end)s or type %(command_start)sstart the tour%"
-"(command_end)s to see it again. Enjoy exploring Odoo!"
+"(command_end)s to see it again. Enjoy exploring Weth!"
 msgstr ""
 "Esse é o fim desta visão geral. Você pode %(bold_start)sfechar esta conversa%"
 "(bold_end)s ou digitar %(command_start)sstart the tour%(command_end)s para "
-"vê-la novamente. Divirta-se explorando o Odoo!"
+"vê-la novamente. Divirta-se explorando o Weth!"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "To %(bold_start)ssend an attachment%(bold_end)s, first click the %"
@@ -276,13 +276,13 @@ msgstr ""
 "(plus_icon)s, em seguida selecione %(paperclip_icon)s Anexar arquivos."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "To get started, try sending me an emoji 😊"
 msgstr "Para começar, tente me enviar um emoji 😊"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "To use special commands, %(bold_start)sstart your message with a %"
@@ -294,7 +294,7 @@ msgstr ""
 "(command_start)s/help%(command_end)s."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Unfortunately, I'm just a bot 😞 I don't understand that.%(new_line)sIf you "
@@ -313,7 +313,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Wonderful! 😇%(new_line)sTry typing %(command_start)s::%(command_end)s to "
@@ -323,19 +323,19 @@ msgstr ""
 "para usar respostas automáticas. Criei uma temporária apenas para você."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Wow, you're a natural!%(new_line)s Use @username to mention someone and grab "
 "their attention.%(new_line)s %(bold_start)sTry mentioning me by typing%"
-"(bold_end)s %(command_start)s@OdooBot%(command_end)s in your message."
+"(bold_end)s %(command_start)s@WethBot%(command_end)s in your message."
 msgstr ""
 "Uau, você é um natural!%(new_line)s Use @nomeusuario para mencionar alguém e "
 "chamar sua atenção.%(new_line)s %(bold_start)sTente me mencionar digitando%"
-"(bold_end)s %(command_start)s@OdooBot%(command_end)s em sua mensagem."
+"(bold_end)s %(command_start)s@WethBot%(command_end)s em sua mensagem."
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid ""
 "Yep, I'm here! 🎉 %(new_line)sNow, try %(bold_start)ssending an attachment%"
@@ -345,31 +345,31 @@ msgstr ""
 "(bold_end)s 📎 - talvez uma foto do seu cachorro fofo... 🐕"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "fuck"
 msgstr "porra"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "help"
 msgstr "ajuda"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "i love you"
 msgstr "eu te amo"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "love"
 msgstr "amor"
 
 #. module: mail_bot
-#. odoo-python
+#. weth-python
 #: code:addons/mail_bot/models/mail_bot.py:0
 msgid "start the tour"
 msgstr "iniciar o tour"

@@ -125,7 +125,7 @@ test("filter by a date field using period works", async () => {
     ]);
     expect(isItemSelected("Date")).toBe(true);
     expect(isOptionSelected("Date", "March")).toBe(true);
-    expect(queryAllTexts`.o-dropdown--menu .o_item_option`).toEqual([
+    expect(queryAllTexts`.w-dropdown--menu .o_item_option`).toEqual([
         "Today",
         "This Week",
         "This Month",
@@ -568,7 +568,7 @@ test("filter by a date field using relative smart dates works", async () => {
     await toggleMenuItem("Date");
 
     // Relative options appear before the period options
-    expect(queryAllTexts`.o-dropdown--menu .o_item_option`.slice(0, 5)).toEqual([
+    expect(queryAllTexts`.w-dropdown--menu .o_item_option`.slice(0, 5)).toEqual([
         "Today",
         "This Week",
         "This Month",

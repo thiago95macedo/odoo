@@ -26,7 +26,7 @@ export class MobileTablePicker extends Component {
             "keydown",
             (ev) => {
                 ev.stopPropagation();
-                if (!ev.target.matches(".o-we-tablesizepopover input")) {
+                if (!ev.target.matches(".w-we-tablesizepopover input")) {
                     return;
                 }
                 switch (ev.key) {

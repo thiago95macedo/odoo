@@ -2,9 +2,9 @@ import { Interaction } from '@web/public/interaction';
 import { registry } from '@web/core/registry';
 
 export class ProductVariantPreviewImageHover extends Interaction {
-    static selector = '.oe_product_cart.o_has_variations';
+    static selector = '.oe_product_cart.w_has_variations';
     dynamicContent = {
-        '.o_product_variant_preview': {
+        '.w_product_variant_preview': {
             't-on-mouseenter': this._mouseEnter,
             't-on-mouseleave': this._mouseLeave,
             't-on-click': this._onClick,
@@ -79,7 +79,7 @@ export class ProductVariantPreviewImageHover extends Interaction {
     _onClick(ev) {
         if (this.uiService.isSmall) {
             ev.preventDefault();
-            const targetElement = ev.target.closest('.o_product_variant_preview');
+            const targetElement = ev.target.closest('.w_product_variant_preview');
             const productCard = ev.target.closest('.oe_product_cart');
             productCard.querySelector('.oe_product_image_link').href = targetElement.href;
             const variantImageSrc = targetElement.dataset.variantImage;

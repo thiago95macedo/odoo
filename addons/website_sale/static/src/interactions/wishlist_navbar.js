@@ -4,7 +4,7 @@ import { rpc } from '@web/core/network/rpc';
 import wishlistUtils from '@website_sale/js/wishlist_utils';
 
 export class WishlistNavbar extends Interaction {
-    static selector = '.o_wsale_my_wish';
+    static selector = '.w_wsale_my_wish';
 
     /**
      * Refresh the products in the wishlist.

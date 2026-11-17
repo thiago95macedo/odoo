@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-20/website_payment/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-20/website_payment/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,19 +53,19 @@ msgid "<span class=\"oe_inline px-0\">or</span>"
 msgstr "<span class=\"oe_inline px-0\">ou</span>"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Align Left"
 msgstr "Alinhar à esquerda"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Align Right"
 msgstr "Alinhar à direita"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Alignment"
 msgstr "Alinhamento"
@@ -76,7 +76,7 @@ msgid "All Websites"
 msgstr "Websites"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Center"
 msgstr "2H Center"
@@ -123,7 +123,7 @@ msgid "Find another provider"
 msgstr "Encontre outro provedor"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Height"
 msgstr "Altura"
@@ -135,13 +135,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/website_builder/supported_payment_methods_option.xml:0
 msgid "Limit"
 msgstr "Limite"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/snippets/s_supported_payment_methods/000.edit.xml:0
 msgid "No published payment methods"
 msgstr "Nenhum método de pagamento publicado"
@@ -176,7 +176,7 @@ msgid "Supported Payment Methods"
 msgstr "Formas de pagamento aceitas"
 
 #. module: website_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_payment/static/src/snippets/s_supported_payment_methods/000.edit.xml:0
 msgid "View providers"
 msgstr "Ver provedores"

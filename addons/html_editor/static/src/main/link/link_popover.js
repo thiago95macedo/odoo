@@ -277,7 +277,7 @@ export class LinkPopover extends Component {
     }
 
     onKeydownEnter(ev) {
-        const isAutoCompleteDropdownOpen = document.querySelector(".o-autocomplete--dropdown-menu");
+        const isAutoCompleteDropdownOpen = document.querySelector(".w-autocomplete--dropdown-menu");
         if (ev.key === "Enter" && !isAutoCompleteDropdownOpen && this.state.url) {
             ev.preventDefault();
             this.onClickApply();
@@ -398,7 +398,7 @@ export class LinkPopover extends Component {
             }
         } else if (
             window.location.hostname !== url.hostname &&
-            !new RegExp(`^https?://${session.db}\\.odoo\\.com(/.*)?$`).test(url.origin)
+            !new RegExp(`^https?://${session.db}\\.weth\\.com(/.*)?$`).test(url.origin)
         ) {
             // Preview pages from current website only. External website will
             // most of the time raise a CORS error. To avoid that error, we

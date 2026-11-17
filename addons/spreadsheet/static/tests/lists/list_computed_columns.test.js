@@ -21,7 +21,7 @@ test("computed column with a constant formula", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -37,10 +37,10 @@ test("computed column with a constant formula", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "computed")');
-    setCellContent(model, "A2", '=ODOO.LIST.VALUE(1, 2, "computed")');
-    setCellContent(model, "A3", '=ODOO.LIST.VALUE(1, 3, "computed")');
-    setCellContent(model, "A4", '=ODOO.LIST.VALUE(1, 4, "computed")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "computed")');
+    setCellContent(model, "A2", '=WETH.LIST.VALUE(1, 2, "computed")');
+    setCellContent(model, "A3", '=WETH.LIST.VALUE(1, 3, "computed")');
+    setCellContent(model, "A4", '=WETH.LIST.VALUE(1, 4, "computed")');
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(42);
     expect(getCellValue(model, "A2")).toBe(42);
@@ -61,7 +61,7 @@ test("computed column referencing another column by its string name", async () =
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -77,10 +77,10 @@ test("computed column referencing another column by its string name", async () =
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", "=ODOO.LIST.VALUE(1, 1, \"'2 Foo'\")");
-    setCellContent(model, "A2", "=ODOO.LIST.VALUE(1, 2, \"'2 Foo'\")");
-    setCellContent(model, "A3", "=ODOO.LIST.VALUE(1, 3, \"'2 Foo'\")");
-    setCellContent(model, "A4", "=ODOO.LIST.VALUE(1, 4, \"'2 Foo'\")");
+    setCellContent(model, "A1", "=WETH.LIST.VALUE(1, 1, \"'2 Foo'\")");
+    setCellContent(model, "A2", "=WETH.LIST.VALUE(1, 2, \"'2 Foo'\")");
+    setCellContent(model, "A3", "=WETH.LIST.VALUE(1, 3, \"'2 Foo'\")");
+    setCellContent(model, "A4", "=WETH.LIST.VALUE(1, 4, \"'2 Foo'\")");
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(24); // 12 * 2
     expect(getCellValue(model, "A2")).toBe(2); // 1 * 2
@@ -100,7 +100,7 @@ test("computed column referencing a spreadsheet cell", async () => {
     // Put the multiplier in a cell
     setCellContent(model, "A20", "3");
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -116,7 +116,7 @@ test("computed column referencing a spreadsheet cell", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "computed")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "computed")');
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(36); // 12 * 3
 });
@@ -132,7 +132,7 @@ test("computed column is recomputed when its cell dependency changes", async () 
 
     setCellContent(model, "A20", "2");
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -148,7 +148,7 @@ test("computed column is recomputed when its cell dependency changes", async () 
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "computed")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "computed")');
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(24); // 12 * 2
 
@@ -166,7 +166,7 @@ test("chained computed columns", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -187,8 +187,8 @@ test("chained computed columns", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "computed1")');
-    setCellContent(model, "A2", '=ODOO.LIST.VALUE(1, 1, "computed2")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "computed1")');
+    setCellContent(model, "A2", '=WETH.LIST.VALUE(1, 1, "computed2")');
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(36); // 12 * 3
     expect(getCellValue(model, "A2")).toBe(72); // 12 * 3 * 2
@@ -202,7 +202,7 @@ test("self-referencing computed column returns #CYCLE", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -218,7 +218,7 @@ test("self-referencing computed column returns #CYCLE", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "self")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "self")');
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").value).toBe("#CYCLE");
 });
@@ -231,7 +231,7 @@ test("computed column with non-existing symbol returns #N/A", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -247,12 +247,12 @@ test("computed column with non-existing symbol returns #N/A", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "Computed")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "Computed")');
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").value).toBe("#N/A");
 });
 
-test("computed column works in dynamic ODOO.LIST mode", async () => {
+test("computed column works in dynamic WETH.LIST mode", async () => {
     // Partner.foo values: [12, 1, 17, 2]
     const { model } = await createSpreadsheetWithList({
         columns: [{ name: "foo", string: "Foo" }],
@@ -261,7 +261,7 @@ test("computed column works in dynamic ODOO.LIST mode", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -278,7 +278,7 @@ test("computed column works in dynamic ODOO.LIST mode", async () => {
     await waitForDataLoaded(model);
 
     // Insert the dynamic list in a separate area to check spilled values
-    setCellContent(model, "P1", "=ODOO.LIST(1, 4)");
+    setCellContent(model, "P1", "=WETH.LIST(1, 4)");
     await waitForDataLoaded(model);
 
     // Column 1 = Foo header/values, Column 2 = Double Foo header/values
@@ -290,7 +290,7 @@ test("computed column works in dynamic ODOO.LIST mode", async () => {
     expect(getCellValue(model, "Q3")).toBe(2); // 1 * 2
 });
 
-test("adding or updating a computed column via UPDATE_ODOO_LIST does not trigger RPC", async () => {
+test("adding or updating a computed column via UPDATE_WETH_LIST does not trigger RPC", async () => {
     let loaded = false;
     const { model } = await createSpreadsheetWithList({
         columns: [{ name: "foo", string: "Foo" }],
@@ -305,7 +305,7 @@ test("adding or updating a computed column via UPDATE_ODOO_LIST does not trigger
     const listDef = model.getters.getListDefinition(listId);
     loaded = true;
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -322,7 +322,7 @@ test("adding or updating a computed column via UPDATE_ODOO_LIST does not trigger
     await waitForDataLoaded(model);
     expect.verifySteps([]);
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -353,7 +353,7 @@ test("computed column definition is preserved in export/import roundtrip", async
         string: "Double Foo",
         computedBy: { formula: "=foo*2", sheetId },
     };
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: { ...listDef, columns: [...listDef.columns, computedCol] },
     });
@@ -373,7 +373,7 @@ test("computed column definition is preserved in export/import roundtrip", async
         spreadsheetData: exported,
     });
     await waitForDataLoaded(model2);
-    setCellContent(model2, "A1", '=ODOO.LIST.VALUE(1, 1, "double_foo")');
+    setCellContent(model2, "A1", '=WETH.LIST.VALUE(1, 1, "double_foo")');
     await waitForDataLoaded(model2);
     expect(getCellValue(model2, "A1")).toBe(24); // 12 * 2
 });
@@ -387,7 +387,7 @@ test("undo/redo adding a computed column", async () => {
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -440,7 +440,7 @@ test("hidden column referenced by a computed column is still fetched", async () 
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
 
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -475,7 +475,7 @@ test("computed column referencing multiple other columns", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -491,10 +491,10 @@ test("computed column referencing multiple other columns", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 1, "sum_col")');
-    setCellContent(model, "A2", '=ODOO.LIST.VALUE(1, 2, "sum_col")');
-    setCellContent(model, "A3", '=ODOO.LIST.VALUE(1, 3, "sum_col")');
-    setCellContent(model, "A4", '=ODOO.LIST.VALUE(1, 4, "sum_col")');
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 1, "sum_col")');
+    setCellContent(model, "A2", '=WETH.LIST.VALUE(1, 2, "sum_col")');
+    setCellContent(model, "A3", '=WETH.LIST.VALUE(1, 3, "sum_col")');
+    setCellContent(model, "A4", '=WETH.LIST.VALUE(1, 4, "sum_col")');
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(22); // 12 + 10
     expect(getCellValue(model, "A2")).toBe(12); // 1 + 11
@@ -510,7 +510,7 @@ test("getListCompiledColumnFormula returns the compiled formula for a computed c
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -547,7 +547,7 @@ test("computed column header is its string name", async () => {
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -563,7 +563,7 @@ test("computed column header is its string name", async () => {
     });
     await waitForDataLoaded(model);
 
-    setCellContent(model, "A1", '=ODOO.LIST.HEADER(1, "computed")');
+    setCellContent(model, "A1", '=WETH.LIST.HEADER(1, "computed")');
     expect(getCellValue(model, "A1")).toBe("My Computed Column");
 });
 
@@ -575,7 +575,7 @@ test("inserting a row after removing a list with a computed column", async () =>
     const [listId] = model.getters.getListIds();
     const sheetId = model.getters.getActiveSheetId();
     const listDef = model.getters.getListDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...listDef,
@@ -590,7 +590,7 @@ test("inserting a row after removing a list with a computed column", async () =>
         },
     });
     await waitForDataLoaded(model);
-    model.dispatch("REMOVE_ODOO_LIST", { listId });
+    model.dispatch("REMOVE_WETH_LIST", { listId });
     expect(model.getters.getListCompiledColumnFormula(listId, "computed")).toBe(undefined);
 
     const rowsBefore = model.getters.getNumberRows(sheetId);
@@ -616,11 +616,11 @@ test("renaming a computed column drops the compiled formula of the old name", as
         string: "Computed",
         computedBy: { formula: "=foo*A20", sheetId },
     };
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: { ...listDef, columns: [...listDef.columns, computedColumn] },
     });
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: { ...listDef, columns: [...listDef.columns, { ...computedColumn, name: "renamed" }] },
     });

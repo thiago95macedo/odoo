@@ -112,7 +112,7 @@ async function fetchInternalMetaData(url) {
     }
 
     const result = await keepLastPromise
-        .add(fetch(urlParsed, { headers: { "Odoo-Link-Preview": "True" } }))
+        .add(fetch(urlParsed, { headers: { "Weth-Link-Preview": "True" } }))
         .then((response) => ({
             contentPromise: response.text(),
             type: response.headers.get("content-type"),
@@ -501,7 +501,7 @@ export class LinkPlugin extends Plugin {
                 this.dependencies.selection.focusEditable();
                 // To avoid a race condition between the events spawn by :
                 // 1. the `focus editable` and
-                // 2. the odoo `Shortcut bar` closure
+                // 2. the weth `Shortcut bar` closure
                 // Which can affect the link overlay opening sequence if we keep it in sync.
                 // Therefore we need to wait for the next tick before triggering openLinkPopover.
                 setTimeout(() => this.openLinkPopover());
@@ -870,7 +870,7 @@ export class LinkPlugin extends Plugin {
         // Some unit tests fail when this.overlay.isOpen but the DOM don't contain the linkPopover yet.
         // Because of some kind of race condition between the hoot mock event and the owl renderer.
         // This is why we check for the popover in the DOM.
-        if (this.currentOverlay.isOpen && document.querySelector(".o-we-linkpopover")) {
+        if (this.currentOverlay.isOpen && document.querySelector(".w-we-linkpopover")) {
             this.currentOverlay.close();
             if (link && link.isConnected) {
                 this.dependencies.selection.setSelection({
@@ -961,11 +961,11 @@ export class LinkPlugin extends Plugin {
             ) ||
             isSelectionInProtected
         ) {
-            const popoverEl = document.querySelector(".o-we-linkpopover");
+            const popoverEl = document.querySelector(".w-we-linkpopover");
             const anchorNode = document.getSelection()?.anchorNode;
             if (
                 (popoverEl && !selectionData.documentSelection) ||
-                (anchorNode && isElement(anchorNode) && anchorNode.closest(".o-we-linkpopover"))
+                (anchorNode && isElement(anchorNode) && anchorNode.closest(".w-we-linkpopover"))
             ) {
                 return;
             }

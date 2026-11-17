@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/web_hierarchy/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -25,14 +25,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web_hierarchy
 msgid ""
 "\n"
-"Odoo Web Hierarchy view\n"
+"WETH Web Hierarchy view\n"
 "=======================\n"
 "\n"
 "This module adds a new view called to be able to define a view to display\n"
 "an organization such as an Organization Chart for employees for instance.\n"
 msgstr ""
 "\n"
-"Visualização de Hierarquia da Web do Odoo\n"
+"Visualização de Hierarquia da Web do Weth\n"
 "===========================================\n"
 "\n"
 "Este módulo adiciona uma nova visualização chamada para poder definir uma "
@@ -50,7 +50,7 @@ msgid "Base"
 msgstr "Base"
 
 #. module: web_hierarchy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_hierarchy/static/src/hierarchy_model.js:0
 msgid "Cannot change the parent because it will cause a cyclic."
 msgstr "Não é possível alterar o superior porque isso causará um ciclo."
@@ -68,14 +68,14 @@ msgid "Hierarchy"
 msgstr "Hierarquia"
 
 #. module: web_hierarchy
-#. odoo-python
+#. weth-python
 #: code:addons/web_hierarchy/models/ir_ui_view.py:0
 msgid "Hierarchy child can only be field or template, got %s"
 msgstr ""
 "O secundário da hierarquia só pode ser um campo ou um modelo, mas obteve %s"
 
 #. module: web_hierarchy
-#. odoo-python
+#. weth-python
 #: code:addons/web_hierarchy/models/ir_ui_view.py:0
 msgid "Hierarchy view can contain only one templates tag"
 msgstr "A visualização hierárquica pode conter apenas um marcador de modelo"
@@ -87,7 +87,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: web_hierarchy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_hierarchy/static/src/hierarchy_renderer.js:0
 msgid ""
 "Impossible to update the parent node of the dragged node because no parent "
@@ -97,7 +97,7 @@ msgstr ""
 "primário foi encontrado."
 
 #. module: web_hierarchy
-#. odoo-python
+#. weth-python
 #: code:addons/web_hierarchy/models/ir_ui_view.py:0
 msgid ""
 "Invalid attributes (%(invalid_attributes)s) in hierarchy view. Attributes "
@@ -107,13 +107,13 @@ msgstr ""
 "Os atributos devem estar em (%(valid_attributes)s)"
 
 #. module: web_hierarchy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_hierarchy/static/src/hierarchy_controller.xml:0
 msgid "New"
 msgstr "Novo"
 
 #. module: web_hierarchy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_hierarchy/static/src/hierarchy_model.js:0
 msgid ""
 "The parent of \"%s\" was successfully updated. Reloading records to account "
@@ -123,7 +123,7 @@ msgstr ""
 "contabilizar outras alterações."
 
 #. module: web_hierarchy
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_hierarchy/static/src/hierarchy_model.js:0
 msgid "The parent record cannot be the record dragged."
 msgstr "O registro primário não pode ser o registro arrastado."

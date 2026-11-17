@@ -1,4 +1,4 @@
-.o-mail-SubChannelPreview {
+.w-mail-SubChannelPreview {
     background-color: mix($gray-100, $gray-200);
 
     &:hover {
@@ -6,7 +6,7 @@
     }
 }
 
-.o-mail-SubChannelPreview-lastMessage {
+.w-mail-SubChannelPreview-lastMessage {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }

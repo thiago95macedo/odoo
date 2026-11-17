@@ -29,7 +29,7 @@ class TestImLivechatMessage(ChatbotCase, MailCommon):
                 'password': self.password,
                 'name': 'Ernest Employee',
                 'notification_type': 'inbox',
-                'odoobot_state': 'disabled',
+                'wethbot_state': 'disabled',
                 'signature': '--\nErnest',
             },
             {

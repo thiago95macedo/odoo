@@ -333,7 +333,7 @@ test("user context is combined with pivot context to fetch data", async function
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ fieldName: "probability" }],
@@ -384,13 +384,13 @@ test("Context is purged from PivotView related keys", async function (assert) {
             {
                 id: "sheet1",
                 cells: {
-                    A1: '=ODOO.PIVOT(1, "probability")',
+                    A1: '=WETH.PIVOT(1, "probability")',
                 },
             },
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 rows: [{ fieldName: "bar" }],
                 domain: [],
@@ -427,10 +427,10 @@ test("Context is purged from PivotView related keys", async function (assert) {
 
 test("Context stays purged from PivotView related keys after an invalidating command", async function () {
     const spreadsheetData = {
-        sheets: [{ id: "sheet1", cells: { A1: '=ODOO.PIVOT(1, "probability")' } }],
+        sheets: [{ id: "sheet1", cells: { A1: '=WETH.PIVOT(1, "probability")' } }],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 rows: [{ fieldName: "bar" }],
                 domain: [],
@@ -488,7 +488,7 @@ test("fetch metadata only once per model", async function () {
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -497,7 +497,7 @@ test("fetch metadata only once per model", async function () {
                 context: {},
             },
             2: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "bar" }],
                 domain: [],
                 measures: [{ field: "probability", operator: "max" }],
@@ -547,7 +547,7 @@ test("don't fetch pivot data if no formula use it", async function () {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -616,7 +616,7 @@ test("evaluates only once when two pivots are loading", async function () {
         sheets: [{ id: "sheet1" }],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -624,7 +624,7 @@ test("evaluates only once when two pivots are loading", async function () {
                 rows: [{ fieldName: "bar" }],
             },
             2: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -636,7 +636,7 @@ test("evaluates only once when two pivots are loading", async function () {
     const { model } = await createModelWithDataSource({
         spreadsheetData,
     });
-    model.config.custom.odooDataProvider.addEventListener("data-source-updated", () =>
+    model.config.custom.wethDataProvider.addEventListener("data-source-updated", () =>
         expect.step("data-source-notified")
     );
     setCellContent(model, "A1", '=PIVOT.VALUE("1", "probability:sum")');
@@ -655,7 +655,7 @@ test("concurrently load the same pivot twice", async function () {
         sheets: [{ id: "sheet1" }],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "foo" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -692,7 +692,7 @@ test("display loading while data is not fully available", async function () {
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "product_id" }],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -922,7 +922,7 @@ test("can import (export) contextual domain", async () => {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [],
                 domain: '[("foo", "=", uid)]',
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -953,7 +953,7 @@ test("Adding a measure should trigger a reload", async () => {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
                 model: "partner",
@@ -1003,7 +1003,7 @@ test("Updating dimensions with undefined values does not trigger a new rpc", asy
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [{ fieldName: "date" }],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
                 model: "partner",
@@ -1079,7 +1079,7 @@ test("pivot grouped by ID displays values correctly", async () => {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 rows: [{ fieldName: "id" }],
                 columns: [],
                 domain: [],
@@ -1107,7 +1107,7 @@ test("pivot grouped by ID in a chain displays values correctly", async () => {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 rows: [{ fieldName: "product_id.id" }],
                 columns: [],
                 domain: [],
@@ -1663,12 +1663,12 @@ test("PIVOT.HEADER formulas are correctly formatted at evaluation", async functi
     expect(getEvaluatedCell(model, "B2").format).toBe(undefined);
 });
 
-test("can edit pivot domain with UPDATE_ODOO_PIVOT_DOMAIN", async () => {
+test("can edit pivot domain with UPDATE_WETH_PIVOT_DOMAIN", async () => {
     const { model } = await createSpreadsheetWithPivot();
     const [pivotId] = model.getters.getPivotIds();
     expect(model.getters.getPivotCoreDefinition(pivotId).domain).toEqual([]);
     expect(getCellValue(model, "B4")).toBe(11);
-    model.dispatch("UPDATE_ODOO_PIVOT_DOMAIN", {
+    model.dispatch("UPDATE_WETH_PIVOT_DOMAIN", {
         pivotId,
         domain: [["foo", "in", [55]]],
     });
@@ -1725,7 +1725,7 @@ test("updating a pivot without changing anything rejects the command", async () 
 test("edited domain is exported", async () => {
     const { model } = await createSpreadsheetWithPivot();
     const [pivotId] = model.getters.getPivotIds();
-    model.dispatch("UPDATE_ODOO_PIVOT_DOMAIN", {
+    model.dispatch("UPDATE_WETH_PIVOT_DOMAIN", {
         pivotId,
         domain: [["foo", "in", [55]]],
     });
@@ -1800,7 +1800,7 @@ test("ignore sorted column if not part of measures", async () => {
     const spreadsheetData = {
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [],
                 domain: [],
                 measures: [{ id: "probability:sum", fieldName: "probability", aggregator: "sum" }],
@@ -1960,7 +1960,7 @@ test("can import a pivot with a calculated field", async function () {
         ],
         pivots: {
             1: {
-                type: "ODOO",
+                type: "WETH",
                 columns: [],
                 domain: [],
                 measures: [
@@ -2081,7 +2081,7 @@ test("isPivotUnused getter", async () => {
     model.dispatch("REQUEST_UNDO", {});
     expect(model.getters.isPivotUnused(pivotId)).toBe(true);
 
-    setCellContent(model, "A2", "[ds](odoo-data-source://pivot/1)");
+    setCellContent(model, "A2", "[ds](weth-data-source://pivot/1)");
     expect(model.getters.isListUnused("1")).toBe(false);
 });
 

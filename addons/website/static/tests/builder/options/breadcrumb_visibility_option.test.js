@@ -30,7 +30,7 @@ test("BreadcrumbVisibility option should appear without overTheContent", async (
     await waitFor("[data-label='Breadcrumb Position']");
     expect("[data-label='Breadcrumb Position']").toBeVisible();
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    expect(".o-overlay-container [data-action-value='overTheContent']").not.toHaveCount();
+    expect(".w-overlay-container [data-action-value='overTheContent']").not.toHaveCount();
 });
 
 test("BreadcrumbVisibility option should appear with overTheContent", async () => {
@@ -44,7 +44,7 @@ test("BreadcrumbVisibility option should appear with overTheContent", async () =
     await waitFor("[data-label='Breadcrumb Position']");
     expect("[data-label='Breadcrumb Position']").toBeVisible();
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    expect(".o-overlay-container [data-action-value='overTheContent']").toBeVisible();
+    expect(".w-overlay-container [data-action-value='overTheContent']").toBeVisible();
 });
 
 test("undo/redo Breadcrumb visibility options", async () => {
@@ -58,14 +58,14 @@ test("undo/redo Breadcrumb visibility options", async () => {
     await contains(":iframe .o_page_breadcrumb").click();
     const precedentBreadcrumb = queryOne(":iframe .o_page_breadcrumb").outerHTML;
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='overTheContent']").click();
+    await contains(".w-overlay-container [data-action-value='overTheContent']").click();
     undo(editor);
     redo(editor);
     undo(editor);
     const modifiedBreadcrumb = queryOne(":iframe .o_page_breadcrumb");
     expect(modifiedBreadcrumb).toHaveOuterHTML(precedentBreadcrumb);
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='hidden']").click();
+    await contains(".w-overlay-container [data-action-value='hidden']").click();
     undo(editor);
     redo(editor);
     undo(editor);
@@ -74,7 +74,7 @@ test("undo/redo Breadcrumb visibility options", async () => {
     // test the invisible elements panel
     await contains(":iframe .o_page_breadcrumb").click();
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='hidden']").click();
+    await contains(".w-overlay-container [data-action-value='hidden']").click();
     expect(modifiedBreadcrumb).toHaveClass("d-none");
     await contains(".o_we_invisible_el_panel div:contains('Breadcrumb')").click();
     expect(modifiedBreadcrumb).not.toHaveClass("d-none");
@@ -104,9 +104,9 @@ describe("save breadcrumb visibility", () => {
             expect.step("save breadcrumbs visibility");
             return true;
         });
-        await contains(".o-overlay-container [data-action-value='overTheContent']").click();
-        await contains(".o-snippets-top-actions button:contains(Save)").click();
-        expect(".o-website-builder_sidebar").not.toHaveClass("o_builder_sidebar_open");
+        await contains(".w-overlay-container [data-action-value='overTheContent']").click();
+        await contains(".w-snippets-top-actions button:contains(Save)").click();
+        expect(".w-website-builder_sidebar").not.toHaveClass("o_builder_sidebar_open");
         expect.verifySteps(["save breadcrumbs visibility"]);
     });
 
@@ -114,9 +114,9 @@ describe("save breadcrumb visibility", () => {
         onRpc("fake.test-model", "write", () => {
             throw "we only preview, it should not be saved";
         });
-        await contains(".o-overlay-container [data-action-value='overTheContent']").hover();
-        await contains(".o-snippets-top-actions button:contains(Save)").click();
-        expect(".o-website-builder_sidebar").not.toHaveClass("o_builder_sidebar_open");
+        await contains(".w-overlay-container [data-action-value='overTheContent']").hover();
+        await contains(".w-snippets-top-actions button:contains(Save)").click();
+        expect(".w-website-builder_sidebar").not.toHaveClass("o_builder_sidebar_open");
     });
 });
 
@@ -133,7 +133,7 @@ test("Breadcrumb over the content displays background and text color options", a
     await contains(":iframe .o_page_breadcrumb").click();
     await waitFor("[data-label='Breadcrumb Position']");
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='overTheContent']").click();
+    await contains(".w-overlay-container [data-action-value='overTheContent']").click();
     await waitFor("[data-label='Background']");
     await waitFor("[data-label='Text Color']");
     expect("[data-label='Background']").toBeVisible();
@@ -142,7 +142,7 @@ test("Breadcrumb over the content displays background and text color options", a
     await contains("[data-color='600']").click();
     const precedentBreadcrumb = queryOne(":iframe .o_page_breadcrumb").outerHTML;
     await contains("[data-label='Breadcrumb Position'] .dropdown").click();
-    await contains(".o-overlay-container [data-action-value='regular']").click();
+    await contains(".w-overlay-container [data-action-value='regular']").click();
     undo(editor);
     redo(editor);
     undo(editor);

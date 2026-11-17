@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 18:21+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/l10n_latam_invoice_document/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -110,11 +110,11 @@ msgstr "Todos os documentos"
 #: model:ir.model.fields,help:l10n_latam_invoice_document.field_account_move__l10n_latam_document_internal_type
 #: model:ir.model.fields,help:l10n_latam_invoice_document.field_l10n_latam_document_type__internal_type
 msgid ""
-"Analog to odoo account.move.move_type but with more options allowing to "
+"Analog to weth account.move.move_type but with more options allowing to "
 "identify the kind of document we are working with. (not only related to "
 "account.move, could be for documents of other models like stock.picking)"
 msgstr ""
-"Análogo ao account.move.move_type do Odoo, mas com mais opções que permitem "
+"Análogo ao account.move.move_type do WETH, mas com mais opções que permitem "
 "identificar com que tipo de documento estamos trabalhando. (relacionado não "
 "apenas com account.move, pode servir para documentos de outros modelos, como "
 "stock.picking)"
@@ -367,7 +367,7 @@ msgid "Name that will be printed in reports, for example \"CREDIT NOTE\""
 msgstr "Nome impresso em relatórios, por exemplo \"NOTA DE CRÉDITO\""
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_move.py:0
 msgid "Please set the document number on the following invoices %s."
 msgstr "Defina o número do documento nas seguintes faturas %s."
@@ -402,7 +402,7 @@ msgid "The document name"
 msgstr "O nome do documento"
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_move.py:0
 msgid ""
 "The journal require a document type but not document type has been selected "
@@ -426,13 +426,13 @@ msgid "Use Documents?"
 msgstr "Usar documentos?"
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_move.py:0
 msgid "We do not accept the usage of document types on receipts yet. "
 msgstr "Ainda não aceitamos o uso de tipos de documentos em recibos."
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_journal.py:0
 msgid ""
 "You can not modify the field \"Use Documents?\" if there are validated "
@@ -442,19 +442,19 @@ msgstr ""
 "validadas nesse diário!"
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_move.py:0
 msgid "You can not use a %s document type with a invoice"
 msgstr "Você não pode usar um tipo de documento %s com uma fatura"
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/models/account_move.py:0
 msgid "You can not use a %s document type with a refund invoice"
 msgstr "Você não pode usar um tipo de documento %s com uma fatura de reembolso"
 
 #. module: l10n_latam_invoice_document
-#. odoo-python
+#. weth-python
 #: code:addons/l10n_latam_invoice_document/wizards/account_move_reversal.py:0
 msgid ""
 "You can only reverse documents with legal invoicing documents from Latin "

@@ -279,10 +279,10 @@ test("do not lose id when adjusting 'selected'", async () => {
     await setupHTMLBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
 
-    await contains(".we-bg-options-container .o-hb-selectMany2X-toggle").click();
-    await contains(".o_select_menu_menu .o-dropdown-item").click();
-    await contains(".we-bg-options-container .o-hb-selectMany2X-toggle").click();
-    await contains(".o_select_menu_menu .o-dropdown-item").click();
+    await contains(".we-bg-options-container .w-hb-selectMany2X-toggle").click();
+    await contains(".o_select_menu_menu .w-dropdown-item").click();
+    await contains(".we-bg-options-container .w-hb-selectMany2X-toggle").click();
+    await contains(".o_select_menu_menu .w-dropdown-item").click();
     expect(":iframe .test-options-target").toHaveAttribute(
         "data-list",
         JSON.stringify([
@@ -299,7 +299,7 @@ test("do not lose id when adjusting 'selected'", async () => {
         ])
     );
 
-    await contains(".we-bg-options-container .o-hb-checkbox input").click();
+    await contains(".we-bg-options-container .w-hb-checkbox input").click();
     expect(":iframe .test-options-target").toHaveAttribute(
         "data-list",
         JSON.stringify([
@@ -317,7 +317,7 @@ test("do not lose id when adjusting 'selected'", async () => {
         ])
     );
 
-    await contains(".we-bg-options-container .o-hb-checkbox input").click();
+    await contains(".we-bg-options-container .w-hb-checkbox input").click();
     expect(":iframe .test-options-target").toHaveAttribute(
         "data-list",
         JSON.stringify([
@@ -367,10 +367,10 @@ test("can add item with string and integer ids", async () => {
     await contains(":iframe .test-options-target").click();
 
     for (let i = 0; i < 2; i++) {
-        await contains(".we-bg-options-container .o-hb-selectMany2X-toggle").click();
-        await contains(".o_select_menu_menu .o-dropdown-item").click();
+        await contains(".we-bg-options-container .w-hb-selectMany2X-toggle").click();
+        await contains(".o_select_menu_menu .w-dropdown-item").click();
     }
-    expect(".we-bg-options-container .o-hb-selectMany2X-toggle").toHaveProperty("disabled");
+    expect(".we-bg-options-container .w-hb-selectMany2X-toggle").toHaveProperty("disabled");
 });
 
 test("not editable builder list option", async () => {
@@ -413,7 +413,7 @@ test("not editable builder list option", async () => {
     await setupHTMLBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
     expect(".we-bg-options-container .builder_list_add_item").toHaveCount(0);
-    expect(".we-bg-options-container .o-hb-input-base[disabled]").toHaveCount(2);
+    expect(".we-bg-options-container .w-hb-input-base[disabled]").toHaveCount(2);
 });
 
 test("drops blank textual entries", async () => {
@@ -501,5 +501,5 @@ test("should disable last checked checkbox", async () => {
     await setupHTMLBuilder(`<div class="test-options-target">a</div>`);
     await contains(":iframe .test-options-target").click();
     await contains(".we-bg-options-container .builder_list_add_item").click();
-    expect(".we-bg-options-container tr .o-checkbox input").toHaveAttribute("disabled");
+    expect(".we-bg-options-container tr .w-checkbox input").toHaveAttribute("disabled");
 });

@@ -19,7 +19,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/website_crm_partner_assign/pt_BR/>\n"
+"weth-20/website_crm_partner_assign/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +61,7 @@ msgid "# of Opportunity"
 msgstr "Nº de oportunidades"
 
 #. module: website_crm_partner_assign
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm_partner_assign/static/src/interactions/crm_partner_assign.js:0
 msgid "%s's Opportunity"
 msgstr "Oportunidade de %s"
@@ -270,7 +270,7 @@ msgid "Activation"
 msgstr "Ativação"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 #: model:ir.model.fields,field_description:website_crm_partner_assign.field_res_partner_activation__active
 msgid "Active"
@@ -292,7 +292,7 @@ msgid "Address:"
 msgstr "Endereço:"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "All Countries"
 msgstr "Todos os países"
@@ -303,7 +303,7 @@ msgid "All Industries"
 msgstr "Todos os segmentos"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "All fields are required!"
 msgstr "Todos os campos são obrigatórios."
@@ -382,7 +382,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 #: model_terms:ir.ui.view,arch_db:website_crm_partner_assign.portal_my_leads
 msgid "Contact Name"
@@ -399,7 +399,7 @@ msgid "Contents"
 msgstr "Conteúdo"
 
 #. module: website_crm_partner_assign
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm_partner_assign/static/src/website_builder/website_crm_partner_assign_option.xml:0
 msgid "Countries"
 msgstr "Países"
@@ -548,7 +548,7 @@ msgid "Expected Closing:"
 msgstr "Fechamento esperado:"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Expected Revenue"
 msgstr "Receita esperada"
@@ -595,7 +595,7 @@ msgid "Forward to partner"
 msgstr "Encaminhar para o parceiro"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Future Activities"
 msgstr "Atividades futuras"
@@ -631,19 +631,19 @@ msgid "Grade"
 msgstr "Classe"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "I am interested by this lead."
 msgstr "Tenho interesse neste lead."
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "I am not interested by this lead. I contacted the lead."
 msgstr "Não estou interessado nesse lead. Entrei em contato com o lead."
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "I am not interested by this lead. I have not contacted the lead."
 msgstr "Não estou interessado nesse lead. Não entrei em contato com o lead."
@@ -719,7 +719,7 @@ msgid "Last date this case was forwarded/assigned to a partner"
 msgstr "Última data em que este caso foi enviado/atribuído a um parceiro"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Late Activities"
 msgstr "Atividades atrasadas"
@@ -804,7 +804,7 @@ msgid "Longitude"
 msgstr "Longitude geográfica"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Lost"
 msgstr "Perdido"
@@ -821,7 +821,7 @@ msgid "My Assigned Partners"
 msgstr "Meus parceiros atribuídos"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 #: model:ir.model.fields,field_description:website_crm_partner_assign.field_res_partner_activation__name
 msgid "Name"
@@ -833,7 +833,7 @@ msgid "New Opportunity"
 msgstr "Nova oportunidade"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Newest"
 msgstr "Mais recente"
@@ -855,7 +855,7 @@ msgid "Next Review"
 msgstr "Próxima revisão"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "No Activities"
 msgstr "Nenhuma atividade"
@@ -871,13 +871,13 @@ msgid "No more partner available"
 msgstr "Não há mais nenhum parceiro disponível"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "Not allowed to update the following field(s): %s."
 msgstr "Não é permitido atualizar os seguintes campos: %s."
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid ""
 "Only users with commercial partner which is a parent of the assigned partner "
@@ -986,7 +986,7 @@ msgid "Partners"
 msgstr "Parceiros"
 
 #. module: website_crm_partner_assign
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm_partner_assign/static/src/website_builder/website_crm_partner_assign_option.xml:0
 msgid "Partners Page"
 msgstr "Página de parceiros"
@@ -1031,7 +1031,7 @@ msgid "Priority:"
 msgstr "Prioridade:"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 #: model_terms:ir.ui.view,arch_db:website_crm_partner_assign.portal_my_opportunity
 msgid "Probability"
@@ -1084,7 +1084,7 @@ msgid "References"
 msgstr "Referências"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/website.py:0
 #: model:ir.module.module,shortdesc:base.module_website_crm_partner_assign
 #: model_terms:ir.ui.view,arch_db:website_crm_partner_assign.index
@@ -1144,13 +1144,13 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/wizard/crm_forward_to_partner.py:0
 msgid "Set an email address for the partner %s"
 msgstr "Defina um endereço de e-mail para o parceiro %s"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/wizard/crm_forward_to_partner.py:0
 msgid "Set an email address for the partner(s): %s"
 msgstr "Defina um endereço de e-mail para os parceiros %s"
@@ -1161,7 +1161,7 @@ msgid "Spam"
 msgstr "Spam"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 #: model_terms:ir.ui.view,arch_db:website_crm_partner_assign.portal_my_opportunities
 msgid "Stage"
@@ -1193,7 +1193,7 @@ msgid "Tags"
 msgstr "Marcadores"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/wizard/crm_forward_to_partner.py:0
 msgid "The Forward Email Template is not in the database"
 msgstr "O modelo de envio de e-mail não está na base de dados"
@@ -1209,7 +1209,7 @@ msgid "There are no opportunities."
 msgstr "Não existem oportunidades."
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "There is no country set in addresses for %(lead_names)s."
 msgstr "Não há nenhum país definido em endereços para %(lead_names)s."
@@ -1238,7 +1238,7 @@ msgstr ""
 "integração."
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Today Activities"
 msgstr "Atividades de hoje"
@@ -1254,7 +1254,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/models/crm_lead.py:0
 msgid "Warning"
 msgstr "Aviso"
@@ -1275,20 +1275,20 @@ msgid "Why aren't you interested in this lead?"
 msgstr "Por que você não está interessado nesse lead?"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "Won"
 msgstr "Ganho"
 
 #. module: website_crm_partner_assign
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm_partner_assign/static/src/website_builder/website_crm_partner_assign_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_crm_partner_assign.ref_country
 msgid "World Map"
 msgstr "Mapa mundi"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/wizard/crm_forward_to_partner.py:0
 msgid "Your leads"
 msgstr "Seus leads"
@@ -1304,13 +1304,13 @@ msgid "a single partner: manual selection of partner"
 msgstr "somente um parceiro: seleção manual de parceiro"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "activity_date_deadline"
 msgstr "activity_date_deadline"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "activity_ids"
 msgstr "activity_ids"
@@ -1345,13 +1345,13 @@ msgstr ""
 "notas do parceiro"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "user_id"
 msgstr "user_id"
 
 #. module: website_crm_partner_assign
-#. odoo-python
+#. weth-python
 #: code:addons/website_crm_partner_assign/controllers/main.py:0
 msgid "won_status"
 msgstr "won_status"

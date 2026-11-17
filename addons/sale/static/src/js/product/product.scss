@@ -1,9 +1,9 @@
 .table.o_sale_product_configurator_table {
-    & tr:first-child > td {
+    & tr:first-child>td {
         padding-top: 0 !important;
     }
 
-    > :not(caption) > *:last-child > * {
+    > :not(caption)>*:last-child>* {
         border-bottom: 0;
     }
 
@@ -22,6 +22,7 @@
 }
 
 @include media-breakpoint-up(md) {
+
     .o_sale_product_configurator_qty,
     .o_sale_product_configurator_price {
         width: 160px;
@@ -52,7 +53,7 @@
 }
 
 .o_sale_product_configurator_uom_choice.active label {
-    $-btn-secondary-design: map-get($o-btns-bs-override, "secondary");
+    $-btn-secondary-design: map-get($w-btns-bs-override, "secondary");
 
     background-color: map-get($-btn-secondary-design, active-background);
     border-color: map-get($-btn-secondary-design, active-border);

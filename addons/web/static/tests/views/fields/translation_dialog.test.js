@@ -35,7 +35,7 @@ test("translation in xml mode correctly renders value of attributes", async () =
         },
     });
 
-    await contains(".o-translate-button").click();
-    await waitFor(".o_translation_dialog .o-translate-full-xml");
-    expect(".o-translate--translatable-block").toHaveValue(`start  " '  & 100 > 90< end`);
+    await contains(".w-translate-button").click();
+    await waitFor(".w_translation_dialog .w-translate-full-xml");
+    expect(".w-translate--translatable-block").toHaveValue(`start  " '  & 100 > 90< end`);
 });

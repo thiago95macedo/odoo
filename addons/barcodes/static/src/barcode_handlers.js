@@ -28,7 +28,7 @@ function clickOnButton(selector) {
     }
 }
 function updatePager(position) {
-    const pager = document.body.querySelector("nav.o_pager");
+    const pager = document.body.querySelector("nav.w_pager");
     if (!pager || pager.innerText.includes("-")) {
         // we don't change pages if we are in a multi record view
         return;
@@ -37,7 +37,7 @@ function updatePager(position) {
     if (position === "first") {
         next = 1;
     } else {
-        next = parseInt(pager.querySelector(".o_pager_limit").textContent, 10);
+        next = parseInt(pager.querySelector(".w_pager_limit").textContent, 10);
     }
     let current = parseInt(pager.innerText.split('/')[0], 10);
     if (current === next) {
@@ -48,13 +48,13 @@ function updatePager(position) {
         timeout: 1000,
         steps: [
             {
-                trigger: "span.o_pager_value",
+                trigger: "span.w_pager_value",
                 async action(trigger) {
                     ACTION_HELPERS.click(trigger);
                 },
             },
             {
-                trigger: "input.o_pager_value",
+                trigger: "input.w_pager_value",
                 async action(trigger) {
                     ACTION_HELPERS.text(trigger, next);
                 },
@@ -64,11 +64,11 @@ function updatePager(position) {
 }
 
 export const COMMANDS = {
-    "OCDEDIT": () => clickOnButton(".o_form_button_edit"),
-    "OCDDISC": () => clickOnButton(".o_form_button_cancel"),
-    "OCDSAVE": () => clickOnButton(".o_form_button_save"),
-    "OCDPREV": () => clickOnButton(".o_pager_previous"),
-    "OCDNEXT": () => clickOnButton(".o_pager_next"),
+    "OCDEDIT": () => clickOnButton(".w_form_button_edit"),
+    "OCDDISC": () => clickOnButton(".w_form_button_cancel"),
+    "OCDSAVE": () => clickOnButton(".w_form_button_save"),
+    "OCDPREV": () => clickOnButton(".w_pager_previous"),
+    "OCDNEXT": () => clickOnButton(".w_pager_next"),
     "OCDPAGERFIRST": () => updatePager("first"),
     "OCDPAGERLAST": () => updatePager("last"),
 };

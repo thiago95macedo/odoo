@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/auth_passkey_portal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -42,13 +42,13 @@ msgid "Add Passkey"
 msgstr "Adicionar chave de acesso"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/js/passkeys_portal_create.js:0
 msgid "Create"
 msgstr "Criar"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/js/passkeys_portal_create.js:0
 msgid "Create Passkey"
 msgstr "Criar chave de acesso"
@@ -64,20 +64,20 @@ msgid "Last Used"
 msgstr "Usados recentemente"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/xml/passkeys_portal_popups.xml:0
 #: model_terms:ir.ui.view,arch_db:auth_passkey_portal.passkeys_portal_hook
 msgid "Name"
 msgstr "Nome"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/xml/passkeys_portal_popups.xml:0
 msgid "Name your key"
 msgstr "Nome da sua chave"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/js/passkeys_portal.js:0
 #: model_terms:ir.ui.view,arch_db:auth_passkey_portal.passkeys_portal_hook
 msgid "Passkeys"
@@ -94,13 +94,13 @@ msgid "Passkeys for portal users"
 msgstr "Chaves de acesso para usuários do portal"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/js/passkeys_portal.js:0
 msgid "Rename"
 msgstr "Renomear"
 
 #. module: auth_passkey_portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_passkey_portal/static/src/xml/passkeys_portal_popups.xml:0
 msgid "Rename your key"
 msgstr "Renomeie sua chave"

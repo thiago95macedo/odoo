@@ -88,7 +88,7 @@ class TestMultiCalendarSync(TestSyncGoogle):
         writer_without_private_access_user = new_test_user(self.env, login='writer-without-private-access-user')
         owner_user.google_account_email = 'o.o@example.com'
 
-        # Calendar was shared on Google, all users now sync it to odoo with their respective access roles
+        # Calendar was shared on Google, all users now sync it to weth with their respective access roles
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'owner', 'dataOwner': 'o.o@example.com'}])
         owner_user.calendar_ids.with_user(owner_user)._sync_calendars_google2weth(google_calendars)
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'writer'}])

@@ -148,7 +148,7 @@
         "**/lib/chartjs-adapter-luxon",
         "**/lib/fullcalendar",
         "**/lib/luxon",
-        "**/lib/odoo_ui_icons",
+        "**/lib/weth_ui_icons",
         "**/lib/owl",
         "**/lib/pdfjs",
         "**/lib/popper",

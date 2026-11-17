@@ -82,11 +82,11 @@ describe("Enter Key", () => {
         expect(getContent(el)).toBe(`<p>ab[]</p>`);
 
         await insertText(editor, "/");
-        await waitFor(".o-we-powerbox");
+        await waitFor(".w-we-powerbox");
 
         await insertText(editor, "quote");
         await press("enter");
-        await waitForNone(".o-we-powerbox");
+        await waitForNone(".w-we-powerbox");
         expect(getContent(el)).toBe("<blockquote>ab[]</blockquote>");
 
         await insertText(editor, "c");

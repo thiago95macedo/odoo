@@ -1,7 +1,7 @@
-.o-discuss-Typing-dot {
+.w-discuss-Typing-dot {
     background-color: $gray-500;
 
-    .o-discuss-Typing-icon:not(.o-isBrowserSafari) & {
+    .w-discuss-Typing-icon:not(.w-isBrowserSafari) & {
         // Safari bug: some CSS style in foreignobject like opacity / transform / filter reset the position of foreignobject to (0, 0)
         // https://github.com/bkrem/react-d3-tree/issues/284
         // https://bugs.webkit.org/show_bug.cgi?id=23113
@@ -9,41 +9,46 @@
         animation: o_mail_Typing_animation 1.5s linear infinite;
         filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .25));
 
-        &.o-discuss-Typing-dot2 {
+        &.w-discuss-Typing-dot2 {
             animation-delay: 0.25s;
         }
 
-        &.o-discuss-Typing-dot3 {
+        &.w-discuss-Typing-dot3 {
             animation-delay: .5s;
         }
     }
 
-    .o-mail-ImStatus &, .o-mail-ThreadIcon & {
+    .w-mail-ImStatus &,
+    .w-mail-ThreadIcon & {
         background-color: #fff;
     }
 
-    &.o-sizeMedium {
+    &.w-sizeMedium {
         width: 4px;
         height: 4px;
     }
 
-    &.o-sizeSmall {
+    &.w-sizeSmall {
         width: 3px;
         height: 3px;
     }
 }
 
-.o-discuss-Typing-icon {
+.w-discuss-Typing-icon {
     padding: 1px 0px;
     gap: 1px;
 }
 
 @keyframes o_mail_Typing_animation {
-    0%, 25%, 75% {
+
+    0%,
+    25%,
+    75% {
         opacity: initial;
         transform: scale(1);
         filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .15));
     }
+
     50% {
         opacity: 75%;
         transform: scale(.85) translateY(-1px);
@@ -51,7 +56,7 @@
     }
 }
 
-.o-mail-DiscussContent .o-discuss-Typing {
+.w-mail-DiscussContent .w-discuss-Typing {
     transform: translateY(-85%);
-    padding-left: calc(#{$o-mail-Message-sidebarWidth} + #{map-get($spacers, 2)});
+    padding-left: calc(#{$w-mail-Message-sidebarWidth} + #{map-get($spacers, 2)});
 }

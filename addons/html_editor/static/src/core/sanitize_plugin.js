@@ -57,9 +57,9 @@ export class SanitizePlugin extends Plugin {
     normalize(element) {
         for (const el of selectElements(
             element,
-            ".o-contenteditable-false, .o-contenteditable-true"
+            ".w-contenteditable-false, .w-contenteditable-true"
         )) {
-            el.contentEditable = el.matches(".o-contenteditable-true");
+            el.contentEditable = el.matches(".w-contenteditable-true");
         }
         for (const el of selectElements(element, "[data-oe-role]")) {
             el.setAttribute("role", el.dataset.oeRole);
@@ -83,7 +83,7 @@ export class SanitizePlugin extends Plugin {
     cleanForSave(root) {
         for (const el of selectElements(
             root,
-            ".o-contenteditable-false, .o-contenteditable-true"
+            ".w-contenteditable-false, .w-contenteditable-true"
         )) {
             el.removeAttribute("contenteditable");
         }

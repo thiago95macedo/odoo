@@ -39,7 +39,7 @@ class AdyenController(http.Controller):
         # match in https://docs.adyen.com/checkout/components-web/localization-components, we simply
         # provide the lang string as is (after adapting the format) and let Adyen find the best fit.
         lang_code = py_to_js_locale(self.env.context.get("lang")) or "en-US"
-        shopper_reference = partner_sudo and f"ODOO_PARTNER_{partner_sudo.id}"
+        shopper_reference = partner_sudo and f"WETH_PARTNER_{partner_sudo.id}"
         partner_country_code = (
             partner_sudo.country_id.code or provider_sudo.company_id.country_id.code or "NL"
         )
@@ -106,9 +106,9 @@ class AdyenController(http.Controller):
             },
             "applicationInfo": {
                 "externalPlatform": {
-                    "name": "Odoo",
+                    "name": "Weth",
                     "version": release.version,
-                    "integrator": "Odoo SA",
+                    "integrator": "WETH SA",
                 }
             },
             "countryCode": partner_country_code,  # ISO 3166-1 alpha-2 (e.g.: 'BE')
@@ -200,7 +200,7 @@ class AdyenController(http.Controller):
     def adyen_return_from_3ds_auth(self, **data):
         """Process the authentication data sent by Adyen after redirection from the 3DS1 page.
 
-        The route is flagged with `save_session=False` to prevent Odoo from assigning a new session
+        The route is flagged with `save_session=False` to prevent WETH from assigning a new session
         to the user if they are redirected to this route with a POST request. Indeed, as the session
         cookie is created without a `SameSite` attribute, some browsers that don't implement the
         recommended default `SameSite=Lax` behavior will not include the cookie in the redirection
@@ -218,7 +218,7 @@ class AdyenController(http.Controller):
 
         # Overwrite the operation to force the flow to 'redirect'. This is necessary because even
         # though Adyen is implemented as a direct payment provider, it will redirect the user out
-        # of Odoo in some cases. For instance, when a 3DS1 authentication is required, or for
+        # of WETH in some cases. For instance, when a 3DS1 authentication is required, or for
         # special payment methods that are not handled by the drop-in (e.g. Sofort).
         tx_sudo.with_context(
             # The /payments/details request uses an idempotency key; the handler is safe to replay

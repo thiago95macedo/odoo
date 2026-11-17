@@ -30,14 +30,14 @@ describe("range collapsed", () => {
 });
 
 describe("range not collapsed", () => {
-    test("should cut a selection as text/plain, text/html and application/vnd.odoo.odoo-editor (1)", async () => {
+    test("should cut a selection as text/plain, text/html and application/vnd.weth.weth-editor (1)", async () => {
         await testEditor({
             contentBefore: "<p>a[bcd]e</p>",
             stepFunction: async (editor) => {
                 const clipboardData = cut(editor);
                 expect(clipboardData.getData("text/plain")).toBe("bcd");
                 expect(clipboardData.getData("text/html")).toBe("<p>bcd</p>");
-                expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+                expect(clipboardData.getData("application/vnd.weth.weth-editor")).toBe(
                     "<p>bcd</p>"
                 );
             },
@@ -45,14 +45,14 @@ describe("range not collapsed", () => {
         });
     });
 
-    test("should cut a selection as text/plain, text/html and application/vnd.odoo.odoo-editor (2)", async () => {
+    test("should cut a selection as text/plain, text/html and application/vnd.weth.weth-editor (2)", async () => {
         await testEditor({
             contentBefore: "<p>[abc<br>efg]</p>",
             stepFunction: async (editor) => {
                 const clipboardData = cut(editor);
                 expect(clipboardData.getData("text/plain")).toBe("abc\nefg");
                 expect(clipboardData.getData("text/html")).toBe("<p>abc<br>efg</p>");
-                expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+                expect(clipboardData.getData("application/vnd.weth.weth-editor")).toBe(
                     "<p>abc<br>efg</p>"
                 );
             },

@@ -75,7 +75,7 @@ export class EmojiPicker extends Component {
         if (!emojiLoader.loaded || !this.gridRef()) {
             return [];
         }
-        const emojiEls = Array.from(this.gridRef().querySelectorAll(".o-Emoji"));
+        const emojiEls = Array.from(this.gridRef().querySelectorAll(".w-Emoji"));
         const emojiRects = emojiEls.map((el) => el.getBoundingClientRect());
         const matrix = [];
         for (const [index, pos] of emojiRects.entries()) {
@@ -110,7 +110,7 @@ export class EmojiPicker extends Component {
 
     activeEmoji = computed(() => {
         const activeCodepoints = this.gridRef()?.querySelector(
-            `.o-EmojiPicker-content .o-Emoji[data-index="${this.activeEmojiIndex()}"]`
+            `.w-EmojiPicker-content .w-Emoji[data-index="${this.activeEmojiIndex()}"]`
         )?.dataset.codepoints;
         return emojiLoader.map.get(activeCodepoints);
     });
@@ -158,7 +158,7 @@ export class EmojiPicker extends Component {
                 this.shouldScrollElem = false;
                 const getElement = () =>
                     this.gridRef().querySelector(
-                        `.o-EmojiPicker-category[data-category="${this.categoryId()}"`
+                        `.w-EmojiPicker-category[data-category="${this.categoryId()}"`
                     );
                 const elem = getElement();
                 if (elem) {
@@ -173,7 +173,7 @@ export class EmojiPicker extends Component {
                 return;
             }
             const active = this.gridRef().querySelector(
-                `.o-Emoji[data-index="${this.activeEmojiIndex()}"]`
+                `.w-Emoji[data-index="${this.activeEmojiIndex()}"]`
             );
             if (active && this.keyboardNavigated && !isElementVisible(active, this.gridRef())) {
                 active.scrollIntoView({ block: "center", behavior: "instant" });
@@ -215,7 +215,7 @@ export class EmojiPicker extends Component {
             parseInt(computedStyle.marginLeft) -
             parseInt(computedStyle.paddingLeft) -
             parseInt(computedStyle.marginLeft);
-        const itemWidth = this.navbarRef().querySelector(".o-Emoji").getBoundingClientRect().width;
+        const itemWidth = this.navbarRef().querySelector(".w-Emoji").getBoundingClientRect().width;
         const gapWidth = parseInt(computedStyle.gap);
         const maxAvailableNavbarItemAmountAtOnce = Math.floor(
             availableWidth / (itemWidth + gapWidth)
@@ -373,7 +373,7 @@ export class EmojiPicker extends Component {
                 ev.preventDefault();
                 this.gridRef()
                     ?.querySelector(
-                        `.o-EmojiPicker-content .o-Emoji[data-index="${this.activeEmojiIndex()}"]`
+                        `.w-EmojiPicker-content .w-Emoji[data-index="${this.activeEmojiIndex()}"]`
                     )
                     ?.click();
                 break;

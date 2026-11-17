@@ -295,33 +295,33 @@ test("activity view: Activity rendering with done activities", async () => {
     });
     // Cells avatars
     await contains(
-        `.o-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[0].user_id[0]}/avatar_128'`,
+        `.w-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[0].user_id[0]}/avatar_128'`,
         { target: domRowMeetingCellUpload }
     );
     await contains(
-        `.o-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[1].user_id[0]}/avatar_128'`,
+        `.w-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[1].user_id[0]}/avatar_128'`,
         { target: domRowMeetingCellUpload }
     );
     await contains(
-        `.o-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[2].user_id[0]}/avatar_128'`,
+        `.w-mail-Avatar img[data-src='/web/image/res.users/${uploadPlannedActs[2].user_id[0]}/avatar_128'`,
         { target: domRowMeetingCellUpload, count: 0 }
     );
-    await contains(`.o-mail-Avatar`, { target: domRowOfficeCellUpload, count: 0 }); // all activity are done
+    await contains(`.w-mail-Avatar`, { target: domRowOfficeCellUpload, count: 0 }); // all activity are done
     // Cells counters
-    await contains(".o-mail-ActivityCell-counter", {
+    await contains(".w-mail-ActivityCell-counter", {
         target: domRowMeetingCellUpload,
         text: "3 / 4",
     });
-    await contains(".o-mail-ActivityCell-counter", {
+    await contains(".w-mail-ActivityCell-counter", {
         text: "3",
         target: domRowOfficeCellUpload,
     });
     // Cells dates
-    await contains(".o-mail-ActivityCell-deadline", {
+    await contains(".w-mail-ActivityCell-deadline", {
         text: formatDate(luxon.DateTime.fromISO(uploadPlannedActs[0].date_deadline)),
         target: domRowMeetingCellUpload,
     });
-    await contains(".o-mail-ActivityCell-deadline", {
+    await contains(".w-mail-ActivityCell-deadline", {
         text: formatDate(luxon.DateTime.fromISO(uploadDoneActs[1].date_done)),
         target: domRowOfficeCellUpload,
     });
@@ -329,29 +329,29 @@ test("activity view: Activity rendering with done activities", async () => {
     await click(`${selRowMeetingCellUpload} > div`, {
         target: domActivity,
     });
-    await contains(".o-mail-ActivityListPopover .badge.text-bg-success", { text: "3" }); // 3 planned
+    await contains(".w-mail-ActivityListPopover .badge.text-bg-success", { text: "3" }); // 3 planned
     for (const actIdx of [0, 1, 2]) {
-        await contains(".o-mail-ActivityListPopoverItem", {
+        await contains(".w-mail-ActivityListPopoverItem", {
             text: `${uploadPlannedActs[actIdx].user_id[1]}-`,
         });
     }
-    await contains(".o-mail-ActivityListPopoverItem", { text: "Due in 4 days" });
-    await contains(".o-mail-ActivityListPopoverItem", { text: "Due in 5 days" });
-    await contains(".o-mail-ActivityListPopoverItem", { text: "Due in 6 days" });
-    await contains(".o-mail-ActivityListPopover .badge.text-bg-secondary", { text: "1" }); // 1 done
-    await contains(".o-mail-ActivityListPopoverItem", { text: `${uploadDoneActs[0].user_id[1]}-` });
-    await contains(".o-mail-ActivityListPopoverItem", {
+    await contains(".w-mail-ActivityListPopoverItem", { text: "Due in 4 days" });
+    await contains(".w-mail-ActivityListPopoverItem", { text: "Due in 5 days" });
+    await contains(".w-mail-ActivityListPopoverItem", { text: "Due in 6 days" });
+    await contains(".w-mail-ActivityListPopover .badge.text-bg-secondary", { text: "1" }); // 1 done
+    await contains(".w-mail-ActivityListPopoverItem", { text: `${uploadDoneActs[0].user_id[1]}-` });
+    await contains(".w-mail-ActivityListPopoverItem", {
         text: formatDate(luxon.DateTime.fromISO(uploadDoneActs[0].date_done)),
     });
     await click(`${selRowOfficeCellUpload} > div`, {
         target: domActivity,
     });
-    await contains(".o-mail-ActivityListPopover .badge.text-bg-secondary", { text: "3" }); // 3 done
+    await contains(".w-mail-ActivityListPopover .badge.text-bg-secondary", { text: "3" }); // 3 done
     for (const actIdx of [1, 2, 3]) {
-        await contains(".o-mail-ActivityListPopoverItem", {
+        await contains(".w-mail-ActivityListPopoverItem", {
             text: formatDate(luxon.DateTime.fromISO(uploadDoneActs[actIdx].date_done)),
         });
-        await contains(".o-mail-ActivityListPopoverItem", {
+        await contains(".w-mail-ActivityListPopoverItem", {
             text: `${uploadDoneActs[actIdx].user_id[1]}-`,
         });
     }
@@ -519,28 +519,28 @@ test("activity view: activity widget", async () => {
             }
         },
     });
-    await click(".today .o-mail-ActivityCell-deadline");
-    await contains(".o-mail-ActivityListPopover");
-    await contains(".o-mail-ActivityListPopover-todayTitle", { text: "Today" });
-    await contains(".o-mail-ActivityMailTemplate-name", { text: "Template1" });
-    await contains(".o-mail-ActivityMailTemplate-name", { text: "Template2" });
-    await click(".o-mail-ActivityMailTemplate-preview[data-mail-template-id='1']");
+    await click(".today .w-mail-ActivityCell-deadline");
+    await contains(".w-mail-ActivityListPopover");
+    await contains(".w-mail-ActivityListPopover-todayTitle", { text: "Today" });
+    await contains(".w-mail-ActivityMailTemplate-name", { text: "Template1" });
+    await contains(".w-mail-ActivityMailTemplate-name", { text: "Template2" });
+    await click(".w-mail-ActivityMailTemplate-preview[data-mail-template-id='1']");
     await expect.waitForSteps(["do_action_compose"]);
-    await click(".today .o-mail-ActivityCell-deadline");
-    await click(".o-mail-ActivityMailTemplate-send[data-mail-template-id='1']");
+    await click(".today .w-mail-ActivityCell-deadline");
+    await click(".w-mail-ActivityMailTemplate-send[data-mail-template-id='1']");
     await expect.waitForSteps(["activity_send_mail"]);
-    await click(".overdue .o-mail-ActivityCell-deadline");
-    await contains(".o-mail-ActivityMailTemplate-name", { count: 0 });
-    await click(".o-mail-ActivityListPopover button", { text: "Schedule an activity" });
+    await click(".overdue .w-mail-ActivityCell-deadline");
+    await contains(".w-mail-ActivityMailTemplate-name", { count: 0 });
+    await click(".w-mail-ActivityListPopover button", { text: "Schedule an activity" });
     await expect.waitForSteps(["do_action_activity"]);
-    await contains(".o-mail-ActivityListPopover", { count: 0 });
-    await click(".overdue .o-mail-ActivityCell-deadline");
-    await click(".o-mail-ActivityListPopoverItem-markAsDone");
+    await contains(".w-mail-ActivityListPopover", { count: 0 });
+    await click(".overdue .w-mail-ActivityCell-deadline");
+    await click(".w-mail-ActivityListPopoverItem-markAsDone");
     await insertText(
-        ".o-mail-ActivityMarkAsDone textarea[placeholder='Write Feedback']",
+        ".w-mail-ActivityMarkAsDone textarea[placeholder='Write Feedback']",
         "feedback2"
     );
-    await click(".o-mail-ActivityMarkAsDone button[aria-label='Done and Schedule Next']");
+    await click(".w-mail-ActivityMarkAsDone button[aria-label='Done and Schedule Next']");
     await expect.waitForSteps(["action_feedback_schedule_next", "serverGeneratedAction"]);
 });
 
@@ -574,8 +574,8 @@ test("activity widget: delete an activity from the widget", async () => {
     });
 
     // Check if activity is scheduled
-    await click(".planned .o-mail-ActivityCell-deadline");
-    await contains(".o-mail-ActivityListPopoverItem");
+    await click(".planned .w-mail-ActivityCell-deadline");
+    await contains(".w-mail-ActivityListPopoverItem");
 
     const activityListPopoverButtons = document.querySelectorAll(
         ".overflow-auto.d-flex.align-items-baseline button"
@@ -585,7 +585,7 @@ test("activity widget: delete an activity from the widget", async () => {
     expect(activityListPopoverButtons[1]).toHaveClass("o-mail-ActivityListPopoverItem-editbtn");
 
     // Delete the activity
-    await click(".o-mail-ActivityListPopoverItem .o-mail-ActivityListPopoverItem-editbtn");
+    await click(".w-mail-ActivityListPopoverItem .w-mail-ActivityListPopoverItem-editbtn");
     await click(".modal-dialog .btn:text('Delete')");
     await expect.waitForSteps(["unlink"]);
 
@@ -616,8 +616,8 @@ test("activity view: Mark as done with keep done enabled", async () => {
     await click(`${selRowOfficeCellEmail} > div`, {
         target: domActivity,
     });
-    await click(".o-mail-ActivityListPopoverItem .o-mail-ActivityListPopoverItem-markAsDone");
-    await click(".o-mail-ActivityMarkAsDone button[aria-label='Done']");
+    await click(".w-mail-ActivityListPopoverItem .w-mail-ActivityListPopoverItem-markAsDone");
+    await click(".w-mail-ActivityMarkAsDone button[aria-label='Done']");
     await contains(".o_animated_number", {
         target: domHeaderEmail,
         text: "1",
@@ -636,9 +636,9 @@ test("activity view: no group_by_menu and no comparison_menu", async () => {
         views: [[false, "activity"]],
     });
     await click(".o_searchview_dropdown_toggler");
-    await contains(".o-dropdown--menu .o_dropdown_container", { count: 2 });
-    await contains(".o-dropdown--menu .o_filter_menu");
-    await contains(".o-dropdown--menu .o_favorite_menu");
+    await contains(".w-dropdown--menu .o_dropdown_container", { count: 2 });
+    await contains(".w-dropdown--menu .o_filter_menu");
+    await contains(".w-dropdown--menu .o_favorite_menu");
 });
 
 test("activity view: group_by in the action has no effect", async () => {
@@ -808,8 +808,8 @@ test("activity view: 'onReloadData' does not add activity_ids condition as selec
     });
 
     //schedule another activity on an activity cell with a scheduled activity
-    await click(".today .o-mail-ActivityCell-deadline");
-    await click(".o-mail-ActivityListPopover button:contains(Schedule an activity)");
+    await click(".today .w-mail-ActivityCell-deadline");
+    await click(".w-mail-ActivityListPopover button:contains(Schedule an activity)");
     await expect.waitForSteps([[], [], []]);
 });
 
@@ -1132,9 +1132,9 @@ test("update activity view after creating multiple activities", async () => {
     expect(".o_activity_summary_cell").toHaveCount(0);
     await click("table tfoot tr .o_record_selector");
     await click(
-        ".o_list_renderer table tbody tr:nth-child(2) td:nth-child(2) .o-mail-ActivityButton"
+        ".o_list_renderer table tbody tr:nth-child(2) td:nth-child(2) .w-mail-ActivityButton"
     );
-    await webContains(".o-mail-ActivityListPopover-footer button").click();
+    await webContains(".w-mail-ActivityListPopover-footer button").click();
     const modalSchedule = await waitFor(".modal:has(.o_form_view)");
     await insertText(`.o_form_view .o_field_widget[name='summary'] input`, "test1", {
         target: modalSchedule,

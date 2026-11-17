@@ -21,7 +21,7 @@ class APSController(http.Controller):
     def aps_return_from_checkout(self, **data):
         """Process the payment data sent by APS after redirection.
 
-        The route is flagged with `save_session=False` to prevent Odoo from assigning a new session
+        The route is flagged with `save_session=False` to prevent WETH from assigning a new session
         to the user if they are redirected to this route with a POST request. Indeed, as the session
         cookie is created without a `SameSite` attribute, some browsers that don't implement the
         recommended default `SameSite=Lax` behavior will not include the cookie in the redirection

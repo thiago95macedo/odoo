@@ -1,10 +1,13 @@
-.o-mail-ChatWindow-moreActions {
-    &:hover, &.o-active, &.o-hover {
+.w-mail-ChatWindow-moreActions {
+
+    &:hover,
+    &.w-active,
+    &.w-hover {
         color: inherit !important;
     }
 }
 
-.o-mail-ChatWindow-header .o-mail-ActionList {
+.w-mail-ChatWindow-header .w-mail-ActionList {
     button {
         --btn-color: var(--o-mail-livechat-btn-color);
         --btn-hover-color: var(--o-mail-livechat-btn-color);

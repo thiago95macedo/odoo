@@ -10,17 +10,19 @@
                 line-height: 1.59rem;
             }
 
-            > .o_filter {
+            >.o_filter {
                 padding: map-get($spacers, 2) 0;
 
-                > span > span {
+                >span>span {
                     font-size: x-small;
+
                     &:nth-child(1) {
                         font-size: xx-small;
                     }
                 }
-                @for $i from 1 through length($o-colors-complete) {
-                    $color: nth($o-colors-complete, $i);
+
+                @for $i from 1 through length($w-colors-complete) {
+                    $color: nth($w-colors-complete, $i);
 
                     .o_color_#{$i - 1} {
                         color: $color;
@@ -32,7 +34,7 @@
         .o_calendar_sidepanel_container {
             height: 100%;
 
-            > .o_calendar_sidepanel {
+            >.o_calendar_sidepanel {
                 width: auto;
             }
         }

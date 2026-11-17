@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-09 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/project_timesheet_holidays/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/__init__.py:0
 msgid "Internal"
 msgstr "Interno"
@@ -157,7 +157,7 @@ msgstr ""
 "para cada tipo de folga."
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/__init__.py:0
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 #: code:addons/project_timesheet_holidays/models/res_company.py:0
@@ -166,7 +166,7 @@ msgid "Time Off"
 msgstr "Folga"
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/hr_leave.py:0
 #: code:addons/project_timesheet_holidays/models/resource_calendar_leaves.py:0
 msgid "Time Off (%(index)s/%(total)s)"
@@ -189,19 +189,19 @@ msgid "Timesheet when on Time Off"
 msgstr "Planilha de horas quando estiver de folgas"
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 msgid "Timesheets linked to public holidays cannot be deleted."
 msgstr "Planilhas de Horas vinculadas a feriados não podem ser excluídas."
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 msgid "Timesheets linked to public holidays cannot be modified."
 msgstr "Planilhas de Horas vinculadas a feriados não podem ser modificadas."
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 msgid ""
 "Timesheets related to time off cannot be created or modified. Please manage "
@@ -238,13 +238,13 @@ msgstr ""
 "configuração 5h #recurso #v16 @Mitchell !"
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 msgid "View Time Off"
 msgstr "Ver folga"
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/models/account_analytic.py:0
 msgid ""
 "You cannot delete timesheets that are linked to time off requests. Please "
@@ -254,7 +254,7 @@ msgstr ""
 "folga. Em vez disso, cancele sua solicitação de folga no aplicativo Folga."
 
 #. module: project_timesheet_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/project_timesheet_holidays/__init__.py:0
 msgid "allow_timesheets"
 msgstr "allow_timesheets"

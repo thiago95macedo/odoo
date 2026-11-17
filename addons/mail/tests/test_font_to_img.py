@@ -74,12 +74,12 @@ class TestMaterialSymbolsToImg(HttpCase):
                 )
 
 
-class TestOdooUiIconsToImg(HttpCase):
+class TestWethUiIconsToImg(HttpCase):
     """
     The `oi_` icons are named on the route, but mails sent before they were
     generated carry a raw codepoint instead, and the oldest ones a Font Awesome
     codepoint that has since been replaced. Every form has to keep rendering
-    the same glyph of `odoo_ui_icons_backend.woff`.
+    the same glyph of `weth_ui_icons_backend.woff`.
     """
     # Icons spread over the codepoint range of the font.
     TEST_ICONS = ('oi_view-pivot', 'oi_css3', 'oi_google-wallet',

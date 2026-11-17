@@ -351,7 +351,7 @@ test("dropdown: focus dropdown items on keyboard navigation after hotkey trigger
     expect(".o_list_view").toHaveCount(1);
     expect(".o_control_panel").toHaveCount(1);
 
-    const DROPDOWN_MENU = ".o-dropdown--menu.dropdown-menu";
+    const DROPDOWN_MENU = ".w-dropdown--menu.dropdown-menu";
 
     const menuEl = queryFirst(".dropdown-toggle");
     expect(document.activeElement).not.toBe(menuEl);
@@ -361,8 +361,8 @@ test("dropdown: focus dropdown items on keyboard navigation after hotkey trigger
     expect(DROPDOWN_MENU).toHaveCount(1);
 
     await press("ArrowDown");
-    expect(".o-dropdown-item:first").toBeFocused();
+    expect(".w-dropdown-item:first").toBeFocused();
 
     await press("ArrowUp");
-    expect(".o-dropdown-item:last").toBeFocused();
+    expect(".w-dropdown-item:last").toBeFocused();
 });

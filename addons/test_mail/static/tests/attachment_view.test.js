@@ -58,7 +58,7 @@ patchWithCleanup(browser, {
 });
 
 function popoutAttachmentViewBody() {
-    return popoutWindow.document.querySelector(".o-mail-PopoutAttachmentView");
+    return popoutWindow.document.querySelector(".w-mail-PopoutAttachmentView");
 }
 async function popoutIsEmpty() {
     await animationFrame();
@@ -157,9 +157,9 @@ test("Attachment view popout keeps its content when the main window is resized",
     await openFormView("mail.test.simple.main.attachment", recordId);
     await click(".o_attachment_preview .o_attachment_control");
     await popoutContains("img");
-    await contains(".o-mail-Form-chatter.o-isInFormSheetBg");
+    await contains(".w-mail-Form-chatter.w-isInFormSheetBg");
     await patchUiSize({ size: SIZES.LG });
-    await contains(".o-mail-Form-chatter:not(.o-isInFormSheetBg)");
+    await contains(".w-mail-Form-chatter:not(.w-isInFormSheetBg)");
     await popoutContains("img");
 });
 
@@ -213,7 +213,7 @@ test("Floating popout control is hidden on mobile", async () => {
     mockUserAgent("android");
     await start();
     await openFormView("mail.test.simple.main.attachment", recordId);
-    await contains(".o-mail-Attachment");
+    await contains(".w-mail-Attachment");
     await hasFloatingPopoutControl(0);
 });
 
@@ -281,14 +281,14 @@ test("Chatter main attachment: can change from non-viewable to viewable", async 
     await contains("button[aria-label='Attach files']:enabled");
     // Add a PDF file
     const pdfFile = new File([new Uint8Array(1)], "text.pdf", { type: "application/pdf" });
-    await dragenterFiles(".o-mail-Chatter", [pdfFile]);
-    await dropFiles(".o-Dropzone", [pdfFile]);
+    await dragenterFiles(".w-mail-Chatter", [pdfFile]);
+    await dropFiles(".w-Dropzone", [pdfFile]);
     await contains(".o_attachment_preview");
-    await contains(".o-mail-Attachment > iframe", { count: 0 }); // The viewer tries to display the text file not the PDF
+    await contains(".w-mail-Attachment > iframe", { count: 0 }); // The viewer tries to display the text file not the PDF
 
     // Switch to the PDF file in the viewer
     await click(".o_move_next");
-    await contains(".o-mail-Attachment > iframe"); // There should be iframe for PDF viewer
+    await contains(".w-mail-Attachment > iframe"); // There should be iframe for PDF viewer
 });
 
 test.skip("Attachment view / chatter popout across multiple records test", async () => {

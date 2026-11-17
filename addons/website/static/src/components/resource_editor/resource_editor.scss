@@ -1,7 +1,7 @@
-$o-we-ace-color: #2F3129 !default;
+$w-we-ace-color: #2F3129 !default;
 
 .o_resource_editor {
-    background: $o-we-ace-color;
+    background: $w-we-ace-color;
     color: white;
     display: flex;
     flex-flow: column nowrap;
@@ -13,12 +13,12 @@ $o-we-ace-color: #2F3129 !default;
         align-items: center;
         padding: $grid-gutter-width/4;
 
-        > .o_resource_editor_type_switcher > button::after {
+        >.o_resource_editor_type_switcher>button::after {
             @include o-caret-down;
             margin-left: 4px;
         }
 
-        > * {
+        >* {
             flex: 0 0 auto;
             margin: 0 $grid-gutter-width/4;
 
@@ -38,7 +38,7 @@ $o-we-ace-color: #2F3129 !default;
     #resource-editor-id {
         flex: 0 0 auto;
         padding: $grid-gutter-width/4 $grid-gutter-width/2;
-        background-color: lighten($o-we-ace-color, 10%);
+        background-color: lighten($w-we-ace-color, 10%);
 
         .o_resource_editor_resource_info {
             color: #ebecee;
@@ -50,7 +50,7 @@ $o-we-ace-color: #2F3129 !default;
             content: "";
             z-index: 1000;
             display: flex;
-            background-color: $o-we-color-danger;
+            background-color: $w-we-color-danger;
             color: white;
             font-size: 1.2em;
             align-items: center;
@@ -59,6 +59,7 @@ $o-we-ace-color: #2F3129 !default;
         }
 
         flex: 1 1 auto;
+
         .ace_gutter {
             .ace_gutter-cell.o_error {
                 position: relative;
@@ -68,6 +69,7 @@ $o-we-ace-color: #2F3129 !default;
                     @include ace-line-error-mixin;
                     width: 2px;
                 }
+
                 &::after {
                     @include o-position-absolute(-100%, 0, -100%, 0);
                     @include ace-line-error-mixin;

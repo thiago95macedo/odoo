@@ -236,7 +236,7 @@ class TestProjectSharingSessionInfo(HttpCase, TestProjectSharingCommon):
     def _get_session_info(self):
         response = self.url_open(f'/my/projects/{self.project_portal.id}/project_sharing')
         self.assertEqual(response.status_code, 200)
-        return json.loads(search(r'odoo\.__session_info__ = (.*);', response.text).group(1))
+        return json.loads(search(r'weth\.__session_info__ = (.*);', response.text).group(1))
 
     def test_portal_can_advanced_edit_in_session_info(self):
         password = 'chell_portal_user'

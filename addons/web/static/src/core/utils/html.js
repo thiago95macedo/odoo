@@ -210,15 +210,15 @@ export function isMarkup(content) {
  * @param {string | Markup} text
  * @returns {string | Markup} the formatted text
  */
-export function odoomark(text) {
+export function wethmark(text) {
     /**
-     * Mapping of patterns - replacer functions to apply to odoomarked strings.
+     * Mapping of patterns - replacer functions to apply to wethmarked strings.
      *
      * For the content passed directly to `markup` (e.g. **bold** or ``tagged``):
      * the content is considered safe, as it directly comes from {@link htmlReplaceAll}
      * which uses {@link htmlEscape}.
      *
-     * Note: this list is declared inline in the `odoomark` function to avoid other
+     * Note: this list is declared inline in the `wethmark` function to avoid other
      * functions using the marked-up replacers for injection.
      */
     const replacers = [

@@ -142,7 +142,7 @@ class PaymentProvider(models.Model):
         :return: The unique reference for the partner
         :rtype: str
         """
-        return f"ODOO_PARTNER_{partner_id}"
+        return f"WETH_PARTNER_{partner_id}"
 
     # === REQUEST HELPERS === #
 

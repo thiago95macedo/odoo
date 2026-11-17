@@ -23,7 +23,7 @@ import { exprToBoolean } from "@web/core/utils/strings";
  * end of the video (30 sec before is considered as completed).
  */
 export class WebsiteSlidesFullscreenYoutubePlayer extends Interaction {
-    static selector = ".o_wslides_fs_youtube_player";
+    static selector = ".w_wslides_fs_youtube_player";
     setup() {
         this.youtubeUrl = "https://www.youtube.com/iframe_api";
         this.slidesService = this.services.website_slides;
@@ -134,7 +134,7 @@ export class WebsiteSlidesFullscreenYoutubePlayer extends Interaction {
  * See https://developer.vimeo.com/player/sdk/reference for all the API documentation.
  */
 export class WebsiteSlidesFullscreenVimeoPlayer extends Interaction {
-    static selector = ".o_wslides_fs_vimeo_player";
+    static selector = ".w_wslides_fs_vimeo_player";
     setup() {
         this.vimeoUrl = "https://player.vimeo.com/api/player.js";
         this.slidesService = this.services.website_slides;
@@ -206,7 +206,7 @@ export class WebsiteSlidesFullscreenVimeoPlayer extends Interaction {
 }
 
 export class FullscreenTextHighlight extends TextHighlight {
-    static selector = ".o_wslide_fs_article_content";
+    static selector = ".w_wslide_fs_article_content";
 }
 
 /**
@@ -218,31 +218,31 @@ export class FullscreenTextHighlight extends TextHighlight {
  * The interaction will trigger a `change_slide` event.
  */
 export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
-    static selector = ".o_wslides_fs_main";
+    static selector = ".w_wslides_fs_main";
     dynamicContent = {
         ...this.dynamicContent,
         _document: {
             "t-on-keydown": this.onKeyDown,
         },
-        ".o_footer": {
+        ".w_footer": {
             "t-att-class": () => ({ "d-none": true }),
         },
-        ".o_wslides_fs_content": {
+        ".w_wslides_fs_content": {
             "t-att-class": () => ({
                 "bg-white": this.slide.category === "quiz" || this.slide.isQuiz,
             }),
         },
-        ".o_wslides_fs_sidebar_list_item .o_wslides_fs_slide_name": {
+        ".w_wslides_fs_sidebar_list_item .w_wslides_fs_slide_name": {
             "t-on-click.stop": this.onSidebarItemClick,
         },
-        ".o_wslides_fs_sidebar": {
+        ".w_wslides_fs_sidebar": {
             "t-att-class": () => ({ o_wslides_fs_sidebar_hidden: this.sidebarHidden }),
         },
-        ".o_wslides_fs_toggle_sidebar": {
+        ".w_wslides_fs_toggle_sidebar": {
             "t-att-class": () => ({ active: !this.sidebarHidden }),
             "t-on-click.prevent": this.toggleSidebar,
         },
-        ".o_wslides_fs_youtube_player, .o_wslides_fs_vimeo_player": {
+        ".w_wslides_fs_youtube_player, .w_wslides_fs_vimeo_player": {
             "t-on-slide_set_completed": this.onSlideSetCompleted,
         },
     };
@@ -273,7 +273,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
         }
         this.bindedGoNext = this.goNext.bind(this);
         this.slidesService.bus.addEventListener("slide_go_next", this.bindedGoNext);
-        document.querySelector(".o_frontend_to_backend_nav")?.remove();
+        document.querySelector(".w_frontend_to_backend_nav")?.remove();
         this.changeSlide();
     }
 
@@ -328,7 +328,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
      * Handler called when the user clicks on a normal slide tab
      */
     onSidebarItemClick(ev) {
-        const el = ev.currentTarget.closest(".o_wslides_fs_sidebar_list_item");
+        const el = ev.currentTarget.closest(".w_wslides_fs_sidebar_list_item");
         const data = el.dataset;
         if (data.canAccess) {
             const isQuiz = !!data.isQuiz;
@@ -349,10 +349,10 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
             return;
         }
         this.slidesService.setSlide(slide, true);
-        this.el.querySelector(".o_wslides_fs_sidebar_list_item.active").classList.remove("active");
+        this.el.querySelector(".w_wslides_fs_sidebar_list_item.active").classList.remove("active");
         this.el
             .querySelector(
-                `.o_wslides_fs_sidebar_list_item[data-id="${slide.id}"]:not([data-is-quiz="True"])`
+                `.w_wslides_fs_sidebar_list_item[data-id="${slide.id}"]:not([data-is-quiz="True"])`
             )
             .classList.add("active");
         this.changeSlide();
@@ -460,7 +460,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
         const urlParts = window.location.pathname.split("/");
         urlParts[urlParts.length - 1] = this.slide.slug;
         const url = urlParts.join("/");
-        this.el.querySelector(".o_wslides_fs_exit_fullscreen").href = url;
+        this.el.querySelector(".w_wslides_fs_exit_fullscreen").href = url;
         const fullscreenUrl = new URL(url, window.location.origin);
         const params = fullscreenUrl.searchParams;
         params.set("fullscreen", 1);
@@ -484,7 +484,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
         this.renderSlideRunning = true;
         try {
             const slide = this.slide;
-            const contentEl = this.el.querySelector(".o_wslides_fs_content");
+            const contentEl = this.el.querySelector(".w_wslides_fs_content");
             contentEl.replaceChildren();
 
             // display quiz slide, or quiz attached to a slide
@@ -535,7 +535,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
             if (this.slide.category === "document") {
                 // only set the slide as completed after iFrame is loaded to avoid concurrent execution with 'embedUrl' controller
                 this.addListener(
-                    this.el.querySelector("iframe.o_wslides_iframe_viewer"),
+                    this.el.querySelector("iframe.w_wslides_iframe_viewer"),
                     "load",
                     () => this.slidesService.toggleCompletion(this.slide),
                     { once: true }
@@ -581,7 +581,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
     }
 
     getCurrentSlideId() {
-        return parseInt(this.el.querySelector(".o_wslides_fs_sidebar_list_item.active").dataset.id);
+        return parseInt(this.el.querySelector(".w_wslides_fs_sidebar_list_item.active").dataset.id);
     }
 
     /**
@@ -599,7 +599,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
         const slideList = [];
         let channelSet = false;
         for (const slideEl of this.el.querySelectorAll(
-            ".o_wslides_fs_sidebar_list_item[data-can-access='True']"
+            ".w_wslides_fs_sidebar_list_item[data-can-access='True']"
         )) {
             const data = slideEl.dataset;
             slideList.push({

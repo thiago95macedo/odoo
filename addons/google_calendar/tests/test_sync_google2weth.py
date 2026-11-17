@@ -16,7 +16,7 @@ from weth import Command, tools
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
 @tagged('at_install', '-post_install')  # LEGACY at_install
-class TestSyncGoogle2Odoo(TestSyncGoogle):
+class TestSyncGoogle2Weth(TestSyncGoogle):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -140,7 +140,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': description,
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -177,8 +177,8 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_new_google_allday_event(self):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
-            'creator': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
+            'creator': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'All day event',
             'attendees': [],
             'reminders': {'useDefault': True},
@@ -201,8 +201,8 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
-            'creator': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
+            'creator': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [],
@@ -230,7 +230,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [],
@@ -363,8 +363,8 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'summary': 'coucou',
             'start': {'date': str(event.start_date), 'dateTime': None},
             'end': {'date': str(event.stop_date + relativedelta(days=1)), 'dateTime': None},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'declined'}],
-            'extendedProperties': {'private': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'attendees': [{'email': 'wethbot@example.com', 'responseStatus': 'declined'}],
+            'extendedProperties': {'private': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
         })
 
@@ -385,7 +385,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'id': google_id,
             'description': 'Small mini desc',
             "updated": self.now,
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [],  # <= attendee removed in Google
@@ -433,7 +433,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         gevent = GoogleEvent([{
             'id': google_id,
             "updated": self.now,
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'coucou',
             'attendees': [],  # <= attendee removed in Google
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=MO'],
@@ -505,7 +505,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': recurrence_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=3;BYDAY=MO'],
             'reminders': {'useDefault': True},
@@ -536,7 +536,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': recurrence_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=3;BYDAY=MO'],
@@ -745,7 +745,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'reminders': {'useDefault': True},
             "attendees": [
                 {
-                    "email": "odoobot@example.com", "responseStatus": "accepted",
+                    "email": "wethbot@example.com", "responseStatus": "accepted",
                 },
             ],
             'updated': self.now,
@@ -789,7 +789,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'reminders': {'useDefault': True},
             "attendees": [
                 {
-                    "email": "odoobot@example.com", "responseStatus": "accepted",
+                    "email": "wethbot@example.com", "responseStatus": "accepted",
                 },
             ],
             'updated': self.now,
@@ -842,7 +842,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'reminders': {'useDefault': True},
             "attendees": [
                 {
-                    "email": "odoobot@example.com", "responseStatus": "accepted",
+                    "email": "wethbot@example.com", "responseStatus": "accepted",
                 },
             ],
             'updated': self.now,
@@ -892,7 +892,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'reminders': {'useDefault': True},
             "attendees": [
                 {
-                    "email": "odoobot@example.com", "responseStatus": "accepted",
+                    "email": "wethbot@example.com", "responseStatus": "accepted",
                 },
             ],
             'updated': self.now,
@@ -944,7 +944,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': recurrence_id,
             'description': '',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Event with ',
             'visibility': 'public',
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=3;BYDAY=MO'],
@@ -1045,7 +1045,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': recurrence_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'recurrence': ['EXDATE;TZID=Europe/Rome:20200113',
@@ -1078,7 +1078,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': google_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1103,7 +1103,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': google_id,
             'description': '',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Event with ',
             'visibility': 'public',
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=3;BYDAY=MO'],
@@ -1297,7 +1297,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
                     ],
                 },
             ]
-            # Then, Odoo syncs
+            # Then, WETH syncs
             with patch.object(
                 GoogleCalendarService,
                 "get_events",
@@ -1352,7 +1352,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': google_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1384,7 +1384,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'id': google_id,
             'updated': updated.replace(tzinfo=UTC).isoformat(),
             'description': 'New Super description',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing was not good, now it is correct',
             'visibility': 'public',
             'attendees': [{
@@ -1414,7 +1414,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     @patch_api
     def test_event_reminder_emails_with_google_id(self):
         """
-        Odoo shouldn't send email reminders for synced events.
+        WETH shouldn't send email reminders for synced events.
         Test that events synced to Google (with a `google_id`)
         are excluded from email alarm notifications.
         """
@@ -1432,7 +1432,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'id': google_id,
             "alarm_id": alarm.id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1473,7 +1473,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'id': google_id,
             'description': 'Changed my mind',
             "updated": self.now,
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': """I don't want to be with me anymore""",
             'attendees': [{
                 'displayName': 'calendar-user (base.group_user)',
@@ -1527,7 +1527,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'organizer': {'email': 'c.c@example.com', 'self': False},
             'attendees': [{'email': 'c.c@example.com', 'responseStatus': 'needsAction'},
                           {'email': 'o.o@example.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id,
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id,
                                               '%s_owner_id' % self.env.cr.dbname: other_user.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 20}], 'useDefault': False},
             'transparency': 'opaque',
@@ -1616,7 +1616,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         google_id = 'gcalendarid123'
         values = {
             'id': google_id,
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'recurrence': ['EXDATE;TZID=Europe/Luxembourg:20260527T113000'],
             'reminders': {'useDefault': True},
@@ -1658,7 +1658,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     @patch_api
     def test_several_attendee_have_the_same_mail(self):
         """
-        In google, One mail = One attendee but on Odoo, some partners could share the same mail
+        In google, One mail = One attendee but on WETH, some partners could share the same mail
         This test checks that the deletion of such attendee has no harm: all attendee but the given mail are deleted.
         """
         partner1 = self.env['res.partner'].create({
@@ -1699,17 +1699,17 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         recurrence._apply_recurrence()
         recurrence.calendar_event_ids.attendee_ids.state = 'accepted'
         mails = sorted(set(event.attendee_ids.mapped('email')))
-        self.assertEqual(mails, ['dalton@example.com', 'odoobot@example.com'])
+        self.assertEqual(mails, ['dalton@example.com', 'wethbot@example.com'])
         gevent = GoogleEvent([{
             'id': google_id,
             'description': 'coucou',
             "updated": self.now,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
             'summary': False,
             'visibility': 'public',
             'attendees': [],
             'reminders': {'useDefault': True},
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id, }},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id, }},
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=3;BYDAY=MO'],
             'start': {
                 'dateTime': '2020-01-13T16:00:00+01:00',
@@ -1725,7 +1725,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         self.sync(gevent)
         # User attendee removed but gevent owner might be added after synch.
         mails = event.attendee_ids.mapped('email')
-        self.assertEqual(mails, ['odoobot@example.com'])
+        self.assertEqual(mails, ['wethbot@example.com'])
 
         self.assertGoogleAPINotCalled()
 
@@ -1740,7 +1740,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'id': "abcd",
             'description': 'coucou',
             "updated": self.now,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'wethbot@example.com', 'self': True},
             'summary': False,
             'visibility': 'public',
             'attendees': [{'email': 'test@example.com', 'responseStatus': 'accepted'}, {'email': 'test2@example.com', 'responseStatus': 'accepted'}],
@@ -1765,7 +1765,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1787,11 +1787,11 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'conferenceData': {
                 'entryPoints': [{
                     'entryPointType': 'video',
-                    'uri': 'https://meet.google.com/odoo-random-test',
-                    'label': 'meet.google.com/odoo-random-test'
+                    'uri': 'https://meet.google.com/weth-random-test',
+                    'label': 'meet.google.com/weth-random-test'
                 }, {
                     'entryPointType': 'more',
-                    'uri':'https://tel.meet/odoo-random-test?pin=42424242424242',
+                    'uri':'https://tel.meet/weth-random-test?pin=42424242424242',
                     'pin':'42424242424242'
                 }]
             }
@@ -1799,7 +1799,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         self.env['calendar.event']._sync_google2weth(GoogleEvent([values]), self.env.user.primary_calendar_id)
         event = self.env['calendar.event'].search([('google_id', '=', values.get('id'))])
         self.assertTrue(event, "It should have created an event")
-        self.assertEqual(event.videocall_location, 'https://meet.google.com/odoo-random-test')
+        self.assertEqual(event.videocall_location, 'https://meet.google.com/weth-random-test')
         self.assertGoogleAPINotCalled()
 
     @patch_api
@@ -1814,13 +1814,13 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
             'user_id': self.env.user.id,
             'need_sync': False,
             'partner_ids': [(6, 0, self.env.user.partner_id.ids)],
-            'videocall_location': 'https://meet.google.com/odoo_local_videocall',
+            'videocall_location': 'https://meet.google.com/weth_local_videocall',
         })
         values = {
             'id': google_id,
             'status': 'confirmed',
             'description': 'Event without meeting url',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Event without meeting url',
             'visibility': 'public',
             'attendees': [{
@@ -1849,13 +1849,13 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         # make sure local video call is not discarded
         gevent = GoogleEvent([values])
         self.env['calendar.event']._sync_google2weth(gevent, self.env.user.primary_calendar_id)
-        self.assertEqual(event.videocall_location, 'https://meet.google.com/odoo_local_videocall')
+        self.assertEqual(event.videocall_location, 'https://meet.google.com/weth_local_videocall')
 
         # now google has meet URL and make sure local video call is updated accordingly
-        values['conferenceData']['entryPoints'][0]['uri'] = 'https://meet.google.com/odoo-random-test'
+        values['conferenceData']['entryPoints'][0]['uri'] = 'https://meet.google.com/weth-random-test'
         gevent = GoogleEvent([values])
         self.env['calendar.event']._sync_google2weth(gevent, self.env.user.primary_calendar_id)
-        self.assertEqual(event.videocall_location, 'https://meet.google.com/odoo-random-test')
+        self.assertEqual(event.videocall_location, 'https://meet.google.com/weth-random-test')
         self.assertGoogleAPINotCalled()
 
     @patch_api
@@ -1863,7 +1863,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1895,7 +1895,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -1932,7 +1932,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': recurrence_id,
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [{
@@ -2003,7 +2003,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         values = {
             'id': 'oj44nep1ldf8a3ll02uip0c9aa',
             'description': 'Small mini desc',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'summary': 'Pricing new update',
             'visibility': 'public',
             'attendees': [],
@@ -2307,7 +2307,7 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
     def test_event_guest_modify_permission(self):
         """
         'guestsCanModify' is a permission set on Google side to allow or forbid guests editing the event.
-        This test states that Odoo Calendar:
+        This test states that WETH Calendar:
         1. forbids the updates of non-editable events by guests.
         2. allows editable events being updated by guests.
         3. allows guests to stop and restart their synchronizations with Google Calendars.
@@ -2365,12 +2365,12 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
                 'date': None,
             },
         }
-        # Sync events from Google to Odoo and get them after sync.
+        # Sync events from Google to WETH and get them after sync.
         self.env['calendar.event']._sync_google2weth(GoogleEvent([not_editable_event_values, editable_event_values]), self.env.user.primary_calendar_id)
         not_editable_event = self.env['calendar.event'].search([('google_id', '=', not_editable_event_values.get('id'))])
         editable_event = self.env['calendar.event'].search([('google_id', '=', editable_event_values.get('id'))])
 
-        # Assert that event is created in Odoo with proper values for guests_readonly variable.
+        # Assert that event is created in WETH with proper values for guests_readonly variable.
         self.assertFalse(editable_event.guests_readonly, "Value 'guestCanModify' received from Google must be True.")
         self.assertTrue(not_editable_event.guests_readonly, "Value 'guestCanModify' received from Google must be False.")
 
@@ -2435,8 +2435,8 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
 
     @patch_api
     def test_create_event_with_default_and_undefined_privacy(self):
-        """ Check if google events are created in Odoo when 'default' privacy setting is defined and also when it is not. """
-        # Sync events from Google to Odoo after adding the privacy property.
+        """ Check if google events are created in WETH when 'default' privacy setting is defined and also when it is not. """
+        # Sync events from Google to WETH after adding the privacy property.
         sample_event_values = {
             'summary': 'Test',
             'start': {'dateTime': '2020-01-06T10:00:00+01:00'},
@@ -2451,10 +2451,10 @@ class TestSyncGoogle2Odoo(TestSyncGoogle):
         self.env['calendar.event']._sync_google2weth(GoogleEvent([undefined_privacy_event, default_privacy_event]), self.env.user.primary_calendar_id)
 
         # Ensure that synced events have the correct privacy field in WETH.
-        undefined_privacy_odoo_event = self.env['calendar.event'].search([('google_id', '=', 1)])
-        default_privacy_odoo_event = self.env['calendar.event'].search([('google_id', '=', 2)])
-        self.assertFalse(undefined_privacy_odoo_event.privacy, "Event with undefined privacy must have False value in privacy field.")
-        self.assertFalse(default_privacy_odoo_event.privacy, "Event with default privacy must have False value in privacy field.")
+        undefined_privacy_weth_event = self.env['calendar.event'].search([('google_id', '=', 1)])
+        default_privacy_weth_event = self.env['calendar.event'].search([('google_id', '=', 2)])
+        self.assertFalse(undefined_privacy_weth_event.privacy, "Event with undefined privacy must have False value in privacy field.")
+        self.assertFalse(default_privacy_weth_event.privacy, "Event with default privacy must have False value in privacy field.")
 
     @users('attendee_user')
     @patch.object(GoogleCalendarService, 'get_events')

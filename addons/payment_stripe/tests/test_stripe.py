@@ -183,7 +183,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         ):
             self.env.company.country_id = country
         else:
-            self.skipTest("Unable to find a country supported by both odoo and stripe")
+            self.skipTest("Unable to find a country supported by both weth and stripe")
 
         with (
             patch.object(

@@ -39,11 +39,11 @@ test("can fold livechat chat windows in mobile", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem", { text: "Visitor" });
-    await click(".o-mail-ChatWindow-header [title*='Fold']", {
-        parent: [".o-mail-ChatWindow", { text: "Visitor" }],
+    await click(".w-mail-NotificationItem", { text: "Visitor" });
+    await click(".w-mail-ChatWindow-header [title*='Fold']", {
+        parent: [".w-mail-ChatWindow", { text: "Visitor" }],
     });
-    await contains(".o-mail-ChatBubble");
+    await contains(".w-mail-ChatBubble");
 });
 
 test.tags("desktop");
@@ -79,13 +79,13 @@ test("closing a chat window with no message from admin side unpins it", async ()
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem:has(:text('Partner 2'))");
-    await click(".o-mail-ChatWindow-header [title*='Close Chat Window']", {
-        parent: [".o-mail-ChatWindow", { text: "Partner 2" }],
+    await click(".w-mail-NotificationItem:has(:text('Partner 2'))");
+    await click(".w-mail-ChatWindow-header [title*='Close Chat Window']", {
+        parent: [".w-mail-ChatWindow", { text: "Partner 2" }],
     });
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
-    await contains(".o-mail-MessagingMenuItem:has(:text('Partner 1'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Partner 2'))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Partner 1'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Partner 2'))", { count: 0 });
 });
 
 test.tags("desktop", "focus required");
@@ -107,9 +107,9 @@ test("Focus should not be stolen when a new livechat open", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem", { text: "general" });
-    await contains(".o-mail-ChatWindow", { text: "general" });
-    await contains(".o-mail-Composer-input[placeholder='Message #general…']:focus");
+    await click(".w-mail-NotificationItem", { text: "general" });
+    await contains(".w-mail-ChatWindow", { text: "general" });
+    await contains(".w-mail-Composer-input[placeholder='Message #general…']:focus");
     withGuest(guestId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -121,9 +121,9 @@ test("Focus should not be stolen when a new livechat open", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatWindow", { text: "Visitor 12" });
+    await contains(".w-mail-ChatWindow", { text: "Visitor 12" });
     await animationFrame();
-    await contains(".o-mail-Composer-input[placeholder='Message #general…']:focus");
+    await contains(".w-mail-Composer-input[placeholder='Message #general…']:focus");
 });
 
 test("do not ask confirmation if other operators are present", async () => {
@@ -140,9 +140,9 @@ test("do not ask confirmation if other operators are present", async () => {
     });
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
     await click("[title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
 });
 
 test.tags("desktop");
@@ -178,7 +178,7 @@ test("Show livechats with new message in chat hub even when in discuss app)", as
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:contains('Test')");
+    await contains(".w-mail-Message:contains('Test')");
     // simulate livechat visitor sending a message
     await withGuest(guestId, () =>
         rpc("/mail/message/post", {
@@ -191,9 +191,9 @@ test("Show livechats with new message in chat hub even when in discuss app)", as
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Live Chats')) .badge:text(1)");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Live Chats')) .badge:text(1)");
     await openFormView("res.partner", serverState.partnerId);
-    await contains(".o-mail-ChatWindow-header:contains('Visitor 11')");
+    await contains(".w-mail-ChatWindow-header:contains('Visitor 11')");
 });
 
 test("livechat: non-member can close immediately", async () => {
@@ -209,9 +209,9 @@ test("livechat: non-member can close immediately", async () => {
     });
     await start();
     setupChatHub({ opened: [channelId] });
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
     await click("[title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
 });
 
 test("Can close all livechat chat windows at once", async () => {
@@ -243,16 +243,16 @@ test("Can close all livechat chat windows at once", async () => {
     patchUiSize({ width: 1920 });
     setupChatHub({ opened: channelIds });
     await start();
-    await contains(".o-mail-ChatWindow", { count: 2 });
+    await contains(".w-mail-ChatWindow", { count: 2 });
     await click("button[title='Chat Options']");
-    await click(".o-dropdown-item:text('Close all conversations')");
+    await click(".w-dropdown-item:text('Close all conversations')");
     await click("button:text('Yes, leave conversation')", {
-        parent: [".o-mail-ChatWindow:contains('Visitor #1')"],
+        parent: [".w-mail-ChatWindow:contains('Visitor #1')"],
     });
     await click("button:text('Yes, leave conversation')", {
-        parent: [".o-mail-ChatWindow:contains('Visitor #2')"],
+        parent: [".w-mail-ChatWindow:contains('Visitor #2')"],
     });
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
 });
 
 test.tags("desktop", "focus required");
@@ -280,11 +280,11 @@ test("Opening ended livechat and seeing last messages automatically marks it as 
     onRpcBefore("/discuss/channel/mark_as_read", async () => await promise);
     setupChatHub({ folded: [channelId] });
     await start();
-    await click(".o-mail-ChatBubble[name='Visitor']");
-    await contains(".o-mail-ChatWindow .o-mail-Message", { count: 2 });
+    await click(".w-mail-ChatBubble[name='Visitor']");
+    await contains(".w-mail-ChatWindow .w-mail-Message", { count: 2 });
     await contains("span:text('This live chat conversation has ended.')");
-    await contains(".o-mail-ChatWindow .o-mail-Thread.o-focused");
-    await contains(".o-mail-Thread-banner:has(:text('2 new messages'))");
+    await contains(".w-mail-ChatWindow .w-mail-Thread.w-focused");
+    await contains(".w-mail-Thread-banner:has(:text('2 new messages'))");
     resolve();
-    await contains(".o-mail-Thread-banner", { count: 0 });
+    await contains(".w-mail-Thread-banner", { count: 0 });
 });

@@ -20,7 +20,7 @@ class PaymentTransaction(models.Model):
     paypal_setup_token_ref = fields.Char(string="PayPal Setup Token ID")
 
     # See https://developer.paypal.com/docs/api-basics/notifications/ipn/IPNandPDTVariables/
-    # this field has no use in Odoo except for debugging
+    # this field has no use in WETH except for debugging
     paypal_type = fields.Char(string="PayPal Transaction Type")
 
     def _get_specific_processing_values(self, processing_values):

@@ -52,7 +52,7 @@ export class PlanSection extends Component {
     communityPlanProps = computed(() => {
         return {
             id: "community",
-            title: "Odoo Community",
+            title: "WETH Community",
             price: "Free",
             hasSubscription: this.props.hasSubscription,
             buttons: [{
@@ -71,7 +71,7 @@ export class PlanSection extends Component {
     enterprisePlanProps = computed(() => {
         return {
             id: "enterprise",
-            title: "Odoo Enterprise",
+            title: "WETH Enterprise",
             hasSubscription: this.props.hasSubscription,
             buttons: this.enterprisePlanButtons(),
             content: {

@@ -2,14 +2,14 @@ import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 
 export class WebsiteSlidesSort extends Interaction {
-    static selector = ".o_wslides_slides_list";
+    static selector = ".w_wslides_slides_list";
 
     dynamicContent = {
         ...this.dynamicContent,
-        ".o_wslides_slide_list_category_empty": {
+        ".w_wslides_slide_list_category_empty": {
             "t-att-class": (el) => ({ "d-none": !this.isCategoryEmpty(el) }),
         },
-        ".o_wslides_js_slides_list_slide_link": {
+        ".w_wslides_js_slides_list_slide_link": {
             "t-att-href": (el) =>
                 `${el.href}${el.href.indexOf("?") !== -1 ? "&" : "?"}fullscreen=1`,
         },
@@ -38,14 +38,14 @@ export class WebsiteSlidesSort extends Interaction {
             onDrop: this.reorderSlides.bind(this),
             applyChangeOnDrop: true,
         };
-        const containerEl = this.el.querySelector("ul.o_wslides_js_slides_list_container");
+        const containerEl = this.el.querySelector("ul.w_wslides_js_slides_list_container");
         this.bindedSortable.push(
             this.sortable
                 .create({
                     ...sortableBaseParam,
                     ref: () => containerEl,
-                    elements: ".o_wslides_slide_list_category",
-                    handle: ".o_wslides_slide_list_category_header .o_wslides_slides_list_drag",
+                    elements: ".w_wslides_slide_list_category",
+                    handle: ".w_wslides_slide_list_category_header .w_wslides_slides_list_drag",
                     sortableId: "category",
                 })
                 .enable()
@@ -57,10 +57,10 @@ export class WebsiteSlidesSort extends Interaction {
                     ...sortableBaseParam,
                     ref: () => containerEl,
                     elements:
-                        ".o_wslides_slides_list_slide:not(.o_wslides_js_slides_list_empty):not(.o_not_editable)",
-                    handle: ".o_wslides_slides_list_drag",
+                        ".w_wslides_slides_list_slide:not(.w_wslides_js_slides_list_empty):not(.w_not_editable)",
+                    handle: ".w_wslides_slides_list_drag",
                     connectGroups: true,
-                    groups: ".o_wslides_js_slides_list_container ul",
+                    groups: ".w_wslides_js_slides_list_container ul",
                     sortableId: "list",
                 })
                 .enable()
@@ -79,15 +79,15 @@ export class WebsiteSlidesSort extends Interaction {
      * "Empty category" placeholder.
      */
     isCategoryEmpty(el) {
-        const categoryHeaderEl = el.closest(".o_wslides_slide_list_category");
+        const categoryHeaderEl = el.closest(".w_wslides_slide_list_category");
         return (
-            categoryHeaderEl?.querySelectorAll(".o_wslides_slides_list_slide:not(.o_not_editable)")
+            categoryHeaderEl?.querySelectorAll(".w_wslides_slides_list_slide:not(.w_not_editable)")
                 .length == 0
         );
     }
 
     getSlides() {
-        return [...this.el.querySelectorAll(".o_wslides_js_list_item")].map((el) =>
+        return [...this.el.querySelectorAll(".w_wslides_js_list_item")].map((el) =>
             parseInt(el.dataset.slideId)
         );
     }

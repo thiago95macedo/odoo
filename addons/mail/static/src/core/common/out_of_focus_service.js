@@ -12,7 +12,7 @@ const PREVIEW_MSG_MAX_SIZE = 350; // optimal for native English speakers
  */
 export class OutOfFocusService {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     constructor(env, services) {
@@ -122,7 +122,7 @@ export class OutOfFocusService {
             // So we fallback to the notification service in this case
             // https://bugs.chromium.org/p/chromium/issues/detail?id=481856
             if (error.message.includes("ServiceWorkerRegistration")) {
-                this.sendOdooNotification(message, { sound, title, type });
+                this.sendWethNotification(message, { sound, title, type });
             } else {
                 throw error;
             }
@@ -133,7 +133,7 @@ export class OutOfFocusService {
      * @param {string} message
      * @param {Object} options
      */
-    async sendOdooNotification(message, options) {
+    async sendWethNotification(message, options) {
         const { sound } = options;
         delete options.sound;
         this.closeFuncs.push(this.notificationService.add(message, options));
@@ -196,7 +196,7 @@ export class OutOfFocusService {
 export const outOfFocusService = {
     dependencies: ["multi_tab", "notification", "mail.sound_effects", "mail.store"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

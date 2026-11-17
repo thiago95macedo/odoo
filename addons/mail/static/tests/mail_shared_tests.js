@@ -23,7 +23,7 @@ export async function mailCanAddMessageReactionMobile() {
             model: "discuss.channel",
         },
         {
-            body: "Hello Odoo",
+            body: "Hello Weth",
             res_id: channelId,
             message_type: "comment",
             model: "discuss.channel",
@@ -31,26 +31,26 @@ export async function mailCanAddMessageReactionMobile() {
     ]);
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(".o-mail-Message:contains('Hello world')");
-    await click(".o-mail-Message:contains('Hello world') [title='Expand']");
-    await click(".o-dropdown-item:contains('Add a Reaction')");
-    await contains(".o-overlay-item:has(.modal .o-EmojiPicker)");
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(".w-mail-Message:contains('Hello world')");
+    await click(".w-mail-Message:contains('Hello world') [title='Expand']");
+    await click(".w-dropdown-item:contains('Add a Reaction')");
+    await contains(".w-overlay-item:has(.modal .w-EmojiPicker)");
     const emojiPickerZIndex = parseInt(
-        getComputedStyle(queryFirst(".o-overlay-item:has(.modal .o-EmojiPicker)")).zIndex
+        getComputedStyle(queryFirst(".w-overlay-item:has(.modal .w-EmojiPicker)")).zIndex
     );
-    const chatWindowZIndex = parseInt(getComputedStyle(queryFirst(".o-mail-ChatWindow")).zIndex);
+    const chatWindowZIndex = parseInt(getComputedStyle(queryFirst(".w-mail-ChatWindow")).zIndex);
     expect(chatWindowZIndex).toBeLessThan(emojiPickerZIndex, {
         message: "emoji picker modal should be above chat window",
     });
-    await click(".modal .o-EmojiPicker .o-Emoji:contains('😀')");
-    await contains(".o-mail-MessageReaction:contains('😀')");
+    await click(".modal .w-EmojiPicker .w-Emoji:contains('😀')");
+    await contains(".w-mail-MessageReaction:contains('😀')");
     // Can add new reactions to a message that already has some
-    await click(".o-mail-Message:contains('Hello world') [title='Expand']");
-    await click(".o-dropdown-item:contains('Add a Reaction')");
-    await click(".modal .o-EmojiPicker .o-Emoji:contains('🤣')");
-    await contains(".o-mail-MessageReaction:contains('🤣')");
-    await contains(".o-mail-MessageReaction:contains('😀')");
+    await click(".w-mail-Message:contains('Hello world') [title='Expand']");
+    await click(".w-dropdown-item:contains('Add a Reaction')");
+    await click(".modal .w-EmojiPicker .w-Emoji:contains('🤣')");
+    await contains(".w-mail-MessageReaction:contains('🤣')");
+    await contains(".w-mail-MessageReaction:contains('😀')");
 }
 
 export async function mailCanCopyTextToClipboardMobile() {
@@ -66,7 +66,7 @@ export async function mailCanCopyTextToClipboardMobile() {
             model: "discuss.channel",
         },
         {
-            body: "Hello Odoo",
+            body: "Hello Weth",
             res_id: channelId,
             message_type: "comment",
             model: "discuss.channel",
@@ -74,10 +74,10 @@ export async function mailCanCopyTextToClipboardMobile() {
     ]);
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(".o-mail-Message:contains('Hello world')");
-    await click(".o-mail-Message:contains('Hello world') [title='Expand']");
-    await contains(".o-dropdown-item:contains('Copy Text')");
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(".w-mail-Message:contains('Hello world')");
+    await click(".w-mail-Message:contains('Hello world') [title='Expand']");
+    await contains(".w-dropdown-item:contains('Copy Text')");
 }
 
 export async function mailChatterMessageActionsInvisibleWhenNotHovered() {
@@ -96,13 +96,13 @@ export async function mailChatterMessageActionsInvisibleWhenNotHovered() {
     };
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message-actions.invisible");
-    await contains(".o-mail-Message-actions button", { count: 2 });
-    expect(isNodeVisible(".o-mail-Message-actions button:eq(0)")).toBe(false);
-    expect(isNodeVisible(".o-mail-Message-actions button:eq(1)")).toBe(false);
-    await hover(".o-mail-Message");
-    await contains(".o-mail-Message-actions:not(.invisible)");
-    await contains(".o-mail-Message-actions button", { count: 2 });
-    expect(isNodeVisible(".o-mail-Message-actions button:eq(0)")).toBe(true);
-    expect(isNodeVisible(".o-mail-Message-actions button:eq(1)")).toBe(true);
+    await contains(".w-mail-Message-actions.invisible");
+    await contains(".w-mail-Message-actions button", { count: 2 });
+    expect(isNodeVisible(".w-mail-Message-actions button:eq(0)")).toBe(false);
+    expect(isNodeVisible(".w-mail-Message-actions button:eq(1)")).toBe(false);
+    await hover(".w-mail-Message");
+    await contains(".w-mail-Message-actions:not(.invisible)");
+    await contains(".w-mail-Message-actions button", { count: 2 });
+    expect(isNodeVisible(".w-mail-Message-actions button:eq(0)")).toBe(true);
+    expect(isNodeVisible(".w-mail-Message-actions button:eq(1)")).toBe(true);
 }

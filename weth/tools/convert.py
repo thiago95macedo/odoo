@@ -701,7 +701,7 @@ def convert_file(
 ):
     if kind is not None:
         warnings.warn(
-            "The `kind` argument is deprecated in Odoo 19.",
+            "The `kind` argument is deprecated in WETH 19.",
             DeprecationWarning,
             stacklevel=2,
         )

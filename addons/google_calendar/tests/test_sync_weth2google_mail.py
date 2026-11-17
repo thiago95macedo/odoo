@@ -15,7 +15,7 @@ from .test_token_access import TestTokenAccess
 
 @tagged('weth2google')
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: user.google_calendar_token)
-class TestSyncOdoo2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
+class TestSyncWeth2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
 
     @classmethod
     def setUpClass(cls):
@@ -89,8 +89,8 @@ class TestSyncOdoo2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
             })
             event_over_limit.write({'alarm_ids': [(4, extra_alarm.id)]})
             assert_alarm_message(event_over_limit, 2)
-            # Google -> Odoo Sync
-            # Shouldn't log if the alarms are unchanged (5 max from Google merged into the 7 of Odoo).
+            # Google -> WETH Sync
+            # Shouldn't log if the alarms are unchanged (5 max from Google merged into the 7 of Weth).
             event_over_limit.write({'google_id': 'google_event_over_limit'})
             google_values = {
                 'id': event_over_limit.google_id,
@@ -108,7 +108,7 @@ class TestSyncOdoo2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
             self.assertEqual(synced_event_over_limit, event_over_limit)
             self.assertEqual(len(event_over_limit.alarm_ids), 7)
             assert_alarm_message(event_over_limit, 2)
-            # Should log if the Google event alarms has changed (1 new from Google added to the 7 of Odoo).
+            # Should log if the Google event alarms has changed (1 new from Google added to the 7 of Weth).
             google_values.update({
                 'updated': event_over_limit.write_date.replace(tzinfo=timezone.utc).isoformat(),
                 'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': 2000}]},

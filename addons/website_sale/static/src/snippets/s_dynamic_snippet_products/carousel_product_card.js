@@ -3,7 +3,7 @@ import { registry } from '@web/core/registry';
 import { rpc } from '@web/core/network/rpc';
 
 export class CarouselProductCard extends Interaction {
-    static selector = '.o_carousel_product_card';
+    static selector = '.w_carousel_product_card';
     dynamicContent = {
         '.js_remove': { 't-on-click': this.onRemoveFromRecentlyViewed },
     };

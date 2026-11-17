@@ -527,7 +527,7 @@ afterEach(() => (hasUsedContainsPositively = false));
  * @property {boolean} [shadowRoot] if provided, targets the shadowRoot of the found elements.
  * @property {number|"bottom"} [setScroll] if provided, sets the scrollTop on the first found
  *  element.
- * @property {HTMLElement|OdooEnv} [target=getFixture()]
+ * @property {HTMLElement|WethEnv} [target=getFixture()]
  * @property {string[]} [triggerEvents] if provided, triggers the given events on the found element
  * @property {string} [text] if provided, the textContent of the found element(s) or one of their
  *  descendants must match. Use `textContent` option for a match on the found element(s) only.
@@ -550,7 +550,7 @@ class Contains {
         this.options.count ??= 1;
         let targetParam;
         if (this.options.target?.testEnv) {
-            // when OdooEnv, special key `target`. See @start
+            // when WethEnv, special key `target`. See @start
             targetParam = this.options.target?.target;
         }
         if (!targetParam) {

@@ -30,7 +30,7 @@ from weth.addons.iot_drivers.tools.system import (
     IOT_IDENTIFIER,
     IOT_SYSTEM,
     IS_RPI,
-    ODOO_START_TIME,
+    WETH_START_TIME,
     SYSTEM_START_TIME,
 )
 
@@ -91,17 +91,17 @@ class IotBoxOwlHomePage(Controller):
     # GET methods                                                #
     # -> Always use json.dumps() to return a JSON response       #
     # ---------------------------------------------------------- #
-    @route.iot_route(['/iot_drivers/restart_odoo_service', '/hw_posbox_homepage/restart_odoo_service'], type='http', cors='*')
-    def odoo_service_restart(self):
-        helpers.odoo_restart(0)
+    @route.iot_route(['/iot_drivers/restart_weth_service', '/hw_posbox_homepage/restart_weth_service'], type='http', cors='*')
+    def weth_service_restart(self):
+        helpers.weth_restart(0)
         return json.dumps({
             'status': 'success',
-            'message': 'Odoo service restarted',
+            'message': 'WETH service restarted',
         })
 
     @route.iot_route('/iot_drivers/iot_logs', type='http', cors='*')
     def get_iot_logs(self):
-        logs_path = "/var/log/weth/odoo-server.log" if IS_RPI else Path().absolute().parent.joinpath('weth.log')
+        logs_path = "/var/log/weth/weth-server.log" if IS_RPI else Path().absolute().parent.joinpath('weth.log')
         log_max_size_chars = 2000000
         log_max_size_lines = 10000
 
@@ -134,7 +134,7 @@ class IotBoxOwlHomePage(Controller):
             'db_uuid': '',
             'enterprise_code': '',
         })
-        helpers.odoo_restart(0)
+        helpers.weth_restart(0)
         return json.dumps({
             'status': 'success',
             'message': 'Successfully cleared credentials',
@@ -184,8 +184,8 @@ class IotBoxOwlHomePage(Controller):
 
         six_terminal = system.get_conf('six_payment_terminal') or 'Not Configured'
         network_qr_codes = wifi.generate_network_qr_codes() or {}
-        odoo_server_url = helpers.get_odoo_server_url() or ''
-        odoo_uptime_seconds = time.monotonic() - ODOO_START_TIME
+        weth_server_url = helpers.get_weth_server_url() or ''
+        weth_uptime_seconds = time.monotonic() - WETH_START_TIME
         system_uptime_seconds = time.monotonic() - SYSTEM_START_TIME
 
         return json.dumps({
@@ -195,16 +195,16 @@ class IotBoxOwlHomePage(Controller):
             'identifier': IOT_IDENTIFIER,
             'mac_address': system.get_mac_address(),
             'devices': grouped_devices,
-            'server_status': odoo_server_url,
+            'server_status': weth_server_url,
             'pairing_code': connection_manager.pairing_code,
             'new_database_url': connection_manager.new_database_url,
-            'pairing_code_expired': connection_manager.pairing_code_expired and not odoo_server_url,
+            'pairing_code_expired': connection_manager.pairing_code_expired and not weth_server_url,
             'six_terminal': six_terminal,
             'is_access_point_up': wifi.is_access_point(),
             'network_interfaces': get_network_interfaces() or [],
             'version': system.get_version(),
             'system': IOT_SYSTEM,
-            'odoo_uptime_seconds': odoo_uptime_seconds,
+            'weth_uptime_seconds': weth_uptime_seconds,
             'system_uptime_seconds': system_uptime_seconds,
             'certificate_end_date': certificate.get_certificate_end_date(),
             'wifi_ssid': system.get_conf('wifi_ssid'),
@@ -226,13 +226,13 @@ class IotBoxOwlHomePage(Controller):
         interfaces_list = helpers.get_handlers_files_to_load(
             file_path('iot_drivers/iot_handlers/interfaces'))
         return json.dumps({
-            'title': "Odoo's IoT Box - Handlers list",
+            'title': "WETH's IoT Box - Handlers list",
             'breadcrumb': 'Handlers list',
             'drivers_list': drivers_list,
             'interfaces_list': interfaces_list,
-            'server': helpers.get_odoo_server_url(),
+            'server': helpers.get_weth_server_url(),
             'root_logger_log_level': self._get_logger_effective_level_str(logging.getLogger()),
-            'odoo_current_log_level': self._get_logger_effective_level_str(logging.getLogger('odoo')),
+            'weth_current_log_level': self._get_logger_effective_level_str(logging.getLogger('weth')),
             'recommended_log_level': 'warning',
             'available_log_levels': AVAILABLE_LOG_LEVELS,
             'drivers_logger_info': self._get_iot_handlers_logger(drivers_list, 'drivers'),
@@ -243,7 +243,7 @@ class IotBoxOwlHomePage(Controller):
     @route.iot_route('/iot_drivers/load_iot_handlers', type="http", cors='*')
     def load_iot_handlers(self):
         helpers.download_iot_handlers()
-        helpers.odoo_restart(0)
+        helpers.weth_restart(0)
         return json.dumps({
             'status': 'success',
             'message': 'IoT Handlers loaded successfully',
@@ -275,7 +275,7 @@ class IotBoxOwlHomePage(Controller):
             'db_uuid': db_uuid,
             'enterprise_code': enterprise_code,
         })
-        helpers.odoo_restart(0)
+        helpers.weth_restart(0)
         return {
             'status': 'success',
             'message': 'Successfully saved credentials',
@@ -306,9 +306,9 @@ class IotBoxOwlHomePage(Controller):
         linux_only=True,
     )
     def generate_password(self):
-        if helpers.get_odoo_server_url():
+        if helpers.get_weth_server_url():
             raise werkzeug.exceptions.Forbidden(
-                "Password generation is disabled once linked to an Odoo server"
+                "Password generation is disabled once linked to an WETH server"
             )
         return {
             "password": system.generate_password(),
@@ -323,7 +323,7 @@ class IotBoxOwlHomePage(Controller):
         return {'status': 'success' if system.toggle_remote_debug() else 'failure'}
 
     @route.iot_route('/iot_drivers/connect_to_server', type="jsonrpc", methods=['POST'], cors='*')
-    def connect_to_odoo_server(self, token):
+    def connect_to_weth_server(self, token):
         if token:
             try:
                 if len(token.split('|')) == 4:
@@ -348,7 +348,7 @@ class IotBoxOwlHomePage(Controller):
                 }
 
         # 1 sec delay for IO operations (save_conf_server)
-        helpers.odoo_restart(1)
+        helpers.weth_restart(1)
         return {
             'status': 'success',
             'message': 'Successfully connected to db, IoT will restart to update the configuration.',
@@ -365,8 +365,8 @@ class IotBoxOwlHomePage(Controller):
         name = name[len(IOT_LOGGING_PREFIX):]
         if name == 'root':
             self._update_logger_level('', value, AVAILABLE_LOG_LEVELS)
-        elif name == 'odoo':
-            self._update_logger_level('odoo', value, AVAILABLE_LOG_LEVELS)
+        elif name == 'weth':
+            self._update_logger_level('weth', value, AVAILABLE_LOG_LEVELS)
             self._update_logger_level('werkzeug', value if value != 'debug' else 'info', AVAILABLE_LOG_LEVELS)
         elif name.startswith(INTERFACE_PREFIX):
             logger_name = name[len(INTERFACE_PREFIX):]
@@ -417,7 +417,7 @@ class IotBoxOwlHomePage(Controller):
         return handlers_loggers_level
 
     def _update_logger_level(self, logger_name, new_level, available_log_levels, handler_folder=False):
-        """Update (if necessary) Odoo's configuration and logger to the given logger_name to the given level.
+        """Update (if necessary) WETH's configuration and logger to the given logger_name to the given level.
         The responsibility of saving the config file is not managed here.
 
         :param logger_name: name of the logging logger to change level
@@ -440,8 +440,8 @@ class IotBoxOwlHomePage(Controller):
                 return
             logger_name = logger.name
 
-        ODOO_TOOL_CONFIG_HANDLER_NAME = 'log_handler'
-        LOG_HANDLERS = (system.get_conf(ODOO_TOOL_CONFIG_HANDLER_NAME, section='options') or []).split(',')
+        WETH_TOOL_CONFIG_HANDLER_NAME = 'log_handler'
+        LOG_HANDLERS = (system.get_conf(WETH_TOOL_CONFIG_HANDLER_NAME, section='options') or []).split(',')
         LOGGER_PREFIX = logger_name + ':'
         IS_NEW_LEVEL_PARENT = new_level == 'parent'
 
@@ -469,8 +469,8 @@ class IotBoxOwlHomePage(Controller):
         if not IS_NEW_LEVEL_PARENT:
             new_entry = LOGGER_PREFIX + new_level_upper_case
             log_handlers_without_logger.append(new_entry)
-            _logger.debug('Adding to odoo config log_handler: %s', new_entry)
-        conf[ODOO_TOOL_CONFIG_HANDLER_NAME] = ','.join(log_handlers_without_logger)
+            _logger.debug('Adding to weth config log_handler: %s', new_entry)
+        conf[WETH_TOOL_CONFIG_HANDLER_NAME] = ','.join(log_handlers_without_logger)
 
         # Update the logger dynamically
         real_new_level = logging.NOTSET if IS_NEW_LEVEL_PARENT else new_level_upper_case
@@ -484,11 +484,11 @@ class IotBoxOwlHomePage(Controller):
 
     def _get_iot_handler_logger(self, handler_name, handler_folder_name):
         """
-        Get Odoo Iot logger given an IoT handler name
+        Get WETH Iot logger given an IoT handler name
         :param handler_name: name of the IoT handler
         :param handler_folder_name: IoT handler folder name (interfaces or drivers)
         :return: logger if any, False otherwise
         """
-        odoo_addon_handler_path = helpers.compute_iot_handlers_addon_name(handler_folder_name, handler_name)
-        return odoo_addon_handler_path in logging.Logger.manager.loggerDict and \
-               logging.getLogger(odoo_addon_handler_path)
+        weth_addon_handler_path = helpers.compute_iot_handlers_addon_name(handler_folder_name, handler_name)
+        return weth_addon_handler_path in logging.Logger.manager.loggerDict and \
+               logging.getLogger(weth_addon_handler_path)

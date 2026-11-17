@@ -43,7 +43,7 @@ export class Instagram extends AbstractThirdPartyVideo {
         base: "https://www.instagram.com/p/B6dXGTxggTG",
         minified: "instagr.am/p/B6dXGTxggTG/",
         reel: "https://www.instagram.com/reel/B6dXGTxggTG/",
-        reel2: "https://www.instagram.com/odoo.official/reel/B6dXGTxggTG/",
+        reel2: "https://www.instagram.com/weth.official/reel/B6dXGTxggTG/",
         reels: "https://www.instagram.com/reels/DPD1qwXDBwy/",
         embed: "https://www.instagram.com/p/B6dXGTxggTG/embed/",
     };

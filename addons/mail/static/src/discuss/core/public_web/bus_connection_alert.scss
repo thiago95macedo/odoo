@@ -1,26 +1,26 @@
-$o-bus-ConnectionAlert-color: mix($white, $warning, 60%);
+$w-bus-ConnectionAlert-color: mix($white, $warning, 60%);
 
-.o-bus-ConnectionAlert {
+.w-bus-ConnectionAlert {
     z-index: 1056;
     animation: o-bus-ConnectionAlert-borderAnimation ease-in-out .5s forwards;
-    border: 2px solid $o-bus-ConnectionAlert-color;
+    border: 2px solid $w-bus-ConnectionAlert-color;
 }
 
-.o-bus-ConnectionAlert-failure {
+.w-bus-ConnectionAlert-failure {
     width: fit-content;
     animation: o-bus-ConnectionAlert-failureAnimation ease-in-out .5s forwards;
     padding: map-get($spacers, 1);
     padding-bottom: map-get($spacers, 1) - 2px;
 }
 
-.o-bus-ConnectionAlert-icon {
+.w-bus-ConnectionAlert-icon {
     animation: o-bus-ConnectionAlert-iconAnimation .5s;
     animation-direction: alternate;
     animation-timing-function: cubic-bezier(.5, 0.95, 0, .5);
     animation-iteration-count: 9;
 }
 
-.o-bus-ConnectionAlert-label {
+.w-bus-ConnectionAlert-label {
     color: $black;
 }
 
@@ -36,23 +36,23 @@ $o-bus-ConnectionAlert-color: mix($white, $warning, 60%);
 
 @keyframes o-bus-ConnectionAlert-borderAnimation {
     from {
-        border-color: rgba($o-bus-ConnectionAlert-color, 0);
+        border-color: rgba($w-bus-ConnectionAlert-color, 0);
 
     }
 
     to {
-        border-color: $o-bus-ConnectionAlert-color;
+        border-color: $w-bus-ConnectionAlert-color;
     }
 }
 
 @keyframes o-bus-ConnectionAlert-failureAnimation {
     from {
         opacity: 0%;
-        background-color: rgba($o-bus-ConnectionAlert-color, .5);
+        background-color: rgba($w-bus-ConnectionAlert-color, .5);
     }
 
     to {
         opacity: 100%;
-        background-color: $o-bus-ConnectionAlert-color;
+        background-color: $w-bus-ConnectionAlert-color;
     }
 }

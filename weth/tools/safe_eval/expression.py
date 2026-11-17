@@ -150,7 +150,7 @@ class _ExprEval(ast.NodeVisitor):
         obj = self.visit(node.value)
         if not isinstance(obj, BaseModel):
             raise TypeError(
-                f"Attribute access is only supported on Odoo recordsets, got {type(obj).__name__!r} "
+                f"Attribute access is only supported on WETH recordsets, got {type(obj).__name__!r} "
                 f"while accessing {node.attr!r}"
             )
 

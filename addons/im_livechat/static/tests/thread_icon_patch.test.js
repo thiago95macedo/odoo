@@ -25,9 +25,9 @@ test("Public website visitor is typing", async () => {
     await openDiscuss(channelId);
     // thread avatar of public visitors should be visible in the header
     await contains(
-        `.o-mail-DiscussContent-header img[data-src='${getOrigin()}/web/image/discuss.channel/${channelId}/avatar_128?unique=abc123']`
+        `.w-mail-DiscussContent-header img[data-src='${getOrigin()}/web/image/discuss.channel/${channelId}/avatar_128?unique=abc123']`
     );
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[data-icon='circle']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[data-icon='circle']");
     const channel = pyEnv["discuss.channel"].search_read([["id", "=", channelId]])[0];
     // simulate receive typing notification from livechat visitor "is typing"
     withGuest(guestId, () =>
@@ -36,8 +36,8 @@ test("Public website visitor is typing", async () => {
             channel_id: channel.id,
         })
     );
-    await contains(".o-mail-DiscussContent-header .o-discuss-Typing-icon");
+    await contains(".w-mail-DiscussContent-header .w-discuss-Typing-icon");
     await contains(
-        ".o-mail-DiscussContent-header .o-discuss-Typing-icon[title='Visitor 20 is typing...']"
+        ".w-mail-DiscussContent-header .w-discuss-Typing-icon[title='Visitor 20 is typing...']"
     );
 });

@@ -14,7 +14,7 @@ export function intersect(a, b) {
 }
 
 /**
- * Convert a spreadsheet date representation to an odoo
+ * Convert a spreadsheet date representation to an weth
  * server formatted date
  *
  * @param {Date} value

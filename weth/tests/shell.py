@@ -9,18 +9,18 @@ import weth
 from weth.modules.registry import Registry
 
 from .loader import make_suite, run_suite
-from .result import OdooTestResult
+from .result import WethTestResult
 
 _logger = logging.getLogger(__name__)
 
-TEST_MODULE_NAME_PATTERN = re.compile(r'^odoo\.addons\.\w+\.tests')
+TEST_MODULE_NAME_PATTERN = re.compile(r'^weth\.addons\.\w+\.tests')
 
 
 def run_tests(env, test_tags, modules=None, reload_tests=False):
     """Run tests for the given modules and test tags."""
 
     if weth.cli.COMMAND != 'shell':
-        _logger.error('run_tests should be used only in odoo shell')
+        _logger.error('run_tests should be used only in weth shell')
         return
 
     if weth.tools.config['workers'] != 0:
@@ -55,7 +55,7 @@ def run_tests(env, test_tags, modules=None, reload_tests=False):
 
 
 def _run_tests(db_name, modules):
-    report = OdooTestResult()
+    report = WethTestResult()
 
     # Run at_install tests
     with Registry._lock:

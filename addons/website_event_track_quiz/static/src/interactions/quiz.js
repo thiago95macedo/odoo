@@ -214,7 +214,7 @@ export class Quiz extends Interaction {
 
     /**
      * When clicking on an answer, this one should be marked as "checked".
-     * @param OdooEvent ev
+     * @param WethEvent ev
      */
     onAnswerClick(ev) {
         if (!this.track.completed) {

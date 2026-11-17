@@ -5,7 +5,7 @@ import { _t } from "@web/core/l10n/translation";
 import { CategoryAddDialog } from "@website_slides/js/public/components/category_add_dialog/category_add_dialog";
 
 export class CategoryAdd extends Interaction {
-    static selector = ".o_wslides_js_slide_section_add";
+    static selector = ".w_wslides_js_slide_section_add";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.openDialog,

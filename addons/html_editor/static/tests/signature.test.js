@@ -24,7 +24,7 @@ test("apply 'Signature' command", async () => {
     const { el, editor } = await setupEditor("<p>ab[]cd</p>");
     await insertText(editor, "/signature");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Signature");
+    expect(".active .w-we-command-name").toHaveText("Signature");
     await press("enter");
     await tick();
     expect(getContent(el)).toBe(
@@ -68,7 +68,7 @@ describe("availability", () => {
         const { editor } = await setupEditor("<p><span>ab[]</span></p>");
         await insertText(editor, "/signature");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toInclude("Signature");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("Signature");
     });
     test("signature should not be available from span which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -76,7 +76,7 @@ describe("availability", () => {
         );
         await insertText(editor, "/signature");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude("Signature");
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude("Signature");
     });
     test("signature should not be available from p which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -84,7 +84,7 @@ describe("availability", () => {
         );
         await insertText(editor, "/signature");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude("Signature");
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude("Signature");
     });
     test("signature should be available from div which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -92,6 +92,6 @@ describe("availability", () => {
         );
         await insertText(editor, "/signature");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toInclude("Signature");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("Signature");
     });
 });

@@ -34,9 +34,9 @@ export async function livechatLastAgentLeaveFromChatWindow() {
         expect.step("action_unfollow");
     });
     await start();
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
     await click("button[title*='Close Chat Window']");
     await click("button:contains('Yes, leave conversation')");
     await expect.waitForSteps(["action_unfollow"]);
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
 }

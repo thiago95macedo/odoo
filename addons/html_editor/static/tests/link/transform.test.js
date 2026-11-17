@@ -70,17 +70,17 @@ describe("transform on space", () => {
     });
     test("typing invalid URL + space should not convert to link", async () => {
         const { editor, el } = await setupEditor("<p>[]</p>");
-        await insertText(editor, "www.odoo");
+        await insertText(editor, "www.weth");
         await insertSpace(editor);
-        expect(cleanLinkArtifacts(getContent(el))).toBe("<p>www.odoo&nbsp;[]</p>");
+        expect(cleanLinkArtifacts(getContent(el))).toBe("<p>www.weth&nbsp;[]</p>");
     });
 
     test("typing uppercase URL + space should convert to link", async () => {
         const { editor, el } = await setupEditor("<p>[]</p>");
-        await insertText(editor, "http://ODOO.COM");
+        await insertText(editor, "http://WETH.COM");
         await insertSpace(editor);
         expect(cleanLinkArtifacts(getContent(el))).toBe(
-            '<p><a href="http://ODOO.COM">http://ODOO.COM</a>&nbsp;[]</p>'
+            '<p><a href="http://WETH.COM">http://WETH.COM</a>&nbsp;[]</p>'
         );
     });
 
@@ -149,11 +149,11 @@ describe("transform on space", () => {
     test("should show replace URL button if link is created by transformation", async () => {
         onRpc("/html_editor/link_preview_external", () => ({
             og_description:
-                "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
+                "From ERP to CRM, eCommerce and CMS. Download WETH or use it in the cloud. Grow Your Business.",
             og_image: "https://www.weth.com.br/web/image/41207129-1abe7a15/homepage-seo.png",
-            og_title: "Open Source ERP and CRM | Odoo",
+            og_title: "Open Source ERP and CRM | Weth",
             og_type: "website",
-            og_site_name: "Odoo",
+            og_site_name: "Weth",
             source_url: "https://weth.com.br",
         }));
         const { editor } = await setupEditor(`<p>[]</p>`);
@@ -164,7 +164,7 @@ describe("transform on space", () => {
             anchorOffset: 0,
         });
         await tick();
-        await expectElementCount(".o-we-linkpopover", 1);
+        await expectElementCount(".w-we-linkpopover", 1);
         expect("button.o_we_replace_title_btn").toHaveCount(1);
     });
 });

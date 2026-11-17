@@ -351,7 +351,7 @@ class TestAccessRightsPrivateTask(TestAccessRights):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.private_task = cls.env['project.task'].create({'name': 'OdooBot Private Task'})
+        cls.private_task = cls.env['project.task'].create({'name': 'WethBot Private Task'})
 
     def setUp(self):
         super().setUp()

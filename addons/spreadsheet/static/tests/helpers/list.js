@@ -2,7 +2,7 @@ import { waitForDataLoaded } from "@spreadsheet/helpers/model";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").WethSpreadsheetModel} WethSpreadsheetModel
  * @typedef {import("@spreadsheet/o_spreadsheet/o_spreadsheet").Model} Model
  */
 
@@ -32,7 +32,7 @@ export function insertListInSpreadsheet(model, params, mode = "static") {
     const listId = model.getters.getNextListId();
     const [col, row] = params.position || [0, 0];
 
-    model.dispatch("INSERT_ODOO_LIST", {
+    model.dispatch("INSERT_WETH_LIST", {
         sheetId: params.sheetId || model.getters.getActiveSheetId(),
         listId,
         linesNumber: params.linesNumber || 10,
@@ -58,7 +58,7 @@ export function insertListInSpreadsheet(model, params, mode = "static") {
  * @param {{name: string, asc: boolean}[]} [params.orderBy]
  * @param { "static" | "dynamic"} [params.mode]
  *
- * @returns { Promise<{ model: OdooSpreadsheetModel, env: Object }>}
+ * @returns { Promise<{ model: WethSpreadsheetModel, env: Object }>}
  */
 export async function createSpreadsheetWithList(params = {}) {
     const { model, env } = await createModelWithDataSource({

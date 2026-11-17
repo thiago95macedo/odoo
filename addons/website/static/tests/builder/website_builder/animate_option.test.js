@@ -52,15 +52,15 @@ describe("onAppearance", () => {
         await waitSidebarUpdated();
 
         await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+        await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
         await waitSidebarUpdated();
-        expect(".options-container [data-label='Animation'] .o-dropdown").toHaveText(
+        expect(".options-container [data-label='Animation'] .w-dropdown").toHaveText(
             "On Appearance"
         );
 
-        expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Fade");
-        expect(".options-container [data-label='Direction'] .o-dropdown").toHaveText("In place");
-        expect(".options-container [data-label='Trigger'] .o-dropdown").toHaveText(
+        expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Fade");
+        expect(".options-container [data-label='Direction'] .w-dropdown").toHaveText("In place");
+        expect(".options-container [data-label='Trigger'] .w-dropdown").toHaveText(
             "First Time Only"
         );
         expect(".options-container [data-label='Intensity']").not.toHaveCount();
@@ -81,15 +81,15 @@ describe("onAppearance", () => {
         await waitSidebarUpdated();
 
         await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+        await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
 
         await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='o_anim_slide_in']").click();
+        await contains(".w-dropdown--menu [data-action-value='o_anim_slide_in']").click();
         await waitSidebarUpdated();
-        expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Slide");
+        expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Slide");
 
-        expect(".options-container [data-label='Direction'] .o-dropdown").toHaveText("From right");
-        expect(".options-container [data-label='Trigger'] .o-dropdown").toHaveText(
+        expect(".options-container [data-label='Direction'] .w-dropdown").toHaveText("From right");
+        expect(".options-container [data-label='Trigger'] .w-dropdown").toHaveText(
             "First Time Only"
         );
         expect(".options-container [data-label='Intensity'] input").toHaveValue(50);
@@ -110,15 +110,15 @@ describe("onAppearance", () => {
         await waitSidebarUpdated();
 
         await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+        await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
 
         await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='o_anim_bounce_in']").click();
+        await contains(".w-dropdown--menu [data-action-value='o_anim_bounce_in']").click();
         await waitSidebarUpdated();
-        expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Bounce");
+        expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Bounce");
 
-        expect(".options-container [data-label='Direction'] .o-dropdown").toHaveText("In place");
-        expect(".options-container [data-label='Trigger'] .o-dropdown").toHaveText(
+        expect(".options-container [data-label='Direction'] .w-dropdown").toHaveText("In place");
+        expect(".options-container [data-label='Trigger'] .w-dropdown").toHaveText(
             "First Time Only"
         );
         expect(".options-container [data-label='Intensity'] input").toHaveValue(50);
@@ -126,7 +126,7 @@ describe("onAppearance", () => {
         expect(".options-container [data-label='Start After'] input").toHaveValue(0);
         expect(".options-container [data-label='Duration'] input").toHaveValue(1);
         await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='onScroll']").click();
+        await contains(".w-dropdown--menu [data-action-value='onScroll']").click();
         await waitSidebarUpdated();
         expect(".options-container [data-label='Intensity']").toHaveCount(1);
     });
@@ -143,15 +143,15 @@ describe("onAppearance", () => {
         await waitSidebarUpdated();
 
         await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+        await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
 
         await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-        await contains(".o-dropdown--menu [data-action-value='o_anim_flash']").click();
+        await contains(".w-dropdown--menu [data-action-value='o_anim_flash']").click();
         await waitSidebarUpdated();
-        expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Flash");
+        expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Flash");
 
         expect(".options-container [data-label='Direction']").not.toHaveCount();
-        expect(".options-container [data-label='Trigger'] .o-dropdown").toHaveText(
+        expect(".options-container [data-label='Trigger'] .w-dropdown").toHaveText(
             "First Time Only"
         );
         expect(".options-container [data-label='Intensity'] input").toHaveValue(50);
@@ -170,12 +170,12 @@ test("visibility of animation animation=onScroll", async () => {
     await waitSidebarUpdated();
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='onScroll']").click();
+    await contains(".w-dropdown--menu [data-action-value='onScroll']").click();
     await waitSidebarUpdated();
-    expect(".options-container [data-label='Animation'] .o-dropdown").toHaveText("On Scroll");
+    expect(".options-container [data-label='Animation'] .w-dropdown").toHaveText("On Scroll");
 
-    expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Fade");
-    expect(".options-container [data-label='Direction'] .o-dropdown").toHaveText("In place");
+    expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Fade");
+    expect(".options-container [data-label='Direction'] .w-dropdown").toHaveText("In place");
 
     expect(".options-container [data-label='Trigger']").not.toBeVisible();
     expect(".options-container [data-label='Intensity']").not.toHaveCount();
@@ -197,19 +197,19 @@ test("reset to 'Fade' effect on animation=onScroll if current effect is appearan
     await waitSidebarUpdated();
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+    await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='o_anim_flash']").click();
+    await contains(".w-dropdown--menu [data-action-value='o_anim_flash']").click();
     await waitSidebarUpdated();
-    expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Flash");
+    expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Flash");
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='onScroll']").click();
+    await contains(".w-dropdown--menu [data-action-value='onScroll']").click();
     await waitSidebarUpdated();
-    expect(".options-container [data-label='Animation'] .o-dropdown").toHaveText("On Scroll");
+    expect(".options-container [data-label='Animation'] .w-dropdown").toHaveText("On Scroll");
 
-    expect(".options-container [data-label='Effect'] .o-dropdown").toHaveText("Fade");
+    expect(".options-container [data-label='Effect'] .w-dropdown").toHaveText("Fade");
     expect(":iframe .test-options-target img").not.toHaveClass("o_anim_flash");
     expect(":iframe .test-options-target img").toHaveClass("o_anim_fade_in");
 });
@@ -254,33 +254,33 @@ test("visibility of animation animation=onHover", async () => {
     // take some time (and setting "On Hover" sets a default)
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='onHover']").click();
+    await contains(".w-dropdown--menu [data-action-value='onHover']").click();
     await waitSidebarUpdated();
-    expect(".options-container [data-label='Animation'] .o-dropdown").toHaveText("On Hover");
+    expect(".options-container [data-label='Animation'] .w-dropdown").toHaveText("On Hover");
     expectOnHoverOptions({ Effect: "Overlay", Color: 1 });
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='image_zoom_in']").click();
+    await contains(".w-dropdown--menu [data-action-value='image_zoom_in']").click();
     await waitSidebarUpdated();
     expectOnHoverOptions({ Effect: "Zoom In", Intensity: 1, Overlay: 1 });
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='image_zoom_out']").click();
+    await contains(".w-dropdown--menu [data-action-value='image_zoom_out']").click();
     await waitSidebarUpdated();
     expectOnHoverOptions({ Effect: "Zoom Out", Intensity: 1, Overlay: 1 });
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='dolly_zoom']").click();
+    await contains(".w-dropdown--menu [data-action-value='dolly_zoom']").click();
     await waitSidebarUpdated();
     expectOnHoverOptions({ Effect: "Dolly Zoom", Intensity: 1, Overlay: 1 });
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='outline']").click();
+    await contains(".w-dropdown--menu [data-action-value='outline']").click();
     await waitSidebarUpdated();
     expectOnHoverOptions({ Effect: "Outline", Color: 1, "Stroke Width": 1 });
 
     await contains(".options-container [data-label='Effect'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='image_mirror_blur']").click();
+    await contains(".w-dropdown--menu [data-action-value='image_mirror_blur']").click();
     await waitSidebarUpdated();
     expectOnHoverOptions({ Effect: "Mirror Blur", Intensity: 1 });
 });
@@ -293,7 +293,7 @@ test("animation=onHover should not be visible when the image is a device shape",
     await contains(":iframe .test-options-target img").click();
     await waitSidebarUpdated();
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    expect(".o-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
+    expect(".w-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
 });
 test("animation=onHover should not be visible when the image has a wrong mimetype", async () => {
     const { waitSidebarUpdated } = await setupWebsiteBuilder(`
@@ -304,7 +304,7 @@ test("animation=onHover should not be visible when the image has a wrong mimetyp
     await contains(":iframe .test-options-target img").click();
     await waitSidebarUpdated();
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    expect(".o-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
+    expect(".w-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
 });
 test("animation=onHover should not be visible when the image has a cors protected image", async () => {
     const { waitSidebarUpdated } = await setupWebsiteBuilder(`
@@ -343,7 +343,7 @@ test("animation=onHover should not be visible when the image has a cors protecte
     await waitSidebarUpdated();
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
     expect.verifySteps(["/web/image/0-redirect/foo.jpg"]);
-    expect(".o-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
+    expect(".w-dropdown--menu [data-action-value='onHover']").not.toHaveCount();
 });
 
 test("image should not be lazy onAppearance", async () => {
@@ -357,11 +357,11 @@ test("image should not be lazy onAppearance", async () => {
     expect(":iframe .test-options-target img").toHaveProperty("loading", "auto");
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='onAppearance']").click();
+    await contains(".w-dropdown--menu [data-action-value='onAppearance']").click();
     expect(":iframe .test-options-target img").toHaveProperty("loading", "eager");
 
     await contains(".options-container [data-label='Animation'] .dropdown-toggle").click();
-    await contains(".o-dropdown--menu [data-action-value='']").click();
+    await contains(".w-dropdown--menu [data-action-value='']").click();
     expect(":iframe .test-options-target img").toHaveProperty("loading", "auto");
 });
 
@@ -693,26 +693,26 @@ describe("animate text in toolbar", () => {
             focusNode: paragraphEl.lastChild,
             focusOffset: paragraphEl.lastChild.length,
         });
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await expandToolbar();
 
         // Apply text highlight from the floating toolbar.
-        await contains(".o-we-toolbar button[title='Apply highlight']").click();
+        await contains(".w-we-toolbar button[title='Apply highlight']").click();
         await contains(".o_popover .o_text_highlight_underline").click();
 
         // Reselect all the text in the paragraph and reopen toolbar.
         await thirdClick(paragraphEl);
         await advanceTime(500);
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await expandToolbar();
 
         // Apply the default animation to the selected text.
-        await contains(".o-we-toolbar button[title='Animate Text']").click();
+        await contains(".w-we-toolbar button[title='Animate Text']").click();
 
         // Reselect all the text again and verify animate button remains active.
         await thirdClick(paragraphEl);
         await advanceTime(500);
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await expandToolbar();
 
         expect("button[title='Animate Text']").toHaveClass("active");

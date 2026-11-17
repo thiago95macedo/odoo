@@ -9,7 +9,7 @@ import { animationFrame, press, queryFirst } from "@weth/hoot-dom";
 defineWebsiteModels();
 
 const openChartSlidingPanel = async () => {
-    await contains("[data-label='Chart Data'] button.o-hb-btn").click();
+    await contains("[data-label='Chart Data'] button.w-hb-btn").click();
     await advanceTime(200);
     await animationFrame();
 };
@@ -519,7 +519,7 @@ test("Focusing input displays related data color/data border colorpickers", asyn
     expect(".hb-sliding-panel [data-label='Dataset Color']").toBeVisible();
     expect(".hb-sliding-panel [data-label='Dataset Border']").toBeVisible();
     await closeChartSlidingPanel();
-    await contains(".options-container [data-label='Type'] button.o-dropdown").click();
+    await contains(".options-container [data-label='Type'] button.w-dropdown").click();
     await contains(".o_popover [data-action-id='setChartType'][data-action-value='pie']").click();
     await openChartSlidingPanel();
     expect(".hb-sliding-panel [data-label='Data Color']").toBeVisible();

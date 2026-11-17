@@ -134,7 +134,7 @@ export class ShortCutPlugin extends Plugin {
                     // Shortcuts are available when focus is in the editable or the toolbar
                     const isFocusInAvailableArea =
                         this.editable.contains(target) ||
-                        !!target?.closest(".o-we-toolbar[data-namespace], .o-we-toolbar-dropdown");
+                        !!target?.closest(".w-we-toolbar[data-namespace], .w-we-toolbar-dropdown");
                     return (
                         isFocusInAvailableArea &&
                         (!isAvailable ||

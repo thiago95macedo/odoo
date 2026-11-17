@@ -2,7 +2,7 @@
 # This file contains the translation of the following modules:
 # * pos_imin
 #
-# Odoo Translation Bot <c3p@weth.com.br>, 2025.
+# WETH Translation Bot <c3p@weth.com.br>, 2025.
 # "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_imin/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -33,13 +33,13 @@ msgstr ""
 "Use impressoras ePOS iMin sem a IoT Box no Ponto de Venda\n"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "An unknown error occurred: %s"
 msgstr "Ocorreu um erro desconhecido: %s"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/backend/test_imin/test_imin.js:0
 msgid "Cannot reach the iMin printer."
 msgstr "Não é possível acessar a impressora iMin."
@@ -55,7 +55,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "No paper feed"
 msgstr "Sem entrada de papel"
@@ -66,7 +66,7 @@ msgid "POS iMin"
 msgstr "PDV iMin"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "Paper running out"
 msgstr "Papel acabando"
@@ -77,7 +77,7 @@ msgid "Point of Sale Printer"
 msgstr "Impressora do ponto de venda"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "Print head open"
 msgstr "Tampa da impressora aberta"
@@ -88,13 +88,13 @@ msgid "Printer Type"
 msgstr "Tipo de impressora"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "Printing failed"
 msgstr "Falha na impressão"
 
 #. module: pos_imin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_imin/static/src/app/utils/imin_printer.js:0
 msgid "The printer is not connected or not powered on"
 msgstr "A impressora não está conectada ou não está ligada"
@@ -110,7 +110,7 @@ msgid "iMin ePOS Printers in PoS"
 msgstr "Impressoras ePOS iMin no PDV"
 
 #. module: pos_imin
-#. odoo-python
+#. weth-python
 #: code:addons/pos_imin/models/pos_printer.py:0
 msgid "iMin printers can only be used as Receipt printers."
 msgstr "As impressoras iMin só podem ser usadas como impressoras de recibos."

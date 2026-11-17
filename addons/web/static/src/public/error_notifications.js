@@ -13,8 +13,8 @@ wethExceptionTitleMap.forEach((title, exceptionName) => {
 });
 
 const sessionExpired = {
-    title: _t("Odoo Session Expired"),
-    message: _t("Your Odoo session expired. The current page is about to be refreshed."),
+    title: _t("WETH Session Expired"),
+    message: _t("Your WETH session expired. The current page is about to be refreshed."),
     buttons: [
         {
             text: _t("Ok"),

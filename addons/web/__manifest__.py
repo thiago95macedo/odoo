@@ -539,12 +539,9 @@ This module provides the core of the WETH Web Client.
             '/web/static/src/libs/materialsymbols/material_symbols_sharp_subset.woff2',
             '/web/static/src/libs/materialsymbols/material_symbols_sharp.css',
         ],
-        'web.odoo_ui_icons': [
-            '/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2',
-            '/web/static/lib/odoo_ui_icons/odoo_ui_icons.css',
-        ],
         'web.weth_ui_icons': [
-            ('include', 'web.odoo_ui_icons'),
+            '/web/static/lib/weth_ui_icons/fonts/weth_ui_icons.woff2',
+            '/web/static/lib/weth_ui_icons/weth_ui_icons.css',
         ],
         'web.icons_fonts': [
             ('include', 'web.material_symbols_outlined'),

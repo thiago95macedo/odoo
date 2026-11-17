@@ -6,7 +6,7 @@ import {
     globalFieldMatchingRegistry,
 } from "@spreadsheet/global_filters/helpers";
 import { escapeRegExp } from "@web/core/utils/strings";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { WethCorePlugin } from "@spreadsheet/plugins";
 
 /**
  * @typedef {import("@spreadsheet").GlobalFilter} GlobalFilter
@@ -14,7 +14,7 @@ import { OdooCorePlugin } from "@spreadsheet/plugins";
  * @typedef {import("@spreadsheet").FieldMatching} FieldMatching
  */
 
-export class GlobalFiltersCorePlugin extends OdooCorePlugin {
+export class GlobalFiltersCorePlugin extends WethCorePlugin {
     static getters = /** @type {const} */ ([
         "getGlobalFilter",
         "getGlobalFilters",
@@ -218,8 +218,8 @@ export class GlobalFiltersCorePlugin extends OdooCorePlugin {
         const rangesOfAllowedValues =
             cmdFilter.type === "text" && cmdFilter.rangesOfAllowedValues?.length
                 ? cmdFilter.rangesOfAllowedValues.map((rangeData) =>
-                      this.getters.getRangeFromRangeData(rangeData)
-                  )
+                    this.getters.getRangeFromRangeData(rangeData)
+                )
                 : undefined;
         /** @type {GlobalFilter} */
         const newFilter =
@@ -289,7 +289,7 @@ export class GlobalFiltersCorePlugin extends OdooCorePlugin {
     // ---------------------------------------------------------------------
 
     /**
-     * Update all ODOO.FILTER.VALUE formulas to reference a filter
+     * Update all WETH.FILTER.VALUE formulas to reference a filter
      * by its new label.
      *
      * @param {string} currentLabel

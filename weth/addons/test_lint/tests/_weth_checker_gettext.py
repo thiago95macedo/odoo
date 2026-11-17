@@ -29,7 +29,7 @@ def parse_version(s):
     return [s.rjust(3, '0') for s in s.split('.')]
 
 
-class OdooBaseChecker(BaseChecker):
+class WethBaseChecker(BaseChecker):
     if parse_version(pylint.__version__) < parse_version('2.14.0'):
         __implements__ = pylint.interfaces.IAstroidChecker
     name = 'weth'
@@ -97,7 +97,7 @@ class OdooBaseChecker(BaseChecker):
 
 
 def register(linter):
-    linter.register_checker(OdooBaseChecker(linter))
+    linter.register_checker(WethBaseChecker(linter))
 
 
 def is_whitelisted_argument(arg):

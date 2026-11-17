@@ -21,7 +21,7 @@ _logger = logging.getLogger(__name__)
 MAX_RECURRENT_EVENT = 720
 
 # API requests are sent to Microsoft Calendar after the current transaction ends.
-# This ensures changes are sent to Microsoft only if they really happened in the Odoo database.
+# This ensures changes are sent to Microsoft only if they really happened in the WETH database.
 # It is particularly important for event creation , otherwise the event might be created
 # twice in Microsoft if the first creation crashed in WETH.
 def after_commit(func):
@@ -173,11 +173,11 @@ class MicrosoftCalendarSync(models.AbstractModel):
         self.microsoft_id = False
         self.ms_universal_event_id = False
         # When we move an event to a secondary calendar, we remove it from outlook. This returns a canceled event record
-        # on the next sync. In this case, we still keep the event in odoo. Only delete it if it's still in a synced
+        # on the next sync. In this case, we still keep the event in weth. Only delete it if it's still in a synced
         # primary calendar.
         self.filtered(lambda e: e.calendar_id.calendar_user_ids.filtered(lambda cu: cu.is_primary)).unlink()
 
-    def _sync_recurrence_microsoft2odoo(self, microsoft_events, new_events=None):
+    def _sync_recurrence_microsoft2weth(self, microsoft_events, new_events=None):
         recurrent_masters = new_events.filter(lambda e: e.is_recurrence()) if new_events else []
         recurrents = new_events.filter(lambda e: e.is_recurrent_not_master()) if new_events else []
         default_values = {'need_sync_m': False}
@@ -188,7 +188,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
         # --- create new recurrences and associated events ---
         for recurrent_master in recurrent_masters:
             new_calendar_recurrence = dict(
-                self.env['calendar.recurrence']._microsoft_to_odoo_values(recurrent_master, default_values, with_ids=True),
+                self.env['calendar.recurrence']._microsoft_to_weth_values(recurrent_master, default_values, with_ids=True),
                 need_sync_m=False
             )
             to_create = recurrents.filter(
@@ -196,7 +196,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
             )
             recurrents -= to_create
             base_values = dict(
-                self.env['calendar.event']._microsoft_to_odoo_values(recurrent_master, default_values, with_ids=True, create=True),
+                self.env['calendar.event']._microsoft_to_weth_values(recurrent_master, default_values, with_ids=True, create=True),
                 need_sync_m=False
             )
             to_create_values = []
@@ -204,16 +204,16 @@ class MicrosoftCalendarSync(models.AbstractModel):
                 to_create = list(to_create)[:MAX_RECURRENT_EVENT]
             for recurrent_event in to_create:
                 if recurrent_event.type == 'occurrence':
-                    value = self.env['calendar.event']._microsoft_to_odoo_recurrence_values(recurrent_event, base_values)
+                    value = self.env['calendar.event']._microsoft_to_weth_recurrence_values(recurrent_event, base_values)
                 else:
-                    value = self.env['calendar.event']._microsoft_to_odoo_values(recurrent_event, default_values, create=True)
+                    value = self.env['calendar.event']._microsoft_to_weth_values(recurrent_event, default_values, create=True)
 
                 to_create_values += [dict(value, need_sync_m=False)]
 
             new_calendar_recurrence['calendar_event_ids'] = [(0, 0, to_create_value) for to_create_value in to_create_values]
-            new_recurrence_odoo = self.env['calendar.recurrence'].with_context(dont_notify=True).create(new_calendar_recurrence)
-            new_recurrence_odoo.base_event_id = new_recurrence_odoo.calendar_event_ids[0] if new_recurrence_odoo.calendar_event_ids else False
-            new_recurrence |= new_recurrence_odoo
+            new_recurrence_weth = self.env['calendar.recurrence'].with_context(dont_notify=True).create(new_calendar_recurrence)
+            new_recurrence_weth.base_event_id = new_recurrence_weth.calendar_event_ids[0] if new_recurrence_weth.calendar_event_ids else False
+            new_recurrence |= new_recurrence_weth
 
         # Outlook can turn an existing single event into a recurring one in place:
         # the seriesMaster then keeps the iCalUId of the former single event. Those
@@ -245,11 +245,11 @@ class MicrosoftCalendarSync(models.AbstractModel):
             to_update = recurrents.filter(lambda e: e.seriesMasterId == recurrent_master_id)
             for recurrent_event in to_update:
                 if recurrent_event.type == 'occurrence':
-                    value = self.env['calendar.event']._microsoft_to_odoo_recurrence_values(
+                    value = self.env['calendar.event']._microsoft_to_weth_recurrence_values(
                         recurrent_event, {'need_sync_m': False}
                     )
                 else:
-                    value = self.env['calendar.event']._microsoft_to_odoo_values(recurrent_event, default_values)
+                    value = self.env['calendar.event']._microsoft_to_weth_values(recurrent_event, default_values)
                 existing_event = recurrence_id.calendar_event_ids.filtered(
                     lambda e: e._is_matching_timeslot(value['start'], value['stop'], recurrent_event.isAllDay)
                 )
@@ -264,7 +264,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
 
     def _update_microsoft_recurrence(self, recurrence, events):
         """
-        Update Odoo events from Outlook recurrence and events.
+        Update WETH events from Outlook recurrence and events.
         """
         # get the list of events to update ...
         events_to_update = events.filter(lambda e: e.seriesMasterId == self.microsoft_id)
@@ -276,9 +276,9 @@ class MicrosoftCalendarSync(models.AbstractModel):
         update_events = self.env['calendar.event']
         for e in events_to_update:
             if e.type == "exception":
-                event_values = self.env['calendar.event']._microsoft_to_odoo_values(e)
+                event_values = self.env['calendar.event']._microsoft_to_weth_values(e)
             elif e.type == "occurrence":
-                event_values = self.env['calendar.event']._microsoft_to_odoo_recurrence_values(e)
+                event_values = self.env['calendar.event']._microsoft_to_weth_recurrence_values(e)
             else:
                 event_values = None
 
@@ -289,11 +289,11 @@ class MicrosoftCalendarSync(models.AbstractModel):
                         event_values, need_sync_m=False
                     )
 
-                odoo_event = self.env['calendar.event'].browse(e.odoo_id(self.env)).exists().with_context(
+                weth_event = self.env['calendar.event'].browse(e.weth_id(self.env)).exists().with_context(
                     no_mail_to_attendees=True, mail_create_nolog=True
                 )
-                odoo_event.with_context(dont_notify=True).write(dict(event_values, need_sync_m=False))
-                update_events |= odoo_event
+                weth_event.with_context(dont_notify=True).write(dict(event_values, need_sync_m=False))
+                update_events |= weth_event
 
         # update the recurrence
         detached_events = self.with_context(dont_notify=True)._apply_recurrence(rec_values)
@@ -306,20 +306,20 @@ class MicrosoftCalendarSync(models.AbstractModel):
         """
         Synchronize Microsoft recurrences in WETH.
         Creates new recurrences, updates existing ones.
-        :return: synchronized odoo
+        :return: synchronized weth
         """
-        existing = microsoft_events.match_with_odoo_events(self.env)
+        existing = microsoft_events.match_with_weth_events(self.env)
         cancelled = existing.cancelled()
         new = microsoft_events - existing - microsoft_events.cancelled()
         new_recurrence = new.filter(lambda e: e.is_recurrent())
 
         # create new events and reccurrences
-        odoo_values = [
-            dict(self._microsoft_to_odoo_values(e, with_ids=True, create=True), need_sync_m=False)
+        weth_values = [
+            dict(self._microsoft_to_weth_values(e, with_ids=True, create=True), need_sync_m=False)
             for e in (new - new_recurrence)
         ]
-        synced_events = self.with_context(dont_notify=True, skip_contact_description=True)._create_from_microsoft(new, odoo_values)
-        synced_recurrences, updated_events = self._sync_recurrence_microsoft2odoo(existing, new_recurrence)
+        synced_events = self.with_context(dont_notify=True, skip_contact_description=True)._create_from_microsoft(new, weth_values)
+        synced_recurrences, updated_events = self._sync_recurrence_microsoft2weth(existing, new_recurrence)
         synced_events |= updated_events
 
         # remove cancelled events and recurrences
@@ -330,7 +330,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
             ('microsoft_id', 'in', cancelled.ids),
         ])
         cancelled_events = self.browse([
-            e.odoo_id(self.env)
+            e.weth_id(self.env)
             for e in cancelled
             if e.id not in [r.microsoft_id for r in cancelled_recurrences]
         ])
@@ -348,39 +348,39 @@ class MicrosoftCalendarSync(models.AbstractModel):
         # update other events
         for mevent in (existing - cancelled).filter(lambda e: e.lastModifiedDateTime):
             # Last updated wins.
-            # This could be dangerous if microsoft server time and odoo server time are different
+            # This could be dangerous if microsoft server time and weth server time are different
             if mevent.is_recurrence():
-                odoo_event = self.env['calendar.recurrence'].browse(mevent.odoo_id(self.env)).exists()
+                weth_event = self.env['calendar.recurrence'].browse(mevent.weth_id(self.env)).exists()
             else:
-                odoo_event = self.browse(mevent.odoo_id(self.env)).exists()
+                weth_event = self.browse(mevent.weth_id(self.env)).exists()
 
-            if odoo_event:
-                odoo_event_updated_time = odoo_event.write_date.replace(tzinfo=datetime.UTC)
+            if weth_event:
+                weth_event_updated_time = weth_event.write_date.replace(tzinfo=datetime.UTC)
                 ms_event_updated_time = parse(mevent.lastModifiedDateTime)
 
                 # If the update comes from an old event/recurrence, check if time diff between updates is reasonable.
                 old_event_update_condition = True
                 if lower_bound_day_range:
-                    update_time_diff = ms_event_updated_time - odoo_event_updated_time
-                    old_event_update_condition = odoo_event._check_old_event_update_required(lower_bound_day_range, update_time_diff)
+                    update_time_diff = ms_event_updated_time - weth_event_updated_time
+                    old_event_update_condition = weth_event._check_old_event_update_required(lower_bound_day_range, update_time_diff)
 
-                if ms_event_updated_time >= odoo_event_updated_time and old_event_update_condition:
-                    vals = dict(odoo_event._microsoft_to_odoo_values(mevent), need_sync_m=False)
-                    odoo_event.with_context(dont_notify=True)._write_from_microsoft(mevent, vals)
+                if ms_event_updated_time >= weth_event_updated_time and old_event_update_condition:
+                    vals = dict(weth_event._microsoft_to_weth_values(mevent), need_sync_m=False)
+                    weth_event.with_context(dont_notify=True)._write_from_microsoft(mevent, vals)
 
-                    if odoo_event._name == 'calendar.recurrence':
-                        update_events = odoo_event._update_microsoft_recurrence(mevent, microsoft_events)
-                        synced_recurrences |= odoo_event
+                    if weth_event._name == 'calendar.recurrence':
+                        update_events = weth_event._update_microsoft_recurrence(mevent, microsoft_events)
+                        synced_recurrences |= weth_event
                         synced_events |= update_events
                     else:
-                        synced_events |= odoo_event
+                        synced_events |= weth_event
 
         return synced_events, synced_recurrences
 
     def _check_old_event_update_required(self, lower_bound_day_range, update_time_diff):
         """
-        Checks if an old event in Odoo should be updated locally. This verification is necessary because
-        sometimes events in Odoo have the same state in Microsoft and even so they trigger updates locally
+        Checks if an old event in WETH should be updated locally. This verification is necessary because
+        sometimes events in WETH have the same state in Microsoft and even so they trigger updates locally
         due to a second or less of update time difference, thus spamming unwanted emails on Microsoft side.
         """
         # Event can be updated locally if its stop date is bigger than lower bound and the update time difference is reasonable (1 hour).
@@ -396,7 +396,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     @after_commit
     def _microsoft_delete(self, user_id, event_id, timeout=TIMEOUT):
         """
-        Once the event has been really removed from the Odoo database, remove it from the Outlook calendar.
+        Once the event has been really removed from the WETH database, remove it from the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' won't exist when this method will be really called due to @after_commit decorator.
@@ -410,7 +410,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     @after_commit
     def _microsoft_patch(self, user_id, event_id, values, timeout=TIMEOUT):
         """
-        Once the event has been really modified in the Odoo database, modify it in the Outlook calendar.
+        Once the event has been really modified in the WETH database, modify it in the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' may have been modified between the call of '_microsoft_patch' and its execution,
@@ -429,7 +429,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     @after_commit
     def _microsoft_insert(self, values, timeout=TIMEOUT):
         """
-        Once the event has been really added in the Odoo database, add it in the Outlook calendar.
+        Once the event has been really added in the WETH database, add it in the Outlook calendar.
 
         Note that all self attributes to use in this method must be provided as method parameters because
         'self' may have been modified between the call of '_microsoft_insert' and its execution,
@@ -457,7 +457,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
             if token:
                 self._ensure_attendees_have_email()
                 # Fetch the event's id (ms_organizer_event_id) using its iCalUId (ms_universal_event_id) since the
-                # former differs for each attendee. This info is required for sending the event answer and Odoo currently
+                # former differs for each attendee. This info is required for sending the event answer and WETH currently
                 # saves the event's id of the last user who synced the event (who might be or not the current user).
                 status, event = microsoft_service._get_single_event(self.ms_universal_event_id, token=token)
                 if status and event and event.get('value') and len(event.get('value')) == 1:
@@ -470,7 +470,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
 
     def _get_microsoft_records_to_sync(self, full_sync=False):
         """
-        Return records that should be synced from Odoo to Microsoft
+        Return records that should be synced from WETH to Microsoft
         :param full_sync: If True, all events attended by the user are returned
         :return: events
         """
@@ -478,13 +478,13 @@ class MicrosoftCalendarSync(models.AbstractModel):
         return self.with_context(active_test=False).search(domain)
 
     @api.model
-    def _microsoft_to_odoo_values(
+    def _microsoft_to_weth_values(
         self, microsoft_event: MicrosoftEvent, default_reminders=(), default_values=None, with_ids=False, create=False
     ):
         """
-        Implements this method to return a dict of Odoo values corresponding
+        Implements this method to return a dict of WETH values corresponding
         to the Microsoft event given as parameter
-        :return: dict of Odoo formatted values
+        :return: dict of WETH formatted values
         """
         raise NotImplementedError()
 
@@ -566,7 +566,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     def _is_microsoft_insertion_blocked(self, sender_user):
         """
         Returns True if the record insertion to Microsoft should be blocked.
-        This is a necessary step for ensuring data match between Odoo and Microsoft,
+        This is a necessary step for ensuring data match between WETH and Microsoft,
         as it prevents attendees to synchronize new records on behalf of the owners,
         otherwise the event ownership would be lost in Outlook and it would block the
         future record synchronization for the original owner.

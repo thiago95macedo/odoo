@@ -81,7 +81,7 @@ class WorldlineDriver(CtypesTerminalDriver):
                     return self.send_status(error=error_msg, request_data=transaction)
                 # Transaction was cancelled
                 else:
-                    _logger.info("transaction #%d cancelled by Odoo user", transaction_id)
+                    _logger.info("transaction #%d cancelled by WETH user", transaction_id)
                     return self.send_status(stage='Cancel', request_data=transaction)
             elif result == -1:
                 # Terminal disconnection, check status manually

@@ -1,27 +1,32 @@
-.o-discuss-ChangeLayoutDialog-option.o-selected {
-    background-color: $o-view-background-color;
-    border-color: $o-brand-primary !important;
+.w-discuss-ChangeLayoutDialog-option.w-selected {
+    background-color: $w-view-background-color;
+    border-color: $w-brand-primary !important;
 }
 
-.o-discuss-ChangeLayoutDialog-thumbnail {
+.w-discuss-ChangeLayoutDialog-thumbnail {
     width: 3rem;
     height: 1.75rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    &.o-auto {
+
+    &.w-auto {
         background-image: url("/mail/static/src/img/call_layouts/layout_auto.svg");
     }
-    &.o-tiled {
+
+    &.w-tiled {
         background-image: url("/mail/static/src/img/call_layouts/layout_tiled.svg");
     }
-    &.o-spotlight {
+
+    &.w-spotlight {
         background-image: url("/mail/static/src/img/call_layouts/layout_spotlight.svg");
     }
-    &.o-sidebar {
+
+    &.w-sidebar {
         background-image: url("/mail/static/src/img/call_layouts/layout_sidebar.svg");
     }
-    &.o-discuss {
+
+    &.w-discuss {
         background-image: url("/mail/static/src/img/call_layouts/layout_discuss.svg");
     }
 }

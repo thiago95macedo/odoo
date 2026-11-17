@@ -226,7 +226,7 @@ class TestIrMailServer(MailCommon):
                 ('notifications', 'dummy.com, full_email@example_2.com, dummy2.com'),
                 ('notifications', self.mail_alias_domain.name),
                 ('notifications', f'{self.mail_alias_domain.name}, example_2.com'),
-                # default relies on "odoo"
+                # default relies on "weth"
                 (False, self.mail_alias_domain.name),
                 # fallback on user email if no from_filter
                 ('notifications', ' '),
@@ -237,7 +237,7 @@ class TestIrMailServer(MailCommon):
                 'full_email@example_2.com',
                 f'notifications@{self.mail_alias_domain.name}',
                 f'notifications@{self.mail_alias_domain.name}',
-                f'odoo@{self.mail_alias_domain.name}',
+                f'weth@{self.mail_alias_domain.name}',
                 self.env.user.email,
                 self.env.user.email,
                 self.env.user.email,

@@ -1,6 +1,6 @@
 import { Domain } from "@web/core/domain";
 import { NO_RECORD_AT_THIS_POSITION } from "../pivot_model";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 
 /**
  * @typedef {import("@spreadsheet").FieldMatching} FieldMatching
@@ -62,7 +62,7 @@ function pivotPeriodToFilterValue(timeRange, value) {
     }
 }
 
-export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
+export class PivotCoreViewGlobalFilterPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ ([
         "getPivotComputedDomain",
         "getFiltersMatchingPivotArgs",
@@ -95,7 +95,7 @@ export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
                 this._pendingAddDomains = true;
                 break;
             case "UPDATE_PIVOT":
-            case "UPDATE_ODOO_PIVOT_DOMAIN":
+            case "UPDATE_WETH_PIVOT_DOMAIN":
                 this._addDomain(cmd.pivotId);
                 break;
             case "DUPLICATE_PIVOT":
@@ -109,7 +109,7 @@ export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
                             "ADD_GLOBAL_FILTER",
                             "EDIT_GLOBAL_FILTER",
                             "REMOVE_GLOBAL_FILTER",
-                            "UPDATE_ODOO_PIVOT_DOMAIN",
+                            "UPDATE_WETH_PIVOT_DOMAIN",
                             "UPDATE_PIVOT",
                         ].includes(command.type)
                     )
@@ -158,7 +158,7 @@ export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
         for (const filter of filters) {
             const dataSource = this.getters.getPivot(pivotId);
             const { type } = this.getters.getPivotCoreDefinition(pivotId);
-            if (type !== "ODOO") {
+            if (type !== "WETH") {
                 continue;
             }
             const { field, granularity: time } = dataSource.parseGroupField(lastNode.field);
@@ -227,7 +227,7 @@ export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
      * @param {string} pivotId pivot id
      */
     _addDomain(pivotId) {
-        if (this.getters.getPivotCoreDefinition(pivotId).type !== "ODOO") {
+        if (this.getters.getPivotCoreDefinition(pivotId).type !== "WETH") {
             return;
         }
         const domainList = [];
@@ -249,7 +249,7 @@ export class PivotCoreViewGlobalFilterPlugin extends OdooEvaluationPlugin {
     _addDomains() {
         for (const pivotId of this.getters
             .getPivotIds()
-            .filter((pivotId) => this.getters.getPivot(pivotId).type === "ODOO")) {
+            .filter((pivotId) => this.getters.getPivot(pivotId).type === "WETH")) {
             this._addDomain(pivotId);
         }
     }

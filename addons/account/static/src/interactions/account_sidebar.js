@@ -8,10 +8,10 @@ const PAGE_WIDTH = 1040;
 const PAGE_HEIGHT = 1464;
 
 export class AccountSidebar extends Sidebar {
-    static selector = ".o_portal_invoice_sidebar";
+    static selector = ".w_portal_invoice_sidebar";
     dynamicContent = {
         _window: { "t-on-resize": this.updateIframeSize },
-        ".o_portal_invoice_print": { "t-on-click.prevent": this.onInvoicePrintClick },
+        ".w_portal_invoice_print": { "t-on-click.prevent": this.onInvoicePrintClick },
     };
 
     setup() {

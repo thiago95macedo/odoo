@@ -1,5 +1,5 @@
 import * as spreadsheet from "@weth/o-spreadsheet";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { WethUIPlugin } from "@spreadsheet/plugins";
 import { _t } from "@web/core/l10n/translation";
 
 const { constants, helpers } = spreadsheet;
@@ -11,26 +11,26 @@ const { UuidGenerator, sanitizeSheetName, getUniqueText } = helpers;
  * @typedef {import("./list_core_plugin").SpreadsheetList} SpreadsheetList
  */
 
-export class ListUIPlugin extends OdooUIPlugin {
+export class ListUIPlugin extends WethUIPlugin {
     /**
      * Handle a spreadsheet command
      * @param {Object} cmd Command
      */
     handle(cmd) {
         switch (cmd.type) {
-            case "INSERT_ODOO_LIST_WITH_TABLE": {
+            case "INSERT_WETH_LIST_WITH_TABLE": {
                 const { sheetId, col, row, listId, linesNumber, definition, mode } = cmd;
                 this._inserListWithTable(sheetId, col, row, definition, listId, linesNumber, mode);
                 break;
             }
-            case "RE_INSERT_ODOO_LIST_WITH_TABLE": {
-                this.dispatch("RE_INSERT_ODOO_LIST", cmd);
+            case "RE_INSERT_WETH_LIST_WITH_TABLE": {
+                this.dispatch("RE_INSERT_WETH_LIST", cmd);
                 const { sheetId, col, row, linesNumber, mode, columns } = cmd;
                 this._addTable(sheetId, col, row, linesNumber, columns, mode);
                 break;
             }
 
-            case "INSERT_NEW_ODOO_LIST": {
+            case "INSERT_NEW_WETH_LIST": {
                 const sheetName = sanitizeSheetName(
                     _t("%(list_name)s (List #%(list_id)s)", {
                         list_name: cmd.name,
@@ -67,12 +67,12 @@ export class ListUIPlugin extends OdooUIPlugin {
                 break;
             }
 
-            case "DUPLICATE_ODOO_LIST_IN_NEW_SHEET": {
+            case "DUPLICATE_WETH_LIST_IN_NEW_SHEET": {
                 const duplicatedListName = _t(
                     "%s (copy)",
                     this.getters.getListDefinition(cmd.listId).name
                 );
-                this.dispatch("DUPLICATE_ODOO_LIST", {
+                this.dispatch("DUPLICATE_WETH_LIST", {
                     listId: cmd.listId,
                     newListId: cmd.newListId,
                     duplicatedListName,
@@ -95,7 +95,7 @@ export class ListUIPlugin extends OdooUIPlugin {
                 });
                 this.dispatch("ACTIVATE_SHEET", { sheetIdFrom, sheetIdTo: sheetId });
                 const columns = this.getters.getListDefinition(cmd.newListId).columns;
-                this.dispatch("RE_INSERT_ODOO_LIST", {
+                this.dispatch("RE_INSERT_WETH_LIST", {
                     sheetId,
                     col: 0,
                     row: 0,
@@ -111,7 +111,7 @@ export class ListUIPlugin extends OdooUIPlugin {
     }
 
     _inserListWithTable(sheetId, col, row, definition, listId, linesNumber, mode) {
-        this.dispatch("INSERT_ODOO_LIST", {
+        this.dispatch("INSERT_WETH_LIST", {
             sheetId,
             col,
             row,

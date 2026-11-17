@@ -38,7 +38,7 @@ class TestRetryCommon(BaseCase):
 @tagged('test_retry', 'test_retry_success')
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestRetry(TestRetryCommon):
-    """ Check some tests behaviour when ODOO_TEST_FAILURE_RETRIES is set"""
+    """ Check some tests behaviour when WETH_TEST_FAILURE_RETRIES is set"""
 
     def test_log_levels(self):
         _logger.debug('test debug')
@@ -51,7 +51,7 @@ class TestRetry(TestRetryCommon):
 
 @tagged('test_retry', 'test_retry_success')
 class TestRetryTraceback(TestRetryCommon):
-    """ Check some tests behaviour when ODOO_TEST_FAILURE_RETRIES is set"""
+    """ Check some tests behaviour when WETH_TEST_FAILURE_RETRIES is set"""
 
     def test_retry_traceback_success(self):
         if self.is_soft_fail():

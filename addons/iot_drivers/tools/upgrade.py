@@ -1,9 +1,9 @@
-"""Module to manage odoo code upgrades using git"""
+"""Module to manage weth code upgrades using git"""
 
 import logging
 import subprocess
 from weth.addons.iot_drivers.tools.helpers import (
-    odoo_restart,
+    weth_restart,
     toggleable,
 )
 from weth.addons.iot_drivers.tools.system import (
@@ -18,16 +18,16 @@ from weth.addons.iot_drivers.tools.system import (
 _logger = logging.getLogger(__name__)
 
 
-def get_last_stable_odoo_version():
-    """This method provides the last stable Odoo version.
-    To be changed whenever a new stable Odoo version is released and
+def get_last_stable_weth_version():
+    """This method provides the last stable WETH version.
+    To be changed whenever a new stable WETH version is released and
     we are sure that this version is compatible with all db versions.
     """
     return "saas-19.4"
 
 
 def get_update_day(serial_number):
-    """This method provides the day of the week to run Odoo upgrade on.
+    """This method provides the day of the week to run WETH upgrade on.
     The day is based on the rpi serial number and allows to roll out updates
     progressively, while leaving a possibility to fix issues before the next update
     for part of our iot boxes.
@@ -45,15 +45,15 @@ def get_update_day(serial_number):
 
 @toggleable
 def check_git_branch():
-    """Checkout the IoT Box code to the last stable Odoo branch"""
+    """Checkout the IoT Box code to the last stable WETH branch"""
     if IS_TEST:
         return
 
     try:
-        target_branch = get_last_stable_odoo_version()
+        target_branch = get_last_stable_weth_version()
 
         # Repository updates
-        shallow_lock = path_file("odoo/.git/shallow.lock")
+        shallow_lock = path_file("weth/.git/shallow.lock")
         if shallow_lock.exists():
             shallow_lock.unlink()  # In case of previous crash/power-off, clean old lockfile
         checkout(target_branch)
@@ -62,7 +62,7 @@ def check_git_branch():
         update_packages()  # System updates
 
         _logger.warning("Update completed, restarting...")
-        odoo_restart()
+        weth_restart()
     except Exception:
         _logger.exception('An error occurred while trying to update the code with git')
 
@@ -103,7 +103,7 @@ def update_requirements():
     """Update the Python requirements of the IoT Box, installing the ones
     listed in the requirements.txt file.
     """
-    requirements_file = path_file('odoo', 'setup', 'iot_box_builder', 'configuration', 'requirements.txt')
+    requirements_file = path_file('weth', 'setup', 'iot_box_builder', 'configuration', 'requirements.txt')
     if not requirements_file.exists():
         _logger.info("No requirements file found, not updating.")
         return
@@ -117,7 +117,7 @@ def update_packages():
     """Update apt packages on the IoT Box, installing the ones listed in
     the packages.txt file.
     """
-    packages_file = path_file('odoo', 'setup', 'iot_box_builder', 'configuration', 'packages.txt')
+    packages_file = path_file('weth', 'setup', 'iot_box_builder', 'configuration', 'packages.txt')
     if not packages_file.exists():
         _logger.info("No packages file found, not updating.")
         return

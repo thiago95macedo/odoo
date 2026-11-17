@@ -25,7 +25,7 @@ export class ThemeModel extends Reactive {
         super();
         this.orm = services.orm;
         this.loadedAssets = new Set();
-        // Shared themes written by Odoo
+        // Shared themes written by Weth
         this.commonThemes = new Map();
         // Blank slate themes (text-only or empty)
         this.simpleThemes = new Map();

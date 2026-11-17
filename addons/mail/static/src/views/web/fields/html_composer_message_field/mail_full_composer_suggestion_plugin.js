@@ -9,7 +9,7 @@ export class MailFullComposerSuggestionPlugin extends Plugin {
     resources = {
         on_beforeinput_handlers: this.onBeforeInput.bind(this),
         selectors_for_feff_providers: () =>
-            "a.o_mail_redirect, a.o_channel_redirect, a.o-discuss-mention",
+            "a.o_mail_redirect, a.o_channel_redirect, a.w-discuss-mention",
     };
 
     setup() {

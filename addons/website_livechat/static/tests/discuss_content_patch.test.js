@@ -27,7 +27,7 @@ test("Discuss header shows visitor avatar", async () => {
     await openDiscuss(channelId);
     const [guest] = pyEnv["mail.guest"].search_read([["id", "=", guestId]]);
     await contains(
-        `.o-mail-DiscussContent-header img[data-src='${url(
+        `.w-mail-DiscussContent-header img[data-src='${url(
             `/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
             }`
         )}']`

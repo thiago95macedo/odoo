@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/spreadsheet_dashboard_event_sale/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -22,32 +22,32 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Attendees"
 msgstr "Participantes"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Current"
 msgstr "Atual"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Date"
 msgstr "Data"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Event Status"
 msgstr "Status do evento"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 #: model:spreadsheet.dashboard,name:spreadsheet_dashboard_event_sale.spreadsheet_dashboard_events
@@ -55,31 +55,31 @@ msgid "Events"
 msgstr "Eventos"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "KPI"
 msgstr "KPI"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Organizer"
 msgstr "Organizador"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Previous"
 msgstr "Anterior"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Registration Status"
 msgstr "Status da inscrição"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Revenue"
@@ -97,53 +97,53 @@ msgid "Spreadsheet dashboard for events"
 msgstr "Painel de planilhas para eventos"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Tags"
 msgstr "Marcadores"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Template"
 msgstr "Modelo"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Top Organizers"
 msgstr "Principais organizadores"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Top Tags"
 msgstr "Principais marcadores"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Top Templates"
 msgstr "Principais modelos"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "Top Venues"
 msgstr "Principais locais de evento"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 msgid "Venue"
 msgstr "Local"
 
 #. module: spreadsheet_dashboard_event_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_event_sale/data/files/events_sample_dashboard.json:0
 msgid "since last period"

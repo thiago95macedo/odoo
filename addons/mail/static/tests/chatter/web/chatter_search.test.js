@@ -35,8 +35,8 @@ test("Click on the search icon should open the search form", async () => {
     const partnerId = pyEnv["res.partner"].create({ name: "John Doe" });
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await contains(".o-mail-SearchInput input");
+    await contains(".w-mail-SearchMessageInput");
+    await contains(".w-mail-SearchInput input");
 });
 
 test("Search in chatter", async () => {
@@ -51,11 +51,11 @@ test("Search in chatter", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput .o-mail-SearchInput input");
-    await editInput(document.body, ".o-mail-SearchInput input", "empty");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message");
-    await click(".o-mail-MessageCard-jump");
-    await contains(".o-mail-Message.o-highlighted .o-mail-Message-content:text('not empty')");
+    await contains(".w-mail-SearchMessageInput .w-mail-SearchInput input");
+    await editInput(document.body, ".w-mail-SearchInput input", "empty");
+    await contains(".w-mail-SearchMessageResult .w-mail-Message");
+    await click(".w-mail-MessageCard-jump");
+    await contains(".w-mail-Message.w-highlighted .w-mail-Message-content:text('not empty')");
 });
 
 test("Close button should close the search panel", async () => {
@@ -69,11 +69,11 @@ test("Close button should close the search panel", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Chatter-topbar [title='Search Messages']");
-    await insertText(".o-mail-SearchInput input", "empty");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message");
-    await click(".o-mail-SearchMessageInput [title='Close']");
-    await contains(".o-mail-SearchMessageInput", { count: 0 });
+    await click(".w-mail-Chatter-topbar [title='Search Messages']");
+    await insertText(".w-mail-SearchInput input", "empty");
+    await contains(".w-mail-SearchMessageResult .w-mail-Message");
+    await click(".w-mail-SearchMessageInput [title='Close']");
+    await contains(".w-mail-SearchMessageInput", { count: 0 });
 });
 
 test("opening search in chatter hides files and pinned messages panels", async () => {
@@ -95,16 +95,16 @@ test("opening search in chatter hides files and pinned messages panels", async (
     await start();
     await openFormView("res.partner", partnerId);
     await click("button[aria-label='Attach files']:text('1')");
-    await contains(".o-mail-AttachmentBox");
+    await contains(".w-mail-AttachmentBox");
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-SearchMessageInput");
+    await contains(".w-mail-AttachmentBox", { count: 0 });
     await contains("button[title='Attach files']:enabled:text('1')");
     await click("button[title='Pinned Messages']:enabled");
-    await contains(".o-mail-pinnedMessages");
+    await contains(".w-mail-pinnedMessages");
     await click("[title='Search Messages']");
-    await contains(".o-mail-SearchMessageInput");
-    await contains(".o-mail-pinnedMessages", { count: 0 });
+    await contains(".w-mail-SearchMessageInput");
+    await contains(".w-mail-pinnedMessages", { count: 0 });
 });
 
 test("Search in chatter should be hightligted", async () => {
@@ -119,8 +119,8 @@ test("Search in chatter should be hightligted", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await insertText(".o-mail-SearchInput input", "empty");
-    await contains(`.o-mail-SearchMessageResult .o-mail-Message .${HIGHLIGHT_CLASS}`);
+    await insertText(".w-mail-SearchInput input", "empty");
+    await contains(`.w-mail-SearchMessageResult .w-mail-Message .${HIGHLIGHT_CLASS}`);
 });
 
 test("Scrolling bottom in non-aside chatter should load more searched message", async () => {
@@ -140,10 +140,10 @@ test("Scrolling bottom in non-aside chatter should load more searched message", 
     await start();
     await openFormView("res.partner", partnerId);
     await click("[title='Search Messages']");
-    await insertText(".o-mail-SearchInput input", "message");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message", { count: 30 });
+    await insertText(".w-mail-SearchInput input", "message");
+    await contains(".w-mail-SearchMessageResult .w-mail-Message", { count: 30 });
     await scroll(".o_content", "bottom");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message", { count: 60 });
+    await contains(".w-mail-SearchMessageResult .w-mail-Message", { count: 60 });
 });
 
 test("Switching chatter filters after empty result should show messages", async () => {
@@ -161,9 +161,9 @@ test("Switching chatter filters after empty result should show messages", async 
     await openFormView("res.partner", serverState.partnerId);
     await click("[title='Search Messages']");
     await click("[title='Filter Messages']");
-    await click(".o-dropdown-item:text('Changes')");
-    await contains(".o-mail-MessageCardList:text('No messages found')");
+    await click(".w-dropdown-item:text('Changes')");
+    await contains(".w-mail-MessageCardList:text('No messages found')");
     await click("[title='Filter Messages']");
-    await click(".o-dropdown-item:text('Messages')");
-    await contains(".o-mail-SearchMessageResult .o-mail-Message-content:text('not empty')");
+    await click(".w-dropdown-item:text('Messages')");
+    await contains(".w-mail-SearchMessageResult .w-mail-Message-content:text('not empty')");
 });

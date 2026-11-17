@@ -1,36 +1,43 @@
-.modal-xl:has(.o_document_layout) {
+.modal-xl:has(.w_document_layout) {
     --modal-width: 1280px;
 }
-.o_document_layout {
+
+.w_document_layout {
     display: flex;
     height: 100%;
-    .o_content{
+
+    .w_content {
         height: inherit;
-        .o_form_renderer {
+
+        .w_form_renderer {
             height: 100%;
-            .o_group {
+
+            .w_group {
                 display: flex;
                 width: auto !important;
-                .o_document_layout_company {
+
+                .w_document_layout_company {
                     flex: 5;
 
                     img {
                         max-height: 100px;
                     }
-                    .o_custom_colors {
-                        .o-checkbox {
+
+                    .w_custom_colors {
+                        .w-checkbox {
                             @include o-position-absolute(0, 0, 0, 0);
                             width: 100%;
                         }
                     }
 
-                    select.o_input {
+                    select.w_input {
                         height: 25px;
                     }
                 }
-                .o_preview {
+
+                .w_preview {
                     .preview_document_layout {
-                        .o_preview_iframe {
+                        .w_preview_iframe {
                             padding: 0;
                         }
                     }
@@ -41,7 +48,7 @@
 }
 
 @media (max-width: 620px) {
-    .o_document_layout .o_group {
+    .w_document_layout .w_group {
         flex-direction: column;
     }
 }

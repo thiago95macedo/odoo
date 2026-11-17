@@ -61,7 +61,7 @@ export class UseSuggestion {
     suggestionService = useService("mail.suggestion");
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("@weth/owl").ReactiveValue<import("@html_editor/editor").Editor>} editor
      */
     constructor(env, editor) {

@@ -3,11 +3,12 @@
         i.oi {
             font-size: var(--Favorite-font-size, 1rem);
         }
+
         i[data-icon="star"] {
-            @include o-hover-text-color($o-main-color-muted, $o-main-favorite-color);
+            @include o-hover-text-color($w-main-color-muted, $w-main-favorite-color);
 
             &.oi-filled {
-                color: $o-main-favorite-color;
+                color: $w-main-favorite-color;
             }
         }
     }

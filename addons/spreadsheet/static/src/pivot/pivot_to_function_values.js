@@ -5,7 +5,7 @@ const { pivotToFunctionValueRegistry } = registries;
 const { toString, toNumber } = helpers;
 
 /**
- * Add pivot formatting functions to support odoo specific fields
+ * Add pivot formatting functions to support weth specific fields
  * in spreadsheet
  */
 

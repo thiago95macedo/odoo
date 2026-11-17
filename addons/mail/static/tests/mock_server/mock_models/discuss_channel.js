@@ -752,7 +752,7 @@ export class DiscussChannel extends models.ServerModel {
         const messageId = MailMessage._getNextId();
         const store = new Store();
         store.add_model_values("mail.message", (res) => {
-            res.one("author_id", [], { value: ResPartner.browse(serverState.odoobotId) });
+            res.one("author_id", [], { value: ResPartner.browse(serverState.wethbotId) });
             res.attr("body", ["markup", content]); // mock: html fields must be markup-wrapped
             res.attr("id", messageId);
             res.attr("is_transient", true);

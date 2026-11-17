@@ -13,7 +13,7 @@ window.addEventListener("beforeunload", () => {
 /**
  * Handles the errors trigger after the before unload event.
  *
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @param {UncaughError} error
  * @returns {boolean}
  */

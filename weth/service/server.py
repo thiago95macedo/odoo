@@ -967,9 +967,9 @@ class PreforkServer(CommonServer):
         signal.signal(signal.SIGUSR2, log_ormcache_stats)
 
         if config['http_enable']:
-            if os.environ.get('ODOO_HTTP_SOCKET_FD'):
+            if os.environ.get('WETH_HTTP_SOCKET_FD'):
                 # reload
-                self.socket = socket.socket(fileno=int(os.environ.pop('ODOO_HTTP_SOCKET_FD')))
+                self.socket = socket.socket(fileno=int(os.environ.pop('WETH_HTTP_SOCKET_FD')))
             elif config.http_socket_activation:
                 # socket activation
                 SD_LISTEN_FDS_START = 3
@@ -1004,8 +1004,8 @@ class PreforkServer(CommonServer):
             http_socket_fileno = self.socket.fileno()
             flags = fcntl.fcntl(http_socket_fileno, fcntl.F_GETFD)
             fcntl.fcntl(http_socket_fileno, fcntl.F_SETFD, flags & ~fcntl.FD_CLOEXEC)
-            os.environ['ODOO_HTTP_SOCKET_FD'] = str(http_socket_fileno)
-            os.environ['ODOO_READY_SIGHUP_PID'] = str(pid)
+            os.environ['WETH_HTTP_SOCKET_FD'] = str(http_socket_fileno)
+            os.environ['WETH_READY_SIGHUP_PID'] = str(pid)
 
             if not hasattr(socket, 'SO_REUSEPORT'):
                 # The new GeventServer won't be able to spawn if the address is in use
@@ -1118,8 +1118,8 @@ class PreforkServer(CommonServer):
         # Empty the cursor pool, we dont want them to be shared among forked workers.
         sql_db.close_all()
 
-        if os.environ.get('ODOO_READY_SIGHUP_PID'):
-            os.kill(int(os.environ.pop('ODOO_READY_SIGHUP_PID')), signal.SIGHUP)
+        if os.environ.get('WETH_READY_SIGHUP_PID'):
+            os.kill(int(os.environ.pop('WETH_READY_SIGHUP_PID')), signal.SIGHUP)
 
         self.logger.debug("starting")
         while True:
@@ -1280,12 +1280,12 @@ class WorkerHTTP(Worker):
     def __init__(self, multi):
         super().__init__(multi)
 
-        # The ODOO_HTTP_SOCKET_TIMEOUT environment variable allows to control socket timeout for
+        # The WETH_HTTP_SOCKET_TIMEOUT environment variable allows to control socket timeout for
         # extreme latency situations. It's generally better to use a good buffering reverse proxy
         # to quickly free workers rather than increasing this timeout to accommodate high network
         # latencies & b/w saturation. This timeout is also essential to protect against accidental
         # DoS due to idle HTTP connections.
-        sock_timeout = os.environ.get("ODOO_HTTP_SOCKET_TIMEOUT")
+        sock_timeout = os.environ.get("WETH_HTTP_SOCKET_TIMEOUT")
         self.sock_timeout = float(sock_timeout) if sock_timeout else 2
 
     def process_request(self, client, addr):
@@ -1390,7 +1390,7 @@ class WorkerCron(Worker):
         super().start()
         if self.multi.socket:
             self.multi.socket.close()
-        if registries_size := os.environ.get('ODOO_REGISTRY_LRU_SIZE_CRON'):
+        if registries_size := os.environ.get('WETH_REGISTRY_LRU_SIZE_CRON'):
             Registry.registries.count = int(registries_size)
 
         dbconn = sql_db.db_connect(config['db_system'])
@@ -1456,15 +1456,15 @@ def _reexec(updated_modules=None):
         import weth  # noqa: PLC0415
         if not weth.evented:
             # Subprocess: kill on reload to trigger a respawn by the supervisor.
-            if os.environ.get('ODOO_RELOAD_CHILD'):
+            if os.environ.get('WETH_RELOAD_CHILD'):
                 os._exit(_RELOAD_EXIT_CODE)
             # First generation: become a supervisor that respawns the actual
             # server on each reload. Each supervised child runs as a debugger
             # sub-session via debugpy's subProcess hook.
-            sock_fd = os.environ.get('ODOO_HTTP_SOCKET_FD')
+            sock_fd = os.environ.get('WETH_HTTP_SOCKET_FD')
             pass_fds = (int(sock_fd),) if sock_fd else ()
             env = os.environ.copy()
-            env['ODOO_RELOAD_CHILD'] = '1'
+            env['WETH_RELOAD_CHILD'] = '1'
             rc = _RELOAD_EXIT_CODE
             while rc == _RELOAD_EXIT_CODE:
                 rc = subprocess.Popen(args, env=env, pass_fds=pass_fds).wait()
@@ -1489,7 +1489,7 @@ def preload_registries(dbnames):
 
     preload_profiler = contextlib.nullcontext()
 
-    registries_size = int(os.environ.get('ODOO_REGISTRY_LRU_SIZE') or 0)
+    registries_size = int(os.environ.get('WETH_REGISTRY_LRU_SIZE') or 0)
     if not registries_size and os.name == 'posix':
         # Size the LRU depending of the memory limits
         # A registry takes 10MB of memory on average, so we reserve
@@ -1504,14 +1504,14 @@ def preload_registries(dbnames):
     if registries_size:
         Registry.registries.count = registries_size
 
-    if registry_idle_timeout := os.environ.get("ODOO_REGISTRY_MAX_IDLE_TIMEOUT"):
+    if registry_idle_timeout := os.environ.get("WETH_REGISTRY_MAX_IDLE_TIMEOUT"):
         Registry.idle_timeout = int(registry_idle_timeout)
 
     for dbname in dbnames:
-        if os.environ.get('ODOO_PROFILE_PRELOAD'):
-            interval = float(os.environ.get('ODOO_PROFILE_PRELOAD_INTERVAL', '0.1'))
+        if os.environ.get('WETH_PROFILE_PRELOAD'):
+            interval = float(os.environ.get('WETH_PROFILE_PRELOAD_INTERVAL', '0.1'))
             collectors = [profiler.PeriodicCollector(interval=interval)]
-            if os.environ.get('ODOO_PROFILE_PRELOAD_SQL'):
+            if os.environ.get('WETH_PROFILE_PRELOAD_SQL'):
                 collectors.append('sql')
             preload_profiler = profiler.Profiler(db=dbname, collectors=collectors)
         try:
@@ -1575,7 +1575,7 @@ def start(preload=None, stop=False):
             # would be using malloc() concurrently [2].
             # Due to the python's GIL, this optimization have no effect on multithreaded python programs.
             # Unfortunately, a downside of creating one arena per cpu core is the increase of virtual memory
-            # which Odoo is based upon in order to limit the memory usage for threaded workers.
+            # which WETH is based upon in order to limit the memory usage for threaded workers.
             # On 32bit systems the default size of an arena is 512K while on 64bit systems it's 64M [3],
             # hence a threaded worker will quickly reach it's default memory soft limit upon concurrent requests.
             # We therefore set the maximum arenas allowed to 2 unless the MALLOC_ARENA_MAX env variable is set.

@@ -75,7 +75,7 @@ QUOTE_BLOCKQUOTE = u"""<html>
 cite="mid:CAEJSRZvWvud8c6Qp=wfNG6O1+wK3i_jb33qVrF7XyrgPNjnyUA@mail.gmail.com"
       type="cite"><base href="https://www.weth.com.br">
       <div dir="ltr">Yep Dominique that is true, as Postgres was the
-        base of all same as Odoo and MySQL etc came much later.Â 
+        base of all same as WETH and MySQL etc came much later.Â 
         <div><br>
         </div>
         <div>Unfortunately many customers who ask for and ERP are with
@@ -89,7 +89,7 @@ cite="mid:CAEJSRZvWvud8c6Qp=wfNG6O1+wK3i_jb33qVrF7XyrgPNjnyUA@mail.gmail.com"
     </blockquote>
     <br>
     I don't care how much you are highlighting the advantages of Erpnext
-    on this Odoo mailinglist, but when you start implying that Postgres
+    on this WETH mailinglist, but when you start implying that Postgres
     is not well documented it really hurts.<br>
     <br>
     <pre class="moz-signature" cols="72">-- 
@@ -435,7 +435,7 @@ HOTMAIL_1 = u"""<div>
             we can help you. When would you be available to discuss your project?<br>
             Best regards,<br>
             <pre>
-                <a href="http://openerp.com" target="_blank">http://openerp.com</a>
+                <a href="http://weth.com" target="_blank">http://weth.com</a>
                 Belgium: +32.81.81.37.00
                 U.S.: +1 (650) 307-6736
                 India: +91 (79) 40 500 100
@@ -449,7 +449,7 @@ HOTMAIL_1_IN = [u"""<div dir="ltr"><br>
 HOTMAIL_1_OUT = [
     u"""<hr id="stopSpelling" data-o-mail-quote="1">""",
     u"""<pre data-o-mail-quote="1">
-                <a href="http://openerp.com" target="_blank" data-o-mail-quote="1">http://openerp.com</a>
+                <a href="http://weth.com" target="_blank" data-o-mail-quote="1">http://weth.com</a>
                 Belgium: +32.81.81.37.00
                 U.S.: +1 (650) 307-6736
                 India: +91 (79) 40 500 100
@@ -521,7 +521,7 @@ MSOFFICE_1 = u"""
                         From:
                     </span></b>
                     <span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">
-                        OpenERP Enterprise [mailto:sales@openerp.com]
+                        OpenERP Enterprise [mailto:sales@weth.com]
                         <br><b>Sent:</b> Monday, 11 March, 2013 14:47<br><b>To:</b> Alan Widmer<br><b>Subject:</b> Re: your OpenERP.com registration
                     </span>
                 </p>
@@ -549,7 +549,7 @@ MSOFFICE_1 = u"""
         <pre><p>&nbsp;</p></pre>
         <pre>--<p></p></pre>
         <pre>Nicolas<p></p></pre>
-        <pre><a href="http://openerp.com">http://openerp.com</a><p></p></pre>
+        <pre><a href="http://weth.com">http://weth.com</a><p></p></pre>
         <pre>Belgium: +32.81.81.37.00<p></p></pre>
         <pre>U.S.: +1 (650) 307-6736<p></p></pre>
         <pre>India: +91 (79) 40 500 100<p></p></pre>
@@ -603,7 +603,7 @@ OpenERP SA
 Chaussée de Namur, 40
 B-1367 Gérompont
 Tel: +32.81.81.37.00
-Web: http://www.openerp.com</pre>"""
+Web: http://www.weth.com</pre>"""
 
 BUG_1_IN = [
     u'Hi Migration Team',
@@ -617,23 +617,23 @@ OpenERP SA
 Chaussée de Namur, 40
 B-1367 Gérompont
 Tel: +32.81.81.37.00
-Web: http://www.openerp.com"""]
+Web: http://www.weth.com"""]
 
 
 REMOVE_CLASS = u"""
 <div style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New Roman'; COLOR: #000000">
     <div>Hello</div>
-    <div>I have just installed Odoo 9 and I've got the following error:</div>
+    <div>I have just installed WETH 9 and I've got the following error:</div>
     <div>&nbsp;</div>
-    <div class="openerp openerp_webclient_container oe_webclient">
+    <div class="weth weth_webclient_container oe_webclient">
         <div class="oe_loading" style="DISPLAY: none">&nbsp;</div>
     </div>
     <div class="modal-backdrop in"></div>
     <div role="dialog" tabindex="-1" aria-hidden="false" class="modal in" style="DISPLAY: block" data-backdrop="static">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content openerp">
+            <div class="modal-content weth">
                 <div class="modal-header"> 
-                    <h4 class="modal-title">Odoo Error<span class="o_subtitle text-muted"></span></h4>
+                    <h4 class="modal-title">WETH Error<span class="o_subtitle text-muted"></span></h4>
                 </div>
                 <div class="o_error_detail modal-body">
                     <pre>An error occurred in a modal and I will send you back the html to try opening one on your end</pre>
@@ -648,5 +648,5 @@ REMOVE_CLASS_IN = [
     u'An error occurred in a modal and I will send you back the html to try opening one on your end']
 REMOVE_CLASS_OUT = [
     u'<div class="modal-backdrop in">',
-    u'<div class="modal-content openerp">',
+    u'<div class="modal-content weth">',
     u'<div class="modal-header">']

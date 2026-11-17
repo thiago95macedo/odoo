@@ -1,6 +1,6 @@
 .o_field_resume_one2many {
-    $o-hrs-timeline-entry-padding: .5rem;
-    $o-hrs-timeline-dot-size: .6rem;
+    $w-hrs-timeline-entry-padding: .5rem;
+    $w-hrs-timeline-dot-size: .6rem;
 
     .o_data_row {
         border-bottom: none;
@@ -8,20 +8,20 @@
 
     .o_resume_timeline_header {
         box-sizing: content-box;
-        width: $o-hrs-timeline-dot-size;
+        width: $w-hrs-timeline-dot-size;
     }
 
     .o_data_row td {
-        padding: $o-hrs-timeline-entry-padding;
+        padding: $w-hrs-timeline-entry-padding;
 
         &.o_resume_timeline_cell {
             div {
-                width: $o-hrs-timeline-dot-size;
-                height: $o-hrs-timeline-dot-size;
+                width: $w-hrs-timeline-dot-size;
+                height: $w-hrs-timeline-dot-size;
             }
 
             &:before {
-                @include o-position-absolute(0, $right: $o-hrs-timeline-dot-size * .5);
+                @include o-position-absolute(0, $right: $w-hrs-timeline-dot-size * .5);
                 width: $border-width;
                 height: 100%;
                 background-color: $border-color;
@@ -34,16 +34,18 @@
         overflow: auto;
     }
 
-    .o_resume_line_title, .o_resume_line_desc {
+    .o_resume_line_title,
+    .o_resume_line_desc {
         white-space: normal;
     }
 
-    .o_resume_line_title, .o_resume_line_dates {
+    .o_resume_line_title,
+    .o_resume_line_dates {
         line-height: 1;
     }
 
-    .o_resume_group_header + .o_data_row .o_resume_timeline_cell:before {
-        top: $o-hrs-timeline-entry-padding;
+    .o_resume_group_header+.o_data_row .o_resume_timeline_cell:before {
+        top: $w-hrs-timeline-entry-padding;
     }
 
     .o_data_row.o_data_row_last {
@@ -52,7 +54,7 @@
         }
 
         .o_resume_timeline_cell:before {
-            height: $o-hrs-timeline-entry-padding;
+            height: $w-hrs-timeline-entry-padding;
         }
     }
 }

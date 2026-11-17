@@ -63,7 +63,7 @@ for (const subscribed of [false, true]) {
                 })
                 .as_dict(),
         });
-        await contains(".o-mail-MessagingMenu-tab:has(:text('Notifications')):has(.badge:text(1))");
+        await contains(".w-mail-MessagingMenu-tab:has(:text('Notifications')):has(.badge:text(1))");
         await expect.waitForSteps(
             subscribed ? ["get subscription"] : ["get subscription", "local notification"]
         );
@@ -99,9 +99,9 @@ test("record push: message already read in inbox", async () => {
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-MessagingMenuItem:has(:text('You: Unread message'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('You: Unread message'))");
     await click("button:text('All')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('You: Read message'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('You: Read message'))");
     patchWithCleanup(parent.document, { hasFocus: () => false });
     patchWithCleanup(browser.navigator.serviceWorker, {
         controller: {

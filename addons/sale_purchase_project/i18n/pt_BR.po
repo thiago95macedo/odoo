@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_purchase_project/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: sale_purchase_project
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase_project/models/account_analytic_line.py:0
 msgid "Purchase Orders"
 msgstr "Pedidos de compra"

@@ -7,7 +7,7 @@ from unittest.mock import patch
 from weth import Command, fields
 from weth.addons.account.tests.common import AccountTestInvoicingCommon
 from weth.tools import config, file_open
-from weth.tools.pdf import OdooPdfFileWriter
+from weth.tools.pdf import WethPdfFileWriter
 
 
 class TestUblCiiCommon(AccountTestInvoicingCommon):
@@ -181,7 +181,7 @@ class TestUblCiiCommon(AccountTestInvoicingCommon):
     def _get_pdf_bytes(cls, xml_content=None, filename='factur-x.xml'):
         """ Small A4 PDF, with `xml_content` embedded as `filename` if given. """
         a4_width_pt, a4_height_pt = 595, 842
-        writer = OdooPdfFileWriter()
+        writer = WethPdfFileWriter()
         writer.add_blank_page(a4_width_pt, a4_height_pt)
         if xml_content:
             writer.add_attachment(filename, xml_content, subtype='text/xml', afrelationship='/Alternative')
@@ -249,7 +249,7 @@ class TestUblCiiCommon(AccountTestInvoicingCommon):
     @classmethod
     def _get_raw_mail_message_str(self, attachments, email_to, message_id=None):
         """ Mock an incoming mail message
-        :param attachments: Odoo recordset of ir.attachment.
+        :param attachments: WETH recordset of ir.attachment.
         :param email_to: string that will fill email_to field in the email, probably you'll want to use some journal alias here.
         :param message_id: Optional. Custom message ID for the email. If not provided, a UUID will be generated.
 

@@ -22,7 +22,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:41+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -54,13 +54,13 @@ msgstr ""
 " * Cancelado: a OP foi cancelada, não pode mais ser confirmada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid " <br/><br/> The components will be taken from <b>%s</b>."
 msgstr " <br/><br/>Os componentes serão retirados de<b>%s</b>."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid ""
 " <br/><br/> The manufactured products will be moved towards <b>%"
@@ -108,85 +108,85 @@ msgid "# of BoM Where is Used"
 msgstr "Nº de LMs onde são usadas"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "%(display_name)s"
 msgstr "%(display_name)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "%(name)s Sequence picking before manufacturing"
 msgstr "%(name)s Sequenciar separação antes da produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "%(name)s Sequence production"
 msgstr "%(name)s Sequenciar produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "%(name)s Sequence stock after manufacturing"
 msgstr "%(name)s Sequenciar estoque após a produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "%(producible_qty)s Ready"
 msgstr "%(producible_qty)s prontos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "%(product)s: Insufficient Quantity To Unbuild"
 msgstr "%(product)s: quantidade insuficiente para desmontar"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "%(product_name)s (new) %(number_of_boms)s"
 msgstr "%(product_name)s (novo) %(number_of_boms)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "%(qty)s %(measure)s unbuilt in %(order)s"
 msgstr "%(qty)s %(measure)s inacabados em %(order)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "%(qty)s Ready To Produce"
 msgstr "%(qty)s Pronto para produzir"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "%(qty)s To %(route)s"
 msgstr "%(qty)s até %(route)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_routing.py:0
 msgid "%i work orders"
 msgstr "%i ordens de trabalho"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "%s Child MO's"
 msgstr "%s OPs secundárias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "%s Days"
 msgstr "%s Dias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "%s cannot be deleted. Try to cancel them before."
 msgstr "%s não pode ser excluída. Tente cancelá-la antes."
@@ -217,20 +217,20 @@ msgid "'Work Order - %s' % object.name"
 msgstr "'Ordem de trabalho - %s' % object.name"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "(in"
 msgstr "(em"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "+ %d days"
 msgstr "+ %d dias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "+ %s days"
 msgstr "+ %s dias"
@@ -250,7 +250,7 @@ msgstr ""
 "            Ações manuais podem ser necessárias."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "0 Days"
 msgstr "0 dias"
@@ -279,7 +279,7 @@ msgid "8 GB RAM"
 msgstr "8 GB de RAM"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/workcenter_dashboard_graph/workcenter_dashboard_graph_field.js:0
 msgid ":  hours"
 msgstr ":  horas"
@@ -764,7 +764,7 @@ msgstr ""
 "Em vez disso, ele é usado para decompor uma LM em seus componentes quando:"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid ""
 "A product with a kit-type bill of materials can not have a reordering rule."
@@ -857,7 +857,7 @@ msgid "Actual time"
 msgstr "Hora real"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/views/mrp_workorder_kanban/mrp_workorder_kanban_header.js:0
 msgid "Add Work Orders to planning"
 msgstr "Adicionar ordens de serviço ao planejamento"
@@ -1083,7 +1083,7 @@ msgstr ""
 "Esta ação não pode ser desfeita."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/product.py:0
 msgid ""
 "As other units of measure (ex : %(problem_uom)s) than %(uom)s have already "
@@ -1121,7 +1121,7 @@ msgid "Attachment Count"
 msgstr "Contagem de anexos"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.js:0
 msgid "Attachments"
 msgstr "Anexos"
@@ -1178,13 +1178,13 @@ msgstr ""
 "\"Criar um novo número de série/lote\" for usado."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_display_filter/mrp_mo_overview_display_filter.js:0
 msgid "Availabilities"
 msgstr "Disponibilidades"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 msgid "Availabilities on products."
 msgstr "Disponibilidades em produtos."
@@ -1200,7 +1200,7 @@ msgid "Availability Losses"
 msgstr "Perdas de disponibilidade"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
@@ -1227,21 +1227,21 @@ msgstr ""
 "em que os componentes devem ser enviados ao subcontratado."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Avg Cost of Components per Unit"
 msgstr "Custo médio de componentes por unidade"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Avg Cost of Operations per Unit"
 msgstr "Custo médio de operações por unidade"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Avg Total Cost per Unit"
@@ -1270,13 +1270,13 @@ msgid "BOM lines of the referred bom"
 msgstr "Linhas da referida lista de materiais"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/product_catalog/kanban_controller.js:0
 msgid "Back to BoM"
 msgstr "Voltar para a LM"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/product_catalog/kanban_controller.js:0
 msgid "Back to Production"
 msgstr "Voltar para produção"
@@ -1292,13 +1292,13 @@ msgid "Backorder Confirmation Lines"
 msgstr "Linhas de confirmação de pedido em espera"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Backorder MO"
 msgstr "OP de pedido em espera"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Backorder MO's"
 msgstr "OPs de pedido em espera"
@@ -1433,7 +1433,7 @@ msgid "Block Workcenter"
 msgstr "Bloquear centro de trabalho"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.xml:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_workcenter__working_state__blocked
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_workorder__state__blocked
@@ -1524,7 +1524,7 @@ msgid "Bom Id Placeholder"
 msgstr "Marcador de posição do ID da LM"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
 #: code:addons/mrp/static/src/components/mo_overview_byproducts_block/mrp_mo_overview_byproducts_block.xml:0
 #: model:ir.model.fields,field_description:mrp.field_res_config_settings__group_mrp_byproducts
@@ -1539,7 +1539,7 @@ msgid "By-product"
 msgstr "Subproduto"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "By-product %s should not be the same as BoM product."
 msgstr "O subproduto %s não deve ser igual ao produto da LM."
@@ -1557,7 +1557,7 @@ msgid "By-products"
 msgstr "Subprodutos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "By-products cost shares must be positive."
@@ -1570,13 +1570,13 @@ msgid "Byproduct"
 msgstr "Subproduto"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "Byproducts"
 msgstr "Subprodutos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Can't find any production location."
 msgstr "Não foi possível encontrar um local de produção."
@@ -1608,7 +1608,7 @@ msgid "Cancel this Order"
 msgstr "Cancelar este pedido"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.xml:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_production__state__cancel
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_workorder__state__cancel
@@ -1619,7 +1619,7 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Cannot delete a manufacturing order in done state."
 msgstr "Não é possível excluir uma ordem de produção com status de concluída."
@@ -1673,7 +1673,7 @@ msgid "Change Quantity To Produce"
 msgstr "Alterar quantidade a produzir"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "Changing the product or variant will permanently reset all previously "
@@ -1683,7 +1683,7 @@ msgstr ""
 "dados relacionados à variante codificados anteriormente."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 msgid "Check BoM Overview"
 msgstr "Visão geral da LM"
@@ -1694,13 +1694,13 @@ msgid "Child Manufacturing Orders"
 msgstr "Ordens de produção secundárias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/wizard/stock_label_type.py:0
 msgid "Choose Labels Layout"
 msgstr "Selecionar modelo das etiquetas"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Choose Type of Labels To Print"
 msgstr "Escolha o tipo de etiquetas a serem impressas"
@@ -1777,7 +1777,7 @@ msgid "Compare BoMs"
 msgstr "Comparar LdMs"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom_line__product_id
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_line_view_form
@@ -1802,13 +1802,13 @@ msgid "Component Status"
 msgstr "Status do componente"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/mrp_forecasted/forecasted_details.xml:0
 msgid "Component of Draft MO"
 msgstr "Componente da OP provisória"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_move.py:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__move_raw_ids
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_form_view
@@ -1871,7 +1871,7 @@ msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_picking.py:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_production__state__confirmed
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_filter
@@ -1879,7 +1879,7 @@ msgid "Confirmed"
 msgstr "Confirmado"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/workorder_planning_status.xml:0
 #, fuzzy
 msgid ""
@@ -1894,7 +1894,7 @@ msgid "Conflicts"
 msgstr "Conflitos"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_consumption_warning_line__product_consumed_qty_uom
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
@@ -1958,7 +1958,7 @@ msgid "Cost"
 msgstr "Custo"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Cost Breakdown of Products"
@@ -1981,14 +1981,14 @@ msgid "Cost based on"
 msgstr "Custo baseado em"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Cost of Components per unit"
 msgstr "Custo dos componentes por unidade"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Cost of Operations per unit"
@@ -2251,7 +2251,7 @@ msgid "Date: Last 365 Days"
 msgstr "Data: últimos 365 dias"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom_pdf_line
@@ -2259,7 +2259,7 @@ msgid "Days"
 msgstr "Dias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "Days to Supply Components"
 msgstr "Dias para fornecer componentes"
@@ -2271,7 +2271,7 @@ msgid "Days to prepare"
 msgstr "Dias para preparar"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 #, fuzzy
 msgid "Days to prepare estimation for"
@@ -2384,13 +2384,13 @@ msgstr "Detalhes"
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_routing_workcenter__cost_mode
 msgid ""
-"Determines the way Odoo calculates the cost of the operation:\n"
+"Determines the way WETH calculates the cost of the operation:\n"
 "- Based on Actual time: the cost will be calculated based on tracked time "
 "and real employee costs.\n"
 "- Based on Theoretical time: the cost will be calculated based on estimated "
 "time and costs."
 msgstr ""
-"Determina a forma como o Odoo calcula o custo da operação:\n"
+"Determina a forma como o WETH calcula o custo da operação:\n"
 "- Com base no tempo real: o custo será calculado com base no tempo "
 "registrado e nos custos reais dos funcionários.\n"
 "- Com base no tempo teórico: o custo será calculado com base no tempo e nos "
@@ -2408,7 +2408,7 @@ msgid "Discard"
 msgstr "Cancelar"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_display_filter/mrp_bom_overview_display_filter.xml:0
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.js:0
 msgid "Display"
@@ -2498,7 +2498,7 @@ msgid "Documentation"
 msgstr "Documentação"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.xml:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_production__state__done
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_unbuild__state__done
@@ -2630,13 +2630,13 @@ msgid "Estimated"
 msgstr "Estimado"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "Estimated %(date)s %(workcenter_name)s"
 msgstr "Estimado %(date)s %(workcenter_name)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "Estimated %s"
@@ -2653,7 +2653,7 @@ msgid "Exception(s):"
 msgstr "Exceções:"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Exp %s"
 msgstr "Prev %s"
@@ -2664,7 +2664,7 @@ msgid "Expected"
 msgstr "Esperado"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "Expected %s"
@@ -2683,7 +2683,7 @@ msgid "Expected Duration"
 msgstr "Duração prevista"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #, fuzzy
 msgid "Exploded BoM Lines"
@@ -2748,7 +2748,7 @@ msgid "Fixed"
 msgstr "Fixo"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.js:0
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.xml:0
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
@@ -2777,13 +2777,13 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (usuários)"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 msgid "Forecast"
 msgstr "Previsão"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.xml:0
 #: code:addons/mrp/static/src/components/mo_overview_line/mrp_mo_overview_line.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
@@ -2832,14 +2832,14 @@ msgid "Format"
 msgstr "Formato"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom
 msgid "Free to Use / On Hand"
 msgstr "Livre para uso/em mãos"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Free to use / On Hand"
@@ -3034,7 +3034,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_boolean_icon_field.js:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__activity_exception_icon
 #: model:ir.model.fields,field_description:mrp.field_mrp_routing_workcenter__activity_exception_icon
@@ -3118,47 +3118,47 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_stock_picking_type__auto_print_mrp_reception_report_labels
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the allocation "
+"If this checkbox is ticked, WETH will automatically print the allocation "
 "report labels of a MO when it is done."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as etiquetas do relatório de alocação de uma OP quando ela for concluída."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_stock_picking_type__auto_print_mrp_reception_report
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the allocation "
+"If this checkbox is ticked, WETH will automatically print the allocation "
 "report of a MO when it is done and has assigned moves."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente o "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente o "
 "relatório de alocação de uma OP quando ela for concluída e tiver "
 "movimentações atribuídas."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_stock_picking_type__auto_print_done_mrp_lot
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the lot/SN label "
+"If this checkbox is ticked, WETH will automatically print the lot/SN label "
 "of a MO when it is done."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "etiqueta de número de série/lote de uma OP quando ela for concluída."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_stock_picking_type__auto_print_done_mrp_product_labels
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the product labels "
+"If this checkbox is ticked, WETH will automatically print the product labels "
 "of a MO when it is done."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as etiquetas de produto de uma OP quando ela for concluída."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_stock_picking_type__auto_print_done_production_order
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the production "
+"If this checkbox is ticked, WETH will automatically print the production "
 "order of a MO when it is done."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "ordem de produção de uma OP quando ela for concluída."
 
 #. module: mrp
@@ -3167,7 +3167,7 @@ msgid "Impacted Transfer(s):"
 msgstr "Transferências impactadas:"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid ""
 "Impossible to plan the workorder. Please check the workcenter availabilities."
@@ -3176,7 +3176,7 @@ msgstr ""
 "dos centros de trabalho."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "Impossible to plan. Please check the workcenter availabilities."
 msgstr ""
@@ -3184,7 +3184,7 @@ msgstr ""
 "trabalho."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.xml:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_production__state__progress
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_workcenter__working_state__done
@@ -3198,7 +3198,7 @@ msgid "In Progress"
 msgstr "Em andamento"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "In Transit"
 msgstr "Em trânsito"
@@ -3297,13 +3297,13 @@ msgid "Is the Current User Working"
 msgstr "O usuário atual está trabalhando"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid "It has already been unblocked."
 msgstr "Já foi desbloqueado."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid ""
 "It is not possible to unplan one single Work Order. You should unplan the "
@@ -3470,7 +3470,7 @@ msgid "Layers that are stick together to assemble wood panels."
 msgstr "Camadas se juntam para montar painéis de madeira."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_replenishment_tree_view
@@ -3587,20 +3587,20 @@ msgid "MO Backorder"
 msgstr "Pedido em espera da OP"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "MO Cost"
 msgstr "Custo de OP"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_display_filter/mrp_mo_overview_display_filter.js:0
 msgid "MO Costs"
 msgstr "Custos de OP"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "MO Generated by %s"
 msgstr "OP gerada por %s"
@@ -3638,7 +3638,7 @@ msgid "MO State"
 msgstr "Status da OM"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_boolean_icon_field.js:0
 #, fuzzy
 msgid "MRP Boolean Icon"
@@ -3672,8 +3672,8 @@ msgid "Manual Duration"
 msgstr "Duração manual"
 
 #. module: mrp
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 #: model:ir.model.fields,field_description:mrp.field_stock_warehouse__manufacture_steps
@@ -3684,7 +3684,7 @@ msgid "Manufacture"
 msgstr "Fabricar"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 #: model:ir.model.fields.selection,name:mrp.selection__stock_warehouse__manufacture_steps__mrp_one_step
 msgid "Manufacture (1 step)"
@@ -3728,7 +3728,7 @@ msgid "Manufactured in the last 365 days"
 msgstr "Fabricados nos últimos 365 dias"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 #: model:ir.actions.client,name:mrp.action_mrp_display_fullscreen
 #: model:ir.model.fields.selection,name:mrp.selection__stock_picking_type__code__mrp_operation
@@ -3743,13 +3743,13 @@ msgid "Manufacturing"
 msgstr "Fabricação"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/mrp_forecasted/forecasted_buttons.xml:0
 msgid "Manufacturing Forecast"
 msgstr "Previsão de fabricação"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom__produce_delay
 msgid "Manufacturing Lead Time"
@@ -3778,7 +3778,7 @@ msgid "Manufacturing Order"
 msgstr "Ordem de produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 #: code:addons/mrp/models/stock_picking.py:0
 #: model:ir.actions.act_window,name:mrp.action_mrp_production_form
@@ -3949,7 +3949,7 @@ msgid "Miscellaneous"
 msgstr "Diversos"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 #, fuzzy
 msgid "Missing route info for components."
@@ -3962,7 +3962,7 @@ msgid "Move"
 msgstr "Mover"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_move.py:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__move_byproduct_ids
 msgid "Move Byproduct"
@@ -4024,14 +4024,14 @@ msgid "Never attribute values"
 msgstr "Nunca valores de atributos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "New"
 msgstr "Novo"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "New BoM from %(mo_name)s"
 msgstr "Nova LM de %(mo_name)s"
@@ -4080,7 +4080,7 @@ msgid "No"
 msgstr "Não"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "No BoM Found"
 msgstr "Nenhuma LM encontrada"
@@ -4097,7 +4097,7 @@ msgid "No bill of materials found. Let's create one!"
 msgstr "Nenhuma lista de materiais encontrada. Vamos criar a primeira!"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom
 msgid "No data available."
@@ -4130,7 +4130,7 @@ msgid "No unbuild order found"
 msgstr "Nenhuma ordem de desmontagem encontrada"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/wizard/mrp_production_serial_numbers.py:0
 #, fuzzy
 msgid "No valid serial numbers provided."
@@ -4161,7 +4161,7 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
@@ -4170,13 +4170,13 @@ msgid "Not Available"
 msgstr "Não disponível"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 msgid "Not Available:"
 msgstr "Não disponível"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "Not Ready"
 msgstr "Não pronta"
@@ -4187,7 +4187,7 @@ msgid "Note that another version of this BOM is available."
 msgstr "Observe que outra versão desta LM está disponível."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid ""
 "Note that archived work center(s): '%s' is/are still linked to active Bill "
@@ -4200,7 +4200,7 @@ msgstr ""
 "trabalho."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/product.py:0
 msgid ""
 "Note that product(s): '%s' is/are still linked to active Bill of Materials, "
@@ -4329,12 +4329,12 @@ msgstr "Meta de EGE"
 #: model:ir.module.module,description:base.module_mrp
 #, fuzzy
 msgid ""
-"Odoo Manufacturing Resource Planning\n"
+"WETH Manufacturing Resource Planning\n"
 "------------------------------------\n"
 "\n"
 "Manage Bill of Materials, plan manufacturing orders, track work orders with "
 "the\n"
-"Odoo <a href=\"https://www.weth.com.br/app/manufacturing\">Open Source MRP</a> "
+"WETH <a href=\"https://www.weth.com.br/app/manufacturing\">Open Source MRP</a> "
 "app.\n"
 "\n"
 "Get all your assembly or manufacturing operations managed by WETH. Schedule\n"
@@ -4365,7 +4365,7 @@ msgid ""
 "---------------------------------\n"
 "\n"
 "Edit manually all proposed operations at any level of the progress. With "
-"Odoo,\n"
+"WETH,\n"
 "you will not be frustrated by a rigid system.\n"
 "\n"
 "Schedule Work Orders\n"
@@ -4405,17 +4405,17 @@ msgid ""
 "manufacturing operations.\n"
 "\n"
 msgstr ""
-"Odoo Fabricação (MRP)\n"
+"WETH Fabricação (MRP)\n"
 "------------------------------------\n"
 "\n"
 "\n"
 "Gerencie listas de materiais, planeje ordens de produção, rastreie ordens de "
 "trabalho com o \n"
-"aplicativo Odoo de <a href=\"https://www.weth.com.br/app/manufacturing\">"
+"aplicativo WETH de <a href=\"https://www.weth.com.br/app/manufacturing\">"
 "Fabricação de código aberto</a>.\n"
 "\n"
 "Tenha todas as suas operações de montagem ou fabricação gerenciadas pelo "
-"Odoo. Programe ordens de produção e ordens de trabalho automaticamente. "
+"Weth. Programe ordens de produção e ordens de trabalho automaticamente. "
 "Revise o planejamento proposto com as visualizações inteligentes de Kanban e "
 "Gantt. Use os recursos de análise avançada para detectar gargalos na "
 "capacidade dos recursos e em locais de inventário.\n"
@@ -4440,7 +4440,7 @@ msgstr ""
 "---------------------------------\n"
 "\n"
 "Edite manualmente todas as operações propostas em qualquer nível do "
-"progresso. Com o Odoo,\n"
+"progresso. Com o WETH,\n"
 "você não ficará frustrado com um sistema rígido.\n"
 "\n"
 "Programe ordens de trabalho\n"
@@ -4483,13 +4483,13 @@ msgstr ""
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_picking_type_form_inherit_mrp
 msgid ""
-"Odoo opens a PDF preview by default. If you want to print instantly,\n"
+"WETH opens a PDF preview by default. If you want to print instantly,\n"
 "                                install the IoT App on a computer that is on "
 "the same local network as the\n"
 "                                barcode operator and configure the routing "
 "of the reports."
 msgstr ""
-"O Odoo abre uma visualização em PDF por padrão. Se quiser imprimir "
+"O WETH abre uma visualização em PDF por padrão. Se quiser imprimir "
 "instantaneamente, instale o aplicativo IoT em um computador que esteja na "
 "mesma rede local que o operador de código de barras e configure o roteamento "
 "dos relatórios."
@@ -4505,7 +4505,7 @@ msgid "On Hand"
 msgstr "Em mãos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid ""
@@ -4515,7 +4515,7 @@ msgstr ""
 "mescladas"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Only manufacturing orders with a Bill of Materials can be %s."
 msgstr "Somente ordens de produção com uma lista de materiais podem ser %s."
@@ -4552,8 +4552,8 @@ msgid "Operation..."
 msgstr "Operação..."
 
 #. module: mrp
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
 #: code:addons/mrp/static/src/components/mo_overview_operations_block/mrp_mo_overview_operations_block.xml:0
@@ -4610,7 +4610,7 @@ msgstr ""
 "iniciada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "Order"
 msgstr "Pedido"
@@ -4684,7 +4684,7 @@ msgid "Package barcode"
 msgstr "Código de barras da embalagem"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: model:ir.actions.report,name:mrp.action_report_mrp_packages
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
@@ -4745,13 +4745,13 @@ msgid "Performance over the last month"
 msgstr "Desempenho no último mês"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Pick Components"
 msgstr "Selecionar componentes"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Pick components and then manufacture"
 msgstr "Selecionar componentes e fabricar"
@@ -4762,7 +4762,7 @@ msgid "Pick components then manufacture (2 steps)"
 msgstr "Selecionar componentes e fabricar (2 passos)"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Pick components, manufacture and then store products (3 steps)"
 msgstr "Selecionar componentes, fabricar e armazenar os produtos (3 passos)"
@@ -4811,7 +4811,7 @@ msgid "Plan"
 msgstr "Plano"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/views/mrp_workorder_kanban/mrp_workorder_kanban_controller.xml:0
 msgid "Plan MO"
 msgstr "Planejar OP"
@@ -4822,7 +4822,7 @@ msgid "Plan Orders"
 msgstr "Planejar ordens"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/views/mrp_workorder_kanban/mrp_workorder_kanban_header.xml:0
 #, fuzzy
 msgid "Plan Work Order"
@@ -4851,7 +4851,7 @@ msgid "Planned Date"
 msgstr "Data planejada"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 msgid ""
 "Planned cost before the MO is done. Once the MO is done its actual cost "
@@ -4874,7 +4874,7 @@ msgid "Planning Issues"
 msgstr "Problemas de planejamento"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/workorder_planning_status.xml:0
 #, fuzzy
 msgid "Planning issue: this work order is scheduled before a dependency"
@@ -4888,19 +4888,19 @@ msgid "Plastic Laminate"
 msgstr "Plástico laminado"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_move.py:0
 msgid "Please enter a positive quantity."
 msgstr "Insira uma quantidade positiva."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Please set the first Serial Number or a default sequence"
 msgstr "Defina o primeiro número de série ou uma sequência padrão"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid ""
 "Please specify a manufacturing order.\n"
@@ -4912,14 +4912,14 @@ msgstr ""
 "subprodutos corretos."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid "Please specify a quantity greater than 0."
 msgstr "Por favor, especifique uma quantidade maior que 0."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid "Please specify the produced serial numbers."
@@ -4944,13 +4944,13 @@ msgid "Possible Product Template Attribute Value"
 msgstr "Possível valor de atributo do modelo de produto"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Post-Production"
 msgstr "Pós-produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Pre-Production"
 msgstr "Pré-produção"
@@ -4978,7 +4978,7 @@ msgid "Primary"
 msgstr "Principal"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 msgid "Print"
@@ -5090,7 +5090,7 @@ msgid "Produced in Operation"
 msgstr "Produzido na operação"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model:ir.model,name:mrp.model_product_template
@@ -5126,7 +5126,7 @@ msgid "Product Capacities"
 msgstr "Capacidades do produto"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 msgid "Product Documents"
 msgstr "Documentos do produto"
@@ -5230,7 +5230,7 @@ msgid "Production Date"
 msgstr "Data de produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "Production End Date"
 msgstr "Data de conclusão da produção"
@@ -5270,7 +5270,7 @@ msgid "Production Order for finished products"
 msgstr "Ordem de produção para produtos acabados"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid "Production Start Date"
 msgstr "Data de início da produção"
@@ -5286,7 +5286,7 @@ msgid "Production Workcenter"
 msgstr "Centro de trabalho de produção"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/mrp_forecasted/forecasted_details.xml:0
 msgid "Production of Draft MO"
 msgstr "Produção de OP provisória"
@@ -5297,7 +5297,7 @@ msgid "Production started late"
 msgstr "Produção iniciada com atraso"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_production_group__production_ids
 #: model:ir.model.fields,field_description:mrp.field_stock_reference__production_ids
@@ -5380,7 +5380,7 @@ msgid "Quant"
 msgstr "Quant"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
@@ -5487,7 +5487,7 @@ msgid "Raw Moves"
 msgstr "Movimentações brutas"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_production__reservation_state__assigned
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_workorder_tree_editable_view
@@ -5503,14 +5503,14 @@ msgid "Real Duration"
 msgstr "Duração real"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Receipt"
 msgstr "Recebimento"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_display_filter/mrp_mo_overview_display_filter.js:0
 msgid "Receipts"
 msgstr "Recebimentos"
@@ -5566,7 +5566,7 @@ msgid "Remaining"
 msgstr "Restante"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/widgets/mrp_relative_date_unformatted_field.js:0
 msgid "Remaining Days"
 msgstr "Dias restantes"
@@ -5588,19 +5588,19 @@ msgid "Repetitions"
 msgstr "Repetições"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_line/mrp_mo_overview_line.xml:0
 msgid "Replenish"
 msgstr "Reposição"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Replenish on Order (MTO)"
 msgstr "Reposição por pedido (sob demanda)"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_display_filter/mrp_mo_overview_display_filter.js:0
 msgid "Replenishments"
 msgstr "Reposições"
@@ -5642,13 +5642,13 @@ msgid "Responsible User"
 msgstr "Usuário responsável"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 msgid "Resupply lead time."
 msgstr "Prazo de reabastecimento."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/widgets/mrp_bom_popover.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom
@@ -5720,13 +5720,13 @@ msgid "Scrap Move"
 msgstr "Movimentação de sucata"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Scrap Products"
 msgstr "Sucatear produtos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Scraps"
 msgstr "Sucatas"
@@ -5772,7 +5772,7 @@ msgid "Secondary"
 msgstr "Secundário"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_routing.py:0
 msgid "Select Operations to Copy"
 msgstr "Selecionar operações para copiar"
@@ -5800,7 +5800,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_production_components
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_serials_form
@@ -5808,7 +5808,7 @@ msgid "Serial Numbers"
 msgstr "Números de série"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Serial number(s) for product %(product_name)s already produced"
 msgstr "Número(s) de série para o produto %(product_name)s já produzido"
@@ -5819,7 +5819,7 @@ msgid "Set Quantity"
 msgstr "Definir quantidade"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid ""
@@ -5945,7 +5945,7 @@ msgid "Solid wood table."
 msgstr "Mesa de madeira maciça."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #, fuzzy
 msgid ""
@@ -5956,7 +5956,7 @@ msgstr ""
 "\t%(error_message)s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "Some work orders are already done, so you cannot unplan this manufacturing "
@@ -5968,7 +5968,7 @@ msgstr ""
 "cancelar o planejamento dessa ordem de produção."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "Some work orders have already started, so you cannot unplan this "
@@ -6076,7 +6076,7 @@ msgid "State"
 msgstr "Situação"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__state
@@ -6171,7 +6171,7 @@ msgid "Stock rule report"
 msgstr "Relatório de regra de estoque"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_warehouse.py:0
 msgid "Store Finished Product"
 msgstr "Armazenar produto acabado"
@@ -6272,7 +6272,7 @@ msgstr ""
 "existentes'."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #, fuzzy
 msgid "Template for Bills of Materials"
@@ -6284,13 +6284,13 @@ msgid "The BoM has been updated since creation of the MO"
 msgstr "A LM foi atualizada desde a criação da OP"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid "The Workorder (%s) cannot be started twice!"
 msgstr "A ordem de trabalho (%s) não pode ser iniciada duas vezes."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "The attribute value %(attribute)s set on product %(product)s does not match "
@@ -6300,7 +6300,7 @@ msgstr ""
 "corresponde ao produto %(bom_product)s da LM"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "The backorder %s has been created."
 msgstr "O pedido em espera %s foi criado."
@@ -6312,13 +6312,13 @@ msgstr ""
 "O Código de Barras de um centro de trabalho deve ser exclusivo por empresa."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "The batch size must be positive!"
 msgstr "O tamanho do lote deve ser positivo!"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "The current configuration is incorrect because it would create a cycle "
@@ -6334,26 +6334,26 @@ msgid "The day after tomorrow"
 msgstr "Depois de amanhã"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid "The end date cannot be set in the future."
 msgstr "A data final não pode ser definida no futuro."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_orderpoint.py:0
 msgid "The following replenishment order has been generated"
 msgstr "O seguinte pedido de reposição foi gerado"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "The manufacturing order has been planned."
 msgstr "A ordem de produção foi planejada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "The manufacturing order has been unplanned."
 msgstr "Planejamento da ordem de produção cancelado."
@@ -6388,7 +6388,7 @@ msgstr ""
 "divisão de custos de todos os subprodutos deve ser menor ou igual a 100."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid ""
 "The planned end date of the work order cannot be prior to the planned start "
@@ -6398,7 +6398,7 @@ msgstr ""
 "data de início planejada. Corrija isso para salvar a ordem de trabalho."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "The product has already been used at least once, editing its structure may "
@@ -6418,7 +6418,7 @@ msgstr ""
 "pendentes."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "The quantity produced must be positive."
 msgstr "A quantidade produzida deve ser positiva."
@@ -6455,7 +6455,7 @@ msgid "The remaining time to finish this work order."
 msgstr "O tempo restante para terminar esta ordem de trabalho."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "The serial number %(number)s used for byproduct %(product_name)s has already "
@@ -6465,7 +6465,7 @@ msgstr ""
 "produzido"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "The serial number %(number)s used for component %(component)s has already "
@@ -6480,14 +6480,14 @@ msgid "The tag name must be unique."
 msgstr "O nome do marcador deve ser exclusivo."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "The total cost share for a BoM's by-products cannot exceed 100."
 msgstr ""
 "O total da divisão de custos dos subprodutos de uma LM não pode exceder 100."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "The total cost share for a manufacturing order's by-products cannot exceed "
@@ -6513,13 +6513,13 @@ msgid ""
 msgstr "Não há componentes para consumir. Tem certeza de que deseja continuar?"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 msgid "There is no defined calendar on workcenter %s."
 msgstr "Não há um calendário definido no centro de trabalho %s."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/wizard/mrp_production_serial_numbers.py:0
 msgid "There is no serial numbers to apply."
 msgstr "Não há números de série a aplicar."
@@ -6530,7 +6530,7 @@ msgid "There's no product move yet"
 msgstr "Ainda não há movimentação de produto"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, fuzzy
 msgid "This MO cannot be planned because it has no Work Orders to Plan."
@@ -6539,7 +6539,7 @@ msgstr ""
 "planejar."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid "This Week"
 msgstr "Esta semana"
@@ -6569,13 +6569,13 @@ msgstr ""
 "minutos."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.xml:0
 msgid "This is a BoM of type Kit!"
 msgstr "Esta é uma LM do tipo kit"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 msgid ""
 "This is the cost based on the BoM of the product. It is computed by summing "
@@ -6598,20 +6598,20 @@ msgstr ""
 "anteriores do produto."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "This production has been merge in %s"
 msgstr "Essa produção foi mesclada em %s"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 #, fuzzy
 msgid "This production order has been closed."
 msgstr "Esta ordem de produção foi fechada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "This production order has been created from Replenishment Report."
 msgstr ""
@@ -6672,7 +6672,7 @@ msgid "Time Tracking"
 msgstr "Controle de tempo"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "Time Tracking: %(user)s"
 msgstr "Controle de tempo: %(user)s"
@@ -6722,7 +6722,7 @@ msgid "To Consume"
 msgstr "A ser consumido"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/wo_list_view_dropdown/wo_list_view_dropdown.xml:0
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_workorder__state__ready
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_filter
@@ -6742,7 +6742,7 @@ msgid "To Manufacture"
 msgstr "A fabricar"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 msgid "To Order"
 msgstr "A ser pedida"
@@ -6760,7 +6760,7 @@ msgid "To Produce"
 msgstr "A produzir"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 msgid "To Replenish"
 msgstr "A repor"
@@ -6789,28 +6789,28 @@ msgid "Top layer of a wood panel."
 msgstr "Camada superior de um painel de madeira."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrp_bom
 msgid "Total Cost"
 msgstr "Custo Total"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Total Cost of Components"
 msgstr "Custo total dos componentes"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Total Cost of Operations"
 msgstr "Custo total das operações"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Total Cost of Production"
@@ -6859,7 +6859,7 @@ msgid "Total Remaining"
 msgstr "Total Restante"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/mrp_production_kanban/mrp_production_kanban_header.js:0
 #, fuzzy
 msgid "Total Remaining Time"
@@ -6953,7 +6953,7 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Unable to split with more than the quantity to produce."
 msgstr "Não é possível dividir com mais do que a quantidade a ser produzida."
@@ -6999,7 +6999,7 @@ msgstr ""
 "no reabastecimento, em vez de uma confirmada."
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.js:0
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.xml:0
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
@@ -7026,7 +7026,7 @@ msgid "Unit"
 msgstr "Unidade"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
@@ -7034,7 +7034,7 @@ msgid "Unit Cost"
 msgstr "Custo unitário"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview_display_filter/mrp_mo_overview_display_filter.js:0
 msgid "Unit Costs"
 msgstr "Custo unitário"
@@ -7045,7 +7045,7 @@ msgid "Unit Factor"
 msgstr "Fator unitário"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 msgid "Unit of Measure"
@@ -7165,7 +7165,7 @@ msgid "Validate Button Style"
 msgstr "Estilo do botão Validar"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 msgid "Variant"
 msgstr "Variante"
@@ -7208,7 +7208,7 @@ msgid "Warehouse"
 msgstr "Armazém"
 
 #. module: mrp
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp/static/src/components/bom_overview_control_panel/mrp_bom_overview_control_panel.xml:0
 msgid "Warehouse:"
 msgstr "Armazém"
@@ -7219,7 +7219,7 @@ msgid "Warn Insufficient Unbuild Quantity"
 msgstr "Aviso de quantidade de desmontagem insuficiente"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "Warning"
@@ -7262,7 +7262,7 @@ msgstr ""
 "Quando os produtos são fabricados, eles podem ser fabricados neste armazém."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_rule.py:0
 msgid ""
 "When products are needed in <b>%s</b>, <br/> a manufacturing order is "
@@ -7274,12 +7274,12 @@ msgstr ""
 #. module: mrp
 #: model_terms:digest.tip,tip_description:mrp.digest_tip_mrp_0
 msgid ""
-"With the Odoo work center control panel, your worker can start work orders "
+"With the WETH work center control panel, your worker can start work orders "
 "in the shop and follow instructions of the worksheet. Quality tests are "
 "perfectly integrated into the process. Workers can trigger feedback loops, "
 "maintenance alerts, scrap products, etc."
 msgstr ""
-"Com o painel de controle do centro de trabalho no Odoo, seu trabalhador pode "
+"Com o painel de controle do centro de trabalho no WETH, seu trabalhador pode "
 "iniciar ordens de trabalho na loja e seguir as instruções da planilha. Os "
 "testes de qualidade estão perfeitamente integrados ao processo. Os "
 "trabalhadores podem acionar ciclos de feedback, alertas de manutenção, "
@@ -7330,7 +7330,7 @@ msgid "Work Center"
 msgstr "Centro de trabalho"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 #, fuzzy
 msgid "Work Center Blocked: %s"
@@ -7358,7 +7358,7 @@ msgid "Work Center Name"
 msgstr "Nome do centro de trabalho"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 #, fuzzy
 msgid "Work Center Unblocked"
@@ -7493,7 +7493,7 @@ msgid "Workcenter"
 msgstr "Centro de trabalho"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid "Workcenter %s cannot be an alternative of itself."
 msgstr "O centro de trabalho %s não pode ser uma alternativa de si mesmo."
@@ -7569,7 +7569,7 @@ msgid "Yesterday"
 msgstr "Ontem"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_lot.py:0
 msgid ""
 "You are not allowed to create or edit a lot or serial number for the "
@@ -7583,7 +7583,7 @@ msgstr ""
 "lotes para componentes”."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "You can not create a kit-type bill of materials for products that have at "
@@ -7593,7 +7593,7 @@ msgstr ""
 "ao menos uma regra de reposição."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "You can not delete a Bill of Material with running manufacturing orders.\n"
@@ -7604,7 +7604,7 @@ msgstr ""
 "Encerre ou cancele-a primeiro."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "You can only merge manufacturing orders of identical products with same BoM."
@@ -7613,7 +7613,7 @@ msgstr ""
 "LM."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "You can only merge manufacturing orders with no additional components or by-"
@@ -7623,26 +7623,26 @@ msgstr ""
 "adicionais."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You can only merge manufacturing with the same operation type"
 msgstr "Só é possível mesclar fabricações com o mesmo tipo de operação"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You can only merge manufacturing with the same state."
 msgstr "Só é possível mesclar fabricações com a mesma situação."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot cancel a manufacturing order that is already done."
 msgstr ""
 "Não é possível cancelar uma ordem de produção que já tenha sido concluída."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "You cannot change the workcenter of a work order that is done."
 msgstr ""
@@ -7650,27 +7650,27 @@ msgstr ""
 "foi concluída."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid "You cannot create a new Bill of Material from here."
 msgstr "Não é possível criar uma lista de materiais a partir daqui."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_routing.py:0
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "You cannot create cyclic dependency."
 msgstr "Não é possível criar uma dependência cíclica."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot delete a manufacturing order that is already done."
 msgstr ""
 "Não é possível excluir uma ordem de produção que já tenha sido concluída."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "You cannot delete an unbuild order if the state is 'Done'."
 msgstr ""
@@ -7678,27 +7678,27 @@ msgstr ""
 "\"Concluído\"."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot have %s  as the finished product and in the Byproducts"
 msgstr "Não é possível ter %s como produto acabado e nos subprodutos"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "You cannot link this work order to another manufacturing order."
 msgstr ""
 "Não é possível vincular esta ordem de trabalho a outra ordem de produção."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot move a manufacturing order once it is cancelled or done."
 msgstr ""
 "Não é possível mover uma ordem de produção depois de cancelada ou concluída."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_picking.py:0
 msgid ""
 "You cannot set a scrap location as the destination location for a "
@@ -7708,19 +7708,19 @@ msgstr ""
 "operação do tipo fabricação."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot set more than 1 lot"
 msgstr "Não é possível definir mais de 1 lote"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You cannot set more than 1 lot per product"
 msgstr "Não é possível definir mais de 1 lote por produto"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid "You cannot start a work order that is already done or cancelled"
 msgstr ""
@@ -7728,13 +7728,13 @@ msgstr ""
 "cancelada"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "You cannot unbuild a undone manufacturing order."
 msgstr "Não é possível desmontar uma ordem de produção anulada."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_bom.py:0
 msgid ""
 "You cannot use the 'Apply on Variant' functionality and simultaneously "
@@ -7758,13 +7758,13 @@ msgstr ""
 "                        Confirme se isso foi feito propositalmente."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "You need at least two production orders to merge them."
 msgstr "É necessário pelo menos duas ordens de produção para mesclá-las."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid ""
 "You need to define at least one productivity loss in the category "
@@ -7776,7 +7776,7 @@ msgstr ""
 "Configuração > Perdas de produtividade."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workorder.py:0
 msgid ""
 "You need to define at least one productivity loss in the category "
@@ -7788,7 +7788,7 @@ msgstr ""
 "Configuração > Perdas de produtividade."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_workcenter.py:0
 msgid ""
 "You need to define at least one unactive productivity loss in the category "
@@ -7800,7 +7800,7 @@ msgstr ""
 "menu Configuração/Perdas de produtividade."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid ""
 "You need to supply Lot/Serial Number for products and 'consume' them: %"
@@ -7815,13 +7815,13 @@ msgid "You produced less than the initial demand"
 msgstr "Você produziu menos do que a demanda inicial"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_unbuild.py:0
 msgid "You should provide a lot number for the final product."
 msgstr "É necessário fornecer um número de lote para o produto final."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/stock_quant.py:0
 msgid ""
 "You should update the components quantity instead of directly updating the "
@@ -7896,7 +7896,7 @@ msgstr ""
 "^FO14,23^A0N,23^FB235,1,0,L^FH^FD"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_routing.py:0
 msgid "bom_id"
 msgstr "bom_id"
@@ -7923,7 +7923,7 @@ msgid "from location"
 msgstr "do local"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 #: code:addons/mrp/models/mrp_workorder.py:0
 #: code:addons/mrp/models/stock_picking.py:0
@@ -7945,19 +7945,19 @@ msgstr ""
 "entrega, por exemplo."
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "manufacturing order"
 msgstr "ordem de produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/report/stock_allocation_report.py:0
 msgid "manufacturing orders"
 msgstr "Ordens de produção"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "merged"
 msgstr "mescladas"
@@ -7994,7 +7994,7 @@ msgid "real duration"
 msgstr "duração real"
 
 #. module: mrp
-#. odoo-python
+#. weth-python
 #: code:addons/mrp/models/mrp_production.py:0
 msgid "split"
 msgstr "divididas"

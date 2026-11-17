@@ -14,12 +14,13 @@
     grid-area: pagination;
 }
 
-.table > :not(caption) > * > * {
+.table> :not(caption)>*>* {
     background-color: unset;
 }
+
 .order-row.highlight {
-    background-color: $o-component-active-bg;
-    color: $o-action;
+    background-color: $w-component-active-bg;
+    color: $w-action;
 }
 
 .ticket-screen .delete-column {
@@ -45,6 +46,7 @@
     .ticket-screen .rightpane {
         width: auto;
     }
+
     .pos .orders {
         position: sticky;
         z-index: 1;
@@ -52,9 +54,8 @@
 
     .controls {
         grid-template-columns: auto auto;
-        grid-template-areas: 
+        grid-template-areas:
             "buttons pagination"
             "search search";
     }
 }
-

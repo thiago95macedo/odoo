@@ -14,7 +14,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/sale_gelato/pt_BR/>\n"
+"weth-20/sale_gelato/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,13 +102,13 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/utils.py:0
 msgid "Could not establish the connection to the Gelato API."
 msgstr "Não foi possível estabelecer a conexão com a API do Gelato."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_template.py:0
 msgid "Could not synchronize with Gelato"
 msgstr "Não foi possível sincronizar com o Gelato"
@@ -200,7 +200,7 @@ msgid "Gelato Webhook Secret"
 msgstr "Gelato - Segredo do Webhook"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/controllers/main.py:0
 msgid ""
 "Gelato could not proceed with the fulfillment of order %(order_reference)s: %"
@@ -210,13 +210,13 @@ msgstr ""
 "(order_reference)s: %(gelato_message)s"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/controllers/main.py:0
 msgid "Gelato has canceled order %(reference)s."
 msgstr "A Gelato cancelou o pedido %(reference)s."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/controllers/main.py:0
 msgid "Gelato has returned order %(reference)s."
 msgstr "A Gelato retornou o pedido %(reference)s."
@@ -245,7 +245,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/delivery_carrier.py:0
 msgid "Invalid source document type"
 msgstr "Tipo de documento de origem inválido"
@@ -267,13 +267,13 @@ msgid "Missing Print Images"
 msgstr "Imagens de impressão ausentes"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_product.py:0
 msgid "Missing images have been successfully created."
 msgstr "As imagens ausentes foram criadas com sucesso."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_template.py:0
 msgid "Missing product variants and images have been successfully created."
 msgstr "As variantes e imagens de produtos ausentes foram criadas com sucesso."
@@ -290,7 +290,7 @@ msgid "Print Images"
 msgstr "Imprimir imagens"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_document.py:0
 msgid "Print images must be set on products before they can be ordered."
 msgstr ""
@@ -350,13 +350,13 @@ msgid "Standard Delivery (Gelato)"
 msgstr "Entrega expressa (Gelato)"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_template.py:0
 msgid "Successfully synchronized with Gelato"
 msgstr "Sincronização bem-sucedida com a Gelato"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/product_product.py:0
 msgid "Successfully updated print images."
 msgstr "Imagens de impressão atualizadas com sucesso."
@@ -379,37 +379,37 @@ msgid "Template Reference"
 msgstr "Referência do modelo"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid "The address is incorrect."
 msgstr "O endereço está incorreto."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/delivery_carrier.py:0
 msgid "The delivery method is not available for this order."
 msgstr "O método de entrega não está disponível para esse pedido."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/res_partner.py:0
 msgid "The following address fields are too long: %s"
 msgstr "Os seguintes campos de endereço são muito longos: %s"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/res_partner.py:0
 msgid "The following required address fields are missing: %s"
 msgstr "Os seguintes campos de endereço obrigatórios estão ausentes: %s"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid "The order has been successfully passed on Gelato."
 msgstr "O pedido foi passada com sucesso para a Gelato."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid ""
 "The order with reference %(order_reference)s was not sent to Gelato.\n"
@@ -430,7 +430,7 @@ msgstr ""
 "área de impressão com seus gráficos corretamente posicionados nela."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid ""
 "Unable to confirm the order %(order_reference)s on Gelato.%(error_message)s"
@@ -439,7 +439,7 @@ msgstr ""
 "(error_message)s"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid ""
 "Unable to delete the order %(order_reference)s on Gelato.%(error_message)s"
@@ -453,7 +453,7 @@ msgid "Webhook Secret"
 msgstr "Segredo do webhook"
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order.py:0
 msgid ""
 "You cannot mix Gelato products with non-Gelato products in the same order."
@@ -462,7 +462,7 @@ msgstr ""
 "mesmo pedido."
 
 #. module: sale_gelato
-#. odoo-python
+#. weth-python
 #: code:addons/sale_gelato/models/sale_order_line.py:0
 msgid "You cannot order unconfigured Gelato products."
 msgstr "Não é possível encomendar produtos Gelato não configurados."

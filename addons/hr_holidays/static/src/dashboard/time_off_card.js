@@ -209,7 +209,7 @@ export class TimeOffCard extends Component {
 
     /**
      * Background utility matching the color configured on the time off type
-     * The color picker is 0-indexed over `$o-colors`
+     * The color picker is 0-indexed over `$w-colors`
      * while the `bg-color-x` classes are 1-indexed, hence the shift.
      */
     getColor() {

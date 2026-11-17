@@ -17,12 +17,12 @@ import { ProductImageViewer } from '@website_sale/js/components/website_sale_ima
 import { BootstrapInstance } from '@web/core/utils/bootstrap_plugin';
 
 export class ProductPage extends Interaction {
-    static selector = '.o_wsale_product_page';
+    static selector = '.w_wsale_product_page';
     dynamicContent = {
         '.js_product input[name="add_qty"]': { 't-on-change': this.onChangeAddQuantity },
         '.css_quantity > button': { 't-on-click.prevent': this.incOrDecQuantity },
-        '.o_wsale_product_page_variants': { 't-on-change': this.onChangeVariant },
-        '.o_product_page_reviews_link': { 't-on-click': this.onClickReviewsLink },
+        '.w_wsale_product_page_variants': { 't-on-change': this.onChangeVariant },
+        '.w_product_page_reviews_link': { 't-on-click': this.onClickReviewsLink },
         'label[name="o_wsale_attribute_color_selector"] input': {
             't-on-change': this.onChangeAttribute
         },
@@ -32,8 +32,8 @@ export class ProductPage extends Interaction {
         'label[name="o_wsale_attribute_thumbnail_selector"] input': {
             't-on-change': this.onChangeAttribute
         },
-        '.o_variant_pills': { 't-on-click': this.onChangePillsAttribute },
-        ".o_packaging_button": {
+        '.w_variant_pills': { 't-on-click': this.onChangePillsAttribute },
+        ".w_packaging_button": {
             "t-on-mouseenter": this.onHoverPackagingButton,
             "t-on-mouseleave": this.onMouseLeavePackagingButton,
             "t-on-click": this.onMouseLeavePackagingButton,
@@ -190,10 +190,10 @@ export class ProductPage extends Interaction {
      * @param {MouseEvent} ev
      */
     onChangePillsAttribute(ev) {
-        const radio = ev.target.closest('.o_variant_pills').querySelector('input');
+        const radio = ev.target.closest('.w_variant_pills').querySelector('input');
         radio.click(); // Trigger `onChangeVariant`.
         const parent = ev.target.closest('.js_product');
-        parent.querySelectorAll('.o_variant_pills').forEach(el => {
+        parent.querySelectorAll('.w_variant_pills').forEach(el => {
             if (el.matches(':has(input:checked)')) {
                 el.classList.add(
                     'active', 'border-primary', 'text-primary-emphasis', 'bg-primary-subtle'
@@ -266,7 +266,7 @@ export class ProductPage extends Interaction {
                 }
             });
             if (combinationChanged) {
-                this._changeAttribute('label[name^="o_wsale_attribute_], .o_variant_pills');
+                this._changeAttribute('label[name^="o_wsale_attribute_], .w_variant_pills');
             }
         }
     }
@@ -564,7 +564,7 @@ export class ProductPage extends Interaction {
      * @param {Element} container
      */
     _triggerVariantChange(container) {
-        container.querySelectorAll('.o_wsale_product_page_variants').forEach(
+        container.querySelectorAll('.w_wsale_product_page_variants').forEach(
             el => el.dispatchEvent(new Event('change')) // Trigger `onChangeVariant`.
         );
         container.querySelectorAll('input.js_variant_change:checked, select.js_variant_change').forEach(
@@ -591,7 +591,7 @@ export class ProductPage extends Interaction {
             .dataset.attributeExclusions;
         const combinationData = combinationDataJson ? JSON.parse(combinationDataJson) : {};
 
-        parent.querySelectorAll('option, input, label, .o_variant_pills').forEach(el => {
+        parent.querySelectorAll('option, input, label, .w_variant_pills').forEach(el => {
             el.classList.remove('css_not_available');
         });
         parent.querySelectorAll('option, input').forEach(el => {
@@ -678,7 +678,7 @@ export class ProductPage extends Interaction {
         );
         input.classList.add('css_not_available')
         input.closest('label')?.classList?.add('css_not_available');
-        input.closest('.o_variant_pills')?.classList?.add('css_not_available');
+        input.closest('.w_variant_pills')?.classList?.add('css_not_available');
 
         const li = input.closest('li');
 
@@ -716,11 +716,11 @@ export class ProductPage extends Interaction {
         if (variantParent) {
             variantParent.dataset.name = combination.display_name;
         }
-        const pricePerUom = parent.querySelector('.o_product_price_unit')
+        const pricePerUom = parent.querySelector('.w_product_price_unit')
             ?.querySelector('.oe_currency_value');
         if (pricePerUom) {
             const hasPrice = this._hasUomPrice(combination);
-            pricePerUom.closest('.o_product_price_unit').classList.toggle('d-none', !hasPrice);
+            pricePerUom.closest('.w_product_price_unit').classList.toggle('d-none', !hasPrice);
             if (hasPrice) {
                 pricePerUom.textContent = this._priceToStr(combination.base_unit_price, precision);
                 const unit = parent.querySelector('.oe_custom_base_unit');
@@ -817,7 +817,7 @@ export class ProductPage extends Interaction {
         if (!combination.no_product_change) {
             this._updateProductImages(parent.closest('#product_detail_main'), combination.carousel);
             this._updateDocumentsSection(parent.closest('#product_detail_main'), combination.documents);
-            const productTags = parent.querySelector('.o_product_tags');
+            const productTags = parent.querySelector('.w_product_tags');
             productTags?.insertAdjacentHTML('beforebegin', htmlEscape(combination.product_tags));
             productTags?.remove();
 
@@ -831,14 +831,14 @@ export class ProductPage extends Interaction {
             // Toggle variant section visibility when UOM availability changes (edge case:
             // template has no attributes, only some variants have UOMs).
             const variantSection = parent.querySelector(
-                '.o_wsale_product_details_content_section_attributes'
+                '.w_wsale_product_details_content_section_attributes'
             );
             if (variantSection) {
                 const hasAttributes = parent.querySelector(
-                    '.o_wsale_product_page_variants li.variant_attribute'
+                    '.w_wsale_product_page_variants li.variant_attribute'
                 );
                 const hasPackaging = parent.querySelector(
-                    '[name="packaging_selector"] .o_wsale_product_page_variants'
+                    '[name="packaging_selector"] .w_wsale_product_page_variants'
                 );
                 variantSection.classList.toggle('d-none', !hasAttributes && !hasPackaging);
             }

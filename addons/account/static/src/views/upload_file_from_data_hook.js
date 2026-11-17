@@ -18,7 +18,7 @@ export function uploadFileFromData(dataTransfer) {
                 console.warn("Invalid files to extract details.");
                 return;
             }
-            let uploadInput = document.querySelector('.document_file_uploader.o_input_file');
+            let uploadInput = document.querySelector('.document_file_uploader.w_input_file');
             uploadInput.files = dataTransfer.files;
             uploadInput.dispatchEvent(new Event("change"));
         }

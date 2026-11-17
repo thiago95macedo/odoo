@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_purchase/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/product_template.py:0
 msgid ""
 "Each time you sell this product through a SO, a RfQ is automatically created "
@@ -133,7 +133,7 @@ msgid "Number of generated purchase items"
 msgstr "Número de itens de compra gerados"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/sale_order_line.py:0
 msgid "Ordered quantity decreased!"
 msgstr "Quantidade solicitada diminuiu!"
@@ -144,7 +144,7 @@ msgid "Origin Sale Item"
 msgstr "Item de venda de origem"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/product_template.py:0
 msgid ""
 "Please define the vendor from whom you would like to purchase this service "
@@ -173,7 +173,7 @@ msgid "Purchase Order Line"
 msgstr "Linha do pedido de compra"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/sale_order.py:0
 msgid "Purchase Order generated from %s"
 msgstr "Pedido de compra gerado a partir de %s"
@@ -213,7 +213,7 @@ msgid "Sales Order Line"
 msgstr "Linha do pedido de vendas"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/purchase_order.py:0
 msgid "Sources Sale Orders %s"
 msgstr "Pedidos de venda de origem %s"
@@ -232,7 +232,7 @@ msgstr ""
 "associados"
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/sale_order_line.py:0
 msgid ""
 "There is no vendor associated to the product %s. Please define a vendor for "
@@ -242,7 +242,7 @@ msgstr ""
 "fornecedor para este produto."
 
 #. module: sale_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/sale_purchase/models/sale_order_line.py:0
 msgid ""
 "You are decreasing the ordered quantity! Do not forget to manually update "

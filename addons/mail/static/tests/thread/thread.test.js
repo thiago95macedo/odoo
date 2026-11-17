@@ -66,7 +66,7 @@ test("messages still render when thread is reloaded twice in a row", async () =>
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     const thread = getService("mail.store")["discuss.channel"].get(channelId);
     thread.isLoaded = false;
     thread.isLoaded = true;
@@ -75,7 +75,7 @@ test("messages still render when thread is reloaded twice in a row", async () =>
     thread.isLoaded = true;
     await advanceFrame(1);
     await animationFrame();
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
 });
 
 test("messages still render when a reset strands mountedAndLoaded", async () => {
@@ -107,14 +107,14 @@ test("messages still render when a reset strands mountedAndLoaded", async () => 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 1 });
+    await contains(".w-mail-Message", { count: 1 });
     thread.state.mountedAndLoaded = false;
     await advanceFrame(1);
-    await contains(".o-mail-Message", { count: 0 });
+    await contains(".w-mail-Message", { count: 0 });
     thread.reset();
     await advanceFrame(1);
     await animationFrame();
-    await contains(".o-mail-Message", { count: 1 });
+    await contains(".w-mail-Message", { count: 1 });
 });
 
 test("dragover files on thread with composer", async () => {
@@ -127,8 +127,8 @@ test("dragover files on thread with composer", async () => {
     const text3 = new File(["hello, world"], "text3.txt", { type: "text/plain" });
     await start();
     await openDiscuss(channelId);
-    await dragenterFiles(".o-mail-Thread", [text3]);
-    await contains(".o-Dropzone");
+    await dragenterFiles(".w-mail-Thread", [text3]);
+    await contains(".w-Dropzone");
 });
 
 test("load more messages from channel (auto-load on scroll)", async () => {
@@ -155,13 +155,13 @@ test("load more messages from channel (auto-load on scroll)", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains("button:text(Load More)", { before: [".o-mail-Message", { count: 30 }] });
+    await contains("button:text(Load More)", { before: [".w-mail-Message", { count: 30 }] });
     expect(getComputedStyle(queryOne("button:text(Load More)")).opacity).toBe("1");
-    await contains(".o-mail-Thread", { scroll: "bottom" });
-    await scroll(".o-mail-Thread", 0);
-    await contains(".o-mail-Message", { count: 60 });
-    await contains(".o-mail-Message:has(:text('30'))", {
-        after: [".o-mail-Message:has(:text('29'))"],
+    await contains(".w-mail-Thread", { scroll: "bottom" });
+    await scroll(".w-mail-Thread", 0);
+    await contains(".w-mail-Message", { count: 60 });
+    await contains(".w-mail-Message:has(:text('30'))", {
+        after: [".w-mail-Message:has(:text('29'))"],
     });
 });
 
@@ -180,7 +180,7 @@ test("show message subject when subject is not the same as the thread name", asy
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('Subject: Salutations, voyageur not empty'))");
+    await contains(".w-mail-Message:has(:text('Subject: Salutations, voyageur not empty'))");
 });
 
 test("do not show message subject when subject is the same as the thread name", async () => {
@@ -198,8 +198,8 @@ test("do not show message subject when subject is the same as the thread name", 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('not empty'))");
-    await contains(".o-mail-Message:has(:text('Subject: Salutations, voyageur not empty'))", {
+    await contains(".w-mail-Message:has(:text('not empty'))");
+    await contains(".w-mail-Message:has(:text('Subject: Salutations, voyageur not empty'))", {
         count: 0,
     });
 });
@@ -226,8 +226,8 @@ test("auto-scroll to last read message on thread load", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread-newMessage ~ .o-mail-Message:has(:text('message 100'))");
-    await isInViewportOf(".o-mail-Message:has(:text('message 100'))", ".o-mail-Thread");
+    await contains(".w-mail-Thread-newMessage ~ .w-mail-Message:has(:text('message 100'))");
+    await isInViewportOf(".w-mail-Message:has(:text('message 100'))", ".w-mail-Thread");
 });
 
 test("auto-scroll on thread load when last read is a hidden notification", async () => {
@@ -259,8 +259,8 @@ test("auto-scroll on thread load when last read is a hidden notification", async
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message:has(:text('message 101'))");
-    await isInViewportOf(".o-mail-Message:has(:text('message 101'))", ".o-mail-Thread");
+    await contains(".w-mail-Message:has(:text('message 101'))");
+    await isInViewportOf(".w-mail-Message:has(:text('message 101'))", ".w-mail-Thread");
 });
 
 test("display day separator before first message of the day", async () => {
@@ -280,7 +280,7 @@ test("display day separator before first message of the day", async () => {
     ]);
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DateSection");
+    await contains(".w-mail-DateSection");
 });
 
 test("date section follows the day change", async () => {
@@ -295,9 +295,9 @@ test("date section follows the day change", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DateSection:text('Today')");
+    await contains(".w-mail-DateSection:text('Today')");
     await advanceTime(2 * 60 * 1000); // past midnight
-    await contains(".o-mail-DateSection:text('Jan 3, 2023')");
+    await contains(".w-mail-DateSection:text('Jan 3, 2023')");
 });
 
 test("scroll position is kept when navigating from one channel to another [CAN FAIL DUE TO WINDOW SIZE]", async () => {
@@ -335,24 +335,24 @@ test("scroll position is kept when navigating from one channel to another [CAN F
     );
     await start();
     await openDiscuss(channelId_1);
-    await contains(".o-mail-Message", { count: 20 });
-    const scrollValue1 = queryFirst(".o-mail-Thread").scrollHeight / 2;
-    const scrollTopValue = queryFirst(".o-mail-Thread").scrollTop;
-    await contains(".o-mail-Thread", { scroll: scrollTopValue });
+    await contains(".w-mail-Message", { count: 20 });
+    const scrollValue1 = queryFirst(".w-mail-Thread").scrollHeight / 2;
+    const scrollTopValue = queryFirst(".w-mail-Thread").scrollTop;
+    await contains(".w-mail-Thread", { scroll: scrollTopValue });
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", scrollValue1);
-    await click(".o-mail-NotificationItem:has(:text('channel-2'))");
-    await contains(".o-mail-Message", { count: 30 });
-    const scrollValue2 = queryFirst(".o-mail-Thread").scrollHeight / 3;
-    await contains(".o-mail-Thread", { scroll: scrollTopValue });
+    await scroll(".w-mail-Thread", scrollValue1);
+    await click(".w-mail-NotificationItem:has(:text('channel-2'))");
+    await contains(".w-mail-Message", { count: 30 });
+    const scrollValue2 = queryFirst(".w-mail-Thread").scrollHeight / 3;
+    await contains(".w-mail-Thread", { scroll: scrollTopValue });
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", scrollValue2);
-    await click(".o-mail-NotificationItem:has(:text('channel-1'))");
-    await contains(".o-mail-Message", { count: 20 });
-    await contains(".o-mail-Thread", { scroll: scrollValue1 });
-    await click(".o-mail-NotificationItem:has(:text('channel-2'))");
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Thread", { scroll: scrollValue2 });
+    await scroll(".w-mail-Thread", scrollValue2);
+    await click(".w-mail-NotificationItem:has(:text('channel-1'))");
+    await contains(".w-mail-Message", { count: 20 });
+    await contains(".w-mail-Thread", { scroll: scrollValue1 });
+    await click(".w-mail-NotificationItem:has(:text('channel-2'))");
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Thread", { scroll: scrollValue2 });
 });
 
 test("thread is still scrolling after scrolling up then to bottom", async () => {
@@ -368,15 +368,15 @@ test("thread is still scrolling after scrolling up then to bottom", async () => 
     );
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
-    await contains(".o-mail-Thread");
+    await contains(".w-mail-Message", { count: 20 });
+    await contains(".w-mail-Thread");
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", queryFirst(".o-mail-Thread").scrollHeight / 2);
-    await scroll(".o-mail-Thread", "bottom");
-    await insertText(".o-mail-Composer-input", "123");
+    await scroll(".w-mail-Thread", queryFirst(".w-mail-Thread").scrollHeight / 2);
+    await scroll(".w-mail-Thread", "bottom");
+    await insertText(".w-mail-Composer-input", "123");
     await press("Enter");
-    await contains(".o-mail-Message", { count: 21 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Message", { count: 21 });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
 });
 
 test("should scroll to bottom on receiving new message if the list is initially scrolled to bottom (asc order)", async () => {
@@ -398,11 +398,11 @@ test("should scroll to bottom on receiving new message if the list is initially 
     }
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-Message", { count: 11 });
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-Message", { count: 11 });
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", "bottom");
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await scroll(".w-mail-Thread", "bottom");
+    await contains(".w-mail-Thread", { scroll: "bottom" });
     // simulate receiving a message
     withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -411,8 +411,8 @@ test("should scroll to bottom on receiving new message if the list is initially 
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 12 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Message", { count: 12 });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
     // simulate receiving a very long message
     withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -421,7 +421,7 @@ test("should scroll to bottom on receiving new message if the list is initially 
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 13 });
+    await contains(".w-mail-Message", { count: 13 });
     await tick(); // wait for the scroll to first unread to complete
     // simulate receiving another short message
     withUser(userId, () =>
@@ -431,11 +431,11 @@ test("should scroll to bottom on receiving new message if the list is initially 
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 14 });
+    await contains(".w-mail-Message", { count: 14 });
     await tick(); // wait in case of an auto-scroll to happen
-    const scrollTop = queryFirst(".o-mail-Thread").scrollTop; // around 590px with chat window sizing
-    const scrollHeight = queryFirst(".o-mail-Thread").scrollHeight; // around 20000px with chat window sizing
-    const clientHeight = queryFirst(".o-mail-Thread").clientHeight; // around 540px with chat window sizing
+    const scrollTop = queryFirst(".w-mail-Thread").scrollTop; // around 590px with chat window sizing
+    const scrollHeight = queryFirst(".w-mail-Thread").scrollHeight; // around 20000px with chat window sizing
+    const clientHeight = queryFirst(".w-mail-Thread").clientHeight; // around 540px with chat window sizing
     expect(scrollHeight / 4).toBeGreaterThan(scrollTop + clientHeight); // viewport is still at least in the 1st quarter, meaning no scroll to bottom
 });
 
@@ -465,11 +465,11 @@ test("should scroll to top of new very long message rendered after the scroll is
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-Message", { count: 11 });
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-Message", { count: 11 });
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", "bottom");
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await scroll(".w-mail-Thread", "bottom");
+    await contains(".w-mail-Thread", { scroll: "bottom" });
     // simulate receiving a very long message
     withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -478,7 +478,7 @@ test("should scroll to top of new very long message rendered after the scroll is
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 12 });
+    await contains(".w-mail-Message", { count: 12 });
     await tick(); // wait for the new message element to be registered
     // simulate receiving another short message
     withUser(userId, () =>
@@ -488,11 +488,11 @@ test("should scroll to top of new very long message rendered after the scroll is
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 13 });
+    await contains(".w-mail-Message", { count: 13 });
     await tick(); // wait in case of an auto-scroll to happen
-    const scrollTop = queryFirst(".o-mail-Thread").scrollTop;
-    const scrollHeight = queryFirst(".o-mail-Thread").scrollHeight;
-    const clientHeight = queryFirst(".o-mail-Thread").clientHeight;
+    const scrollTop = queryFirst(".w-mail-Thread").scrollTop;
+    const scrollHeight = queryFirst(".w-mail-Thread").scrollHeight;
+    const clientHeight = queryFirst(".w-mail-Thread").clientHeight;
     expect(scrollHeight / 4).toBeGreaterThan(scrollTop + clientHeight); // viewport is still at least in the 1st quarter, meaning no scroll to bottom
 });
 
@@ -515,9 +515,9 @@ test("should not scroll on receiving new message if the list is initially scroll
     }
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-Message", { count: 21 });
-    await contains(".o-mail-Thread", { scroll: 0 });
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-Message", { count: 21 });
+    await contains(".w-mail-Thread", { scroll: 0 });
     // simulate receiving a message
     withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -526,8 +526,8 @@ test("should not scroll on receiving new message if the list is initially scroll
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 22 });
-    await contains(".o-mail-ChatWindow .o-mail-Thread", { scroll: 0 });
+    await contains(".w-mail-Message", { count: 22 });
+    await contains(".w-mail-ChatWindow .w-mail-Thread", { scroll: 0 });
 });
 
 test("Mention a partner with special character (e.g. apostrophe ')", async () => {
@@ -545,13 +545,13 @@ test("Mention a partner with special character (e.g. apostrophe ')", async () =>
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "@");
-    await insertText(".o-mail-Composer-input", "Pyn");
-    await click('.o-mail-Composer-suggestion:has(:text("Pynya\'s spokesman"))');
-    await contains(".o-mail-Composer-input", { value: "@Pynya's spokesman " });
+    await insertText(".w-mail-Composer-input", "@");
+    await insertText(".w-mail-Composer-input", "Pyn");
+    await click('.w-mail-Composer-suggestion:has(:text("Pynya\'s spokesman"))');
+    await contains(".w-mail-Composer-input", { value: "@Pynya's spokesman " });
     await press("Enter");
     await contains(
-        `.o-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId}"][data-oe-model="res.partner"]:text("@Pynya's spokesman")`
+        `.w-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId}"][data-oe-model="res.partner"]:text("@Pynya's spokesman")`
     );
 });
 
@@ -577,18 +577,18 @@ test("mention 2 different partners that have the same name", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "@Te");
-    await click(":nth-child(1 of .o-mail-Composer-suggestion");
-    await contains(".o-mail-Composer-input", { value: "@TestPartner " });
-    await insertText(".o-mail-Composer-input", "@Te");
-    await click(":nth-child(2 of .o-mail-Composer-suggestion");
-    await contains(".o-mail-Composer-input", { value: "@TestPartner @TestPartner " });
+    await insertText(".w-mail-Composer-input", "@Te");
+    await click(":nth-child(1 of .w-mail-Composer-suggestion");
+    await contains(".w-mail-Composer-input", { value: "@TestPartner " });
+    await insertText(".w-mail-Composer-input", "@Te");
+    await click(":nth-child(2 of .w-mail-Composer-suggestion");
+    await contains(".w-mail-Composer-input", { value: "@TestPartner @TestPartner " });
     await press("Enter");
     await contains(
-        `.o-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId_1}"][data-oe-model="res.partner"]:text("@TestPartner")`
+        `.w-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId_1}"][data-oe-model="res.partner"]:text("@TestPartner")`
     );
     await contains(
-        `.o-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId_2}"][data-oe-model="res.partner"]:text("@TestPartner")`
+        `.w-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId_2}"][data-oe-model="res.partner"]:text("@TestPartner")`
     );
 });
 
@@ -607,12 +607,12 @@ test("Post a message containing an email address followed by a mention on anothe
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "email@weth.com.br\n@Te");
-    await click(".o-mail-Composer-suggestion");
-    await contains(".o-mail-Composer-input", { value: "email@weth.com.br\n@TestPartner " });
+    await insertText(".w-mail-Composer-input", "email@weth.com.br\n@Te");
+    await click(".w-mail-Composer-suggestion");
+    await contains(".w-mail-Composer-input", { value: "email@weth.com.br\n@TestPartner " });
     await press("Enter");
     await contains(
-        `.o-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId}"][data-oe-model="res.partner"]:text("@TestPartner")`
+        `.w-mail-Message-body .o_mail_redirect[data-oe-id="${partnerId}"][data-oe-model="res.partner"]:text("@TestPartner")`
     );
 });
 
@@ -635,11 +635,11 @@ test("basic rendering of canceled notification", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message-notification [data-icon='mail']");
-    await click(".o-mail-Message-notification");
-    await contains(".o-mail-MessageNotificationPopover");
-    await contains(".o-mail-MessageNotificationPopover [data-icon='delete']");
-    await contains(".o-mail-MessageNotificationPopover:text('ToSomeone(test@test.be)')");
+    await contains(".w-mail-Message-notification [data-icon='mail']");
+    await click(".w-mail-Message-notification");
+    await contains(".w-mail-MessageNotificationPopover");
+    await contains(".w-mail-MessageNotificationPopover [data-icon='delete']");
+    await contains(".w-mail-MessageNotificationPopover:text('ToSomeone(test@test.be)')");
 });
 
 test("first unseen message should be directly preceded by the new message separator if there is a transient message just before it while composer is not focused", async () => {
@@ -664,15 +664,15 @@ test("first unseen message should be directly preceded by the new message separa
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "not empty");
+    await insertText(".w-mail-Composer-input", "not empty");
     await press("Enter");
-    await contains(".o-mail-Message:has(:text('not empty'))");
+    await contains(".w-mail-Message:has(:text('not empty'))");
     // send a command that leads to receiving a transient message
-    await insertText(".o-mail-Composer-input", "/who");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await contains(".o-mail-Message", { count: 2 });
+    await insertText(".w-mail-Composer-input", "/who");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await contains(".w-mail-Message", { count: 2 });
     // composer is focused by default, we remove that focus
-    queryFirst(".o-mail-Composer-input").blur();
+    queryFirst(".w-mail-Composer-input").blur();
     // simulate receiving a message
     withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -681,9 +681,9 @@ test("first unseen message should be directly preceded by the new message separa
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Message", { count: 3 });
-    await contains(".o-mail-Thread-newMessage:contains('New')");
-    await contains(".o-mail-Message[aria-label='Note'] + .o-mail-Thread-newMessage");
+    await contains(".w-mail-Message", { count: 3 });
+    await contains(".w-mail-Thread-newMessage:contains('New')");
+    await contains(".w-mail-Message[aria-label='Note'] + .w-mail-Thread-newMessage");
 });
 
 test.tags("focus required");
@@ -692,9 +692,9 @@ test("composer should be focused automatically after clicking on the send button
     const channelId = pyEnv["discuss.channel"].create({ name: "test" });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "Dummy Message");
+    await insertText(".w-mail-Composer-input", "Dummy Message");
     await press("Enter");
-    await contains(".o-mail-Composer-input:focus");
+    await contains(".w-mail-Composer-input:focus");
 });
 
 test("chat window header should not have unread counter for non-channel thread", async () => {
@@ -716,8 +716,8 @@ test("chat window header should not have unread counter for non-channel thread",
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-ChatWindow-counter:text('1')", { count: 0 });
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-ChatWindow-counter:text('1')", { count: 0 });
 });
 
 test("Thread messages are only loaded once", async () => {
@@ -745,7 +745,7 @@ test("Thread messages are only loaded once", async () => {
             { channel_id: channelIds[0], fetch_params: { limit: 60, around: 0 } },
         ],
     ]);
-    await contains(".o-mail-Message-content:text('Message on channel1')");
+    await contains(".w-mail-Message-content:text('Message on channel1')");
     await click("button:has(:text('Sales'))");
     await waitStoreFetch([
         [
@@ -753,10 +753,10 @@ test("Thread messages are only loaded once", async () => {
             { channel_id: channelIds[1], fetch_params: { limit: 60, around: 0 } },
         ],
     ]);
-    await contains(".o-mail-Message-content:text('Message on channel2')");
+    await contains(".w-mail-Message-content:text('Message on channel2')");
     await click("button:has(:text('General'))");
     await waitStoreFetch();
-    await contains(".o-mail-Message-content:text('Message on channel1')");
+    await contains(".w-mail-Message-content:text('Message on channel1')");
 });
 
 test.tags("focus required");
@@ -785,7 +785,7 @@ test("[text composer] Opening thread with needaction messages should mark all me
     await expect.waitForSteps([
         `store fetch: /discuss/channel/messages - {"channel_id":${channelId},"fetch_params":{"limit":60,"around":0}}`,
     ]);
-    await contains(".o-mail-Message", { count: 2 });
+    await contains(".w-mail-Message", { count: 2 });
     await click("button:has(:text('Sales'))");
     await expect.waitForSteps([
         `store fetch: /discuss/channel/messages - {"channel_id":${salesId},"fetch_params":{"limit":60,"around":0}}`,
@@ -845,7 +845,7 @@ test("Opening thread with needaction messages should mark all messages of thread
     await expect.waitForSteps([
         `store fetch: /discuss/channel/messages - {"channel_id":${channelId},"fetch_params":{"limit":60,"around":0}}`,
     ]);
-    await contains(".o-mail-Message", { count: 2 });
+    await contains(".w-mail-Message", { count: 2 });
     await click("button:has(:text('Sales'))");
     await expect.waitForSteps([
         `store fetch: /discuss/channel/messages - {"channel_id":${salesId},"fetch_params":{"limit":60,"around":0}}`,
@@ -891,7 +891,7 @@ test("[technical] Opening thread without needaction messages should not mark all
     await start();
     await openDiscuss(salesChannelId);
     await click("button:has(:text('General'))");
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     await tick();
     await expect.waitForSteps([]);
 });
@@ -921,11 +921,11 @@ test("can be marked as read while loading", async () => {
     });
     await start();
     await openDiscuss();
-    await contains(".o-mail-NotificationItem .o-discuss-badge:text('1')");
-    await click(".o-mail-NotificationItem:has(:text('Demo'))");
+    await contains(".w-mail-NotificationItem .w-discuss-badge:text('1')");
+    await click(".w-mail-NotificationItem:has(:text('Demo'))");
     loadDeferred.resolve();
     await waitStoreFetch("/discuss/channel/messages");
-    await contains(".o-discuss-badge", { count: 0 });
+    await contains(".w-discuss-badge", { count: 0 });
 });
 
 test("message received while loading thread is kept in the thread", async () => {
@@ -951,7 +951,7 @@ test("message received while loading thread is kept in the thread", async () => 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread-empty");
+    await contains(".w-mail-Thread-empty");
     await expect.waitForSteps(["messages computed"]);
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -962,10 +962,10 @@ test("message received while loading thread is kept in the thread", async () => 
     );
     // The message list is not rendered while the thread loads, so the empty
     // state going away is the only sign that the message reached the thread.
-    await contains(".o-mail-Thread-empty", { count: 0 });
+    await contains(".w-mail-Thread-empty", { count: 0 });
     loadResolve();
     await waitStoreFetch("/discuss/channel/messages");
-    await contains(".o-mail-Message-content:has(:text('Hello'))");
+    await contains(".w-mail-Message-content:has(:text('Hello'))");
 });
 
 test("message received while loading thread on last read message is shown once after scrolling down", async () => {
@@ -1006,7 +1006,7 @@ test("message received while loading thread on last read message is shown once a
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread-empty");
+    await contains(".w-mail-Thread-empty");
     await withUser(userId, () =>
         rpc("/mail/message/post", {
             post_data: { body: "Hello", message_type: "comment" },
@@ -1014,15 +1014,15 @@ test("message received while loading thread on last read message is shown once a
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-empty", { count: 0 }); // wait for the message
+    await contains(".w-mail-Thread-empty", { count: 0 }); // wait for the message
     loadResolve();
     await waitStoreFetch("/discuss/channel/messages");
-    await contains(".o-mail-Message-content:has(:text('msg39'))");
-    await contains(".o-mail-Message-content:has(:text('Hello'))", { count: 0 });
-    await scroll(".o-mail-Thread", "bottom");
+    await contains(".w-mail-Message-content:has(:text('msg39'))");
+    await contains(".w-mail-Message-content:has(:text('Hello'))", { count: 0 });
+    await scroll(".w-mail-Thread", "bottom");
     await waitStoreFetch("/discuss/channel/messages");
-    await contains(".o-mail-Message-content:has(:text('msg54'))");
-    await contains(".o-mail-Message-content:has(:text('Hello'))");
+    await contains(".w-mail-Message-content:has(:text('msg54'))");
+    await contains(".w-mail-Message-content:has(:text('Hello'))");
 });
 
 test("New message separator not appearing after showing composer on thread", async () => {
@@ -1042,9 +1042,9 @@ test("New message separator not appearing after showing composer on thread", asy
     await start();
     await openFormView("res.partner", serverState.partnerId);
     await contains("button:text('Log note')");
-    await contains(".o-mail-Thread-newMessage", { count: 0 });
+    await contains(".w-mail-Thread-newMessage", { count: 0 });
     await click("button:text('Log note')");
-    await contains(".o-mail-Thread-newMessage", { count: 0 });
+    await contains(".w-mail-Thread-newMessage", { count: 0 });
 });
 
 test("Transient messages are added at the end of the thread", async () => {
@@ -1052,14 +1052,14 @@ test("Transient messages are added at the end of the thread", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "Dummy Message");
+    await insertText(".w-mail-Composer-input", "Dummy Message");
     await press("Enter");
-    await contains(".o-mail-Message");
-    await insertText(".o-mail-Composer-input", "/help");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await contains(".o-mail-Message", { count: 2 });
-    await contains(".o-mail-Message:eq(0):has(:text('Mitchell Admin'))");
-    await contains(".o-mail-Message:eq(1):has(:text('OdooBot'))");
+    await contains(".w-mail-Message");
+    await insertText(".w-mail-Composer-input", "/help");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await contains(".w-mail-Message", { count: 2 });
+    await contains(".w-mail-Message:eq(0):has(:text('Mitchell Admin'))");
+    await contains(".w-mail-Message:eq(1):has(:text('WethBot'))");
 });
 
 test("Can scroll to notification", async () => {
@@ -1091,12 +1091,12 @@ test("Can scroll to notification", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
-    await isInViewportOf(".o-mail-Message:contains(message 59)", ".o-mail-Thread");
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
+    await isInViewportOf(".w-mail-Message:contains(message 59)", ".w-mail-Thread");
     await click("[title='Pinned Messages']");
-    await click(".o-discuss-PinnedMessagesPanel a[role='button']:text('Jump')");
-    await isInViewportOf(".o-mail-NotificationMessage:contains(notification 0)", ".o-mail-Thread");
+    await click(".w-discuss-PinnedMessagesPanel a[role='button']:text('Jump')");
+    await isInViewportOf(".w-mail-NotificationMessage:contains(notification 0)", ".w-mail-Thread");
 });
 
 test("Update unread counter when receiving new message", async () => {
@@ -1121,7 +1121,7 @@ test("Update unread counter when receiving new message", async () => {
     });
     await start();
     await openDiscuss(undefined);
-    await contains(".o-mail-NotificationItem:has(:text('Demo')) .o-discuss-badge:text('1')");
+    await contains(".w-mail-NotificationItem:has(:text('Demo')) .w-discuss-badge:text('1')");
 
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -1134,7 +1134,7 @@ test("Update unread counter when receiving new message", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-NotificationItem:has(:text('Demo')) .o-discuss-badge:text('2')");
+    await contains(".w-mail-NotificationItem:has(:text('Demo')) .w-discuss-badge:text('2')");
 });
 
 test("Show start message of conversation", async () => {
@@ -1160,18 +1160,18 @@ test("Show start message of conversation", async () => {
     ]);
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread:has(:text('Welcome to #General!'))");
-    await contains(".o-mail-Thread:has(:text('This is the start of the #General channel'))");
-    await click(".o-mail-NotificationItem:has(:text('ThreadOne'))");
-    await contains(".o-mail-Thread:has(:text('ThreadOne'))");
-    await contains(".o-mail-Thread:has(:text('Started by Mitchell Admin'))");
-    await click(".o-mail-MessagingMenu-tab[data-id='chat']");
-    await click(".o-mail-NotificationItem:has(:text('Demo'))");
-    await contains(".o-mail-Thread:has(:text('Demo'))");
-    await contains(".o-mail-Thread:has(:text('This is the start of your direct chat with Demo'))");
-    await click(".o-mail-NotificationItem:has(:text('Mitchell Admin and Demo'))");
-    await contains(".o-mail-Thread:has(:text('Mitchell Admin and Demo'))");
+    await contains(".w-mail-Thread:has(:text('Welcome to #General!'))");
+    await contains(".w-mail-Thread:has(:text('This is the start of the #General channel'))");
+    await click(".w-mail-NotificationItem:has(:text('ThreadOne'))");
+    await contains(".w-mail-Thread:has(:text('ThreadOne'))");
+    await contains(".w-mail-Thread:has(:text('Started by Mitchell Admin'))");
+    await click(".w-mail-MessagingMenu-tab[data-id='chat']");
+    await click(".w-mail-NotificationItem:has(:text('Demo'))");
+    await contains(".w-mail-Thread:has(:text('Demo'))");
+    await contains(".w-mail-Thread:has(:text('This is the start of your direct chat with Demo'))");
+    await click(".w-mail-NotificationItem:has(:text('Mitchell Admin and Demo'))");
+    await contains(".w-mail-Thread:has(:text('Mitchell Admin and Demo'))");
     await contains(
-        ".o-mail-Thread:has(:text('This is the start of Mitchell Admin and Demo group'))"
+        ".w-mail-Thread:has(:text('This is the start of Mitchell Admin and Demo group'))"
     );
 });

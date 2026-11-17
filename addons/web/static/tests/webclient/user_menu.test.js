@@ -80,8 +80,8 @@ test("can be rendered", async () => {
         },
     }));
     await mountWithCleanup(UserMenu);
-    expect("img.o_user_avatar").toHaveCount(1);
-    expect("img.o_user_avatar").toHaveAttribute(
+    expect("img.w_user_avatar").toHaveCount(1);
+    expect("img.w_user_avatar").toHaveAttribute(
         "data-src",
         `${getOrigin()}/web/image/res.partner/17/avatar_128?unique=1704106800000`
     );
@@ -123,7 +123,7 @@ test("can be rendered", async () => {
 test("display the correct name in debug mode", async () => {
     serverState.debug = "1";
     await mountWithCleanup(UserMenu);
-    expect("img.o_user_avatar").toHaveCount(1);
+    expect("img.w_user_avatar").toHaveCount(1);
     expect("small.oe_topbar_name").toHaveCount(1);
     expect(".oe_topbar_name").toHaveText("Sauron" + "\n" + "test");
 });
@@ -161,7 +161,7 @@ test("can use component as registry item", async () => {
     }));
     await mountWithCleanup(UserMenu);
     await contains("button.dropdown-toggle").click();
-    expect(".o-dropdown--menu span.component-class").toHaveText("Example Component");
+    expect(".w-dropdown--menu span.component-class").toHaveText("Example Component");
 });
 
 test("Share URL item is present in the user menu when running as PWA", async () => {
@@ -176,9 +176,9 @@ test("Share URL item is present in the user menu when running as PWA", async () 
     userMenuRegistry.add("share_url", shareUrlMenuItem);
     await mountWithCleanup(UserMenu);
     await contains("button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveCount(1);
-    expect(".o-dropdown--menu .dropdown-item").toHaveText("Share");
-    await contains(".o-dropdown--menu .dropdown-item").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveCount(1);
+    expect(".w-dropdown--menu .dropdown-item").toHaveText("Share");
+    await contains(".w-dropdown--menu .dropdown-item").click();
     expect.verifySteps(["navigator.share"]);
 });
 
@@ -186,6 +186,6 @@ test("Share URL item is not present in the user menu when not running as PWA", a
     mockMatchMedia({ ["display-mode"]: "browser" });
     userMenuRegistry.add("share_url", shareUrlMenuItem);
     await mountWithCleanup(UserMenu);
-    await contains(".o_user_menu").click();
-    expect(".o-dropdown--menu .dropdown-item").not.toHaveCount();
+    await contains(".w_user_menu").click();
+    expect(".w-dropdown--menu .dropdown-item").not.toHaveCount();
 });

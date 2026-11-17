@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-30 17:40+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/product/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgid "# Products"
 msgstr "Nº de produtos"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid ""
 "%(item_name)s: end date (%(end_date)s) should be after start date (%"
@@ -98,7 +98,7 @@ msgstr ""
 "início (%(start_date)s)"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "%(percentage)s %% %(discount_type)s on %(base)s %(extra)s"
 msgstr "%(percentage)s %% %(discount_type)s em %(base)s %(extra)s"
@@ -121,25 +121,25 @@ msgid "'Products Labels - %s' % (object.name)"
 msgstr "\"Rótulos de produtos – %s\" % (object.name)"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "(e.g: product description, ebook, legal notice, ...)."
 msgstr "(ex.: descrição do produto, e-book, aviso legal, ...)."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "+ %(amount)s extra fee"
 msgstr "+ %(amount)s taxa extra"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "- %(amount)s rebate"
 msgstr "- %(amount)s de redução"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #, fuzzy
 msgid "- Barcode \"%(barcode)s\" already assigned to %(product_list)s"
@@ -322,25 +322,25 @@ msgid "A barcode can only be assigned to one packaging."
 msgstr "Um código de barras só pode ser associado a uma embalagem."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_combo.py:0
 msgid "A combo choice can't contain duplicate products."
 msgstr "Uma opção de combo não pode conter produtos duplicados."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_combo_item.py:0
 msgid "A combo choice can't contain products of type \"combo\"."
 msgstr "Uma opção de combinação não pode conter produtos do tipo \"combo\"."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_combo.py:0
 msgid "A combo choice must contain at least 1 product."
 msgstr "Uma opção de combo deve conter pelo menos um produto."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "A combo product must contain at least 1 combo choice."
 msgstr "Uma opção de combo deve conter pelo menos um produto."
@@ -358,7 +358,7 @@ msgstr ""
 "faturas/notas de crédito"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid "A packaging already uses the barcode"
 msgstr "Uma embalagem já está usando o código de barras"
@@ -379,7 +379,7 @@ msgstr ""
 "sazonais etc."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid ""
 "A pricelist item with \"Other Pricelist\" as base must have a "
@@ -389,13 +389,13 @@ msgstr ""
 "base_pricelist_id."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_uom.py:0
 msgid "A product already uses the barcode"
 msgstr "Um produto já está usando o código de barras"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "A sellable combo product can only contain sellable products."
 msgstr "Um combo de produtos vendáveis só pode conter produtos vendáveis."
@@ -490,20 +490,20 @@ msgid "Activity Type Icon"
 msgstr "Ícone do tipo de atividade"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/order_line/order_line.xml:0
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_item_form_view
 msgid "Add"
 msgstr "Adicionar"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Add Products"
 msgstr "Adicionar produtos"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "Add Products to pricelist report"
 msgstr "Adicionar produtos ao relatório de lista de preços"
@@ -514,13 +514,13 @@ msgid "Add a price"
 msgstr "Adicionar um preço"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Add a quantity"
 msgstr "Adicionar uma quantidade"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid ""
 "Add products using the \"Add Products\" button at the top right to\n"
@@ -531,7 +531,7 @@ msgstr ""
 "incluí-los no relatório."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute_value.py:0
 msgid "Add to all products"
 msgstr "Adicionar a todos os produtos"
@@ -579,7 +579,7 @@ msgid "All Product Variants using this Tag"
 msgstr "Todas as variantes de produtos que usam esse marcador"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 #: model:ir.model.fields.selection,name:product.selection__product_pricelist_item__applied_on__3_global
 msgid "All Products"
@@ -596,7 +596,7 @@ msgid "All countries"
 msgstr "Todos os países"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/product_document.py:0
 msgid "All files uploaded"
 msgstr "Todos os arquivos carregados"
@@ -698,7 +698,7 @@ msgid "Assigns the priority to the list of product vendor."
 msgstr "Atribui a prioridade à lista de fornecedorES do produto."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid ""
 "At most %s quantities can be displayed simultaneously. Remove a selected "
@@ -805,19 +805,19 @@ msgstr ""
 "estoque do tipo “interno”."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_controller.js:0
 msgid "Back to Order"
 msgstr "Voltar para o pedido"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_controller.js:0
 msgid "Back to Quotation"
 msgstr "Voltar para a cotação"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/pricelist_report.py:0
 #: model:ir.model.fields,field_description:product.field_product_product__barcode
 #: model:ir.model.fields,field_description:product.field_product_template__barcode
@@ -844,7 +844,7 @@ msgid "Barcode Lookup"
 msgstr "Barcode Lookup"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid ""
@@ -950,7 +950,7 @@ msgid "Brown"
 msgstr "Marrom"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_attribute_value_list.js:0
 msgid "Bye-bye, record!"
 msgstr "Tchau, registro!"
@@ -983,7 +983,7 @@ msgid "Catalog Is In Order"
 msgstr "Catálogo Está em Ordem"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_catalog_mixin.py:0
 #, fuzzy
 msgid "Catalog missing the child field to update."
@@ -1008,7 +1008,7 @@ msgid "Chairs Combo"
 msgstr "Cadeiras Combo"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid ""
@@ -1038,13 +1038,13 @@ msgid "Choose the sheet layout to print the labels"
 msgstr "Escolha o layout da folha para imprimir as etiquetas"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/product_catalog_search_panel.xml:0
 msgid "Clear All"
 msgstr "Limpar tudo"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/product_catalog_search_panel.xml:0
 msgid "Close"
 msgstr "Fechar"
@@ -1115,13 +1115,13 @@ msgid "Combo Price"
 msgstr "Preço do combo"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "Combo products can't have attributes."
 msgstr "Os combos de produtos não podem ter atributos."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid ""
 "Combos allow to choose one product amongst a selection of choices per "
@@ -1262,7 +1262,7 @@ msgid "Create a new product variant"
 msgstr "Criar uma nova variante de produto"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_renderer.xml:0
 msgid "Create a product"
 msgstr "Criar um produto"
@@ -1409,7 +1409,7 @@ msgid "Cyan"
 msgstr "Ciano"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist.py:0
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_item_calendar
 #, fuzzy
@@ -1422,19 +1422,19 @@ msgid "Database Data"
 msgstr "Dados da base de dados"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Date"
 msgstr "Data"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/order_line/order_line.xml:0
 msgid "Decrease quantity"
 msgstr "Diminuir a quantidade"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/res_company.py:0
 msgid "Default"
 msgstr "Padrão"
@@ -1480,7 +1480,7 @@ msgid "Define your weight unit of measure"
 msgstr "Defina sua unidade de medida de peso"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_attribute_value_list.js:0
 #: model_terms:ir.ui.view,arch_db:product.product_document_kanban
 msgid "Delete"
@@ -1624,7 +1624,7 @@ msgstr ""
 "exibe a unidade de medida selecionada."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 #: model:ir.model.fields,field_description:product.field_product_product__product_document_ids
 #: model:ir.model.fields,field_description:product.field_product_template__product_document_ids
@@ -1669,7 +1669,7 @@ msgid "Drawers"
 msgstr "Gavetas"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid "Duplicate values in attribute values are not allowed: %s"
 msgstr "Não são permitidos valores duplicados nos atributos: %s"
@@ -1713,7 +1713,7 @@ msgid "End Date"
 msgstr "Data de término"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_supplierinfo.py:0
 msgid ""
 "End date can't be earlier than the start date. Please check dates for vendor "
@@ -1742,7 +1742,7 @@ msgid "Ergonomic"
 msgstr "Ergonômico"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "Error exporting file. Please try again."
 msgstr "Erro ao exportar o arquivo. Tente novamente."
@@ -1836,7 +1836,7 @@ msgid "File cabinets"
 msgstr "Armários de arquivos"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/product_catalog_search_panel.xml:0
 msgid "Filters"
 msgstr "Filtros"
@@ -2256,7 +2256,7 @@ msgid "Incoming"
 msgstr "Recebido"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/order_line/order_line.xml:0
 msgid "Increase quantity"
 msgstr "Aumentar a quantidade"
@@ -2282,7 +2282,7 @@ msgid "Internal Notes"
 msgstr "Anotações internas"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/pricelist_report.py:0
 #: model:ir.model.fields,field_description:product.field_product_product__default_code
 #: model:ir.model.fields,field_description:product.field_product_template__default_code
@@ -2296,7 +2296,7 @@ msgid "International Article Number used for product identification."
 msgstr "Número internacional de artigo, usado para identificação do produto."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_attribute_value_list.js:0
 msgid "Invalid Operation"
 msgstr "Operação inválida"
@@ -2353,7 +2353,7 @@ msgid "Is public document"
 msgstr "É um documento público"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid ""
 "It is not possible to import different values for the same attribute: %s"
@@ -2404,7 +2404,7 @@ msgid "Label ZPL Report"
 msgstr "Relatório de etiqueta ZPL"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid "Labels cannot be printed for products of service type"
@@ -2752,7 +2752,7 @@ msgid "Never"
 msgstr "Nunca"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist.py:0
 msgid "New"
 msgstr "Novo"
@@ -2806,7 +2806,7 @@ msgid "Nivea"
 msgstr "Nivea"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/wizard/product_label_layout.py:0
 msgid ""
 "No product to print, if the product is archived please unarchive it before "
@@ -2816,13 +2816,13 @@ msgstr ""
 "desarquivá-lo antes de imprimir sua etiqueta."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_renderer.xml:0
 msgid "No products could be found."
 msgstr "Nenhum produto encontrado."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "No products found in the report"
 msgstr "Nenhum produto encontrado no relatório"
@@ -2833,7 +2833,7 @@ msgid "No vendor pricelist found"
 msgstr "Nenhuma lista de preços de fornecedor encontrada"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_attribute_value_list.js:0
 msgid "No, keep it"
 msgstr "Não, manter"
@@ -2855,14 +2855,14 @@ msgid "Normal (2.25\" x 1.25\")"
 msgstr "Normal (2.25\" x 1.25\")"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid "Note:"
 msgstr "Nota:"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid "Note: Some products may be hidden due to access restrictions."
 msgstr ""
@@ -2959,7 +2959,7 @@ msgid "On Hand"
 msgstr "Na mão"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_line.py:0
 msgid ""
 "On the product %(product)s you cannot associate the value %(value)s with the "
@@ -2969,7 +2969,7 @@ msgstr ""
 "%(attribute)s porque eles não são correspondentes."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_line.py:0
 msgid ""
 "On the product %(product)s you cannot transform the attribute %"
@@ -2979,14 +2979,14 @@ msgstr ""
 "(attribute_src)s em atributo %(attribute_dest)s."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_document_kanban/upload_button/upload_button.js:0
 msgid "Oops! '%(fileName)s' didn’t upload since its format isn’t allowed."
 msgstr ""
 "Ops! '%(fileName)s' não foi carregado, pois seu formato não é permitido."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/product_catalog_search_panel.xml:0
 #, fuzzy
 msgid "Open filters"
@@ -3127,13 +3127,13 @@ msgid "Plain Discount"
 msgstr "Desconto simples"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "Please enter a positive whole number."
 msgstr "Digite um número inteiro positivo."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_document.py:0
 msgid ""
 "Please enter a valid URL.\n"
@@ -3147,25 +3147,25 @@ msgstr ""
 "URL inválido: %s"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "Please select some products first."
 msgstr "Selecione um projeto primeiro."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "Please specify the category for which this rule should be applied"
 msgstr "Especifique a categoria à qual esta regra deverá ser aplicada"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "Please specify the product for which this rule should be applied"
 msgstr "Especifique o produto ao qual esta regra deverá ser aplicada"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid ""
 "Please specify the product variant for which this rule should be applied"
@@ -3221,7 +3221,7 @@ msgid "Price at which the product is sold to customers."
 msgstr "Preço pelo qual o produto é vendido aos clientes."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 #: model:ir.actions.report,name:product.action_report_pricelist
 #: model:ir.model,name:product.model_product_pricelist
@@ -3246,7 +3246,7 @@ msgid "Pricelist Name"
 msgstr "Nome da lista de preços"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 #: model:ir.actions.server,name:product.action_product_price_list_report
 #: model:ir.actions.server,name:product.action_product_template_price_list_report
@@ -3255,7 +3255,7 @@ msgid "Pricelist Report"
 msgstr "Relatório de lista de preços"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist.py:0
 msgid "Pricelist Report Preview"
 msgstr "Visualização do relatório de lista de preços"
@@ -3288,7 +3288,7 @@ msgid "Prices"
 msgstr "Preços"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 #: model_terms:ir.ui.view,arch_db:product.product_label_layout_form
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_view
@@ -3314,7 +3314,7 @@ msgid "Private pod with desk and chair"
 msgstr "Cabine privada com mesa e cadeira"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/pricelist_report.py:0
 #: model:ir.model,name:product.model_product_template
 #: model:ir.model.fields,field_description:product.field_product_catalog_line_mixin__product_id
@@ -3537,7 +3537,7 @@ msgid "Product Variants"
 msgstr "Variantes de produto"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute.py:0
 #: code:addons/product/models/product_catalog_mixin.py:0
 #: model:ir.actions.act_window,name:product.product_template_action
@@ -3577,7 +3577,7 @@ msgid "Products Price Search"
 msgstr "Procurar preços de produtos"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid "Products: %(category)s"
 msgstr "Produtos: %(category)s"
@@ -3630,7 +3630,7 @@ msgid "QR Code"
 msgstr "Código QR"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Quantities"
 msgstr "Quantidades"
@@ -3646,7 +3646,7 @@ msgid "Quantity"
 msgstr "Quantidade"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/pricelist_report.py:0
 msgid "Quantity (%s UoM)"
 msgstr "Quantidade (%s UM)"
@@ -3658,7 +3658,7 @@ msgid "Quantity On Hand"
 msgstr "Quantidade em mãos"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "Quantity already present (%s)."
 msgstr "Quantidade já presente (%s)."
@@ -3722,7 +3722,7 @@ msgid "Ray-Ban"
 msgstr "Ray-ban"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "Recursive pricelist rules detected: %s"
 msgstr "Regras recursivas da lista de preços detectadas: %s"
@@ -3774,7 +3774,7 @@ msgid "Related attachment"
 msgstr "Anexo relacionado"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Remove quantity"
 msgstr "Remover quantidade"
@@ -3951,7 +3951,7 @@ msgid "Show Extra Price"
 msgstr "Mostrar preço extra"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Show Name"
 msgstr "Mostrar o nome"
@@ -4010,7 +4010,7 @@ msgid "Sony"
 msgstr "Sony"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/report/product_pricelist_report.py:0
 msgid "Sorry, you are not allowed to access this document."
 msgstr "Desculpe, você não tem permissão para acessar este documento."
@@ -4170,37 +4170,37 @@ msgid "Template Values"
 msgstr "Valores do modelo"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist.py:0
 msgid "Template for Pricelists"
 msgstr "Modelo para listas de preços"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "Template for Products"
 msgstr "Modelo para produtos"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_supplierinfo.py:0
 msgid "Template for Vendor Pricelists"
 msgstr "Modelo para listas de preços de fornecedores"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "The Internal Reference '%s' already exists."
 msgstr "A referência interna '%s' já existe."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid "The Reference '%s' already exists."
 msgstr "A referência \"%s\" já existe."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_line.py:0
 msgid ""
 "The attribute %(attribute)s must have at least one value for the product %"
@@ -4219,7 +4219,7 @@ msgstr ""
 "produto."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid "The cost of a product can't be negative."
@@ -4244,7 +4244,7 @@ msgid "The display type used in the Product Configurator."
 msgstr "O tipo de visualização usado no configurador de Produtos."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid ""
 "The exitings product has different attribute value. \"%(imported_values)s\" "
@@ -4265,7 +4265,7 @@ msgstr ""
 "máxima é de 125 cm."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "The minimum margin should be lower than the maximum margin."
 msgstr "A margem mínima deve ser menor do que a margem máxima."
@@ -4293,7 +4293,7 @@ msgstr ""
 "secundárias)"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid ""
 "The number of variants to generate is above allowed limit. You should either "
@@ -4312,7 +4312,7 @@ msgid "The price to purchase a product"
 msgstr "O preço para comprar um produto"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "The product template is archived so no combination is possible."
 msgstr ""
@@ -4331,7 +4331,7 @@ msgstr ""
 "unidade padrão do produto."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "The rounding method must be strictly positive."
 msgstr "O método de arredondamento deve ser estritamente positivo."
@@ -4348,7 +4348,7 @@ msgstr ""
 "preços dos atributos extras."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_value.py:0
 msgid ""
 "The value %(value)s is not defined for the attribute %(attribute)s on the "
@@ -4358,7 +4358,7 @@ msgstr ""
 "%(product)s."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid ""
 "The value of Base Unit Count must be greater than 0. Use 0 to hide the price "
@@ -4368,7 +4368,7 @@ msgstr ""
 "esconder o preço por unidade neste produto."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_catalog_mixin.py:0
 #, fuzzy
 msgid ""
@@ -4379,25 +4379,25 @@ msgstr ""
 "e não através do catálogo."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "There are no possible combination."
 msgstr "Não há combinação possível."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "There are no remaining closest combination."
 msgstr "Não há mais combinações restantes."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "There are no remaining possible combination."
 msgstr "Não há mais combinações possíveis."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid ""
 "This configuration of product attributes, values, and exclusions would lead "
@@ -4424,7 +4424,7 @@ msgid "This note is only for internal purposes."
 msgstr "Esta anotação é apenas para fins internos."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid ""
 "This product is part of a combo, so its type can't be changed to \"combo\"."
@@ -4507,7 +4507,7 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/controllers/pricelist_report.py:0
 #: model_terms:ir.ui.view,arch_db:product.report_pricelist_page
 msgid "UOM"
@@ -4519,7 +4519,7 @@ msgid "UOM price display"
 msgstr "Exibição de preço com unidade de medida"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid ""
 "Unable to import products with attribute value without attribute name "
@@ -4529,7 +4529,7 @@ msgstr ""
 "(definido como: atributo:valor): %s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 msgid ""
 "Unable to import products with attribute values but without name of product "
@@ -4586,7 +4586,7 @@ msgid "Unit of Measure for price per unit on products."
 msgstr "Unidade de medida para o preço unitário dos produtos."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_model.js:0
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_item_form_view
 msgid "Units"
@@ -4623,7 +4623,7 @@ msgid "Update product attribute value"
 msgstr "Atualizar o valor do atributo do produto"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute_value.py:0
 msgid "Update product extra prices"
 msgstr "Atualizar preços extras de produtos"
@@ -4634,13 +4634,13 @@ msgid "Update the extra price on existing products"
 msgstr "Atualizar o preço extra em produtos existentes"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/product_document_kanban/upload_button/upload_button.xml:0
 msgid "Upload"
 msgstr "Carregar"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid "Upload files to your product"
 msgstr "Faça upload de arquivos para seu produto"
@@ -4656,7 +4656,7 @@ msgid "Url"
 msgstr "URL"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template.py:0
 msgid ""
 "Use this feature to store any files you would like to share with your "
@@ -4677,7 +4677,7 @@ msgid "Used on Products"
 msgstr "Usado em produtos"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "Username"
 msgstr "Nome do usuário"
@@ -4951,7 +4951,7 @@ msgid "Weight unit of measure label"
 msgstr "Etiqueta da unidade de medida de peso"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid "What to expect ?"
@@ -4990,7 +4990,7 @@ msgid "Write Date"
 msgstr "Data de gravação"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_catalog_mixin.py:0
 #, fuzzy
 msgid "Wrong catalog child field!"
@@ -5012,7 +5012,7 @@ msgid "Yellow"
 msgstr "Amarelo"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/wizard/update_product_attribute_value.py:0
 msgid ""
 "You are about to add the value \"%(attribute_value)s\" to %(product_count)s "
@@ -5022,13 +5022,13 @@ msgstr ""
 "(product_count)s produtos."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/wizard/update_product_attribute_value.py:0
 msgid "You are about to update the extra price of %s products."
 msgstr "Você está prestes a atualizar o preço extra de %s produtos."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/res_config_settings.py:0
 msgid ""
 "You are deactivating the pricelist feature. Every active pricelist will be "
@@ -5056,7 +5056,7 @@ msgstr ""
 "copiar e colar um link do arquivo."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_uom.py:0
 #, fuzzy
 msgid ""
@@ -5075,20 +5075,20 @@ msgstr ""
 "Você pode carregar uma imagem que será usada como a cor do valor do atributo."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/order_line/order_line.xml:0
 msgid "You can't edit this product in the catalog."
 msgstr "Não é possível editar esse produto no catálogo."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_catalog_mixin.py:0
 #, fuzzy
 msgid "You cannot add or remove products from this record."
 msgstr "Você não pode adicionar ou remover produtos deste registro."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid ""
@@ -5099,7 +5099,7 @@ msgstr ""
 "primeiro dos seguintes pacotes: %s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute.py:0
 msgid ""
 "You cannot archive this attribute as there are still products linked to it"
@@ -5108,7 +5108,7 @@ msgstr ""
 "ele"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute.py:0
 msgid ""
 "You cannot change the Variants Creation Mode of the attribute %(attribute)s "
@@ -5120,7 +5120,7 @@ msgstr ""
 "%(products)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute_value.py:0
 msgid ""
 "You cannot change the attribute of the value %(value)s because it is used on "
@@ -5130,7 +5130,7 @@ msgstr ""
 "seguintes produtos: %(products)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_category.py:0
 msgid ""
 "You cannot change the company of %(categories)s as they hold products shared "
@@ -5140,7 +5140,7 @@ msgstr ""
 "compartilhados entre empresas ou pertencentes a outras empresas."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_category.py:0
 msgid ""
 "You cannot change the company of %(category)s as it holds products shared "
@@ -5150,7 +5150,7 @@ msgstr ""
 "compartilhados entre empresas ou pertencentes a outras empresas."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_value.py:0
 msgid ""
 "You cannot change the product of the value %(value)s set on product %"
@@ -5160,7 +5160,7 @@ msgstr ""
 "(product)s."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_value.py:0
 msgid ""
 "You cannot change the value of the value %(value)s set on product %"
@@ -5170,7 +5170,7 @@ msgstr ""
 "(product)s."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist.py:0
 msgid ""
 "You cannot delete pricelist(s):\n"
@@ -5184,7 +5184,7 @@ msgstr ""
 "%(other_pricelists)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute.py:0
 msgid ""
 "You cannot delete the attribute %(attribute)s because it is used on the "
@@ -5196,7 +5196,7 @@ msgstr ""
 "%(products)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute_value.py:0
 msgid ""
 "You cannot delete the value %(value)s because it is used on the following "
@@ -5208,7 +5208,7 @@ msgstr ""
 "%(products)s\n"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_line.py:0
 msgid ""
 "You cannot move the attribute %(attribute)s from the product %(product_src)s "
@@ -5218,7 +5218,7 @@ msgstr ""
 "para o produto %(product_dest)s."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_template_attribute_value.py:0
 msgid ""
 "You cannot update related variants from the values. Please update related "
@@ -5228,7 +5228,7 @@ msgstr ""
 "Atualize os valores relacionados das variantes."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/product_catalog/kanban_renderer.xml:0
 msgid ""
 "You must define a product for everything you sell or purchase,\n"
@@ -5265,13 +5265,13 @@ msgstr ""
 "aquisição, etc."
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.js:0
 msgid "You must leave at least one quantity."
 msgstr "Você deve deixar pelo menos uma quantidade."
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/wizard/product_label_layout.py:0
 msgid "You need to set a positive quantity."
 msgstr "Você precisa definir uma quantidade positiva."
@@ -5709,13 +5709,13 @@ msgstr ""
 "^FO0,13^A0N,30^FB457,1,0,C^FH^FD"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_attribute.py:0
 msgid "attribute_id"
 msgstr "attribute_id"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "csv"
 msgstr "csv"
@@ -5727,7 +5727,7 @@ msgid "days"
 msgstr "dias"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "discount"
 msgstr "desconto"
@@ -5769,7 +5769,7 @@ msgid "each variant"
 msgstr "cada variante"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "pdf"
 msgstr "pdf"
@@ -5781,48 +5781,48 @@ msgid "per"
 msgstr "para"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #: code:addons/product/models/product_template.py:0
 msgid "product"
 msgstr "produto"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 msgid "product cost"
 msgstr "custo do produto"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #, fuzzy
 msgid "product: %(name)s"
 msgstr "produto: %(name)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #, fuzzy
 msgid "product: %(product_name)s"
 msgstr "produto: %(product_name)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_product.py:0
 #, fuzzy
 msgid "product: %(product_name)s with variant: %(variant_name)s"
 msgstr "produto: %(product_name)s com variante: %(variant_name)s"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_item_form_view
 msgid "sales price"
 msgstr "preço de venda"
 
 #. module: product
-#. odoo-python
+#. weth-python
 #: code:addons/product/models/product_pricelist_item.py:0
 #, fuzzy
 msgid "surcharge"
@@ -5834,7 +5834,7 @@ msgid "to"
 msgstr "até"
 
 #. module: product
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product/static/src/js/pricelist_report/product_pricelist_report.xml:0
 msgid "xlsx"
 msgstr "xlsx"

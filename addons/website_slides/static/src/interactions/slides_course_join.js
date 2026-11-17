@@ -6,7 +6,7 @@ import { SlidesCourseJoinPopup } from "@website_slides/js/public/components/cour
 import { session } from "@web/session";
 
 export class WebsiteSlidesCourseJoinLink extends Interaction {
-    static selector = ".o_wslides_js_course_join_link";
+    static selector = ".w_wslides_js_course_join_link";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.onJoinClick,

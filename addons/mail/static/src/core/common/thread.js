@@ -233,7 +233,7 @@ export class Thread extends Component {
                     this.channel?.self_member_id.new_message_separator_ui - 1
                 )?.();
                 if (el) {
-                    el.querySelector(".o-mail-Message-jumpTarget").scrollIntoView({
+                    el.querySelector(".w-mail-Message-jumpTarget").scrollIntoView({
                         behavior: "instant",
                         block: "center",
                     });
@@ -495,7 +495,7 @@ export class Thread extends Component {
      * @param {Element} messageEl element of the first newer message.
      */
     applyScrollContextuallyNewerChannelMessages(thread, messageEl) {
-        messageEl.querySelector(".o-mail-Message-jumpTarget").scrollIntoView({
+        messageEl.querySelector(".w-mail-Message-jumpTarget").scrollIntoView({
             behavior: "instant",
             block: this.props.order === "asc" ? "start" : "end",
         });
@@ -717,7 +717,7 @@ export class Thread extends Component {
             this.scrollingToHighlight = true;
             await this.messageHighlight.startupPromise;
             this.messageHighlight
-                .scrollTo(el.querySelector(".o-mail-Message-jumpTarget"))
+                .scrollTo(el.querySelector(".w-mail-Message-jumpTarget"))
                 .then(() => (this.scrollingToHighlight = false));
         }
     }

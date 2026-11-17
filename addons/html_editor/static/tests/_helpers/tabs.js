@@ -16,7 +16,7 @@ function setWidths() {
     indentWidths = {};
 
     const rootDiv = document.createElement("div");
-    rootDiv.classList.add("odoo-editor-editable");
+    rootDiv.classList.add("weth-editor-editable");
     rootDiv.contentEditable = true;
     document.body.append(rootDiv);
 

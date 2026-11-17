@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/project_sale_expense/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -54,13 +54,13 @@ msgid "Expense"
 msgstr "Despesa"
 
 #. module: project_sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/project_sale_expense/models/account_analytic_line.py:0
 msgid "Expenses (Costs)"
 msgstr "Despesas (Custos)"
 
 #. module: project_sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/project_sale_expense/models/account_analytic_line.py:0
 msgid "Expenses (Revenue)"
 msgstr "Despesas (Receita)"

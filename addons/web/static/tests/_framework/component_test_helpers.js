@@ -10,7 +10,7 @@ import { isSmall } from "./ui_test_helpers";
 /**
  * @typedef {import("@weth/hoot").Target} Target
  * @typedef {import("@weth/owl").Component} Component
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  *
  * @typedef {ConstructorParameters<typeof App>[1]} AppConfig
  */
@@ -73,11 +73,11 @@ export function findComponent(appOrComponent, predicate) {
  */
 export function getDropdownMenu(togglerSelector) {
     if (isSmall()) {
-        return queryFirst(".o-dropdown--menu", { eq: -1 });
+        return queryFirst(".w-dropdown--menu", { eq: -1 });
     }
     let el = queryFirst(togglerSelector);
     if (el && !el.classList.contains("o-dropdown")) {
-        el = el.querySelector(".o-dropdown");
+        el = el.querySelector(".w-dropdown");
     }
     if (!el) {
         throw new Error(`getDropdownMenu: Could not find element "${togglerSelector}".`);
@@ -94,11 +94,11 @@ export function getDropdownMenu(togglerSelector) {
  *
  * @template {ComponentConstructor<P, E>} C
  * @template [P={}]
- * @template [E=OdooEnv]
+ * @template [E=WethEnv]
  * @param {C | string} ComponentClass
  * @param {AppConfig & {
- *  componentEnv?: Partial<OdooEnv>;
- *  containerEnv?: Partial<OdooEnv>;
+ *  componentEnv?: Partial<WethEnv>;
+ *  containerEnv?: Partial<WethEnv>;
  *  noMainContainer?: boolean;
  *  props?: P;
  *  target?: Target;

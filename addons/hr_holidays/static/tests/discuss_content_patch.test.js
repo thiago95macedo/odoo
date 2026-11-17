@@ -28,7 +28,7 @@ test("show 'Back on' in header of dm chat", async () => {
     await start();
     await openDiscuss(channelId);
     await contains(
-        ".o-mail-DiscussContent-header .o-mail-DiscussContent-outOfOffice:text('Back on Jan 1, 2023')"
+        ".w-mail-DiscussContent-header .w-mail-DiscussContent-outOfOffice:text('Back on Jan 1, 2023')"
     );
 });
 
@@ -54,8 +54,8 @@ test("show 'Back on' in header of dm chat even when showing local timezone", asy
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header .o-mail-DiscussContent-localDateTime");
+    await contains(".w-mail-DiscussContent-header .w-mail-DiscussContent-localDateTime");
     await contains(
-        ".o-mail-DiscussContent-header .o-mail-DiscussContent-outOfOffice:text('Back on Jan 3, 2023')"
+        ".w-mail-DiscussContent-header .w-mail-DiscussContent-outOfOffice:text('Back on Jan 3, 2023')"
     );
 });

@@ -33,34 +33,34 @@ test("Test Carousel Option (s_carousel)", async () => {
     // Editing the Transition
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('None')").click();
+    await contains(".w-hb-select-dropdown-item:contains('None')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "true");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10000");
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Slide')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Slide')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "true");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10600");
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Fade')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Fade')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "true");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10600");
 
     // Editing the Autoplay
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Always')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Always')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "carousel");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10600");
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Never')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Never')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "false");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10600");
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('After First Hover')").click();
+    await contains(".w-hb-select-dropdown-item:contains('After First Hover')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "true");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "10600");
 
@@ -92,7 +92,7 @@ test("Test Carousel Option (s_carousel)", async () => {
     // Autoplay: Never doesn't remove bs-interval
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Never')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Never')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "false");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "5000");
     expect(carouselEl).toHaveStyle({ "--transition-duration": "2000ms" });
@@ -108,34 +108,34 @@ test("Test Carousel Option (s_image_gallery)", async () => {
     // Editing the Transition
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('None')").click();
+    await contains(".w-hb-select-dropdown-item:contains('None')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "carousel");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1000");
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Slide')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Slide')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "carousel");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1600");
 
     await contains(".hb-row[data-label='Transition'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Fade')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Fade')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "carousel");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1600");
 
     // Editing the Autoplay
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Always')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Always')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "carousel");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1600");
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Never')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Never')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "false");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1600");
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('After First Hover')").click();
+    await contains(".w-hb-select-dropdown-item:contains('After First Hover')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "true");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "1600");
 
@@ -167,7 +167,7 @@ test("Test Carousel Option (s_image_gallery)", async () => {
     // Autoplay: Never doesn't remove bs-interval
 
     await contains(".hb-row[data-label='Autoplay'] button").click();
-    await contains(".o-hb-select-dropdown-item:contains('Never')").click();
+    await contains(".w-hb-select-dropdown-item:contains('Never')").click();
     expect(carouselEl).toHaveAttribute("data-bs-ride", "false");
     expect(carouselEl).toHaveAttribute("data-bs-interval", "5000");
     expect(carouselEl).toHaveStyle({ "--transition-duration": "2000ms" });

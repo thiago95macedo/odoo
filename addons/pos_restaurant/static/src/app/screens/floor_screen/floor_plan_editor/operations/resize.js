@@ -36,7 +36,7 @@ export class ResizeOperation {
         this.resizeStarted = false;
 
         this.isTextElement = floorElement.isText;
-        this.textContentEl = this.isTextElement ? el.querySelector(".o_fp_text_content") : null;
+        this.textContentEl = this.isTextElement ? el.querySelector(".w_fp_text_content") : null;
         this.isCornerHandle = position.length === 2;
         this.maintainRatio = floorElement.isResizeMaintainRatio();
 

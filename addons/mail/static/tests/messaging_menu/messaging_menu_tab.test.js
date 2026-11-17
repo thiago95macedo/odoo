@@ -40,9 +40,9 @@ defineMailModels();
 test("chat tab displays message when empty", async () => {
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-MessagingMenuEmpty .fw-bold:text('No messages yet!')");
+    await contains(".w-mail-MessagingMenuEmpty .fw-bold:text('No messages yet!')");
     await contains(
-        ".o-mail-MessagingMenuEmpty :text('Chat with your coworkers on desktop or on mobile.')"
+        ".w-mail-MessagingMenuEmpty :text('Chat with your coworkers on desktop or on mobile.')"
     );
 });
 
@@ -79,18 +79,18 @@ test("unread filter shows only unread chats", async () => {
     });
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Bob'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Bob'))");
     await click("button:text(Unread)");
-    await contains("button.o-active:text(Unread)");
-    await contains(".o-mail-NotificationItem", { count: 1 });
-    await contains(".o-mail-NotificationItem-name:text(Alice)");
+    await contains("button.w-active:text(Unread)");
+    await contains(".w-mail-NotificationItem", { count: 1 });
+    await contains(".w-mail-NotificationItem-name:text(Alice)");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-NotificationItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Bob'))");
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Bob'))");
 });
 
 test("unread filter shows only unread channels", async () => {
@@ -128,18 +128,18 @@ test("unread filter shows only unread channels", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alpha'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Beta'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alpha'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Beta'))");
     await click("button:text(Unread)");
-    await contains("button.o-active:text(Unread)");
-    await contains(".o-mail-NotificationItem", { count: 1 });
-    await contains(".o-mail-NotificationItem-name:text(Alpha)");
+    await contains("button.w-active:text(Unread)");
+    await contains(".w-mail-NotificationItem", { count: 1 });
+    await contains(".w-mail-NotificationItem-name:text(Alpha)");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-NotificationItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alpha'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Beta'))");
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alpha'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Beta'))");
 });
 
 test("group filter shows only group chats", async () => {
@@ -165,18 +165,18 @@ test("group filter shows only group chats", async () => {
     ]);
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Team'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Team'))");
     await click("button:text(Group)");
-    await contains("button.o-active:text(Group)");
-    await contains(".o-mail-NotificationItem", { count: 1 });
-    await contains(".o-mail-NotificationItem-name:text(Team)");
+    await contains("button.w-active:text(Group)");
+    await contains(".w-mail-NotificationItem", { count: 1 });
+    await contains(".w-mail-NotificationItem-name:text(Team)");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Team'))");
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Team'))");
 });
 
 test("thread filter shows only channel threads", async () => {
@@ -197,18 +197,18 @@ test("thread filter shows only channel threads", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Bug thread'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Bug thread'))");
     await click("button:text(Thread)");
-    await contains("button.o-active:text(Thread)");
-    await contains(".o-mail-NotificationItem", { count: 1 });
-    await contains(".o-mail-NotificationItem:has(:text('Bug thread'))");
+    await contains("button.w-active:text(Thread)");
+    await contains(".w-mail-NotificationItem", { count: 1 });
+    await contains(".w-mail-NotificationItem:has(:text('Bug thread'))");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Bug thread'))");
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Bug thread'))");
 });
 
 test("active filter with no match shows a neutral empty state, not the tab onboarding", async () => {
@@ -222,11 +222,11 @@ test("active filter with no match shows a neutral empty state, not the tab onboa
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 1 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 1 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
     await click("button:text(Thread)");
-    await contains("button.o-active:text(Thread)");
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('No conversation matches this filter.'))");
+    await contains("button.w-active:text(Thread)");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('No conversation matches this filter.'))");
 });
 
 test("plugin filter narrows a tab's content, ANDed with the chip filter", async () => {
@@ -269,21 +269,21 @@ test("plugin filter narrows a tab's content, ANDed with the chip filter", async 
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains("button.o-active:text(Unread)");
+    await contains("button.w-active:text(Unread)");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-MessagingMenuItem", { count: 3 });
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-MessagingMenuItem", { count: 3 });
     getService("mail.store").messagingMenuSystrayState.setPluginFilter("test.author", {
         id: "test_author_alice",
         includesMessage: (msg) => msg.author_id?.id === aliceId,
     });
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice: hello'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice: old news'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice: hello'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice: old news'))");
     await click("button:text(Unread)");
-    await contains("button.o-active:text(Unread)");
-    await contains(".o-mail-MessagingMenuItem", { count: 1 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alice: hello'))");
+    await contains("button.w-active:text(Unread)");
+    await contains(".w-mail-MessagingMenuItem", { count: 1 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alice: hello'))");
 });
 
 test("create new chat from chat tab", async () => {
@@ -293,11 +293,11 @@ test("create new chat from chat tab", async () => {
     await start();
     await openMessagingMenu();
     await click("button:has([data-icon='add']):text(Chat)");
-    await contains(".o-discuss-ChannelInvitation");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
+    await contains(".w-discuss-ChannelInvitation");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
     await click("button:text('Create Chat'):enabled");
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
-    await contains(".o-mail-ChatWindow-displayName:text('TestPartner')");
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
+    await contains(".w-mail-ChatWindow-displayName:text('TestPartner')");
 });
 
 test("create new group chat from chat tab", async () => {
@@ -311,24 +311,24 @@ test("create new group chat from chat tab", async () => {
     await start();
     await openMessagingMenu();
     await click("button:has([data-icon='add']):text(Chat)");
-    await contains(".o-discuss-ChannelInvitation");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner1'))");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
+    await contains(".w-discuss-ChannelInvitation");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner1'))");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
     await click("button:text('Create Chat'):enabled");
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
     await contains(
-        ".o-mail-ChatWindow-displayName:text('Mitchell Admin, TestPartner1, and TestPartner2')"
+        ".w-mail-ChatWindow-displayName:text('Mitchell Admin, TestPartner1, and TestPartner2')"
     );
 });
 
 test("meeting tab displays message when empty", async () => {
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.MEETING);
-    await contains(".o-mail-MessagingMenuEmpty .fw-bold:text('No video conference planned!')");
+    await contains(".w-mail-MessagingMenuEmpty .fw-bold:text('No video conference planned!')");
     await contains(
-        ".o-mail-MessagingMenuEmpty:contains('Collaborate with coworkers and customers in video calls.')"
+        ".w-mail-MessagingMenuEmpty:contains('Collaborate with coworkers and customers in video calls.')"
     );
-    await contains(".o-mail-MessagingMenuEmpty:contains('No install needed.')");
+    await contains(".w-mail-MessagingMenuEmpty:contains('No install needed.')");
 });
 
 test("create new meeting from meeting tab", async () => {
@@ -336,8 +336,8 @@ test("create new meeting from meeting tab", async () => {
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.MEETING);
     await click("button:text(Meeting)");
-    await click(".o-dropdown-item:text('Start Now')");
-    await contains(".o-mail-Meeting");
+    await click(".w-dropdown-item:text('Start Now')");
+    await contains(".w-mail-Meeting");
 });
 
 test("unread filter shows only unread meetings", async () => {
@@ -377,18 +377,18 @@ test("unread filter shows only unread meetings", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.MEETING);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Standup'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Retro'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Standup'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Retro'))");
     await click("button:text(Unread)");
-    await contains("button.o-active:text(Unread)");
-    await contains(".o-mail-NotificationItem", { count: 1 });
-    await contains(".o-mail-NotificationItem:has(:text('Standup'))");
+    await contains("button.w-active:text(Unread)");
+    await contains(".w-mail-NotificationItem", { count: 1 });
+    await contains(".w-mail-NotificationItem:has(:text('Standup'))");
     await click("button:text(All)");
-    await contains("button.o-active:text(All)");
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Standup'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Retro'))");
+    await contains("button.w-active:text(All)");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Standup'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Retro'))");
 });
 
 test("join most popular channel from empty channel tab", async () => {
@@ -416,19 +416,19 @@ test("join most popular channel from empty channel tab", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenu .o-mail-MessagingMenuEmpty");
-    await contains(".o-mail-MessagingMenuEmptyChannel-popularChannels :text(General)");
-    await contains(".o-mail-MessagingMenuEmptyChannel-popularChannels :text('2 followers')");
-    await contains(".o-mail-MessagingMenuEmptyChannel-popularChannels :text(Sales)");
-    await contains(".o-mail-MessagingMenuEmptyChannel-popularChannels :text('1 follower')");
+    await contains(".w-mail-MessagingMenu .w-mail-MessagingMenuEmpty");
+    await contains(".w-mail-MessagingMenuEmptyChannel-popularChannels :text(General)");
+    await contains(".w-mail-MessagingMenuEmptyChannel-popularChannels :text('2 followers')");
+    await contains(".w-mail-MessagingMenuEmptyChannel-popularChannels :text(Sales)");
+    await contains(".w-mail-MessagingMenuEmptyChannel-popularChannels :text('1 follower')");
     await click("button:text('Find more channels')");
     await expect.waitForSteps(["mail.discuss_channel_action"]);
-    await contains(".o-mail-MessagingMenu", { count: 0 });
+    await contains(".w-mail-MessagingMenu", { count: 0 });
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
     await click(
-        ".o-mail-MessagingMenuEmptyChannel-popularChannels:has(:text(General)) button:text(Follow)"
+        ".w-mail-MessagingMenuEmptyChannel-popularChannels:has(:text(General)) button:text(Follow)"
     );
-    await contains(".o-mail-NotificationItem-name:text(General)");
+    await contains(".w-mail-NotificationItem-name:text(General)");
 });
 
 test("tabs sort items by last_interest_dt", async () => {
@@ -475,11 +475,11 @@ test("tabs sort items by last_interest_dt", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem", { count: 4 });
-    await contains(".o-mail-NotificationItem-name:eq(0):text(Alpha)");
-    await contains(".o-mail-NotificationItem-name:eq(1):text(Beta)");
-    await contains(".o-mail-NotificationItem-name:eq(2):has(:text(Sub))");
-    await contains(".o-mail-NotificationItem-name:eq(3):text(Gamma)");
+    await contains(".w-mail-NotificationItem", { count: 4 });
+    await contains(".w-mail-NotificationItem-name:eq(0):text(Alpha)");
+    await contains(".w-mail-NotificationItem-name:eq(1):text(Beta)");
+    await contains(".w-mail-NotificationItem-name:eq(2):has(:text(Sub))");
+    await contains(".w-mail-NotificationItem-name:eq(3):text(Gamma)");
 });
 
 test("favorite channels are displayed first", async () => {
@@ -508,9 +508,9 @@ test("favorite channels are displayed first", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:eq(0):has(:text(Gamma):has([data-icon='star']))");
-    await contains(".o-mail-MessagingMenuItem:eq(1):has(:text(Alpha'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:eq(0):has(:text(Gamma):has([data-icon='star']))");
+    await contains(".w-mail-MessagingMenuItem:eq(1):has(:text(Alpha'))");
 });
 
 test("channel tab counter: initial unread count combines with loaded channels state", async () => {
@@ -546,22 +546,22 @@ test("channel tab counter: initial unread count combines with loaded channels st
     await openMessagingMenu();
     // From init_counter_ids before channels are loaded.
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Channels')) .o-mail-MessagingMenu-tabCounter:text(2)"
+        ".w-mail-MessagingMenu-tab:has(:text('Channels')) .w-mail-MessagingMenu-tabCounter:text(2)"
     );
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Alpha'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Beta'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Alpha'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Beta'))");
     // No double count after channels load.
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Channels')) .o-mail-MessagingMenu-tabCounter:text(2)"
+        ".w-mail-MessagingMenu-tab:has(:text('Channels')) .w-mail-MessagingMenu-tabCounter:text(2)"
     );
-    await triggerEvents(".o-mail-NotificationItem.o-interest:first", ["mouseenter"]);
+    await triggerEvents(".w-mail-NotificationItem.w-interest:first", ["mouseenter"]);
     // Respond to mark as read.
-    await click(".o-mail-MessagingMenu-actions:eq(0) button");
-    await click(".o-dropdown-item:text(Mark Read)");
+    await click(".w-mail-MessagingMenu-actions:eq(0) button");
+    await click(".w-dropdown-item:text(Mark Read)");
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Channels')) .o-mail-MessagingMenu-tabCounter:text(1)"
+        ".w-mail-MessagingMenu-tab:has(:text('Channels')) .w-mail-MessagingMenu-tabCounter:text(1)"
     );
 });
 
@@ -603,21 +603,21 @@ test("message tab counter: initial unread count decrements after marking loaded 
     await openMessagingMenu();
     // From init_counter_ids before messages are loaded.
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Notifications')) .o-mail-MessagingMenu-tabCounter:text(2)"
+        ".w-mail-MessagingMenu-tab:has(:text('Notifications')) .w-mail-MessagingMenu-tabCounter:text(2)"
     );
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Demo: msg 1'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Demo: msg 2'))");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Demo: msg 1'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Demo: msg 2'))");
     // Respond to mark as read.
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Notifications')) .o-mail-MessagingMenu-tabCounter:text(2)"
+        ".w-mail-MessagingMenu-tab:has(:text('Notifications')) .w-mail-MessagingMenu-tabCounter:text(2)"
     );
-    await triggerEvents(".o-mail-MessagingMenuItem:first", ["mouseenter"]);
-    await click(".o-mail-MessagingMenu-actions:eq(0) button");
-    await click(".o-dropdown-item:text('Mark as Read')");
+    await triggerEvents(".w-mail-MessagingMenuItem:first", ["mouseenter"]);
+    await click(".w-mail-MessagingMenu-actions:eq(0) button");
+    await click(".w-dropdown-item:text('Mark as Read')");
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Notifications')) .o-mail-MessagingMenu-tabCounter:text(1)"
+        ".w-mail-MessagingMenu-tab:has(:text('Notifications')) .w-mail-MessagingMenu-tabCounter:text(1)"
     );
 });
 
@@ -659,12 +659,12 @@ test("message tab counter: initial unread count decrements after marking unloade
     await openMessagingMenu();
     // From init_counter_ids before messages are loaded.
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Notifications')) .o-mail-MessagingMenu-tabCounter:text(2)"
+        ".w-mail-MessagingMenu-tab:has(:text('Notifications')) .w-mail-MessagingMenu-tabCounter:text(2)"
     );
     // Simulate mark as read from another device.
     await getService("orm").call("mail.message", "set_message_done", [[messageId1]]);
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Notifications')) .o-mail-MessagingMenu-tabCounter:text(1)"
+        ".w-mail-MessagingMenu-tab:has(:text('Notifications')) .w-mail-MessagingMenu-tabCounter:text(1)"
     );
 });
 
@@ -686,12 +686,12 @@ test("marking unloaded message as read when notifications are handled by email",
     });
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-MessagingMenu-tab", { count: 3 });
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Channels'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Meetings'))");
+    await contains(".w-mail-MessagingMenu-tab", { count: 3 });
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Channels'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Meetings'))");
     // Notifications are handled by email: no tab counts them.
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Notifications'))", { count: 0 });
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Notifications'))", { count: 0 });
     // Simulate mark as read from another device.
     await getService("orm").call("mail.message", "set_message_done", [[messageId]]);
     await waitNotifications(["mail.message/mark_as_read"]);
@@ -702,9 +702,9 @@ test("inbox tab displays message when empty", async () => {
     pyEnv["res.users"].write(serverState.userId, { notification_type: "inbox" });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-MessagingMenuEmpty .fw-bold:text('You\\'re all caught up!')");
+    await contains(".w-mail-MessagingMenuEmpty .fw-bold:text('You\\'re all caught up!')");
     await contains(
-        ".o-mail-MessagingMenuEmpty :text('Notifications of the documents you follow will appear here.')"
+        ".w-mail-MessagingMenuEmpty :text('Notifications of the documents you follow will appear here.')"
     );
 });
 
@@ -719,22 +719,22 @@ test("bookmark tab is only shown when there are bookmarked messages", async () =
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessagingMenu-tab", { count: 3 });
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Channels'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Meetings'))");
-    await contains(".o-mail-Message");
-    await rightClick(".o-mail-Message");
-    await click(".o-dropdown-item:contains(Bookmark)");
-    await contains(".o-mail-MessagingMenu-tab", { count: 4 });
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Bookmarks')):has(.badge:text(1))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Channels'))");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Meetings'))");
-    await click(`.o-mail-MessagingMenu-tab[data-id='${MENU_TABS.BOOKMARK}']`);
-    await contains(".o-mail-MessagingMenuItem .o-mail-NotificationItem-name:text(General)");
+    await contains(".w-mail-MessagingMenu-tab", { count: 3 });
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Channels'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Meetings'))");
+    await contains(".w-mail-Message");
+    await rightClick(".w-mail-Message");
+    await click(".w-dropdown-item:contains(Bookmark)");
+    await contains(".w-mail-MessagingMenu-tab", { count: 4 });
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Bookmarks')):has(.badge:text(1))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Channels'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Meetings'))");
+    await click(`.w-mail-MessagingMenu-tab[data-id='${MENU_TABS.BOOKMARK}']`);
+    await contains(".w-mail-MessagingMenuItem .w-mail-NotificationItem-name:text(General)");
     await contains(
-        ".o-mail-MessagingMenuItem .o-mail-NotificationItem-text:text('You: Hello there!')"
+        ".w-mail-MessagingMenuItem .w-mail-NotificationItem-text:text('You: Hello there!')"
     );
 });
 
@@ -750,14 +750,14 @@ test("can search messages", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.BOOKMARK);
-    await contains(".o-mail-MessagingMenuItem:has(:text('You: This is a message'))");
-    await insertText(".o-mail-DiscussSearch input", "message");
-    await contains(".o-mail-MessagingMenuItem:has(:text('You: This is a message'))");
-    await insertText(".o-mail-DiscussSearch input", "something different", { replace: true });
-    await contains(".o-mail-MessagingMenuEmpty:text('No results for \"something different\".')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('You: This is a message'))");
+    await insertText(".w-mail-DiscussSearch input", "message");
+    await contains(".w-mail-MessagingMenuItem:has(:text('You: This is a message'))");
+    await insertText(".w-mail-DiscussSearch input", "something different", { replace: true });
+    await contains(".w-mail-MessagingMenuEmpty:text('No results for \"something different\".')");
     // Switching tabs clears the search.
-    await click(`.o-mail-MessagingMenu-tab[data-id='${MENU_TABS.CHAT}']`);
-    await contains(".o-mail-DiscussSearch input", { value: "" });
+    await click(`.w-mail-MessagingMenu-tab[data-id='${MENU_TABS.CHAT}']`);
+    await contains(".w-mail-DiscussSearch input", { value: "" });
 });
 
 test("search messages on the text of their preview and body, not on their markup", async () => {
@@ -773,20 +773,20 @@ test("search messages on the text of their preview and body, not on their markup
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.BOOKMARK);
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
+        ".w-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
-    await insertText(".o-mail-DiscussSearch input", "href");
+    await insertText(".w-mail-DiscussSearch input", "href");
     await animationFrame();
-    await waitFor(".o-mail-MessagingMenuEmpty:text('No results for \"href\".'):count(1)");
-    await insertText(".o-mail-DiscussSearch input", "weth.com.br", { replace: true });
+    await waitFor(".w-mail-MessagingMenuEmpty:text('No results for \"href\".'):count(1)");
+    await insertText(".w-mail-DiscussSearch input", "weth.com.br", { replace: true });
     await animationFrame();
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
+        ".w-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
-    await insertText(".o-mail-DiscussSearch input", "website", { replace: true });
+    await insertText(".w-mail-DiscussSearch input", "website", { replace: true });
     await animationFrame();
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
+        ".w-mail-MessagingMenuItem:has(:text('You: Visit https://www.weth.com.br')):count(1)"
     );
 });
 
@@ -795,17 +795,17 @@ test("push notification request stays on the chat tab regardless of user notific
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Chats')) .o-mail-MessagingMenu-tabCounter:text(1)"
+        ".w-mail-MessagingMenu-tab:has(:text('Chats')) .w-mail-MessagingMenu-tabCounter:text(1)"
     );
-    await contains(".o-mail-NotificationItem-name:text('Turn on notifications')");
+    await contains(".w-mail-NotificationItem-name:text('Turn on notifications')");
     getService("mail.store").self_user.notification_type = "inbox";
     await contains(
-        ".o-mail-MessagingMenu-tab:has(:text('Chats')) .o-mail-MessagingMenu-tabCounter:text(1)"
+        ".w-mail-MessagingMenu-tab:has(:text('Chats')) .w-mail-MessagingMenu-tabCounter:text(1)"
     );
-    await contains(".o-mail-NotificationItem-name:text('Turn on notifications')");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Notifications'))");
+    await contains(".w-mail-NotificationItem-name:text('Turn on notifications')");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Notifications'))");
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('You're all caught up!'))");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('You're all caught up!'))");
 });
 
 test("convert meeting to group chat (self)", async () => {
@@ -830,19 +830,19 @@ test("convert meeting to group chat (self)", async () => {
     ]);
     await start();
     await openDiscuss(channelIds[0]);
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Meetings')).active");
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem .o-active:has(:text('Meeting 1'))");
-    await click(".o-mail-MessagingMenuItem:has(:text('Meeting 2')) [title='Chat Actions']");
-    await click(".o-dropdown-item:text('Convert to Chat')");
-    await contains(".o-mail-MessagingMenuItem");
-    await click(".o-mail-MessagingMenuItem:has(:text('Meeting 1')) [title='Chat Actions']");
-    await click(".o-dropdown-item:text('Convert to Chat')");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats')).active");
-    await contains(".o-mail-MessagingMenuItem", { count: 2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Meeting 1'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Meetings')).active");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem .w-active:has(:text('Meeting 1'))");
+    await click(".w-mail-MessagingMenuItem:has(:text('Meeting 2')) [title='Chat Actions']");
+    await click(".w-dropdown-item:text('Convert to Chat')");
+    await contains(".w-mail-MessagingMenuItem");
+    await click(".w-mail-MessagingMenuItem:has(:text('Meeting 1')) [title='Chat Actions']");
+    await click(".w-dropdown-item:text('Convert to Chat')");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats')).active");
+    await contains(".w-mail-MessagingMenuItem", { count: 2 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Meeting 1'))");
     await contains(
-        `.o-mail-NotificationMessage:has(:text('${serverState.partnerName} converted this meeting into a group chat'))`
+        `.w-mail-NotificationMessage:has(:text('${serverState.partnerName} converted this meeting into a group chat'))`
     );
 });
 
@@ -861,17 +861,17 @@ test("sync the meeting when another member converts it to a group chat", async (
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Meetings')).active");
-    await contains(".o-mail-MessagingMenuItem .o-active:has(:text('Meeting 1'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Meetings')).active");
+    await contains(".w-mail-MessagingMenuItem .w-active:has(:text('Meeting 1'))");
     await withUser(userId, () =>
         getService("mail.store").fetchStoreData("/discuss/channel/meeting_to_group_chat", {
             channel_id: channelId,
         })
     );
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats')).active");
-    await contains(".o-mail-MessagingMenuItem .o-active:has(:text('Meeting 1'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats')).active");
+    await contains(".w-mail-MessagingMenuItem .w-active:has(:text('Meeting 1'))");
     await contains(
-        "   .o-mail-NotificationMessage:has(:text('Alice converted this meeting into a group chat'))"
+        "   .w-mail-NotificationMessage:has(:text('Alice converted this meeting into a group chat'))"
     );
 });
 
@@ -969,7 +969,7 @@ test("tab added after boot fetches its own counter without re-fetching the other
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-MessagingMenuItem", { count: 1 });
+    await contains(".w-mail-MessagingMenuItem", { count: 1 });
     await expect.waitForSteps([
         `store fetch: /mail/messaging_menu/initialize_counters - ${JSON.stringify({
             filter_id_by_tab_id_by_record_type: {
@@ -979,7 +979,7 @@ test("tab added after boot fetches its own counter without re-fetching the other
         })}`,
     ]);
     getService("mail.store").messagingMenu.testDynamicOn = true;
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Dynamic Tab')):has(.badge:text(1))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Dynamic Tab')):has(.badge:text(1))");
     await expect.waitForSteps([
         `store fetch: /mail/messaging_menu/initialize_counters - ${JSON.stringify({
             filter_id_by_tab_id_by_record_type: { "mail.message": { test_dynamic: null } },

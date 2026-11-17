@@ -62,8 +62,8 @@ class PrinterDriver(PrinterDriverBase):
                 options = {'document-format': CUPS_FORMAT_AUTO}
                 if not duplex:
                     options["sides"] = "one-sided"
-                job_id = self.conn.createJob(self.device_identifier, 'Odoo print job', options)
-                self.conn.startDocument(self.device_identifier, job_id, 'Odoo print job', CUPS_FORMAT_AUTO, 1)
+                job_id = self.conn.createJob(self.device_identifier, 'WETH print job', options)
+                self.conn.startDocument(self.device_identifier, job_id, 'WETH print job', CUPS_FORMAT_AUTO, 1)
                 self.conn.writeRequestData(data, len(data))
                 self.conn.finishDocument(self.device_identifier)
             self.job_ids.add(job_id)
@@ -139,7 +139,7 @@ class PrinterDriver(PrinterDriverBase):
     def print_status_zpl(self):
         iot_status = self._get_iot_status()
 
-        title = "IoT Box Connected" if helpers.get_odoo_server_url() else "IoT Box Status"
+        title = "IoT Box Connected" if helpers.get_weth_server_url() else "IoT Box Status"
         command = f"^XA^CI28 ^FT35,40 ^A0N,30 ^FD{title}^FS"
         p = 85
         if iot_status["pairing_code"]:
@@ -175,7 +175,7 @@ class PrinterDriver(PrinterDriverBase):
 
         if iot_status["pairing_code"]:
             pairing_code = (
-                '\nOdoo not connected\n'
+                '\nWETH not connected\n'
                 'Go to the IoT app, click "Connect",\n'
                 'Pairing Code: %s\n' % iot_status["pairing_code"]
             )
@@ -197,7 +197,7 @@ class PrinterDriver(PrinterDriverBase):
         if len(ips) == 0:
             network_quality = ""
         else:
-            network_quality = "\nNetwork quality:\n - To Odoo server: %s\n" % wan_quality
+            network_quality = "\nNetwork quality:\n - To WETH server: %s\n" % wan_quality
             if to_gateway_quality:
                 network_quality += " - To Modem: %s\n" % to_gateway_quality
             if to_printer_quality:
@@ -208,7 +208,7 @@ class PrinterDriver(PrinterDriverBase):
             mac_address = '\nMac Address:\n%s\n' % iot_status["mac_address"]
             homepage = '\nIoT Box Homepage:\nhttp://%s:8069\n' % ips[0]
 
-        title = b'IoT Box Connected' if helpers.get_odoo_server_url() else b'IoT Box Status'
+        title = b'IoT Box Connected' if helpers.get_weth_server_url() else b'IoT Box Status'
         body = pairing_code + wlan + identifier + mac_address + ip + network_quality + homepage
 
         return title, body.encode()

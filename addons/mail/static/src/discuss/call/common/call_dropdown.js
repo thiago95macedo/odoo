@@ -37,7 +37,7 @@ export class CallDropdown extends Component {
             getItems: () => {
                 if (this.isOpen() && this.menuRef()) {
                     return this.menuRef().querySelectorAll(
-                        ":scope .o-navigable, :scope .o-dropdown"
+                        ":scope .w-navigable, :scope .w-dropdown"
                     );
                 }
                 return [];

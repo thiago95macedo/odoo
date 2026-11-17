@@ -31,18 +31,18 @@ test("no conflicts between file uploads", async () => {
     // Uploading file in the first thread: res.partner chatter.
     await openFormView("res.partner", partnerId);
     await click("button:text('Send message')");
-    await inputFiles(".o-mail-Chatter .o-mail-Composer input[type=file]", [text]);
+    await inputFiles(".w-mail-Chatter .w-mail-Composer input[type=file]", [text]);
     // Uploading file in the second thread: discuss.channel in chatWindow.
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem");
-    await inputFiles(".o-mail-ChatWindow .o-mail-Composer input[type=file]", [text2]);
-    await contains(".o-mail-Chatter .o-mail-AttachmentContainer");
-    await contains(".o-mail-ChatWindow .o-mail-AttachmentContainer");
+    await click(".w-mail-NotificationItem");
+    await inputFiles(".w-mail-ChatWindow .w-mail-Composer input[type=file]", [text2]);
+    await contains(".w-mail-Chatter .w-mail-AttachmentContainer");
+    await contains(".w-mail-ChatWindow .w-mail-AttachmentContainer");
     await contains(
-        ".o-mail-Chatter .o-mail-AttachmentContainer:not(.o-isUploading):contains(text1.txt)"
+        ".w-mail-Chatter .w-mail-AttachmentContainer:not(.w-isUploading):contains(text1.txt)"
     );
     await contains(
-        ".o-mail-ChatWindow .o-mail-AttachmentContainer:not(.o-isUploading):contains(text2.txt)"
+        ".w-mail-ChatWindow .w-mail-AttachmentContainer:not(.w-isUploading):contains(text2.txt)"
     );
 });
 
@@ -53,8 +53,8 @@ test("Attachment shows spinner during upload", async () => {
     onRpc("/mail/attachment/upload", () => new Promise(() => { })); // never fulfill the attachment upload promise.
     await start();
     await openDiscuss(channelId);
-    await inputFiles(".o-mail-Composer input[type=file]", [text2]);
+    await inputFiles(".w-mail-Composer input[type=file]", [text2]);
     await contains(
-        ".o-mail-AttachmentContainer.o-isUploading:contains(text2.txt) [data-icon='autorenew']"
+        ".w-mail-AttachmentContainer.w-isUploading:contains(text2.txt) [data-icon='autorenew']"
     );
 });

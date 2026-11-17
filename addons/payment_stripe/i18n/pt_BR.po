@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_stripe/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgid "Boleto"
 msgstr "Boleto"
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/payment_form.js:0
 msgid "Cannot display the payment form"
 msgstr "Não é possível exibir o formulário de pagamento"
@@ -135,7 +135,7 @@ msgid "Connect"
 msgstr "Conectar"
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/express_checkout.js:0
 msgid "Delivery"
 msgstr "Entrega"
@@ -178,7 +178,7 @@ msgid "FPX"
 msgstr "FPX"
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/express_checkout.js:0
 msgid "Free Shipping"
 msgstr "Frete grátis"
@@ -221,7 +221,7 @@ msgstr ""
 "Stripe para o WETH."
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/payment_form.js:0
 msgid "Incorrect payment details"
 msgstr "Informações de pagamento incorretas"
@@ -252,7 +252,7 @@ msgid "Multibanco"
 msgstr "Multibanco"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid "Other Payment Providers"
 msgstr "Outros provedores de pagamento"
@@ -293,7 +293,7 @@ msgid "Payment Transaction"
 msgstr "Transação de pagamento"
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -309,7 +309,7 @@ msgid "Pix"
 msgstr "Pix"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid "Please use live credentials to enable Apple Pay."
 msgstr "Use credenciais ativas para ativar o Apple Pay."
@@ -325,13 +325,13 @@ msgid "Publishable Key"
 msgstr "Chave publicável"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_transaction.py:0
 msgid "Received data with invalid intent status: %s."
 msgstr "Dados recebidos com status de intenção inválido: %s"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_transaction.py:0
 msgid "Received data with missing intent status."
 msgstr "Dados recebidos sem status de intenção."
@@ -362,7 +362,7 @@ msgid "Stripe"
 msgstr "Stripe"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid ""
 "Stripe Connect is not available in your country, please use another payment "
@@ -387,7 +387,7 @@ msgid "Swish"
 msgstr "Swish"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_transaction.py:0
 msgid "The customer left the payment page."
 msgstr "O cliente saiu da página de pagamento."
@@ -398,7 +398,7 @@ msgid "The key solely used to identify the account with Stripe"
 msgstr "A chave usada exclusivamente para identificar a conta com o Stripe"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_transaction.py:0
 msgid ""
 "The refund did not go through. Please log into your Stripe Dashboard to get "
@@ -424,7 +424,7 @@ msgid "UPI"
 msgstr "UPI"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_token.py:0
 msgid "Unable to convert payment token to new API."
 msgstr "Não foi possível converter o token de pagamento em uma nova API."
@@ -455,13 +455,13 @@ msgid "Wero"
 msgstr "Wero"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid "You Stripe Webhook was successfully set up!"
 msgstr "Seu webhook do Stripe foi configurado com sucesso."
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid ""
 "You cannot create a Stripe Webhook if your Stripe Secret Key is not set."
@@ -470,7 +470,7 @@ msgstr ""
 "estiver definida."
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid ""
 "You cannot set the provider to live mode until your onboarding to Stripe is "
@@ -480,7 +480,7 @@ msgstr ""
 "com o Stripe seja concluída."
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid ""
 "You cannot set the provider to test mode while it is linked with your Stripe "
@@ -490,19 +490,19 @@ msgstr ""
 "vinculado à sua conta do Stripe."
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid "Your Stripe Webhook is already set up."
 msgstr "Seu webhook do Stripe já está configurado."
 
 #. module: payment_stripe
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_stripe/static/src/interactions/express_checkout.js:0
 msgid "Your order"
 msgstr "Seu pedido"
 
 #. module: payment_stripe
-#. odoo-python
+#. weth-python
 #: code:addons/payment_stripe/models/payment_provider.py:0
 msgid "Your web domain was successfully verified."
 msgstr "Seu domínio da web foi verificado com sucesso."

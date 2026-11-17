@@ -1,15 +1,16 @@
-.pac-container { // Google Maps' Autocomplete
-    z-index: $zindex-modal-backdrop; // > $o-we-zindex
-    font-size: $o-we-sidebar-font-size;
+.pac-container {
+    // Google Maps' Autocomplete
+    z-index: $zindex-modal-backdrop; // > $w-we-zindex
+    font-size: $w-we-sidebar-font-size;
     padding-top: 0;
     padding-bottom: 0;
-    border: $o-we-sidebar-content-field-border-width solid $o-we-sidebar-content-field-dropdown-border-color;
+    border: $w-we-sidebar-content-field-border-width solid $w-we-sidebar-content-field-dropdown-border-color;
     border-top: none;
-    border-radius: $o-we-item-border-radius;
+    border-radius: $w-we-item-border-radius;
     overflow: hidden;
-    background-color: $o-we-sidebar-content-field-dropdown-bg;
-    box-shadow: $o-we-sidebar-content-field-dropdown-shadow;
-    margin-top: $o-we-sidebar-content-field-dropdown-spacing;
+    background-color: $w-we-sidebar-content-field-dropdown-bg;
+    box-shadow: $w-we-sidebar-content-field-dropdown-shadow;
+    margin-top: $w-we-sidebar-content-field-dropdown-spacing;
 
     &:after {
         display: none;
@@ -17,16 +18,18 @@
 
     .pac-item {
         @include o-text-overflow(block);
-        line-height: $o-we-sidebar-content-field-dropdown-item-height;
-        color: $o-we-sidebar-content-field-clickable-color;
-        border-top: $o-we-sidebar-content-field-border-width solid lighten($o-we-sidebar-content-field-dropdown-border-color, 15%);
-        border-radius: $o-we-sidebar-content-field-border-radius;
-        background-color: $o-we-sidebar-content-field-clickable-bg;
-        color: $o-we-sidebar-content-field-clickable-color;
-        font-size: $o-we-sidebar-font-size;
+        line-height: $w-we-sidebar-content-field-dropdown-item-height;
+        color: $w-we-sidebar-content-field-clickable-color;
+        border-top: $w-we-sidebar-content-field-border-width solid lighten($w-we-sidebar-content-field-dropdown-border-color, 15%);
+        border-radius: $w-we-sidebar-content-field-border-radius;
+        background-color: $w-we-sidebar-content-field-clickable-bg;
+        color: $w-we-sidebar-content-field-clickable-color;
+        font-size: $w-we-sidebar-font-size;
 
-        &:hover, &:focus, &.pac-item-selected {
-            background-color: $o-we-sidebar-content-field-dropdown-item-bg-hover;
+        &:hover,
+        &:focus,
+        &.pac-item-selected {
+            background-color: $w-we-sidebar-content-field-dropdown-item-bg-hover;
             cursor: pointer;
         }
 

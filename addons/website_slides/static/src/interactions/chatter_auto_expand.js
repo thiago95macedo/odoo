@@ -5,7 +5,7 @@ import { router } from "@web/core/browser/router";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 export class ChatterAutoExpand extends Interaction {
-    static selector = ".o_wslides_course_main";
+    static selector = ".w_wslides_course_main";
 
     setup() {
         this.bootstrap = usePlugin(BootstrapInstance);

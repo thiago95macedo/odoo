@@ -887,13 +887,13 @@ test("should remove format of a editable text within contenteditable false block
 describe("Toolbar", () => {
     async function removeFormatClick() {
         await expandToolbar();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveCount(1); // remove format
         expect(".btn[name='remove_format']").not.toHaveClass("disabled"); // remove format button should not be disabled
 
         await click(".btn[name='remove_format']");
         await waitFor(".btn[name='remove_format'].disabled");
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveClass("disabled"); // remove format button should be disabled
     }
 
@@ -942,13 +942,13 @@ describe("Toolbar", () => {
             `<p>this <span class="random-class">is[ a ]UX</span> test.</p>`
         );
         await expandToolbar();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveCount(1); // remove format
         expect(".btn[name='remove_format']").toHaveClass("disabled"); // remove format button should be disabled when no format
 
         await click(".btn[name='remove_format']");
         await animationFrame();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveClass("disabled"); // remove format button should still be disabled
         expect(getContent(el)).toBe(
             `<p>this <span class="random-class">is[ a ]UX</span> test.</p>`
@@ -958,13 +958,13 @@ describe("Toolbar", () => {
     test("Remove format button should be available if selection contains formatted nodes among unformatted nodes", async () => {
         const { el } = await setupEditor(`<p>this <b>is[ a UX</b> te]st.</p>`);
         await expandToolbar();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveCount(1); // remove format
         expect(".btn[name='remove_format']").not.toHaveClass("disabled"); // remove format button should not be disabled
 
         await click(".btn[name='remove_format']");
         await waitFor(".btn[name='remove_format'].disabled");
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveClass("disabled"); // remove format button should now be disabled
         expect(getContent(el)).toBe(`<p>this <b>is</b>[ a UX te]st.</p>`);
     });
@@ -972,7 +972,7 @@ describe("Toolbar", () => {
     test("Remove format button should be the last one in the decoration button group", async () => {
         await setupEditor("<p>[abc]</p>");
         await expandToolbar();
-        const formatButtons = queryAll(".o-we-toolbar .btn-group[name='decoration'] .btn");
+        const formatButtons = queryAll(".w-we-toolbar .btn-group[name='decoration'] .btn");
         expect(formatButtons.at(-1)).toHaveAttribute("name", "remove_format");
     });
 
@@ -1223,7 +1223,7 @@ describe("typography classes", () => {
             `)
         );
         await expandToolbar();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(".btn[name='remove_format']").toHaveCount(1); // remove format
         expect(".btn[name='remove_format']").toHaveClass("disabled"); // remove format button should be disabled
     });
@@ -1262,7 +1262,7 @@ describe("typography classes", () => {
     });
 
     test("should disable remove format button after applying block default class", async () => {
-        const { el } = await setupEditor('<h2 class="display-3-fs">Hello [Odoo]</h2>');
+        const { el } = await setupEditor('<h2 class="display-3-fs">Hello [Weth]</h2>');
         await expandToolbar();
         expect(".btn[name='remove_format']").not.toHaveAttribute("disabled");
 
@@ -1271,7 +1271,7 @@ describe("typography classes", () => {
 
         expect(".btn[name='remove_format']").toHaveAttribute("disabled");
         expect(getContent(el)).toBe(
-            '<h2 class="display-3-fs">Hello <span class="h2">[Odoo]</span></h2>'
+            '<h2 class="display-3-fs">Hello <span class="h2">[Weth]</span></h2>'
         );
     });
 });

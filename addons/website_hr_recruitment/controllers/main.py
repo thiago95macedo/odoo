@@ -209,7 +209,7 @@ class WebsiteHrRecruitment(WebsiteForm):
             introduction_label = self.env._("Short Introduction")
             data["custom"] = data["custom"].replace("short_introduction", introduction_label)
         if model_sudo.model == "hr.applicant":
-            if not request.cookies.get('odoo_utm_medium'):
+            if not request.cookies.get('weth_utm_medium'):
                 website_medium = request.env['utm.mixin']._utm_ref('utm.utm_medium_website')
                 if website_medium:
                     data['record']['medium_id'] = website_medium.id

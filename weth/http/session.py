@@ -56,7 +56,7 @@ The default duration before a session is rotated, changing the session
 id (also on the cookie) but keeping the same content.
 """
 
-SESSION_ROTATION_INTERVAL_HEADER_SKIP = "X-Odoo-Skip-Session-Rotation-Interval"
+SESSION_ROTATION_INTERVAL_HEADER_SKIP = "X-Weth-Skip-Session-Rotation-Interval"
 """ The header to pass in a request to skip the soft session rotation. """
 
 SESSION_DELETION_TIMER = 120
@@ -456,7 +456,7 @@ def check(session: Session, request_or_env: Request | Environment) -> None:
 
 
 class SessionStore:
-    """ Odoo implementation of the filesystem session store. """
+    """ WETH implementation of the filesystem session store. """
 
     def __init__(self, /, path: str | None = None, session_cls: type[Session] = Session):
         """
@@ -466,7 +466,7 @@ class SessionStore:
             Defaults to :class:`Session`.
         """
         if path is None:
-            path = os.path.join(tempfile.gettempdir(), 'odoo_session_store')
+            path = os.path.join(tempfile.gettempdir(), 'weth_session_store')
             os.makedirs(path, exist_ok=True)
         self.path: str = path
         self.session_cls: type[Session] = session_cls

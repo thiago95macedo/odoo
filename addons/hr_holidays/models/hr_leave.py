@@ -1741,7 +1741,7 @@ class HrLeave(models.Model):
             # skip_time_rules: bulk trigger below, once resource.calendar.leaves exist for all auto-approved leaves
             holiday_sudo.with_context(skip_time_rules=True).action_approve()
             holiday_sudo.message_subscribe(partner_ids=self._get_responsible_for_approval().partner_id.ids)
-            holiday_sudo.message_post(body=self.env._("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment")  # Message from OdooBot (sudo)
+            holiday_sudo.message_post(body=self.env._("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment")  # Message from WethBot (sudo)
         elif not self.env.context.get('import_file'):
             holiday_sudo.activity_update()
 

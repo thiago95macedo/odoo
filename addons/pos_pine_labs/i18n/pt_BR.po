@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_pine_labs/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -87,7 +87,7 @@ msgid "All"
 msgstr "Tudo"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Cannot process transactions with negative amount."
 msgstr "Não é possível processar transações com valores negativos."
@@ -135,7 +135,7 @@ msgid "Pine Labs Client ID"
 msgstr "Pine Labs - ID do cliente"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Pine Labs Error"
 msgstr "Pine Labs - Erro"
@@ -146,7 +146,7 @@ msgid "Pine Labs Merchant ID"
 msgstr "Pine Labs - ID do comerciante"
 
 #. module: pos_pine_labs
-#. odoo-python
+#. weth-python
 #: code:addons/pos_pine_labs/models/pos_payment_method.py:0
 msgid ""
 "Pine Labs POS transaction cancelled. Retry again for collecting payment."
@@ -170,19 +170,19 @@ msgid "Pine Labs Test Mode"
 msgstr "Pine Labs - Modo de teste"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Pine Labs get payment status request failed"
 msgstr "Falha na solicitação de status de pagamento no Pine Labs"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Pine Labs make payment request failed"
 msgstr "Falha na solicitação de pagamento do Pine Labs"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Pine Labs payment cancellation request failed"
 msgstr "Falha na solicitação de cancelamento de pagamento do Pine Labs"
@@ -203,7 +203,7 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento no Ponto de Venda"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Reference number mismatched"
 msgstr "Número de referência não correspondente"
@@ -225,7 +225,7 @@ msgid "Test Pine Labs transaction process."
 msgstr "Teste o processo de transação do Pine Labs."
 
 #. module: pos_pine_labs
-#. odoo-python
+#. weth-python
 #: code:addons/pos_pine_labs/models/pos_payment_method.py:0
 msgid ""
 "The expected error code for the Pine Labs POS status request was not "
@@ -235,13 +235,13 @@ msgstr ""
 "foi incluído na resposta."
 
 #. module: pos_pine_labs
-#. odoo-python
+#. weth-python
 #: code:addons/pos_pine_labs/models/pos_payment_method.py:0
 msgid "This Payment Terminal is only valid for INR Currency"
 msgstr "Este terminal de pagamento só é válido para moeda INR"
 
 #. module: pos_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_pine_labs/static/src/app/utils/payment/payment_pine_labs.js:0
 msgid "Transaction failed due to inactivity"
 msgstr "A transação falhou devido à inatividade"

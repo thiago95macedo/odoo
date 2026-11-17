@@ -118,7 +118,7 @@
     </template>
 
     <!-- Header -->
-    <!-- TODO (PR https://github.com/weth/odoo/pull/242202): apply suggestions comments -->
+    <!-- TODO (PR https://github.com/weth/weth/pull/242202): apply suggestions comments -->
     <template id="pos_state_header" name="POS State Header" inherit_id="payment.state_header" primary="True">
         <xpath expr="//div[@name='o_payment_status_alert']" position="replace">
             <t t-if="status_message">

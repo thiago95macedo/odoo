@@ -42,22 +42,22 @@ import {
 import { PROPERTY_TYPES } from "@web/views/fields/properties/property_definition";
 
 async function addPropertyDefinition() {
-    await waitFor(".o_property_field_popover");
-    await click(".o_property_field_popover .o_field_property_definition_add");
+    await waitFor(".w_property_field_popover");
+    await click(".w_property_field_popover .w_field_property_definition_add");
     await animationFrame();
 }
 
 async function discardPropertyDefinitionChanges() {
-    await waitFor(".o_property_field_popover");
-    await click(".o_property_field_popover .o_field_property_definition_discard");
+    await waitFor(".w_property_field_popover");
+    await click(".w_property_field_popover .w_field_property_definition_discard");
     await animationFrame();
 }
 
 async function changeType(propertyType) {
     const propertyTypeIndex = PROPERTY_TYPES.indexOf(propertyType);
-    await click(".o_field_property_definition_type input");
+    await click(".w_field_property_definition_type input");
     await animationFrame();
-    await click(`.o_field_property_definition_type_menu .o-dropdown-item:eq(${propertyTypeIndex})`);
+    await click(`.w_field_property_definition_type_menu .w-dropdown-item:eq(${propertyTypeIndex})`);
     await animationFrame();
 }
 
@@ -112,24 +112,24 @@ async function makePropertiesGroupView(propertySpecs) {
 }
 
 async function toggleSeparator(separatorName, isSeparator) {
-    await click(`[property-name="${separatorName}"] .o_field_property_open_popover`);
+    await click(`[property-name="${separatorName}"] .w_field_property_open_popover`);
     await animationFrame();
     await changeType(isSeparator ? "separator" : "char");
     if (isSeparator) {
         // set unfold by default when switching to a separator
-        await click(`.o_field_property_definition_fold input:eq(0)`);
+        await click(`.w_field_property_definition_fold input:eq(0)`);
     }
     await addPropertyDefinition();
 }
 
 function getGroups() {
-    const groups = queryAll(".o_field_properties .row:first-child .o_property_group");
+    const groups = queryAll(".w_field_properties .row:first-child .w_property_group");
     return groups.map((group) => [
         [
-            queryFirst(".o_field_property_group_label", { root: group })?.innerText || "",
+            queryFirst(".w_field_property_group_label", { root: group })?.innerText || "",
             group.getAttribute("property-name"),
         ],
-        ...queryAll("[property-name]:not(.o_property_folded)", { root: group }).map((property) => [
+        ...queryAll("[property-name]:not(.w_property_folded)", { root: group }).map((property) => [
             property.innerText,
             property.getAttribute("property-name"),
         ]),
@@ -304,17 +304,17 @@ test("properties: no access to parent", async () => {
         },
     });
 
-    expect(".o_field_properties").toHaveCount(1, { message: "The field must be in the view" });
+    expect(".w_field_properties").toHaveCount(1, { message: "The field must be in the view" });
 
     await toggleActionMenu();
-    expect(".o-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
+    expect(".w-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
         message: "The 'Edit Properties' btn should be in the cog menu",
     });
     await toggleMenuItem("Edit Properties"); // Start the edition mode
-    expect(".o_field_properties:first-child .o_field_property_open_popover").toHaveCount(0, {
+    expect(".w_field_properties:first-child .w_field_property_open_popover").toHaveCount(0, {
         message: "The edit definition button must not be in the view",
     });
-    expect(".o_field_properties:first-child .o_property_field_value input:first").toHaveValue(
+    expect(".w_field_properties:first-child .w_property_field_value input:first").toHaveValue(
         "char value"
     );
 });
@@ -342,70 +342,70 @@ test("properties: access to parent", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1, { message: "The field must be in the view" });
+    expect(".w_field_properties").toHaveCount(1, { message: "The field must be in the view" });
 
     await toggleActionMenu();
-    expect(".o-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
+    expect(".w-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
         message: "Show 'Edit Properties' btn in cog menu",
     });
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
-    expect(".o_field_properties:first-child .o_field_property_open_popover").not.toBeEmpty({
+    expect(".w_field_properties:first-child .w_field_property_open_popover").not.toBeEmpty({
         message: "The edit definition button must be in the view",
     });
 
-    expect(".o_field_properties:first-child .o_property_field_value input:first").toHaveValue(
+    expect(".w_field_properties:first-child .w_property_field_value input:first").toHaveValue(
         "char value"
     );
 
     // Open the definition popover
     await click(
-        ".o_field_properties:first-child .o_property_field:first-child .o_field_property_open_popover"
+        ".w_field_properties:first-child .w_property_field:first-child .w_field_property_open_popover"
     );
     await animationFrame();
 
-    expect(".o_property_field_popover").toHaveCount(1, {
+    expect(".w_property_field_popover").toHaveCount(1, {
         message: "Should have opened the definition popover",
     });
-    expect(".o_field_property_definition_header").toHaveValue("My Char");
+    expect(".w_field_property_definition_header").toHaveValue("My Char");
 
-    expect(".o_field_property_definition_type input").toHaveValue("Text");
+    expect(".w_field_property_definition_type input").toHaveValue("Text");
 
     // Change the property type to "Date & Time"
-    await contains(".o_field_property_definition_header").edit("My Datetime");
+    await contains(".w_field_property_definition_header").edit("My Datetime");
     await changeType("datetime");
-    expect(".o_property_field_popover .o_field_property_definition_type input").toHaveValue(
+    expect(".w_property_field_popover .w_field_property_definition_type input").toHaveValue(
         "Date & Time",
         { message: "Should have changed the property type" }
     );
 
     // Choosing a date in the date picker should not close the definition popover
-    await click(".o_field_property_definition_value .o_datetime_input");
+    await click(".w_field_property_definition_value .w_datetime_input");
     await animationFrame();
     await click(getPickerCell("3"));
     await animationFrame();
-    expect(".o_datetime_picker").toHaveCount(1);
+    expect(".w_datetime_picker").toHaveCount(1);
 
-    expect(".o_property_field_popover").toHaveCount(1, {
+    expect(".w_property_field_popover").toHaveCount(1, {
         message: "Should not close the definition popover after selecting a date",
     });
 
     await addPropertyDefinition();
 
     // Check that the type change have been propagated
-    expect(".o_field_property_label:eq(0)").toHaveText("My Datetime", {
+    expect(".w_field_property_label:eq(0)").toHaveText("My Datetime", {
         message: "Should have updated the property label",
     });
-    expect(".o_property_field_value .o_datetime_input").toHaveCount(1, {
+    expect(".w_property_field_value .w_datetime_input").toHaveCount(1, {
         message: "Should have changed the property type",
     });
 
     // Check that the value is reset (because the type changed)
-    expect(".o_property_field_value input").toHaveValue("");
+    expect(".w_property_field_value input").toHaveValue("");
     // Discard the form view and check that the properties take its old values
     await clickCancel();
     await animationFrame();
-    expect(".o_property_field:first-child .o_property_field_value input:first").toHaveValue(
+    expect(".w_property_field:first-child .w_property_field_value input:first").toHaveValue(
         "char value",
         { message: "Discarding the form view should reset the old values" }
     );
@@ -440,10 +440,10 @@ test("properties: edit mode enabled after the setup", async () => {
             </form>`,
     });
 
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
 
-    expect(".o_field_property_definition_type input").toHaveValue("Text", {
+    expect(".w_field_property_definition_type input").toHaveValue("Text", {
         message: "the definition popover must be editable, not readonly",
     });
 });
@@ -473,33 +473,33 @@ test("properties: add a new property", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
-    expect(".o-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
+    expect(".w-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
         message: "The 'Edit Properties' btn should be in the cog menu",
     });
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // Create a new property
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
 
-    expect(".o_property_field_popover").toHaveCount(1, {
+    expect(".w_property_field_popover").toHaveCount(1, {
         message: "Should have opened the definition popover",
     });
 
-    expect(".o_field_property_definition_header").toHaveValue("Property 3", {
+    expect(".w_field_property_definition_header").toHaveValue("Property 3", {
         message: "Should have added a default label",
     });
 
-    expect(".o_field_property_definition_type input").toHaveValue("Text", {
+    expect(".w_field_property_definition_type input").toHaveValue("Text", {
         message: "Default type must be text",
     });
 
     await addPropertyDefinition();
 
-    const properties = queryAll(".o_field_property_label");
+    const properties = queryAll(".w_field_property_label");
     expect(properties).toHaveCount(3);
 
     const newProperty = properties[2];
@@ -526,43 +526,43 @@ test("properties: selection", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1);
-    expect(".o_property_field:nth-child(2) select").toHaveCount(1);
-    expect(".o_property_field:nth-child(2) select").toHaveValue("b");
+    expect(".w_field_properties").toHaveCount(1);
+    expect(".w_property_field:nth-child(2) select").toHaveCount(1);
+    expect(".w_property_field:nth-child(2) select").toHaveValue("b");
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
     // Edit the selection property
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
-    expect(".o_property_field_popover").toHaveCount(1);
+    expect(".w_property_field_popover").toHaveCount(1);
 
-    expect(".o_property_field_popover .o_field_property_selection").toHaveCount(1, {
+    expect(".w_property_field_popover .w_field_property_selection").toHaveCount(1, {
         message: "Must instantiate the selection component",
     });
 
     // Check the default option, must be the third one"
     expect(
-        ".o_property_field_popover .o_field_property_selection_option:nth-child(1) [data-icon='star'].oi-filled"
+        ".w_property_field_popover .w_field_property_selection_option:nth-child(1) [data-icon='star'].oi-filled"
     ).toHaveCount(0);
     expect(
-        ".o_property_field_popover .o_field_property_selection_option:nth-child(2) [data-icon='star'].oi-filled"
+        ".w_property_field_popover .w_field_property_selection_option:nth-child(2) [data-icon='star'].oi-filled"
     ).toHaveCount(0);
     expect(
-        ".o_property_field_popover .o_field_property_selection_option:nth-child(3) [data-icon='star'].oi-filled"
+        ".w_property_field_popover .w_field_property_selection_option:nth-child(3) [data-icon='star'].oi-filled"
     ).toHaveCount(1);
-    expect(".o_property_field_popover .o_field_property_definition_type input").toHaveValue(
+    expect(".w_property_field_popover .w_field_property_definition_type input").toHaveValue(
         "Selection"
     );
 
     const getOptions = () =>
-        queryAll(".o_property_field_popover .o_field_property_selection_option");
+        queryAll(".w_property_field_popover .w_field_property_selection_option");
     const getOptionsValues = () =>
-        queryAllValues(".o_property_field_popover .o_field_property_selection_option input");
+        queryAllValues(".w_property_field_popover .w_field_property_selection_option input");
 
     // Create a new selection option
-    await click(".o_field_property_selection [data-icon='add']");
+    await click(".w_field_property_selection [data-icon='add']");
     await animationFrame();
     expect(getOptions()).toHaveCount(4, { message: "Should have added the new option" });
     expect(queryFirst("input", { root: getOptions()[3] })).toBeFocused({
@@ -598,17 +598,17 @@ test("properties: selection", async () => {
     expect(queryFirst("input", { root: getOptions()[2] })).toBeFocused();
 
     // Remove the second option
-    await click(".o_field_property_selection_option:nth-child(2) [data-icon='delete']");
+    await click(".w_field_property_selection_option:nth-child(2) [data-icon='delete']");
     await animationFrame();
     expect(getOptionsValues()).toEqual(["A", "C", "New option"], {
         message: "Should have removed the second option",
     });
-    await click(".o_field_property_selection_option:nth-child(2) input");
+    await click(".w_field_property_selection_option:nth-child(2) input");
     await animationFrame();
     // test that pressing 'Enter' inserts a new option after the one currently focused (and not last).
     await press("Enter");
     await animationFrame();
-    await click(".o_field_property_selection_option:nth-child(3) input");
+    await click(".w_field_property_selection_option:nth-child(3) input");
     await edit("New option 2");
     await runAllTimers();
     await animationFrame();
@@ -618,8 +618,8 @@ test("properties: selection", async () => {
 
     const getOptionDraggableElement = (index) =>
         queryFirst(
-            `.o_field_property_selection_option:nth-child(${index + 1
-            }) .o_field_property_selection_drag`
+            `.w_field_property_selection_option:nth-child(${index + 1
+            }) .w_field_property_selection_drag`
         );
 
     await contains(getOptionDraggableElement(0)).dragAndDrop(getOptionDraggableElement(2));
@@ -629,7 +629,7 @@ test("properties: selection", async () => {
     expect(getOptionsValues()).toEqual(["New option", "C", "New option 2", "A"]);
 
     // create an empty option and move it
-    await click(".o_field_property_selection > div > .btn-link");
+    await click(".w_field_property_selection > div > .btn-link");
     await animationFrame();
     expect(getOptionsValues()).toEqual(["New option", "C", "New option 2", "A", ""]);
     await contains(getOptionDraggableElement(4)).dragAndDrop(getOptionDraggableElement(1));
@@ -657,26 +657,26 @@ test("properties: selection option keys are generated from labels and handle dup
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
     const getOptionNames = () =>
-        queryAll(".o_property_field_popover .o_field_property_selection_option").map((option) =>
+        queryAll(".w_property_field_popover .w_field_property_selection_option").map((option) =>
             option.getAttribute("option-name")
         );
     const getOptionLabels = () =>
-        queryAllValues(".o_property_field_popover .o_field_property_selection_option input");
+        queryAllValues(".w_property_field_popover .w_field_property_selection_option input");
 
-    await click(".o_field_property_selection [data-icon='add']");
+    await click(".w_field_property_selection [data-icon='add']");
     await animationFrame();
-    await click(".o_property_field_popover .o_field_property_selection_option:last-of-type input");
+    await click(".w_property_field_popover .w_field_property_selection_option:last-of-type input");
     await edit("New option");
-    await click(".o_field_property_selection [data-icon='add']");
+    await click(".w_field_property_selection [data-icon='add']");
     await animationFrame();
-    await click(".o_property_field_popover .o_field_property_selection_option:last-of-type input");
+    await click(".w_property_field_popover .w_field_property_selection_option:last-of-type input");
     await edit("New option");
     const input = queryFirst(
-        ".o_property_field_popover .o_field_property_selection_option:last-of-type input"
+        ".w_property_field_popover .w_field_property_selection_option:last-of-type input"
     );
     input.blur();
     await animationFrame();
@@ -707,23 +707,23 @@ test("properties: float and integer", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // change type to float
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("float");
     await addPropertyDefinition();
 
     const editValue = async (newValue, expected, message) => {
-        await contains(".o_property_field:nth-child(2) .o_field_property_input").edit(newValue);
+        await contains(".w_property_field:nth-child(2) .w_field_property_input").edit(newValue);
         // click away
-        await click(".o_form_sheet_bg");
+        await click(".w_form_sheet_bg");
         await animationFrame();
-        expect(".o_property_field:nth-child(2) .o_field_property_input").toHaveValue(expected, {
+        expect(".w_property_field:nth-child(2) .w_field_property_input").toHaveValue(expected, {
             message,
         });
     };
@@ -736,7 +736,7 @@ test("properties: float and integer", async () => {
     await editValue("1,2,3,4,5,6.1,2,3,5", "1,234,561,235.00");
 
     // change type to integer
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("integer");
     await addPropertyDefinition();
@@ -793,8 +793,8 @@ test("properties: text", async () => {
             </form>`,
     });
 
-    expect(".o_field_properties textarea").toHaveCount(1);
-    expect(".o_field_properties textarea").toHaveValue("text value");
+    expect(".w_field_properties textarea").toHaveCount(1);
+    expect(".w_field_properties textarea").toHaveValue("text value");
 });
 
 /**
@@ -822,46 +822,46 @@ test("properties: tags", async () => {
     const createNewTag = async (selector, text) => {
         await contains(selector).edit(text, { confirm: false });
         await runAllTimers();
-        await contains(".o_field_property_dropdown_add .dropdown-item").click();
+        await contains(".w_field_property_dropdown_add .dropdown-item").click();
     };
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     // Select the tags type
     await changeType("tags");
 
     // Create 3 tags
-    const tagsInputSelector = ".o_property_field_popover .o_field_property_dropdown_menu input";
+    const tagsInputSelector = ".w_property_field_popover .w_field_property_dropdown_menu input";
     await createNewTag(tagsInputSelector, "A");
     await createNewTag(tagsInputSelector, "B");
     await createNewTag(tagsInputSelector, "C");
-    expect(queryAllTexts(".o_tag")).toEqual(["A", "B", "C"]);
+    expect(queryAllTexts(".w_tag")).toEqual(["A", "B", "C"]);
 
     await addPropertyDefinition();
 
     // Edit the tags valuegetVisibleTags
-    await click(".o_property_field_value .o_input_dropdown input");
+    await click(".w_property_field_value .w_input_dropdown input");
     await animationFrame();
     // Check that he newly created tags are available
-    const dropdownItemsSelector = ".o_property_field_value .o_input_dropdown .dropdown-item";
+    const dropdownItemsSelector = ".w_property_field_value .w_input_dropdown .dropdown-item";
     expect(queryAllTexts(dropdownItemsSelector)).toEqual(["A", "B", "C"], {
         message: "Should be able to selected the created tags",
     });
 
     // Select one tag in the list
-    await click(".o_property_field_value .ui-menu-item:nth-child(2)");
+    await click(".w_property_field_value .ui-menu-item:nth-child(2)");
     await animationFrame();
 
-    expect(queryAllTexts(".o_property_field_value .o_tag")).toEqual(["B"], {
+    expect(queryAllTexts(".w_property_field_value .w_tag")).toEqual(["B"], {
         message: "Should have selected the tag B",
     });
 
     // Re-open the tag dropdown and verify that the selected tag is not in the list
     // (because it's already selected)
-    await click(".o_property_field_value .o_input_dropdown input");
+    await click(".w_property_field_value .w_input_dropdown input");
     await animationFrame();
 
     expect(queryAllTexts(dropdownItemsSelector)).toEqual(["A", "C"], {
@@ -869,46 +869,46 @@ test("properties: tags", async () => {
     });
 
     // Create a new tag from the property value component
-    await createNewTag(".o_property_field_value .o_field_property_dropdown_menu input", "D");
-    expect(queryAllTexts(".o_property_field_value .o_tag")).toEqual(["B", "D"], {
+    await createNewTag(".w_property_field_value .w_field_property_dropdown_menu input", "D");
+    expect(queryAllTexts(".w_property_field_value .w_tag")).toEqual(["B", "D"], {
         message: "Should have created and selected the tag D",
     });
 
     // Re-open the popover and check that the new tag has been added in the definition
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
-    const popover = queryFirst(".o_property_field_popover");
-    expect(queryAllTexts(".o_tag", { root: popover })).toEqual(["A", "B", "C", "D"]);
+    const popover = queryFirst(".w_property_field_popover");
+    expect(queryAllTexts(".w_tag", { root: popover })).toEqual(["A", "B", "C", "D"]);
 
     // Change the tag color
-    await click(".o_tag:nth-child(2)", { root: popover });
+    await click(".w_tag:nth-child(2)", { root: popover });
     await animationFrame();
-    await click(".o_tag_popover .o_colorlist_item_color_11");
+    await click(".w_tag_popover .w_colorlist_item_color_11");
     await animationFrame();
-    expect(queryFirst(".o_tag:nth-child(2)", { root: popover })).toHaveClass("o_tag_color_11", {
+    expect(queryFirst(".w_tag:nth-child(2)", { root: popover })).toHaveClass("o_tag_color_11", {
         message: "Should have changed the tag color",
     });
 
     // Check that the new B color has been propagated in the form view
     await addPropertyDefinition();
-    expect(queryFirst(".o_property_field_value .o_tag:first-child")).toHaveClass("o_tag_color_11", {
+    expect(queryFirst(".w_property_field_value .w_tag:first-child")).toHaveClass("o_tag_color_11", {
         message: "Should have changed the tag color",
     });
 
     // Open the popover and remove B from the definition
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
-    await click(".o_property_field_popover .o_tag:nth-child(2) .o_delete");
+    await click(".w_property_field_popover .w_tag:nth-child(2) .w_delete");
     await addPropertyDefinition();
-    expect(".o_property_field_value .o_tag").toHaveCount(1, {
+    expect(".w_property_field_value .w_tag").toHaveCount(1, {
         message: "Should have unselected the removed tag B",
     });
 
     // Remove a tag by pressing backspace
-    await click(".o_property_field_value .o_input_dropdown input");
+    await click(".w_property_field_value .w_input_dropdown input");
     await press("backspace");
     await animationFrame();
-    expect(".o_property_field_value .o_tag").toHaveCount(0, {
+    expect(".w_property_field_value .w_tag").toHaveCount(0, {
         message: "Should have unselected the tag",
     });
 });
@@ -965,44 +965,44 @@ test("properties: many2one", async () => {
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-    await waitFor(".o_property_field_popover");
-    const popover = queryFirst(".o_property_field_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+    await waitFor(".w_property_field_popover");
+    const popover = queryFirst(".w_property_field_popover");
     // Select the many2one type
     await changeType("many2one");
 
     // Choose the "User" model
-    await click(".o_field_property_definition_model input", { root: popover });
+    await click(".w_field_property_definition_model input", { root: popover });
     await animationFrame();
-    expect(queryAllTexts(".o_field_property_definition_model .ui-menu-item")).toEqual([
+    expect(queryAllTexts(".w_field_property_definition_model .ui-menu-item")).toEqual([
         "Partner",
         "User",
     ]);
-    await click(".o_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
+    await click(".w_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
     await animationFrame();
-    expect(".o_field_property_definition_model input").toHaveValue("User", {
+    expect(".w_field_property_definition_model input").toHaveValue("User", {
         message: "Should have selected the User model",
     });
 
     // Choose a many2one value
-    await click(".o_field_property_definition_value input", { root: popover });
+    await click(".w_field_property_definition_value input", { root: popover });
     await animationFrame();
-    await click(".o_field_property_definition_value .ui-menu-item:nth-child(3)", { root: popover });
+    await click(".w_field_property_definition_value .ui-menu-item:nth-child(3)", { root: popover });
     await animationFrame();
-    expect(".o_field_property_definition_value input").toHaveValue("Eve", {
+    expect(".w_field_property_definition_value input").toHaveValue("Eve", {
         message: "Should have selected the third user",
     });
 
     await addPropertyDefinition();
 
     // Quick create a user
-    await click(".o_property_field:nth-child(2) .o_property_field_value input");
+    await click(".w_property_field:nth-child(2) .w_property_field_value input");
     await animationFrame();
     await edit("New User");
     await runAllTimers();
-    await click(".o_property_field:nth-child(2) .o_m2o_dropdown_option_create .dropdown-item");
+    await click(".w_property_field:nth-child(2) .w_m2o_dropdown_option_create .dropdown-item");
     await animationFrame();
-    expect(".o_property_field:nth-child(2) .o_property_field_value input").toHaveValue(
+    expect(".w_property_field:nth-child(2) .w_property_field_value input").toHaveValue(
         "Created:New User",
         { message: "Should have created a new user" }
     );
@@ -1042,23 +1042,23 @@ test("properties: a relational property with an unevaluable domain shows no reco
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     for (const propertyType of ["many2one", "many2many"]) {
-        await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-        await waitFor(".o_property_field_popover");
-        const popover = queryFirst(".o_property_field_popover");
+        await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+        await waitFor(".w_property_field_popover");
+        const popover = queryFirst(".w_property_field_popover");
         await changeType(propertyType);
 
         // Selecting the model triggers the matching-records count, which fails here.
-        await click(".o_field_property_definition_model input", { root: popover });
+        await click(".w_field_property_definition_model input", { root: popover });
         await animationFrame();
-        await click(".o_field_property_definition_model .ui-menu-item:first-child", {
+        await click(".w_field_property_definition_model .ui-menu-item:first-child", {
             root: popover,
         });
         await animationFrame();
 
-        expect(".o_property_field_popover").toHaveCount(1, {
+        expect(".w_property_field_popover").toHaveCount(1, {
             message: `the ${propertyType} property editor stays open`,
         });
-        expect(queryFirst(".o_property_field_popover").textContent).not.toInclude("record(s)", {
+        expect(queryFirst(".w_property_field_popover").textContent).not.toInclude("record(s)", {
             message: "no matching record count is shown when the domain cannot be evaluated",
         });
         await addPropertyDefinition();
@@ -1109,63 +1109,63 @@ test("properties: many2many", async () => {
         actionMenus: {},
     });
 
-    const getSelectedUsers = () => queryAllTexts(".o_property_field_value .o_tag_badge_text");
+    const getSelectedUsers = () => queryAllTexts(".w_property_field_value .w_tag_badge_text");
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
-    const popover = queryFirst(".o_property_field_popover");
+    const popover = queryFirst(".w_property_field_popover");
     // Select the many2many type
     await changeType("many2many");
 
     // Choose the "User" model
-    await click(".o_field_property_definition_model input", { root: popover });
+    await click(".w_field_property_definition_model input", { root: popover });
     await animationFrame();
-    expect(queryAllTexts(".o_field_property_definition_model .ui-menu-item")).toEqual([
+    expect(queryAllTexts(".w_field_property_definition_model .ui-menu-item")).toEqual([
         "Partner",
         "User",
     ]);
 
-    await click(".o_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
+    await click(".w_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
     await animationFrame();
-    expect(".o_field_property_definition_model input").toHaveValue("User", {
+    expect(".w_field_property_definition_model input").toHaveValue("User", {
         message: "Should have selected the User model",
     });
 
     await addPropertyDefinition();
 
     // Add Eve in the list
-    await click(".o_property_field:nth-child(2) input");
+    await click(".w_property_field:nth-child(2) input");
     await animationFrame();
-    await click(".o_property_field:nth-child(2) .ui-menu-item:nth-child(3)");
+    await click(".w_property_field:nth-child(2) .ui-menu-item:nth-child(3)");
     await animationFrame();
     expect(getSelectedUsers()).toEqual(["Eve"], { message: "Should have selected the third user" });
 
     // Add Bob in the list
-    await click(".o_property_field:nth-child(2) input");
+    await click(".w_property_field:nth-child(2) input");
     await animationFrame();
-    await click(".o_property_field:nth-child(2) .ui-menu-item:nth-child(2)");
+    await click(".w_property_field:nth-child(2) .ui-menu-item:nth-child(2)");
     await animationFrame();
     expect(getSelectedUsers()).toEqual(["Eve", "Bob"], {
         message: "Should have selected the second user",
     });
 
     // Quick create a user
-    await click(".o_property_field:nth-child(2) .o_property_field_value input");
+    await click(".w_property_field:nth-child(2) .w_property_field_value input");
     await animationFrame();
-    await click(".o_property_field:nth-child(2) input");
+    await click(".w_property_field:nth-child(2) input");
     await edit("New User");
     await runAllTimers();
-    await click(".o_property_field:nth-child(2) .o_m2o_dropdown_option_create");
+    await click(".w_property_field:nth-child(2) .w_m2o_dropdown_option_create");
     await animationFrame();
     expect(getSelectedUsers()).toEqual(["Eve", "Bob", "Created:New User"], {
         message: "Should have created a new user",
     });
 
     // Remove Bob from the list
-    await click(".o_property_field:nth-child(2) .o_tag:nth-child(2) .o_delete");
+    await click(".w_property_field:nth-child(2) .w_tag:nth-child(2) .w_delete");
     await animationFrame();
     expect(getSelectedUsers()).toEqual(["Eve", "Created:New User"], {
         message: "Should have removed Bob from the list",
@@ -1271,15 +1271,15 @@ test("properties: many2one 'Search more...' +  internal link save keeps data", a
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // Opening the popover
-    await click('[property-name="many_2_one"] .o_field_property_open_popover');
+    await click('[property-name="many_2_one"] .w_field_property_open_popover');
     await animationFrame();
 
-    const popover = queryFirst(".o_property_field_popover");
+    const popover = queryFirst(".w_property_field_popover");
 
     // Opening the "Search more..." modal
-    await click(".o_field_property_definition_value input", { root: popover });
+    await click(".w_field_property_definition_value input", { root: popover });
     await animationFrame();
-    await click(".o_m2o_dropdown_option_search_more", { root: popover });
+    await click(".w_m2o_dropdown_option_search_more", { root: popover });
     await animationFrame();
 
     // Checking the model loaded
@@ -1290,33 +1290,33 @@ test("properties: many2one 'Search more...' +  internal link save keeps data", a
     await animationFrame();
 
     // Switching the co-model of the property field
-    await click(".o_field_property_definition_model input", { root: popover });
+    await click(".w_field_property_definition_model input", { root: popover });
     await animationFrame();
-    await click(".o_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
+    await click(".w_field_property_definition_model .ui-menu-item:nth-child(2)", { root: popover });
     await animationFrame();
 
     // Opening the "Search more..." modal
-    await click(".o_field_property_definition_value input", { root: popover });
+    await click(".w_field_property_definition_value input", { root: popover });
     await animationFrame();
-    await click(".o_m2o_dropdown_option_search_more", { root: popover });
+    await click(".w_m2o_dropdown_option_search_more", { root: popover });
     await animationFrame();
     // Checking the model loaded
     expect.verifySteps(["res.users"]);
 
     // Select the first value
-    await click(".o_list_table tbody tr:first-child td[name='display_name']");
+    await click(".w_list_table tbody tr:first-child td[name='display_name']");
     await animationFrame();
 
     // Click on external button
-    await click(".o_external_button");
+    await click(".w_external_button");
     await animationFrame();
 
     // Click on Save & close button
-    await click(".modal .o_form_button_save");
+    await click(".modal .w_form_button_save");
     await animationFrame();
 
     // Check that value does not disappear
-    expect(".o_field_property_definition_value input").toHaveValue("Alice");
+    expect(".w_field_property_definition_value input").toHaveValue("Alice");
 });
 
 test("properties: date(time) property manipulations", async () => {
@@ -1372,23 +1372,23 @@ test("properties: date(time) property manipulations", async () => {
     expect.verifySteps(["get_views", "web_read"]);
 
     // check initial properties
-    expect("[property-name=property_1] .o_property_field_value input").toHaveValue("01/01/2019");
-    expect("[property-name=property_2] .o_property_field_value input").toHaveValue(
+    expect("[property-name=property_1] .w_property_field_value input").toHaveValue("01/01/2019");
+    expect("[property-name=property_2] .w_property_field_value input").toHaveValue(
         "01/01/2019 11:00:00"
     );
 
     // edit date property
-    await click(".o_property_field[property-name=property_1] input");
+    await click(".w_property_field[property-name=property_1] input");
     await animationFrame();
-    await click(".o_datetime_picker .o_previous");
+    await click(".w_datetime_picker .w_previous");
     await animationFrame();
     await click(getPickerCell("31"));
     expect("[property-name=property_1] input").toHaveValue("12/31/2018");
 
     // edit date time property
-    await click(".o_property_field[property-name=property_2] input");
+    await click(".w_property_field[property-name=property_2] input");
     await animationFrame();
-    await click(".o_datetime_picker .o_previous");
+    await click(".w_datetime_picker .w_previous");
     await animationFrame();
     await click(getPickerCell("31"));
     await animationFrame();
@@ -1443,45 +1443,45 @@ test("properties: name reset", async () => {
         actionMenus: {},
     });
 
-    expect('.o_property_field[property-name="property_2"]').toHaveCount(1);
+    expect('.w_property_field[property-name="property_2"]').toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // open the definition popover
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     // change the type to "many2one"
     await changeType("many2one");
 
     // select the "User" model
-    await click(".o_field_property_definition_model input");
-    await contains(".o_field_property_definition_model .ui-menu-item:nth-child(2)").click();
+    await click(".w_field_property_definition_model input");
+    await contains(".w_field_property_definition_model .ui-menu-item:nth-child(2)").click();
     await animationFrame();
     await addPropertyDefinition();
 
     // check that the name has been regenerated
-    expect(".o_property_field:nth-child(2)").not.toHaveAttribute("property-name", "property_2", {
+    expect(".w_property_field:nth-child(2)").not.toHaveAttribute("property-name", "property_2", {
         message: "Name must have been regenerated",
     });
 
     // change back to "Selection" and verify that the original name is restored
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("selection");
     await addPropertyDefinition();
-    expect(".o_property_field:nth-child(2)").toHaveAttribute("property-name", "property_2", {
+    expect(".w_property_field:nth-child(2)").toHaveAttribute("property-name", "property_2", {
         message: "Name must have been restored",
     });
 
     // re-select many2one user
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("many2one");
-    await click(".o_field_property_definition_model input");
-    await contains(".o_field_property_definition_model .ui-menu-item:nth-child(2)").click();
+    await click(".w_field_property_definition_model input");
+    await contains(".w_field_property_definition_model .ui-menu-item:nth-child(2)").click();
     await animationFrame();
-    const propertyName = queryAttribute(".o_property_field:nth-child(2)", "property-name");
+    const propertyName = queryAttribute(".w_property_field:nth-child(2)", "property-name");
     expect(propertyName.endsWith("_html")).toEqual(false);
 
     // save (if we do not save, the name will be the same even if
@@ -1489,32 +1489,32 @@ test("properties: name reset", async () => {
     await addPropertyDefinition();
 
     // restore the model "User", and check that the name has been restored
-    await contains(".o_property_field:nth-child(2) .o_field_property_open_popover").click();
-    await contains(".o_field_property_definition_model input").click();
-    await contains(".o_field_property_definition_model .ui-menu-item:nth-child(2)").click();
+    await contains(".w_property_field:nth-child(2) .w_field_property_open_popover").click();
+    await contains(".w_field_property_definition_model input").click();
+    await contains(".w_field_property_definition_model .ui-menu-item:nth-child(2)").click();
     await addPropertyDefinition();
-    expect(".o_property_field:nth-child(2)").toHaveAttribute("property-name", propertyName);
+    expect(".w_property_field:nth-child(2)").toHaveAttribute("property-name", propertyName);
 
     // Change the definition and check that the name stay the same
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-    await contains(".o_field_property_definition_kanban input").click();
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+    await contains(".w_field_property_definition_kanban input").click();
     await addPropertyDefinition();
-    expect(".o_property_field:nth-child(2)").toHaveAttribute("property-name", propertyName);
+    expect(".w_property_field:nth-child(2)").toHaveAttribute("property-name", propertyName);
 
     // Change the type to "HTML" and verify that the suffix is added
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("html");
     await addPropertyDefinition();
-    const htmlPropertyName = queryAttribute(".o_property_field:nth-child(2)", "property-name");
+    const htmlPropertyName = queryAttribute(".w_property_field:nth-child(2)", "property-name");
     expect(htmlPropertyName.endsWith("_html")).toEqual(true);
 
     // Restore the selection type, the name should be restored
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("selection");
     await addPropertyDefinition();
-    expect(".o_property_field:nth-child(2)").toHaveAttribute("property-name", "property_2", {
+    expect(".w_property_field:nth-child(2)").toHaveAttribute("property-name", "property_2", {
         message: "Name must have been restored",
     });
 });
@@ -1539,16 +1539,16 @@ test("properties: kanban view", async () => {
     });
 
     // check second card
-    expect(".o_kanban_record:nth-child(2) .o_card_property_field:nth-child(3)").toHaveText(
+    expect(".w_kanban_record:nth-child(2) .w_card_property_field:nth-child(3)").toHaveText(
         "char value 4"
     );
-    expect(".o_kanban_record:nth-child(2) .o_card_property_field:nth-child(1)").toHaveText(
+    expect(".w_kanban_record:nth-child(2) .w_card_property_field:nth-child(1)").toHaveText(
         "char value\nsuffix"
     );
-    expect(".o_kanban_record:nth-child(2) .o_card_property_field:nth-child(2)").toHaveText("C");
+    expect(".w_kanban_record:nth-child(2) .w_card_property_field:nth-child(2)").toHaveText("C");
 
     // check first card
-    expect(".o_kanban_record:nth-child(1) .o_card_property_field").toHaveCount(2);
+    expect(".w_kanban_record:nth-child(1) .w_card_property_field").toHaveCount(2);
 });
 
 test("properties: kanban view with date and datetime property fields", async () => {
@@ -1594,10 +1594,10 @@ test("properties: kanban view with date and datetime property fields", async () 
     });
 
     // check fifth card
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(1) span").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(1) span").toHaveText(
         "01/01/2019"
     );
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(2) span").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(2) span").toHaveText(
         "01/01/2019 11:00:00"
     );
 });
@@ -1639,8 +1639,8 @@ test("properties: kanban view with multiple sources of properties definitions", 
             </kanban>`,
     });
 
-    expect(".o_kanban_record:not(.o_kanban_ghost)").toHaveCount(5);
-    expect(queryAllTexts(".o_kanban_record:not(.o_kanban_ghost)")).toEqual([
+    expect(".w_kanban_record:not(.w_kanban_ghost)").toHaveCount(5);
+    expect(queryAllTexts(".w_kanban_record:not(.w_kanban_ghost)")).toEqual([
         "Company 1\nfirst partner\nchar value\nsuffix\nB",
         "Company 1\nsecond partner\nchar value\nsuffix\nC\nchar value 4",
         "Company 1\nthird partner",
@@ -1715,25 +1715,25 @@ test("properties: kanban view with label and border", async () => {
     });
 
     // check for label in integer, float, date and datetime field
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(1) label").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(1) label").toHaveText(
         "My Integer"
     );
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(2) label").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(2) label").toHaveText(
         "My Float"
     );
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(3) label").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(3) label").toHaveText(
         "My Date"
     );
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(4) label").toHaveText(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(4) label").toHaveText(
         "My Datetime"
     );
 
     //check that label and border class is present for checkbox field
-    expect(".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(5) .border").toHaveCount(
+    expect(".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(5) .border").toHaveCount(
         1
     );
     expect(
-        ".o_kanban_record:nth-child(5) .o_card_property_field:nth-child(5) label:eq(0)"
+        ".w_kanban_record:nth-child(5) .w_card_property_field:nth-child(5) label:eq(0)"
     ).toHaveText("My Checkbox");
 });
 
@@ -1760,7 +1760,7 @@ test("properties: kanban view without properties", async () => {
                 </templates>
             </kanban>`,
     });
-    expect(".o_kanban_record:eq(0)").toHaveText("Company 1\nfirst partner");
+    expect(".w_kanban_record:eq(0)").toHaveText("Company 1\nfirst partner");
 });
 
 /**
@@ -1792,9 +1792,9 @@ test("properties: switch view on desktop", async () => {
         ],
     });
     await animationFrame();
-    await click(".o_switch_view.o_list");
+    await click(".w_switch_view.w_list");
     await animationFrame();
-    expect(".o_optional_columns").toHaveCount(1, {
+    expect(".w_optional_columns").toHaveCount(1, {
         message: "Properties should be added as optional columns.",
     });
 });
@@ -1825,11 +1825,11 @@ test("properties: switch view on mobile", async () => {
         ],
     });
     await animationFrame();
-    await click(".o_cp_switch_buttons .dropdown-toggle");
+    await click(".w_cp_switch_buttons .dropdown-toggle");
     await animationFrame();
     await click(".dropdown-item:contains(List)");
     await animationFrame();
-    expect(".o_optional_columns").toHaveCount(1, {
+    expect(".w_optional_columns").toHaveCount(1, {
         message: "Properties should be added as optional columns.",
     });
 });
@@ -1858,49 +1858,49 @@ test("properties: default value", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // add a new property field
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
 
     // edit the default value and close the popover definition
     // because we just created the property, the default value should be propagated
-    await click(".o_field_property_definition_value input");
+    await click(".w_field_property_definition_value input");
     await edit("First Default Value", { confirm: "Enter" });
     await animationFrame();
     await addPropertyDefinition();
 
-    expect(".o_field_properties .o_property_field:last .o_property_field_value input").toHaveValue(
+    expect(".w_field_properties .w_property_field:last .w_property_field_value input").toHaveValue(
         "First Default Value"
     );
 
     // empty the new / existing property value, and re-open the property we created and change the default value
     // it shouldn't be propagated because it's the second time we open the definition
     const checkProperty = async (property) => {
-        await click(".o_property_field_value input", { root: property });
+        await click(".w_property_field_value input", { root: property });
         await edit("");
         await runAllTimers();
         await animationFrame();
 
-        await click(".o_field_property_open_popover", { root: property });
+        await click(".w_field_property_open_popover", { root: property });
         await runAllTimers();
         await animationFrame();
 
-        await click(".o_field_property_definition_value input");
+        await click(".w_field_property_definition_value input");
         await edit("Second Default Value");
         await runAllTimers();
         await animationFrame();
 
         await addPropertyDefinition();
 
-        expect(queryFirst(".o_property_field_value input", { root: property })).toHaveValue("");
+        expect(queryFirst(".w_property_field_value input", { root: property })).toHaveValue("");
     };
-    await checkProperty(".o_field_properties .o_property_field:last");
-    const existingProperty = queryFirst(".o_field_properties .o_property_field:nth-child(1)");
+    await checkProperty(".w_field_properties .w_property_field:last");
+    const existingProperty = queryFirst(".w_field_properties .w_property_field:nth-child(1)");
     await checkProperty(existingProperty);
 });
 
@@ -1922,37 +1922,37 @@ test("properties: default value date", async () => {
                 </form>`,
         actionMenus: {},
     });
-    expect(".o_field_properties").toHaveCount(1, { message: "The field must be in the view" });
+    expect(".w_field_properties").toHaveCount(1, { message: "The field must be in the view" });
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // add a new date property
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
     await changeType("date");
-    expect(".o_property_field_popover .o_field_property_definition_type input").toHaveValue(
+    expect(".w_property_field_popover .w_field_property_definition_type input").toHaveValue(
         "Date",
         { message: "Should have changed the property type" }
     );
     // choose a default value and check that it is propagated on the property field
-    await click(".o_field_property_definition_value .o_datetime_input");
+    await click(".w_field_property_definition_value .w_datetime_input");
     await animationFrame();
-    expect(".o_date_picker").toHaveCount(1);
+    expect(".w_date_picker").toHaveCount(1);
     await click(getPickerCell("3"));
     await animationFrame();
     await addPropertyDefinition();
-    expect(".o_datetime_input").toHaveValue("01/03/2022", {
+    expect(".w_datetime_input").toHaveValue("01/03/2022", {
         message: "The default date value should have been propagated",
     });
     // save the form and check that the default value is not reset
-    await click(".o_form_button_save");
+    await click(".w_form_button_save");
     await animationFrame();
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    await click(".o_property_field:nth-last-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-last-child(2) .w_field_property_open_popover");
     await animationFrame();
-    expect(".o_property_field_popover .o_field_property_definition_value input").toHaveValue(
+    expect(".w_property_field_popover .w_field_property_definition_value input").toHaveValue(
         "01/03/2022"
     );
 });
@@ -1976,20 +1976,20 @@ test("properties: suffix", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
 
-    await click(".o_field_property_definition_suffix input");
+    await click(".w_field_property_definition_suffix input");
     await edit("kg", { confirm: "Enter" });
     await animationFrame();
     await addPropertyDefinition();
 
-    expect(".o_field_properties .o_property_field:last .o_property_field_value_suffix").toHaveText(
+    expect(".w_field_properties .w_property_field:last .w_property_field_value_suffix").toHaveText(
         "kg"
     );
 });
@@ -2020,15 +2020,15 @@ test("properties: close property popover once clicked on delete icon", async () 
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // We open the property popover
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
-    expect(".o_field_property_definition").toHaveCount(1);
+    expect(".w_field_property_definition").toHaveCount(1);
 
     // Trying to delete the property should have closed its definition popover
     // We click on delete button
-    await click(".o_field_property_definition_delete");
+    await click(".w_field_property_definition_delete");
     await animationFrame();
-    expect(".o_field_property_definition").toHaveCount(0);
+    expect(".w_field_property_definition").toHaveCount(0);
 });
 
 /**
@@ -2062,35 +2062,35 @@ test("properties: form view and falsy domain, properties are not empty", async (
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
-    expect(".o_test_properties_not_empty").toHaveCount(1);
+    expect(".w_test_properties_not_empty").toHaveCount(1);
 
     // delete a property, 2 properties left
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
-    await click(".o_field_property_definition_delete");
+    await click(".w_field_property_definition_delete");
     await animationFrame();
     await click(".modal-content .btn-danger");
     await animationFrame();
-    expect(".o_test_properties_not_empty").toHaveCount(1);
+    expect(".w_test_properties_not_empty").toHaveCount(1);
 
     // delete a property, 1 property left
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
-    await click(".o_field_property_definition_delete");
+    await click(".w_field_property_definition_delete");
     await animationFrame();
     await click(".modal-content .btn-danger");
     await animationFrame();
-    expect(".o_test_properties_not_empty").toHaveCount(1);
+    expect(".w_test_properties_not_empty").toHaveCount(1);
 
     // delete a property, no property left
 
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
-    await click(".o_field_property_definition_delete");
+    await click(".w_field_property_definition_delete");
     await animationFrame();
     await click(".modal-content .btn-danger");
     await animationFrame();
-    expect(".o_test_properties_not_empty").toHaveCount(0);
+    expect(".w_test_properties_not_empty").toHaveCount(0);
 });
 
 /**
@@ -2120,13 +2120,13 @@ test("properties: form view and falsy domain, properties are empty", async () =>
             </form>`,
         actionMenus: {},
     });
-    expect(".o_test_properties_not_empty").toHaveCount(0);
+    expect(".w_test_properties_not_empty").toHaveCount(0);
 
     // create the first property
     await toggleActionMenu();
-    await click(".o-dropdown--menu span:contains(Edit Properties)");
+    await click(".w-dropdown--menu span:contains(Edit Properties)");
     await animationFrame();
-    expect(".o_test_properties_not_empty").toHaveCount(1);
+    expect(".w_test_properties_not_empty").toHaveCount(1);
 });
 
 test("properties: discard changes", async () => {
@@ -2141,11 +2141,11 @@ test("properties: discard changes", async () => {
                 <field name="properties" widget="properties"/>
             </form>`,
     });
-    expect(".o_property_field:first-child input").toHaveValue("char value");
-    await contains(".o_property_field:first-child input").edit("char updated");
-    expect(".o_property_field:first-child input").toHaveValue("char updated");
+    expect(".w_property_field:first-child input").toHaveValue("char value");
+    await contains(".w_property_field:first-child input").edit("char updated");
+    expect(".w_property_field:first-child input").toHaveValue("char updated");
     await clickCancel();
-    expect(".o_property_field:first-child input").toHaveValue("char value");
+    expect(".w_property_field:first-child input").toHaveValue("char value");
 });
 
 // ---------------------------------------------------
@@ -2173,7 +2173,7 @@ test("properties: separators layout", async () => {
 
     // fold the group
     await click(
-        ".o_field_properties .o_property_group[property-name='property_gen_2']:first-child .o_field_property_group_label"
+        ".w_field_properties .w_property_group[property-name='property_gen_2']:first-child .w_field_property_group_label"
     );
     await animationFrame();
     expect(getGroups()).toEqual([
@@ -2184,7 +2184,7 @@ test("properties: separators layout", async () => {
         ],
     ]);
     await click(
-        ".o_field_properties .o_property_group[property-name='property_gen_2']:first-child .o_field_property_group_label"
+        ".w_field_properties .w_property_group[property-name='property_gen_2']:first-child .w_field_property_group_label"
     );
     await animationFrame();
     await toggleSeparator("property_3", true);
@@ -2200,7 +2200,7 @@ test("properties: separators layout", async () => {
     ]);
 
     // fold the left group
-    await click(".o_property_group[property-name='property_gen_2'] .o_field_property_group_label");
+    await click(".w_property_group[property-name='property_gen_2'] .w_field_property_group_label");
     await animationFrame();
     expect(getGroups()).toEqual([
         [["PROPERTY 1", "property_gen_2"]],
@@ -2209,14 +2209,14 @@ test("properties: separators layout", async () => {
             ["Property 4", "property_4"],
         ],
     ]);
-    await click(".o_property_group[property-name='property_gen_2'] .o_field_property_group_label");
+    await click(".w_property_group[property-name='property_gen_2'] .w_field_property_group_label");
     await animationFrame();
     // create 3 new properties
-    await click(".o_field_property_add button");
+    await click(".w_field_property_add button");
     await addPropertyDefinition();
-    await click(".o_field_property_add button");
+    await click(".w_field_property_add button");
     await addPropertyDefinition();
-    await click(".o_field_property_add button");
+    await click(".w_field_property_add button");
     await addPropertyDefinition();
     expect(getGroups()).toEqual([
         [
@@ -2304,7 +2304,7 @@ test("properties: open section by default", async () => {
         [["SEPARATOR 3", "property_3"]],
     ]);
 
-    await click("div[property-name='property_1'] .o_field_property_group_label");
+    await click("div[property-name='property_1'] .w_field_property_group_label");
     await animationFrame();
 
     expect(getGroups()).toEqual([[["SEPARATOR 1", "property_1"]], [["SEPARATOR 3", "property_3"]]]);
@@ -2335,15 +2335,15 @@ test("properties: labels of folded properties are hidden on mobile", async () =>
     });
 
     expect("[property-name='property_2']").not.toHaveClass("o_property_folded");
-    expect("[property-name='property_2'] .o_field_property_label").toBeVisible();
-    expect("[property-name='property_2'] .o_property_field_value").toBeVisible();
+    expect("[property-name='property_2'] .w_field_property_label").toBeVisible();
+    expect("[property-name='property_2'] .w_property_field_value").toBeVisible();
 
-    await click("div[property-name='property_1'] .o_field_property_group_label");
+    await click("div[property-name='property_1'] .w_field_property_group_label");
     await animationFrame();
 
     expect("[property-name='property_2']").toHaveClass("o_property_folded");
-    expect("[property-name='property_2'] .o_field_property_label").not.toBeVisible();
-    expect("[property-name='property_2'] .o_property_field_value").not.toBeVisible();
+    expect("[property-name='property_2'] .w_field_property_label").not.toBeVisible();
+    expect("[property-name='property_2'] .w_property_field_value").not.toBeVisible();
 });
 
 test.tags("desktop");
@@ -2363,7 +2363,7 @@ test("properties: save separator folded state", async () => {
     // return true if the given separator is folded
     const foldState = (separatorName) =>
         !queryFirst(
-            `div[property-name='${separatorName}'] .o_field_property_label [data-icon='arrow_drop_down']`
+            `div[property-name='${separatorName}'] .w_field_property_label [data-icon='arrow_drop_down']`
         );
 
     const assertFolded = (values) => {
@@ -2375,13 +2375,13 @@ test("properties: save separator folded state", async () => {
     };
 
     await click(
-        ".o_field_properties .o_property_group[property-name='property_1'] .o_field_property_group_label"
+        ".w_field_properties .w_property_group[property-name='property_1'] .w_field_property_group_label"
     );
     await animationFrame();
     assertFolded([true, false, false, false]);
 
     await click(
-        ".o_field_properties .o_property_group[property-name='property_3'] .o_field_property_group_label"
+        ".w_field_properties .w_property_group[property-name='property_3'] .w_field_property_group_label"
     );
     await animationFrame();
     assertFolded([true, false, true, false]);
@@ -2460,7 +2460,7 @@ test("properties: separators drag and drop", async () => {
     ]);
 
     // fold the first group
-    await click("div[property-name='property_gen_2'] .o_field_property_group_label");
+    await click("div[property-name='property_gen_2'] .w_field_property_group_label");
 
     // drag and drop the firth property in the folded group
     await contains(getPropertyHandleElement("property_5")).dragAndDrop(
@@ -2552,7 +2552,7 @@ test("properties: start in edit mode", async () => {
                 </sheet>
             </form>`,
     });
-    expect(".o_field_property_add button").toHaveCount(1, {
+    expect(".w_field_property_add button").toHaveCount(1, {
         message: "The add button must be in the view",
     });
 });
@@ -2566,7 +2566,7 @@ test("properties: no add properties action in cogmenu if no properties field", a
         actionMenus: {},
     });
     await toggleActionMenu();
-    expect(".o-dropdown--menu span:contains(Edit Properties)").toHaveCount(0);
+    expect(".w-dropdown--menu span:contains(Edit Properties)").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -2617,8 +2617,8 @@ test("properties: onChange return new properties", async () => {
     await runAllTimers();
     await click(".dropdown-menu li");
     await animationFrame();
-    expect("[name='properties'] .o_property_field").toHaveText("My New Char");
-    expect("[name='properties'] .o_property_field input").toHaveValue("Hello");
+    expect("[name='properties'] .w_property_field").toHaveText("My New Char");
+    expect("[name='properties'] .w_property_field input").toHaveValue("Hello");
 });
 
 test("new property, change record, change property type", async () => {
@@ -2646,21 +2646,21 @@ test("new property, change record, change property type", async () => {
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     await animationFrame();
-    await contains(".o_field_property_definition_add").click();
+    await contains(".w_field_property_definition_add").click();
     await animationFrame();
-    await contains(".o_property_field .o_property_field_value input").edit("aze");
-    await contains(".o_pager_next").click();
+    await contains(".w_property_field .w_property_field_value input").edit("aze");
+    await contains(".w_pager_next").click();
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    expect(".o_property_field .o_property_field_value input").toHaveValue("");
+    expect(".w_property_field .w_property_field_value input").toHaveValue("");
     // Change second record's property type
-    await contains(".o_property_field .o_field_property_open_popover").click();
+    await contains(".w_property_field .w_field_property_open_popover").click();
     await changeType("integer");
     await animationFrame();
-    await contains(".o_field_property_definition_add").click();
+    await contains(".w_field_property_definition_add").click();
 
-    await contains(".o_pager_previous").click();
-    expect(".o_property_field .o_property_field_value input").toHaveValue("0");
+    await contains(".w_pager_previous").click();
+    expect(".w_property_field .w_property_field_value input").toHaveValue("0");
 });
 
 test("property many2one, change property type from many2one to integer", async () => {
@@ -2721,9 +2721,9 @@ test("property many2one, change property type from many2one to integer", async (
     await toggleMenuItem("Edit Properties"); // Start the edition mode
 
     // Change the record's property type
-    await contains(".o_property_field .o_field_property_open_popover").click();
+    await contains(".w_property_field .w_field_property_open_popover").click();
     await changeType("integer");
-    await contains(".o_field_property_definition_add").click();
+    await contains(".w_field_property_definition_add").click();
 
     // save
     await clickSave();
@@ -2735,7 +2735,7 @@ test("properties: moving single property to 2nd group in auto split mode", async
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties"); // Start the edition mode
     const { moveTo, drop } = await contains(getPropertyHandleElement("property_1")).drag();
-    const secondGroup = queryFirst(".o_property_group:last-of-type");
+    const secondGroup = queryFirst(".w_property_group:last-of-type");
     await moveTo(secondGroup, "bottom");
     await drop();
     expect(getGroups()).toEqual([
@@ -2883,18 +2883,18 @@ test("properties: monetary without currency_field", async () => {
             </form>`,
         actionMenus: {},
     });
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
-    await click(".o_field_property_definition_type input");
+    await click(".w_field_property_definition_type input");
     await animationFrame();
     expect(
-        `.o_field_property_definition_type_menu .o-dropdown-item.text-muted:contains(Monetary) > div`
+        `.w_field_property_definition_type_menu .w-dropdown-item.text-muted:contains(Monetary) > div`
     ).toHaveAttribute(
         "data-tooltip",
         "Not possible to create monetary field because there is no currency on current model."
@@ -2922,33 +2922,33 @@ test("properties: monetary with currency_id", async () => {
             </form>`,
         actionMenus: {},
     });
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
-    await click(".o_field_property_definition_type input");
+    await click(".w_field_property_definition_type input");
     await animationFrame();
     expect(
-        `.o_field_property_definition_type_menu .o-dropdown-item:not(.text-muted):contains(Monetary)`
+        `.w_field_property_definition_type_menu .w-dropdown-item:not(.text-muted):contains(Monetary)`
     ).toHaveCount(1);
 
     await contains(
-        `.o_field_property_definition_type_menu .o-dropdown-item:contains(Monetary)`
+        `.w_field_property_definition_type_menu .w-dropdown-item:contains(Monetary)`
     ).click();
-    expect(`.o_field_property_definition_currency_field select`).toHaveText("Currency");
-    expect(`.o_field_property_definition_currency_field select`).toHaveValue("currency_id");
-    expect(".o_field_property_definition_value .o_input > span:eq(0)").toHaveText("$");
-    expect(`.o_field_property_definition_value input`).toHaveValue("0.00");
+    expect(`.w_field_property_definition_currency_field select`).toHaveText("Currency");
+    expect(`.w_field_property_definition_currency_field select`).toHaveValue("currency_id");
+    expect(".w_field_property_definition_value .w_input > span:eq(0)").toHaveText("$");
+    expect(`.w_field_property_definition_value input`).toHaveValue("0.00");
 
     await addPropertyDefinition();
     expect(
-        ".o_property_field:nth-child(2) .o_property_field_value .o_input > span:eq(0)"
+        ".w_property_field:nth-child(2) .w_property_field_value .w_input > span:eq(0)"
     ).toHaveText("$");
-    expect(`.o_property_field:nth-child(2) .o_property_field_value input`).toHaveValue("0.00");
+    expect(`.w_property_field:nth-child(2) .w_property_field_value input`).toHaveValue("0.00");
 });
 
 test("properties: monetary with multiple currency field", async () => {
@@ -2974,40 +2974,40 @@ test("properties: monetary with multiple currency field", async () => {
             </form>`,
         actionMenus: {},
     });
-    expect(".o_field_properties").toHaveCount(1);
+    expect(".w_field_properties").toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
-    await click(".o_field_property_definition_type input");
+    await click(".w_field_property_definition_type input");
     await animationFrame();
     expect(
-        `.o_field_property_definition_type_menu .o-dropdown-item:not(.text-muted):contains(Monetary)`
+        `.w_field_property_definition_type_menu .w-dropdown-item:not(.text-muted):contains(Monetary)`
     ).toHaveCount(1);
 
     await contains(
-        `.o_field_property_definition_type_menu .o-dropdown-item:contains(Monetary)`
+        `.w_field_property_definition_type_menu .w-dropdown-item:contains(Monetary)`
     ).click();
-    expect(`.o_field_property_definition_currency_field select`).toHaveText(
+    expect(`.w_field_property_definition_currency_field select`).toHaveText(
         "Currency\nAnother currency"
     );
-    expect(`.o_field_property_definition_currency_field select`).toHaveValue("currency_id");
+    expect(`.w_field_property_definition_currency_field select`).toHaveValue("currency_id");
 
-    await contains(".o_field_property_definition_currency_field select").select(
+    await contains(".w_field_property_definition_currency_field select").select(
         "another_currency_id"
     );
-    expect(`.o_field_property_definition_currency_field select`).toHaveValue("another_currency_id");
-    expect(".o_field_property_definition_value .o_input > span:eq(1)").toHaveText("€");
-    expect(`.o_field_property_definition_value input`).toHaveValue("0.00");
+    expect(`.w_field_property_definition_currency_field select`).toHaveValue("another_currency_id");
+    expect(".w_field_property_definition_value .w_input > span:eq(1)").toHaveText("€");
+    expect(`.w_field_property_definition_value input`).toHaveValue("0.00");
 
     await addPropertyDefinition();
     expect(
-        ".o_property_field:nth-child(2) .o_property_field_value .o_input > span:eq(1)"
+        ".w_property_field:nth-child(2) .w_property_field_value .w_input > span:eq(1)"
     ).toHaveText("€");
-    expect(`.o_property_field:nth-child(2) .o_property_field_value input`).toHaveValue("0.00");
+    expect(`.w_property_field:nth-child(2) .w_property_field_value input`).toHaveValue("0.00");
 });
 
 test("properties: signature", async () => {
@@ -3031,22 +3031,22 @@ test("properties: signature", async () => {
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await contains(".o_property_field:first-child .o_field_property_open_popover").click();
-    expect(".o_field_property_definition").toHaveCount(1);
+    await contains(".w_property_field:first-child .w_field_property_open_popover").click();
+    expect(".w_field_property_definition").toHaveCount(1);
 
     await changeType("signature");
-    expect(queryAllTexts(".o_field_property_definition .o_form_label")).toEqual([
+    expect(queryAllTexts(".w_field_property_definition .w_form_label")).toEqual([
         "Label",
         "Field Type",
     ]);
 
     await addPropertyDefinition();
-    expect(".o_field_property_definition").toHaveCount(0);
-    expect(".o_signature").toHaveCount(1);
-    expect(".o_signature.o_signature_editable").toHaveCount(1, {
+    expect(".w_field_property_definition").toHaveCount(0);
+    expect(".w_signature").toHaveCount(1);
+    expect(".w_signature.w_signature_editable").toHaveCount(1, {
         message: "The signature field should be editable",
     });
-    expect(".o_property_field:eq(0) .o_property_field_value_suffix").toHaveCount(0, {
+    expect(".w_property_field:eq(0) .w_property_field_value_suffix").toHaveCount(0, {
         message: "suffix should be removed",
     });
 });
@@ -3072,11 +3072,11 @@ test("properties: signature in readonly", async () => {
         actionMenus: {},
     });
 
-    expect(".o_signature").toHaveCount(1);
-    expect(".o_signature.o_signature_editable").toHaveCount(0, {
+    expect(".w_signature").toHaveCount(1);
+    expect(".w_signature.w_signature_editable").toHaveCount(0, {
         message: "The signature field should be in readonly",
     });
-    expect(".o_property_field:eq(0) .o_property_field_value_suffix").toHaveCount(0, {
+    expect(".w_property_field:eq(0) .w_property_field_value_suffix").toHaveCount(0, {
         message: "suffix should be removed",
     });
 });
@@ -3107,10 +3107,10 @@ test("properties definition: default value should not add value key", async () =
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
     await changeType("boolean");
-    await click(".o_field_property_definition_value .o-checkbox input");
+    await click(".w_field_property_definition_value .w-checkbox input");
     await addPropertyDefinition();
 
     await clickSave();
@@ -3141,60 +3141,60 @@ test("properties definition: test display and edit", async () => {
     });
 
     // Base state
-    expect(".o_property_field_value").toHaveCount(4, {
+    expect(".w_property_field_value").toHaveCount(4, {
         message: "4 field value should be present : 1 for each definition.",
     });
-    expect(".o_property_field_value .o_input").toHaveCount(0, {
+    expect(".w_property_field_value .w_input").toHaveCount(0, {
         message: "It shouldn't be possible to add a value to a property definition",
     });
 
     // Edit an existing definition
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    expect(".o_field_property_open_popover").toHaveCount(4, {
+    expect(".w_field_property_open_popover").toHaveCount(4, {
         message: "4 popover buttons should be present : 1 for each definition.",
     });
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
-    expect(".o_field_property_selection_option").toHaveCount(3, {
+    expect(".w_field_property_selection_option").toHaveCount(3, {
         message: "Only the 3 options from the demo data should be displayed.",
     });
-    await click(".o_field_property_selection [data-icon='add']");
+    await click(".w_field_property_selection [data-icon='add']");
     await animationFrame();
     await edit("New option");
     await addPropertyDefinition();
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
-    expect(".o_field_property_selection_option").toHaveCount(4, {
+    expect(".w_field_property_selection_option").toHaveCount(4, {
         message: "The added option should now be displayed.",
     });
     await addPropertyDefinition();
 
     // Add a new definition
-    await click(".o_field_property_add button");
-    await waitFor(".o_property_field_popover");
-    expect(".o_property_field_popover").toHaveCount(1, {
+    await click(".w_field_property_add button");
+    await waitFor(".w_property_field_popover");
+    expect(".w_property_field_popover").toHaveCount(1, {
         message: "Should have opened the definition popover",
     });
-    expect(".o_field_property_definition_header").toHaveValue("Property 5", {
+    expect(".w_field_property_definition_header").toHaveValue("Property 5", {
         message: "Should have added a default label",
     });
-    expect(".o_field_property_definition_type input").toHaveValue("Text", {
+    expect(".w_field_property_definition_type input").toHaveValue("Text", {
         message: "Default type must be text",
     });
     await addPropertyDefinition();
-    expect(".o_property_field_value").toHaveCount(5, {
+    expect(".w_property_field_value").toHaveCount(5, {
         message: "5 field value should be present : 1 for each definition.",
     });
 
     // Delete an existing definition
-    await click(".o_property_field:first-child .o_field_property_open_popover");
+    await click(".w_property_field:first-child .w_field_property_open_popover");
     await animationFrame();
-    await click(".o_field_property_definition_delete");
+    await click(".w_field_property_definition_delete");
     await animationFrame();
     await click(".modal-content .btn-danger");
     await animationFrame();
-    expect(".o_property_field_value").toHaveCount(4, {
+    expect(".w_property_field_value").toHaveCount(4, {
         message: "4 field value should be present : 1 for each definition.",
     });
 });
@@ -3220,12 +3220,12 @@ test("many2one property in list view", async () => {
             </list>`,
     });
 
-    expect(".o_list_table thead th").toHaveCount(3);
-    await contains(".o_optional_columns_dropdown_toggle").click();
-    await contains(".o-dropdown-item input[name='properties.m2o_property']").click();
-    expect(".o_list_table thead th").toHaveCount(4);
-    expect(queryAllTexts(".o_data_row:eq(0) .o_data_cell")).toEqual(["first partner", "Alice"]);
-    expect(".o_data_row:eq(0) .o_m2o_avatar img").toHaveCount(1);
+    expect(".w_list_table thead th").toHaveCount(3);
+    await contains(".w_optional_columns_dropdown_toggle").click();
+    await contains(".w-dropdown-item input[name='properties.m2o_property']").click();
+    expect(".w_list_table thead th").toHaveCount(4);
+    expect(queryAllTexts(".w_data_row:eq(0) .w_data_cell")).toEqual(["first partner", "Alice"]);
+    expect(".w_data_row:eq(0) .w_m2o_avatar img").toHaveCount(1);
 });
 
 test("properties: no parent document set", async () => {
@@ -3254,11 +3254,11 @@ test("properties: no parent document set", async () => {
         },
     });
 
-    expect(".o_field_properties").toHaveCount(1, { message: "The field must be in the view" });
+    expect(".w_field_properties").toHaveCount(1, { message: "The field must be in the view" });
 
     await toggleActionMenu();
 
-    expect(".o-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
+    expect(".w-dropdown--menu span:contains(Edit Properties)").toHaveCount(1, {
         message: "Show Edit Properties btn in cog menu",
     });
 
@@ -3266,7 +3266,7 @@ test("properties: no parent document set", async () => {
 
     expect.verifySteps(["notification"]);
 
-    expect(".o_field_properties:first-child .o_field_property_open_popover").toHaveCount(0, {
+    expect(".w_field_properties:first-child .w_field_property_open_popover").toHaveCount(0, {
         message: "The edit definition button must not be in the view",
     });
 });
@@ -3299,22 +3299,22 @@ test("add button visible in edit mode and during notebook switch", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_property_add button").toHaveCount(0, {
+    expect(".w_field_property_add button").toHaveCount(0, {
         message: "Add Property button should be hidden before enabling edit mode",
     });
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
 
-    expect(".o_field_property_add button").toHaveCount(1, {
+    expect(".w_field_property_add button").toHaveCount(1, {
         message: "Add Property button should be visible in edit mode",
     });
 
-    await contains(".o_notebook_headers .nav-link:contains(Other)").click();
-    await contains(".o_notebook_headers .nav-link:contains(Properties)").click();
-    await waitFor(".o_field_property_add button");
+    await contains(".w_notebook_headers .nav-link:contains(Other)").click();
+    await contains(".w_notebook_headers .nav-link:contains(Properties)").click();
+    await waitFor(".w_field_property_add button");
 
-    expect(".o_field_property_add button").toHaveCount(1, {
+    expect(".w_field_property_add button").toHaveCount(1, {
         message: "Add Property button should remain visible after notebook switch",
     });
 });
@@ -3354,7 +3354,7 @@ test("properties: Create a property with an onchange methods", async () => {
         actionMenus: {},
     });
     await toggleActionMenu();
-    await contains(".o_popover span:contains(Edit Properties)").click();
+    await contains(".w_popover span:contains(Edit Properties)").click();
     await runAllTimers();
     await addPropertyDefinition();
     expect.verifySteps([
@@ -3384,31 +3384,31 @@ test("properties: discard recent changes after add", async () => {
         actionMenus: {},
     });
 
-    expect('.o_property_field[property-name="property_2"]').toHaveCount(1);
+    expect('.w_property_field[property-name="property_2"]').toHaveCount(1);
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
     await changeType("text");
     await animationFrame();
     await addPropertyDefinition();
-    expect(".o_property_field:nth-child(2)").not.toHaveAttribute("property-name", "property_2", {
+    expect(".w_property_field:nth-child(2)").not.toHaveAttribute("property-name", "property_2", {
         message: "Name must have been regenerated",
     });
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-    await waitFor(".o_property_field_popover");
-    expect(".o_field_property_definition_type input").toHaveValue("Multiline Text", {
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+    await waitFor(".w_property_field_popover");
+    expect(".w_field_property_definition_type input").toHaveValue("Multiline Text", {
         message: "Type must have changed to text",
     });
 
     await animationFrame();
     await changeType("html");
     await discardPropertyDefinitionChanges();
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-    await waitFor(".o_property_field_popover");
-    expect(".o_field_property_definition_type input").toHaveValue("Multiline Text", {
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+    await waitFor(".w_property_field_popover");
+    expect(".w_field_property_definition_type input").toHaveValue("Multiline Text", {
         message: "Retrieved type text from html",
     });
 });
@@ -3434,18 +3434,18 @@ test("properties: discard recent changes on click away", async () => {
 
     await toggleActionMenu();
     await toggleMenuItem("Edit Properties");
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
     await animationFrame();
 
-    const initialType = queryFirst(".o_field_property_definition_type input").value;
+    const initialType = queryFirst(".w_field_property_definition_type input").value;
 
     await changeType("text");
-    await click(".o_form_sheet_bg");
+    await click(".w_form_sheet_bg");
     await animationFrame();
 
-    await click(".o_property_field:nth-child(2) .o_field_property_open_popover");
-    await waitFor(".o_property_field_popover");
-    expect(".o_field_property_definition_type input").toHaveValue(initialType, {
+    await click(".w_property_field:nth-child(2) .w_field_property_open_popover");
+    await waitFor(".w_property_field_popover");
+    expect(".w_field_property_definition_type input").toHaveValue(initialType, {
         message: "Clicking away should discard changes in the property definition popover",
     });
 });
@@ -3491,6 +3491,6 @@ test("properties: selection field", async () => {
         actionMenus: {},
     });
 
-    expect(".o_field_property_selection[name='selection_value']").toHaveCount(1);
-    expect(queryAllTexts(".o_field_property_selection select option")).toEqual(["", "A", "B", "C"]);
+    expect(".w_field_property_selection[name='selection_value']").toHaveCount(1);
+    expect(queryAllTexts(".w_field_property_selection select option")).toEqual(["", "A", "B", "C"]);
 });

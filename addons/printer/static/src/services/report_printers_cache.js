@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 import { browser } from "@web/core/browser/browser";
 
-const STORAGE_KEY = "odoo_reports_printer";
+const STORAGE_KEY = "weth_reports_printer";
 
 function readFromStorage() {
     try {

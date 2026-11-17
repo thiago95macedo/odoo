@@ -49,7 +49,7 @@ beforeEach(async () => {
 test.tags("desktop");
 test("can be rendered", async () => {
     await mountWithCleanup(NavBar);
-    expect(".o_navbar_apps_menu button.dropdown-toggle").toHaveCount(1, {
+    expect(".w_navbar_apps_menu button.dropdown-toggle").toHaveCount(1, {
         message: "1 apps menu toggler present",
     });
 });
@@ -57,9 +57,9 @@ test("can be rendered", async () => {
 test.tags("desktop");
 test("dropdown menu can be toggled", async () => {
     await mountWithCleanup(NavBar);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
     expect(".dropdown-menu").toHaveCount(1);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
     expect(".dropdown-menu").toHaveCount(0);
 });
 
@@ -67,16 +67,16 @@ test.tags("desktop");
 test("href attribute on apps menu items", async () => {
     defineMenus([{ id: 1, actionID: 339 }]);
     await mountWithCleanup(NavBar);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/weth/action-339");
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveAttribute("href", "/weth/action-339");
 });
 
 test.tags("desktop");
 test("href attribute with path on apps menu items", async () => {
     defineMenus([{ id: 1, actionID: 339, actionPath: "my-path" }]);
     await mountWithCleanup(NavBar);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/weth/my-path");
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveAttribute("href", "/weth/my-path");
 });
 
 test.tags("desktop");
@@ -84,8 +84,8 @@ test("href attribute includes debug param when in debug mode", async () => {
     serverState.debug = "assets";
     defineMenus([{ id: 1, actionID: 339 }]);
     await mountWithCleanup(NavBar);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute(
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveAttribute(
         "href",
         "/weth/action-339?debug=assets"
     );
@@ -96,8 +96,8 @@ test("href attribute with path includes debug param when in debug mode", async (
     serverState.debug = "assets";
     defineMenus([{ id: 1, actionID: 339, actionPath: "my-path" }]);
     await mountWithCleanup(NavBar);
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute(
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item").toHaveAttribute(
         "href",
         "/weth/my-path?debug=assets"
     );
@@ -119,9 +119,9 @@ test("many sublevels in app menu items", async () => {
     await makeTestApp();
     getService("menu").setCurrentMenu(1);
     await mountWithCleanup(NavBar);
-    await contains(".o_menu_sections .o-dropdown").click();
+    await contains(".w_menu_sections .w-dropdown").click();
     expect(
-        queryAll(".o-dropdown--menu > *").map((el) => ({
+        queryAll(".w-dropdown--menu > *").map((el) => ({
             text: el.innerText,
             paddingLeft: el.style.paddingLeft,
             tagName: el.tagName,
@@ -154,8 +154,8 @@ test("data-menu-xmlid attribute on AppsMenu items", async () => {
     await mountWithCleanup(NavBar);
 
     // check apps
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(queryAllAttributes(".o-dropdown--menu a", "data-menu-xmlid")).toEqual(["wowl", null], {
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(queryAllAttributes(".w-dropdown--menu a", "data-menu-xmlid")).toEqual(["wowl", null], {
         message:
             "menu items should have the correct data-menu-xmlid attribute (only the first is set)",
     });
@@ -163,22 +163,22 @@ test("data-menu-xmlid attribute on AppsMenu items", async () => {
     // check menus
     getService("menu").setCurrentMenu(1);
     await animationFrame();
-    expect(".o_menu_sections .dropdown-item[data-menu-xmlid=menu_3]").toHaveCount(1);
+    expect(".w_menu_sections .dropdown-item[data-menu-xmlid=menu_3]").toHaveCount(1);
 
     // check sub menus toggler
-    expect(".o_menu_sections button.dropdown-toggle[data-menu-xmlid=menu_4]").toHaveCount(1);
+    expect(".w_menu_sections button.dropdown-toggle[data-menu-xmlid=menu_4]").toHaveCount(1);
 
     // check sub menus
-    await contains(".o_menu_sections .dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item[data-menu-xmlid=menu_5]").toHaveCount(1);
+    await contains(".w_menu_sections .dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item[data-menu-xmlid=menu_5]").toHaveCount(1);
 });
 
 test.tags("desktop");
 test("navbar can display current active app", async () => {
     await mountWithCleanup(NavBar);
     // Open apps menu
-    await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item:not(.focus)").toHaveCount(1, {
+    await contains(".w_navbar_apps_menu button.dropdown-toggle").click();
+    expect(".w-dropdown--menu .dropdown-item:not(.focus)").toHaveCount(1, {
         message:
             "should not show the current active app as the menus service has not loaded an app yet",
     });
@@ -187,7 +187,7 @@ test("navbar can display current active app", async () => {
     getService("menu").setCurrentMenu(1);
     await animationFrame();
 
-    expect(".o-dropdown--menu .dropdown-item.focus").toHaveCount(1, {
+    expect(".w-dropdown--menu .dropdown-item.focus").toHaveCount(1, {
         message: "should show the current active app",
     });
 });
@@ -223,10 +223,10 @@ test("navbar can display systray items ordered based on their sequence", async (
     systrayRegistry.add("addon.myitem4", { Component: MyItem4 });
 
     await mountWithCleanup(NavBar);
-    expect(".o_menu_systray:eq(0) li").toHaveCount(4, {
+    expect(".w_menu_systray:eq(0) li").toHaveCount(4, {
         message: "four systray items should be displayed",
     });
-    expect(queryAllTexts(".o_menu_systray:eq(0) li")).toEqual([
+    expect(queryAllTexts(".w_menu_systray:eq(0) li")).toEqual([
         "my item 3",
         "my item 4",
         "my item 2",
@@ -257,7 +257,7 @@ test("navbar updates after adding a systray item", async () => {
         },
     });
     await mountWithCleanup(NavBar);
-    expect(".o_menu_systray:eq(0) li").toHaveCount(2, {
+    expect(".w_menu_systray:eq(0) li").toHaveCount(2, {
         message: "2 systray items should be displayed",
     });
 });
@@ -301,16 +301,16 @@ test("can adapt with 'more' menu sections behavior", async () => {
     getService("menu").setCurrentMenu(1);
     await mountWithCleanup(MyNavbar);
 
-    expect(".o_menu_sections > *:not(.o_menu_sections_more):visible").toHaveCount(3, {
+    expect(".w_menu_sections > *:not(.w_menu_sections_more):visible").toHaveCount(3, {
         message: "should have 3 menu sections displayed (that are not the 'more' menu)",
     });
-    expect(".o_menu_sections_more").toHaveCount(0);
+    expect(".w_menu_sections_more").toHaveCount(0);
 
     // Force minimal width
     await resize({ width: 0 });
     await waitNavbarAdaptation();
 
-    expect(".o_menu_sections").not.toBeVisible({
+    expect(".w_menu_sections").not.toBeVisible({
         message: "no menu section should be displayed",
     });
 
@@ -318,10 +318,10 @@ test("can adapt with 'more' menu sections behavior", async () => {
     await resize({ width: 1366 });
     await waitNavbarAdaptation();
 
-    expect(".o_menu_sections > *:not(.o_menu_sections_more):not(.d-none)").toHaveCount(3, {
+    expect(".w_menu_sections > *:not(.w_menu_sections_more):not(.d-none)").toHaveCount(3, {
         message: "should have 3 menu sections displayed (that are not the 'more' menu)",
     });
-    expect(".o_menu_sections_more").toHaveCount(0, { message: "the 'more' menu should not exist" });
+    expect(".w_menu_sections_more").toHaveCount(0, { message: "the 'more' menu should not exist" });
     expect.verifySteps([
         "adapt -> hide 0/3 sections",
         "adapt -> hide 3/3 sections",
@@ -373,7 +373,7 @@ test("'more' menu sections adaptations do not trigger render in some cases", asy
     const navbar = await mountWithCleanup(MyNavbar);
 
     expect(navbar.currentAppSections).toHaveLength(0, { message: "0 app sub menus" });
-    expect(".o_navbar").toHaveRect({ width: 600 });
+    expect(".w_navbar").toHaveRect({ width: 600 });
     expect(adaptCount).toBe(1);
     expect(adaptRenderCount).toBe(0, {
         message: "during adapt, render not triggered as the navbar has no app sub menus",
@@ -382,7 +382,7 @@ test("'more' menu sections adaptations do not trigger render in some cases", asy
     await resize({ width: 0 });
     await waitNavbarAdaptation();
 
-    expect(".o_navbar").toHaveRect({ width: 0 });
+    expect(".w_navbar").toHaveRect({ width: 0 });
     expect(adaptCount).toBe(2);
     expect(adaptRenderCount).toBe(0, {
         message: "during adapt, render not triggered as the navbar has no app sub menus",
@@ -485,28 +485,28 @@ test("'more' menu sections properly updated on app change", async () => {
     // Force minimal width
     await resize({ width: 0 });
     await waitNavbarAdaptation();
-    expect(".o_menu_sections > *:not(.d-none)").toHaveCount(1, {
+    expect(".w_menu_sections > *:not(.d-none)").toHaveCount(1, {
         message: "only one menu section should be displayed",
     });
-    expect(".o_menu_sections_more:not(.d-none)").toHaveCount(1, {
+    expect(".w_menu_sections_more:not(.d-none)").toHaveCount(1, {
         message: "the displayed menu section should be the 'more' menu",
     });
 
     // Open the more menu
-    await contains(".o_menu_sections_more .dropdown-toggle").click();
+    await contains(".w_menu_sections_more .dropdown-toggle").click();
     expect(queryAllTexts(".dropdown-menu > *")).toEqual(
         ["Section 10", "Section 11", "Section 12", "Section 120", "Section 121", "Section 122"],
         { message: "'more' menu should contain first app sections" }
     );
     // Close the more menu
-    await contains(".o_menu_sections_more .dropdown-toggle").click();
+    await contains(".w_menu_sections_more .dropdown-toggle").click();
 
     // Set App2 menu
     getService("menu").setCurrentMenu(2);
     await animationFrame();
 
     // Open the more menu
-    await contains(".o_menu_sections_more .dropdown-toggle").click();
+    await contains(".w_menu_sections_more .dropdown-toggle").click();
     expect(queryAllTexts(".dropdown-menu > *")).toEqual(
         ["Section 20", "Section 21", "Section 22", "Section 220", "Section 221", "Section 222"],
         { message: "'more' menu should contain second app sections" }
@@ -606,24 +606,24 @@ test("[Offline] unavailable menus are disabled", async () => {
     await setOffline(true);
 
     // check menus of current app
-    expect(".o_menu_sections .o_nav_entry").toHaveCount(2);
-    expect(".o_menu_sections .o_nav_entry.o_disabled_offline").toHaveCount(1);
-    expect(".o_menu_sections .o_nav_entry:eq(1)").toHaveClass("o_disabled_offline");
-    expect(".o_menu_sections .o-dropdown").toHaveCount(1);
-    expect(".o_menu_sections .o-dropdown[data-available-offline]").toHaveCount(1);
-    expect(".o_menu_sections .o-dropdown").not.toHaveClass(".o_disabled_offline");
+    expect(".w_menu_sections .w_nav_entry").toHaveCount(2);
+    expect(".w_menu_sections .w_nav_entry.w_disabled_offline").toHaveCount(1);
+    expect(".w_menu_sections .w_nav_entry:eq(1)").toHaveClass("o_disabled_offline");
+    expect(".w_menu_sections .w-dropdown").toHaveCount(1);
+    expect(".w_menu_sections .w-dropdown[data-available-offline]").toHaveCount(1);
+    expect(".w_menu_sections .w-dropdown").not.toHaveClass(".w_disabled_offline");
 
     // check sub-menus
-    await contains(".o_menu_sections .o-dropdown").click();
-    expect(".o-overlay-item .o-dropdown-item").toHaveCount(3);
-    expect(".o-overlay-item .o-dropdown-item.o_disabled_offline").toHaveCount(2);
-    expect(".o-overlay-item .o-dropdown-item:eq(1)").not.toHaveClass("o_disabled_offline");
+    await contains(".w_menu_sections .w-dropdown").click();
+    expect(".w-overlay-item .w-dropdown-item").toHaveCount(3);
+    expect(".w-overlay-item .w-dropdown-item.w_disabled_offline").toHaveCount(2);
+    expect(".w-overlay-item .w-dropdown-item:eq(1)").not.toHaveClass("o_disabled_offline");
 
     // check apps
-    await contains(".o_navbar_apps_menu button").click();
-    expect(".o-overlay-item .o_app").toHaveCount(3);
-    expect(".o-overlay-item .o_app.o_disabled_offline").toHaveCount(1);
-    expect(".o-overlay-item .o_app:eq(2)").toHaveClass("o_disabled_offline");
+    await contains(".w_navbar_apps_menu button").click();
+    expect(".w-overlay-item .w_app").toHaveCount(3);
+    expect(".w-overlay-item .w_app.w_disabled_offline").toHaveCount(1);
+    expect(".w-overlay-item .w_app:eq(2)").toHaveClass("o_disabled_offline");
 });
 
 test.tags("desktop");
@@ -647,24 +647,24 @@ test("navbar adapts app brand and menu sections on resize from mobile to desktop
     await mountWithCleanup(NavBar);
 
     // App brand and menu sections should be hidden on mobile width
-    expect(".o_menu_brand").toHaveCount(0);
-    expect(".o_menu_sections").toHaveCount(0);
+    expect(".w_menu_brand").toHaveCount(0);
+    expect(".w_menu_sections").toHaveCount(0);
 
     // Resize to desktop width
     await resize({ width: 1200 });
     await waitNavbarAdaptation();
 
     // App brand and menu sections should be visible on desktop width
-    expect(".o_menu_brand").toBeVisible();
-    expect(".o_menu_brand").toHaveText("My App");
-    expect(".o_menu_sections").toBeVisible();
-    expect(".o_menu_sections > *").toHaveCount(2);
+    expect(".w_menu_brand").toBeVisible();
+    expect(".w_menu_brand").toHaveText("My App");
+    expect(".w_menu_sections").toBeVisible();
+    expect(".w_menu_sections > *").toHaveCount(2);
 
     // Resize back to mobile width
     await resize({ width: 500 });
     await waitNavbarAdaptation();
 
     // App brand and menu sections should be hidden again on mobile width
-    expect(".o_menu_brand").toHaveCount(0);
-    expect(".o_menu_sections").toHaveCount(0);
+    expect(".w_menu_brand").toHaveCount(0);
+    expect(".w_menu_sections").toHaveCount(0);
 });

@@ -1,4 +1,4 @@
-import { OdooViewsDataSource } from "@spreadsheet/data_sources/odoo_views_data_source";
+import { WethViewsDataSource } from "@spreadsheet/data_sources/weth_views_data_source";
 import { _t } from "@web/core/l10n/translation";
 import { GraphModel as ChartModel } from "@web/views/graph/graph_model";
 import { Domain } from "@web/core/domain";
@@ -6,7 +6,7 @@ import { range } from "@web/core/utils/numbers";
 import { getCurrency } from "@web/core/currency";
 import { computeFormatFromCurrency } from "@spreadsheet/currency/helpers";
 
-export class ChartDataSource extends OdooViewsDataSource {
+export class ChartDataSource extends WethViewsDataSource {
     /**
      * @override
      * @param {Object} services Services (see DataSource)

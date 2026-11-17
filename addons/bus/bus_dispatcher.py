@@ -240,10 +240,10 @@ class ChannelTopic:
 
 def get_reserved_cursor_ratio(default=0.3):
     try:
-        ratio = float(os.getenv("ODOO_BUS_RESERVE_CURSORS_RATIO", default))
+        ratio = float(os.getenv("WETH_BUS_RESERVE_CURSORS_RATIO", default))
     except ValueError:
         _logger.warning(
-            "ODOO_BUS_RESERVE_CURSORS_RATIO has to be a float, defaulting to %f.",
+            "WETH_BUS_RESERVE_CURSORS_RATIO has to be a float, defaulting to %f.",
             default,
         )
         ratio = default

@@ -43,7 +43,7 @@ export class AddToCart extends Interaction {
         if (quantity > 0) {
             button.dispatchEvent(new CustomEvent('product_added_to_cart', { bubbles: true }));
         }
-        if (button.closest('.o_carousel_product_card')?.dataset?.add2cartRerender === 'True') {
+        if (button.closest('.w_carousel_product_card')?.dataset?.add2cartRerender === 'True') {
             const dynamicSnippetProducts = button.closest('.s_dynamic_snippet_products');
             this.services['public.interactions'].stopInteractions(dynamicSnippetProducts);
             this.services['public.interactions'].startInteractions(dynamicSnippetProducts);

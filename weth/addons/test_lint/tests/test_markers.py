@@ -19,7 +19,7 @@ class TestConflictMarkers(LintCase):
             self.assertFalse(any(m in content for m in MARKERS), 'Conflict markers found in %s' % fullpath_name)
 
     def test_conflict_markers(self):
-        """ Test that there are no conflict markers left in Odoo files """
+        """ Test that there are no conflict markers left in WETH files """
         import weth.addons  # noqa: PLC0415
 
         counter = 0

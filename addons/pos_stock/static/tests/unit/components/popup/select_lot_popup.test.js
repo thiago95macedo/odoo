@@ -24,7 +24,7 @@ test("lot popup creates lot on apply", async () => {
     await dialogActions(
         () => click(".line-lot-icon"),
         [
-            () => contains(".o-autocomplete--input").edit("LOT1", { confirm: false }),
+            () => contains(".w-autocomplete--input").edit("LOT1", { confirm: false }),
             () => click(".modal-footer .btn-primary"),
         ]
     );
@@ -35,7 +35,7 @@ test("lot popup creates lot on apply", async () => {
     await dialogActions(
         () => click(".line-lot-icon"),
         [
-            () => contains(".o-autocomplete--input").edit("", { confirm: false }),
+            () => contains(".w-autocomplete--input").edit("", { confirm: false }),
             () => click(".modal-footer .btn-primary"),
         ]
     );

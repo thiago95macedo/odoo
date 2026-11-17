@@ -15,7 +15,7 @@ const template = `
         </div>
     </div>`;
 
-test("caps_lock_warning is started when there is a presence of password input field inside `.o_caps_lock_warning`", async () => {
+test("caps_lock_warning is started when there is a presence of password input field inside `.w_caps_lock_warning`", async () => {
     const { core } = await startInteractions(template);
     expect(core.interactions).toHaveLength(1);
 });
@@ -25,7 +25,7 @@ test("caps lock alert is displayed when CapsLock is turned on", async () => {
     await pointerDown(queryOne("#password"));
     await keyUp("a");
     await keyUp("CapsLock");
-    expect(".o_caps_lock_warning_text").toBeVisible();
+    expect(".w_caps_lock_warning_text").toBeVisible();
 });
 
 test("caps lock alert is displayed even when CapsLock has been pressed while not focused on the password field", async () => {
@@ -42,9 +42,9 @@ test("caps lock alert is displayed even when CapsLock has been pressed while not
     await keyUp("a");
     await keyUp("CapsLock");
     await pointerDown(queryOne("#password"));
-    expect(".o_caps_lock_warning_text").toBeVisible();
+    expect(".w_caps_lock_warning_text").toBeVisible();
     await keyUp("CapsLock");
-    expect(".o_caps_lock_warning_text").not.toBeVisible();
+    expect(".w_caps_lock_warning_text").not.toBeVisible();
 });
 
 test("show the password, type something, and then hide the password back, caps lock alert should be available", async () => {
@@ -60,11 +60,11 @@ test("show the password, type something, and then hide the password back, caps l
             </div>
         </div>`;
     await startInteractions(templateWithEye);
-    await click("button.o_show_password");
+    await click("button.w_show_password");
     await click("#password");
     await edit("secureinfo");
-    await click("button.o_show_password");
+    await click("button.w_show_password");
     await click("#password");
     await keyUp("CapsLock");
-    expect(".o_caps_lock_warning_text").toBeVisible();
+    expect(".w_caps_lock_warning_text").toBeVisible();
 });

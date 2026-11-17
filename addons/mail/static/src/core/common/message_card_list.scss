@@ -1,21 +1,21 @@
-.o-mail-MessageCardList {
+.w-mail-MessageCardList {
     .card {
         --border-opacity: .2;
     }
 
     .card-body {
-        background-color: var(--mail-MessageCardList-cardBodyBg, $o-view-background-color);
-    
-        &:hover .o-mail-MessageCard-jump {
+        background-color: var(--mail-MessageCardList-cardBodyBg, $w-view-background-color);
+
+        &:hover .w-mail-MessageCard-jump {
             opacity: 100 !important;
         }
     }
 }
 
-.o-mail-MessageCard-jump {
+.w-mail-MessageCard-jump {
     color: white;
 }
 
-.o_touch_device .o-mail-MessageCard-jump.btn {
+.o_touch_device .w-mail-MessageCard-jump.btn {
     font-size: 0.9rem;
 }

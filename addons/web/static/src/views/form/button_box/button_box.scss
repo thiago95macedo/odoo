@@ -1,4 +1,4 @@
-.o-form-buttonbox {
+.w-form-buttonbox {
     // Compute the expected oe_stat_button's height according to the default btn size.
     $-stat-button-inner-size: calc(#{$btn-padding-y} * 2 + #{$btn-font-size} * #{$btn-line-height});
     $-stat-button-height: calc(#{$-stat-button-inner-size} + #{$btn-border-width} * 2);
@@ -20,15 +20,15 @@
     %-stat-button-text {
         @include o-text-overflow(block);
         order: 1;
-        font-size: $o-font-size-base-smaller;
+        font-size: $w-font-size-base-smaller;
         line-height: $line-height-sm;
     }
 
     %-stat-button-value {
         order: 2;
         font-weight: $font-weight-bold;
-        color: var(--color, var(--o-stat-text-color, #{$o-brand-primary}));
-        font-size: $o-font-size-base-smaller;
+        color: var(--color, var(--o-stat-text-color, #{$w-brand-primary}));
+        font-size: $w-font-size-base-smaller;
     }
 
     %-stat-button-figure-offset {
@@ -59,7 +59,7 @@
         }
 
         // Some buttons only display text without using StatInfo template
-        > span {
+        >span {
             @include o-text-overflow(block);
         }
 
@@ -67,7 +67,9 @@
             overflow: hidden;
         }
 
-        .o_stat_info, > span, .o_field_statinfo {
+        .o_stat_info,
+        >span,
+        .o_field_statinfo {
             @extend %-stat-button-container;
 
             .o_stat_text {
@@ -84,7 +86,9 @@
         }
 
         &:not(:disabled) {
-            > .o_stat_info .o_field_widget, > span .o_field_widget {
+
+            >.o_stat_info .o_field_widget,
+            >span .o_field_widget {
                 cursor: pointer;
             }
         }
@@ -93,27 +97,31 @@
             @extend %-stat-button-figure-offset;
         }
 
-        &:not(:hover) .o_stat_info > .o_hover {
+        &:not(:hover) .o_stat_info>.o_hover {
             display: none !important;
         }
-        &:hover .o_stat_info > .o_not_hover {
+
+        &:hover .o_stat_info>.o_not_hover {
             display: none !important
         }
+
         &.btn-outline-secondary:disabled {
             opacity: 1;
-            color:inherit;
+            color: inherit;
         }
 
         // The following code ensures that the correct button state
         // is brought to the front, depending on the situation.
         // For example, when a user starts clicking on one button
         // and then drags to another.
-        &.btn-outline-secondary, .o_button_more {
+        &.btn-outline-secondary,
+        .o_button_more {
             &:hover {
                 z-index: 1;
             }
 
-            &:active, &.show {
+            &:active,
+            &.show {
                 z-index: 2;
             }
 
@@ -123,26 +131,27 @@
         }
     }
 
-    &:not(.o-form-buttonbox-small, .o_dropdown_more) > * + * {
+    &:not(.w-form-buttonbox-small, .o_dropdown_more)>*+* {
         margin-left: -$border-width;
     }
 
     @include media-breakpoint-up(md) {
         &:not(.o_dropdown_more) {
+
             .oe_stat_button,
-            .oe_stat_button > button {
+            .oe_stat_button>button {
                 border-radius: 0;
             }
         }
 
-        > .oe_stat_button:first-child,
-        > div:first-child > .oe_stat_button {
+        >.oe_stat_button:first-child,
+        >div:first-child>.oe_stat_button {
             @include border-start-radius($border-radius);
         }
 
-        > button.oe_stat_button:last-child,
-        > div:last-child > .oe_stat_button,
-        > div.oe_stat_button:last-child > button {
+        >button.oe_stat_button:last-child,
+        >div:last-child>.oe_stat_button,
+        >div.oe_stat_button:last-child>button {
             @include border-end-radius($border-radius);
         }
     }
@@ -151,7 +160,7 @@
     .oe_stat_button.dropdown {
         min-width: auto;
 
-        > .o_button_more {
+        >.o_button_more {
             width: 100%;
             height: 100%;
 
@@ -183,10 +192,10 @@
     }
 }
 
-.o-form-buttonbox-small {
+.w-form-buttonbox-small {
     --button-box-gap: 1px;
     --button-box-per-row: 2;
-    --button-box-border-color: #{map-get(map-get($o-btns-bs-outline-override, 'secondary'), 'border')};
+    --button-box-border-color: #{map-get(map-get($w-btns-bs-outline-override, 'secondary'), 'border')};
     --button-box-spacing: #{map-get($spacers, 3)};
 
     display: grid;
@@ -194,26 +203,29 @@
     overflow: hidden;
     gap: var(--button-box-gap);
 
-    &:has(.o-dropdown-item:only-child) {
+    &:has(.w-dropdown-item:only-child) {
         --button-box-per-row: 1;
     }
-    &:not(:has(.o-dropdown-item:only-child)) {
+
+    &:not(:has(.w-dropdown-item:only-child)) {
         width: calc(100vw - var(--button-box-spacing) * 2) !important;
         left: var(--button-box-spacing) !important;
         right: var(--button-box-spacing) !important;
     }
 
-    > span .o_field_widget, .o_stat_info, .o_stat_value {
+    >span .o_field_widget,
+    .o_stat_info,
+    .o_stat_value {
         @include text-truncate;
     }
 
     .oe_stat_button,
-    .oe_stat_button > button {
+    .oe_stat_button>button {
         border-color: transparent;
         border-radius: 0;
     }
 
-    > .o-dropdown-item {
+    >.w-dropdown-item {
         outline: $btn-border-width solid var(--button-box-border-color);
     }
 }
@@ -224,7 +236,8 @@
         // Use the value of $focus-ring-box-shadow defined in bootstrap_overridden.scss,
         // but apply it with inset so the ring is visible inside the button.
         // If the default value changes, this should be updated accordingly.
-        --#{$prefix}btn-focus-box-shadow: inset 0 0 #{$focus-ring-blur} #{$focus-ring-width * .5} #{$o-component-active-border}, inset 0 0 #{$focus-ring-blur} #{$focus-ring-width} #{$focus-ring-color};
+        --#{$prefix}btn-focus-box-shadow: inset 0 0 #{$focus-ring-blur} #{$focus-ring-width * .5} #{$w-component-active-border},
+        inset 0 0 #{$focus-ring-blur} #{$focus-ring-width} #{$focus-ring-color};
 
         height: auto;
         width: 100%;
@@ -234,7 +247,7 @@
     }
 }
 
-.o_bottom_sheet .o-form-buttonbox {
+.o_bottom_sheet .w-form-buttonbox {
     --button-box-per-row: 1;
     --o-stat-text-color: currentColor;
     --o-stat-button-color: currentColor;
@@ -243,11 +256,11 @@
     display: grid;
     padding: map-get($spacers, 3) !important;
 
-    &.o-form-buttonbox-small:not(:has(.o-dropdown-item:only-child)) {
+    &.w-form-buttonbox-small:not(:has(.w-dropdown-item:only-child)) {
         width: revert !important;
     }
 
-    .o-dropdown-item {
+    .w-dropdown-item {
         outline: none;
 
         &:not(:last-child) {
@@ -259,9 +272,10 @@
             height: unset;
             padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x);
 
-            &, * {
+            &,
+            * {
                 font-size: $h5-font-size;
-                font-weight: $o-font-weight-medium;
+                font-weight: $w-font-weight-medium;
             }
 
             .o_button_icon {
@@ -274,7 +288,8 @@
             }
         }
 
-        .o_field_statinfo, .o_stat_info {
+        .o_field_statinfo,
+        .o_stat_info {
             flex-direction: row-reverse;
             align-items: baseline;
             gap: map-get($spacers, 1);

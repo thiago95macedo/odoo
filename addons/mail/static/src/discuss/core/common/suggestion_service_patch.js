@@ -31,7 +31,7 @@ const suggestionServicePatch = {
      * @override
      */
     isPartnerSuggestionValid(partner, { composerType, thread }) {
-        if (thread?.channel && partner.eq(this.store.odoobot)) {
+        if (thread?.channel && partner.eq(this.store.wethbot)) {
             return true;
         }
         return super.isPartnerSuggestionValid(partner, { composerType, thread });

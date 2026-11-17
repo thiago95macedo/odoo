@@ -473,7 +473,7 @@ class TestPosOrderReceipt(TestPointOfSaleHttpCommon, CommonPosTest):
     def test_change_receipt_times_use_shop_timezone(self):
         """
         Preparation ticket times must use the shop timezone, not the acting user's,
-        since backend users (public user, OdooBot, self ordering user) may have no tz.
+        since backend users (public user, WethBot, self ordering user) may have no tz.
         """
         self.env.company.tz = 'Europe/Brussels'  # UTC+2
         public_user = self.env.ref('base.public_user')

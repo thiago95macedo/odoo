@@ -67,11 +67,11 @@ test("make voice message in chat", async () => {
     await start();
     await openDiscuss(channelId);
     await loadLamejs(); // simulated AudioProcess.process() requires lamejs fully loaded
-    await click(".o-mail-Composer button[title='More Actions']");
+    await click(".w-mail-Composer button[title='More Actions']");
     await contains(".dropdown-item:contains('Voice Message')");
     mockDate("2023-07-31 13:00:00");
     await click(".dropdown-item:contains('Voice Message')");
-    await contains(".o-mail-VoiceRecorder:text('00 : 00')");
+    await contains(".w-mail-VoiceRecorder:text('00 : 00')");
     /**
      * Simulate 10 sec elapsed.
      * `patchDate` does not freeze the time, it merely changes the value of "now" at the time it was
@@ -89,15 +89,15 @@ test("make voice message in chat", async () => {
     mockDate("2023-07-31 13:00:10.500");
     // simulate some microphone data
     resources.audioProcessor.process([[new Float32Array(128)]]);
-    await waitFor(".o-mail-VoiceRecorder:text('00 : 10')");
-    await click(".o-mail-Composer button[title='Stop Recording']");
-    await contains(".o-mail-VoicePlayer");
+    await waitFor(".w-mail-VoiceRecorder:text('00 : 10')");
+    await click(".w-mail-Composer button[title='Stop Recording']");
+    await contains(".w-mail-VoicePlayer");
     // wait for audio stream decode + drawing of waves
     await voicePlayerDrawn;
-    await contains(".o-mail-VoicePlayer button[title='Play']");
-    await contains(".o-mail-VoicePlayer canvas", { count: 2 }); // 1 for global waveforms, 1 for played waveforms
-    await contains(".o-mail-VoicePlayer:text('00 : 03')"); // duration of call-invitation_.mp3
-    await click(".o-mail-Composer button[title='More Actions']");
+    await contains(".w-mail-VoicePlayer button[title='Play']");
+    await contains(".w-mail-VoicePlayer canvas", { count: 2 }); // 1 for global waveforms, 1 for played waveforms
+    await contains(".w-mail-VoicePlayer:text('00 : 03')"); // duration of call-invitation_.mp3
+    await click(".w-mail-Composer button[title='More Actions']");
     await contains(".dropdown-item:contains('Attach Files')"); // check menu loaded
     await contains(".dropdown-item:contains('Voice Message')", { count: 0 }); // only 1 voice message at a time
 });

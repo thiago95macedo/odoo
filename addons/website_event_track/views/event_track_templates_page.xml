@@ -177,7 +177,7 @@
                         pre_countdown_display="bool(False)"
                         main_remaining_time="int(track.website_cta_start_remaining)"
                         main_countdown_display="bool(False)"
-                        display_class.f=".o_event_cta_action">
+                        display_class.f=".w_event_cta_action">
                         <!--<t t-set="pre_countdown_text" t-value="'Talk starts in'"/>-->
                         <!--<t t-set="main_countdown_text" t-value="'Magic happens in'"/>-->
                     </t>

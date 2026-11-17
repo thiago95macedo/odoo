@@ -179,7 +179,7 @@ export class VideoSelector extends Component {
                     media.dataset.embedUrl ||
                     mediaContainer?.dataset?.embedUrl ||
                     media.dataset.src ||
-                    media.dataset.oeExpression; // backward compatibility for iframe added in older odoo versions
+                    media.dataset.oeExpression; // backward compatibility for iframe added in older weth versions
 
                 // Deprecated oeExpression store the url without protocol for some reason.
                 if (embedUrl?.startsWith("//")) {

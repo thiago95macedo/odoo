@@ -19,7 +19,7 @@ submission provided by the `payment` module.
 ## Module history
 
 - `15.2`
-  - The support for webhook notifications is added. odoo/odoo#82922
+  - The support for webhook notifications is added. weth/weth#82922
 
 ## Testing instructions
 

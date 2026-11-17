@@ -1,15 +1,16 @@
 //## Website Sale frontent design
 //## ----------------------------
 
-.o_wsale_image_viewer {
-    .o_wsale_image_viewer_control > a > i,
-    .o_wsale_image_viewer_header {
+.w_wsale_image_viewer {
+
+    .w_wsale_image_viewer_control>a>i,
+    .w_wsale_image_viewer_header {
         height: 40px;
         z-index: 2;
     }
 
-    .o_wsale_image_viewer_image {
-        .o_wsale_image_viewer_void {
+    .w_wsale_image_viewer_image {
+        .w_wsale_image_viewer_void {
             z-index: 1;
             padding-top: 64px;
             padding-bottom: 156px;
@@ -24,14 +25,14 @@
         }
     }
 
-    .o_wsale_image_viewer_carousel {
+    .w_wsale_image_viewer_carousel {
         z-index: 2;
 
         ol {
             list-style: none;
             transition: transform 250ms ease-out;
 
-            li > div > img.o_wsale_image_viewer_thumbnail {
+            li>div>img.w_wsale_image_viewer_thumbnail {
                 aspect-ratio: var(--o-wsale-product-image-ratio, 1/1);
                 border: 4px solid transparent;
                 height: 128px;
@@ -50,6 +51,7 @@
 
 #product_documents {
     .list-group-item-action {
+
         &:hover,
         &:focus {
             background-color: var(--bs-list-group-bg);

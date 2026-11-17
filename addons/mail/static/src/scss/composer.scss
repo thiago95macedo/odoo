@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'emojifont';
     src: local('Segoe UI'),
-         local('Apple Color Emoji'),
-         local('Android Emoji'),
-         local('Noto Color Emoji'),
-         local('Twitter Color Emoji'),
-         local('Twitter Color'),
-         local('EmojiOne Color'),
-         local('EmojiOne'),
-         local(EmojiSymbols),
-         local(Symbola);
+        local('Apple Color Emoji'),
+        local('Android Emoji'),
+        local('Noto Color Emoji'),
+        local('Twitter Color Emoji'),
+        local('Twitter Color'),
+        local('EmojiOne Color'),
+        local('EmojiOne'),
+        local(EmojiSymbols),
+        local(Symbola);
 }
 
 // Emoji
@@ -23,12 +23,14 @@
 .o_field_widget:has(.o_field_input_buttons > .o_mail_emojis_buttons) {
     position: relative;
 }
-.o_field_input_buttons:has(.o_mail_emojis_buttons):has([data-field-type="text"])  {
+
+.o_field_input_buttons:has(.o_mail_emojis_buttons):has([data-field-type="text"]) {
     flex-direction: column;
     justify-content: flex-end;
 }
+
 .o_modal_fullscreen {
-    z-index: $o-mail-ChatWindow-zindex + 1;
+    z-index: $w-mail-ChatWindow-zindex + 1;
 
     .arrow {
         @include o-position-absolute(50%, $grid-gutter-width*0.5);
@@ -54,10 +56,11 @@
     }
 }
 
-.o_mail_composer_form .o_form_renderer  {
+.o_mail_composer_form .o_form_renderer {
     padding-bottom: 0px;
+
     .oe-bordered-editor[name=body] .o_readonly {
-        border: 1px solid $o-gray-300;
+        border: 1px solid $w-gray-300;
         padding: 4px;
     }
 }

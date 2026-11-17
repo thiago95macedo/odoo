@@ -43,7 +43,7 @@ export function useTagNavigation(tagsContainerRef, options = {}) {
 
     useNavigation(tagsContainerRef, {
         getItems: () =>
-            tagsContainerRef()?.querySelectorAll(":scope .o_tag, :scope .o-autocomplete--input") ??
+            tagsContainerRef()?.querySelectorAll(":scope .o_tag, :scope .w-autocomplete--input") ??
             [],
         isNavigationAvailable: ({ navigator, target }) =>
             isEnabled() && navigator.isFocused && navigator.contains(target),

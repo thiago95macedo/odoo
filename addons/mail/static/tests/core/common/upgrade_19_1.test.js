@@ -61,15 +61,15 @@ test("use blur is 'on'", async () => {
     // dropdown requires an extra delay before click (because handler is registered in useEffect)
     await contains("[title='Open Actions Menu']");
     await click("[title='Open Actions Menu']");
-    await click(".o-dropdown-item:text('Voice & Video Settings')");
-    await contains(".o-discuss-CallSettings");
+    await click(".w-dropdown-item:text('Voice & Video Settings')");
+    await contains(".w-discuss-CallSettings");
     await click("button[title='Video']");
     await contains("input[title='Blur video background']:checked");
     await contains(
-        "div[title='Background blur intensity'] .o-discuss-DiscussCallSettings-width-text-percentage:text('10%')"
+        "div[title='Background blur intensity'] .w-discuss-DiscussCallSettings-width-text-percentage:text('10%')"
     );
     await contains(
-        "div[title='Edge blur intensity'] .o-discuss-DiscussCallSettings-width-text-percentage:text('30%')"
+        "div[title='Edge blur intensity'] .w-discuss-DiscussCallSettings-width-text-percentage:text('30%')"
     );
     const useBlurKey = makeRecordFieldLocalId(Settings.localId(), "useBlur");
     expect(localStorage.getItem(useBlurKey)).toBe(toRawValue(true));
@@ -108,9 +108,9 @@ test("voice activation threshold", async () => {
     // dropdown requires an extra delay before click (because handler is registered in useEffect)
     await contains("[title='Open Actions Menu']");
     await click("[title='Open Actions Menu']");
-    await click(".o-dropdown-item:text('Voice & Video Settings')");
-    await contains(".o-discuss-CallSettings");
-    await contains(".o-Discuss-CallSettings-thresholdInput:value(0.3)");
+    await click(".w-dropdown-item:text('Voice & Video Settings')");
+    await contains(".w-discuss-CallSettings");
+    await contains(".w-Discuss-CallSettings-thresholdInput:value(0.3)");
     const voiceActivationThresholdKey = makeRecordFieldLocalId(
         Settings.localId(),
         "voiceActivationThreshold"
@@ -125,17 +125,17 @@ test("member default open is 'off'", async () => {
     localStorage.setItem("mail.user_setting.no_members_default_open", "true");
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Thread:contains('Welcome to #test')");
-    await contains(".o-mail-ActionList-button[title='Members']");
-    await contains(".o-mail-ActionList-button[title='Members']:not(.active)");
+    await contains(".w-mail-Thread:contains('Welcome to #test')");
+    await contains(".w-mail-ActionList-button[title='Members']");
+    await contains(".w-mail-ActionList-button[title='Members']:not(.active)");
     const isMemberPanelOpenByDefaultKey = makeRecordFieldLocalId(
         DiscussApp.localId(),
         "isMemberPanelOpenByDefault"
     );
     expect(localStorage.getItem(isMemberPanelOpenByDefaultKey)).toBe(toRawValue(false));
     expect(localStorage.getItem("mail.user_setting.no_members_default_open")).toBe(null);
-    await click(".o-mail-ActionList-button[title='Members']");
-    await contains(".o-mail-ActionList-button[title='Members'].active"); // just to validate .active is correct selector
+    await click(".w-mail-ActionList-button[title='Members']");
+    await contains(".w-mail-ActionList-button[title='Members'].active"); // just to validate .active is correct selector
     expect(localStorage.getItem(isMemberPanelOpenByDefaultKey)).toBe(null);
 });
 
@@ -148,7 +148,7 @@ test("last active id of discuss app", async () => {
     );
     await start();
     await openDiscuss();
-    await contains(".o-mail-Thread:contains('Welcome to #test')");
+    await contains(".w-mail-Thread:contains('Welcome to #test')");
     const lastActiveId = makeRecordFieldLocalId(DiscussApp.localId(), "lastActiveId");
     expect(localStorage.getItem(lastActiveId)).toBe(toRawValue(`discuss.channel_${channelId}`));
     expect(localStorage.getItem("mail.user_setting.discuss_last_active_id")).toBe(null);
@@ -163,8 +163,8 @@ test("call auto focus is 'off", async () => {
     await openDiscuss(channelId);
     await click("[title='Start Call']");
     await click("button[aria-label='Video Settings']");
-    await click(".o-discuss-QuickVideoSettings button:has(:text('Advanced Settings'))");
-    await contains(".o-discuss-CallSettings .o-mail-TabHeader.o-active:has(:text('Video'))");
+    await click(".w-discuss-QuickVideoSettings button:has(:text('Advanced Settings'))");
+    await contains(".w-discuss-CallSettings .w-mail-TabHeader.w-active:has(:text('Video'))");
     await contains("input[title='Auto-focus speaker']:not(:checked)");
     // correct local storage values
     const useCallAutoFocusKey = makeRecordFieldLocalId(Settings.localId(), "useCallAutoFocus");
@@ -237,17 +237,17 @@ test("device input/output id", async () => {
     // dropdown requires an extra delay before click (because handler is registered in useEffect)
     await contains("[title='Open Actions Menu']");
     await click("[title='Open Actions Menu']");
-    await click(".o-dropdown-item:text('Voice & Video Settings')");
-    await contains(".o-discuss-CallSettings");
+    await click(".w-dropdown-item:text('Voice & Video Settings')");
+    await contains(".w-discuss-CallSettings");
     await contains(
-        "div[aria-label='Microphone'] .o-mail-DeviceSelect-button[data-kind='audioinput']:text('audio_input_2_label')"
+        "div[aria-label='Microphone'] .w-mail-DeviceSelect-button[data-kind='audioinput']:text('audio_input_2_label')"
     );
     await contains(
-        "div[aria-label='Speakers'] .o-mail-DeviceSelect-button[data-kind='audiooutput']:text('audio_output_2_label')"
+        "div[aria-label='Speakers'] .w-mail-DeviceSelect-button[data-kind='audiooutput']:text('audio_output_2_label')"
     );
     await click("button[title='Video']");
     await contains(
-        "div[aria-label='Camera'] .o-mail-DeviceSelect-button[data-kind='videoinput']:text('video_input_2_label')"
+        "div[aria-label='Camera'] .w-mail-DeviceSelect-button[data-kind='videoinput']:text('video_input_2_label')"
     );
     // correct local storage values
     const audioInputDeviceIdKey = makeRecordFieldLocalId(Settings.localId(), "audioInputDeviceId");

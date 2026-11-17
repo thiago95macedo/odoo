@@ -492,14 +492,14 @@ class TestSchema(common.TransactionCase):
         self.assertEqual(indexdef, [{'indexdef': Like('...USING gin...index_trigram...gin_trgm_ops...')}])
 
     def test_index_conflict_attribute(self):
-        # commit /weth/odoo/pull/100736
+        # commit /weth/weth/pull/100736
         table_names = ('test_orm_schema', 'test_orm_schema_index')
         indexdef = self._get_indexdef(table_names, '%(btree)%')
 
         self.assertEqual(indexdef, [{'indexdef': Like('...USING btree (btree)...')}])
 
     def test_long_index_attribute(self):
-        # commit /weth/odoo/pull/100736
+        # commit /weth/weth/pull/100736
         indexdef = self._get_indexdef(self.model._table, '%very_very_very_very_long_field_name%')
 
         self.assertCountEqual(indexdef, [

@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_custom/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid "Enable the use of QR-codes when paying by wire transfer."
 msgstr "Ativar o uso de códigos QR em pagamentos por transferência bancária."
 
 #. module: payment_custom
-#. odoo-python
+#. weth-python
 #: code:addons/payment_custom/models/payment_transaction.py:0
 msgid "Finalize your payment"
 msgstr "Finalize o pagamento"
@@ -153,7 +153,7 @@ msgid "Payment Transaction"
 msgstr "Transação do pagamento"
 
 #. module: payment_custom
-#. odoo-python
+#. weth-python
 #: code:addons/payment_custom/models/payment_transaction.py:0
 msgid "The customer has selected %(provider_name)s to make the payment."
 msgstr "O cliente selecionou %(provider_name)s para fazer o pagamento."

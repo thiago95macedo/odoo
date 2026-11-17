@@ -41,12 +41,12 @@ test("in a list view", async () => {
         `,
     });
     expect("td:contains(Belgium)").toHaveCount(1);
-    await contains(".o_data_cell").click();
-    await editSelectMenu(".o_field_widget[name='country'] input", { value: "United States" });
-    expect(".o_data_cell input").toHaveValue(
+    await contains(".w_data_cell").click();
+    await editSelectMenu(".w_field_widget[name='country'] input", { value: "United States" });
+    expect(".w_data_cell input").toHaveValue(
         /United States\s+\([0-9]+\/[0-9]+\/[0-9]+ [0-9]+:[0-9]+:[0-9]+\)/
     );
-    expect(".o_tz_warning").toHaveCount(1);
+    expect(".w_tz_warning").toHaveCount(1);
 });
 
 test("in a form view", async () => {
@@ -61,13 +61,13 @@ test("in a form view", async () => {
             </form>
         `,
     });
-    await contains(".o_field_widget[name='country'] input").click();
-    expect(".o_select_menu_item:contains(Belgium)").toHaveCount(1);
-    await editSelectMenu(".o_field_widget[name='country'] input", { value: "United States" });
-    expect(".o_field_widget[name='country'] input").toHaveValue(
+    await contains(".w_field_widget[name='country'] input").click();
+    expect(".w_select_menu_item:contains(Belgium)").toHaveCount(1);
+    await editSelectMenu(".w_field_widget[name='country'] input", { value: "United States" });
+    expect(".w_field_widget[name='country'] input").toHaveValue(
         /United States\s+\([0-9]+\/[0-9]+\/[0-9]+ [0-9]+:[0-9]+:[0-9]+\)/
     );
-    expect(".o_tz_warning").toHaveCount(1);
+    expect(".w_tz_warning").toHaveCount(1);
 });
 
 test("timezone_mismatch_field mismatch property", () => {

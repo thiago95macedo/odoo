@@ -76,15 +76,15 @@ export class AccountLabelTextField extends ListTextField {
     }
 
     get m2xInput() {
-        return this.rootRef()?.querySelector(".o_m2o_overlay .o-autocomplete--input");
+        return this.rootRef()?.querySelector(".w_m2o_overlay .w-autocomplete--input");
     }
 
     get isDropdownVisible() {
-        const menu = this.rootRef()?.querySelector(".o_m2o_overlay .o-autocomplete--dropdown-menu");
+        const menu = this.rootRef()?.querySelector(".w_m2o_overlay .w-autocomplete--dropdown-menu");
         if (!menu) {
             return false;
         }
-        if (menu.querySelector(".o_loading") || menu.querySelector("li.o_m2o_no_result")) {
+        if (menu.querySelector(".w_loading") || menu.querySelector("li.w_m2o_no_result")) {
             return false;
         }
         return true;

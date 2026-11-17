@@ -23,10 +23,10 @@ export const SEE_RECORD_LIST = async (position, env, newWindow) => {
     const listId = env.model.getters.getListIdFromPosition(position);
     const dataSource = await env.model.getters.getAsyncListDataSource(listId);
     let index;
-    if (functionName === "ODOO.LIST") {
+    if (functionName === "WETH.LIST") {
         const mainPosition = env.model.getters.getCellPosition(cell.id);
         index = position.row - mainPosition.row;
-    } else if (functionName === "ODOO.LIST.VALUE") {
+    } else if (functionName === "WETH.LIST.VALUE") {
         const evaluatedArgs = args
             .map(astToFormula)
             .map((arg) => env.model.getters.evaluateFormula(sheetId, arg));
@@ -62,7 +62,7 @@ export const SEE_RECORD_LIST = async (position, env, newWindow) => {
 
 /**
  * @param {import("@weth/o-spreadsheet").CellPosition} position
- * @param {import("@spreadsheet").OdooGetters} getters
+ * @param {import("@spreadsheet").WethGetters} getters
  * @returns {boolean}
  */
 export const SEE_RECORD_LIST_VISIBLE = (position, getters) => {
@@ -81,11 +81,11 @@ export const SEE_RECORD_LIST_VISIBLE = (position, getters) => {
         return false;
     }
     const { functionName } = getFirstListFunction(cell.compiledFormula, getters);
-    if (functionName === "ODOO.LIST") {
+    if (functionName === "WETH.LIST") {
         const mainPosition = getters.getCellPosition(cell.id);
         const rowOffset = position.row - mainPosition.row;
         return rowOffset >= 1;
     } else {
-        return functionName === "ODOO.LIST.VALUE";
+        return functionName === "WETH.LIST.VALUE";
     }
 };

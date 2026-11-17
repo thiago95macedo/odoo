@@ -7,7 +7,7 @@ import { useEnv } from "@web/owl2/utils";
 const LOCAL_STORAGE_PREFIX = "presence";
 
 export class PresencePlugin extends Plugin {
-    isOdooFocused = signal(true);
+    isWethFocused = signal(true);
     /** @private */
     lastPresenceTime = signal(
         browser.localStorage.getItem(`${LOCAL_STORAGE_PREFIX}.lastPresence`) ||
@@ -47,11 +47,11 @@ export class PresencePlugin extends Plugin {
         } catch {
             // noop
         }
-        this.isOdooFocused.set(isFocused);
-        browser.localStorage.setItem(`${LOCAL_STORAGE_PREFIX}.focus`, this.isOdooFocused());
-        if (this.isOdooFocused()) {
+        this.isWethFocused.set(isFocused);
+        browser.localStorage.setItem(`${LOCAL_STORAGE_PREFIX}.focus`, this.isWethFocused());
+        if (this.isWethFocused()) {
             this.lastPresenceTime.set(luxon.DateTime.now().ts);
-            this.env.bus.trigger("window_focus", this.isOdooFocused());
+            this.env.bus.trigger("window_focus", this.isWethFocused());
         }
     }
 
@@ -60,7 +60,7 @@ export class PresencePlugin extends Plugin {
      */
     onStorage({ key, newValue }) {
         if (key === `${LOCAL_STORAGE_PREFIX}.focus`) {
-            this.isOdooFocused.set(JSON.parse(newValue));
+            this.isWethFocused.set(JSON.parse(newValue));
             this.env.bus.trigger("window_focus", newValue);
         }
         if (key === `${LOCAL_STORAGE_PREFIX}.lastPresence`) {

@@ -1,6 +1,6 @@
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { WethCorePlugin } from "@spreadsheet/plugins";
 
-export class IrMenuPlugin extends OdooCorePlugin {
+export class IrMenuPlugin extends WethCorePlugin {
     static getters = /** @type {const} */ (["getIrMenu"]);
     constructor(config) {
         super(config);

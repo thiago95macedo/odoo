@@ -5,18 +5,18 @@
 %o-html-layout-fill {
   height: 100%;
 
-  .o_web_client {
+  .w_web_client {
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
 
-    > .o_action_manager {
+    >.w_action_manager {
       direction: ltr; //Define direction attribute here so when rtlcss preprocessor run, it converts it to rtl
       flex: 1 1 auto;
       height: 100%;
       overflow: hidden;
 
-      > .o_action {
+      >.w_action {
         height: 100%;
         display: flex;
         flex-flow: column nowrap;
@@ -24,28 +24,32 @@
 
         @include media-breakpoint-up(lg) {
           -ms-overflow-style: none; // IE and Edge
-          scrollbar-width: none;    // Firefox
+          scrollbar-width: none; // Firefox
 
-          &::-webkit-scrollbar {    // Chrome, Safari and Opera
+          &::-webkit-scrollbar {
+            // Chrome, Safari and Opera
             display: none;
           }
         }
 
-        > .o_control_panel {
+        >.w_control_panel {
           flex: 0 0 auto;
         }
-        .o_content {
+
+        .w_content {
           overflow: auto;
           height: 100%;
         }
 
         @include media-breakpoint-down(md) {
+
           // Made the o_action scroll instead of its o_content.
           // Except when the view wants to handle the scroll itself.
-          &:not(.o_action_delegate_scroll), .o_form_view_container {
+          &:not(.w_action_delegate_scroll),
+          .w_form_view_container {
             overflow: auto;
 
-            .o_content {
+            .w_content {
               overflow: initial;
             }
           }
@@ -53,20 +57,20 @@
       }
     }
 
-    .o_main_navbar {
+    .w_main_navbar {
       flex: 0 0 auto;
     }
 
-    .o_control_panel {
+    .w_control_panel {
       flex: 0 0 auto;
     }
 
-    .o_content {
+    .w_content {
       direction: ltr; //Define direction attribute here so when rtlcss preprocessor run, it converts it to rtl
       flex: 1 1 auto;
       position: relative; // Allow to redistribute the 100% height to its child
 
-      > .o_view_controller {
+      >.w_view_controller {
         position: absolute; // Get the 100% height of its flex parent
         top: 0;
         right: 0;
@@ -85,9 +89,9 @@
 }
 
 @include media-only(screen) {
-    html {
-        @extend %o-html-layout-fill;
-    }
+  html {
+    @extend %o-html-layout-fill;
+  }
 }
 
 //------------------------------------------------------------------------------
@@ -95,12 +99,12 @@
 //------------------------------------------------------------------------------
 
 @include media-only(print) {
-    .o_web_client {
-        max-width: 100%;
-    }
+  .w_web_client {
+    max-width: 100%;
+  }
 
-    @page {
-        margin: 0.5cm;
-        size: a4 auto;
-    }
+  @page {
+    margin: 0.5cm;
+    size: a4 auto;
+  }
 }

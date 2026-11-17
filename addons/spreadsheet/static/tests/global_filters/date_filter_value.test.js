@@ -31,7 +31,7 @@ test("basic date filter value", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown:first").click();
+    await contains(".w-date-filter-dropdown:first").click();
     expect.verifySteps(["update"]);
 });
 
@@ -90,7 +90,7 @@ test("Date options are computed from the current date", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
+    const inputs = fixture.querySelectorAll(".w-date-filter-dropdown input");
     expect(inputs.length).toBe(5);
     expect(inputs[0].value).toBe("July 2022");
     expect(inputs[1].value).toBe("Q3 2022");
@@ -106,7 +106,7 @@ test("Month props value should override date options", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
+    const inputs = fixture.querySelectorAll(".w-date-filter-dropdown input");
     expect(inputs.length).toBe(5);
     expect(inputs[0].value).toBe("January 2025");
     expect(inputs[1].value).toBe("Q3 2022");
@@ -122,7 +122,7 @@ test("Quarter props value should override date options", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
+    const inputs = fixture.querySelectorAll(".w-date-filter-dropdown input");
     expect(inputs.length).toBe(5);
     expect(inputs[0].value).toBe("July 2022");
     expect(inputs[1].value).toBe("Q1 2025");
@@ -138,7 +138,7 @@ test("Year props value should override date options", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
+    const inputs = fixture.querySelectorAll(".w-date-filter-dropdown input");
     expect(inputs.length).toBe(5);
     expect(inputs[0].value).toBe("July 2022");
     expect(inputs[1].value).toBe("Q3 2022");
@@ -153,7 +153,7 @@ test("All the options should be displayed", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const options = fixture.querySelectorAll(".o-date-filter-dropdown .o-date-option-label");
+    const options = fixture.querySelectorAll(".w-date-filter-dropdown .w-date-option-label");
     expect(options.length).toBe(14);
     expect(options[0].textContent).toBe("Today");
     expect(options[1].textContent).toBe("Yesterday");
@@ -197,7 +197,7 @@ test("Can select a relative period", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='last_30_days']").click();
+    await contains(".w-date-filter-dropdown[data-id='last_30_days']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -212,7 +212,7 @@ test("Can select a month", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='month']").click();
+    await contains(".w-date-filter-dropdown[data-id='month']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -227,7 +227,7 @@ test("Can select previous month", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='month'] .btn-previous").click();
+    await contains(".w-date-filter-dropdown[data-id='month'] .btn-previous").click();
     expect.verifySteps(["update"]);
 });
 
@@ -242,7 +242,7 @@ test("Can select next month", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='month'] .btn-next").click();
+    await contains(".w-date-filter-dropdown[data-id='month'] .btn-next").click();
     expect.verifySteps(["update"]);
 });
 
@@ -257,7 +257,7 @@ test("Can select a quarter", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='quarter']").click();
+    await contains(".w-date-filter-dropdown[data-id='quarter']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -272,7 +272,7 @@ test("Can select previous quarter", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='quarter'] .btn-previous").click();
+    await contains(".w-date-filter-dropdown[data-id='quarter'] .btn-previous").click();
     expect.verifySteps(["update"]);
 });
 
@@ -287,7 +287,7 @@ test("Can select next quarter", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='quarter'] .btn-next").click();
+    await contains(".w-date-filter-dropdown[data-id='quarter'] .btn-next").click();
     expect.verifySteps(["update"]);
 });
 
@@ -302,7 +302,7 @@ test("Can select a year", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='year']").click();
+    await contains(".w-date-filter-dropdown[data-id='year']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -317,7 +317,7 @@ test("Can select previous year", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='year'] .btn-previous").click();
+    await contains(".w-date-filter-dropdown[data-id='year'] .btn-previous").click();
     expect.verifySteps(["update"]);
 });
 
@@ -332,7 +332,7 @@ test("Can select next year", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown[data-id='year'] .btn-next").click();
+    await contains(".w-date-filter-dropdown[data-id='year'] .btn-next").click();
     expect.verifySteps(["update"]);
 });
 
@@ -347,7 +347,7 @@ test("Can select all time", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-date-filter-dropdown:not([data-id])").click();
+    await contains(".w-date-filter-dropdown:not([data-id])").click();
     expect.verifySteps(["update"]);
 });
 
@@ -358,7 +358,7 @@ test("Input value is correct for relative period", async function () {
     });
     expect("input").toHaveValue("Last 30 Days");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("Last 30 Days");
+    expect("div.selected .w-date-option-label").toHaveText("Last 30 Days");
 });
 
 test("Input value is correct for month", async function () {
@@ -368,7 +368,7 @@ test("Input value is correct for month", async function () {
     });
     expect("input").toHaveValue("January 2023");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("Month");
+    expect("div.selected .w-date-option-label").toHaveText("Month");
 });
 
 test("Input value is correct for quarter", async function () {
@@ -378,7 +378,7 @@ test("Input value is correct for quarter", async function () {
     });
     expect("input").toHaveValue("Q1 2023");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("Quarter");
+    expect("div.selected .w-date-option-label").toHaveText("Quarter");
 });
 
 test("Input value is correct for year", async function () {
@@ -388,7 +388,7 @@ test("Input value is correct for year", async function () {
     });
     expect("input").toHaveValue("2023");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("Year");
+    expect("div.selected .w-date-option-label").toHaveText("Year");
 });
 
 test("Input value is correct for range", async function () {
@@ -398,7 +398,7 @@ test("Input value is correct for range", async function () {
     });
     expect("input").toHaveValue("January 1 – 31, 2023");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("Custom Range");
+    expect("div.selected .w-date-option-label").toHaveText("Custom Range");
 });
 
 test("Input value is correct for all time", async function () {
@@ -408,7 +408,7 @@ test("Input value is correct for all time", async function () {
     });
     expect("input").toHaveValue("All time");
     await contains("input").click();
-    expect("div.selected .o-date-option-label").toHaveText("All time");
+    expect("div.selected .w-date-option-label").toHaveText("All time");
 });
 
 test("Can open date time picker to select a range", async function () {

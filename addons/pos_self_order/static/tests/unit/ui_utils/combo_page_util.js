@@ -45,7 +45,7 @@ export async function clickNext() {
 export async function increaseComboItemQty(productName, qty) {
     await waitFor(`.combo_product_box span:contains("${productName}")`);
     for (let i = 1; i < qty; i++) {
-        await waitFor(`.item_qty_container .o-so-tabular-nums:contains("${i}")`);
+        await waitFor(`.item_qty_container .w-so-tabular-nums:contains("${i}")`);
         await contains(".item_qty_container button:eq(1)").click();
         await animationFrame();
     }

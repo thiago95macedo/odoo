@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 /**
- * This class is used to fix carousel auto-slide behavior in Odoo 17.4 and up.
+ * This class is used to fix carousel auto-slide behavior in WETH 17.4 and up.
  * It handles upgrade cases from lower versions.
  * TODO find a way to get rid of this with an upgrade script?
  */

@@ -39,7 +39,7 @@ DEFAULT_PAYMENT_METHOD_CODES = {
 # their bank accounts.
 # Items suffixed with "_FPX" are for individual accounts.
 # Items suffixed with "_BUSINESS" are for business accounts.
-# When the user chooses FPX in Odoo, this list becomes filtered payment options in Xendit dashboard.
+# When the user chooses FPX in WETH, this list becomes filtered payment options in Xendit dashboard.
 # When a webhook is received from Xendit, we can map all of these options back to 'fpx' in WETH.
 FPX_METHODS = [
     "UOB_FPX",

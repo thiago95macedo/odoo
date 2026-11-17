@@ -221,7 +221,7 @@ export class TablePlugin extends Plugin {
         // tables cannot be wrapped yet: wrap them once they get there.
         normalize_processors: this.wrapTables.bind(this),
         clipboard_content_processors: this.processContentForClipboard.bind(this),
-        paste_odoo_editor_html_processors: (fragment) => {
+        paste_weth_editor_html_processors: (fragment) => {
             if (!this.config.allowScrollableTables) {
                 this.unwrapTables(fragment);
             }
@@ -243,7 +243,7 @@ export class TablePlugin extends Plugin {
         delete_range_overrides: this.handleDeleteRange.bind(this),
         apply_color_overrides: this.applyTableColor.bind(this),
         paste_html_overrides: this.handlePasteTableIntoExistingTable.bind(this),
-        paste_odoo_editor_html_overrides: this.handlePasteTableIntoExistingTable.bind(this),
+        paste_weth_editor_html_overrides: this.handlePasteTableIntoExistingTable.bind(this),
 
         /** Predicates */
         is_node_removable_predicates: (node, root) => {
@@ -859,9 +859,9 @@ export class TablePlugin extends Plugin {
                 if (
                     columnIndex > 0 &&
                     cell ===
-                        (position === "after"
-                            ? tableGrid[rowIndex + 1]?.[columnIndex]
-                            : tableGrid[rowIndex - 1]?.[columnIndex])
+                    (position === "after"
+                        ? tableGrid[rowIndex + 1]?.[columnIndex]
+                        : tableGrid[rowIndex - 1]?.[columnIndex])
                 ) {
                     cell.rowSpan += 1;
                 } else {
@@ -1478,9 +1478,9 @@ export class TablePlugin extends Plugin {
             } else if (
                 ev &&
                 closestElement(ev.target, "table") ===
-                    closestElement(selection.anchorNode, "table") &&
+                closestElement(selection.anchorNode, "table") &&
                 closestElement(ev.target, isTableCell) !==
-                    closestElement(selection.focusNode, isTableCell)
+                closestElement(selection.focusNode, isTableCell)
             ) {
                 // After the manual update firefox will not be able the table selection automatically
                 // so we need to update the selection manually too.
@@ -1549,7 +1549,7 @@ export class TablePlugin extends Plugin {
             if (
                 !(ev.ctrlKey && ["ArrowUp", "ArrowDown"].includes(ev.key)) &&
                 (focusNode.nodeType === Node.TEXT_NODE ||
-                    focusNode.matches("br, p, div.o-paragraph"))
+                    focusNode.matches("br, p, div.w-paragraph"))
             ) {
                 const isAtTextBoundary = (key) => {
                     const actualSelection = this.document.getSelection();
@@ -1918,7 +1918,7 @@ export class TablePlugin extends Plugin {
                 cellContents.filter(isBlock).every(isEmptyBlock) &&
                 Math.abs(
                     ev.clientX -
-                        (this._lastMousedownPosition ? this._lastMousedownPosition[0] : ev.clientX)
+                    (this._lastMousedownPosition ? this._lastMousedownPosition[0] : ev.clientX)
                 ) >= 20
             ) {
                 // Handle selecting an empty cell.

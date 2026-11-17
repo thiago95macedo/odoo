@@ -23,7 +23,7 @@ defineModels([ResConfigSettings]);
 
 test("Simple render", async () => {
     onRpc("/base_setup/demo_active", () => true);
-    redirect("/odoo");
+    redirect("/weth");
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -35,9 +35,9 @@ test("Simple render", async () => {
         resModel: "res.config.settings",
     });
     expect(router.current).toEqual({});
-    expect(".o_widget_res_config_dev_tool").toHaveCount(1);
+    expect(".w_widget_res_config_dev_tool").toHaveCount(1);
     expect(queryAllTexts`#developer_tool h2`).toEqual(["Developer Tools"]);
-    expect(queryAllTexts`#developer_tool .o_setting_right_pane button`).toEqual([
+    expect(queryAllTexts`#developer_tool .w_setting_right_pane button`).toEqual([
         "Activate the developer mode",
         "Activate the developer mode (with assets)",
         "Activate the developer mode (with tests assets)",
@@ -51,7 +51,7 @@ test("Activate the developer mode", async () => {
             expect.step("location reload");
         },
     });
-    redirect("/odoo");
+    redirect("/weth");
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -76,7 +76,7 @@ test("Activate the developer mode (with assets)", async () => {
             expect.step("location reload");
         },
     });
-    redirect("/odoo");
+    redirect("/weth");
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -101,7 +101,7 @@ test("Activate the developer mode (with tests assets)", async () => {
             expect.step("location reload");
         },
     });
-    redirect("/odoo");
+    redirect("/weth");
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -128,7 +128,7 @@ test("Activate the developer modeddd (with tests assets)", async () => {
             expect.step("location reload");
         },
     });
-    redirect("/odoo?debug=assets%2Ctests");
+    redirect("/weth?debug=assets%2Ctests");
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -143,7 +143,7 @@ test("Activate the developer modeddd (with tests assets)", async () => {
     await animationFrame();
     expect(router.current).toEqual({ debug: "assets,tests" });
 
-    expect(queryAllTexts`#developer_tool .o_setting_right_pane button`).toEqual([
+    expect(queryAllTexts`#developer_tool .w_setting_right_pane button`).toEqual([
         "Deactivate the developer mode",
     ]);
 

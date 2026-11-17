@@ -358,7 +358,7 @@ export class DashboardSearchBar extends Component {
 
         return {
             virtualFocus: true,
-            getItems: () => this.menuRef()?.querySelectorAll(":scope .o-dropdown-item") ?? [],
+            getItems: () => this.menuRef()?.querySelectorAll(":scope .w-dropdown-item") ?? [],
             isNavigationAvailable: ({ navigator, target }) => this.inputDropdownState.isOpen,
             onUpdated: (navigator) => (this.navigator = navigator),
             hotkeys: {

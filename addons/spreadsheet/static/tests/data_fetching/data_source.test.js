@@ -32,7 +32,7 @@ test("data source is ready after all concurrent requests are resolved", async ()
         }
     }
     const dataSource = new TestDataSource({
-        odooDataProvider: {
+        wethDataProvider: {
             notify: () => expect.step("notify"),
             notifyWhenPromiseResolves: () => expect.step("notify-from-promise"),
             cancelPromise: () => expect.step("cancel-promise"),
@@ -64,7 +64,7 @@ test("Datasources handle errors thrown at _load", async () => {
     }
 
     const dataSource = new TestDataSource({
-        odooDataProvider: {
+        wethDataProvider: {
             notify: () => expect.step("notify"),
             notifyWhenPromiseResolves: () => expect.step("notify-from-promise"),
             cancelPromise: () => expect.step("cancel-promise"),

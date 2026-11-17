@@ -37,11 +37,11 @@ test("BuilderButton with action “websiteConfig” are correctly displayed", as
     });
     await setupWebsiteBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(0);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(1);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(1);
     expect("[data-action-param*='test_template_1']").not.toHaveClass("active");
     expect("[data-action-param*='test_template_2']").toHaveClass("active");
     expect.verifySteps(["theme_customize_data_get"]);
@@ -136,11 +136,11 @@ test("use isActiveItem base on BuilderButton with 'websiteConfig'", async () => 
     });
     await setupWebsiteBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(0);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(1);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(1);
     expect("[data-action-param*='test_template_1']").toHaveClass("active");
     expect(".test").toHaveCount(1);
     expect.verifySteps(["theme_customize_data_get"]);
@@ -164,11 +164,11 @@ test("use isActiveItem base on BuilderCheckbox with 'websiteConfig'", async () =
     });
     await setupWebsiteBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(0);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(1);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(1);
     expect("[data-action-param*='test_template_1'] .form-check-input:checked").toHaveCount(1);
     expect(".test").toHaveCount(1);
     expect.verifySteps(["theme_customize_data_get"]);
@@ -233,13 +233,13 @@ test("use isActiveItem base on BuilderSelectItem with websiteConfig", async () =
     await setupWebsiteBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
     await animationFrame();
-    expect(".o-tab-content > .o_customize_tab").toHaveCount(1);
+    expect(".w-tab-content > .o_customize_tab").toHaveCount(1);
     expect(".my-test").toHaveCount(1);
     expect("[data-label='Test'] .dropdown-toggle").toHaveText("b");
-    expect(".o-dropdown-item:visible").toHaveCount(0);
+    expect(".w-dropdown-item:visible").toHaveCount(0);
 
     await contains("[data-label='Test'] .dropdown-toggle").click();
-    expect(".o-dropdown-item:visible").toHaveCount(2);
+    expect(".w-dropdown-item:visible").toHaveCount(2);
 
     await contains("[data-action-param*='test_template_1']").click();
     expect.verifySteps(["theme_customize_data_get", "theme_customize_data"]);
@@ -347,7 +347,7 @@ test("BuilderButton with action “previewableWebsiteConfig”", async () => {
     expect(":iframe .test-options-target").not.toHaveClass("test_class_1");
     expect(":iframe .test-options-target").toHaveClass("test_class_2");
 
-    await contains(".o-snippets-top-actions [data-action='save']").click();
+    await contains(".w-snippets-top-actions [data-action='save']").click();
     expect.verifySteps(["websiteSave", "theme_customize_data"]);
 });
 
@@ -404,7 +404,7 @@ test("Undo and redo “previewableWebsiteConfig” action", async () => {
     expect(":iframe .test-options-target").toHaveClass("test_class_1");
     expect(":iframe .test-options-target").not.toHaveClass("test_class_2");
 
-    await contains(".o-snippets-top-actions [data-action='save']").click();
+    await contains(".w-snippets-top-actions [data-action='save']").click();
     expect.verifySteps(["websiteSave", "theme_customize_data"]);
 });
 
@@ -431,7 +431,7 @@ test("No rpc call if “previewableWebsiteConfig” action is undone", async () 
     await contains(":iframe .test-options-target").click();
     await contains("[data-action-param*='test_template']").click();
     undo(editor);
-    await contains(".o-snippets-top-actions [data-action='save']").click();
+    await contains(".w-snippets-top-actions [data-action='save']").click();
     expect.verifySteps([]); // No call to `theme_customize_data` nor to `save`
 });
 

@@ -1,6 +1,6 @@
 import { CommandResult } from "../../o_spreadsheet/cancelled_reason";
 import { helpers, CompiledFormula, registries } from "@weth/o-spreadsheet";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { WethCorePlugin } from "@spreadsheet/plugins";
 
 const { getMaxObjectId, deepEquals, deepCopy, getCanonicalSymbolName } = helpers;
 const { specificRangeTransformRegistry } = registries;
@@ -32,7 +32,7 @@ const { specificRangeTransformRegistry } = registries;
  * @property {import("@weth/o-spreadsheet").Range[]} dependencies
  */
 
-function updateOdooListCommandAdaptRange(cmd, { adaptFormulaString }) {
+function updateWethListCommandAdaptRange(cmd, { adaptFormulaString }) {
     cmd = deepCopy(cmd);
     for (const columnName in cmd.list.columns) {
         const column = cmd.list.columns[columnName];
@@ -46,8 +46,8 @@ function updateOdooListCommandAdaptRange(cmd, { adaptFormulaString }) {
     }
     return cmd;
 }
-specificRangeTransformRegistry.add("UPDATE_ODOO_LIST", updateOdooListCommandAdaptRange);
-function insertOdooListCommandAdaptRange(cmd, { adaptFormulaString }) {
+specificRangeTransformRegistry.add("UPDATE_WETH_LIST", updateWethListCommandAdaptRange);
+function insertWethListCommandAdaptRange(cmd, { adaptFormulaString }) {
     cmd = deepCopy(cmd);
     for (const columnName in cmd.definition.columns) {
         const column = cmd.definition.columns[columnName];
@@ -61,9 +61,9 @@ function insertOdooListCommandAdaptRange(cmd, { adaptFormulaString }) {
     }
     return cmd;
 }
-specificRangeTransformRegistry.add("INSERT_ODOO_LIST", insertOdooListCommandAdaptRange);
+specificRangeTransformRegistry.add("INSERT_WETH_LIST", insertWethListCommandAdaptRange);
 
-export class ListCorePlugin extends OdooCorePlugin {
+export class ListCorePlugin extends WethCorePlugin {
     static getters = /** @type {const} */ ([
         "getListDisplayName",
         "getListDefinition",
@@ -91,7 +91,7 @@ export class ListCorePlugin extends OdooCorePlugin {
      */
     allowDispatch(cmd) {
         switch (cmd.type) {
-            case "INSERT_ODOO_LIST":
+            case "INSERT_WETH_LIST":
                 if (cmd.listId !== this.nextId.toString()) {
                     return CommandResult.InvalidNextId;
                 }
@@ -99,7 +99,7 @@ export class ListCorePlugin extends OdooCorePlugin {
                     return CommandResult.ListIdDuplicated;
                 }
                 return this._checkDefinition(cmd.definition);
-            case "DUPLICATE_ODOO_LIST":
+            case "DUPLICATE_WETH_LIST":
                 if (!this.lists[cmd.listId]) {
                     return CommandResult.ListIdNotFound;
                 }
@@ -107,7 +107,7 @@ export class ListCorePlugin extends OdooCorePlugin {
                     return CommandResult.InvalidNextId;
                 }
                 break;
-            case "RENAME_ODOO_LIST":
+            case "RENAME_WETH_LIST":
                 if (!(cmd.listId in this.lists)) {
                     return CommandResult.ListIdNotFound;
                 }
@@ -115,7 +115,7 @@ export class ListCorePlugin extends OdooCorePlugin {
                     return CommandResult.EmptyName;
                 }
                 break;
-            case "UPDATE_ODOO_LIST":
+            case "UPDATE_WETH_LIST":
                 if (!(cmd.listId in this.lists)) {
                     return CommandResult.ListIdNotFound;
                 }
@@ -123,7 +123,7 @@ export class ListCorePlugin extends OdooCorePlugin {
                     return CommandResult.ListDefinitionUnchanged;
                 }
                 return this._checkDefinition(cmd.list);
-            case "UPDATE_ODOO_LIST_DOMAIN":
+            case "UPDATE_WETH_LIST_DOMAIN":
                 if (!(cmd.listId in this.lists)) {
                     return CommandResult.ListIdNotFound;
                 }
@@ -138,7 +138,7 @@ export class ListCorePlugin extends OdooCorePlugin {
      */
     handle(cmd) {
         switch (cmd.type) {
-            case "INSERT_ODOO_LIST": {
+            case "INSERT_WETH_LIST": {
                 const { sheetId, col, row, definition, listId, linesNumber, mode } = cmd;
                 const anchor = [col, row];
                 this._addList(listId, definition);
@@ -146,24 +146,24 @@ export class ListCorePlugin extends OdooCorePlugin {
                 this._insertList(sheetId, anchor, listId, linesNumber, columns, mode);
                 break;
             }
-            case "DUPLICATE_ODOO_LIST": {
+            case "DUPLICATE_WETH_LIST": {
                 const { listId, newListId, duplicatedListName } = cmd;
                 const duplicatedList = deepCopy(this.lists[listId]);
                 duplicatedList.name = duplicatedListName ?? duplicatedList.name + " (copy)";
                 this._addList(newListId, duplicatedList);
                 break;
             }
-            case "RE_INSERT_ODOO_LIST": {
+            case "RE_INSERT_WETH_LIST": {
                 const { sheetId, col, row, listId, linesNumber, columns, mode } = cmd;
                 const anchor = [col, row];
                 this._insertList(sheetId, anchor, listId, linesNumber, columns, mode);
                 break;
             }
-            case "RENAME_ODOO_LIST": {
+            case "RENAME_WETH_LIST": {
                 this.history.update("lists", cmd.listId, "name", cmd.name);
                 break;
             }
-            case "REMOVE_ODOO_LIST": {
+            case "REMOVE_WETH_LIST": {
                 const lists = { ...this.lists };
                 delete lists[cmd.listId];
                 this.history.update("lists", lists);
@@ -172,11 +172,11 @@ export class ListCorePlugin extends OdooCorePlugin {
                 this.history.update("compiledColumnFormulas", compiledColumnFormulas);
                 break;
             }
-            case "UPDATE_ODOO_LIST_DOMAIN": {
+            case "UPDATE_WETH_LIST_DOMAIN": {
                 this.history.update("lists", cmd.listId, "domain", cmd.domain);
                 break;
             }
-            case "UPDATE_ODOO_LIST": {
+            case "UPDATE_WETH_LIST": {
                 this.history.update("lists", cmd.listId, cmd.list);
                 this._compileCalculatedColumns(cmd.listId, cmd.list);
                 break;
@@ -352,7 +352,7 @@ export class ListCorePlugin extends OdooCorePlugin {
     }
 
     /**
-     * Build an Odoo list
+     * Build an WETH list
      * @param {string} sheetId Id of the sheet
      * @param {[number,number]} anchor Top-left cell in which the list should be inserted
      * @param {string} id Id of the list
@@ -374,8 +374,8 @@ export class ListCorePlugin extends OdooCorePlugin {
         let [col, row] = anchor;
         for (const column of columns) {
             const content = column.string
-                ? `=ODOO.LIST.HEADER(${id},"${column.name}","${column.string}")`
-                : `=ODOO.LIST.HEADER(${id},"${column.name}")`;
+                ? `=WETH.LIST.HEADER(${id},"${column.name}","${column.string}")`
+                : `=WETH.LIST.HEADER(${id},"${column.name}")`;
             this.dispatch("UPDATE_CELL", {
                 sheetId,
                 col,
@@ -396,7 +396,7 @@ export class ListCorePlugin extends OdooCorePlugin {
                     sheetId,
                     col,
                     row,
-                    content: `=ODOO.LIST.VALUE(${id},${i},"${column.name}")`,
+                    content: `=WETH.LIST.VALUE(${id},${i},"${column.name}")`,
                 });
                 col++;
             }
@@ -405,7 +405,7 @@ export class ListCorePlugin extends OdooCorePlugin {
     }
 
     _insertSplillableList(sheetId, anchor, id, linesNumber) {
-        const content = linesNumber ? `=ODOO.LIST(${id}, ${linesNumber})` : `=ODOO.LIST(${id})`;
+        const content = linesNumber ? `=WETH.LIST(${id}, ${linesNumber})` : `=WETH.LIST(${id})`;
         this.dispatch("UPDATE_CELL", {
             sheetId,
             col: anchor[0],

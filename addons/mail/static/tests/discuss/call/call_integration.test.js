@@ -74,8 +74,8 @@ onlineTest("Can join a call in p2p", async (assert) => {
 
     await openDiscuss(channelId);
     await click("[title='Join Call']");
-    await contains(".o-discuss-Call");
-    await contains(".o-discuss-CallParticipantCard[aria-label='Remote']");
+    await contains(".w-discuss-Call");
+    await contains(".w-discuss-CallParticipantCard[aria-label='Remote']");
     await Promise.all([localUserConnected, remoteUserConnected]);
     await contains("span[data-connection-state='connected']");
 });

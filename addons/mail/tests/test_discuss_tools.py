@@ -270,7 +270,7 @@ class TestDiscussTools(MailCase):
                 "discuss_category_id": public_category.id,
             },
         )
-        odoobot_partner = self.env.ref("base.partner_root")
+        wethbot_partner = self.env.ref("base.partner_root")
         bob_user = new_test_user(self.env, "bob_user", name="Bob", email="bob@secret.com")
         bob_member = public_channel._add_members(users=bob_user)
         portal_user = new_test_user(self.env, login="portal_user", groups="base.group_portal")
@@ -314,7 +314,7 @@ class TestDiscussTools(MailCase):
             "discuss.channel.member": [
                 {
                     "id": public_channel.self_member_id.id,
-                    "partner_id": odoobot_partner.id,
+                    "partner_id": wethbot_partner.id,
                     "seen_message_id": test_message.id,
                 },
                 {
@@ -324,7 +324,7 @@ class TestDiscussTools(MailCase):
                 },
             ],
             "res.partner": [
-                {"id": odoobot_partner.id, "name": "OdooBot"},
+                {"id": wethbot_partner.id, "name": "WethBot"},
                 {"id": bob_user.partner_id.id, "name": "Bob"},
             ],
         }
@@ -344,9 +344,9 @@ class TestDiscussTools(MailCase):
                     "sequence": public_category.sequence,
                 },
             ],
-            "mail.message": [{"id": test_message.id, "author_id": odoobot_partner.id}],
+            "mail.message": [{"id": test_message.id, "author_id": wethbot_partner.id}],
             "res.partner": [
-                {"id": odoobot_partner.id, "email": "odoobot@example.com", "phone": False},
+                {"id": wethbot_partner.id, "email": "wethbot@example.com", "phone": False},
                 {"id": bob_user.partner_id.id, "email": "bob@secret.com", "phone": False},
             ],
         }

@@ -7,7 +7,7 @@ import { getTemplate } from "@web/core/templates";
 import { session } from "@web/session";
 
 /**
- * @typedef {{}} OdooEnv
+ * @typedef {{}} WethEnv
  */
 
 // Keys that used to be on the env and are now provided elsewhere. Reading one
@@ -25,9 +25,9 @@ const REMOVED_KEYS = {
 };
 
 /**
- * Return a value Odoo Env object
+ * Return a value WETH Env object
  *
- * @returns {OdooEnv}
+ * @returns {WethEnv}
  */
 export function makeEnv() {
     // `bus` is set by `EnvBusBridgePlugin` once the app's plugins start.

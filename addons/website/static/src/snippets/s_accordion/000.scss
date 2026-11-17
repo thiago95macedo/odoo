@@ -8,7 +8,7 @@
             box-shadow: none;
         }
 
-        // Replace the default chevron with our Odoo UI icon to
+        // Replace the default chevron with our WETH UI icon to
         // have more control on its color depending on the
         // preset applied
         &:after {
@@ -23,7 +23,7 @@
     .o_icons_side_to_bottom {
         --accordion-btn-icon-transform: rotate(0deg);
 
-        > .accordion-item > .accordion-button.collapsed {
+        >.accordion-item>.accordion-button.collapsed {
             &.o_icons_position_reversed:after {
                 transform: rotate(-90deg);
             }
@@ -40,8 +40,10 @@
     }
 
     .o_icons_plus_to_minus {
-        > .accordion-item > .accordion-header > .o_custom_icons_wrap {
-            &:before, &:after {
+        >.accordion-item>.accordion-header>.o_custom_icons_wrap {
+
+            &:before,
+            &:after {
                 content: '';
                 position: absolute;
                 inset: 0;
@@ -53,35 +55,41 @@
             }
         }
 
-        > .accordion-item > .accordion-button.collapsed .o_custom_icons_wrap:after {
+        >.accordion-item>.accordion-button.collapsed .o_custom_icons_wrap:after {
             transform: rotate(90deg);
         }
     }
 
     .o_custom_icons {
-        > .accordion-item > .accordion-button:after {
+        >.accordion-item>.accordion-button:after {
             display: none;
         }
 
-        &.o_transition > .accordion-item > .accordion-button > .o_custom_icons_wrap > span {
+        &.o_transition>.accordion-item>.accordion-button>.o_custom_icons_wrap>span {
             transition: opacity nth($transition-base, 2) nth($transition-base, 3), transform nth($transition-base, 2) nth($transition-base, 3);
         }
 
-        > .accordion-item > .accordion-button {
-            &.collapsed .o_custom_icon_active, &:not(.collapsed) .o_custom_icon_inactive {
+        >.accordion-item>.accordion-button {
+
+            &.collapsed .o_custom_icon_active,
+            &:not(.collapsed) .o_custom_icon_inactive {
                 opacity: 0;
             }
         }
 
-        &.o_transition_scale > .accordion-item > .accordion-button {
-            &.collapsed .o_custom_icon_active, &:not(.collapsed) .o_custom_icon_inactive {
+        &.o_transition_scale>.accordion-item>.accordion-button {
+
+            &.collapsed .o_custom_icon_active,
+            &:not(.collapsed) .o_custom_icon_inactive {
                 transform: scale(0);
                 opacity: 1;
             }
         }
 
-        &.o_transition_translate > .accordion-item > .accordion-button {
-            &.collapsed .o_custom_icon_active, &:not(.collapsed) .o_custom_icon_inactive {
+        &.o_transition_translate>.accordion-item>.accordion-button {
+
+            &.collapsed .o_custom_icon_active,
+            &:not(.collapsed) .o_custom_icon_inactive {
                 opacity: 1;
             }
 
@@ -96,7 +104,7 @@
     }
 
     .s_accordion_highlight {
-        > .accordion-item {
+        >.accordion-item {
             border: 0;
             border-radius: var(--#{$prefix}accordion-border-radius);
             overflow: hidden;
@@ -116,7 +124,7 @@
                 position: absolute;
                 inset: 0;
                 display: block;
-                background: rgba(0,0,0,0.4); // Fallback
+                background: rgba(0, 0, 0, 0.4); // Fallback
                 background-color: fade-currentColor(4%);
                 content: '';
                 z-index: -1;
@@ -150,4 +158,3 @@
         }
     }
 }
-

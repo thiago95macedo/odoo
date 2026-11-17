@@ -25,7 +25,7 @@ let startServicesPromise = null;
  * Start all services registered in the service registry, while making sure
  * each service dependencies are properly fulfilled.
  *
- * @param {OdooEnv} env
+ * @param {WethEnv} env
  * @returns {Promise<void>}
  */
 export async function startServices(env, runScope) {

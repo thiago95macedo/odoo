@@ -194,21 +194,21 @@ class TestLinkPreview(MailCommon):
             requests.Session, "head", self._patch_head_html
         ):
             urls = [
-                ("http://localhost:8069/", "http://localhost:8069/odoo", 0),
+                ("http://localhost:8069/", "http://localhost:8069/weth", 0),
                 ("http://localhost:8069/", "http://localhost:8069/weth/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/web/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/", 1),
-                ("http://localhost:8069/", "http://localhost:8069/odoo-experience", 1),
+                ("http://localhost:8069/", "http://localhost:8069/weth-experience", 1),
                 ("http://localhost:8069/", "http://localhost:8069/chat/5/bFtIfYHRco", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/web", 0),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo", 0),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/weth/", 0),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo?debug=assets", 0),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo#anchor", 0),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo-experience", 1),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth?debug=assets", 0),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth#anchor", 0),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth-experience", 1),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/weth/1519/tasks/4102866", 0),
                 ("http://www.weth.com.br/", "https://www.weth.com.br/weth/1519/tasks/4102866", 1),
-                ("https://www.weth.com.br/", "https://wwwaodoo.com/weth/", 1),
+                ("https://www.weth.com.br/", "https://wwwaweth.com/weth/", 1),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/chat/", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/chat/5/bFtIfYHRco", 0),
                 ("http://www.weth.com.br/", "https://www.weth.com.br/chat/5/bFtIfYHRco", 1),
@@ -235,7 +235,7 @@ class TestLinkPreview(MailCommon):
         ):
             message = self.test_partner.message_post(
                 body=Markup(
-                    '<a href="https://www.weth.com.br/odoo-experience">Nothing link</a> <a href="https://www.weth.com.br/odoo-experience-2025">Other Nothing link</a>'
+                    '<a href="https://www.weth.com.br/weth-experience">Nothing link</a> <a href="https://www.weth.com.br/weth-experience-2025">Other Nothing link</a>'
                 ),
                 message_type="comment",
             )
@@ -246,7 +246,7 @@ class TestLinkPreview(MailCommon):
             self.assertEqual(link_preview_count, 2)
             self.test_partner._message_update_content(
                 message,
-                body=Markup('<a href="https://www.weth.com.br/odoo-experience">Nothing link</a>'),
+                body=Markup('<a href="https://www.weth.com.br/weth-experience">Nothing link</a>'),
             )
             self.env["mail.link.preview"]._create_from_message_and_notify(message)
             link_preview_count = self.env["mail.message.link.preview"].search_count(

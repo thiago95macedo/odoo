@@ -1,50 +1,51 @@
-
 //------------------------------------------------------------------------------
 // Colors
 //------------------------------------------------------------------------------
 
 // Color combinations
-$o-color-combinations: o-safe-nth($o-color-combinations-presets, $o-color-combinations-preset-number, ()) !default;
-$-combination-additions: ();
-@for $index from 1 through length($o-color-combinations) {
-    $combination: map-merge($o-base-color-combination, nth($o-color-combinations, $index));
+$w-color-combinations: o-safe-nth($w-color-combinations-presets, $w-color-combinations-preset-number, ()) !default;
+$-combination-additions: (
+);
+
+@for $index from 1 through length($w-color-combinations) {
+    $combination: map-merge($w-base-color-combination, nth($w-color-combinations, $index));
 
     @each $element, $color in $combination {
-        $-combination-additions: map-merge($-combination-additions, (
-            'o-cc#{$index}-#{$element}': $color,
-        ));
+        $-combination-additions: map-merge($-combination-additions, ('o-cc#{$index}-#{$element}': $color,
+                ));
     }
 }
 
 // Colors
-$o-color-palette: map-get($o-color-palettes, $o-color-palette-name) or ();
+$w-color-palette: map-get($w-color-palettes, $w-color-palette-name) or ();
 // Original color palette can contain override of the default combinations (so keep 'null' values for this merge)
-$o-color-palette: map-merge($-combination-additions, $o-color-palette);
-$o-color-palette: map-merge($o-base-color-palette, $o-color-palette);
+$w-color-palette: map-merge($-combination-additions, $w-color-palette);
+$w-color-palette: map-merge($w-base-color-palette, $w-color-palette);
 
 // Theme colors
-$o-theme-color-palette: map-get($o-theme-color-palettes, $o-theme-color-palette-name) or () !default;
-@if not $o-support-13-0-color-system {
-    $o-theme-color-palette: map-remove($o-theme-color-palette, 'alpha', 'beta', 'gamma', 'delta', 'epsilon');
+$w-theme-color-palette: map-get($w-theme-color-palettes, $w-theme-color-palette-name) or () !default;
+
+@if not $w-support-13-0-color-system {
+    $w-theme-color-palette: map-remove($w-theme-color-palette, 'alpha', 'beta', 'gamma', 'delta', 'epsilon');
 }
-$-main-color: map-get($o-color-palette, 'o-color-1');
+
+$-main-color: map-get($w-color-palette, 'o-color-1');
 $-main-color-lightness: lightness($-main-color);
-$o-theme-color-palette: map-merge((
-    // color 1 and 2 are used to override primary and secondary BS4
-    // colors by default, so that theme colors affect the default Odoo layouts
-    'primary': $-main-color,
-    'secondary': map-get($o-color-palette, 'o-color-2'),
-), $o-theme-color-palette);
-$o-theme-color-palette: map-merge($o-base-theme-color-palette, $o-theme-color-palette);
+$w-theme-color-palette: map-merge(( // color 1 and 2 are used to override primary and secondary BS4
+            // colors by default, so that theme colors affect the default WETH layouts
+            'primary': $-main-color,
+            'secondary': map-get($w-color-palette, 'o-color-2'),
+        ), $w-theme-color-palette);
+$w-theme-color-palette: map-merge($w-base-theme-color-palette, $w-theme-color-palette);
 
 // Gray colors
 // Extend grays with transparent ones (for some reason, BS4 create black-50 and
 // white-50 but does not allow overridding that with variables).
-$o-gray-color-palette: map-get($o-gray-color-palettes, $o-gray-color-palette-name) or () !default;
-$o-gray-color-palette: map-merge($o-transparent-grays, $o-gray-color-palette);
-$o-gray-color-palette: map-merge($o-base-gray-color-palette, $o-gray-color-palette);
+$w-gray-color-palette: map-get($w-gray-color-palettes, $w-gray-color-palette-name) or () !default;
+$w-gray-color-palette: map-merge($w-transparent-grays, $w-gray-color-palette);
+$w-gray-color-palette: map-merge($w-base-gray-color-palette, $w-gray-color-palette);
 
-$o-color-system-initialized: false;
+$w-color-system-initialized: false;
 
 // Returns:
 // - true if the given name is a css color or null
@@ -52,27 +53,36 @@ $o-color-system-initialized: false;
 // - throws an error if the given arg cannot reference a color
 @function check-color-identifier-type($name) {
     $-type: type-of($name);
-    @if $-type == 'color' or $-type == 'null' {
+
+    @if $-type =='color' or $-type =='null' {
         @return true;
-    } @else if $-type != 'string' {
+    }
+
+    @else if $-type !='string' {
         @error "Color name '#{$name}' is of unsupported type '#{$-type}'";
     }
+
     @return false;
 }
+
 @function use-cc-bg($name) {
-    @if type-of($name) == 'number' {
+    @if type-of($name)=='number' {
         // Preset number, let's return the background color of the related
         // preset.
         @return 'o-cc#{$name}-bg';
     }
+
     @return $name;
 }
-// Looks up for the color related to the given name in the related odoo palettes
+
+// Looks up for the color related to the given name in the related weth palettes
 // following redirection a maximum number of time (by default none).
 @function o-related-color($name, $max-recursions: 0, $original-name: $name, $use-cc-bg: false) {
     @if $use-cc-bg {
         $name: use-cc-bg($name);
-    } @else if type-of($name) == 'number' {
+    }
+
+    @else if type-of($name)=='number' {
         @return $name;
     }
 
@@ -81,18 +91,25 @@ $o-color-system-initialized: false;
     }
 
     $-value: null;
-    @if map-has-key($o-color-palette, $name) {
-        $-value: map-get($o-color-palette, $name);
-    } @else if map-has-key($o-theme-color-palette, $name) {
-        $-value: map-get($o-theme-color-palette, $name);
-    } @else if map-has-key($o-gray-color-palette, $name) {
-        $-value: map-get($o-gray-color-palette, $name);
+
+    @if map-has-key($w-color-palette, $name) {
+        $-value: map-get($w-color-palette, $name);
     }
+
+    @else if map-has-key($w-theme-color-palette, $name) {
+        $-value: map-get($w-theme-color-palette, $name);
+    }
+
+    @else if map-has-key($w-gray-color-palette, $name) {
+        $-value: map-get($w-gray-color-palette, $name);
+    }
+
     @return o-related-color($-value, $max-recursions - 1, $original-name);
 }
+
 // Function which allows to retrieve a color value from a name, the color being
 // either in $theme-colors, $grays or $colors maps. If those maps are not
-// initialized yet, it will look up the color in the related odoo palettes.
+// initialized yet, it will look up the color in the related weth palettes.
 @function o-color($name) {
     $name: use-cc-bg($name);
 
@@ -103,13 +120,15 @@ $o-color-system-initialized: false;
     // When the system is initialized, it means that the bootstrap maps have
     // been configured and contain a direct mapping between color name -> css
     // value. We can thus search in those.
-    @if $o-color-system-initialized {
+    @if $w-color-system-initialized {
         @if map-has-key($colors, $name) {
             @return map-get($colors, $name);
         }
+
         @if map-has-key($theme-colors, $name) {
             @return map-get($theme-colors, $name);
         }
+
         @if map-has-key($grays, $name) {
             @return map-get($grays, $name);
         }
@@ -122,12 +141,16 @@ $o-color-system-initialized: false;
 // Same as 'increase-contrast' except that the color is not changed if the given
 // related color name is part of the given exclusion list (default to a global
 // exclusion list which can be extended by other apps).
-$o-we-auto-contrast-exclusions: () !default;
-@function auto-contrast($color1, $color2, $color1-name, $exclude: $o-we-auto-contrast-exclusions) {
+$w-we-auto-contrast-exclusions: (
+    ) !default;
+
+@function auto-contrast($color1, $color2, $color1-name, $exclude: $w-we-auto-contrast-exclusions) {
     @if index($exclude, $color1-name) {
         @return $color1;
     }
-    @return increase-contrast($color1, $color2);
+
+    @return increase-contrast($color1, $color2
+);
 }
 
 // Replace invalid characters used for colors in url.
@@ -145,4 +168,4 @@ $o-we-auto-contrast-exclusions: () !default;
 // Fonts
 //------------------------------------------------------------------------------
 
-$o-small-font-size: 0.875rem !default;
+$w-small-font-size: 0.875rem !default;

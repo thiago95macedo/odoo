@@ -38,6 +38,6 @@ test("on leave members are categorised correctly in online/offline", async () =>
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList h6", { text: "Online - 4" });
-    await contains(".o-discuss-ChannelMemberList h6", { text: "Offline - 1" });
+    await contains(".w-discuss-ChannelMemberList h6", { text: "Online - 4" });
+    await contains(".w-discuss-ChannelMemberList h6", { text: "Offline - 1" });
 });

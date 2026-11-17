@@ -1,10 +1,10 @@
-.o-body-with-translate-side-panel {
+.w-body-with-translate-side-panel {
     --translate-side-panel-width: clamp(25rem, 30vw, 30rem);
 
     width: calc(100vw - var(--translate-side-panel-width));
 }
 
-.o-translation-pointer {
+.w-translation-pointer {
     --_rgb: var(--info-rgb);
 
     border: 2px solid rgb(var(--_rgb));
@@ -21,12 +21,12 @@
     animation: o-translation-pointer-animation 500ms infinite ease-in-out;
 }
 
-.o-translate-side-panel {
+.w-translate-side-panel {
     height: 100vh;
     width: var(--translate-side-panel-width);
     z-index: 2000;
 
-    .o-translate-card {
+    .w-translate-card {
         cursor: pointer;
 
         &:hover {
@@ -39,7 +39,7 @@
         }
     }
 
-    .o-translation-flag {
+    .w-translation-flag {
         object-fit: contain;
         max-width: 1.5rem;
     }
@@ -50,10 +50,12 @@
         background-color: rgba(var(--_rgb), 0.05);
         box-shadow: 0 0 2px 0 rgb(var(--_rgb));
     }
+
     50% {
         background-color: rgba(var(--_rgb), 0.25);
         box-shadow: 0 0 1rem 2px rgb(var(--_rgb));
     }
+
     to {
         background-color: rgba(var(--_rgb), 0.05);
         box-shadow: 0 0 2px 0 rgb(var(--_rgb));

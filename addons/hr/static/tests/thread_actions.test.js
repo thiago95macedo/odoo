@@ -34,16 +34,16 @@ beforeEach(async () => {
 test("employee profile lookup is skipped in Discuss and sidebar items", async () => {
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-threadName[title='Mario']");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mario'))");
+    await contains(".w-mail-DiscussContent-threadName[title='Mario']");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mario'))");
     expect.verifySteps([]);
 });
 
 test("employee profile is available in chat windows", async () => {
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow:has(:text('Mario'))");
-    await click(".o-mail-ChatWindow [title='Open Actions Menu']");
-    await contains(".o-dropdown-item:text('View Profile')");
+    await contains(".w-mail-ChatWindow:has(:text('Mario'))");
+    await click(".w-mail-ChatWindow [title='Open Actions Menu']");
+    await contains(".w-dropdown-item:text('View Profile')");
     expect.verifySteps(["employee lookup"]);
 });

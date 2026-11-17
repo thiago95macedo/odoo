@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/hr_fleet/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgid "Attachments"
 msgstr "Anexos"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee.py:0
 msgid "Cannot remove address from employees with linked cars."
 msgstr "Não é possível remover endereço de funcionários com carros vinculados."
@@ -64,7 +64,7 @@ msgid "Cars"
 msgstr "Carros"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee.py:0
 #: model_terms:ir.ui.view,arch_db:hr_fleet.hr_employee_public_view_form
 #: model_terms:ir.ui.view,arch_db:hr_fleet.view_employee_form
@@ -131,7 +131,7 @@ msgid "Employee Name"
 msgstr "Nome do funcionário"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee_departure.py:0
 msgid "Employee has been removed from %(car)s future driver list"
 msgstr "O funcionário foi removido da lista de futuros motoristas d %(car)s"
@@ -180,7 +180,7 @@ msgid "Odometer log for a vehicle"
 msgstr "Registros de odômetro do veículo"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/fleet_vehicle_assignation_log.py:0
 msgid "Ongoing"
 msgstr "Em andamento"
@@ -191,7 +191,7 @@ msgid "Public Employee"
 msgstr "Empregado público"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/fleet_vehicle.py:0
 #: code:addons/hr_fleet/models/fleet_vehicle_log_contract.py:0
 msgid "Related Employee"
@@ -203,7 +203,7 @@ msgid "Services for vehicles"
 msgstr "Serviços para veículos"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee_departure.py:0
 msgid ""
 "The future driver has been removed due to the end of collaboration with %"
@@ -212,13 +212,13 @@ msgstr ""
 "O futuro motorista foi removido devido ao fim da colaboração com %(employee)s"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee_departure.py:0
 msgid "The vehicle %(car)s has been freed"
 msgstr "O veículo %(car)s foi libertado"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/hr_employee_departure.py:0
 msgid ""
 "The vehicle has been freed due to the end of collaboration with %(employee)s"
@@ -226,7 +226,7 @@ msgstr ""
 "O veículo foi liberado devido ao término da colaboração com %(employee)s"
 
 #. module: hr_fleet
-#. odoo-python
+#. weth-python
 #: code:addons/hr_fleet/models/fleet_vehicle_assignation_log.py:0
 msgid ""
 "This assignment overlaps with an existing assignment for %(vehicle)s "
@@ -236,7 +236,7 @@ msgstr ""
 "(Responsável: %(driver)s, Período: %(start)s a %(end)s)"
 
 #. module: hr_fleet
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_fleet/static/src/views/hr_fleet_kanban/hr_fleet_kanban_controller.xml:0
 msgid "Upload"
 msgstr "Carregar"

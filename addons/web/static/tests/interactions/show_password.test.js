@@ -15,14 +15,14 @@ const template = `
     </div>
 `;
 
-test("show_password is started when there is a .o_show_password", async () => {
+test("show_password is started when there is a .w_show_password", async () => {
     const { core } = await startInteractions(template);
     expect(core.interactions).toHaveLength(1);
 });
 
 test("input type changes on clicking the eye icon", async () => {
     await startInteractions(template);
-    const showEl = queryOne(".o_show_password");
+    const showEl = queryOne(".w_show_password");
     expect("input").toHaveAttribute("type", "password");
     await click(showEl);
     expect("input").toHaveAttribute("type", "text");

@@ -20,7 +20,7 @@ def _sumup_pair_reader(merchant_code: str, api_key: str, pairing_code: str, name
             f"{SUMUP_API_URL}/v0.1/merchants/{merchant_code}/readers",
             json={
                 "pairing_code": pairing_code,
-                "name": f"Odoo - {name}",
+                "name": f"WETH - {name}",
             },
             headers={"Authorization": f"Bearer {api_key}"},
             timeout=10,

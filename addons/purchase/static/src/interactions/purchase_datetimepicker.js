@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { rpc } from "@web/core/network/rpc";
 
 export class PurchaseDatetimePicker extends Interaction {
-    static selector = ".o-purchase-datetimepicker";
+    static selector = ".w-purchase-datetimepicker";
 
     start() {
         this.registerCleanup(

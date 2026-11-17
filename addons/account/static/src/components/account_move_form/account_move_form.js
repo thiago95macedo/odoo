@@ -61,7 +61,7 @@ export class AccountMoveFormRenderer extends FormRenderer {
 
     async saveBeforeTabChange() {
         if (this.props.record.isInEdition && await this.props.record.isDirty()) {
-            const contentEl = document.querySelector('.o_content');
+            const contentEl = document.querySelector('.w_content');
             const scrollPos = contentEl.scrollTop;
             await this.props.record.save();
             if (scrollPos) {

@@ -26,11 +26,11 @@ test("add_link utility function", () => {
         "www.127.0.0.5": false,
         "should.notmatch": false,
         "fhttps://test.example.com/test": false,
-        "https://www.transifex.com/weth/odoo-11/translate/#fr/lunch?q=text%3A'La+Tartiflette'": true,
-        "https://www.transifex.com/weth/odoo-11/translate/#fr/$/119303430?q=text%3ATartiflette": true,
+        "https://www.transifex.com/weth/weth-11/translate/#fr/lunch?q=text%3A'La+Tartiflette'": true,
+        "https://www.transifex.com/weth/weth-11/translate/#fr/$/119303430?q=text%3ATartiflette": true,
         "https://tenor.com/view/chỗgiặt-dog-smile-gif-13860250": true,
         "http://www.boîtenoire.be": true,
-        "https://github.com/weth/enterprise/compare/16.0...odoo-dev:enterprise:16.0-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/16.0...weth-dev:enterprise:16.0-voip-fix_demo_data-tsm?expand=1": true,
         "https://github.com/weth/enterprise/compare/16.0...16.0-voip-fix_demo_data-tsm?expand=1": true,
         "https://github.com/weth/enterprise/compare/16.0...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
         "https://github.com/weth/enterprise/compare/chỗgiặt...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
@@ -160,9 +160,9 @@ test("url", async () => {
     await openDiscuss(channelId);
     // see: https://www.ietf.org/rfc/rfc1738.txt
     const messageBody = "https://weth.com.br?test=~^|`{}[]#";
-    await insertText(".o-mail-Composer-input", messageBody);
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(`.o-mail-Message a:contains(${messageBody})`);
+    await contains(`.w-mail-Message a:contains(${messageBody})`);
 });
 
 test("url with comma at the end", async () => {
@@ -171,10 +171,10 @@ test("url with comma at the end", async () => {
     await start();
     await openDiscuss(channelId);
     const messageBody = "Go to https://weth.com.br, it's great!";
-    await insertText(".o-mail-Composer-input", messageBody);
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://weth.com.br)");
-    await contains(`.o-mail-Message-content:contains(${messageBody}`);
+    await contains(".w-mail-Message a:contains(https://weth.com.br)");
+    await contains(`.w-mail-Message-content:contains(${messageBody}`);
 });
 
 test("url with dot at the end", async () => {
@@ -183,10 +183,10 @@ test("url with dot at the end", async () => {
     await start();
     await openDiscuss(channelId);
     const messageBody = "Go to https://weth.com.br. It's great!";
-    await insertText(".o-mail-Composer-input", messageBody);
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://weth.com.br)");
-    await contains(`.o-mail-Message-content:contains(${messageBody})`);
+    await contains(".w-mail-Message a:contains(https://weth.com.br)");
+    await contains(`.w-mail-Message-content:contains(${messageBody})`);
 });
 
 test("url with semicolon at the end", async () => {
@@ -195,10 +195,10 @@ test("url with semicolon at the end", async () => {
     await start();
     await openDiscuss(channelId);
     const messageBody = "Go to https://weth.com.br; it's great!";
-    await insertText(".o-mail-Composer-input", messageBody);
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://weth.com.br)");
-    await contains(`.o-mail-Message-content:contains(${messageBody})`);
+    await contains(".w-mail-Message a:contains(https://weth.com.br)");
+    await contains(`.w-mail-Message-content:contains(${messageBody})`);
 });
 
 test("url with ellipsis at the end", async () => {
@@ -207,10 +207,10 @@ test("url with ellipsis at the end", async () => {
     await start();
     await openDiscuss(channelId);
     const messageBody = "Go to https://weth.com.br... it's great!";
-    await insertText(".o-mail-Composer-input", messageBody);
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
-    await contains(".o-mail-Message a:contains(https://weth.com.br)");
-    await contains(`.o-mail-Message-content:contains(${messageBody})`);
+    await contains(".w-mail-Message a:contains(https://weth.com.br)");
+    await contains(`.w-mail-Message-content:contains(${messageBody})`);
 });
 
 test("url with number in subdomain", async () => {
@@ -218,11 +218,11 @@ test("url with number in subdomain", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    const messageBody = "https://www.45017478-master-all.runbot134.weth.com.br/odoo";
-    await insertText(".o-mail-Composer-input", messageBody);
+    const messageBody = "https://www.45017478-master-all.runbot134.weth.com.br/weth";
+    await insertText(".w-mail-Composer-input", messageBody);
     await press("Enter");
     await contains(
-        ".o-mail-Message a:contains(https://www.45017478-master-all.runbot134.weth.com.br/odoo)"
+        ".w-mail-Message a:contains(https://www.45017478-master-all.runbot134.weth.com.br/weth)"
     );
 });
 

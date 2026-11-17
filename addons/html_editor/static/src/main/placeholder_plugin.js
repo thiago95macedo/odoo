@@ -11,7 +11,7 @@ export class PlaceholderPlugin extends Plugin {
         ...(this.config.placeholder && {
             hints: [
                 withSequence(1, {
-                    selector: `.odoo-editor-editable:not(:focus) > ${baseContainerGlobalSelector}:only-child`,
+                    selector: `.weth-editor-editable:not(:focus) > ${baseContainerGlobalSelector}:only-child`,
                     text: this.config.placeholder,
                 }),
             ],

@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_toss_payments/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgid "Code"
 msgstr "Código"
 
 #. module: payment_toss_payments
-#. odoo-python
+#. weth-python
 #: code:addons/payment_toss_payments/models/payment_provider.py:0
 msgid "Currencies other than KRW are not supported."
 msgstr "Outras moedas além do KRW não são aceitas."
@@ -99,19 +99,19 @@ msgid "Payment Transaction"
 msgstr "Transação do pagamento"
 
 #. module: payment_toss_payments
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_toss_payments/static/src/interactions/payment_form.js:0
 msgid "Payment not completed"
 msgstr "Pagamento não concluído"
 
 #. module: payment_toss_payments
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_toss_payments/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
 
 #. module: payment_toss_payments
-#. odoo-python
+#. weth-python
 #: code:addons/payment_toss_payments/models/payment_transaction.py:0
 msgid "Received data with invalid payment status: %s"
 msgstr "Dados recebidos com status de pagamento inválido: %s"

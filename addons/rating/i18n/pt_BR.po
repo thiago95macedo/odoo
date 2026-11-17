@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/rating/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -165,7 +165,7 @@ msgid "Half a star"
 msgstr "Meia estrela"
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/controllers/main.py:0
 #: model:ir.model.fields.selection,name:rating.selection__product_template__rating_avg_text__top
 #: model:ir.model.fields.selection,name:rating.selection__project_task__rating_avg_text__top
@@ -224,7 +224,7 @@ msgid "Image URL"
 msgstr "URL da imagem"
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/controllers/main.py:0
 msgid ""
 "Incorrect rating: should be %(rating_unhappy)d, %(rating_neutral)d or %"
@@ -234,7 +234,7 @@ msgstr ""
 "(rating_happy)d (%(rate)d recebido)"
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/models/mail_thread.py:0
 msgid "Invalid token or rating."
 msgstr "Token ou avaliação inválida."
@@ -296,7 +296,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/controllers/main.py:0
 #: model:ir.model.fields.selection,name:rating.selection__product_template__rating_avg_text__ok
 #: model:ir.model.fields.selection,name:rating.selection__project_task__rating_avg_text__ok
@@ -468,7 +468,7 @@ msgid "Rating should be between 0 and 5"
 msgstr "A avaliação deve ser entre 0 e 5"
 
 #. module: rating
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/rating/static/src/core/web/notification_item_patch.xml:0
 msgid "Rating:"
 msgstr "Avaliação:"
@@ -577,7 +577,7 @@ msgid "There is no rating for this object at the moment."
 msgstr "Não há avaliação para esse objeto no momento."
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/controllers/main.py:0
 #: model:ir.model.fields.selection,name:rating.selection__product_template__rating_avg_text__ko
 #: model:ir.model.fields.selection,name:rating.selection__project_task__rating_avg_text__ko
@@ -594,7 +594,7 @@ msgid "Visible Internally Only"
 msgstr "Visível apenas internamente"
 
 #. module: rating
-#. odoo-python
+#. weth-python
 #: code:addons/rating/models/mail_thread.py:0
 msgid "Wrong rating value. A rate should be between 0 and 5 (received %d)."
 msgstr ""

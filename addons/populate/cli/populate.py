@@ -20,7 +20,7 @@ _logger = logging.getLogger(__name__)
 
 
 class Populate(Command):
-    """Populate an Odoo database with synthetic data using blueprints"""
+    """Populate an WETH database with synthetic data using blueprints"""
 
     def run(self, cmdargs):
         """Parse CLI options, open the target database, and run or resume a session.
@@ -56,7 +56,7 @@ class Populate(Command):
             self._execute(session, profile=config['profile'])
 
     def _setup_options(self):
-        """Register populate-specific options on the global Odoo CLI parser."""
+        """Register populate-specific options on the global WETH CLI parser."""
         parser = config.parser
         parser.prog = self.prog
         group = optparse.OptionGroup(parser, "Populate Configuration")

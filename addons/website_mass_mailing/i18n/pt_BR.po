@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:43+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_mass_mailing/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -230,7 +230,7 @@ msgstr ""
 "notificaremos no lançamento."
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/xml/website_mass_mailing.xml:0
 #: model_terms:ir.ui.view,arch_db:website_mass_mailing.s_newsletter_benefits_popup
 #: model_terms:ir.ui.view,arch_db:website_mass_mailing.s_newsletter_subscribe_popup
@@ -243,7 +243,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/mailing_list_subscribe_option.xml:0
 #: code:addons/website_mass_mailing/static/src/website_builder/toggle_thanks_message_translation_option.xml:0
 msgid "Display Thanks Message"
@@ -260,7 +260,7 @@ msgid "Email Address"
 msgstr "Endereço de e-mail"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/newsletter_layout_option.xml:0
 msgid "Email Subscription"
 msgstr "Inscrição por e-mail"
@@ -271,7 +271,7 @@ msgid "First Name"
 msgstr "Nome"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/newsletter_layout_option.xml:0
 msgid "Form Subscription"
 msgstr "Inscrição por formulário"
@@ -288,14 +288,14 @@ msgstr ""
 "produtos da nossa empresa, diretamente em sua caixa de entrada."
 
 #. module: website_mass_mailing
-#. odoo-python
+#. weth-python
 #: code:addons/website_mass_mailing/controllers/main.py:0
 #, fuzzy
 msgid "Invalid mailing list."
 msgstr "Lista de mala direta inválida."
 
 #. module: website_mass_mailing
-#. odoo-python
+#. weth-python
 #: code:addons/website_mass_mailing/controllers/main.py:0
 msgid "Invalid subscription type"
 msgstr "Assinatura inválida"
@@ -327,13 +327,13 @@ msgid "Last Name"
 msgstr "Sobrenome"
 
 #. module: website_mass_mailing
-#. odoo-python
+#. weth-python
 #: code:addons/website_mass_mailing/controllers/website_form.py:0
 msgid "Mailing List(s) not found!"
 msgstr "Lista de distribuição não encontrada!"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/mailing_list_subscribe_option.xml:0
 #: model_terms:ir.ui.view,arch_db:website_mass_mailing.s_newsletter_aside
 #: model_terms:ir.ui.view,arch_db:website_mass_mailing.snippets
@@ -381,19 +381,19 @@ msgid "Newsletter Subscribe Button"
 msgstr "Botão de assinatura ao boletim informativo"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/toggle_thanks_message_translation_option.xml:0
 msgid "Newsletter block"
 msgstr "Bloco de newsletter"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/toggle_thanks_message_translation_option.xml:0
 msgid "Newsletter popup"
 msgstr "Popup de newsletter"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/mailing_list_subscribe_option_plugin.js:0
 msgid ""
 "No mailing list found, do you want to create a new one? This will save all "
@@ -403,25 +403,25 @@ msgstr ""
 "salvará todas as suas alterações. Tem certeza de que deseja continuar?"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/mailing_list_subscribe_option.xml:0
 msgid "None"
 msgstr "Nenhum"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/interactions/subscribe_list_missing_error.xml:0
 msgid "Pick one or remove this block."
 msgstr "Escolha uma opção ou remova este bloco."
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/mailing_list_subscribe_option.xml:0
 msgid "Placeholder"
 msgstr "Marcador de posição"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/recaptcha_subscribe_option.xml:0
 msgid "Show reCaptcha Policy"
 msgstr "Exibir política de reCaptcha"
@@ -444,7 +444,7 @@ msgid "Subscribe for updates, offers <br/>and insights!"
 msgstr "Inscreva-se para receber atualizações, ofertas <br/>e informações!"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/js/mass_mailing_form_editor.edit.js:0
 msgid "Subscribe to"
 msgstr "Inscrever-se a"
@@ -457,7 +457,7 @@ msgid "Subscribe to our newsletter"
 msgstr "Assine nossa newsletter"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/website_builder/newsletter_layout_option.xml:0
 msgid "Template"
 msgstr "Modelo"
@@ -475,13 +475,13 @@ msgid "Thanks for registering!"
 msgstr "Agradecemos por sua inscrição!"
 
 #. module: website_mass_mailing
-#. odoo-python
+#. weth-python
 #: code:addons/website_mass_mailing/controllers/main.py:0
 msgid "Thanks for subscribing!"
 msgstr "Agradecemos pela sua inscrição!"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/interactions/subscribe_list_missing_error.xml:0
 msgid "This block is not linked to an active Newsletter."
 msgstr "Este bloco não está vinculado a uma newsletter ativa."
@@ -492,7 +492,7 @@ msgid "Waiting List"
 msgstr "Lista de espera"
 
 #. module: website_mass_mailing
-#. odoo-python
+#. weth-python
 #: code:addons/website_mass_mailing/controllers/website_form.py:0
 msgid "You cannot subscribe to the following list anymore : %s"
 msgstr "Não é mais possível se inscrever a essa lista: %s"
@@ -504,13 +504,13 @@ msgid "You will now be informed about the latest news."
 msgstr "Agora você será informado sobre as últimas notícias."
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/js/mass_mailing_form_editor.edit.js:0
 msgid "Your Email"
 msgstr "Seu e-mail"
 
 #. module: website_mass_mailing
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing/static/src/js/mass_mailing_form_editor.edit.js:0
 msgid "Your Name"
 msgstr "Seu nome"

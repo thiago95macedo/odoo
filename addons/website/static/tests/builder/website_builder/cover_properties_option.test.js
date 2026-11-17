@@ -108,7 +108,7 @@ test("Add image as cover", async () => {
         return true;
     });
 
-    await contains(".o-snippets-top-actions button[data-action='save']").click();
+    await contains(".w-snippets-top-actions button[data-action='save']").click();
     expect.verifySteps(["save attachment", "save cover"]);
 });
 
@@ -149,7 +149,7 @@ test("No dropzone is created in a record cover", async () => {
         },
     });
 
-    await contains(".o-snippets-menu #snippet_content .o_snippet_thumbnail").drag();
+    await contains(".w-snippets-menu #snippet_content .o_snippet_thumbnail").drag();
     // Next to a field of the cover, and inside an element of the cover: both
     // would be saved through the cover, which only writes back its
     // `cover_properties`.
@@ -181,6 +181,6 @@ test("Changing the cover size saves its properties", async () => {
         return true;
     });
 
-    await contains(".o-snippets-top-actions button[data-action='save']").click();
+    await contains(".w-snippets-top-actions button[data-action='save']").click();
     expect.verifySteps(["save cover"]);
 });

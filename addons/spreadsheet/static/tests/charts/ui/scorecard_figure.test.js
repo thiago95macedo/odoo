@@ -96,16 +96,16 @@ test("clicking scorecard outside dashboard mode does nothing", async function ()
     const { model } = await createModelWithDataSource({ serverData });
     const fixture = await mountSpreadsheet(model);
     createScorecardChart(model);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: 1 },
+        wethLink: { type: "wethMenu", wethMenuId: 1 },
     });
     await animationFrame();
     await clickCanvas(fixture, "key");
     expect.verifySteps([]);
 });
 
-test("clicking scorecard in dashboard mode navigates to odoo link", async function () {
+test("clicking scorecard in dashboard mode navigates to weth link", async function () {
     mockService("action", {
         doAction: (action) => {
             if (action === "menuAction" || action.xml_id === "menuAction") {
@@ -116,9 +116,9 @@ test("clicking scorecard in dashboard mode navigates to odoo link", async functi
     const { model } = await createModelWithDataSource({ serverData });
     const fixture = await mountSpreadsheet(model);
     createScorecardChart(model);
-    model.dispatch("UPDATE_ODOO_LINK_TO_CHART", {
+    model.dispatch("UPDATE_WETH_LINK_TO_CHART", {
         chartId,
-        odooLink: { type: "odooMenu", odooMenuId: 1 },
+        wethLink: { type: "wethMenu", wethMenuId: 1 },
     });
     model.updateMode("dashboard");
     await animationFrame();

@@ -28,7 +28,7 @@ function patchUserActiveCompanies(cids) {
 
 describe.current.tags("mobile");
 
-const clickConfirm = () => contains(".o_switch_company_menu_buttons button:first").click();
+const clickConfirm = () => contains(".w_switch_company_menu_buttons button:first").click();
 
 /**
  * @param {number} index
@@ -47,23 +47,23 @@ beforeEach(() => {
 test("basic rendering", async () => {
     await mountWithCleanup(MobileSwitchCompanyMenu);
 
-    expect(".o_burger_menu_companies").toHaveProperty("tagName", "DIV");
-    expect(".o_burger_menu_companies").toHaveClass("o_burger_menu_companies");
+    expect(".w_burger_menu_companies").toHaveProperty("tagName", "DIV");
+    expect(".w_burger_menu_companies").toHaveClass("o_burger_menu_companies");
     expect("[data-company-id]").toHaveCount(3);
     expect(".log_into").toHaveCount(3);
-    expect(".o_switch_company_item input[type='checkbox']:checked").toHaveCount(1);
-    expect(".o_switch_company_item input[type='checkbox']:not(:checked)").toHaveCount(2);
+    expect(".w_switch_company_item input[type='checkbox']:checked").toHaveCount(1);
+    expect(".w_switch_company_item input[type='checkbox']:not(:checked)").toHaveCount(2);
 
-    expect(".o_switch_company_item:eq(0)").toHaveText("Hermit");
-    expect(".o_switch_company_item:eq(0)").toHaveClass("alert-light");
-    expect(".o_switch_company_item:eq(1)").toHaveText("Herman's");
-    expect(".o_switch_company_item:eq(2)").toHaveText("Heroes TM");
+    expect(".w_switch_company_item:eq(0)").toHaveText("Hermit");
+    expect(".w_switch_company_item:eq(0)").toHaveClass("alert-light");
+    expect(".w_switch_company_item:eq(1)").toHaveText("Herman's");
+    expect(".w_switch_company_item:eq(2)").toHaveText("Heroes TM");
 
-    expect(".o_switch_company_item input[type='checkbox']:eq(0):checked").toHaveCount(1);
-    expect(".o_switch_company_item input[type='checkbox']:eq(1):not(:checked)").toHaveCount(1);
-    expect(".o_switch_company_item input[type='checkbox']:eq(2):not(:checked)").toHaveCount(1);
+    expect(".w_switch_company_item input[type='checkbox']:eq(0):checked").toHaveCount(1);
+    expect(".w_switch_company_item input[type='checkbox']:eq(1):not(:checked)").toHaveCount(1);
+    expect(".w_switch_company_item input[type='checkbox']:eq(2):not(:checked)").toHaveCount(1);
 
-    expect(".o_burger_menu_companies").toHaveText("Companies\nHermit\nHerman's\nHeroes TM");
+    expect(".w_burger_menu_companies").toHaveText("Companies\nHermit\nHerman's\nHeroes TM");
 });
 
 test("companies can be toggled: toggle a second company", async () => {
@@ -249,18 +249,18 @@ test("companies can be logged in even if some toggled within delay", async () =>
 
 test("show confirm and reset buttons only when selection has changed", async () => {
     await mountWithCleanup(MobileSwitchCompanyMenu);
-    expect(".o_switch_company_menu_buttons").toHaveCount(0);
+    expect(".w_switch_company_menu_buttons").toHaveCount(0);
     await toggleCompany(1);
-    expect(".o_switch_company_menu_buttons button").toHaveCount(2);
+    expect(".w_switch_company_menu_buttons button").toHaveCount(2);
     await toggleCompany(1);
-    expect(".o_switch_company_menu_buttons").toHaveCount(0);
+    expect(".w_switch_company_menu_buttons").toHaveCount(0);
 });
 
 test("No collapse and have search input when less than 10 companies", async () => {
     await mountWithCleanup(MobileSwitchCompanyMenu);
-    expect(".o_burger_menu_companies [data-icon='arrow_right']").toHaveCount(0);
-    expect(".o_burger_menu_companies input[type='checkbox']:indeterminate").toHaveCount(1);
-    expect(".o_burger_menu_companies input[role='searchbox']").toHaveCount(1);
+    expect(".w_burger_menu_companies [data-icon='arrow_right']").toHaveCount(0);
+    expect(".w_burger_menu_companies input[type='checkbox']:indeterminate").toHaveCount(1);
+    expect(".w_burger_menu_companies input[role='searchbox']").toHaveCount(1);
 });
 
 test("Show search input when more than 10 companies & search filters items but ignore case and spaces", async () => {
@@ -277,16 +277,16 @@ test("Show search input when more than 10 companies & search filters items but i
         { id: 10, name: "Random e", sequence: 10, parent_id: false, child_ids: [] },
     ];
     await createSwitchCompanyMenu();
-    await contains(".o_burger_menu_companies > div").click();
-    expect(".o_burger_menu_companies input[role='searchbox']").toHaveCount(1);
-    expect(".o_burger_menu_companies input[role='searchbox']").not.toBeFocused();
+    await contains(".w_burger_menu_companies > div").click();
+    expect(".w_burger_menu_companies input[role='searchbox']").toHaveCount(1);
+    expect(".w_burger_menu_companies input[role='searchbox']").not.toBeFocused();
 
-    expect(".o_switch_company_item").toHaveCount(10);
-    contains(".o_burger_menu_companies input[role='searchbox']").edit("omcom");
+    expect(".w_switch_company_item").toHaveCount(10);
+    contains(".w_burger_menu_companies input[role='searchbox']").edit("omcom");
     await animationFrame();
 
-    expect(".o_switch_company_item").toHaveCount(3);
-    expect(queryAllTexts(".o_switch_company_item.o-navigable")).toEqual([
+    expect(".w_switch_company_item").toHaveCount(3);
+    expect(queryAllTexts(".w_switch_company_item.w-navigable")).toEqual([
         "Random Company a",
         "Random Company aa",
         "Random Company ab",

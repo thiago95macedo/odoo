@@ -137,7 +137,7 @@ test("click on the sms button in a FormViewDialog has no effect on the main form
 
     await editInput(document.body, "[name='foo'] input", "John");
     await editInput(document.body, "[name='mobile'] input", "+32494444411");
-    await click(".o-kanban-button-new");
+    await click(".w-kanban-button-new");
     await animationFrame();
     await editInput(document.body, ".modal .o_field_char[name='foo'] input", "Max");
     await editInput(document.body, ".modal .o_field_phone[name='mobile'] input", "+324955555");

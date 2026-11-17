@@ -86,7 +86,7 @@ export class CaptionPlugin extends Plugin {
         html_drop_overrides: this.onDrop.bind(this),
         paste_text_overrides: this.onPaste.bind(this),
         paste_html_overrides: this.onPaste.bind(this),
-        paste_odoo_editor_html_overrides: this.onPaste.bind(this),
+        paste_weth_editor_html_overrides: this.onPaste.bind(this),
         normalize_processors: (root) => {
             let figures = [];
             if (root.matches(CAPTION_SPAN_SELECTOR)) {

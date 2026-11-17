@@ -86,12 +86,12 @@ class CalendarRecurrence(models.Model):
     def _write_from_google(self, gevent, vals, calendar):
         current_rrule = self.rrule
         current_parsed_rrule = self._rrule_parse(current_rrule, self.dtstart)
-        # event_tz is written on event in Google but on recurrence in Odoo
+        # event_tz is written on event in Google but on recurrence in Weth
         vals['event_tz'] = gevent.start.get('timeZone')
         super()._write_from_google(gevent, vals, calendar)
 
         base_event_time_fields = ['start', 'stop', 'allday']
-        new_event_values = self.env["calendar.event"]._odoo_values(gevent, calendar)
+        new_event_values = self.env["calendar.event"]._weth_values(gevent, calendar)
         new_parsed_rrule = self._rrule_parse(self.rrule, self.dtstart)
         # We update the attendee status for all events in the recurrence
         google_attendees = gevent.attendees or []
@@ -123,10 +123,10 @@ class CalendarRecurrence(models.Model):
                     partner.name = google_attendee.get('displayName')
 
         organizers_partner_ids = [event.user_id.partner_id for event in self.calendar_event_ids if event.user_id]
-        for odoo_attendee_email in set(existing_attendees.mapped('email')):
+        for weth_attendee_email in set(existing_attendees.mapped('email')):
             # Sometimes, several partners have the same email. Remove old attendees except organizer, otherwise the events will disappear.
-            if email_normalize(odoo_attendee_email) not in emails:
-                attendees = existing_attendees.exists().filtered(lambda att: att.email == email_normalize(odoo_attendee_email) and att.partner_id not in organizers_partner_ids)
+            if email_normalize(weth_attendee_email) not in emails:
+                attendees = existing_attendees.exists().filtered(lambda att: att.email == email_normalize(weth_attendee_email) and att.partner_id not in organizers_partner_ids)
                 self.calendar_event_ids.write({'need_sync': False, 'partner_ids': [Command.unlink(att.partner_id.id) for att in attendees]})
 
         old_event_values = self.base_event_id and self.base_event_id.read(base_event_time_fields)[0]
@@ -175,10 +175,10 @@ class CalendarRecurrence(models.Model):
         attendee_values = {}
         for gevent, vals in zip(gevents, vals_list):
             base_values = dict(
-                self.env['calendar.event']._odoo_values(gevent, calendar),  # FIXME default reminders
+                self.env['calendar.event']._weth_values(gevent, calendar),  # FIXME default reminders
                 need_sync=False,
             )
-            # If we convert a single event into a recurrency on Google, we should reuse this event on Odoo
+            # If we convert a single event into a recurrency on Google, we should reuse this event on Weth
             # Google reuse the event google_id to identify the recurrence in that case
             base_event = self.env['calendar.event'].search([('google_id', '=', vals['google_id'])])
             if not base_event:
@@ -189,7 +189,7 @@ class CalendarRecurrence(models.Model):
                 base_event.write(dict(base_values, google_id=False))
             vals['base_event_id'] = base_event.id
             vals['calendar_event_ids'] = [(4, base_event.id)]
-            # event_tz is written on event in Google but on recurrence in Odoo
+            # event_tz is written on event in Google but on recurrence in Weth
             vals['event_tz'] = gevent.start.get('timeZone')
             attendee_values[base_event.id] = {'attendee_ids': base_values.get('attendee_ids')}
 
@@ -209,7 +209,7 @@ class CalendarRecurrence(models.Model):
         return Domain('calendar_event_ids.user_id', '=', self.env.user.id) & Domain('rrule', '!=', False)
 
     @api.model
-    def _odoo_values(self, google_recurrence, calendar, default_reminders=()):
+    def _weth_values(self, google_recurrence, calendar, default_reminders=()):
         return {
             'rrule': google_recurrence.rrule,
             'google_id': google_recurrence.id,
@@ -238,7 +238,7 @@ class CalendarRecurrence(models.Model):
         property_location = 'shared' if event.user_id else 'private'
         values['extendedProperties'] = {
             property_location: {
-                '%s_odoo_id' % self.env.cr.dbname: self.id,
+                '%s_weth_id' % self.env.cr.dbname: self.id,
             },
         }
         return values

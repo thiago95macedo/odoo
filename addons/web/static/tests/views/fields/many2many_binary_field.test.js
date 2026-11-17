@@ -93,37 +93,37 @@ test("widget many2many_binary", async () => {
         resId: 1,
     });
 
-    expect("div.o_field_widget .oe_fileupload").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachments").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachment .o_attachment_delete").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveText("Pictures");
+    expect("div.w_field_widget .oe_fileupload").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachments").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachment .w_attachment_delete").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveText("Pictures");
 
-    expect("input.o_input_file").toHaveAttribute("accept", "image/*");
+    expect("input.w_input_file").toHaveAttribute("accept", "image/*");
     expect.verifySteps(["/web/dataset/call_kw/turtle/web_read"]);
 
     // Set and trigger the change of a file for the input
-    await contains(".o_file_input_trigger").click();
+    await contains(".w_file_input_trigger").click();
     await setInputFiles(new File(["fake_file"], "fake_file.tiff", { type: "text/plain" }));
     await animationFrame();
 
-    expect(".o_attachment:nth-child(2) .caption a:eq(0)").toHaveText("fake_file.tiff", {
+    expect(".w_attachment:nth-child(2) .caption a:eq(0)").toHaveText("fake_file.tiff", {
         message: 'value of attachment should be "fake_file.tiff"',
     });
-    expect(".o_attachment:nth-child(2) .caption.small a").toHaveText("TIFF", {
+    expect(".w_attachment:nth-child(2) .caption.small a").toHaveText("TIFF", {
         message: "file extension should be correct",
     });
-    expect(".o_attachment:nth-child(2) .o_image.o_hover").toHaveAttribute(
+    expect(".w_attachment:nth-child(2) .w_image.w_hover").toHaveAttribute(
         "data-mimetype",
         "text/plain",
         { message: "preview displays the right mimetype" }
     );
 
     // delete the attachment
-    await contains("div.o_field_widget .oe_fileupload .o_attachment .o_attachment_delete").click();
+    await contains("div.w_field_widget .oe_fileupload .w_attachment .w_attachment_delete").click();
 
     await clickSave();
-    expect("div.o_field_widget .oe_fileupload .o_attachments").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachments").toHaveCount(1);
     expect.verifySteps([
         "/web/dataset/call_kw/ir.attachment/web_read",
         "/web/dataset/call_kw/turtle/web_save",
@@ -168,26 +168,26 @@ test("widget many2many_binary displays notification on error", async () => {
         resId: 1,
     });
 
-    expect("div.o_field_widget .oe_fileupload").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachments").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachment .o_attachment_delete").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachments").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachment .w_attachment_delete").toHaveCount(1);
 
     // Set and trigger the import of 2 files in the input
-    await contains(".o_file_input_trigger").click();
+    await contains(".w_file_input_trigger").click();
     await setInputFiles([
         new File(["good_file"], "good_file.txt", { type: "text/plain" }),
         new File(["bad_file"], "bad_file.txt", { type: "text/plain" }),
     ]);
     await animationFrame();
 
-    expect(".o_attachment:nth-child(2) .caption a:eq(0)").toHaveText("good_file.txt", {
+    expect(".w_attachment:nth-child(2) .caption a:eq(0)").toHaveText("good_file.txt", {
         message: 'value of attachment should be "good_file.txt"',
     });
-    expect("div.o_field_widget .oe_fileupload .o_attachments").toHaveCount(1);
-    expect(".o_notification").toHaveCount(1);
-    expect(".o_notification_content").toHaveText("Uploading error. Error on file: bad_file.txt");
-    expect(".o_notification_bar").toHaveClass("bg-danger");
+    expect("div.w_field_widget .oe_fileupload .w_attachments").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
+    expect(".w_notification_content").toHaveText("Uploading error. Error on file: bad_file.txt");
+    expect(".w_notification_bar").toHaveClass("bg-danger");
 });
 
 test("widget many2many_binary image MIME type preview", async () => {
@@ -224,23 +224,23 @@ test("widget many2many_binary image MIME type preview", async () => {
         resId: 1,
     });
 
-    expect("div.o_field_widget .oe_fileupload").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachments").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attach").toHaveCount(1);
-    expect("div.o_field_widget .oe_fileupload .o_attachment .o_attachment_delete").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachments").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attach").toHaveCount(1);
+    expect("div.w_field_widget .oe_fileupload .w_attachment .w_attachment_delete").toHaveCount(1);
 
     // Set and trigger the import of a png image in the input
-    await contains(".o_file_input_trigger").click();
+    await contains(".w_file_input_trigger").click();
     await setInputFiles(new File([imageData], "fake_image.png", { type: "image/png" }));
     await animationFrame();
 
-    expect(".o_attachment:nth-child(2) .caption a:eq(0)").toHaveText("fake_image.png", {
+    expect(".w_attachment:nth-child(2) .caption a:eq(0)").toHaveText("fake_image.png", {
         message: 'value of attachment should be "fake_image.png"',
     });
-    expect(".o_attachment:nth-child(2) .caption.small a").toHaveText("PNG", {
+    expect(".w_attachment:nth-child(2) .caption.small a").toHaveText("PNG", {
         message: "file extension should be correct",
     });
-    expect(".o_attachment:nth-child(2) .o_preview_image.o_hover").toHaveAttribute(
+    expect(".w_attachment:nth-child(2) .w_preview_image.w_hover").toHaveAttribute(
         "src",
         `data:image/png;base64,${IMAGE_B64}`,
         { message: "preview should display the image preview" }

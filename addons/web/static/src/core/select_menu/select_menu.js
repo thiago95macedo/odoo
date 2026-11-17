@@ -6,7 +6,7 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { localeCompare, normalize } from "@web/core/l10n/utils";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
 import { mergeClasses } from "@web/core/utils/classname";
-import { highlightText, odoomark } from "@web/core/utils/html";
+import { highlightText, wethmark } from "@web/core/utils/html";
 import { scrollTo } from "@web/core/utils/scrolling";
 import { useDebounced } from "@web/core/utils/timing";
 
@@ -456,7 +456,7 @@ export class SelectMenu extends Component {
                     label: choice.label
                         ? highlightText(
                             searchString,
-                            odoomark(choice.label),
+                            wethmark(choice.label),
                             "o_filtered_text fw-bold"
                         )
                         : choice.value,

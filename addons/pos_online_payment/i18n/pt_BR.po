@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:45+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_online_payment/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -47,20 +47,20 @@ msgid "<strong>Error:</strong> The currency is missing or invalid."
 msgstr "<strong>Erro:</strong> a moeda está ausente ou é inválida."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_config.py:0
 msgid "A POS config cannot have more than one online payment method."
 msgstr ""
 "Uma configuração de PDV não pode ter mais de um método de pagamento online."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "A payment option must be specified."
 msgstr "Uma opção de pagamento deve ser especificada."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "A validation payment cannot be used for a Point of Sale online payment."
 msgstr ""
@@ -73,7 +73,7 @@ msgid "All available providers"
 msgstr "Todos os provedores disponíveis"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid ""
 "All payment providers configured for an online payment method must use the "
@@ -105,14 +105,14 @@ msgid "Cancel payment"
 msgstr "Cancelar pagamento"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment.py:0
 msgid "Cannot create a POS online payment without an accounting payment."
 msgstr ""
 "Não é possível criar um pagamento online de PDV sem um pagamento contábil."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment.py:0
 msgid ""
 "Cannot create a POS payment with a not online payment method and an online "
@@ -122,13 +122,13 @@ msgstr ""
 "online e um pagamento contábil online."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment.py:0
 msgid "Cannot edit a POS online payment essential data."
 msgstr "Não é possível editar dados essenciais de um pagamento online de PDV."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid ""
 "Could not create an online payment method (company_id=%(company_id)d, "
@@ -163,25 +163,25 @@ msgid "ID"
 msgstr "ID"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Invalid online payment"
 msgstr "Pagamento online inválido"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Invalid online payments"
 msgstr "Pagamentos online inválidos"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Invoice could not be generated"
 msgstr "A fatura não pôde ser gerada"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid ""
 "It looks like a payment for this order is already being processed — maybe "
@@ -204,7 +204,7 @@ msgid "Online"
 msgstr "Online"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid "Online Payment"
 msgstr "Pagamento online"
@@ -215,7 +215,7 @@ msgid "Online Payment Method"
 msgstr "Método de pagamento online"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid "Online Payment Transfer"
 msgstr "Transferência de pagamento online"
@@ -226,13 +226,13 @@ msgid "Online accounting payment"
 msgstr "Pagamento contábil online"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Online payment unavailable"
 msgstr "Pagamento online indisponível"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Online payments cannot have a negative amount (%s: %s)."
 msgstr "Os pagamentos online não podem ter um valor negativo (%s: %s)."
@@ -253,13 +253,13 @@ msgid "Order Reference"
 msgstr "Referência do pedido"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Order saving issue"
 msgstr "Problema ao salvar o pedido"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/account_payment.py:0
 #: code:addons/pos_online_payment/models/payment_transaction.py:0
 #: model:ir.model.fields,field_description:pos_online_payment.field_account_payment__pos_order_id
@@ -270,7 +270,7 @@ msgid "POS Order"
 msgstr "Pedido do PDV"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid "POS Receivable Transfer"
 msgstr "Transferência de recebíveis de PDV"
@@ -292,13 +292,13 @@ msgid "Payment Transaction"
 msgstr "Transação de pagamento"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Payment provider requirement"
 msgstr "Requisitos do provedor de pagamentos"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Please ensure you have a customer with an email address on this order."
 msgstr ""
@@ -335,7 +335,7 @@ msgid "Processed by"
 msgstr "Processado por"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Server error"
 msgstr "Erro interno do servidor"
@@ -346,7 +346,7 @@ msgid "Skip <i class=\"oi ms-1\" data-icon=\"east\"/>"
 msgstr "Pular <i class=\"oi ms-1\" data-icon=\"east\"/>"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid "The %s already has one online payment."
 msgstr ""
@@ -354,13 +354,13 @@ msgstr ""
 "pagamento online."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/payment_transaction.py:0
 msgid "The POS online payment (tx.id=%d) could not be saved correctly"
 msgstr "O pagamento online do PDV (tx.id=%d) não pôde ser salvo corretamente"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/payment_transaction.py:0
 msgid ""
 "The POS online payment (tx.id=%d) could not be saved correctly because the "
@@ -370,7 +370,7 @@ msgstr ""
 "o método de pagamento online não pôde ser encontrado"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The POS session is not opened."
 msgstr "A sessão do PDV não está aberta."
@@ -386,49 +386,49 @@ msgid "The Point of Sale order linked to this payment"
 msgstr "O pedido do ponto de venda vinculado a esse pagamento"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "The QR code payment could not be generated."
 msgstr "Não foi possível gerar o pagamento por código QR."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The amount to pay has changed. Please refresh the page."
 msgstr "O valor a ser pago foi alterado. Atualize a página."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The currency is invalid."
 msgstr "A moeda é inválida."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "The invoice could not be generated."
 msgstr "A fatura não pôde ser gerada."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The order has been cancelled."
 msgstr "O pedido foi cancelado."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "The order has not been saved correctly on the server."
 msgstr "O pedido não foi salvo corretamente no servidor."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The payment provider is invalid."
 msgstr "O provedor de pagamento é inválido."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid ""
 "The payment should either be direct, with redirection, or made by a token."
@@ -437,37 +437,37 @@ msgstr ""
 "token."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The payment token is invalid."
 msgstr "O token de pagamento é inválido."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/payment_transaction.py:0
 msgid "The payment transaction (%d) has a negative amount."
 msgstr "A transação de pagamento (%d) tem um valor negativo."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The provided order or access token is invalid."
 msgstr "O pedido fornecido ou o token de acesso é inválido."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "The provided partner_id is different than expected."
 msgstr "O partner_id fornecido é diferente do esperado."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "The saved order could not be retrieved."
 msgstr "O pedido salvo não pôde ser recuperado."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid ""
 "The total amount of remaining online payments to execute (%s) doesn't "
@@ -477,13 +477,13 @@ msgstr ""
 "corresponde ao valor restante não pago do pedido (%s)."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "There are online payments that were missing in your view."
 msgstr "Há pagamentos online que estavam faltando em sua visualização."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid ""
 "There is a problem with the server. The order online payment status cannot "
@@ -493,7 +493,7 @@ msgstr ""
 "pode ser recuperado."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid ""
 "There is a problem with the server. The order online payment status cannot "
@@ -504,7 +504,7 @@ msgstr ""
 "pedido?"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid ""
 "There is no online payment method configured for this Point of Sale order."
@@ -513,7 +513,7 @@ msgstr ""
 "de venda."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "There is nothing to pay for this order."
 msgstr "Não há nada a pagar por esse pedido."
@@ -529,7 +529,7 @@ msgid "To Pay"
 msgstr "A pagar"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_config.py:0
 msgid ""
 "To use an online payment method in a POS config, it must have at least one "
@@ -540,7 +540,7 @@ msgstr ""
 "moeda dessa configuração de PDV."
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/controllers/payment_portal.py:0
 msgid "Tokenization is not available for logged out customers."
 msgstr "A tokenização não está disponível para clientes desconectados."
@@ -551,7 +551,7 @@ msgid "Transaction Reference"
 msgstr "Referência da transação"
 
 #. module: pos_online_payment
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment/models/pos_payment_method.py:0
 msgid "Transfer Online payment %(account_name)s => %(pos_receivable_name)s"
 msgstr "Transferir pagamento online %(account_name)s => %(pos_receivable_name)s"
@@ -567,7 +567,7 @@ msgid "Type"
 msgstr "Tipo"
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Updated online payments"
 msgstr "Pagamentos online atualizados"
@@ -578,7 +578,7 @@ msgid "We're confirming your payment."
 msgstr "Estamos confirmando seu pagamento."
 
 #. module: pos_online_payment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment/static/src/app/utils/order_payment_validation.js:0
 msgid "Yes"
 msgstr "Sim"

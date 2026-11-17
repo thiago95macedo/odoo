@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_cashmatic/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,13 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/app/payment_cashmatic.js:0
 msgid "Cash Machine Error"
 msgstr "Erro no terminal de pagamento"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/app/screens/payment_screen/payment_lines/payment_lines.xml:0
 msgid "Cash dispensed"
 msgstr "Dinheiro dispensado"
@@ -59,19 +59,19 @@ msgid "Cashmatic Username"
 msgstr "Nome de usuário do Cashmatic"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/app/payment_cashmatic.js:0
 msgid "Cashmatic cancellation failed: %s"
 msgstr "O cancelamento do Cashmatic falhou: %s"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/cashmatic_service.js:0
 msgid "Cashmatic device unreachable"
 msgstr "Dispositivo Cashmatic inacessível"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/app/payment_cashmatic.js:0
 msgid "Cashmatic payment failed: %s"
 msgstr "O pagamento com Cashmatic falhou: %s"
@@ -104,7 +104,7 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento do Ponto de Venda"
 
 #. module: pos_cashmatic
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_cashmatic/static/src/app/payment_cashmatic.js:0
 msgid ""
 "The cash machine could not dispense %s. Please give the remaining amount to "

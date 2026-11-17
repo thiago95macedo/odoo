@@ -7,7 +7,7 @@ import { session } from "@web/session";
 describe.current.tags("headless");
 
 test("default state", () => {
-    expect(odoo.debug).toBe("");
+    expect(weth.debug).toBe("");
     const s = { ...serverState };
     expect(s).toInclude("view_info");
     delete s.view_info;
@@ -23,8 +23,8 @@ test("default state", () => {
         isRegularUser: true,
         lang: "en",
         multiLang: false,
-        odoobotId: 418,
-        odoobotUid: 518,
+        wethbotId: 418,
+        wethbotUid: 518,
         partnerId: 17,
         partnerName: "Mitchell Admin",
         publicPartnerId: 18,

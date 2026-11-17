@@ -35,18 +35,18 @@ registerStoreHandler(
             store.request_channel_ids.add(channelId);
         }
         if (!ResUsers._is_public(this.env.uid)) {
-            const odoobotChatMemberChannelIds = DiscussChannelMember._filter([
-                ["partner_id", "=", serverState.odoobotId],
+            const wethbotChatMemberChannelIds = DiscussChannelMember._filter([
+                ["partner_id", "=", serverState.wethbotId],
             ]).map((member) => member.channel_id);
             const myMemberChannelIds = DiscussChannelMember._filter([
                 ["partner_id", "=", this.env.user.partner_id],
             ]).map((member) => member.channel_id);
-            const odoobotChatIds = DiscussChannel.search([
+            const wethbotChatIds = DiscussChannel.search([
                 ["channel_type", "=", "chat"],
-                ["id", "in", odoobotChatMemberChannelIds],
+                ["id", "in", wethbotChatMemberChannelIds],
                 ["id", "in", myMemberChannelIds],
             ]);
-            for (const channelId of odoobotChatIds) {
+            for (const channelId of wethbotChatIds) {
                 store.request_channel_ids.add(channelId);
             }
         }
@@ -162,9 +162,9 @@ registerStoreHandler("systray_get_activities", function store_systray_get_activi
     const roleIds = this.env.user.role_ids || [];
     const activities_to_assign_count = roleIds.length
         ? MailActivity._filter([
-              ["user_id", "=", false],
-              ["role_id", "in", roleIds],
-          ]).length
+            ["user_id", "=", false],
+            ["role_id", "in", roleIds],
+        ]).length
         : 0;
     store.add_global_values({
         activityCounter: groups.reduce((counter, group) => counter + (group.total_count || 0), 0),

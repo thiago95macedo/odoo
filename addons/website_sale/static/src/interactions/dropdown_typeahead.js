@@ -3,7 +3,7 @@ import { Interaction } from '@web/public/interaction';
 
 
 export class DropdownTypeahead extends Interaction {
-    static selector = ".dropdown.o_typeahead, .dropup.o_typeahead";
+    static selector = ".dropdown.w_typeahead, .dropup.w_typeahead";
 
     dynamicContent = {
         _root: {

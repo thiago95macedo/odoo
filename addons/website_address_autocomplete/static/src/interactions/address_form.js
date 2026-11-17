@@ -80,7 +80,7 @@ export class AddressForm extends Interaction {
         this.cityInput.value = address.city || "";
         this.street2Input.value = address.street2 || "";
 
-        // Selects based on odoo ids
+        // Selects based on weth ids
         if (address.country) {
             this.countrySelect.value = address.country[0];
             // Let the state select know that the country has changed so that it may fetch the correct states or disappear.

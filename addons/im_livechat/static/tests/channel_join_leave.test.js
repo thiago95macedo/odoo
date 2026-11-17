@@ -60,12 +60,12 @@ test("visitor leaving ends the livechat conversation", async () => {
     });
     setupChatHub({ opened: [channel_id] });
     await start();
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
     // simulate visitor leaving
     await withGuest(guestId, () => rpc("/im_livechat/visitor_leave_session", { channel_id }));
     await contains("span", { text: "This live chat conversation has ended." });
     await click("button[title*='Close Chat Window']");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
 });
 
 test("ended livechat hides join channel action", async () => {
@@ -110,16 +110,16 @@ test("leaving chat window triggers a single RPC", async () => {
     setupChatHub({ opened: [channelId] });
     onRpc("discuss.channel", "action_unfollow", () => expect.step("action_unfollow"));
     await start();
-    await contains(".o-mail-ChatWindow");
-    await contains(".o-mail-Message:contains('Last message from Visitor #1')");
+    await contains(".w-mail-ChatWindow");
+    await contains(".w-mail-Message:contains('Last message from Visitor #1')");
     await click("[title='Open Actions Menu']", {
-        parent: [".o-mail-ChatWindow:contains('Visitor #1')"],
+        parent: [".w-mail-ChatWindow:contains('Visitor #1')"],
     });
-    await click(".o-dropdown-item:text('Close Conversation')");
+    await click(".w-dropdown-item:text('Close Conversation')");
     await contains(
         ".modal-header:contains('Closing this will end the live chat with Visitor #1. Are you sure you want to proceed?')"
     );
     await click("button:contains(Close Conversation)");
-    await contains(".o-mail-ChatWindow", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 0 });
     await expect.waitForSteps(["action_unfollow"]);
 });

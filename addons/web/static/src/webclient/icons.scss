@@ -6,7 +6,7 @@
 // ================================
 
 $ms-font-family: 'Material Symbols Outlined';
-$oi-font-family: 'odoo_ui_icons';
+$oi-font-family: 'weth_ui_icons';
 // Icon sizing map
 $icon-sizes: (
     'sm': 0.8em,
@@ -21,7 +21,7 @@ $icon-sizes: (
     '9x': 9em,
     '10x': 10em,
 );
-$oi-default-size: 1em;   // Normally 14px
+$oi-default-size: 1em; // Normally 14px
 $oi-fw-ratio: 1.28571429; // Matches .fa-fw
 
 // ================================
@@ -67,29 +67,35 @@ $oi-fw-ratio: 1.28571429; // Matches .fa-fw
 // Generic class for Material Symbols and OI extended library icons.
 .oi {
     @include material-icon-base;
+
     &[data-icon^="oi_"] {
         --icon-font-family: #{$oi-font-family};
     }
+
     &[data-icon="oi_twitter"]:before {
         content: "oi_x";
     }
+
     &[data-icon="oi_twitter-square"]:before {
         content: "oi_x-square";
     }
 }
 
-.o_rtl .oi {
-    $rtl-selectors: ();
-    @each $icon in $oi-custom-rtl-icons {
-        $rtl-selectors: append($rtl-selectors, unquote('&[data-icon="oi_#{$icon}"]'), comma);
-    }
-    @each $icon in $ms-rtl-icons {
-        $rtl-selectors: append($rtl-selectors, unquote('&[data-icon="#{$icon}"]'), comma);
-    }
-    
-    #{$rtl-selectors} {
-        transform: scaleX(-1);
-    }
+.w_rtl .oi {
+    $rtl-selectors: (
+    );
+
+@each $icon in $oi-custom-rtl-icons {
+    $rtl-selectors: append($rtl-selectors, unquote('&[data-icon="oi_#{$icon}"]'), comma);
+}
+
+@each $icon in $ms-rtl-icons {
+    $rtl-selectors: append($rtl-selectors, unquote('&[data-icon="#{$icon}"]'), comma);
+}
+
+#{$rtl-selectors} {
+    transform: scaleX(-1);
+}
 }
 
 
@@ -102,7 +108,7 @@ $oi-fw-ratio: 1.28571429; // Matches .fa-fw
     .oi-#{$name} {
         font-size: $size;
 
-        @if $name == 'lg' {
+        @if $name =='lg' {
             vertical-align: middle;
         }
     }
@@ -122,7 +128,8 @@ $oi-fw-ratio: 1.28571429; // Matches .fa-fw
     vertical-align: middle;
 }
 
-.oi-stack-1x, .oi-stack-2x {
+.oi-stack-1x,
+.oi-stack-2x {
     position: absolute;
     left: 0;
     width: 100%;
@@ -172,6 +179,7 @@ $oi-fw-ratio: 1.28571429; // Matches .fa-fw
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(359deg);
     }

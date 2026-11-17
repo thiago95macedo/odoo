@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/purchase_mrp/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgid "Bill of Material Line"
 msgstr "Linha da lista de materiais"
 
 #. module: purchase_mrp
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_mrp/models/mrp_bom.py:0
 msgid "Components cost share have to be positive or equals to zero."
 msgstr "A divisão de custos dos componentes deve ser positiva ou igual a zero."
@@ -130,7 +130,7 @@ msgid "Manufacturing Order"
 msgstr "Ordem de produção"
 
 #. module: purchase_mrp
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_mrp/models/purchase.py:0
 msgid "Manufacturing Source of %s"
 msgstr "Origem de fabricação de %s"
@@ -146,7 +146,7 @@ msgid "Purchase Order Line"
 msgstr "Linha do pedido de compra"
 
 #. module: purchase_mrp
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_mrp/models/mrp_production.py:0
 msgid "Purchase Order generated from %s"
 msgstr "Pedido de compra gerado a partir de %s"
@@ -176,7 +176,7 @@ msgstr ""
 "total de todos os componentes tem que ser igual a 100."
 
 #. module: purchase_mrp
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_mrp/models/mrp_bom.py:0
 msgid "The total cost share for a BoM's component have to be 100"
 msgstr ""

@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 
 # API requests are sent to Google Calendar after the current transaction ends.
-# This ensures changes are sent to Google only if they really happened in the Odoo database.
+# This ensures changes are sent to Google only if they really happened in the WETH database.
 # It is particularly important for event creation , otherwise the event might be created
 # twice in Google if the first creation crashed in WETH.
 def after_commit(func):

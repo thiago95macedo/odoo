@@ -1,12 +1,12 @@
 .o_record_selector {
     position: relative;
 
-    .o-autocomplete {
+    .w-autocomplete {
         min-width: 0;
     }
 
     .o_dropdown_button {
-        @include o-position-absolute($o-input-padding-y, $o-input-padding-x);
+        @include o-position-absolute($w-input-padding-y, $w-input-padding-x);
         pointer-events: none;
 
         &::after {
@@ -15,7 +15,8 @@
         }
     }
 
-    &:hover, &:focus-within {
+    &:hover,
+    &:focus-within {
         .o_dropdown_button::after {
             opacity: 1;
         }
@@ -35,7 +36,8 @@
             pointer-events: none;
         }
 
-        &:hover, &:focus-within {
+        &:hover,
+        &:focus-within {
             &::after {
                 opacity: 1;
             }

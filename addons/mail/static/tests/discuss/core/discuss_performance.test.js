@@ -56,15 +56,15 @@ test("posting new message should only render relevant part", async () => {
     await start();
     const stopObserve1 = observeRenders();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 10 });
-    await insertText(".o-mail-Composer-input", "Test");
+    await contains(".w-mail-Message", { count: 10 });
+    await insertText(".w-mail-Composer-input", "Test");
     const result1 = stopObserve1();
     // LessThan because renders could be batched
     expect(result1.get(Message)).toBeLessThan(11); // 10: all messages initially
     const stopObserve2 = observeRenders();
     posting = true;
     triggerHotkey("Enter");
-    await contains(".o-mail-Message", { count: 11 });
+    await contains(".w-mail-Message", { count: 11 });
     posting = false;
     const result2 = stopObserve2();
     expect(result2.get(Composer)).toBeLessThan(3); // 2: temp disabling + clear content
@@ -99,12 +99,12 @@ test("replying to message should only render relevant part", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 10 });
+    await contains(".w-mail-Message", { count: 10 });
     const stopObserve = observeRenders();
     replying = true;
-    await click(".o-mail-Message:last [title='Expand']");
-    await click(".o-dropdown-item:contains('Reply')");
-    await contains(".o-mail-Composer:has(:text('Replying to Mitchell Admin'))");
+    await click(".w-mail-Message:last [title='Expand']");
+    await click(".w-dropdown-item:contains('Reply')");
+    await contains(".w-mail-Composer:has(:text('Replying to Mitchell Admin'))");
     replying = false;
     const result = stopObserve();
     expect(result.get(Composer)).toBeLessThan(2);
@@ -139,12 +139,12 @@ test("right-click message selection should only render relevant part", async () 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 10 });
+    await contains(".w-mail-Message", { count: 10 });
     const stopObserve = observeRenders();
     rightClicking = true;
 
-    await rightClick(".o-mail-Message:last");
-    await contains(".dropdown-menu .o-mail-ActionList");
+    await rightClick(".w-mail-Message:last");
+    await contains(".dropdown-menu .w-mail-ActionList");
     rightClicking = false;
     const result = stopObserve();
     expect(result.get(Message)).toBe(1);

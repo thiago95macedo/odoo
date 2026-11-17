@@ -111,7 +111,7 @@ test("plugin destruction is reverse of instantiation order", async () => {
     expect.verifySteps(["destroy: second", "destroy: first"]);
 });
 
-test("Remove odoo-editor-editable class after every plugin is destroyed", async () => {
+test("Remove weth-editor-editable class after every plugin is destroyed", async () => {
     class TestPlugin extends Plugin {
         static id = "test";
         destroy() {
@@ -145,7 +145,7 @@ test("Element is not editable if any plugin marks it non-editable", async () => 
             config: { includePlugins: [TestPlugin] },
         }
     );
-    const img = el.querySelector(".o-editable-media");
+    const img = el.querySelector(".w-editable-media");
     const selectionPlugin = plugins.get("selection");
     await expect(selectionPlugin.isNodeEditable(img)).toBe(false);
 });

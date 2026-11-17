@@ -26,7 +26,7 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
             "eventType": "workingLocation",
             'description': 'Working location',
             'summary': 'Working location',
-            'organizer': {'email': 'odoocalendarref@gmail.com', 'self': True},
+            'organizer': {'email': 'wethcalendarref@gmail.com', 'self': True},
             'visibility': 'public',
             'attendees': [],
             'reminders': {'useDefault': True},
@@ -37,7 +37,7 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
         })
 
     @patch_api
-    def test_work_locations_google_allday_to_odoo_hr(self):
+    def test_work_locations_google_allday_to_weth_hr(self):
         with self.mock_datetime_and_now("2025-04-28"):
             office_location_values = {
                 **self.work_location_simple_values,
@@ -47,7 +47,7 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
                 'workingLocationProperties': {
                     'type': 'officeLocation',
                     'officeLocation': {
-                        'label': 'Odoo Farm 1: R&D Vidange Office'
+                        'label': 'WETH Farm 1: R&D Vidange Office'
                     }
                 }
             }
@@ -73,7 +73,7 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
                 'workingLocationProperties': {
                     'type': 'customLocation',
                     'customLocation': {
-                        'label': 'Odoo Louvain-la-Neuve Office'
+                        'label': 'WETH Louvain-la-Neuve Office'
                     }
                 }
             }
@@ -86,7 +86,7 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
                 'workingLocationProperties': {
                     'type': 'customLocation',
                     'customLocation': {
-                        'label': 'Odoo Louvain-la-Neuve Office'
+                        'label': 'WETH Louvain-la-Neuve Office'
                     }
                 }
             }
@@ -103,9 +103,9 @@ class TestSyncWorkLocationsGoogle(TestSyncGoogle):
                 current_work_locations_count,
                 previous_work_locations_count + 2,
             )
-            office_location = self.env['hr.work.location'].search([('name', '=', 'Odoo Farm 1: R&D Vidange Office')])
+            office_location = self.env['hr.work.location'].search([('name', '=', 'WETH Farm 1: R&D Vidange Office')])
             home_location = self.env['hr.work.location'].search([('name', '=', 'Home')])
-            custom_location = self.env['hr.work.location'].search([('name', '=', 'Odoo Louvain-la-Neuve Office')])
+            custom_location = self.env['hr.work.location'].search([('name', '=', 'WETH Louvain-la-Neuve Office')])
 
             self.assertEqual(self.hr_employee.monday_location_id, office_location)
             self.assertEqual(self.hr_employee.tuesday_location_id, home_location)

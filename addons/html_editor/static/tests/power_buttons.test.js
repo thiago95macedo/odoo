@@ -218,13 +218,13 @@ describe("buttons", () => {
         await setupEditor("<p>[]<br></p>");
         click(".o_we_power_buttons .power_button[data-icon='crop_landscape']");
         await animationFrame();
-        await expectElementCount(".o-we-linkpopover", 1);
+        await expectElementCount(".w-we-linkpopover", 1);
     });
 
     test("should open the powerbox using the power buttons without losing editor focus", async () => {
         const { el, editor } = await setupEditor("<p>[]<br></p>");
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         expect(editor.document.activeElement).toBe(el);
     });
 
@@ -232,12 +232,12 @@ describe("buttons", () => {
         const { editor } = await setupEditor("<p>[]<br></p>");
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
-        expect(queryAllTexts(".o-we-command-name").length).toBe(28);
+        await expectElementCount(".w-we-powerbox", 1);
+        expect(queryAllTexts(".w-we-command-name").length).toBe(28);
         // Type a search term
         await insertText(editor, "head");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "Heading 1",
             "Heading 2",
             "Heading 3",
@@ -248,21 +248,21 @@ describe("buttons", () => {
         }
         await animationFrame();
         // All commands should be available again
-        expect(queryAllTexts(".o-we-command-name").length).toBe(28);
+        expect(queryAllTexts(".w-we-command-name").length).toBe(28);
     });
 
     test("should close the powerbox on pointerdown outside and not reopen it on subsequent keydown", async () => {
         const { editor } = await setupEditor("<p>[]<br></p>");
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         // Click outside the powerbox
         await pointerDown("p");
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
         // Typing should not reopen the powerbox
         await insertText(editor, "a");
         await animationFrame();
-        expect(".o-we-powerbox").toHaveCount(0);
+        expect(".w-we-powerbox").toHaveCount(0);
     });
 
     test("should close the powerbox on undo", async () => {
@@ -270,9 +270,9 @@ describe("buttons", () => {
         splitBlock(editor);
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         undo(editor);
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
     });
 
     test("should close the powerbox on redo", async () => {
@@ -281,9 +281,9 @@ describe("buttons", () => {
         undo(editor);
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         redo(editor);
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
     });
 
     test("should close the powerbox on backspace", async () => {
@@ -291,65 +291,65 @@ describe("buttons", () => {
         splitBlock(editor);
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         press("backspace");
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
     });
 
     test("should filter powerbox commands and keep it open on undo when only the search term changes", async () => {
         const { editor } = await setupEditor("<p>[]<br></p>");
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
-        expect(queryAllTexts(".o-we-command-name").length).toBe(28);
+        await expectElementCount(".w-we-powerbox", 1);
+        expect(queryAllTexts(".w-we-command-name").length).toBe(28);
         // Type a search term
         await insertText(editor, "head");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "Heading 1",
             "Heading 2",
             "Heading 3",
         ]);
         undo(editor);
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
     });
 
     test("should filter powerbox commands and keep it open on redo when only the search term changes", async () => {
         const { editor } = await setupEditor("<p>[]<br></p>");
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
-        expect(queryAllTexts(".o-we-command-name").length).toBe(28);
+        await expectElementCount(".w-we-powerbox", 1);
+        expect(queryAllTexts(".w-we-command-name").length).toBe(28);
         // Type a search term
         await insertText(editor, "head");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "Heading 1",
             "Heading 2",
             "Heading 3",
         ]);
         undo(editor);
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
     });
 
     test("should filter and apply a powerbox command when opened via the power buttons", async () => {
         const { el, editor } = await setupEditor("<p>[]<br></p>");
         // Open powerbox via the More options button
         click(".o_we_power_buttons .power_button[data-icon='more_vert']");
-        await expectElementCount(".o-we-powerbox", 1);
-        expect(queryAllTexts(".o-we-command-name").length).toBe(28);
+        await expectElementCount(".w-we-powerbox", 1);
+        expect(queryAllTexts(".w-we-command-name").length).toBe(28);
         // Type a search term
         await insertText(editor, "head");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "Heading 1",
             "Heading 2",
             "Heading 3",
         ]);
         undo(editor);
-        await expectElementCount(".o-we-powerbox", 1);
+        await expectElementCount(".w-we-powerbox", 1);
         await press("enter");
-        await expectElementCount(".o-we-powerbox", 0);
+        await expectElementCount(".w-we-powerbox", 0);
         expect(getContent(el)).toBe('<h1 o-we-hint-text="Heading 1" class="o-we-hint">[]<br></h1>');
     });
 });

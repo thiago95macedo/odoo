@@ -8,12 +8,12 @@ import { rpc } from "@web/core/network/rpc";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 export class SlideLike extends Interaction {
-    static selector = ".o_wslides_js_slide_like";
+    static selector = ".w_wslides_js_slide_like";
     dynamicContent = {
-        ".o_wslides_js_slide_like_up": {
+        ".w_wslides_js_slide_like_up": {
             "t-on-click": (ev) => this.onClick(ev.currentTarget.dataset.slideId, "like"),
         },
-        ".o_wslides_js_slide_like_down": {
+        ".w_wslides_js_slide_like_down": {
             "t-on-click": (ev) => this.onClick(ev.currentTarget.dataset.slideId, "dislike"),
         },
     };
@@ -51,9 +51,9 @@ export class SlideLike extends Interaction {
             })
         );
         if (!data.error) {
-            const likeButtonEl = this.el.querySelector("span.o_wslides_js_slide_like_up");
+            const likeButtonEl = this.el.querySelector("span.w_wslides_js_slide_like_up");
             const likesIcon = likeButtonEl.querySelector("i.oi");
-            const dislikeButtonEl = this.el.querySelector("span.o_wslides_js_slide_like_down");
+            const dislikeButtonEl = this.el.querySelector("span.w_wslides_js_slide_like_down");
             const dislikesIcon = dislikeButtonEl.querySelector("i.oi");
 
             // update 'thumbs-up' button with latest state

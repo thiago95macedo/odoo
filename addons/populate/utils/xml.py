@@ -62,7 +62,7 @@ def parse(xml: str):
         if not model_name:
             msg = (
                 f"Missing required 'model' attribute on <{operation}> element. "
-                f"Each <{operation}> must specify the Odoo model name."
+                f"Each <{operation}> must specify the WETH model name."
             )
             raise ValueError(msg)
 

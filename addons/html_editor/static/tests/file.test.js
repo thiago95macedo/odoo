@@ -54,7 +54,7 @@ describe("file command", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect(".odoo-editor-editable .o_file_box").toHaveCount(1);
+        expect(".weth-editor-editable .o_file_box").toHaveCount(1);
     });
 
     test("file card should have inline display, BS alert-info style and no download button", async () => {
@@ -108,7 +108,7 @@ describe("file command", () => {
             await animationFrame();
             expect(getContent(fileNameEl1)).toBe("[file.txt]");
             // File name editing should not open the editor toolbar.
-            expect(".o-we-toolbar").toHaveCount(0);
+            expect(".w-we-toolbar").toHaveCount(0);
 
             // Clicking the second file name transfers editability to it.
             await click(fileNameEl2);
@@ -126,7 +126,7 @@ describe("file command", () => {
             await animationFrame();
             expect(getContent(fileNameEl2)).toBe("[file.txt]");
             // File name editing should not open the editor toolbar.
-            expect(".o-we-toolbar").toHaveCount(0);
+            expect(".w-we-toolbar").toHaveCount(0);
 
             // Clicking outside exits file name editing for all files.
             const paragraph = el.firstElementChild;
@@ -268,7 +268,7 @@ describe("file command", () => {
 
             // Click the file icon to open the file viewer
             await click(fileImage);
-            await expectElementCount(".o-FileViewer", 1);
+            await expectElementCount(".w-FileViewer", 1);
         });
     });
 
@@ -289,7 +289,7 @@ describe("file command", () => {
         // Typing "/" inside the file name should NOT open the powerbox.
         await insertText(editor, "/");
         await animationFrame();
-        expect(".o-we-powerbox").toHaveCount(0);
+        expect(".w-we-powerbox").toHaveCount(0);
     });
 
     test.tags("desktop");
@@ -357,7 +357,7 @@ test("Should not apply color to file box", async () => {
     await press(["Ctrl", "a"]);
     await animationFrame();
     await expandToolbar();
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await animationFrame();
     await click('.o_colorpicker_section [data-color="o-color-1"]');
     await animationFrame();
@@ -419,7 +419,7 @@ describe("document tab in media dialog", () => {
             await click(".nav-link:contains('Documents')");
             await animationFrame();
             await click(".o_we_attachment_highlight .o_button_area");
-            expect(".odoo-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
+            expect(".weth-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
         });
     });
 });
@@ -435,7 +435,7 @@ describe("powerbutton", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect(".odoo-editor-editable .o_file_box").toHaveCount(1);
+        expect(".weth-editor-editable .o_file_box").toHaveCount(1);
     });
 
     test("file powerbutton uploads a file directly via the system's selector (embedded component)", async () => {
@@ -448,7 +448,7 @@ describe("powerbutton", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect('.odoo-editor-editable [data-embedded="file"]').toHaveCount(1);
+        expect('.weth-editor-editable [data-embedded="file"]').toHaveCount(1);
     });
 });
 
@@ -514,7 +514,7 @@ test("Edit embedded file name using input", async () => {
     });
     const mockedUpload = patchUpload(editor);
     await insertText(editor, "/file");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await press("Enter");
     await mockedUpload;
     await expectElementCount(".o_file_name_container", 1);

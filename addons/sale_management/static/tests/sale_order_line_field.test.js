@@ -210,12 +210,12 @@ test("Can't mark section hidden if optional and vice versa", async () => {
     );
 
     await contains('.o_data_row:contains(Sec1) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Set Optional)').toHaveClass('disabled', {
+    expect('.w-dropdown-item:contains(Set Optional)').toHaveClass('disabled', {
         message: "Section with hidden prices can't be optional"
     });
 
     await contains('.o_data_row:contains(Sec2) .o_list_section_options button').click();
-    expect('.o-dropdown-item:contains(Set Optional)').toHaveClass('disabled', {
+    expect('.w-dropdown-item:contains(Set Optional)').toHaveClass('disabled', {
         message: "Hidden section can't be optional"
     });
 })
@@ -250,13 +250,13 @@ test("Setting section optional should reset some fields", async () => {
     );
 
     await contains('.o_data_row:contains(Sec3-sub2) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Hide Composition)').click();
+    await contains('.w-dropdown-item:contains(Hide Composition)').click();
 
     await contains('.o_data_row:contains(Sec3-sub1) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Hide Prices)').click();
+    await contains('.w-dropdown-item:contains(Hide Prices)').click();
 
     await contains('.o_data_row:contains(Sec3) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Set Optional)').click();
+    await contains('.w-dropdown-item:contains(Set Optional)').click();
 
     await clickSave();
     await expect.verifySteps(['web_save']);
@@ -307,7 +307,7 @@ test("Unsetting optional section should reset some fields", async () => {
     });
 
     await contains('.o_data_row:contains(Sec3) .o_list_section_options button').click();
-    await contains('.o-dropdown-item:contains(Unset Optional)').click();
+    await contains('.w-dropdown-item:contains(Unset Optional)').click();
 
     await clickSave();
     await expect.verifySteps(['web_save']);
@@ -472,7 +472,7 @@ test("Selecting a section template should append its section and lines to the or
     await contains("button:contains(Add Section)").click();
     expect(".o_section_templates_dropdown").toBeVisible();
 
-    await contains("span.o-dropdown-item:contains(Section Template 1)").click();
+    await contains("span.w-dropdown-item:contains(Section Template 1)").click();
     expect(queryAllTexts(".o_data_row td[name=product_and_description]")).toEqual([
         ...EXPECTED_LINE_RECORDS,
         "Section Template 1",

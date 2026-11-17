@@ -1,4 +1,4 @@
-import { OdooViewsDataSource } from "@spreadsheet/data_sources/odoo_views_data_source";
+import { WethViewsDataSource } from "@spreadsheet/data_sources/weth_views_data_source";
 import { EvaluationError } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 import {
@@ -17,12 +17,12 @@ const { toNumber, deepEquals } = spreadsheet.helpers;
 const { DEFAULT_LOCALE } = spreadsheet.constants;
 
 /**
- * @typedef {import("@spreadsheet").OdooFields} OdooFields
+ * @typedef {import("@spreadsheet").WethFields} WethFields
  *
  * @typedef {Object} ListMetaData
  * @property {Array<string>} columns
  * @property {string} resModel
- * @property {OdooFields} fields
+ * @property {WethFields} fields
  *
  * @typedef {Object} ListSearchParams
  * @property {Array<string>} orderBy
@@ -32,7 +32,7 @@ const { DEFAULT_LOCALE } = spreadsheet.constants;
 
 export const SEARCH_COUNT_LIMIT = 10_000;
 
-export class ListDataSource extends OdooViewsDataSource {
+export class ListDataSource extends WethViewsDataSource {
     /**
      * @override
      * @param {Object} services Services (see DataSource)

@@ -2,15 +2,17 @@
     0% {
         transform: scale(0.75);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
 }
 
-.o-CallDebriefMediaControls {
+.w-CallDebriefMediaControls {
     // Media controls should always be in LTR direction, even in RTL context.
     /*rtl:ignore*/
     direction: ltr;
@@ -20,45 +22,47 @@
         --CallDebriefMediaControls__timeLabel-width: 100%;
     }
 
-    .o-CallDebrief-control {
+    .w-CallDebrief-control {
         @include media-breakpoint-up(md) {
             --#{$prefix}btn-bg: transparent;
             --#{$prefix}btn-border-color: transparent;
             --#{$prefix}btn-disabled-bg: transparent;
             --#{$prefix}btn-disabled-border-color: transparent;
 
-            &.o-CallDebrief-hotkeyFeedback {
-                --btn-bg: #{$o-component-active-bg};
+            &.w-CallDebrief-hotkeyFeedback {
+                --btn-bg: #{$w-component-active-bg};
 
                 animation: o-CallDebrief-mediaControlsFeedbackPop .2s ease-out;
             }
         }
     }
 
-    .o-CallDebrief-select {
+    .w-CallDebrief-select {
         background-image: none;
         // Center selected value on Safari
         text-align-last: center;
     }
 
-    .o-CallDebriefMediaControls-timeLabel, .o-CallDebriefMediaControls-playbackRate {
+    .w-CallDebriefMediaControls-timeLabel,
+    .w-CallDebriefMediaControls-playbackRate {
         font-variant-numeric: tabular-nums;
         user-select: none;
     }
 
-    .o-CallDebriefMediaControls-timeLabel {
+    .w-CallDebriefMediaControls-timeLabel {
         order: var(--CallDebriefMediaControls__timeLabel-order);
         width: var(--CallDebriefMediaControls__timeLabel-width, auto);
     }
 
-    .o-CallDebriefMediaControls-playbackRate {
+    .w-CallDebriefMediaControls-playbackRate {
         --#{$prefix}box-shadow-inset: none;
 
         @include media-breakpoint-up(md) {
             --#{$prefix}bg-opacity: 0;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             --#{$prefix}bg-opacity: 1;
         }
 
@@ -67,13 +71,13 @@
         }
     }
 
-    .o-CallDebriefMediaControls-volumeWrapper {
-        &:hover .o-CallDebriefMediaControls-volumeRange {
+    .w-CallDebriefMediaControls-volumeWrapper {
+        &:hover .w-CallDebriefMediaControls-volumeRange {
             --CallDebriefMediaControls__volumeRange-display: block;
         }
     }
 
-    .o-CallDebriefMediaControls-volumeRange {
+    .w-CallDebriefMediaControls-volumeRange {
         /*rtl:begin:ignore*/
         left: 100%;
         transform: rotate(-90deg);
@@ -84,7 +88,7 @@
         width: map-get($spacers, 5) * 2;
     }
 
-    .o-CallDebrief-playbackRateLabel {
+    .w-CallDebrief-playbackRateLabel {
         width: 5ch;
         height: 2em;
     }

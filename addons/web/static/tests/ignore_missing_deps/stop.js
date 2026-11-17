@@ -1,3 +1,3 @@
 // @weth-module ignore
 
-window.__odooIgnoreMissingDependencies = false;
+window.__wethIgnoreMissingDependencies = false;

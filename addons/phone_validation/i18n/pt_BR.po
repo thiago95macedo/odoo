@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/phone_validation/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr ""
 "números de registros. "
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/phone_blacklist.py:0
 msgid "%(error)s Please correct the number and try again."
 msgstr "%(error)s Corrija o número e tente novamente."
@@ -103,7 +103,7 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/mail_thread_phone.py:0
 msgid "Are you sure you want to unblacklist this Phone Number?"
 msgstr ""
@@ -111,7 +111,7 @@ msgstr ""
 "bloqueio?"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/phone_blacklist.py:0
 msgid "Are you sure you want to unblacklist this phone number?"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr ""
 "mensagens SMS."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/res_users.py:0
 msgid ""
 "Blocked by deletion of portal account %(portal_user_name)s by %(user_name)s "
@@ -272,19 +272,19 @@ msgstr ""
 "não receberá mais SMS de envio em massa, de lista alguma"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid "Impossible number %s: not a valid country prefix."
 msgstr "Número inexistente %s: não é um prefixo de país válido."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid "Impossible number %s: not enough digits."
 msgstr "Número inexistente %s: não há dígitos suficientes."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid "Impossible number %s: too many digits."
 msgstr "Número inexistente %s: dígitos demais."
@@ -304,13 +304,13 @@ msgstr ""
 "modelo."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid "Invalid number %s: probably incorrect prefix."
 msgstr "Número inválido %s: o prefixo provavelmente está incorreto."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/mail_thread_phone.py:0
 msgid "Invalid primary phone field on model %s"
 msgstr "Campo de telefone principal inválido no modelo %s"
@@ -349,7 +349,7 @@ msgid "Messages"
 msgstr "Mensagens"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/mail_thread_phone.py:0
 msgid "Missing definition of phone fields."
 msgstr "Falta definição dos campos telefônicos."
@@ -438,7 +438,7 @@ msgid "Phone Numbers Validation"
 msgstr "Validação de números de telefone"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/mail_thread_phone.py:0
 msgid "Please enter at least 3 characters when searching a Phone number."
 msgstr "Digite pelo menos 3 caracteres ao pesquisar um número de telefone."
@@ -463,7 +463,7 @@ msgid "Sanitized Number"
 msgstr "Número uniformizado"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid ""
 "The phone number %s is invalid! Let's fix it - you are not dialing aliens."
@@ -472,7 +472,7 @@ msgstr ""
 "para alienígenas."
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/tools/phone_validation.py:0
 msgid "Unable to parse %(phone)s: %(error)s"
 msgstr "Não foi possível analisar %(phone)s: %(error)s"
@@ -483,7 +483,7 @@ msgid "Unblacklist"
 msgstr "Remover da lista de bloqueio"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/wizard/phone_blacklist_remove.py:0
 msgid "Unblock Reason: %(reason)s"
 msgstr "Motivo do desbloqueio: %(reason)s"
@@ -499,7 +499,7 @@ msgid "Validate and format phone numbers"
 msgstr "Validar e formatar números de telefone"
 
 #. module: phone_validation
-#. odoo-python
+#. weth-python
 #: code:addons/phone_validation/models/mail_thread_phone.py:0
 msgid ""
 "You do not have the access right to unblacklist phone numbers. Please "

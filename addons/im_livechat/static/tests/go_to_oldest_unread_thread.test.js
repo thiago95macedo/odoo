@@ -83,29 +83,29 @@ test("tab on discuss composer goes to oldest unread livechat", async () => {
     ]);
     await start();
     await openDiscuss(channelIds[0]);
-    await contains(".o-mail-NotificationItem.o-active:has(:text('Visitor 11'))");
+    await contains(".w-mail-NotificationItem.w-active:has(:text('Visitor 11'))");
     await contains(
-        ".o-mail-NotificationItem:has(:text('Visitor 13')) .o-mail-NotificationItem-counter:text(1)"
+        ".w-mail-NotificationItem:has(:text('Visitor 13')) .w-mail-NotificationItem-counter:text(1)"
     );
-    await contains(".o-mail-Composer-input[placeholder='Tab to next live chat']");
-    await focus(".o-mail-Composer-input");
+    await contains(".w-mail-Composer-input[placeholder='Tab to next live chat']");
+    await focus(".w-mail-Composer-input");
     triggerHotkey("Tab");
     await contains(
-        ".o-mail-NotificationItem:has(:text('Visitor 13')) .o-mail-NotificationItem-counter:text(1)",
+        ".w-mail-NotificationItem:has(:text('Visitor 13')) .w-mail-NotificationItem-counter:text(1)",
         { count: 0 }
     );
-    await contains(".o-mail-NotificationItem.o-active:has(:text('Visitor 13'))");
+    await contains(".w-mail-NotificationItem.w-active:has(:text('Visitor 13'))");
     await contains(
-        ".o-mail-NotificationItem:has(:text('Visitor 12')) .o-mail-NotificationItem-counter:text(1)"
+        ".w-mail-NotificationItem:has(:text('Visitor 12')) .w-mail-NotificationItem-counter:text(1)"
     );
-    await contains(".o-mail-Composer-input[placeholder='Tab to next live chat']");
-    await focus(".o-mail-Composer-input");
+    await contains(".w-mail-Composer-input[placeholder='Tab to next live chat']");
+    await focus(".w-mail-Composer-input");
     triggerHotkey("Tab");
     await contains(
-        ".o-mail-NotificationItem:has(:text('Visitor 12')) .o-mail-NotificationItem-counter:text(1)",
+        ".w-mail-NotificationItem:has(:text('Visitor 12')) .w-mail-NotificationItem-counter:text(1)",
         { count: 0 }
     );
-    await contains(".o-mail-NotificationItem.o-active:has(:text('Visitor 12'))");
+    await contains(".w-mail-NotificationItem.w-active:has(:text('Visitor 12'))");
 });
 
 test.tags("focus required");
@@ -159,10 +159,10 @@ test("Tab livechat picks ended livechats last", async () => {
     setupChatHub({ folded: [channelIds[0], channelIds[1], channelIds[2], channelIds[3]] });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.LIVECHAT);
-    await click(".o-mail-NotificationItem", { text: "Visitor 4" });
-    await contains(".o-mail-ChatWindow:contains('Visitor 4') .o-mail-Message:contains('Hello')");
-    await contains(".o-mail-ChatWindow:contains('Visitor 4') .o-mail-Composer.o-focused");
-    await contains(".o-mail-ChatWindow:contains('Visitor 4') .badge", { count: 0 });
+    await click(".w-mail-NotificationItem", { text: "Visitor 4" });
+    await contains(".w-mail-ChatWindow:contains('Visitor 4') .w-mail-Message:contains('Hello')");
+    await contains(".w-mail-ChatWindow:contains('Visitor 4') .w-mail-Composer.w-focused");
+    await contains(".w-mail-ChatWindow:contains('Visitor 4') .badge", { count: 0 });
     await advanceTime(5_000);
     await withGuest(guestIds[1], () =>
         rpc("/mail/message/post", {
@@ -191,7 +191,7 @@ test("Tab livechat picks ended livechats last", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await waitFor(".o-mail-ChatBubble[name='Visitor 3'] .badge:contains('2')", { timeout: 3000 });
+    await waitFor(".w-mail-ChatBubble[name='Visitor 3'] .badge:contains('2')", { timeout: 3000 });
     /**
      * channel id | last_interest_dt    | livechat_end_dt | unread
      * -----------+---------------------+-----------------+--------
@@ -202,15 +202,15 @@ test("Tab livechat picks ended livechats last", async () => {
      *          4 | 2021-01-02 10:00:04 | false           | false
      */
     await press("Tab");
-    await contains(".o-mail-ChatWindow", { count: 2 });
-    await contains(".o-mail-ChatWindow:contains('Visitor 0') .o-mail-Message:contains('Hello')");
-    await contains(".o-mail-ChatWindow:contains('Visitor 0') .o-mail-Composer.o-focused");
-    await contains(".o-mail-ChatWindow:contains('Visitor 0') .badge", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 2 });
+    await contains(".w-mail-ChatWindow:contains('Visitor 0') .w-mail-Message:contains('Hello')");
+    await contains(".w-mail-ChatWindow:contains('Visitor 0') .w-mail-Composer.w-focused");
+    await contains(".w-mail-ChatWindow:contains('Visitor 0') .badge", { count: 0 });
     await press("Tab");
-    await contains(".o-mail-ChatWindow", { count: 3 });
-    await contains(".o-mail-ChatWindow:contains('Visitor 2') .o-mail-Message:contains('Hello')");
-    await contains(".o-mail-ChatWindow:contains('Visitor 2') .o-mail-Composer.o-focused");
-    await contains(".o-mail-ChatWindow:contains('Visitor 2') .badge", { count: 0 });
+    await contains(".w-mail-ChatWindow", { count: 3 });
+    await contains(".w-mail-ChatWindow:contains('Visitor 2') .w-mail-Message:contains('Hello')");
+    await contains(".w-mail-ChatWindow:contains('Visitor 2') .w-mail-Composer.w-focused");
+    await contains(".w-mail-ChatWindow:contains('Visitor 2') .badge", { count: 0 });
     await advanceTime(5_000);
     await withGuest(guestIds[0], () =>
         rpc("/mail/message/post", {
@@ -223,7 +223,7 @@ test("Tab livechat picks ended livechats last", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await waitFor(".o-mail-ChatWindow:contains('Visitor 0') .badge:contains('1')", {
+    await waitFor(".w-mail-ChatWindow:contains('Visitor 0') .badge:contains('1')", {
         timeout: 3000,
     });
     /**
@@ -236,14 +236,14 @@ test("Tab livechat picks ended livechats last", async () => {
      *          4 | 2021-01-02 10:00:04 | false           | false
      */
     await press("Tab");
-    await contains(".o-mail-ChatWindow:contains('Visitor 3') .o-mail-Message:contains('Hello')");
-    await contains(".o-mail-ChatWindow:contains('Visitor 3') .o-mail-Composer.o-focused");
-    await contains(".o-mail-ChatWindow:contains('Visitor 3') .badge", { count: 0 });
+    await contains(".w-mail-ChatWindow:contains('Visitor 3') .w-mail-Message:contains('Hello')");
+    await contains(".w-mail-ChatWindow:contains('Visitor 3') .w-mail-Composer.w-focused");
+    await contains(".w-mail-ChatWindow:contains('Visitor 3') .badge", { count: 0 });
     await press("Tab");
-    await contains(".o-mail-ChatWindow:contains('Visitor 0') .o-mail-Composer.o-focused");
-    await contains(".o-mail-ChatWindow:contains('Visitor 0') .badge", { count: 0 });
+    await contains(".w-mail-ChatWindow:contains('Visitor 0') .w-mail-Composer.w-focused");
+    await contains(".w-mail-ChatWindow:contains('Visitor 0') .badge", { count: 0 });
     await press("Tab");
-    await contains(".o-mail-ChatWindow:contains('Visitor 1') .o-mail-Message:contains('Hello')");
+    await contains(".w-mail-ChatWindow:contains('Visitor 1') .w-mail-Message:contains('Hello')");
     await contains("span", { text: "This live chat conversation has ended." });
 });
 
@@ -285,14 +285,14 @@ test("switching to folded chat window unfolds it", async () => {
     });
     setupChatHub({ opened: [channelIds[0]], folded: [channelIds[1]] });
     await start();
-    await contains(".o-mail-ChatBubble[name='Visitor 12']");
-    await focus(".o-mail-Composer-input", {
-        parent: [".o-mail-ChatWindow", { text: "Visitor 11" }],
+    await contains(".w-mail-ChatBubble[name='Visitor 12']");
+    await focus(".w-mail-Composer-input", {
+        parent: [".w-mail-ChatWindow", { text: "Visitor 11" }],
     });
     triggerHotkey("Tab");
-    await contains(".o-mail-ChatWindow", {
+    await contains(".w-mail-ChatWindow", {
         text: "Visitor 12",
-        contains: [".o-mail-Composer-input:focus"],
+        contains: [".w-mail-Composer-input:focus"],
     });
 });
 
@@ -340,15 +340,15 @@ test("switching to hidden chat window unhides it", async () => {
     patchUiSize({ width: 900 }); // enough for 2 chat windows max
     await start();
     // FIXME: expected order: general, 12, 11
-    await contains(".o-mail-ChatWindow", { count: 2 });
-    await contains(".o-mail-ChatWindow", { count: 0, text: "Visitor 11" });
-    await focus(".o-mail-Composer-input", {
-        parent: [".o-mail-ChatWindow", { text: "Visitor 12" }],
+    await contains(".w-mail-ChatWindow", { count: 2 });
+    await contains(".w-mail-ChatWindow", { count: 0, text: "Visitor 11" });
+    await focus(".w-mail-Composer-input", {
+        parent: [".w-mail-ChatWindow", { text: "Visitor 12" }],
     });
     triggerHotkey("Tab");
-    await contains(".o-mail-ChatWindow", {
+    await contains(".w-mail-ChatWindow", {
         text: "Visitor 11",
-        contains: [".o-mail-Composer-input:focus"],
+        contains: [".w-mail-Composer-input:focus"],
     });
 });
 
@@ -384,9 +384,9 @@ test("tab on composer doesn't switch thread if user is typing", async () => {
     ]);
     await start();
     await openDiscuss(channelIds[0]);
-    await insertText(".o-mail-Composer-input", "Hello, ");
+    await insertText(".w-mail-Composer-input", "Hello, ");
     triggerHotkey("Tab");
-    await contains(".o-mail-NotificationItem.o-active", { text: "Visitor 11" });
+    await contains(".w-mail-NotificationItem.w-active", { text: "Visitor 11" });
 });
 
 test("tab on composer doesn't switch thread if no unread thread", async () => {
@@ -419,7 +419,7 @@ test("tab on composer doesn't switch thread if no unread thread", async () => {
     ]);
     await start();
     await openDiscuss(channelIds[0]);
-    await focus(".o-mail-Composer-input");
+    await focus(".w-mail-Composer-input");
     triggerHotkey("Tab");
-    await contains(".o-mail-NotificationItem.o-active", { text: "Visitor 11" });
+    await contains(".w-mail-NotificationItem.w-active", { text: "Visitor 11" });
 });

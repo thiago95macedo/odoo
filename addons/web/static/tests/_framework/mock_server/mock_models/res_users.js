@@ -23,11 +23,11 @@ export class ResUsers extends ServerModel {
             share: true,
         },
         {
-            id: serverState.odoobotUid,
+            id: serverState.wethbotUid,
             active: false,
-            login: "odoobot",
-            partner_id: serverState.odoobotId,
-            password: "odoobot",
+            login: "wethbot",
+            partner_id: serverState.wethbotId,
+            password: "wethbot",
         },
     ];
 

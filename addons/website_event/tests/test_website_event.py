@@ -31,9 +31,9 @@ class TestEventRegisterUTM(HttpCase, TestEventOnlineCommon):
 
         self.authenticate(None, None)
         self.opener.cookies.update({
-            'odoo_utm_campaign': event_campaign.name,
-            'odoo_utm_source': self.env.ref('utm.utm_source_newsletter').name,
-            'odoo_utm_medium': self.env.ref('utm.utm_medium_email').name
+            'weth_utm_campaign': event_campaign.name,
+            'weth_utm_source': self.env.ref('utm.utm_source_newsletter').name,
+            'weth_utm_medium': self.env.ref('utm.utm_medium_email').name
         })
         event_questions = self.event_0.question_ids
         name_question = event_questions.filtered(lambda q: q.question_type == 'name')

@@ -67,7 +67,7 @@ from weth.http.session import (
     update_session_token,
     session_store,
 )
-from weth.http.session import Session as OdooHttpSession
+from weth.http.session import Session as WethHttpSession
 from weth.orm.environments import CacheLayer
 from weth.modules.registry import Registry
 from weth.sql_db import Cursor
@@ -102,7 +102,7 @@ else:
     _logger.info("Importing test framework", stack_info=_logger.isEnabledFor(logging.DEBUG))
 
 
-# The odoo library is supposed already configured.
+# The weth library is supposed already configured.
 HOST = '127.0.0.1'
 # Useless constant, tests are aware of the content of demo data
 ADMIN_USER_ID = api.SUPERUSER_ID
@@ -113,7 +113,7 @@ BROWSER_WAIT = CHECK_BROWSER_SLEEP * CHECK_BROWSER_ITERATIONS # seconds
 DEFAULT_SUCCESS_SIGNAL = 'test successful'
 TEST_CURSOR_COOKIE_NAME = 'test_request_key'
 
-DISABLE_TIMEOUTS = str2bool(os.getenv('ODOO_TEST_DISABLE_TIMEOUT', '0'))
+DISABLE_TIMEOUTS = str2bool(os.getenv('WETH_TEST_DISABLE_TIMEOUT', '0'))
 
 IGNORED_MSGS = re.compile(r"""
     failed\ to\ fetch  # base error
@@ -239,10 +239,10 @@ def standalone(*tags):
     """ Decorator for standalone test functions.  This is somewhat dedicated to
     tests that install, upgrade or uninstall some modules, which is currently
     forbidden in regular test cases.  The function is registered under the given
-    ``tags`` and the corresponding Odoo module name.
+    ``tags`` and the corresponding WETH module name.
     """
     def register(func):
-        # register func by odoo module name
+        # register func by weth module name
         if func.__module__.startswith('weth.addons.'):
             module = func.__module__.split('.')[2]
             standalone_tests[module].append(func)
@@ -282,7 +282,7 @@ def new_test_user(env, login='', groups='base.group_user', context=None, **kwarg
      * name: "login (groups)" by default as it is required;
      * email: it is either the login (if it is a valid email) or a generated
        string 'x.x@example.com' (x being the first login letter). This is due
-       to email being required for most odoo operations;
+       to email being required for most weth operations;
     """
     if not login:
         raise ValueError('New users require at least a login')
@@ -578,7 +578,7 @@ class DummyRLock:
 
 
 class BaseCase(case.TestCase):
-    """ Subclass of TestCase for Odoo-specific code. This class is abstract and
+    """ Subclass of TestCase for WETH-specific code. This class is abstract and
     expects self.registry, self.cr and self.uid to be initialized by subclasses.
     """
     registry: Registry = None
@@ -1593,7 +1593,7 @@ class ChromeBrowser:
             raise unittest.SkipTest("websocket-client module is not installed")
         self.user_data_dir = self.cleanup.enter_context(
             tempfile.TemporaryDirectory(
-                suffix='_chrome_odoo',
+                suffix='_chrome_weth',
                 ignore_cleanup_errors=True,
             )
         )
@@ -1812,7 +1812,7 @@ class ChromeBrowser:
             '--remote-debugging-port': str(self.remote_debugging_port),
             '--user-data-dir': user_data_dir,
             '--enable-logging': '',
-            '--v': str(int(os.environ.get("ODOO_BROWSER_LOG_VERBOSITY", "0"))),
+            '--v': str(int(os.environ.get("WETH_BROWSER_LOG_VERBOSITY", "0"))),
             # FIXME: these next 2 flags are temporarily uncommented to allow client
             # code to manually run garbage collection. This is done as currently
             # the Chrome unit test process doesn't have access to its available
@@ -2324,7 +2324,7 @@ which leads to stray network requests and inconsistencies."""
             )
         # all that's left is type=object, subtype=None aka custom or
         # non-standard objects, print as TypeName(param=val, ...), sadly because
-        # of the way Odoo widgets are created they all appear as Class(...)
+        # of the way WETH widgets are created they all appear as Class(...)
         # nb: preview properties are *not* recursive, the value is *all* we get
         return '%s(%s)' % (
             arg.get('className') or 'object',
@@ -2481,7 +2481,7 @@ class Screencaster:
 
 @cache
 def _find_executable():
-    browser_bin_path = os.environ.get('ODOO_BROWSER_BIN')  # used for testing specific Chrome builds
+    browser_bin_path = os.environ.get('WETH_BROWSER_BIN')  # used for testing specific Chrome builds
     if browser_bin_path and os.path.exists(browser_bin_path):
         return browser_bin_path
     system = platform.system()
@@ -2567,7 +2567,7 @@ class Response(requests.Response):
             super().raise_for_status()
         except requests.exceptions.HTTPError as exc:
             is_html = self.headers.get('content-type', '').startswith('text/html')
-            is_website = is_html and b'<meta name="generator" content="Odoo"/>' in self.content
+            is_website = is_html and b'<meta name="generator" content="WETH"/>' in self.content
             if is_website:
                 # The second container in <main> contains the error message
                 main = self.text.partition('<main>')[2].partition('</main>')[0]
@@ -2605,7 +2605,7 @@ class HttpCase(TransactionCase):
     browser = None
     browser_size = '1366x768'
     touch_enabled = False
-    session: OdooHttpSession = None
+    session: WethHttpSession = None
 
     _logger: logging.Logger = None
 
@@ -2958,7 +2958,7 @@ class HttpCase(TransactionCase):
                 for name, value in cookies.items():
                     browser.set_cookie(name, value, '/', HOST)
 
-            cpu_throttling_os = os.environ.get('ODOO_BROWSER_CPU_THROTTLING')  # used by dedicated runbot builds
+            cpu_throttling_os = os.environ.get('WETH_BROWSER_CPU_THROTTLING')  # used by dedicated runbot builds
             cpu_throttling = int(cpu_throttling_os) if cpu_throttling_os else cpu_throttling
 
             if cpu_throttling:
@@ -3167,7 +3167,7 @@ def tagged(*tags):
 
 
 class freeze_time:
-    """ Object to replace the freezegun in Odoo test suites
+    """ Object to replace the freezegun in WETH test suites
         It properly handles the test classes decoration
         Also, it can be used like the usual method decorator or context manager
     """

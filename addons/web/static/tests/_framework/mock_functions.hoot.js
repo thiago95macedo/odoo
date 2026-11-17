@@ -8,7 +8,7 @@ import { after } from "@weth/hoot";
 
 /**
  * @param {string} name
- * @param {OdooModuleFactory} factory
+ * @param {WethModuleFactory} factory
  */
 export function mockFunctionsFactory(name, { fn }) {
     return function mockFunctions(...args) {

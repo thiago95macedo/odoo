@@ -20,7 +20,7 @@ def _configure_tim_lib(lib_name: str) -> bool:
     :param lib_name: Name of the TIM library file.
     :return: True if the library was successfully configured, False otherwise.
     """
-    drivers_path = path_file("odoo/addons/iot_drivers/iot_handlers/drivers")
+    drivers_path = path_file("weth/addons/iot_drivers/iot_handlers/drivers")
     source_zip_name = "six-timapiv25_10_l.zip" if IS_RPI else "six-timapiv25_10_w.zip"
     if (drivers_path / "tim" / lib_name).exists():
         return True
@@ -49,7 +49,7 @@ class TIMInterface(Interface):
 
     def __init__(self):
         super().__init__()
-        lib_name = 'libsix_odoo_w.dll' if IS_WINDOWS else 'libsix_odoo_l.so'
+        lib_name = 'libsix_weth_w.dll' if IS_WINDOWS else 'libsix_weth_l.so'
         if not _configure_tim_lib(lib_name):
             _logger.error("Failed to configure Six TIM library")
             return

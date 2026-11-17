@@ -272,7 +272,7 @@ export function findDateCell(date) {
  * @returns {HTMLElement}
  */
 export function findEvent(eventId) {
-    return queryFirst(`.o_event[data-event-id="${eventId}"]`);
+    return queryFirst(`.w_event[data-event-id="${eventId}"]`);
 }
 
 /**
@@ -296,7 +296,7 @@ export function findTimeRow(time) {
  * @returns {HTMLElement}
  */
 export function findFilterPanelSection(sectionName) {
-    return queryFirst(`.o_calendar_filter[data-name="${sectionName}"]`);
+    return queryFirst(`.w_calendar_filter[data-name="${sectionName}"]`);
 }
 
 /**
@@ -306,7 +306,7 @@ export function findFilterPanelSection(sectionName) {
  */
 export function findFilterPanelFilter(sectionName, filterValue) {
     const root = findFilterPanelSection(sectionName);
-    return queryFirst(`.o_calendar_filter_item[data-value="${filterValue}"]`, { root });
+    return queryFirst(`.w_calendar_filter_item[data-value="${filterValue}"]`, { root });
 }
 
 /**
@@ -315,7 +315,7 @@ export function findFilterPanelFilter(sectionName, filterValue) {
  */
 export function findFilterPanelSectionFilter(sectionName) {
     const root = findFilterPanelSection(sectionName);
-    return queryFirst(`.o_calendar_filter_items_checkall`, { root });
+    return queryFirst(`.w_calendar_filter_items_checkall`, { root });
 }
 
 /**
@@ -325,7 +325,7 @@ export function findFilterPanelSectionFilter(sectionName) {
 export async function pickDate(date) {
     const day = date.split("-")[2];
     const iDay = parseInt(day, 10) - 1;
-    await click(`.o_datetime_picker .o_date_item_cell:not(.o_out_of_range):eq(${iDay})`);
+    await click(`.w_datetime_picker .w_date_item_cell:not(.w_out_of_range):eq(${iDay})`);
     await animationFrame();
 }
 
@@ -396,7 +396,7 @@ export async function selectTimeRange(startDateTime, endDateTime) {
         queryFirst(`.fc-timegrid-slot[data-time="${midTime}"]:eq(1)`, { visible: false })
     );
 
-    const rendererRect = queryRect(`.o_calendar_widget:first`);
+    const rendererRect = queryRect(`.w_calendar_widget:first`);
     const startColumnRect = queryRect(`.fc-col-header-cell.fc-day[data-date="${startDate}"]`);
     const startRow = queryFirst(`.fc-timegrid-slot[data-time="${startTime}"]:eq(1)`);
     const endColumnRect = queryRect(`.fc-col-header-cell.fc-day[data-date="${endDate}"]`);
@@ -466,7 +466,7 @@ export async function selectAllDayRange(startDate, endDate) {
     await animationFrame();
 }
 export async function closeCwPopOver() {
-    await contains(`.o_card_popover_close`).click();
+    await contains(`.w_card_popover_close`).click();
 }
 /**
  * @param {number} eventId
@@ -540,7 +540,7 @@ export async function selectHourOnPicker(selectedValue) {
         const fromFormat = selectedValue.includes(":") ? "H:mm" : "H";
         selectedValue = luxon.DateTime.fromFormat(selectedValue, fromFormat).toFormat("HH:mm");
     }
-    await click(".o_time_picker_input:eq(0)");
+    await click(".w_time_picker_input:eq(0)");
     await animationFrame();
     await edit(selectedValue, { confirm: "enter" });
     await animationFrame();
@@ -605,7 +605,7 @@ export async function resizeEventToTime(eventId, dateTime) {
 
     const column = findDateColumn(date);
     const columnRect = queryRect(column);
-    const rendererRect = queryRect(`.o_calendar_widget:first`);
+    const rendererRect = queryRect(`.w_calendar_widget:first`);
 
     if (hasTouch()) {
         const { drop } = await drag(eventEl, {
@@ -677,19 +677,19 @@ export async function resizeEventToDate(eventId, date, fromStart = false) {
  * @returns {Promise<void>}
  */
 export async function changeScale(scale) {
-    await contains(`.o_view_scale_selector .scale_button_selection`).click();
-    await contains(`.o-dropdown--menu .o_scale_button_${scale}`).click();
+    await contains(`.w_view_scale_selector .scale_button_selection`).click();
+    await contains(`.w-dropdown--menu .w_scale_button_${scale}`).click();
 }
 
 export async function displayCalendarPanel() {
     if (isSmall()) {
-        await contains(".o_calendar_container .o_other_calendar_panel").click();
+        await contains(".w_calendar_container .w_other_calendar_panel").click();
     }
 }
 
 export async function hideCalendarPanel() {
     if (isSmall()) {
-        await contains(".o_calendar_container .o_other_calendar_panel").click();
+        await contains(".w_calendar_container .w_other_calendar_panel").click();
     }
 }
 
@@ -700,13 +700,13 @@ export async function hideCalendarPanel() {
 export async function navigate(direction) {
     if (hasTouch()) {
         if (direction === "next") {
-            await swipeLeft(".o_calendar_widget", { pointerDownDuration: 200 });
+            await swipeLeft(".w_calendar_widget", { pointerDownDuration: 200 });
         } else {
-            await swipeRight(".o_calendar_widget", { pointerDownDuration: 200 });
+            await swipeRight(".w_calendar_widget", { pointerDownDuration: 200 });
         }
         await advanceFrame(16);
     } else {
-        await contains(`.o_calendar_navigation_buttons .o_calendar_button_${direction}`).click();
+        await contains(`.w_calendar_navigation_buttons .w_calendar_button_${direction}`).click();
     }
 }
 
@@ -716,7 +716,7 @@ export async function navigate(direction) {
  * @returns {Promise<void>}
  */
 export async function toggleFilter(sectionName, filterValue) {
-    const otherCalendarPanel = queryFirst(".o_other_calendar_panel");
+    const otherCalendarPanel = queryFirst(".w_other_calendar_panel");
     if (otherCalendarPanel) {
         click(otherCalendarPanel);
         await animationFrame();
@@ -742,7 +742,7 @@ export async function toggleFilter(sectionName, filterValue) {
  * @returns {Promise<void>}
  */
 export async function toggleSectionFilter(sectionName) {
-    const otherCalendarPanel = queryFirst(".o_other_calendar_panel");
+    const otherCalendarPanel = queryFirst(".w_other_calendar_panel");
     if (otherCalendarPanel) {
         await click(otherCalendarPanel);
         await animationFrame();
@@ -770,7 +770,7 @@ export async function toggleSectionFilter(sectionName) {
  */
 export async function removeFilter(sectionName, filterValue) {
     const root = findFilterPanelFilter(sectionName, filterValue);
-    const button = queryFirst(`.o_remove`, { root });
+    const button = queryFirst(`.w_remove`, { root });
 
     instantScrollTo(button);
 

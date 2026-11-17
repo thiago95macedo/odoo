@@ -1,9 +1,10 @@
-.o-discuss-NotificationSettings {
+.w-discuss-NotificationSettings {
 
-    .o-mail-NotificationSettings-submenu {
+    .w-mail-NotificationSettings-submenu {
         max-width: 250px !important;
     }
-    .o-discuss-NotificationSettings-separator {
+
+    .w-discuss-NotificationSettings-separator {
         min-width: 20px;
     }
 
@@ -11,14 +12,15 @@
         --#{$prefix}btn-hover-bg: #{$dropdown-link-hover-bg};
         --#{$prefix}btn-active-bg: #{$dropdown-link-hover-bg};
 
-        &:hover, &.show {
-            .o-simulateDarkTheme & {
+        &:hover,
+        &.show {
+            .w-simulateDarkTheme & {
                 background-color: mix($gray-700, $gray-800);
             }
         }
     }
 }
 
-.o-discuss-NotificationSettings-defaultValue {
-    color: $o-action;
+.w-discuss-NotificationSettings-defaultValue {
+    color: $w-action;
 }

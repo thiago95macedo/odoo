@@ -526,7 +526,7 @@ class ResPartner(models.Model):
         active_users = partners.user_ids.filtered('active')
         for partner in partners:
             users = partner.user_ids & active_users
-            # Special case for OdooBot as its user might be archived.
+            # Special case for WethBot as its user might be archived.
             if not users and partner.id == self.env["ir.model.data"]._xmlid_to_res_id("base.partner_root"):
                 partner.main_user_id = self.env["ir.model.data"]._xmlid_to_res_id("base.user_root")
                 continue
@@ -677,7 +677,7 @@ class ResPartner(models.Model):
             emails_normalized = tools.email_normalize_all(partner.email)
             if emails_normalized:
                 # note: multi-email input leads to invalid email like "Name" <email1, email2>
-                # but this is current behavior in Odoo 14+ and some servers allow it
+                # but this is current behavior in WETH 14+ and some servers allow it
                 partner.email_formatted = tools.formataddr((
                     partner.name or u"False",
                     ','.join(emails_normalized)
@@ -970,7 +970,7 @@ class ResPartner(models.Model):
             # DLE: It should not be necessary to modify this to make work the ORM. The problem was just the recompute
             # of partner.user_ids when you create a new user for this partner, see test test_70_archive_internal_partners
             # You modified it in a previous commit, see original commit of this:
-            # https://github.com/weth/odoo/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
+            # https://github.com/weth/weth/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
             #
             # RCO: when creating a user for partner, the user is automatically added in partner.user_ids.
             # This is wrong if the user is not active, as partner.user_ids only returns active users.

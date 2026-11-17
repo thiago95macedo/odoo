@@ -392,7 +392,7 @@ test("qweb mode readonly attributes", async () => {
     editor.selection.moveToPosition({ row: 0, column: 17 });
     expect(document.activeElement).toBe(editor.textInput.getElement());
 
-    expect(".ace_editor .ace_odoo_attr_readonly").toHaveCount(10);
+    expect(".ace_editor .ace_weth_attr_readonly").toHaveCount(10);
 
     for (let i = 0; i < 'lock-id="0"'.length; i++) {
         editor.commands.commands.backspace.exec(editor);

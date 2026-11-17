@@ -343,7 +343,7 @@ test("clickbot clickeverywhere test (with dropdown menu)", async () => {
     const webClient = await mountWithCleanup(WebClient);
     await runAllTimers();
     await animationFrame();
-    expect(".o_menu_sections .dropdown-toggle").toHaveText("a dropdown");
+    expect(".w_menu_sections .dropdown-toggle").toHaveText("a dropdown");
     new ClickbotLauncher(webClient.env, { logger: true }).start();
     await promise;
     expect.verifySteps([

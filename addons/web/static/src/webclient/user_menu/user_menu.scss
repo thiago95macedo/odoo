@@ -1,7 +1,7 @@
-.o_user_menu {
+.w_user_menu {
     --NavBar-entry-margin-right: calc(#{$spacer} - var(--NavBar-entry-padding-right));
 
-    .o_user_avatar {
+    .w_user_avatar {
         height: calc(var(--o-navbar-height) - 20px);
     }
 }

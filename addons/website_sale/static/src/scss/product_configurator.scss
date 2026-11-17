@@ -17,7 +17,9 @@
         opacity: 0;
     }
 
-    &:hover, &.active, &.active:hover {
+    &:hover,
+    &.active,
+    &.active:hover {
         box-shadow: inset 0 0 0 ($border-width * 2) $body-bg;
     }
 
@@ -29,14 +31,15 @@
         --o-wsale-attribute-color-border-color: #{fade-currentColor(60%)};
     }
 
-    &.active, &.active:hover {
+    &.active,
+    &.active:hover {
         --o-wsale-attribute-color-border-color: #{$primary};
     }
 
     &:has(input:focus-visible)::before {
         @include o-position-absolute($top: 50%, $left: 50%);
 
-        content:" ";
+        content: " ";
         width: 140%;
         height: 140%;
         border-radius: 100%;
@@ -64,7 +67,8 @@
     outline: var(--o-wsale-css-attribute-image__outline-width) solid $border-color;
     transition: $input-transition;
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
         outline-color: map-get($theme-colors, 'primary');
     }
 
@@ -94,7 +98,8 @@
     aspect-ratio: var(--o-wsale-product-image-ratio);
     width: 64px;
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
         outline-color: $primary;
     }
 
@@ -103,7 +108,7 @@
     }
 }
 
-.o_wsale_product_page_opt_image_ratio_auto label.css_attribute_thumbnail {
+.w_wsale_product_page_opt_image_ratio_auto label.css_attribute_thumbnail {
     min-height: 64px;
 }
 
@@ -152,11 +157,11 @@
             }
 
             input {
-                @include media-breakpoint-up(lg)  {
+                @include media-breakpoint-up(lg) {
                     max-width: 100%;
                 }
 
-                @include media-breakpoint-up(xl)  {
+                @include media-breakpoint-up(xl) {
                     max-width: 4ch;
                 }
             }
@@ -185,11 +190,12 @@ select.form-select.css_attribute_select {
         }
     }
 }
+
 // In the case of a modal, we cannot rely on '$input-color' to define the color
 // of the select arrow because '$input-color' is set based on the background
 // color of the body. In modals, the input color is adjusted based on the
 // modal's background color (see 'bootstrap_review_frontend.scss').
-@if ($modal-content-color == null) and ($form-select-bg == $body-bg) {
+@if ($modal-content-color ==null) and ($form-select-bg ==$body-bg) {
     .modal-content {
         select.form-select.css_attribute_select {
             background-image: str-replace($-arrow-url, "#000", str-replace(#{color-contrast($modal-content-bg)}, "#", "%23"));
@@ -198,7 +204,7 @@ select.form-select.css_attribute_select {
 }
 
 .variant_attribute {
-    .o_variant_pills {
+    .w_variant_pills {
         border: $border-width solid $border-color;
 
         &:has(input:focus-visible) {
@@ -206,7 +212,8 @@ select.form-select.css_attribute_select {
         }
     }
 
-    label, .o_variant_pills {
+    label,
+    .w_variant_pills {
         &.css_not_available {
             opacity: 0.6;
         }
@@ -242,6 +249,7 @@ label.css_attribute_color.css_not_available {
 
     .td-qty {
         width: 200px;
+
         a.input-group-addon {
             background-color: transparent;
             border: 0px;

@@ -44,7 +44,7 @@ test("hr.timesheet (form): FloatToggleField is used when current company uom use
         resModel: "account.analytic.line",
         resId: 1,
     });
-    expect('div[name="unit_amount"] .o_field_float_toggle').toBeVisible({
+    expect('div[name="unit_amount"] .w_field_float_toggle').toBeVisible({
         message: "unit_amount should be displayed as float toggle",
     });
 });
@@ -57,7 +57,7 @@ test("hr.timesheet (form): FloatToggleField is dependent on timesheet_uom_factor
         resModel: "account.analytic.line",
         resId: 1,
     });
-    expect('div[name="unit_amount"] .o_field_float_toggle').toBeVisible({
+    expect('div[name="unit_amount"] .w_field_float_toggle').toBeVisible({
         message: "timesheet_uom_factor should be taken into account",
     });
 });
@@ -75,7 +75,7 @@ test("hr.timesheet (form): FloatFactorField is used when the current_company uom
     expect('div[name="unit_amount"] input').toHaveValue("1", {
         message: "unit_amount is not displayed as float and not as time",
     });
-    expect('div[name="unit_amount"].o_field_float_toggle').not.toHaveCount(null, {
+    expect('div[name="unit_amount"].w_field_float_toggle').not.toHaveCount(null, {
         message: "unit_amount is not displayed as float toggle",
     });
 });

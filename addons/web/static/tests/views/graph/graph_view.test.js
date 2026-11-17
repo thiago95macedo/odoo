@@ -197,7 +197,7 @@ test('graph view with "class" attribute', async () => {
         resModel: "foo",
         arch: `<graph class="foobar-class"/>`,
     });
-    expect(".o_graph_view").toHaveClass("foobar-class");
+    expect(".w_graph_view").toHaveClass("foobar-class");
 });
 
 test("simple bar chart rendering", async () => {
@@ -205,8 +205,8 @@ test("simple bar chart rendering", async () => {
 
     const { measure, mode, order, stacked } = getGraphModelMetaData(view);
 
-    expect(".o_graph_view").toHaveClass("o_view_controller");
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_view").toHaveClass("o_view_controller");
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     expect(measure).toBe("__count", {
         message: `the active measure should be "__count" by default`,
     });
@@ -232,8 +232,8 @@ test("simple bar chart rendering with no data", async () => {
 
     const view = await mountView({ type: "graph", resModel: "foo" });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
-    expect(".o_nocontent_help").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_nocontent_help").toHaveCount(0);
     checkLabels(view, []);
     checkDatasets(view, [], []);
 });
@@ -249,7 +249,7 @@ test("simple bar chart rendering (one groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#36A2EBFF",
@@ -276,7 +276,7 @@ test("simple bar chart rendering (two groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(
         view,
@@ -321,7 +321,7 @@ test("bar chart many2many groupBy", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["black", "red", "None"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#36A2EBFF",
@@ -351,7 +351,7 @@ test("differentiate many2many values with same label", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["black", "red", "red (2)", "None"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#36A2EBFF",
@@ -372,7 +372,7 @@ test("line chart rendering (no groupBy)", async () => {
         arch: /* xml */ `<graph type="line" />`,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     expect(getGraphModelMetaData(view).mode).toBe("line");
     checkLabels(view, ["", "Total", ""]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label", "stack"], {
@@ -398,7 +398,7 @@ test("line chart rendering (one groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#9bd1f5",
@@ -424,7 +424,7 @@ test("line chart rendering (two groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(
         view,
@@ -479,7 +479,7 @@ test("line chart many2many groupBy", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["black", "red"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#9bd1f5",
@@ -568,8 +568,8 @@ test("format total in hh:mm when measure is unit_amount", async () => {
 
     const { measure, fieldAttrs } = getGraphModelMetaData(view);
 
-    expect(".o_graph_view").toHaveClass("o_view_controller");
-    expect("div.o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_view").toHaveClass("o_view_controller");
+    expect("div.w_graph_canvas_container canvas").toHaveCount(1);
     expect(measure).toBe("unit_amount", { message: `the measure should be "unit_amount"` });
     checkLegend(view, []);
     checkMeasure("Unit Amount");
@@ -819,7 +819,7 @@ test("pie chart rendering (no groupBy)", async () => {
         arch: /* xml */ `<graph type="pie" />`,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     expect(getGraphModelMetaData(view).mode).toBe("pie");
     checkLabels(view, ["Total"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label", "stack"], {
@@ -844,7 +844,7 @@ test("pie chart rendering (one groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data"], {
         backgroundColor: ["#36A2EBFF", "#FF6384FF"],
@@ -868,7 +868,7 @@ test("pie chart many2many groupby", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["black", "red", "None"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data"], {
         backgroundColor: ["#36A2EBFF", "#FF6384FF", "#4BC0C0FF"],
@@ -893,7 +893,7 @@ test("pie chart rendering (two groupBy)", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false / xphone", "false / xpad", "true / xphone"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: ["#36A2EBFF", "#FF6384FF", "#4BC0C0FF"],
@@ -950,8 +950,8 @@ test("pie chart rendering (mix of positive and negative values)", async () => {
         `,
     });
 
-    expect(".o_view_nocontent").toHaveCount(0);
-    expect(".o_graph_canvas_container").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container").toHaveCount(1);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label", "stack"], {
         backgroundColor: ["#36A2EBFF"],
         borderColor: getBorderWhite(),
@@ -1030,7 +1030,7 @@ test("props modifications", async () => {
 
     checkModeIs(view, "line");
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Revenue");
 
     expect(getYAxisLabel(view)).toBe("Revenue");
@@ -1063,7 +1063,7 @@ test("switching mode", async () => {
 test("switching measure", async () => {
     await mountView({ type: "graph", resModel: "foo" });
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
     checkMeasure("Count");
 
@@ -1241,8 +1241,8 @@ test("no content helper", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
     expect(".abc").toHaveCount(0);
 });
 
@@ -1258,15 +1258,15 @@ test("no content helper after update", async () => {
         },
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
     expect(".abc").toHaveCount(0);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("False Domain");
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
     expect(".abc").toHaveCount(0);
 });
 
@@ -1281,14 +1281,14 @@ test("display the provided no content helper when search has no matching data", 
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
-    expect(".o_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_view_nocontent").toHaveCount(0);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("color");
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(0);
-    expect(".o_nocontent_help:contains(This helper should be displayed)").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(0);
+    expect(".w_nocontent_help:contains(This helper should be displayed)").toHaveCount(1);
 });
 
 test("can reload with other group by", async () => {
@@ -1388,7 +1388,7 @@ test("save params succeeds", async () => {
     await editFavoriteName("First Favorite");
     await saveFavorite();
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Foo");
 
     await toggleSaveFavorite();
@@ -1548,7 +1548,7 @@ test("the active measure description is the arch string attribute in priority", 
 
     checkTooltip(view, { title: "FooFighters", lines: [{ label: "Total", value: "239" }] }, 0);
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Nirvana");
 
     checkTooltip(view, { title: "Nirvana", lines: [{ label: "Total", value: "23" }] }, 0);
@@ -1610,7 +1610,7 @@ test("initial groupby is kept when reloading", async () => {
 
     await toggleSearchBarMenu();
     await toggleMenuItem("False Domain");
-    expect(".o_graph_canvas_container").toHaveCount(0);
+    expect(".w_graph_canvas_container").toHaveCount(0);
 });
 
 test("use a many2one as a measure should work (without groupBy)", async () => {
@@ -1692,18 +1692,18 @@ test("not use a many2one as a measure by default", async () => {
         viewId: false,
     });
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
-    expect(queryAllTexts(".o-dropdown--menu .o_menu_item")).toEqual(["Foo", "Revenue", "Count"]);
+    expect(queryAllTexts(".w-dropdown--menu .w_menu_item")).toEqual(["Foo", "Revenue", "Count"]);
 });
 
 test.tags("desktop");
 test("graph view crash when moving from search view using Down key", async () => {
     await mountView({ type: "graph", resModel: "foo" });
 
-    await contains(".o_searchview input").press("ArrowDown");
+    await contains(".w_searchview input").press("ArrowDown");
 
-    expect(".o_graph_view").toHaveCount(1);
+    expect(".w_graph_view").toHaveCount(1);
 });
 
 test("graph measures should be alphabetically sorted (exception: 'Count' is last)", async () => {
@@ -1720,9 +1720,9 @@ test("graph measures should be alphabetically sorted (exception: 'Count' is last
         `,
     });
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
-    expect(queryAllTexts(".o-dropdown--menu .o_menu_item")).toEqual([
+    expect(queryAllTexts(".w-dropdown--menu .w_menu_item")).toEqual([
         "Bouh",
         "Foo",
         "Revenue",
@@ -1760,8 +1760,8 @@ test("non store fields defined on the arch are present in the measures", async (
         `,
     });
 
-    await contains(`.o_report_measures`).click();
-    expect(queryAllTexts(`.o_menu_item`)).toEqual(["Foo", "Revenue", "Count"]);
+    await contains(`.w_report_measures`).click();
+    expect(queryAllTexts(`.w_menu_item`)).toEqual(["Foo", "Revenue", "Count"]);
 });
 
 test("graph view `graph_measure` field in context", async () => {
@@ -1842,9 +1842,9 @@ test("an invisible field can not be found in the 'Measures' menu", async () => {
 
     checkTooltip(view, { lines: [{ label: "Total", value: "8" }] }, 0);
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
-    expect(".o_menu_item:contains(Revenue)").toHaveCount(0, {
+    expect(".w_menu_item:contains(Revenue)").toHaveCount(0, {
         message: `"Revenue" can not be found in the "Measures" menu`,
     });
 });
@@ -1883,7 +1883,7 @@ test("action name is displayed in breadcrumbs", async () => {
         type: "ir.actions.act_window",
         views: [[false, "graph"]],
     });
-    expect(".o_breadcrumb .active:first").toHaveText("Glou glou");
+    expect(".w_breadcrumb .active:first").toHaveText("Glou glou");
 });
 
 test("clicking on bar charts triggers a do_action", async () => {
@@ -2138,15 +2138,15 @@ test("graph view without invisible attribute on field", async () => {
         type: "graph",
         resModel: "foo",
     });
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
-    expect(".o_menu_item").toHaveCount(3, {
+    expect(".w_menu_item").toHaveCount(3, {
         message:
             "there should be three menu items in the measures dropdown (count, revenue and foo)",
     });
-    expect(".o_menu_item:contains(Revenue)").toHaveCount(1);
-    expect(".o_menu_item:contains(Foo)").toHaveCount(1);
-    expect(".o_menu_item:contains(Count)").toHaveCount(1);
+    expect(".w_menu_item:contains(Revenue)").toHaveCount(1);
+    expect(".w_menu_item:contains(Foo)").toHaveCount(1);
+    expect(".w_menu_item:contains(Count)").toHaveCount(1);
 });
 
 test("graph view with invisible attribute on field", async () => {
@@ -2159,12 +2159,12 @@ test("graph view with invisible attribute on field", async () => {
             </graph>
         `,
     });
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
 
-    expect(".o_menu_item").toHaveCount(2, {
+    expect(".w_menu_item").toHaveCount(2, {
         message: "there should be only two menu items in the measures dropdown (count and foo)",
     });
-    expect(".o_menu_item:contains(Revenue)").toHaveCount(0);
+    expect(".w_menu_item:contains(Revenue)").toHaveCount(0);
 });
 
 test("graph view reserved word", async () => {
@@ -2366,16 +2366,16 @@ test("empty graph view with sample data", async () => {
         noContentHelp: /* xml */ `<p class="abc">click to add a foo</p>`,
     });
 
-    expect(".o_graph_view .o_content").toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent").toHaveCount(1);
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_view .w_content").toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("False Domain");
 
-    expect(".o_graph_view .o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent").toHaveCount(0);
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_view .w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
 });
 
 test("non empty graph view with sample data", async () => {
@@ -2396,16 +2396,16 @@ test("non empty graph view with sample data", async () => {
         noContentHelp: /* xml */ `<p class="abc">click to add a foo</p>`,
     });
 
-    expect(".o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_view_nocontent").toHaveCount(0);
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_view_nocontent").toHaveCount(0);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
 
     await toggleSearchBarMenu();
     await toggleMenuItem("False Domain");
 
-    expect(".o_content").not.toHaveClass("o_view_sample_data");
-    expect(".o_graph_canvas_container canvas").toHaveCount(0);
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_content").not.toHaveClass("o_view_sample_data");
+    expect(".w_graph_canvas_container canvas").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(1);
 });
 
 test("empty graph view without sample data after filter", async () => {
@@ -2421,8 +2421,8 @@ test("empty graph view without sample data after filter", async () => {
         noContentHelp: /* xml */ `<p class="abc">click to add a foo</p>`,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(0);
-    expect(".o_view_nocontent").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(0);
+    expect(".w_view_nocontent").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -2508,7 +2508,7 @@ test("change mode, stacked, or order via the graph buttons does not reload datap
 
     expect(`[data-tooltip="Ascending"]`).toHaveClass("active");
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Foo");
 
     expect.verifySteps([
@@ -2551,7 +2551,7 @@ test("concurrent reloads: add a filter, and directly toggle a measure", async ()
     });
 
     // Toggle a measure
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Foo");
 
     checkDatasets(view, ["data", "label"], {
@@ -2809,19 +2809,19 @@ test("no class 'o_view_sample_data' when real data are presented", async () => {
         `,
     });
 
-    expect(".o_graph_view .o_view_sample_data").toHaveCount(1);
+    expect(".w_graph_view .w_view_sample_data").toHaveCount(1);
     expect(getChart(view).data.datasets.length).toBeGreaterThan(0);
 
     await selectMode("line");
 
-    expect(".o_graph_view .o_view_sample_data").toHaveCount(1);
+    expect(".w_graph_view .w_view_sample_data").toHaveCount(1);
     expect(getChart(view).data.datasets.length).toBeGreaterThan(0);
 
-    await contains(`.o_report_measures`).click();
+    await contains(`.w_report_measures`).click();
     await toggleMenuItem("Revenue");
 
-    expect(".o_graph_view .o_view_sample_data").toHaveCount(0);
-    expect(".o_graph_canvas_container").toHaveCount(0);
+    expect(".w_graph_view .w_view_sample_data").toHaveCount(0);
+    expect(".w_graph_canvas_container").toHaveCount(0);
 });
 
 test("single chart rendering on search", async () => {
@@ -3001,13 +3001,13 @@ test("graph views make their control panel available directly", async () => {
         arch: `<graph/>`,
     });
 
-    expect(".o_graph_view").toHaveCount(1);
-    expect(".o_graph_view .o_control_panel .o_searchview").toHaveCount(1);
-    expect(".o_graph_view .o_graph_renderer").toHaveCount(0);
+    expect(".w_graph_view").toHaveCount(1);
+    expect(".w_graph_view .w_control_panel .w_searchview").toHaveCount(1);
+    expect(".w_graph_view .w_graph_renderer").toHaveCount(0);
 
     def.resolve();
     await animationFrame();
-    expect(".o_graph_view .o_graph_renderer").toHaveCount(1);
+    expect(".w_graph_view .w_graph_renderer").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -3037,7 +3037,7 @@ test("monetary chart rendering with multiple currencies", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkLabels(view, ["false", "true"]);
     checkDatasets(view, ["backgroundColor", "borderColor", "data", "label"], {
         backgroundColor: "#36A2EBFF",
@@ -3123,7 +3123,7 @@ test("graph renders percentage widget measures", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     checkMeasure("Ratio");
     checkTooltip(view, { title: "Ratio", lines: [{ label: "Total", value: "33.33%" }] }, 0);
 });
@@ -3212,7 +3212,7 @@ test("monetary chart rendering with a single foreign currency", async () => {
         `,
     });
 
-    expect(".o_graph_canvas_container canvas").toHaveCount(1);
+    expect(".w_graph_canvas_container canvas").toHaveCount(1);
     // should display the sum in the records currency, i.e. USD
     checkTooltip(view, { title: "Amount", lines: [{ label: "2016-01-01", value: "$ 300.00" }] }, 0);
     checkTooltip(view, { title: "Amount", lines: [{ label: "2016-01-03", value: "$ 400.00" }] }, 1);

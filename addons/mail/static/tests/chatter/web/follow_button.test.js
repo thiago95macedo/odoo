@@ -18,19 +18,19 @@ test("base rendering follow, edit subscription and unfollow button", async () =>
     const threadId = pyEnv["res.partner"].create({});
     await start();
     await openFormView("res.partner", threadId);
-    await contains(".o-mail-Followers-counter:text('0')");
+    await contains(".w-mail-Followers-counter:text('0')");
     await contains("[title='Show Followers'] [data-icon='person']");
     await click("[title='Show Followers']");
-    await click(".o-dropdown-item:text('Follow')");
-    await contains(".o-mail-Followers-counter:text('1')");
+    await click(".w-dropdown-item:text('Follow')");
+    await contains(".w-mail-Followers-counter:text('1')");
     await contains("[title='Show Followers'] .oi-filled[data-icon='person']");
     await click("[title='Show Followers']");
-    await contains(".o-mail-Followers-dropdown");
+    await contains(".w-mail-Followers-dropdown");
     await click("[title='Edit Notification Preferences']");
-    await contains(".o-mail-Followers-dropdown", { count: 0 });
+    await contains(".w-mail-Followers-dropdown", { count: 0 });
     await click("[title='Show Followers']");
-    await click(".o-dropdown-item:text('Unfollow')");
-    await contains(".o-mail-Followers-counter:text('0')");
+    await click(".w-dropdown-item:text('Unfollow')");
+    await contains(".w-mail-Followers-counter:text('0')");
     await contains("[title='Show Followers'] [data-icon='person']");
 });
 
@@ -54,7 +54,7 @@ test("following during a slow RPC should not reload another record opened via th
     });
     await expect.waitForSteps([`read ${partnerId_1}`]);
     await click("[title='Show Followers']");
-    await click(".o-dropdown-item:text('Follow')");
+    await click(".w-dropdown-item:text('Follow')");
     await expect.waitForSteps(["subscribe"]);
     // Switch to the second record while the subscribe RPC of the first is still pending.
     await pagerNext();
@@ -65,6 +65,6 @@ test("following during a slow RPC should not reload another record opened via th
     // The follow callback targets the first record: it must not reload the second one.
     expect.verifySteps([]);
     await pagerPrevious();
-    await contains(".o-mail-Followers-counter:text('1')");
+    await contains(".w-mail-Followers-counter:text('1')");
     await expect.waitForSteps([`read ${partnerId_1}`]);
 });

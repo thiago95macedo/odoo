@@ -1490,7 +1490,7 @@ describe("update tab width", () => {
                 direction: "rtl",
             },
         });
-        expect(".odoo-editor-editable").toHaveAttribute("dir", "rtl");
+        expect(".weth-editor-editable").toHaveAttribute("dir", "rtl");
         checkTabsAlignment(el);
         for (const char of test) {
             await insertText(editor, char);
@@ -1508,7 +1508,7 @@ describe("update tab width", () => {
                 direction: "rtl",
             },
         });
-        expect(".odoo-editor-editable").toHaveAttribute("dir", "rtl");
+        expect(".weth-editor-editable").toHaveAttribute("dir", "rtl");
         checkTabsAlignment(el);
         for (const char of "def") {
             await insertText(editor, char);
@@ -1527,7 +1527,7 @@ describe("update tab width", () => {
                 direction: "ltr",
             },
         });
-        expect(".odoo-editor-editable").toHaveAttribute("dir", "ltr");
+        expect(".weth-editor-editable").toHaveAttribute("dir", "ltr");
         checkTabsAlignment(el, false);
         for (const char of test) {
             await insertText(editor, char);

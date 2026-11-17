@@ -17,7 +17,7 @@ msgstr ""
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/hr_recruitment_survey/pt_BR/>\n"
+"weth-20/hr_recruitment_survey/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -306,19 +306,19 @@ msgid "Interview Form"
 msgstr "Formulário de entrevista"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/hr_job.py:0
 msgid "Interview Form: %s"
 msgstr "Formulário de entrevista: %s"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid "Interview Invitation"
 msgstr "Convite para entrevista"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid "Interview Invitation: %(survey_name)s"
 msgstr "Convite para entrevista: %(survey_name)s"
@@ -341,7 +341,7 @@ msgid "Is Editor"
 msgstr "É editor"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/survey_survey.py:0
 msgid "Job"
 msgstr "Trabalho"
@@ -446,7 +446,7 @@ msgstr ""
 "Isso nos ajudará a gerenciar sua candidatura."
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/hr_applicant.py:0
 msgid "Please provide an applicant name."
 msgstr "Forneça o nome do candidato."
@@ -482,7 +482,7 @@ msgid "Recruitment Form"
 msgstr "Formulário de recrutamento"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/survey_survey.py:0
 msgid "Related Jobs"
 msgstr "Empregos relacionados"
@@ -534,7 +534,7 @@ msgid "Send Interviews"
 msgstr "Enviar entrevistas"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/hr_applicant.py:0
 msgid "Send interviews"
 msgstr "Enviar entrevistas"
@@ -550,7 +550,7 @@ msgid "Subject"
 msgstr "Assunto"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/hr_job.py:0
 #: model:ir.model,name:hr_recruitment_survey.model_survey_survey
 #: model:ir.model.fields,field_description:hr_recruitment_survey.field_hr_applicant__survey_id
@@ -592,13 +592,13 @@ msgstr ""
 "breve."
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/survey_user_input.py:0
 msgid "The applicant \"%s\" has finished the survey."
 msgstr "O candidato \"%s\" concluiu a pesquisa."
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid ""
 "The following emails you just entered are invalid:\n"
@@ -608,7 +608,7 @@ msgstr ""
 "%s"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid ""
 "The following recipients have no user account: %s. You should create user "
@@ -618,13 +618,13 @@ msgstr ""
 "contas de usuário para eles ou permitir o cadastro externo na configuração."
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid "The survey %(survey_link)s has been sent to %(partner_link)s"
 msgstr "A pesquisa %(survey_link)s foi enviada para %(partner_link)s"
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/wizard/hr_recruitment_survey_invite.py:0
 msgid ""
 "This survey does not allow external people to participate. You should create "
@@ -691,7 +691,7 @@ msgstr ""
 "envie convites e analise as respostas."
 
 #. module: hr_recruitment_survey
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment_survey/models/survey_survey.py:0
 msgid "id"
 msgstr "id"

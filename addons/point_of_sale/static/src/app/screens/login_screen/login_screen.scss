@@ -2,10 +2,11 @@
     background: {
         size: cover;
         attachment: fixed;
-        color: var(--homeMenu-bg-color, #{$o-gray-200});
+        color: var(--homeMenu-bg-color, #{$w-gray-200});
         image: var(--homeMenu-bg-image, url("/hr_attendance/static/img/background-light.svg"));
     }
-    .timer-hours{
+
+    .timer-hours {
         font-variant-numeric: tabular-nums;
     }
 }
@@ -16,14 +17,17 @@
             height: $pos-navbar-height;
         }
     }
+
     .fade-effect {
         animation-name: fade-in;
         animation-duration: 2.5s;
     }
+
     @keyframes fade-in {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }

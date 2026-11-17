@@ -54,21 +54,21 @@ test("basic many2many: find tag, select tag, unselect tag", async () => {
     expect("table tr").toHaveCount(0);
     expect(selection).toEqual([]);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     expect("input").toHaveCount(1);
     await contains("input").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(3);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(3);
+    await contains("span.w-dropdown-item").click();
     expect(selection).toEqual([{ id: 1, name: "First", display_name: "First" }]);
     expect("table tr").toHaveCount(1);
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(2);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(2);
+    await contains("span.w-dropdown-item").click();
     expect(selection).toEqual([
         { id: 1, name: "First", display_name: "First" },
         { id: 2, name: "Second", display_name: "Second" },
@@ -114,34 +114,34 @@ test("basic many2many: toggle dropdown without changing search term or selection
     expect(selection).toEqual([]);
 
     // Click to open, 1st search should be done
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
     expect(selection).toEqual([]);
     expect(executeCount).toBe(1);
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
 
     // Toogle dropdown, no new search should be done
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
     expect(selection).toEqual([]);
     // Still same as no item is selected
     expect(executeCount).toBe(1);
-    await contains(".btn.o-dropdown").click();
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
     expect(selection).toEqual([]);
-    expect("span.o-dropdown-item").toHaveCount(1);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(1);
+    await contains("span.w-dropdown-item").click();
     expect("table tr").toHaveCount(1);
 
     // Open again, now a second search should be done because selection changed
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await delay(300); // debounce
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(1);
+    expect("span.w-dropdown-item").toHaveCount(1);
     expect(selection).toEqual([{ id: 1, name: "First", display_name: "First" }]);
     expect(executeCount).toBe(2);
     expect.verifySteps(["name_search", "name_search"]);
@@ -178,7 +178,7 @@ test("basic many2many: search with uncreated records", async () => {
     expect("table tr").toHaveCount(3);
 
     // Click to open, 1st search should be done
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     await advanceTime(300); // debounce
     await animationFrame();
 

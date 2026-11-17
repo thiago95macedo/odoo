@@ -72,10 +72,10 @@ export class DiscussClientAction extends Component {
             await this.store.isReadyPromise;
             this.store.discuss.thread = undefined;
             this.store.discuss.hasRestoredThread = true;
-            const odoobotChat = this.store.odoobot?.searchChat();
-            const selfMember = odoobotChat?.self_member_id;
-            if (odoobotChat && selfMember?.is_pinned && !selfMember.seen_message_id) {
-                odoobotChat.setAsDiscussThread(false);
+            const wethbotChat = this.store.wethbot?.searchChat();
+            const selfMember = wethbotChat?.self_member_id;
+            if (wethbotChat && selfMember?.is_pinned && !selfMember.seen_message_id) {
+                wethbotChat.setAsDiscussThread(false);
             }
             return;
         }

@@ -71,14 +71,14 @@ class WebclientController(ThreadController):
             [("channel_member_ids", "any", member_domain)],
         )
         if request.env.user._is_internal():
-            # sudo: res.partner - reading the odoobot partner id is acceptable
-            odoobot = request.env.ref("base.partner_root").sudo()
-            odoobot_chat = request.env["discuss.channel"].search_fetch([
+            # sudo: res.partner - reading the wethbot partner id is acceptable
+            wethbot = request.env.ref("base.partner_root").sudo()
+            wethbot_chat = request.env["discuss.channel"].search_fetch([
                 ("channel_type", "=", "chat"),
                 ("is_member", "=", True),
-                ("channel_member_ids.partner_id", "=", odoobot.id),
+                ("channel_member_ids.partner_id", "=", wethbot.id),
             ])
-            channels |= odoobot_chat
+            channels |= wethbot_chat
         request.update_context(channels=request.env.context["channels"] | channels)
 
     @store_handler("res.partner", audience="everyone")

@@ -26,7 +26,7 @@ test("price of lot tracked product with and without pricelist", async () => {
         // this closes "Server Communication Problem" dialog
         await contains("button:contains(Yes)").click();
 
-        await contains(".modal-dialog input.o-autocomplete--input.o_input").edit(lot);
+        await contains(".modal-dialog input.w-autocomplete--input.o_input").edit(lot);
         await contains("button:contains(Apply)").click();
         await addLinePromise;
     };

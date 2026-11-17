@@ -39,9 +39,9 @@ test("Notification Error", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await _assertContainsSmsNotification();
-    await click(".o-mail-Message-notification");
-    await contains(".o-mail-MessageNotificationPopover");
-    await contains(".o-mail-MessageNotificationPopover [title='Error']");
+    await click(".w-mail-Message-notification");
+    await contains(".w-mail-MessageNotificationPopover");
+    await contains(".w-mail-MessageNotificationPopover [title='Error']");
 });
 
 const _prepareSmsNotification = async (notification_status) => {
@@ -63,16 +63,16 @@ const _prepareSmsNotification = async (notification_status) => {
 };
 
 const _assertContainsSmsNotification = async () => {
-    await contains(".o-mail-Message");
-    await contains(".o-mail-Message-notification");
-    await contains(".o-mail-Message-notification i");
-    await contains(".o-mail-Message-notification i[data-icon='smartphone']");
+    await contains(".w-mail-Message");
+    await contains(".w-mail-Message-notification");
+    await contains(".w-mail-Message-notification i");
+    await contains(".w-mail-Message-notification i[data-icon='smartphone']");
 };
 
 const _assertContainsPopoverWithIcon = async (iconName) => {
-    await click(".o-mail-Message-notification");
-    await contains(".o-mail-MessageNotificationPopover");
-    await contains(".o-mail-MessageNotificationPopover i");
-    await contains(`.o-mail-MessageNotificationPopover i[data-icon='${iconName}']`);
-    await contains(".o-mail-MessageNotificationPopover", { text: "ToSomeone" });
+    await click(".w-mail-Message-notification");
+    await contains(".w-mail-MessageNotificationPopover");
+    await contains(".w-mail-MessageNotificationPopover i");
+    await contains(`.w-mail-MessageNotificationPopover i[data-icon='${iconName}']`);
+    await contains(".w-mail-MessageNotificationPopover", { text: "ToSomeone" });
 };

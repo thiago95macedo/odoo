@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/product_matrix/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -59,13 +59,13 @@ msgid "Column name"
 msgstr "Nome da coluna"
 
 #. module: product_matrix
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product_matrix/static/src/xml/product_matrix_dialog.xml:0
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: product_matrix
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product_matrix/static/src/xml/product_matrix_dialog.xml:0
 msgid "Discard"
 msgstr "Descartar"
@@ -88,7 +88,7 @@ msgid "My Company Tshirt (GRID)"
 msgstr "Camiseta da minha empresa (grade)"
 
 #. module: product_matrix
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/product_matrix/static/src/xml/product_matrix.xml:0
 msgid "Not available"
 msgstr "Não disponível"

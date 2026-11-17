@@ -10,10 +10,10 @@ import { escapeRegExp } from "@web/core/utils/strings";
  * @typedef {DomainListRepr | string | Domain} DomainRepr
  */
 
-export class InvalidDomainError extends Error {}
+export class InvalidDomainError extends Error { }
 
 /**
- * Javascript representation of an Odoo domain
+ * Javascript representation of an WETH domain
  */
 export class Domain {
     /**

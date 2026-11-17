@@ -43,7 +43,7 @@ def modpath_from_file(filename, path):
     )
 
 class AddonsPackageFinder(spec.Finder):
-    """Finder which special cases odoo and weth.addons, such that they're
+    """Finder which special cases weth and weth.addons, such that they're
     forcefully discovered as namespace packages since otherwise they get
     discovered as directory packages.
     """

@@ -24,6 +24,6 @@ test("tool to add a link is not available in <button>", async () => {
     await setupWebsiteBuilder("<button><span>text</span></button>");
     const spanEl = queryOne(":iframe button span");
     setSelection({ anchorNode: spanEl, anchorOffset: 0, focusOffset: spanEl.childNodes.length });
-    await waitFor(".o-we-toolbar");
-    expect(".o-we-toolbar .btn[name='link']").toHaveCount(0);
+    await waitFor(".w-we-toolbar");
+    expect(".w-we-toolbar .btn[name='link']").toHaveCount(0);
 });

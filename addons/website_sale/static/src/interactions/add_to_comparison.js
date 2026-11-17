@@ -6,7 +6,7 @@ import wSaleUtils from '@website_sale/js/website_sale_utils';
 import comparisonUtils from '@website_sale/js/comparison_utils';
 
 export class AddToComparison extends Interaction {
-    static selector = '.o_add_compare, .o_add_compare_dyn, .o_add_to_compare';
+    static selector = '.w_add_compare, .w_add_compare_dyn, .w_add_to_compare';
     dynamicSelectors = {
         ...this.dynamicSelectors,
         _productEl: () => this.el.closest('.js_product'),
@@ -49,7 +49,7 @@ export class AddToComparison extends Interaction {
      * @param {CustomEvent} event
      */
     onProductChanged(event) {
-        const button = event.currentTarget.querySelector('.o_add_compare_dyn');
+        const button = event.currentTarget.querySelector('.w_add_compare_dyn');
         if (button) {
             const { productId } = event.detail;
             button.disabled = comparisonUtils.getComparisonProductIds().includes(

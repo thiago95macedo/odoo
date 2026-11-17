@@ -145,7 +145,7 @@ test("should have collapsed selection when mouse down on a table cell", async ()
     );
     const lastCell = el.querySelector("td:last-child");
     pointerDown(lastCell);
-    await waitForNone(".o-we-toolbar");
+    await waitForNone(".w-we-toolbar");
     await animationFrame();
     const selection = document.getSelection();
     expect(selection.isCollapsed).toBe(true);

@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 
-const cacheName = "odoo-pos-cache";
+const cacheName = "weth-pos-cache";
 
 const fetchCacheRespond = async (event) => {
     const cache = await caches.open(cacheName);

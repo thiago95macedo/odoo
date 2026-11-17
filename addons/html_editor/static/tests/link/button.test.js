@@ -60,14 +60,14 @@ describe("button style", () => {
                 </div>
             `)
         );
-        await waitFor(".o-we-toolbar");
+        await waitFor(".w-we-toolbar");
         await click("button[name='link']");
         await animationFrame();
         await click("button[name='link_type']");
         await animationFrame();
-        await click(".o-we-link-type-dropdown .dropdown-item:contains('Button Primary')");
+        await click(".w-we-link-type-dropdown .dropdown-item:contains('Button Primary')");
         await animationFrame();
-        await contains(".o-we-linkpopover input.o_we_href_input_link").edit("/test");
+        await contains(".w-we-linkpopover input.o_we_href_input_link").edit("/test");
 
         // Ensure `.display-1-fs` overrides the `.btn`'s default font size.
         const link = el.querySelector("a.btn");
@@ -181,12 +181,12 @@ describe("button style", () => {
 describe("Custom button style", () => {
     test("Editor don't allow custom style by default", async () => {
         await setupEditor('<p><a href="https://test.com/">link[]Label</a></p>');
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         await click("button[name='link_type']");
         await animationFrame();
-        const dropdownItems = queryAll(".o-we-link-type-dropdown .dropdown-item");
+        const dropdownItems = queryAll(".w-we-link-type-dropdown .dropdown-item");
         const labels = dropdownItems.map((item) => item.textContent.trim());
         expect(labels).toInclude("Link");
         expect(labels).toInclude("Button Primary");
@@ -197,7 +197,7 @@ describe("Custom button style", () => {
         await setupEditor(
             `<p><a href="https://test.com/" class="btn btn-primary">link[]Label</a></p>`
         );
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         const optionsValues = [...queryOne("select[name='link_style_size']").options].map(
@@ -212,7 +212,7 @@ describe("Custom button style", () => {
         await setupEditor(
             `<p><a href="https://test.com/" class="btn btn-primary">link[]Label</a></p>`
         );
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         const optionsValues = [...queryOne("select[name='link_style_shape']").options].map(
@@ -229,7 +229,7 @@ describe("Custom button style", () => {
 
     test("Editor don't allow target blank style by default", async () => {
         await setupEditor('<p><a href="https://test.com/">link[]Label</a></p>');
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         const count = queryAll(".target-blank-option").length;
@@ -238,12 +238,12 @@ describe("Custom button style", () => {
 
     test("Editor allow custom Style if config is active", async () => {
         await setupEditor('<p><a href="https://test.com/">link[]Label</a></p>');
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         await click("button[name='link_type']");
         await animationFrame();
-        const dropdownItems = queryAll(".o-we-link-type-dropdown .dropdown-item");
+        const dropdownItems = queryAll(".w-we-link-type-dropdown .dropdown-item");
         const labels = dropdownItems.map((item) => item.textContent.trim());
         expect(labels).toInclude("Link");
         expect(labels).toInclude("Button Primary");
@@ -254,14 +254,14 @@ describe("Custom button style", () => {
     test("should convert selected text to a button", async () => {
         const { el } = await setupEditor("<p>[Hello]</p>");
 
-        await contains(".o-we-toolbar [data-icon='link']").click();
-        await contains(".o-we-linkpopover input.o_we_href_input_link").edit("http://test.test/", {
+        await contains(".w-we-toolbar [data-icon='link']").click();
+        await contains(".w-we-linkpopover input.o_we_href_input_link").edit("http://test.test/", {
             confirm: false,
         });
 
         await contains("button[name='link_type']").click();
         await contains(
-            ".o-we-link-type-dropdown .dropdown-item:contains('Button Primary')"
+            ".w-we-link-type-dropdown .dropdown-item:contains('Button Primary')"
         ).click();
         await contains("select[name='link_style_size']").select("lg");
         await contains("select[name='link_style_shape']").select("fill rounded-pill");
@@ -281,7 +281,7 @@ describe("Custom button style", () => {
         await setupEditor('<p><a href="https://test.com/">link[]Label</a></p>');
         const a = queryOne("p > a");
 
-        await contains(".o-we-linkpopover .o_we_edit_link").click();
+        await contains(".w-we-linkpopover .o_we_edit_link").click();
         await contains("button[name='link_type']").click();
         await contains(".dropdown-item span:contains('Button Primary')").click();
 
@@ -304,7 +304,7 @@ describe("Custom button style", () => {
             '<p><a href="https://test.com/" class="btn btn-fill-primary rounded-circle">link[]Label</a></p>'
         );
         const a = queryOne("p > a");
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
         await animationFrame();
         expect('select[name="link_style_shape"]').toHaveValue("fill rounded-pill");
@@ -321,7 +321,7 @@ describe("button edit", () => {
         const { el, editor } = await setupEditor(
             '<p>this is a <a href="http://test.test/">link</a></p>'
         );
-        await waitForNone(".o-we-linkpopover");
+        await waitForNone(".w-we-linkpopover");
         const button = el.querySelector("a");
         // simulate double click selection
         setSelection({ anchorNode: button, anchorOffset: 0 });
@@ -413,10 +413,10 @@ describe("button edit", () => {
                 `,
             }
         );
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".o_we_edit_link");
 
-        await contains(".o-we-linkpopover input.o_we_label_link").fill("b");
+        await contains(".w-we-linkpopover input.o_we_label_link").fill("b");
         await click(".o_we_apply_link");
         expect(cleanLinkArtifacts(getContent(el))).toBe(
             '<p><a href="http://test.test/" class="invisible btn btn-primary o_link_in_selection">ab[]</a></p>'

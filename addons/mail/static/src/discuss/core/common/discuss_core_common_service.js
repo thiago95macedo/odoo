@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 
 export class DiscussCoreCommon {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     constructor(env, services) {
@@ -125,7 +125,7 @@ export const discussCoreCommon = {
         "presence",
     ],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

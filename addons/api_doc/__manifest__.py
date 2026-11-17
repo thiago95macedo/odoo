@@ -2,7 +2,7 @@
     'name': 'API Documentation',
     'category': 'Hidden',
     'description': """
-Odoo Dynamic API Documentation
+WETH Dynamic API Documentation
 ==============================
 
 This module provides a dynamic documentation page for developpers at the

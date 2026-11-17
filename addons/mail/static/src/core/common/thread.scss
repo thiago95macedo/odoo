@@ -1,5 +1,5 @@
-.o-mail-Thread {
-    &:has(.o-mail-Message.o-selected) .o-mail-Message:not(.o-selected) {
+.w-mail-Thread {
+    &:has(.w-mail-Message.w-selected) .w-mail-Message:not(.w-selected) {
         opacity: 50% !important;
     }
 
@@ -8,12 +8,12 @@
     }
 }
 
-.o-mail-Thread-jumpPresent {
-    z-index: $o-mail-NavigableList-zIndex - 1;
+.w-mail-Thread-jumpPresent {
+    z-index: $w-mail-NavigableList-zIndex - 1;
     --border-opacity: var(--mail-Thread-jumpPresentBorderOpacity, .2);
 }
 
-.o-mail-Thread-newMessage {
+.w-mail-Thread-newMessage {
     transition: opacity 0.5s;
 
     span {
@@ -22,11 +22,11 @@
     }
 }
 
-.o-mail-Thread-avatar {
+.w-mail-Thread-avatar {
     --avatar-size: #{$h1-font-size};
     --icon-font-size: 2.6em;
 
-    &.o-mail-Thread-avatarChatWindow {
+    &.w-mail-Thread-avatarChatWindow {
         --avatar-size: 28px;
         --icon-font-size: 1.5em;
     }
@@ -41,7 +41,7 @@
     }
 }
 
-.o-mail-Thread-newMessageLine {
+.w-mail-Thread-newMessageLine {
     --border-opacity: .65;
 }
 
@@ -49,28 +49,29 @@
     & a:hover {
         text-decoration: underline;
     }
+
     display: inline;
 }
 
-.o-mail-NotificationMessage p {
+.w-mail-NotificationMessage p {
     margin-bottom: 0;
 }
 
-.o-mail-Message:not(:has(.o-mail-MessageReaction)) + .o-mail-NotificationMessage {
+.w-mail-Message:not(:has(.w-mail-MessageReaction))+.w-mail-NotificationMessage {
     margin-top: map-get($spacers, 1);
 }
 
-.o-mail-NotificationMessage:has(.o_hide_author) {
-    & .o-mail-NotificationMessage-author {
-        display: none!important;
+.w-mail-NotificationMessage:has(.o_hide_author) {
+    & .w-mail-NotificationMessage-author {
+        display: none !important;
     }
 }
 
-.o-mail-Thread-banner {
-    z-index: $o-mail-NavigableList-zIndex - 1;
+.w-mail-Thread-banner {
+    z-index: $w-mail-NavigableList-zIndex - 1;
     --border-opacity: 0.5;
 }
 
-.o-mail-Thread-bannerHover:hover {
+.w-mail-Thread-bannerHover:hover {
     filter: brightness(95%);
 }

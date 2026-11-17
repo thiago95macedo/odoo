@@ -71,7 +71,7 @@ export class ControlPanel extends Component {
                 },
                 {
                     bypassEditableProtection: true,
-                    withOverlay: () => this.root().querySelector("nav.o_cp_switch_buttons"),
+                    withOverlay: () => this.root().querySelector("nav.w_cp_switch_buttons"),
                 }
             );
         }
@@ -185,7 +185,7 @@ export class ControlPanel extends Component {
 
     dropdownifyButtons() {
         const adaptiveMenu = document.querySelector(
-            ".o-control-panel-adaptive-dropdown.dropdown-menu"
+            ".w-control-panel-adaptive-dropdown.dropdown-menu"
         );
         const meaningfulElements = this.getBoxedElements(adaptiveMenu.children);
         for (const el of meaningfulElements) {

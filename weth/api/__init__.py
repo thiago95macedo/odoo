@@ -1,6 +1,6 @@
 # ruff: noqa: F401
 # Exports features of the ORM to developers.
-# This is a `__init__.py` file to avoid merge conflicts on `odoo/api.py`.
+# This is a `__init__.py` file to avoid merge conflicts on `weth/api.py`.
 from weth.orm.identifiers import NewId
 from weth.orm.cache import ormcache
 from weth.orm.decorators import (

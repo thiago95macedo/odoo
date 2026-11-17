@@ -199,9 +199,9 @@ class PaymentTransaction(models.Model):
 
         # Update the payment method.
         payment_method_type = payment_data.get("payment_type_id", "")
-        for odoo_code, mp_codes in const.PAYMENT_METHODS_MAPPING.items():
+        for weth_code, mp_codes in const.PAYMENT_METHODS_MAPPING.items():
             if any(payment_method_type == mp_code for mp_code in mp_codes.split(",")):
-                payment_method_type = odoo_code
+                payment_method_type = weth_code
                 break
         if payment_method_type == "card":
             payment_method_code = payment_data.get("payment_method_id")

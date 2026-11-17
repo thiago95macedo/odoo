@@ -56,7 +56,7 @@ try:
         """
         Applies ANSI syntax highlighting to a SQL string for terminal output.
 
-        Enable it via the ~/.odoorc (-c/--config) configuration file::
+        Enable it via the ~/.wethrc (-c/--config) configuration file::
 
             [colors]
             sql = auto
@@ -107,7 +107,7 @@ def categorize_query(decoded_query: str) -> tuple[typing.Literal['from', 'into']
 
 sql_counter: int = 0
 
-MAX_IDLE_TIMEOUT = int(os.getenv("ODOO_DB_MAX_IDLE_TIMEOUT", "600"))
+MAX_IDLE_TIMEOUT = int(os.getenv("WETH_DB_MAX_IDLE_TIMEOUT", "600"))
 
 
 class Savepoint:
@@ -288,7 +288,7 @@ class Cursor(_CursorProtocol):
             self.__caller = None
         self._closed = False   # real initialization value
 
-        if os.getenv('ODOO_FAKETIME_TEST_MODE') and self.dbname in tools.config['db_name']:
+        if os.getenv('WETH_FAKETIME_TEST_MODE') and self.dbname in tools.config['db_name']:
             self._obj.execute("SET SESSION search_path = public, pg_catalog;")
             self._cnx.commit()  # ensure that the search_path remains after a rollback
 
@@ -461,7 +461,7 @@ class Cursor(_CursorProtocol):
         A proxy for psycopg2.extras.execute_values which can log all queries like execute.
         But this method cannot set log_exceptions=False like execute
         """
-        # Odoo Cursor only proxies all methods of psycopg2 Cursor. This is a patch for problems caused by passing
+        # WETH Cursor only proxies all methods of psycopg2 Cursor. This is a patch for problems caused by passing
         # self instead of self._obj to the first parameter of psycopg2.extras.execute_values.
         if isinstance(query, psql.Composable):
             query = query.as_string(self._obj)

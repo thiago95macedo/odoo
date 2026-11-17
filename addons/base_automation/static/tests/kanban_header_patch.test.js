@@ -86,13 +86,13 @@ test("basic grouped rendering with automations", async () => {
     }).click();
 
     // check available actions in kanban header's config dropdown
-    expect(".o-dropdown--menu .o_kanban_toggle_fold").toHaveCount(1);
-    expect(".o-dropdown--menu .o_column_automations").toHaveCount(1);
-    expect(".o-dropdown--menu .o_group_edit").toHaveCount(0);
-    expect(".o-dropdown--menu .o_group_delete").toHaveCount(0);
-    expect(".o-dropdown--menu .o_column_archive_records").toHaveCount(0);
-    expect(".o-dropdown--menu .o_column_unarchive_records").toHaveCount(0);
+    expect(".w-dropdown--menu .o_kanban_toggle_fold").toHaveCount(1);
+    expect(".w-dropdown--menu .o_column_automations").toHaveCount(1);
+    expect(".w-dropdown--menu .o_group_edit").toHaveCount(0);
+    expect(".w-dropdown--menu .o_group_delete").toHaveCount(0);
+    expect(".w-dropdown--menu .o_column_archive_records").toHaveCount(0);
+    expect(".w-dropdown--menu .o_column_unarchive_records").toHaveCount(0);
     expect.verifySteps([]);
-    await contains(".o-dropdown--menu .o_column_automations").click();
+    await contains(".w-dropdown--menu .o_column_automations").click();
     expect.verifySteps(["base_automation.base_automation_act"]);
 });

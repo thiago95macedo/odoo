@@ -118,7 +118,7 @@ describe("replicate changes", () => {
         });
         await contains(":iframe .test-1 > span").click();
         await contains("button.btn.dropdown").click();
-        await contains("span.o-dropdown-item.dropdown-item").click();
+        await contains("span.w-dropdown-item.dropdown-item").click();
 
         expect(":iframe .test-1 > *").toHaveAttribute("data-oe-many2one-id", 1);
         expect(":iframe .test-2 > *").toHaveAttribute("data-oe-many2one-id", 1);
@@ -240,8 +240,8 @@ describe("replicate changes", () => {
         expect(button1).not.toHaveClass("btn-secondary");
         expect(button2).not.toHaveClass("btn-secondary");
         await contains(":iframe .data_1 .btn").click();
-        await contains(".o-hb-select-toggle").click();
-        await contains(".o-hb-select-dropdown-item[data-action-value='secondary']").click();
+        await contains(".w-hb-select-toggle").click();
+        await contains(".w-hb-select-dropdown-item[data-action-value='secondary']").click();
         expect(button1).toHaveClass("btn-secondary");
         expect(button2).toHaveClass("btn-secondary");
         expect(button1).toHaveClass("o_dirty");

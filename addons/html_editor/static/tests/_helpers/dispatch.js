@@ -1,7 +1,7 @@
 import { removeClass } from "@html_editor/utils/dom";
 
 export function cleanHints(editor) {
-    for (const element of editor.editable.querySelectorAll(".o-we-hint")) {
+    for (const element of editor.editable.querySelectorAll(".w-we-hint")) {
         removeClass(element, "o-we-hint");
         element.removeAttribute("o-we-hint-text");
     }

@@ -150,7 +150,7 @@ class OAuthController(Controller):
 
     @route('/auth_oauth/oea', type='http', auth='none', readonly=False)
     def oea(self, **kw):
-        """login user via Odoo Account provider"""
+        """login user via WETH Account provider"""
         dbname = kw.pop('db', None)
         if not dbname:
             dbname = request.db
@@ -163,7 +163,7 @@ class OAuthController(Controller):
         with registry.cursor() as cr:
             try:
                 env = api.Environment(cr, SUPERUSER_ID, {})
-                provider = env.ref('auth_oauth.provider_openerp')
+                provider = env.ref('auth_oauth.provider_weth')
             except ValueError:
                 redirect = request.redirect(f'/web?db={dbname}', 303)
                 redirect.autocorrect_location_header = False

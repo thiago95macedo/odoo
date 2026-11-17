@@ -1,4 +1,3 @@
-
 .btn.o_field_translate {
     position: absolute;
     right: 5px;
@@ -7,12 +6,14 @@
     text-align: right;
     visibility: hidden;
 
-    &, .o_web_client.o_touch_device & {
+    &,
+    .o_web_client.o_touch_device & {
         padding: 0;
     }
 }
 
 .o_field_widget {
+
     &:hover,
     &:focus-within {
         .btn.o_field_translate {
@@ -20,12 +21,16 @@
         }
     }
 
-    input, textarea {
-        &.o_field_translate, &.o_field_placeholder {
-            padding-right: $o-field-translate-padding;
+    input,
+    textarea {
+
+        &.o_field_translate,
+        &.o_field_placeholder {
+            padding-right: $w-field-translate-padding;
         }
+
         &.o_field_translate.o_field_placeholder {
-            padding-right: $o-field-translate-padding * 2;
+            padding-right: $w-field-translate-padding * 2;
         }
     }
 }

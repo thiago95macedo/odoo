@@ -29,7 +29,7 @@ from .test_common import TestHttpBase
 from weth.addons.base.tests.common import HttpCase, HttpCaseWithUserDemo
 from weth.addons.test_http.controllers import CT_JSON
 
-GEOIP_ODOO_FARM_2 = {
+GEOIP_WETH_FARM_2 = {
     'city': 'Ramillies',
     'country_code': 'BE',
     'country_name': 'Belgium',
@@ -223,11 +223,11 @@ class TestHttpSession(TestHttpBase):
 
     def test_session08_gc_ignored_no_db_name(self):
         with patch.object(session_store(), "vacuum") as mock:
-            with patch.dict(os.environ, {'ODOO_SKIP_GC_SESSIONS': ''}):
+            with patch.dict(os.environ, {'WETH_SKIP_GC_SESSIONS': ''}):
                 self.env['ir.http']._gc_sessions()
                 mock.assert_called_once()
 
-            with patch.dict(os.environ, {'ODOO_SKIP_GC_SESSIONS': '1'}):
+            with patch.dict(os.environ, {'WETH_SKIP_GC_SESSIONS': '1'}):
                 mock.reset_mock()
                 self.env['ir.http']._gc_sessions()
                 mock.assert_not_called()
@@ -303,48 +303,48 @@ class TestHttpSession(TestHttpBase):
         session['foo_2'] = 'bar_2'
         self.assertTrue(session.is_dirty)
 
-    def test_session12_x_odoo_database_good_no_prior_session(self):
+    def test_session12_x_weth_database_good_no_prior_session(self):
         res = self.multidb_url_open(
             '/test_http/ensure_db',
             dblist=('a', 'b'),
-            headers={'X-Odoo-Database': 'a'})
+            headers={'X-Weth-Database': 'a'})
         self.assertEqual(res.status_code, 200, res.text)
         self.assertEqual(res.text, 'a')
         self.assertNotIn('session_id', res.cookies)
 
-    def test_session13_x_odoo_database_bad_no_prior_session(self):
+    def test_session13_x_weth_database_bad_no_prior_session(self):
         res = self.multidb_url_open(
             '/test_http/ensure_db',
             dblist=('a', 'b'),
             headers={
-                'X-Odoo-Database': 'c',
+                'X-Weth-Database': 'c',
             }, timeout=10000)
         self.assertEqual(res.status_code, 303, res.text)
         self.assertURLEqual(res.next.url, '/web/database/selector')
         self.assertNotIn('session_id', res.cookies)
 
-    def test_session14_x_odoo_database_with_prior_session_same(self):
+    def test_session14_x_weth_database_with_prior_session_same(self):
         session = self.authenticate(None, None)
         self.assertEqual(session.db, get_db_name())
 
         res = self.url_open('/test_http/ensure_db', headers={
-            'X-Odoo-Database': get_db_name(),
+            'X-Weth-Database': get_db_name(),
         })
         res.raise_for_status()
         self.assertEqual(res.status_code, 200, res.text)
         self.assertEqual(res.text, get_db_name())
         self.assertNotIn('session_id', res.cookies)
 
-    def test_session15_x_odoo_database_with_prior_session_different(self):
+    def test_session15_x_weth_database_with_prior_session_different(self):
         session = self.authenticate(None, None)
         self.assertEqual(session.db, get_db_name())
 
         res = self.url_open('/test_http/ensure_db', headers={
-            'X-Odoo-Database': f'not-{get_db_name()}',
+            'X-Weth-Database': f'not-{get_db_name()}',
         })
         self.assertEqual(res.status_code, 403, res.text)
         self.assertIn(
-            "Cannot use both the session_id cookie and the x-odoo-database header.",
+            "Cannot use both the session_id cookie and the x-weth-database header.",
             res.text,
         )
 
@@ -364,7 +364,7 @@ class TestHttpSession(TestHttpBase):
 class TestSessionStore(HttpCaseWithUserDemo):
     def setUp(self):
         super().setUp()
-        if os.getenv("ODOO_FAKETIME_TEST_MODE"):
+        if os.getenv("WETH_FAKETIME_TEST_MODE"):
             self.skipTest("Those tests are not working in with faketime (filesystem times are used)")
         self.tmpdir = TemporaryDirectory()
         self.addCleanup(self.tmpdir.cleanup)
@@ -448,17 +448,17 @@ class TestSessionRotation(HttpCase):
             self.assertTrue(normalized_path.startswith(session_store().path))
             return len(glob.glob(normalized_path))
         self.authenticate('admin', 'admin')
-        self.url_open('/odoo')
+        self.url_open('/weth')
         session_one = self.opener.cookies['session_id']
         # Session shouldn't rotate if not expired
-        self.url_open('/odoo')
+        self.url_open('/weth')
         self.assertEqual(self.opener.cookies['session_id'], session_one)
         self.assertEqual(get_amount_sessions(session_one), 1)
         # Expire the first session
         session_one_obj = session_store().get(session_one)
         session_one_obj['create_time'] -= SESSION_ROTATION_INTERVAL
         session_store().save(session_one_obj)
-        self.url_open('/odoo')
+        self.url_open('/weth')
         session_two = self.opener.cookies['session_id']
         self.assertNotEqual(session_one, session_two)
         self.assertEqual(get_amount_sessions(session_two), 2)
@@ -466,7 +466,7 @@ class TestSessionRotation(HttpCase):
         session_two_obj = session_store().get(session_two)
         session_two_obj['create_time'] -= SESSION_DELETION_TIMER
         session_store().save(session_two_obj)
-        self.url_open('/odoo')
+        self.url_open('/weth')
         session_three = self.opener.cookies['session_id']
         self.assertEqual(session_three, session_two)
         self.assertEqual(get_amount_sessions(session_three), 1)
@@ -489,7 +489,7 @@ class TestSessionRotation(HttpCase):
         """
         # Obtain a session
         self.authenticate("admin", "admin")
-        self.url_open("/odoo")
+        self.url_open("/weth")
         session_id = self.opener.cookies["session_id"]
 
         # Expire the session to trigger the automatic soft rotation
@@ -498,9 +498,9 @@ class TestSessionRotation(HttpCase):
         session_store().save(session)
 
         # Check the session doesn't rotate while using the skip header flag
-        self.url_open("/odoo", headers={SESSION_ROTATION_INTERVAL_HEADER_SKIP: "1"})
+        self.url_open("/weth", headers={SESSION_ROTATION_INTERVAL_HEADER_SKIP: "1"})
         self.assertEqual(self.opener.cookies["session_id"], session_id)
 
         # Check the session rotates while not using the skip header flag
-        self.url_open("/odoo")
+        self.url_open("/weth")
         self.assertNotEqual(self.opener.cookies["session_id"], session_id)

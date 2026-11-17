@@ -32,8 +32,8 @@ test("Can execute help command on livechat channels", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "/help");
-    await click(".o-mail-Composer button[title='Send']:enabled");
+    await insertText(".w-mail-Composer-input", "/help");
+    await click(".w-mail-Composer button[title='Send']:enabled");
     await expect.waitForSteps(["execute_command_help"]);
 });
 
@@ -49,7 +49,7 @@ test('Receives visitor typing status "is typing"', async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-Typing", { text: "" });
+    await contains(".w-discuss-Typing", { text: "" });
     const channel = pyEnv["discuss.channel"].search_read([["id", "=", channelId]])[0];
     // simulate receive typing notification from livechat visitor "is typing"
     withGuest(guestId, () =>
@@ -58,5 +58,5 @@ test('Receives visitor typing status "is typing"', async () => {
             channel_id: channel.id,
         })
     );
-    await contains(".o-discuss-Typing", { text: "Visitor 20 is typing..." });
+    await contains(".w-discuss-Typing", { text: "Visitor 20 is typing..." });
 });

@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_sms/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgid "SMS"
 msgstr "SMS"
 
 #. module: website_sms
-#. odoo-python
+#. weth-python
 #: code:addons/website_sms/models/website_visitor.py:0
 #: model_terms:ir.ui.view,arch_db:website_sms.website_visitor_view_form
 msgid "Send SMS"
@@ -62,7 +62,7 @@ msgid "Send SMS to Visitor"
 msgstr "Enviar SMS para o visitante"
 
 #. module: website_sms
-#. odoo-python
+#. weth-python
 #: code:addons/website_sms/models/website_visitor.py:0
 msgid ""
 "There are no contact and/or no phone or mobile numbers linked to this "

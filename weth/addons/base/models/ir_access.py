@@ -458,7 +458,7 @@ class IrAccess(models.Model):
             if suggested_company and len(suggested_company) > 1:
                 resolution_info += "\n\n" + self.env._(
                     "Note: this might be a multi-company issue. "
-                    "Switching company may help - in Odoo, not in real life!"
+                    "Switching company may help - in WETH, not in real life!"
                 )
             elif suggested_company and suggested_company in self.env.user.company_ids:
                 context = {'suggested_company': {

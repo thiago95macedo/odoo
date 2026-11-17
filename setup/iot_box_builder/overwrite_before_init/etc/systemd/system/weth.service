@@ -1,5 +1,5 @@
 [Unit]
-Description=Odoo IoT Box service
+Description=WETH IoT Box service
 After=network-online.target time-sync.target cups.socket NetworkManager.service rc-local.service
 Wants=network-online.target time-sync.target
 StartLimitIntervalSec=0
@@ -10,7 +10,7 @@ Group=weth
 Environment="LIBCAMERA_LOG_LEVELS=3"
 Environment="XDG_RUNTIME_DIR=/run/weth"
 Environment="XDG_CACHE_HOME=/run/weth"
-Environment="ODOO_PY_COLORS=True"
+Environment="WETH_PY_COLORS=True"
 ExecStartPre=sudo /bin/mkdir -p /run/weth
 ExecStartPre=sudo /bin/chown weth:weth /run/weth
 ExecStartPre=sudo timedatectl set-ntp true

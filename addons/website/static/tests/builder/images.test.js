@@ -33,11 +33,11 @@ test("click on Image shouldn't open toolbar", async () => {
     const editor = getEditor();
     const p = editor.editable.querySelector("p");
     setSelection({ anchorNode: p, anchorOffset: 0, focusNode: p, focusOffset: 1 });
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
 
     await contains(":iframe img.a_nice_img").click();
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test("Double click on image and replace it", async () => {
@@ -58,7 +58,7 @@ test("Double click on image and replace it", async () => {
     await dblclick(":iframe img.a_nice_img");
     await animationFrame();
     expect(".modal-content:contains(Select a media) .o_upload_media_button").toHaveCount(1);
-    expect("div.o-tooltip").toHaveCount(0);
+    expect("div.w-tooltip").toHaveCount(0);
     await contains(".o_select_media_dialog .o_button_area[aria-label='logo']").click();
     await waitSidebarUpdated();
     await waitForNone(".o_select_media_dialog");
@@ -104,10 +104,10 @@ test("media dialog requests website logo attachments", async () => {
 test("simple click on Image", async () => {
     await setupWebsiteBuilder(`<div><img class=a_nice_img src='${dummyBase64Img}'></div>`);
     await click(":iframe img.a_nice_img");
-    await waitFor("div.o-tooltip");
-    expect("div.o-tooltip").toHaveCount(1);
+    await waitFor("div.w-tooltip");
+    expect("div.w-tooltip").toHaveCount(1);
     await advanceTime(3100);
-    expect("div.o-tooltip").toHaveCount(0);
+    expect("div.w-tooltip").toHaveCount(0);
 });
 
 test("double click on text", async () => {
@@ -199,7 +199,7 @@ test("pasted/dropped images are converted to attachments on save in website edit
     ).toBe(true);
 
     // Save and check if image has been saved as attachment
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect.verifySteps(["add_data", "save"]);
 });
 
@@ -276,7 +276,7 @@ test("pasted/dropped images are converted to attachments on snippet save", async
     await expect.waitForSteps(["add_data image-1.png", "save snippet"]);
 
     // Save and check if image of section 2 has been saved as attachment
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     await expect.waitForSteps(["add_data image-2.png", "save"]);
 });
 
@@ -404,7 +404,7 @@ test("Save image with correct parameter", async () => {
                 class="o_modified_image_to_save"
             >
         </div>`);
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     await expect.waitForSteps(["modify_image"]);
 });
 

@@ -96,7 +96,7 @@ class IrActionsReport(models.Model):
             extra_args += ['--orientation', 'landscape']
         elif paperformat and paperformat.orientation:
             extra_args += ['--orientation', paperformat.orientation.lower()]
-        if os.getenv('ODOO_PAPER_MUNCHER_FEATURE') == '1':
+        if os.getenv('WETH_PAPER_MUNCHER_FEATURE') == '1':
             extra_args += ['--feature', '*=on']  # activate all experimental/optional features
         if paperformat and paperformat.format:
             if paperformat.format != 'custom':
@@ -127,7 +127,7 @@ class IrActionsReport(models.Model):
                 wsgi_environ['HTTP_HOST'] = url.netloc
                 wsgi_environ['HTTP_COOKIE'] = f'session_id={temp_session.sid}; HttpOnly; domain={url.hostname}; path=/;'
             else:
-                wsgi_environ['HTTP_X_ODOO_DATABASE'] = self.env.cr.dbname
+                wsgi_environ['HTTP_X_WETH_DATABASE'] = self.env.cr.dbname
 
             with PaperMuncherServer(
                 args=[paper_muncher().bin, *names, '-o', 'pipe:/paper-muncher/output.pdf', *extra_args],

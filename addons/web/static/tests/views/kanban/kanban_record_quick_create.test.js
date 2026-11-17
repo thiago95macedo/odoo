@@ -198,7 +198,7 @@ test("create in grouped on m2o", async () => {
     });
 
     expect(".o_kanban_group.o_group_draggable").toHaveCount(2);
-    expect(".o_control_panel_main_buttons button.o-kanban-button-new").toHaveCount(1);
+    expect(".o_control_panel_main_buttons button.w-kanban-button-new").toHaveCount(1);
     expect(".o_column_quick_create").toHaveCount(0, {
         message: "no quick create since no default groupby",
     });
@@ -1731,7 +1731,7 @@ test("quick create record: cancel when modal is opened", async () => {
     // will NOT close the quick create.
     // This can happen when the user clicks out of the input because of a race condition between
     // the focusout of the m2o and the global 'click' handler of the quick create.
-    // Check odoo/odoo#61981 for more details.
+    // Check weth/weth#61981 for more details.
     expect(".o_dialog").toHaveCount(1, { message: "modal should be opening after m2o focusout" });
     expect(document.body).toHaveClass("modal-open");
     await click(document.body);

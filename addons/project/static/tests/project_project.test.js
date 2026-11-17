@@ -37,8 +37,8 @@ test("project.project (list) hide archive/unarchive action for project user", as
     await mountView(listViewParams);
     await contains("input.form-check-input").click();
     await contains(`.o_cp_action_menus .dropdown-toggle`).click();
-    expect(`.o-dropdown--menu span:contains(Archive)`).toHaveCount(0, { message: "Archive action should not be visible" });
-    expect(`.o-dropdown--menu span:contains(Unarchive)`).toHaveCount(0, { message: "Unarchive action should not be visible" });
+    expect(`.w-dropdown--menu span:contains(Archive)`).toHaveCount(0, { message: "Archive action should not be visible" });
+    expect(`.w-dropdown--menu span:contains(Unarchive)`).toHaveCount(0, { message: "Unarchive action should not be visible" });
 });
 
 test("project.project (kanban) hide archive/unarchive action for project user", async () => {

@@ -41,7 +41,7 @@
       </xpath>
       <xpath expr="//head/link[last()]" position="after">
         <t t-call-assets="web.material_symbols_outlined" t-binary="True"/>
-        <t t-call-assets="web.odoo_ui_icons" t-binary="True"/>
+        <t t-call-assets="web.weth_ui_icons" t-binary="True"/>
         <t t-call-assets="web.assets_frontend" t-js="false"/>
       </xpath>
       <xpath expr="//head/script[@id='web.layout.wethscript']" position="after">
@@ -138,7 +138,7 @@
         <t t-set="head">
             <t t-if="disable_opengraph">
                 <!-- Open Graph / Facebook -->
-                <meta property="og:site_name" content="Odoo"/>
+                <meta property="og:site_name" content="Weth"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" t-att-content="og_url"/>
                 <meta property="og:title" t-att-content="og_title"/>
@@ -149,7 +149,7 @@
                 <meta property="og:image:height" content="420"/>
                 <!-- Twitter -->
                 <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:site" content="@Odoo"/>
+                <meta name="twitter:site" content="@Weth"/>
                 <meta name="twitter:url" t-att-content="og_url"/>
                 <meta name="twitter:domain" t-att-content="og_domain"/>
                 <meta name="twitter:title" t-att-content="og_title"/>
@@ -367,7 +367,7 @@
             <div class="card">
                 <img t-attf-src="data:image/png;base64,{{weth_icon.to_base64()}}" alt="WETH logo"/>
                 <h1>You are offline</h1>
-                <p>Check your network connection and come back here. Odoo will load as soon as you're back online.</p>
+                <p>Check your network connection and come back here. WETH will load as soon as you're back online.</p>
                 <button onclick="location.reload()">Check again</button>
             </div>
         </t>

@@ -24,14 +24,14 @@ test("PWA service fetches the manifest found in the page", async () => {
     mountManifestLink("/web/manifest.webmanifest");
     onRpc("/*", (request) => {
         expect.step(new URL(request.url).pathname);
-        return { name: "Odoo PWA" };
+        return { name: "WETH PWA" };
     });
     const pwaService = await getService("pwa");
     let appManifest = await pwaService.getManifest();
-    expect(appManifest).toEqual({ name: "Odoo PWA" });
+    expect(appManifest).toEqual({ name: "WETH PWA" });
     expect.verifySteps(["/web/manifest.webmanifest"]);
     appManifest = await pwaService.getManifest();
-    expect(appManifest).toEqual({ name: "Odoo PWA" });
+    expect(appManifest).toEqual({ name: "WETH PWA" });
     // manifest is only fetched once to get the app name
     expect.verifySteps([]);
 });
@@ -65,5 +65,5 @@ test("PWA installation process", async () => {
         },
     });
     expect(pwaService.canPromptToInstall).toBe(false);
-    expect.verifySteps(['{"/odoo":"accepted"}', "onDone call with installation accepted"]);
+    expect.verifySteps(['{"/weth":"accepted"}', "onDone call with installation accepted"]);
 });

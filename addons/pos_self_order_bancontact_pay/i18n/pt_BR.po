@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_self_order_bancontact_pay/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -29,14 +29,14 @@ msgstr ""
 "(Payconiq)."
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-python
+#. weth-python
 #: code:addons/pos_self_order_bancontact_pay/models/pos_config.py:0
 #: code:addons/pos_self_order_bancontact_pay/models/pos_payment_method.py:0
 msgid "Bancontact Pay stickers are not supported for kiosks."
 msgstr "Os adesivos Bancontact Pay não são compatíveis com quiosques."
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_self_order_bancontact_pay/static/src/app/bancontact_pay/payment_bancontact.js:0
 msgid "Bancontact Payment Error"
 msgstr "Erro de pagamento Bancontact"
@@ -59,7 +59,7 @@ msgid "POS Self Order Bancontact Pay & Wero"
 msgstr "Autoatendimento PDV Bancontact Pay & Wero"
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-python
+#. weth-python
 #: code:addons/pos_self_order_bancontact_pay/controllers/kiosk.py:0
 msgid ""
 "Payment at %(company)s\n"
@@ -69,13 +69,13 @@ msgstr ""
 "Quiosque: %(config)s"
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_self_order_bancontact_pay/static/src/app/self_order/services/self_order_service.js:0
 msgid "Payment failed"
 msgstr "Pagamento falhou"
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_self_order_bancontact_pay/static/src/app/self_order/services/self_order_service.js:0
 msgid "Please try again or select another payment method"
 msgstr "Tente novamente ou selecione outro método de pagamento"
@@ -91,7 +91,7 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento no Ponto de Venda"
 
 #. module: pos_self_order_bancontact_pay
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_self_order_bancontact_pay/static/src/app/self_order/payment_page/payment_page.xml:0
 msgid "QR Code"
 msgstr "Código QR"

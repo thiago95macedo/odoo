@@ -18,8 +18,8 @@ let unread_store;
 async function saveUnreadCounter(counter, retry = true) {
     try {
         unread_store ??= new window.idbKeyval.Store(
-            "odoo-mail-unread-db",
-            "odoo-mail-unread-store"
+            "weth-mail-unread-db",
+            "weth-mail-unread-store"
         );
     } catch {
         // The browser does not allow the database to be opened (private mode, blocked
@@ -97,7 +97,7 @@ const StorePatch = {
         super.onPushNotificationDisplayed(...arguments);
         this.updateAppBadge();
     },
-    onUpdateActivityGroups() {},
+    onUpdateActivityGroups() { },
     /**
      * @param {string} resModel
      * @param {number[]} resIds
@@ -138,7 +138,7 @@ const StorePatch = {
     updateAppBadge() {
         if (window.idbKeyval) {
             saveUnreadCounter(this.globalCounter);
-            Promise.resolve(navigator.setAppBadge?.(this.globalCounter)).catch(() => {}); // FIXME: Illegal invocation error in HOOT
+            Promise.resolve(navigator.setAppBadge?.(this.globalCounter)).catch(() => { }); // FIXME: Illegal invocation error in HOOT
         }
     },
     /**
@@ -221,7 +221,7 @@ const StorePatch = {
         return false;
     },
     /** @param {import("models").Thread} fromThread */
-    onLinkFollowed(fromThread) {},
+    onLinkFollowed(fromThread) { },
 };
 patch(Store.prototype, StorePatch);
 

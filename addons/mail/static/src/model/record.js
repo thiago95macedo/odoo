@@ -42,9 +42,9 @@ export class Record {
     /** @type {import("./record_internal").RecordInternal} */
     _;
     static id = "id";
-    /** @type {import("@web/env").OdooEnv} */
+    /** @type {import("@web/env").WethEnv} */
     static env;
-    /** @type {import("@web/env").OdooEnv} */
+    /** @type {import("@web/env").WethEnv} */
     env;
     /** @type {Object<string, Record>} */
     static records;

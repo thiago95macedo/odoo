@@ -4,13 +4,14 @@
 
 .o_notification_manager {
     position: fixed;
-    inset: auto $o-notification-margin ($o-navbar-height * 0.25) $o-notification-margin;
-    z-index: $o-notification-zindex;
+    inset: auto $w-notification-margin (
+        $w-navbar-height * 0.25) $w-notification-margin;
+    z-index: $w-notification-zindex;
 
     @include media-breakpoint-up(md) {
-        inset: ($o-navbar-height * 1.15) $o-notification-margin auto auto;
-        min-width: $o-notification-min-width-md;
-        max-width: $o-notification-max-width-md;
+        inset: ($w-navbar-height * 1.15) $w-notification-margin auto auto;
+        min-width: $w-notification-min-width-md;
+        max-width: $w-notification-max-width-md;
     }
 
     @include media-breakpoint-down(md) {
@@ -24,12 +25,13 @@
     }
 
     .o_notification {
-        background-color: var(--Notification__background-color, #{$o-view-background-color}); // Needed to override the background in 'website.scss'
-    }
+        background-color: var(--Notification__background-color, #{$w-view-background-color}
+    ); // Needed to override the background in 'website.scss'
+}
 
-    .o_notification_bar {
-        width: $o-notification-bar-width;
-    }
+.o_notification_bar {
+    width: $w-notification-bar-width;
+}
 }
 
 @include owl-fade(0.5s, "o_notification");
@@ -39,5 +41,5 @@
     bottom: 0;
     left: 0;
     height: 3px;
-    margin-left: $o-notification-bar-width;
+    margin-left: $w-notification-bar-width;
 }

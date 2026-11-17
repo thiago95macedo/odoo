@@ -14,7 +14,7 @@ import { getContent, setSelection } from "./_helpers/selection";
 import {
     insertText,
     pasteHtml,
-    pasteOdooEditorHtml,
+    pasteWethEditorHtml,
     pasteText,
     undo,
 } from "./_helpers/user_actions";
@@ -1298,7 +1298,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<h1>[]<br></h1>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     '<p><font style="background-color: rgb(255, 0, 0);">abc</font></p>'
                 );
@@ -1311,7 +1311,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<h1>[]<br></h1>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     '<div class="o-paragraph"><font style="background-color: rgb(255, 0, 0);">abc</font></div>'
                 );
@@ -1324,7 +1324,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, "<li><p>abc</p></li><li><p>def</p></li>");
+                pasteWethEditorHtml(editor, "<li><p>abc</p></li><li><p>def</p></li>");
             },
             contentAfter: "<p>abc</p><p>def[]</p>",
         });
@@ -1334,7 +1334,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, "<li><h1>abc</h1></li><li><h1>def</h1></li");
+                pasteWethEditorHtml(editor, "<li><h1>abc</h1></li><li><h1>def</h1></li");
             },
             contentAfter: "<h1>abc</h1><h1>def[]</h1>",
         });
@@ -1344,7 +1344,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     "<li><blockquote>abc</blockquote></li><li><blockquote>def</blockquote></li>"
                 );
@@ -1356,7 +1356,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     "<li><p>abc</p><p>def</p></li><li><p>abc</p><p>def</p></li>"
                 );
@@ -1369,7 +1369,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     "<li><h1>abc</h1><h1>def</h1></li><li><h1>abc</h1><h1>def</h1></li"
                 );
@@ -1382,7 +1382,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     "<li><blockquote>abc</blockquote><blockquote>def</blockquote></li><li><blockquote>abc</blockquote><blockquote>def</blockquote></li>"
                 );
@@ -1396,7 +1396,7 @@ describe("Unwrapping html element", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     unformat(`
                     <li>
@@ -2992,7 +2992,7 @@ describe("pasting within pre", () => {
 });
 
 const url = "https://www.weth.com.br";
-const imgUrl = "https://download.odoocdn.com/icons/website/static/description/icon.png";
+const imgUrl = "https://download.wethcdn.com/icons/website/static/description/icon.png";
 const videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 describe("link", () => {
@@ -3083,7 +3083,7 @@ describe("link", () => {
             );
             pasteText(editor, "http://weth.com.br");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>xy<a href="http://weth.com.br">http://weth.com.br</a>[]z</p>`
             );
@@ -3098,7 +3098,7 @@ describe("link", () => {
             );
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             expect(getContent(el)).toBe(`<p>xy${imgUrl}[]z</p>`);
 
             await press("Enter");
@@ -3111,7 +3111,7 @@ describe("link", () => {
             );
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             expect(getContent(el)).toBe(`<p>xy${imgUrl}[]z</p>`);
 
             await press("ArrowDown");
@@ -3176,7 +3176,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[]</p>");
             pasteText(editor, `abc ${url} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${url}">${url}</a> def[]</p>`
             );
@@ -3190,7 +3190,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[]</p>");
             pasteText(editor, `abc ${imgUrl} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${imgUrl}">${imgUrl}</a> def[]</p>`
             );
@@ -3200,7 +3200,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[]</p>");
             pasteText(editor, `abc ${videoUrl} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${videoUrl}">${videoUrl}</a> def[]</p>`
             );
@@ -3210,7 +3210,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[]</p>");
             pasteText(editor, `${url} ${videoUrl} ${imgUrl}`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p><a href="${url}">${url}</a> <a href="${videoUrl}">${videoUrl}</a> <a href="${imgUrl}">${imgUrl}</a>[]</p>`
             );
@@ -3224,7 +3224,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[]</p>");
             pasteText(editor, `${url} abc ${videoUrl} def ${imgUrl}`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p><a href="${url}">${url}</a> abc <a href="${videoUrl}">${videoUrl}</a> def <a href="${imgUrl}">${imgUrl}</a>[]</p>`
             );
@@ -3338,11 +3338,11 @@ describe("link", () => {
             );
         });
 
-        test("should transform a mail URL when pasting a mail as odoo html", async () => {
+        test("should transform a mail URL when pasting a mail as weth html", async () => {
             const { el } = await setupEditor("<p>ab[]</p>");
 
             const clipboardData = new DataTransfer();
-            clipboardData.setData("application/vnd.odoo.odoo-editor", "<p>user@domain.com</p>");
+            clipboardData.setData("application/vnd.weth.weth-editor", "<p>user@domain.com</p>");
             clipboardData.setData("text/plain", "user@domain.com");
             await dispatch(el, "paste", { clipboardData });
             expect(cleanLinkArtifacts(getContent(el))).toBe(
@@ -3350,12 +3350,12 @@ describe("link", () => {
             );
         });
 
-        test("should transform a mail URL when pasting a mail as odoo html (2)", async () => {
+        test("should transform a mail URL when pasting a mail as weth html (2)", async () => {
             const { el } = await setupEditor("<p>ab[]</p>");
 
             const clipboardData = new DataTransfer();
             clipboardData.setData(
-                "application/vnd.odoo.odoo-editor",
+                "application/vnd.weth.weth-editor",
                 "<p>mailto:user@domain.com</p>"
             );
             clipboardData.setData("text/plain", "mailto:user@domain.com");
@@ -3461,7 +3461,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[xyz]</p>");
             pasteText(editor, `abc ${url} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${url}">${url}</a> def[]</p>`
             );
@@ -3471,7 +3471,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[xyz]</p>");
             pasteText(editor, `abc ${imgUrl} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${imgUrl}">${imgUrl}</a> def[]</p>`
             );
@@ -3481,7 +3481,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[xyz]</p>");
             pasteText(editor, `abc ${videoUrl} def`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>abc <a href="${videoUrl}">${videoUrl}</a> def[]</p>`
             );
@@ -3491,7 +3491,7 @@ describe("link", () => {
             const { el, editor } = await setupEditor("<p>[xyz]</p>");
             pasteText(editor, `${url} ${videoUrl} ${imgUrl}`);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p><a href="${url}">${url}</a> <a href="${videoUrl}">${videoUrl}</a> <a href="${imgUrl}">${imgUrl}</a>[]</p>`
             );
@@ -3575,9 +3575,9 @@ describe("link", () => {
             );
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             expect(getContent(el)).toBe(
-                `<p>abhttps://download.odoocdn.com/icons/website/static/description/icon.png[]cd</p>`
+                `<p>abhttps://download.wethcdn.com/icons/website/static/description/icon.png[]cd</p>`
             );
             await press("Enter");
             expect(getContent(el)).toBe(`<p>ab<img src="${imgUrl}">[]cd</p>`);
@@ -3589,9 +3589,9 @@ describe("link", () => {
             );
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             expect(getContent(el)).toBe(
-                `<p>abhttps://download.odoocdn.com/icons/website/static/description/icon.png[]cd</p>`
+                `<p>abhttps://download.wethcdn.com/icons/website/static/description/icon.png[]cd</p>`
             );
             await press("ArrowDown");
             await press("Enter");
@@ -3671,7 +3671,7 @@ describe("images", () => {
             const { el, editor } = await setupEditor("<p>ab[]cd</p>");
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             expect(getContent(el)).toBe(`<p>ab<img src="${imgUrl}">[]cd</p>`);
         });
@@ -3680,7 +3680,7 @@ describe("images", () => {
             const { el, editor } = await setupEditor('<p>a<span class="a">b[]c</span>d</p>');
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             expect(getContent(el)).toBe(
                 `<p>a<span class="a">b<img src="${imgUrl}">[]c</span>d</p>`
@@ -3694,7 +3694,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>a<a href="http://existing.com">b<img src="${imgUrl}">[]c</a>d</p>`
             );
@@ -3705,7 +3705,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick the second command (Paste as URL)
             await press("ArrowDown");
             await press("Enter");
@@ -3721,7 +3721,7 @@ describe("images", () => {
             pasteText(editor, "*should not disappear*");
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick the second command (Paste as URL)
             await press("ArrowDown");
             await press("Enter");
@@ -3735,9 +3735,9 @@ describe("images", () => {
             expect(getContent(el)).toBe(`<p>ax[]b</p>`);
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             undo(editor);
-            await waitForNone(".o-we-powerbox");
+            await waitForNone(".w-we-powerbox");
             expect(getContent(el)).toBe(`<p>ax[]b</p>`);
         });
     });
@@ -3748,7 +3748,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             expect(cleanLinkArtifacts(getContent(el))).toBe(`<p>ab<img src="${imgUrl}">[]cd</p>`);
         });
@@ -3760,7 +3760,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             expect(getContent(el)).toBe(
                 `<p>a<span class="a">b<img src="${imgUrl}">[]c</span>d</p>`
@@ -3774,7 +3774,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 0);
+            await expectElementCount(".w-we-powerbox", 0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
                 `<p>a<a href="http://existing.com">b<img src="${imgUrl}">[]c</a>d</p>`
             );
@@ -3785,7 +3785,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick the second command (Paste as URL)
             await press("ArrowDown");
             await press("Enter");
@@ -3811,7 +3811,7 @@ describe("images", () => {
             // paste url
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick the second command (Paste as URL)
             await press("ArrowDown");
             await press("Enter");
@@ -3824,7 +3824,7 @@ describe("images", () => {
             const { el, editor } = await setupEditor("<p>[abc]</p>");
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick first command (Embed image)
             await press("Enter");
             // Undo
@@ -3837,7 +3837,7 @@ describe("images", () => {
 
             pasteText(editor, imgUrl);
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             // Pick second command (Paste as URL)
             await press("ArrowDown");
             await press("Enter");
@@ -3848,12 +3848,12 @@ describe("images", () => {
     });
 });
 
-describe("Odoo editor own html", () => {
+describe("WETH editor own html", () => {
     test("should paste html as is", async () => {
         await testEditor({
             contentBefore: "<p>a[]b</p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, '<div class="custom-paste oe_unbreakable">b</div>');
+                pasteWethEditorHtml(editor, '<div class="custom-paste oe_unbreakable">b</div>');
             },
             contentAfter: '<p>a</p><div class="custom-paste oe_unbreakable">b</div><p>[]b</p>',
         });
@@ -3863,7 +3863,7 @@ describe("Odoo editor own html", () => {
         await testEditor({
             contentBefore: "<p>a[]b</p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, `<script>console.log('xss attack')</script>`);
+                pasteWethEditorHtml(editor, `<script>console.log('xss attack')</script>`);
             },
             contentAfter: "<p>a[]b</p>",
         });
@@ -3880,7 +3880,7 @@ describe("Odoo editor own html", () => {
         await testEditor({
             contentBefore: "<p>a[]</p><p>b</p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     `<div>c</div><div class="x y" data-x="system">d</div><div style="color: red">e</div>`
                 );
@@ -3897,7 +3897,7 @@ describe("Odoo editor own html", () => {
         await testEditor({
             contentBefore: "<p>[]<br></p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(
+                pasteWethEditorHtml(
                     editor,
                     `<p>a</p><div class="o_table_wrapper"><table><tbody><tr><td><p>b</p></td></tr></tbody></table></div><p>c</p>`
                 );
@@ -3911,9 +3911,9 @@ describe("Odoo editor own html", () => {
 });
 
 describe("editable in iframe", () => {
-    test("should paste odoo-editor html", async () => {
+    test("should paste weth-editor html", async () => {
         const { el, editor } = await setupEditor("<p>[]</p>", { props: { iframe: true } });
-        pasteOdooEditorHtml(editor, `<p>text<b>bold text</b>more text</p>`);
+        pasteWethEditorHtml(editor, `<p>text<b>bold text</b>more text</p>`);
         expect(getContent(el)).toBe("<p>text<b>bold text</b>more text[]</p>");
     });
 });
@@ -3923,7 +3923,7 @@ describe("paste in contenteditable span", () => {
         const { el, editor } = await setupEditor(
             `<p contenteditable="false"><span contenteditable="true">[]</span></p>`
         );
-        pasteOdooEditorHtml(editor, `<h1>text<b>bold text</b>more text</h1>`);
+        pasteWethEditorHtml(editor, `<h1>text<b>bold text</b>more text</h1>`);
         expect(getContent(el)).toBe(
             `<p data-selection-placeholder=""><br></p><p contenteditable="false"><span contenteditable="true">text<b>bold text</b>more text[]</span></p><p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>`
         );
@@ -3932,7 +3932,7 @@ describe("paste in contenteditable span", () => {
         const { el, editor } = await setupEditor(
             `<p contenteditable="false"><span contenteditable="true">[]</span></p>`
         );
-        pasteOdooEditorHtml(
+        pasteWethEditorHtml(
             editor,
             `<p>a paragraph</p><h1>text<b>bold text</b>more text</h1><p>another</p>`
         );
@@ -3944,7 +3944,7 @@ describe("paste in contenteditable span", () => {
         const { el, editor } = await setupEditor(
             `<p contenteditable="false"><span contenteditable="true">ab[]cd</span></p>`
         );
-        pasteOdooEditorHtml(
+        pasteWethEditorHtml(
             editor,
             `<p>a paragraph</p><h1>text<b>bold text</b>more text</h1><p>another</p>`
         );
@@ -4010,7 +4010,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 400;
                 font-style: italic;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -4021,7 +4021,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 700;
                 font-style: italic;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -4032,7 +4032,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 700;
                 font-style: normal;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -4049,7 +4049,7 @@ describe("Paste HTML tables", () => {
                 color: #495057;
                 font-size: 10.0pt;
                 font-style: italic;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
                 text-align: center;
@@ -4069,7 +4069,7 @@ describe("Paste HTML tables", () => {
                 color: #495057;
                 font-size: 10.0pt;
                 font-weight: 700;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
                 text-align: center;
@@ -4110,7 +4110,7 @@ describe("Paste HTML tables", () => {
             .xl94 {
                 color: #495057;
                 font-size: 10.0pt;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "WETH Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 1;
                 text-align: center;
@@ -4217,7 +4217,7 @@ describe("Paste HTML tables", () => {
         </colgroup>
         <tbody>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Odoo Unicode Support Noto;font-weight:normal;font-style:italic;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:WETH Unicode Support Noto;font-weight:normal;font-style:italic;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Italic then also BOLD&quot;}"
                     data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;}}{&quot;1&quot;:17,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;,&quot;5&quot;:1}}">
                     <span style="font-size:10pt;font-family:Arial;font-style:italic;color:#495057;">Italic then also
@@ -4228,7 +4228,7 @@ describe("Paste HTML tables", () => {
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Italic strike&quot;}">Italic strike</td>
             </tr>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Odoo Unicode Support Noto;font-weight:bold;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:WETH Unicode Support Noto;font-weight:bold;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Just bold Just italic&quot;}"
                     data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;}}{&quot;1&quot;:10,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;,&quot;5&quot;:0,&quot;6&quot;:1}}">
                     <span
@@ -4247,7 +4247,7 @@ describe("Paste HTML tables", () => {
                     strike and underline</td>
             </tr>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;font-family:Odoo Unicode Support Noto;font-weight:normal;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;font-family:WETH Unicode Support Noto;font-weight:normal;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Color background&quot;}">Color background
                 </td>
                 <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;color:#ff0000;"
@@ -4615,7 +4615,7 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(imgElement, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
         expect(imageHTML).toBe(
             `<p><img class="img-fluid" data-file-name="image.png" src="${base64Image}"></p>`
         );
@@ -4625,8 +4625,8 @@ describe("onDrop", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image}">`
         );
-        // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+        // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4656,7 +4656,7 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(firstImage, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
         expect(imageHTML).toBe(
             `<p><img class="img-fluid" data-file-name="image.png" src="${base64Image}"></p>`
         );
@@ -4666,8 +4666,8 @@ describe("onDrop", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image}">`
         );
-        // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+        // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4696,7 +4696,7 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(firstImage, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
         expect(imageHTML).toBe(
             `<p><img class="img-fluid" data-file-name="image.png" src="${base64Image3}"></p>`
         );
@@ -4706,8 +4706,8 @@ describe("onDrop", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image3}">`
         );
-        // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+        // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4739,7 +4739,7 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(firstImage, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
         expect(imageHTML).toBe(
             `<p><img class="img-fluid" data-file-name="image.png" src="${base64Image1}"><img class="img-fluid" data-file-name="image.png" src="${base64Image2}"></p>`
         );
@@ -4749,8 +4749,8 @@ describe("onDrop", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image1}"><img src="${base64Image2}">`
         );
-        // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+        // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4783,12 +4783,12 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(bannerElement, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const odooEditorData = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const wethEditorData = dragdata.getData("application/vnd.weth.weth-editor");
         const textHtml = dragdata.getData("text/html");
         const dropData = new DataTransfer();
         dropData.setData("text/html", textHtml);
-        // Simulate the application/vnd.odoo.odoo-editor data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor", odooEditorData);
+        // Simulate the application/vnd.weth.weth-editor data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor", wethEditorData);
         await dispatch(targetNodeForDrop, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4820,12 +4820,12 @@ describe("onDrop", () => {
         await dispatch(iconElement, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
 
-        const odooEditorData = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const wethEditorData = dragdata.getData("application/vnd.weth.weth-editor");
         const textHtml = dragdata.getData("text/html");
         const dropData = new DataTransfer();
         dropData.setData("text/html", textHtml);
-        // Simulate the application/vnd.odoo.odoo-editor-node data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor-node", odooEditorData);
+        // Simulate the application/vnd.weth.weth-editor-node data that the browser would do.
+        dropData.setData("application/vnd.weth.weth-editor-node", wethEditorData);
         await dispatch(targetNodeForDrop, "drop", { dataTransfer: dropData });
         await animationFrame();
 
@@ -4978,7 +4978,7 @@ describe("paste table cells into an existing table", () => {
                 </table>
             `)
         );
-        pasteOdooEditorHtml(
+        pasteWethEditorHtml(
             editor,
             unformat(`
                 <table class="table table-bordered o_table">
@@ -5063,7 +5063,7 @@ describe("paste table cells into an existing table", () => {
                 </table>
             `)
         );
-        pasteOdooEditorHtml(
+        pasteWethEditorHtml(
             editor,
             unformat(`
                 <table class="table table-bordered o_table">
@@ -5119,7 +5119,7 @@ describe("paste table cells into an existing table", () => {
         const dragdata = new DataTransfer();
         await dispatch(imgElement, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor");
+        const imageHTML = dragdata.getData("application/vnd.weth.weth-editor");
         expect(imageHTML).toBe(
             `<p><img class="img-fluid" data-file-name="image.png" src="${base64Image}"></p>`
         );
@@ -5129,7 +5129,7 @@ describe("paste table cells into an existing table", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image}">`
         );
-        dropData.setData("application/vnd.odoo.odoo-editor", imageHTML);
+        dropData.setData("application/vnd.weth.weth-editor", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 

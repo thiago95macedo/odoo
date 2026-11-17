@@ -648,7 +648,7 @@ class StoredTranslations(dict):
     def written(self, env: Environment, field: BaseString, translation_dict: dict[str, ParsedTranslation], *, adapt_close_terms: bool = False, delay_translations: bool = False) -> StoredTranslations | None:
         """ Apply written translations and build a new stored mapping.
 
-        :param env: Current Odoo environment, used for validation and
+        :param env: Current WETH environment, used for validation and
                     language-aware errors.
         :param field: A model_terms translated field (``callable(field.translate)``).
         :param translation_dict: Mapping ``{lang_code: ParsedTranslation}`` for
@@ -781,7 +781,7 @@ class StoredTranslations(dict):
     ) -> StoredTranslations | None:
         """ Apply term-level translations and build a new stored mapping.
 
-        :param env: Current Odoo environment, used for validation and
+        :param env: Current WETH environment, used for validation and
                     language-aware errors.
         :param field: A model_terms translated field (``callable(field.translate)``).
         :param source_lang: Language of the source terms in ``term_updates``.
@@ -858,7 +858,7 @@ class StoredTranslations(dict):
     def extract_term_translations(self, env: Environment, field: BaseString, source_lang: str, target_langs: set[str] | None = None, *, include_identical: bool = False) -> dict[str, dict[str, str]]:
         """ Extract per-language term mappings from stored model_terms translations.
 
-        :param env: Odoo environment
+        :param env: WETH environment
         :param field: A model_terms translated field (``callable(field.translate)``).
         :param source_lang: Language of the source terms to extract against
         :param target_langs: if provided, restrict output to these language codes
@@ -927,7 +927,7 @@ def adapt_translated_field_value(
     language codes to translated strings. This function applies the adapter to each
     value, preserving None and False as-is.
 
-    :param env: the Odoo environment
+    :param env: the WETH environment
     :param field: the translated field
     :param val: the value to adapt; can be a dict {lang: value}, a plain string,
                 or None/False
@@ -1266,7 +1266,7 @@ def parse_xmlid(xmlid: str, default_module: str) -> tuple[str, str]:
 
 
 def translation_file_reader(source, fileformat='po', module=None):
-    """ Iterate over translation file to return Odoo translation entries """
+    """ Iterate over translation file to return WETH translation entries """
     if fileformat == 'csv':
         if module is not None:
             # if `module` is provided, we are reading a data file located in that module
@@ -1375,7 +1375,7 @@ class XMLDataFileReader:
 
 
 class PoFileReader:
-    """ Iterate over po file to return Odoo translation entries """
+    """ Iterate over po file to return WETH translation entries """
     def __init__(self, source):
 
         def get_pot_path(source_name):
@@ -1467,7 +1467,7 @@ class PoFileReader:
                 _logger.error("malformed po file: unknown occurrence: %s", occurrence)
 
 def TranslationFileWriter(target, fileformat='po', lang=None):
-    """ Iterate over translation file to return Odoo translation entries """
+    """ Iterate over translation file to return WETH translation entries """
     if fileformat == 'csv':
         return CSVFileWriter(target)
 
@@ -1496,7 +1496,7 @@ class CSVFileWriter:
 
 
 class PoFileWriter:
-    """ Iterate over po file to return Odoo translation entries """
+    """ Iterate over po file to return WETH translation entries """
     def __init__(self, target, lang):
 
         self.buffer = target
@@ -1764,10 +1764,10 @@ def extract_spreadsheet_terms(fileobj, keywords, comment_tags, options):
                         terms.add(chartDefinition['title']['text'])
 
     terms.update(global_filter['label'] for global_filter in data.get('globalFilters', []))
-    for odoo_list in data.get('lists', {}).values():
-        if not odoo_list.get('translateHeaders', False):
+    for weth_list in data.get('lists', {}).values():
+        if not weth_list.get('translateHeaders', False):
             continue
-        columns = odoo_list.get('columns', [])
+        columns = weth_list.get('columns', [])
         for column in columns:
             if isinstance(column, dict) and 'string' in column:
                 terms.add(column['string'])

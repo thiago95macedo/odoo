@@ -1,6 +1,6 @@
 .o_field_property_dropdown_menu {
-    .o-autocomplete--dropdown-menu {
-        max-height: 200px!important;
+    .w-autocomplete--dropdown-menu {
+        max-height: 200px !important;
     }
 }
 
@@ -10,6 +10,7 @@ input.o_field_property_input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input.o_field_property_input[type=number] {
     -moz-appearance: textfield;
 }
@@ -31,9 +32,11 @@ input.o_field_property_input[type=number] {
         line-height: 1;
         margin-right: 5px;
     }
+
     .o_input_dropdown {
         width: 100px !important;
         min-width: 100px !important;
+
         input {
             border: 0px !important;
         }
@@ -45,13 +48,14 @@ input.o_field_property_input[type=number] {
     border-bottom: 1px solid var(--o-input-border-color);
 }
 
-.o_field_property_many2many_value.avatar .o_tag{
+.o_field_property_many2many_value.avatar .o_tag {
     .o_tag_badge_text {
         padding: 0px !important;
     }
 }
 
 .o_property_field_value {
+
     .o_properties_external_button,
     .o_dropdown_button {
         display: none;
@@ -59,6 +63,7 @@ input.o_field_property_input[type=number] {
 
     &:hover,
     &:focus-within {
+
         .o_properties_external_button,
         .o_dropdown_button {
             display: block;
@@ -72,7 +77,7 @@ input.o_field_property_input[type=number] {
     // Many2one and Many2many avatar
     .o_field_property_many2one_value img,
     .o_m2m_avatar {
-        height: var(--Avatar-size, #{$o-avatar-size});
+        height: var(--Avatar-size, #{$w-avatar-size});
         aspect-ratio: 1;
     }
 }

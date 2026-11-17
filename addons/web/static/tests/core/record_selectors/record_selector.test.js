@@ -76,11 +76,11 @@ test("Can be updated from autocomplete", async () => {
     });
 
     expect(".o_record_selector input").toHaveValue("Alice");
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(0);
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(0);
     await click(".o_record_selector input");
     await animationFrame();
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(1);
-    await click("li.o-autocomplete--dropdown-item:eq(1)");
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(1);
+    await click("li.w-autocomplete--dropdown-item:eq(1)");
     await animationFrame();
     expect(".o_record_selector input").toHaveValue("Bob");
 });
@@ -92,16 +92,16 @@ test("Can display avatars with the right model", async () => {
     });
 
     expect(".o_record_selector input").toHaveValue("Alice");
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(0);
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(0);
     await click(".o_record_selector input");
     await animationFrame();
-    expect(".o-autocomplete--dropdown-menu").toHaveCount(1);
-    expect(".o-autocomplete--dropdown-menu span.o_avatar img").toHaveCount(3);
-    expect(".o-autocomplete--dropdown-menu span.o_avatar img:eq(1)").toHaveAttribute(
+    expect(".w-autocomplete--dropdown-menu").toHaveCount(1);
+    expect(".w-autocomplete--dropdown-menu span.o_avatar img").toHaveCount(3);
+    expect(".w-autocomplete--dropdown-menu span.o_avatar img:eq(1)").toHaveAttribute(
         "data-src",
         "/web/image/res.partner/2/avatar_128"
     );
-    await click("li.o-autocomplete--dropdown-item:eq(1)");
+    await click("li.w-autocomplete--dropdown-item:eq(1)");
     await animationFrame();
     expect(".o_record_selector input").toHaveValue("Bob");
     expect(".o_record_selector .o_m2o_avatar").toHaveCount(1);
@@ -176,11 +176,11 @@ test("Support virtual record in props and custom quickCreate", async () => {
             },
         }),
     });
-    await contains(".o-autocomplete--input").edit("I do not exist yet", { confirm: false });
+    await contains(".w-autocomplete--input").edit("I do not exist yet", { confirm: false });
     await runAllTimers();
 
     await contains(".o_m2o_dropdown_option a:contains(Create I do not exist yet)").click();
-    await waitFor(".o-autocomplete--input:value(I do not exist yet)");
+    await waitFor(".w-autocomplete--input:value(I do not exist yet)");
     expect(virtualRecord).toEqual({
         id: false,
         display_name: "I do not exist yet",

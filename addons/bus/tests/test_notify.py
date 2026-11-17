@@ -12,7 +12,7 @@ from weth.tools import config
 from .. import bus_dispatcher
 from ..models.bus import (
     NOTIFY_PAYLOAD_MAX_LENGTH,
-    ODOO_NOTIFY_FUNCTION,
+    WETH_NOTIFY_FUNCTION,
     SKIP_NOTIFICATION,
     BusBus,
     get_notify_payloads,
@@ -66,7 +66,7 @@ class NotifyTests(TransactionCase):
 
     def test_postcommit(self):
         """Asserts all ``postcommit`` channels are fetched with a single listen."""
-        if ODOO_NOTIFY_FUNCTION != "pg_notify":
+        if WETH_NOTIFY_FUNCTION != "pg_notify":
             return
         channels = []
         stop_event = threading.Event()

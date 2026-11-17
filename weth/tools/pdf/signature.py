@@ -529,7 +529,7 @@ class PdfSigner:
         (For the specific structure of the signature dictionary).
 
     :param pdf_raw: The raw bytes of the original PDF file.
-    :param company: The Odoo company record containing the signing certificate/key.
+    :param company: The WETH company record containing the signing certificate/key.
     :param signing_time: Optional datetime to use as the signing timestamp.
                          Defaults to ``datetime.now()``.
     """
@@ -560,7 +560,7 @@ class PdfSigner:
 
         :param sig_overlay_pdf: The parsed PDF widget to overlay as the signature appearance.
         :param field_name: The dictionary name for the signature field. If left as
-            ``None``, a unique name of the form ``"Odoo Signature <uuid>"`` is
+            ``None``, a unique name of the form ``"WETH Signature <uuid>"`` is
             generated so re-signing the same document never collides with an existing
             ``/T`` field.
         :param appearance_origin: Bottom-left ``(x, y)`` of the appearance on the first
@@ -606,7 +606,7 @@ class PdfSigner:
         # Make the field name unique so re-signing the same document does not
         # produce duplicate /T entries (which break form validation in strict viewers).
         if field_name is None:
-            field_name = f"Odoo Signature {uuid.uuid4()}"
+            field_name = f"WETH Signature {uuid.uuid4()}"
 
         incremented_objects = {}
 

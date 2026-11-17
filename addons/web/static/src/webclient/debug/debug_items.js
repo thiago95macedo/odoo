@@ -88,7 +88,7 @@ class ClocReport extends Component {
         for (const [groupName, records] of Object.entries(
             Object.groupBy(_records, (r) => r.module)
         )) {
-            const isUserCusto = groupName === "odoo/studio";
+            const isUserCusto = groupName === "weth/studio";
             const group = {
                 name: groupName,
                 display_name: isUserCusto ? _t("User customization") : groupName,

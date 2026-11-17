@@ -22,7 +22,7 @@ test("should apply border width", async () => {
         </tr></tbody></table>`);
     await expandToolbar();
     await contains(".btn[name='table_border_width']").click();
-    await contains(".o-dropdown-item:has(.o-border-preview[style*='border-width: 3px'])").click();
+    await contains(".w-dropdown-item:has(.w-border-preview[style*='border-width: 3px'])").click();
     expect("td").toHaveStyle({ "border-width": "3px" }, { inline: true });
 });
 
@@ -34,7 +34,7 @@ test("should apply border style", async () => {
     await expandToolbar();
     await contains(".btn[name='table_border_style']").click();
     await contains(
-        ".o-dropdown-item:has(.o-border-preview[style*='border-style: dotted'])"
+        ".w-dropdown-item:has(.w-border-preview[style*='border-style: dotted'])"
     ).click();
     expect("td").toHaveStyle({ "border-style": "dotted" }, { inline: true });
 });
@@ -76,7 +76,7 @@ test("should apply border width when selection is text inside a cell", async () 
         </tr></tbody></table>`);
     await expandToolbar();
     await contains(".btn[name='table_border_width']").click();
-    await contains(".o-dropdown-item:has(.o-border-preview[style*='border-width: 3px'])").click();
+    await contains(".w-dropdown-item:has(.w-border-preview[style*='border-width: 3px'])").click();
     expect("td").toHaveStyle({ "border-width": "3px" }, { inline: true });
 });
 
@@ -88,7 +88,7 @@ test("should apply border style when selection is text inside a cell", async () 
     await expandToolbar();
     await contains(".btn[name='table_border_style']").click();
     await contains(
-        ".o-dropdown-item:has(.o-border-preview[style*='border-style: dotted'])"
+        ".w-dropdown-item:has(.w-border-preview[style*='border-style: dotted'])"
     ).click();
     expect("td").toHaveStyle({ "border-style": "dotted" }, { inline: true });
 });

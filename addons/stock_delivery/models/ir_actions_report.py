@@ -64,7 +64,7 @@ class IrActionsReport(models.Model):
         print the attachments in the chatter with ePOS or IoT.
 
         If the attachment is a PDF, we download it.
-        If there are multiple PDFs, we only print one as we can't make Odoo download multiple at once.
+        If there are multiple PDFs, we only print one as we can't make WETH download multiple at once.
         """
         report = self._get_report(report_ref)
         if report.report_name in ["stock_delivery.report_shipping_labels", "stock_delivery.report_shipping_docs"]:

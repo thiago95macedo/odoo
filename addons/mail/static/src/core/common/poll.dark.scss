@@ -1,8 +1,9 @@
-.o-mail-Poll, .o-mail-PollResult {
+.w-mail-Poll,
+.w-mail-PollResult {
     --border-opacity: .5;
 }
 
-.o-mail-PollResult-emojiWrapper {
+.w-mail-PollResult-emojiWrapper {
     background-color: rgba(255, 255, 255, 0.096);
     border-color: transparent;
 }
@@ -19,6 +20,6 @@ $poll-check-opacity-map: (
 );
 @include o-mail-poll();
 
-.o-mail-Poll:not(.o-ongoing) .o-mail-PollOption.o-winningOption {
+.w-mail-Poll:not(.w-ongoing) .w-mail-PollOption.w-winningOption {
     --poll-border-color: rgba(var(--poll-bg-r), var(--poll-bg-g), var(--poll-bg-b), 1);
 }

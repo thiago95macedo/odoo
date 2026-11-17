@@ -1,36 +1,49 @@
 ///
-/// This file regroups the variables that style odoo components.
+/// This file regroups the variables that style weth components.
 /// They are available in every asset bundle.
 ///
 
 // Contrast ratio
-$o-frontend-min-contrast-ratio: 2.9 !default;
+$w-frontend-min-contrast-ratio: 2.9 !default;
 
 // Media
-$o-webclient-media: screen !default;
+$w-webclient-media: screen !default;
 
 // Color-scheme
-$o-webclient-color-scheme: bright !default;
+$w-webclient-color-scheme: bright !default;
 
 // Options
-$o-enable-backdrop-blur: false !default;
+$w-enable-backdrop-blur: false !default;
 
 // Font sizes
-$o-root-font-size: 1rem !default;
-$o-font-size-base: o-to-rem(14px) !default;
-$o-font-size-base-touch: o-to-rem(16px) !default;
-$o-font-size-base-small: o-to-rem(13px) !default;
-$o-font-size-base-smaller: o-to-rem(12px) !default;
-$o-line-height-base: 1.5 !default; // This is BS default
-$o-line-height-sm : 1.25 !default;
-$o-line-height-lg : 2 !default;
+$w-root-font-size: 1rem !default;
+$w-font-size-base: o-to-rem(14px) !default;
+$w-font-size-base-touch: o-to-rem(16px) !default;
+$w-font-size-base-small: o-to-rem(13px) !default;
+$w-font-size-base-smaller: o-to-rem(12px) !default;
+$w-line-height-base: 1.5 !default; // This is BS default
+$w-line-height-sm : 1.25 !default;
+$w-line-height-lg : 2 !default;
 
 // Global sans-serif fonts stack, defined here as we need to process
 // it before actually using it (to add more unicode support with the special
-// Odoo font for example). Adding unicode support is not done directly here as
+// WETH font for example). Adding unicode support is not done directly here as
 // this font can be used by the website where the unicode support is already
 // automatically added.
-$o-system-fonts: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji") !default;
+$w-system-fonts: (
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Ubuntu,
+    "Noto Sans",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji") !default;
 
 
 // Font weights
@@ -42,312 +55,344 @@ $o-system-fonts: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvet
 // a suitable weight using the fallowing fallback scheme.
 // https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#fallback_weights
 
-$o-font-weight-normal: 400 !default;
-$o-font-weight-medium: 500 !default;
-$o-font-weight-bold: 700 !default;
+$w-font-weight-normal: 400 !default;
+$w-font-weight-medium: 500 !default;
+$w-font-weight-bold: 700 !default;
 
 // Colors
-$o-white: #FFFFFF !default;
-$o-black: #000000 !default;
+$w-white: #FFFFFF !default;
+$w-black: #000000 !default;
 
-$o-gray-100: #f8f9fa !default;
-$o-gray-200: #e9ecef !default;
-$o-gray-300: #dee2e6 !default;
-$o-gray-400: #ced4da !default;
-$o-gray-500: #adb5bd !default;
-$o-gray-600: #6c757d !default;
-$o-gray-700: #495057 !default;
-$o-gray-800: #343a40 !default;
-$o-gray-900: #212529 !default;
+$w-gray-100: #f8f9fa !default;
+$w-gray-200: #e9ecef !default;
+$w-gray-300: #dee2e6 !default;
+$w-gray-400: #ced4da !default;
+$w-gray-500: #adb5bd !default;
+$w-gray-600: #6c757d !default;
+$w-gray-700: #495057 !default;
+$w-gray-800: #343a40 !default;
+$w-gray-900: #212529 !default;
 
-$o-grays: (
-    100: $o-gray-100,
-    200: $o-gray-200,
-    300: $o-gray-300,
-    400: $o-gray-400,
-    500: $o-gray-500,
-    600: $o-gray-600,
-    700: $o-gray-700,
-    800: $o-gray-800,
-    900: $o-gray-900,
-) !default;
+$w-grays: (
+    100: $w-gray-100,
+    200: $w-gray-200,
+    300: $w-gray-300,
+    400: $w-gray-400,
+    500: $w-gray-500,
+    600: $w-gray-600,
+    700: $w-gray-700,
+    800: $w-gray-800,
+    900: $w-gray-900,
+    ) !default;
 
-$o-colors: #a2a2a2, #ee2d2d, #dc8534, #e8bb1d, #5794dd, #9f628f, #db8865,
-           #41a9a2, #304be0, #ee2f8a, #61c36e, #9872e6 !default;
+$w-colors: #a2a2a2,
+    #ee2d2d,
+    #dc8534,
+    #e8bb1d,
+    #5794dd,
+    #9f628f,
+    #db8865,
+    #41a9a2,
+    #304be0,
+    #ee2f8a,
+    #61c36e,
+    #9872e6 !default;
 
 // Tag and badge palette (o_tag_color_N, o_badge_color_N) Generated from OKLCH.
 // To change a color, edit its OKLCH value and convert it back to hex.
-$o-colors-border:
-    #8f8f8f, #d76a58, #cc7724, #c09910,
-    #179dc5, #b271c6, #af8563, #17a49d,
-    #5d8ee4, #d06792, #4ca65a, #8f7ede
-    !default;
-$o-colors-bg-subtle:
-    #d7d7d7, #fedbd5, #fedec5, #f4dc9d,
-    #c2ecfe, #ebcaf6, #f2e1d4, #aef4ee,
-    #c3d9fe, #fec5d9, #bae5bd, #e4e1fe
-    !default;
-$o-colors-text-emphasis:
-    #3d3d3d, #6b1f15, #5c3003, #4c3b04,
-    #044457, #542662, #4d3827, #034744,
-    #193a76, #671d3f, #044b18, #3e2f72
-    !default;
+$w-colors-border: #8f8f8f,
+    #d76a58,
+    #cc7724,
+    #c09910,
+    #179dc5,
+    #b271c6,
+    #af8563,
+    #17a49d,
+    #5d8ee4,
+    #d06792,
+    #4ca65a,
+    #8f7ede !default;
+$w-colors-bg-subtle: #d7d7d7,
+    #fedbd5,
+    #fedec5,
+    #f4dc9d,
+    #c2ecfe,
+    #ebcaf6,
+    #f2e1d4,
+    #aef4ee,
+    #c3d9fe,
+    #fec5d9,
+    #bae5bd,
+    #e4e1fe !default;
+$w-colors-text-emphasis: #3d3d3d,
+    #6b1f15,
+    #5c3003,
+    #4c3b04,
+    #044457,
+    #542662,
+    #4d3827,
+    #034744,
+    #193a76,
+    #671d3f,
+    #044b18,
+    #3e2f72 !default;
 
-$o-colors-ui: () !default;
-@for $index from 1 through length($o-colors) {
+$w-colors-ui: (
+    ) !default;
+
+@for $index from 1 through length($w-colors) {
     $_color-name: "color-#{$index}";
-    $_color-value: nth($o-colors, $index);
-    $o-colors-ui: map-merge($o-colors-ui, ($_color-name: $_color-value));
+    $_color-value: nth($w-colors, $index
+    );
+$w-colors-ui: map-merge($w-colors-ui, ($_color-name: $_color-value));
 }
 
 
-$o-community-color: #05285b !default;
-$o-enterprise-color: #031b3e !default;
-$o-enterprise-action-color: #1b4f9b !default;
+$w-community-color: #05285b !default;
+$w-enterprise-color: #031b3e !default;
+$w-enterprise-action-color: #1b4f9b !default;
 
-$o-brand-odoo: $o-community-color !default;
-$o-brand-primary: $o-community-color !default;
+$w-brand-weth: $w-community-color !default;
+$w-brand-primary: $w-community-color !default;
 
-$o-brand-secondary: #64748b !default;
-$o-brand-lightsecondary: $o-gray-100 !default;
+$w-brand-secondary: #64748b !default;
+$w-brand-lightsecondary: $w-gray-100 !default;
 
-$o-action: #1b4f9b !default;
-$o-success: #28a745 !default;
-$o-info: #17a2b8 !default;
-$o-warning: #ffac00 !default;
-$o-danger: #dc3545 !default;
+$w-action: #1b4f9b !default;
+$w-success: #28a745 !default;
+$w-info: #17a2b8 !default;
+$w-warning: #ffac00 !default;
+$w-danger: #dc3545 !default;
 
 // Fine-tune contextual text colors.
 // Overrides $theme-colors generated 'text-x' classes only.
-// Custom colors are set by $o-text-colors-custom
-$o-theme-text-colors: (
+// Custom colors are set by $w-text-colors-custom
+$w-theme-text-colors: (
     "success": #008818,
     "info": #0180a5,
     "warning": #9a6b01,
     "danger": #d23f3a,
-)!default;
+    ) !default;
 
 // Gradients
-$o-gradient:    null !default;
-$o-gradient-sm: null !default;
-$o-gradient-lg: null !default;
-$o-gradient-btn:  null !default;
+$w-gradient: null !default;
+$w-gradient-sm: null !default;
+$w-gradient-lg: null !default;
+$w-gradient-btn: null !default;
 
 // Opacities
-$o-opacity-disabled: .5 !default;
-$o-opacity-muted: .76 !default;
+$w-opacity-disabled: .5 !default;
+$w-opacity-muted: .76 !default;
 
-$o-opacities: (
+$w-opacities: (
     0: 0,
     25: .25,
     50: .5,
     75: .75,
     100: 1,
-    disabled: $o-opacity-disabled,
-    muted: $o-opacity-muted,
-) !default;
+    disabled: $w-opacity-disabled,
+    muted: $w-opacity-muted,
+    ) !default;
 
 // Font families
-$o-font-family-sans-serif: o-add-unicode-support-font($o-system-fonts) !default;
-$o-font-family-monospace: o-add-unicode-support-font((SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace)) !default;
+$w-font-family-sans-serif: o-add-unicode-support-font($w-system-fonts) !default;
+$w-font-family-monospace: o-add-unicode-support-font((SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace)) !default;
 
-$o-headings-font-family: o-add-unicode-support-font(("SF Pro Display", $o-system-fonts)) !default;
+$w-headings-font-family: o-add-unicode-support-font(("SF Pro Display", $w-system-fonts)) !default;
 
 // Font colors
-$o-main-text-color: $o-gray-900 !default;
-$o-main-color-muted: rgba($o-gray-700, $o-opacity-muted) !default;
-$o-main-headings-color: $o-black !default;
-$o-main-link-color: #13448a !default;
-$o-main-favorite-color: #f3cc00 !default;
-$o-main-code-color: #d2317b !default;
+$w-main-text-color: $w-gray-900 !default;
+$w-main-color-muted: rgba($w-gray-700, $w-opacity-muted) !default;
+$w-main-headings-color: $w-black !default;
+$w-main-link-color: #13448a !default;
+$w-main-favorite-color: #f3cc00 !default;
+$w-main-code-color: #d2317b !default;
 
 // Tables
-$o-table-cell-padding-x-sm: .3rem !default;
-$o-table-cell-padding-y-sm: .5rem !default;
+$w-table-cell-padding-x-sm: .3rem !default;
+$w-table-cell-padding-y-sm: .5rem !default;
 
 // Components colors
-$o-component-active-color:  $o-black !default;
-$o-component-active-bg: mix($o-action, $o-gray-100, 20%) !default;
-$o-component-active-border: $o-action !default;
+$w-component-active-color: $w-black !default;
+$w-component-active-bg: mix($w-action, $w-gray-100, 20%) !default;
+$w-component-active-border: $w-action !default;
 
-$o-border-color: $o-gray-300 !default;
+$w-border-color: $w-gray-300 !default;
 
-$o-view-background-color: #FFFFFF !default;
-$o-shadow-color: #303030 !default;
+$w-view-background-color: #FFFFFF !default;
+$w-shadow-color: #303030 !default;
 
-$o-form-lightsecondary: #ccc !default;
+$w-form-lightsecondary: #ccc !default;
 
-$o-list-footer-bg-color: transparent !default;
-$o-list-footer-font-weight: bold !default;
+$w-list-footer-bg-color: transparent !default;
+$w-list-footer-font-weight: bold !default;
 
 // Custom colors generation maps
-$o-text-colors-custom: (
-    "action": $o-action,
-    "favourite": $o-main-favorite-color,
-) !default;
+$w-text-colors-custom: (
+    "action": $w-action,
+    "favourite": $w-main-favorite-color,
+    ) !default;
 
-$o-bg-colors-custom: (
-    "action": $o-action,
-    "view": $o-view-background-color,
-    "favourite": $o-main-favorite-color,
-) !default;
+$w-bg-colors-custom: (
+    "action": $w-action,
+    "view": $w-view-background-color,
+    "favourite": $w-main-favorite-color,
+    ) !default;
 
-$o-btn-custom: (
-    "favourite": $o-main-favorite-color,
-) !default;
+$w-btn-custom: (
+    "favourite": $w-main-favorite-color,
+    ) !default;
 
 // Components (BS)
 
 
 // Forms
-$o-form-check-input-border-color: $o-gray-500 !default;
+$w-form-check-input-border-color: $w-gray-500 !default;
 
 // o-inputs
-$o-input-padding-y: 2px !default;
-$o-input-padding-x: 4px !default;
+$w-input-padding-y: 2px !default;
+$w-input-padding-x: 4px !default;
 
-$o-input-bg: transparent !default;
-$o-input-invalid-bg: mix($o-danger, $o-input-bg, 10%) !default;
-$o-input-border-required: $o-brand-primary !default;
+$w-input-bg: transparent !default;
+$w-input-invalid-bg: mix($w-danger, $w-input-bg, 10%) !default;
+$w-input-border-required: $w-brand-primary !default;
 
 // Layout
 //
-$o-spacer: 16px !default; // = 1rem
-$o-form-spacing-unit: 5px !default;
-$o-horizontal-padding: $o-spacer !default;
-$o-dropdown-hpadding: 20px !default;
-$o-dropdown-vpadding: 3px !default;
-$o-dropdown-max-height: 70vh !default;
+$w-spacer: 16px !default; // = 1rem
+$w-form-spacing-unit: 5px !default;
+$w-horizontal-padding: $w-spacer !default;
+$w-dropdown-hpadding: 20px !default;
+$w-dropdown-vpadding: 3px !default;
+$w-dropdown-max-height: 70vh !default;
 
-$o-statbutton-height: 44px !default;
-$o-statbutton-spacing: 6px !default;
+$w-statbutton-height: 44px !default;
+$w-statbutton-spacing: 6px !default;
 
-$o-modal-lg: 980px !default;
-$o-modal-md: 620px !default;
-$o-modal-sm: 460px !default;
+$w-modal-lg: 980px !default;
+$w-modal-md: 620px !default;
+$w-modal-sm: 460px !default;
 
-$o-modal-animation-duration: .4s !default;
+$w-modal-animation-duration: .4s !default;
 
 // Needed for having no spacing between sheet and mail body in mass_mailing:
 // Different required cancel paddings between web and web_enterprise
-$o-sheet-cancel-tpadding: 0px !default;
+$w-sheet-cancel-tpadding: 0px !default;
 
-$o-statusbar-height: 33px !default;
+$w-statusbar-height: 33px !default;
 
-$o-label-font-size-factor: 0.8 !default;
+$w-label-font-size-factor: 0.8 !default;
 
 
 // == List group
 
-$o-list-group-active-color: $o-black !default;
-$o-list-group-active-bg: lighten(saturate(adjust-hue($o-info, 15), 1.8), 50) !default;
+$w-list-group-active-color: $w-black !default;
+$w-list-group-active-bg: lighten(saturate(adjust-hue($w-info, 15), 1.8), 50) !default;
 
 // Breadcrumbs
 
-$o-breadcrumb-item-padding-x: .25rem !default;
+$w-breadcrumb-item-padding-x: .25rem !default;
 
 
 // == Badges
 
 // Define a minimum width. This value is arbitrary and strictly font-related.
-$o-badge-min-width: 3ch !default;
+$w-badge-min-width: 3ch !default;
 
-$o-base-settings-mobile-tabs-height: 40px !default;
+$w-base-settings-mobile-tabs-height: 40px !default;
 
-$o-card-body-bg-opacity: 0.9 !default;
+$w-card-body-bg-opacity: 0.9 !default;
 
 // Border-radius
 
-$o-border-radius: o-to-rem(4px) !default;
-$o-border-radius-sm: o-to-rem(3px) !default;
-$o-border-radius-lg: o-to-rem(6px) !default;
-$o-border-radius-xl: o-to-rem(12px) !default;
+$w-border-radius: o-to-rem(4px) !default;
+$w-border-radius-sm: o-to-rem(3px) !default;
+$w-border-radius-lg: o-to-rem(6px) !default;
+$w-border-radius-xl: o-to-rem(12px) !default;
 
 // == Buttons
 // Map of customized values for each button. If a button's design is defined
 // here, the relative values will take priority over default BS ones.
 // Notice: each map's entry is passed directly to the Bootstrap mixin, meaning
 // that all states must be defined, there can't be omissions.
-$o-btns-bs-override: () !default;
-$o-btns-bs-override: map-merge((
-    "primary": (
-        background: $o-brand-primary,
-        border: $o-brand-primary,
-        color: $o-white,
+$w-btns-bs-override: (
+    ) !default;
+$w-btns-bs-override: map-merge(("primary": (background: $w-brand-primary,
+                border: $w-brand-primary,
+                color: $w-white,
 
-        hover-background: #1b4f9b,
-        hover-border: #13448a,
-        hover-color: $o-white,
+                hover-background: #1b4f9b,
+                hover-border: #13448a,
+                hover-color: $w-white,
 
-        active-background: #031b3e,
-        active-border: #031b3e,
-        active-color: $o-white,
+                active-background: #031b3e,
+                active-border: #031b3e,
+                active-color: $w-white,
 
-        disabled-background: $o-brand-primary,
-        disabled-border: $o-brand-primary,
-        disabled-color: $o-white,
-    ),
-    "secondary": (
-        background: $o-gray-300,
-        border: $o-gray-300,
-        color: $o-gray-900,
+                disabled-background: $w-brand-primary,
+                disabled-border: $w-brand-primary,
+                disabled-color: $w-white,
+            ),
+            "secondary": (background: $w-gray-300,
+                border: $w-gray-300,
+                color: $w-gray-900,
 
-        hover-background: $o-gray-400,
-        hover-border: $o-gray-400,
-        hover-color: $o-black,
+                hover-background: $w-gray-400,
+                hover-border: $w-gray-400,
+                hover-color: $w-black,
 
-        active-background: $o-component-active-bg,
-        active-border:  $o-component-active-border,
-        active-color: $o-component-active-color,
+                active-background: $w-component-active-bg,
+                active-border: $w-component-active-border,
+                active-color: $w-component-active-color,
 
-        disabled-background: $o-gray-300,
-        disabled-border: $o-gray-300,
-        disabled-color: $o-gray-900,
-    ),
-    "light": (
-        background: $o-white,
-        border: $o-white,
-        color: $o-gray-900,
+                disabled-background: $w-gray-300,
+                disabled-border: $w-gray-300,
+                disabled-color: $w-gray-900,
+            ),
+            "light": (background: $w-white,
+                border: $w-white,
+                color: $w-gray-900,
 
-        hover-background: $o-gray-200,
-        hover-border: $o-gray-200,
-        hover-color: $o-black,
+                hover-background: $w-gray-200,
+                hover-border: $w-gray-200,
+                hover-color: $w-black,
 
-        active-background: $o-component-active-bg,
-        active-border:  $o-component-active-border,
-        active-color: $o-component-active-color,
+                active-background: $w-component-active-bg,
+                active-border: $w-component-active-border,
+                active-color: $w-component-active-color,
 
-        disabled-background: $o-white,
-        disabled-border: $o-white,
-        disabled-color: $o-gray-900,
-    ),
-), $o-btns-bs-override);
+                disabled-background: $w-white,
+                disabled-border: $w-white,
+                disabled-color: $w-gray-900,
+            ),
+        ), $w-btns-bs-override
+);
 
-$o-btns-bs-outline-override: () !default;
-$o-btns-bs-outline-override: map-merge((
-    "secondary": (
-        background: transparent,
-        border: $o-gray-300,
-        color: $o-gray-900,
+$w-btns-bs-outline-override: (
+    ) !default;
+$w-btns-bs-outline-override: map-merge(("secondary": (background: transparent,
+                border: $w-gray-300,
+                color: $w-gray-900,
 
-        hover-background: $o-gray-200,
-        hover-border: $o-gray-300,
-        hover-color: $o-black,
+                hover-background: $w-gray-200,
+                hover-border: $w-gray-300,
+                hover-color: $w-black,
 
-        active-background: $o-component-active-bg,
-        active-border:  $o-component-active-border,
-        active-color: $o-component-active-color,
+                active-background: $w-component-active-bg,
+                active-border: $w-component-active-border,
+                active-color: $w-component-active-color,
 
-        disabled-background: transparent,
-        disabled-border: $o-gray-300,
-        disabled-color: $o-gray-900,
-    ),
-), $o-btns-bs-outline-override);
+                disabled-background: transparent,
+                disabled-border: $w-gray-300,
+                disabled-color: $w-gray-900,
+            ),
+        ), $w-btns-bs-outline-override
+);
 
 
 // == Easings
 
 // Entering easing
-$o-easing-enter: cubic-bezier(0.05, 0.7, 0.1, 1.0) !default;
+$w-easing-enter: cubic-bezier(0.05, 0.7, 0.1, 1.0) !default;
 // Exit easing
-$o-easing-exit: cubic-bezier(0.3, 0.0, 0.8, 0.15) !default;
+$w-easing-exit: cubic-bezier(0.3, 0.0, 0.8, 0.15) !default;

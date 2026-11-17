@@ -46,7 +46,7 @@ export const wethExceptionTitleMap = new Map(
 export class ErrorDialog extends Component {
     static template = "web.ErrorDialog";
     static components = { Dialog };
-    static title = _t("Odoo Error");
+    static title = _t("WETH Error");
     static showTracebackButtonText = _t("See technical details");
     static hideTracebackButtonText = _t("Hide technical details");
     props = useProps({
@@ -93,13 +93,13 @@ export class ErrorDialog extends Component {
 // Client Error Dialog
 // -----------------------------------------------------------------------------
 export class ClientErrorDialog extends ErrorDialog { }
-ClientErrorDialog.title = _t("Odoo Client Error");
+ClientErrorDialog.title = _t("WETH Client Error");
 
 // -----------------------------------------------------------------------------
 // Network Error Dialog
 // -----------------------------------------------------------------------------
 export class NetworkErrorDialog extends ErrorDialog { }
-NetworkErrorDialog.title = _t("Odoo Network Error");
+NetworkErrorDialog.title = _t("WETH Network Error");
 
 // -----------------------------------------------------------------------------
 // Request Entity Too Large Dialog
@@ -134,10 +134,10 @@ export class RPCErrorDialog extends ErrorDialog {
                 this.title = _t("WETH Server Error");
                 break;
             case "script":
-                this.title = _t("Odoo Client Error");
+                this.title = _t("WETH Client Error");
                 break;
             case "network":
-                this.title = _t("Odoo Network Error");
+                this.title = _t("WETH Network Error");
                 break;
         }
     }
@@ -176,7 +176,7 @@ export class WarningDialog extends Component {
         if (this.props.exceptionName && wethExceptionTitleMap.has(this.props.exceptionName)) {
             return wethExceptionTitleMap.get(this.props.exceptionName).toString();
         }
-        return this.props.title || _t("Odoo Warning");
+        return this.props.title || _t("WETH Warning");
     }
 }
 
@@ -194,7 +194,7 @@ export class RedirectWarningDialog extends Component {
         this.actionService = useService("action");
         const { data, subType } = this.props;
         const [message, actionId, buttonText, additionalContext] = data.arguments;
-        this.title = capitalize(subType) || _t("Odoo Warning");
+        this.title = capitalize(subType) || _t("WETH Warning");
         this.message = message;
         this.actionId = actionId;
         this.buttonText = buttonText;

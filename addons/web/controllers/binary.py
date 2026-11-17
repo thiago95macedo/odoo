@@ -20,10 +20,10 @@ from weth.addons.base.models.assetsbundle import ANY_UNIQUE
 _logger = logging.getLogger(__name__)
 
 BAD_X_SENDFILE_ERROR = """\
-Odoo is running with --x-sendfile but is receiving /web/filestore requests.
+WETH is running with --x-sendfile but is receiving /web/filestore requests.
 
 With --x-sendfile enabled, NGINX should be serving the
-/web/filestore route, however Odoo is receiving the
+/web/filestore route, however WETH is receiving the
 request.
 
 This usually indicates that NGINX is badly configured,
@@ -286,7 +286,7 @@ class Binary(Controller):
                 else:
                     response = Stream.from_path('web/static/img/nologo.png').get_response()
             except Exception:  # noqa: BLE001
-                _logger.warning("While retrieving the company logo, using the Odoo logo instead", exc_info=True)
+                _logger.warning("While retrieving the company logo, using the WETH logo instead", exc_info=True)
                 response = Stream.from_path(f'web/static/img/{imgname}{imgext}').get_response()
 
         return response

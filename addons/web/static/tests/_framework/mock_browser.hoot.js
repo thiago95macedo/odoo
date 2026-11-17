@@ -11,7 +11,7 @@ import { mockLocation } from "@weth/hoot";
  * it can't be directly mocked on the window object.
  *
  * @param {string} name
- * @param {OdooModuleFactory} factory
+ * @param {WethModuleFactory} factory
  */
 export function mockBrowserFactory(name, { fn }) {
     return function mockBrowser(...args) {

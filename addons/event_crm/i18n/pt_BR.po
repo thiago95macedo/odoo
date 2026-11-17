@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-09-28 19:33+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/event_crm/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgid "# Registrations"
 msgstr "Nº de inscrições"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_registration.py:0
 msgid "(updated)"
 msgstr "(atualizado)"
@@ -100,7 +100,7 @@ msgid "Automatically assign the created leads to this Salesperson."
 msgstr "Atribua automaticamente os leads criados a este vendedor."
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_event.py:0
 msgid "Aww! No Leads created, check your Lead Generation Rules and try again."
 msgstr ""
@@ -286,7 +286,7 @@ msgid "Generate Leads"
 msgstr "Gerar leads"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_event.py:0
 msgid "Got it! We've noted your request. Your leads will be created soon!"
 msgstr ""
@@ -378,7 +378,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_lead_rule.py:0
 msgid "New registrations"
 msgstr "Novas inscrições"
@@ -389,7 +389,7 @@ msgid "No registration found"
 msgstr "Nenhuma inscrição encontrada"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_event.py:0
 msgid "Only Event Managers are allowed to re-generate all leads."
 msgstr ""
@@ -402,7 +402,7 @@ msgid "Opportunity"
 msgstr "Oportunidade"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_registration.py:0
 msgid "Participants"
 msgstr "Participantes"
@@ -532,7 +532,7 @@ msgid "Trigger Type"
 msgstr "Tipo de gatilho"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_registration.py:0
 msgid "Updated registrations"
 msgstr "Inscrições atualizadas"
@@ -548,7 +548,7 @@ msgid "When"
 msgstr "Quando"
 
 #. module: event_crm
-#. odoo-python
+#. weth-python
 #: code:addons/event_crm/models/event_event.py:0
 msgid "Yee-ha, %(leads_count)s Leads have been created!"
 msgstr "Oba! %(leads_count)s leads foram criados!"

@@ -79,7 +79,7 @@ class PaymentTransaction(models.Model):
             "billingAddress": self._mollie_prepare_billing_address_payload(),
             "lines": [
                 {
-                    "description": "Odoo purchase",
+                    "description": "WETH purchase",
                     "quantity": 1,
                     "unitPrice": {
                         "currency": self.currency_id.name,

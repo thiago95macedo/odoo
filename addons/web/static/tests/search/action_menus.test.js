@@ -112,8 +112,8 @@ test("render ActionMenus in list view", async () => {
 
     // select Print dropdown
     await contains(`.o_cp_action_menus .dropdown-toggle:eq(0)`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(3);
-    expect(queryAllTexts(`.o-dropdown--menu .o-dropdown-item`)).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(3);
+    expect(queryAllTexts(`.w-dropdown--menu .w-dropdown-item`)).toEqual([
         "Some Report always visible",
         "Some Report with domain 1",
         "Some Report with domain 2",
@@ -125,8 +125,8 @@ test("render ActionMenus in list view", async () => {
     // select only the record that satisfies domain 1
     await contains(`.o_data_row:eq(1) input`).click();
     await contains(`.o_cp_action_menus .dropdown-toggle:eq(0)`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(2);
-    expect(queryAllTexts(`.o-dropdown--menu .o-dropdown-item`)).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(2);
+    expect(queryAllTexts(`.w-dropdown--menu .w-dropdown-item`)).toEqual([
         "Some Report always visible",
         "Some Report with domain 1",
     ]);
@@ -162,8 +162,8 @@ test("render ActionMenus in form view", async () => {
     await contains(`.o_cp_action_menus i[data-icon="more_vert"]`).click();
 
     // select Print dropdown
-    await contains(`button.o-dropdown:contains(Print)`).click();
-    expect(queryAllTexts(`.o-dropdown--menu-submenu span.o-dropdown-item`)).toEqual([
+    await contains(`button.w-dropdown:contains(Print)`).click();
+    expect(queryAllTexts(`.w-dropdown--menu-submenu span.w-dropdown-item`)).toEqual([
         "Some Report always visible",
         "Some Report with domain 1",
     ]);
@@ -177,8 +177,8 @@ test("render ActionMenus in form view", async () => {
     expect(`.o_pager_counter`).toHaveText("2 / 2");
     expect.verifySteps(["onchange", "web_save"]);
     await contains(`.o_cp_action_menus i[data-icon="more_vert"]`).click();
-    await contains(`button.o-dropdown:contains(Print)`).click();
-    expect(queryAllTexts(`.o-dropdown--menu-submenu span.o-dropdown-item`)).toEqual([
+    await contains(`button.w-dropdown:contains(Print)`).click();
+    expect(queryAllTexts(`.w-dropdown--menu-submenu span.w-dropdown-item`)).toEqual([
         "Some Report always visible",
         "Some Report with domain 2",
     ]);
@@ -188,8 +188,8 @@ test("render ActionMenus in form view", async () => {
     await contains(`.o_pager_previous`).click();
     expect(`.o_pager_counter`).toHaveText("1 / 2");
     await contains(`.o_cp_action_menus i[data-icon="more_vert"]`).click();
-    await contains(`button.o-dropdown:contains(Print)`).click();
-    expect(queryAllTexts(`.o-dropdown--menu-submenu span.o-dropdown-item`)).toEqual([
+    await contains(`button.w-dropdown:contains(Print)`).click();
+    expect(queryAllTexts(`.w-dropdown--menu-submenu span.w-dropdown-item`)).toEqual([
         "Some Report always visible",
         "Some Report with domain 1",
     ]);
@@ -245,8 +245,8 @@ test("render ActionMenus in list view with extraPrintItems", async () => {
 
     // select Print dropdown
     await contains(`.o_cp_action_menus .dropdown-toggle:eq(0)`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(4);
-    expect(queryAllTexts(`.o-dropdown--menu .o-dropdown-item`)).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(4);
+    expect(queryAllTexts(`.w-dropdown--menu .w-dropdown-item`)).toEqual([
         "Extra Print Item",
         "Some Report always visible",
         "Some Report with domain 1",
@@ -259,8 +259,8 @@ test("render ActionMenus in list view with extraPrintItems", async () => {
     // select only the record that satisfies domain 1
     await contains(`.o_data_row:eq(1) input`).click();
     await contains(`.o_cp_action_menus .dropdown-toggle:eq(0)`).click();
-    expect(`.o-dropdown--menu .o-dropdown-item`).toHaveCount(3);
-    expect(queryAllTexts(`.o-dropdown--menu .o-dropdown-item`)).toEqual([
+    expect(`.w-dropdown--menu .w-dropdown-item`).toHaveCount(3);
+    expect(queryAllTexts(`.w-dropdown--menu .w-dropdown-item`)).toEqual([
         "Extra Print Item",
         "Some Report always visible",
         "Some Report with domain 1",
@@ -319,7 +319,7 @@ test("separator rendered only to separate group", async () => {
     await contains(`div.o_control_panel .o_cp_action_menus .dropdown-toggle`).click();
 
     // There should be exactly one separator between the two groups and none before the first item.
-    expect(`.o-dropdown--menu .dropdown-divider`).toHaveCount(1);
+    expect(`.w-dropdown--menu .dropdown-divider`).toHaveCount(1);
 });
 
 test("[Offline] render ActionMenus in form view", async () => {
@@ -345,7 +345,7 @@ test("[Offline] render ActionMenus in form view", async () => {
     // select CogMenu
     await contains(`.o_cp_action_menus button[aria-label='Actions menu']`).click();
 
-    expect(queryAllTexts(`.o-dropdown--menu span.o-dropdown-item`)).toEqual([
+    expect(queryAllTexts(`.w-dropdown--menu span.w-dropdown-item`)).toEqual([
         "No report available.",
         "Duplicate",
         "Delete",

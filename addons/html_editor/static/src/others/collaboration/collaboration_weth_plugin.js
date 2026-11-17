@@ -321,12 +321,12 @@ export class CollaborationWethPlugin extends Plugin {
                 switch (notificationName) {
                     case "ptp_remove":
                         // todo: to implement
-                        // this.odooEditor.multiselectionRemove(notificationPayload);
+                        // this.wethEditor.multiselectionRemove(notificationPayload);
                         break;
                     case "ptp_disconnect":
                         this.ptp.removePeer(fromPeerId);
                         // todo: to implement
-                        // this.odooEditor.multiselectionRemove(fromPeerId);
+                        // this.wethEditor.multiselectionRemove(fromPeerId);
                         break;
                     case "rtc_data_channel_open": {
                         fromPeerId = notificationPayload.connectionPeerId;
@@ -729,7 +729,7 @@ export class CollaborationWethPlugin extends Plugin {
         // if (this.conflictDialogOpened) {
         //     return;
         // }
-        // const content = markup(this.odooEditor.editable.cloneNode(true).outerHTML);
+        // const content = markup(this.wethEditor.editable.cloneNode(true).outerHTML);
         // this.conflictDialogOpened = true;
         // this.env.services.dialog.add(ConflictDialog, {
         //     content,

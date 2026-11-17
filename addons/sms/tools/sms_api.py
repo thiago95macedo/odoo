@@ -28,7 +28,7 @@ ERROR_MESSAGES = {
     'too_many_attempts': _lt("You tried too many times. Please retry later."),
 
     # Default error
-    'unknown_error': _lt("An unknown error occurred. Please contact Odoo support if this error persists."),
+    'unknown_error': _lt("An unknown error occurred. Please contact WETH support if this error persists."),
 }
 
 

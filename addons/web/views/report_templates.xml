@@ -13,7 +13,7 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="initial-scale=1"/>
-                <title><t t-out="title or 'Odoo Report'"/></title>
+                <title><t t-out="title or 'WETH Report'"/></title>
                 <t t-call-assets="web.report_assets_common" t-autoprefix="true"/>
                 <!-- Temporary code: only used to maintain CSS for legacy HTML reports (full width...) -->
                 <!-- Should be removed once the reports are fully converted. -->
@@ -47,7 +47,7 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="initial-scale=1"/>
-                <title><t t-out="title or 'Odoo Report'"/></title>
+                <title><t t-out="title or 'WETH Report'"/></title>
                 <t t-call-assets="web.report_assets_common" t-js="false"/>
                 <style>
                     <t t-out="preview_css"/>
@@ -902,33 +902,33 @@
                 }
             }
 
-            .o_border_color {
+            .w_border_color {
                 border-color: #000000;
             }
 
-            .o_bg_color {
+            .w_bg_color {
                 background-color: #000000;
             }
 
-            .o_bg_color_15 {
+            .w_bg_color_15 {
                 background-color: rgba(0, 0, 0, .15);
             }
 
-            .o_color_company_<t t-out='company.id'/> {
-                .o_border_color {
+            .w_color_company_<t t-out='company.id'/> {
+                .w_border_color {
                     border-color: <t t-out='primary'/>;
                 }
 
-                &amp;.o_bg_color, .o_bg_color {
+                &amp;.w_bg_color, .w_bg_color {
                     background-color: <t t-out='primary'/>;
                 }
 
-                .o_bg_color_15 {
+                .w_bg_color_15 {
                     background-color: rgba(<t t-out='primary'/>, .15);
                 }
             }
 
-            .o_company_<t t-out='company.id'/>_layout {
+            .w_company_<t t-out='company.id'/>_layout {
                 font-family: <t t-out="font" />;
 
                 h2 {
@@ -939,17 +939,17 @@
                     color: <t t-out='secondary'/>;
                 }
 
-                .o_total strong {
+                .w_total strong {
                     color: <t t-out='primary'/>;
                 }
 
-                .o_company_tagline {
+                .w_company_tagline {
                     color: <t t-out='primary'/>
                 }
 
                 <t t-if="company.report_tables_id == 'boxed'">
-                    &amp;.o_report_layout_boxed {
-                        #total .o_total td {
+                    &amp;.w_report_layout_boxed {
+                        #total .w_total td {
                             background-color: <t t-out='primary'/>;
 
                             strong {
@@ -959,7 +959,7 @@
                     }
                 </t>
                 <t t-elif="company.report_tables_id == 'bold'" >
-                    &amp;.o_report_layout_bold {
+                    &amp;.w_report_layout_bold {
                         th {
                             color: <t t-out='primary'/>;
                             border-color: <t t-out='primary'/>;
@@ -971,8 +971,8 @@
                     }
                 </t>
                 <t t-elif="company.report_tables_id == 'striped'" >
-                    &amp;.o_report_layout_striped {
-                        table:not(.o_ignore_layout_styling) {
+                    &amp;.w_report_layout_striped {
+                        table:not(.w_ignore_layout_styling) {
                             th {
                                 color: <t t-out='secondary'/> !important;
                             }
@@ -980,12 +980,12 @@
                                 &amp;:first-child, &amp;:last-child {
                                     border-color: <t t-out='secondary'/>;
                                 }
-                                &amp;.o_line_section td {
+                                &amp;.w_line_section td {
                                     background-color: <t t-out='secondary'/> !important;
                                     color: preview-color-contrast(<t t-out='secondary'/>) !important;
                                 }
 
-                                &amp;.o_line_subsection td {
+                                &amp;.w_line_subsection td {
                                     background-color: mix(white, <t t-out='secondary'/>, 40%) !important;
                                     color: preview-color-contrast(mix(white, <t t-out='secondary'/>, 40%)) !important;
                                 }
@@ -996,7 +996,7 @@
                             }
                         }
 
-                        .o_total_table:not(.o_ignore_layout_styling) {
+                        .w_total_table:not(.w_ignore_layout_styling) {
                             tr:first-child {
                                 border-color: transparent;
                             }
@@ -1007,13 +1007,13 @@
                     }
                 </t>
                 <t t-elif="company.report_tables_id == 'bubble'">
-                    &amp;.o_report_layout_bubble {
+                    &amp;.w_report_layout_bubble {
                         #informations {
                             border-color: <t t-out='secondary'/>;
                             background-color: mix(white, <t t-out='secondary'/>, 92%);
                         }
 
-                        table:not(.o_ignore_layout_styling) {
+                        table:not(.w_ignore_layout_styling) {
                             thead th, tbody:first-child tr:first-child td {
                                 border-top-color: <t t-out='primary'/>;
                             }
@@ -1031,7 +1031,7 @@
                             }
                         }
 
-                        thead th, #total .o_total td {
+                        thead th, #total .w_total td {
                             background-color: <t t-out='primary'/>;
                             color: preview-color-contrast(<t t-out='primary'/>);
 
@@ -1042,8 +1042,8 @@
                     }
                 </t>
                 <t t-elif="company.report_tables_id == 'column'" >
-                    &amp;.o_report_layout_column {
-                        table:not(.o_ignore_layout_styling) {
+                    &amp;.w_report_layout_column {
+                        table:not(.w_ignore_layout_styling) {
                             th {
                                 background-color: <t t-out='secondary'/>;
                                 color: preview-color-contrast(<t t-out='secondary'/>);
@@ -1056,20 +1056,20 @@
                     }
                 </t>
                 <t t-if="layout == 'web.external_layout_folder'">
-                    &amp; .o_folder_header_container {
+                    &amp; .w_folder_header_container {
                         rect, path {
                             fill: mix(white, <t t-out='primary'/>, 92%);
                         }
                     }
                 </t>
                 <t t-elif="layout == 'web.external_layout_center'">
-                    &amp; .o_layout_center_header {
+                    &amp; .w_layout_center_header {
                         background-color: mix(white, <t t-out='primary'/>, 90%);
                     }
                 </t>
                 <t t-elif="layout == 'web.external_layout_lines'">
                     @for $i from 1 through 10 {
-                        .o_lines_path_#{$i} {
+                        .w_lines_path_#{$i} {
                             stroke: mix(white, <t t-out='primary'/>, $i * 8%);
                         }
                     }

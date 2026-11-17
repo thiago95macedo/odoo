@@ -310,9 +310,9 @@ test.tags("mobile");
 test("should update toolbar font size when applying and removing it on a collapsed selection on mobile", async () => {
     const { el, editor } = await setupEditor("<p>[]<br></p>");
 
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     const fontSizeInputEl = await getIframeInput(
-        ".o-we-toolbar [name='font_size'] iframe.o_font_size_selector_iframe",
+        ".w-we-toolbar [name='font_size'] iframe.o_font_size_selector_iframe",
         "input[name='font_size_input']"
     );
     expect(fontSizeInputEl).toHaveValue(14);

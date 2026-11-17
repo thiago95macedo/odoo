@@ -47,11 +47,11 @@ test("Unsplash is inserted in the Media Dialog", async () => {
         { ...imageRecord, description: "unsplash_image" },
     ]);
     const { editor } = await setupEditor(`<p>[]</p>`);
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     await insertText(editor, "/image");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
-    await click(".o-we-command");
+    await expectElementCount(".w-we-powerbox", 1);
+    await click(".w-we-command");
     await animationFrame();
     expect(".o_select_media_dialog").toHaveCount(1);
     contains("input.o_we_search").edit("cat");
@@ -59,8 +59,8 @@ test("Unsplash is inserted in the Media Dialog", async () => {
     expect.verifySteps(["fetch_images"]);
     await waitFor("img[title='Username']");
     await click(".o_button_area[aria-label='Username']");
-    await waitFor(".o-wysiwyg img[alt='unsplash_image']");
-    expect(".o-wysiwyg img[alt='unsplash_image']").toHaveCount(1);
+    await waitFor(".w-wysiwyg img[alt='unsplash_image']");
+    expect(".w-wysiwyg img[alt='unsplash_image']").toHaveCount(1);
 });
 
 test("Unsplash images are processed correctly in CustomMediaDialog", async () => {
@@ -135,11 +135,11 @@ test("Unsplash error is displayed when there is no key", async () => {
         };
     });
     const { editor } = await setupEditor(`<p>[]</p>`);
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
     await insertText(editor, "/image");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
-    await click(".o-we-command");
+    await expectElementCount(".w-we-powerbox", 1);
+    await click(".w-we-command");
     await animationFrame();
     expect(".o_select_media_dialog").toHaveCount(1);
     contains("input.o_we_search").edit("cat");

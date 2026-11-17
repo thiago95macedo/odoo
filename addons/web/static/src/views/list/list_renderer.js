@@ -50,7 +50,7 @@ import { _t } from "@web/core/l10n/translation";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { user } from "@web/core/user";
-import { odoomark } from "@web/core/utils/html";
+import { wethmark } from "@web/core/utils/html";
 import { exprToBoolean } from "@web/core/utils/strings";
 import { MOVABLE_RECORD_TYPES } from "@web/model/relational_model/dynamic_group_list";
 import { ActionHelper } from "@web/views/action_helper";
@@ -155,7 +155,7 @@ export const listRendererProps = {
     readonly: t.any().optional(),
 };
 
-/** @extends Component<ListRendererProps, OdooEnv> */
+/** @extends Component<ListRendererProps, WethEnv> */
 export class ListRenderer extends Component {
     static template = "web.ListRenderer";
     static rowsTemplate = "web.ListRenderer.Rows";
@@ -202,7 +202,7 @@ export class ListRenderer extends Component {
         const onGlobalClick = this.onGlobalClick.bind(this);
         onMounted(() => window.addEventListener("click", onGlobalClick, { capture: true }));
         onWillUnmount(() => window.removeEventListener("click", onGlobalClick, { capture: true }));
-        this.odoomark = odoomark;
+        this.wethmark = wethmark;
 
         this.longTouchTimer = null;
         this.touchStartMs = 0;
@@ -2533,7 +2533,7 @@ export class ListRenderer extends Component {
             return;
         }
         // Overlay
-        if (this.rootRef().closest(".o-overlay-item") !== target.closest(".o-overlay-item")) {
+        if (this.rootRef().closest(".w-overlay-item") !== target.closest(".w-overlay-item")) {
             return;
         }
         // Specific data attribute to explicitly ignore clicks

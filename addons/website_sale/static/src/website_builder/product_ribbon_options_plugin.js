@@ -80,7 +80,7 @@ export class ProductsRibbonOptionPlugin extends Plugin {
     }
 
     async _setRibbon(editingElement, ribbon, save = true) {
-        const ribbonEl = editingElement.querySelector(".o_ribbons");
+        const ribbonEl = editingElement.querySelector(".w_ribbons");
         const ribbonId = ribbon.id;
         const editableBody = ribbonEl.ownerDocument.body;
         const variantMode = this.isVariantMode(editingElement)
@@ -219,8 +219,8 @@ export class ProductsRibbonOptionPlugin extends Plugin {
     async deleteRibbon(editingElement) {
         const ribbonId = parseInt(
             this.isVariantMode(editingElement)
-                ? editingElement.querySelector(".o_ribbons")?.dataset?.ribbonId
-                : editingElement.querySelector(".o_ribbons")?.dataset?.templateRibbonId
+                ? editingElement.querySelector(".w_ribbons")?.dataset?.ribbonId
+                : editingElement.querySelector(".w_ribbons")?.dataset?.templateRibbonId
         );
         if (this.ribbonsObject[ribbonId]) {
             const ribbonIndex = this.ribbons.findIndex(ribbon => ribbon.id === ribbonId);
@@ -356,8 +356,8 @@ export class SetRibbonAction extends BuilderAction {
     isApplied({ editingElement, value }) {
         const ribbonId = parseInt(
             this.ribbonOptions.isVariantMode(editingElement)
-                ? editingElement.querySelector(".o_ribbons")?.dataset?.ribbonId
-                : editingElement.querySelector(".o_ribbons")?.dataset?.templateRibbonId
+                ? editingElement.querySelector(".w_ribbons")?.dataset?.ribbonId
+                : editingElement.querySelector(".w_ribbons")?.dataset?.templateRibbonId
         );
         const match = !ribbonId || !this.ribbonOptions.getRibbonsObject().hasOwnProperty(ribbonId)
             ? ''
@@ -458,8 +458,8 @@ export class ModifyRibbonAction extends BuilderAction {
     getValue({ editingElement, params }) {
         const ribbonId = parseInt(
             this.ribbonOptions.isVariantMode(editingElement)
-                ? editingElement.querySelector(".o_ribbons")?.dataset?.ribbonId
-                : editingElement.querySelector(".o_ribbons")?.dataset?.templateRibbonId
+                ? editingElement.querySelector(".w_ribbons")?.dataset?.ribbonId
+                : editingElement.querySelector(".w_ribbons")?.dataset?.templateRibbonId
         );
         if (!ribbonId || !this.ribbonOptions.getRibbonsObject().hasOwnProperty(ribbonId)) {
             return;
@@ -470,8 +470,8 @@ export class ModifyRibbonAction extends BuilderAction {
     isApplied({ editingElement, params, value }) {
         const ribbonId = parseInt(
             this.ribbonOptions.isVariantMode(editingElement)
-                ? editingElement.querySelector(".o_ribbons")?.dataset?.ribbonId
-                : editingElement.querySelector(".o_ribbons")?.dataset?.templateRibbonId
+                ? editingElement.querySelector(".w_ribbons")?.dataset?.ribbonId
+                : editingElement.querySelector(".w_ribbons")?.dataset?.templateRibbonId
         );
         if (!ribbonId || !this.ribbonOptions.getRibbonsObject().hasOwnProperty(ribbonId)) {
             return;
@@ -480,7 +480,7 @@ export class ModifyRibbonAction extends BuilderAction {
     }
     async apply({ editingElement, params, value }) {
         const isPreviewMode = this.dependencies.history.getIsPreviewing();
-        const ribbonEl = editingElement.querySelector('.o_ribbons')
+        const ribbonEl = editingElement.querySelector('.w_ribbons')
         const setting = params.mainParam;
         const ribbonId = parseInt(
             this.ribbonOptions.isVariantMode(editingElement)

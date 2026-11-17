@@ -3,7 +3,11 @@
     opacity: 70%;
     position: relative;
 
-    &.d-lg-flex, &.d-md-flex, &.o_half_screen_height, &.o_three_quarter_height, &.o_full_screen_height {
+    &.d-lg-flex,
+    &.d-md-flex,
+    &.o_half_screen_height,
+    &.o_three_quarter_height,
+    &.o_full_screen_height {
         // e.g. Useful if "Height" option is enabled.
         display: flex !important;
     }
@@ -17,12 +21,13 @@
         z-index: 100;
         font-family: "Material Symbols Outlined";
         text-align: right;
-        color: $o-we-color-accent;
+        color: $w-we-color-accent;
         pointer-events: none;
         content: "."; // Content is mandatory.
     }
 
-    &.d-md-none::before, &.d-lg-none::before {
+    &.d-md-none::before,
+    &.d-lg-none::before {
         font-size: 50px;
         content: "desktop_access_disabled";
     }

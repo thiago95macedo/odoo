@@ -13,7 +13,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/auth_totp_mail/pt_BR/>\n"
+"weth-20/auth_totp_mail/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -150,13 +150,13 @@ msgid "<span>Consider also</span>"
 msgstr "<span>Considerar também</span>"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "A new device was used to sign in to your account."
 msgstr "Um novo dispositivo foi usado para fazer login na sua conta."
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/auth_totp_device.py:0
 msgid ""
 "A trusted device has just been removed from your account: %(device_names)s"
@@ -173,7 +173,7 @@ msgid "Authentication Device"
 msgstr "Dispositivo de autenticação"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Cannot send email: user %s has no email address."
 msgstr ""
@@ -185,7 +185,7 @@ msgid "Check your inbox! We sent a code to"
 msgstr "Verifique sua caixa de entrada! Enviamos um código para"
 
 #. module: auth_totp_mail
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_mail/static/src/services/check_identity/check_identity.xml:0
 msgid "Check your mailbox"
 msgstr "Verifique sua caixa de correio"
@@ -249,11 +249,11 @@ msgstr "ID"
 
 #. module: auth_totp_mail
 #: model:mail.template,subject:auth_totp_mail.mail_template_totp_invite
-msgid "Invitation to activate two-factor authentication on your Odoo account"
-msgstr "Convite para ativar autenticação de dois fatores na sua conta Odoo"
+msgid "Invitation to activate two-factor authentication on your WETH account"
+msgstr "Convite para ativar autenticação de dois fatores na sua conta Weth"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid ""
 "Invitation to use two-factor authentication sent for the following user(s): "
@@ -273,7 +273,7 @@ msgid "Invite to use two-factor authentication"
 msgstr "Convite para utilizar a autenticação de dois fatores"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "New Connection to your Account"
 msgstr "Nova conexão à sua conta"
@@ -289,25 +289,25 @@ msgid "Re-send email"
 msgstr "Reenviar e-mail"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Security"
 msgstr "Segurança"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Security Update: 2FA Activated"
 msgstr "Atualização de segurança: 2FA ativada"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Security Update: 2FA Deactivated"
 msgstr "Atualização de segurança: 2FA desativada"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/auth_totp_device.py:0
 msgid "Security Update: Device Removed"
 msgstr "Atualização de segurança: dispositivo removido"
@@ -323,7 +323,7 @@ msgid "Settings: 2Fa New Login"
 msgstr "Definições: novo login com 2FA"
 
 #. module: auth_totp_mail
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_mail/static/src/services/check_identity/check_identity.xml:0
 msgid "Six-digit authentication code"
 msgstr "Código de autenticação de seis dígitos"
@@ -339,19 +339,19 @@ msgid "Two-factor authentication enforcing policy"
 msgstr "Política de imposição de autenticação de dois fatores"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Two-factor authentication has been activated on your account"
 msgstr "A autenticação dois fatores foi ativada na sua conta"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Two-factor authentication has been deactivated on your account"
 msgstr "A autenticação dois fatores foi desativada na sua conta"
 
 #. module: auth_totp_mail
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_mail/static/src/services/check_identity/check_identity.xml:0
 msgid "Use an authentication code sent by email"
 msgstr "Usar um código de autenticação enviado por e-mail"
@@ -362,19 +362,19 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: auth_totp_mail
-#. odoo-python
+#. weth-python
 #: code:addons/auth_totp_mail/models/res_users.py:0
 msgid "Verification failed, please double-check the 6-digit code"
 msgstr "A verificação falhou, confira o código de 6 dígitos"
 
 #. module: auth_totp_mail
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_mail/static/src/services/check_identity/check_identity.xml:0
 msgid "Verify"
 msgstr "Verificar"
 
 #. module: auth_totp_mail
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/auth_totp_mail/static/src/services/check_identity/check_identity.xml:0
 msgid "We sent a 6-digit code to your email address."
 msgstr "Enviamos um código de 6 dígitos para o seu endereço de e-mail."

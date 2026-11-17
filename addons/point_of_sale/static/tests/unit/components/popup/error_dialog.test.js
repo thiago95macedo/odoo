@@ -21,7 +21,7 @@ test("shows Reload Data button on Error Dialog", async () => {
     await addErrorDialog();
     expect(".modal-footer .btn").toHaveCount(1);
     expect(".modal .modal-title").toHaveText("Oops!");
-    await contains(".o-default-button").click();
+    await contains(".w-default-button").click();
 
     // For PWA applications
     mockMatchMedia({ ["display-mode"]: "standalone" });

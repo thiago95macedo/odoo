@@ -41,9 +41,9 @@ test(`FilterableSelectionField test whitelist`, async () => {
         `,
         resId: 1,
     });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(2);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons", "Promotion"]);
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(2);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons", "Promotion"]);
 });
 
 test(`FilterableSelectionField test blacklist`, async () => {
@@ -57,9 +57,9 @@ test(`FilterableSelectionField test blacklist`, async () => {
         `,
         resId: 1,
     });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(2);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons", "Promotion"]);
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(2);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons", "Promotion"]);
 });
 
 test(`FilterableSelectionField test with invalid value`, async () => {
@@ -74,13 +74,13 @@ test(`FilterableSelectionField test with invalid value`, async () => {
         `,
         resId: 2,
     });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(3);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons", "Promotion", "Gift card"]);
-    await editSelectMenu(".o_field_widget[name='type'] input", { value: "Coupons" });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(2);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons", "Promotion"]);
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(3);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons", "Promotion", "Gift card"]);
+    await editSelectMenu(".w_field_widget[name='type'] input", { value: "Coupons" });
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(2);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons", "Promotion"]);
 });
 
 test(`FilterableSelectionField test whitelist_fname`, async () => {
@@ -95,9 +95,9 @@ test(`FilterableSelectionField test whitelist_fname`, async () => {
         `,
         resId: 1,
     });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(2);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons", "Promotion"]);
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(2);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons", "Promotion"]);
 });
 
 test(`FilterableSelectionField test whitelist_fname with falsy value`, async () => {
@@ -112,7 +112,7 @@ test(`FilterableSelectionField test whitelist_fname with falsy value`, async () 
         `,
         resId: 3,
     });
-    await contains(".o_field_widget[name='type'] input").click();
-    expect(`.o_select_menu_item`).toHaveCount(1);
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Coupons"]);
+    await contains(".w_field_widget[name='type'] input").click();
+    expect(`.w_select_menu_item`).toHaveCount(1);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Coupons"]);
 });

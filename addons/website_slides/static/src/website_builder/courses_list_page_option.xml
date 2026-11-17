@@ -20,13 +20,13 @@
     <xpath expr="//t[@id='page_options_hook']" position="after">
         <courses_list_page_option
             template="website_slides.CoursesListPageOption"
-            selector="main:has(.o_wslides_home_main)"
+            selector="main:has(.w_wslides_home_main)"
             title="Courses Page"
             groups='["website.group_website_designer"]'
             editableOnly="false"/>
         <courses_list_aside_page_option
             template="website_slides.CoursesListAsidePageOption"
-            selector="main:has(.o_wslides_home_aside_loggedin)"
+            selector="main:has(.w_wslides_home_aside_loggedin)"
             groups='["website.group_website_designer"]'
             editableOnly="false"/>
     </xpath>

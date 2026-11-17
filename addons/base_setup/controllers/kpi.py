@@ -7,7 +7,7 @@ import psycopg2
 from weth.exceptions import ValidationError
 from weth.http import Controller, route
 from weth.modules import Manifest
-from weth.modules import module as odoo_modules_module
+from weth.modules import module as weth_modules_module
 from weth.release import series as release_series
 from weth.sql_db import db_connect
 from weth.tools import SQL
@@ -76,7 +76,7 @@ def _db_kpi_summary(database, api_key):
     Retrieve the KPI summary from a single database.
 
     This function connects to the given database, verifies the API key,
-    ensures the database version matches the current Odoo release, and
+    ensures the database version matches the current WETH release, and
     calls all registered KPI providers.
 
     :param str database: The name of the database
@@ -120,7 +120,7 @@ def _db_kpi_summary(database, api_key):
             finally:
                 # get_kpi_summary functions are not expected to have any side effect
                 # this also avoids leaving the cursor in a failed transaction state.
-                if not odoo_modules_module.current_test:
+                if not weth_modules_module.current_test:
                     cr.rollback()
 
         cr.execute(SQL("""
@@ -153,7 +153,7 @@ class KpiController(Controller):
         The result of this call will only include the databases:
             - that have been found on this server
             - where the provided API key could be verified
-            - that are on the same Odoo version as the current Odoo
+            - that are on the same WETH version as the current Weth
 
         Databases that don't match one of these points won't be included in the result,
         and should be contacted separately via RPC calls.

@@ -28,11 +28,11 @@ test("many2many_falsy_value_label widget displays `🔒 private` label across vi
     await contains(".o_control_panel_navigation .o_cp_switch_buttons");
     await waitFor(".o_switch_view:count(2)");
     await contains(".o_list_view .o_content");
-    await contains(".o-mail-Many2ManyFalsyValueLabelField:text('🔒 Private')");
+    await contains(".w-mail-Many2ManyFalsyValueLabelField:text('🔒 Private')");
     await switchView("kanban");
     await contains(".o_kanban_view .o_content");
-    await contains(".o-mail-Many2ManyFalsyValueLabelField:text('🔒 Private')");
-    await click(".o_control_panel_main_buttons .o-kanban-button-new");
+    await contains(".w-mail-Many2ManyFalsyValueLabelField:text('🔒 Private')");
+    await click(".o_control_panel_main_buttons .w-kanban-button-new");
     await contains(".o_form_view .o_content");
-    await contains(".o-mail-Many2ManyFalsyValueLabelField input[placeholder='🔒 Private']");
+    await contains(".w-mail-Many2ManyFalsyValueLabelField input[placeholder='🔒 Private']");
 });

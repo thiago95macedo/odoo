@@ -8,7 +8,7 @@ from weth.addons.base.models.res_groups import ResGroups
 
 
 @common.tagged('at_install', '-post_install', 'groups')
-class TestGroupsOdoo(common.TransactionCase):
+class TestGroupsWeth(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

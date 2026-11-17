@@ -34,17 +34,17 @@ test("internal users can upload file to temporary thread", async () => {
     await loadDefaultEmbedConfig();
     const [partnerUser] = pyEnv["res.users"].search_read([["id", "=", serverState.partnerId]]);
     await start({ authenticateAs: partnerUser, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const file = new File(["hello, world"], "text.txt", { type: "text/plain" });
-    await contains(".o-mail-Composer");
-    await click(".o-mail-Composer button[title='More Actions']");
+    await contains(".w-mail-Composer");
+    await click(".w-mail-Composer button[title='More Actions']");
     await contains(".dropdown-item:contains('Attach files')");
-    await inputFiles(".o-mail-Composer .o_input_file", [file]);
-    await contains(".o-mail-AttachmentContainer:not(.o-isUploading):contains(text.txt)");
+    await inputFiles(".w-mail-Composer .o_input_file", [file]);
+    await contains(".w-mail-AttachmentContainer:not(.w-isUploading):contains(text.txt)");
     const subscribed = waitUntilSubscribe();
     await triggerHotkey("Enter");
     await subscribed;
-    await contains(".o-mail-Message .o-mail-AttachmentContainer:contains(text.txt)");
+    await contains(".w-mail-Message .w-mail-AttachmentContainer:contains(text.txt)");
 });
 
 test("The name of the conversation changes based on the agents' names", async () => {
@@ -53,8 +53,8 @@ test("The name of the conversation changes based on the agents' names", async ()
     pyEnv["res.partner"].write(serverState.partnerId, { user_livechat_username: "MitchellOp" });
     const operatorUserId = serverState.userId;
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow-header", { text: "MitchellOp" });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow-header", { text: "MitchellOp" });
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
@@ -83,7 +83,7 @@ test("The name of the conversation changes based on the agents' names", async ()
             ],
         })
     );
-    await contains(".o-mail-ChatWindow-header", { text: "MitchellOp, James" });
+    await contains(".w-mail-ChatWindow-header", { text: "MitchellOp, James" });
 });
 
 test("Portal users should not be able to start a call", async () => {
@@ -102,16 +102,16 @@ test("Portal users should not be able to start a call", async () => {
     });
     pyEnv["res.partner"].write(serverState.partnerId, { user_livechat_username: "MitchellOp" });
     await start({ authenticateAs: { login: "joel", password: "joel" }, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow-header:text('MitchellOp')");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow-header:text('MitchellOp')");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello MitchellOp!");
     await subscribed;
-    await contains(".o-mail-Message[data-persistent]:contains('Hello MitchellOp!')");
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button", { count: 2 });
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button[title='Fold']");
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button[title*='Close']");
-    await contains(".o-discuss-Call", { count: 0 });
+    await contains(".w-mail-Message[data-persistent]:contains('Hello MitchellOp!')");
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button", { count: 2 });
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button[title='Fold']");
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button[title*='Close']");
+    await contains(".w-discuss-Call", { count: 0 });
     // simulate operator starts call
     const [channelId] = pyEnv["discuss.channel"].search([
         ["channel_type", "=", "livechat"],
@@ -124,13 +124,13 @@ test("Portal users should not be able to start a call", async () => {
     await withUser(serverState.userId, () =>
         rpc("/mail/rtc/channel/join_call", { channel_id: channelId }, { silent: true })
     );
-    await contains(".o-discuss-Call button", { count: 2 });
-    await contains(".o-discuss-Call button[title='Join Video Call']");
-    await contains(".o-discuss-Call button[title='Join Call']");
+    await contains(".w-discuss-Call button", { count: 2 });
+    await contains(".w-discuss-Call button[title='Join Video Call']");
+    await contains(".w-discuss-Call button[title='Join Call']");
     // still same actions in header
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button", { count: 2 });
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button[title='Fold']");
-    await contains(".o-mail-ChatWindow-header .o-mail-ActionList-button[title*='Close']");
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button", { count: 2 });
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button[title='Fold']");
+    await contains(".w-mail-ChatWindow-header .w-mail-ActionList-button[title*='Close']");
 });
 
 test("avatar url contains access token for non-internal users", async () => {
@@ -139,14 +139,14 @@ test("avatar url contains access token for non-internal users", async () => {
     pyEnv["res.partner"].write(serverState.partnerId, { user_livechat_username: "MitchellOp" });
     const [partner] = pyEnv["res.partner"].search_read([["id", "=", serverState.partnerId]]);
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     await contains(
-        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        `.w-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
         }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
     await contains(
-        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        `.w-mail-Message-avatar[data-src="${getOrigin()}/web/image/res.partner/${partner.id
         }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
@@ -156,11 +156,11 @@ test("avatar url contains access token for non-internal users", async () => {
     const guestId = pyEnv.cookie.get("dgid");
     const [guest] = pyEnv["mail.guest"].read(guestId);
     await contains(
-        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/mail.guest/${guest.id
+        `.w-mail-Message-avatar[data-src="${getOrigin()}/web/image/mail.guest/${guest.id
         }/avatar_128?access_token=${guest.id}&unique=${deserializeDateTime(guest.write_date).ts}"]`
     );
     await contains(
-        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        `.w-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
         }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
@@ -175,25 +175,25 @@ test("can close confirm livechat with keyboard", async () => {
         }
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Thread:not([data-transient])");
     await triggerHotkey("Escape");
     await contains(
-        ".o-livechat-CloseConfirmation:has(:text('Leaving will end the live chat with Mitchell Admin. Are you sure you want to continue?'))"
+        ".w-livechat-CloseConfirmation:has(:text('Leaving will end the live chat with Mitchell Admin. Are you sure you want to continue?'))"
     );
     await triggerHotkey("Escape");
-    await contains(".o-livechat-CloseConfirmation", { count: 0 });
+    await contains(".w-livechat-CloseConfirmation", { count: 0 });
     await triggerHotkey("Escape");
     await contains(
-        ".o-livechat-CloseConfirmation:has(:text('Leaving will end the live chat with Mitchell Admin. Are you sure you want to continue?'))"
+        ".w-livechat-CloseConfirmation:has(:text('Leaving will end the live chat with Mitchell Admin. Are you sure you want to continue?'))"
     );
     await triggerHotkey("Enter");
     await expect.waitForSteps(["/im_livechat/visitor_leave_session"]);
-    await contains(".o-mail-ChatWindow", { text: "Did we correctly answer your question?" });
+    await contains(".w-mail-ChatWindow", { text: "Did we correctly answer your question?" });
 });
 
 test("Should not show IM status of agents", async () => {
@@ -209,14 +209,14 @@ test("Should not show IM status of agents", async () => {
     pyEnv["res.partner"].create({ name: "Joel", user_ids: [joelUid] });
     pyEnv["res.partner"].write(serverState.partnerId, { user_livechat_username: "MitchellOp" });
     await start({ authenticateAs: { login: "joel", password: "joel" }, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow-header:text('MitchellOp')");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow-header:text('MitchellOp')");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello MitchellOp!");
     await subscribed;
-    await contains(".o-mail-Message[data-persistent]:contains('Hello MitchellOp!')");
-    await click(".o-mail-ChatWindow-header");
-    await contains(".o-mail-ChatBubble");
+    await contains(".w-mail-Message[data-persistent]:contains('Hello MitchellOp!')");
+    await click(".w-mail-ChatWindow-header");
+    await contains(".w-mail-ChatBubble");
     await assertChatBubbleAndWindowImStatus("MitchellOp", 0);
 });
 
@@ -261,12 +261,12 @@ test("Displays the name of agent in welcome message", async () => {
     ]);
     setupChatHub({ opened: [chatAsAgent, chatAsBot] });
     await start({ authenticateAs: false });
-    await contains(".o-mail-ChatWindow", { count: 2 });
+    await contains(".w-mail-ChatWindow", { count: 2 });
     await contains(
-        ".o-mail-ChatWindow:eq(0) .o-mail-Message:has(:text('Hello, how may I help you?')) .o-mail-Message-author:text('Jane')"
+        ".w-mail-ChatWindow:eq(0) .w-mail-Message:has(:text('Hello, how may I help you?')) .w-mail-Message-author:text('Jane')"
     );
     await contains(
-        ".o-mail-ChatWindow:eq(1) .o-mail-Message:has(:text('Hello, how may I help you?')) .o-mail-Message-author:text('Bot')"
+        ".w-mail-ChatWindow:eq(1) .w-mail-Message:has(:text('Hello, how may I help you?')) .w-mail-Message-author:text('Bot')"
     );
 });
 
@@ -278,7 +278,7 @@ test("should not make XMLHttpRequest to server file content when embedded extern
         origin: window.location.origin,
     });
     mockFetch(() => {
-        throw new Error("Should not fetch from external to odoo");
+        throw new Error("Should not fetch from external to weth");
     });
     patchWithCleanup(HTMLAnchorElement.prototype, {
         click() {
@@ -292,18 +292,18 @@ test("should not make XMLHttpRequest to server file content when embedded extern
 
     const [partnerUser] = pyEnv["res.users"].search_read([["id", "=", serverState.partnerId]]);
     await start({ authenticateAs: partnerUser, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const textFile = new File(["hello, world"], "test.txt", { type: "text/plain" });
-    await contains(".o-mail-Composer");
+    await contains(".w-mail-Composer");
 
-    await click(".o-mail-Composer button[title='More Actions']");
+    await click(".w-mail-Composer button[title='More Actions']");
     await contains(".dropdown-item:contains('Attach files')");
-    await inputFiles(".o-mail-Composer .o_input_file", [textFile]);
-    await contains(".o-mail-AttachmentContainer:not(.o-isUploading):contains(test.txt)");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await contains(".o-mail-Message .o-mail-AttachmentContainer:contains(test.txt)");
+    await inputFiles(".w-mail-Composer .o_input_file", [textFile]);
+    await contains(".w-mail-AttachmentContainer:not(.w-isUploading):contains(test.txt)");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await contains(".w-mail-Message .w-mail-AttachmentContainer:contains(test.txt)");
     await click(
-        ".o-mail-Message .o-mail-AttachmentContainer:contains(test.txt) [title='Download']"
+        ".w-mail-Message .w-mail-AttachmentContainer:contains(test.txt) [title='Download']"
     );
 
     expect.verifySteps([`${session.origin} test.txt`]);
@@ -332,16 +332,16 @@ test("should not allow preview of PDF attachments when embedded externally", asy
 
     const [partnerUser] = pyEnv["res.users"].search_read([["id", "=", serverState.partnerId]]);
     await start({ authenticateAs: partnerUser, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const pdfFile = new File(["hello, world"], "test.pdf", { type: "application/pdf" });
-    await contains(".o-mail-Composer");
+    await contains(".w-mail-Composer");
 
-    await click(".o-mail-Composer button[title='More Actions']");
+    await click(".w-mail-Composer button[title='More Actions']");
     await contains(".dropdown-item:contains('Attach files')");
-    await inputFiles(".o-mail-Composer .o_input_file", [pdfFile]);
-    await contains(".o-mail-AttachmentContainer:not(.o-isUploading):contains(test.pdf)");
-    await click(".o-mail-Composer button[title='Send']:enabled");
-    await click(".o-mail-Message .o-mail-AttachmentContainer:contains(test.pdf)");
+    await inputFiles(".w-mail-Composer .o_input_file", [pdfFile]);
+    await contains(".w-mail-AttachmentContainer:not(.w-isUploading):contains(test.pdf)");
+    await click(".w-mail-Composer button[title='Send']:enabled");
+    await click(".w-mail-Message .w-mail-AttachmentContainer:contains(test.pdf)");
 });
 
 test("Agent sees the visitor avatar on the chat bubble of a live chat", async () => {
@@ -377,10 +377,10 @@ test("Agent sees the visitor avatar on the chat bubble of a live chat", async ()
     await start();
     const [guest] = pyEnv["mail.guest"].read(guestId);
     await contains(
-        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
+        `.w-mail-ChatBubble img[data-src='${getOrigin()}/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
         }']`
     );
-    await contains(".o-mail-ChatBubble[name='Visitor 11']");
+    await contains(".w-mail-ChatBubble[name='Visitor 11']");
 });
 
 test("Agent sees their own avatar on the chat bubble of their own live chat", async () => {
@@ -403,7 +403,7 @@ test("Agent sees their own avatar on the chat bubble of their own live chat", as
     await start();
     const [partner] = pyEnv["res.partner"].read(serverState.partnerId);
     await contains(
-        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/res.partner/${serverState.partnerId
+        `.w-mail-ChatBubble img[data-src='${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}']`
     );
 });

@@ -22,7 +22,7 @@ export class CarouselProduct extends Interaction {
                 "justify-content": this.indicatorJustify,
             }),
         },
-        ".o_carousel_product_indicators": {
+        ".w_carousel_product_indicators": {
             "t-on-wheel.prevent": this.onMouseWheel,
         },
     };
@@ -47,7 +47,7 @@ export class CarouselProduct extends Interaction {
 
     updateCarouselPosition() {
         let size = 5;
-        for (const el of document.querySelectorAll(".o_top_fixed_element")) {
+        for (const el of document.querySelectorAll(".w_top_fixed_element")) {
             const style = window.getComputedStyle(el);
             size += el.getBoundingClientRect().height + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
         }
@@ -68,7 +68,7 @@ export class CarouselProduct extends Interaction {
         }
         const isReversed = this.el.style["flex-direction"] === "column-reverse";
         const isLeftIndicators = this.el.classList.contains("o_carousel_product_left_indicators");
-        const indicatorsDivEl = this.el.querySelector(isLeftIndicators ? ".o_carousel_product_indicators" : ".carousel-indicators");
+        const indicatorsDivEl = this.el.querySelector(isLeftIndicators ? ".w_carousel_product_indicators" : ".carousel-indicators");
         if (!indicatorsDivEl) {
             return;
         }

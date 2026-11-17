@@ -46,7 +46,7 @@
         "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false, "caughtErrors": "all" }]
     },
     "globals": {
-        "odoo": "readonly",
+        "weth": "readonly",
         "$": "readonly",
         "jQuery": "readonly",
         "Chart": "readonly",

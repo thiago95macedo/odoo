@@ -29,13 +29,13 @@ test("activity assign popover simplest layout", async () => {
 
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Activity-assign");
-    await contains(".o-mail-ActivityAssignPopover");
-    await contains(".o-mail-ActivityAssignPopover input[type='text']");
-    await contains(".o-mail-ActivityAssignPopover button[aria-label='Assign']");
-    await contains(".o-mail-ActivityAssignPopover button[aria-label='Discard']");
-    await click(".o-mail-ActivityAssignPopover button[aria-label='Discard']");
-    await contains(".o-mail-ActivityAssignPopover", { count: 0 });
+    await click(".w-mail-Activity-assign");
+    await contains(".w-mail-ActivityAssignPopover");
+    await contains(".w-mail-ActivityAssignPopover input[type='text']");
+    await contains(".w-mail-ActivityAssignPopover button[aria-label='Assign']");
+    await contains(".w-mail-ActivityAssignPopover button[aria-label='Discard']");
+    await click(".w-mail-ActivityAssignPopover button[aria-label='Discard']");
+    await contains(".w-mail-ActivityAssignPopover", { count: 0 });
 });
 
 test("activity assign popover assign user", async () => {
@@ -50,10 +50,10 @@ test("activity assign popover assign user", async () => {
 
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Activity-assign");
-    await insertText(".o-mail-ActivityAssignPopover input[type='text']", "Mitchell");
+    await click(".w-mail-Activity-assign");
+    await insertText(".w-mail-ActivityAssignPopover input[type='text']", "Mitchell");
     await click(".ui-menu-item:text('Mitchell Admin')");
-    await click(".o-mail-ActivityAssignPopover button[aria-label='Assign']");
-    await contains(".o-mail-ActivityAssignPopover", { count: 0 });
-    await contains(".o-mail-Activity-user", { text: "for Mitchell Admin" });
+    await click(".w-mail-ActivityAssignPopover button[aria-label='Assign']");
+    await contains(".w-mail-ActivityAssignPopover", { count: 0 });
+    await contains(".w-mail-Activity-user", { text: "for Mitchell Admin" });
 });

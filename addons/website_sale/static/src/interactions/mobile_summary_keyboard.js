@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 
 export class MobileSummaryKeyboard extends Interaction {
-    static selector = ".o_mobile_summary";
+    static selector = ".w_mobile_summary";
     dynamicContent = {
         _document: {
             "t-on-focusin": this.onFocusIn,

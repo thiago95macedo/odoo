@@ -108,7 +108,7 @@ class AccountAccount(models.Model):
     @api.model
     @spreadsheet_safe_batch
     def spreadsheet_fetch_debit_credit(self, args_list):
-        """Fetch data for ODOO.CREDIT, ODOO.DEBIT and ODOO.BALANCE formulas
+        """Fetch data for WETH.CREDIT, WETH.DEBIT and WETH.BALANCE formulas
         The input list looks like this::
 
             [{
@@ -135,7 +135,7 @@ class AccountAccount(models.Model):
     @api.model
     @spreadsheet_safe_batch
     def spreadsheet_fetch_residual_amount(self, args_list):
-        """Fetch data for ODOO.RESUDUAL formulas
+        """Fetch data for WETH.RESUDUAL formulas
         The input list looks like this::
 
             [{
@@ -161,7 +161,7 @@ class AccountAccount(models.Model):
     @api.model
     @spreadsheet_safe_batch
     def spreadsheet_fetch_partner_balance(self, args_list):
-        """Fetch data for ODOO.PARTNER.BALANCE formulas
+        """Fetch data for WETH.PARTNER.BALANCE formulas
         The input list looks like this::
 
             [{
@@ -211,7 +211,7 @@ class AccountAccount(models.Model):
     @api.model
     @spreadsheet_safe_batch
     def spreadsheet_fetch_balance_tag(self, args_list):
-        """Fetch data for ODOO.BALANCE.TAG formulas
+        """Fetch data for WETH.BALANCE.TAG formulas
         The input list looks like this::
 
             [{

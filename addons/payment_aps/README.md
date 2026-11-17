@@ -19,7 +19,7 @@ on form submission provided by the `payment` module.
 ## Module history
 
 - `16.0`
-  - The first version of the module is merged. odoo/odoo#95860
+  - The first version of the module is merged. weth/weth#95860
 
 ## Testing instructions
 

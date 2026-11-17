@@ -30,9 +30,9 @@ test("rating value displayed on the preview", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem-text", { text: "Rating:" });
-    await contains(".o-rating-preview-image[alt='top']");
-    await contains(".o-rating-preview-image[data-src='/rating/static/src/img/rating_5.png']");
+    await contains(".w-mail-NotificationItem-text", { text: "Rating:" });
+    await contains(".w-rating-preview-image[alt='top']");
+    await contains(".w-rating-preview-image[data-src='/rating/static/src/img/rating_5.png']");
 });
 
 test("rating value displayed on the needaction preview", async () => {
@@ -62,7 +62,7 @@ test("rating value displayed on the needaction preview", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await contains(".o-mail-NotificationItem-text", { text: "Rating:" });
-    await contains(".o-rating-preview-image[alt='top']");
-    await contains(".o-rating-preview-image[data-src='/rating/static/src/img/rating_5.png']");
+    await contains(".w-mail-NotificationItem-text", { text: "Rating:" });
+    await contains(".w-rating-preview-image[alt='top']");
+    await contains(".w-rating-preview-image[data-src='/rating/static/src/img/rating_5.png']");
 });

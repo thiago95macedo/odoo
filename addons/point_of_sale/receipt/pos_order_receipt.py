@@ -37,7 +37,7 @@ class PosOrderReceipt(models.AbstractModel):
     _description = 'Point of Sale Order Receipt Generator'
 
     def _order_receipt_tz(self):
-        """Receipts must use the shop timezone, since the rendering user (self ordering user, public user, OdooBot, ...) can be in a different tz"""
+        """Receipts must use the shop timezone, since the rendering user (self ordering user, public user, WethBot, ...) can be in a different tz"""
         self.ensure_one()
         return self.company_id.sudo().tz or self.env.context.get('tz') or self.env.user.tz or 'UTC'
 

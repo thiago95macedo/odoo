@@ -120,14 +120,14 @@ describe("Form action options", () => {
 
         await contains(":iframe section").click();
         await contains("[data-label='Action'] button:contains('Send an E-mail')").click();
-        await contains("div.o-dropdown-item:contains('Apply for a Job')").click();
+        await contains("div.w-dropdown-item:contains('Apply for a Job')").click();
 
         await animationFrame();
         expect("span:contains('Applied Job')").toHaveCount(1);
         expect("[data-label='URL'] input").toHaveValue("/job-thank-you");
 
         await contains("[data-label='Action'] button:contains('Apply for a Job')").click();
-        await contains("div.o-dropdown-item:contains('Create a Customer')").click();
+        await contains("div.w-dropdown-item:contains('Create a Customer')").click();
 
         expect("span:contains('Applied Job')").toHaveCount(0);
         expect("[data-label='URL'] input").toHaveValue("/contactus-thank-you");
@@ -146,11 +146,11 @@ describe("Form action options", () => {
 
         await contains(":iframe section").click();
         await contains("[data-label='Action'] button:contains('Send an E-mail')").click();
-        await contains("div.o-dropdown-item:contains('Apply for a Job')").click();
+        await contains("div.w-dropdown-item:contains('Apply for a Job')").click();
 
         await contains("[data-label='Applied Job'] button:contains('Choose a record...')").click();
         expect.verifySteps([`name_search: limit 6`]);
-        await contains("span.o-dropdown-item:contains('Test job')").click();
+        await contains("span.w-dropdown-item:contains('Test job')").click();
         expect(":iframe form .s_website_form_field.s_website_form_dnone").toHaveCount(1);
         expect(":iframe form .s_website_form_field.s_website_form_dnone input").toHaveAttribute(
             "name",
@@ -168,7 +168,7 @@ describe("Form action options", () => {
 
         await contains(":iframe section").click();
         await contains("[data-label='Action'] button:contains('Send an E-mail')").click();
-        await contains("div.o-dropdown-item:contains('Create a Customer')").click();
+        await contains("div.w-dropdown-item:contains('Create a Customer')").click();
 
         expect(":iframe form [data-name='job_ids'] input[type='checkbox']").toHaveCount(1);
         expect(":iframe form [data-name='job_ids'] input[type='checkbox']").toHaveAttribute(
@@ -183,12 +183,12 @@ describe("Form action options", () => {
 
         await contains(":iframe section").click();
         await contains("[data-label='Action'] button:contains('Send an E-mail')").click();
-        await contains("div.o-dropdown-item:contains('Create a Customer')").click();
+        await contains("div.w-dropdown-item:contains('Create a Customer')").click();
 
         await contains(
             "[data-label='Preferred Job'] button:contains('Choose a record...')"
         ).click();
-        await contains("span.o-dropdown-item:contains('Test job')").click();
+        await contains("span.w-dropdown-item:contains('Test job')").click();
         expect(":iframe form .s_website_form_dnone input[name='job_id']").toHaveValue("42");
         expect("[data-label='Preferred Job'] button[aria-label='Unselect']").toHaveCount(0);
     });
@@ -199,7 +199,7 @@ describe("Form action options", () => {
 
         await contains(":iframe section").click();
         await contains("[data-label='Action'] button:contains('Send an E-mail')").click();
-        await contains("div.o-dropdown-item:contains('Create a Customer')").click();
+        await contains("div.w-dropdown-item:contains('Create a Customer')").click();
 
         await contains("[data-label='Reference'] input").edit("REF-1");
         expect(":iframe form .s_website_form_dnone input[name='ref']").toHaveValue("REF-1");
@@ -238,8 +238,8 @@ test("'Author' field's type stays selected when you modify the option list", asy
     await contains(":iframe section span:contains(Author)").click();
     await contains(".hb-row[data-label='Type'] button:contains('Author')").click();
     expect(".o_popover [data-choice-index]:contains('Author')").toHaveClass("selected");
-    await contains(".o_select_menu button.o-hb-selectMany2X-toggle:contains('Add')").click();
-    await contains(".o_select_menu_menu .o-dropdown-item").click();
+    await contains(".o_select_menu button.w-hb-selectMany2X-toggle:contains('Add')").click();
+    await contains(".o_select_menu_menu .w-dropdown-item").click();
     // check that the author is still marked as selected
     await contains(".hb-row[data-label='Type'] button:contains('Author')").click();
     expect(".o_popover [data-choice-index]:contains('Author')").toHaveClass("selected");
@@ -511,17 +511,17 @@ test("Correctly set field dependency name at field rename", async () => {
     await changeFieldAndCheckDependency(
         async () => await contains("input[data-id='1']").edit("newName")
     );
-    expect(".o-main-components-container  .o-dropdown-item:contains('Option 3')").toHaveCount(1);
-    expect(".o-main-components-container  .o-dropdown-item:contains('newName')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Option 3')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('newName')").toHaveCount(1);
 });
 
 test("Correctly set field dependency name at field addition", async () => {
     await changeFieldAndCheckDependency(
         async () => await contains("button.builder_list_add_item").click()
     );
-    expect(".o-main-components-container  .o-dropdown-item:contains('Option 2')").toHaveCount(1);
-    expect(".o-main-components-container  .o-dropdown-item:contains('Option 3')").toHaveCount(1);
-    expect(".o-main-components-container  .o-dropdown-item:contains('Item')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Option 2')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Option 3')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Item')").toHaveCount(1);
 });
 
 test("Correctly set field dependency name at selected field rename", async () => {
@@ -530,9 +530,9 @@ test("Correctly set field dependency name at selected field rename", async () =>
         async () => await contains("input[data-id='0']").edit(newName),
         newName
     );
-    expect(".o-main-components-container  .o-dropdown-item:contains('Option 3')").toHaveCount(1);
-    expect(".o-main-components-container  .o-dropdown-item:contains('Option 2')").toHaveCount(1);
-    expect(`.o-main-components-container  .o-dropdown-item:contains('${newName}')`).toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Option 3')").toHaveCount(1);
+    expect(".w-main-components-container  .w-dropdown-item:contains('Option 2')").toHaveCount(1);
+    expect(`.w-main-components-container  .w-dropdown-item:contains('${newName}')`).toHaveCount(1);
 });
 
 test("Visibility dependency on radio field with 'Add other' option", async (fieldDependencyName = "Option 1") => {
@@ -583,9 +583,9 @@ test("Visibility dependency on radio field with 'Add other' option", async (fiel
     `);
     await contains(":iframe input[name='b']").click();
     await contains(`#hidden_condition_no_text_opt:contains(${fieldDependencyName})`).click();
-    expect(".o-main-components-container .o-dropdown-item:contains('Option 1')").toHaveCount(1);
-    expect(".o-main-components-container .o-dropdown-item:contains('Option 2')").toHaveCount(1);
-    expect(".o-main-components-container .o-dropdown-item:contains('Other')").toHaveCount(1);
+    expect(".w-main-components-container .w-dropdown-item:contains('Option 1')").toHaveCount(1);
+    expect(".w-main-components-container .w-dropdown-item:contains('Option 2')").toHaveCount(1);
+    expect(".w-main-components-container .w-dropdown-item:contains('Other')").toHaveCount(1);
 });
 
 test("Changing max files number option updates file input 'multiple' attribute", async () => {
@@ -635,7 +635,7 @@ test("Form using the Outgoing Mails model includes hidden email_to field", async
 
     await contains(":iframe section").click();
     await contains(".hb-row[data-label='Action'] button").click();
-    await contains("div.o-dropdown-item:contains('Send an E-mail')").click();
+    await contains("div.w-dropdown-item:contains('Send an E-mail')").click();
 
     expect(":iframe input[type='hidden'][name='email_to']").toHaveCount(1);
     expect(":iframe input[type='hidden'][name='email_to']").toHaveValue("company@mail.com");
@@ -666,11 +666,11 @@ test("Saving outgoing mail form without company email uses editor email fallback
 
     await contains(":iframe section").click();
     await contains(".hb-row[data-label='Action'] button").click();
-    await contains("div.o-dropdown-item:contains('Send an E-mail')").click();
+    await contains("div.w-dropdown-item:contains('Send an E-mail')").click();
 
     expect(":iframe input[type='hidden'][name='email_to']").toHaveValue("user@mail.com");
 
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
 });
 
 test("dropping a snippet containing a form applies the default recipient email", async () => {
@@ -1123,7 +1123,7 @@ test("contains conditional visibility value for 'record' field", async () => {
 
 describe("Many2one Field", () => {
     const addRecordButtonSelector =
-        ".we-bg-options-container [title='Add a record to the list'] button.o-hb-selectMany2X-toggle";
+        ".we-bg-options-container [title='Add a record to the list'] button.w-hb-selectMany2X-toggle";
     let records;
 
     beforeEach(async () => {
@@ -1208,14 +1208,14 @@ describe("Many2one Field", () => {
                     "The menu should be rendered above the Add button because it's too tall to be below.",
             }
         );
-        expect(".o_select_menu_menu .o-dropdown-item:first").toHaveText("Brazil", {
+        expect(".o_select_menu_menu .w-dropdown-item:first").toHaveText("Brazil", {
             message:
                 "Since we already added 'Belgium' the first alphabetical suggestion should be 'Brazil'",
         });
-        expect(".o_select_menu_menu .o-dropdown-item:nth-of-type(2)").toHaveText("India");
-        await contains(".o_select_menu_menu .o-dropdown-item:nth-of-type(2)").click();
+        expect(".o_select_menu_menu .w-dropdown-item:nth-of-type(2)").toHaveText("India");
+        await contains(".o_select_menu_menu .w-dropdown-item:nth-of-type(2)").click();
         await contains(addRecordButtonSelector).click();
-        await contains(".o_select_menu_menu .o-dropdown-item:first").click();
+        await contains(".o_select_menu_menu .w-dropdown-item:first").click();
 
         expect(".o_we_table_wrapper table tr:first input[name=display_name]").toHaveValue(
             "Belgium"
@@ -1284,9 +1284,9 @@ describe("Many2one Field", () => {
 
         test("List order", async () => {
             await contains(addRecordButtonSelector).click();
-            await contains(".o_select_menu_menu .o-dropdown-item:contains(India)").click();
+            await contains(".o_select_menu_menu .w-dropdown-item:contains(India)").click();
             await contains(addRecordButtonSelector).click();
-            await contains(".o_select_menu_menu .o-dropdown-item:contains(Brazil)").click();
+            await contains(".o_select_menu_menu .w-dropdown-item:contains(Brazil)").click();
             await contains(dialogButtonSelector).click();
 
             expect(".modal-dialog .o_left_panel .o_list_item").toHaveCount(records.length - 3);
@@ -1385,8 +1385,8 @@ test("tool to add a link is not available in <label>", async () => {
     onRpc("get_authorized_fields", () => ({}));
     await setupWebsiteBuilder("<label><span>text</span></label>");
     setSelectionOnNodeContent(queryOne(":iframe label span"));
-    await waitFor(".o-we-toolbar");
-    expect(".o-we-toolbar .btn[name='link']").toHaveCount(0);
+    await waitFor(".w-we-toolbar");
+    expect(".w-we-toolbar .btn[name='link']").toHaveCount(0);
 });
 
 test("powerbox tools that add links are not available in <label>", async () => {
@@ -1400,14 +1400,14 @@ test("powerbox tools that add links are not available in <label>", async () => {
     await insertText(getEditor(), "/");
     await animationFrame();
     for (const item of items) {
-        expect(queryAllTexts(".o-we-command-name")).toInclude(item);
+        expect(queryAllTexts(".w-we-command-name")).toInclude(item);
     }
 
     setSelection({ anchorNode: queryOne(":iframe span.in-label"), anchorOffset: 0 });
     await insertText(getEditor(), "/");
     await animationFrame();
     for (const item of items) {
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude(item);
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude(item);
     }
 });
 
@@ -1567,7 +1567,7 @@ test("default for label when user deletes its content, and use it on save", asyn
         expect(args[1]).toMatch("Custom Field");
         return true;
     });
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect.verifySteps(["save"]);
 });
 
@@ -1668,7 +1668,7 @@ test("incomplete field requirements are discarded on save", async () => {
     `);
 
     queryOne(":iframe .s_website_form").classList.add("o_dirty");
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
 });
 
 test("only known model fields are whitelisted on save", async () => {
@@ -1700,7 +1700,7 @@ test("only known model fields are whitelisted on save", async () => {
     `);
 
     queryOne(":iframe .s_website_form").classList.add("o_dirty");
-    await contains(".o-snippets-top-actions button:contains(Save)").click();
+    await contains(".w-snippets-top-actions button:contains(Save)").click();
     expect(whitelistCalls.length).toBeGreaterThan(0);
     for (const names of whitelistCalls) {
         expect(names).toEqual(["email_from"]);
@@ -1746,7 +1746,7 @@ test("change action of form to a model without registered fields adds the model'
 
     await contains(":iframe section").click();
     await contains(".hb-row[data-label='Action'] button").click();
-    await contains("div.o-dropdown-item:contains('Create a Custom Record')").click();
+    await contains("div.w-dropdown-item:contains('Create a Custom Record')").click();
 
     expect(":iframe form").toHaveAttribute("data-model_name", "x_custom.model");
     // Only the fields required by the model are added, flagged as
@@ -1854,7 +1854,7 @@ test("field added by the form action is displayed as a dropdown when it has more
 
     await contains(":iframe section").click();
     await contains(".hb-row[data-label='Action'] button").click();
-    await contains("div.o-dropdown-item:contains('Apply for a Job')").click();
+    await contains("div.w-dropdown-item:contains('Apply for a Job')").click();
 
     // Five options or less: the selection keeps its radio buttons.
     expect(":iframe .s_website_form_field[data-type='selection']").toHaveCount(1);
@@ -1931,7 +1931,7 @@ test("No 'Labels Position' option when the form has no field", async () => {
     expect(".hb-row[data-label='Labels Position']").toHaveCount(1);
 
     await contains(".hb-row[data-label='Action'] button").click();
-    await contains("div.o-dropdown-item:contains('Create a Customer')").click();
+    await contains("div.w-dropdown-item:contains('Create a Customer')").click();
     await animationFrame();
 
     expect(":iframe form .s_website_form_field").toHaveCount(0);

@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_authorize/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgid "Code"
 msgstr "Código"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_provider.py:0
 msgid ""
 "Could not fetch merchant details:\n"
@@ -154,13 +154,13 @@ msgstr ""
 "%s"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/authorize_request.py:0
 msgid "Could not retrieve the transaction details."
 msgstr "Não foi possível recuperar os detalhes da transação."
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_transaction.py:0
 msgid ""
 "Could not retrieve the transaction details. (error code: %(error_code)s; "
@@ -192,7 +192,7 @@ msgid "Expiration"
 msgstr "Expiração"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_provider.py:0
 msgid ""
 "Failed to authenticate.\n"
@@ -239,7 +239,7 @@ msgid "Name On Account"
 msgstr "Nome na conta"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_provider.py:0
 msgid "Only one currency can be selected by Authorize.Net account."
 msgstr "Só é possível selecionar uma moeda por conta do Authorize.Net."
@@ -265,7 +265,7 @@ msgid "Payment Transaction"
 msgstr "Transação do Pagamento"
 
 #. module: payment_authorize
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/payment_authorize/static/src/interactions/payment_form.js:0
 msgid "Payment processing failed"
 msgstr "Falha no processamento do pagamento"
@@ -286,7 +286,7 @@ msgid "Re-generate Your Webhook"
 msgstr "Regenerar seu Webhook"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_transaction.py:0
 msgid ""
 "Received data with status code \"%(status)s\" and error code \"%(error)s\"."
@@ -295,7 +295,7 @@ msgstr ""
 "(error)s\""
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/controllers/main.py:0
 msgid "Received tampered payment request data."
 msgstr "Dados da solicitação de pagamento recebidos alterados."
@@ -318,10 +318,10 @@ msgstr "O ID usado exclusivamente para identificar a conta com o Authorize.Net"
 #. module: payment_authorize
 #: model:ir.model.fields,help:payment_authorize.field_payment_provider__authorize_client_key
 msgid ""
-"The public client key. To generate directly from Odoo or from Authorize.Net "
+"The public client key. To generate directly from WETH or from Authorize.Net "
 "backend."
 msgstr ""
-"A chave pública do cliente para gerar diretamente pelo Odoo ou pelo back-end "
+"A chave pública do cliente para gerar diretamente pelo WETH ou pelo back-end "
 "do Authorize.Net."
 
 #. module: payment_authorize
@@ -330,7 +330,7 @@ msgid "The technical code of this payment provider."
 msgstr "O código técnico deste provedor de pagamento."
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_transaction.py:0
 msgid ""
 "The transaction is not in a status to be refunded. (status: %(status)s, "
@@ -349,7 +349,7 @@ msgstr ""
 "Authorize.Net."
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/controllers/main.py:0
 msgid "Transaction not found."
 msgstr "Transação não encontrada."
@@ -370,7 +370,7 @@ msgid "YY"
 msgstr "AA"
 
 #. module: payment_authorize
-#. odoo-python
+#. weth-python
 #: code:addons/payment_authorize/models/payment_provider.py:0
 msgid "Your Authorize.Net webhook was successfully set up!"
 msgstr "Seu webhook do Authorize.Net foi configurado com sucesso!"

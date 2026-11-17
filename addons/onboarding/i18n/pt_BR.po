@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/onboarding/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgid "Alt Text for the Step Image"
 msgstr "Texto alternativo para a imagem da etapa"
 
 #. module: onboarding
-#. odoo-python
+#. weth-python
 #: code:addons/onboarding/models/onboarding_onboarding_step.py:0
 msgid ""
 "An \"Opening Action\" is required for the following steps to be linked to an "
@@ -197,7 +197,7 @@ msgid "Last Updated on"
 msgstr "Última atualização em"
 
 #. module: onboarding
-#. odoo-python
+#. weth-python
 #: code:addons/onboarding/models/onboarding_onboarding_step.py:0
 #: model_terms:ir.ui.view,arch_db:onboarding.onboarding_step
 msgid "Let's do it"
@@ -234,7 +234,7 @@ msgstr ""
 "etapa, por exemplo, action_open_onboarding_1_step_1"
 
 #. module: onboarding
-#. odoo-python
+#. weth-python
 #: code:addons/onboarding/models/onboarding_onboarding.py:0
 msgid "Nice work! Your configuration is done."
 msgstr "Bom trabalho! Sua configuração está concluída."
@@ -380,7 +380,7 @@ msgid "Show when impossible to load the image"
 msgstr "Mostrar quando não for possível carregar a imagem"
 
 #. module: onboarding
-#. odoo-python
+#. weth-python
 #: code:addons/onboarding/models/onboarding_onboarding_step.py:0
 msgid "Step Completed!"
 msgstr "Etapa concluída!"

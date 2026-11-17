@@ -20,7 +20,7 @@ export class AccountJournalDashboardGraphField extends JournalDashboardGraphFiel
     }
 
     getMonthlyTotalChartConfig() {
-        const totalColor = getColor(2, colorScheme, "odoo");
+        const totalColor = getColor(2, colorScheme, "weth");
 
         return {
             type: "bar",

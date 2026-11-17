@@ -87,7 +87,7 @@ def _wkhtml() -> WkhtmlInfo:
                 dpi_zoom_ratio = True
 
             if config['workers'] == 1:
-                _logger.info('You need to start Odoo with at least two workers to print a pdf version of the reports.')
+                _logger.info('You need to start WETH with at least two workers to print a pdf version of the reports.')
                 state = 'workers'
         else:
             _logger.info('Wkhtmltopdf seems to be broken.')
@@ -109,7 +109,7 @@ def _wkhtml() -> WkhtmlInfo:
         if match:
             wkhtmltoimage_version = parse_version(match.group(0).decode('ascii'))
             if config['workers'] == 1:
-                _logger.info('You need to start Odoo with at least two workers to convert images to html.')
+                _logger.info('You need to start WETH with at least two workers to convert images to html.')
         else:
             _logger.info('Wkhtmltoimage seems to be broken.')
 

@@ -15,39 +15,37 @@ $cyan: #17a2b8 !default;
 //End Restore BS4 Colors
 
 // All of those are BS default
-$white:    $o-white !default;
-$gray-100: $o-gray-100 !default;
-$gray-200: $o-gray-200 !default;
-$gray-300: $o-gray-300 !default;
-$gray-400: $o-gray-400 !default;
-$gray-500: $o-gray-500 !default;
-$gray-600: $o-gray-600 !default;
-$gray-700: $o-gray-700 !default;
-$gray-800: $o-gray-800 !default;
-$gray-900: $o-gray-900 !default;
+$white: $w-white !default;
+$gray-100: $w-gray-100 !default;
+$gray-200: $w-gray-200 !default;
+$gray-300: $w-gray-300 !default;
+$gray-400: $w-gray-400 !default;
+$gray-500: $w-gray-500 !default;
+$gray-600: $w-gray-600 !default;
+$gray-700: $w-gray-700 !default;
+$gray-800: $w-gray-800 !default;
+$gray-900: $w-gray-900 !default;
 
-$black:    $o-black !default;
+$black: $w-black !default;
 
-$primary: $o-brand-primary !default;
+$primary: $w-brand-primary !default;
 $secondary: $gray-300 !default;
-$light: $o-gray-100 !default;
-$dark: $o-gray-900 !default;
+$light: $w-gray-100 !default;
+$dark: $w-gray-900 !default;
 
-$success: $o-success !default;
-$info: $o-info !default;
-$warning: $o-warning !default;
-$danger: $o-danger !default;
+$success: $w-success !default;
+$info: $w-info !default;
+$warning: $w-warning !default;
+$danger: $w-danger !default;
 
-$theme-colors: map-merge((
-    "primary":    $primary,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
-), $o-colors-ui) !default;
+$theme-colors: map-merge(("primary": $primary,
+            "secondary": $secondary,
+            "success": $success,
+            "info": $info,
+            "warning": $warning,
+            "danger": $danger,
+            "light": $light,
+            "dark": $dark), $w-colors-ui) !default;
 
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
@@ -72,20 +70,20 @@ $enable-cssgrid: true !default;
 $enable-dark-mode: false !default;
 
 // Spacing
-$spacer: $o-spacer !default;
+$spacer: $w-spacer !default;
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg: $o-webclient-background-color !default;
-$body-color: $o-main-text-color !default;
+$body-bg: $w-webclient-background-color !default;
+$body-color: $w-main-text-color !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color: $o-main-link-color !default;
+$link-color: $w-main-link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: none !default;
 $link-shade-percentage: 30% !default;
@@ -94,35 +92,35 @@ $link-shade-percentage: 30% !default;
 //
 // Style .text-muted elements
 
-$text-muted: $o-main-color-muted !default;
+$text-muted: $w-main-color-muted !default;
 
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-gutter-width: $o-horizontal-padding * 2 !default;
+$grid-gutter-width: $w-horizontal-padding * 2 !default;
 
 // Components
 //
 // Define common padding and border radius sizes and more.
 
-$border-color: $o-border-color !default;
+$border-color: $w-border-color !default;
 
-$border-radius: $o-border-radius !default;
-$border-radius-sm: $o-border-radius-sm !default;
-$border-radius-lg: $o-border-radius-lg !default;
-$border-radius-xl: $o-border-radius-xl !default;
+$border-radius: $w-border-radius !default;
+$border-radius-sm: $w-border-radius-sm !default;
+$border-radius-lg: $w-border-radius-lg !default;
+$border-radius-xl: $w-border-radius-xl !default;
 
-$component-active-color: $o-component-active-color !default;
-$component-active-bg: $o-component-active-bg !default;
+$component-active-color: $w-component-active-color !default;
+$component-active-bg: $w-component-active-bg !default;
 
 $caret-width: 4px !default;
 
 $focus-ring-width: .25rem !default;
 $focus-ring-opacity: .5 !default;
-$focus-ring-color: rgba($o-component-active-border, $focus-ring-opacity) !default;
+$focus-ring-color: rgba($w-component-active-border, $focus-ring-opacity) !default;
 $focus-ring-blur: 0 !default;
-$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width * .5 $o-component-active-border, 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width * .5 $w-component-active-border, 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
 
 // Typography
 //
@@ -130,18 +128,18 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width * .5 $o-component
 
 // Desired weights, not necessarily matching the final result on screen.
 // Check primary_variables.scss for more info.
-$font-weight-normal: $o-font-weight-normal !default;
-$font-weight-bold: $o-font-weight-medium !default;
+$font-weight-normal: $w-font-weight-normal !default;
+$font-weight-bold: $w-font-weight-medium !default;
 
-$font-family-sans-serif: $o-font-family-sans-serif !default;
+$font-family-sans-serif: $w-font-family-sans-serif !default;
 
-$font-size-base: $o-font-size-base !default;
-$font-size-sm: $o-font-size-base-small !default;
+$font-size-base: $w-font-size-base !default;
+$font-size-sm: $w-font-size-base-small !default;
 $small-font-size: $font-size-sm !default;
 
-$line-height-base: $o-line-height-base !default;
-$line-height-sm: $o-line-height-sm !default;
-$line-height-lg: $o-line-height-lg !default;
+$line-height-base: $w-line-height-base !default;
+$line-height-sm: $w-line-height-sm !default;
+$line-height-lg: $w-line-height-lg !default;
 
 $h1-font-size: $font-size-base * 2.0 !default;
 $h2-font-size: $font-size-base * 1.5 !default;
@@ -149,9 +147,9 @@ $h3-font-size: $font-size-base * 1.3 !default;
 $h4-font-size: $font-size-base * 1.2 !default;
 $h5-font-size: $font-size-base * 1.1 !default;
 
-$headings-font-family: $o-headings-font-family !default;
+$headings-font-family: $w-headings-font-family !default;
 $headings-font-weight: $font-weight-bold !default;
-$headings-color: $o-main-headings-color !default;
+$headings-color: $w-main-headings-color !default;
 
 // Tables
 //
@@ -165,8 +163,8 @@ $table-border-color: $border-color !default;
 $table-group-separator-color: $gray-200 !default;
 $table-cell-padding-x: .75rem !default;
 $table-cell-padding-y: .75rem !default;
-$table-cell-padding-x-sm: $o-table-cell-padding-x-sm !default;
-$table-cell-padding-y-sm: $o-table-cell-padding-y-sm !default;
+$table-cell-padding-x-sm: $w-table-cell-padding-x-sm !default;
+$table-cell-padding-y-sm: $w-table-cell-padding-y-sm !default;
 $table-striped-order: even !default;
 
 $table-active-bg-factor: .05 !default;
@@ -191,7 +189,7 @@ $input-btn-padding-x-lg: o-to-rem(12) !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 $btn-font-weight: $font-weight-bold !default;
-$btn-disabled-opacity: $o-opacity-disabled !default;
+$btn-disabled-opacity: $w-opacity-disabled !default;
 $btn-border-radius-lg: $border-radius !default;
 
 // Dropdowns
@@ -200,30 +198,30 @@ $btn-border-radius-lg: $border-radius !default;
 
 $dropdown-border-color: $border-color !default;
 
-$dropdown-link-color: $o-main-text-color !default;
+$dropdown-link-color: $w-main-text-color !default;
 $dropdown-link-hover-color: $black !default;
 $dropdown-link-hover-bg: rgba($black, 0.08) !default;
 
 $dropdown-link-active-color: $black !default;
 $dropdown-link-active-bg: transparent !default;
 
-$dropdown-link-disabled-color: $o-main-color-muted !default;
+$dropdown-link-disabled-color: $w-main-color-muted !default;
 
-$dropdown-item-padding-y: $o-dropdown-vpadding !default;
-$dropdown-item-padding-x: $o-dropdown-hpadding !default;
+$dropdown-item-padding-y: $w-dropdown-vpadding !default;
+$dropdown-item-padding-x: $w-dropdown-hpadding !default;
 
 // List group
 
-$list-group-bg: $o-view-background-color !default;
+$list-group-bg: $w-view-background-color !default;
 $list-group-hover-bg: $dropdown-link-hover-bg !default;
 
-$list-group-active-color: $o-list-group-active-color !default;
-$list-group-active-bg: $o-list-group-active-bg !default;
+$list-group-active-color: $w-list-group-active-color !default;
+$list-group-active-bg: $w-list-group-active-bg !default;
 $list-group-action-hover-color: $gray-900 !default;
 
 // Breadcrumbs
 
-$breadcrumb-item-padding-x: $o-breadcrumb-item-padding-x !default;
+$breadcrumb-item-padding-x: $w-breadcrumb-item-padding-x !default;
 
 // Z-index master list
 
@@ -233,7 +231,7 @@ $breadcrumb-item-padding-x: $o-breadcrumb-item-padding-x !default;
 // Indeed, bootstrap forces them to a lower z-index as the modal-backdrop
 // element (unique in their supported cases) might be put after the modal
 // element (if the modal is already in the DOM, hidden, then opened). This
-// cannot happen in odoo though as modals are not hidden but removed from
+// cannot happen in weth though as modals are not hidden but removed from
 // the DOM and are always put at the end of the body when opened.
 //
 // TODO the following code was disabled because it is saas-incompatible
@@ -246,13 +244,13 @@ $nav-tabs-link-active-bg: $white !default;
 
 $nav-pills-border-radius: 0 !default;
 $nav-pills-link-active-color: $white !default;
-$nav-pills-link-active-bg: $o-brand-primary !default;
+$nav-pills-link-active-bg: $w-brand-primary !default;
 
 // Tooltips
 
 $tooltip-font-size: $font-size-sm !default;
 $tooltip-max-width: 400px !default;
-$tooltip-color: $o-gray-200 !default;
+$tooltip-color: $w-gray-200 !default;
 $tooltip-opacity: 1 !default;
 $tooltip-border-radius: calc(var(--popover-border-radius) - var(--popover-border-width)) !default;
 
@@ -276,17 +274,17 @@ $toast-header-background-color: $toast-background-color !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding: $o-horizontal-padding !default;
+$modal-inner-padding: $w-horizontal-padding !default;
 $modal-footer-margin-between: 1px !default;
 
-$modal-lg: $o-modal-lg !default;
-$modal-md: $o-modal-md !default;
-$modal-sm: $o-modal-sm !default;
+$modal-lg: $w-modal-lg !default;
+$modal-md: $w-modal-md !default;
+$modal-sm: $w-modal-sm !default;
 
 $modal-backdrop-opacity: .25 !default;
 
 $modal-content-border-radius: $border-radius-lg !default;
-$modal-content-bg: $o-view-background-color !default;
+$modal-content-bg: $w-view-background-color !default;
 
 $modal-scale-transform: none !default;
 
@@ -296,34 +294,34 @@ $breadcrumb-padding-y: 0 !default;
 $breadcrumb-padding-x: 0 !default;
 $breadcrumb-margin-bottom: 0 !default;
 
-$breadcrumb-bg: $o-control-panel-background-color !default;
+$breadcrumb-bg: $w-control-panel-background-color !default;
 
 // Code
 
-$code-color: $o-main-code-color!default;
+$code-color: $w-main-code-color !default;
 
 // User input typically entered via keyboard
 
-$kbd-color: $o-gray-700 !default;
-$kbd-bg: $o-gray-100 !default;
-$kbd-box-shadow: 0px 1px 1px rgba($o-black, 0.2), inset 0px -1px 1px 1px rgba($o-gray-200, 0.8), inset 0px 2px 0px 0px rgba($o-white, 0.8) !default;
+$kbd-color: $w-gray-700 !default;
+$kbd-bg: $w-gray-100 !default;
+$kbd-box-shadow: 0px 1px 1px rgba($w-black, 0.2), inset 0px -1px 1px 1px rgba($w-gray-200, 0.8), inset 0px 2px 0px 0px rgba($w-white, 0.8) !default;
 
 // Input
-$input-bg: $o-input-bg !default;
-$input-focus-border-color: $o-brand-primary !default;
-$form-check-input-border: 1px solid $o-form-check-input-border-color !default;
-$form-check-input-checked-color: $o-brand-lightsecondary !default;
-$form-check-input-checked-border-color: $o-brand-primary !default;
-$form-check-input-checked-bg-color: $o-brand-primary !default;
-$form-check-input-indeterminate-color: $o-brand-lightsecondary !default;
-$form-check-input-indeterminate-border-color: $o-brand-primary !default;
-$form-check-input-indeterminate-bg-color: $o-brand-primary !default;
-$form-check-input-focus-box-shadow: 0 0 0 .25rem rgba($o-action, .25) !default;
+$input-bg: $w-input-bg !default;
+$input-focus-border-color: $w-brand-primary !default;
+$form-check-input-border: 1px solid $w-form-check-input-border-color !default;
+$form-check-input-checked-color: $w-brand-lightsecondary !default;
+$form-check-input-checked-border-color: $w-brand-primary !default;
+$form-check-input-checked-bg-color: $w-brand-primary !default;
+$form-check-input-indeterminate-color: $w-brand-lightsecondary !default;
+$form-check-input-indeterminate-border-color: $w-brand-primary !default;
+$form-check-input-indeterminate-bg-color: $w-brand-primary !default;
+$form-check-input-focus-box-shadow: 0 0 0 .25rem rgba($w-action, .25) !default;
 $form-switch-checked-color: $white !default;
-$form-switch-focus-color: mix($o-success, $input-bg) !default;
+$form-switch-focus-color: mix($w-success, $input-bg) !default;
 
 $form-range-thumb-bg: $primary !default;
-$form-range-thumb-focus-box-shadow: 0 0 0 1px $o-brand-primary !default;
+$form-range-thumb-focus-box-shadow: 0 0 0 1px $w-brand-primary !default;
 
 // Badge
 $badge-color: inherit !default;
@@ -334,6 +332,6 @@ $badge-padding-x: 0.82em !default;
 $input-placeholder-color: mix($gray-400, $gray-500) !default;
 
 // Card
-$card-bg: $o-view-background-color !default;
+$card-bg: $w-view-background-color !default;
 $card-spacer-y: $spacer !default; // BS Default
 $card-cap-padding-y: $card-spacer-y !default;

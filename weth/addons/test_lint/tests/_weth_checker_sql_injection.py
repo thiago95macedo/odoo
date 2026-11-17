@@ -49,7 +49,7 @@ def parse_version(s):
     # inside pylint on runbot
     return [s.rjust(3, '0') for s in s.split('.')]
 
-class OdooBaseChecker(BaseChecker):
+class WethBaseChecker(BaseChecker):
     # `test_printf` fails if this is not set in 2.5 (???), but it's deprecated
     # in 2.14, so make conditional
     if parse_version(pylint.__version__) < parse_version('2.14.0'):
@@ -327,7 +327,7 @@ class OdooBaseChecker(BaseChecker):
         return node
 
     def _check_sql_injection_risky(self, node):
-        # Inspired from OCA/pylint-odoo project
+        # Inspired from OCA/pylint-weth project
         # Thanks @moylop260 (Moisés López) & @nilshamerlinck (Nils Hamerlinck)
         current_file_bname = os.path.basename(self.linter.current_file)
         if not (
@@ -389,4 +389,4 @@ class OdooBaseChecker(BaseChecker):
 
 
 def register(linter):
-    linter.register_checker(OdooBaseChecker(linter))
+    linter.register_checker(WethBaseChecker(linter))

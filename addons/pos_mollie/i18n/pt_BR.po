@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_mollie/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,13 @@ msgid "Display Name"
 msgstr "Nome de exibição"
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "Failed to initiate payment: %s"
 msgstr "Falha ao iniciar o pagamento: %s"
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "Failed to initiate refund: %s"
 msgstr "Falha ao iniciar o reembolso: %s"
@@ -54,7 +54,7 @@ msgid "Mollie"
 msgstr "Mollie"
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "Mollie Error"
 msgstr "Erro Mollie"
@@ -70,7 +70,7 @@ msgid "Mollie Terminal ID"
 msgstr "ID do terminal Mollie"
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "No internet connection. Waiting for recovery to confirm the payment..."
 msgstr ""
@@ -83,7 +83,7 @@ msgid "POS Mollie"
 msgstr "PDV Mollie"
 
 #. module: pos_mollie
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mollie/models/pos_payment_method.py:0
 msgid ""
 "Please set the API key on the Mollie payment provider before making a "
@@ -98,25 +98,25 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento no Ponto de Venda"
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "The payment failed for an unknown reason."
 msgstr "O pagamento falhou por um motivo desconhecido."
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "The payment has timed out."
 msgstr "O prazo para o pagamento expirou."
 
 #. module: pos_mollie
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_mollie/static/src/payment_mollie.js:0
 msgid "You can only refund an order that was paid for with Mollie."
 msgstr "Você só pode reembolsar um pedido que tenha sido pago com Mollie."
 
 #. module: pos_mollie
-#. odoo-python
+#. weth-python
 #: code:addons/pos_mollie/models/pos_payment_method.py:0
 msgid "You do not have the necessary permissions to access this payment."
 msgstr "Você não tem as permissões necessárias para acessar este pagamento."

@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 13:49+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_event_track_live_quiz/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "vivo\". "
 
 #. module: website_event_track_live_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live_quiz/static/src/xml/website_event_track_quiz_templates.xml:0
 msgid "Next Track"
 msgstr "Próxima sessão"
@@ -42,7 +42,7 @@ msgid "Quiz on Live Event Tracks"
 msgstr "Questionário sobre sessões de eventos ao vivo"
 
 #. module: website_event_track_live_quiz
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_track_live_quiz/static/src/xml/website_event_track_live_templates.xml:0
 msgid "Take the Quiz"
 msgstr "Responda ao questionário"

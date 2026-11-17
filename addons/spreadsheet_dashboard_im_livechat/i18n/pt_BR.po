@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/spreadsheet_dashboard_im_livechat/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -23,93 +23,93 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Agent"
 msgstr "Agente"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Agents"
 msgstr "Agentes"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Avg. Rating"
 msgstr "Avaliação média"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Avg. number of messages"
 msgstr "Número médio de mensagens"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Avg. session duration"
 msgstr "Duração média da sessão"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Avg. time to respond"
 msgstr "Tempo médio de resposta"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Call Duration"
 msgstr "Duração da chamada"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_ongoing_dashboard.json:0
 msgid "Calls"
 msgstr "Chamadas"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Calls by Agents"
 msgstr "Ligações de agentes"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Channels"
 msgstr "Canais"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_ongoing_dashboard.json:0
 msgid "Chart"
 msgstr "Gráficos"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Countries"
 msgstr "Países"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Current"
 msgstr "Atual"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -123,14 +123,14 @@ msgid "Escalated Sessions"
 msgstr "Sessões escalonadas"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Expertises"
 msgstr "Especialidades"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -139,7 +139,7 @@ msgid "Handled by Agent"
 msgstr "Tratado pelo agente"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -148,14 +148,14 @@ msgid "Handled by Bot"
 msgstr "Manipulado pelo bot"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "KPI"
 msgstr "KPI"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Languages"
@@ -172,33 +172,33 @@ msgid "Live Chat - Ongoing Sessions"
 msgstr "Chat ao vivo - Sessões em andamento"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Map"
 msgstr "Mapa"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Messages per Session"
 msgstr "Mensagens por sessão"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Messages per session"
 msgstr "Mensagens por sessão"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "No One Available"
 msgstr "Ninguém disponível"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Not Answered"
@@ -210,7 +210,7 @@ msgid "Ongoing Call Sessions"
 msgstr "Sessões de ligações em andamento"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_ongoing_dashboard.json:0
 #: model:ir.ui.menu,name:spreadsheet_dashboard_im_livechat.ongoing_session_all_menu
@@ -218,39 +218,39 @@ msgid "Ongoing Sessions"
 msgstr "Sessões em andamento"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Period"
 msgstr "Período"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Previous"
 msgstr "Anterior"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Rating (%)"
 msgstr "Classificação (%)"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Session Duration"
 msgstr "Duração da sessão"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Session Duration (min)"
 msgstr "Duração da sessão (min)"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 #: model:ir.actions.act_window,name:spreadsheet_dashboard_im_livechat.ongoing_sessions_agents_in_call_action
@@ -272,45 +272,45 @@ msgid "Sessions Handled by Bot"
 msgstr "Sessões tratadas pelo bot"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Sessions by Agent"
 msgstr "Sessões por agente"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Sessions by Day"
 msgstr "Sessões por dia"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Sessions by Day of Week"
 msgstr "Sessões por dia da semana"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Sessions by Hour of Day"
 msgstr "Sessões por hora do dia"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 msgid "Sessions by Minute"
 msgstr "Sessões por minuto"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Sessions with Calls (#)"
 msgstr "Sessões com chamadas (#)"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Sessions with Calls (%)"
@@ -328,27 +328,27 @@ msgid "Spreadsheet dashboard for live chat"
 msgstr "Painel de planilhas para chat ao vivo"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Time to Respond"
 msgstr "Tempo para responder"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 msgid "Time to Respond (sec)"
 msgstr "Tempo de resposta (segundos)"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_ongoing_dashboard.json:0
 msgid "Top"
 msgstr "Topo"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -357,7 +357,7 @@ msgid "Top Agents"
 msgstr "Principais agentes"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -366,7 +366,7 @@ msgid "Top Chatbot Answers"
 msgstr "Principais respostas do Chatbot"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -374,21 +374,21 @@ msgid "Top Countries"
 msgstr "Principais países"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_ongoing_dashboard.json:0
 msgid "Top Expertise"
 msgstr "Principais conhecimentos"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "Top Expertises"
 msgstr "Principais especialidades"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_ongoing_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
@@ -397,14 +397,14 @@ msgid "Top Languages"
 msgstr "Principais idiomas"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "last period"
 msgstr "período anterior"
 
 #. module: spreadsheet_dashboard_im_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_im_livechat/data/files/livechat_sample_dashboard.json:0
 msgid "since last period"

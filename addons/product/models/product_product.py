@@ -1011,7 +1011,7 @@ class ProductProduct(models.Model):
         For convenience the template is copied instead and its first variant is
         returned.
         """
-        # copy variant is disabled in https://github.com/weth/odoo/pull/38303
+        # copy variant is disabled in https://github.com/weth/weth/pull/38303
         # this returns the first possible combination of variant to make it
         # works for now, need to be fixed to return product_variant_id if it's
         # possible in the future

@@ -17,7 +17,7 @@ patch(Message.prototype, {
             return;
         }
         super.prepareMessageBody(...arguments);
-        Array.from(bodyEl.querySelectorAll(".o-mail-ellipsis")).forEach((el) => el.remove());
+        Array.from(bodyEl.querySelectorAll(".w-mail-ellipsis")).forEach((el) => el.remove());
         this.insertEllipsisbtn(bodyEl);
     },
 

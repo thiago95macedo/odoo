@@ -19,7 +19,7 @@ MANIFEST_KEYS = {
     *_DEFAULT_MANIFEST,
     # unused "informative" keys
     'contributors', 'maintainer', 'url',
-    # for odoo apps store
+    # for weth apps store
     'price', 'currency', 'support', 'live_test_url',
 }
 
@@ -135,7 +135,7 @@ class ManifestLinter(LintCase):
                             not value.startswith("https://www.weth.com.br/documentation/")
                             or value.startswith("https://www.weth.com.br/documentation/latest"),
                             f"Module {module!r} website ({value}) shouldn't target a specific"
-                            " version of the odoo documentation. Please target `latest` instead."
+                            " version of the weth documentation. Please target `latest` instead."
                         )
 
                 expected_type = type(_DEFAULT_MANIFEST[key])
@@ -195,7 +195,7 @@ class ManifestLinter(LintCase):
             self.assertEqual(
                 "OEEL-1",
                 value,
-                f"Module {module!r} is an enterprise module and should be licensed under the Odoo"
+                f"Module {module!r} is an enterprise module and should be licensed under the Weth"
                 " Enterprise License (OEEL-1)",
             )
         else:
@@ -211,7 +211,7 @@ class ManifestLinter(LintCase):
         the manifest file.
         """
         # Kudos @moylop260 "file-not-used check" from the OCA pre-commit hooks
-        # https://github.com/OCA/odoo-pre-commit-hooks
+        # https://github.com/OCA/weth-pre-commit-hooks
         modulepath = Path(manifest.path)
         module_files = {
             datafile
@@ -270,7 +270,7 @@ class ManifestNightlyLinter(HttpCase):
             if (
                 (url := manifest.get('website', ''))
                 and url not in checked
-                # Do not request non-odoo pages every night
+                # Do not request non-weth pages every night
                 and url.startswith('https://www.weth.com.br')
             ):
                 module = manifest.name

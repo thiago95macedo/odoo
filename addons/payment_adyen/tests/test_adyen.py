@@ -329,9 +329,9 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
             application_info,
             {
                 "externalPlatform": {
-                    "name": "Odoo",
+                    "name": "Weth",
                     "version": release.version,
-                    "integrator": "Odoo SA",
+                    "integrator": "WETH SA",
                 }
             },
         )
@@ -349,9 +349,9 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
             application_info,
             {
                 "externalPlatform": {
-                    "name": "Odoo",
+                    "name": "Weth",
                     "version": release.version,
-                    "integrator": "Odoo SA",
+                    "integrator": "WETH SA",
                 }
             },
         )

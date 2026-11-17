@@ -1,7 +1,8 @@
-div.o_field_timesheet_uom > button.o_field_float_toggle {
+div.w_field_timesheet_uom>button.w_field_float_toggle {
     width: 50px !important;
 }
 
-.o_list_view .o_timesheet_uom_cell, .o_timesheet_uom_cell .o_list_number_th {
+.w_list_view .w_timesheet_uom_cell,
+.w_timesheet_uom_cell .w_list_number_th {
     text-align: left !important;
 }

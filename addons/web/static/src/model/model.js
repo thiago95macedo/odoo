@@ -18,7 +18,7 @@ import {
 } from "@weth/owl";
 
 /**
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  * @typedef {import("@web/search/search_model").SearchParams} SearchParams
  * @typedef {import("services").ServiceFactories} Services
  *
@@ -36,7 +36,7 @@ export class Model {
     static services = [];
 
     /**
-     * @param {OdooEnv} env
+     * @param {WethEnv} env
      * @param {SearchParams} params
      * @param {Services} services
      */

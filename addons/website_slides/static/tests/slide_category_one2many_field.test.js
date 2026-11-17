@@ -61,13 +61,13 @@ test("basic rendering", async () => {
                 </field>
             </form>`,
     });
-    expect(".o_field_x2many .o_list_renderer table.o_section_list_view").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(2);
-    expect(".o_data_row:eq(0)").toHaveClass("o_is_section fw-bold");
-    expect(".o_data_row:eq(0)").toHaveText("firstSectionTitle");
-    expect(".o_data_row:eq(1)").toHaveText("recordTitle recordName 5");
-    expect(".o_data_row:eq(0) td[name=name]:nth-child(1)").toHaveAttribute("colspan", "3");
-    expect(".o_data_row:eq(1) td[name=name]:nth-child(1)").not.toHaveAttribute("colspan");
+    expect(".w_field_x2many .w_list_renderer table.w_section_list_view").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(2);
+    expect(".w_data_row:eq(0)").toHaveClass("o_is_section fw-bold");
+    expect(".w_data_row:eq(0)").toHaveText("firstSectionTitle");
+    expect(".w_data_row:eq(1)").toHaveText("recordTitle recordName 5");
+    expect(".w_data_row:eq(0) td[name=name]:nth-child(1)").toHaveAttribute("colspan", "3");
+    expect(".w_data_row:eq(1) td[name=name]:nth-child(1)").not.toHaveAttribute("colspan");
 });
 
 test("click on section behaves as usual in readonly mode", async () => {
@@ -86,10 +86,10 @@ test("click on section behaves as usual in readonly mode", async () => {
             </form>`,
         readonly: true,
     });
-    await click(".o_data_cell:nth-child(1)");
-    await waitFor(".modal .o_form_view");
-    expect(".modal .o_form_view").toHaveCount(1);
-    expect(".o_selected_row").toHaveCount(0);
+    await click(".w_data_cell:nth-child(1)");
+    await waitFor(".modal .w_form_view");
+    expect(".modal .w_form_view").toHaveCount(1);
+    expect(".w_selected_row").toHaveCount(0);
 });
 
 test("click on section edit the section in place", async () => {
@@ -107,10 +107,10 @@ test("click on section edit the section in place", async () => {
                 </field>
             </form>`,
     });
-    await click(".o_data_cell:nth-child(1)");
-    await waitFor(".o_is_section.o_selected_row");
-    expect(".o_is_section.o_selected_row").toHaveCount(1);
-    expect(".modal .o_form_view").toHaveCount(0);
+    await click(".w_data_cell:nth-child(1)");
+    await waitFor(".w_is_section.w_selected_row");
+    expect(".w_is_section.w_selected_row").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(0);
 });
 
 test("click on real line opens a dialog", async () => {
@@ -128,9 +128,9 @@ test("click on real line opens a dialog", async () => {
                 </field>
             </form>`,
     });
-    await click(".o_data_row:nth-child(2) .o_data_cell:nth-child(1)");
-    await waitFor(".modal .o_form_view");
-    expect(".modal .o_form_view").toHaveCount(1);
+    await click(".w_data_row:nth-child(2) .w_data_cell:nth-child(1)");
+    await waitFor(".modal .w_form_view");
+    expect(".modal .w_form_view").toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -153,12 +153,12 @@ test("can create section inline", async () => {
                 </field>
             </form>`,
     });
-    expect(".o_selected_row.o_is_section").toHaveCount(0);
+    expect(".w_selected_row.w_is_section").toHaveCount(0);
 
-    await click(".o_field_x2many_list_row_add button:nth-child(2)");
-    await waitFor(".o_selected_row.o_is_section");
-    expect(".o_selected_row.o_is_section").toHaveCount(1);
-    expect(".modal .o_form_view").toHaveCount(0);
+    await click(".w_field_x2many_list_row_add button:nth-child(2)");
+    await waitFor(".w_selected_row.w_is_section");
+    expect(".w_selected_row.w_is_section").toHaveCount(1);
+    expect(".modal .w_form_view").toHaveCount(0);
 });
 
 test("creates real record in form dialog", async () => {
@@ -181,8 +181,8 @@ test("creates real record in form dialog", async () => {
             </form>`,
     });
 
-    await click(".o_field_x2many_list_row_add button:nth-child(1)");
-    await waitFor(".modal .o_form_view");
-    expect(".o_selected_row").toHaveCount(0);
-    expect(".modal .o_form_view").toHaveCount(1);
+    await click(".w_field_x2many_list_row_add button:nth-child(1)");
+    await waitFor(".modal .w_form_view");
+    expect(".w_selected_row").toHaveCount(0);
+    expect(".modal .w_form_view").toHaveCount(1);
 });

@@ -28,7 +28,7 @@ class RazorpayController(Controller):
         """
         _logger.info("Returning from authorization with data:\n%s", pprint.pformat(data))
 
-        # Retrieve the Razorpay data and Odoo metadata from the redirect data.
+        # Retrieve the Razorpay data and WETH metadata from the redirect data.
         provider_id = int(data["provider_id"])
         authorization_code = data.get("authorization_code")
         csrf_token = data["csrf_token"]

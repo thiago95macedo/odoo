@@ -215,7 +215,7 @@ export class DiscussChannel extends Record {
         return (
             !this.isTransient &&
             this.typesAllowingCalls.includes(this.channel_type) &&
-            !this.correspondent?.persona.eq(this.store.odoobot) &&
+            !this.correspondent?.persona.eq(this.store.wethbot) &&
             !this.is_readonly
         );
     }
@@ -588,7 +588,7 @@ export class DiscussChannel extends Record {
         this._computeUnknownStatusMembers().sort((m1, m2) => this.store.sortMembers(m1, m2))
     );
 
-    _onDeleteChatWindow() {}
+    _onDeleteChatWindow() { }
 
     computeIsDisplayed() {
         return this.chatWindow?.isOpen;
@@ -755,7 +755,7 @@ export class DiscussChannel extends Record {
         }
     }
 
-    onPinStateUpdated() {}
+    onPinStateUpdated() { }
 
     /** @param {import("models").Message} message */
     onNewSelfMessage(message) {

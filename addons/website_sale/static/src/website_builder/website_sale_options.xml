@@ -5,11 +5,11 @@
     <xpath expr="//t[@id='image_options']" position="before">
         <product_image_option
             template="website_sale.ProductImageOption"
-            t-attf-selector=".o_wsale_product_images :is({{replaceMediaOptionSelector}})"
+            t-attf-selector=".w_wsale_product_images :is({{replaceMediaOptionSelector}})"
             t-att-exclude="replaceMediaOptionExclude"/>
     </xpath>
     <xpath expr="//replace_media_option" position="attributes">
-        <attribute name="t-attf-exclude" add=".o_wsale_product_images :is({{replaceMediaOptionSelector}})" separator=", "/>
+        <attribute name="t-attf-exclude" add=".w_wsale_product_images :is({{replaceMediaOptionSelector}})" separator=", "/>
     </xpath>
     <xpath expr="//image_pop_up_option" position="attributes">
         <attribute name="t-attf-exclude" add="{{tagImageSelector}}" separator=", "/>
@@ -20,7 +20,7 @@
 
     <xpath expr="//t[@id='page_options_hook']" position="after">
         <checkout_page_option
-            selector="main:has(.oe_website_sale .o_wizard)"
+            selector="main:has(.oe_website_sale .w_wizard)"
             title="Checkout"
             editableOnly="false"
             groups='["website.group_website_designer"]'/>
@@ -46,20 +46,20 @@
             editableOnly="false"/>
         <product_attribute_option
             template="website_sale.ProductAttributeOption"
-            selector="#product_detail .o_wsale_product_attribute"
+            selector="#product_detail .w_wsale_product_attribute"
             editableOnly="false"
             reloadTarget="true"
             groups='["website.group_website_designer"]'/>
         <product_header_category_option
             template="website_sale.ProductHeaderCategoryOption"
-            selector="#products_grid:has(header.o_wsale_products_header_is_category)"
+            selector="#products_grid:has(header.w_wsale_products_header_is_category)"
             title="Category Header"
             editableOnly="false"
             reloadTarget="true"
             groups='["website.group_website_designer"]'/>
         <product_header_shop_option
             template="website_sale.ProductHeaderShopOption"
-            selector="#products_grid:has(header.o_wsale_products_header_is_shop)"
+            selector="#products_grid:has(header.w_wsale_products_header_is_shop)"
             title="Shop Header"
             editableOnly="false"
             reloadTarget="true"

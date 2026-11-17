@@ -1,8 +1,7 @@
-
 #o_employee_org_chart {
     --treeEntry-padding-v: #{map-get($spacers, 2)};
-    --treeEntry--after-width: #{$o-hr-org-chart-entry-pic-small-size  * .25};
-    --treeEntry--before-top: calc(-2 * (var(--treeEntry-padding-v)) - (#{$o-hr-org-chart-entry-pic-small-size} * .5));
+    --treeEntry--after-width: #{$w-hr-org-chart-entry-pic-small-size  * .25};
+    --treeEntry--before-top: calc(-2 * (var(--treeEntry-padding-v)) - (#{$w-hr-org-chart-entry-pic-small-size} * .5));
 
     .o_org_chart_entry {
         padding-top: var(--treeEntry-padding-v);
@@ -18,20 +17,20 @@
         }
 
         &:after {
-            top: calc(#{$o-hr-org-chart-entry-pic-small-size} * .5 + var(--treeEntry-padding-v));
+            top: calc(#{$w-hr-org-chart-entry-pic-small-size} * .5 + var(--treeEntry-padding-v));
             width: var(--treeEntry--after-width);
         }
 
         .o_media_object {
-            width: $o-hr-org-chart-entry-pic-small-size;
-            height: $o-hr-org-chart-entry-pic-small-size;
+            width: $w-hr-org-chart-entry-pic-small-size;
+            height: $w-hr-org-chart-entry-pic-small-size;
             background-size: cover;
             background-position: center center;
         }
 
         &.o_org_chart_entry_self .o_media_object {
-            width: $o-hr-org-chart-entry-pic-size;
-            height: $o-hr-org-chart-entry-pic-size;
+            width: $w-hr-org-chart-entry-pic-size;
+            height: $w-hr-org-chart-entry-pic-size;
         }
 
         .o_employee_redirect:hover {
@@ -52,7 +51,7 @@
         .o_org_chart_entry {
             --treeEntry-padding-h: 0px;
             --treeEntry--after-display: none;
-            --treeEntry--beforeAfter-left: #{$o-hr-org-chart-entry-pic-small-size * .5};
+            --treeEntry--beforeAfter-left: #{$w-hr-org-chart-entry-pic-small-size * .5};
             --treeEntry--before-top: calc(var(--treeEntry-padding-v) * -1);
 
             &:before {
@@ -65,32 +64,33 @@
         }
     }
 
-    .o_org_chart_group_down .o_treeEntry, .o_org_chart_entry_self_container .o_treeEntry {
-        --treeEntry-padding-h: #{$o-hr-org-chart-entry-pic-size};
+    .o_org_chart_group_down .o_treeEntry,
+    .o_org_chart_entry_self_container .o_treeEntry {
+        --treeEntry-padding-h: #{$w-hr-org-chart-entry-pic-size};
 
         padding-left: calc(var(--treeEntry-padding-h) - var(--treeEntry--after-width));
     }
 
     .o_org_chart_entry_self_container {
         .o_treeEntry:after {
-            top: calc(#{$o-hr-org-chart-entry-pic-size} * .5 + var(--treeEntry-padding-v));
+            top: calc(#{$w-hr-org-chart-entry-pic-size} * .5 + var(--treeEntry-padding-v));
         }
 
         &.o_org_chart_has_managers {
             .o_org_chart_entry_self {
-                --treeEntry-padding-h: #{$o-hr-org-chart-entry-pic-small-size};
+                --treeEntry-padding-h: #{$w-hr-org-chart-entry-pic-small-size};
 
                 padding-left: calc(var(--treeEntry-padding-h) - var(--treeEntry--after-width));
             }
 
-            & + .o_org_chart_group_down {
-                padding-left: calc(#{$o-hr-org-chart-entry-pic-small-size} - var(--treeEntry--after-width));
+            &+.o_org_chart_group_down {
+                padding-left: calc(#{$w-hr-org-chart-entry-pic-small-size} - var(--treeEntry--after-width));
             }
         }
 
-        & + .o_org_chart_group_down {
-            --treeEntry--after-width: #{$o-hr-org-chart-entry-pic-size * .25};
-            --treeEntry-padding-h: calc(#{$o-hr-org-chart-entry-pic-size} - var(--treeEntry--after-width));
+        &+.o_org_chart_group_down {
+            --treeEntry--after-width: #{$w-hr-org-chart-entry-pic-size * .25};
+            --treeEntry-padding-h: calc(#{$w-hr-org-chart-entry-pic-size} - var(--treeEntry--after-width));
         }
     }
 }
@@ -105,7 +105,7 @@
     }
 
     .o_media_object {
-        $-media-object-size: $o-hr-org-chart-entry-pic-small-size - map-get($spacers, 2);
+        $-media-object-size: $w-hr-org-chart-entry-pic-small-size - map-get($spacers, 2);
         width: $-media-object-size;
         height: $-media-object-size;
         background-size: cover;

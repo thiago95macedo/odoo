@@ -66,7 +66,7 @@ test("upload end removes component", async () => {
     fileUploadService.upload("/test/", []);
     await animationFrame();
     expect(".file_upload").toHaveCount(0);
-    expect(".o_notification").toHaveCount(0);
+    expect(".w_notification").toHaveCount(0);
 });
 
 test("upload error removes component", async () => {
@@ -101,7 +101,7 @@ test("upload can be aborted by clicking on cross", async () => {
     const fileUploadService = await getService("file_upload");
     fileUploadService.upload("/test/", []);
     await animationFrame();
-    await contains(".o-file-upload-progress-bar-abort", { visible: false }).click();
+    await contains(".w-file-upload-progress-bar-abort", { visible: false }).click();
     await animationFrame();
     expect(".file_upload").toHaveCount(0);
 });
@@ -132,7 +132,7 @@ test("handles error", async () => {
     });
     const fileUploadService = await getService("file_upload");
     fileUploadService.upload("/test/", []);
-    await waitFor(".o_notification:has(.bg-danger):contains(An error occurred while uploading)");
+    await waitFor(".w_notification:has(.bg-danger):contains(An error occurred while uploading)");
 });
 
 test("handles http not success", async () => {
@@ -140,7 +140,7 @@ test("handles http not success", async () => {
     onRpc("/test/", () => new Response("<p>Boom HTML</p>", { status: 500 }));
     const fileUploadService = await getService("file_upload");
     fileUploadService.upload("/test/", []);
-    await waitFor(".o_notification:has(.bg-danger):contains(Boom HTML)");
+    await waitFor(".w_notification:has(.bg-danger):contains(Boom HTML)");
 });
 
 test("handles jsonrpc error", async () => {
@@ -153,20 +153,20 @@ test("handles jsonrpc error", async () => {
     }));
     const fileUploadService = await getService("file_upload");
     fileUploadService.upload("/test/", []);
-    await waitFor(".o_notification:has(.bg-danger):contains(Boom JSON)");
+    await waitFor(".w_notification:has(.bg-danger):contains(Boom JSON)");
 });
 
-test("handles Odoo's jsonrpc error", async () => {
+test("handles WETH's jsonrpc error", async () => {
     await mountWithCleanup(Parent);
     onRpc("/test/", () => ({
         error: {
             data: {
                 name: "ValidationError",
-                message: "Boom Odoo",
+                message: "Boom Weth",
             },
         },
     }));
     const fileUploadService = await getService("file_upload");
     fileUploadService.upload("/test/", []);
-    await waitFor(".o_notification:has(.bg-danger):contains(ValidationError: Boom Odoo)");
+    await waitFor(".w_notification:has(.bg-danger):contains(ValidationError: Boom Weth)");
 });

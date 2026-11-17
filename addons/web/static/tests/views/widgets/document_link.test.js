@@ -25,9 +25,9 @@ test("documentation_link: default label and icon", async () => {
             <widget name="documentation_link" path="/this_is_a_test.html"/>
         </form>`,
     });
-    expect(".o_doc_link").toHaveText("View Documentation");
+    expect(".w_doc_link").toHaveText("View Documentation");
     expect("a.alert-link").toHaveCount(0);
-    expect(".o_doc_link [data-icon='open_in_new']").toHaveCount(1);
+    expect(".w_doc_link [data-icon='open_in_new']").toHaveCount(1);
 });
 
 test("documentationLink: add alert-link class", async () => {
@@ -63,8 +63,8 @@ test("documentation_link: given label", async () => {
             <widget name="documentation_link" path="/this_is_a_test.html" label="docdoc"/>
         </form>`,
     });
-    expect(".o_doc_link").toHaveText("docdoc");
-    expect(".o_doc_link .oi").toHaveCount(0);
+    expect(".w_doc_link").toHaveText("docdoc");
+    expect(".w_doc_link .oi").toHaveCount(0);
 });
 
 test("documentation_link: given icon", async () => {
@@ -77,8 +77,8 @@ test("documentation_link: given icon", async () => {
             <widget name="documentation_link" path="/this_is_a_test.html" icon="help"/>
         </form>`,
     });
-    expect(".o_doc_link").toHaveText("");
-    expect(".o_doc_link [data-icon='help']").toHaveCount(1);
+    expect(".w_doc_link").toHaveText("");
+    expect(".w_doc_link [data-icon='help']").toHaveCount(1);
 });
 
 test("documentation_link: given label and icon", async () => {
@@ -91,8 +91,8 @@ test("documentation_link: given label and icon", async () => {
             <widget name="documentation_link" path="/this_is_a_test.html" label="docdoc" icon="help"/>
         </form>`,
     });
-    expect(".o_doc_link").toHaveText("docdoc");
-    expect(".o_doc_link [data-icon='help']").toHaveCount(1);
+    expect(".w_doc_link").toHaveText("docdoc");
+    expect(".w_doc_link [data-icon='help']").toHaveCount(1);
 });
 
 test("documentation_link: relative path", async () => {
@@ -105,7 +105,7 @@ test("documentation_link: relative path", async () => {
             <widget name="documentation_link" path="/applications/technical/web/settings/this_is_a_test.html"/>
         </form>`,
     });
-    expect(".o_doc_link").toHaveAttribute(
+    expect(".w_doc_link").toHaveAttribute(
         "href",
         "https://www.weth.com.br/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
@@ -121,7 +121,7 @@ test("documentation_link: absolute path (http)", async () => {
                 <widget name="documentation_link" path="http://www.weth.com.br/"/>
             </form>`,
     });
-    expect(".o_doc_link").toHaveAttribute("href", "http://www.weth.com.br/");
+    expect(".w_doc_link").toHaveAttribute("href", "http://www.weth.com.br/");
 });
 
 test("documentation_link: absolute path (https)", async () => {
@@ -135,5 +135,5 @@ test("documentation_link: absolute path (https)", async () => {
         </form>`,
     });
 
-    expect(".o_doc_link").toHaveAttribute("href", "https://www.weth.com.br/");
+    expect(".w_doc_link").toHaveAttribute("href", "https://www.weth.com.br/");
 });

@@ -120,11 +120,11 @@ export class MessagingMenu extends Record {
     }
 
     /**
-     * Tab hosting OdooBot extras (delivery failures, push notification request). Null in
+     * Tab hosting WethBot extras (delivery failures, push notification request). Null in
      * the base mail bundle: discuss overrides it to point to the chat tab, keeping mail
      * unaware of the "chat" concept.
      */
-    get odooBotNotificationsTab() {
+    get wethBotNotificationsTab() {
         return null;
     }
 }

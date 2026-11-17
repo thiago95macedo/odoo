@@ -31,7 +31,7 @@ const getSequence = () => sequence++;
  */
 
 /**
- * @typedef {import("@mail/../lib/odoo_sfu/odoo_sfu").SFU_CLIENT_STATE} SfuClientState
+ * @typedef {import("@mail/../lib/weth_sfu/weth_sfu").SFU_CLIENT_STATE} SfuClientState
  */
 
 /**
@@ -69,15 +69,15 @@ const getSequence = () => sequence++;
 /**
  * @typedef {Object} ToggleVideoOptions
  * @property {boolean} [force] if defined, bypass the toggle to force the state
- * @property {import("@web/env").OdooEnv} [env]
+ * @property {import("@web/env").WethEnv} [env]
  * @property {boolean} [refreshStream] if true, the stream be requested from the device again instead of
  *     potentially reusing the current stream.
  */
 
 /**
- * @return {Promise<{ SfuClient: import("@mail/../lib/odoo_sfu/odoo_sfu").SfuClient, SFU_CLIENT_STATE: SfuClientState }>}
+ * @return {Promise<{ SfuClient: import("@mail/../lib/weth_sfu/weth_sfu").SfuClient, SFU_CLIENT_STATE: SfuClientState }>}
  */
-const loadSfuAssets = memoize(async () => await loadBundle("mail.assets_odoo_sfu"));
+const loadSfuAssets = memoize(async () => await loadBundle("mail.assets_weth_sfu"));
 
 /**
  *
@@ -169,13 +169,13 @@ function hasTurn(iceServers) {
 export class Network {
     /** @type {import("@mail/discuss/call/common/peer_to_peer").PeerToPeer} */
     p2p;
-    /** @type {import("@mail/../lib/odoo_sfu/odoo_sfu").SfuClient} */
+    /** @type {import("@mail/../lib/weth_sfu/weth_sfu").SfuClient} */
     sfu;
     /** @type {[{ name: string, f: EventListener }]} */
     _listeners = [];
     /**
      * @param {import("@mail/discuss/call/common/peer_to_peer").PeerToPeer} p2p
-     * @param {import("@mail/../lib/odoo_sfu/odoo_sfu").SfuClient} [sfu]
+     * @param {import("@mail/../lib/weth_sfu/weth_sfu").SfuClient} [sfu]
      */
     constructor(p2p, sfu) {
         this.p2p = p2p;
@@ -212,7 +212,7 @@ export class Network {
 
     /**
      * add a SFU to the network.
-     * @param {import("@mail/../lib/odoo_sfu/odoo_sfu").SfuClient} sfu
+     * @param {import("@mail/../lib/weth_sfu/weth_sfu").SfuClient} sfu
      */
     addSfu(sfu) {
         if (this.sfu) {
@@ -448,7 +448,7 @@ export class Rtc extends Record {
      * @type {Network}
      */
     network;
-    /** @type {import("@mail/../lib/odoo_sfu/odoo_sfu").SfuClient} */
+    /** @type {import("@mail/../lib/weth_sfu/weth_sfu").SfuClient} */
     sfuClient = undefined;
 
     /** @type {Object<string, boolean>} The keys are action names and the values are booleans indicating whether each action is active */
@@ -1400,8 +1400,8 @@ export class Rtc extends Record {
         const load = async () => {
             await loadSfuAssets();
             const sfuModule =
-                weth.loader.modules.get("@_custom/mail/../lib/odoo_sfu/odoo_sfu") ??
-                weth.loader.modules.get("@mail/../lib/odoo_sfu/odoo_sfu");
+                weth.loader.modules.get("@_custom/mail/../lib/weth_sfu/weth_sfu") ??
+                weth.loader.modules.get("@mail/../lib/weth_sfu/weth_sfu");
             this.SFU_CLIENT_STATE = sfuModule.SFU_CLIENT_STATE;
             this.sfuClient = new sfuModule.SfuClient();
         };
@@ -2483,7 +2483,7 @@ export class Rtc extends Record {
      * @param {String} type 'camera' or 'screen'
      * @param {Object} [options] options
      * @param {Boolean} [options.activateVideo=false] options
-     * @param {import("@web/env").OdooEnv} [options.env]
+     * @param {import("@web/env").WethEnv} [options.env]
      * @param {Boolean} [options.refreshStream] whether we are requesting a new stream
      */
     async setVideo(track, type, options) {
@@ -2979,7 +2979,7 @@ export const rtcService = {
         "presence",
     ],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

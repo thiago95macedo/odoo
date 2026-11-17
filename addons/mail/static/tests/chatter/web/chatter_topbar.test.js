@@ -22,12 +22,12 @@ test("base rendering", async () => {
     const partnerId = pyEnv["res.partner"].create({});
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter-topbar");
+    await contains(".w-mail-Chatter-topbar");
     await contains("button:text('Send message')");
     await contains("button:text('Log note')");
     await contains("button:text('Activity')");
     await contains("button[aria-label='Attach files']");
-    await contains(".o-mail-Followers");
+    await contains(".w-mail-Followers");
 });
 
 async function hasAttachmentPopoutButton(count) {
@@ -78,7 +78,7 @@ test("Attachment popout button is hidden on mobile", async () => {
     mockUserAgent("android");
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter-topbar");
+    await contains(".w-mail-Chatter-topbar");
     await hasAttachmentPopoutButton(0);
 });
 
@@ -103,13 +103,13 @@ test("rendering with multiple partner followers", async () => {
     ]);
     await start();
     await openFormView("res.partner", partnerId_3);
-    await contains(".o-mail-Followers");
-    await contains(".o-mail-Followers-button");
-    await click(".o-mail-Followers-button");
-    await contains(".o-mail-Followers-dropdown");
-    await contains(".o-mail-Follower", { count: 2 });
-    await contains(".o-mail-Follower:eq(0):text('Jean Michang')");
-    await contains(".o-mail-Follower:eq(1):text('Eden Hazard')");
+    await contains(".w-mail-Followers");
+    await contains(".w-mail-Followers-button");
+    await click(".w-mail-Followers-button");
+    await contains(".w-mail-Followers-dropdown");
+    await contains(".w-mail-Follower", { count: 2 });
+    await contains(".w-mail-Follower:eq(0):text('Jean Michang')");
+    await contains(".w-mail-Follower:eq(1):text('Eden Hazard')");
 });
 
 test("log note toggling", async () => {
@@ -118,13 +118,13 @@ test("log note toggling", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await contains("button:not(.active):text('Log note')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
     await click("button:text('Log note')");
     await contains("button.active:text('Log note')");
-    await contains(".o-mail-Composer .o-mail-Composer-input[placeholder='Log an internal note…']");
+    await contains(".w-mail-Composer .w-mail-Composer-input[placeholder='Log an internal note…']");
     await click("button:text('Log note')");
     await contains("button:not(.active):text('Log note')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
 });
 
 test("send message toggling", async () => {
@@ -133,15 +133,15 @@ test("send message toggling", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await contains("button:not(.active):text('Send message')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
     await click("button:text('Send message')");
     await contains("button.active:text('Send message')");
     await contains(
-        ".o-mail-Composer-input[placeholder='Send a message to all followers and selected contacts…']"
+        ".w-mail-Composer-input[placeholder='Send a message to all followers and selected contacts…']"
     );
     await click("button:text('Send message')");
     await contains("button:not(.active):text('Send message')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
 });
 
 test("log note/send message switching", async () => {
@@ -151,17 +151,17 @@ test("log note/send message switching", async () => {
     await openFormView("res.partner", partnerId);
     await contains("button:not(.active):text('Send message')");
     await contains("button:not(.active):text('Log note')");
-    await contains(".o-mail-Composer", { count: 0 });
+    await contains(".w-mail-Composer", { count: 0 });
     await click("button:text('Send message')");
     await contains("button.active:text('Send message')");
     await contains("button:not(.active):text('Log note')");
     await contains(
-        ".o-mail-Composer-input[placeholder='Send a message to all followers and selected contacts…']"
+        ".w-mail-Composer-input[placeholder='Send a message to all followers and selected contacts…']"
     );
     await click("button:text('Log note')");
     await contains("button:not(.active):text('Send message')");
     await contains("button.active:text('Log note')");
-    await contains(".o-mail-Composer-input[placeholder='Log an internal note…']");
+    await contains(".w-mail-Composer-input[placeholder='Log an internal note…']");
 });
 
 test("attachment counter without attachments", async () => {
@@ -242,8 +242,8 @@ test("attachment icon open directly the file uploader if there is no attachment 
     const partnerId = pyEnv["res.partner"].create({});
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter-fileUploader");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-Chatter-fileUploader");
+    await contains(".w-mail-AttachmentBox", { count: 0 });
 });
 
 test("attachment icon open the attachment box when there is at least 1 attachment", async () => {
@@ -260,11 +260,11 @@ test("attachment icon open the attachment box when there is at least 1 attachmen
     await start();
     await openFormView("res.partner", partnerId);
     await contains("button[aria-label='Attach files']");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
-    await contains(".o-mail-Chatter-fileUploader", { count: 0 });
+    await contains(".w-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-Chatter-fileUploader", { count: 0 });
     await click("button[aria-label='Attach files']");
-    await contains(".o-mail-AttachmentBox");
-    await contains(".o-mail-Chatter-fileUploader");
+    await contains(".w-mail-AttachmentBox");
+    await contains(".w-mail-Chatter-fileUploader");
 });
 
 test("composer state conserved when clicking on another topbar button", async () => {
@@ -272,14 +272,14 @@ test("composer state conserved when clicking on another topbar button", async ()
     const partnerId = pyEnv["res.partner"].create({});
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter-topbar");
+    await contains(".w-mail-Chatter-topbar");
     await contains("button:text('Send message')");
     await contains("button:text('Log note')");
     await contains("button[aria-label='Attach files']");
     await click("button:text('Log note')");
     await contains("button.active:text('Log note')");
     await contains("button:not(.active):text('Send message')");
-    await click(".o-mail-Chatter-topbar button[aria-label='Attach files']");
+    await click(".w-mail-Chatter-topbar button[aria-label='Attach files']");
     await contains("button.active:text('Log note')");
     await contains("button:not(.active):text('Send message')");
 });
@@ -332,7 +332,7 @@ test("Send message displays the number of notified followers inside a badge", as
     await start();
     await openFormView("res.partner", partnerId_4);
     await click("button:text('Send message')");
-    await contains(".o-mail-RecipientsInput .badge:text('2 Followers')");
+    await contains(".w-mail-RecipientsInput .badge:text('2 Followers')");
 });
 
 test("Attach files and Pinned Messages panels are mutually exclusive", async () => {
@@ -353,11 +353,11 @@ test("Attach files and Pinned Messages panels are mutually exclusive", async () 
     await start();
     await openFormView("res.partner", partnerId);
     await click("button[title='Attach files']:text('1')");
-    await contains(".o-mail-AttachmentBox");
+    await contains(".w-mail-AttachmentBox");
     await click("button[title='Pinned Messages']");
-    await contains(".o-mail-pinnedMessages");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-pinnedMessages");
+    await contains(".w-mail-AttachmentBox", { count: 0 });
     await click("button[title='Attach files']:text('1')");
-    await contains(".o-mail-AttachmentBox");
-    await contains(".o-mail-pinnedMessages", { count: 0 });
+    await contains(".w-mail-AttachmentBox");
+    await contains(".w-mail-pinnedMessages", { count: 0 });
 });

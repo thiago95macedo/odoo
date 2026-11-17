@@ -24,9 +24,9 @@ class TestCommand(BaseCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.odoo_bin = Path(__file__).parents[5].resolve() / 'weth-bin'
+        cls.weth_bin = Path(__file__).parents[5].resolve() / 'weth-bin'
         addons_path = config.format('addons_path', config['addons_path'])
-        cls.run_args = (sys.executable, cls.odoo_bin, f'--addons-path={addons_path}')
+        cls.run_args = (sys.executable, cls.weth_bin, f'--addons-path={addons_path}')
 
     def run_command(self, *args, check=True, capture_output=True, text=True, **kwargs):
         return sp.run(
@@ -172,9 +172,9 @@ class TestCommandUsingDb(TestCommand, TransactionCase):
     def test_i18n_export(self):
         reader_mock_result = [
             ('base', 'code', 'addons/template_inheritance.py', 331,
-             "Invalid position attribute: '%s'", '', ('odoo-python',)),
+             "Invalid position attribute: '%s'", '', ('weth-python',)),
             ('base', 'code', 'addons/template_inheritance.py', 341,
-             "Element '%s' cannot be located in parent view", '', ('odoo-python',)),
+             "Element '%s' cannot be located in parent view", '', ('weth-python',)),
         ]
         expected_text = [
             "# Translation of WETH Server.",
@@ -194,12 +194,12 @@ class TestCommandUsingDb(TestCommand, TransactionCase):
             '"Content-Transfer-Encoding: \\n"',
             '"Plural-Forms: \\n"',
             '#. module: base',
-            '#. odoo-python',
+            '#. weth-python',
             '#: code:addons/template_inheritance.py:0',
             'msgid "Element \'%s\' cannot be located in parent view"',
             'msgstr ""',
             '#. module: base',
-            '#. odoo-python',
+            '#. weth-python',
             '#: code:addons/template_inheritance.py:0',
             'msgid "Invalid position attribute: \'%s\'"',
             'msgstr ""',

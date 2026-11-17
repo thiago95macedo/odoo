@@ -1,4 +1,4 @@
-.o-discuss-CallParticipantCard {
+.w-discuss-CallParticipantCard {
     position: relative;
     background-color: transparent;
     color: white;
@@ -6,43 +6,46 @@
     // and its talking glow off the card's own width (the `cq*` units below).
     container-type: inline-size;
 
-    &.o-inset {
+    &.w-inset {
         cursor: move !important;
 
-        .o-discuss-CallParticipantCard-avatar img {
+        .w-discuss-CallParticipantCard-avatar img {
             max-height: #{"min(70%, 70px)"};
             max-width: #{"min(70%, 70px)"};
         }
     }
 }
 
-.o-discuss-CallParticipantCard-avatar.o-selfInCall {
-    background-color: var(--discuss-CallParticipantCard-bgColor, #{$o-gray-700});
+.w-discuss-CallParticipantCard-avatar.w-selfInCall {
+    background-color: var(--discuss-CallParticipantCard-bgColor, #{$w-gray-700});
     background-image: radial-gradient(circle, rgba(white, 0.06) 0%, rgba(0, 0, 0, 0.4) 100%);
     border: 1px solid rgba(white, 0.2);
 }
 
-.o-discuss-CallParticipantCard-avatar:not(.o-minimized) {
-    &.o-isRemoteVideo {
+.w-discuss-CallParticipantCard-avatar:not(.w-minimized) {
+    &.w-isRemoteVideo {
         background: linear-gradient(180deg, #144173 0%, #082647 30%, #133c68 60%, #082647 90%);
         background-size: 200% 200%;
         animation: gradientAnimation 5s ease-in-out infinite alternate;
         filter: blur(2px);
     }
+
     @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 100%;
+        }
     }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
-}
 }
 
-.o-discuss-CallParticipantCard-avatar img {
+.w-discuss-CallParticipantCard-avatar img {
     max-height: #{"min(100%, 80px)"}; // interpolated as not supported by Sass
     max-width: #{"min(100%, 80px)"};
     aspect-ratio: 1;
@@ -51,54 +54,63 @@
     box-shadow: 0 0 0 calc(var(--discuss-CallParticipantCard-talkingVolume, 0) * 4cqi) rgba(white, 0.25);
     transition: box-shadow 0.3s ease-out, outline 0.3s ease-out;
 
-    &.o-small {
+    &.w-small {
         box-shadow: 0 0 0 calc(var(--discuss-CallParticipantCard-talkingVolume, 0) * 8cqi) rgba(white, 0.25);
     }
 
-    &.o-isTalking {
+    &.w-isTalking {
         outline: calc(1px + var(--discuss-CallParticipantCard-talkingVolume, 0) * 3px) solid white;
-        &.o-small {
+
+        &.w-small {
             outline: 1px solid white;
         }
     }
 
-    &.o-isInvitation:not(:hover) {
+    &.w-isInvitation:not(:hover) {
         animation: o-discuss-CallParticipantCard-avatarImag_borderPulse 0.5s linear infinite alternate;
     }
 
-    &.o-isInvitation:hover {
+    &.w-isInvitation:hover {
         outline: solid map-get($theme-colors, 'danger');
     }
 }
 
 @keyframes o-discuss-CallParticipantCard-avatarImag_borderPulse {
-    0% { outline: solid transparent }
-    100% { outline: solid white }
+    0% {
+        outline: solid transparent
+    }
+
+    100% {
+        outline: solid white
+    }
 }
 
-.o-discuss-CallParticipantCard-iconBlackBg {
+.w-discuss-CallParticipantCard-iconBlackBg {
     background-color: rgba(0, 0, 0, 0.6);
     color: var(--discuss-CallParticipantCard-overlay-color, white);
 }
 
-.o-discuss-CallParticipantCard-overlay {
+.w-discuss-CallParticipantCard-overlay {
     margin: Min(5%, map-get($spacers, 2));
 
-    &.o-proportional-container {
+    &.w-proportional-container {
         container-type: inline-size;
-        .o-proportional-text {
+
+        .w-proportional-text {
             font-size: #{"min(1rem, 40cqw)"};
-            &.o-video-text {
+
+            &.w-video-text {
                 font-size: 5cqw;
             }
-            &.o-discuss-CallParticipantCard-overlayBottomName {
+
+            &.w-discuss-CallParticipantCard-overlayBottomName {
                 font-size: #{"min(0.8rem, 40cqw)"};
             }
         }
     }
 }
 
-.o-discuss-CallParticipantCard-contextButton {
+.w-discuss-CallParticipantCard-contextButton {
     margin: Min(5%, map-get($spacers, 2));
     aspect-ratio: 1;
     color: #F9FAFB !important;
@@ -112,9 +124,9 @@
     }
 }
 
-.o-discuss-CallParticipantCard-contextMenu {
+.w-discuss-CallParticipantCard-contextMenu {
     width: 200px;
-    background-color: $o-mail-CallMenu-bgColor;
-    border-color: $o-mail-CallMenu-bgColor-lighter;
+    background-color: $w-mail-CallMenu-bgColor;
+    border-color: $w-mail-CallMenu-bgColor-lighter;
     color: rgba(white, 0.9);
 }

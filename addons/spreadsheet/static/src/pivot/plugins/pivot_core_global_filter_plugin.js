@@ -1,7 +1,7 @@
 // @ts-check
 /**
  *
- * @typedef {import("@spreadsheet").OdooPivotDefinition} OdooPivotDefinition
+ * @typedef {import("@spreadsheet").WethPivotDefinition} WethPivotDefinition
  * @typedef {import("@spreadsheet").AllCoreCommand} AllCoreCommand
  * @typedef {import("@spreadsheet").GFLocalPivot} GFLocalPivot
  *
@@ -11,9 +11,9 @@
 import { CommandResult } from "../../o_spreadsheet/cancelled_reason";
 import { checkFilterFieldMatching } from "@spreadsheet/global_filters/helpers";
 import { deepCopy } from "@web/core/utils/objects";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { WethCorePlugin } from "@spreadsheet/plugins";
 
-export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
+export class PivotCoreGlobalFilterPlugin extends WethCorePlugin {
     static getters = /** @type {const} */ (["getPivotFieldMatch", "getPivotFieldMatching"]);
     constructor(config) {
         super(config);
@@ -45,7 +45,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
     handle(cmd) {
         switch (cmd.type) {
             case "ADD_PIVOT": {
-                if (cmd.pivot.type === "ODOO") {
+                if (cmd.pivot.type === "WETH") {
                     this._addPivot(cmd.pivotId, undefined);
                 }
                 break;
@@ -57,7 +57,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
             case "DUPLICATE_PIVOT": {
                 const { pivotId, newPivotId } = cmd;
                 const pivotDefinition = this.getters.getPivotCoreDefinition(pivotId);
-                if (pivotDefinition.type !== "ODOO") {
+                if (pivotDefinition.type !== "WETH") {
                     break;
                 }
                 const pivot = deepCopy(this.pivots[pivotId]);
@@ -86,7 +86,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
      */
     getPivotFieldMatch(id) {
         const pivot = this.getters.getPivotCoreDefinition(id);
-        if (pivot.type !== "ODOO") {
+        if (pivot.type !== "WETH") {
             return {};
         }
         return this.pivots[id]?.fieldMatching || {};
@@ -115,7 +115,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
     _setPivotFieldMatching(filterId, pivotFieldMatches) {
         for (const [pivotId, fieldMatch] of Object.entries(pivotFieldMatches)) {
             const pivot = this.getters.getPivotCoreDefinition(pivotId);
-            if (pivot.type !== "ODOO") {
+            if (pivot.type !== "WETH") {
                 continue;
             }
             this.history.update("pivots", pivotId, "fieldMatching", filterId, fieldMatch);
@@ -135,7 +135,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
      */
     _addPivot(id, fieldMatching = undefined) {
         const pivot = this.getters.getPivotCoreDefinition(id);
-        if (pivot.type === "ODOO") {
+        if (pivot.type === "WETH") {
             this.history.update("pivots", id, {
                 id,
                 fieldMatching: fieldMatching || this.getters.getFieldMatchingForModel(pivot.model),
@@ -168,7 +168,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
         for (const id in this.pivots) {
             const pivot = this.getters.getPivotCoreDefinition(id);
             data.pivots[id].fieldMatching =
-                pivot.type === "ODOO" ? this.pivots[id].fieldMatching : {};
+                pivot.type === "WETH" ? this.pivots[id].fieldMatching : {};
         }
     }
 }

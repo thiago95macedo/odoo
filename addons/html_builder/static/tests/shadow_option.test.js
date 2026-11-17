@@ -19,14 +19,14 @@ test("edit box-shadow with ShadowOption", async () => {
         '<div class="test-options-target">b</div>'
     );
 
-    await contains(".o-hb-select-toggle").click();
-    await contains("div.o-hb-select-dropdown-item:contains(Normal)").click();
+    await contains(".w-hb-select-toggle").click();
+    await contains("div.w-hb-select-dropdown-item:contains(Normal)").click();
     expect(":iframe .test-options-target").toHaveOuterHTML(
         '<div class="test-options-target shadow">b</div>'
     );
 
-    await contains(".o-hb-select-toggle").click();
-    await contains("div.o-hb-select-dropdown-item:contains(Custom)").click();
+    await contains(".w-hb-select-toggle").click();
+    await contains("div.w-hb-select-dropdown-item:contains(Custom)").click();
     await contains('.options-container button[title="Outset"]').click();
     expect(queryAllTexts(".hb-row .hb-row-label")).toEqual([
         "Shadow",
@@ -72,8 +72,8 @@ test("edit box-shadow with ShadowOption", async () => {
         '<div class="test-options-target o-shadow-custom" style="box-shadow: rgba(0, 0, 0, 0.15) 10px 82px 10.5px 0.4px inset !important;">b</div>'
     );
 
-    await contains(".o-hb-select-toggle").click();
-    await contains("div.o-hb-select-dropdown-item:contains(None)").click();
+    await contains(".w-hb-select-toggle").click();
+    await contains("div.w-hb-select-dropdown-item:contains(None)").click();
     expect(queryAllTexts(".hb-row .hb-row-label")).toEqual(["Shadow"]);
     expect(":iframe .test-options-target").toHaveOuterHTML(
         '<div class="test-options-target" style="">b</div>'

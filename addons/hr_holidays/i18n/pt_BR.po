@@ -22,7 +22,7 @@ msgstr ""
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/hr_holidays/pt_BR/>\n"
+"weth-20/hr_holidays/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +32,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/report/hr_leave_employee_type_report.py:0
 msgid ""
 "\n"
@@ -111,7 +111,7 @@ msgstr ""
 "aceito, configurando um tipo de reunião no campo Tipo de folga.\n"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid " to %(date_to_utc)s"
 msgstr " até %(date_to_utc)s"
@@ -147,122 +147,122 @@ msgid "# Public Holidays"
 msgstr "Nº de feriados públicos"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "%(allocation_name)s (from %(date_from)s to %(date_to)s)"
 msgstr "%(allocation_name)s (de %(date_from)s até %(date_to)s)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "%(allocation_name)s (from %(date_from)s to No Limit)"
 msgstr "%(allocation_name)s (de %(date_from)s até Ilimitado)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(days)g days"
 msgstr "%(days)g dias"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(days)gd"
 msgstr "%(days)gd"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(duration)s"
 msgstr "%(duration)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(employee)s on Time Off : %(duration)s"
 msgstr "%(employee)s em Folga: %(duration)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(employee_name)s from %(date_from)s to %(date_to)s - %(state)s"
 msgstr "%(employee_name)s de %(date_from)s até %(date_to)s - %(state)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(employee_name)s requested a time-off \n"
 msgstr "%(employee_name)s solicitou uma folgas \n"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(holiday_name)s has been refused."
 msgstr "%(holiday_name)s foi recusado."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/hr_presence_status/hr_presence_status.js:0
 msgid "%(label)s, back on %(date)s"
 msgstr "%(label)s, retorno em %(date)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(leave_name)s has been cancelled for the following reason: %(reason)s"
 msgstr "%(leave_name)s foi cancelado pelo seguinte motivo: %(reason)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/res_users.py:0
 #, fuzzy
 msgid "%(name)s !!✈ Back on %(date)s!!"
 msgstr "%(name)s !!✈ De volta em %(date)s!!"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/hr_leave_allocation_generate_multi_wizard.py:0
 msgid "%(name)s (%(duration)s %(unit_of_measure)s(s))"
 msgstr "%(name)s (%(duration)s %(unit_of_measure)s(s))"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "%(name)s (%(duration)s day(s))"
 msgstr "%(name)s (%(duration)s dia(s))"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "%(name)s (%(duration)s hour(s))"
 msgstr "%(name)s (%(duration)s hora(s))"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "%(name)s (%(time)g days left)"
 msgstr "%(name)s (%(time)g dias restantes)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "%(name)s (%(time)g hours left)"
 msgstr "%(name)s (%(time)g horas restantes)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "%(name)s (%(time)g remaining out of %(maximum)g days)"
 msgstr "%(name)s (%(time)g restante de %(maximum)g dias)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "%(name)s (%(time)g remaining out of %(maximum)g hours)"
 msgstr "%(name)s (%(time)g restante de %(maximum)g horas)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "%(name)s does not have a valid allocation for the leave type %(leave_type)s "
@@ -272,43 +272,43 @@ msgstr ""
 "(leave_type)s ” para atender a essa solicitação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(name)s: %(duration)s"
 msgstr "%(name)s: %(duration)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(person)s on %(work_entry_type)s: %(duration)s (%(start)s)"
 msgstr "%(person)s em %(work_entry_type)s: %(duration)s (%(start)s)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(person)s: %(duration)s (%(start)s)"
 msgstr "%(person)s: %(duration)s (%(start)s)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%(start_date)s → %(end_date)s (%(duration)s)"
 msgstr "%(start_date)s → %(end_date)s (%(duration)s)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 msgid "%(work_entry_type)s %(duration)s"
 msgstr "%(work_entry_type)s %(duration)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%s"
 msgstr "%s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "%s: Time Off"
 msgstr "%s: Folga"
@@ -346,19 +346,19 @@ msgid "&lt;th class=\"text-center\" colspan="
 msgstr "&lt;th class=\"text-center\" colspan="
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/hr_presence_status/hr_presence_status.js:0
 msgid ", back on "
 msgstr ", retorno "
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "- %(code)s - %(name)s: %(nbr_days)s days"
 msgstr "- %(code)s - %(name)s: %(nbr_days)s dias"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "- '%(version)s' from %(start_date)s to %(end_date)s"
 msgstr "- '%(version)s' de %(start_date)s até %(end_date)s"
@@ -762,19 +762,19 @@ msgid "<strong>Departments and Employees</strong>"
 msgstr "<strong>Departamentos e funcionários</strong>"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "A balance cap is set to"
 msgstr "Um limite de saldo é definido para"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "A cancelled leave cannot be modified."
 msgstr "Uma licença cancelada não pode ser modificada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "A duration of %s per day does not fit in the working time of the selected "
@@ -811,7 +811,7 @@ msgstr ""
 "e status de aprovação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "A leave cannot be set across multiple versions with different working "
@@ -841,13 +841,13 @@ msgid "A supporting document is required for this type of time type."
 msgstr "É necessário um documento comprovativo para este tipo de horário."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "A time off cannot be duplicated."
 msgstr "Uma folga não pode ser duplicada."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "A yearly cap is set to"
 msgstr "Um limite anual está definido para"
@@ -895,7 +895,7 @@ msgid "Access Groups"
 msgstr "Grupos de acesso"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "According to your working schedule you are expected to work %(days)s days in "
@@ -907,7 +907,7 @@ msgstr ""
 "licença %(work_entry_type_name)s só pode ser tirada por dias."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Accrual (Future):"
 msgstr "Acúmulo (futuro):"
@@ -939,7 +939,7 @@ msgid "Accrual Plan Level"
 msgstr "Nível do plano de acúmulo"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid "Accrual Plan's Employees"
 msgstr "Funcionários do plano de acúmulo"
@@ -957,7 +957,7 @@ msgid "Accrual Time Off: Updates the number of time off"
 msgstr "Folga por acúmulo: atualiza o número de folgas"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "Accrual frequency :"
 msgstr "Frequência de acúmulo:"
@@ -997,7 +997,7 @@ msgid "Active Employees"
 msgstr "Funcionários ativos"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "Active but on leave"
 msgstr "Ativo, mas de licença"
@@ -1061,7 +1061,7 @@ msgid "Add Public Holidays"
 msgstr "Adicionar feriados"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "Add a milestone"
 msgstr "Adicionar um marco"
@@ -1073,7 +1073,7 @@ msgid "Add a reason..."
 msgstr "Escreva o motivo..."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Add some description for the leave"
 msgstr "Adicione uma descrição para a licença"
@@ -1084,7 +1084,7 @@ msgid "Administrator"
 msgstr "Administrador"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_accrual_level__milestone_date__after
 msgid "After"
@@ -1137,7 +1137,7 @@ msgid "All day"
 msgstr "Dia inteiro"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid ""
 "All public holidays for %(year)s are already present for: %(companies)s."
@@ -1169,7 +1169,7 @@ msgid "Allocated (Days/Hours)"
 msgstr "Alocado (dias/horas)"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Allocated:"
 msgstr "Alocado:"
@@ -1213,7 +1213,7 @@ msgid "Allocation Remaining Display"
 msgstr "Exibição de alocação restante"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 #: code:addons/hr_holidays/wizard/hr_leave_allocation_generate_multi_wizard.py:0
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_report__allocation_id
@@ -1224,7 +1224,7 @@ msgid "Allocation Request"
 msgstr "Solicitação de alocação"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_department_view_kanban
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_activity
@@ -1245,13 +1245,13 @@ msgid "Allocation from working schedule"
 msgstr "Alocação a partir da programação de trabalho"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Allocation must be \"To Approve\" in order to approve it."
 msgstr "A alocação deve ser \"A aprovar\" para aprová-la."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Allocation of %(work_entry_type)s: %(amount).2f %(unit)s to %(target)s"
 msgstr ""
@@ -1263,7 +1263,7 @@ msgid "Allocation on"
 msgstr "Alocação em"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "Allocation request must be confirmed, second approval or validated in order "
@@ -1278,7 +1278,7 @@ msgid "Allocation to Approve"
 msgstr "Alocação a aprovar"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.xml:0
 #: model:ir.actions.act_window,name:hr_holidays.hr_leave_allocation_action_approve_department
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_work_entry_type__allocation_count
@@ -1323,7 +1323,7 @@ msgid "Amount"
 msgstr "Valor"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "An employee already booked time off which overlaps with this period:"
 msgstr "Um funcionário já reservou uma folga que se sobrepõe a esse período:"
@@ -1345,7 +1345,7 @@ msgid "Approval"
 msgstr "Aprovação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_form
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_kanban
@@ -1358,8 +1358,8 @@ msgid "Approve"
 msgstr "Aprovar"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/report/holidays_summary_report.py:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee__current_leave_state__validate
@@ -1386,7 +1386,7 @@ msgid "Approved Requests"
 msgstr "Solicitações aprovadas"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Approved:"
 msgstr "Aprovado:"
@@ -1410,7 +1410,7 @@ msgid "Archived Employees"
 msgstr "Funcionários arquivados"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 msgid "Are you sure you want to delete this record?"
 msgstr "Tem certeza de que deseja excluir este registro?"
@@ -1479,7 +1479,7 @@ msgid "Automatic Rules"
 msgstr "Regras automáticas"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 msgid "Available"
@@ -1492,13 +1492,13 @@ msgid "Available Time Off"
 msgstr "Folgas disponíveis"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Available:"
 msgstr "Disponível:"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/common/hr_employee_model_patch.js:0
 msgid "Back on %(date)s"
 msgstr "Volta em %(date)s"
@@ -1509,7 +1509,7 @@ msgid "Back to Approval"
 msgstr "Voltar para Aprovação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/selection_badge_with_filter/selection_badge_with_filter.js:0
 msgid "Badges for Selection With Work Entry Request Unit Type Filter"
 msgstr ""
@@ -1517,8 +1517,8 @@ msgstr ""
 "entrada de trabalho"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/report/hr_leave_employee_type_report.py:0
 #: code:addons/hr_holidays/static/src/views/graph/hr_holidays_graph_renderer.js:0
 #: model:ir.ui.menu,name:hr_holidays.menu_hr_holidays_balance
@@ -1526,7 +1526,7 @@ msgid "Balance"
 msgstr "Saldo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.xml:0
 msgid "Balance on the"
 msgstr "Saldo em"
@@ -1587,7 +1587,7 @@ msgstr ""
 "Pode gerenciar e configurar todos os feriados e solicitações de ausência."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_version.py:0
 msgid ""
 "Can't change current working schedule while there are already validated "
@@ -1611,8 +1611,8 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: code:addons/hr_holidays/static/src/views/hooks.js:0
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
@@ -1640,13 +1640,13 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Cancelled Time Off"
 msgstr "Folga cancelada"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_time_rule.py:0
 msgid ""
 "Cannot reduce %(employee)s's '%(leave_type)s' balance by %(days).4g day(s): %"
@@ -1676,7 +1676,7 @@ msgid "Carry Over Options"
 msgstr "Opções de transferência"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_version.py:0
 msgid ""
 "Changing the contract on this employee changes their working schedule in a "
@@ -1696,7 +1696,7 @@ msgstr ""
 "Este erro foi causado por:\n"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee.py:0
 msgid ""
 "Changing this working schedule results in the affected employee(s) not "
@@ -1726,25 +1726,25 @@ msgid "Choose a cap for this accrual."
 msgstr "Escolha um limite para esse acúmulo."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Click on the 22nd"
 msgstr "Clique no dia 22"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Click on the 25st"
 msgstr "Clique no dia 25"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Click on this button to request a time-off"
 msgstr "Clique neste botão para solicitar uma folga"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Click on this button to request time-off or allocation"
 msgstr "Clique neste botão para solicitar folgas ou alocação"
@@ -1800,27 +1800,27 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_model.js:0
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_model.js:0
 msgid "Confirmation"
 msgstr "Confirmação"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/report/holidays_summary_report.py:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_holidays_summary_employee__holiday_type__confirmed
 msgid "Confirmed"
 msgstr "Confirmado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/report/holidays_summary_report.py:0
 msgid "Confirmed and Approved"
 msgstr "Confirmado e aprovado"
@@ -1891,7 +1891,7 @@ msgid "Create an Accrual Plan"
 msgstr "Criar um plano de acúmulo"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid "Created %(count)s public holiday(s) for %(company)s."
 msgstr "Criou feriado(s) público(s) em %(count)s para %(company)s."
@@ -2019,7 +2019,7 @@ msgid "Day(s)"
 msgstr "Dia(s)"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_time_rule_allocation_log__days
@@ -2100,7 +2100,7 @@ msgid "Delete"
 msgstr "Excluir"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 msgid "Delete Time Off"
 msgstr "Excluir folga"
@@ -2150,7 +2150,7 @@ msgid "Determines if the entry counts as working time or absence."
 msgstr "Determina se a entrada conta como tempo de trabalho ou ausência."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_model.js:0
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 msgid "Discard"
@@ -2202,7 +2202,7 @@ msgid "Display Time Off in Calendar"
 msgstr "Exibir folgas no calendário"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid ""
 "Do you want to save the changes made to the accrual plan before creating a "
@@ -2212,7 +2212,7 @@ msgstr ""
 "marco?"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid ""
 "Do you want to save the changes made to the accrual plan before editing this "
@@ -2222,7 +2222,7 @@ msgstr ""
 "marco?"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar_leaves.py:0
 msgid ""
 "Due to a change in global time offs, %s extra day(s) have been taken from "
@@ -2232,7 +2232,7 @@ msgstr ""
 "sua alocação. Revise essa licença se precisar que ela seja alterada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar_leaves.py:0
 msgid ""
 "Due to a change in global time offs, this leave no longer has the required "
@@ -2244,7 +2244,7 @@ msgstr ""
 "Revise essa licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar_leaves.py:0
 msgid ""
 "Due to a change in global time offs, you have been granted %s day(s) back."
@@ -2301,7 +2301,7 @@ msgid "Eligible for Accrual Rate"
 msgstr "Elegível para Taxa de Acumulação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hr_leave_export.js:0
 #: model:ir.model,name:hr_holidays.model_hr_employee
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__employee_id
@@ -2377,7 +2377,7 @@ msgid "End Date"
 msgstr "Data final"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee_departure.py:0
 msgid ""
 "End date has been updated because the employee will leave the company on %"
@@ -2392,7 +2392,7 @@ msgid "Exclude Refused"
 msgstr "Excluir Recusado"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hr_leave_export.js:0
 msgid "External ID (update only)"
 msgstr "ID externo (somente atualização)"
@@ -2513,19 +2513,19 @@ msgid "Generate time off for multiple employees"
 msgstr "Gerar folgas para vários funcionários"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/hr_leave_allocation_generate_multi_wizard.py:0
 msgid "Generated Allocations"
 msgstr "Alocações geradas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/hr_leave_generate_multi_wizard.py:0
 msgid "Generated Time Off"
 msgstr "Folgas geradas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "Generic"
 msgstr "Genérico"
@@ -2536,7 +2536,7 @@ msgid "Give Time"
 msgstr "Dê tempo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/allocation_form_view_dialog.xml:0
 msgid "Grant"
 msgstr "Conceder"
@@ -2649,7 +2649,7 @@ msgid "Hourly"
 msgstr "Por hora"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_accrual_plan__added_value_type__hour
@@ -2794,7 +2794,7 @@ msgstr ""
 "este campo permanecer desmarcado."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_model.js:0
 msgid ""
 "If you modify this request, it will need to be approved again. Do you wish "
@@ -2827,7 +2827,7 @@ msgid "Ignore Public Holidays"
 msgstr "Ignorar feriados públicos"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_accrual_plan__transition_mode__immediately
 msgid "Immediately"
@@ -2839,7 +2839,7 @@ msgid "In Contract"
 msgstr "Em contrato"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Incorrect state for new allocation"
 msgstr "Status incorreto para nova alocação"
@@ -2982,25 +2982,25 @@ msgid "Left"
 msgstr "Restante"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 msgid "Legend"
 msgstr "Legenda"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Let's discover the <strong>Time Off</strong> app!"
 msgstr "Vamos explorar o app <strong>Folgas</strong>!"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Let's go check it"
 msgstr "Vamos dar uma olhada nisso"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Let's try to create a sick time off, select it in the list"
 msgstr "Vamos tentar criar uma folga por atestado, selecione a opção na lista"
@@ -3011,7 +3011,7 @@ msgid "Levels"
 msgstr "Níveis"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar_leaves.py:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.load_public_holiday_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:hr_holidays.resource_calendar_leaves_tree_inherit
@@ -3051,7 +3051,7 @@ msgid "Mandatory Day"
 msgstr "Dia obrigatório"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.actions.act_window,name:hr_holidays.hr_leave_mandatory_day_action
 #: model:ir.ui.menu,name:hr_holidays.hr_holidays_mandatory_day_menu_configuration
@@ -3146,13 +3146,13 @@ msgid "Messages"
 msgstr "Mensagens"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid "Milestone Edition"
 msgstr "Edição de Marcos"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_accrual_plan__level_ids
 msgid "Milestones"
@@ -3271,7 +3271,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Negative allocations are not allowed for this time type."
 msgstr "Alocações negativas não são permitidas para este tipo de horário."
@@ -3287,37 +3287,37 @@ msgstr ""
 "aplicada."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.xml:0
 msgid "New"
 msgstr "Novo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "New !"
 msgstr "Novo!"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "New %(work_entry_type)s Request created by %(user)s"
 msgstr "Nova solicitação %(work_entry_type)s criada por %(user)s"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hooks.js:0
 msgid "New Allocation"
 msgstr "Nova alocação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.xml:0
 msgid "New Allocation Request"
 msgstr "Nova solicitação de alocação"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "New Allocation Request created by %(user)s: %(count)s Days of %(leave_type)s"
@@ -3333,7 +3333,7 @@ msgid "New Group Allocation"
 msgstr "Nova alocação de grupo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_kanban
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_tree
@@ -3341,19 +3341,19 @@ msgid "New Group Time Off"
 msgstr "Nova folga em grupo"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid "New Milestone"
 msgstr "Novo marco"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.xml:0
 msgid "New Request"
 msgstr "Nova solicitação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.xml:0
 #: code:addons/hr_holidays/static/src/webclient/share_target/hr_holiday_share_target_item.js:0
@@ -3449,7 +3449,7 @@ msgid "No milestones on the plan yet. Let's create a new one"
 msgstr "Ainda não há marcos no plano. Vamos criar um novo"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid "No public holidays were added."
 msgstr "Nenhum feriado foi adicionado."
@@ -3462,7 +3462,7 @@ msgstr ""
 "calendário)."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "No, keep the old version"
 msgstr "Não, manter a versão antiga"
@@ -3492,7 +3492,7 @@ msgid "None"
 msgstr "Nenhum"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "Not possible state. State Approve is only used for leave needed 2 approvals"
@@ -3586,7 +3586,7 @@ msgid "Officer: Manage all requests"
 msgstr "Administrador: gerenciar todas as solicitações"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/web/avatar_card/avatar_card_patch.xml:0
 msgid "On Time Off"
 msgstr "De folga"
@@ -3597,67 +3597,67 @@ msgid "On leave"
 msgstr "Em licença"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Only"
 msgstr "Apenas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only %(remaining)s day(s) available"
 msgstr "Apenas %(remaining)s dia(s) disponível(is)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only %(remaining)s hour(s) available"
 msgstr "Apenas %(remaining)s hora(s) disponível(is)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only a Time Off Officer/Manager can approve a leave."
 msgstr "Somente um Diretor/Gerente de Folga pode aprovar uma licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Only a Time Off Officer/Manager can approve an allocation."
 msgstr "Somente um Diretor/Gerente de Folga pode aprovar uma alocação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only a Time Off Officer/Manager can refuse a leave."
 msgstr "Somente um Diretor/Gerente de Folga pode recusar uma licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Only a Time Off Officer/Manager can refuse an allocation."
 msgstr "Somente um Diretor/Gerente de Folga pode recusar uma alocação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only a Time Off Officer/Manager can validate a leave."
 msgstr "Somente um Diretor/Gerente de folga pode validar uma licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Only a Time Off Officer/Manager can validate an allocation."
 msgstr "Somente um Diretor/Gerente de Folga pode validar uma alocação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Only a manager can modify a canceled leave."
 msgstr "Somente gerentes podem modificar uma licença cancelada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Only a time off Administrator can approve/refuse their own requests."
 msgstr ""
@@ -3673,7 +3673,7 @@ msgstr ""
 "“não remunerado”."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "Oops! %(state)s Time-Off requests can only be deleted by Administrators."
@@ -3687,7 +3687,7 @@ msgid "Output Leave"
 msgstr "Licença Resultante"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.xml:0
 msgid "Overlaps"
 msgstr "Sobreposições"
@@ -3703,19 +3703,19 @@ msgid "Overview"
 msgstr "Visão geral"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.xml:0
 msgid "Pending"
 msgstr "Pendente"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.js:0
 msgid "Pending Allocations"
 msgstr "Alocações pendentes"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Pending:"
 msgstr "Pendente:"
@@ -3739,7 +3739,7 @@ msgid "Planned"
 msgstr "Planejado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid ""
 "Please select a work entry type for all public holidays before adding them."
@@ -3777,8 +3777,8 @@ msgid "Public Holiday Preview Wizard Line"
 msgstr "Linha do Assistente de Visualização de Feriados"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar.py:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.actions.act_window,name:hr_holidays.resource_calendar_global_leaves_action_from_calendar
@@ -3789,7 +3789,7 @@ msgid "Public Holidays"
 msgstr "Feriados"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid "Public holiday data is not available for %(year)s for: %(companies)s."
 msgstr ""
@@ -3828,7 +3828,7 @@ msgid "Record"
 msgstr "Registro"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_form
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_kanban
@@ -3841,7 +3841,7 @@ msgid "Refuse"
 msgstr "Recusar"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee__current_leave_state__refuse
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__state__refuse
@@ -3861,7 +3861,7 @@ msgid "Refused"
 msgstr "Recusado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Refused Time Off"
 msgstr "Folga recusada"
@@ -3911,7 +3911,7 @@ msgid "Request Date Hour To"
 msgstr "Solicitar Data Hora até"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hr_leave_export.js:0
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__request_date_to
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_report_calendar__request_date_to
@@ -3919,7 +3919,7 @@ msgid "Request End Date"
 msgstr "Data final da solicitação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hr_leave_export.js:0
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__request_date_from
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_report_calendar__request_date_from
@@ -3993,7 +3993,7 @@ msgid "Saturday"
 msgstr "Sábado"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_level_view_form
 msgid "Save"
@@ -4005,7 +4005,7 @@ msgid "Save & New"
 msgstr "Salvar & Novo"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_time_rule.py:0
 msgid ""
 "Saving %(record)s requires reducing %(employee)s's '%(leave_type)s' balance "
@@ -4047,19 +4047,19 @@ msgid "Second Approval"
 msgstr "Segunda aprovação"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Second approval request for %(leave_type)s"
 msgstr "Segunda solicitação de aprovação para %(leave_type)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Second approval request for %(work_entry_type)s"
 msgstr "Segundo pedido de aprovação para %(work_entry_type)s"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Select Time Off"
 msgstr "Selecionar folga"
@@ -4089,7 +4089,7 @@ msgstr ""
 "# pelo Administrador de Folgas, pelo Aprovador do Funcionário ou por ambos."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Select the request you just created"
 msgstr "Selecione a solicitação que você acabou de criar"
@@ -4113,7 +4113,7 @@ msgid "Selectable in Time Off"
 msgstr "Selecionável em “Folgas”"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "Selected Time Type must be the same one set on accrual plan"
 msgstr ""
@@ -4175,22 +4175,22 @@ msgid "Sick Time Off"
 msgstr "Folga por atestado médico"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/hr_leave_generate_multi_wizard.py:0
 msgid ""
 "Some employees already have time off requests in hours that overlap with the "
-"selected period, Odoo cannot automatically adjust or split hourly leaves "
+"selected period, WETH cannot automatically adjust or split hourly leaves "
 "during batch generation. Conflicting time off:\n"
 "%s"
 msgstr ""
 "Alguns funcionários já têm solicitações de folga em horários que se "
-"sobrepõem ao período selecionado; o Odoo não pode ajustar ou dividir "
+"sobrepõem ao período selecionado; o WETH não pode ajustar ou dividir "
 "automaticamente as folgas por hora durante a geração em lote. Folga "
 "conflitante:\n"
 "%s"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Some leaves cannot be linked to any allocation. To see those leaves,"
 msgstr ""
@@ -4198,7 +4198,7 @@ msgstr ""
 "licenças,"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid ""
 "Some of the accrual plans you're trying to delete are linked to an existing "
@@ -4277,7 +4277,7 @@ msgid "Striked"
 msgstr "Riscado"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 #: code:addons/hr_holidays/static/src/views/view_dialog/allocation_form_view_dialog.xml:0
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
@@ -4285,7 +4285,7 @@ msgid "Submit Request"
 msgstr "Enviar solicitação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "Submit your request"
 msgstr "Envie sua solicitação"
@@ -4296,7 +4296,7 @@ msgid "Sum"
 msgstr "Soma"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.xml:0
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_filter_panel/calendar_mobile_filter_panel.xml:0
 msgid "Summary"
@@ -4319,7 +4319,7 @@ msgid "Supporting Document Expected"
 msgstr "Documento de apoio esperado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Supporting Documents"
 msgstr "Documentos comprobatórios"
@@ -4330,7 +4330,7 @@ msgid "Switch employees to the new accrual level:"
 msgstr "Mudar os funcionários para o novo nível de acúmulo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_employee_type_report__holiday_status__taken
 msgid "Taken"
@@ -4351,7 +4351,7 @@ msgstr ""
 "Use este campo para fazer uma busca."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "The Start Date of the Validity Period must be anterior to the End Date."
 msgstr ""
@@ -4369,7 +4369,7 @@ msgstr ""
 "acúmulo é usado."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid ""
 "The allocation requirement of a time type cannot be changed once leaves of "
@@ -4389,7 +4389,7 @@ msgstr ""
 "A cor selecionada aqui será usada em todas as telas com o tipo de hora."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/res_company.py:0
 msgid ""
 "The company country cannot be changed while time off leaves or allocations "
@@ -4404,19 +4404,19 @@ msgid "The days carried over will be effective for"
 msgstr "Os dias transferidos serão válidos para"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee_departure.py:0
 msgid "The employee will leave the company on %(departure_date)s."
 msgstr "O funcionário deixará a empresa em %(departure_date)s."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan_level.py:0
 msgid "The first day must be lower than the second day."
 msgstr "O primeiro dia deve ser menor do que o segundo dia."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "The following employees are not supposed to work during that period:\n"
@@ -4426,7 +4426,7 @@ msgstr ""
 "%s"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid ""
 "The leaves planned in the future are exceeding the maximum value of the "
@@ -4459,7 +4459,7 @@ msgstr ""
 "da solicitação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "The selected accrual plan has no time type set. Please set a time type on "
@@ -4492,19 +4492,19 @@ msgstr ""
 "\"Aprovado\"."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "The time off has been automatically approved"
 msgstr "A folga foi aprovada automaticamente"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "The time off is outside the working schedule of the employee"
 msgstr "As folgas estão fora do horário de trabalho do funcionário"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "The time off request has been cancelled for the following reason:%(reason)s"
@@ -4534,7 +4534,7 @@ msgstr ""
 "a saída em horas em uma folga diária reduz a fonte para menos de um dia)."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "The total negative allocation within this validity period cannot exceed %"
@@ -4544,7 +4544,7 @@ msgstr ""
 "(max)s %(unit)s."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "There is no employee set on the time off. Please make sure you're logged in "
@@ -4554,7 +4554,7 @@ msgstr ""
 "empresa certa."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "There is no valid allocation to cover this request for the following "
@@ -4564,7 +4564,7 @@ msgstr ""
 "funcionários: %s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/load_public_holiday_wizard.py:0
 msgid "These companies do not have a country set: %(companies)s."
 msgstr "Essas empresas não têm um país definido: %(companies)s."
@@ -4630,7 +4630,7 @@ msgid "This milestone will be reached :"
 msgstr "Esse marco será alcançado:"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 msgid ""
 "This operation is not allowed as you are not linked to an employee in the "
@@ -4640,19 +4640,19 @@ msgstr ""
 "funcionário da empresa atual."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "This time off cannot be cancelled."
 msgstr "Esta folga não pode ser cancelada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "This time off will be entirely replaced with %(code)s - %(name)s"
 msgstr "Estas folgas serão totalmente substituídas por %(code)s - %(name)s"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "This time off will be split into:\n"
 msgstr "Estas folgas serão divididas em:\n"
@@ -4681,8 +4681,8 @@ msgid "Thursday"
 msgstr "Quinta"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_display_name_mixin.py:0
 #: code:addons/hr_holidays/static/src/webclient/share_target/hr_holiday_share_target_item.js:0
 #: model:ir.actions.act_window,name:hr_holidays.hr_leave_action_holiday_allocation_id
@@ -4740,13 +4740,13 @@ msgid "Time Off Approver"
 msgstr "Aprovador de folga"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 msgid "Time Off Balance"
 msgstr "Saldo de folgas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: model:ir.model,name:hr_holidays.model_hr_leave_report_calendar
 msgid "Time Off Calendar"
@@ -4758,7 +4758,7 @@ msgid "Time Off Count"
 msgstr "Contagem de folgas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee.py:0
 msgid "Time Off Dashboard"
 msgstr "Painel de folgas"
@@ -4784,7 +4784,7 @@ msgid "Time Off Per Employee Summary / Report"
 msgstr "Resumo/Relatório de Folga por Funcionário"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 #: model:ir.actions.act_window,name:hr_holidays.hr_leave_action_my_request
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_holidays_cancel_leave__leave_id
@@ -4927,7 +4927,7 @@ msgid "Time Type Approval"
 msgstr "Prazo para aprovação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/hr_leave_export.js:0
 msgid "Time Type/External ID"
 msgstr "Tipo de hora/ID externo"
@@ -4965,7 +4965,7 @@ msgid "Time off Taken"
 msgstr "Folga tirada"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee_departure.py:0
 msgid "Time off and allocation requests have been cleaned for %s"
 msgstr "Os pedidos de folga e de alocação foram atualizados para %s"
@@ -4978,7 +4978,7 @@ msgid "Time off of people you are manager of"
 msgstr "Folga de pessoas das quais você é gerente"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Time off request must be confirmed or validated in order to refuse it."
 msgstr ""
@@ -5003,7 +5003,7 @@ msgid "Title"
 msgstr "Título"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_side_panel/calendar_side_panel.xml:0
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__state__confirm
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_allocation__state__confirm
@@ -5037,7 +5037,7 @@ msgid "To Validate"
 msgstr "A validar"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "To import it as a new time off request instead, leave the External ID column "
@@ -5047,7 +5047,7 @@ msgstr ""
 "branco."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "To modify an approved time off, make sure you unapprove it first (%"
@@ -5057,7 +5057,7 @@ msgstr ""
 "aprovação (%(employee)s: %(date_from)s para %(date_to)s)."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_dashboard.xml:0
 msgid "Today"
 msgstr "Hoje"
@@ -5108,7 +5108,7 @@ msgid "Twice a year"
 msgstr "Duas vezes por ano"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/resource_calendar_leaves.py:0
 msgid ""
 "Two public holidays cannot overlap each other for the same working hours."
@@ -5156,7 +5156,7 @@ msgid "Unlimited"
 msgstr "Ilimitado"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid "Unnamed Plan"
 msgstr "Plano sem nome"
@@ -5173,25 +5173,25 @@ msgid "Unread Messages"
 msgstr "Mensagens não lidas"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/hr_presence_status/hr_presence_status.js:0
 msgid "Unspecified"
 msgstr "Não especificado"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "Unused days will be reset."
 msgstr "Os dias não utilizados serão reiniciados."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "Unused days will be transferred totally on each"
 msgstr "Os dias não utilizados serão transferidos totalmente em cada"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "Unused days will be transferred with a max of"
 msgstr "Os dias não utilizados serão transferidos com um máximo de"
@@ -5218,31 +5218,31 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/common/im_status_patch.js:0
 msgid "User is on leave"
 msgstr "Usuário em licença"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/common/im_status_patch.js:0
 msgid "User is on leave and busy"
 msgstr "O usuário está de licença e ocupado"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/common/im_status_patch.js:0
 msgid "User is on leave and idle"
 msgstr "Usuário em licença e ocioso"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/core/common/im_status_patch.js:0
 msgid "User is on leave and online"
 msgstr "Usuário em licença e on-line"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 msgid "UserError"
 msgstr "UserError"
@@ -5253,7 +5253,7 @@ msgid "Valid Work Entry Type"
 msgstr "Tipo de entrada de trabalho válido"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/view_dialog/form_view_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_form
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_kanban
@@ -5271,13 +5271,13 @@ msgid "Validation Type"
 msgstr "Tipo de validação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "Validity"
 msgstr "Validade"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_employee_departure.py:0
 msgid ""
 "Validity End date has been updated because the employee will leave the "
@@ -5305,7 +5305,7 @@ msgid "Validity Stop"
 msgstr "Fim da validade"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.js:0
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.xml:0
 msgid "View Overlaps"
@@ -5354,7 +5354,7 @@ msgid "Wednesday"
 msgstr "Quarta"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan_level.py:0
 msgid "Weekday must be selected to use the frequency weekly"
 msgstr "O dia da semana deve ser selecionado para usar a frequência semanal"
@@ -5474,25 +5474,25 @@ msgstr ""
 "esse período."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "Yes, save changes"
 msgstr "Sim, salvar alterações"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/report/hr_leave_report_calendar.py:0
 msgid "You are not allowed to approve this leave request."
 msgstr "Você não tem permissão para aprovar essa solicitação de licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/report/hr_leave_report_calendar.py:0
 msgid "You are not allowed to refuse this leave request."
 msgstr "Você não tem permissão para recusar essa solicitação de licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You are not allowed to request time off on a Mandatory Day."
 msgstr "Não é permitido solicitar folga em um dia obrigatório."
@@ -5516,7 +5516,7 @@ msgstr ""
 "pode solicitar folgas para si mesmo."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/views/calendar/calendar_controller.js:0
 #: code:addons/hr_holidays/static/src/views/list/holidays_list_controller.js:0
 msgid ""
@@ -5557,7 +5557,7 @@ msgid "You can not start an accrual in the past."
 msgstr "Não é possível iniciar um acúmulo no passado."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You can only cancel your own leave. You can cancel a leave only if this "
@@ -5567,13 +5567,13 @@ msgstr ""
 "somente se essa licença for aprovada, validada ou recusada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can only validate a leave with validation by Time Off Manager."
 msgstr "Você só pode validar uma licença com a validação do Gerente de Folgas."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "You can only validate an allocation with validation by Time Off Manager."
@@ -5581,69 +5581,69 @@ msgstr ""
 "Você só pode validar uma alocação com a validação do Gerente de Folgas."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/tours/hr_holidays_tour.js:0
 msgid "You can select the period you need to take off"
 msgstr "Você pode selecionar o período que precisa tirar"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "You can't approve a validated allocation."
 msgstr "Não é possível aprovar uma alocação validada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't approve a validated leave."
 msgstr "Não é possível aprovar uma licença validada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "You can't approve this refused allocation."
 msgstr "Não é possível aprovar essa alocação recusada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't approve this refused leave."
 msgstr "Não é possível aprovar essa licença recusada."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't delete a time off request that is in the past."
 msgstr "Não é possível excluir uma solicitação de folga que esteja no passado."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "You can't do the same action twice."
 msgstr "Não é possível executar a mesma ação duas vezes."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't refuse a leave with validation by Time Off Officer."
 msgstr "Não é possível recusar uma licença com validação do Diretor de Folgas."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "You can't refuse an allocation with validation by Time Off Officer."
 msgstr ""
 "Não é possível recusar uma alocação com validação pelo Diretor de Folga."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't reset a leave. Cancel/delete this one and create an other"
 msgstr "Não é possível redefinir uma licença. Cancele/exclua esta e crie outra"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "You can't reset an allocation. Cancel/delete this one and create an other"
@@ -5652,25 +5652,25 @@ msgstr ""
 "outra"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You can't validate this leave."
 msgstr "Você não pode validar essa licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid "You cannot allow requests on top of leaves of type 'Absence'."
 msgstr "Não é permitido permitir solicitações sobre folhas do tipo 'Ausência'."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You cannot approve this leave."
 msgstr "Você não pode aprovar essa licença."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You cannot create a time off request for an employee of type company "
@@ -5680,7 +5680,7 @@ msgstr ""
 "executivo da empresa."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "You cannot delete an allocation request which has some validated leaves."
@@ -5689,13 +5689,13 @@ msgstr ""
 "licenças validadas."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid "You cannot delete an allocation request which is in %s state."
 msgstr "Não é possível excluir uma solicitação de alocação com status %s."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You cannot encode more absence hours than allowed for this period.\n"
@@ -5710,7 +5710,7 @@ msgstr ""
 "Ausência solicitada: %(requested)g horas."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You cannot first approve a time off for %s, because you are not his time off "
@@ -5720,7 +5720,7 @@ msgstr ""
 "de folga dessa pessoa"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan_level.py:0
 msgid "You cannot have a balance cap on accrued time set to 0."
 msgstr "Você não pode definir o limite de saldo no tempo acumulado como 0."
@@ -5746,7 +5746,7 @@ msgstr ""
 "Você não pode ter um tempo de validade de provisionamento definido como 0."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid ""
 "You cannot modify the 'Duration Count' setting because one or more leaves "
@@ -5758,7 +5758,7 @@ msgstr ""
 "afetaria os saldos existentes dos funcionários."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid ""
 "You cannot modify the 'Public Holiday Included' setting since one or more "
@@ -5770,7 +5770,7 @@ msgstr ""
 "o saldo desses funcionários seria afetado por essa alteração."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
 "You cannot reduce the duration below the duration of leaves already taken by "
@@ -5780,7 +5780,7 @@ msgstr ""
 "pelo funcionário."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You do not have any allocation for this time type.\n"
@@ -5790,7 +5790,7 @@ msgstr ""
 "Solicite uma alocação antes de enviar seu pedido de folga."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You don't have the rights to apply second approval on a time off request"
@@ -5810,7 +5810,7 @@ msgstr ""
 "Você deve fornecer uma taxa maior que 0 nos níveis do plano de acumulação."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
 "You must have manager rights to modify/validate a time off that already begun"
@@ -5819,32 +5819,32 @@ msgstr ""
 "iniciou"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "You've already booked time off which overlaps with this period:"
 msgstr "Você já reservou uma folga que coincide com esse período:"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Your %(work_entry_type)s planned on %(date)s has been accepted"
 msgstr "Seu %(work_entry_type)s planejado em %(date)s foi aceito"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Your %(work_entry_type)s planned on %(date)s has been refused"
 msgstr ""
 "Sua solicitação de %(work_entry_type)s planejada em %(date)s foi recusada"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "Your Time Off"
 msgstr "Sua folga"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan_level.py:0
 msgid ""
 "Your frequency selection is not correct: please choose a frequency between "
@@ -5856,7 +5856,7 @@ msgstr ""
 "Mensalmente, Duas vezes por ano e Anualmente."
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/wizard/hr_holidays_cancel_leave.py:0
 msgid "Your time off has been cancelled."
 msgstr "Sua folga foi cancelada."
@@ -5867,19 +5867,19 @@ msgid "__default__"
 msgstr "__default__"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "allocation date"
 msgstr "data de alocação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "and a balance cap is set to"
 msgstr "e um limite de equilíbrio é definido para"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_level_view_form
 msgid "and the"
@@ -5896,13 +5896,13 @@ msgid "by Type"
 msgstr "por tipo"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "can be used before the allocation expires."
 msgstr "podem ser usados antes que a alocação expire."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid "click here"
 msgstr "clique aqui"
@@ -5913,20 +5913,20 @@ msgid "dates"
 msgstr "datas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "day"
 msgstr "dia"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "day(s)"
 msgstr "dia(s)"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
@@ -5980,31 +5980,31 @@ msgid "eg. Sickness, Paid time off, Unpaid, ..."
 msgstr "ex.: Doença, Licença remunerada, Não remunerada, ..."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "every day."
 msgstr "todos os dias."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "every hour."
 msgstr "a cada hora."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "every month on the"
 msgstr "todos os meses no"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "every week on"
 msgstr "toda semana no"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "every year on the"
 msgstr "todos os anos no"
@@ -6015,14 +6015,14 @@ msgid "from the start of allocation"
 msgstr "desde o início da alocação"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "hour(s)"
 msgstr "hora(s)"
 
 #. module: hr_holidays
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
@@ -6030,13 +6030,13 @@ msgid "hours"
 msgstr "horas"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan.py:0
 msgid "id"
 msgstr "id"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_work_entry_type.py:0
 msgid ""
 "leaves of type 'Worked Time' should be always eligible for accrual rate."
@@ -6045,13 +6045,13 @@ msgstr ""
 "acumulação."
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "month(s)"
 msgstr "meses"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_level_view_form
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_plan_view_form
@@ -6074,7 +6074,7 @@ msgid "of the month"
 msgstr "do mês"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_level_view_form
 msgid "of the month."
@@ -6086,7 +6086,7 @@ msgid "on"
 msgstr "em"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "on each"
 msgstr "em cada um"
@@ -6097,7 +6097,7 @@ msgid "on the"
 msgstr "no dia"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.xml:0
 msgid "remaining )"
 msgstr "restantes)"
@@ -6125,19 +6125,19 @@ msgid "sequence"
 msgstr "sequência"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "start of the year"
 msgstr "início do ano"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/leave_stats/leave_stats.xml:0
 msgid "team members on holiday during this period"
 msgstr "membros da equipe em férias durante esse período"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "the accruated amount is insufficient for that duration."
 msgstr "o valor acumulado é insuficiente para essa duração."
@@ -6148,19 +6148,19 @@ msgid "to"
 msgstr "até"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "twice a month on the"
 msgstr "duas vezes por mês no"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.xml:0
 msgid "twice a year on the"
 msgstr "duas vezes por ano no"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "undefined"
 msgstr "indefinido"
@@ -6171,13 +6171,13 @@ msgid "validate"
 msgstr "validar"
 
 #. module: hr_holidays
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_holidays/static/src/components/accrual_level/accrual_levels.js:0
 msgid "year(s)"
 msgstr "ano(s)"
 
 #. module: hr_holidays
-#. odoo-python
+#. weth-python
 #: code:addons/hr_holidays/models/hr_time_rule.py:0
 msgid "your HR manager"
 msgstr "seu gerente de RH"

@@ -46,7 +46,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/today");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Today')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Today')", 1);
         await press("Enter");
         expect('[data-embedded="date"]').toHaveCount(1);
         await animationFrame();
@@ -93,7 +93,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/hour");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Hour')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Hour')", 1);
         await press("Enter");
         expect('[data-embedded="date"]').toHaveCount(1);
         await animationFrame();
@@ -138,7 +138,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/hour");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Hour')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Hour')", 1);
         await press("Enter");
         expect('[data-embedded="date"]').toHaveCount(1);
         await animationFrame();
@@ -156,7 +156,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/insertdate");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains(/^Date$/)", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains(/^Date$/)", 1);
         await press("Enter");
         await expectElementCount(".o_datetime_picker", 1);
         await contains(".o_date_item_cell:contains('7')").click();
@@ -179,7 +179,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/datetime");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Date and Time')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Date and Time')", 1);
         await press("Enter");
         await expectElementCount(".o_datetime_picker", 1);
         expect(".o_datetime_picker button[title='Clear']").toHaveCount(0);
@@ -209,7 +209,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/datetime");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Date and Time')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Date and Time')", 1);
         await press("Enter");
         await expectElementCount(".o_datetime_picker", 1);
         await contains(".o_date_item_cell:contains('6')").click();
@@ -335,7 +335,7 @@ describe("date command", () => {
             config: configWithEmbeddings,
         });
         await insertText(editor, "/datetime");
-        await expectElementCount(".o-we-powerbox .o-we-command-name:contains('Date and Time')", 1);
+        await expectElementCount(".w-we-powerbox .w-we-command-name:contains('Date and Time')", 1);
         await press("Enter");
         await expectElementCount(".o_datetime_picker", 1);
         expect(document.activeElement).not.toBe(el);

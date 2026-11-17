@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:42+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_account/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -60,13 +60,13 @@ msgstr ""
 "\n"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/stock_move.py:0
 msgid "%(value)s for %(quantity)s %(unit)s from %(production)s"
 msgstr "%(value)s para %(quantity)s %(unit)s de %(production)s"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/mrp_production.py:0
 msgid "%s - Labour"
 msgstr "%s - Mão-de-obra"
@@ -179,7 +179,7 @@ msgid "Bill of Material"
 msgstr "Lista de materiais"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/analytic_account.py:0
 #: model_terms:ir.ui.view,arch_db:mrp_account.account_analytic_account_view_form_mrp
 msgid "Bills of Materials"
@@ -229,8 +229,8 @@ msgid "Consolidation Currency"
 msgstr "Moeda de consolidação"
 
 #. module: mrp_account
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/mrp_account/report/stock_valuation_report.py:0
 #: code:addons/mrp_account/static/src/stock_valuation/stock_valuation_report.js:0
 #: code:addons/mrp_account/static/src/stock_valuation/stock_valuation_report.xml:0
@@ -321,7 +321,7 @@ msgid "Extra BoM Cost"
 msgstr "Custo extra da lista de materiais"
 
 #. module: mrp_account
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/mrp_account/static/src/components/bom_overview_extra_bom_cost_line/bom_overview_extra_bom_cost_line.xml:0
 #: code:addons/mrp_account/static/src/components/mo_overview_extra_bom_cost_line/mo_overview_extra_bom_cost_line.xml:0
 #: model:ir.model.fields,field_description:mrp_account.field_mrp_bom__extra_cost
@@ -402,7 +402,7 @@ msgid "MO Overview Report"
 msgstr "Relatório geral de OP"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "Manual Entry"
 msgstr "Lançamento manual"
@@ -414,7 +414,7 @@ msgid "Manufacturing Order"
 msgstr "Ordem de produção"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/analytic_account.py:0
 #: model:ir.model.fields.selection,name:mrp_account.selection__account_analytic_line__category__manufacturing_order
 #: model_terms:ir.ui.view,arch_db:mrp_account.account_analytic_account_view_form_mrp
@@ -429,7 +429,7 @@ msgid "Manufacturing Orders Count"
 msgstr "Contagem de ordens de produção"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "Manufacturing WIP - %(orders_list)s"
 msgstr "TEP de Fabricação - %(orders_list)s"
@@ -445,7 +445,7 @@ msgid "Mo Analytic Account Line"
 msgstr "Linha de conta analítica da OP"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "Please make sure the total credit amount equals the total debit amount."
 msgstr ""
@@ -515,13 +515,13 @@ msgid "Reversal Date"
 msgstr "Data da reversão"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "Reversal date must be after the posting date."
 msgstr "A data de estorno deve ser posterior à data de lançamento."
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "Reversal of: %s"
 msgstr "Estorno de: %s"
@@ -595,19 +595,19 @@ msgid "Total Debit"
 msgstr "Débito total"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "WIP - Component Value"
 msgstr "TEP - Valor do componente"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/wizard/mrp_wip_accounting.py:0
 msgid "WIP - Overhead"
 msgstr "TEP - Conta de custos indiretos"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/mrp_production.py:0
 msgid "WIP Entries of %s"
 msgstr "Entradas de WIP de %s"
@@ -618,7 +618,7 @@ msgid "WIP Journal Entry Count"
 msgstr "Total de lançamentos no diário de WIP"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/account_move.py:0
 msgid "WIP MOs of %s"
 msgstr "OPs de TEP de %s"
@@ -674,7 +674,7 @@ msgid "Work Order Count"
 msgstr "Contagem de ordens de trabalho"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/analytic_account.py:0
 msgid "Work Orders"
 msgstr "Ordens de trabalho"
@@ -690,7 +690,7 @@ msgid "Workcenter Productivity Log"
 msgstr "Registro de produtividade do centro de trabalho"
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/mrp_production.py:0
 #, fuzzy
 msgid ""
@@ -701,7 +701,7 @@ msgstr ""
 "lançamentos contábeis associados."
 
 #. module: mrp_account
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_account/models/mrp_production.py:0
 #: code:addons/mrp_account/models/mrp_workorder.py:0
 msgid "[WC] %s"

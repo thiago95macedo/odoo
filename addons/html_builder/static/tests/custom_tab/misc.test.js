@@ -498,7 +498,7 @@ test("hide empty OptionContainer and display OptionContainer with content (with 
 test("fallback on the 'Blocks' tab if no option match the selected element", async () => {
     await setupHTMLBuilder(`<div class="parent-target"><div class="child-target">b</div></div>`);
     await contains(":iframe .parent-target > div").click();
-    expect(".o-snippets-tabs button:contains('Blocks')").toHaveClass("active");
+    expect(".w-snippets-tabs button:contains('Blocks')").toHaveClass("active");
 });
 
 test("move back on the 'Blocks' tab if no more option match the selected element", async () => {
@@ -512,9 +512,9 @@ test("move back on the 'Blocks' tab if no more option match the selected element
     });
     await setupHTMLBuilder(`<div class="parent-target"><div class="child-target">b</div></div>`);
     await contains(":iframe .parent-target > div").click();
-    expect(".o-snippets-tabs button[data-name=customize]").toHaveClass("active");
+    expect(".w-snippets-tabs button[data-name=customize]").toHaveClass("active");
     await contains("button.oe_snippet_remove").click();
-    expect(".o-snippets-tabs button[data-name=blocks]").toHaveClass("active");
+    expect(".w-snippets-tabs button[data-name=blocks]").toHaveClass("active");
 });
 
 test("stay on the 'Theme' tab if no more option match the selected element", async () => {
@@ -537,10 +537,10 @@ test("stay on the 'Theme' tab if no more option match the selected element", asy
     const { getEditor } = await setupHTMLBuilder(
         `<div class="parent-target"><div class="child-target">b</div></div>`
     );
-    await contains(".o-snippets-tabs button[data-name=theme]").click();
-    expect(".o-snippets-tabs button[data-name=theme]").toHaveClass("active");
+    await contains(".w-snippets-tabs button[data-name=theme]").click();
+    expect(".w-snippets-tabs button[data-name=theme]").toHaveClass("active");
     getEditor().shared.builderOptions.deactivateContainers();
-    expect(".o-snippets-tabs button[data-name=theme]").toHaveClass("active");
+    expect(".w-snippets-tabs button[data-name=theme]").toHaveClass("active");
 });
 
 test("display empty message if no option container is visible", async () => {

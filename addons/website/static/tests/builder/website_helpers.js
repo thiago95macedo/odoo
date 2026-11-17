@@ -343,7 +343,7 @@ export async function setupWebsiteBuilder(
         const sessionScriptEl = targetDoc.createElement("script");
         sessionScriptEl.type = "text/javascript";
         sessionScriptEl.textContent = `
-            odoo = {};
+            weth = {};
             weth.__session_info__ = ${JSON.stringify(session)}
         `;
         targetDoc.head.append(sessionScriptEl);
@@ -378,7 +378,7 @@ async function openBuilderSidebar(editAssetsLoaded) {
         loadBundle("html_editor.assets_image_cropper"),
     ]);
 
-    await click(".o-website-btn-custo-primary");
+    await click(".w-website-btn-custo-primary");
     await editAssetsLoaded;
     // animationFrame linked to state.isEditing rendering the
     // WebsiteBuilderClientAction.
@@ -453,7 +453,7 @@ export async function setupWebsiteBuilderWithDummySnippet(content) {
 
 export async function insertCategorySnippet({ group, snippet } = {}) {
     await contains(
-        `.o-snippets-menu #snippet_groups .o_snippet${group ? `[data-snippet-group=${group}]` : ""
+        `.w-snippets-menu #snippet_groups .o_snippet${group ? `[data-snippet-group=${group}]` : ""
         } .o_snippet_thumbnail .o_snippet_thumbnail_area`
     ).click();
     await confirmAddSnippet(snippet);

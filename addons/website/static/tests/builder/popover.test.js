@@ -32,7 +32,7 @@ test("Popovers scroll with iframe", async () => {
         focusOffset: 4,
     });
 
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
 
     const expectScroll = async (popoverSelector) => {
@@ -55,16 +55,16 @@ test("Popovers scroll with iframe", async () => {
         });
     };
 
-    await contains(".o-we-toolbar button.o-select-color-background").click();
+    await contains(".w-we-toolbar button.w-select-color-background").click();
     await expectScroll(".o_popover:has(> .o_font_color_selector)");
 
-    await contains(".o-we-toolbar div[name=websiteDecoration] > button").click();
+    await contains(".w-we-toolbar div[name=websiteDecoration] > button").click();
     await expectScroll(".o_popover");
 
-    await contains(".o-we-toolbar button.o-select-highlight").click();
+    await contains(".w-we-toolbar button.w-select-highlight").click();
     await expectScroll(".o_popover");
 
-    await contains(".o-we-toolbar button[title='Animate Text']").click();
+    await contains(".w-we-toolbar button[title='Animate Text']").click();
     await expectScroll(".o_popover:has(> .o_animate_text_popover)");
 });
 
@@ -78,19 +78,19 @@ test("Floating toolbar visual consistency and usability", async () => {
         focusOffset: 4,
     });
 
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
 
     // Verify animation option dropdown matches font style popover design
-    await contains(".o-we-toolbar button[title='Animate Text']").click();
+    await contains(".w-we-toolbar button[title='Animate Text']").click();
     await contains(".o_animate_text_popover .hb-row-content button").click();
     const animationPopover = await waitFor(".o_popover:has([data-action-value='onAppearance'])");
     expect(animationPopover).not.toHaveClass("o-hb-select-dropdown");
 
     // Verify highlight picker grid is scrollable and scrollbar is hidden
-    await pointerDown(".o-we-toolbar button[title='Apply highlight']");
+    await pointerDown(".w-we-toolbar button[title='Apply highlight']");
     await waitForNone(".o_popover:has([data-action-value='onAppearance'])");
-    await pointerUp(".o-we-toolbar button[title='Apply highlight']");
+    await pointerUp(".w-we-toolbar button[title='Apply highlight']");
     const textHighlightPopover = await waitFor(".o_popover .grid");
     expect(textHighlightPopover).toHaveStyle({ overflow: "auto", scrollbarWidth: "thin" });
 
@@ -117,16 +117,16 @@ test("closing the link popover should re-open the toolbar", async () => {
     const p = queryOne(":iframe p");
     setSelection({ anchorNode: p, anchorOffset: 0, focusNode: p, focusOffset: 1 });
 
-    await waitFor(".o-we-toolbar");
-    await contains('.o-we-toolbar button[name="link"]').click();
+    await waitFor(".w-we-toolbar");
+    await contains('.w-we-toolbar button[name="link"]').click();
 
     // While the link popover is open, the toolbar should be hidden
-    await expectElementCount(".o-we-toolbar", 0);
-    await expectElementCount(".o-we-linkpopover", 1);
+    await expectElementCount(".w-we-toolbar", 0);
+    await expectElementCount(".w-we-linkpopover", 1);
 
     // Closing the link popover should bring the toolbar back
     await click(".o_we_discard_link");
 
-    await expectElementCount(".o-we-linkpopover", 0);
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-linkpopover", 0);
+    await expectElementCount(".w-we-toolbar", 1);
 });

@@ -23,8 +23,8 @@ test("Do not open chat windows automatically when chat hub is compact", async ()
     });
     await start();
     await click("button[title='Chat Options']");
-    await click(".o-dropdown-item", { text: "Hide all conversations" });
-    await contains(".o-mail-ChatHub-bubbleBtn [data-icon='forum']");
+    await click(".w-dropdown-item", { text: "Hide all conversations" });
+    await contains(".w-mail-ChatHub-bubbleBtn [data-icon='forum']");
     await withGuest(guestId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -36,10 +36,10 @@ test("Do not open chat windows automatically when chat hub is compact", async ()
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-ChatHub-bubbleBtn .badge", { text: "1" });
-    await click("button.o-mail-ChatHub-bubbleBtn");
-    await contains(".o-mail-ChatBubble[name=Visitor] .badge", { text: "1" });
-    await contains(".o-mail-ChatWindow", { count: 0, text: "Visitor" });
-    await click(".o-mail-ChatBubble[name=Visitor] .o-mail-ChatHub-bubbleBtn");
-    await contains(".o-mail-ChatWindow", { text: "Visitor" });
+    await contains(".w-mail-ChatHub-bubbleBtn .badge", { text: "1" });
+    await click("button.w-mail-ChatHub-bubbleBtn");
+    await contains(".w-mail-ChatBubble[name=Visitor] .badge", { text: "1" });
+    await contains(".w-mail-ChatWindow", { count: 0, text: "Visitor" });
+    await click(".w-mail-ChatBubble[name=Visitor] .w-mail-ChatHub-bubbleBtn");
+    await contains(".w-mail-ChatWindow", { text: "Visitor" });
 });

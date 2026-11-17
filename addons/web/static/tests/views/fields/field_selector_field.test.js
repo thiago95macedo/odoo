@@ -39,11 +39,11 @@ test("readonly", async () => {
             </form>
         `,
     });
-    expect(".o_field_widget[name='update_path']").toHaveText("non_searchable");
-    expect(".o_field_widget[name='update_path']").toHaveClass(
+    expect(".w_field_widget[name='update_path']").toHaveText("non_searchable");
+    expect(".w_field_widget[name='update_path']").toHaveClass(
         "o_field_widget o_readonly_modifier o_field_field_selector"
     );
-    expect(".o_field_widget[name='update_path'] .o_input").toHaveCount(0);
+    expect(".w_field_widget[name='update_path'] .w_input").toHaveCount(0);
 });
 
 test("required", async () => {
@@ -56,10 +56,10 @@ test("required", async () => {
             </form>
         `,
     });
-    expect(".o_model_field_selector_warning").toHaveCount(1);
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    await contains(".o_model_field_selector_popover_item button:contains('email')").click();
-    expect(".o_model_field_selector_warning").toHaveCount(0);
+    expect(".w_model_field_selector_warning").toHaveCount(1);
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    await contains(".w_model_field_selector_popover_item button:contains('email')").click();
+    expect(".w_model_field_selector_warning").toHaveCount(0);
 });
 
 test("model option", async () => {
@@ -80,8 +80,8 @@ test("model option", async () => {
             </form>
         `,
     });
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual(
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual(
         [
             "Created on",
             "Display name",
@@ -93,18 +93,18 @@ test("model option", async () => {
         ],
         { message: "should display fields from same model by default" }
     );
-    await contains(".o_field_widget[name='model'] .o_input").edit("lead");
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual(
+    await contains(".w_field_widget[name='model'] .w_input").edit("lead");
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual(
         ["Contact", "Created on", "Display name", "Id", "Last Modified on", "Note", "Salesperson"],
         { message: "should display fields of the specified model" }
     );
-    expect(".o_model_field_selector_popover_item_relation").toHaveCount(2, {
+    expect(".w_model_field_selector_popover_item_relation").toHaveCount(2, {
         message: "following relations is supported by default",
     });
     await followRelation();
     await animationFrame();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual(
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual(
         ["Childs", "Created on", "Display name", "Email", "Id", "Last Modified on"],
         { message: "should display fields of the selected relation" }
     );
@@ -122,12 +122,12 @@ test("model option pointing to an empty field", async () => {
             </form>
         `,
     });
-    expect(".o_field_widget[name='update_path'] .o_model_field_selector").toHaveCount(0, {
+    expect(".w_field_widget[name='update_path'] .w_model_field_selector").toHaveCount(0, {
         message: "the selector should not be usable without a model",
     });
-    await contains(".o_field_widget[name='model'] .o_input").edit("lead");
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual([
+    await contains(".w_field_widget[name='model'] .w_input").edit("lead");
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual([
         "Contact",
         "Created on",
         "Display name",
@@ -153,13 +153,13 @@ test("follow_relations option", async () => {
             </form>
         `,
     });
-    await contains(".o_field_widget[name='model'] .o_input").edit("lead");
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual(
+    await contains(".w_field_widget[name='model'] .w_input").edit("lead");
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual(
         ["Contact", "Created on", "Display name", "Id", "Last Modified on", "Note", "Salesperson"],
         { message: "should display fields of the specified model" }
     );
-    expect(".o_model_field_selector_popover_item_relation").toHaveCount(0, {
+    expect(".w_model_field_selector_popover_item_relation").toHaveCount(0, {
         message: "should not allow to follow relations",
     });
 });
@@ -184,9 +184,9 @@ test("allow_properties option", async () => {
             </form>
         `,
     });
-    await contains(".o_field_widget[name='model'] .o_input").edit("lead");
-    await contains(".o_field_widget[name='update_path'] .o_input").click();
-    expect(queryAllTexts(".o_model_field_selector_popover_item")).toEqual(
+    await contains(".w_field_widget[name='model'] .w_input").edit("lead");
+    await contains(".w_field_widget[name='update_path'] .w_input").click();
+    expect(queryAllTexts(".w_model_field_selector_popover_item")).toEqual(
         ["Contact", "Created on", "Display name", "Id", "Last Modified on", "Note", "Salesperson"],
         { message: "should display fields of the specified model, except the properties field" }
     );

@@ -75,7 +75,7 @@ class TestPoSSetup(TestPoSCommon):
             'code': 'BANKOS',
             'type': 'bank',
             'invoice_reference_type': 'invoice',
-            'invoice_reference_model': 'odoo'
+            'invoice_reference_model': 'weth'
         })
         payment_method = self.env['pos.payment.method'].create({
             'name': 'Lets Pay for Tests', 'journal_id': journal.id, 'type': 'bank'})

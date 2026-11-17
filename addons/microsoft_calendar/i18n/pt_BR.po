@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/microsoft_calendar/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -23,31 +23,31 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Days"
 msgstr "%(reminder_type)s – %(duration)s dias"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Hours"
 msgstr "%(reminder_type)s – %(duration)s horas"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "%(reminder_type)s - %(duration)s Minutes"
 msgstr "%(reminder_type)s – %(duration)s minutos"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "%s - At time of event"
 msgstr "%s – Na hora do evento"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "(No title)"
 msgstr "(Sem título)"
@@ -60,7 +60,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: microsoft_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/microsoft_calendar/static/src/views/microsoft_calendar/microsoft_calendar_controller.js:0
 msgid ""
 "An administrator needs to configure Outlook Synchronization before you can "
@@ -70,7 +70,7 @@ msgstr ""
 "possa usá-la."
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/res_users.py:0
 msgid ""
 "An error occurred while generating the token. Your authorization code may be "
@@ -94,7 +94,7 @@ msgid "Calendar Event"
 msgstr "Evento no calendário"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "Calendar Event imported from Outlook"
 msgstr "Evento de calendário importado do Outlook"
@@ -110,13 +110,13 @@ msgid "Config Settings"
 msgstr "Configurações"
 
 #. module: microsoft_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/microsoft_calendar/static/src/views/microsoft_calendar/microsoft_calendar_controller.js:0
 msgid "Configuration"
 msgstr "Configuração"
 
 #. module: microsoft_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/microsoft_calendar/static/src/views/microsoft_calendar/microsoft_calendar_controller.js:0
 msgid "Configure"
 msgstr "Configurar"
@@ -138,8 +138,8 @@ msgstr "Criado em"
 
 #. module: microsoft_calendar
 #: model:ir.model.fields,field_description:microsoft_calendar.field_microsoft_calendar_account_reset__delete_events
-msgid "Delete synced events from Odoo"
-msgstr "Excluir eventos sincronizados do Odoo"
+msgid "Delete synced events from Weth"
+msgstr "Excluir eventos sincronizados do Weth"
 
 #. module: microsoft_calendar
 #: model:ir.actions.act_window,name:microsoft_calendar.microsoft_calendar_reset_account_action
@@ -160,7 +160,7 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "Due to an Outlook Calendar limitation, recurrence updates must be done "
@@ -170,21 +170,21 @@ msgstr ""
 "recorrência devem ser feitas diretamente no Calendário do Outlook."
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "Due to an Outlook Calendar limitation, recurrence updates must be done "
 "directly in Outlook Calendar.\n"
 "If this recurrence is not shown in Outlook Calendar, you must delete it in "
-"Odoo Calendar and recreate it in Outlook Calendar."
+"WETH Calendar and recreate it in Outlook Calendar."
 msgstr ""
 "Devido a uma limitação do Calendário do Outlook, as atualizações de "
 "recorrência devem ser feitas diretamente no Calendário do Outlook.\n"
 "Se essa recorrência não for mostrada no Calendário do Outlook, você deverá "
-"excluí-la no Calendário do Odoo e recriá-la no Calendário do Outlook."
+"excluí-la no Calendário do WETH e recriá-la no Calendário do Outlook."
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "Due to an Outlook Calendar limitation, recurrent events must be created "
@@ -204,17 +204,17 @@ msgid "Event Recurrence Rule"
 msgstr "Regra de recorrência de evento"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
-"For a correct synchronization between Odoo and Outlook Calendar, all "
+"For a correct synchronization between WETH and Outlook Calendar, all "
 "attendees must have an email address. However, some events do not respect "
 "this condition. As long as the events are incorrect, the calendars will not "
 "be synchronized.\n"
 "Either update the events/attendees or archive these events %(details)s:\n"
 "%(invalid_events)s"
 msgstr ""
-"Para uma sincronização correta entre o Odoo e o Outlook Calendar, todos os "
+"Para uma sincronização correta entre o WETH e o Outlook Calendar, todos os "
 "participantes devem ter um endereço de e-mail. No entanto, alguns eventos "
 "não respeitam essa condição. Enquanto os eventos estiverem incorretos, os "
 "calendários não serão sincronizados.\n"
@@ -222,14 +222,14 @@ msgstr ""
 "%(invalid_events)s"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "For having a different organizer in your event, it is necessary that the "
-"organizer have its Odoo Calendar synced with Outlook Calendar."
+"organizer have its WETH Calendar synced with Outlook Calendar."
 msgstr ""
 "Para ter um organizador diferente em seu evento, é necessário que o "
-"organizador tenha seu Calendário do Odoo sincronizado com o Calendário do "
+"organizador tenha seu Calendário do WETH sincronizado com o Calendário do "
 "Outlook."
 
 #. module: microsoft_calendar
@@ -261,7 +261,7 @@ msgstr ""
 "Indica se a sincronização com o Calendário do Outlook está pausada ou não."
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "It is necessary adding the proposed organizer as attendee before saving the "
@@ -352,7 +352,7 @@ msgid "Next Sync Token"
 msgstr "Token da próxima sincronização"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid "Notification"
 msgstr "Notificação"
@@ -365,7 +365,7 @@ msgid "Organizer event Id"
 msgstr "ID do evento do organizador"
 
 #. module: microsoft_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/microsoft_calendar/static/src/views/microsoft_calendar/microsoft_calendar_controller.xml:0
 msgid "Outlook"
 msgstr "Outlook"
@@ -388,7 +388,7 @@ msgid "Outlook Synchronization stopped"
 msgstr "Sincronização do Outlook interrompida"
 
 #. module: microsoft_calendar
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_calendar/models/calendar_event.py:0
 msgid ""
 "Outlook limitation: in a recurrence, an event cannot be moved to or before "
@@ -436,7 +436,7 @@ msgid "Synchronize a record with Microsoft Calendar"
 msgstr "Sincronize um registro com o Calendário Microsoft"
 
 #. module: microsoft_calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/microsoft_calendar/static/src/views/microsoft_calendar/microsoft_calendar_controller.js:0
 msgid ""
 "The Outlook Synchronization needs to be configured before you can use it, do "
@@ -494,8 +494,8 @@ msgstr "O que deve acontecer com os eventos sincronizados anteriormente?"
 #~ msgid "Confirm"
 #~ msgstr "Confirmar"
 
-#~ msgid "Delete from Odoo"
-#~ msgstr "Excluir do Odoo"
+#~ msgid "Delete from Weth"
+#~ msgstr "Excluir do Weth"
 
 #~ msgid "Delete from both"
 #~ msgstr "Excluir de ambos"

@@ -17,7 +17,7 @@ class Temporal(Generator, ABC):
     default_end: str
 
     def __init__(self, start: str | None = None, end: str | None = None, **kwargs):
-        """Parse date bounds accepted by Odoo date utilities.
+        """Parse date bounds accepted by WETH date utilities.
 
         :param start: Lower bound expression, defaulting to the subclass range start.
         :param end: Upper bound expression, defaulting to the subclass range end.

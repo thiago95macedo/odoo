@@ -56,7 +56,7 @@ async function testPropertyFieldAvatarOpenChat(propertyType) {
         propertyType === "many2one" ? ".o_field_property_many2one_value img" : ".o_m2m_avatar"
     );
     await waitStoreFetch("res.users");
-    await contains(".o-mail-ChatWindow", { text: "Partner Test" });
+    await contains(".w-mail-ChatWindow", { text: "Partner Test" });
 }
 
 describe.current.tags("desktop");

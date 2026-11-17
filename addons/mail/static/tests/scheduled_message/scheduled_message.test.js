@@ -34,27 +34,27 @@ test("Scheduled messages basic layout", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-ScheduledMessagesList");
-    await contains(".o-mail-Scheduled-Message");
-    await contains(".o-mail-Message-author:text('Mitchell Admin')");
+    await contains(".w-mail-ScheduledMessagesList");
+    await contains(".w-mail-Scheduled-Message");
+    await contains(".w-mail-Message-author:text('Mitchell Admin')");
     const partner = pyEnv["res.partner"].search_read([["id", "=", partnerId]])[0];
     await contains(
-        `.o-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
+        `.w-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
         }']`
     );
     await contains(
-        `.o-mail-Message-date[title='${deserializeDateTime(scheduled_date).toLocaleString(
+        `.w-mail-Message-date[title='${deserializeDateTime(scheduled_date).toLocaleString(
             luxon.DateTime.DATETIME_SHORT
         )}']:text('in 3 hours')` // 3 hours because luxon toRelative rounds down
     );
-    await contains(".o-mail-Message-body em:text('Subject: Greetings')");
-    await contains(".o-mail-Message-body p:text('Hello There')");
-    await contains(".o-mail-Message-bubble.bg-success-light");
-    await contains(".o-mail-Scheduled-Message-buttons [data-icon='edit']");
-    await contains(".o-mail-Scheduled-Message-buttons [data-icon='close']");
-    await click(".o-mail-ScheduledMessagesList > .cursor-pointer");
-    await contains(".o-mail-Scheduled-Message", { count: 0 });
-    await contains(".o-mail-ScheduledMessagesList [data-icon='arrow_right'] + span:text('1')");
+    await contains(".w-mail-Message-body em:text('Subject: Greetings')");
+    await contains(".w-mail-Message-body p:text('Hello There')");
+    await contains(".w-mail-Message-bubble.bg-success-light");
+    await contains(".w-mail-Scheduled-Message-buttons [data-icon='edit']");
+    await contains(".w-mail-Scheduled-Message-buttons [data-icon='close']");
+    await click(".w-mail-ScheduledMessagesList > .cursor-pointer");
+    await contains(".w-mail-Scheduled-Message", { count: 0 });
+    await contains(".w-mail-ScheduledMessagesList [data-icon='arrow_right'] + span:text('1')");
 });
 
 test("Scheduled messages are ordered by scheduled date", async () => {
@@ -76,12 +76,12 @@ test("Scheduled messages are ordered by scheduled date", async () => {
     ]);
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Scheduled-Message", { count: 2 });
+    await contains(".w-mail-Scheduled-Message", { count: 2 });
     await contains(
-        ".o-mail-Scheduled-Message:first-child .o-mail-Message-body p:text('Scheduled Message 2')"
+        ".w-mail-Scheduled-Message:first-child .w-mail-Message-body p:text('Scheduled Message 2')"
     );
     await contains(
-        ".o-mail-Scheduled-Message:last-child .o-mail-Message-body p:text('Scheduled Message 1')"
+        ".w-mail-Scheduled-Message:last-child .w-mail-Message-body p:text('Scheduled Message 1')"
     );
 });
 
@@ -96,10 +96,10 @@ test("Message scheduled by another user can't be edited but can be canceled", as
     });
     await start({ authenticateAs: false });
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message-author:text('Mitchell Admin')");
-    await contains(".o-mail-Message-bubble.bg-info-light");
-    await contains(".o-mail-Scheduled-Message-buttons:text('Edit')", { count: 0 });
-    await contains(".o-mail-Scheduled-Message-buttons:text('Cancel')");
+    await contains(".w-mail-Message-author:text('Mitchell Admin')");
+    await contains(".w-mail-Message-bubble.bg-info-light");
+    await contains(".w-mail-Scheduled-Message-buttons:text('Edit')", { count: 0 });
+    await contains(".w-mail-Scheduled-Message-buttons:text('Cancel')");
 });
 
 test("Message scheduled by another user can be edited by admin", async () => {
@@ -114,9 +114,9 @@ test("Message scheduled by another user can be edited by admin", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message-author:text('Henri Papier')");
-    await contains(".o-mail-Scheduled-Message-buttons:has(:text('Edit'))");
-    await contains(".o-mail-Scheduled-Message-buttons:has(:text('Cancel'))");
+    await contains(".w-mail-Message-author:text('Henri Papier')");
+    await contains(".w-mail-Scheduled-Message-buttons:has(:text('Edit'))");
+    await contains(".w-mail-Scheduled-Message-buttons:has(:text('Cancel'))");
 });
 
 test("avatar card from author should be opened after clicking on their name or avatar", async () => {
@@ -139,14 +139,14 @@ test("avatar card from author should be opened after clicking on their name or a
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await click(".o-mail-Scheduled-Message .o-mail-Message-author:text('Demo')");
-    await contains(".o-mail-avatar-card-name:text('Demo')");
+    await click(".w-mail-Scheduled-Message .w-mail-Message-author:text('Demo')");
+    await contains(".w-mail-avatar-card-name:text('Demo')");
     await contains(".o_card_user_infos > a:text('demo@example.com')");
     await contains(".o_card_user_infos > a:text('+5646548')");
-    await click(".o-mail-Message-date");
+    await click(".w-mail-Message-date");
     await contains(".o_card_user_infos", { count: 0 });
-    await click(".o-mail-Message-avatar");
-    await contains(".o-mail-avatar-card-name:text('Demo')");
+    await click(".w-mail-Message-avatar");
+    await contains(".w-mail-avatar-card-name:text('Demo')");
 });
 
 test("Read more of a scheduled message", async () => {
@@ -161,19 +161,19 @@ test("Read more of a scheduled message", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await contains(
-        ".o-mail-Message-body p:text('" + "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD) + "...')"
+        ".w-mail-Message-body p:text('" + "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD) + "...')"
     );
-    await click(".o-mail-Message-body button:text('Read More')");
+    await click(".w-mail-Message-body button:text('Read More')");
     await contains(
-        ".o-mail-Message-body p:text('" +
+        ".w-mail-Message-body p:text('" +
         "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD + 1) +
         "')"
     );
-    await click(".o-mail-Message-body button:text('Read Less')");
+    await click(".w-mail-Message-body button:text('Read Less')");
     await contains(
-        ".o-mail-Message-body p:text('" + "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD) + "...')"
+        ".w-mail-Message-body p:text('" + "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD) + "...')"
     );
-    await contains(".o-mail-Message-body button:text('Read More')");
+    await contains(".w-mail-Message-body button:text('Read More')");
 });
 
 test("Send a scheduled message", async () => {
@@ -197,11 +197,11 @@ test("Send a scheduled message", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Scheduled-Message");
-    await contains(".o-mail-Message", { count: 0 });
-    await click(".o-mail-Scheduled-Message-buttons .btn:text('Send Now')");
-    await contains(".o-mail-Scheduled-Message", { count: 0 });
-    await contains(".o-mail-Message .o-mail-Message-body:text('Test Body')");
+    await contains(".w-mail-Scheduled-Message");
+    await contains(".w-mail-Message", { count: 0 });
+    await click(".w-mail-Scheduled-Message-buttons .btn:text('Send Now')");
+    await contains(".w-mail-Scheduled-Message", { count: 0 });
+    await contains(".w-mail-Message .w-mail-Message-body:text('Test Body')");
 });
 
 test("Edit a scheduled message", async () => {
@@ -235,11 +235,11 @@ test("Edit a scheduled message", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Scheduled-Message");
-    await click(".o-mail-Scheduled-Message-buttons .btn:text('Edit')");
-    await contains(".o-mail-Message-body em:text('Subject: Hi there')");
-    await contains(".o-mail-Message-body p:text('Rescheduled later')");
-    await contains(".o-mail-Message-date:text('in 2 hours')");
+    await contains(".w-mail-Scheduled-Message");
+    await click(".w-mail-Scheduled-Message-buttons .btn:text('Edit')");
+    await contains(".w-mail-Message-body em:text('Subject: Hi there')");
+    await contains(".w-mail-Message-body p:text('Rescheduled later')");
+    await contains(".w-mail-Message-date:text('in 2 hours')");
 });
 
 test("Cancel a scheduled message", async () => {
@@ -253,10 +253,10 @@ test("Cancel a scheduled message", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-ScheduledMessagesList");
-    await click(".o-mail-Scheduled-Message-buttons .btn:text('Cancel')");
+    await contains(".w-mail-ScheduledMessagesList");
+    await click(".w-mail-Scheduled-Message-buttons .btn:text('Cancel')");
     await click(".modal-footer .btn-primary");
-    await contains(".o-mail-ScheduledMessagesList", { count: 0 });
+    await contains(".w-mail-ScheduledMessagesList", { count: 0 });
     expect(pyEnv["mail.scheduled.message"].browse(scheduledMessageId)).toEqual([]);
 });
 
@@ -279,11 +279,11 @@ test("Scheduling a message", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter");
-    await click(".o-mail-Chatter-sendMessage");
-    await click(".o-mail-Composer button[title='Open Full Composer']");
-    await contains(".o-mail-Scheduled-Message");
-    await contains(".o-mail-Message-body:text('New scheduled message')");
+    await contains(".w-mail-Chatter");
+    await click(".w-mail-Chatter-sendMessage");
+    await click(".w-mail-Composer button[title='Open Full Composer']");
+    await contains(".w-mail-Scheduled-Message");
+    await contains(".w-mail-Message-body:text('New scheduled message')");
 });
 
 test("New scheduled message is loaded when sending a message", async () => {
@@ -291,8 +291,8 @@ test("New scheduled message is loaded when sending a message", async () => {
     const partnerId = pyEnv.user.partner_id;
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter");
-    await contains(".o-mail-ScheduledMessagesList", { count: 0 });
+    await contains(".w-mail-Chatter");
+    await contains(".w-mail-ScheduledMessagesList", { count: 0 });
     pyEnv["mail.scheduled.message"].create({
         author_id: pyEnv["res.partner"].create({ name: "Julien Dragoul" }),
         body: "Hello",
@@ -300,13 +300,13 @@ test("New scheduled message is loaded when sending a message", async () => {
         res_id: partnerId,
         scheduled_date: "2024-10-20 12:00:00",
     });
-    await click(".o-mail-Chatter-logNote");
-    await contains(".o-mail-Composer");
-    await insertText(".o-mail-Composer-input", "Bloups");
-    await click(".o-mail-Composer button:text('Log')");
-    await contains(".o-mail-ScheduledMessagesList");
-    await contains(".o-mail-Message-author:text('Julien Dragoul')");
-    await contains(".o-mail-Message-body:text('Hello')");
+    await click(".w-mail-Chatter-logNote");
+    await contains(".w-mail-Composer");
+    await insertText(".w-mail-Composer-input", "Bloups");
+    await click(".w-mail-Composer button:text('Log')");
+    await contains(".w-mail-ScheduledMessagesList");
+    await contains(".w-mail-Message-author:text('Julien Dragoul')");
+    await contains(".w-mail-Message-body:text('Hello')");
 });
 
 test("Scheduled messages are updated when switching records", async () => {
@@ -329,10 +329,10 @@ test("Scheduled messages are updated when switching records", async () => {
     ]);
     await start();
     await openFormView("res.partner", partnerId, { resIds: [partnerId, partnerId2] });
-    await contains(".o-mail-Scheduled-Message");
-    await contains(".o-mail-Message-body:text('Scheduled record 1')");
+    await contains(".w-mail-Scheduled-Message");
+    await contains(".w-mail-Message-body:text('Scheduled record 1')");
     await click(".o_pager_next");
-    await contains(".o-mail-Message-body:text('Scheduled record 2')");
+    await contains(".w-mail-Message-body:text('Scheduled record 2')");
 });
 
 test("Scheduled date is updated when time passes", async () => {
@@ -346,16 +346,16 @@ test("Scheduled date is updated when time passes", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message-date:text('in 59 minutes')");
+    await contains(".w-mail-Message-date:text('in 59 minutes')");
     await advanceTime(3600000);
-    await contains(".o-mail-Message-date:text('now')");
+    await contains(".w-mail-Message-date:text('now')");
 });
 
 test("Open avatar card when clicking on partner mention", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv.user.partner_id;
     pyEnv["mail.scheduled.message"].create({
-        body: `<a href="${getOrigin()}/odoo#model=res.partner&id=${partnerId}" class="o_mail_redirect" data-oe-model="res.partner" data-oe-id="${partnerId}">@Mitchell Admin</a>`,
+        body: `<a href="${getOrigin()}/weth#model=res.partner&id=${partnerId}" class="o_mail_redirect" data-oe-model="res.partner" data-oe-id="${partnerId}">@Mitchell Admin</a>`,
         model: "res.partner",
         res_id: partnerId,
         scheduled_date: "2024-10-20 11:00:00",
@@ -371,7 +371,7 @@ test("Open chat when clicking on channel mention", async () => {
     const partnerId = pyEnv.user.partner_id;
     const channelId = pyEnv["discuss.channel"].create({ name: "my-channel" });
     pyEnv["mail.scheduled.message"].create({
-        body: `<a href="${getOrigin()}/odoo#model=discuss?channel&id=${channelId}" class="o_channel_redirect" data-oe-model="discuss.channel" data-oe-id="${channelId}">#my-channel</a>`,
+        body: `<a href="${getOrigin()}/weth#model=discuss?channel&id=${channelId}" class="o_channel_redirect" data-oe-model="discuss.channel" data-oe-id="${channelId}">#my-channel</a>`,
         model: "res.partner",
         res_id: partnerId,
         scheduled_date: "2024-10-20 11:00:00",
@@ -379,8 +379,8 @@ test("Open chat when clicking on channel mention", async () => {
     await start();
     await openFormView("res.partner", partnerId);
     await click(".o_channel_redirect");
-    await contains(".o-mail-ChatWindow .o-mail-Thread");
-    await contains(".o-mail-ChatWindow-displayName:text('my-channel')");
+    await contains(".w-mail-ChatWindow .w-mail-Thread");
+    await contains(".w-mail-ChatWindow-displayName:text('my-channel')");
 });
 
 test("Scheduled message with attachments", async () => {
@@ -408,11 +408,11 @@ test("Scheduled message with attachments", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Scheduled-Message");
-    await contains(".o-mail-AttachmentList");
-    await contains(".o-mail-Chatter-attachFiles sup:text('2')");
-    await contains(".o-mail-AttachmentCard");
-    await contains(".o-mail-AttachmentImage");
+    await contains(".w-mail-Scheduled-Message");
+    await contains(".w-mail-AttachmentList");
+    await contains(".w-mail-Chatter-attachFiles sup:text('2')");
+    await contains(".w-mail-AttachmentCard");
+    await contains(".w-mail-AttachmentImage");
 });
 
 test("widget mail_composer_attachment_selector: edit attachment of scheduled message", async () => {

@@ -72,7 +72,7 @@ test("Renaming custom snippets don't make an orm call", async () => {
     );
 
     await contains(
-        ".o-website-builder_sidebar .o_snippets_container .o_snippet[name='Custom'] button"
+        ".w-website-builder_sidebar .o_snippets_container .o_snippet[name='Custom'] button"
     ).click();
     await animationFrame();
 
@@ -84,9 +84,9 @@ test("Renaming custom snippets don't make an orm call", async () => {
     await contains(
         ".o_add_snippet_dialog .o_add_snippet_iframe:iframe .o_custom_snippet_edit button > [data-icon='edit']"
     ).click();
-    expect(".o-overlay-item .modal-dialog:contains('Rename the block')").toHaveCount(1);
-    await contains(".o-overlay-item .modal-dialog input#inputConfirmation").fill("new custom name");
-    await contains(".o-overlay-item .modal-dialog footer>button:contains('Save')").click();
+    expect(".w-overlay-item .modal-dialog:contains('Rename the block')").toHaveCount(1);
+    await contains(".w-overlay-item .modal-dialog input#inputConfirmation").fill("new custom name");
+    await contains(".w-overlay-item .modal-dialog footer>button:contains('Save')").click();
     expect(
         ".o_add_snippet_dialog .o_add_snippet_iframe:iframe .o_custom_snippet_edit>span:contains('new custom name')"
     ).toHaveCount(1);

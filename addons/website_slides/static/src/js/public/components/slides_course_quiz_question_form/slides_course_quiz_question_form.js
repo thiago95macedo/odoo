@@ -74,8 +74,8 @@ export class WebsiteSlidesCourseQuizQuestionForm extends Component {
      */
     onToggleAnswerLineCommentClick(event) {
         const commentLineEl = event.currentTarget
-            .closest(".o_wslides_js_quiz_answer")
-            .querySelector(".o_wslides_js_quiz_answer_comment");
+            .closest(".w_wslides_js_quiz_answer")
+            .querySelector(".w_wslides_js_quiz_answer_comment");
         commentLineEl.classList.toggle("d-none");
         commentLineEl.querySelector("input[type=text]").focus();
     }
@@ -110,7 +110,7 @@ export class WebsiteSlidesCourseQuizQuestionForm extends Component {
     }
 
     onRemoveAnswerLineCommentClick(event, answer) {
-        const commentLineEl = event.currentTarget.closest(".o_wslides_js_quiz_answer_comment");
+        const commentLineEl = event.currentTarget.closest(".w_wslides_js_quiz_answer_comment");
         commentLineEl.classList.add("d-none");
         answer.comment = "";
     }
@@ -140,7 +140,7 @@ export class WebsiteSlidesCourseQuizQuestionForm extends Component {
 
     isValidForm(formEl) {
         return (
-            formEl.querySelector(".o_wslides_quiz_question input[type=text]").value.trim() !== ""
+            formEl.querySelector(".w_wslides_quiz_question input[type=text]").value.trim() !== ""
         );
     }
 
@@ -152,15 +152,15 @@ export class WebsiteSlidesCourseQuizQuestionForm extends Component {
     serializeForm(formEl) {
         const answers = [];
         let sequence = 1;
-        for (const answerEl of formEl.querySelectorAll(".o_wslides_js_quiz_answer")) {
-            const value = answerEl.querySelector(".o_wslides_js_quiz_answer_value").value;
+        for (const answerEl of formEl.querySelectorAll(".w_wslides_js_quiz_answer")) {
+            const value = answerEl.querySelector(".w_wslides_js_quiz_answer_value").value;
             if (value.trim()) {
                 answers.push({
                     sequence: sequence++,
                     text_value: value,
                     is_correct: answerEl.querySelector("input[type=radio]").checked,
                     comment: answerEl
-                        .querySelector(".o_wslides_js_quiz_answer_comment input[type=text]")
+                        .querySelector(".w_wslides_js_quiz_answer_comment input[type=text]")
                         .value.trim(),
                 });
             }

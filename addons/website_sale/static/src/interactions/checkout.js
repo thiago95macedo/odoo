@@ -25,8 +25,8 @@ export class Checkout extends Interaction {
             .find(button => button.offsetParent !== null);
         this.useDeliveryAsBillingToggle = document.querySelector('#use_delivery_as_billing');
         this.billingContainer = this.el.querySelector('#billing_container');
-        this.vatDiv = this.el.querySelector(".o_address_card_vat");
-        this.addBillingAddressBtn = this.el.querySelector('.o_add_billing_address_btn');
+        this.vatDiv = this.el.querySelector(".w_address_card_vat");
+        this.addBillingAddressBtn = this.el.querySelector('.w_add_billing_address_btn');
     }
 
     async willStart() {
@@ -102,7 +102,7 @@ export class Checkout extends Interaction {
         const useDeliveryAsBilling = ev.target.checked;
 
         const addDeliveryAddressButton = this.el.querySelector(
-            '.o_address_card_add_new[data-address-type="delivery"]'
+            '.w_address_card_add_new[data-address-type="delivery"]'
         );
         if (addDeliveryAddressButton) {  // If `Add` button for delivery.
             // Update the `use_delivery_as_billing` query param for a new delivery address URL.
@@ -316,7 +316,7 @@ export class Checkout extends Interaction {
      */
     _updateCartSummaries(result) {
         const parentElements = document.querySelectorAll(
-            '#o_cart_summary_offcanvas, div.o_total_card'
+            '#o_cart_summary_offcanvas, div.w_total_card'
         );
         parentElements.forEach(el => this._updateCartSummary(result, el));
     }
@@ -496,7 +496,7 @@ export class Checkout extends Interaction {
      */
     _getDeliveryPriceBadge(radio) {
         const deliveryMethodContainer = this._getDeliveryMethodContainer(radio);
-        return deliveryMethodContainer.querySelector('.o_wsale_delivery_price_badge');
+        return deliveryMethodContainer.querySelector('.w_wsale_delivery_price_badge');
     }
 
     /**

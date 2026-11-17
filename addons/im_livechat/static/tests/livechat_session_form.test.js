@@ -39,7 +39,7 @@ test("fallback stays hidden while channel loads", async () => {
     await waitStoreFetch("discuss.channel");
     await mountPromise;
 
-    await contains(".o-mail-Discuss");
+    await contains(".w-mail-Discuss");
     await contains("span", { text: "No conversation found", count: 0 });
 
 });

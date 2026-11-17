@@ -99,10 +99,10 @@ class ResUsers(models.Model):
                 full_sync = True
         self.res_users_settings_id.sudo().microsoft_calendar_sync_token = next_sync_token
 
-        # Microsoft -> Odoo
+        # Microsoft -> Weth
         synced_events, synced_recurrences = self.env['calendar.event']._sync_microsoft2weth(events) if events else (self.env['calendar.event'], self.env['calendar.recurrence'])
 
-        # Odoo -> Microsoft
+        # WETH -> Microsoft
         recurrences = self.env['calendar.recurrence']._get_microsoft_records_to_sync(full_sync=full_sync)
         recurrences -= synced_recurrences
         recurrences._sync_weth2microsoft()
@@ -197,7 +197,7 @@ class ResUsers(models.Model):
         """
         Set the first synchronization date as an ICP parameter when applicable (param not defined yet
         and calendar never synchronized before). This parameter is used for not synchronizing previously
-        created Odoo events and thus avoid spamming invitations for those events.
+        created WETH events and thus avoid spamming invitations for those events.
         """
         ICP = self.env['ir.config_parameter'].sudo()
         first_synchronization_date = ICP.get_str('microsoft_calendar.sync.first_synchronization_date')

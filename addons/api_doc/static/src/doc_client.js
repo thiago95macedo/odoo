@@ -20,7 +20,7 @@ export class DocClient extends Component {
     };
 
     setup() {
-        this.setTheme(localStorage.getItem("theme") || "odoo-dark");
+        this.setTheme(localStorage.getItem("theme") || "weth-dark");
 
         this.ui = useDocUI();
         this.modelStore = proxy(new ModelStore());
@@ -106,7 +106,7 @@ export class DocClient extends Component {
     }
 
     toggleTheme() {
-        this.setTheme(this.theme === "odoo-dark" ? "odoo-light" : "odoo-dark");
+        this.setTheme(this.theme === "weth-dark" ? "weth-light" : "weth-dark");
     }
 
     setTheme(theme) {

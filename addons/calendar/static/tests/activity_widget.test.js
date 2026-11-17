@@ -60,8 +60,8 @@ test("list activity widget: reschedule button in dropdown", async () => {
         // Filter the view so we only click the button for our specific test user
         domain: [["id", "=", userId]],
     });
-    await contains(".o-mail-ListActivity-summary", { text: "OXP" });
-    await click(".o-mail-ActivityButton"); // open the popover
-    await contains(".o-mail-ActivityListPopoverItem-editbtn [data-icon='edit']", { count: 0 });
-    await contains(".o-mail-ActivityListPopoverItem-editbtn [data-icon='calendar_today']");
+    await contains(".w-mail-ListActivity-summary", { text: "OXP" });
+    await click(".w-mail-ActivityButton"); // open the popover
+    await contains(".w-mail-ActivityListPopoverItem-editbtn [data-icon='edit']", { count: 0 });
+    await contains(".w-mail-ActivityListPopoverItem-editbtn [data-icon='calendar_today']");
 });

@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-09-25 19:36+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/crm_livechat/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/chatbot_script_step.py:0
 msgid "%s's New Lead"
 msgstr "Novo lead de %s"
@@ -52,20 +52,20 @@ msgid "Chatbot Script Step"
 msgstr "Etapa do script do Chatbot"
 
 #. module: crm_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm_livechat/static/src/core/thread_actions.js:0
 #: model:ir.model.fields.selection,name:crm_livechat.selection__chatbot_script_step__step_type__create_lead
 msgid "Create Lead"
 msgstr "Criar lead"
 
 #. module: crm_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm_livechat/static/src/core/channel_commands.js:0
 msgid "Create a new lead (/lead lead title)"
 msgstr "Criar um novo lead (/lead lead title)"
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/discuss_channel.py:0
 msgid ""
 "Create a new lead with: %(pre_start)s%(lead_command)s %(i_start)slead title%"
@@ -166,7 +166,7 @@ msgid "Livechat Support Channel Report"
 msgstr "Relatório de canal de suporte do chat"
 
 #. module: crm_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm_livechat/static/src/core/web/livechat_channel_info_list_patch.xml:0
 msgid "Open leads"
 msgstr "Leads abertos"
@@ -216,14 +216,14 @@ msgstr ""
 "contato com você?"
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/crm_lead.py:0
 msgid "You cannot create leads linked to channels you don't have access to."
 msgstr ""
 "Não é possível criar leads vinculados a canais aos quais você não tem acesso."
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/crm_lead.py:0
 msgid ""
 "You cannot update a lead and link it to a channel you don't have access to."
@@ -232,19 +232,19 @@ msgstr ""
 "tem acesso."
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/discuss_channel.py:0
 msgid "created a new lead: %s"
 msgstr "criou um novo lead: %s"
 
 #. module: crm_livechat
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm_livechat/static/src/core/thread_actions.js:0
 msgid "e.g. Product pricing"
 msgstr "ex.: preços de produtos"
 
 #. module: crm_livechat
-#. odoo-python
+#. weth-python
 #: code:addons/crm_livechat/models/chatbot_script_step.py:0
 msgid "livechat discussion"
 msgstr "debate no chat ao vivo"

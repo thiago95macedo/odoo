@@ -32,7 +32,7 @@ SYSTEM_INCREASE_AMOUNT_SECTORS = SYSTEM_INCREASE_MiB * 2048
 QEMU_ARM_STATIC = "/usr/bin/qemu-arm-static"
 BEFORE_INIT_FILES = Path(__file__).parent / 'overwrite_before_init'
 BUILD_UTILS_FILES = Path(__file__).parent / 'build_utils'
-RPI_ODOO_CLONE_DIR = f"{BUILD_DIR}/overwrite_before_init/home/pi/odoo"
+RPI_WETH_CLONE_DIR = f"{BUILD_DIR}/overwrite_before_init/home/pi/weth"
 
 
 class KvmIotBuilder:
@@ -41,7 +41,7 @@ class KvmIotBuilder:
         self.image = args.vm_image
         self.login = args.vm_login
         self.ssh_key = args.vm_ssh_key
-        self.odoo_org = 'odoo-dev' if args.dev else 'odoo'
+        self.weth_org = 'weth-dev' if args.dev else 'weth'
 
     def timeout(self, signum, frame):
         logger.warning("vm timeout kill (pid: %s)", self.kvm_proc.pid)
@@ -101,13 +101,13 @@ class KvmIotBuilder:
             'sudo e2fsck -fy /dev/loop0p2',
             'sudo resize2fs /dev/loop0p2',
             'sudo e2label /dev/loop0p2 iotboxfs',
-            # Odoo Clone
-            f'mkdir -p {RPI_ODOO_CLONE_DIR}',
-            f'git clone -b {self.args.odoo_branch} --no-local --no-checkout --depth=1 https://github.com/{self.odoo_org}/odoo.git {RPI_ODOO_CLONE_DIR}',
-            f'cd {RPI_ODOO_CLONE_DIR} && git config core.sparsecheckout true',
-            f'cd {RPI_ODOO_CLONE_DIR} && cat {BUILD_DIR}/build_utils/sparse-checkout >> .git/info/sparse-checkout',
-            f'cd {RPI_ODOO_CLONE_DIR} && git read-tree -mu HEAD',
-            f'cd {RPI_ODOO_CLONE_DIR} && git remote set-url origin https://github.com/{self.odoo_org}/odoo.git',
+            # WETH Clone
+            f'mkdir -p {RPI_WETH_CLONE_DIR}',
+            f'git clone -b {self.args.weth_branch} --no-local --no-checkout --depth=1 https://github.com/{self.weth_org}/weth.git {RPI_WETH_CLONE_DIR}',
+            f'cd {RPI_WETH_CLONE_DIR} && git config core.sparsecheckout true',
+            f'cd {RPI_WETH_CLONE_DIR} && cat {BUILD_DIR}/build_utils/sparse-checkout >> .git/info/sparse-checkout',
+            f'cd {RPI_WETH_CLONE_DIR} && git read-tree -mu HEAD',
+            f'cd {RPI_WETH_CLONE_DIR} && git remote set-url origin https://github.com/{self.weth_org}/weth.git',
             f'mkdir -p {BUILD_DIR}/overwrite_before_init/usr/bin',
             # System partition customization
             f'mkdir -p {BOX_MOUNT_POINT}',
@@ -115,7 +115,7 @@ class KvmIotBuilder:
             f'sudo mount -v /dev/loop0p1 {BOX_MOUNT_POINT}/boot',
             f'sudo cp {QEMU_ARM_STATIC} {BOX_MOUNT_POINT}/usr/bin/',
             f'sudo cp -a {BUILD_DIR}/overwrite_before_init/* {BOX_MOUNT_POINT}',
-            f'sudo mkdir -p {BOX_MOUNT_POINT}/var/odoo',
+            f'sudo mkdir -p {BOX_MOUNT_POINT}/var/weth',
             f'echo {IOTBOX_VERSION} > /tmp/iotbox_version',
             # chroot initialization
             f'sudo chroot {BOX_MOUNT_POINT} /bin/bash -c /etc/init_image.sh',
@@ -145,12 +145,12 @@ class KvmIotBuilder:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Script to build Odoo IotBox Raspberry PI image.")
+    parser = argparse.ArgumentParser(description="Script to build WETH IotBox Raspberry PI image.")
     parser.add_argument("--vm-ssh-key", "-k", help="Ssh identify file to use for connection to the VM (Defaults to current user identity file)")
     parser.add_argument("--vm-image", "-i", required=True, help="Path to Qemu/KVM image used to build IotBox")
     parser.add_argument("--vm-login", "-l", required=True, help="Login for the VM")
     parser.add_argument("--destdir", "-d", default='/tmp', help="Directory where to put the built image (Defaults to '/tmp')")
-    parser.add_argument("--odoo-branch", "-b", default="master", help="Odoo branch to clone (Defaults to master)")
+    parser.add_argument("--weth-branch", "-b", default="master", help="WETH branch to clone (Defaults to master)")
     parser.add_argument("--dev", "-x", action='store_true', help="Clone branch from weth-dev github")
     parser.add_argument("--ca-pub-key", "-c", required=True, help="CA public key")
 

@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { SlideUploadDialog } from "@website_slides/js/public/components/slide_upload_dialog/slide_upload_dialog";
 
 export class SlideUpload extends Interaction {
-    static selector = ".o_wslides_js_slide_upload";
+    static selector = ".w_wslides_js_slide_upload";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.openDialog,

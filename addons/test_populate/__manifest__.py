@@ -1,8 +1,8 @@
 {
-    'name': 'Odoo Populate Tests',
+    'name': 'WETH Populate Tests',
     'version': '0.1',
-    'summary': "Test module for Odoo's Populate",
-    'description': 'Standalone testing module for Odoo Populate module.',
+    'summary': "Test module for WETH's Populate",
+    'description': 'Standalone testing module for WETH Populate module.',
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'category': 'Hidden/Tests',

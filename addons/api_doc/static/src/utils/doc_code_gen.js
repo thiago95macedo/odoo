@@ -42,7 +42,7 @@ export function createRequestCode({ language, url, requestObj }) {
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + apiKey,
-            // "X-Odoo-Database": "...",
+            // "X-Weth-Database": "...",
         },
         body: JSON.stringify(${objStr}),
     };
@@ -62,7 +62,7 @@ export function createRequestCode({ language, url, requestObj }) {
 curl '${url}'\\
   -X POST \\
   --oauth2-bearer YOUR_API_KEY \\
-# -H "X-Odoo-Database: ..." \\
+# -H "X-Weth-Database: ..." \\
   -H "Content-Type: application/json" \\
   -d '${objStr}'
 `;
@@ -83,7 +83,7 @@ response = requests.post(
     "${url}",
     headers={
         "Authorization": f"Bearer {api_key}",
-        # "X-Odoo-Database": "...",
+        # "X-Weth-Database": "...",
     },
     json=${objStr},
 )

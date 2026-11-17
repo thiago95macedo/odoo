@@ -85,7 +85,7 @@ def extract_comodel_domain(
 
 
 def get_color_from_code(color, is_open_shift):
-    """Take a color code from Odoo's Kanban view and returns an hex code compatible with the fullcalendar library"""
+    """Take a color code from WETH's Kanban view and returns an hex code compatible with the fullcalendar library"""
     # if the shift is an open shift, we use the '80' affix at the end of the hex code to modify the transparency
     if is_open_shift:
         switch_color = {

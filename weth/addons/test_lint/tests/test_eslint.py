@@ -39,7 +39,7 @@ class TestESLint(LintCase):
         self.assertEqual(process.returncode, 0, msg=f"""
 stdout: {process.stdout}
 Perhaps you might benefit from installing the tooling found at:
-https://github.com/weth/odoo/wiki/Javascript-coding-guidelines#use-a-linter \n
+https://github.com/weth/weth/wiki/Javascript-coding-guidelines#use-a-linter \n
 stderr: {process.stderr}
 """)
 

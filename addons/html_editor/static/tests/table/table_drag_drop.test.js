@@ -27,11 +27,11 @@ test("should move first column after second column on drag and drop", async () =
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over first cell to trigger column menu
     await hover(el.querySelector("td.a"));
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start long press on column menu
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -41,7 +41,7 @@ test("should move first column after second column on drag and drop", async () =
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetCell = el.querySelector("td.b");
     const targetCellRect = targetCell.getBoundingClientRect();
     // Drag overlay to the right of second column
@@ -74,7 +74,7 @@ test("should move first column after second column on drag and drop", async () =
         clientX: targetCellRect.x + targetCellRect.width * 0.75,
         clientY: targetCellRect.y,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -117,12 +117,12 @@ test("should be able to drag overlay immediately after activating drag overlay",
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over first cell to trigger column menu
     const targetCell = el.querySelector("td.a");
     await hover(targetCell);
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start long press on column menu
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -133,7 +133,7 @@ test("should be able to drag overlay immediately after activating drag overlay",
     await delay(200);
     // Trigger pointermove immediately before overlay mounts.
     await manuallyDispatchProgrammaticEvent(targetCell, "pointermove");
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetCellRect = targetCell.getBoundingClientRect();
     // Drag overlay to the right of second column
     await manuallyDispatchProgrammaticEvent(targetCell, "pointermove", {
@@ -182,11 +182,11 @@ test("should move third column before first column on drag and drop", async () =
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over third column header cell to trigger column menu
     await hover(el.querySelector("td.c"));
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start long press drag on third column
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -196,7 +196,7 @@ test("should move third column before first column on drag and drop", async () =
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetCell = el.querySelector("td.a");
     const targetCellRect = targetCell.getBoundingClientRect();
     // Drag overlay to the left of first column
@@ -229,7 +229,7 @@ test("should move third column before first column on drag and drop", async () =
         clientX: targetCellRect.x - targetCellRect.width * 0.75,
         clientY: targetCellRect.y,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -274,11 +274,11 @@ test("should not allow dropping a column inside a merged column", async () => {
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over the first cell to display the column menu
     await hover(el.querySelector("td.a"));
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start a long press on the column menu to enable drag-and-drop
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -288,7 +288,7 @@ test("should not allow dropping a column inside a merged column", async () => {
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     // Drag to the boundary before the merged column (valid drop)
     let targetCell = el.querySelector("td.a");
     let targetCellRect = targetCell.getBoundingClientRect();
@@ -391,7 +391,7 @@ test("should not allow dropping a column inside a merged column", async () => {
         clientX: targetCellRect.x + targetCellRect.width * 0.75,
         clientY: targetCellRect.y,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -439,11 +439,11 @@ test("should not allow dragging a merged column", async () => {
             <p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over first cell to trigger column menu
     await hover(el.querySelector("td.b"));
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start a long press on the merged column menu
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -454,7 +454,7 @@ test("should not allow dragging a merged column", async () => {
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
     // Drag overlay should not appear for merged columns
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
 });
 
 test("undo/redo should work correctly after dragging and dropping a column", async () => {
@@ -472,11 +472,11 @@ test("undo/redo should work correctly after dragging and dropping a column", asy
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over first cell to trigger column menu
     await hover(el.querySelector("td.a"));
-    await waitFor("[data-type='column'].o-we-table-menu");
-    const colMenu = document.querySelector("[data-type='column'].o-we-table-menu");
+    await waitFor("[data-type='column'].w-we-table-menu");
+    const colMenu = document.querySelector("[data-type='column'].w-we-table-menu");
     const colMenuRect = colMenu.getBoundingClientRect();
     // Start long press drag on first column
     await manuallyDispatchProgrammaticEvent(colMenu, "pointerdown", {
@@ -486,7 +486,7 @@ test("undo/redo should work correctly after dragging and dropping a column", asy
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetCell = el.querySelector("td.c");
     const targetCellRect = targetCell.getBoundingClientRect();
     // Drag overlay to the right of last column
@@ -499,7 +499,7 @@ test("undo/redo should work correctly after dragging and dropping a column", asy
         clientX: targetCellRect.x + targetCellRect.width * 0.75,
         clientY: targetCellRect.y,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -573,11 +573,11 @@ test("should move first header row to last position on drag and drop", async () 
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over the first row to trigger row menu
     await hover(el.querySelector("th.a"));
-    await waitFor("[data-type='row'].o-we-table-menu");
-    const rowMenu = document.querySelector("[data-type='row'].o-we-table-menu");
+    await waitFor("[data-type='row'].w-we-table-menu");
+    const rowMenu = document.querySelector("[data-type='row'].w-we-table-menu");
     const rowMenuRect = rowMenu.getBoundingClientRect();
     // Start long press drag on first header row
     await manuallyDispatchProgrammaticEvent(rowMenu, "pointerdown", {
@@ -587,7 +587,7 @@ test("should move first header row to last position on drag and drop", async () 
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetRow = el.querySelector("tr:last-child");
     const targetRowRect = targetRow.getBoundingClientRect();
     // Drag overlay to the position of last row
@@ -622,7 +622,7 @@ test("should move first header row to last position on drag and drop", async () 
         clientX: targetRowRect.x,
         clientY: targetRowRect.y + targetRowRect.height * 0.75,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -669,11 +669,11 @@ test("should move last row above the first header row on drag and drop", async (
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over the last row to trigger row menu
     await hover(el.querySelector("td.e"));
-    await waitFor("[data-type='row'].o-we-table-menu");
-    const rowMenu = document.querySelector("[data-type='row'].o-we-table-menu");
+    await waitFor("[data-type='row'].w-we-table-menu");
+    const rowMenu = document.querySelector("[data-type='row'].w-we-table-menu");
     const rowMenuRect = rowMenu.getBoundingClientRect();
     // Start long press drag on the last row
     await manuallyDispatchProgrammaticEvent(rowMenu, "pointerdown", {
@@ -683,7 +683,7 @@ test("should move last row above the first header row on drag and drop", async (
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetRow = el.querySelector("tr:first-child"); // first header row
     const targetRowRect = targetRow.getBoundingClientRect();
     // Drag overlay above the first header row
@@ -718,7 +718,7 @@ test("should move last row above the first header row on drag and drop", async (
         clientX: targetRowRect.x,
         clientY: targetRowRect.y - targetRowRect.height * 0.75,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -772,11 +772,11 @@ test("should not allow dropping a row inside a merged row", async () => {
         `)
     );
 
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over the first row to trigger the row menu
     await hover(el.querySelector("td.a"));
-    await waitFor("[data-type='row'].o-we-table-menu");
-    const rowMenu = document.querySelector("[data-type='row'].o-we-table-menu");
+    await waitFor("[data-type='row'].w-we-table-menu");
+    const rowMenu = document.querySelector("[data-type='row'].w-we-table-menu");
     const rowMenuRect = rowMenu.getBoundingClientRect();
     // Long press to start drag
     await manuallyDispatchProgrammaticEvent(rowMenu, "pointerdown", {
@@ -786,7 +786,7 @@ test("should not allow dropping a row inside a merged row", async () => {
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
 
     // Drag over top boundary of merged row
     let targeCell = el.querySelector("td.a");
@@ -912,7 +912,7 @@ test("should not allow dropping a row inside a merged row", async () => {
         clientY: targetRowRect.y + targetRowRect.height * 0.75,
     });
 
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>
@@ -966,11 +966,11 @@ test("should not allow dragging a merged row", async () => {
         `)
     );
 
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over a cell in the merged row
     await hover(el.querySelector("td.c"));
-    await waitFor("[data-type='row'].o-we-table-menu");
-    const rowMenu = document.querySelector("[data-type='row'].o-we-table-menu");
+    await waitFor("[data-type='row'].w-we-table-menu");
+    const rowMenu = document.querySelector("[data-type='row'].w-we-table-menu");
     const rowMenuRect = rowMenu.getBoundingClientRect();
     // Start a long press on the merged row menu
     await manuallyDispatchProgrammaticEvent(rowMenu, "pointerdown", {
@@ -981,7 +981,7 @@ test("should not allow dragging a merged row", async () => {
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
     // Drag overlay should not appear for merged rows
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
 });
 
 test("undo/redo should work correctly after dragging and dropping a row", async () => {
@@ -997,11 +997,11 @@ test("undo/redo should work correctly after dragging and dropping a row", async 
             </table>
         `)
     );
-    await expectElementCount(".o-we-table-menu", 0);
+    await expectElementCount(".w-we-table-menu", 0);
     // Hover over the first row to trigger the row menu
     await hover(el.querySelector("td.a"));
-    await waitFor("[data-type='row'].o-we-table-menu");
-    const rowMenu = document.querySelector("[data-type='row'].o-we-table-menu");
+    await waitFor("[data-type='row'].w-we-table-menu");
+    const rowMenu = document.querySelector("[data-type='row'].w-we-table-menu");
     const rowMenuRect = rowMenu.getBoundingClientRect();
     // Start long press drag on the first row
     await manuallyDispatchProgrammaticEvent(rowMenu, "pointerdown", {
@@ -1011,7 +1011,7 @@ test("undo/redo should work correctly after dragging and dropping a row", async 
     // Table drag-drop overlay activates after a 200ms long press.
     // Wait 300ms to ensure reliability in tests.
     await delay(300);
-    await expectElementCount(".o-we-table-drag-drop", 1);
+    await expectElementCount(".w-we-table-drag-drop", 1);
     const targetRow = el.querySelector("tr:last-child"); // Drop position (last row)
     const targetRowRect = targetRow.getBoundingClientRect();
     // Drag overlay to the position of the last row
@@ -1024,7 +1024,7 @@ test("undo/redo should work correctly after dragging and dropping a row", async 
         clientX: targetRowRect.x,
         clientY: targetRowRect.y + targetRowRect.height * 0.75,
     });
-    await expectElementCount(".o-we-table-drag-drop", 0);
+    await expectElementCount(".w-we-table-drag-drop", 0);
     expect(getContent(el)).toBe(
         unformat(`
             <p><br></p>

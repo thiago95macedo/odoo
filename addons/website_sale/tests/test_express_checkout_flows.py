@@ -139,7 +139,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
 
     def test_express_checkout_registered_user(self):
         """Test that when you use express checkout as a registered user and the address sent by the
-        express checkout form exactly matches the one registered in odoo, we do not create a new
+        express checkout form exactly matches the one registered in weth, we do not create a new
         partner and reuse the existing one.
         """
         self.sale_order.partner_id = self.user_demo.partner_id.id
@@ -172,7 +172,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
     def test_express_checkout_registered_user_existing_address(self):
         """Test that when you use the express checkout as a registered user and the address sent by
         the express checkout form exactly matches to one of the addresses linked to this user in
-        odoo, we do not create a new partner and reuse the existing one.
+        weth, we do not create a new partner and reuse the existing one.
         """
         # Create a child partner for the demo partner
         child_partner_address = dict(self.express_checkout_billing_values)
@@ -214,7 +214,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
     def test_express_checkout_registered_user_new_address(self):
         """Test that when you use the express checkout as a registered user and the address sent by
         the express checkout form doesn't match to one of the addresses linked to this user in
-        odoo, we create a new partner.
+        weth, we create a new partner.
         """
         self.sale_order.partner_id = self.user_demo.partner_id.id
         self.authenticate(
@@ -420,7 +420,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
     def test_express_checkout_registered_user_with_shipping_option(self):
         """Test that when you use the express checkout as a registered user and the shipping
         address sent by the express checkout form exactly matches one of the addresses linked
-        to this user in Odoo, we do not create a new partner and reuse the existing one.
+        to this user in WETH, we do not create a new partner and reuse the existing one.
         """
         self.sale_order.partner_id = self.user_demo.partner_id.id
         self.authenticate(
@@ -459,7 +459,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
 
     def test_express_checkout_registered_user_with_shipping_option_new_address(self):
         """Test that when you use the express checkout as a registered user and the shipping
-        address sent by the express checkout form doesn't exist in Odoo, we create a new
+        address sent by the express checkout form doesn't exist in WETH, we create a new
         partner.
         """
         self.sale_order.partner_id = self.user_demo.partner_id.id

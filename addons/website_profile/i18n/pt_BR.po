@@ -18,7 +18,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/website_profile/pt_BR/>\n"
+"weth-20/website_profile/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +37,7 @@ msgstr ""
 "            Não recebeu?"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/models/res_users.py:0
 msgid "%(company_name)s Profile validation"
 msgstr "%(company_name)s Validação do perfil"
@@ -195,7 +195,7 @@ msgid "Access the website profile of the users"
 msgstr "Acessar o perfil de site dos usuários"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "All Courses"
 msgstr "Todos os cursos"
@@ -257,7 +257,7 @@ msgstr ""
 "publicações."
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:website_profile.user_profile_content
 msgid "Biography"
@@ -269,8 +269,8 @@ msgid "Can Publish"
 msgstr "Pode publicar"
 
 #. module: website_profile
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid ""
@@ -282,14 +282,14 @@ msgstr ""
 "operação."
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 #: model:ir.model.fields,field_description:website_profile.field_res_users__city
 msgid "City"
 msgstr "Cidade"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Clear"
 msgstr "Limpar"
@@ -300,20 +300,20 @@ msgid "Close"
 msgstr "Fechar"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 #: model:ir.model.fields,field_description:website_profile.field_res_users__country_id
 msgid "Country"
 msgstr "País"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Country..."
 msgstr "País..."
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Discard"
 msgstr "Descartar"
@@ -326,25 +326,25 @@ msgid "Display Name"
 msgstr "Nome de exibição"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Edit"
 msgstr "Editar"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.js:0
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Email"
 msgstr "E-mail"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "Forum"
 msgstr "Fórum"
@@ -412,7 +412,7 @@ msgid "More info"
 msgstr "Mais informações"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Name"
 msgstr "Nome"
@@ -443,13 +443,13 @@ msgid "No user found for"
 msgstr "Nenhum usuário encontrado para"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "Not have enough karma to view other users' profile."
 msgstr "Não há karma suficiente para ver perfis de outros usuários."
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Public Profile"
 msgstr "Perfil público"
@@ -465,7 +465,7 @@ msgid "Ranks"
 msgstr "Classificações"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "Ranks and Badges"
 msgstr "Classificação e Medalhas"
@@ -506,7 +506,7 @@ msgid "This month"
 msgstr "Este mês"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "This profile is private!"
 msgstr "Este perfil é privado."
@@ -517,13 +517,13 @@ msgid "This week"
 msgstr "Esta semana"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 msgid "Update"
 msgstr "Atualizar"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.js:0
 msgid "Update failed."
 msgstr "Falha na atualização."
@@ -534,7 +534,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "User Profiles"
 msgstr "Perfis de usuário"
@@ -561,7 +561,7 @@ msgid "Visible on current website"
 msgstr "Visível neste site"
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.xml:0
 #: model:ir.model,name:website_profile.model_website
 msgid "Website"
@@ -598,7 +598,7 @@ msgid "When you finish a course or reach milestones, you're awarded badges."
 msgstr "Quando você termina um curso ou atinge marcos, você recebe emblemas."
 
 #. module: website_profile
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_profile/static/src/components/profile_dialog/profile_dialog.js:0
 msgid "Write a few words about yourself..."
 msgstr "Escreva algumas palavras sobre você…"
@@ -610,7 +610,7 @@ msgid "XP"
 msgstr "XP"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "You are not allowed to edit this user"
 msgstr "Você não tem permissão para editar este usuário"
@@ -660,7 +660,7 @@ msgid "s"
 msgstr "s"
 
 #. module: website_profile
-#. odoo-python
+#. weth-python
 #: code:addons/website_profile/controllers/main.py:0
 msgid "slides"
 msgstr "slides"

@@ -10,7 +10,7 @@
  *                filters
  *                /\    \
  *               /  \    \
- *           pivot  list  Odoo chart
+ *           pivot  list  WETH chart
  */
 
 /** TODO: Introduce a position parameter to the plugin registry in order to load them in a specific order */
@@ -25,20 +25,20 @@ import {
     GlobalFiltersUIPlugin,
     GlobalFiltersCoreViewPlugin,
 } from "@spreadsheet/global_filters/index";
-import { PivotOdooCorePlugin, PivotCoreViewGlobalFilterPlugin } from "@spreadsheet/pivot/index"; // pivot depends on filter for its getters
+import { PivotWethCorePlugin, PivotCoreViewGlobalFilterPlugin } from "@spreadsheet/pivot/index"; // pivot depends on filter for its getters
 import { ListCorePlugin, ListCoreViewPlugin, ListUIPlugin } from "@spreadsheet/list/index"; // list depends on filter for its getters
 import {
-    ChartOdooLinkPlugin,
-    OdooChartCorePlugin,
-    OdooChartCoreViewPlugin,
-} from "@spreadsheet/chart/index"; // Odoochart depends on filter for its getters
+    ChartWethLinkPlugin,
+    WethChartCorePlugin,
+    WethChartCoreViewPlugin,
+} from "@spreadsheet/chart/index"; // Wethchart depends on filter for its getters
 import { PivotCoreGlobalFilterPlugin } from "./pivot/plugins/pivot_core_global_filter_plugin";
-import { PivotOdooUIPlugin } from "./pivot/plugins/pivot_odoo_ui_plugin";
+import { PivotWethUIPlugin } from "./pivot/plugins/pivot_weth_ui_plugin";
 import { ListCoreGlobalFilterPlugin } from "./list/plugins/list_core_global_filter_plugin";
 import { globalFieldMatchingRegistry } from "./global_filters/helpers";
-import { OdooChartFeaturePlugin } from "./chart/plugins/odoo_chart_feature_plugin";
+import { WethChartFeaturePlugin } from "./chart/plugins/weth_chart_feature_plugin";
 import { LoggingUIPlugin } from "@spreadsheet/logging/logging_ui_plugin";
-import { PivotOdooCoreViewPlugin } from "./pivot/plugins/pivot_odoo_core_view_plugin";
+import { PivotWethCoreViewPlugin } from "./pivot/plugins/pivot_weth_core_view_plugin";
 
 globalFieldMatchingRegistry.add("pivot", {
     getIds: (getters) =>
@@ -46,7 +46,7 @@ globalFieldMatchingRegistry.add("pivot", {
             .getPivotIds()
             .filter(
                 (id) =>
-                    getters.getPivotCoreDefinition(id).type === "ODOO" &&
+                    getters.getPivotCoreDefinition(id).type === "WETH" &&
                     getters.getPivotFieldMatch(id)
             ),
     getDisplayName: (getters, pivotId) => getters.getPivotName(pivotId),
@@ -56,13 +56,13 @@ globalFieldMatchingRegistry.add("pivot", {
         getters.getPivotFieldMatching(pivotId, filterId),
     getModel: (getters, pivotId) => {
         const pivot = getters.getPivotCoreDefinition(pivotId);
-        return pivot.type === "ODOO" && pivot.model;
+        return pivot.type === "WETH" && pivot.model;
     },
     waitForReady: (getters) =>
         getters
             .getPivotIds()
             .map((pivotId) => getters.getPivot(pivotId))
-            .filter((pivot) => pivot.type === "ODOO")
+            .filter((pivot) => pivot.type === "WETH")
             .map((pivot) => pivot.loadMetadata()),
     getFields: (getters, pivotId) => getters.getPivot(pivotId).getFields(),
     getActionXmlId: (getters, pivotId) => getters.getPivotCoreDefinition(pivotId).actionXmlId,
@@ -87,19 +87,19 @@ globalFieldMatchingRegistry.add("list", {
 });
 
 globalFieldMatchingRegistry.add("chart", {
-    getIds: (getters) => getters.getOdooChartIds(),
-    getDisplayName: (getters, chartId) => getters.getOdooChartName(chartId),
+    getIds: (getters) => getters.getWethChartIds(),
+    getDisplayName: (getters, chartId) => getters.getWethChartName(chartId),
     getFieldMatching: (getters, chartId, filterId) =>
-        getters.getOdooChartFieldMatching(chartId, filterId),
+        getters.getWethChartFieldMatching(chartId, filterId),
     getModel: (getters, chartId) =>
         getters.getChart(chartId).getDefinition().dataSource.metaData.resModel,
     getTag: (getters, chartId) => {
-        const odooChartId = getters.getOdooChartIds().indexOf(chartId) + 1;
-        return _t("Chart #%(odooChartId)s", { odooChartId });
+        const wethChartId = getters.getWethChartIds().indexOf(chartId) + 1;
+        return _t("Chart #%(wethChartId)s", { wethChartId });
     },
     waitForReady: (getters) =>
         getters
-            .getOdooChartIds()
+            .getWethChartIds()
             .map((chartId) => getters.getChartDataSource(chartId).loadMetadata()),
     getFields: (getters, chartId) => getters.getChartDataSource(chartId).getFields(),
     getActionXmlId: (getters, chartId) => getters.getChartDefinition(chartId).actionXmlId,
@@ -113,29 +113,29 @@ globalFieldMatchingRegistry.add("chart", {
     },
 });
 
-corePluginRegistry.add("OdooGlobalFiltersCorePlugin", GlobalFiltersCorePlugin);
-corePluginRegistry.add("PivotOdooCorePlugin", PivotOdooCorePlugin);
-corePluginRegistry.add("OdooPivotGlobalFiltersCorePlugin", PivotCoreGlobalFilterPlugin);
-corePluginRegistry.add("OdooListCorePlugin", ListCorePlugin);
-corePluginRegistry.add("OdooListCoreGlobalFilterPlugin", ListCoreGlobalFilterPlugin);
-corePluginRegistry.add("odooChartCorePlugin", OdooChartCorePlugin);
-corePluginRegistry.add("ChartOdooLinkPlugin", ChartOdooLinkPlugin);
+corePluginRegistry.add("WethGlobalFiltersCorePlugin", GlobalFiltersCorePlugin);
+corePluginRegistry.add("PivotWethCorePlugin", PivotWethCorePlugin);
+corePluginRegistry.add("WethPivotGlobalFiltersCorePlugin", PivotCoreGlobalFilterPlugin);
+corePluginRegistry.add("WethListCorePlugin", ListCorePlugin);
+corePluginRegistry.add("WethListCoreGlobalFilterPlugin", ListCoreGlobalFilterPlugin);
+corePluginRegistry.add("wethChartCorePlugin", WethChartCorePlugin);
+corePluginRegistry.add("ChartWethLinkPlugin", ChartWethLinkPlugin);
 
-// local command handled by the list and Odoo chart core view plugins, which are
+// local command handled by the list and WETH chart core view plugins, which are
 // evaluation plugins: it has to be declared as an evaluation command to reach them.
 spreadsheet.evaluationCommandTypes.add("REFRESH_ALL_DATA_SOURCES");
 
-evaluationPluginRegistry.add("OdooGlobalFiltersCoreViewPlugin", GlobalFiltersCoreViewPlugin);
+evaluationPluginRegistry.add("WethGlobalFiltersCoreViewPlugin", GlobalFiltersCoreViewPlugin);
 evaluationPluginRegistry.add(
-    "OdooPivotGlobalFiltersCoreViewPlugin",
+    "WethPivotGlobalFiltersCoreViewPlugin",
     PivotCoreViewGlobalFilterPlugin
 );
-evaluationPluginRegistry.add("OdooListCoreViewPlugin", ListCoreViewPlugin);
-evaluationPluginRegistry.add("OdooChartCoreViewPlugin", OdooChartCoreViewPlugin);
-evaluationPluginRegistry.add("PivotOdooCoreViewPlugin", PivotOdooCoreViewPlugin);
+evaluationPluginRegistry.add("WethListCoreViewPlugin", ListCoreViewPlugin);
+evaluationPluginRegistry.add("WethChartCoreViewPlugin", WethChartCoreViewPlugin);
+evaluationPluginRegistry.add("PivotWethCoreViewPlugin", PivotWethCoreViewPlugin);
 
-featurePluginRegistry.add("OdooLoggingUIPlugin", LoggingUIPlugin);
-featurePluginRegistry.add("OdooGlobalFiltersUIPlugin", GlobalFiltersUIPlugin);
-featurePluginRegistry.add("odooPivotUIPlugin", PivotOdooUIPlugin);
-featurePluginRegistry.add("odooListUIPlugin", ListUIPlugin);
-featurePluginRegistry.add("OdooChartFeaturePlugin", OdooChartFeaturePlugin);
+featurePluginRegistry.add("WethLoggingUIPlugin", LoggingUIPlugin);
+featurePluginRegistry.add("WethGlobalFiltersUIPlugin", GlobalFiltersUIPlugin);
+featurePluginRegistry.add("wethPivotUIPlugin", PivotWethUIPlugin);
+featurePluginRegistry.add("wethListUIPlugin", ListUIPlugin);
+featurePluginRegistry.add("WethChartFeaturePlugin", WethChartFeaturePlugin);

@@ -22,7 +22,7 @@ function mockIdbKeyval() {
 
 /** Value saved for the app badge, read from a new connection. */
 async function unreadCounter() {
-    const store = new window.idbKeyval.Store("odoo-mail-unread-db", "odoo-mail-unread-store");
+    const store = new window.idbKeyval.Store("weth-mail-unread-db", "weth-mail-unread-store");
     return window.idbKeyval.get("unread", store);
 }
 

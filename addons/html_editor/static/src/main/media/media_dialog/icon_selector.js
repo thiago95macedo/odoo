@@ -92,7 +92,7 @@ export class IconSelector extends Component {
         if (!this.props.media) {
             return false;
         }
-        // Material Symbols and Odoo UI icons: compare data-icon and filled state
+        // Material Symbols and WETH UI icons: compare data-icon and filled state
         const dataIconChanged = this.props.media.dataset.icon !== icon.dataIcon;
         const filledChanged = this.props.media.classList.contains("oi-filled") !== filled;
         return dataIconChanged || filledChanged;
@@ -113,7 +113,7 @@ export class IconSelector extends Component {
     static createElements(selectedMedia, { document = window.document } = {}) {
         return selectedMedia.map((icon) => {
             const iconEl = document.createElement("span");
-            // Material Symbols and Odoo UI icons: icon is identified by data-icon attribute
+            // Material Symbols and WETH UI icons: icon is identified by data-icon attribute
             iconEl.classList.add("oi");
             if (icon.filled) {
                 iconEl.classList.add("oi-filled");

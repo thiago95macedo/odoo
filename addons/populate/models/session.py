@@ -57,7 +57,7 @@ _worker_logger = logging.getLogger('weth.addons.populate.worker')
 def has_platform_enabled_multiprocessing() -> bool:
     """Checks if the platform has allowed multiprocessing for the `populate` feature."""
     # opt-in by default, easier user onboarding.
-    return str2bool(os.getenv('ODOO_POPULATE_MULTIPROCESS_ENABLE', 'True'))
+    return str2bool(os.getenv('WETH_POPULATE_MULTIPROCESS_ENABLE', 'True'))
 
 
 class Session(models.Model):
@@ -354,7 +354,7 @@ class ParallelExecutor(JobExecutor):
         ``ProcessPoolExecutor`` with ``spawn`` imports the initializer before it
         runs it. Loading ``populate_worker`` as a top-level module avoids an
         early import of ``weth.addons.populate``, which may only become
-        available after the worker initializes Odoo's addons' path.
+        available after the worker initializes WETH's addons' path.
         """
         utils_path_str = str(Path(__file__).resolve().parents[1] / 'utils')
         if utils_path_str not in sys.path:
@@ -362,7 +362,7 @@ class ParallelExecutor(JobExecutor):
             sys.path.append(utils_path_str)
             importlib.invalidate_caches()
 
-        # Import target: odoo/addons/populate/utils/populate_worker:initialize
+        # Import target: weth/addons/populate/utils/populate_worker:initialize
         return importlib.import_module('populate_worker').initialize
 
     def _worker_execute(self, job_id: int, context: dict):

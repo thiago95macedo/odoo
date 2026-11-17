@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:45+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_online_payment_self_order/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgid "Online Payment"
 msgstr "Pagamento online"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/app/components/order_widget/order_widget.js:0
 msgid "Order"
 msgstr "Pedido"
@@ -69,19 +69,19 @@ msgid "POS Self-Order / Online Payment"
 msgstr "Autoatendimento/Pagamento online do PDV"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/app/components/order_widget/order_widget.js:0
 msgid "Pay"
 msgstr "Pagar"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/portal/pos_self_order_payment_form_patch.js:0
 msgid "Pay anyway"
 msgstr "Pagar mesmo assim"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/app/components/order_widget/order_widget.js:0
 msgid "Pay at cashier"
 msgstr "Pagar no caixa"
@@ -102,13 +102,13 @@ msgid "Payment Transaction"
 msgstr "Transação do Pagamento"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/portal/pos_self_order_payment_form_patch.js:0
 msgid "Payment already in progress"
 msgstr "Pagamento já em andamento"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/app/pages/payment_page/payment_page.xml:0
 msgid "Payment in progress"
 msgstr "Pagamento em andamento"
@@ -140,7 +140,7 @@ msgid "Support online payment in self-order"
 msgstr "Suportar pagamento online no autoatendimento"
 
 #. module: pos_online_payment_self_order
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_online_payment_self_order/static/src/app/pages/payment_page/payment_page.js:0
 msgid "The current order cannot be paid (maybe it is already paid)."
 msgstr "O pedido atual não pode ser pago (talvez já tenha sido pago)."
@@ -155,7 +155,7 @@ msgstr ""
 "autoatendimento online."
 
 #. module: pos_online_payment_self_order
-#. odoo-python
+#. weth-python
 #: code:addons/pos_online_payment_self_order/models/pos_config.py:0
 msgid ""
 "The online payment method used for self-order in a POS config must have at "

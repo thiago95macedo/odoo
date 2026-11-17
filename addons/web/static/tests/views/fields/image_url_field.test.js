@@ -105,12 +105,12 @@ test("ImageUrlField in subviews are loaded correctly", async () => {
     expect(`img[data-src="${FR_FLAG_URL}"]`).toHaveCount(1, {
         message: "The view's image is in the DOM",
     });
-    expect(".o_kanban_record:not(.o_kanban_ghost):not(.o-kanban-button-new)").toHaveCount(1, {
+    expect(".w_kanban_record:not(.w_kanban_ghost):not(.w-kanban-button-new)").toHaveCount(1, {
         message: "There should be one record in the many2many",
     });
 
     // Actual flow: click on an element of the m2m to get its form view
-    await click(".o_kanban_record:not(.o_kanban_ghost):not(.o-kanban-button-new)");
+    await click(".w_kanban_record:not(.w_kanban_ghost):not(.w-kanban-button-new)");
     await animationFrame();
     expect(".modal").toHaveCount(1, { message: "The modal should have opened" });
     expect(`img[data-src="${EN_FLAG_URL}"]`).toHaveCount(1, {
@@ -138,7 +138,7 @@ test("image fields in x2many list are loaded correctly", async () => {
         resId: 1,
     });
 
-    expect("tr.o_data_row").toHaveCount(1, {
+    expect("tr.w_data_row").toHaveCount(1, {
         message: "There should be one record in the many2many",
     });
     expect(`img[data-src="${EN_FLAG_URL}"]`).toHaveCount(1, {
@@ -167,7 +167,7 @@ test("image url fields in kanban don't stop opening record", async () => {
         `,
     });
 
-    await click(".o_kanban_record");
+    await click(".w_kanban_record");
     await animationFrame();
     expect.verifySteps(["open record"]);
 });
@@ -238,5 +238,5 @@ test("ImageUrlField with width attribute is auto when Studio is set", async () =
 
     });
 
-    expect(`.o_field_widget[name=foo] img`).toHaveAttribute("style", "width: auto; max-height: 270px;");
+    expect(`.w_field_widget[name=foo] img`).toHaveAttribute("style", "width: auto; max-height: 270px;");
 });

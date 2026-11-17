@@ -33,7 +33,7 @@ export class ImStatusMixin extends Record {
                     this.store.env.services.presence.getInactivityPeriod() < AWAY_DELAY;
                 return [
                     (this.presence_status === "away" && isOnline) ||
-                        this.presence_status === "offline",
+                    this.presence_status === "offline",
                 ];
             },
             function updateBusPresence(isPresenceOutdated) {
@@ -96,7 +96,7 @@ export class ImStatusMixin extends Record {
     /** @type {ImStatus} */
     presence_status;
     presenceChannel = this.computed(() => {
-        const channel = `odoo-presence-${this.Model.getName()}_${this.id}`;
+        const channel = `weth-presence-${this.Model.getName()}_${this.id}`;
         if (this.im_status_access_token) {
             return channel + `-${this.im_status_access_token}`;
         }

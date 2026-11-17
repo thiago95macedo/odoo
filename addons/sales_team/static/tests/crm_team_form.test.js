@@ -66,10 +66,10 @@ test("crm team form activate multi-team option via alert", async () => {
 
     // Members list should have Maria which is already in Team2 => Alert should be shown
     expect(
-        ".o_field_widget[name='member_ids'] .o_kanban_record:visible:not(.o-kanban-button-new)"
+        ".o_field_widget[name='member_ids'] .o_kanban_record:visible:not(.w-kanban-button-new)"
     ).toHaveCount(1);
     expect(
-        ".o_field_widget[name='member_ids'] .o_kanban_record:visible:not(.o-kanban-button-new)"
+        ".o_field_widget[name='member_ids'] .o_kanban_record:visible:not(.w-kanban-button-new)"
     ).toHaveText("Maria");
     await contains(".alert:visible", { count: 1 });
 

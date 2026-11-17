@@ -242,7 +242,7 @@ class ResCountryState(models.Model):
     def name_search(self, name='', domain=None, operator='ilike', limit=100):
         result = []
         domain = Domain(domain or Domain.TRUE)
-        # accepting 'in' as operator (see odoo/addons/base/tests/test_res_country.py)
+        # accepting 'in' as operator (see weth/addons/base/tests/test_res_country.py)
         if operator == 'in':
             if limit is None:
                 limit = 100  # force a limit

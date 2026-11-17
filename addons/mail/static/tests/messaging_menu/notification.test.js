@@ -40,12 +40,12 @@ test("basic layout", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await contains(".o-mail-NotificationItem", {
+    await contains(".w-mail-NotificationItem", {
         contains: [
-            [".o-mail-NotificationItem-name:text('Email Failure: Discussion Channel')"],
-            [".o-mail-NotificationItem-counter:text('2')"],
-            [".o-mail-NotificationItem-date:text('Jan 1')"],
-            [".o-mail-NotificationItem-text:text('An error occurred when sending an email')"],
+            [".w-mail-NotificationItem-name:text('Email Failure: Discussion Channel')"],
+            [".w-mail-NotificationItem-counter:text('2')"],
+            [".w-mail-NotificationItem-date:text('Jan 1')"],
+            [".w-mail-NotificationItem-text:text('An error occurred when sending an email')"],
         ],
     });
 });
@@ -63,9 +63,9 @@ test("notification date follows the day change", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem-date:text('12:00 PM')");
+    await contains(".w-mail-NotificationItem-date:text('12:00 PM')");
     await advanceTime(2 * 60 * 1000); // past midnight
-    await contains(".o-mail-NotificationItem-date:text('Jan 3')");
+    await contains(".w-mail-NotificationItem-date:text('Jan 3')");
 });
 
 test("mark as read", async () => {
@@ -83,13 +83,13 @@ test("mark as read", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await triggerEvents(".o-mail-NotificationItem-name:text('Email Failure: Discussion Channel')", [
+    await triggerEvents(".w-mail-NotificationItem-name:text('Email Failure: Discussion Channel')", [
         "mouseenter",
     ]);
-    await click(".o-mail-NotificationItem-markAsRead", {
-        parent: [".o-mail-NotificationItem:has(:text('Email Failure: Discussion Channel'))"],
+    await click(".w-mail-NotificationItem-markAsRead", {
+        parent: [".w-mail-NotificationItem:has(:text('Email Failure: Discussion Channel'))"],
     });
-    await contains(".o-mail-NotificationItem-name:text('Email Failure: Discussion Channel')", {
+    await contains(".w-mail-NotificationItem-name:text('Email Failure: Discussion Channel')", {
         count: 0,
     });
 });
@@ -143,7 +143,7 @@ test("open non-channel failure", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await click(".o-mail-NotificationItem");
+    await click(".w-mail-NotificationItem");
     await expect.waitForSteps(["do_action"]);
 });
 
@@ -190,7 +190,7 @@ test("different discuss.channel are not grouped", async () => {
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
     await contains(
-        ".o-mail-NotificationItem-text:text('An error occurred when sending an email')",
+        ".w-mail-NotificationItem-text:text('An error occurred when sending an email')",
         { count: 2 }
     );
 });
@@ -235,8 +235,8 @@ test("multiple grouped notifications by model", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await contains(".o-mail-NotificationItem", { count: 2 });
-    await contains(".o-mail-NotificationItem-counter:text('2')", { count: 2 });
+    await contains(".w-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-NotificationItem-counter:text('2')", { count: 2 });
 });
 
 test("non-failure notifications are ignored", async () => {
@@ -254,7 +254,7 @@ test("non-failure notifications are ignored", async () => {
     });
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-NotificationItem", { count: 0 });
+    await contains(".w-mail-NotificationItem", { count: 0 });
 });
 
 test("marked as read thread notifications are ordered by last message date", async () => {
@@ -279,9 +279,9 @@ test("marked as read thread notifications are ordered by last message date", asy
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem", { count: 2 });
-    await contains(".o-mail-NotificationItem-name:eq(0):text('Channel 2020')");
-    await contains(".o-mail-NotificationItem-name:eq(1):text('Channel 2019')");
+    await contains(".w-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-NotificationItem-name:eq(0):text('Channel 2020')");
+    await contains(".w-mail-NotificationItem-name:eq(1):text('Channel 2019')");
 });
 
 test("thread notifications are re-ordered on receiving a new message", async () => {
@@ -315,7 +315,7 @@ test("thread notifications are re-ordered on receiving a new message", async () 
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-NotificationItem", { count: 2 });
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -327,9 +327,9 @@ test("thread notifications are re-ordered on receiving a new message", async () 
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-NotificationItem-name:eq(0):text('Channel 2019')");
-    await contains(".o-mail-NotificationItem-name:eq(1):text('Channel 2020')");
-    await contains(".o-mail-NotificationItem", { count: 2 });
+    await contains(".w-mail-NotificationItem-name:eq(0):text('Channel 2019')");
+    await contains(".w-mail-NotificationItem-name:eq(1):text('Channel 2020')");
+    await contains(".w-mail-NotificationItem", { count: 2 });
 });
 
 test("messaging menu counter should ignore unread messages in channels that are unpinned", async () => {
@@ -359,10 +359,10 @@ test("messaging menu counter should ignore unread messages in channels that are 
     ]);
     await start();
     await contains(".o_menu_systray i[aria-label='Messages']");
-    await contains(".o-mail-MessagingMenuInDropdown-counter", { count: 0 });
+    await contains(".w-mail-MessagingMenuInDropdown-counter", { count: 0 });
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL); // fetch channels
-    await contains(".o-mail-NotificationItem-name:text('General')"); // ensure channels fetched
-    await contains(".o-mail-MessagingMenuInDropdown-counter", { count: 0 });
+    await contains(".w-mail-NotificationItem-name:text('General')"); // ensure channels fetched
+    await contains(".w-mail-MessagingMenuInDropdown-counter", { count: 0 });
 });
 
 test("subtype description should be displayed when body is empty", async () => {
@@ -379,5 +379,5 @@ test("subtype description should be displayed when body is empty", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem-text:text('Partner1: hello')");
+    await contains(".w-mail-NotificationItem-text:text('Partner1: hello')");
 });

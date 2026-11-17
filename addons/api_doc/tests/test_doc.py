@@ -217,7 +217,7 @@ class TestDoc(HttpCaseWithUserDemo):
         self.assertTrue(etag_demo)
         self.assertRegex(
             res.headers.get('Content-Disposition', ''),
-            r'odoo-doc-index-\w+-%s\.json' % etag_demo.strip('"'),
+            r'weth-doc-index-\w+-%s\.json' % etag_demo.strip('"'),
             "The document should have a unique name.",
         )
 
@@ -248,7 +248,7 @@ class TestDoc(HttpCaseWithUserDemo):
         self.assertTrue(res.content, "We should have downloaded the document")
         cache_control = sorted(res.headers.get('Cache-Control', '').split(', '))
         self.assertEqual(cache_control, ['no-store'])
-        self.assertRegex(res.headers.get('Content-Disposition', ''), r'\bodoo-doc-index\.json$',
+        self.assertRegex(res.headers.get('Content-Disposition', ''), r'\bweth-doc-index\.json$',
             "The document should not have a unique name.")
         spy_doc_index.assert_called()
 

@@ -5,7 +5,7 @@ import { _t } from "@web/core/l10n/translation";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { CopyButton } from "@web/core/copy_button/copy_button";
-import { waitForDataLoaded, freezeOdooData } from "@spreadsheet/helpers/model";
+import { waitForDataLoaded, freezeWethData } from "@spreadsheet/helpers/model";
 import { Model } from "@weth/o-spreadsheet";
 
 /**
@@ -32,7 +32,7 @@ export class SpreadsheetShareButton extends Component {
     async onOpened() {
         const model = this.props.model;
         await waitForDataLoaded(model);
-        const data = await freezeOdooData(model);
+        const data = await freezeWethData(model);
         if (!this.isChanged(data)) {
             return;
         }

@@ -157,7 +157,7 @@ describe("2 columns", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/2columns");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("2 columns");
+        expect(".active .w-we-command-name").toHaveText("2 columns");
 
         await press("enter");
         expect(getContent(el)).toBe(
@@ -166,7 +166,7 @@ describe("2 columns", () => {
 
         await insertText(editor, "/columns");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "3 columns",
             "4 columns",
             "Remove column layout",
@@ -250,7 +250,7 @@ describe("3 columns", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/3columns");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("3 columns");
+        expect(".active .w-we-command-name").toHaveText("3 columns");
 
         await press("enter");
         expect(getContent(el)).toBe(
@@ -259,7 +259,7 @@ describe("3 columns", () => {
 
         await insertText(editor, "/columns");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "2 columns",
             "4 columns",
             "Remove column layout",
@@ -335,7 +335,7 @@ describe("4 columns", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/4columns");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("4 columns");
+        expect(".active .w-we-command-name").toHaveText("4 columns");
 
         await press("enter");
         expect(getContent(el)).toBe(
@@ -344,7 +344,7 @@ describe("4 columns", () => {
 
         await insertText(editor, "/columns");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "2 columns",
             "3 columns",
             "Remove column layout",
@@ -426,7 +426,7 @@ describe("remove columns", () => {
         const { el, editor } = await setupEditor("<p>ab[]cd</p>");
         await insertText(editor, "/columns");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual([
+        expect(queryAllTexts(".w-we-command-name")).toEqual([
             "2 columns",
             "3 columns",
             "4 columns",
@@ -440,7 +440,7 @@ describe("remove columns", () => {
 
         await insertText(editor, "/removecolumn");
         await animationFrame();
-        expect(".active .o-we-command-name").toHaveText("Remove column layout");
+        expect(".active .w-we-command-name").toHaveText("Remove column layout");
         await press("enter");
         expect(getContent(el)).toBe(`<p>ab[]cd</p>`);
     });
@@ -711,7 +711,7 @@ describe("availability", () => {
         const { editor } = await setupEditor("<p>ab[]</p>");
         await insertText(editor, "/col");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toInclude("2 columns");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("2 columns");
     });
     test("columnize 2 should not be available from p which is the root of editable", async () => {
         const { editor } = await setupEditor(
@@ -719,6 +719,6 @@ describe("availability", () => {
         );
         await insertText(editor, "/col");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).not.toInclude("2 columns");
+        expect(queryAllTexts(".w-we-command-name")).not.toInclude("2 columns");
     });
 });

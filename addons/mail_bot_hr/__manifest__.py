@@ -1,7 +1,7 @@
 {
-    'name': "OdooBot - HR",
+    'name': "WethBot - HR",
     'summary': """Bridge module between hr and mailbot.""",
-    'description': """This module adds the OdooBot state and notifications in the user form modified by hr.""",
+    'description': """This module adds the WethBot state and notifications in the user form modified by hr.""",
     'website': "https://www.weth.com.br/app/discuss",
     'category': 'Productivity/Discuss',
     'depends': ['mail_bot', 'hr'],

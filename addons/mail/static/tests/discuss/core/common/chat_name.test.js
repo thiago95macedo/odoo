@@ -32,5 +32,5 @@ test("Chat name keeps both persons when a member is gone", async () => {
     );
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-threadName[title='Mitchell Admin, Alice']");
+    await contains(".w-mail-DiscussContent-threadName[title='Mitchell Admin, Alice']");
 });

@@ -27,7 +27,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(
             self._new_mails.filtered(lambda m: m.model == 'res.partner').mapped('author_id'),
             self.user_marketing.partner_id | self.user_marketing_1.partner_id,
-            "When a mailing is sent by OdooBot, the author of the mails must be the author of the mailing."
+            "When a mailing is sent by WethBot, the author of the mails must be the author of the mailing."
         )
 
         with self.mock_mail_gateway(mail_unlink_sent=False):

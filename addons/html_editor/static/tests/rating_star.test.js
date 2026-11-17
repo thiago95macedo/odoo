@@ -20,7 +20,7 @@ test("add 3 star elements", async () => {
     const { el, editor } = await setupEditor("<p>[]</p>");
     await insertText(editor, "/3star");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
 
     await press("Enter");
     expect(getContent(el)).toBe(
@@ -32,7 +32,7 @@ test("add 5 star elements", async () => {
     const { el, editor } = await setupEditor("<p>[]</p>");
     await insertText(editor, "/5star");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
 
     await press("Enter");
     expect(getContent(el)).toBe(
@@ -110,7 +110,7 @@ test("stars line should be reachable with up/down", async () => {
     await simulateArrowKeyPress(editor, "ArrowUp");
     await insertText(editor, "/3star");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
 
     const stars = `<span contenteditable="false" class="o_stars"><i class="oi" data-icon="star" contenteditable="false">\u200B</i><i class="oi" data-icon="star" contenteditable="false">\u200B</i><i class="oi" data-icon="star" contenteditable="false">\u200B</i></span>`;
@@ -149,5 +149,5 @@ test("should not open icon toolbar when inserting a paragraph break before the s
     );
     splitBlock(editor);
     await advanceTime(100);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 });

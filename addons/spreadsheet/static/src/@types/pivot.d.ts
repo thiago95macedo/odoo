@@ -1,21 +1,21 @@
-import { OdooPivotRuntimeDefinition } from "@spreadsheet/pivot/pivot_runtime";
+import { WethPivotRuntimeDefinition } from "@spreadsheet/pivot/pivot_runtime";
 import { ORM } from "@web/core/orm_plugin";
 import { PivotMeasure } from "@spreadsheet/pivot/pivot_runtime";
 import { ServerData } from "@spreadsheet/data_sources/server_data";
 import { Pivot, CommonPivotCoreDefinition, PivotCoreDefinition } from "@weth/o-spreadsheet";
 
 declare module "@spreadsheet" {
-    export interface OdooPivotCoreDefinition extends CommonPivotCoreDefinition {
-        type: "ODOO";
+    export interface WethPivotCoreDefinition extends CommonPivotCoreDefinition {
+        type: "WETH";
         model: string;
         domain: Array;
         context: Object;
         actionXmlId: string;
     }
 
-    export type ExtendedPivotCoreDefinition = PivotCoreDefinition | OdooPivotCoreDefinition;
+    export type ExtendedPivotCoreDefinition = PivotCoreDefinition | WethPivotCoreDefinition;
 
-    interface OdooPivot<T> extends Pivot<T> {
+    interface WethPivot<T> extends Pivot<T> {
         type: ExtendedPivotCoreDefinition["type"];
     }
     export interface GFLocalPivot {
@@ -23,7 +23,7 @@ declare module "@spreadsheet" {
         fieldMatching: Record<string, any>;
     }
 
-    export interface OdooField {
+    export interface WethField {
         name: string;
         type: string;
         string: string;
@@ -33,7 +33,7 @@ declare module "@spreadsheet" {
         store?: boolean;
     }
 
-    export type OdooFields = Record<string, Field | undefined>;
+    export type WethFields = Record<string, Field | undefined>;
 
     export interface PivotMetaData {
         colGroupBys: string[];
@@ -52,15 +52,15 @@ declare module "@spreadsheet" {
         context: Object;
     }
 
-    /* Params used for the odoo pivot model */
+    /* Params used for the weth pivot model */
     export interface WebPivotModelParams {
         metaData: PivotMetaData;
         searchParams: PivotSearchParams;
     }
 
-    export interface OdooPivotModelParams {
-        fields: OdooFields;
-        definition: OdooPivotRuntimeDefinition;
+    export interface WethPivotModelParams {
+        fields: WethFields;
+        definition: WethPivotRuntimeDefinition;
         searchParams: {
             domain: Array;
             context: Object;
@@ -70,6 +70,6 @@ declare module "@spreadsheet" {
     export interface PivotModelServices {
         serverData: ServerData;
         orm: ORM;
-        getters: OdooGetters;
+        getters: WethGetters;
     }
 }

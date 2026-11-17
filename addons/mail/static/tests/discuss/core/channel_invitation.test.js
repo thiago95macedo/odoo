@@ -35,7 +35,7 @@ test("Can invite people from member panel", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("button[title='Add People']");
 });
 
@@ -56,17 +56,17 @@ test("can invite users in channel from chat window", async () => {
     // dropdown requires an extra delay before click (because handler is registered in useEffect)
     await contains("[title='Open Actions Menu']");
     await click("[title='Open Actions Menu']");
-    await click(".o-dropdown-item:text('Invite People')");
-    await contains(".o-discuss-ChannelInvitation");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
-    await click(".o-discuss-ChannelInvitation button:text('Invite'):enabled");
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
+    await click(".w-dropdown-item:text('Invite People')");
+    await contains(".w-discuss-ChannelInvitation");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
+    await click(".w-discuss-ChannelInvitation button:text('Invite'):enabled");
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
     const [{ date }] = pyEnv["mail.message"].search_read([["res_id", "=", channelId]]);
     const time = deserializeDateTime(date).toLocaleString(luxon.DateTime.TIME_SIMPLE, {
         locale: user.lang,
     });
     await contains(
-        `.o-mail-Thread .o-mail-NotificationMessage:text('Mitchell Admin invited TestPartner to the channel${time}')`
+        `.w-mail-Thread .w-mail-NotificationMessage:text('Mitchell Admin invited TestPartner to the channel${time}')`
     );
 });
 
@@ -92,10 +92,10 @@ test("should be able to search for a new user to invite from an existing chat", 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("button[title='Add People']");
-    await insertText(".o-discuss-ChannelInvitation-search", "TestPartner2");
-    await contains(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
+    await insertText(".w-discuss-ChannelInvitation-search", "TestPartner2");
+    await contains(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
 });
 
 test("Can quick unselect people from the channel invitation", async () => {
@@ -120,19 +120,19 @@ test("Can quick unselect people from the channel invitation", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("button[title='Add People']");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2')).o-selected");
-    const selectedButtonsSelector = ".o-discuss-ChannelInvitation-selectedList button";
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2')).w-selected");
+    const selectedButtonsSelector = ".w-discuss-ChannelInvitation-selectedList button";
     await contains(selectedButtonsSelector);
-    await contains(".o-discuss-ChannelInvitation-selectedList button:text(TestPartner2)");
+    await contains(".w-discuss-ChannelInvitation-selectedList button:text(TestPartner2)");
     await contains(
-        ".o-discuss-ChannelInvitation-selectedList button:text(TestPartner2) [data-icon='close_small']"
+        ".w-discuss-ChannelInvitation-selectedList button:text(TestPartner2) [data-icon='close_small']"
     );
-    await click(".o-discuss-ChannelInvitation-selectedList button:text(TestPartner2)");
+    await click(".w-discuss-ChannelInvitation-selectedList button:text(TestPartner2)");
     await click(
-        ".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2')):not(.o-selected)"
+        ".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2')):not(.w-selected)"
     );
     await contains(selectedButtonsSelector, { count: 0 });
 });
@@ -154,10 +154,10 @@ test("Invitation form should display channel group restriction", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-discuss-ChannelMemberList"); // wait for auto-open of this panel
+    await contains(".w-discuss-ChannelMemberList"); // wait for auto-open of this panel
     await click("button[title='Add People']");
     await contains(
-        ".o-discuss-ChannelInvitation div:text('Access restricted to group \"testGroup\"')",
+        ".w-discuss-ChannelInvitation div:text('Access restricted to group \"testGroup\"')",
         {
             after: ["button [data-icon='content_copy']"],
         }
@@ -186,14 +186,14 @@ test("should be able to create a new group chat from an existing chat", async ()
     });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-DiscussContent-header button[title='Invite People']");
-    await contains(".o-discuss-ChannelInvitation");
-    await insertText(".o-discuss-ChannelInvitation-search", "TestPartner2");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
+    await click(".w-mail-DiscussContent-header button[title='Invite People']");
+    await contains(".w-discuss-ChannelInvitation");
+    await insertText(".w-discuss-ChannelInvitation-search", "TestPartner2");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner2'))");
     await click("button:text('Create Group Chat'):enabled");
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
     await contains(
-        ".o-mail-NotificationItem:has(:text('Mitchell Admin, TestPartner, and TestPartner2'))"
+        ".w-mail-NotificationItem:has(:text('Mitchell Admin, TestPartner, and TestPartner2'))"
     );
 });
 
@@ -213,10 +213,10 @@ test("unnamed group chat should display correct name just after being invited", 
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-NotificationItem:has(:text('General'))");
-    await click(".o-mail-MessagingMenu-tab[data-id='chat']");
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats')).active");
-    await contains(".o-mail-NotificationItem:has(:text('Jane and Mitchell Admin'))", {
+    await contains(".w-mail-NotificationItem:has(:text('General'))");
+    await click(".w-mail-MessagingMenu-tab[data-id='chat']");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats')).active");
+    await contains(".w-mail-NotificationItem:has(:text('Jane and Mitchell Admin'))", {
         count: 0,
     });
     const currentUserId = serverState.userId;
@@ -226,7 +226,7 @@ test("unnamed group chat should display correct name just after being invited", 
             user_ids: [currentUserId],
         })
     );
-    await contains(".o-mail-NotificationItem:has(:text('Jane and Mitchell Admin'))");
+    await contains(".w-mail-NotificationItem:has(:text('Jane and Mitchell Admin'))");
 });
 
 test("invite user to self chat opens DM chat with user", async () => {
@@ -267,15 +267,15 @@ test("invite user to self chat opens DM chat with user", async () => {
     ]);
     await start();
     await openDiscuss(selfChatId);
-    await contains(".o-mail-NotificationItem:has(:text('Mitchell Admin'))"); // self-chat
-    await contains(".o-mail-NotificationItem:has(:text('TestPartner and Mitchell Admin'))");
-    await contains(".o-mail-NotificationItem:has(:text('TestGuest and Mitchell Admin'))");
-    await contains(".o-mail-NotificationItem:has(:text('TestPartner'))");
-    await click(".o-mail-DiscussContent-header button[title='Invite People']");
-    await insertText(".o-discuss-ChannelInvitation-search", "TestPartner");
-    await click(".o-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
+    await contains(".w-mail-NotificationItem:has(:text('Mitchell Admin'))"); // self-chat
+    await contains(".w-mail-NotificationItem:has(:text('TestPartner and Mitchell Admin'))");
+    await contains(".w-mail-NotificationItem:has(:text('TestGuest and Mitchell Admin'))");
+    await contains(".w-mail-NotificationItem:has(:text('TestPartner'))");
+    await click(".w-mail-DiscussContent-header button[title='Invite People']");
+    await insertText(".w-discuss-ChannelInvitation-search", "TestPartner");
+    await click(".w-discuss-ChannelInvitation-selectable:has(:text('TestPartner'))");
     await click("button:contains('Go to Conversation'):enabled");
-    await contains(".o-mail-NotificationItem.o-active:has(:text('TestPartner'))");
+    await contains(".w-mail-NotificationItem.w-active:has(:text('TestPartner'))");
 });
 
 test("Invite sidebar action has the correct title for group chats", async () => {
@@ -291,6 +291,6 @@ test("Invite sidebar action has the correct title for group chats", async () => 
     await start();
     await openDiscuss(channelId);
     await click("button[title='Chat Actions']");
-    await click(".o-dropdown-item:text('Invite People')");
+    await click(".w-dropdown-item:text('Invite People')");
     await contains(".modal-title:text('Mitchell Admin and Demo')");
 });

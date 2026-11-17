@@ -41,7 +41,7 @@ export function offlineErrorHandler(env, error, originalError) {
             dialog.add(AlertDialog, {
                 title: _t("Connection Lost"),
                 body: _t(
-                    "Until the connection is reestablished, Odoo Point of Sale will operate with limited functionality."
+                    "Until the connection is reestablished, WETH Point of Sale will operate with limited functionality."
                 ),
                 confirmLabel: _t("Continue with limited functionality"),
             });

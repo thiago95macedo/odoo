@@ -17,7 +17,7 @@ export const CHAT_HUB_KEY = "mail.ChatHub";
 export class ChatHub extends Record {
     static singleton = true;
 
-    BUBBLE = 56; // same value as $o-mail-ChatHub-bubblesWidth
+    BUBBLE = 56; // same value as $w-mail-ChatHub-bubblesWidth
     recomputeBubbleStart = 0;
     BUBBLE_START = this.computed(() => {
         void this.recomputeBubbleStart;
@@ -27,10 +27,10 @@ export class ChatHub extends Record {
         return CHAT_HUB_DEFAULT_BUBBLE_START;
     }
     BUBBLE_LIMIT = 7;
-    BUBBLE_OUTER = 10; // same value as $o-mail-ChatHub-bubblesMargin
+    BUBBLE_OUTER = 10; // same value as $w-mail-ChatHub-bubblesMargin
     WINDOW_GAP = 10; // for a single end, multiply by 2 for left and right together.
     WINDOW_INBETWEEN = 5;
-    WINDOW = 380; // same value as $o-mail-ChatWindow-width
+    WINDOW = 380; // same value as $w-mail-ChatWindow-width
 
     /** @returns {import("models").ChatHub} */
     setup() {

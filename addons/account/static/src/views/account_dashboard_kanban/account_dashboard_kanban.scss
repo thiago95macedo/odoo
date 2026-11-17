@@ -1,12 +1,12 @@
-.o_account_dashboard_kanban_view {
-    .o_drop_area {
-        background-color: $o-view-background-color;
+.w_account_dashboard_kanban_view {
+    .w_drop_area {
+        background-color: $w-view-background-color;
         border: 1px dashed $border-color;
         border-radius: var(--Card-border-radius);
 
         &.drag_to_card {
-            border-color: $o-brand-primary;
-            background-color: mix($o-brand-primary, $o-view-background-color, 15%);
+            border-color: $w-brand-primary;
+            background-color: mix($w-brand-primary, $w-view-background-color, 15%);
         }
     }
 }

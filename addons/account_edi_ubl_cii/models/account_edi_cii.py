@@ -474,7 +474,7 @@ class AccountEdiCii(models.AbstractModel):
         }
 
     def _cii_is_vat_void(self, vat):
-        """Whether `vat` is one of Odoo's conventional values meaning "not subject to VAT"
+        """Whether `vat` is one of WETH's conventional values meaning "not subject to VAT"
         (as opposed to a real, missing, or invalid VAT number)."""
         return is_identifier_void(vat)
 
@@ -981,8 +981,8 @@ class AccountEdiCii(models.AbstractModel):
 
     def _import_cii_invoice_add_customer_values(self, collected_values):
         customer_values = collected_values['customer_values'] = {}
-        odoo_document_type = collected_values['odoo_document_type']
-        party_tag = "BuyerTradeParty" if odoo_document_type == 'sale' else "SellerTradeParty"
+        weth_document_type = collected_values['weth_document_type']
+        party_tag = "BuyerTradeParty" if weth_document_type == 'sale' else "SellerTradeParty"
         tree = collected_values['tree']
         party_node = tree.find(f".//{{*}}ApplicableHeaderTradeAgreement/{{*}}{party_tag}")
         if party_node is None:
@@ -1060,7 +1060,7 @@ class AccountEdiCii(models.AbstractModel):
 
     def _import_cii_invoice_add_tax_total_values(self, collected_values):
         file_document_sign = collected_values['file_document_sign']
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
 
         taxes_values = collected_values['tax_total_values'] = {}
         tree = collected_values['tree']
@@ -1081,7 +1081,7 @@ class AccountEdiCii(models.AbstractModel):
             })
             tax_values = taxes_values.setdefault(tax_key, {
                 'amount_type': 'percent',
-                'type_tax_use': odoo_document_type,
+                'type_tax_use': weth_document_type,
                 'amount': percentage,
                 'ubl_cii_tax_category_code': category_code,
                 'tax_amount_currency': 0.0,
@@ -1433,12 +1433,12 @@ class AccountEdiCii(models.AbstractModel):
         if charge['reason_code'] != 'AEO':
             return
 
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
         fixed_tax_amount = charge['amount'] / collected_values['to_write']['quantity']
         charge['attempt_tax_values'] = tax_values = {
             'name': charge['reason'],
             'amount_type': 'fixed',
-            'type_tax_use': odoo_document_type,
+            'type_tax_use': weth_document_type,
             'amount': fixed_tax_amount,
             'tax_amount_currency': fixed_tax_amount,
         }

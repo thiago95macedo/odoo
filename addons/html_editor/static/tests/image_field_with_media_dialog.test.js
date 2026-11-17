@@ -110,7 +110,7 @@ test("x2_many_media_viewer uploads against the parent form record", async () => 
                     </field>
                 </form>`,
         });
-        await click(".o-kanban-button-new");
+        await click(".w-kanban-button-new");
     });
 
     await expect.waitForSteps(["product,7"]);

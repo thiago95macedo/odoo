@@ -52,7 +52,7 @@ export class ChatHub extends Component {
             enable: () => this.chatHub.compact || !this.chatHub.opened.length,
             cursor: "grabbing",
             ref: this.bubblesRef,
-            elements: ".o-mail-ChatHub-bubbles",
+            elements: ".w-mail-ChatHub-bubbles",
             onDragStart: () => {
                 this.more.close();
                 this.options.close();

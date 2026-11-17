@@ -4,9 +4,10 @@
 
     .o_modal_container {
         @include media-breakpoint-up(sm) {
-            min-width: calc(#{$o-form-view-sheet-max-width} / 2.5);
+            min-width: calc(#{$w-form-view-sheet-max-width} / 2.5);
         }
-        max-width: calc(#{$o-form-view-sheet-max-width} / 2);
+
+        max-width: calc(#{$w-form-view-sheet-max-width} / 2);
     }
 
     .o_field_property_definition_kanban,
@@ -21,13 +22,14 @@
         display: inline-block !important;
     }
 
-    .o-checkbox {
+    .w-checkbox {
         padding-left: 0 !important;
 
         input {
             margin-left: 0 !important;
         }
     }
+
     @include media-breakpoint-up(sm) {
         max-height: 70vh !important;
     }
@@ -35,6 +37,7 @@
 
 .o_field_property_definition {
     .o_input_dropdown {
+
         .o_properties_external_button,
         .o_dropdown_button {
             display: none;
@@ -42,6 +45,7 @@
 
         &:hover,
         &:focus-within {
+
             .o_properties_external_button,
             .o_dropdown_button {
                 display: block;
@@ -50,7 +54,8 @@
     }
 }
 
-.o_field_property_definition_type, .o_field_property_definition_type_menu {
+.o_field_property_definition_type,
+.o_field_property_definition_type_menu {
     img {
         width: 20px;
         height: 20px;

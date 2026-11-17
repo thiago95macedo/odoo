@@ -24,7 +24,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-25 19:36+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/crm/pt_BR/>\n"
+"weth-20/crm/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,37 +49,37 @@ msgid "# Unassigned Leads"
 msgstr "Nº de leads não atribuídos"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "%(assigned)s leads allocated among %(team_count)s teams."
 msgstr "%(assigned)s leads atribuídos entre %(team_count)s equipes."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "%(assigned)s leads allocated to %(team_name)s team."
 msgstr "%(assigned)s leads atribuídos para a equipe %(team_name)s."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "%(attach_name)s (from %(lead_name)s)"
 msgstr "%(attach_name)s (de %(lead_name)s)"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/wizard/crm_lead_to_opportunity_mass.py:0
 msgid "%(converted_count)s leads have been converted"
 msgstr "%(converted_count)s os leads foram convertidos"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "%(duplicates)s duplicates leads have been merged."
 msgstr "%(duplicates)s leads duplicados foram mesclados."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "%(members_assigned)s leads assigned among %(member_count)s salespersons."
@@ -87,37 +87,37 @@ msgstr ""
 "%(members_assigned)s leads atribuídos entre %(member_count)s vendedores."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "%s's opportunity"
 msgstr "Oportunidade da %s"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/res_users.py:0
 msgid "(Team Leader)"
 msgstr "(Team Leader)"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "(sample data)"
 msgstr "(dados de amostra)"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/wizard/crm_lead_to_opportunity_mass.py:0
 msgid "1 lead has been converted"
 msgstr "1 lead foi convertido"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "<b>Create your first opportunity.</b>"
 msgstr "<b>Crie sua primeira oportunidade.</b>"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid ""
 "<b>Drag &amp; drop opportunities</b> between columns as you progress in your "
@@ -127,7 +127,7 @@ msgstr ""
 "em seu ciclo de vendas."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "<b>Write a few letters</b> to look for a company, or create a new one."
 msgstr ""
@@ -386,7 +386,7 @@ msgstr ""
 "próxima atividade."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "A lead in a Won stage cannot be lost. Move it to another stage first."
 msgstr ""
@@ -394,20 +394,20 @@ msgstr ""
 "estágio."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 #: model_terms:ir.ui.view,arch_db:crm.crm_lead_view_form
 msgid "AI"
 msgstr "IA"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "AI-computed chances of winning"
 msgstr "Chances de ganho calculadas por IA"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "AI-computed chances of winning for"
 msgstr "Chances de ganho calculadas por IA para"
@@ -423,7 +423,7 @@ msgid "Access Groups"
 msgstr "Grupos de acesso"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Access request for \"%s\""
 msgstr "Solicitação de acesso para \"%s\""
@@ -614,13 +614,13 @@ msgid "Aliased Model"
 msgstr "Modelo de alias"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/team_switcher/team_switcher.js:0
 msgid "All Teams"
 msgstr "Todas as equipes"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "All set. Let’s <b>Schedule</b> it."
 msgstr "Pronto. Vamos <b>agendar</b> isso."
@@ -642,7 +642,7 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid ""
 "As you are a member of no Sales Team, you are showed the entire Pipeline.<br/"
@@ -652,7 +652,7 @@ msgstr ""
 "pipeline.<br/>"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.xml:0
 msgid "Ask your Team Leader to get access"
 msgstr "Peça ao seu líder de equipe para obter acesso"
@@ -695,7 +695,7 @@ msgid "Assignment Rules"
 msgstr "Regras de atribuição"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "Assignment domain for team %(team)s is incorrectly formatted"
 msgstr ""
@@ -743,7 +743,7 @@ msgid "Average Leads Capacity (on 30 days)"
 msgstr "Capacidade média de leads (em 30 dias)"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Belgium"
 msgstr "Bélgica"
@@ -759,7 +759,7 @@ msgid "Blacklisted Phone is Phone"
 msgstr "O telefone na lista de bloqueio é fixo"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Boom! Team record for the past 30 days."
 msgstr "Uau! Recorde da equipe nos últimos 30 dias."
@@ -770,10 +770,10 @@ msgid "Bounce"
 msgstr "Devolvido"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
-msgid "Bring Odoo into your inbox:"
-msgstr "Receba o Odoo na sua caixa de entrada:"
+msgid "Bring WETH into your inbox:"
+msgstr "Receba o WETH na sua caixa de entrada:"
 
 #. module: crm
 #: model:ir.module.module,shortdesc:base.module_crm
@@ -822,7 +822,7 @@ msgid "Campaign:"
 msgstr "Campanha:"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_stage.py:0
 msgid ""
 "Changing the value of 'Is Won Stage' may induce a large number of "
@@ -881,17 +881,17 @@ msgstr ""
 "treinamento, serviço"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid ""
-"Click on the breadcrumbs to go back to your Pipeline. Odoo will save all "
+"Click on the breadcrumbs to go back to your Pipeline. WETH will save all "
 "your changes as you navigate."
 msgstr ""
-"Clique na trilha de navegação para voltar ao seu funil. O Odoo salvará todas "
+"Clique na trilha de navegação para voltar ao seu funil. O WETH salvará todas "
 "as suas alterações à medida que você navegar."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Close opportunities to get insights."
 msgstr "Feche oportunidades para obter insights."
@@ -959,10 +959,10 @@ msgid "Completion Date"
 msgstr "Data de conclusão"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
-msgid "Computed by Odoo AI using your data."
-msgstr "Calculado pela IA do Odoo usando seus dados."
+msgid "Computed by WETH AI using your data."
+msgstr "Calculado pela IA do WETH usando seus dados."
 
 #. module: crm
 #: model:ir.model,name:crm.model_res_config_settings
@@ -975,7 +975,7 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Connect to Gmail or Outlook accounts."
 msgstr "Conecte-se a contas do Gmail ou do Outlook."
@@ -986,7 +986,7 @@ msgid "Consider leads created as of the:"
 msgstr "Considere os leads criados a partir de:"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Consulting"
 msgstr "Consultoria"
@@ -1110,7 +1110,7 @@ msgid "Country"
 msgstr "País"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Create Contacts, Leads, Tickets, Projects and Tasks."
 msgstr "Crie contatos, leads, tickets, Projetos e tarefas."
@@ -1153,7 +1153,7 @@ msgstr ""
 "oportunidades."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 #: model_terms:ir.actions.act_window,help:crm.crm_case_form_view_salesteams_lead
 #: model_terms:ir.actions.act_window,help:crm.crm_case_form_view_salesteams_opportunity
@@ -1166,14 +1166,14 @@ msgid "Create an Opportunity"
 msgstr "Criar uma oportunidade"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 #: model_terms:ir.ui.view,arch_db:crm.crm_action_helper
 msgid "Create an opportunity to start playing with your pipeline."
 msgstr "Crie uma oportunidade para começar a explorar o seu funil de vendas."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Create your new contact."
 msgstr "Crie seu novo contato."
@@ -1278,7 +1278,7 @@ msgid "Days to rot"
 msgstr "Dias para apodrecer"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Deadline: %s"
 msgstr "Prazo: %s"
@@ -1321,11 +1321,11 @@ msgstr ""
 #: model_terms:digest.tip,tip_description:crm.digest_tip_crm_4
 msgid ""
 "Did you know you can search a company by name or VAT number to instantly "
-"fill in all its data? Odoo autocompletes everything for you: logo, address, "
+"fill in all its data? WETH autocompletes everything for you: logo, address, "
 "company size, business information, social media accounts, etc."
 msgstr ""
 "Você sabia que é possível pesquisar uma empresa por nome ou número de CNPJ "
-"para preencher instantaneamente todos os seus dados? O Odoo preenche tudo "
+"para preencher instantaneamente todos os seus dados? O WETH preenche tudo "
 "automaticamente para você: logo, endereço, porte da empresa, informações "
 "comerciais, contas nas redes sociais etc."
 
@@ -1333,12 +1333,12 @@ msgstr ""
 #: model_terms:digest.tip,tip_description:crm.digest_tip_crm_5
 msgid ""
 "Did you know you can turn a list of opportunities into a map view, using the "
-"top-right map icon? A lot of screens in Odoo can be turned into a map: "
+"top-right map icon? A lot of screens in WETH can be turned into a map: "
 "tasks, contacts, delivery orders, etc."
 msgstr ""
 "Você sabia que é possível transformar uma lista de oportunidades em uma "
 "visualização de mapa, usando o ícone do mapa no canto superior direito? "
-"Muitas telas no Odoo podem ser transformadas em um mapa: tarefas, contatos, "
+"Muitas telas no WETH podem ser transformadas em um mapa: tarefas, contatos, "
 "pedidos de entrega etc."
 
 #. module: crm
@@ -1384,25 +1384,25 @@ msgid "Display your partners on a dedicated website page."
 msgstr "Exiba seus parceiros em uma página dedicada do site."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_stage.py:0
 msgid "Do you really want to update this stage?"
 msgstr "Você realmente quer atualizar esse estágio?"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Do you want to install the \"%(module_name)s\" App?"
 msgstr "Quer instalar o aplicativo “%(module_name)s ”?"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Does not have a"
 msgstr "Não tem um"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Does not have an"
 msgstr "Não tem um"
@@ -1413,7 +1413,7 @@ msgid "Domain"
 msgstr "Domínio"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Drag your opportunity to <b>Won</b> when you get the deal. Congrats!"
 msgstr ""
@@ -1430,7 +1430,7 @@ msgid "Duplicated Lead Ids Domain"
 msgstr "Domínio de IDs de lead duplicados"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Duration: %s"
 msgstr "Duração: %s"
@@ -1466,7 +1466,7 @@ msgid "Email Domain Criterion"
 msgstr "Critério de domínio de e-mail"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Email Marketing"
 msgstr "Marketing por e-mail"
@@ -1478,8 +1478,8 @@ msgstr "Qualidade dos e-mails"
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team__alias_domain
-msgid "Email domain e.g. 'example.com' in 'odoo@example.com'"
-msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'odoo@exemplo.com'"
+msgid "Email domain e.g. 'example.com' in 'weth@example.com'"
+msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'weth@exemplo.com'"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_lead_merge_summary
@@ -1574,7 +1574,7 @@ msgid "Expected Revenues"
 msgstr "Receitas esperadas"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Exploration"
 msgstr "Exploração"
@@ -1590,13 +1590,13 @@ msgid "Extra fields..."
 msgstr "Campos extras..."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Failed to install \"%(module_name)s\""
 msgstr "Falha ao instalar \"%(module_name)s\""
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 #: model:ir.model.fields,field_description:crm.field_crm_lead_scoring_frequency_field__field_id
 msgid "Field"
@@ -1623,10 +1623,10 @@ msgstr ""
 "Campos que podem ser usados para cálculo preditivo de pontuação de lead"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
-msgid "Find any Odoo record without leaving your inbox."
-msgstr "Encontre qualquer registro do Odoo sem sair da sua caixa de entrada."
+msgid "Find any WETH record without leaving your inbox."
+msgstr "Encontre qualquer registro do WETH sem sair da sua caixa de entrada."
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_stage_form
@@ -1673,13 +1673,13 @@ msgid "Forecast Analysis"
 msgstr "Análise de previsão"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "From %(source_name)s"
 msgstr "De %(source_name)s"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "From %(source_name)s: %(source_subject)s"
 msgstr "De %(source_name)s: %(source_subject)s"
@@ -1691,13 +1691,13 @@ msgid "Future Activities"
 msgstr "Atividades futuras"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.xml:0
 msgid "Generate"
 msgstr "Gerar"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Generate leads from Outlook & Gmail"
 msgstr "Gerar leads a partir do Outlook e do Gmail"
@@ -1718,19 +1718,19 @@ msgid "Get Lost Reason"
 msgstr "Obter motivo da perda"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Get it for Gmail"
 msgstr "Baixe para o Gmail"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Get it for Outlook"
 msgstr "Baixe para o Outlook"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Get our Mail Plugins!"
 msgstr "Baixe nossos plug-ins de e-mail!"
@@ -1741,13 +1741,13 @@ msgid "Give priority if"
 msgstr "Dê prioridade se"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Gmail"
 msgstr "Gmail"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Go, go, go! Congrats for your first deal."
 msgstr "É isso aí! Parabéns pelo seu primeiro contrato."
@@ -1758,7 +1758,7 @@ msgid "Has Message"
 msgstr "Tem uma mensagem"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Has a"
 msgstr "Tem um"
@@ -1781,7 +1781,7 @@ msgstr ""
 "alteração."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Historic win rate"
 msgstr "Taxa histórica de ganhos"
@@ -1882,13 +1882,13 @@ msgid "Import & Synchronize"
 msgstr "Importar e sincronizar"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Import leads from CSV"
 msgstr "Importar leads por CSV"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Import leads from a CSV or Excel file"
 msgstr "Importar leads de um arquivo CSV ou Excel"
@@ -1899,7 +1899,7 @@ msgid "In rotation, with a limit"
 msgstr "Em rotação, com um limite"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/webclient/share_target/crm_share_target_item.xml:0
 msgid "In sales team"
 msgstr "Na equipe de vendas"
@@ -1928,13 +1928,13 @@ msgstr ""
 "modelo."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Install request for \"%s\""
 msgstr "Solicitação de instalação para “%s ”"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Installing \"%(module_name)s\""
 msgstr "Instalando \"%(module_name)s\""
@@ -1947,7 +1947,7 @@ msgstr ""
 "2 horas)"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/res_config_settings.py:0
 msgid ""
 "Invalid repeat frequency. Consider changing frequency type instead of using "
@@ -2032,7 +2032,7 @@ msgid "Language"
 msgstr "Idioma"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Language is"
 msgstr "Idioma é"
@@ -2053,7 +2053,7 @@ msgid "Last Automation:"
 msgstr "Última automação:"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Last Meeting"
 msgstr "Última reunião"
@@ -2098,7 +2098,7 @@ msgid "Late Activities"
 msgstr "Atividades atrasadas"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/webclient/share_target/crm_share_target_item.js:0
 #: model:ir.model,name:crm.model_crm_lead
 #: model:ir.model.fields.selection,name:crm.selection__crm_activity_report__lead_type__lead
@@ -2125,7 +2125,7 @@ msgid "Lead Assignment"
 msgstr "Atribuição de leads"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "Lead Assignment requested by %(user_name)s"
 msgstr "Atribuição de lead solicitada por %(user_name)s"
@@ -2181,7 +2181,7 @@ msgid "Lead Scoring Starting Date in String"
 msgstr "Data inicial da pontuação de lead em string"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Lead Sourcing"
 msgstr "Fontes principais"
@@ -2193,13 +2193,13 @@ msgid "Lead Tags"
 msgstr "Marcadores do lead"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Lead or Opportunity"
 msgstr "Lead ou oportunidade"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "Lead/Opportunities automatic assignment is limited to managers or "
@@ -2219,7 +2219,7 @@ msgid "Lead/Opportunity created<br/>"
 msgstr "Lead/Oportunidade criada<br/>"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lost_reason.py:0
 #: model:ir.actions.act_window,name:crm.crm_case_form_view_salesteams_lead
 #: model:ir.actions.act_window,name:crm.crm_lead_all_leads
@@ -2268,7 +2268,7 @@ msgstr ""
 "mais precisa."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "Leads Assigned"
 msgstr "Leads atribuídos"
@@ -2290,7 +2290,7 @@ msgstr ""
 "Leads são a etapa de qualificação antes da criação de uma oportunidade."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/wizard/crm_merge_opportunities.py:0
 msgid "Leads merged"
 msgstr "Leads mesclados"
@@ -2326,14 +2326,14 @@ msgid "Leads/Opportunities to merge"
 msgstr "Leads/Oportunidades a serem mescladas"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Learn More"
 msgstr "Saiba mais"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Let's <b>Schedule an Activity.</b>"
 msgstr "Vamos <b>agendar uma atividade</b>."
@@ -2345,7 +2345,7 @@ msgid "Let's get to work!"
 msgstr "Mãos à obra!"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Let’s have a look at an Opportunity."
 msgstr "Vamos dar uma olhada em uma oportunidade."
@@ -2384,7 +2384,7 @@ msgid "Locale Code"
 msgstr "Código da localidade (país/idioma)"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Located in"
 msgstr "Localizado em"
@@ -2395,7 +2395,7 @@ msgid "Looks like nothing is planned."
 msgstr "Parece que não há nada planejado."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid ""
 "Looks like nothing is planned. :(<br><br><i>Tip: Schedule activities to keep "
@@ -2417,7 +2417,7 @@ msgid "Lost"
 msgstr "Perdido"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/wizard/crm_lead_lost.py:0
 msgid "Lost Comment"
 msgstr "Perda - Comentário"
@@ -2458,13 +2458,13 @@ msgid "Low"
 msgstr "Baixa"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_kanban/crm_column_progress.xml:0
 msgid "MRR"
 msgstr "RRM"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Mail plugins"
 msgstr "Plug-ins de e-mail"
@@ -2475,7 +2475,7 @@ msgid "Manage Recurring Plans"
 msgstr "Gerenciar planos recorrentes"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/team_switcher/team_switcher.xml:0
 msgid "Manage Teams"
 msgstr "Gerenciar equipes"
@@ -2562,7 +2562,7 @@ msgid "Meeting Display Label"
 msgstr "Exibir etiqueta da reunião"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Meeting scheduled at %s"
 msgstr "Reunião agendada em %s"
@@ -2574,7 +2574,7 @@ msgid "Meetings"
 msgstr "Reuniões"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team_member.py:0
 msgid ""
 "Member assignment domain for user %(user)s and team %(team)s is incorrectly "
@@ -2584,7 +2584,7 @@ msgstr ""
 "está formatado incorretamente"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team_member.py:0
 msgid ""
 "Member preferred assignment domain for user %(user)s and team %(team)s is "
@@ -2679,7 +2679,7 @@ msgid "My Pipeline"
 msgstr "Meu funil"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0 model:crm.stage,name:crm.stage_lead1
 msgid "New"
 msgstr "Novo"
@@ -2720,7 +2720,7 @@ msgid "Next Activity Type"
 msgstr "Tipo da próxima atividade"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Next Meeting"
 msgstr "Próxima reunião"
@@ -2731,25 +2731,25 @@ msgid "Next Run"
 msgstr "Próxima execução"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "No"
 msgstr "Não"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "No Meeting"
 msgstr "Sem reuniões"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "No Subject"
 msgstr "Sem assunto"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "No allocated leads to %(team_name)s team and its salespersons because no "
@@ -2759,7 +2759,7 @@ msgstr ""
 "nenhum lead sem atribuição corresponde a esse domínio."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "No allocated leads to %(team_name)s team because it has no capacity. Add "
@@ -2769,7 +2769,7 @@ msgstr ""
 "Adicione capacidades para os vendedores."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "No allocated leads to any team or salesperson. Check your Sales Teams and "
@@ -2790,13 +2790,13 @@ msgid "No data found!"
 msgstr "Nenhum dado encontrado!"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "No detours, no delays - from %(stage_name)s straight to the win! 🚀"
 msgstr "Sem desvios, sem atrasos — de %(stage_name)s direto para a vitória! 🚀"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "No lead assigned to salespersons because no unassigned lead matches their "
@@ -2806,7 +2806,7 @@ msgstr ""
 "corresponde aos domínios deles."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid ""
 "No new lead allocated to %(team_name)s team because no unassigned lead "
@@ -2816,7 +2816,7 @@ msgstr ""
 "atribuição corresponde a esse domínio."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 msgid "No new lead allocated to the teams because no lead match their domains."
 msgstr ""
@@ -2860,7 +2860,7 @@ msgid "Notes:"
 msgstr "Notas:"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Now, <b>add your Opportunity</b> to your Pipeline."
 msgstr "Agora, <b>adicione sua oportunidade</b> ao seu funil."
@@ -2921,10 +2921,10 @@ msgstr "Número de mensagens com erro de entrega"
 #. module: crm
 #: model:ir.module.module,description:base.module_crm
 msgid ""
-"Odoo CRM\n"
+"WETH CRM\n"
 "--------\n"
 "\n"
-"Boost sales productivity, improve win rates, grow revenue with the Odoo\n"
+"Boost sales productivity, improve win rates, grow revenue with the Weth\n"
 "<a href=\"https://www.weth.com.br/app/crm\">Open Source CRM</a>.\n"
 "\n"
 "Manage your sales funnel with no effort. Attract leads, follow-up on phone\n"
@@ -2972,7 +2972,7 @@ msgid ""
 "they\n"
 "work, so everyone stays productive.\n"
 "\n"
-"Route, sort and filter incoming emails automatically. Odoo CRM handles "
+"Route, sort and filter incoming emails automatically. WETH CRM handles "
 "incoming\n"
 "emails and route them to the right opportunities or Sales Team. New leads "
 "are\n"
@@ -2990,7 +2990,7 @@ msgid ""
 "Lead Automation and Marketing Campaigns\n"
 "---------------------------------------\n"
 "\n"
-"Drive performance by automating tasks with Odoo <a href=\"https://"
+"Drive performance by automating tasks with WETH <a href=\"https://"
 "www.weth.com.br/app/crm\">CRM</a>.\n"
 "\n"
 "Use our marketing campaigns to automate lead acquisition, follow ups and\n"
@@ -3039,11 +3039,11 @@ msgid ""
 "Compare revenues with forecasts and budgets in real time.\n"
 "\n"
 msgstr ""
-"Odoo CRM\n"
+"WETH CRM\n"
 "--------\n"
 "\n"
 "Aumente a produtividade das vendas, melhore as taxas de conversão e aumente "
-"a receita com o Odoo\n"
+"a receita com o Weth\n"
 "<a href=\"https://www.weth.com.br/app/crm\">CRM de código aberto</a>.\n"
 "\n"
 "Gerencie seu funil de vendas sem esforço. Atraia leads, faça o "
@@ -3094,7 +3094,7 @@ msgstr ""
 "como\n"
 "trabalha, para que todos continuem produtivos.\n"
 "\n"
-"Encaminhe, classifique e filtre e-mails recebidos automaticamente. O Odoo "
+"Encaminhe, classifique e filtre e-mails recebidos automaticamente. O WETH "
 "CRM lida com os\n"
 "e-mails recebidos e os encaminha para as oportunidades certas ou para a "
 "equipe de Vendas. Novos leads são\n"
@@ -3113,7 +3113,7 @@ msgstr ""
 "Automação de leads e campanhas de marketing\n"
 "---------------------------------------\n"
 "\n"
-"Impulsione o desempenho automatizando tarefas com o Odoo <a href=\"https://"
+"Impulsione o desempenho automatizando tarefas com o WETH <a href=\"https://"
 "www.weth.com.br/app/crm\">CRM</a>.\n"
 "\n"
 "Use nossas campanhas de marketing para automatizar a aquisição de leads, "
@@ -3168,25 +3168,25 @@ msgstr ""
 #. module: crm
 #: model_terms:ir.actions.act_window,help:crm.crm_case_form_view_salesteams_opportunity
 msgid ""
-"Odoo helps you keep track of your sales pipeline to follow\n"
+"WETH helps you keep track of your sales pipeline to follow\n"
 "                    up potential sales and better forecast your future "
 "revenues."
 msgstr ""
-"O Odoo te ajuda a manter o controle do seu funil de vendas para\n"
+"O WETH te ajuda a manter o controle do seu funil de vendas para\n"
 "                    acompanhar vendas em potencial e prever melhor as suas "
 "receitas futuras."
 
 #. module: crm
 #: model_terms:digest.tip,tip_description:crm.digest_tip_crm_2
 msgid ""
-"Odoo's artificial intelligence engine predicts the success rate of each "
+"WETH's artificial intelligence engine predicts the success rate of each "
 "opportunity based on your history. You can always update the success rate "
-"manually, but if you let Odoo do the job the score is updated while the "
+"manually, but if you let WETH do the job the score is updated while the "
 "opportunity moves forward in your sales cycle."
 msgstr ""
-"O mecanismo de inteligência artificial do Odoo prevê a taxa de sucesso de "
+"O mecanismo de inteligência artificial do WETH prevê a taxa de sucesso de "
 "cada oportunidade com base em seu histórico. Você sempre pode atualizar a "
-"taxa de sucesso manualmente, mas se deixar Odoo fazer o trabalho, a "
+"taxa de sucesso manualmente, mas se deixar WETH fazer o trabalho, a "
 "pontuação será atualizada conforme a oportunidade avança em seu ciclo de "
 "vendas."
 
@@ -3211,7 +3211,7 @@ msgid "Opp. Lost Reason"
 msgstr "Motivo de perda da oportunidade"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/res_partner.py:0
 #: model:ir.actions.act_window,name:crm.crm_case_form_view_salesteams_opportunity
 #: model:ir.actions.act_window,name:crm.crm_lead_opportunities
@@ -3350,7 +3350,7 @@ msgid "Out of rotation"
 msgstr "Fora de rotação"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Outlook"
 msgstr "Outlook"
@@ -3429,7 +3429,7 @@ msgid "Pending"
 msgstr "Pendente"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Phew, that took some effort — but you nailed it. Good job!"
 msgstr ""
@@ -3461,7 +3461,7 @@ msgid "Phone:"
 msgstr "Telefone:"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_team.py:0
 #: model:ir.actions.act_window,name:crm.crm_lead_action_pipeline
 #: model:ir.model.fields,field_description:crm.field_crm_team__use_opportunities
@@ -3545,7 +3545,7 @@ msgid "Preference assignment Domain"
 msgstr "Domínio da atribuição preferencial"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Preview records and open their forms in one click."
 msgstr "Visualize registros e abra seus formulários com um clique."
@@ -3615,7 +3615,7 @@ msgid "Qualified"
 msgstr "Qualificado"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Qualify leads with a Survey"
 msgstr "Qualifique leads com uma pesquisa"
@@ -3626,7 +3626,7 @@ msgid "Ratings"
 msgstr "Avaliações"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid "Ready to boost your sales? Let's have a look at your <b>Pipeline</b>."
 msgstr ""
@@ -3685,7 +3685,7 @@ msgid "Repeat every"
 msgstr "Repetir a cada"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/res_config_settings.py:0
 msgid "Repeat frequency should be positive."
 msgstr "A frequência de repetição deve ser positiva."
@@ -3804,7 +3804,7 @@ msgid "Sanitized Number"
 msgstr "Número uniformizado"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Save emails and attachments directly to WETH."
 msgstr "Salve e-mails e anexos diretamente no WETH."
@@ -3827,13 +3827,13 @@ msgid "Search Opportunities"
 msgstr "Pesquisar oportunidades"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Search in our directory of 580M+ entities"
 msgstr "Pesquise em nosso diretório com mais de 580 milhões de entidades"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "See AI-computed chances details"
 msgstr "Veja os detalhes das chances calculadas por IA"
@@ -3844,7 +3844,7 @@ msgid "Select a Lost Reason..."
 msgstr "Selecione um motivo de perda..."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Select at least two Leads/Opportunities from the list to merge them."
 msgstr ""
@@ -3856,7 +3856,7 @@ msgid "Select or create a contact..."
 msgstr "Selecione ou crie um contato..."
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Send an email and get leads from replies"
 msgstr "Enviar um e-mail e obter leads a partir das respostas"
@@ -3942,7 +3942,7 @@ msgid "Show to all teams"
 msgstr "Mostrar a todas as equipes"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/wizard/crm_merge_opportunities.py:0
 msgid "Something went wrong, please try again later"
 msgstr "Ocorreu um erro, tente novamente mais tarde"
@@ -3956,7 +3956,7 @@ msgid "Source"
 msgstr "Origem"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Source is"
 msgstr "Fonte é"
@@ -3967,7 +3967,7 @@ msgid "Source:"
 msgstr "Origem:"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/res_config_settings.py:0
 #: model:ir.model.fields,field_description:crm.field_crm_activity_report__stage_id
 #: model:ir.model.fields,field_description:crm.field_crm_lead__stage_id
@@ -4065,7 +4065,7 @@ msgid "Street2"
 msgstr "Complemento"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Subject: "
 msgstr "Assunto: "
@@ -4076,7 +4076,7 @@ msgid "Subtype"
 msgstr "Subtipo"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Survey"
 msgstr "Pesquisas"
@@ -4098,7 +4098,7 @@ msgid "Tag"
 msgstr "Marcador"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Tagged as"
 msgstr "Marcado como"
@@ -4116,7 +4116,7 @@ msgid "Tags:"
 msgstr "Marcadores:"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_search_model.js:0
 msgid "Team"
 msgstr "Equipe"
@@ -4132,7 +4132,7 @@ msgid "Teams Members"
 msgstr "Membros da equipe"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Template for Leads & Opportunities"
 msgstr "Modelo para leads e oportunidades"
@@ -4157,7 +4157,7 @@ msgstr ""
 "automaticamente novos leads atribuídos ao canal."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "The lead %s cannot be won and lost at the same time."
 msgstr "O lead %s não pode estar em Ganho e Perdido ao mesmo tempo."
@@ -4165,11 +4165,11 @@ msgstr "O lead %s não pode estar em Ganho e Perdido ao mesmo tempo."
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team__alias_model_id
 msgid ""
-"The model (Odoo Document Kind) to which this alias corresponds. Any incoming "
+"The model (WETH Document Kind) to which this alias corresponds. Any incoming "
 "email that does not reply to an existing record will cause the creation of a "
 "new record of this model (e.g. a Project Task)"
 msgstr ""
-"O modelo (tipo de documento do Odoo) ao qual esse alias corresponde. "
+"O modelo (tipo de documento do Weth) ao qual esse alias corresponde. "
 "Qualquer e-mail recebido que não responda a um registro existente causará a "
 "criação de um novo registro desse modelo (ex.: uma tarefa de projeto)"
 
@@ -4290,7 +4290,7 @@ msgstr ""
 "lista de e-mail"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid ""
 "This new lead created by %(creation_source)s was automatically assigned to "
@@ -4330,8 +4330,8 @@ msgstr "Dica: converta e-mails recebidos em oportunidades"
 #. module: crm
 #: model:digest.tip,name:crm.digest_tip_crm_1
 #: model_terms:digest.tip,tip_description:crm.digest_tip_crm_1
-msgid "Tip: Did you know Odoo has built-in lead mining?"
-msgstr "Dica: você sabia que o Odoo tem mineração de leads integrada?"
+msgid "Tip: Did you know WETH has built-in lead mining?"
+msgstr "Dica: você sabia que o WETH tem mineração de leads integrada?"
 
 #. module: crm
 #: model:digest.tip,name:crm.digest_tip_crm_4
@@ -4370,7 +4370,7 @@ msgid "Tip: Turn a selection of opportunities into a map"
 msgstr "Dica: transforme uma seleção de oportunidades em um mapa"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/promote_mail_plugins_dialog/promote_mail_plugins_dialog.xml:0
 msgid "Tired of copy-pasting emails?"
 msgstr "Cansado de copiar e colar e-mails?"
@@ -4383,7 +4383,7 @@ msgid "Title"
 msgstr "Título"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid ""
 "To prevent data loss, Leads and Opportunities can only be merged by groups "
@@ -4393,7 +4393,7 @@ msgstr ""
 "por grupos de %(max_length)s."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid ""
 "To work with the CRM, you should <a name=\"%d\" type=\"action\" "
@@ -4403,7 +4403,7 @@ msgstr ""
 "tabindex=\"-1\">fazer parte de uma equipe.</a>"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "To work with the CRM, you should be added to a Team."
 msgstr "Para trabalhar com o CRM, você deve ser adicionado a uma equipe."
@@ -4420,13 +4420,13 @@ msgid "Too expensive"
 msgstr "Muito caro"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Top Negatives"
 msgstr "Principais pontos negativos"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "Top Positives"
 msgstr "Principais pontos positivos"
@@ -4456,7 +4456,7 @@ msgid "Try sending an email"
 msgstr "Tente enviar um e-mail"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 msgid "Turn visitors into leads via a form"
 msgstr "Transforme visitantes em leads por meio de um formulário"
@@ -4588,7 +4588,7 @@ msgid "Use the <i>New</i> button, or send an email to"
 msgstr "Use o botão <i>Novo</i>, ou envie um e-mail para"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid ""
 "Use the <i>New</i> button, or send an email to %(email_link)s to test the "
@@ -4665,7 +4665,7 @@ msgid "We don't have people/skills"
 msgstr "Não temos pessoas ou habilidades necessárias"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/components/lead_generation_dropdown/lead_generation_dropdown.js:0
 #: model:ir.model.fields,field_description:crm.field_crm_lead__website
 msgid "Website"
@@ -4702,7 +4702,7 @@ msgid "What went wrong?"
 msgstr "O que aconteceu de errado?"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_kanban/crm_column_progress.js:0
 msgid "Without activities scheduled"
 msgstr "Sem atividades programadas"
@@ -4730,19 +4730,19 @@ msgid "Won/Lost"
 msgstr "Ganho/Perdido"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Wow, that was fast. That deal didn’t stand a chance!"
 msgstr "Uau, que rápido! Não teve a menor chance!"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Yay, your first win from %(utm_source_name)s!"
 msgstr "Uhu, sua primeira vitória no %(utm_source_name)s!"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Yeah! Best deal out of the last 7 days for the team."
 msgstr "Sim! O melhor negócio dos últimos 7 dias para a equipe."
@@ -4753,13 +4753,13 @@ msgid "Yearly"
 msgstr "Anual"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "Yes"
 msgstr "Sim"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/js/tours/crm.js:0
 msgid ""
 "You can make your opportunity advance through your pipeline by clicking on "
@@ -4769,25 +4769,25 @@ msgstr ""
 "etapas aqui. Tente enviá-la para a próxima etapa!"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You don't have the access needed to run this cron."
 msgstr "Você não tem o acesso necessário para executar este cron."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You just beat your personal record for the past 30 days."
 msgstr "Você bateu seu recorde pessoal nos últimos 30 dias."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You just beat your personal record for the past 7 days."
 msgstr "Você bateu seu recorde pessoal nos últimos 7 dias."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You just expanded the map! First win in %(country)s."
 msgstr "Você acaba de expandir o mapa! Primeira conquista em %(country)s."
@@ -4807,7 +4807,7 @@ msgstr ""
 "mais."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You're on a winning streak. 3 deals in 3 days, congrats!"
 msgstr ""
@@ -4815,7 +4815,7 @@ msgstr ""
 "parabéns!"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "You're on fire! Fifth deal won today 🔥"
 msgstr "Você está arrasando! Quinto negócio fechado hoje 🔥"
@@ -4887,7 +4887,7 @@ msgid "e.g. mycompany.com"
 msgstr "ex.: minhaempresa.com"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "email address"
 msgstr "endereço de e-mail"
@@ -4903,49 +4903,49 @@ msgid "generate opportunities in your pipeline?<br>"
 msgstr "gerar oportunidades no seu funil de vendas?<br>"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "has value"
 msgstr "tem valor"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "incoming email"
 msgstr "e-mails recebidos"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lost_reason.py:0
 msgid "lost_reason_id"
 msgstr "lost_reason_id"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/forecast_kanban/forecast_kanban_column_quick_create.js:0
 msgid "next %s"
 msgstr "próxim %s"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "phone number"
 msgstr "número de telefone"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "sample data"
 msgstr "dados de amostra"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "stage"
 msgstr "estágio"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "team"
 msgstr "equipe"
@@ -4956,7 +4956,7 @@ msgid "team_count"
 msgstr "team_count"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "this lead"
 msgstr "este lead"
@@ -4974,25 +4974,25 @@ msgstr ""
 "da equipe de vendas."
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "type"
 msgstr "tipo"
 
 #. module: crm
-#. odoo-python
+#. weth-python
 #: code:addons/crm/models/crm_lead.py:0
 msgid "unknown"
 msgstr "desconhecido"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "valid email address"
 msgstr "endereço de e-mail válido"
 
 #. module: crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/crm/static/src/views/crm_form/crm_pls_tooltip_button.xml:0
 msgid "valid phone number"
 msgstr "número de telefone válido"

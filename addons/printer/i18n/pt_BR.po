@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/printer/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgid "Do not ask me again"
 msgstr "Não me pergunte novamente"
 
 #. module: printer
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/printer/static/src/print_action_handler.js:0
 #, fuzzy
 msgid ""
@@ -128,7 +128,7 @@ msgid "No printer configured!"
 msgstr "Nenhuma impressora configurada"
 
 #. module: printer
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/printer/static/src/client_actions/reset_cached_printers.xml:0
 #, fuzzy
 msgid "No report to display"
@@ -158,27 +158,27 @@ msgid "Report Action"
 msgstr "Ação de relatório"
 
 #. module: printer
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/printer/static/src/client_actions/reset_cached_printers.xml:0
 #, fuzzy
 msgid "Reports with linked printers"
 msgstr "Relatórios com impressoras vinculadas"
 
 #. module: printer
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/printer/static/src/client_actions/reset_cached_printers.xml:0
 msgid "Reset Linked Printers"
 msgstr "Redefinir impressoras vinculadas"
 
 #. module: printer
-#. odoo-python
+#. weth-python
 #: code:addons/printer/models/ir_actions_report.py:0
 #, fuzzy
 msgid "Select Printers for %s"
 msgstr "Selecione Impressoras para %s"
 
 #. module: printer
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/printer/static/src/wizard/select_printers_wizard.js:0
 #, fuzzy
 msgid "Select at least one printer"

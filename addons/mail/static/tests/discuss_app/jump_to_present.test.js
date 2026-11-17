@@ -37,15 +37,15 @@ test("Basic jump to present when scrolling to outdated messages", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
-    await contains(".o-mail-Thread");
-    expect(document.querySelector(".o-mail-Thread").scrollHeight).toBeGreaterThan(
-        PRESENT_VIEWPORT_THRESHOLD * document.querySelector(".o-mail-Thread").clientHeight,
+    await contains(".w-mail-Message", { count: 20 });
+    await contains(".w-mail-Thread");
+    expect(document.querySelector(".w-mail-Thread").scrollHeight).toBeGreaterThan(
+        PRESENT_VIEWPORT_THRESHOLD * document.querySelector(".w-mail-Thread").clientHeight,
         { message: "should have enough scroll height to trigger jump to present" }
     );
     await click("[title='Jump to Present']");
     await contains("[title='Jump to Present']", { count: 0 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
 });
 
 test("Jump to present reaches the bottom in a browser without scrollend", async () => {
@@ -76,10 +76,10 @@ test("Jump to present reaches the bottom in a browser without scrollend", async 
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
+    await contains(".w-mail-Message", { count: 20 });
     await click("[title='Jump to Present']");
-    await contains(".o-mail-Thread", {
-        contains: [".o-mail-Message", { count: 20 }],
+    await contains(".w-mail-Thread", {
+        contains: [".w-mail-Message", { count: 20 }],
         scroll: "bottom",
     });
 });
@@ -119,19 +119,19 @@ test("Jump to a pinned message during jump to present in a browser without scrol
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
+    await contains(".w-mail-Message", { count: 20 });
     await click("[title='Pinned Messages']");
-    await contains(".o-discuss-PinnedMessagesPanel a[role='button']:text(Jump):count(1)");
+    await contains(".w-discuss-PinnedMessagesPanel a[role='button']:text(Jump):count(1)");
     await click("[title='Jump to Present']");
     await smoothScrollStarted.promise;
-    await click(".o-discuss-PinnedMessagesPanel a[role='button']:text(Jump)");
-    await contains(".o-mail-Message.o-highlighted .o-mail-Message-body:text(pinned-message)");
-    await contains(".o-mail-Message.o-highlighted", { count: 0 });
+    await click(".w-discuss-PinnedMessagesPanel a[role='button']:text(Jump)");
+    await contains(".w-mail-Message.w-highlighted .w-mail-Message-body:text(pinned-message)");
+    await contains(".w-mail-Message.w-highlighted", { count: 0 });
     await isInViewportOf(
-        ".o-mail-Thread .o-mail-Message-body:text(pinned-message)",
-        ".o-mail-Thread"
+        ".w-mail-Thread .w-mail-Message-body:text(pinned-message)",
+        ".w-mail-Thread"
     );
-    await contains(".o-mail-Thread", { count: 0, scroll: "bottom" });
+    await contains(".w-mail-Thread", { count: 0, scroll: "bottom" });
 });
 
 test("Jump to present keeps the position of a user who scrolls up in a browser without scrollend", async () => {
@@ -163,16 +163,16 @@ test("Jump to present keeps the position of a user who scrolls up in a browser w
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
+    await contains(".w-mail-Message", { count: 20 });
     await click("[title='Jump to Present']");
     await smoothScrollStarted.promise;
     await animationFrame();
     await animationFrame(); // wait for the scroll event of the stalled scroll
-    const userScrollTop = queryFirst(".o-mail-Thread").scrollTop - 200;
-    await scroll(".o-mail-Thread", userScrollTop);
+    const userScrollTop = queryFirst(".w-mail-Thread").scrollTop - 200;
+    await scroll(".w-mail-Thread", userScrollTop);
     await delay(1000); // wait for the end of the smooth scroll check
-    expect(Math.abs(queryFirst(".o-mail-Thread").scrollTop - userScrollTop)).toBeLessThan(2);
-    await contains(".o-mail-Thread", { count: 0, scroll: "bottom" });
+    expect(Math.abs(queryFirst(".w-mail-Thread").scrollTop - userScrollTop)).toBeLessThan(2);
+    await contains(".w-mail-Thread", { count: 0, scroll: "bottom" });
 });
 
 test("Jump to present reaches the bottom when a message arrives during the smooth scroll", async () => {
@@ -196,7 +196,7 @@ test("Jump to present reaches the bottom when a message arrives during the smoot
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
+    await contains(".w-mail-Message", { count: 20 });
     const smoothScrollStarted = Promise.withResolvers();
     patchWithCleanup(Element.prototype, {
         scrollTo(...args) {
@@ -217,8 +217,8 @@ test("Jump to present reaches the bottom when a message arrives during the smoot
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread", {
-        contains: [".o-mail-Message", { count: 21 }],
+    await contains(".w-mail-Thread", {
+        contains: [".w-mail-Message", { count: 21 }],
         scroll: "bottom",
     });
 });
@@ -237,18 +237,18 @@ test("Basic jump to present when scrolling to outdated messages (DESC, chatter a
     }
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message", { count: 20 });
-    await contains(".o-mail-Thread");
-    expect(document.querySelector(".o-mail-Chatter").scrollHeight).toBeGreaterThan(
-        PRESENT_VIEWPORT_THRESHOLD * document.querySelector(".o-mail-Chatter").clientHeight,
+    await contains(".w-mail-Message", { count: 20 });
+    await contains(".w-mail-Thread");
+    expect(document.querySelector(".w-mail-Chatter").scrollHeight).toBeGreaterThan(
+        PRESENT_VIEWPORT_THRESHOLD * document.querySelector(".w-mail-Chatter").clientHeight,
         { message: "should have enough scroll height to trigger jump to present" }
     );
-    await contains(".o-mail-Chatter", { scroll: 0 });
-    await scroll(".o-mail-Chatter", "bottom");
-    await isInViewportOf("[title='Jump to Present']", ".o-mail-Thread");
+    await contains(".w-mail-Chatter", { scroll: 0 });
+    await scroll(".w-mail-Chatter", "bottom");
+    await isInViewportOf("[title='Jump to Present']", ".w-mail-Thread");
     await click("[title='Jump to Present']");
     await contains("[title='Jump to Present']", { count: 0 });
-    await contains(".o-mail-Chatter", { scroll: 0 });
+    await contains(".w-mail-Chatter", { scroll: 0 });
 });
 
 test.tags("owl3");
@@ -266,7 +266,7 @@ test.skip("Basic jump to present when scrolling to outdated messages (DESC, chat
     }
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message", { count: 20 });
+    await contains(".w-mail-Message", { count: 20 });
     await contains(".o_content");
     expect(document.querySelector(".o_content").scrollHeight).toBeGreaterThan(
         PRESENT_VIEWPORT_THRESHOLD * document.querySelector(".o_content").clientHeight,
@@ -318,14 +318,14 @@ test("Jump to old reply should prompt jump to present", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await click(".o-mail-MessageInReply .cursor-pointer");
-    await contains(".o-mail-Message:eq(0):has(:text('Hello world!'))");
-    await contains(".o-mail-Message", { count: 31 });
+    await contains(".w-mail-Message", { count: 30 });
+    await click(".w-mail-MessageInReply .cursor-pointer");
+    await contains(".w-mail-Message:eq(0):has(:text('Hello world!'))");
+    await contains(".w-mail-Message", { count: 31 });
     await click("[title='Jump to Present']");
     await contains("[title='Jump to Present']", { count: 0 });
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
 });
 
 test("Jump to old reply should prompt jump to present (RPC small delay)", async () => {
@@ -379,13 +379,13 @@ test("Jump to old reply should prompt jump to present (RPC small delay)", async 
             { channel_id: channelId, fetch_params: { limit: 60, around: 103 } },
         ],
     ]);
-    await contains(".o-mail-Message", { count: 30 });
-    await click(".o-mail-MessageInReply .cursor-pointer");
-    await contains(".o-mail-Message:eq(0):has(:text('Hello world!'))");
-    await contains(".o-mail-Message", { count: 31 });
+    await contains(".w-mail-Message", { count: 30 });
+    await click(".w-mail-MessageInReply .cursor-pointer");
+    await contains(".w-mail-Message:eq(0):has(:text('Hello world!'))");
+    await contains(".w-mail-Message", { count: 31 });
     await click("[title='Jump to Present']");
     await contains("[title='Jump to Present']", { count: 0 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
     await waitStoreFetch([
         [
             "/discuss/channel/messages",
@@ -426,15 +426,15 @@ test("Post message when seeing old message should jump to present", async () => 
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await click(".o-mail-MessageInReply .cursor-pointer");
+    await contains(".w-mail-Message", { count: 30 });
+    await click(".w-mail-MessageInReply .cursor-pointer");
     await contains("[title='Jump to Present']");
-    await insertText(".o-mail-Composer-input", "Newly posted");
+    await insertText(".w-mail-Composer-input", "Newly posted");
     await press("Enter");
     await contains("[title='Jump to Present']", { count: 0 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
-    await contains(".o-mail-Message-content:has(:text('Newly posted'))", {
-        after: [".o-mail-Message-content:has(:text('Most Recent!'))"], // should load around present
+    await contains(".w-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Message-content:has(:text('Newly posted'))", {
+        after: [".w-mail-Message-content:has(:text('Most Recent!'))"], // should load around present
     });
 });
 
@@ -473,17 +473,17 @@ test("when triggering jump to present, keeps showing old messages until recent o
     await openDiscuss(channelId);
     await waitStoreFetch("/discuss/channel/messages");
     await click("[title='Pinned Messages']");
-    await click(".o-discuss-PinnedMessagesPanel a[role='button']:text('Jump')");
-    await contains(".o-mail-Thread .o-mail-Message:has(:text('first-message'))");
+    await click(".w-discuss-PinnedMessagesPanel a[role='button']:text('Jump')");
+    await contains(".w-mail-Thread .w-mail-Message:has(:text('first-message'))");
     await animationFrame();
     slowMessageFetchDeferred = Promise.withResolvers();
     await click("[title='Jump to Present']");
     await animationFrame();
-    await contains(".o-mail-Thread .o-mail-Message:has(:text('first-message'))");
+    await contains(".w-mail-Thread .w-mail-Message:has(:text('first-message'))");
     slowMessageFetchDeferred.resolve();
     await waitStoreFetch("/discuss/channel/messages");
-    await contains(".o-mail-Thread .o-mail-Message:has(:text('first-message'))", { count: 0 });
-    await contains(".o-mail-Thread", { scroll: "bottom" });
+    await contains(".w-mail-Thread .w-mail-Message:has(:text('first-message'))", { count: 0 });
+    await contains(".w-mail-Thread", { scroll: "bottom" });
 });
 
 test("focus composer after jump to present", async () => {
@@ -499,10 +499,10 @@ test("focus composer after jump to present", async () => {
     );
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Composer.o-focused");
-    queryFirst(".o-mail-Composer-input").blur();
-    await contains(".o-mail-Composer.o-focused", { count: 0 });
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Composer.w-focused");
+    queryFirst(".w-mail-Composer-input").blur();
+    await contains(".w-mail-Composer.w-focused", { count: 0 });
     await click("[title='Jump to Present']");
-    await contains(".o-mail-Composer.o-focused");
+    await contains(".w-mail-Composer.w-focused");
 });

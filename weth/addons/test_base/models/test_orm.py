@@ -2180,7 +2180,7 @@ class TestOrmEmpty_Int(models.Model):
 
 class TestOrmTeam(models.Model):
     _name = 'test_orm.team'
-    _description = 'Odoo Team'
+    _description = 'WETH Team'
 
     name = fields.Char()
     parent_id = fields.Many2one('test_orm.team')
@@ -2189,7 +2189,7 @@ class TestOrmTeam(models.Model):
 
 class TestOrmTeamMember(models.Model):
     _name = 'test_orm.team.member'
-    _description = 'Odoo Developer'
+    _description = 'WETH Developer'
 
     name = fields.Char('Name')
     team_id = fields.Many2one('test_orm.team')

@@ -11,7 +11,7 @@ from weth.tools.misc import frozendict
 class MicrosoftEvent(abc.Set):
     """
     This helper class holds the values of a Microsoft event.
-    Inspired by Odoo recordset, one instance can be a single Microsoft event or a
+    Inspired by WETH recordset, one instance can be a single Microsoft event or a
     (immutable) set of Microsoft events.
     All usual set operations are supported (union, intersection, etc).
 
@@ -72,31 +72,31 @@ class MicrosoftEvent(abc.Set):
         """
         return tuple(e.iCalUId for e in self)
 
-    def odoo_id(self, env):
-        return self._odoo_id
+    def weth_id(self, env):
+        return self._weth_id
 
-    def _meta_odoo_id(self, microsoft_guid):
-        """Returns the Odoo id stored in the Microsoft Event metadata.
+    def _meta_weth_id(self, microsoft_guid):
+        """Returns the WETH id stored in the Microsoft Event metadata.
         This id might not actually exists in the database.
         """
         return None
 
     @property
-    def odoo_ids(self):
+    def weth_ids(self):
         """
-        Get the list of Odoo event ids already mapped with Outlook events (self)
+        Get the list of WETH event ids already mapped with Outlook events (self)
         """
-        return tuple(e._odoo_id for e in self if e._odoo_id)
+        return tuple(e._weth_id for e in self if e._weth_id)
 
-    def _load_odoo_ids_from_db(self, env, force_model=None):
+    def _load_weth_ids_from_db(self, env, force_model=None):
         """
-        Map Microsoft events to existing Odoo events:
+        Map Microsoft events to existing WETH events:
         1) extract unmapped events only,
-        2) match Odoo events and Outlook events which have both a ICalUId set,
+        2) match WETH events and Outlook events which have both a ICalUId set,
         3) match remaining events,
         Returns the list of mapped events
         """
-        mapped_events = [e.id for e in self if e._odoo_id]
+        mapped_events = [e.id for e in self if e._weth_id]
 
         # avoid mapping events if they are already all mapped
         if len(self) == len(mapped_events):
@@ -106,36 +106,36 @@ class MicrosoftEvent(abc.Set):
 
         # Query events OR recurrences, get organizer_id and universal_id values by splitting microsoft_id.
         model_env = force_model if force_model is not None else self._get_model(env)
-        odoo_events = model_env.with_context(active_test=False).search([
+        weth_events = model_env.with_context(active_test=False).search([
             '|',
             ('ms_universal_event_id', "in", unmapped_events.uids),
             ('microsoft_id', "in", unmapped_events.ids)
         ]).with_env(env)
 
-        # 1. try to match unmapped events with Odoo events using their iCalUId
+        # 1. try to match unmapped events with WETH events using their iCalUId
         unmapped_events_with_uids = unmapped_events.filter(lambda e: e.iCalUId)
-        odoo_events_with_uids = odoo_events.filtered(lambda e: e.ms_universal_event_id)
-        mapping = {e.ms_universal_event_id: e.id for e in odoo_events_with_uids}
+        weth_events_with_uids = weth_events.filtered(lambda e: e.ms_universal_event_id)
+        mapping = {e.ms_universal_event_id: e.id for e in weth_events_with_uids}
 
         for ms_event in unmapped_events_with_uids:
-            odoo_id = mapping.get(ms_event.iCalUId)
-            if odoo_id:
-                ms_event._events[ms_event.id]['_odoo_id'] = odoo_id
+            weth_id = mapping.get(ms_event.iCalUId)
+            if weth_id:
+                ms_event._events[ms_event.id]['_weth_id'] = weth_id
                 mapped_events.append(ms_event.id)
 
-        # 2. try to match unmapped events with Odoo events using their id
+        # 2. try to match unmapped events with WETH events using their id
         unmapped_events = self.filter(lambda e: e.id not in mapped_events)
-        mapping = {e.microsoft_id: e for e in odoo_events}
+        mapping = {e.microsoft_id: e for e in weth_events}
 
         for ms_event in unmapped_events:
-            odoo_event = mapping.get(ms_event.id)
-            if odoo_event:
-                ms_event._events[ms_event.id]['_odoo_id'] = odoo_event.id
+            weth_event = mapping.get(ms_event.id)
+            if weth_event:
+                ms_event._events[ms_event.id]['_weth_id'] = weth_event.id
                 mapped_events.append(ms_event.id)
 
-                # don't forget to also set the global event ID on the Odoo event to ease
+                # don't forget to also set the global event ID on the WETH event to ease
                 # and improve reliability of future mappings
-                odoo_event.write({
+                weth_event.write({
                     'microsoft_id': ms_event.id,
                     'ms_universal_event_id': ms_event.iCalUId,
                     'need_sync_m': False,
@@ -148,11 +148,11 @@ class MicrosoftEvent(abc.Set):
         Indicates who is the owner of an event (i.e the organizer of the event).
 
         There are several possible cases:
-        1) the current Odoo user is the organizer of the event according to Outlook event, so return his id.
-        2) the current Odoo user is NOT the organizer and:
-           2.1) we are able to find a Odoo user using the Outlook event organizer email address and we use his id,
-           2.2) we are NOT able to find a Odoo user matching the organizer email address and we return False, meaning
-                that no Odoo user will be able to modify this event. All modifications will be done from Outlook.
+        1) the current WETH user is the organizer of the event according to Outlook event, so return his id.
+        2) the current WETH user is NOT the organizer and:
+           2.1) we are able to find a WETH user using the Outlook event organizer email address and we use his id,
+           2.2) we are NOT able to find a WETH user matching the organizer email address and we return False, meaning
+                that no WETH user will be able to modify this event. All modifications will be done from Outlook.
         """
         if self.isOrganizer:
             return env.user.id
@@ -162,7 +162,7 @@ class MicrosoftEvent(abc.Set):
 
         organizer_email = self.organizer.get('emailAddress') and email_normalize(self.organizer.get('emailAddress').get('address'))
         if organizer_email:
-            # Warning: In Microsoft: 1 email = 1 user; but in Odoo several users might have the same email
+            # Warning: In Microsoft: 1 email = 1 user; but in WETH several users might have the same email
             user = env['res.users'].search([('email', '=', organizer_email)], limit=1)
             return user.id if user else False
         return False
@@ -244,19 +244,19 @@ class MicrosoftEvent(abc.Set):
     def cancelled(self):
         return self.filter(lambda e: e.is_cancelled())
 
-    def match_with_odoo_events(self, env) -> 'MicrosoftEvent':
+    def match_with_weth_events(self, env) -> 'MicrosoftEvent':
         """
-        Match Outlook events (self) with existing Odoo events, and return the list of matched events
+        Match Outlook events (self) with existing WETH events, and return the list of matched events
         """
         # first, try to match recurrences
         # Note that when a recurrence is removed, there is no field in Outlook data to identify
         # the item as a recurrence, so select all deleted items by default.
         recurrence_candidates = self.filter(lambda x: x.is_recurrence() or x.is_removed())
-        mapped_recurrences = recurrence_candidates._load_odoo_ids_from_db(env, force_model=env["calendar.recurrence"])
+        mapped_recurrences = recurrence_candidates._load_weth_ids_from_db(env, force_model=env["calendar.recurrence"])
 
         # then, try to match events
         events_candidates = (self - mapped_recurrences).filter(lambda x: not x.is_recurrence())
-        mapped_events = events_candidates._load_odoo_ids_from_db(env)
+        mapped_events = events_candidates._load_weth_ids_from_db(env)
 
         return mapped_recurrences | mapped_events
 

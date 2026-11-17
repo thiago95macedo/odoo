@@ -6,7 +6,7 @@ export class WebsiteEventPWA extends Interaction {
     static selector = "#wrapwrap.event";
 
     dynamicContent = {
-        _window : { "t-on-beforeinstallprompt.prevent": (event) => this.showInstallBanner(event) },
+        _window: { "t-on-beforeinstallprompt.prevent": (event) => this.showInstallBanner(event) },
         ".o_btn_close": { "t-on-click": this.hideInstallBanner },
         ".o_btn_install": { "t-on-click": this.onPromptInstall },
     };
@@ -33,8 +33,8 @@ export class WebsiteEventPWA extends Interaction {
 
     hideInstallBanner() {
         this.installBanner ? this.installBanner[0].remove() : undefined;
-        const shadowHostEl = document.querySelector(".o-livechat-root");
-        const livechatButtonEl = shadowHostEl?.shadowRoot.querySelector(".o-livechat-LivechatButton");
+        const shadowHostEl = document.querySelector(".w-livechat-root");
+        const livechatButtonEl = shadowHostEl?.shadowRoot.querySelector(".w-livechat-LivechatButton");
         if (livechatButtonEl) {
             livechatButtonEl.style.position = "";
             livechatButtonEl.style.bottom = "0";
@@ -95,8 +95,8 @@ export class WebsiteEventPWA extends Interaction {
 
         // If Livechat available, It should be placed above the PWA banner.
         const height = document.querySelector(".o_pwa_install_banner").offsetHeight;
-        const shadowHostEl = document.querySelector(".o-livechat-root");
-        const livechatButtonEl = shadowHostEl?.shadowRoot.querySelector(".o-livechat-LivechatButton");
+        const shadowHostEl = document.querySelector(".w-livechat-root");
+        const livechatButtonEl = shadowHostEl?.shadowRoot.querySelector(".w-livechat-LivechatButton");
         if (livechatButtonEl) {
             livechatButtonEl.style.position = "relative";
             livechatButtonEl.style.bottom = `${height}px`;

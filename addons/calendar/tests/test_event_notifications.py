@@ -94,7 +94,7 @@ class TestCalendarMail(CalendarMailCommon):
         self.assertDictEqual(
             defaults[event.id],
             {'email_cc': '', 'email_to': '', 'partner_ids': (self.customers[0] + self.user_employee_2.partner_id).ids},
-            'Correctly filters out robodoo and aliases'
+            'Correctly filters out robweth and aliases'
         )
 
     def test_event_get_suggested_recipients(self):
@@ -120,7 +120,7 @@ class TestCalendarMail(CalendarMailCommon):
                 'partner_id': self.user_employee_2.partner_id.id,
                 'recipient_type': 'to',
             },
-        ], 'Correctly filters out robodoo and aliases')
+        ], 'Correctly filters out robweth and aliases')
 
     def test_event_template(self):
         event, template = self.event.with_user(self.user_employee), self.test_template_event.with_user(self.user_employee)

@@ -1,10 +1,10 @@
-# Regras de Arquitetura Técnica — Odoo 20
+# Regras de Arquitetura Técnica — WETH
 
 ## 1. Backend e ORM
 - **Operações em Lote:** Proibido executar `search`, `create`, `write` ou agregações dentro de loops `for`.
 - **Decorações Obrigatórias:** Métodos `create()` sobrescritos devem ser decorados com `@api.model_create_multi`.
 - **Declaração de Constraints e Índices:**
-  - Proibido `_sql_constraints` (ignorado em Odoo 20).
+  - Proibido `_sql_constraints` (ignorado em WETH).
   - Usar atributos com prefixo `_`: `_check_name = models.Constraint("CHECK (...)", "Mensagem")`.
   - Usar `models.Index` e `models.UniqueIndex` para índices compostos ou especiais.
 - **Ordenação Segura:** Todo atributo `_order` deve finalizar com um campo único (ex: `sequence, id`).

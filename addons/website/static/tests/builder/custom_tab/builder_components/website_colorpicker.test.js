@@ -20,7 +20,7 @@ test("should apply o_cc color", async () => {
     await contains(":iframe .test-options-target").click();
     expect(".options-container").toBeDisplayed();
     await contains(".we-bg-options-container .o_we_color_preview").click();
-    await click(".o-overlay-item [data-color='o_cc3']");
+    await click(".w-overlay-item [data-color='o_cc3']");
     await animationFrame();
     expect(":iframe .test-options-target").toHaveClass("test-options-target o_cc o_cc3");
 });
@@ -34,7 +34,7 @@ test("should remove o_cc color on reset", async () => {
     await contains(":iframe .test-options-target").click();
     expect(".options-container").toBeDisplayed();
     await contains(".we-bg-options-container .o_we_color_preview").click();
-    await click(".o-overlay-item [data-icon='delete'].oi-filled");
+    await click(".w-overlay-item [data-icon='delete'].oi-filled");
     await animationFrame();
     expect(":iframe .test-options-target").toHaveClass("test-options-target");
     expect(":iframe .test-options-target").not.toHaveClass("o_cc o_cc3");

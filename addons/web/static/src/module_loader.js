@@ -14,17 +14,17 @@
     }
 
     class ModuleLoader {
-        /** @type {OdooModuleLoader["bus"]} */
+        /** @type {WethModuleLoader["bus"]} */
         bus = new EventTarget();
-        /** @type {OdooModuleLoader["checkErrorProm"]} */
+        /** @type {WethModuleLoader["checkErrorProm"]} */
         checkErrorProm = null;
-        /** @type {OdooModuleLoader["factories"]} */
+        /** @type {WethModuleLoader["factories"]} */
         factories = new Map();
-        /** @type {OdooModuleLoader["failed"]} */
+        /** @type {WethModuleLoader["failed"]} */
         failed = new Set();
-        /** @type {OdooModuleLoader["jobs"]} */
+        /** @type {WethModuleLoader["jobs"]} */
         jobs = new Set();
-        /** @type {OdooModuleLoader["modules"]} */
+        /** @type {WethModuleLoader["modules"]} */
         modules = new Map();
 
         /**
@@ -37,13 +37,13 @@
             this.debug = Boolean(strDebug && strDebug !== "0");
         }
 
-        /** @type {OdooModuleLoader["addJob"]} */
+        /** @type {WethModuleLoader["addJob"]} */
         addJob(name) {
             this.jobs.add(name);
             this.startModules();
         }
 
-        /** @type {OdooModuleLoader["define"]} */
+        /** @type {WethModuleLoader["define"]} */
         define(name, deps, factory, lazy = false) {
             if (typeof name !== "string") {
                 throw new Error(`Module name should be a string, got: ${String(name)}`);
@@ -62,7 +62,7 @@
             this.factories.set(name, {
                 deps,
                 fn: factory,
-                ignoreMissingDeps: globalThis.__odooIgnoreMissingDependencies,
+                ignoreMissingDeps: globalThis.__wethIgnoreMissingDependencies,
             });
             if (!lazy) {
                 this.addJob(name);
@@ -73,7 +73,7 @@
             }
         }
 
-        /** @type {OdooModuleLoader["findErrors"]} */
+        /** @type {WethModuleLoader["findErrors"]} */
         findErrors(moduleNames) {
             /**
              * @param {Iterable<string>} currentModuleNames
@@ -140,7 +140,7 @@
             return errors;
         }
 
-        /** @type {OdooModuleLoader["findJob"]} */
+        /** @type {WethModuleLoader["findJob"]} */
         findJob() {
             for (const job of this.jobs) {
                 if (this.factories.get(job).deps.every((dep) => this.modules.has(dep))) {
@@ -150,7 +150,7 @@
             return null;
         }
 
-        /** @type {OdooModuleLoader["reportErrors"]} */
+        /** @type {WethModuleLoader["reportErrors"]} */
         async reportErrors(errors) {
             if (!Object.keys(errors).length) {
                 return;
@@ -213,7 +213,7 @@
             return this.modules.get(dependency);
         }
 
-        /** @type {OdooModuleLoader["startModules"]} */
+        /** @type {WethModuleLoader["startModules"]} */
         startModules() {
             let job;
             while ((job = this.findJob())) {
@@ -221,11 +221,11 @@
             }
         }
 
-        /** @type {OdooModuleLoader["startModule"]} */
+        /** @type {WethModuleLoader["startModule"]} */
         startModule(name) {
             this.jobs.delete(name);
             const factory = this.factories.get(name);
-            /** @type {OdooModule | null} */
+            /** @type {WethModule | null} */
             let module = null;
             try {
                 module = factory.fn(this.require.bind(this));

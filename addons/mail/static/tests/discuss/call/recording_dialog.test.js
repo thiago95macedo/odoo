@@ -17,7 +17,7 @@ function configureRecording() {
 
 async function openRecordingDialog() {
     getService("dialog").add(RecordingDialog, {});
-    await contains(".o-discuss-RecordingDialog");
+    await contains(".w-discuss-RecordingDialog");
 }
 
 test("video records audio and video", async () => {
@@ -31,15 +31,15 @@ test("video records audio and video", async () => {
     });
 
     await openRecordingDialog();
-    await contains(".o-discuss-RecordingDialog .o-checkbox", { count: 2 });
-    await contains(".o-discuss-RecordingDialog :text('Generate recording file')", { count: 0 });
+    await contains(".w-discuss-RecordingDialog .w-checkbox", { count: 2 });
+    await contains(".w-discuss-RecordingDialog :text('Generate recording file')", { count: 0 });
     await contains(
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record video')) input:checked"
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record video')) input:checked"
     );
     await contains(
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record transcription')) input:not(:checked)"
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record transcription')) input:not(:checked)"
     );
-    await click(".o-discuss-RecordingDialog button:text('Start recording')");
+    await click(".w-discuss-RecordingDialog button:text('Start recording')");
     expect.verifySteps(["start recording"]);
 });
 
@@ -54,16 +54,16 @@ test("transcription can be selected with or without video", async () => {
     });
 
     await openRecordingDialog();
-    await click(".o-discuss-RecordingDialog .o-checkbox:has(:text('Record transcription')) input");
-    await contains(".o-discuss-RecordingDialog .o-checkbox input:checked", { count: 2 });
-    await click(".o-discuss-RecordingDialog .o-checkbox:has(:text('Record video')) input");
+    await click(".w-discuss-RecordingDialog .w-checkbox:has(:text('Record transcription')) input");
+    await contains(".w-discuss-RecordingDialog .w-checkbox input:checked", { count: 2 });
+    await click(".w-discuss-RecordingDialog .w-checkbox:has(:text('Record video')) input");
     await contains(
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record transcription')) input:checked"
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record transcription')) input:checked"
     );
     await contains(
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record video')) input:not(:checked)"
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record video')) input:not(:checked)"
     );
-    await click(".o-discuss-RecordingDialog button:text('Start recording')");
+    await click(".w-discuss-RecordingDialog button:text('Start recording')");
     expect.verifySteps(["start transcription"]);
 });
 
@@ -72,9 +72,9 @@ test("start is disabled without a selected output", async () => {
     configureRecording();
 
     await openRecordingDialog();
-    await click(".o-discuss-RecordingDialog .o-checkbox:has(:text('Record video')) input");
-    await contains(".o-discuss-RecordingDialog .o-checkbox input:checked", { count: 0 });
-    await contains(".o-discuss-RecordingDialog button:text('Start recording'):disabled");
+    await click(".w-discuss-RecordingDialog .w-checkbox:has(:text('Record video')) input");
+    await contains(".w-discuss-RecordingDialog .w-checkbox input:checked", { count: 0 });
+    await contains(".w-discuss-RecordingDialog button:text('Start recording'):disabled");
 });
 
 test("audio-only permission can stop a legacy cycle but cannot start one", async () => {
@@ -106,19 +106,19 @@ test("active recording keeps video immutable and transcription reactive", async 
         },
     });
     await openRecordingDialog();
-    await contains(".o-discuss-RecordingDialog span:text('Transcription in progress')");
-    await contains(".o-discuss-RecordingDialog :text('Audio recording')", { count: 0 });
-    const videoOption = ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record video'))";
+    await contains(".w-discuss-RecordingDialog span:text('Transcription in progress')");
+    await contains(".w-discuss-RecordingDialog :text('Audio recording')", { count: 0 });
+    const videoOption = ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record video'))";
     await contains(`${videoOption} input:disabled:not(:checked)`);
     await click(videoOption);
     await contains(`${videoOption} input:disabled:not(:checked)`);
     rtc.recordingState = { ...rtc.recordingState, transcription: false };
     const transcriptionOption =
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record transcription'))";
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record transcription'))";
     await contains(`${transcriptionOption} input:not(:checked):not(:disabled)`);
     await click(`${transcriptionOption} input`);
     await contains(`${transcriptionOption} input:checked`);
-    await click(".o-discuss-RecordingDialog button:text('Update')");
+    await click(".w-discuss-RecordingDialog button:text('Update')");
     expect.verifySteps(["update transcription"]);
 });
 
@@ -138,9 +138,9 @@ test("transcription-only recording must be stopped instead of updated", async ()
     });
     await openRecordingDialog();
     const transcriptionOption =
-        ".o-discuss-RecordingDialog .o-checkbox:has(:text('Record transcription'))";
+        ".w-discuss-RecordingDialog .w-checkbox:has(:text('Record transcription'))";
     await contains(`${transcriptionOption} input:checked:disabled`);
-    await contains(".o-discuss-RecordingDialog button:text('Update')", { count: 0 });
-    await click(".o-discuss-RecordingDialog button:text('Stop recording')");
+    await contains(".w-discuss-RecordingDialog button:text('Update')", { count: 0 });
+    await click(".w-discuss-RecordingDialog button:text('Stop recording')");
     expect.verifySteps(["stop recording"]);
 });

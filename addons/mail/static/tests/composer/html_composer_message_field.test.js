@@ -112,7 +112,7 @@ test("media dialog: upload", async function () {
         </form>`,
     });
 
-    const anchorNode = queryOne(".odoo-editor-editable div.o-paragraph");
+    const anchorNode = queryOne(".weth-editor-editable div.w-paragraph");
     setSelection({ anchorNode, anchorOffset: 0 });
 
     // Open media dialog
@@ -170,15 +170,15 @@ test("mention a partner", async () => {
         res_id: composerId,
         views: [["mail.compose.message,false,form", "form"]],
     });
-    const editable = queryOne(`.odoo-editor-editable`);
+    const editable = queryOne(`.weth-editor-editable`);
     setSelection({ anchorNode: editable.firstChild, anchorOffset: 0 });
     await htmlInsertText(htmlEditor, "@");
-    expect(".overlay .o-mail-MentionList input[placeholder='Search for a user...']").toBeFocused();
-    expect(".overlay .o-mail-NavigableList .o-mail-NavigableList-item").toHaveCount(0);
+    expect(".overlay .w-mail-MentionList input[placeholder='Search for a user...']").toBeFocused();
+    expect(".overlay .w-mail-NavigableList .w-mail-NavigableList-item").toHaveCount(0);
 
     await press("a");
-    await waitFor(".overlay .o-mail-NavigableList .o-mail-NavigableList-item");
-    expect(queryAllTexts(".overlay .o-mail-NavigableList .o-mail-NavigableList-item")).toEqual([
+    await waitFor(".overlay .w-mail-NavigableList .w-mail-NavigableList-item");
+    expect(queryAllTexts(".overlay .w-mail-NavigableList .w-mail-NavigableList-item")).toEqual([
         "Mitchell Admin",
     ]);
     expect.verifySteps(["get_mention_suggestions: a"]);
@@ -212,17 +212,17 @@ describe("Remove attachments", () => {
         await openFormView("res.partner", serverState.partnerId);
         await click("button:text('Log note')");
         await click("button[title='Open Full Composer']");
-        await waitFor(".odoo-editor-editable");
-        const anchorNode = queryOne(".odoo-editor-editable div.o-paragraph");
+        await waitFor(".weth-editor-editable");
+        const anchorNode = queryOne(".weth-editor-editable div.w-paragraph");
         setSelection({ anchorNode, anchorOffset: 0 });
         await insertText(htmlEditor, "/file");
         await press("Enter");
         await expect.waitForSteps(["File Uploaded"]);
         await waitFor("[name='attachment_ids'] a:contains('file.txt')");
-        await waitFor(".odoo-editor-editable .o_file_box:has(a:contains('file.txt'))");
+        await waitFor(".weth-editor-editable .o_file_box:has(a:contains('file.txt'))");
         await click("[name='attachment_ids'] button:has(i[data-icon='close'])");
         await waitForNone("[name='attachment_ids'] a:contains('file.txt')");
-        await waitForNone(".odoo-editor-editable .o_file_box:has(a:contains('file.txt'))");
+        await waitForNone(".weth-editor-editable .o_file_box:has(a:contains('file.txt'))");
     });
 
     test("should remove image from html editor if removed from attachment list", async () => {
@@ -257,8 +257,8 @@ describe("Remove attachments", () => {
         await openFormView("res.partner", serverState.partnerId);
         await click("button:text('Log note')");
         await click("button[title='Open Full Composer']");
-        await waitFor(".odoo-editor-editable");
-        const anchorNode = queryOne(".odoo-editor-editable div.o-paragraph");
+        await waitFor(".weth-editor-editable");
+        const anchorNode = queryOne(".weth-editor-editable div.w-paragraph");
         setSelection({ anchorNode, anchorOffset: 0 });
         await insertText(htmlEditor, "/image");
         await press("Enter");
@@ -270,10 +270,10 @@ describe("Remove attachments", () => {
         manuallyDispatchProgrammaticEvent(fileInput, "change");
         await expect.waitForSteps(["Image Uploaded"]);
         await waitFor("[name='attachment_ids'] a:contains('test.jpg')");
-        await waitFor(".odoo-editor-editable img[data-attachment-id='1']");
+        await waitFor(".weth-editor-editable img[data-attachment-id='1']");
         await click("[name='attachment_ids'] button:has(i[data-icon='close'])");
         await waitForNone("[name='attachment_ids'] a:contains('test.jpg')");
-        await waitForNone(".odoo-editor-editable img[data-attachment-id='1']");
+        await waitForNone(".weth-editor-editable img[data-attachment-id='1']");
     });
 });
 

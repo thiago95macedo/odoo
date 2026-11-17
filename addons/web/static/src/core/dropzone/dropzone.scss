@@ -1,8 +1,8 @@
-.o-Dropzone {
+.w-Dropzone {
     border: 2px dashed;
     z-index: 1000; // above chat window
 
-    &.o-dragging-inside {
+    &.w-dragging-inside {
         border-width: 5px;
     }
 }

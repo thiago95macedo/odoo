@@ -2,7 +2,7 @@ import * as spreadsheet from "@weth/o-spreadsheet";
 import { getFirstListFunction, getListFunctions } from "../list_helpers";
 import { Domain } from "@web/core/domain";
 import { ListDataSource } from "../list_data_source";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 import { isDataSourceUrl, parseDataSourceUrl } from "../../data_sources/data_source_link";
 import { computeFormatFromCurrency } from "@spreadsheet/currency/helpers";
 
@@ -20,7 +20,7 @@ const { unquote, isMatrix, isEvaluationError, PositionMap } = spreadsheet.helper
  * @typedef {import("./list_core_plugin").SpreadsheetList} SpreadsheetList
  */
 
-export class ListCoreViewPlugin extends OdooEvaluationPlugin {
+export class ListCoreViewPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ ([
         "getListComputedDomain",
         "getListHeaderValue",
@@ -76,17 +76,17 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
             this.shouldInvalidateCache = true;
         }
         switch (cmd.type) {
-            case "INSERT_ODOO_LIST": {
+            case "INSERT_WETH_LIST": {
                 const { listId, linesNumber } = cmd;
                 this._setupList(listId, linesNumber);
                 break;
             }
-            case "DUPLICATE_ODOO_LIST": {
+            case "DUPLICATE_WETH_LIST": {
                 this._setupList(cmd.newListId, 0);
                 break;
             }
             case "REFRESH_ALL_DATA_SOURCES":
-                this._refreshOdooLists();
+                this._refreshWethLists();
                 break;
             case "ADD_GLOBAL_FILTER":
             case "EDIT_GLOBAL_FILTER":
@@ -94,8 +94,8 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
             case "SET_GLOBAL_FILTER_VALUE":
                 this._pendingAddDomains = true;
                 break;
-            case "UPDATE_ODOO_LIST":
-            case "UPDATE_ODOO_LIST_DOMAIN": {
+            case "UPDATE_WETH_LIST":
+            case "UPDATE_WETH_LIST_DOMAIN": {
                 const listDefinition = this._getListModelDefinition(cmd.listId);
                 this.lists[cmd.listId].definition = listDefinition;
                 this.lists[cmd.listId].dataSource.onDefinitionChange(listDefinition);
@@ -118,9 +118,9 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
 
                 const updateCommands = cmd.commands.filter(
                     (cmd) =>
-                        cmd.type === "UPDATE_ODOO_LIST_DOMAIN" ||
-                        cmd.type === "UPDATE_ODOO_LIST" ||
-                        cmd.type === "INSERT_ODOO_LIST"
+                        cmd.type === "UPDATE_WETH_LIST_DOMAIN" ||
+                        cmd.type === "UPDATE_WETH_LIST" ||
+                        cmd.type === "INSERT_WETH_LIST"
                 );
                 for (const cmd of updateCommands) {
                     if (!this.getters.isExistingList(cmd.listId)) {
@@ -199,7 +199,7 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
     /**
      * Refresh the cache of all the lists
      */
-    _refreshOdooLists() {
+    _refreshWethLists() {
         for (const listId of this.getters.getListIds()) {
             this.lists[listId].dataSource.load({ reload: true });
         }
@@ -367,7 +367,7 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
         if (cell && cell.isFormula) {
             const listFunction = getFirstListFunction(cell.compiledFormula, this.getters);
             if (listFunction) {
-                return listFunction.functionName === "ODOO.LIST";
+                return listFunction.functionName === "WETH.LIST";
             }
         }
         return false;
@@ -392,7 +392,7 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
         }
         const { functionName, args } = getFirstListFunction(cell.compiledFormula, this.getters);
         const dataSource = this.getters.getListDataSource(listId);
-        if (functionName === "ODOO.LIST") {
+        if (functionName === "WETH.LIST") {
             const mainCell = this.getters.getCorrespondingFormulaCell(position);
             const mainPosition = this.getters.getCellPosition(mainCell.id);
             const colOffset = position.col - mainPosition.col;
@@ -405,8 +405,8 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
             }
             return dataSource.getFields()[fieldName];
         }
-        // ODOO.LIST.HEADER or ODOO.LIST.VALUE
-        const fieldArg = functionName === "ODOO.LIST.HEADER" ? args[1] : args[2];
+        // WETH.LIST.HEADER or WETH.LIST.VALUE
+        const fieldArg = functionName === "WETH.LIST.HEADER" ? args[1] : args[2];
         if (!fieldArg || !dataSource.isValid()) {
             return undefined;
         }
@@ -466,12 +466,12 @@ export class ListCoreViewPlugin extends OdooEvaluationPlugin {
         }
         const { functionName } = getFirstListFunction(mainCell.compiledFormula, this.getters);
 
-        if (functionName === "ODOO.LIST") {
+        if (functionName === "WETH.LIST") {
             const mainPosition = this.getters.getCellPosition(mainCell.id);
             const rowOffset = position.row - mainPosition.row;
             return rowOffset === 0;
         }
-        return functionName === "ODOO.LIST.HEADER";
+        return functionName === "WETH.LIST.HEADER";
     }
 
     /**

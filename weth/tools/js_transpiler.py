@@ -1,9 +1,9 @@
 """
 This code is what let us use ES6-style modules in weth.
-Classic Odoo modules are composed of a top-level :samp:`weth.define({name},{dependencies},{body_function})` call.
+Classic WETH modules are composed of a top-level :samp:`weth.define({name},{dependencies},{body_function})` call.
 This processor will take files starting with an `@weth-module` annotation (in a comment) and convert them to classic modules.
-If any file has the ``/** odoo-module */`` on top of it, it will get processed by this class.
-It performs several operations to get from ES6 syntax to the usual odoo one with minimal changes.
+If any file has the ``/** weth-module */`` on top of it, it will get processed by this class.
+It performs several operations to get from ES6 syntax to the usual weth one with minimal changes.
 This is done on the fly, this not a pre-processing tool.
 
 Caveat: This is done without a full parser, only using regex. One can only expect to cover as much edge cases
@@ -19,7 +19,7 @@ from weth.tools.misc import OrderedSet
 
 def transpile_javascript(url, content):
     """
-    Transpile the code from native JS modules to custom odoo modules.
+    Transpile the code from native JS modules to custom weth modules.
 
     :param content: The original source code
     :param url: The url of the file in the project
@@ -66,7 +66,7 @@ URL_RE = re.compile(r"""
 
 def url_to_module_path(url):
     """
-    Odoo modules each have a name. (weth.define("<the name>", [<dependencies>], function (require) {...});
+    WETH modules each have a name. (weth.define("<the name>", [<dependencies>], function (require) {...});
     It is used in to be required later. (const { something } = require("<the name>").
     The transpiler transforms the url of the file in the project to this name.
     It takes the module name and add a @ on the start of it, and map it to be the source of the static/src (or
@@ -701,12 +701,12 @@ WETH_MODULE_RE = re.compile(r"""
 
 def is_weth_module(url, content):
     """
-    Detect if the file is a native odoo module.
+    Detect if the file is a native weth module.
     We look for a comment containing @weth-module.
 
     :param url:
     :param content: source code
-    :return: is this a odoo module that need transpilation ?
+    :return: is this a weth module that need transpilation ?
     """
     result = WETH_MODULE_RE.match(content)
     if result and result['ignore']:
@@ -724,7 +724,7 @@ def get_aliased_weth_define_content(module_path, content):
     new modules.
 
     Example:
-    If we have a require call somewhere in the odoo source base being:
+    If we have a require call somewhere in the weth source base being:
     > vat AbstractAction require("web.AbstractAction")
     we have a problem when we will have converted to module to ES6: its new name will be more like
     "web/chrome/abstract_action". So the require would fail !

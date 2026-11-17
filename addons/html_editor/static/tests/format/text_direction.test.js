@@ -176,14 +176,14 @@ test("should switch the direction from the powerbox", async () => {
     const { el, editor } = await setupEditor("<p>a[]</p>");
     await insertText(editor, "/Switchdirection");
     await animationFrame();
-    expect(queryAllTexts(".o-we-command-name")).toEqual(["Switch direction"]);
-    await expectElementCount(".o-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")).toEqual(["Switch direction"]);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
     expect(getContent(el)).toBe(`<p dir="rtl">a[]</p>`);
     await insertText(editor, "/Switchdirection");
     await animationFrame();
-    expect(queryAllTexts(".o-we-command-name")).toEqual(["Switch direction"]);
-    await expectElementCount(".o-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")).toEqual(["Switch direction"]);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
     expect(getContent(el)).toBe(`<p>a[]</p>`);
 });

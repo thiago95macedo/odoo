@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/purchase_repair/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgid "Purchase Order"
 msgstr "Pedido de compra"
 
 #. module: purchase_repair
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_repair/models/repair_order.py:0
 #: model_terms:ir.ui.view,arch_db:purchase_repair.view_repair_order_form_inherit
 msgid "Purchase Orders"
@@ -76,7 +76,7 @@ msgid "Repair Orders"
 msgstr "Ordens de reparo"
 
 #. module: purchase_repair
-#. odoo-python
+#. weth-python
 #: code:addons/purchase_repair/models/purchase_order.py:0
 msgid "Repair Source of %s"
 msgstr "Reparo da origem de %s"

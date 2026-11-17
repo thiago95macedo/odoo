@@ -63,10 +63,10 @@ test("radio field on a many2one in a new record", async () => {
         arch: /* xml */ `<form><field name="product_id" widget="radio"/></form>`,
     });
 
-    expect("div.o_radio_item").toHaveCount(2);
-    expect("input.o_radio_input").toHaveCount(2);
-    expect(".o_field_radio:first").toHaveText("xphone\nxpad");
-    expect("input.o_radio_input:checked").toHaveCount(0);
+    expect("div.w_radio_item").toHaveCount(2);
+    expect("input.w_radio_input").toHaveCount(2);
+    expect(".w_field_radio:first").toHaveText("xphone\nxpad");
+    expect("input.w_radio_input:checked").toHaveCount(0);
 });
 
 test("[Offline] radio field on a many2one", async () => {
@@ -79,10 +79,10 @@ test("[Offline] radio field on a many2one", async () => {
         arch: /* xml */ `<form><field name="product_id" widget="radio"/></form>`,
     });
 
-    expect("div.o_radio_item").toHaveCount(1);
-    expect("input.o_radio_input").toHaveCount(1);
-    expect(".o_field_radio:first").toHaveText("xphone");
-    expect("input.o_radio_input:checked").toHaveCount(1);
+    expect("div.w_radio_item").toHaveCount(1);
+    expect("input.w_radio_input").toHaveCount(1);
+    expect(".w_field_radio:first").toHaveText("xphone");
+    expect("input.w_radio_input:checked").toHaveCount(1);
 });
 
 test("required radio field on a many2one", async () => {
@@ -92,10 +92,10 @@ test("required radio field on a many2one", async () => {
         arch: /* xml */ `<form><field name="product_id" widget="radio" required="1"/></form>`,
     });
 
-    expect(".o_field_radio input:checked").toHaveCount(0);
+    expect(".w_field_radio input:checked").toHaveCount(0);
     await clickSave();
-    expect(".o_notification_content:first").toHaveText("Missing required fields");
-    expect(".o_notification_bar:first").toHaveClass("bg-danger");
+    expect(".w_notification_content:first").toHaveText("Missing required fields");
+    expect(".w_notification_bar:first").toHaveClass("bg-danger");
 });
 
 test("radio field change value by onchange", async () => {
@@ -119,15 +119,15 @@ test("radio field change value by onchange", async () => {
         `,
     });
 
-    await click(".o_field_boolean input[type='checkbox']");
+    await click(".w_field_boolean input[type='checkbox']");
     await animationFrame();
-    expect("input.o_radio_input[data-value='37']").toBeChecked();
-    expect("input.o_radio_input[data-value='black']").toBeChecked();
+    expect("input.w_radio_input[data-value='37']").toBeChecked();
+    expect("input.w_radio_input[data-value='black']").toBeChecked();
 
-    await click(".o_field_boolean input[type='checkbox']");
+    await click(".w_field_boolean input[type='checkbox']");
     await animationFrame();
-    expect("input.o_radio_input[data-value='41']").toBeChecked();
-    expect("input.o_radio_input[data-value='red']").toBeChecked();
+    expect("input.w_radio_input[data-value='41']").toBeChecked();
+    expect("input.w_radio_input[data-value='red']").toBeChecked();
 });
 
 test("radio field on a selection in a new record", async () => {
@@ -137,17 +137,17 @@ test("radio field on a selection in a new record", async () => {
         arch: /* xml */ `<form><field name="color" widget="radio"/></form>`,
     });
 
-    expect("div.o_radio_item").toHaveCount(2);
-    expect("input.o_radio_input").toHaveCount(2, { message: "should have 2 possible choices" });
-    expect(".o_field_radio").toHaveText("Red\nBlack");
+    expect("div.w_radio_item").toHaveCount(2);
+    expect("input.w_radio_input").toHaveCount(2, { message: "should have 2 possible choices" });
+    expect(".w_field_radio").toHaveText("Red\nBlack");
 
     // click on 2nd option
-    await click("input.o_radio_input:eq(1)");
+    await click("input.w_radio_input:eq(1)");
     await animationFrame();
 
     await clickSave();
 
-    expect("input.o_radio_input[data-value=black]").toBeChecked({
+    expect("input.w_radio_input[data-value=black]").toBeChecked({
         message: "should have saved record with correct value",
     });
 });
@@ -173,15 +173,15 @@ test("two radio field with same selection", async () => {
         `,
     });
 
-    expect("[name='color'] input.o_radio_input[data-value=black]").toBeChecked();
-    expect("[name='color_2'] input.o_radio_input[data-value=black]").toBeChecked();
+    expect("[name='color'] input.w_radio_input[data-value=black]").toBeChecked();
+    expect("[name='color_2'] input.w_radio_input[data-value=black]").toBeChecked();
 
     // click on Red
     await click("[name='color_2'] label");
     await animationFrame();
 
-    expect("[name='color'] input.o_radio_input[data-value=black]").toBeChecked();
-    expect("[name='color_2'] input.o_radio_input[data-value=red]").toBeChecked();
+    expect("[name='color'] input.w_radio_input[data-value=black]").toBeChecked();
+    expect("[name='color_2'] input.w_radio_input[data-value=red]").toBeChecked();
 });
 
 test.tags("desktop");
@@ -201,20 +201,20 @@ test("radio field has o_horizontal or o_vertical class", async () => {
         `,
     });
 
-    expect(".o_field_radio > div.o_vertical").toHaveCount(1, {
+    expect(".w_field_radio > div.w_vertical").toHaveCount(1, {
         message: "should have o_vertical class",
     });
 
-    const verticalRadio = ".o_field_radio > div.o_vertical:first";
-    expect(`${verticalRadio} .o_radio_item:first`).toHaveRect({
-        right: queryRect(`${verticalRadio} .o_radio_item:last`).right,
+    const verticalRadio = ".w_field_radio > div.w_vertical:first";
+    expect(`${verticalRadio} .w_radio_item:first`).toHaveRect({
+        right: queryRect(`${verticalRadio} .w_radio_item:last`).right,
     });
-    expect(".o_field_radio > div.o_horizontal").toHaveCount(1, {
+    expect(".w_field_radio > div.w_horizontal").toHaveCount(1, {
         message: "should have o_horizontal class",
     });
-    const horizontalRadio = ".o_field_radio > div.o_horizontal:first";
-    expect(`${horizontalRadio} .o_radio_item:first`).toHaveRect({
-        top: queryRect(`${horizontalRadio} .o_radio_item:last`).top,
+    const horizontalRadio = ".w_field_radio > div.w_horizontal:first";
+    expect(`${horizontalRadio} .w_radio_item:first`).toHaveRect({
+        top: queryRect(`${horizontalRadio} .w_radio_item:last`).top,
     });
 });
 
@@ -234,15 +234,15 @@ test("radio field with numerical keys encoded as strings", async () => {
         resId: 1,
         arch: /* xml */ `<form><field name="selection" widget="radio"/></form>`,
     });
-    expect(".o_field_widget").toHaveText("Red\nBlack");
-    expect(".o_radio_input:checked").toHaveCount(0);
+    expect(".w_field_widget").toHaveText("Red\nBlack");
+    expect(".w_radio_input:checked").toHaveCount(0);
 
-    await check("input.o_radio_input:last");
+    await check("input.w_radio_input:last");
     await animationFrame();
     await clickSave();
 
-    expect(".o_field_widget").toHaveText("Red\nBlack");
-    expect(".o_radio_input[data-value='1']").toBeChecked();
+    expect(".w_field_widget").toHaveText("Red\nBlack");
+    expect(".w_radio_input[data-value='1']").toBeChecked();
 
     expect.verifySteps(["1"]);
 });
@@ -259,8 +259,8 @@ test("radio field is empty", async () => {
         `,
     });
 
-    expect(".o_field_widget[name=trululu]").toHaveClass("o_field_empty");
-    expect(".o_radio_input").toHaveCount(3);
-    expect(".o_radio_input:disabled").toHaveCount(3);
-    expect(".o_radio_input:checked").toHaveCount(0);
+    expect(".w_field_widget[name=trululu]").toHaveClass("o_field_empty");
+    expect(".w_radio_input").toHaveCount(3);
+    expect(".w_radio_input:disabled").toHaveCount(3);
+    expect(".w_radio_input:checked").toHaveCount(0);
 });

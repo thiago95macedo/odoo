@@ -1,10 +1,12 @@
 .o_command_palette {
     $-app-icon-size: 1.8rem;
+
     @include media-breakpoint-up(md) {
         top: 120px;
         position: absolute;
     }
-    > .modal-body {
+
+    >.modal-body {
         padding: 0;
     }
 
@@ -15,7 +17,7 @@
             max-height: 50vh;
         }
 
-        .o_command > a > *,
+        .o_command>a>*,
         &_empty,
         hr {
             margin-inline: calc(var(--CommandPalette-inset, 0px) * -1);
@@ -25,7 +27,7 @@
             border-radius: var(--CommandPalette__item-border-radius, 0);
 
             &.focused {
-                background: rgba($o-component-active-bg, .65);
+                background: rgba($w-component-active-bg, .65);
             }
 
             &_hotkey {
@@ -35,6 +37,7 @@
                 padding: 0.5rem 1.3em;
                 display: flex;
             }
+
             a {
                 text-decoration: none;
                 color: inherit;
@@ -44,20 +47,23 @@
     }
 
     .o_favorite {
-        color: $o-main-favorite-color;
+        color: $w-main-favorite-color;
     }
 
     .o_app_icon {
         height: $-app-icon-size;
         width: $-app-icon-size;
     }
-    .o_command{
+
+    .o_command {
         cursor: pointer;
+
         .text-ellipsis {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
         }
+
         .o_command_focus {
             white-space: nowrap;
             opacity: 0.9;

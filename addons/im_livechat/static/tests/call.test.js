@@ -36,14 +36,14 @@ test("should display started a call message with operator livechat username", as
     });
     setupChatHub({ opened: [channelId] });
     await start();
-    await contains(".o-mail-ChatWindow", { text: "Visitor" });
+    await contains(".w-mail-ChatWindow", { text: "Visitor" });
     await click("[title='Start Call']");
-    await contains(".o-mail-NotificationMessage");
+    await contains(".w-mail-NotificationMessage");
     const [{ date }] = pyEnv["mail.message"].search_read([["res_id", "=", channelId]]);
     const time = deserializeDateTime(date).toLocaleString(luxon.DateTime.TIME_SIMPLE, {
         locale: user.lang,
     });
-    await contains(".o-mail-NotificationMessage", {
+    await contains(".w-mail-NotificationMessage", {
         text: `mitchell boss started a call.${time}`,
     });
 });

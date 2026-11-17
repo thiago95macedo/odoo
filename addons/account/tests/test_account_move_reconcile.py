@@ -5260,7 +5260,7 @@ class TestAccountMoveReconcile(AccountTestInvoicingCommon):
         self.assertTrue(line_3.full_reconcile_id)
 
     def test_reconcile_payment_custom_rate(self):
-        """When reconciling a payment we want to take the accounting rate and not the odoo rate.
+        """When reconciling a payment we want to take the accounting rate and not the weth rate.
         Most likely the payment information are derived from information of the bank, therefore have
         the relevant rate.
         """

@@ -29,6 +29,6 @@ test("disable add_to_cart button when there is no product", async () => {
 
     await contains(":iframe .s_add_to_cart").click();
     await contains(".hb-row[data-label='Product'] button").click();
-    await contains(".o_select_menu_item:contains(Table)").click();
+    await contains(".w_select_menu_item:contains(Table)").click();
     expect(":iframe .s_add_to_cart button").not.toHaveAttribute("disabled");
 });

@@ -7,9 +7,9 @@ import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpe
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 
-const DROPDOWN_TOGGLE = ".o-dropdown.dropdown-toggle";
-const DROPDOWN_MENU = ".o-dropdown--menu.dropdown-menu";
-const DROPDOWN_ITEM = ".o-dropdown-item.dropdown-item:not(.o-dropdown)";
+const DROPDOWN_TOGGLE = ".w-dropdown.dropdown-toggle";
+const DROPDOWN_MENU = ".w-dropdown--menu.dropdown-menu";
+const DROPDOWN_ITEM = ".w-dropdown-item.dropdown-item:not(.w-dropdown)";
 
 function getContent(selector, pseudoSelector) {
     const content = getComputedStyle(queryOne(selector), pseudoSelector).content;
@@ -128,9 +128,9 @@ test("'active' and 'selected' classes shows a checked icon", async () => {
     await click(DROPDOWN_TOGGLE);
     await animationFrame();
 
-    expect(getContent(".o-dropdown-item.no-check", ":before")).toEqual("none");
-    expect(getContent(".o-dropdown-item.selected", ":before")).toEqual("check");
-    expect(getContent(".o-dropdown-item.active", ":before")).toEqual("check");
+    expect(getContent(".w-dropdown-item.no-check", ":before")).toEqual("none");
+    expect(getContent(".w-dropdown-item.selected", ":before")).toEqual("check");
+    expect(getContent(".w-dropdown-item.active", ":before")).toEqual("check");
 });
 
 test.tags("mobile");
@@ -153,7 +153,7 @@ test("'active' and 'selected' classes shows a checked icon (mobile)", async () =
     await click(DROPDOWN_TOGGLE);
     await animationFrame();
 
-    expect(getContent(".o-dropdown-item.no-check", "::after")).toEqual("none");
-    expect(getContent(".o-dropdown-item.selected", "::after")).toEqual("check");
-    expect(getContent(".o-dropdown-item.active", "::after")).toEqual("check");
+    expect(getContent(".w-dropdown-item.no-check", "::after")).toEqual("none");
+    expect(getContent(".w-dropdown-item.selected", "::after")).toEqual("check");
+    expect(getContent(".w-dropdown-item.active", "::after")).toEqual("check");
 });

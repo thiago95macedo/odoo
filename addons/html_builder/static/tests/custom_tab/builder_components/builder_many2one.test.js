@@ -63,12 +63,12 @@ test("many2one: async load", async () => {
 
     await contains(":iframe .test-options-target").click();
 
-    await contains(".btn.o-dropdown").click();
+    await contains(".btn.w-dropdown").click();
     expect("input").toHaveCount(1);
     await contains("input").click();
     await animationFrame();
-    expect("span.o-dropdown-item").toHaveCount(3);
-    await contains("span.o-dropdown-item").click();
+    expect("span.w-dropdown-item").toHaveCount(3);
+    await contains("span.w-dropdown-item").click();
     expect.verifySteps(["load"]);
     expect(editableContent).toHaveInnerHTML(`<div class="test-options-target">b</div>`);
     defWillLoad.resolve();
@@ -117,16 +117,16 @@ test("dependency definition should not be outdated", async () => {
 
     await contains(":iframe .test-options-target").click();
 
-    await contains(".btn.o-dropdown").click();
-    await contains("span.o-dropdown-item:contains(First)").click();
+    await contains(".btn.w-dropdown").click();
+    await contains("span.w-dropdown-item:contains(First)").click();
     expect("span:contains(Dependant)").toHaveCount(0);
 
-    await contains(".btn.o-dropdown").click();
-    await contains("span.o-dropdown-item:contains(Second)").click();
+    await contains(".btn.w-dropdown").click();
+    await contains("span.w-dropdown-item:contains(Second)").click();
     expect("span:contains(Dependant)").toHaveCount(1);
 
-    await contains(".btn.o-dropdown").click();
-    await contains("span.o-dropdown-item:contains(Third)").click();
+    await contains(".btn.w-dropdown").click();
+    await contains("span.w-dropdown-item:contains(Third)").click();
     expect("span:contains(Dependant)").toHaveCount(0);
 });
 
@@ -157,10 +157,10 @@ test("BuilderMany2One: add null_text option in website builder dropdown", async 
     `);
     const editableContent = getEditableContent();
     await contains(":iframe .test-options-target").click();
-    await contains(".btn.o-dropdown").click();
-    await contains("span.o-dropdown-item:contains('Remote')").click();
+    await contains(".btn.w-dropdown").click();
+    await contains("span.w-dropdown-item:contains('Remote')").click();
     expect(editableContent.textContent.trim()).toBe("Remote");
-    await contains(".btn.o-dropdown").click();
-    await contains("span.o-dropdown-item:contains('First')").click();
+    await contains(".btn.w-dropdown").click();
+    await contains("span.w-dropdown-item:contains('First')").click();
     expect(editableContent.textContent.trim()).toBe("First");
 });

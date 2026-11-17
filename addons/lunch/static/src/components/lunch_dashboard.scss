@@ -1,10 +1,11 @@
 .o_lunch_content {
-    .o-autocomplete--input {
+    .w-autocomplete--input {
         cursor: pointer;
     }
 
 
-    .o_search_panel_resize + &, .o_search_panel_sidebar + & {
+    .o_search_panel_resize+&,
+    .o_search_panel_sidebar+& {
         .o_kanban_renderer {
             --Kanban-padding: 0 #{map-get($spacers, 2)} #{map-get($spacers, 3)} 0;
         }
@@ -21,7 +22,7 @@
             max-width: 3rem;
         }
 
-        .o_lunch_qty_btn.disabled .oi{
+        .o_lunch_qty_btn.disabled .oi {
             opacity: $btn-disabled-opacity;
         }
 

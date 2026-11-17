@@ -47,7 +47,7 @@ class TestIrWebsocket(WebsocketCase):
         websocket = self.websocket_connect(cookie=f"session_id={session.sid};")
         self.subscribe(
             websocket,
-            [f"odoo-presence-res.users_{bob.id}"],
+            [f"weth-presence-res.users_{bob.id}"],
             self.env["bus.bus"]._bus_last_id(),
         )
         # offline => online

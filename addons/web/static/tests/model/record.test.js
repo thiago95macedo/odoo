@@ -141,10 +141,10 @@ test(`can be updated with different resId`, async () => {
         "/web/dataset/call_kw/foo/fields_get",
         "/web/dataset/call_kw/foo/web_read",
     ]);
-    expect(`.o_field_char:contains(yop)`).toHaveCount(1);
+    expect(`.w_field_char:contains(yop)`).toHaveCount(1);
 
     await contains(`button.my-btn`).click();
-    expect(`.o_field_char:contains(blip)`).toHaveCount(1);
+    expect(`.w_field_char:contains(blip)`).toHaveCount(1);
     expect.verifySteps(["/web/dataset/call_kw/foo/web_read"]);
 });
 
@@ -204,7 +204,7 @@ test(`predefined fields and values`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps([]);
-    expect(`.o_field_widget input`).toHaveValue("abc");
+    expect(`.w_field_widget input`).toHaveValue("abc");
 });
 
 test(`Record with onRootLoaded props`, async () => {
@@ -343,7 +343,7 @@ test(`can access record changes`, async () => {
     await contains(".do_something").click();
     expect.verifySteps([`do something with {"foo":false}`]);
 
-    await contains(".o_field_widget[name=foo] input").edit("some value");
+    await contains(".w_field_widget[name=foo] input").edit("some value");
     await contains(".do_something").click();
     expect.verifySteps([`do something with {"foo":"some value"}`]);
 });
@@ -396,15 +396,15 @@ test(`handles many2one fields: value is an object`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps([]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("bar1");
+    expect(`.w_field_many2one_selection input`).toHaveValue("bar1");
 
-    await contains(`.o_field_many2one_selection input`).edit("abc", { confirm: false });
+    await contains(`.w_field_many2one_selection input`).edit("abc", { confirm: false });
     await runAllTimers();
     expect.verifySteps(["/web/dataset/call_kw/bar/web_name_search"]);
 
-    await contains(`.o-autocomplete--dropdown-item a:eq(0)`).click();
+    await contains(`.w-autocomplete--dropdown-item a:eq(0)`).click();
     expect.verifySteps(["record changed"]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("abc");
+    expect(`.w_field_many2one_selection input`).toHaveValue("abc");
 });
 
 test.tags("desktop");
@@ -455,15 +455,15 @@ test(`handles many2one fields: value is a pair id, display_name`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps([]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("bar1");
+    expect(`.w_field_many2one_selection input`).toHaveValue("bar1");
 
-    await contains(`.o_field_many2one_selection input`).edit("abc", { confirm: false });
+    await contains(`.w_field_many2one_selection input`).edit("abc", { confirm: false });
     await runAllTimers();
     expect.verifySteps(["/web/dataset/call_kw/bar/web_name_search"]);
 
-    await contains(`.o-autocomplete--dropdown-item a:eq(0)`).click();
+    await contains(`.w-autocomplete--dropdown-item a:eq(0)`).click();
     expect.verifySteps(["record changed"]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("abc");
+    expect(`.w_field_many2one_selection input`).toHaveValue("abc");
 });
 
 test(`handles many2one fields: value is an id`, async () => {
@@ -502,7 +502,7 @@ test(`handles many2one fields: value is an id`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps(["/web/dataset/call_kw/bar/web_read"]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("bar1");
+    expect(`.w_field_many2one_selection input`).toHaveValue("bar1");
 });
 
 test(`handles many2one fields: value is an object with id only`, async () => {
@@ -541,7 +541,7 @@ test(`handles many2one fields: value is an object with id only`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps(["/web/dataset/call_kw/bar/web_read"]);
-    expect(`.o_field_many2one_selection input`).toHaveValue("bar1");
+    expect(`.w_field_many2one_selection input`).toHaveValue("bar1");
 });
 
 test(`handles x2many fields`, async () => {
@@ -592,7 +592,7 @@ test(`handles x2many fields`, async () => {
     onRpc(({ route }) => expect.step(route));
     await mountWithCleanup(Parent);
     expect.verifySteps(["/web/dataset/call_kw/tag/web_read"]);
-    expect(queryAllTexts`.o_tag`).toEqual(["bug", "ref"]);
+    expect(queryAllTexts`.w_tag`).toEqual(["bug", "ref"]);
 });
 
 test(`supports passing dynamic values -- full control to the user of Record`, async () => {

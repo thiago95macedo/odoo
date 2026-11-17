@@ -22,8 +22,8 @@ test("can delete an attachment from the file viewer", async () => {
             },
         },
     });
-    await waitFor(".o-FileViewer");
-    await click(".o-FileViewer-headerButton[title='Remove']");
+    await waitFor(".w-FileViewer");
+    await click(".w-FileViewer-headerButton[title='Remove']");
     expect.verifySteps(["delete_file test_image.png"]);
 });
 
@@ -39,30 +39,30 @@ function makeImage() {
 }
 
 const RESET_ZOOM_BUTTON =
-    ".o-FileViewer-toolbar .o-FileViewer-toolbarButton[title='Reset Zoom (0)']";
-const ZOOM_IN_BUTTON = ".o-FileViewer-toolbar .o-FileViewer-toolbarButton[title='Zoom In (+)']";
-const ZOOM_OUT_BUTTON = ".o-FileViewer-toolbar .o-FileViewer-toolbarButton[title='Zoom Out (-)']";
+    ".w-FileViewer-toolbar .w-FileViewer-toolbarButton[title='Reset Zoom (0)']";
+const ZOOM_IN_BUTTON = ".w-FileViewer-toolbar .w-FileViewer-toolbarButton[title='Zoom In (+)']";
+const ZOOM_OUT_BUTTON = ".w-FileViewer-toolbar .w-FileViewer-toolbarButton[title='Zoom Out (-)']";
 
 test("image toolbar exposes its buttons", async () => {
     await mountWithCleanup(FileViewer, {
         props: { files: [makeImage()], startIndex: 0 },
     });
-    await waitFor(".o-FileViewer-toolbar");
-    expect(".o-FileViewer-toolbar").toHaveAttribute("role", "toolbar");
+    await waitFor(".w-FileViewer-toolbar");
+    expect(".w-FileViewer-toolbar").toHaveAttribute("role", "toolbar");
     expect(ZOOM_IN_BUTTON).toHaveCount(1);
     expect(RESET_ZOOM_BUTTON).toHaveCount(1);
     expect(`${RESET_ZOOM_BUTTON} i`).toHaveAttribute("data-icon", "recenter");
     expect(ZOOM_OUT_BUTTON).toHaveCount(1);
-    expect(".o-FileViewer-toolbar [title='Rotate (r)']").toHaveCount(1);
-    expect(".o-FileViewer-toolbar [title='Print']").toHaveCount(1);
-    expect(".o-FileViewer-toolbar .o-FileViewer-download").toHaveCount(1);
+    expect(".w-FileViewer-toolbar [title='Rotate (r)']").toHaveCount(1);
+    expect(".w-FileViewer-toolbar [title='Print']").toHaveCount(1);
+    expect(".w-FileViewer-toolbar .w-FileViewer-download").toHaveCount(1);
 });
 
 test("reset zoom button is inert at default zoom and active once zoomed", async () => {
     await mountWithCleanup(FileViewer, {
         props: { files: [makeImage()], startIndex: 0 },
     });
-    await waitFor(".o-FileViewer-toolbar");
+    await waitFor(".w-FileViewer-toolbar");
     expect(RESET_ZOOM_BUTTON).toHaveClass(["pe-none", "text-muted"]);
 
     await click(ZOOM_IN_BUTTON);
@@ -79,7 +79,7 @@ test("zoom out button is inert at minimum zoom", async () => {
     await mountWithCleanup(FileViewer, {
         props: { files: [makeImage()], startIndex: 0 },
     });
-    await waitFor(".o-FileViewer-toolbar");
+    await waitFor(".w-FileViewer-toolbar");
     expect(ZOOM_OUT_BUTTON).not.toHaveClass("pe-none");
 
     // a single zoom out step (0.5) brings the scale down to the minimum (0.5)

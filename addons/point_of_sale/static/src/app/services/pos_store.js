@@ -105,7 +105,7 @@ export class PosStore extends WithLazyGetterTrap {
     }
     /**
      * use setup instead of constructor because setup can be patched.
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     async setup(

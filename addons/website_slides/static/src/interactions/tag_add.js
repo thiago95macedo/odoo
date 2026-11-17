@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { CourseTagAddDialog } from "@website_slides/js/public/components/course_tag_add_dialog/course_tag_add_dialog";
 
 export class TagAdd extends Interaction {
-    static selector = ".o_wslides_js_channel_tag_add";
+    static selector = ".w_wslides_js_channel_tag_add";
     dynamicContent = {
         _root: {
             "t-on-click.prevent": this.onClick,

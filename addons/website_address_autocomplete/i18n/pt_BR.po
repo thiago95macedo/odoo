@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_address_autocomplete/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_address_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_address_autocomplete/static/src/xml/autocomplete.xml:0
 msgid "Powered by Google"
 msgstr "Desenvolvido por Google"

@@ -420,7 +420,7 @@ export class FloorPlanEditor extends FloorPlanBase {
         });
 
         const shapeElements = clickable
-            .map((el) => el.closest(".o_fp_shape"))
+            .map((el) => el.closest(".w_fp_shape"))
             .filter((el) => el !== null);
 
         // Check each shape element in order

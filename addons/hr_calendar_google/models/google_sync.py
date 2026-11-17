@@ -20,7 +20,7 @@ class GoogleEventSync(models.AbstractModel):
         return super()._get_skipped_google_events(gevents) + GoogleEvent(ignored_gevents)
 
     def _get_location_data(self, gevent):
-        """ Extract (Odoo Type, Name) from Google event. """
+        """ Extract (WETH Type, Name) from Google event. """
         props = gevent.workingLocationProperties
         if props.get('type') == 'customLocation':
             return 'other', props['customLocation'].get('label', self.env._('Custom'))

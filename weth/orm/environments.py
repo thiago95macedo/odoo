@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-"""The Odoo API module defines Odoo Environments.
+"""The WETH API module defines WETH Environments.
 """
 from __future__ import annotations
 

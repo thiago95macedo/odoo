@@ -17,7 +17,7 @@ from . import discuss_voice_metadata
 from . import mail_guest
 from . import res_users_settings_volumes
 
-# odoo models
+# weth models
 from . import bus_listener_mixin
 from . import ir_attachment
 from . import ir_websocket

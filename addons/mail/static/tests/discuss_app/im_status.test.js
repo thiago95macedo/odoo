@@ -27,7 +27,7 @@ test("initially online", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is online']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is online']");
 });
 
 test("initially offline", async () => {
@@ -43,7 +43,7 @@ test("initially offline", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is offline']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is offline']");
 });
 
 test("initially away", async () => {
@@ -59,7 +59,7 @@ test("initially away", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is idle']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is idle']");
 });
 
 test("change icon on change partner im_status", async () => {
@@ -68,13 +68,13 @@ test("change icon on change partner im_status", async () => {
     const channelId = pyEnv["discuss.channel"].create({ channel_type: "chat" });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is online']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is online']");
     sendPresenceUpdate("res.users", serverState.userId, "offline");
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is offline']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is offline']");
     sendPresenceUpdate("res.users", serverState.userId, "away");
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is idle']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is idle']");
     sendPresenceUpdate("res.users", serverState.userId, "online");
-    await contains(".o-mail-DiscussContent-header .o-mail-ImStatus[title='User is online']");
+    await contains(".w-mail-DiscussContent-header .w-mail-ImStatus[title='User is online']");
 });
 
 test("show im status in messaging menu preview of chat", async () => {
@@ -90,7 +90,7 @@ test("show im status in messaging menu preview of chat", async () => {
     });
     await start();
     await openMessagingMenu();
-    await contains(".o-mail-NotificationItem:has(.o-mail-NotificationItem-name:text('Demo'))", {
+    await contains(".w-mail-NotificationItem:has(.w-mail-NotificationItem-name:text('Demo'))", {
         contains: ["i[aria-label='User is online']"],
     });
 });

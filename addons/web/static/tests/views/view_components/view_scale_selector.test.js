@@ -43,23 +43,23 @@ test("basic ViewScaleSelector component usage", async () => {
     }
 
     await mountWithCleanup(Parent);
-    expect(".o_view_scale_selector").toHaveCount(1);
+    expect(".w_view_scale_selector").toHaveCount(1);
     expect.verifySteps([]);
-    expect(".o_view_scale_selector").toHaveText("Weekly");
+    expect(".w_view_scale_selector").toHaveText("Weekly");
     expect(".scale_button_selection").toHaveAttribute("data-hotkey", "v");
     await click(".scale_button_selection");
     await animationFrame();
-    expect(".o-dropdown--menu").toHaveCount(1);
-    expect(".o-dropdown--menu .active:first").toHaveText("Weekly", {
+    expect(".w-dropdown--menu").toHaveCount(1);
+    expect(".w-dropdown--menu .active:first").toHaveText("Weekly", {
         message: "the active option is selected",
     });
-    expect(".o-dropdown--menu span:nth-child(2)").toHaveAttribute("data-hotkey", "o", {
+    expect(".w-dropdown--menu span:nth-child(2)").toHaveAttribute("data-hotkey", "o", {
         message: "'week' scale has the right hotkey",
     });
-    await click(".o_scale_button_day");
+    await click(".w_scale_button_day");
     await animationFrame();
     expect.verifySteps(["day"]);
-    expect(".o_view_scale_selector").toHaveText("Daily");
+    expect(".w_view_scale_selector").toHaveText("Daily");
     await click(".scale_button_selection");
     expect(".dropdown-item:last:interactive").not.toHaveCount();
     await contains(".dropdown-item:contains(Yearly)").click();
@@ -93,7 +93,7 @@ test("ViewScaleSelector with only one scale available", async () => {
     }
 
     await mountWithCleanup(Parent);
-    expect(".o_view_scale_selector").toHaveCount(0);
+    expect(".w_view_scale_selector").toHaveCount(0);
 });
 
 test("ViewScaleSelector show weekends button is disabled when scale is day", async () => {
@@ -128,13 +128,13 @@ test("ViewScaleSelector show weekends button is disabled when scale is day", asy
     }
 
     await mountWithCleanup(Parent);
-    expect(".o_view_scale_selector").toHaveCount(1);
+    expect(".w_view_scale_selector").toHaveCount(1);
     await click(".scale_button_selection");
     await animationFrame();
-    expect(".o_show_weekends").toHaveClass("disabled");
+    expect(".w_show_weekends").toHaveClass("disabled");
     await click(".dropdown-item:nth-child(2)");
     await animationFrame();
     await click(".scale_button_selection");
     await animationFrame();
-    expect(".o_show_weekends").not.toHaveClass("disabled");
+    expect(".w_show_weekends").not.toHaveClass("disabled");
 });

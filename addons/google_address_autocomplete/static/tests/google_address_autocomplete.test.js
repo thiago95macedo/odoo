@@ -89,7 +89,7 @@ test("correctly fill all standard fields", async () => {
             state_id: 2,
             // this was input by the user
             // save as is
-            street: "odoo farm 3",
+            street: "weth farm 3",
             street2: "Ferme 2",
             zip: "1367",
         });
@@ -108,13 +108,13 @@ test("correctly fill all standard fields", async () => {
             <field name="country_id" />
         </form>`,
     });
-    currentInput = "odoo farm 2";
-    await contains(".o_field_widget[name='street'] input").edit("odoo farm 2", { confirm: false });
+    currentInput = "weth farm 2";
+    await contains(".o_field_widget[name='street'] input").edit("weth farm 2", { confirm: false });
     await runAllTimers();
     expect.verifySteps(["/autocomplete/address"]);
 
     await contains(
-        ".o_field_widget[name='street'] .o-autocomplete--dropdown-item a:contains(Bourlottes)"
+        ".o_field_widget[name='street'] .w-autocomplete--dropdown-item a:contains(Bourlottes)"
     ).click();
     expect.verifySteps(["/autocomplete/address_full"]);
     const expectedFields = {
@@ -130,8 +130,8 @@ test("correctly fill all standard fields", async () => {
     }
 
     const formerToken = googleSessionToken;
-    currentInput = "odoo farm 3";
-    await contains(".o_field_widget[name='street'] input").edit("odoo farm 3", { confirm: false });
+    currentInput = "weth farm 3";
+    await contains(".o_field_widget[name='street'] input").edit("weth farm 3", { confirm: false });
     await runAllTimers();
     expect.verifySteps(["/autocomplete/address"]);
     expect(googleSessionToken).not.toBe(formerToken);
@@ -150,12 +150,12 @@ test("fills current field with values of unknown ones", async () => {
         </form>`,
     });
 
-    await contains(".o_field_widget[name='some_char'] input").edit("odoo farm 2", {
+    await contains(".o_field_widget[name='some_char'] input").edit("weth farm 2", {
         confirm: false,
     });
     await runAllTimers();
     await contains(
-        ".o_field_widget[name='some_char'] .o-autocomplete--dropdown-item a:contains(Bourlottes)"
+        ".o_field_widget[name='some_char'] .w-autocomplete--dropdown-item a:contains(Bourlottes)"
     ).click();
 
     const expectedFields = {
@@ -180,9 +180,9 @@ test("typing in input should make form dirty", async () => {
         resId: 1,
     });
     expect(".o_form_button_save:visible").toHaveCount(0);
-    await contains(".o_field_widget[name='street'] input").edit("odoo farm 3", { confirm: false });
+    await contains(".o_field_widget[name='street'] input").edit("weth farm 3", { confirm: false });
     await contains(".o_form_button_save:visible").click();
-    expect.verifySteps([{ street: "odoo farm 3" }]);
+    expect.verifySteps([{ street: "weth farm 3" }]);
 });
 
 test("support field mapping in options", async () => {
@@ -198,12 +198,12 @@ test("support field mapping in options", async () => {
         </form>`,
     });
 
-    await contains(".o_field_widget[name='some_char'] input").edit("odoo farm 2", {
+    await contains(".o_field_widget[name='some_char'] input").edit("weth farm 2", {
         confirm: false,
     });
     await runAllTimers();
     await contains(
-        ".o_field_widget[name='some_char'] .o-autocomplete--dropdown-item a:contains(Bourlottes)"
+        ".o_field_widget[name='some_char'] .w-autocomplete--dropdown-item a:contains(Bourlottes)"
     ).click();
 
     const expectedFields = {
@@ -231,12 +231,12 @@ test("select a value, then empty the input and save", async () => {
         resId: 1,
     });
 
-    await contains(".o_field_widget[name=street] input").edit("odoo farm 2", {
+    await contains(".o_field_widget[name=street] input").edit("weth farm 2", {
         confirm: false,
     });
     await runAllTimers();
     await contains(
-        ".o_field_widget[name=street] .o-autocomplete--dropdown-item a:contains(Bourlottes)"
+        ".o_field_widget[name=street] .w-autocomplete--dropdown-item a:contains(Bourlottes)"
     ).click();
     expect(".o_field_widget[name=street] input").toHaveValue("rue des Bourlottes 9");
     await contains(".o_field_widget[name=street] input").edit("");

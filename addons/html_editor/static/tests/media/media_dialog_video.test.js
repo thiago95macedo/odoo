@@ -38,7 +38,7 @@ describe("media dialog video", () => {
                 mockFetch(() => '{"data": "mockFetch api result data"}');
                 await insertText(editor, "/video");
                 await animationFrame();
-                await expectElementCount(".o-we-powerbox", 1);
+                await expectElementCount(".w-we-powerbox", 1);
                 await press("Enter");
 
                 await waitFor(`div.modal`);
@@ -67,7 +67,7 @@ describe("media dialog video", () => {
             // Open the media dialog with the /video command
             await insertText(editor, "/video");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
 
             // Ensure the video tab is selected by default
@@ -141,7 +141,7 @@ describe("media dialog video", () => {
             // Open the media dialog with the /video command
             await insertText(editor, "/video");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
 
             // Ensure the video tab is selected by default
@@ -186,7 +186,7 @@ describe("media dialog video", () => {
                 mockFetch(() => '{"data": "mockFetch api result data"}');
                 await insertText(editor, "/video");
                 await animationFrame();
-                await expectElementCount(".o-we-powerbox", 1);
+                await expectElementCount(".w-we-powerbox", 1);
                 await press("Enter");
 
                 await waitFor(`div.modal`);
@@ -218,7 +218,7 @@ describe("media dialog video", () => {
             // Open the media dialog with the /video command
             await insertText(editor, "/video");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
 
             // Ensure the video tab is selected by default
@@ -469,7 +469,7 @@ describe("media dialog video", () => {
             // Open the media dialog with the /video command
             await insertText(editor, "/video");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             let mediaModal = await waitFor(`div.modal`);
 
@@ -571,7 +571,7 @@ describe("media dialog video", () => {
 
             await insertText(editor, "/video");
             await animationFrame();
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
 
             const videoId = "dQw4w9WgXcQ";
@@ -622,7 +622,7 @@ describe("media dialog video", () => {
          */
         async function openVideoDialog(editor) {
             await insertText(editor, "/video");
-            await expectElementCount(".o-we-powerbox", 1);
+            await expectElementCount(".w-we-powerbox", 1);
             await press("Enter");
             await waitFor("div.modal");
             await click("#o_video_text");

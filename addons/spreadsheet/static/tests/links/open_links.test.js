@@ -31,7 +31,7 @@ test("click a web link", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: "[Odoo](https://weth.com.br)" },
+                cells: { A1: "[Weth](https://weth.com.br)" },
             },
         ],
     };
@@ -56,7 +56,7 @@ test("click a menu link", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: "[label](odoo://ir_menu_xml_id/test_menu)" },
+                cells: { A1: "[label](weth://ir_menu_xml_id/test_menu)" },
             },
         ],
     };
@@ -83,7 +83,7 @@ test("middle-click a menu link", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: "[label](odoo://ir_menu_xml_id/test_menu)" },
+                cells: { A1: "[label](weth://ir_menu_xml_id/test_menu)" },
             },
         ],
     };
@@ -100,7 +100,7 @@ test("click a menu link [2]", async () => {
         doAction(action) {
             expect.step("do-action");
             expect(action).toMatchObject({
-                name: "an odoo view",
+                name: "an weth view",
                 res_model: "partner",
                 target: "current",
                 type: "ir.actions.act_window",
@@ -114,7 +114,7 @@ test("click a menu link [2]", async () => {
     await makeSpreadsheetMockEnv({ serverData: getMenuServerData() });
     const env = getMockEnv();
     const view = {
-        name: "an odoo view",
+        name: "an weth view",
         viewType: "list",
         action: {
             modelName: "partner",
@@ -123,9 +123,9 @@ test("click a menu link [2]", async () => {
     };
 
     const model = new Model({}, { custom: { env } });
-    setCellContent(model, "A1", `[a view](odoo://view/${JSON.stringify(view)})`);
+    setCellContent(model, "A1", `[a view](weth://view/${JSON.stringify(view)})`);
     const cell = getEvaluatedCell(model, "A1");
-    expect(urlRepresentation(cell.link, model.getters)).toBe("an odoo view");
+    expect(urlRepresentation(cell.link, model.getters)).toBe("an weth view");
     openLink(cell.link, env);
     expect.verifySteps(["do-action"]);
 });
@@ -162,7 +162,7 @@ test("Click a link containing an action xml id", async () => {
     };
 
     const model = new Model({}, { custom: { env } });
-    setCellContent(model, "A1", `[an action link](odoo://view/${JSON.stringify(view)})`);
+    setCellContent(model, "A1", `[an action link](weth://view/${JSON.stringify(view)})`);
     const cell = getEvaluatedCell(model, "A1");
     expect(urlRepresentation(cell.link, model.getters)).toBe("My Action Name");
     await openLink(cell.link, env);
@@ -203,7 +203,7 @@ test("Can open link when some views are absent from the referred action", async 
     };
 
     const model = new Model({}, { custom: { env } });
-    setCellContent(model, "A1", `[an action link](odoo://view/${JSON.stringify(view)})`);
+    setCellContent(model, "A1", `[an action link](weth://view/${JSON.stringify(view)})`);
     const cell = getEvaluatedCell(model, "A1");
     expect(urlRepresentation(cell.link, model.getters)).toBe("My Action Name");
     await openLink(cell.link, env);
@@ -234,7 +234,7 @@ test("Context is passed correctly to the action service", async () => {
     };
 
     const model = new Model({}, { custom: { env } });
-    setCellContent(model, "A1", `[an action link](odoo://view/${JSON.stringify(view)})`);
+    setCellContent(model, "A1", `[an action link](weth://view/${JSON.stringify(view)})`);
     const cell = getEvaluatedCell(model, "A1");
     expect(urlRepresentation(cell.link, model.getters)).toBe("My Action Name");
     await openLink(cell.link, env);

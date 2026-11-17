@@ -5,7 +5,7 @@
     // Inform the user that he may click on a cell to be redirected to a list view of the
     // items corresponding to the clicked cell
     &.o_enable_linking .o_pivot_cell_value:not(.o_empty) {
-        @include o-hover-text-color($body-color, $o-main-link-color);
+        @include o-hover-text-color($body-color, $w-main-link-color);
     }
 
     .o_pivot_measure_row,
@@ -37,7 +37,9 @@
     }
 
     @include media-only(print) {
-        .bg-100, .text-bg-100 {
+
+        .bg-100,
+        .text-bg-100 {
             --background-color: transparent;
         }
     }
@@ -46,6 +48,7 @@
 // ------- Sample mode -------
 .o_pivot_view .o_view_sample_data {
     overflow: hidden !important;
+
     .o_pivot {
         @include o-sample-data-disabled;
     }

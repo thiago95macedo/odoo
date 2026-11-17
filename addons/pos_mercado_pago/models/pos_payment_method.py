@@ -64,7 +64,7 @@ class PosPaymentMethod(models.Model):
         self._check_special_access()
 
         mercado_pago = MercadoPagoPosRequest(self.sudo().mp_bearer_token)
-        # Identify Odoo as the integrator
+        # Identify WETH as the integrator
         infos['config'] = {
             'point': {
                 'terminal_id': self.mp_id_point_smart_complet,

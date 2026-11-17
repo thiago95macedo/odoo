@@ -224,7 +224,7 @@ describe("DebugMenu", () => {
     });
 
     test("can disable the rpc cache", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         patchWithCleanup(location, {
             reload: () => expect.step("reloadPage"),
         });
@@ -242,7 +242,7 @@ describe("DebugMenu", () => {
     });
 
     test("can re-enable the rpc cache", async () => {
-        redirect("/odoo?cache=0");
+        redirect("/weth?cache=0");
         patchWithCleanup(location, {
             reload: () => expect.step("reloadPage"),
         });

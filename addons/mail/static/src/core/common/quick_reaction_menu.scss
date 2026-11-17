@@ -1,9 +1,9 @@
-.o-mail-QuickReactionMenu-popEffect--smaller i::before {
+.w-mail-QuickReactionMenu-popEffect--smaller i::before {
     display: inline-block;
     transform: rotate(45deg);
 }
 
-.o-mail-QuickReactionMenu-toggler.o-open {
+.w-mail-QuickReactionMenu-toggler.w-open {
     opacity: 100% !important;
 }
 
@@ -19,12 +19,12 @@ $quick-reaction-menu-slide-in-duration: 0.15s;
     }
 }
 
-.o-mail-QuickReactionMenu-popover {
+.w-mail-QuickReactionMenu-popover {
     background-color: unset;
     border: none;
 }
 
-.o-mail-QuickReactionMenu {
+.w-mail-QuickReactionMenu {
     gap: 1px;
     padding-top: map-get($spacers, 1) / 2;
     padding-bottom: map-get($spacers, 1) / 2;
@@ -33,17 +33,17 @@ $quick-reaction-menu-slide-in-duration: 0.15s;
     animation: qrm-menuSlideInAnimation $quick-reaction-menu-slide-in-duration cubic-bezier(0.6, 0, 0.4, 1) forwards;
 }
 
-.o-mail-QuickReactionMenu-emoji {
+.w-mail-QuickReactionMenu-emoji {
     &.bg-300 {
         --bg-opacity: .35;
     }
 }
 
-.o-mail-QuickReactionMenu-emoji,
-.o-mail-QuickReactionMenu-emojiPicker {
+.w-mail-QuickReactionMenu-emoji,
+.w-mail-QuickReactionMenu-emojiPicker {
     &.focus {
-        background-color: rgba($o-action, .1);
-        outline: 1px solid rgba($o-action, .5);
+        background-color: rgba($w-action, .1);
+        outline: 1px solid rgba($w-action, .5);
     }
 
     &:focus-visible:not(.focus) {
@@ -51,7 +51,7 @@ $quick-reaction-menu-slide-in-duration: 0.15s;
     }
 }
 
-.o-mail-QuickReactionMenu-emojiPicker {
+.w-mail-QuickReactionMenu-emojiPicker {
     padding: map-get($spacers, 3) / 2;
 }
 
@@ -79,10 +79,10 @@ $quick-reaction-menu-emoji-pop-out-duration: 0.075s;
     }
 }
 
-.o-mail-QuickReactionMenu-popEffect {
+.w-mail-QuickReactionMenu-popEffect {
     --quick-reaction-menu-final-scale: 1;
 
-    &.o-mail-QuickReactionMenu-popEffect--smaller {
+    &.w-mail-QuickReactionMenu-popEffect--smaller {
         --quick-reaction-menu-final-scale: .9;
     }
 
@@ -92,7 +92,7 @@ $quick-reaction-menu-emoji-pop-out-duration: 0.075s;
 }
 
 @for $i from 0 through $quick-reaction-menu-total-buttons {
-    .o-mail-QuickReactionMenu-popEffect:nth-child(#{$i + 1}) {
+    .w-mail-QuickReactionMenu-popEffect:nth-child(#{$i + 1}) {
         animation-delay: #{$quick-reaction-menu-slide-in-duration / 3 + $i * $quick-reaction-menu-emoji-delay-increment};
     }
 }
@@ -111,7 +111,7 @@ $quick-reaction-menu-picker-grow-duration: 0.25s;
     }
 }
 
-.o-mail-QuickReactionMenu-pickerPopover {
+.w-mail-QuickReactionMenu-pickerPopover {
     --popover-bg: #{$gray-100};
     --popover-border-color: var(--border-color);
 
@@ -131,7 +131,7 @@ $quick-reaction-menu-picker-grow-duration: 0.25s;
         transform: translateY(var(--arrowTranslateY));
     }
 
-    & .o-EmojiPicker {
+    & .w-EmojiPicker {
         opacity: 0;
         transform: scale(0.8);
         transform-origin: var(--originY);

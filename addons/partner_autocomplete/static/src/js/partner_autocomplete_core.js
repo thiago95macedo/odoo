@@ -136,7 +136,7 @@ export function usePartnerAutocomplete() {
     }
 
     /**
-     * Use Odoo Autocomplete API to return suggestions
+     * Use WETH Autocomplete API to return suggestions
      *
      * @param {string} fieldName
      * @param {string} value

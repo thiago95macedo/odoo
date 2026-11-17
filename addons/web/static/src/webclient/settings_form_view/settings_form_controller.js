@@ -42,9 +42,9 @@ export class SettingsFormController extends formView.Controller {
             () => {
                 if (this.searchState.value) {
                     if (
-                        this.rootRef().querySelector(".o_settings_container:not(.d-none)") ||
+                        this.rootRef().querySelector(".w_settings_container:not(.d-none)") ||
                         this.rootRef().querySelector(
-                            ".settings .o_settings_container:not(.d-none) .o_setting_box.o_searchable_setting"
+                            ".settings .w_settings_container:not(.d-none) .w_setting_box.w_searchable_setting"
                         )
                     ) {
                         this.state.displayNoContent = false;

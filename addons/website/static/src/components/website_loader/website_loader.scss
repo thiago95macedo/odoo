@@ -1,6 +1,6 @@
 .o_website_loader_container {
     $-accent-color: #BB86FC; // dark mode primary color
-    background-color: $o-view-background-color;
+    background-color: $w-view-background-color;
     pointer-events: all;
     z-index: $zindex-modal - 1;
 
@@ -10,6 +10,7 @@
         background-size: contain;
         filter: var(--website-loader-logo-filter);
     }
+
     .o_website_loader_container_content {
         color: var(--website-loader-color);
         background-color: $gray-100;
@@ -19,6 +20,7 @@
             max-width: 30rem;
         }
     }
+
     .o_website_loader_tip {
         color: var(--website-loader-color);
 
@@ -29,12 +31,15 @@
             --TourPointer__color-accent: #{lighten($-accent-color, 7%)};
         }
     }
+
     .o_website_loader_text_highlight {
         color: $-accent-color;
     }
+
     .o_website_loader_progress {
         --progress-height: 0.5rem;
     }
+
     .o_website_loader_check {
         @keyframes loaderCheck {
             from {
@@ -45,6 +50,7 @@
 
         animation: loaderCheck 1s ease-out;
     }
+
     .o_website_loader_done {
         @keyframes loaderDone {
             from {
@@ -55,6 +61,7 @@
 
         animation: loaderDone 1s ease-out;
     }
+
     // Animation Steps Container
     #o_website_loader_animations_steps {
         width: 55%;
@@ -74,16 +81,23 @@
     // Stages Timeline Definition
     // =======================================
 
-    #o_website_loader_step_colors, #o_website_loader_step_images, #o_website_loader_step_text, #o_website_loader_step_generic {
+    #o_website_loader_step_colors,
+    #o_website_loader_step_images,
+    #o_website_loader_step_text,
+    #o_website_loader_step_generic {
         @include o-position-absolute(0, 0, 0, 0);
         transition: opacity 1s ease-in-out;
         transform-style: preserve-3d;
     }
-    #o_website_loader_step_images, #o_website_loader_step_text, #o_website_loader_step_generic {
+
+    #o_website_loader_step_images,
+    #o_website_loader_step_text,
+    #o_website_loader_step_generic {
         display: none;
         opacity: 0;
         transition-delay: .5s;
     }
+
     // IMAGES Stage
     &.o_website_loader_container_images {
         #o_website_loader_step_colors span {
@@ -100,12 +114,14 @@
             }
         }
     }
+
     // TEXT Stage
     &.o_website_loader_container_text {
 
         #o_website_loader_step_colors {
             display: none;
         }
+
         #o_website_loader_step_images {
             display: flex;
             opacity: 1;
@@ -116,6 +132,7 @@
                 opacity: 0;
             }
         }
+
         #o_website_loader_step_text {
             display: block;
             opacity: 1;
@@ -125,13 +142,16 @@
     // GENERIC Stage
     &.o_website_loader_container_generic {
 
-        #o_website_loader_step_colors, #o_website_loader_step_images {
+        #o_website_loader_step_colors,
+        #o_website_loader_step_images {
             display: none;
         }
+
         #o_website_loader_step_text {
             display: block;
             opacity: 0;
         }
+
         #o_website_loader_step_generic {
             display: block;
             transition: opacity 1s ease-in-out;
@@ -160,16 +180,20 @@
             from {
                 transform: scale(1.6) rotate3d(1.6, 1, -1.1, 37deg) translateX(10%) translateY(-3%);
             }
+
             to {
                 transform: scale(1.5) rotate3d(1.4, 1, -1.1, 29deg) translateX(10%) translateY(0);
             }
         }
 
         @keyframes elevateColoredCells {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateZ(0px);
                 background-color: #1F2937;
             }
+
             30% {
                 transform: translateZ(25px);
                 background-color: var(--background-color);
@@ -211,6 +235,7 @@
             animation: filmstripScroll 30s linear infinite;
             animation-play-state: inherit;
         }
+
         img {
             height: auto;
             padding: 4px;
@@ -248,20 +273,26 @@
             color: rgba(white, .5);
 
             @keyframes loaderTextFading {
-                0%, 100% {
+
+                0%,
+                100% {
                     opacity: 0;
                 }
+
                 50% {
                     opacity: 1;
                 }
             }
+
             &:nth-child(2) {
                 animation-delay: 2s;
                 color: rgba(mix(cyan, white), .5);
             }
+
             &:nth-child(3) {
                 animation-delay: 4s;
-                color: rgba(mix(magenta, white), .5);;
+                color: rgba(mix(magenta, white), .5);
+                ;
                 transform: translate(-10%, -25%) scale(.9);
             }
         }
@@ -273,25 +304,35 @@
         $-loader-gap: $-loader-size * .5;
 
         @keyframes rotateLoader {
-            0% { transform: rotate(0deg);}
-            100% { transform: rotate(360deg);}
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
-        .o_website_loader_circle, .o_website_loader_circle_mask {
+        .o_website_loader_circle,
+        .o_website_loader_circle_mask {
             @include o-position-absolute(50%, $left: 50%);
             margin-left: $-loader-gap * -1;
             margin-top: $-loader-gap * -1;
         }
-        .o_website_loader_circle, .o_website_loader_circle_line {
+
+        .o_website_loader_circle,
+        .o_website_loader_circle_line {
             height: $-loader-size;
             width: $-loader-size;
             border-radius: 50%;
             box-shadow: inset 0 0 0 1px #FFF;
         }
+
         .o_website_loader_circle {
             height: $-loader-size;
             opacity: .2;
         }
+
         .o_website_loader_circle_mask {
             height: $-loader-size;
             width: $-loader-gap;

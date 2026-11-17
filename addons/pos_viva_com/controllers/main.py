@@ -37,7 +37,7 @@ class PosVivaComController(http.Controller):
                     )
                     payment_method_sudo._retrieve_session_id(data_webhook)
                 else:
-                    _logger.error(_('received a message for a terminal not registered in Odoo: %s', terminal_id))
+                    _logger.error(_('received a message for a terminal not registered in Weth: %s', terminal_id))
             return json.dumps({'Key': payment_method_sudo.viva_com_webhook_verification_key})
         else:
             _logger.error(_('received a message for a pos payment provider not registered.'))
@@ -130,7 +130,7 @@ class PosVivaComController(http.Controller):
         dynamicLink = self._create_dynamic_link(f"/pos/ui/{config_id}/payment/{order_uuid}")
         return request.redirect(dynamicLink, local=False)
 
-    # Create a redirect link which should open the Odoo mobile app if it is installed
+    # Create a redirect link which should open the WETH mobile app if it is installed
     def _create_dynamic_link(self, redirect_path):
         base_url = request.env['ir.config_parameter'].sudo().get_str('web.base.url')
         original_link = f"{base_url}{redirect_path}"

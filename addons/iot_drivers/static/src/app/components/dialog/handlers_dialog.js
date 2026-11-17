@@ -30,7 +30,7 @@ export class HandlerDialog extends Component {
             this.handlerData.set(data);
             this.globalLogger.set({
                 "iot-logging-root": data.root_logger_log_level,
-                "iot-logging-odoo": data.odoo_current_log_level,
+                "iot-logging-weth": data.weth_current_log_level,
             });
             this.initialization.set(false);
         } catch {
@@ -107,7 +107,7 @@ export class HandlerDialog extends Component {
                                 t-on-change="(ev) => this.onChange(ev.target.name, ev.target.value)"
                                 t-att-id="global[0]"
                                 t-att-value="global[1]">
-                                <option value="parent">Same as Odoo</option>
+                                <option value="parent">Same as Weth</option>
                                 <option value="info">Info</option>
                                 <option value="debug">Debug</option>
                                 <option value="warning">Warning</option>
@@ -126,7 +126,7 @@ export class HandlerDialog extends Component {
                                 t-on-change="(ev) => this.onChange(ev.target.name, ev.target.value)"
                                 t-att-id="interface[0]"
                                 t-att-value="interface[1].is_using_parent_level ? 'parent' : interface[1].level">
-                                <option value="parent">Same as Odoo</option>
+                                <option value="parent">Same as Weth</option>
                                 <option value="info">Info</option>
                                 <option value="debug">Debug</option>
                                 <option value="warning">Warning</option>
@@ -145,7 +145,7 @@ export class HandlerDialog extends Component {
                                 t-on-change="(ev) => this.onChange(ev.target.name, ev.target.value)"
                                 t-att-id="drivers[0]"
                                 t-att-value="drivers[1].is_using_parent_level ? 'parent' : drivers[1].level">
-                                <option value="parent">Same as Odoo</option>
+                                <option value="parent">Same as Weth</option>
                                 <option value="info">Info</option>
                                 <option value="debug">Debug</option>
                                 <option value="warning">Warning</option>

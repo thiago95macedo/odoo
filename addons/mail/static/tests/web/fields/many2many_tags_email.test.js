@@ -56,10 +56,10 @@ test("fieldmany2many tags email (edition)", async () => {
     await clickFieldDropdownItem("partner_ids", "gold, Invoice");
     const tags = queryAll('.o_field_many2many_tags_email[name="partner_ids"] .badge.o_tag_color_0');
     expect(tags[1].innerText).toBe("gold, Invoice");
-    await contains(".o-mail-RecipientsInputTagsListPopover");
+    await contains(".w-mail-RecipientsInputTagsListPopover");
     // set the email
-    await insertText(".o-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
-    await click(".o-mail-RecipientsInputTagsListPopover .btn-primary");
+    await insertText(".w-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
+    await click(".w-mail-RecipientsInputTagsListPopover .btn-primary");
     await contains('.o_field_many2many_tags_email[name="partner_ids"] .badge.o_tag_color_0', {
         count: 2,
     });
@@ -88,16 +88,16 @@ test("fieldmany2many tags email popup close without filling", async () => {
     // add an other existing tag
     await clickFieldDropdown("partner_ids");
     await clickFieldDropdownItem("partner_ids", "Deficient Denise");
-    await contains(".o-mail-RecipientsInputTagsListPopover");
+    await contains(".w-mail-RecipientsInputTagsListPopover");
     // set the email
-    await insertText(".o-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
+    await insertText(".w-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
     // Close the modal dialog without saving (should remove partner from invalid records)
-    await click(".o-mail-RecipientsInputTagsListPopover .btn-secondary");
+    await click(".w-mail-RecipientsInputTagsListPopover .btn-secondary");
     // Selecting a partner with a valid email shouldn't open the modal dialog for the previous partner
     await contains(".o_field_widget[name='partner_ids'] .badge", { count: 0 });
     await clickFieldDropdown("partner_ids");
     await clickFieldDropdownItem("partner_ids", "Valid Valeria");
-    await contains(".o-mail-RecipientsInputTagsListPopover", { count: 0 });
+    await contains(".w-mail-RecipientsInputTagsListPopover", { count: 0 });
 });
 
 test("many2many_tags_email expands to show all tags when focused", async () => {
@@ -123,11 +123,11 @@ test("many2many_tags_email expands to show all tags when focused", async () => {
 
     // Adding tags should also keep showing all tags even if the mail popover appears
     await clickFieldDropdownItem("partner_ids", "4");
-    await contains(".o-mail-RecipientsInputTagsListPopover");
+    await contains(".w-mail-RecipientsInputTagsListPopover");
     await contains(".o_field_widget[name='partner_ids'] .badge", { count: 4 }); // 1 new record, even if not valid email yet
 
-    await insertText(".o-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
-    await click(".o-mail-RecipientsInputTagsListPopover .btn-primary");
+    await insertText(".w-mail-RecipientsInputTagsListPopover input", "coucou@petite.perruche");
+    await click(".w-mail-RecipientsInputTagsListPopover .btn-primary");
     await contains(".o_field_widget[name='partner_ids'] .badge", { count: 4 }); // 1 new record, email validated
 
     // Deleting tags should also keep showing all tags

@@ -109,7 +109,7 @@ describe("mailing snippet model", () => {
         ).not.toBe(undefined);
         expect(
             blockSocialAndLogo.querySelector(
-                "a[href='https://www.linkedin.com/company/odoo'][data-platform='linkedin']"
+                "a[href='https://www.linkedin.com/company/weth'][data-platform='linkedin']"
             )
         ).not.toBe(undefined);
 

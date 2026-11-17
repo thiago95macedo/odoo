@@ -20,17 +20,17 @@ test("can add, replace, and remove emojis to a poll option", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-Composer button[title='More Actions']");
-    await click(".o-dropdown-item:text('Create Poll')");
+    await click(".w-mail-Composer button[title='More Actions']");
+    await click(".w-dropdown-item:text('Create Poll')");
     await contains(".modal-header:text('Create Poll')");
-    await click(".o-mail-CreatePollOptionDialog:first [data-icon='sentiment_satisfied']");
-    await click(".o-Emoji:text('😀')");
-    await click(".o-mail-CreatePollOptionDialog:first span:text('😀')");
-    await click(".o-dropdown-item:text('Replace Emoji')");
-    await click(".o-Emoji:text('😁')");
-    await click(".o-mail-CreatePollOptionDialog:first span:text('😁')");
-    await click(".o-dropdown-item:text('Remove Emoji')");
-    await contains(".o-mail-CreatePollOptionDialog:first [data-icon='sentiment_satisfied']");
+    await click(".w-mail-CreatePollOptionDialog:first [data-icon='sentiment_satisfied']");
+    await click(".w-Emoji:text('😀')");
+    await click(".w-mail-CreatePollOptionDialog:first span:text('😀')");
+    await click(".w-dropdown-item:text('Replace Emoji')");
+    await click(".w-Emoji:text('😁')");
+    await click(".w-mail-CreatePollOptionDialog:first span:text('😁')");
+    await click(".w-dropdown-item:text('Remove Emoji')");
+    await contains(".w-mail-CreatePollOptionDialog:first [data-icon='sentiment_satisfied']");
 });
 
 test("poll creation should be disabled during message editing", async () => {
@@ -44,13 +44,13 @@ test("poll creation should be disabled during message editing", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-Composer button[title='More Actions']");
-    await contains(".o-dropdown-item:text('Create Poll')");
-    await click(".o-mail-Message [title='Expand']");
-    await click(".o-dropdown-item:text('Edit')");
-    await click(".o-mail-Message .o-mail-Composer button[title='More Actions']");
-    await contains(".o-dropdown-item:text('Attach Files')");
-    await contains(".o-dropdown-item:text('Create Poll')", { count: 0 });
+    await click(".w-mail-Composer button[title='More Actions']");
+    await contains(".w-dropdown-item:text('Create Poll')");
+    await click(".w-mail-Message [title='Expand']");
+    await click(".w-dropdown-item:text('Edit')");
+    await click(".w-mail-Message .w-mail-Composer button[title='More Actions']");
+    await contains(".w-dropdown-item:text('Attach Files')");
+    await contains(".w-dropdown-item:text('Create Poll')", { count: 0 });
 });
 
 test.tags("focus required");
@@ -59,12 +59,12 @@ test("autofocus question on poll opening and user-added options", async () => {
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(channelId);
-    await click(".o-mail-Composer button[title='More Actions']");
-    await click(".o-dropdown-item:text('Create Poll')");
+    await click(".w-mail-Composer button[title='More Actions']");
+    await click(".w-dropdown-item:text('Create Poll')");
     await contains(".modal-header:text('Create Poll')");
     await contains("input[name='poll_question']:focus");
     await click("button:text('Add another option')");
-    await contains(".o-mail-CreatePollOptionDialog:eq(2) input:focus");
+    await contains(".w-mail-CreatePollOptionDialog:eq(2) input:focus");
 });
 
 test("full label of a truncated poll option is shown in a tooltip", async () => {
@@ -87,19 +87,19 @@ test("full label of a truncated poll option is shown in a tooltip", async () => 
     });
     await start();
     await openDiscuss(channelId);
-    await hover(`.o-mail-PollOption span:text('${longLabel}')`);
-    await contains(`.o-tooltip:text('${longLabel}')`);
-    await hover(".o-mail-PollOption span:text('Short')");
+    await hover(`.w-mail-PollOption span:text('${longLabel}')`);
+    await contains(`.w-tooltip:text('${longLabel}')`);
+    await hover(".w-mail-PollOption span:text('Short')");
     await advanceTime(1000);
-    await contains(".o-tooltip", { count: 0 });
-    await click(".o-mail-Poll a:text('View results')");
-    await contains(".o-mail-PollOption div > span.text-truncate", { count: 2 });
-    await contains(".o-tooltip", { count: 0 });
-    await hover(`.o-mail-PollOption span:text('${longLabel}')`);
-    await contains(`.o-tooltip:text('${longLabel}')`);
-    await click(".o-mail-Poll a:text('0 votes')");
-    await hover(`.o-mail-PollVotesPanel span:text('${longLabel}')`);
-    await contains(`.o-tooltip:text('${longLabel}')`);
+    await contains(".w-tooltip", { count: 0 });
+    await click(".w-mail-Poll a:text('View results')");
+    await contains(".w-mail-PollOption div > span.text-truncate", { count: 2 });
+    await contains(".w-tooltip", { count: 0 });
+    await hover(`.w-mail-PollOption span:text('${longLabel}')`);
+    await contains(`.w-tooltip:text('${longLabel}')`);
+    await click(".w-mail-Poll a:text('0 votes')");
+    await hover(`.w-mail-PollVotesPanel span:text('${longLabel}')`);
+    await contains(`.w-tooltip:text('${longLabel}')`);
 });
 
 test("full label of a truncated winning option is shown in a tooltip", async () => {
@@ -124,8 +124,8 @@ test("full label of a truncated winning option is shown in a tooltip", async () 
     });
     await start();
     await openDiscuss(channelId);
-    await hover(`.o-mail-PollResult p:text('${longLabel}')`);
-    await contains(`.o-tooltip:text('${longLabel}')`);
+    await hover(`.w-mail-PollResult p:text('${longLabel}')`);
+    await contains(`.w-tooltip:text('${longLabel}')`);
 });
 
 test("tap on the info button of a truncated poll option shows its full label", async () => {
@@ -149,14 +149,14 @@ test("tap on the info button of a truncated poll option shows its full label", a
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-PollOption i.oi[data-icon='info']:count(1)");
-    await triggerEvents(`.o-mail-PollOption i[data-tooltip='${longLabel}']`, [
+    await contains(".w-mail-PollOption i.oi[data-icon='info']:count(1)");
+    await triggerEvents(`.w-mail-PollOption i[data-tooltip='${longLabel}']`, [
         "touchstart",
         "touchend",
         "click",
     ]);
-    await contains(`.o-tooltip:text('${longLabel}')`);
-    await contains(".o-mail-PollOption input:not(:checked)", { count: 2 });
-    await click(`.o-mail-PollOption span:text('${longLabel}')`);
-    await contains(".o-mail-PollOption input:checked");
+    await contains(`.w-tooltip:text('${longLabel}')`);
+    await contains(".w-mail-PollOption input:not(:checked)", { count: 2 });
+    await click(`.w-mail-PollOption span:text('${longLabel}')`);
+    await contains(".w-mail-PollOption input:checked");
 });

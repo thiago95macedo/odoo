@@ -1,14 +1,14 @@
 import { registries } from "@weth/o-spreadsheet";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 const { evaluationPluginRegistry } = registries;
 
-export class ServerDataPlugin extends OdooEvaluationPlugin {
+export class ServerDataPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ (["getServerData"]);
 
     constructor(config) {
         super(config);
         /** @type {import("@spreadsheet/data_sources/server_data").ServerData} */
-        this._serverData = config.custom.odooDataProvider?.serverData;
+        this._serverData = config.custom.wethDataProvider?.serverData;
     }
 
     handle(cmd) {
@@ -23,11 +23,11 @@ export class ServerDataPlugin extends OdooEvaluationPlugin {
     getServerData() {
         if (!this._serverData) {
             throw new Error(
-                "'serverData' is not defined, please make sure a 'OdooDataProvider' instance is provided to the model."
+                "'serverData' is not defined, please make sure a 'WethDataProvider' instance is provided to the model."
             );
         }
         return this._serverData;
     }
 }
 
-evaluationPluginRegistry.add("odooServerData", ServerDataPlugin);
+evaluationPluginRegistry.add("wethServerData", ServerDataPlugin);

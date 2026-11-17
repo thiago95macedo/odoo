@@ -1,7 +1,7 @@
 // Duplicate :root/body rules into :host ruleset in order to make them work
 // in the shadow DOM.
 
-$o-livechat-font-size: 14px !default;
+$w-livechat-font-size: 14px !default;
 
 // Source: bootstrap/scss/_root.scss
 :host,
@@ -53,14 +53,16 @@ $o-livechat-font-size: 14px !default;
 
   // Root and body
   // scss-docs-start root-body-variables
-  @if $font-size-root != null {
+  @if $font-size-root !=null {
     --#{$prefix}root-font-size: #{$font-size-root};
   }
+
   --#{$prefix}body-font-family: #{inspect($font-family-base)};
   @include rfs($font-size-base, --#{$prefix}body-font-size);
   --#{$prefix}body-font-weight: #{$font-weight-base};
   --#{$prefix}body-line-height: #{$line-height-base};
-  @if $body-text-align != null {
+
+  @if $body-text-align !=null {
     --#{$prefix}body-text-align: #{$body-text-align};
   }
 
@@ -92,7 +94,7 @@ $o-livechat-font-size: 14px !default;
   --#{$prefix}link-hover-color: #{$link-hover-color};
   --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
 
-  @if $link-hover-decoration != null {
+  @if $link-hover-decoration !=null {
     --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
   }
 
@@ -194,28 +196,28 @@ $o-livechat-font-size: 14px !default;
 
 // Source: bootstrap/_reboot.scss
 :host {
-    margin: 0; // 1
-    font-family: var(--#{$prefix}body-font-family);
-    @include font-size(var(--#{$prefix}body-font-size));
-    font-weight: var(--#{$prefix}body-font-weight);
-    line-height: var(--#{$prefix}body-line-height);
-    color: var(--#{$prefix}body-color);
-    text-align: var(--#{$prefix}body-text-align);
-    background-color: var(--#{$prefix}body-bg); // 2
-    -webkit-text-size-adjust: 100%; // 3
-    -webkit-tap-highlight-color: rgba($black, 0); // 4
+  margin: 0; // 1
+  font-family: var(--#{$prefix}body-font-family);
+  @include font-size(var(--#{$prefix}body-font-size));
+  font-weight: var(--#{$prefix}body-font-weight);
+  line-height: var(--#{$prefix}body-line-height);
+  color: var(--#{$prefix}body-color);
+  text-align: var(--#{$prefix}body-text-align);
+  background-color: var(--#{$prefix}body-bg); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba($black, 0); // 4
 }
 
 // Source: webclient.scss
 :host {
-    --o-webclient-color-scheme: #{$o-webclient-color-scheme};
-    font-size: $o-livechat-font-size;
+  --o-webclient-color-scheme: #{$w-webclient-color-scheme};
+  font-size: $w-livechat-font-size;
 }
 
 
 // Source: ui.scss
 :host {
-    & .o_hidden {
-        display: none!important;
-    }
+  & .o_hidden {
+    display: none !important;
+  }
 }

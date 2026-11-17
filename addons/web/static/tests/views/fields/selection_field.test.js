@@ -89,11 +89,11 @@ test("SelectionField in a list view", async () => {
         arch: '<list string="Colors" editable="top"><field name="color"/></list>',
     });
 
-    expect(".o_data_row").toHaveCount(3);
-    await click(".o_data_cell");
+    expect(".w_data_row").toHaveCount(3);
+    await click(".w_data_cell");
     await animationFrame();
-    const td = queryFirst("tbody tr.o_selected_row td:not(.o_list_record_selector)");
-    expect(queryOne(".o_select_menu input", { root: td })).toHaveCount(1, {
+    const td = queryFirst("tbody tr.w_selected_row td:not(.w_list_record_selector)");
+    expect(queryOne(".w_select_menu input", { root: td })).toHaveCount(1, {
         message: "td should have a child 'select'",
     });
     expect(td.children).toHaveCount(1, { message: "select tag should be only child of td" });
@@ -109,20 +109,20 @@ test("SelectionField in a list view with multi_edit", async () => {
         arch: '<list string="Colors" multi_edit="1"><field name="color"/></list>',
     });
     // select two records and edit them
-    await click(".o_data_row:eq(0) .o_list_record_selector input:first");
+    await click(".w_data_row:eq(0) .w_list_record_selector input:first");
     await animationFrame();
-    await click(".o_data_row:eq(1) .o_list_record_selector input:first");
+    await click(".w_data_row:eq(1) .w_list_record_selector input:first");
     await animationFrame();
 
-    await contains(".o_field_cell[name='color']").click();
-    await editSelectMenu(".o_field_widget[name='color'] input", { value: "" });
-    await contains(".o_dialog footer button").click();
-    expect(queryAllTexts(".o_field_cell")).toEqual(["", "", "Red"]);
+    await contains(".w_field_cell[name='color']").click();
+    await editSelectMenu(".w_field_widget[name='color'] input", { value: "" });
+    await contains(".w_dialog footer button").click();
+    expect(queryAllTexts(".w_field_cell")).toEqual(["", "", "Red"]);
 
-    await contains(".o_field_cell[name='color']").click();
-    await editSelectMenu(".o_field_widget[name='color'] input", { value: "Black" });
-    await contains(".o_dialog footer button").click();
-    expect(queryAllTexts(".o_field_cell")).toEqual(["Black", "Black", "Red"]);
+    await contains(".w_field_cell[name='color']").click();
+    await editSelectMenu(".w_field_widget[name='color'] input", { value: "Black" });
+    await contains(".w_dialog footer button").click();
+    expect(queryAllTexts(".w_field_cell")).toEqual(["Black", "Black", "Red"]);
 });
 
 test("SelectionField, edition and on many2one field", async () => {
@@ -141,13 +141,13 @@ test("SelectionField, edition and on many2one field", async () => {
                 <field name="color" widget="selection" />
             </form>`,
     });
-    expect(".o_select_menu").toHaveCount(3);
-    await contains(".o_field_widget[name='product_id'] input").click();
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["xphone", "xpad"]);
-    expect(".o_field_widget[name='product_id'] input").toHaveValue("xphone");
-    expect(".o_field_widget[name='trululu'] input").toHaveValue("");
-    await editSelectMenu(".o_field_widget[name='product_id'] input", { value: "xpad" });
-    expect(".o_field_widget[name='color'] input").toHaveValue("Red");
+    expect(".w_select_menu").toHaveCount(3);
+    await contains(".w_field_widget[name='product_id'] input").click();
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["xphone", "xpad"]);
+    expect(".w_field_widget[name='product_id'] input").toHaveValue("xphone");
+    expect(".w_field_widget[name='trululu'] input").toHaveValue("");
+    await editSelectMenu(".w_field_widget[name='product_id'] input", { value: "xpad" });
+    expect(".w_field_widget[name='color'] input").toHaveValue("Red");
     expect.verifySteps(["get_views", "web_read", "name_search", "name_search", "onchange"]);
 });
 
@@ -175,27 +175,27 @@ test("[Offline] SelectionField on many2one field", async () => {
         views: [[false, "form"]],
     });
 
-    await contains(".o_field_selection input").click();
-    expect(queryAllTexts(`.o-dropdown-item`)).toEqual(["xphone", "xpad"]);
+    await contains(".w_field_selection input").click();
+    expect(queryAllTexts(`.w-dropdown-item`)).toEqual(["xphone", "xpad"]);
 
     //close the dropdown
-    await contains(".o_form_renderer").click();
+    await contains(".w_form_renderer").click();
 
     setOffline(true);
 
-    await contains(".o_field_selection input").click();
-    expect(queryAllTexts(`.o-dropdown-item`)).toEqual(["xphone", "xpad"]);
+    await contains(".w_field_selection input").click();
+    expect(queryAllTexts(`.w-dropdown-item`)).toEqual(["xphone", "xpad"]);
 
     // select the second one
     await contains(`.dropdown-item:contains(xpad)`).click();
-    expect(`.o_field_selection input`).toHaveValue("xpad");
+    expect(`.w_field_selection input`).toHaveValue("xpad");
 
     // save the record (should do the write RPC with the correct commands)
     await clickSave();
 
     // The created record will be save the next time we are online
-    await contains(`.o_menu_systray .o_nav_entry [data-icon="link_off"]`).click();
-    expect(queryAllTexts`.o-dropdown--menu .o_offline_systray_content div`).toEqual([
+    await contains(`.w_menu_systray .w_nav_entry [data-icon="link_off"]`).click();
+    expect(queryAllTexts`.w-dropdown--menu .w_offline_systray_content div`).toEqual([
         "PARTNER",
         "first record",
         "Edited",
@@ -227,8 +227,8 @@ test("unset selection field with string keys", async () => {
         arch: /* xml */ '<form edit="0"><field name="selection" /></form>',
     });
 
-    expect(".o_field_widget").toHaveText("", { message: "there should be no displayed value" });
-    expect(".o_field_widget").toHaveClass("o_field_empty", {
+    expect(".w_field_widget").toHaveText("", { message: "there should be no displayed value" });
+    expect(".w_field_widget").toHaveClass("o_field_empty", {
         message: "should have class o_field_empty",
     });
 });
@@ -247,7 +247,7 @@ test("unset selection on a many2one field", async () => {
         arch: /* xml */ '<form><field name="trululu" widget="selection" /></form>',
     });
 
-    await editSelectMenu(".o_field_widget[name='trululu'] input", { value: "" });
+    await editSelectMenu(".w_field_widget[name='trululu'] input", { value: "" });
     await animationFrame();
     await clickSave();
     await animationFrame();
@@ -264,8 +264,8 @@ test("field selection with many2ones and special characters", async () => {
         arch: /* xml */ '<form><field name="trululu" widget="selection" /></form>',
     });
 
-    await contains(".o_field_widget[name='trululu'] input").click();
-    expect(".o_select_menu_item:contains(<span>hey</span>)").toHaveCount(1);
+    await contains(".w_field_widget[name='trululu'] input").click();
+    expect(".w_select_menu_item:contains(<span>hey</span>)").toHaveCount(1);
 });
 
 test("required selection widget should not have blank option", async () => {
@@ -289,13 +289,13 @@ test("required selection widget should not have blank option", async () => {
                 </form>`,
     });
 
-    await contains(".o_field_widget[name='feedback_value'] input").click();
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Good", "Bad"]);
+    await contains(".w_field_widget[name='feedback_value'] input").click();
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Good", "Bad"]);
 
     // change value to update widget modifier values
-    await editSelectMenu(".o_field_widget[name='feedback_value'] input", { value: "Bad" });
-    await contains(".o_field_widget[name='color'] input").click();
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Red", "Black"]);
+    await editSelectMenu(".w_field_widget[name='feedback_value'] input", { value: "Bad" });
+    await contains(".w_field_widget[name='color'] input").click();
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Red", "Black"]);
 });
 
 test("selection field with placeholder", async () => {
@@ -305,7 +305,7 @@ test("selection field with placeholder", async () => {
         arch: /* xml */ `<form><field name="trululu" widget="selection" placeholder="Placeholder"/></form>`,
     });
 
-    expect(`.o_field_widget[name='trululu'] input`).toHaveAttribute("placeholder", "Placeholder");
+    expect(`.w_field_widget[name='trululu'] input`).toHaveAttribute("placeholder", "Placeholder");
 });
 
 test("placeholder_field shows as placeholder", async () => {
@@ -320,7 +320,7 @@ test("placeholder_field shows as placeholder", async () => {
             <field name="char"/>
         </form>`,
     });
-    expect(`.o_field_widget[name='trululu'] input`).toHaveAttribute(
+    expect(`.w_field_widget[name='trululu'] input`).toHaveAttribute(
         "placeholder",
         "My Placeholder"
     );
@@ -341,11 +341,11 @@ test("SelectionField in kanban view", async () => {
         domain: [["id", "=", 1]],
     });
 
-    await contains(".o_field_widget[name='color'] input").click();
-    expect(".o_select_menu_item").toHaveCount(2, {
+    await contains(".w_field_widget[name='color'] input").click();
+    expect(".w_select_menu_item").toHaveCount(2, {
         message: "Two options are displayed",
     });
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["Red", "Black"]);
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["Red", "Black"]);
 });
 
 test("SelectionField - auto save record in kanban view", async () => {
@@ -363,7 +363,7 @@ test("SelectionField - auto save record in kanban view", async () => {
                 </kanban>`,
         domain: [["id", "=", 1]],
     });
-    await editSelectMenu(".o_field_widget[name='color'] input", { value: "Black" });
+    await editSelectMenu(".w_field_widget[name='color'] input", { value: "Black" });
     expect.verifySteps(["web_save"]);
 });
 
@@ -385,7 +385,7 @@ test("SelectionField don't open form view on click in kanban view", async functi
         },
     });
 
-    await contains(".o_field_widget[name='color'] input").click();
+    await contains(".w_field_widget[name='color'] input").click();
     expect.verifySteps([]);
 });
 
@@ -415,7 +415,7 @@ test("SelectionField is disabled if field readonly", async () => {
         domain: [["id", "=", 1]],
     });
 
-    expect(".o_field_widget[name='color'] span").toHaveCount(1, {
+    expect(".w_field_widget[name='color'] span").toHaveCount(1, {
         message: "field should be readonly",
     });
 });
@@ -436,7 +436,7 @@ test("SelectionField is disabled with a readonly attribute", async () => {
         domain: [["id", "=", 1]],
     });
 
-    expect(".o_field_widget[name='color'] span").toHaveCount(1, {
+    expect(".w_field_widget[name='color'] span").toHaveCount(1, {
         message: "field should be readonly",
     });
 });
@@ -457,8 +457,8 @@ test("SelectionField search is disabled in BottomSheet", async function (assert)
         domain: [["id", "=", 1]],
     });
 
-    await contains(".o_field_widget[name='color'] input").click();
-    expect(".o_bottom_sheet input").toHaveCount(0);
+    await contains(".w_field_widget[name='color'] input").click();
+    expect(".w_bottom_sheet input").toHaveCount(0);
 });
 
 test("SelectionField fallback to value when option not found", async () => {
@@ -485,7 +485,7 @@ test("SelectionField fallback to value when option not found", async () => {
     });
 
     // Should display the raw value "unknown_value" instead of crashing
-    expect(".o_field_widget[name='color'] input").toHaveValue("unknown_value", {
+    expect(".w_field_widget[name='color'] input").toHaveValue("unknown_value", {
         message: "should fallback to raw value when option not found",
     });
 });
@@ -513,7 +513,7 @@ test("SelectionField fallback to value in readonly mode", async () => {
     });
 
     // In readonly mode, should display the raw value as text
-    expect(".o_field_widget[name='color']").toHaveText("deprecated_option", {
+    expect(".w_field_widget[name='color']").toHaveText("deprecated_option", {
         message: "should display raw value in readonly mode when option not found",
     });
 });
@@ -540,7 +540,7 @@ test("SelectionField fallback in list view", async () => {
     });
 
     // Check that unknown values fallback to raw value
-    expect(".o_data_row:eq(0) .o_data_cell").toHaveText("unknown_status", {
+    expect(".w_data_row:eq(0) .w_data_cell").toHaveText("unknown_status", {
         message: "unknown value should fallback to raw value in list view",
     });
 });
@@ -557,14 +557,14 @@ test("SelectionField hotkeys in form view", async () => {
             </form>`,
     });
 
-    await contains(".o_field_widget[name='product_id'] input").click();
-    expect(".o_field_widget[name='product_id'] input").toBeFocused();
-    expect(queryAllTexts(".o_select_menu_item")).toEqual(["xphone", "xpad"]);
+    await contains(".w_field_widget[name='product_id'] input").click();
+    expect(".w_field_widget[name='product_id'] input").toBeFocused();
+    expect(queryAllTexts(".w_select_menu_item")).toEqual(["xphone", "xpad"]);
 
     await press("Tab");
     await animationFrame();
-    expect(".o_field_widget[name='product_id'] input").toHaveValue("xphone");
-    expect(".o_field_widget[name='product_id'] input").toBeFocused();
+    expect(".w_field_widget[name='product_id'] input").toHaveValue("xphone");
+    expect(".w_field_widget[name='product_id'] input").toBeFocused();
 
     await press("ArrowDown");
     await animationFrame();
@@ -572,15 +572,15 @@ test("SelectionField hotkeys in form view", async () => {
     await animationFrame();
     await press("Shift+Tab");
     await animationFrame();
-    expect(".o_field_widget[name='product_id'] input").toHaveValue("xpad");
-    expect(".o_field_widget[name='product_id'] input").toBeFocused();
+    expect(".w_field_widget[name='product_id'] input").toHaveValue("xpad");
+    expect(".w_field_widget[name='product_id'] input").toBeFocused();
 
     await press("ArrowUp");
     await animationFrame();
     await press("Enter");
     await animationFrame();
-    expect(".o_field_widget[name='product_id'] input").toHaveValue("xphone");
-    expect(".o_field_widget[name='product_id'] input").toBeFocused();
+    expect(".w_field_widget[name='product_id'] input").toHaveValue("xphone");
+    expect(".w_field_widget[name='product_id'] input").toBeFocused();
 });
 
 test.tags("desktop");
@@ -594,8 +594,8 @@ test("required SelectionField value is not cleared when input is emptied and blu
         arch: /* xml */ `<form><field name="color" required="1" /></form>`,
     });
 
-    await contains(".o_field_widget[name='color'] input").edit("", { confirm: "blur" });
+    await contains(".w_field_widget[name='color'] input").edit("", { confirm: "blur" });
     await animationFrame();
 
-    expect(".o_field_widget[name='color'] input").toHaveValue("Red");
+    expect(".w_field_widget[name='color'] input").toHaveValue("Red");
 });

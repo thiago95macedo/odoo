@@ -9,10 +9,10 @@ defineSpreadsheetModels();
 
 const { CellComposerStore } = stores;
 
-test("ODOO.ACCOUNT.GROUP type", async function () {
+test("WETH.ACCOUNT.GROUP type", async function () {
     const { store: composer } = await makeStore(CellComposerStore);
 
-    composer.startEdition("=ODOO.ACCOUNT.GROUP(");
+    composer.startEdition("=WETH.ACCOUNT.GROUP(");
     await animationFrame();
     const proposals = composer.autoCompleteProposals;
     expect(proposals.map((p) => p.text)).toEqual([
@@ -38,6 +38,6 @@ test("ODOO.ACCOUNT.GROUP type", async function () {
     ]);
     composer.insertAutoCompleteValue(proposals[0]);
     await animationFrame();
-    expect(composer.currentContent).toBe('=ODOO.ACCOUNT.GROUP("asset_receivable"');
+    expect(composer.currentContent).toBe('=WETH.ACCOUNT.GROUP("asset_receivable"');
     expect(composer.isAutoCompleteDisplayed).toBe(false);
 });

@@ -1,7 +1,7 @@
 import { Model } from "@weth/o-spreadsheet";
 
 /**
- * An o-spreadsheet model with all custom Odoo plugins
- * @type {import("@spreadsheet").OdooSpreadsheetModelConstructor}
+ * An o-spreadsheet model with all custom WETH plugins
+ * @type {import("@spreadsheet").WethSpreadsheetModelConstructor}
  **/
-export const OdooSpreadsheetModel = Model;
+export const WethSpreadsheetModel = Model;

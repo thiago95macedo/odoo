@@ -377,7 +377,7 @@ class TestAttachmentController(MailControllerAttachmentCommon):
             <span class="testStripClass" style="color: red;">Test</span>
             <script>console.log('xssScriptTest')</script>
             <b onclick="console.log('xssEventTest')">Malicious</b>
-            [Odoo](https://weth.com.br) and [ref][1] and <https://auto.test>
+            [Weth](https://weth.com.br) and [ref][1] and <https://auto.test>
             [1]: https://ref.test
             ```py
             def test():
@@ -405,7 +405,7 @@ class TestAttachmentController(MailControllerAttachmentCommon):
                 self.assertIn("&lt;b onclick=", res.text)
                 self.assertNotIn("<script", res.text, "no script tag is ever parsed")
                 self.assertNotIn("<a", res.text)
-                self.assertIn("Odoo (https://weth.com.br)", res.text)
+                self.assertIn("WETH (https://weth.com.br)", res.text)
                 self.assertIn("ref (https://ref.test)", res.text)
                 self.assertIn("https://auto.test (https://auto.test)", res.text)
                 if head:

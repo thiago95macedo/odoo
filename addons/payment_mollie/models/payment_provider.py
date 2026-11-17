@@ -68,7 +68,7 @@ class PaymentProvider(models.Model):
             "Authorization": f"Bearer {self.mollie_api_key}",
             "Content-Type": "application/json",
             # See https://docs.mollie.com/integration-partners/user-agent-strings
-            "User-Agent": f"Odoo/{release.version} MollieNativeOdoo/{module_version}",
+            "User-Agent": f"Weth/{release.version} MollieNativeWeth/{module_version}",
         }
 
     def _parse_response_error(self, response):

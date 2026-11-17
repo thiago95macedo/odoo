@@ -439,7 +439,7 @@ export function useNavigation(containerRef, options = {}) {
 
     const newOptions = { ...options };
     if (!newOptions.getItems) {
-        newOptions.getItems = () => getContainerEl()?.querySelectorAll(":scope .o-navigable") ?? [];
+        newOptions.getItems = () => getContainerEl()?.querySelectorAll(":scope .w-navigable") ?? [];
     }
 
     const hotkeyService = useService("hotkey");

@@ -9,7 +9,7 @@ class MicrosoftCalendarAccountReset(models.TransientModel):
 
     user_id = fields.Many2one('res.users', required=True)
     delete_events = fields.Boolean(
-        string="Delete synced events from Odoo",
+        string="Delete synced events from Weth",
         help="This will only affect events for which the user is the owner")
 
     def reset_account(self):
@@ -19,7 +19,7 @@ class MicrosoftCalendarAccountReset(models.TransientModel):
                 ('ms_universal_event_id', '!=', False)])
 
             # Clear microsoft_id first. unlink() deletes any still-linked event from the
-            # remote Outlook calendar. Detaching first lets us delete from Odoo only.
+            # remote Outlook calendar. Detaching first lets us delete from WETH only.
             events.with_context(dont_notify=True).microsoft_id = False
             events.unlink()
 

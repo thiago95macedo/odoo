@@ -29,8 +29,8 @@ test("Do not ask feedback if empty", async () => {
     await startServer();
     await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
     await click("[title*='Close Chat Window']");
 });
 
@@ -43,16 +43,16 @@ test("Close without feedback", async () => {
         }
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Thread:not([data-transient])");
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
+    await click(".w-livechat-CloseConfirmation-leave");
     await click("button", { text: "Close" });
-    await contains(".o-livechat-LivechatButton");
+    await contains(".w-livechat-LivechatButton");
     await expect.waitForSteps(["/im_livechat/visitor_leave_session"]);
 });
 
@@ -61,12 +61,12 @@ test("Last operator leaving ends the livechat", async () => {
     await loadDefaultEmbedConfig();
     const operatorUserId = serverState.userId;
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Message-content", { text: "Hello World!" });
+    await contains(".w-mail-Message-content", { text: "Hello World!" });
     // simulate operator leaving
     await withUser(operatorUserId, () =>
         getService("orm").call("discuss.channel", "action_unfollow", [
@@ -74,7 +74,7 @@ test("Last operator leaving ends the livechat", async () => {
         ])
     );
     await contains("span", { text: "This live chat conversation has ended." });
-    await contains(".o-mail-Composer-input", { count: 0 });
+    await contains(".w-mail-Composer-input", { count: 0 });
     await click("[title*='Close Chat Window']");
     await contains("p", { text: "Did we correctly answer your question?" }); // shows immediately feedback
 });
@@ -93,14 +93,14 @@ test("Feedback with rating and comment", async () => {
         }
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow");
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Thread:not([data-transient])");
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
+    await click(".w-livechat-CloseConfirmation-leave");
     await expect.waitForSteps(["/im_livechat/visitor_leave_session"]);
     await click(`img[alt="${RATING.OK}"]`);
     await insertText("textarea[placeholder='Explain your note']", "Good job!");
@@ -113,30 +113,30 @@ test("Closing folded chat window should open it with feedback", async () => {
     await startServer();
     await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Thread:not([data-transient])");
     await click("[title='Fold']");
-    await click(".o-mail-ChatBubble");
+    await click(".w-mail-ChatBubble");
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
-    await contains(".o-mail-ChatWindow p", { text: "Did we correctly answer your question?" });
+    await click(".w-livechat-CloseConfirmation-leave");
+    await contains(".w-mail-ChatWindow p", { text: "Did we correctly answer your question?" });
 });
 
 test("Start new session from feedback panel", async () => {
     const pyEnv = await startServer();
     const channelId = await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
-    await contains(".o-mail-ChatWindow", { text: "Mitchell Admin" });
+    await click(".w-livechat-LivechatButton");
+    await contains(".w-mail-ChatWindow", { text: "Mitchell Admin" });
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Thread:not([data-transient])");
+    await contains(".w-mail-Thread:not([data-transient])");
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
+    await click(".w-livechat-CloseConfirmation-leave");
     pyEnv["im_livechat.channel"].write([channelId], {
         user_ids: [Command.clear(serverState.userId)],
     });
@@ -149,8 +149,8 @@ test("Start new session from feedback panel", async () => {
     });
 
     await click("button", { text: "New Session" });
-    await contains(".o-mail-ChatWindow", { count: 1 });
-    await contains(".o-mail-ChatWindow", { text: "Bob Operator" });
+    await contains(".w-mail-ChatWindow", { count: 1 });
+    await contains(".w-mail-ChatWindow", { text: "Bob Operator" });
 });
 
 test("open review link on good rating", async () => {
@@ -164,13 +164,13 @@ test("open review link on good rating", async () => {
     await startServer();
     await loadDefaultEmbedConfig();
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await click(".o-livechat-LivechatButton");
+    await click(".w-livechat-LivechatButton");
     const subscribed = waitUntilSubscribe();
     await postLivechatMessage("Hello World!");
     await subscribed;
-    await contains(".o-mail-Message-content", { text: "Hello World!" });
+    await contains(".w-mail-Message-content", { text: "Hello World!" });
     await click("[title*='Close Chat Window']");
-    await click(".o-livechat-CloseConfirmation-leave");
+    await click(".w-livechat-CloseConfirmation-leave");
     await click(`img[alt="${RATING.GOOD}"]`);
     await insertText("textarea[placeholder='Explain your note']", "Good job!");
     await click("button:contains(Send):enabled");

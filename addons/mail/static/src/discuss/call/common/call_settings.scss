@@ -1,25 +1,22 @@
-.o-Discuss-CallSettings-thresholdInput {
+.w-Discuss-CallSettings-thresholdInput {
     &::-moz-range-track {
-        background: linear-gradient(
-            to right,
-            $o-success 0%,
-            $o-success var(--volume),
-            $form-range-track-bg var(--volume),
-            $form-range-track-bg 100%
-        );
+        background: linear-gradient(to right,
+                $w-success 0%,
+                $w-success var(--volume),
+                $form-range-track-bg var(--volume),
+                $form-range-track-bg 100%);
     }
+
     &::-webkit-slider-runnable-track {
-        background: linear-gradient(
-            to right,
-            $o-success 0%,
-            $o-success var(--volume),
-            $form-range-track-bg var(--volume),
-            $form-range-track-bg 100%
-        );
+        background: linear-gradient(to right,
+                $w-success 0%,
+                $w-success var(--volume),
+                $form-range-track-bg var(--volume),
+                $form-range-track-bg 100%);
     }
 }
 
-.o-discuss-CallSettings .o-mail-TabHeader {
+.w-discuss-CallSettings .w-mail-TabHeader {
     flex-grow: 1;
     justify-content: center;
 }

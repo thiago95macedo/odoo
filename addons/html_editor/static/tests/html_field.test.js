@@ -61,7 +61,7 @@ import {
     ensureDistinctHistoryCommit,
     insertText,
     pasteHtml,
-    pasteOdooEditorHtml,
+    pasteWethEditorHtml,
     pasteText,
     undo,
 } from "./_helpers/user_actions";
@@ -164,7 +164,7 @@ beforeEach(() => {
 });
 
 function setSelectionInHtmlField(selector = "p", fieldName = "txt") {
-    const anchorNode = queryOne(`[name='${fieldName}'] .odoo-editor-editable ${selector}`);
+    const anchorNode = queryOne(`[name='${fieldName}'] .weth-editor-editable ${selector}`);
     setSelection({ anchorNode, anchorOffset: 0 });
     return anchorNode;
 }
@@ -180,17 +180,17 @@ test("html field in readonly", async () => {
                 <field name="txt" widget="html" readonly="1"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML("<p>first</p>");
 
     await contains(`.o_pager_next`).click();
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML("<p>second</p>");
 
     await contains(`.o_pager_previous`).click();
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML("<p>first</p>");
 });
@@ -207,12 +207,12 @@ test("html field in readonly updated by onchange", async () => {
                 <field name="txt" widget="html" readonly="1"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML("<p>first</p>");
 
     await contains(`.o_field_widget[name=name] input`).edit("hello");
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML("<p>hello</p>");
 });
@@ -261,7 +261,7 @@ test("html field in readonly with embedded components", async () => {
                 <field name="txt" widget="html" readonly="1" options="{'embedded_components': True}"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML(
         `<div><span data-embedded="counter" data-embedded-props='{"name":"name"}'><span class="counter">name:0</span></div>`
@@ -320,7 +320,7 @@ test("html field in readonly with embedded components and editable descendants",
                 <field name="txt" widget="html" readonly="1" options="{'embedded_components': True}"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML(
         `<div data-embedded="wrapper"><div class="editable"><div data-embedded-editable="editable"><span data-embedded="counter"><span class="counter">Counter:0</span></span></div></div></div>`
@@ -405,7 +405,7 @@ test("XML-like self-closing elements are fixed in readonly mode", async () => {
                 <field name="txt" widget="html" readonly="1"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveInnerHTML(
         `<a href="#" target="_blank" rel="noreferrer"></a>outside<a href="#" target="_blank" rel="noreferrer">inside</a>`
@@ -429,9 +429,9 @@ test("XML-like self-closing elements are fixed in editable mode", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(1);
+    expect(".weth-editor-editable").toHaveCount(1);
     expect(`[name="txt"] .o_readonly`).toHaveCount(0);
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         `<div class="o-paragraph">outside<a href="#">inside</a></div>`
     );
 });
@@ -454,18 +454,18 @@ test("edit and save a html field", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_save`).not.toBeVisible();
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "test");
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(".o_form_button_save").toBeVisible();
 
     await contains(".o_form_button_save").click();
     expect.verifySteps(["web_save"]);
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(`.o_form_button_save`).not.toBeVisible();
 });
 
@@ -495,8 +495,8 @@ test("edit and save a html field containing JSON as some attribute values should
     const value = JSON.stringify({
         myString: "myString",
     });
-    pasteOdooEditorHtml(htmlEditor, `<div data-value=${value}><p>content</p></div>`);
-    const txtField = queryOne('.o_field_html[name="txt"] .odoo-editor-editable');
+    pasteWethEditorHtml(htmlEditor, `<div data-value=${value}><p>content</p></div>`);
+    const txtField = queryOne('.o_field_html[name="txt"] .weth-editor-editable');
     expect(txtField).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
         `<div data-value="{&quot;myString&quot;:&quot;myString&quot;}"><p>content</p></div><p>first</p>`
@@ -518,13 +518,13 @@ test("edit a html field in new form view dialog and close the dialog with 'escap
             </form>`,
     });
     expect(".modal").toHaveCount(1);
-    expect(".odoo-editor-editable div.o-paragraph").toHaveText("");
+    expect(".weth-editor-editable div.w-paragraph").toHaveText("");
 
-    await contains("[name='txt'] .odoo-editor-editable").focus();
-    setSelectionInHtmlField("div.o-paragraph");
+    await contains("[name='txt'] .weth-editor-editable").focus();
+    setSelectionInHtmlField("div.w-paragraph");
     await insertText(htmlEditor, "test");
     await animationFrame();
-    expect(".odoo-editor-editable div.o-paragraph").toHaveText("test");
+    expect(".weth-editor-editable div.w-paragraph").toHaveText("test");
     expect(".o_form_button_save").toBeVisible();
 
     await press("escape");
@@ -551,11 +551,11 @@ test("onchange update html field in edition", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
 
     await contains(`.o_field_widget[name=name] input`).edit("hello");
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("hello");
+    expect(".weth-editor-editable p").toHaveText("hello");
 });
 
 test("create new record and load it correctly", async () => {
@@ -610,18 +610,18 @@ test("create new record and load it correctly", async () => {
             </form>`,
     });
 
-    expect(".odoo-editor-editable").toHaveCount(1);
-    expect(".odoo-editor-editable").toHaveInnerHTML("<p>2</p>");
+    expect(".weth-editor-editable").toHaveCount(1);
+    expect(".weth-editor-editable").toHaveInnerHTML("<p>2</p>");
     await contains(".o_input#linked_composer_id_0").click();
     await animationFrame();
     await contains(".ui-menu-item:contains(first), .o_kanban_record:contains(first)").click();
     await animationFrame();
-    expect(".odoo-editor-editable").toHaveInnerHTML("<p>1</p>");
+    expect(".weth-editor-editable").toHaveInnerHTML("<p>1</p>");
     await contains(".o_input#linked_composer_id_0").click();
     await animationFrame();
     await contains(".ui-menu-item:contains(second), .o_kanban_record:contains(second)").click();
     await animationFrame();
-    expect(".odoo-editor-editable").toHaveInnerHTML("<p>2</p>");
+    expect(".weth-editor-editable").toHaveInnerHTML("<p>2</p>");
 });
 
 test("edit a html field with `o-contenteditable-true` or `o-contenteditable-false` in its content should not reset the editable value when saving", async () => {
@@ -668,14 +668,14 @@ test("edit a html field with `o-contenteditable-true` or `o-contenteditable-fals
             </form>`,
     });
     expect.verifySteps(["setup_wysiwyg"]);
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
         getTxtValue("inside", true) +
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
     );
     setSelectionInHtmlField();
-    pasteOdooEditorHtml(htmlEditor, "addon");
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    pasteWethEditorHtml(htmlEditor, "addon");
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
         getTxtValue("addoninside", true) +
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
@@ -737,12 +737,12 @@ test("edit html field and blur multiple time should apply 1 onchange", async () 
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "Hello ");
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
 
     await contains("[name='name'] input").click();
     expect.verifySteps(["onchange: <p>Hello first</p>"]);
 
-    await contains("[name='txt'] .odoo-editor-editable").focus();
+    await contains("[name='txt'] .weth-editor-editable").focus();
     await contains("[name='name'] input").click();
     def.resolve();
     await animationFrame();
@@ -774,18 +774,18 @@ test("edit an html field during an onchange", async () => {
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "Hello ");
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
 
     await contains(".o_form_view").click();
     expect.verifySteps(["onchange: <p>Hello first</p>"]);
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "Yop ");
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Yop Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Yop Hello first </p>");
 
     def.resolve();
     await animationFrame();
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Yop Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Yop Hello first </p>");
 });
 
 test("click on next/previous page", async () => {
@@ -799,13 +799,13 @@ test("click on next/previous page", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p:contains(first)").toHaveCount(1);
+    expect(".weth-editor-editable p:contains(first)").toHaveCount(1);
 
     await contains(`.o_pager_next`).click();
-    expect(".odoo-editor-editable p:contains(second)").toHaveCount(1);
+    expect(".weth-editor-editable p:contains(second)").toHaveCount(1);
 
     await contains(`.o_pager_previous`).click();
-    expect(".odoo-editor-editable p:contains(first)").toHaveCount(1);
+    expect(".weth-editor-editable p:contains(first)").toHaveCount(1);
 });
 
 test("edit and switch page", async () => {
@@ -825,23 +825,23 @@ test("edit and switch page", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_save`).not.toBeVisible();
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "test");
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(`.o_form_button_save`).toBeVisible();
 
     await contains(`.o_pager_next`).click();
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("second");
+    expect(".weth-editor-editable p").toHaveText("second");
     expect(`.o_form_button_save`).not.toBeVisible();
     expect.verifySteps(["web_save"]);
 
     await contains(`.o_pager_previous`).click();
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(`.o_form_button_save`).not.toBeVisible();
 });
 
@@ -856,20 +856,20 @@ test("discard changes in html field in form", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_save`).not.toBeVisible();
 
     // move the hoot focus in the editor
-    await click(".odoo-editor-editable");
+    await click(".weth-editor-editable");
     setSelectionInHtmlField();
     await insertText(htmlEditor, "test");
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(`.o_form_button_cancel`).toBeVisible();
 
     await contains(`.o_form_button_cancel`).click();
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_cancel`).not.toBeVisible();
 });
 
@@ -884,30 +884,30 @@ test("undo after discard html field changes in form", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_save`).not.toBeVisible();
 
     // move the hoot focus in the editor
-    await click(".odoo-editor-editable");
+    await click(".weth-editor-editable");
     setSelectionInHtmlField();
     await insertText(htmlEditor, "tes");
     await ensureDistinctHistoryCommit();
     await insertText(htmlEditor, "t");
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("testfirst");
+    expect(".weth-editor-editable p").toHaveText("testfirst");
     expect(`.o_form_button_cancel`).toBeVisible();
 
     await press(["ctrl", "z"]);
-    expect(".odoo-editor-editable p").toHaveText("tesfirst");
+    expect(".weth-editor-editable p").toHaveText("tesfirst");
     expect(`.o_form_button_cancel`).toBeVisible();
 
     await contains(`.o_form_button_cancel`).click();
     await animationFrame();
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_cancel`).not.toBeVisible();
 
     await press(["ctrl", "z"]);
-    expect(".odoo-editor-editable p").toHaveText("first");
+    expect(".weth-editor-editable p").toHaveText("first");
     expect(`.o_form_button_cancel`).not.toBeVisible();
 });
 
@@ -938,16 +938,16 @@ test("A new MediaDialog after switching record in a Form view should have the co
                     <field name="txt" widget="html"/>
                 </form>`,
     });
-    expect(".odoo-editor-editable p:contains(first)").toHaveCount(1);
+    expect(".weth-editor-editable p:contains(first)").toHaveCount(1);
 
     await contains(`.o_pager_next`).click();
-    expect(".odoo-editor-editable p:contains(second)").toHaveCount(1);
+    expect(".weth-editor-editable p:contains(second)").toHaveCount(1);
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/Media");
     await animationFrame();
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(".active .o-we-command-name").toHaveText("Media");
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(".active .w-we-command-name").toHaveText("Media");
 
     await press("Enter");
     await animationFrame();
@@ -979,16 +979,16 @@ test("Embed video by pasting video URL", async () => {
     pasteText(htmlEditor, videoURL);
     await animationFrame();
     expect(anchorNode.outerHTML).toBe(`<p>${videoURL}</p>`);
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(queryAllTexts(".o-we-command-name")).toEqual(["Embed YouTube Video", "Paste as URL"]);
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")).toEqual(["Embed YouTube Video", "Paste as URL"]);
 
     // Press Enter to select first option in the powerbox ("Embed Youtube Video").
     await press("Enter");
     // Insertion triggers `selectionchange` and `commit` creates a selection
     // placeholder. `fixSelectionInsideEditableRoot` moves the selection into it
     // and triggers another `selectionchange` that removes the selection
-    // placeholder. So we must wait for the `.o-we-hint`.
-    await waitFor(".o-we-hint");
+    // placeholder. So we must wait for the `.w-we-hint`.
+    await waitFor(".w-we-hint");
     await animationFrame();
     const videoIframe = queryOne("div[data-embedded='video']");
     expect(videoIframe.nextElementSibling).toHaveOuterHTML(
@@ -1017,7 +1017,7 @@ test("Embedded video shouldn't have the 'media_iframe_video' class", async () =>
 
     // Open the video tab of the media dialog
     await insertText(htmlEditor, "/video");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await press("Enter");
     await waitFor(".o_select_media_dialog");
     expect(".o_select_media_dialog .nav-link:contains('Videos')").toHaveClass("active");
@@ -1048,7 +1048,7 @@ test("isDirty should be false when the content is being transformed by the edito
             </form>`,
     });
 
-    expect(`[name='txt'] .odoo-editor-editable`).toHaveInnerHTML("<p><b>abc</b></p>", {
+    expect(`[name='txt'] .weth-editor-editable`).toHaveInnerHTML("<p><b>abc</b></p>", {
         message: "value should be sanitized by the editor",
     });
     expect(`.o_form_button_save`).not.toBeVisible();
@@ -1127,46 +1127,46 @@ test("link preview in Link Popover", async () => {
     await animationFrame();
     // Click on the edit link icon
     await contains("a.o_we_edit_link").click();
-    expect(".o-we-linkpopover input.o_we_label_link").toHaveValue("This website", {
+    expect(".w-we-linkpopover input.o_we_label_link").toHaveValue("This website", {
         message: "The label input field should match the link's content",
     });
 
-    await contains(".o-we-linkpopover input.o_we_label_link").edit("Bad new label");
-    expect(".o-we-linkpopover input.o_we_label_link").toHaveValue("Bad new label", {
+    await contains(".w-we-linkpopover input.o_we_label_link").edit("Bad new label");
+    expect(".w-we-linkpopover input.o_we_label_link").toHaveValue("Bad new label", {
         message: "The label input field should match the link's content",
     });
     // Click on Discard button to undo changes.
-    await contains(".o-we-linkpopover .o_we_discard_link").click();
+    await contains(".w-we-linkpopover .o_we_discard_link").click();
     await waitFor("a.o_we_edit_link");
     expect(".test_target a").toHaveText("This website");
 
     // Click on the edit link icon
     await contains("a.o_we_edit_link").click();
-    expect(".o-we-linkpopover input.o_we_label_link").toHaveValue("This website", {
+    expect(".w-we-linkpopover input.o_we_label_link").toHaveValue("This website", {
         message: "The label input field should match the link's content",
     });
 
     // Open the popover option to edit the link
-    await contains(".o-we-linkpopover input.o_we_label_link").edit("New label");
+    await contains(".w-we-linkpopover input.o_we_label_link").edit("New label");
 
     // Click "Save".
-    await contains(".o-we-linkpopover .o_we_apply_link").click();
+    await contains(".w-we-linkpopover .o_we_apply_link").click();
     expect(".test_target a").toHaveText("New label", {
         message: "The link's label should be updated",
     });
 
     // Click on the edit link icon
     await contains("a.o_we_edit_link").click();
-    expect(".o-we-linkpopover input.o_we_label_link").toHaveValue("New label", {
+    expect(".w-we-linkpopover input.o_we_label_link").toHaveValue("New label", {
         message: "The label input field should match the link's content",
     });
 
     // Open the popover option to edit the link
-    await contains(".o-we-linkpopover input.o_we_label_link").edit("Final label");
+    await contains(".w-we-linkpopover input.o_we_label_link").edit("Final label");
 
     // Move selection outside for auto-save.
     setSelectionInHtmlField(".test_target");
-    await expectElementCount(".o-we-linkpopover", 0);
+    await expectElementCount(".w-we-linkpopover", 0);
     expect(".test_target a").toHaveText("Final label", {
         message: "The link's label should be updated",
     });
@@ -1189,14 +1189,14 @@ test("html field with a placeholder", async () => {
             </form>`,
     });
 
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph o-we-hint" o-we-hint-text="test"><br></div>',
         { type: "html" }
     );
 
-    setSelectionInHtmlField("div.o-paragraph");
+    setSelectionInHtmlField("div.w-paragraph");
     await tick();
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph o-we-hint" o-we-hint-text="Type &quot;/&quot; for commands"><br></div>',
         { type: "html" }
     );
@@ -1204,7 +1204,7 @@ test("html field with a placeholder", async () => {
     moveSelectionOutsideEditor();
     htmlEditor.editable.blur();
     await tick();
-    expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
+    expect(`[name="txt"] .weth-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph o-we-hint" o-we-hint-text="test"><br></div>',
         { type: "html" }
     );
@@ -1225,8 +1225,8 @@ test("should display overlay on video hover and handle video replacement and rem
 
     // Insert video
     await insertText(htmlEditor, "/video");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await contains(".modal-body .nav-link:contains('Videos')").click();
@@ -1248,9 +1248,9 @@ test("should display overlay on video hover and handle video replacement and rem
 
     // Click on overlay and choose Replace
     await click(".video-overlay button");
-    await waitFor(".o-dropdown-item");
-    expect(queryAllTexts(".o-dropdown-item")[0]).toBe("Replace");
-    await click(".o-dropdown-item [data-icon='swap_horiz']");
+    await waitFor(".w-dropdown-item");
+    expect(queryAllTexts(".w-dropdown-item")[0]).toBe("Replace");
+    await click(".w-dropdown-item [data-icon='swap_horiz']");
     await waitFor("textarea[id='o_video_text']");
 
     // Replace video
@@ -1275,9 +1275,9 @@ test("should display overlay on video hover and handle video replacement and rem
     await hover(queryOne("div[data-embedded='video']"));
     await expectElementCount(".video-overlay", 1);
     await click(".video-overlay button");
-    await waitFor(".o-dropdown-item");
-    expect(queryAllTexts(".o-dropdown-item")[1]).toBe("Remove");
-    await click(".o-dropdown-item [data-icon='delete'].oi-filled");
+    await waitFor(".w-dropdown-item");
+    expect(queryAllTexts(".w-dropdown-item")[1]).toBe("Remove");
+    await click(".w-dropdown-item [data-icon='delete'].oi-filled");
     await expectElementCount('div[data-embedded="video"]', 0);
 });
 
@@ -1298,7 +1298,7 @@ test("should preserve vertical video setting when reopening media dialog", async
 
     // Open the video tab of the media dialog
     await insertText(htmlEditor, "/video");
-    await waitFor(".o-we-powerbox");
+    await waitFor(".w-we-powerbox");
     await press("Enter");
     await waitFor(".o_select_media_dialog");
     expect(".o_select_media_dialog .nav-link:contains('Videos')").toHaveClass("active");
@@ -1329,9 +1329,9 @@ test("should preserve vertical video setting when reopening media dialog", async
 
     // Click on overlay and choose Replace
     await click(".video-overlay button");
-    await waitFor(".o-dropdown-item");
-    expect(queryAllTexts(".o-dropdown-item")[0]).toBe("Replace");
-    await click(".o-dropdown-item [data-icon='swap_horiz']");
+    await waitFor(".w-dropdown-item");
+    expect(queryAllTexts(".w-dropdown-item")[0]).toBe("Replace");
+    await click(".w-dropdown-item [data-icon='swap_horiz']");
 
     // Ensure the vertical setting is still active
     await waitFor(".o_video_dialog_form .o_video_dialog_options label:contains(Vertical) input");
@@ -1352,8 +1352,8 @@ test("MediaDialog contains 'Videos' tab by default in html field", async () => {
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await animationFrame();
@@ -1378,8 +1378,8 @@ test("MediaDialog does not contain 'Videos' tab in html field when 'allowVideo' 
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await animationFrame();
@@ -1410,8 +1410,8 @@ test("MediaDialog does not contain 'Videos' tab when sanitize = true and embedde
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await animationFrame();
@@ -1442,8 +1442,8 @@ test("MediaDialog contains 'Videos' tab when sanitize_tags = true and 'allowVide
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await animationFrame();
@@ -1467,8 +1467,8 @@ test("'Media' command is available by default", async () => {
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 });
 
 test("'Media' command is not available when 'allowImage' = false", async () => {
@@ -1484,7 +1484,7 @@ test("'Media' command is not available when 'allowImage' = false", async () => {
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
     await animationFrame();
-    expect(queryAllTexts(".o-we-command-name")).not.toInclude("Media");
+    expect(queryAllTexts(".w-we-command-name")).not.toInclude("Media");
 });
 
 test("MediaDialog does not contain 'Documents' tab in html field when 'allowMediaDocuments' = false", async () => {
@@ -1500,8 +1500,8 @@ test("MediaDialog does not contain 'Documents' tab in html field when 'allowMedi
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/media");
-    await expectElementCount(".o-we-powerbox", 1);
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Media");
+    await expectElementCount(".w-we-powerbox", 1);
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Media");
 
     await press("Enter");
     await expectElementCount(".o_select_media_dialog", 1);
@@ -1525,7 +1525,7 @@ test("'Upload a file' command is not available when 'allowFile' = false", async 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/file");
     await animationFrame();
-    expect(queryAllTexts(".o-we-command-name")).not.toInclude("Upload a file");
+    expect(queryAllTexts(".w-we-command-name")).not.toInclude("Upload a file");
 });
 
 test.tags("desktop");
@@ -1541,9 +1541,9 @@ test("'Table wrapper' is not available when 'allowScrollableTables' = false", as
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/table");
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
-    await expectElementCount(".o-we-tablepicker", 1);
+    await expectElementCount(".w-we-tablepicker", 1);
     await press("Enter");
     await expectElementCount("table", 1);
     await expectElementCount(".o_table_wrapper", 0);
@@ -1562,9 +1562,9 @@ test("'Table wrapper' is not available when 'allowScrollableTables' = false (mob
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/table");
-    await expectElementCount(".o-we-powerbox", 1);
+    await expectElementCount(".w-we-powerbox", 1);
     await press("Enter");
-    await expectElementCount(".o-we-tablesizepopover", 1);
+    await expectElementCount(".w-we-tablesizepopover", 1);
     await press("Enter");
     await expectElementCount("table", 1);
     await expectElementCount(".o_table_wrapper", 0);
@@ -1580,10 +1580,10 @@ test("codeview is not available by default", async () => {
                 <field name="txt" widget="html"/>
             </form>`,
     });
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
-    await waitFor(".o-we-toolbar");
-    expect(".o-we-toolbar button[name='codeview']").toHaveCount(0);
+    await waitFor(".w-we-toolbar");
+    expect(".w-we-toolbar button[name='codeview']").toHaveCount(0);
 });
 
 test("codeview is not available when not in debug mode", async () => {
@@ -1596,10 +1596,10 @@ test("codeview is not available when not in debug mode", async () => {
                 <field name="txt" widget="html" options="{'codeview': true}"/>
             </form>`,
     });
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
-    await waitFor(".o-we-toolbar");
-    expect(".o-we-toolbar button[name='codeview']").toHaveCount(0);
+    await waitFor(".w-we-toolbar");
+    expect(".w-we-toolbar button[name='codeview']").toHaveCount(0);
 });
 
 test("codeview is available when option is active and in debug mode", async () => {
@@ -1613,10 +1613,10 @@ test("codeview is available when option is active and in debug mode", async () =
                 <field name="txt" widget="html" options="{'codeview': true}"/>
             </form>`,
     });
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
     await expandToolbar();
-    expect(".o-we-toolbar button[name='codeview']").toHaveCount(1);
+    expect(".w-we-toolbar button[name='codeview']").toHaveCount(1);
 });
 
 test("enable/disable codeview with editor toolbar", async () => {
@@ -1631,20 +1631,20 @@ test("enable/disable codeview with editor toolbar", async () => {
                 <field name="txt" widget="html" options="{'codeview': true}"/>
             </form>`,
     });
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p> first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p> first </p>");
     expect("[name='txt'] textarea").toHaveCount(0);
 
     // Switch to code view
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
     await expandToolbar();
-    await contains(".o-we-toolbar button[name='codeview']").click();
-    expect("[name='txt'] .odoo-editor-editable").toHaveClass("d-none");
+    await contains(".w-we-toolbar button[name='codeview']").click();
+    expect("[name='txt'] .weth-editor-editable").toHaveClass("d-none");
     expect("[name='txt'] textarea").toHaveValue("<p>first</p>");
 
     // Switch to editor
     await contains(".o_codeview_btn").click();
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p> first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p> first </p>");
     expect("[name='txt'] textarea").toHaveCount(0);
 });
 
@@ -1670,13 +1670,13 @@ test("edit and enable/disable codeview with editor toolbar", async () => {
     await ensureDistinctHistoryCommit();
     await insertText(htmlEditor, " ");
     await ensureDistinctHistoryCommit();
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
 
     // Switch to code view
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
     await expandToolbar();
-    await contains(".o-we-toolbar button[name='codeview']").click();
+    await contains(".w-we-toolbar button[name='codeview']").click();
     expect("[name='txt'] textarea").toHaveValue("<p>Hello first</p>");
 
     await contains("[name='txt'] textarea").edit("<p>Yop</p>");
@@ -1684,13 +1684,13 @@ test("edit and enable/disable codeview with editor toolbar", async () => {
 
     // Switch to editor
     await contains(".o_codeview_btn").click();
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p> Yop </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p> Yop </p>");
 
     undo(htmlEditor);
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
 
     undo(htmlEditor);
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hellofirst </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hellofirst </p>");
 });
 
 test("edit and save a html field in collaborative should keep the same wysiwyg", async () => {
@@ -1725,7 +1725,7 @@ test("edit and save a html field in collaborative should keep the same wysiwyg",
 
     setSelectionInHtmlField();
     await insertText(htmlEditor, "Hello ");
-    expect("[name='txt'] .odoo-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
+    expect("[name='txt'] .weth-editor-editable").toHaveInnerHTML("<p>Hello first </p>");
     expect.verifySteps(["Setup Wysiwyg"]);
 
     await clickSave();
@@ -1766,8 +1766,8 @@ test("'checklist' command is not available when 'allowChecklist' = false", async
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "/chec");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")).not.toInclude("Checklist");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")).not.toInclude("Checklist");
 });
 
 test("'checklist' toolbar option is not available when 'allowChecklist' = false", async () => {
@@ -1780,12 +1780,12 @@ test("'checklist' toolbar option is not available when 'allowChecklist' = false"
                 <field name="txt" widget="html" options="{'allowChecklist': false}"/>
             </form>`,
     });
-    const node = queryOne(".odoo-editor-editable p");
+    const node = queryOne(".weth-editor-editable p");
     setSelection({ anchorNode: node, anchorOffset: 0, focusNode: node, focusOffset: 1 });
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
-    await contains(".o-we-toolbar button[name='list_selector']").click();
-    await waitFor(".o-we-toolbar-dropdown");
+    await contains(".w-we-toolbar button[name='list_selector']").click();
+    await waitFor(".w-we-toolbar-dropdown");
     expect("button[name='checklist']").toHaveCount(0);
 });
 
@@ -1807,7 +1807,7 @@ test("typing '[] ' does not create a checklist when 'allowChecklist' is false", 
     });
     setSelectionInHtmlField();
     await insertText(htmlEditor, "[] ");
-    expect(queryOne(".odoo-editor-editable")).toHaveInnerHTML("<p>[] </p>");
+    expect(queryOne(".weth-editor-editable")).toHaveInnerHTML("<p>[] </p>");
 });
 
 test("should not paste checklist when allowchecklist is false", async () => {
@@ -1827,18 +1827,18 @@ test("should not paste checklist when allowchecklist is false", async () => {
             </form>`,
     });
     setSelectionInHtmlField();
-    pasteOdooEditorHtml(
+    pasteWethEditorHtml(
         htmlEditor,
         `<ul class="o_checklist"><li><div class="o-paragraph">1</div><ul class="o_checklist"><li><div class="o-paragraph">2</div><ul class="o_checklist"><li>3</li></ul></li></ul></li></ul>`
     );
-    expect(queryOne(".odoo-editor-editable")).toHaveInnerHTML(
+    expect(queryOne(".weth-editor-editable")).toHaveInnerHTML(
         `<div class="o-paragraph">1</div><div class="o-paragraph">2</div><div class="o-paragraph">3</div>`
     );
     pasteHtml(
         htmlEditor,
         `<ul class="o_checklist"><li><div class="o-paragraph">1</div><ul class="o_checklist"><li><div class="o-paragraph">2</div><ul class="o_checklist"><li>3</li></ul></li></ul></li></ul>`
     );
-    expect(queryOne(".odoo-editor-editable")).toHaveInnerHTML(
+    expect(queryOne(".weth-editor-editable")).toHaveInnerHTML(
         `<div class="o-paragraph">1</div><div class="o-paragraph">2</div><div class="o-paragraph">31</div><div class="o-paragraph">2</div><div class="o-paragraph">3</div>`
     );
 });
@@ -2274,14 +2274,14 @@ describe("direction config", () => {
                 <field name="txt" widget="html"/>
             </form>`,
         });
-        expect(".odoo-editor-editable").toHaveAttribute("dir", "ltr");
-        const node = queryOne(".odoo-editor-editable p");
+        expect(".weth-editor-editable").toHaveAttribute("dir", "ltr");
+        const node = queryOne(".weth-editor-editable p");
         setSelection({ anchorNode: node.firstChild, anchorOffset: 0 });
         await insertText(htmlEditor, "/Switchdirection");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual(["Switch direction"]);
+        expect(queryAllTexts(".w-we-command-name")).toEqual(["Switch direction"]);
         await press("Enter");
-        expect(".odoo-editor-editable p").toHaveAttribute("dir", "rtl");
+        expect(".weth-editor-editable p").toHaveAttribute("dir", "rtl");
     });
 
     test("rtl direction", async () => {
@@ -2299,14 +2299,14 @@ describe("direction config", () => {
                 <field name="txt" widget="html"/>
             </form>`,
         });
-        expect(".odoo-editor-editable").toHaveAttribute("dir", "rtl");
-        const node = queryOne(".odoo-editor-editable p");
+        expect(".weth-editor-editable").toHaveAttribute("dir", "rtl");
+        const node = queryOne(".weth-editor-editable p");
         setSelection({ anchorNode: node.firstChild, anchorOffset: 0 });
         await insertText(htmlEditor, "/Switchdirection");
         await animationFrame();
-        expect(queryAllTexts(".o-we-command-name")).toEqual(["Switch direction"]);
+        expect(queryAllTexts(".w-we-command-name")).toEqual(["Switch direction"]);
         await press("Enter");
-        expect(".odoo-editor-editable p").toHaveAttribute("dir", "ltr");
+        expect(".weth-editor-editable p").toHaveAttribute("dir", "ltr");
     });
 });
 
@@ -2758,7 +2758,7 @@ describe("save image", () => {
         // Reswitch tab, and check the image was saved properly.
         await contains(".o_notebook_headers .nav-link:not(.active)[name='html']").click();
         await waitFor(".o_notebook_headers .nav-link.active[name='html']");
-        await waitFor(".odoo-editor-editable", { timeout: 1500 });
+        await waitFor(".weth-editor-editable", { timeout: 1500 });
         const savedImg = htmlEditor.editable.querySelector("img");
         expect(savedImg.getAttribute("src")).toBe("/test_image_url.png?access_token=1234");
         expect(savedImg).not.toHaveClass("o_b64_image_to_save");
@@ -2797,7 +2797,7 @@ describe("save image", () => {
         addData.resolve();
         await contains(".o_field_widget[name='hide'] input").uncheck();
         await expectElementCount(
-            ".odoo-editor-editable img[src='/test_image_url.png?access_token=1234']",
+            ".weth-editor-editable img[src='/test_image_url.png?access_token=1234']",
             1
         );
     });
@@ -2840,7 +2840,7 @@ describe("save image", () => {
         addData.resolve();
         await contains(".o_field_widget[name='hide'] input").uncheck();
         await expectElementCount(
-            ".odoo-editor-editable img[src='/test_image_url.png?access_token=1234']",
+            ".weth-editor-editable img[src='/test_image_url.png?access_token=1234']",
             1
         );
         await contains(".o_form_button_save").click();
@@ -2871,7 +2871,7 @@ describe("translatable", () => {
         expect(".o_field_html .btn.o_field_translate").not.toBeVisible();
 
         // Focus on the editable to make the translate button visible
-        await contains(".odoo-editor-editable").click();
+        await contains(".weth-editor-editable").click();
         expect(".o_field_html .btn.o_field_translate").toBeVisible();
 
         // Click away to remove focus
@@ -2891,11 +2891,11 @@ describe("codeview enabled", () => {
                     <field name="txt" widget="html" options="{'codeview': True}"/>
                 </form>`,
         });
-        const anchorNode = queryOne(`[name='txt'] .odoo-editor-editable p`);
+        const anchorNode = queryOne(`[name='txt'] .weth-editor-editable p`);
         setSelection({ anchorNode, anchorOffset: 0 });
         await insertText(htmlEditor, "/code");
-        await waitFor(".o-we-powerbox");
-        expect(queryAllTexts(".o-we-command-name")).toInclude("Code");
+        await waitFor(".w-we-powerbox");
+        expect(queryAllTexts(".w-we-command-name")).toInclude("Code");
     });
 
     test("Video tab in media dialog should be available when codeview enabled", async () => {
@@ -2908,11 +2908,11 @@ describe("codeview enabled", () => {
                     <field name="txt" widget="html" options="{'codeview': True}"/>
                 </form>`,
         });
-        const anchorNode = queryOne(`[name='txt'] .odoo-editor-editable p`);
+        const anchorNode = queryOne(`[name='txt'] .weth-editor-editable p`);
         setSelection({ anchorNode, anchorOffset: 0 });
         await insertText(htmlEditor, "/video");
-        await waitFor(".o-we-powerbox");
-        await click(".o-we-powerbox .o-we-command-name:contains('Media')");
+        await waitFor(".w-we-powerbox");
+        await click(".w-we-powerbox .w-we-command-name:contains('Media')");
         await waitFor(".o_select_media_dialog");
         expect(".o_select_media_dialog .nav-link:contains('Videos')").toHaveCount(1);
     });
@@ -2936,8 +2936,8 @@ test("should always have a block before a Table of Contents", async () => {
     });
     setSelectionInHtmlField("h1");
     await insertText(htmlEditor, "/tableofcontents");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Table of Contents");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Table of Contents");
     await press("Enter");
     await animationFrame();
     const firstChild = htmlEditor.editable.firstChild;
@@ -2966,13 +2966,13 @@ test("should not open icon toolbar when creating table of contents inside a list
     });
     setSelectionInHtmlField("li");
     await insertText(htmlEditor, "/tableofcontents");
-    await waitFor(".o-we-powerbox");
-    expect(queryAllTexts(".o-we-command-name")[0]).toBe("Table of Contents");
+    await waitFor(".w-we-powerbox");
+    expect(queryAllTexts(".w-we-command-name")[0]).toBe("Table of Contents");
     await press("Enter");
     await animationFrame();
     setSelectionInHtmlField("li");
     await advanceTime(200);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test("html field is forced readonly in list views", async () => {
@@ -2986,7 +2986,7 @@ test("html field is forced readonly in list views", async () => {
             </list>`,
     });
 
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="txt"] .o_readonly`).toHaveCount(2);
     expect(queryAllTexts(`[name="txt"] .o_readonly`)).toEqual(["first", "second"]);
 });

@@ -1,19 +1,19 @@
 import { CorePlugin, EvaluationPlugin, UIPlugin } from "@weth/o-spreadsheet";
 
 /**
- * An o-spreadsheet core plugin with access to all custom Odoo plugins
- * @type {import("@spreadsheet").OdooCorePluginConstructor}
+ * An o-spreadsheet core plugin with access to all custom WETH plugins
+ * @type {import("@spreadsheet").WethCorePluginConstructor}
  **/
-export const OdooCorePlugin = CorePlugin;
+export const WethCorePlugin = CorePlugin;
 
 /**
- * An o-spreadsheet CoreView plugin with access to all custom Odoo plugins
- * @type {import("@spreadsheet").OdooCoreViewPluginConstructor}
+ * An o-spreadsheet CoreView plugin with access to all custom WETH plugins
+ * @type {import("@spreadsheet").WethCoreViewPluginConstructor}
  **/
-export const OdooEvaluationPlugin = EvaluationPlugin;
+export const WethEvaluationPlugin = EvaluationPlugin;
 
 /**
- * An o-spreadsheet UI plugin with access to all custom Odoo plugins
- * @type {import("@spreadsheet").OdooUIPluginConstructor}
+ * An o-spreadsheet UI plugin with access to all custom WETH plugins
+ * @type {import("@spreadsheet").WethUIPluginConstructor}
  **/
-export const OdooUIPlugin = UIPlugin;
+export const WethUIPlugin = UIPlugin;

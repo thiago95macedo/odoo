@@ -26,19 +26,19 @@ fi
 mkdir -p /var/run/weth
 chown weth:weth /var/run/weth
 
-# For compatibility between new IoT Box images and old Odoo code on it (it will not start Odoo on boot without this)
+# For compatibility between new IoT Box images and old WETH code on it (it will not start WETH on boot without this)
 start_wifi=/home/pi/weth/addons/point_of_sale/tools/posbox/configuration/wireless_ap.sh
 if [ -f $start_wifi ]; then
   $start_wifi &
 fi
 
 # Update current branch
-cd /home/pi/odoo
+cd /home/pi/weth
 localbranch=$(sudo -u weth git symbolic-ref -q --short HEAD)
 localremote=$(sudo -u weth git config branch.$localbranch.remote)
 
 sudo -u weth rm -f /home/pi/weth/.git/shallow.lock
-sudo -u weth git remote set-url "${localremote}" "https://github.com/weth/odoo.git"
+sudo -u weth git remote set-url "${localremote}" "https://github.com/weth/weth.git"
 
 sudo -u weth GIT_SSL_NO_VERIFY=1 git fetch "${localremote}" "${localbranch}" --depth=1
 sudo -u weth git reset --hard FETCH_HEAD

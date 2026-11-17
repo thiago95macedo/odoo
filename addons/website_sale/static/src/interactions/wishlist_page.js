@@ -5,9 +5,9 @@ import { Interaction } from '@web/public/interaction';
 import wishlistUtils from '@website_sale/js/wishlist_utils';
 
 export class WishlistPage extends Interaction {
-    static selector = '.o_wsale_wishlist_page';
+    static selector = '.w_wsale_wishlist_page';
     dynamicContent = {
-        '.o_wish_rm': { 't-on-click': this.removeProduct },
+        '.w_wish_rm': { 't-on-click': this.removeProduct },
         'button[name="add_to_cart"]': { 't-on-product_added_to_cart': this.removeProduct },
     };
 

@@ -6,7 +6,7 @@ import { renderToElement } from "@web/core/utils/render";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 export class CoursePrerequisite extends Interaction {
-    static selector = ".o_wslides_js_prerequisite_course";
+    static selector = ".w_wslides_js_prerequisite_course";
 
     setup() {
         this.bootstrap = usePlugin(BootstrapInstance);

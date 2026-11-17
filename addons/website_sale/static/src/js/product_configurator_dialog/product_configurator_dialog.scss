@@ -1,15 +1,15 @@
-.o_sale_product_configurator_dialog {
+.w_sale_product_configurator_dialog {
     --product-configurator-img-size-lg: 6rem;
 
     .modal-header .btn[data-icon="arrow_back"] {
         padding-left: 0;
     }
 
-    .o_wsale_product_configurator_vr {
+    .w_wsale_product_configurator_vr {
         background: $border-color;
     }
 
-    .o_sale_product_configurator_img {
+    .w_sale_product_configurator_img {
         @include media-breakpoint-down(md) {
             --product-configurator-img-size-sm: 4rem;
         }

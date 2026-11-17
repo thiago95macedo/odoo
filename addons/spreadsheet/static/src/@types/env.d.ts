@@ -5,7 +5,7 @@ declare module "@spreadsheet" {
     import { Model } from "@weth/o-spreadsheet";
 
     export interface SpreadsheetChildEnv extends SSChildEnv {
-        model: OdooSpreadsheetModel;
+        model: WethSpreadsheetModel;
         services: Services;
     }
 }

@@ -1,9 +1,10 @@
 @mixin o-kanban-css-filter($class, $accent-color) {
+
     // Provide CSS reordering and highlight
     &.o_kanban_group_show_#{$class} {
-        --KanbanGroup-background: #{mix($accent-color, $o-kanban-background, 5%)};
+        --KanbanGroup-background: #{mix($accent-color, $w-kanban-background, 5%)};
 
-        outline: $border-width solid $o-view-background-color;
+        outline: $border-width solid $w-view-background-color;
         box-shadow: inset 2px 0 0 $accent-color, inset -2px 0 0 $accent-color;
 
         .oe_kanban_card_#{$class} {

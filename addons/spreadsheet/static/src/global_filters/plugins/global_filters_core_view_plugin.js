@@ -21,14 +21,14 @@ import {
     getDateRange,
     getDateGlobalFilterValueFromDefault,
 } from "@spreadsheet/global_filters/helpers";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 import { serializeDate } from "@web/core/l10n/dates";
 import { getFilterCellValue, getFilterValueDomain } from "../helpers";
 const { DateTime } = luxon;
 
 const { toNumber } = helpers;
 
-export class GlobalFiltersCoreViewPlugin extends OdooEvaluationPlugin {
+export class GlobalFiltersCoreViewPlugin extends WethEvaluationPlugin {
     static getters = /** @type {const} */ ([
         "getFilterDisplayValue",
         "getGlobalFilterByName",

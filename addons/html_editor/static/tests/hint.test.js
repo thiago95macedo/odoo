@@ -236,7 +236,7 @@ test("should debounce hint on selection change", async () => {
             config: { debounceHints: true },
         }
     );
-    await waitFor(".o-we-hint"); // Let the initial state settle.
+    await waitFor(".w-we-hint"); // Let the initial state settle.
     expect(getContent(el)).toBe(
         `<p o-we-hint-text='Type "/" for commands' class="o-we-hint">[]<br></p><p><br></p><p><br></p><p><br></p><p><br></p>`
     );

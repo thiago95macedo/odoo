@@ -13,7 +13,7 @@ test("getLoadedDataSources discards datasources with an invalid model", async ()
         spreadsheetData: {
             pivots: {
                 1: {
-                    type: "ODOO",
+                    type: "WETH",
                     columns: [],
                     domain: [],
                     measures: [],

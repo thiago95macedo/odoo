@@ -18,7 +18,7 @@ function updateCartNavBar(data) {
         if (data.cart_quantity === 0) {
             cartQuantityElement.classList.add('d-none');
         } else {
-            const cartIconElement = document.querySelector('li.o_wsale_my_cart');
+            const cartIconElement = document.querySelector('li.w_wsale_my_cart');
             cartIconElement.classList.remove('d-none');
             cartQuantityElement.classList.remove('d-none');
             cartQuantityElement.classList.add('o_mycart_zoom_animation');
@@ -50,17 +50,17 @@ function updateCartNavBar(data) {
  */
 function updateCartSummary(data) {
     if (data['website_sale.shorter_cart_summary']) {
-        const shorterCartSummaryEl = document.querySelector('.o_wsale_shorter_cart_summary');
+        const shorterCartSummaryEl = document.querySelector('.w_wsale_shorter_cart_summary');
         const newShorterCartSummaryWrapperEl = createElementWithContent(
             'div', data['website_sale.shorter_cart_summary'],
         );
-        const newShorterCartSummaryEl = newShorterCartSummaryWrapperEl.querySelector('.o_wsale_shorter_cart_summary');
+        const newShorterCartSummaryEl = newShorterCartSummaryWrapperEl.querySelector('.w_wsale_shorter_cart_summary');
         // Update the existing cart summary
         shorterCartSummaryEl.className = newShorterCartSummaryEl.className;
         shorterCartSummaryEl.replaceChildren(...newShorterCartSummaryEl.childNodes);
     }
     if (data['website_sale.total']) {
-        document.querySelectorAll('div.o_cart_total').forEach(
+        document.querySelectorAll('div.w_cart_total').forEach(
             div => div.innerHTML = data['website_sale.total']
         );
     }
@@ -74,7 +74,7 @@ function updateCartSummary(data) {
  */
 function updateQuickReorderSidebar(data) {
     const quickReorderButton = document.getElementById('quick_reorder_button');
-    document.querySelectorAll('.o_wsale_quick_reorder_line_group').forEach(el => el.remove());
+    document.querySelectorAll('.w_wsale_quick_reorder_line_group').forEach(el => el.remove());
     if (data['website_sale.quick_reorder_history'].trim()) {
         document.querySelector('#quick_reorder_sidebar .offcanvas-body').insertAdjacentHTML(
             'afterbegin', data['website_sale.quick_reorder_history']
@@ -144,7 +144,7 @@ async function updateShopContent(interaction, {
         [...document.querySelectorAll(".accordion-item .accordion-button[aria-expanded=true]")]
             .map((el) => el.dataset.bsTarget)
     );
-    const productGridWrapper = document.querySelector('.o_wsale_products_grid_table_wrapper');
+    const productGridWrapper = document.querySelector('.w_wsale_products_grid_table_wrapper');
     productGridWrapper?.classList?.add('opacity-50');
 
     try {
@@ -155,7 +155,7 @@ async function updateShopContent(interaction, {
         }
         const data = await interaction.waitFor(rpc('/shop/reload', paramsObject));
         const updatedShopPage = createElementWithContent("div", markup(data.html));
-        const shopPageEl = document.querySelector('.o_wsale_products_page');
+        const shopPageEl = document.querySelector('.w_wsale_products_page');
         interaction.services['public.interactions'].stopInteractions(shopPageEl);
 
         updateElementContent(
@@ -169,8 +169,8 @@ async function updateShopContent(interaction, {
         updateElementContent(updatedShopPage, "#o_wsale_products_header");
         updateElementContent(updatedShopPage, "#o_wsale_floating_bar");
 
-        const productGridSelector = ".o_wsale_products_grid_table_wrapper";
-        const emptyGridSelector = ".o_wsale_empty_products_grid";
+        const productGridSelector = ".w_wsale_products_grid_table_wrapper";
+        const emptyGridSelector = ".w_wsale_empty_products_grid";
         const isEmptyGrid = updatedShopPage.querySelector(emptyGridSelector);
         const wasEmptyGrid = document.querySelector(emptyGridSelector);
         const gridSelector = isEmptyGrid ? emptyGridSelector : productGridSelector;
@@ -193,7 +193,7 @@ async function updateShopContent(interaction, {
         updateElementContent(updatedShopPage, ".products_pager");
         updateElementContent(
             updatedShopPage,
-            ".o_website_offcanvas",
+            ".w_website_offcanvas",
             { postUpdate: (el) => restoreExpandedAccordions(el, expandedTargets) },
         );
 

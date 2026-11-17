@@ -52,6 +52,6 @@ test("badge notification opens employee form", async () => {
 
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.NOTIFICATION);
-    await click(".o-mail-NotificationItem:has(:text(You: You've received a badge!");
+    await click(".w-mail-NotificationItem:has(:text(You: You've received a badge!");
     await expect.waitForSteps(["do_action"]);
 });

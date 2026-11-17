@@ -45,7 +45,7 @@ test("Not sharing file should not trigger the share target dialog", async () => 
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps([
         "start_service_share_target",
         "ask_for_available_files",
@@ -61,7 +61,7 @@ test("Sharing file should trigger the share target dialog", async () => {
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
     expect(".modal-footer .btn").toHaveCount(2);
     expect(".modal-footer .btn-primary").toHaveCount(1);
     expect(".modal-footer .btn-secondary").toHaveCount(1);
@@ -78,11 +78,11 @@ test("Sharing a pdf file should have a preview generated and have the file name"
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog img").toHaveCount(1);
-    expect(".o_image").toHaveCount(1);
-    expect(".o_image").toHaveAttribute("data-mimetype", "application/pdf");
-    expect(".o_dialog div.text-truncate").toHaveText(pdfFile.name);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog img").toHaveCount(1);
+    expect(".w_image").toHaveCount(1);
+    expect(".w_image").toHaveAttribute("data-mimetype", "application/pdf");
+    expect(".w_dialog div.text-truncate").toHaveText(pdfFile.name);
     expect.verifySteps(["generate_pdf_preview"]);
 });
 
@@ -96,11 +96,11 @@ test("Sharing an image file should have a preview and a file name", async () => 
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog img").toHaveCount(1);
-    expect(".o_image").toHaveCount(1);
-    expect(".o_image").toHaveAttribute("data-mimetype", "image/png");
-    expect(".o_dialog div.text-truncate").toHaveText(pngFile.name);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog img").toHaveCount(1);
+    expect(".w_image").toHaveCount(1);
+    expect(".w_image").toHaveAttribute("data-mimetype", "image/png");
+    expect(".w_dialog div.text-truncate").toHaveText(pngFile.name);
     expect.verifySteps([]);
 });
 
@@ -150,7 +150,7 @@ test("ShareTargetItem Should respect the order", async () => {
 
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(queryAllTexts(".o_dialog .modal-body .btn")).toEqual([
+    expect(queryAllTexts(".w_dialog .modal-body .btn")).toEqual([
         "Expense",
         "Bill",
         "Time Off",
@@ -211,9 +211,9 @@ test("Create button should call the check company and process method", async () 
     shareTargetRegistry.add("fake_share_target", CustomShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
     await contains("footer .btn-primary").click();
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps(["checkAndActiveIfNeededUserCompany", "process"]);
 });
 
@@ -224,8 +224,8 @@ test("res.company many2one should not display the company choice when having one
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_many2one").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_many2one").toHaveCount(0);
 });
 
 test("res.company many2one should not display the company choice when having multi companies", async () => {
@@ -253,8 +253,8 @@ test("res.company many2one should not display the company choice when having mul
     shareTargetRegistry.add("fake_share_target", ShareTargetItem);
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_many2one").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_many2one").toHaveCount(1);
 });
 
 test("res.company many2one should update the select value and use it on save", async () => {
@@ -359,21 +359,21 @@ test("res.company many2one should update the select value and use it on save", a
 
     await mountWithCleanup(WebClient);
     await animationFrame();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_many2one").toHaveCount(1);
-    expect(".o_many2one input").toHaveValue(originalCompany.name);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_many2one").toHaveCount(1);
+    expect(".w_many2one input").toHaveValue(originalCompany.name);
     await animationFrame();
-    await contains(".o_many2one input").click();
+    await contains(".w_many2one input").click();
     await runAllTimers();
     expect(".dropdown-item:eq(0)").toHaveText(serverState.companies[0].name);
     expect(".dropdown-item:eq(1)").toHaveText(serverState.companies[1].name);
     expect(".dropdown-item:eq(2)").toHaveText(serverState.companies[2].name);
     await contains(".dropdown-item:eq(1)").click();
-    expect(".o_many2one input").toHaveValue(changedCompany.name);
+    expect(".w_many2one input").toHaveValue(changedCompany.name);
     await contains("footer .btn-primary").click();
     await runAllTimers();
     await animationFrame();
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps([
         `onCompanyChange_from_${originalCompany.display_name}_to_${changedCompany.display_name}`,
         "checkAndActiveIfNeededUserCompany",

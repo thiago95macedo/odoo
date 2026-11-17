@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-23 17:40+0000\n"
 "PO-Revision-Date: 2026-11-02 22:33+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_sumup/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,25 +27,25 @@ msgstr ""
 "Código exibido na tela do terminal, usado para emparelhá-lo uma única vez."
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "Could not pair the reader: %(error)s"
 msgstr "Não foi possível emparelhar o terminal: %(error)s"
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "Could not reach SumUp. Please try again in a moment."
 msgstr "Não foi possível contatar o SumUp. Tente novamente em instantes."
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "Could not reach SumUp. Please try again."
 msgstr "Não foi possível contatar o SumUp. Tente novamente."
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "Couldn't find a transaction corresponding to this payment."
 msgstr ""
@@ -77,13 +77,13 @@ msgid "Pairing Code"
 msgstr "Código de emparelhamento"
 
 #. module: pos_sumup
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sumup/static/src/app/utils/payment/payment_sumup.js:0
 msgid "Payment failed."
 msgstr "Pagamento falhou."
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "Please set the SumUp merchant code first."
 msgstr "Defina o código de comerciante do SumUp primeiro."
@@ -94,7 +94,7 @@ msgid "Point of Sale Payment Method"
 msgstr "Método de pagamento no Ponto de Venda"
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid ""
 "Reader %(terminal)s is already used in company %(company)s on payment method"
@@ -104,7 +104,7 @@ msgstr ""
 "(payment_method)s."
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid ""
 "Reader %(terminal)s is already used on payment method %(payment_method)s."
@@ -133,13 +133,13 @@ msgid "SumUp API key"
 msgstr "Chave de API do SumUp"
 
 #. module: pos_sumup
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sumup/static/src/app/utils/payment/payment_sumup.js:0
 msgid "SumUp Error"
 msgstr "Erro do SumUp"
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "SumUp can't refund a transaction not paid with SumUp."
 msgstr "O SumUp não pode reembolsar uma transação não paga com o SumUp."
@@ -166,7 +166,7 @@ msgstr ""
 "api-keys#create-an-api-key"
 
 #. module: pos_sumup
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sumup/models/pos_payment_method.py:0
 msgid "You do not have the necessary permissions to make a SumUp payment."
 msgstr ""

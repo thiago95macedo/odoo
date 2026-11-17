@@ -21,8 +21,8 @@
 --screencasts /tmp/screencasts
 --screenshots /tmp/screenshots
 
---logfile /tmp/odoo.log
---log-handler odoo.tools.config:DEBUG
+--logfile /tmp/weth.log
+--log-handler weth.tools.config:DEBUG
 --log-handler :WARNING
 --log-web
 --log-sql

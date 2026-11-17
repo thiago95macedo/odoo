@@ -1,23 +1,24 @@
 /*rtl:begin:ignore*/
-.o-CallDebriefTimeline-container {
-    .o-CallDebriefTimeline {
+.w-CallDebriefTimeline-container {
+    .w-CallDebriefTimeline {
         height: var(--CallDebriefTimeline-height, #{map-get($spacers, 3) * 2});
         cursor: grab;
         touch-action: none;
 
-        &:active, &:hover {
-            .o-CallDebriefTimeline-timestamp {
+        &:active,
+        &:hover {
+            .w-CallDebriefTimeline-timestamp {
                 opacity: 1;
                 transform: translate(-50%, -25%);
             }
 
-            .o-CallDebriefTimeline-playhead:before {
+            .w-CallDebriefTimeline-playhead:before {
                 transform: scale(1);
             }
         }
     }
 
-    .o-CallDebriefTimeline-track {
+    .w-CallDebriefTimeline-track {
         // Timeline track should always be in LTR direction, even in RTL context.
         /*rtl:ignore*/
         direction: ltr;
@@ -25,19 +26,19 @@
         height: var(--CallDebriefTimeline__track-height, #{map-get($spacers, 2)});
     }
 
-    .o-CallDebriefTimeline-segment {
+    .w-CallDebriefTimeline-segment {
         height: var(--CallDebriefTimeline__track-height, #{map-get($spacers, 2)});
 
-        &.o-CallDebriefTimeline-silence-segment {
+        &.w-CallDebriefTimeline-silence-segment {
             --CallDebriefTimeline__track-height: #{map-get($spacers, 1) / 2};
         }
 
-        .o-CallDebriefTimeline-media-progress {
+        .w-CallDebriefTimeline-media-progress {
             left: 0;
         }
     }
 
-    .o-CallDebriefTimeline-playhead {
+    .w-CallDebriefTimeline-playhead {
         left: 0;
         transform: translate(-50%, -50%);
         height: var(--CallDebriefTimeline__playhead-size, #{map-get($spacers, 3)});
@@ -54,7 +55,7 @@
         }
     }
 
-    .o-CallDebriefTimeline-timestamp {
+    .w-CallDebriefTimeline-timestamp {
         left: 0;
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -63,11 +64,12 @@
     }
 }
 
-.o-CallDebrief-mediaPlayer {
+.w-CallDebrief-mediaPlayer {
     touch-action: manipulation;
 
-    .o-CallDebriefControls-volumeSlider {
+    .w-CallDebriefControls-volumeSlider {
         touch-action: none;
     }
 }
+
 /*rtl:end:ignore*/

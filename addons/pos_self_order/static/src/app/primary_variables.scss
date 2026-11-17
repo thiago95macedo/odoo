@@ -1,86 +1,84 @@
-$o-so-font-size-base: 1rem !default;
-$o-so-4k-multiplier: 3.3 !default;
-$o-so-kiosk-multiplier: 1.25 !default;
+$w-so-font-size-base: 1rem !default;
+$w-so-4k-multiplier: 3.3 !default;
+$w-so-kiosk-multiplier: 1.25 !default;
 
-$o-so-font-size-4k: $o-so-font-size-base * $o-so-4k-multiplier !default;
-$o-so-font-size-kiosk: $o-so-font-size-base * $o-so-kiosk-multiplier !default;
+$w-so-font-size-4k: $w-so-font-size-base * $w-so-4k-multiplier !default;
+$w-so-font-size-kiosk: $w-so-font-size-base * $w-so-kiosk-multiplier !default;
 
 // Mirror enterprise grayscale
-$o-white: #FFF !default;
-$o-black: #000 !default;
+$w-white: #FFF !default;
+$w-black: #000 !default;
 
-$o-gray-100: #F9FAFB !default;
-$o-gray-200: #eeeeee !default;
-$o-gray-300: #d8dadd !default;
-$o-gray-400: #9a9ca5 !default;
-$o-gray-500: #7c7f89 !default;
-$o-gray-600: #5f636f !default;
-$o-gray-700: #374151 !default;
-$o-gray-800: #1F2937 !default;
-$o-gray-900: #111827 !default;
+$w-gray-100: #F9FAFB !default;
+$w-gray-200: #eeeeee !default;
+$w-gray-300: #d8dadd !default;
+$w-gray-400: #9a9ca5 !default;
+$w-gray-500: #7c7f89 !default;
+$w-gray-600: #5f636f !default;
+$w-gray-700: #374151 !default;
+$w-gray-800: #1F2937 !default;
+$w-gray-900: #111827 !default;
 
-$o-kiosk-color: #714B67 !default;
-$o-brand-primary: $o-kiosk-color !default;
+$w-kiosk-color: #714B67 !default;
+$w-brand-primary: $w-kiosk-color !default;
 
 // Buttons
 // Map of customized values for each button. If a button's design is defined
 // here, the relative values will take priority over default BS ones.
 // Notice: each map's entry is passed directly to the Bootstrap mixin, meaning
 // that all states must be defined, there can't be omissions.
-$o-btns-bs-override: () !default;
-$o-btns-bs-override: map-merge((
-    "primary": (
-        background: $o-brand-primary,
-        border: $o-brand-primary,
-        color: $o-white,
+$w-btns-bs-override: (
+    ) !default;
+$w-btns-bs-override: map-merge(("primary": (background: $w-brand-primary,
+                border: $w-brand-primary,
+                color: $w-white,
 
-        hover-background: $o-brand-primary,
-        hover-border: $o-brand-primary,
-        hover-color: $o-white,
+                hover-background: $w-brand-primary,
+                hover-border: $w-brand-primary,
+                hover-color: $w-white,
 
-        active-background: darken($o-brand-primary, 15%),
-        active-border: darken($o-brand-primary, 20%),
-        active-color: $o-white,
+                active-background: darken($w-brand-primary, 15%),
+                active-border: darken($w-brand-primary, 20%),
+                active-color: $w-white,
 
-        disabled-background: $o-brand-primary,
-        disabled-border: $o-brand-primary,
-        disabled-color: $o-white,
-    ),
-    "light": (
-        background: $o-white,
-        border: $o-gray-300,
-        color: $o-gray-700,
+                disabled-background: $w-brand-primary,
+                disabled-border: $w-brand-primary,
+                disabled-color: $w-white,
+            ),
+            "light": (background: $w-white,
+                border: $w-gray-300,
+                color: $w-gray-700,
 
-        hover-background: $o-white,
-        hover-border: var(--companyColor),
-        hover-color: $o-gray-900,
+                hover-background: $w-white,
+                hover-border: var(--companyColor),
+                hover-color: $w-gray-900,
 
-        active-background:  $o-white,
-        active-border: var(--companyColor),
-        active-color: $o-gray-900,
+                active-background: $w-white,
+                active-border: var(--companyColor),
+                active-color: $w-gray-900,
 
-        disabled-background: $o-white,
-        disabled-border: $o-gray-300,
-        disabled-color: $o-gray-700,
-    ),
-    "secondary": (
-        background: $o-gray-200,
-        border: $o-gray-200,
-        color: $o-gray-700,
+                disabled-background: $w-white,
+                disabled-border: $w-gray-300,
+                disabled-color: $w-gray-700,
+            ),
+            "secondary": (background: $w-gray-200,
+                border: $w-gray-200,
+                color: $w-gray-700,
 
-        hover-background: $o-gray-200,
-        hover-border: $o-gray-200,
-        hover-color: $o-gray-800,
+                hover-background: $w-gray-200,
+                hover-border: $w-gray-200,
+                hover-color: $w-gray-800,
 
-        active-background: $o-gray-300,
-        active-border: $o-gray-300,
-        active-color: $o-gray-800,
+                active-background: $w-gray-300,
+                active-border: $w-gray-300,
+                active-color: $w-gray-800,
 
-        disabled-background: $o-gray-200,
-        disabled-border: $o-gray-200,
-        disabled-color: $o-gray-700,
-    ),
-), $o-btns-bs-override);
+                disabled-background: $w-gray-200,
+                disabled-border: $w-gray-200,
+                disabled-color: $w-gray-700,
+            ),
+        ), $w-btns-bs-override
+);
 
 
 
@@ -99,9 +97,9 @@ $o-btns-bs-override: map-merge((
 
 @mixin o-kiosk() {
     @include media-breakpoint-up(lg) {
-         .kiosk {
-             @content;
-         }
+        .kiosk {
+            @content;
+        }
     }
 }
 
@@ -140,14 +138,17 @@ $o-btns-bs-override: map-merge((
     }
 
 
-    @each $key, $value in  $spacers {
+    @each $key, $value in $spacers {
+
         // Gap
         .gap-#{$context}-#{$key} {
             gap: $value !important;
         }
+
         .row-gap-#{$context}-#{$key} {
             row-gap: $value !important;
         }
+
         .column-gap-#{$context}-#{$key} {
             column-gap: $value !important;
         }
@@ -156,22 +157,28 @@ $o-btns-bs-override: map-merge((
         .m-#{$context}-#{$key} {
             margin: $value !important;
         }
+
         .mt-#{$context}-#{$key} {
             margin-top: $value !important;
         }
+
         .mb-#{$context}-#{$key} {
             margin-bottom: $value !important;
         }
+
         .ms-#{$context}-#{$key} {
             margin-left: $value !important;
         }
+
         .me-#{$context}-#{$key} {
             margin-right: $value !important;
         }
+
         .mx-#{$context}-#{$key} {
             margin-left: $value !important;
             margin-right: $value !important;
         }
+
         .my-#{$context}-#{$key} {
             margin-top: $value !important;
             margin-bottom: $value !important;
@@ -181,22 +188,28 @@ $o-btns-bs-override: map-merge((
         .p-#{$context}-#{$key} {
             padding: $value !important;
         }
+
         .pt-#{$context}-#{$key} {
             padding-top: $value !important;
         }
+
         .pb-#{$context}-#{$key} {
             padding-bottom: $value !important;
         }
+
         .ps-#{$context}-#{$key} {
             padding-left: $value !important;
         }
+
         .pe-#{$context}-#{$key} {
             padding-right: $value !important;
         }
+
         .px-#{$context}-#{$key} {
             padding-left: $value !important;
             padding-right: $value !important;
         }
+
         .py-#{$context}-#{$key} {
             padding-top: $value !important;
             padding-bottom: $value !important;
@@ -207,6 +220,7 @@ $o-btns-bs-override: map-merge((
         margin-left: auto !important;
         margin-right: auto !important;
     }
+
     .my-#{$context}-auto {
         margin-top: auto !important;
         margin-bottom: auto !important;
@@ -216,21 +230,27 @@ $o-btns-bs-override: map-merge((
     .d-#{$context}-none {
         display: none !important;
     }
+
     .d-#{$context}-block {
         display: block !important;
     }
+
     .d-#{$context}-inline {
         display: inline !important;
     }
+
     .d-#{$context}-inline-block {
         display: inline-block !important;
     }
+
     .d-#{$context}-flex {
         display: flex !important;
     }
+
     .d-#{$context}-inline-flex {
         display: inline-flex !important;
     }
+
     .d-#{$context}-grid {
         display: grid !important;
     }
@@ -239,47 +259,57 @@ $o-btns-bs-override: map-merge((
     .flex-#{$context}-row {
         flex-direction: row !important;
     }
+
     .flex-#{$context}-column {
         flex-direction: column !important;
     }
+
     .justify-#{$context}-start {
         justify-content: flex-start !important;
     }
+
     .justify-#{$context}-center {
         justify-content: center !important;
     }
+
     .justify-#{$context}-end {
         justify-content: flex-end !important;
     }
+
     .justify-#{$context}-between {
         justify-content: space-between !important;
     }
+
     .justify-#{$context}-around {
         justify-content: space-around !important;
     }
+
     .align-#{$context}-start {
         align-items: flex-start !important;
     }
+
     .align-#{$context}-center {
         align-items: center !important;
     }
+
     .align-#{$context}-end {
         align-items: flex-end !important;
     }
+
     .align-#{$context}-stretch {
         align-items: stretch !important;
     }
 
     //Grid
     @for $i from 1 through 12 {
-      .g-col-#{$context}-#{$i} {
-        grid-column: auto / span #{$i} !important;
-      }
+        .g-col-#{$context}-#{$i} {
+            grid-column: auto / span #{$i} !important;
+        }
 
-      .col-#{$context}-#{$i} {
-        flex: 0 0 auto;
-        width: (100% / 12) * $i !important;
-      }
+        .col-#{$context}-#{$i} {
+            flex: 0 0 auto;
+            width: (100% / 12) * $i !important;
+        }
     }
 
     .text-#{$context}-center {
@@ -297,19 +327,13 @@ $o-btns-bs-override: map-merge((
     $width-utilities: 25, 50, 75, 100;
 
     @each $w in $width-utilities {
-      .w-#{$context}-#{$w} {
-        width: #{$w}% !important;
-      }
+        .w-#{$context}-#{$w} {
+            width: #{$w}% !important;
+        }
     }
 
     // Add the auto width utility separately
     .w-#{$context}-auto {
-      width: auto !important;
+        width: auto !important;
     }
 }
-
-
-
-
-
-

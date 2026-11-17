@@ -1,33 +1,33 @@
 import { registries } from "@weth/o-spreadsheet";
 import { globalFieldMatchingRegistry } from "../global_filters/helpers";
 import { _t } from "@web/core/l10n/translation";
-import { navigateToOdooDatasource } from "../chart/odoo_chart/odoo_chart_helpers";
+import { navigateToWethDatasource } from "../chart/weth_chart/weth_chart_helpers";
 const { urlRegistry } = registries;
 
-const ODOO_DATA_SOURCE_PREFIX = "odoo-data-source://";
+const WETH_DATA_SOURCE_PREFIX = "weth-data-source://";
 
 const dataSourceIconTemplates = {
-    list: "o-spreadsheet-Icon.ODOO_LIST",
+    list: "o-spreadsheet-Icon.WETH_LIST",
     pivot: "o-spreadsheet-Icon.PIVOT",
     chart: "o-spreadsheet-Icon.INSERT_CHART",
 };
 
 export function isDataSourceUrl(url) {
-    return url.startsWith(ODOO_DATA_SOURCE_PREFIX);
+    return url.startsWith(WETH_DATA_SOURCE_PREFIX);
 }
 
 export function parseDataSourceUrl(url) {
     if (isDataSourceUrl(url)) {
-        const separatorIndex = url.indexOf("/", ODOO_DATA_SOURCE_PREFIX.length);
+        const separatorIndex = url.indexOf("/", WETH_DATA_SOURCE_PREFIX.length);
         return [
-            url.substring(ODOO_DATA_SOURCE_PREFIX.length, separatorIndex),
+            url.substring(WETH_DATA_SOURCE_PREFIX.length, separatorIndex),
             url.substring(separatorIndex + 1),
         ];
     }
     throw new Error(`${url} is not a valid datasource link`);
 }
 
-urlRegistry.add("OdooDataSources", {
+urlRegistry.add("WethDataSources", {
     sequence: 70,
     title: _t("Data Sources"),
     match(url) {
@@ -50,7 +50,7 @@ urlRegistry.add("OdooDataSources", {
     },
     open(url, env, newWindow) {
         const [dsType, dsId] = parseDataSourceUrl(url, env, newWindow);
-        navigateToOdooDatasource(env, dsType, dsId, newWindow);
+        navigateToWethDatasource(env, dsType, dsId, newWindow);
     },
     getLinkProposals(env) {
         const proposals = [];
@@ -62,7 +62,7 @@ urlRegistry.add("OdooDataSources", {
                 const displayName = dsFieldMatching.getDisplayName(getters, dataSourceCoreId);
                 proposals.push({
                     label: `${tag} - ${displayName}`,
-                    url: `${ODOO_DATA_SOURCE_PREFIX}${dataSourceType}/${dataSourceCoreId}`,
+                    url: `${WETH_DATA_SOURCE_PREFIX}${dataSourceType}/${dataSourceCoreId}`,
                     icon: dataSourceIconTemplates[dataSourceType],
                     isExternal: false,
                     isUrlEditable: false,

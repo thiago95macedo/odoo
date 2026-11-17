@@ -118,19 +118,19 @@ async function start({ arch, model = DEFAULT_MODEL, record = FAKE_RECORD, ...pro
 
 test(`mount a CalendarCommonPopover`, async () => {
     await start();
-    expect(`.o_popover_header`).toHaveCount(1);
-    expect(`.o_popover_header`).toHaveText("Meeting");
-    expect(`.o_card_record`).toHaveCount(1);
-    expect(`.o_card_record div[name="description"]`).toHaveCount(1);
-    expect(`.o_popover_footer .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_popover_footer .o_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_popover_header`).toHaveCount(1);
+    expect(`.w_popover_header`).toHaveText("Meeting");
+    expect(`.w_card_record`).toHaveCount(1);
+    expect(`.w_card_record div[name="description"]`).toHaveCount(1);
+    expect(`.w_popover_footer .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_popover_footer .w_cw_popover_delete`).toHaveCount(1);
 });
 
 test(`date duration: is all day and is same day`, async () => {
     await start({
         record: { ...FAKE_RECORD, isAllDay: true, isTimeHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("July 16, 2021");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("July 16, 2021");
 });
 
 test(`date duration: is all day and two days duration`, async () => {
@@ -142,7 +142,7 @@ test(`date duration: is all day and two days duration`, async () => {
             isTimeHidden: true,
         },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("July 16-17, 2021\n2 days");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("July 16-17, 2021\n2 days");
 });
 
 test(`time duration: 1 hour diff`, async () => {
@@ -150,7 +150,7 @@ test(`time duration: 1 hour diff`, async () => {
         record: { ...FAKE_RECORD, end: DEFAULT_DATE.plus({ hours: 1 }) },
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 09:00\n(1 hour)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 09:00\n(1 hour)");
 });
 
 test(`time duration: 2 hours diff`, async () => {
@@ -158,7 +158,7 @@ test(`time duration: 2 hours diff`, async () => {
         record: { ...FAKE_RECORD, end: DEFAULT_DATE.plus({ hours: 2 }) },
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 10:00\n(2 hours)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 10:00\n(2 hours)");
 });
 
 test(`time duration: 1 minute diff`, async () => {
@@ -166,7 +166,7 @@ test(`time duration: 1 minute diff`, async () => {
         record: { ...FAKE_RECORD, end: DEFAULT_DATE.plus({ minutes: 1 }) },
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 08:01\n(1 minute)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 08:01\n(1 minute)");
 });
 
 test(`time duration: 2 minutes diff`, async () => {
@@ -174,58 +174,58 @@ test(`time duration: 2 minutes diff`, async () => {
         record: { ...FAKE_RECORD, end: DEFAULT_DATE.plus({ minutes: 2 }) },
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 08:02\n(2 minutes)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 08:02\n(2 minutes)");
 });
 
 test(`time duration: 3 hours and 15 minutes diff`, async () => {
     await start({
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
 });
 
 test(`isDateHidden is true`, async () => {
     await start({
         model: { ...DEFAULT_MODEL, isDateHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
 });
 
 test(`isDateHidden is false`, async () => {
     await start({
         model: { ...DEFAULT_MODEL, isDateHidden: false },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("July 16, 2021");
-    expect(`.o_card_record > div:eq(1)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("July 16, 2021");
+    expect(`.w_card_record > div:eq(1)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
 });
 
 test(`isTimeHidden is true`, async () => {
     await start({
         record: { ...FAKE_RECORD, isTimeHidden: true },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("July 16, 2021");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("July 16, 2021");
 });
 
 test(`isTimeHidden is false`, async () => {
     await start({
         record: { ...FAKE_RECORD, isTimeHidden: false },
     });
-    expect(`.o_card_record > div:eq(0)`).toHaveText("July 16, 2021");
-    expect(`.o_card_record > div:eq(1)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
+    expect(`.w_card_record > div:eq(0)`).toHaveText("July 16, 2021");
+    expect(`.w_card_record > div:eq(1)`).toHaveText("08:00 - 11:15\n(3 hours, 15 minutes)");
 });
 
 test(`canDelete is true`, async () => {
     await start({
         model: { ...DEFAULT_MODEL, canDelete: true },
     });
-    expect(`.o_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_cw_popover_delete`).toHaveCount(1);
 });
 
 test(`canDelete is false`, async () => {
     await start({
         model: { ...DEFAULT_MODEL, canDelete: false },
     });
-    expect(`.o_cw_popover_delete`).toHaveCount(0);
+    expect(`.w_cw_popover_delete`).toHaveCount(0);
 });
 
 test(`click on delete button`, async () => {
@@ -233,7 +233,7 @@ test(`click on delete button`, async () => {
         model: { ...DEFAULT_MODEL, canDelete: true },
         deleteRecord: () => expect.step("delete"),
     });
-    await click(`.o_cw_popover_delete`);
+    await click(`.w_cw_popover_delete`);
     expect.verifySteps(["delete"]);
 });
 
@@ -241,7 +241,7 @@ test(`click on edit button`, async () => {
     await start({
         openRecord: () => expect.step("edit"),
     });
-    await click(`.o_cw_popover_edit`);
+    await click(`.w_cw_popover_edit`);
     expect.verifySteps(["edit"]);
 });
 
@@ -256,8 +256,8 @@ test(`popover node with default body and footer`, async () => {
             </calendar>
         `,
     });
-    expect(`.o_popover_body`).toHaveCount(1);
-    expect(`.o_popover_body`).toHaveText("July 16, 2021\n08:00 - 11:15\n(3 hours, 15 minutes)");
-    expect(`.o_popover_footer .o_cw_popover_edit`).toHaveCount(1);
-    expect(`.o_popover_footer .o_cw_popover_delete`).toHaveCount(1);
+    expect(`.w_popover_body`).toHaveCount(1);
+    expect(`.w_popover_body`).toHaveText("July 16, 2021\n08:00 - 11:15\n(3 hours, 15 minutes)");
+    expect(`.w_popover_footer .w_cw_popover_edit`).toHaveCount(1);
+    expect(`.w_popover_footer .w_cw_popover_delete`).toHaveCount(1);
 });

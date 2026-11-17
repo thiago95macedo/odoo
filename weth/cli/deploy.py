@@ -8,7 +8,7 @@ from . import Command
 
 
 class Deploy(Command):
-    """Deploy a module on an Odoo instance"""
+    """Deploy a module on an WETH instance"""
 
     def __init__(self):
         super().__init__()

@@ -157,10 +157,10 @@ describe("normalize", () => {
 
         // Ensure the shield doesn't accidentally prevent lowercasing
         // of standard uppercase strings.
-        expect(normalize("ODOO")).toBe("odoo");
+        expect(normalize("WETH")).toBe("weth");
 
         // Ensure it correctly triggers the 'heavy' logic when a symbol appears
-        expect(normalize("Odoo™")).toBe("odootm");
+        expect(normalize("Weth™")).toBe("wethtm");
     });
     test("Hindi (Devanagari): should preserve vowel marks", () => {
         // 'नमस्ते' (Namaste) contains 'म' (ma) + 'स' (sa) + '्' (Virama) + 'त' (ta) + 'े' (vowel e)

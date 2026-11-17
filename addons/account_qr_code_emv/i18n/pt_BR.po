@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/account_qr_code_emv/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 "comerciante EMV para o sistema de pagamento.\n"
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "A bank account is required for EMV QR Code generation."
 msgstr "É necessário ter uma conta bancária para a geração do código QR EMV."
@@ -73,7 +73,7 @@ msgid "Display Qr Setting"
 msgstr "Exibir configuração do QR"
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "EMV Merchant-Presented QR-code"
 msgstr "Código QR EMV apresentado pelo comerciante"
@@ -102,31 +102,31 @@ msgid "Include the reference in the QR code."
 msgstr "Inclua a referência no código QR."
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "Missing Account Identifier Type."
 msgstr "Tipo de identificador de conta ausente."
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "Missing Identifier Value."
 msgstr "Valor do identificador ausente."
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "Missing Merchant Account Information."
 msgstr "Há informações ausentes na conta do comerciante."
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid "Missing Merchant City."
 msgstr "Cidade do comerciante ausente."
 
 #. module: account_qr_code_emv
-#. odoo-python
+#. weth-python
 #: code:addons/account_qr_code_emv/models/res_bank.py:0
 msgid ""
 "No EMV QR Code is available for the country of the account %"

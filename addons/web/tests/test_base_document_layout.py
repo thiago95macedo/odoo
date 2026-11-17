@@ -146,8 +146,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['odoo']['img']
-            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
+            doc_layout.logo = self.company_imgs['weth']['img']
+            self.assertColors(doc_layout, self.company_imgs['weth']['colors'])
 
     def test_company_colors_change_logo(self):
         """changes of the logo implies displaying the new computed colors"""
@@ -160,8 +160,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['odoo']['img']
-            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
+            doc_layout.logo = self.company_imgs['weth']['img']
+            self.assertColors(doc_layout, self.company_imgs['weth']['colors'])
 
     def test_company_colors_and_logo_change_logo(self):
         """The colors of the company may differ from the one the logo computes
@@ -176,8 +176,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['odoo']['img'].to_base64()
-            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
+            doc_layout.logo = self.company_imgs['weth']['img'].to_base64()
+            self.assertColors(doc_layout, self.company_imgs['weth']['colors'])
 
     # Layout change tests
     def test_company_colors_reset_colors(self):
@@ -248,9 +248,9 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
         self.assertFalse(secondary)
 
     def _get_company_report_styles(self, styles, company):
-        company_marker = f'.o_company_{company.id}_layout'
+        company_marker = f'.w_company_{company.id}_layout'
         match = re.search(
-            rf'{re.escape(company_marker)}.*?(?=\n\s*\.o_company_\d+_layout|\Z)',
+            rf'{re.escape(company_marker)}.*?(?=\n\s*\.w_company_\d+_layout|\Z)',
             styles,
             re.S,
         )

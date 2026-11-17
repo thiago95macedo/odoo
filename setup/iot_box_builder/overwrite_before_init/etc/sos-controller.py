@@ -26,7 +26,7 @@ class Handler(BaseHTTPRequestHandler):
                 ['sudo', 'cp', '-r', '/var/lib/tailscale/', '/root_bypass_ramdisks/var/lib/tailscale/'],
                 check=True,
             )
-            self.make_response(200, "Remote Debug is enabled, Odoo support team can now access the device.")
+            self.make_response(200, "Remote Debug is enabled, WETH support team can now access the device.")
         except subprocess.CalledProcessError:
             self.make_response(
                 500,

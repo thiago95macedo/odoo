@@ -13,7 +13,7 @@
                     'flex-column w-100 bg-transparent': !this.props.inline,
                     'o-inline rounded-3': this.props.inline,
                     'o-rounded-bubble': this.props.inline and !this.hasBtnBg,
-                    'o_switcher': this.props.odooControlPanelSwitchStyle and group.length gt 1 and this.props.inline and groupDescription?.tags?.includes('INLINE_SWITCHER_LOOK'),
+                    'o_switcher': this.props.wethControlPanelSwitchStyle and group.length gt 1 and this.props.inline and groupDescription?.tags?.includes('INLINE_SWITCHER_LOOK'),
                 }">
                     <span class="smaller text-muted ms-1" t-if="this.props.dropdown and groupDescription?.name" t-out="groupDescription?.name"/>
                     <Action t-foreach="group" t-as="action" t-key="action.id" t-props="this.getActionProps(action, group, { isFirstInGroup: action_first, index: action_index, isLastInGroup: action_last })"/>
@@ -56,7 +56,7 @@
         'o-first': this.props.isFirstInGroup,
         'o-last': this.props.isLastInGroup,
         'active': this.action.isActive,
-        'o-odooControlPanelSwitchStyle': this.props.odooControlPanelSwitchStyle,
+        'o-wethControlPanelSwitchStyle': this.props.wethControlPanelSwitchStyle,
         'o-hasBtnBg': this.hasBtnBg,
         'o-inline': this.props.inline,
         'btn-secondary': !this.action.tags.includes('PRIMARY') and !this.action.tags.includes('DANGER') and !this.action.tags.includes('SUCCESS'),

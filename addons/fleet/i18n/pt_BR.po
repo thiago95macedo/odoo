@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-28 00:33+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/fleet/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid ""
 "\n"
 "Vehicle, leasing, insurances, cost\n"
 "==================================\n"
-"With this module, Odoo helps you managing all your vehicles, the\n"
+"With this module, WETH helps you managing all your vehicles, the\n"
 "contracts associated to those vehicle as well as services, costs\n"
 "and many other features necessary to the management of your fleet\n"
 "of vehicle(s)\n"
@@ -49,7 +49,7 @@ msgstr ""
 "\n"
 "Veículos, leasing, seguros, custos\n"
 "==================================\n"
-"Com este módulo, o Odoo ajuda você a gerenciar todos os seus veículos, os\n"
+"Com este módulo, o WETH ajuda você a gerenciar todos os seus veículos, os\n"
 "contratos associados a esses veículos, bem como serviços, custos\n"
 "e muitos outros recursos necessários para a gestão da sua frota\n"
 "de veículos\n"
@@ -230,7 +230,7 @@ msgid "Air Filter Replacement"
 msgstr "Troca do filtro de ar"
 
 #. module: fleet
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/fleet/static/src/js/fleet_form.js:0
 msgid ""
 "All services and contracts linked to this vehicle will also be archived.\n"
@@ -261,13 +261,13 @@ msgid "Archive"
 msgstr "Arquivar"
 
 #. module: fleet
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/fleet/static/src/js/fleet_form.js:0
 msgid "Archive Vehicle"
 msgstr "Arquivar veículo"
 
 #. module: fleet
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/fleet/static/src/js/fleet_form.js:0
 msgid "Archive Vehicle & Contracts"
 msgstr "Arquivar Veículos e Contratos"
@@ -493,7 +493,7 @@ msgid "Cars Count"
 msgstr "Quantidade de carros"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:fleet.view_partner_form
 msgid "Cars History"
@@ -1072,7 +1072,7 @@ msgid "Employee Car"
 msgstr "Carro de funcionário"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle_log_services.py:0
 msgid "Emptying the odometer value of a vehicle is not allowed."
 msgstr "Não é permitido zerar o valor do odômetro de um veículo."
@@ -1616,11 +1616,11 @@ msgstr "Disponibilizar veículo"
 #: model_terms:ir.actions.act_window,help:fleet.fleet_vehicle_log_contract_action
 msgid ""
 "Manage all your contracts (leasing, insurances, etc.) with\n"
-"            their related services, costs. Odoo will automatically warn\n"
+"            their related services, costs. WETH will automatically warn\n"
 "            you when some contracts have to be renewed."
 msgstr ""
 "Gerencie todos os seus contratos (locação, seguros etc.) com\n"
-"            seus serviços e custos relacionados. O Odoo avisará "
+"            seus serviços e custos relacionados. O WETH avisará "
 "automaticamente\n"
 "            quando os contratos precisarem ser renovados."
 
@@ -1629,7 +1629,7 @@ msgstr ""
 msgid "Manage efficiently your different effective vehicles Costs with WETH."
 msgstr ""
 "Gerencie com eficiência os custos de seus diferentes veículos efetivos com o "
-"Odoo."
+"Weth."
 
 #. module: fleet
 #: model_terms:ir.actions.act_window,help:fleet.fleet_vehicle_odometer_reporting_action
@@ -1653,7 +1653,7 @@ msgid "Manual"
 msgstr "Manual"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle_model_brand.py:0
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model__brand_id
 #: model_terms:ir.ui.view,arch_db:fleet.fleet_vehicle_log_services_view_search
@@ -1749,7 +1749,7 @@ msgid "Model of a vehicle"
 msgstr "Modelo do veículo"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle_model_brand.py:0
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_model_action
 #: model:ir.ui.menu,name:fleet.fleet_models_configuration
@@ -1861,7 +1861,7 @@ msgid "No data for odometer analysis"
 msgstr "Não há dados para análise de odômetro"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "No plate"
 msgstr "Sem placa"
@@ -2259,7 +2259,7 @@ msgid "Resurface Rotors"
 msgstr "Revestir os rotores"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "Review driver change"
 msgstr "Revisar alteração do motorista"
@@ -2303,7 +2303,7 @@ msgid "Send"
 msgstr "Enviar"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "Send Email"
 msgstr "Enviar e-mail"
@@ -2540,7 +2540,7 @@ msgstr ""
 "em branco se estiver disponível imediatamente."
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/wizard/fleet_vehicle_send_mail.py:0
 msgid "The following vehicle drivers are missing an email address: %s."
 msgstr "Os seguintes motoristas não têm um endereço de e-mail: %s."
@@ -2551,7 +2551,7 @@ msgid "The license plate must be unique"
 msgstr "A placa de matrícula deve ser única"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "The odometer value cannot be lower than the previous one."
 msgstr "O valor do odômetro não pode ser menor do que o anterior."
@@ -2682,7 +2682,7 @@ msgid "Unit"
 msgstr "Unidade"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "Unnamed Vehicle"
 msgstr "Veículo sem nome"
@@ -2693,7 +2693,7 @@ msgid "Unregistered"
 msgstr "Não registrado"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle_model.py:0
 #: model:ir.model,name:fleet.model_fleet_vehicle
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_assignation_log__vehicle_id
@@ -2769,13 +2769,13 @@ msgid "Vehicle Type"
 msgstr "Tipo de veículo"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/wizard/fleet_vehicle_send_mail.py:0
 msgid "Vehicle: Mass mail drivers"
 msgstr "Veículo: distribuição em massa para motoristas"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle_model.py:0
 #: model:ir.actions.act_window,name:fleet.fleet_vehicle_action
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_send_mail__vehicle_ids
@@ -3005,7 +3005,7 @@ msgid "show the services logs for this vehicle"
 msgstr "mostram os registros de serviço para este veículo"
 
 #. module: fleet
-#. odoo-python
+#. weth-python
 #: code:addons/fleet/models/fleet_vehicle.py:0
 msgid "user_id"
 msgstr "user_id"

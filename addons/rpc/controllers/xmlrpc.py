@@ -69,7 +69,7 @@ def xmlrpc_handle_exception_string(e):
     return dumps(fault)
 
 
-class OdooMarshaller(xmlrpc.client.Marshaller):
+class WethMarshaller(xmlrpc.client.Marshaller):
     dispatch = dict(xmlrpc.client.Marshaller.dispatch)
 
     def dump_frozen_dict(self, value, write):
@@ -77,7 +77,7 @@ class OdooMarshaller(xmlrpc.client.Marshaller):
         self.dump_struct(value, write)
 
     # By default, in xmlrpc, bytes are converted to xmlrpc.client.Binary object.
-    # Historically, odoo is sending binary as base64 string.
+    # Historically, weth is sending binary as base64 string.
     # In python 3, base64.b64{de,en}code() methods now works on bytes.
     def dump_bytes(self, value, write):
         self.dump_unicode(value.decode(), write)
@@ -113,7 +113,7 @@ class OdooMarshaller(xmlrpc.client.Marshaller):
 
 
 def dumps(params: list | tuple | xmlrpc.client.Fault) -> str:
-    response = OdooMarshaller(allow_none=False).dumps(params)
+    response = WethMarshaller(allow_none=False).dumps(params)
     return f"""\
 <?xml version="1.0"?>
 <methodResponse>

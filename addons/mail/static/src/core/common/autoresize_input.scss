@@ -1,4 +1,4 @@
-.o-mail-AutoresizeInput-box {
+.w-mail-AutoresizeInput-box {
     --o-input-border-color: transparent;
     --o-input-padding-x: #{map-get($spacers, 1)};
     padding-inline: var(--o-input-padding-x);
@@ -12,21 +12,21 @@
         white-space: pre;
     }
 
-    &:where(:has(.o-mail-AutoresizeInput:enabled)):hover {
+    &:where(:has(.w-mail-AutoresizeInput:enabled)):hover {
         --o-input-border-color: #{$border-color};
     }
 
     &:focus-within {
-        --o-input-border-color: #{$o-component-active-border};
+        --o-input-border-color: #{$w-component-active-border};
         color: $body-color !important; // Reset eventual text-muted.
     }
 
-    &:where(:has(.o-mail-AutoresizeInput[disabled])) {
+    &:where(:has(.w-mail-AutoresizeInput[disabled])) {
         color: $body-color;
     }
 }
 
-.o-mail-AutoresizeInput {
+.w-mail-AutoresizeInput {
     // Out of flow so it can't influence the box's size. Only ::after does.
     padding-inline: var(--o-input-padding-x);
     color: inherit;

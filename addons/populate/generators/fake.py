@@ -116,7 +116,7 @@ def create(method_name: str):
         Accepts ``locale`` and any of the underlying Faker method's keyword arguments.
         """
         name = f'fake.{method_name}'
-        # Disable type-checking, as inferring the correct Odoo field type from
+        # Disable type-checking, as inferring the correct WETH field type from
         # either the return type of the typed method or from calling it
         # can be error-prone and/or inaccurate, leading to false-positives.
         allowed_on = None

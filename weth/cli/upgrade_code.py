@@ -8,7 +8,7 @@ that takes a single argument, the file_manager, and returns nothing.
 
 The file_manager acts as a list of files, files have 3 attributes:
 * path: the pathlib.Path where the file is on the file system;
-* addon: the odoo addon in which the file is;
+* addon: the weth addon in which the file is;
 * content: the re-writtable content of the file (lazy).
 
 There are additional utilities on the file_manager, such as:
@@ -51,12 +51,12 @@ try:
 except ImportError:
     # Assume the script is directy executed (by opposition to be
     # executed via weth-bin), happily release/parse_version are
-    # standalone so we can hack our way there without importing odoo
+    # standalone so we can hack our way there without importing weth
     sys.path.insert(0, str(ROOT))
     sys.path.insert(0, str(ROOT / 'tools'))
     import release
     from parse_version import parse_version
-    # Avoid shadowing stdlib modules when running upgrade scripts, e.g. json with odoo/tools/json.py
+    # Avoid shadowing stdlib modules when running upgrade scripts, e.g. json with weth/tools/json.py
     del sys.path[:2]
     class Command:
         """ Simplified version of the one in command.py, for standalone execution """

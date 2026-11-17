@@ -28,11 +28,11 @@
                     <div class="o_not_editable">
                         <img class="img img-fluid o_editable_media mx-auto"
                             style="width: 50% !important"
-                            src="https://www.weth.com.br/web/image/38874595-16ef5349/odoo-mobile.png"
-                            data-original-src="https://www.weth.com.br/web/image/38874595-16ef5349/odoo-mobile.png"
+                            src="https://www.weth.com.br/web/image/38874595-16ef5349/weth-mobile.png"
+                            data-original-src="https://www.weth.com.br/web/image/38874595-16ef5349/weth-mobile.png"
                             data-original-mimetype="image/png"
                             data-mimetype="image/png"
-                            alt="Odoo Mobile" />
+                            alt="WETH Mobile" />
                     </div>
                 </div>
                 <div class="col-md-8 col-12">
@@ -40,10 +40,10 @@
                     <div class="row">
                         <div class="col-6 col-md-4 offset-md-2">
                             <div class="o_not_editable">
-                                <a href="https://play.google.com/store/apps/details?id=com.odoo.mobile" target="_blank">
+                                <a href="https://play.google.com/store/apps/details?id=com.weth.mobile" target="_blank">
                                     <img class="img img-fluid o_editable_media mx-auto"
-                                        src="https://download.odoocdn.com/digests/digest/static/src/img/google_play.png"
-                                        data-original-src="https://download.odoocdn.com/digests/digest/static/src/img/google_play.png"
+                                        src="https://download.wethcdn.com/digests/digest/static/src/img/google_play.png"
+                                        data-original-src="https://download.wethcdn.com/digests/digest/static/src/img/google_play.png"
                                         data-original-mimetype="image/png"
                                         data-mimetype="image/png"
                                         alt="Google Play Store"/>
@@ -54,8 +54,8 @@
                             <div class="o_not_editable">
                                 <a href="https://itunes.apple.com/us/app/weth/id1272543640" target="_blank">
                                     <img class="img img-fluid o_editable_media mx-auto"
-                                        src="https://download.odoocdn.com/digests/digest/static/src/img/app_store.png"
-                                        data-original-src="https://download.odoocdn.com/digests/digest/static/src/img/app_store.png"
+                                        src="https://download.wethcdn.com/digests/digest/static/src/img/app_store.png"
+                                        data-original-src="https://download.wethcdn.com/digests/digest/static/src/img/app_store.png"
                                         data-original-mimetype="image/png"
                                         data-mimetype="image/png"
                                         alt="App Store"/>

@@ -7,7 +7,7 @@ import { CellErrorType, EvaluationError } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 
 /**
- * @typedef {import("./odoo_data_provider").OdooDataProvider} OdooDataProvider
+ * @typedef {import("./weth_data_provider").WethDataProvider} WethDataProvider
  * @typedef {import("./server_data").ServerData} ServerData
  */
 
@@ -24,11 +24,11 @@ import { _t } from "@web/core/l10n/translation";
 export class LoadableDataSource {
     /**
      * @param {Object} param0
-     * @param {OdooDataProvider} param0.odooDataProvider
+     * @param {WethDataProvider} param0.wethDataProvider
      */
-    constructor({ odooDataProvider }) {
+    constructor({ wethDataProvider }) {
         /** @protected */
-        this.odooDataProvider = odooDataProvider;
+        this.wethDataProvider = wethDataProvider;
 
         /**
          * Last time that this dataSource has been updated
@@ -47,11 +47,11 @@ export class LoadableDataSource {
     }
 
     get _orm() {
-        return this.odooDataProvider.orm;
+        return this.wethDataProvider.orm;
     }
 
     get serverData() {
-        return this.odooDataProvider.serverData;
+        return this.wethDataProvider.serverData;
     }
 
     /**
@@ -63,7 +63,7 @@ export class LoadableDataSource {
      */
     async load(params) {
         if (params && params.reload) {
-            this.odooDataProvider.cancelPromise(this._loadPromise);
+            this.wethDataProvider.cancelPromise(this._loadPromise);
             this._loadPromise = undefined;
         }
         if (!this._loadPromise) {
@@ -95,7 +95,7 @@ export class LoadableDataSource {
                     this._lastUpdate = Date.now();
                     this._isFullyLoaded = true;
                 });
-            await this.odooDataProvider.notifyWhenPromiseResolves(this._loadPromise);
+            await this.wethDataProvider.notifyWhenPromiseResolves(this._loadPromise);
         }
         return this._loadPromise;
     }
@@ -158,7 +158,7 @@ export class ModelNotFoundError extends Error { }
  *
  * @param {object} fieldService
  * @param {string} model
- * @returns {Promise<import("@spreadsheet").OdooFields>}
+ * @returns {Promise<import("@spreadsheet").WethFields>}
  */
 export async function getFields(fieldService, model) {
     try {

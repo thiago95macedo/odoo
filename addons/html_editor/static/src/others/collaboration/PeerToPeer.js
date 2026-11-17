@@ -2,7 +2,7 @@ import { localeCompare } from "@web/core/l10n/utils";
 
 const urlParams = new URLSearchParams(window.location.search);
 const collaborationDebug = urlParams.get("collaborationDebug");
-const COLLABORATION_LOCALSTORAGE_KEY = "odoo_editor_collaboration_debug";
+const COLLABORATION_LOCALSTORAGE_KEY = "weth_editor_collaboration_debug";
 if (typeof collaborationDebug === "string") {
     if (collaborationDebug === "false") {
         localStorage.removeItem(
@@ -88,7 +88,7 @@ const baseNotificationMethods = {
                 console.groupCollapsed("=== ERROR: handle offer ===");
                 console.log(
                     "An offer has been received for a non-existent peer connection - peer: " +
-                        notification.fromPeerId
+                    notification.fromPeerId
                 );
                 console.trace(pc && pc.connectionState);
                 console.groupEnd();
@@ -257,16 +257,14 @@ export class PeerToPeer {
         if (debugShowNotifications) {
             if (notificationName === "ptp_request_result") {
                 console.log(
-                    `%c${Date.now()} - REQUEST RESULT SEND: %c${transport}:${
-                        notificationPayload.requestId
+                    `%c${Date.now()} - REQUEST RESULT SEND: %c${transport}:${notificationPayload.requestId
                     }:${this._currentPeerId.slice("-5")}:${peerId.slice("-5")}`,
                     "color: #aaa;font-weight:bold;",
                     "color: #aaa;font-weight:normal"
                 );
             } else if (notificationName === "ptp_request") {
                 console.log(
-                    `%c${Date.now()} - REQUEST SEND: %c${transport}:${
-                        notificationPayload.requestName
+                    `%c${Date.now()} - REQUEST SEND: %c${transport}:${notificationPayload.requestName
                     }|${notificationPayload.requestId}:${this._currentPeerId.slice(
                         "-5"
                     )}:${peerId.slice("-5")}`,
@@ -322,8 +320,7 @@ export class PeerToPeer {
             if (debugShowNotifications) {
                 if (notification.notificationName === "ptp_request_result") {
                     console.log(
-                        `%c${Date.now()} - REQUEST RESULT RECEIVE: %c${
-                            notification.notificationPayload.requestId
+                        `%c${Date.now()} - REQUEST RESULT RECEIVE: %c${notification.notificationPayload.requestId
                         }:${notification.fromPeerId.slice("-5")}:${notification.toPeerId.slice(
                             "-5"
                         )}`,
@@ -332,10 +329,8 @@ export class PeerToPeer {
                     );
                 } else if (notification.notificationName === "ptp_request") {
                     console.log(
-                        `%c${Date.now()} - REQUEST RECEIVE: %c${
-                            notification.notificationPayload.requestName
-                        }|${
-                            notification.notificationPayload.requestId
+                        `%c${Date.now()} - REQUEST RECEIVE: %c${notification.notificationPayload.requestName
+                        }|${notification.notificationPayload.requestId
                         }:${notification.fromPeerId.slice("-5")}:${notification.toPeerId.slice(
                             "-5"
                         )}`,
@@ -344,8 +339,7 @@ export class PeerToPeer {
                     );
                 } else {
                     console.log(
-                        `%c${Date.now()} - NOTIFICATION RECEIVE: %c${
-                            notification.notificationName
+                        `%c${Date.now()} - NOTIFICATION RECEIVE: %c${notification.notificationName
                         }:${notification.fromPeerId}:${notification.toPeerId}`,
                         "color: #aaa;font-weight:bold;",
                         "color: #aaa;font-weight:normal"
@@ -515,9 +509,9 @@ export class PeerToPeer {
                 console.groupCollapsed("=== ERROR: onIceCandidate ===");
                 console.log(
                     "connectionState: " +
-                        pc.connectionState +
-                        " - iceState: " +
-                        pc.iceConnectionState
+                    pc.connectionState +
+                    " - iceState: " +
+                    pc.iceConnectionState
                 );
                 console.trace(error);
                 console.groupEnd();

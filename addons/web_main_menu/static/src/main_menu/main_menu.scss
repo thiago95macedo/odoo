@@ -1,41 +1,40 @@
 // ============================================================================
 // Variáveis do Menu Principal — WETH Institucional
 // ============================================================================
-$o-main-menu-background-color: $o-brand-primary !default;
-$o-main-menu-background:
-    radial-gradient(ellipse 65% 55% at 5% 0%, rgba(#1b4f9b, .75), transparent),
+$w-main-menu-background-color: $w-brand-primary !default;
+$w-main-menu-background: radial-gradient(ellipse 65% 55% at 5% 0%, rgba(#1b4f9b, .75), transparent),
     radial-gradient(ellipse 70% 45% at 50% 100%, rgba(#0a3a7e, .7), transparent),
     linear-gradient(165deg, #031b3e 0%, #05285b 55%, #082046 100%) !default;
-$o-main-menu-color: $o-white !default;
-$o-main-menu-badge-bg: $o-danger !default;
-$o-main-menu-tile-bg: rgba($o-white, .14) !default;
-$o-main-menu-tile-bg--hover: rgba($o-white, .22) !default;
-$o-main-menu-tile-border: rgba($o-white, .22) !default;
-$o-main-menu-tile-shadow: 0 .5rem 1.25rem rgba(#020e22, .20) !default;
-$o-main-menu-slot-border: rgba($o-white, .35) !default;
+$w-main-menu-color: $w-white !default;
+$w-main-menu-badge-bg: $w-danger !default;
+$w-main-menu-tile-bg: rgba($w-white, .14) !default;
+$w-main-menu-tile-bg--hover: rgba($w-white, .22) !default;
+$w-main-menu-tile-border: rgba($w-white, .22) !default;
+$w-main-menu-tile-shadow: 0 .5rem 1.25rem rgba(#020e22, .20) !default;
+$w-main-menu-slot-border: rgba($w-white, .35) !default;
 
 // ============================================================================
 // Integração com o Web Client
 // ============================================================================
 // O fundo se propaga suavemente sob a navbar, que se torna translúcida.
 .o_web_client:has(> .o_action_manager > .o_main_menu) {
-    background-color: $o-main-menu-background-color;
-    background-image: $o-main-menu-background;
+    background-color: $w-main-menu-background-color;
+    background-image: $w-main-menu-background;
 
     .o_main_navbar {
         --NavBar-entry-backgroundColor: transparent;
-        --NavBar-entry-backgroundColor--hover: #{rgba($o-white, .12)};
-        --NavBar-entry-backgroundColor--focus: #{rgba($o-white, .12)};
-        --NavBar-entry-backgroundColor--active: #{rgba($o-white, .18)};
-        --o-navbar-badge-bg: #{$o-main-menu-badge-bg};
-        --o-navbar-badge-color: #{$o-white};
+        --NavBar-entry-backgroundColor--hover: #{rgba($w-white, .12)};
+        --NavBar-entry-backgroundColor--focus: #{rgba($w-white, .12)};
+        --NavBar-entry-backgroundColor--active: #{rgba($w-white, .18)};
+        --o-navbar-badge-bg: #{$w-main-menu-badge-bg};
+        --o-navbar-badge-color: #{$w-white};
         --o-navbar-badge-text-shadow: none;
 
         background: transparent;
     }
 
     // O menu principal possui scroll próprio e fluido.
-    > .o_action_manager > .o_main_menu {
+    >.o_action_manager>.o_main_menu {
         overflow-y: auto;
     }
 }
@@ -50,7 +49,7 @@ $o-main-menu-slot-border: rgba($o-white, .35) !default;
     --MainMenu-grid-padding: .75rem;
     --MainMenu-title-padding: 1rem;
 
-    color: $o-main-menu-color;
+    color: $w-main-menu-color;
 
     @include media-breakpoint-up(md) {
         --MainMenu-tile-size: 4.5rem;
@@ -158,9 +157,9 @@ $o-main-menu-slot-border: rgba($o-white, .35) !default;
         justify-content: center;
         min-height: var(--MainMenu-tile-size);
         padding: 1rem;
-        border: 1px dashed $o-main-menu-slot-border;
+        border: 1px dashed $w-main-menu-slot-border;
         border-radius: var(--MainMenu-tile-radius);
-        color: rgba($o-white, .75);
+        color: rgba($w-white, .75);
         font-size: .875rem;
         text-align: center;
     }
@@ -188,15 +187,15 @@ $o-main-menu-slot-border: rgba($o-white, .35) !default;
             outline: none;
 
             .o_main_menu_tile {
-                background-color: $o-main-menu-tile-bg--hover;
-                border-color: rgba($o-white, .35);
+                background-color: $w-main-menu-tile-bg--hover;
+                border-color: rgba($w-white, .35);
                 transform: translateY(-2px);
                 box-shadow: 0 .75rem 1.75rem rgba(#020e22, .28);
             }
         }
 
         &:focus-visible .o_main_menu_tile {
-            outline: 2px solid $o-white;
+            outline: 2px solid $w-white;
             outline-offset: 3px;
         }
     }
@@ -208,10 +207,10 @@ $o-main-menu-slot-border: rgba($o-white, .35) !default;
         justify-content: center;
         width: var(--MainMenu-tile-size);
         height: var(--MainMenu-tile-size);
-        border: 1px solid $o-main-menu-tile-border;
+        border: 1px solid $w-main-menu-tile-border;
         border-radius: var(--MainMenu-tile-radius);
-        background-color: $o-main-menu-tile-bg;
-        box-shadow: $o-main-menu-tile-shadow;
+        background-color: $w-main-menu-tile-bg;
+        box-shadow: $w-main-menu-tile-shadow;
         backdrop-filter: blur(8px);
         transition: background-color .15s, border-color .15s, box-shadow .15s, transform .15s;
 

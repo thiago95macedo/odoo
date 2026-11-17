@@ -68,7 +68,7 @@ export async function loadAssets(styleTarget) {
             url("/im_livechat/material_symbols_outlined"),
             document
         ),
-        loadFont("odoo_ui_icons", url("/im_livechat/odoo_ui_icons"), document),
+        loadFont("weth_ui_icons", url("/im_livechat/weth_ui_icons"), document),
     ]);
 }
 

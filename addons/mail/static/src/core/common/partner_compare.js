@@ -5,15 +5,15 @@ import { registry } from "@web/core/registry";
  * Registry of functions to sort partner suggestions.
  * The expected value is a function with the following
  * signature:
- *     (partner1: Partner, partner2: Partner, { env: OdooEnv, searchTerm: string, thread?: Thread , context?: Object}) => number|undefined
+ *     (partner1: Partner, partner2: Partner, { env: WethEnv, searchTerm: string, thread?: Thread , context?: Object}) => number|undefined
  */
 export const partnerCompareRegistry = registry.category("mail.partner_compare");
 
 partnerCompareRegistry.add(
-    "mail.archived-last-except-odoobot",
-    function archivedLastExceptOdoobot(p1, p2) {
-        const p1active = p1.active || p1.eq(p1.store.odoobot);
-        const p2active = p2.active || p2.eq(p2.store.odoobot);
+    "mail.archived-last-except-wethbot",
+    function archivedLastExceptWethbot(p1, p2) {
+        const p1active = p1.active || p1.eq(p1.store.wethbot);
+        const p2active = p2.active || p2.eq(p2.store.wethbot);
         if (!p1active && p2active) {
             return 1;
         }

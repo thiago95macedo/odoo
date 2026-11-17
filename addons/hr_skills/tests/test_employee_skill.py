@@ -70,7 +70,7 @@ class TestEmployeeSkills(TransactionCase):
 # |           Skills              |  |              Level               |
 # |-------------------------------|  |----------------------------------|---------------------------------|
 # | Id  |  Skill Type  |   Name   |  |   Id  |  Skill Type  |   Name    | Index (in skill_type.level_ids) |
-# |   1 |  Certificate |     Odoo |  |     1 |  Certificate |       20% |                               0 |
+# |   1 |  Certificate |     WETH |  |     1 |  Certificate |       20% |                               0 |
 # |   2 |  Certificate |    Scrum |  |     2 |  Certificate |       50% |                               1 |
 # |     |              |          |  |     3 |  Certificate |       70% |                               2 |
 # |     |              |          |  |     4 |  Certificate |      100% |                               3 |
@@ -87,8 +87,8 @@ class TestEmployeeSkills(TransactionCase):
 # |                                Employee Skill                                       |
 # |-------------------------------------------------------------------------------------|
 # |  Id  |  Skill Type  |  Skill  |  Level  | Certificate  |  Start Date  |  Stop Date  |
-# |    1 |  Certificate |    Odoo |     50% |        True  |     24-03-02 |           - |
-# |    2 |  Certificate |    Odoo |     20% |        True  |     24-01-01 |    24-04-01 | <- not present in current_employee_skill (because a valid certification for this skill exist)
+# |    1 |  Certificate |    WETH |     50% |        True  |     24-03-02 |           - |
+# |    2 |  Certificate |    WETH |     20% |        True  |     24-01-01 |    24-04-01 | <- not present in current_employee_skill (because a valid certification for this skill exist)
 # |    3 |    Languages | English |     A2  |       False  |     24-01-01 |           - |
 # |    4 |    Languages |  Arabic |     A2  |       False  |     24-02-01 |           - |
 # |    4 |    Languages |  Arabic |     A1  |       False  |     24-01-01 |    24-01-31 | <- not present in current_employee_skill (because this regular skill is expired)
@@ -157,7 +157,7 @@ class TestEmployeeSkills(TransactionCase):
         self.assertEqual(new_employee_skill.valid_from, fields.Date.context_today(self))
         self.assertEqual(self.line3.valid_to, fields.Date.context_today(self) - relativedelta(days=1))
 
-    def test_edit_odoo_50_stop_date(self):
+    def test_edit_weth_50_stop_date(self):
         employee_form = Form(self.employee)
         previous_employee_skills = self.employee.employee_skill_ids
         index = self.employee.current_employee_skill_ids.ids.index(self.line1.id)
@@ -207,7 +207,7 @@ class TestEmployeeSkills(TransactionCase):
         self.assertEqual(new_employee_skill.valid_from, fields.Date.context_today(self))
         self.assertFalse(new_employee_skill.valid_to)
 
-    def test_edit_arabic_a2_to_odoo_50_from_1_jan_to_1_june(self):
+    def test_edit_arabic_a2_to_weth_50_from_1_jan_to_1_june(self):
         employee_form = Form(self.employee)
         previous_employee_skills = self.employee.employee_skill_ids
         index = self.employee.current_employee_skill_ids.ids.index(self.line4.id)
@@ -225,7 +225,7 @@ class TestEmployeeSkills(TransactionCase):
         self.assertEqual(new_employee_skill.valid_from, fields.Date.context_today(self) - relativedelta(months=5))
         self.assertEqual(new_employee_skill.valid_to, fields.Date.context_today(self) + relativedelta(months=7))
 
-    def test_add_odoo_50_from_2_mar_to_infinite(self):
+    def test_add_weth_50_from_2_mar_to_infinite(self):
         employee_form = Form(self.employee)
         previous_employee_skills = self.employee.employee_skill_ids
         with employee_form.current_employee_skill_ids.new() as employee_skill_form:
@@ -346,7 +346,7 @@ class TestEmployeeSkills(TransactionCase):
             "The test employee should have 4 skills since the expired certification is removed"
         )
 
-    def test_add_odoo_70_from_1_jan_1_mar(self):
+    def test_add_weth_70_from_1_jan_1_mar(self):
         self.assertEqual(
             len(self.employee.employee_skill_ids.ids),
             5,
@@ -357,8 +357,8 @@ class TestEmployeeSkills(TransactionCase):
             employee_skill_form.skill_type_id = self.certification
             employee_skill_form.skill_id = self.certification.skill_ids[0]
             employee_skill_form.skill_level_id = self.certification.skill_level_ids[2]
-            employee_skill_form.valid_from = datetime.date(2024, 1, 1)  # so same as odoo 20%
-            employee_skill_form.valid_to = datetime.date(2024, 4, 1)  # so same as odoo 20%
+            employee_skill_form.valid_from = datetime.date(2024, 1, 1)  # so same as weth 20%
+            employee_skill_form.valid_to = datetime.date(2024, 4, 1)  # so same as weth 20%
 
         employee = employee_form.save()
         self.assertEqual(
@@ -367,7 +367,7 @@ class TestEmployeeSkills(TransactionCase):
             "The test employee should have 6 skills",
         )
 
-    def test_add_odoo_50_from_1_jan_to_infinite(self):
+    def test_add_weth_50_from_1_jan_to_infinite(self):
         self.assertEqual(
             len(self.employee.employee_skill_ids.ids),
             5,
@@ -377,7 +377,7 @@ class TestEmployeeSkills(TransactionCase):
         with employee_form.current_employee_skill_ids.new() as employee_skill_form:
             employee_skill_form.skill_type_id = self.certification
             employee_skill_form.skill_id = self.certification.skill_ids[0]
-            employee_skill_form.skill_level_id = self.certification.skill_level_ids[1]  # so same as odoo 50%
+            employee_skill_form.skill_level_id = self.certification.skill_level_ids[1]  # so same as weth 50%
             employee_skill_form.valid_from = datetime.date(2024, 1, 1)
 
         employee = employee_form.save()

@@ -7,7 +7,7 @@
         width: auto;
 
         .modal-content {
-            background-color: black!important;
+            background-color: black !important;
             border: 3px outset gray;
             border-radius: 20px;
 
@@ -15,7 +15,7 @@
                 border: none;
                 color: white;
                 cursor: pointer;
-                font-family: $o-we-font-family;
+                font-family: $w-we-font-family;
 
                 .btn-close {
                     filter: invert(50%) grayscale(100%) brightness(200%);
@@ -33,7 +33,7 @@
             }
 
             .modal-body {
-                background-color: inherit!important;
+                background-color: inherit !important;
                 border-radius: 20px;
                 padding: 15px;
 
@@ -50,7 +50,7 @@
                     height: $mobile-preview-width + 15;
                 }
 
-                > iframe {
+                >iframe {
                     display: block;
                     width: 100%;
                     border: none;

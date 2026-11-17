@@ -4,11 +4,11 @@ import { EvaluationError } from "@weth/o-spreadsheet";
 const { arg, toString, toJsDate, toNumber } = spreadsheet.helpers;
 const { functionRegistry } = spreadsheet.registries;
 
-functionRegistry.add("ODOO.CURRENCY.RATE", {
+functionRegistry.add("WETH.CURRENCY.RATE", {
     description: _t(
         "This function takes in two currency codes as arguments, and returns the exchange rate from the first currency to the second as float."
     ),
-    category: "Odoo",
+    category: "Weth",
     compute: function (currencyFrom, currencyTo, date, companyId) {
         const from = toString(currencyFrom);
         const to = toString(currencyTo);

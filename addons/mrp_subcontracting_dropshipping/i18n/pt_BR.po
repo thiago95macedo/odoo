@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_subcontracting_dropshipping/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgid "Dropship Subcontractor Pick Type"
 msgstr "Tipo de separação de envio direto para subcontratados"
 
 #. module: mrp_subcontracting_dropshipping
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_dropshipping/models/stock_warehouse.py:0
 msgid "Dropship Subcontractor on Order"
 msgstr "Envio direto sob demanda para subcontratação"
@@ -91,7 +91,7 @@ msgid "Minimum Inventory Rule"
 msgstr "Regra de estoque mínimo"
 
 #. module: mrp_subcontracting_dropshipping
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_dropshipping/models/purchase.py:0
 msgid "Please note this purchase order is for subcontracting purposes."
 msgstr "Observe que este pedido de compra é para fins de subcontratação."
@@ -137,7 +137,7 @@ msgid "Warehouse"
 msgstr "Armazém"
 
 #. module: mrp_subcontracting_dropshipping
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_dropshipping/models/purchase.py:0
 msgid "Warning"
 msgstr "Aviso"

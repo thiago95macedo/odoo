@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_project/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -49,19 +49,19 @@ msgid "Add a task suggestion form to your website"
 msgstr "Adicione um formulário de sugestão de tarefa ao seu site"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Ask Your Question"
 msgstr "Faça sua pergunta"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Attach File"
 msgstr "Anexar arquivo"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 #: model:ir.model.fields,field_description:website_project.field_project_task__partner_company_name
 msgid "Company Name"
@@ -84,19 +84,19 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: website_project
-#. odoo-python
+#. weth-python
 #: code:addons/website_project/controllers/main.py:0
 msgid "Email"
 msgstr "E-mail"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Email Address"
 msgstr "Endereço de email"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Full Name"
 msgstr "Nome Completo"
@@ -113,7 +113,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Message Subject"
 msgstr "Assunto da mensagem"
@@ -124,7 +124,7 @@ msgid "Online Task Submission"
 msgstr "Envio de tarefa online"
 
 #. module: website_project
-#. odoo-python
+#. weth-python
 #: code:addons/website_project/controllers/main.py:0
 msgid "Other Information"
 msgstr "Outras informações"
@@ -140,13 +140,13 @@ msgid "Page"
 msgstr "Página"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.edit.js:0
 msgid "Phone Number"
 msgstr "Número de telefone"
 
 #. module: website_project
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_project/static/src/js/website_project_editor.js:0
 msgid "Project"
 msgstr "Projeto"

@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-09 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_timesheet/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/sale_order.py:0
 msgid ""
 "\n"
@@ -52,7 +52,7 @@ msgstr ""
 "            "
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_move.py:0
 #: code:addons/sale_timesheet/models/project_project.py:0
 msgid ""
@@ -101,7 +101,7 @@ msgstr ""
 "ter quantidades entregues reais nos pedidos de venda.\n"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid ""
 "'%(missing_plan_names)s' analytic plan(s) required on the analytic "
@@ -425,7 +425,7 @@ msgid "Bachelor Degree or Higher"
 msgstr "Graduação ou superior"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/product_template.py:0
 msgid "Based on Timesheets"
 msgstr "Baseado em planilhas de horas"
@@ -733,7 +733,7 @@ msgid "Interior Designing"
 msgstr "Design de interiores"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 #: model:ir.model.fields,field_description:sale_timesheet.field_timesheets_analysis_report__reinvoice_move_id
@@ -749,7 +749,7 @@ msgid "Invoice Policy"
 msgstr "Política de faturamento"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/product_template.py:0
 msgid "Invoice based on timesheets (delivered quantity)."
 msgstr "Fatura com base em planilhas de horas (quantidade entregue)."
@@ -760,7 +760,7 @@ msgid "Invoice created from the timesheet"
 msgstr "Fatura criada a partir de planilha de horas"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 msgid "Invoices"
 msgstr "Faturas"
@@ -1096,7 +1096,7 @@ msgid "Qualify the customer needs"
 msgstr "Qualifique as necessidades do cliente"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 msgid "Quotation"
 msgstr "Cotação"
@@ -1140,7 +1140,7 @@ msgid "Sales Advance Payment Invoice"
 msgstr "Fatura de venda com pagamento antecipado"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 #: model:ir.model,name:sale_timesheet.model_sale_order
@@ -1152,7 +1152,7 @@ msgid "Sales Order"
 msgstr "Pedido de venda"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 #: model:ir.model.fields,field_description:sale_timesheet.field_account_analytic_line__so_line
 #: model:ir.model.fields,field_description:sale_timesheet.field_project_sale_line_employee_map__sale_line_id
@@ -1225,13 +1225,13 @@ msgid "Sales order to which the task is linked."
 msgstr "Pedido de venda ao qual a tarefa está vinculada."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 msgid "Search in Invoice"
 msgstr "Buscar nas faturas"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/controllers/portal.py:0
 msgid "Search in Sales Order Item"
 msgstr "Buscar no item do pedido de venda"
@@ -1329,7 +1329,7 @@ msgid "Tasks Analysis"
 msgstr "Análise de tarefas"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/product_product.py:0
 #: code:addons/sale_timesheet/models/product_template.py:0
 msgid ""
@@ -1340,7 +1340,7 @@ msgstr ""
 "arquivado, excluído ou vinculado a uma empresa."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/sale_order.py:0
 msgid "The Sales Order must contain at least one service product."
 msgstr "O pedido de vendas deve conter pelo menos um produto de serviço."
@@ -1448,7 +1448,7 @@ msgid "Timesheet Total Duration"
 msgstr "Duração total da planilha de horas"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_move.py:0
 #: model:ir.actions.act_window,name:sale_timesheet.action_timesheet_from_invoice
 #: model:ir.actions.act_window,name:sale_timesheet.timesheet_action_from_sales_order
@@ -1463,31 +1463,31 @@ msgid "Timesheets"
 msgstr "Planilhas de horas"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "Timesheets (Fixed Price)"
 msgstr "Planilhas de Horas (Preço Fixo)"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "Timesheets (Manual)"
 msgstr "Planilhas de Horas (Manual)"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "Timesheets (Milestones)"
 msgstr "Planilhas de Horas (Marcos)"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "Timesheets (Non-Billable)"
 msgstr "Planilhas de horas (não faturáveis)"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "Timesheets (Time & Materials)"
 msgstr "Planilhas de Horas (Tempo e Materiais)"
@@ -1513,7 +1513,7 @@ msgid "Timesheets by Billing Type"
 msgstr "Planilhas de horas por tipo de faturamento"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/project_project.py:0
 msgid "Timesheets of %s"
 msgstr "Planilha de horas de %s"
@@ -1642,7 +1642,7 @@ msgid "What's great in the job?"
 msgstr "O que é ótimo no trabalho?"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/project_project.py:0
 msgid ""
 "You cannot link a billable project to a sales order item that comes from an "
@@ -1652,7 +1652,7 @@ msgstr ""
 "proveniente de uma despesa ou de uma fatura de fornecedor."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/project_project.py:0
 msgid ""
 "You cannot link a billable project to a sales order item that is not a "
@@ -1662,13 +1662,13 @@ msgstr ""
 "que não seja um serviço."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "You cannot modify timsheets that are already invoiced."
 msgstr "Não é possível modificar planilhas de horas já faturadas."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_analytic_line.py:0
 msgid "You cannot remove timsheets that are already invoiced."
 msgstr "Não é possível remover planilhas de horas que já foram faturadas."
@@ -1679,7 +1679,7 @@ msgid "billed manually"
 msgstr "faturadas manualmente"
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/sale_order_line.py:0
 msgid "days remaining"
 msgstr "dias restantes"
@@ -1695,7 +1695,7 @@ msgid "of the hours sold."
 msgstr "das horas vendidas."
 
 #. module: sale_timesheet
-#. odoo-python
+#. weth-python
 #: code:addons/sale_timesheet/models/account_move.py:0
 msgid "project_id"
 msgstr "project_id"

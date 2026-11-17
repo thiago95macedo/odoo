@@ -61,17 +61,17 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
         # Reset the LDAP users between unit tests, so each unit test does not have to take care of the users cleanup
         self.ldap_connection_mock._users = {
             # The user account on the LDAP server that is used to query the directory.
-            # Not the account linked to the admin user in the odoo database
+            # Not the account linked to the admin user in the weth database
             "cn=admin,dc=example,dc=org": {
                 "uid": "admin",
                 "password": "admin",
             },
-            # The user linked to the admin user in the odoo databae
+            # The user linked to the admin user in the weth databae
             "uid=admin,dc=example,dc=org": {
                 "uid": "admin",
                 "password": "xyz",
             },
-            # The user linked to the demo user in the odoo databae
+            # The user linked to the demo user in the weth databae
             "uid=demo,dc=example,dc=org": {
                 "uid": "demo",
                 "password": "foo",
@@ -92,10 +92,10 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
                     "company": (self.env.company.id, self.env.company.name),
                     "ldap_server": "127.0.0.1",
                     "ldap_server_port": 389,
-                    "ldap_binddn": "cn=admin,dc=odoo,dc=com",
+                    "ldap_binddn": "cn=admin,dc=weth,dc=com",
                     "ldap_password": "admin",
                     "ldap_filter": "cn=%s",
-                    "ldap_base": "dc=odoo,dc=com",
+                    "ldap_base": "dc=weth,dc=com",
                     "user": (template_user.id, template_user.name),
                     "create_user": True,
                     "ldap_tls": False,
@@ -104,7 +104,7 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
 
         def _authenticate(*args, **kwargs):
             return (
-                "cn=test_ldap_user,dc=odoo,dc=com",
+                "cn=test_ldap_user,dc=weth,dc=com",
                 {
                     "sn": [b"test_ldap_user"],
                     "cn": [b"test_ldap_user"],
@@ -141,7 +141,7 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
     @users("demo")
     def test_user_change_own_password(self):
         """Tests that, when a user is linked to an LDAP user and changes his password,
-        the password gets updated in the LDAP server rather than updating the local password in the odoo database.
+        the password gets updated in the LDAP server rather than updating the local password in the weth database.
         """
         # Check the user cannot connect with a random password
         with self.assertRaises(AccessDenied):
@@ -226,7 +226,7 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
     @users("admin")
     def test_admin_change_users_password(self):
         """Tests that, when an admin changes the password of users linked to LDAP accounts,
-        the passwords gets updated in the LDAP server rather than updating the local passwords in the odoo database.
+        the passwords gets updated in the LDAP server rather than updating the local passwords in the weth database.
         """
 
         # Check the users can connect with their above defined password in the LDAP mock

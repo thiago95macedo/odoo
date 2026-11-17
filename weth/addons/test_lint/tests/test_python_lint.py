@@ -111,7 +111,7 @@ class TestOrmCacheDecoratorWarnings(LintCase):
 
     def test_forbid_domains_in_onchanges(self):
         """ Dynamic domains (returning a domain from an onchange) are deprecated
-        and should not be used in "standard" Odoo anymore
+        and should not be used in "standard" WETH anymore
         """
         checker = OnchangeChecker()
         rs = []
@@ -124,7 +124,7 @@ class TestOrmCacheDecoratorWarnings(LintCase):
             self.fail("\n- ".join(rs))
 
     def test_addons_orm_import(self):
-        """ Test that weth.orm is not imported in Odoo modules"""
+        """ Test that weth.orm is not imported in WETH modules"""
         checker = ImportOrmChecker()
         errors = []
         for path in self.iter_module_files('*.py'):

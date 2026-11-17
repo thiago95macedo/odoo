@@ -2,12 +2,12 @@
 
 from weth.tests import tagged
 from weth.tests.common import TransactionCase
-from weth.tools.js_transpiler import URL_RE, ODOO_MODULE_RE
+from weth.tools.js_transpiler import URL_RE, WETH_MODULE_RE
 
 @tagged('post_install', '-at_install')
 class TestJsTranspiler(TransactionCase):
 
-    def test_correct_ODOO_MODULE_RE(self):
+    def test_correct_WETH_MODULE_RE(self):
         cases = [
             '// @weth-module',
             '//@weth-module',
@@ -26,15 +26,15 @@ class TestJsTranspiler(TransactionCase):
         ]
 
         for case in cases:
-            assert ODOO_MODULE_RE.match(case), "URL_RE is failing... >%s<" % case
+            assert WETH_MODULE_RE.match(case), "URL_RE is failing... >%s<" % case
             if "alias" in case:
-                assert ODOO_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE is failing for alias... >%s<" % case
-                assert ODOO_MODULE_RE.match(case).groupdict().get('alias') == "web.test", "URL_RE does not get the right alias for ... >%s<" % case
+                assert WETH_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE is failing for alias... >%s<" % case
+                assert WETH_MODULE_RE.match(case).groupdict().get('alias') == "web.test", "URL_RE does not get the right alias for ... >%s<" % case
             if "default" in case:
-                assert ODOO_MODULE_RE.match(case).groupdict().get('default'), "URL_RE is failing for default... >%s<" % case
-                assert ODOO_MODULE_RE.match(case).groupdict().get('default') == "false", "URL_RE does not get the right default for ... >%s<" % case
+                assert WETH_MODULE_RE.match(case).groupdict().get('default'), "URL_RE is failing for default... >%s<" % case
+                assert WETH_MODULE_RE.match(case).groupdict().get('default') == "false", "URL_RE does not get the right default for ... >%s<" % case
 
-    def test_incorrect_ODOO_MODULE_RE(self):
+    def test_incorrect_WETH_MODULE_RE(self):
         cases = [
             '/* @weth-module alias = web.test ',
             '/* @weth-module alias= web.test',
@@ -42,7 +42,7 @@ class TestJsTranspiler(TransactionCase):
         ]
 
         for case in cases:
-            assert not ODOO_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE should fail because of too much spaces but didn't... >%s<" % case
+            assert not WETH_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE should fail because of too much spaces but didn't... >%s<" % case
 
         cases = [
             '// @weth-modulealias=web.test',
@@ -52,11 +52,11 @@ class TestJsTranspiler(TransactionCase):
         for case in cases:
             if "alias" in case and "default" in case:
                 assert \
-                    not ODOO_MODULE_RE.match(case).groupdict().get('alias') \
+                    not WETH_MODULE_RE.match(case).groupdict().get('alias') \
                     or \
-                    not ODOO_MODULE_RE.match(case).groupdict().get('default'), "URL_RE should fail for alias and default... >%s<" % case
+                    not WETH_MODULE_RE.match(case).groupdict().get('default'), "URL_RE should fail for alias and default... >%s<" % case
             elif "alias" in case:
-                assert not ODOO_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE should fail for alias... >%s<" % case
+                assert not WETH_MODULE_RE.match(case).groupdict().get('alias'), "URL_RE should fail for alias... >%s<" % case
 
     def test_correct_URL_RE(self):
         cases = [

@@ -282,18 +282,18 @@ test("SelectCreateDialog list view is readonly", async () => {
     });
     await animationFrame();
     // select first row
-    await contains(".o_list_view tbody tr td:first").click();
-    expect(".o_data_row_selected").toHaveCount(1);
+    await contains(".w_list_view tbody tr td:first").click();
+    expect(".w_data_row_selected").toHaveCount(1);
     // click on it to see if the list is editable
-    await contains(".o_list_view tbody tr:first .o_list_char").click();
-    expect(".o_data_row_selected").toHaveCount(0);
-    expect(".o_selected_row").toHaveCount(0);
+    await contains(".w_list_view tbody tr:first .w_list_char").click();
+    expect(".w_data_row_selected").toHaveCount(0);
+    expect(".w_selected_row").toHaveCount(0);
 
-    expect(".o_list_view tbody tr td .o_field_char input").toHaveCount(0, {
+    expect(".w_list_view tbody tr td .w_field_char input").toHaveCount(0, {
         message: "list view should not be editable in a SelectCreateDialog",
     });
-    expect(".o_handle_cell").toHaveCount(4);
-    expect(".o_row_handle.o_disabled").toHaveCount(3, {
+    expect(".w_handle_cell").toHaveCount(4);
+    expect(".w_row_handle.w_disabled").toHaveCount(3, {
         message: "handles should be disabled in readonly",
     });
 });
@@ -323,8 +323,8 @@ test("SelectCreateDialog list view is readonly (grouped by m2o)", async () => {
         },
     });
     await animationFrame();
-    expect(".o_group_header").toHaveCount(1);
-    expect(".o_list_footer .o_list_group_add").toHaveCount(0);
+    expect(".w_group_header").toHaveCount(1);
+    expect(".w_list_footer .w_list_group_add").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -378,8 +378,8 @@ test("SelectCreateDialog cascade x2many in create mode on desktop", async () => 
         `,
     });
 
-    await contains(".o_field_x2many_list_row_add button").click();
-    await contains(".o_field_widget[name=instrument] input").edit("ABC", { confirm: false });
+    await contains(".w_field_x2many_list_row_add button").click();
+    await contains(".w_field_widget[name=instrument] input").edit("ABC", { confirm: false });
     await runAllTimers();
     await contains(
         `[name="instrument"] .dropdown .dropdown-menu li:contains("Create and edit...")`
@@ -387,15 +387,15 @@ test("SelectCreateDialog cascade x2many in create mode on desktop", async () => 
 
     expect(".modal .modal-lg").toHaveCount(1);
 
-    await contains(".modal .o_field_x2many_list_row_add button").click();
+    await contains(".modal .w_field_x2many_list_row_add button").click();
 
     expect(".modal .modal-lg").toHaveCount(2);
 
-    await contains(".modal .o_data_row input[type=checkbox]").check();
+    await contains(".modal .w_data_row input[type=checkbox]").check();
     await clickModalButton({ text: "Select" });
 
     expect(".modal .modal-lg").toHaveCount(1);
-    expect(".modal .o_data_cell").toHaveText("Awsome");
+    expect(".modal .w_data_cell").toHaveText("Awsome");
 
     // click on modal save button
     await clickSave({ index: 1 });
@@ -455,25 +455,25 @@ test("SelectCreateDialog cascade x2many in create mode on mobile", async () => {
         `,
     });
 
-    await contains(".o_field_x2many_list_row_add button").click();
+    await contains(".w_field_x2many_list_row_add button").click();
 
-    click(".o_field_widget[name=instrument] input");
+    click(".w_field_widget[name=instrument] input");
     await animationFrame();
 
-    await contains(`.modal .o_create_button`).click();
+    await contains(`.modal .w_create_button`).click();
 
     expect(".modal .modal-lg").toHaveCount(2);
 
-    await contains(".modal .o_field_char[name=name] input").edit("ABC");
-    await contains(".modal .o_field_x2many_list_row_add button").click();
+    await contains(".modal .w_field_char[name=name] input").edit("ABC");
+    await contains(".modal .w_field_x2many_list_row_add button").click();
 
     expect(".modal .modal-lg").toHaveCount(3);
     await contains(
-        ".modal .o_data_row input[type=checkbox], .o_kanban_record:contains(Awsome)"
+        ".modal .w_data_row input[type=checkbox], .w_kanban_record:contains(Awsome)"
     ).click();
 
     expect(".modal .modal-lg").toHaveCount(2);
-    expect(".modal .o_data_cell").toHaveText("Awsome");
+    expect(".modal .w_data_cell").toHaveText("Awsome");
 
     // click on modal save button
     await clickSave({ index: 1 });
@@ -524,13 +524,13 @@ test("SelectCreateDialog: save current search on desktop", async () => {
     });
     await animationFrame();
 
-    expect(".o_data_row").toHaveCount(3, { message: "should contain 3 records" });
+    expect(".w_data_row").toHaveCount(3, { message: "should contain 3 records" });
 
     // filter on bar
     await toggleSearchBarMenu();
     await toggleMenuItem("Bar");
 
-    expect(".o_data_row").toHaveCount(2, { message: "should contain 2 records" });
+    expect(".w_data_row").toHaveCount(2, { message: "should contain 2 records" });
 
     // save filter
     await toggleSaveFavorite();
@@ -585,13 +585,13 @@ test("SelectCreateDialog: save current search on mobile", async () => {
     });
     await animationFrame();
 
-    expect(".o_kanban_record[data-id]").toHaveCount(3, { message: "should contain 3 records" });
+    expect(".w_kanban_record[data-id]").toHaveCount(3, { message: "should contain 3 records" });
 
     // filter on bar
     await toggleSearchBarMenu();
     await toggleMenuItem("Bar");
 
-    expect(".o_kanban_record[data-id]").toHaveCount(2, { message: "should contain 2 records" });
+    expect(".w_kanban_record[data-id]").toHaveCount(2, { message: "should contain 2 records" });
 
     // save filter
     await toggleSaveFavorite();
@@ -618,8 +618,8 @@ test("SelectCreateDialog calls on_selected with every record matching the domain
     });
     await animationFrame();
 
-    await contains("thead .o_list_record_selector input").click();
-    await contains(".o_selection_box .o_select_domain").click();
+    await contains("thead .w_list_record_selector input").click();
+    await contains(".w_selection_box .w_select_domain").click();
     await clickModalButton({ text: "Select" });
 });
 
@@ -642,8 +642,8 @@ test("SelectCreateDialog calls on_selected with every record matching without se
     });
     await animationFrame();
 
-    await contains("thead .o_list_record_selector input").click();
-    await contains(".o_selection_box").click();
+    await contains("thead .w_list_record_selector input").click();
+    await contains(".w_selection_box").click();
     await clickModalButton({ text: "Select", index: 1 });
 });
 
@@ -660,9 +660,9 @@ test("SelectCreateDialog: multiple clicks on record", async () => {
         },
     });
     await animationFrame();
-    await click(".modal .o_data_row .o_data_cell");
-    await click(".modal .o_data_row .o_data_cell");
-    await click(".modal .o_data_row .o_data_cell");
+    await click(".modal .w_data_row .w_data_cell");
+    await click(".modal .w_data_row .w_data_cell");
+    await click(".modal .w_data_row .w_data_cell");
     await animationFrame();
     // should have called onSelected only once
     expect.verifySteps(["select record 1"]);
@@ -685,23 +685,23 @@ test("SelectCreateDialog: default props, create a record on desktop", async () =
     });
     await animationFrame();
 
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog .o_list_view .o_data_row").toHaveCount(3);
-    expect(".o_dialog footer button").toHaveCount(3);
-    expect(".o_dialog footer button.o_select_button").toHaveCount(1);
-    expect(".o_dialog footer button.o_create_button").toHaveCount(1);
-    expect(".o_dialog footer button.o_form_button_cancel").toHaveCount(1);
-    expect(".o_dialog .o_control_panel_main_buttons .o_list_button_add").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog .w_list_view .w_data_row").toHaveCount(3);
+    expect(".w_dialog footer button").toHaveCount(3);
+    expect(".w_dialog footer button.w_select_button").toHaveCount(1);
+    expect(".w_dialog footer button.w_create_button").toHaveCount(1);
+    expect(".w_dialog footer button.w_form_button_cancel").toHaveCount(1);
+    expect(".w_dialog .w_control_panel_main_buttons .w_list_button_add").toHaveCount(0);
 
-    await contains(".o_dialog footer button.o_create_button").click();
+    await contains(".w_dialog footer button.w_create_button").click();
 
-    expect(".o_dialog").toHaveCount(2);
-    expect(".o_dialog .o_form_view").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(2);
+    expect(".w_dialog .w_form_view").toHaveCount(1);
 
-    await contains(".o_dialog .o_form_view .o_field_widget input").edit("hello");
+    await contains(".w_dialog .w_form_view .w_field_widget input").edit("hello");
     await clickSave();
 
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps(["onSelected 4"]);
 });
 
@@ -720,22 +720,22 @@ test("SelectCreateDialog: click on row once in selection", async () => {
     });
     await animationFrame();
 
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog .o_list_view .o_data_row").toHaveCount(3);
-    expect(".o_dialog .o_selection_box").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog .w_list_view .w_data_row").toHaveCount(3);
+    expect(".w_dialog .w_selection_box").toHaveCount(0);
 
-    await contains(".o_data_row .o_list_record_selector").click();
-    expect(".o_dialog .o_data_row_selected").toHaveCount(1);
+    await contains(".w_data_row .w_list_record_selector").click();
+    expect(".w_dialog .w_data_row_selected").toHaveCount(1);
 
-    await contains(".o_data_row:eq(1) .o_data_cell").click();
-    expect(".o_dialog .o_data_row_selected").toHaveCount(2);
-    await contains(".o_data_row:eq(1) .o_data_cell").click();
-    expect(".o_dialog .o_data_row_selected").toHaveCount(1);
-    await contains(".o_data_row:eq(1) .o_data_cell").click();
-    expect(".o_dialog .o_data_row_selected").toHaveCount(2);
+    await contains(".w_data_row:eq(1) .w_data_cell").click();
+    expect(".w_dialog .w_data_row_selected").toHaveCount(2);
+    await contains(".w_data_row:eq(1) .w_data_cell").click();
+    expect(".w_dialog .w_data_row_selected").toHaveCount(1);
+    await contains(".w_data_row:eq(1) .w_data_cell").click();
+    expect(".w_dialog .w_data_row_selected").toHaveCount(2);
 
-    await contains(".o_dialog footer .btn-primary").click();
-    expect(".o_dialog").toHaveCount(0);
+    await contains(".w_dialog footer .btn-primary").click();
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps(["onSelected 1,2"]);
 });
 
@@ -757,23 +757,23 @@ test("SelectCreateDialog: default props, create a record on mobile", async () =>
     });
     await animationFrame();
 
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog .o_kanban_record[data-id]").toHaveCount(3);
-    expect(".o_dialog footer button").toHaveCount(3);
-    expect(".o_dialog footer button.o_select_button").toHaveCount(1);
-    expect(".o_dialog footer button.o_create_button").toHaveCount(1);
-    expect(".o_dialog footer button.o_form_button_cancel").toHaveCount(1);
-    expect(".o_dialog .o_control_panel_main_buttons .o_list_button_add").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog .w_kanban_record[data-id]").toHaveCount(3);
+    expect(".w_dialog footer button").toHaveCount(3);
+    expect(".w_dialog footer button.w_select_button").toHaveCount(1);
+    expect(".w_dialog footer button.w_create_button").toHaveCount(1);
+    expect(".w_dialog footer button.w_form_button_cancel").toHaveCount(1);
+    expect(".w_dialog .w_control_panel_main_buttons .w_list_button_add").toHaveCount(0);
 
-    await contains(".o_dialog footer button.o_create_button").click();
+    await contains(".w_dialog footer button.w_create_button").click();
 
-    expect(".o_dialog").toHaveCount(2);
-    expect(".o_dialog .o_form_view").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(2);
+    expect(".w_dialog .w_form_view").toHaveCount(1);
 
-    await contains(".o_dialog .o_form_view .o_field_widget input").edit("hello");
+    await contains(".w_dialog .w_form_view .w_field_widget input").edit("hello");
     await clickSave();
 
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
     expect.verifySteps(["onSelected 4"]);
 });
 
@@ -789,10 +789,10 @@ test("SelectCreateDialog empty list, default no content helper", async () => {
     await mountWithCleanup(WebClient);
     getService("dialog").add(SelectCreateDialog, { resModel: "partner" });
     await animationFrame();
-    expect(".o_dialog .o_list_view").toHaveCount(1);
-    expect(".o_dialog .o_list_view .o_data_row").toHaveCount(0);
-    expect(".o_dialog .o_list_view .o_view_nocontent").toHaveCount(1);
-    expect(queryOne(".o_dialog .o_list_view .o_view_nocontent")).toHaveInnerHTML(
+    expect(".w_dialog .w_list_view").toHaveCount(1);
+    expect(".w_dialog .w_list_view .w_data_row").toHaveCount(0);
+    expect(".w_dialog .w_list_view .w_view_nocontent").toHaveCount(1);
+    expect(queryOne(".w_dialog .w_list_view .w_view_nocontent")).toHaveInnerHTML(
         `<div class="o_nocontent_help">
             <p>No record found</p>
             <p>Adjust your filters or create a new record.</p>
@@ -812,8 +812,8 @@ test("SelectCreateDialog doesn't display the cog menu", async () => {
     getService("dialog").add(SelectCreateDialog, { resModel: "partner" });
     await animationFrame();
 
-    expect(".o_dialog .o_list_view").toHaveCount(1);
-    expect(".o_dialog .o_cp_action_menus").toHaveCount(0);
+    expect(".w_dialog .w_list_view").toHaveCount(1);
+    expect(".w_dialog .w_cp_action_menus").toHaveCount(0);
 });
 
 test.tags("mobile");
@@ -826,10 +826,10 @@ test("SelectCreateDialog empty kanban, default no content helper", async () => {
     await mountWithCleanup(WebClient);
     getService("dialog").add(SelectCreateDialog, { resModel: "partner" });
     await animationFrame();
-    expect(".o_dialog .o_kanban_view").toHaveCount(1);
-    expect(".o_dialog .o_kanban_view .o_kanban_record[data-id]").toHaveCount(0);
-    expect(".o_dialog .o_kanban_view .o_view_nocontent").toHaveCount(1);
-    expect(queryOne(".o_dialog .o_kanban_view .o_view_nocontent")).toHaveInnerHTML(
+    expect(".w_dialog .w_kanban_view").toHaveCount(1);
+    expect(".w_dialog .w_kanban_view .w_kanban_record[data-id]").toHaveCount(0);
+    expect(".w_dialog .w_kanban_view .w_view_nocontent").toHaveCount(1);
+    expect(queryOne(".w_dialog .w_kanban_view .w_view_nocontent")).toHaveInnerHTML(
         `<div class="o_nocontent_help">
             <p>No record found</p>
             <p>Adjust your filters or create a new record.</p>
@@ -858,10 +858,10 @@ test("SelectCreateDialog empty list, noContentHelp props", async () => {
     });
     await animationFrame();
 
-    expect(".o_dialog .o_list_view").toHaveCount(1);
-    expect(".o_dialog .o_list_view .o_data_row").toHaveCount(0);
-    expect(".o_dialog .o_list_view .o_view_nocontent").toHaveCount(1);
-    expect(queryOne(".o_dialog .o_list_view .o_view_nocontent")).toHaveInnerHTML(
+    expect(".w_dialog .w_list_view").toHaveCount(1);
+    expect(".w_dialog .w_list_view .w_data_row").toHaveCount(0);
+    expect(".w_dialog .w_list_view .w_view_nocontent").toHaveCount(1);
+    expect(queryOne(".w_dialog .w_list_view .w_view_nocontent")).toHaveInnerHTML(
         `<div class="o_nocontent_help">
             <p class="custom_classname">Hello</p>
             <p>I'm an helper</p>
@@ -906,24 +906,24 @@ test("SelectCreateDialog with open action", async () => {
             </form>
         `,
     });
-    await contains(`.o_field_widget[name="instrument"] .dropdown input`).click();
-    await contains(`.o_field_widget[name="instrument"] .o_m2o_dropdown_option_search_more`).click();
+    await contains(`.w_field_widget[name="instrument"] .dropdown input`).click();
+    await contains(`.w_field_widget[name="instrument"] .w_m2o_dropdown_option_search_more`).click();
     await contains(
-        `.o_list_renderer .o_data_row .o_field_cell.o_list_char:text("Instrument 10")`
+        `.w_list_renderer .w_data_row .w_field_cell.w_list_char:text("Instrument 10")`
     ).click();
     expect("input").toHaveValue("Instrument 10");
     expect.verifySteps([]);
 
-    await contains(".o_field_widget[name=instrument] input").edit("Instrument", { confirm: false });
+    await contains(".w_field_widget[name=instrument] input").edit("Instrument", { confirm: false });
     await runAllTimers();
-    await contains(`.o_field_widget[name="instrument"] .o_m2o_dropdown_option_search_more`).click();
+    await contains(`.w_field_widget[name="instrument"] .w_m2o_dropdown_option_search_more`).click();
     expect.verifySteps(["name_search"]);
     expect(searchLimit).toBe(1000, {
         message: "The name_search should have been called with a limit of 1000",
     });
 
     expect(".modal .modal-lg").toHaveCount(1);
-    expect(".modal .modal-lg .o_data_row").toHaveCount(25, {
+    expect(".modal .modal-lg .w_data_row").toHaveCount(25, {
         message: "should contain 25 records",
     });
 });
@@ -947,10 +947,10 @@ test("SelectCreateDialog empty kanban, noContentHelp props", async () => {
     });
     await animationFrame();
 
-    expect(".o_dialog .o_kanban_view").toHaveCount(1);
-    expect(".o_dialog .o_kanban_view .o_kanban_record[data-id]").toHaveCount(0);
-    expect(".o_dialog .o_kanban_view .o_view_nocontent").toHaveCount(1);
-    expect(queryOne(".o_dialog .o_kanban_view .o_view_nocontent")).toHaveInnerHTML(
+    expect(".w_dialog .w_kanban_view").toHaveCount(1);
+    expect(".w_dialog .w_kanban_view .w_kanban_record[data-id]").toHaveCount(0);
+    expect(".w_dialog .w_kanban_view .w_view_nocontent").toHaveCount(1);
+    expect(queryOne(".w_dialog .w_kanban_view .w_view_nocontent")).toHaveInnerHTML(
         `<div class="o_nocontent_help"><p class="custom_classname">Hello</p><p>I'm an helper</p></div>`
     );
 });
@@ -984,22 +984,22 @@ test("SelectCreateDialog: clear selection on mobile", async () => {
                 </form>`,
     });
 
-    await contains('.o_field_widget[name="linked_sale_order_line"] input').click();
-    expect(".modal-dialog.modal-lg:eq(0) .btn.o_clear_button").toHaveCount(0, {
+    await contains('.w_field_widget[name="linked_sale_order_line"] input').click();
+    expect(".modal-dialog.modal-lg:eq(0) .btn.w_clear_button").toHaveCount(0, {
         message: "there shouldn't be a Clear button",
     });
-    await contains(".modal-dialog.modal-lg:eq(0) .o_form_button_cancel").click();
+    await contains(".modal-dialog.modal-lg:eq(0) .w_form_button_cancel").click();
 
     // Select a product
-    await contains('.o_field_widget[name="product_id"] input').click();
-    await contains(".modal-dialog.modal-lg:eq(0) .o_kanban_record:nth-child(1)").click();
+    await contains('.w_field_widget[name="product_id"] input').click();
+    await contains(".modal-dialog.modal-lg:eq(0) .w_kanban_record:nth-child(1)").click();
 
     // Remove the product
-    await contains('.o_field_widget[name="product_id"] input').click();
-    expect(".modal-dialog.modal-lg:eq(0) .btn.o_clear_button").toHaveCount(1, {
+    await contains('.w_field_widget[name="product_id"] input').click();
+    expect(".modal-dialog.modal-lg:eq(0) .btn.w_clear_button").toHaveCount(1, {
         message: "there should be a Clear button",
     });
-    await contains(".btn.o_clear_button").click();
+    await contains(".btn.w_clear_button").click();
 
     await clickSave();
 });
@@ -1041,8 +1041,8 @@ test("SelectCreateDialog: selection_mode should be true", async () => {
             </form>`,
     });
 
-    await contains('.o_field_widget[name="product_id"] input').click();
-    await contains(".modal-dialog.modal-lg .o_kanban_record:nth-child(1) .o_primary span").click();
+    await contains('.w_field_widget[name="product_id"] input').click();
+    await contains(".modal-dialog.modal-lg .w_kanban_record:nth-child(1) .w_primary span").click();
     expect(".modal-dialog.modal-lg").toHaveCount(0);
     await clickSave();
     expect.verifySteps([]);
@@ -1066,23 +1066,23 @@ test("SelectCreateDialog: default props, create a record", async () => {
             </form>`,
     });
 
-    await contains('.o_field_widget[name="product_id"] input').click();
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog .o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(1);
-    expect(".o_dialog footer button").toHaveCount(2);
-    expect(".o_dialog footer button.o_create_button").toHaveCount(1);
-    expect(".o_dialog footer button.o_form_button_cancel").toHaveCount(1);
-    expect(".o_dialog .o_control_panel_main_buttons .o-kanban-button-new").toHaveCount(0);
+    await contains('.w_field_widget[name="product_id"] input').click();
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog .w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(1);
+    expect(".w_dialog footer button").toHaveCount(2);
+    expect(".w_dialog footer button.w_create_button").toHaveCount(1);
+    expect(".w_dialog footer button.w_form_button_cancel").toHaveCount(1);
+    expect(".w_dialog .w_control_panel_main_buttons .w-kanban-button-new").toHaveCount(0);
 
-    await contains(".o_dialog footer button.o_create_button:eq(0)").click();
+    await contains(".w_dialog footer button.w_create_button:eq(0)").click();
 
-    expect(".o_dialog").toHaveCount(2);
-    expect(".o_dialog .o_form_view").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(2);
+    expect(".w_dialog .w_form_view").toHaveCount(1);
 
-    await contains(".o_dialog .o_form_view .o_field_widget input").edit("hello");
-    await contains(".o_dialog .o_form_button_save:eq(0)").click();
+    await contains(".w_dialog .w_form_view .w_field_widget input").edit("hello");
+    await contains(".w_dialog .w_form_button_save:eq(0)").click();
 
-    expect(".o_dialog").toHaveCount(0);
+    expect(".w_dialog").toHaveCount(0);
 });
 
 test.tags("desktop");
@@ -1102,9 +1102,9 @@ test("SelectCreateDialog list: control panel stays visible when list overflows",
         noCreate: true,
     });
     await animationFrame();
-    expect(".o_dialog .o_list_view .o_content").toHaveStyle({ overflowY: "auto" });
+    expect(".w_dialog .w_list_view .w_content").toHaveStyle({ overflowY: "auto" });
 
-    const renderer = queryOne(".o_dialog .o_list_renderer");
+    const renderer = queryOne(".w_dialog .w_list_renderer");
     expect(renderer.scrollHeight).toBeGreaterThan(renderer.clientHeight, {
         message: "Scroll belongs to the renderer (doesn't include the control panel)",
     });
@@ -1135,10 +1135,10 @@ test("dropdown menu is hidden in SelectCreateDialog", async () => {
             </form>`,
     });
 
-    await contains('.o_field_widget[name="product_id"] input').click();
+    await contains('.w_field_widget[name="product_id"] input').click();
 
-    expect(".o_dialog").toHaveCount(1);
-    expect(".o_dialog .o_kanban_view .o_kanban_record:not(.o_kanban_ghost)").toHaveCount(1);
+    expect(".w_dialog").toHaveCount(1);
+    expect(".w_dialog .w_kanban_view .w_kanban_record:not(.w_kanban_ghost)").toHaveCount(1);
 
-    expect(".o_kanban_record:eq(0) .o_dropdown_kanban .dropdown-toggle").toHaveCount(0);
+    expect(".w_kanban_record:eq(0) .w_dropdown_kanban .dropdown-toggle").toHaveCount(0);
 });

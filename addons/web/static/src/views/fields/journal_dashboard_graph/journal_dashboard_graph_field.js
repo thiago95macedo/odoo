@@ -38,7 +38,7 @@ export class JournalDashboardGraphField extends Component {
             return pt.x;
         });
 
-        const color10 = getColor(3, cookie.get("color_scheme"), "odoo");
+        const color10 = getColor(3, cookie.get("color_scheme"), "weth");
         const sampleColor = getCustomColor(colorScheme, "#d8dadd", "#495057");
         const borderColor = this.data[0].is_sample_data ? hexToRGBA(sampleColor, 0.225) : color10;
         const backgroundColor = this.data[0].is_sample_data
@@ -117,8 +117,8 @@ export class JournalDashboardGraphField extends Component {
         const labels = [];
         const backgroundColor = [];
 
-        const color13 = getColor(2, cookie.get("color_scheme"), "odoo");
-        const color19 = getColor(1, cookie.get("color_scheme"), "odoo");
+        const color13 = getColor(2, cookie.get("color_scheme"), "weth");
+        const color19 = getColor(1, cookie.get("color_scheme"), "weth");
         this.data[0].values.forEach((pt) => {
             data.push(pt.value);
             labels.push(pt.label);

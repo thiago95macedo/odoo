@@ -111,7 +111,7 @@ class CalendarEvent(models.Model):
         previous_alarms_per_event = {event.id: event.alarm_ids for event in self} if 'alarm_ids' in vals else {}
         res = super(CalendarEvent, self.with_context(dont_notify=notify_context)).write(vals)
         if previous_alarms_per_event:
-            # Only check events whose alarms actually changed (Google -> Odoo sync only logs on Google alarms update).
+            # Only check events whose alarms actually changed (Google -> WETH sync only logs on Google alarms update).
             events_to_check = self.filtered(lambda event: event.alarm_ids != previous_alarms_per_event[event.id])
             events_to_check._check_alarm_ids_sync_limit()
         if recurrence_update_setting == 'all_events' and len(self) == 1 and vals.keys() & self._get_google_synced_fields():
@@ -171,12 +171,12 @@ class CalendarEvent(models.Model):
         ])
 
     @api.model
-    def _odoo_values(self, google_event, calendar, default_reminders=()):
-        """ Convert the google event record to a set of values that can be used to create or update an Odoo event.
+    def _weth_values(self, google_event, calendar, default_reminders=()):
+        """ Convert the google event record to a set of values that can be used to create or update an WETH event.
 
         Side effect note: To prevent alarm duplication when importing multiple events in a single transaction, we create
         the alarm record directly within this call so that other events can be linked to it. If the sync process fails,
-        the transaction will be rolled back and the alarm record will not be committed (see _odoo_reminders_commands)
+        the transaction will be rolled back and the alarm record will not be committed (see _weth_reminders_commands)
         """
         if google_event.is_cancelled():
             return {'active': False}
@@ -189,8 +189,8 @@ class CalendarEvent(models.Model):
         reminder_command = reminders.get('overrides')
         if not reminder_command:
             reminder_command = reminders.get('useDefault') and default_reminders or ()
-        alarm_commands = self._odoo_reminders_commands(reminder_command)
-        attendee_commands, partner_commands = self._odoo_attendee_commands(google_event)
+        alarm_commands = self._weth_reminders_commands(reminder_command)
+        attendee_commands, partner_commands = self._weth_attendee_commands(google_event)
         related_event = self.search([('google_id', '=', google_event.id)], limit=1)
         name = google_event.summary or related_event and related_event.name or _("(No title)")
         values = {
@@ -212,7 +212,7 @@ class CalendarEvent(models.Model):
             # If the calendar is secondary, assign the event to the calendar owner.
             values['user_id'] = calendar.owner_id.id
         elif not related_event and not google_event.is_recurrent():
-            # If the event doesn't exist in Odoo yet, explicitly set the user to prevent default env.user assignment
+            # If the event doesn't exist in WETH yet, explicitly set the user to prevent default env.user assignment
             # If it exists, do not override the user
             values['user_id'] = False
 
@@ -252,14 +252,14 @@ class CalendarEvent(models.Model):
         return values
 
     @api.model
-    def _odoo_attendee_commands(self, google_event):
+    def _weth_attendee_commands(self, google_event):
         attendee_commands = []
         partner_commands = []
         google_attendees = google_event.attendees or []
         emails = [a.get('email') for a in google_attendees]
         existing_attendees = self.env['calendar.attendee']
         if google_event.exists(self.env):
-            event = google_event.get_odoo_event(self.env)
+            event = google_event.get_weth_event(self.env)
             existing_attendees = event.attendee_ids
         attendees_by_emails = {tools.email_normalize(a.email): a for a in existing_attendees}
         partners = self._get_sync_partner(emails)
@@ -284,16 +284,16 @@ class CalendarEvent(models.Model):
                 partner_commands += [(4, partner.id)]
                 if google_attendee.get('displayName') and not partner.name:
                     partner.name = google_attendee.get('displayName')
-        for odoo_attendee in attendees_by_emails.values():
+        for weth_attendee in attendees_by_emails.values():
             # Remove old attendees but only if it does not correspond to the current user.
-            email = tools.email_normalize(odoo_attendee.email)
+            email = tools.email_normalize(weth_attendee.email)
             if email not in emails and email != self.env.user.email:
-                attendee_commands += [(2, odoo_attendee.id)]
-                partner_commands += [(3, odoo_attendee.partner_id.id)]
+                attendee_commands += [(2, weth_attendee.id)]
+                partner_commands += [(3, weth_attendee.partner_id.id)]
         return attendee_commands, partner_commands
 
     @api.model
-    def _odoo_reminders_commands(self, reminders=()):
+    def _weth_reminders_commands(self, reminders=()):
         """ Returns commands to link alarms to the event based on the reminders provided by google.
 
         Side effect note: To avoid having to extract and deduplicate alarm commands later on, we simply create
@@ -346,7 +346,7 @@ class CalendarEvent(models.Model):
         return commands
 
     def action_mass_archive(self, recurrence_update_setting):
-        """ Delete recurrence in Odoo if in 'all_events' or in 'future_events' edge case, triggering one mail. """
+        """ Delete recurrence in WETH if in 'all_events' or in 'future_events' edge case, triggering one mail. """
         self.ensure_one()
         google_service = GoogleCalendarService(self.env['google.service'])
         archive_future_events = recurrence_update_setting == 'future_events' and self == self.recurrence_id.base_event_id
@@ -398,7 +398,7 @@ class CalendarEvent(models.Model):
             'attendees': attendee_values,
             'extendedProperties': {
                 'shared': {
-                    '%s_odoo_id' % self.env.cr.dbname: self.id,
+                    '%s_weth_id' % self.env.cr.dbname: self.id,
                 },
             },
             'reminders': {
@@ -422,20 +422,20 @@ class CalendarEvent(models.Model):
         if not self.active:
             values['status'] = 'cancelled'
         if self.user_id and self.user_id != self.env.user and not bool(self.user_id.sudo().google_calendar_token):
-            # The organizer is an Odoo user that do not sync his calendar
+            # The organizer is an WETH user that do not sync his calendar
             values['extendedProperties']['shared']['%s_owner_id' % self.env.cr.dbname] = self.user_id.id
         elif not self.user_id:
             # We can't store on the shared properties in that case without getting a 403. It can happen when
-            # the owner is not an Odoo user: We don't store the real owner identity (mail)
+            # the owner is not an WETH user: We don't store the real owner identity (mail)
             # If we are not the owner, we should change the post values to avoid errors because we don't have
             # write permissions
             # See https://developers.google.com/calendar/concepts/sharing
             keep_keys = ['id', 'summary', 'attendees', 'start', 'end', 'reminders']
             values = {key: val for key, val in values.items() if key in keep_keys}
-            # values['extendedProperties']['private] should be used if the owner is not an odoo user
+            # values['extendedProperties']['private] should be used if the owner is not an weth user
             values['extendedProperties'] = {
                 'private': {
-                    '%s_odoo_id' % self.env.cr.dbname: self.id,
+                    '%s_weth_id' % self.env.cr.dbname: self.id,
                 },
             }
         return values

@@ -27,13 +27,13 @@ test("simplest layout of a followed subtype", async () => {
     });
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] label:text('TestSubtype')`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] label:text('TestSubtype')`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:checked`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:checked`
     );
 });
 
@@ -51,10 +51,10 @@ test("simplest layout of a not followed subtype", async () => {
     });
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
     );
 });
 
@@ -72,22 +72,22 @@ test("toggle follower subtype checkbox", async () => {
     });
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
     );
     await click(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:checked`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:checked`
     );
     await click(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
     );
 });
 
@@ -110,25 +110,25 @@ test("follower subtype apply", async () => {
     });
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']:checked`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']:checked`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']:not(:checked)`
     );
     await click(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId1}'] input[type='checkbox']:not(:checked)`
     );
     await click(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']:checked`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId2}'] input[type='checkbox']:checked`
     );
     await click(".modal-footer button:text('Update')");
     await contains(".o_notification:text('Notification preferences updated.')");
@@ -149,18 +149,18 @@ test("unselecting all follower subtypes removes the follower", async () => {
     });
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await contains(".o-mail-Followers-counter:text('1')");
-    await click(".o-mail-Followers-button");
+    await contains(".w-mail-Followers-counter:text('1')");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     await click(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']`
     );
     await contains(
-        `.o-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
+        `.w-mail-FollowerSubtypeDialog-subtype[data-follower-subtype-id='${subtypeId}'] input[type='checkbox']:not(:checked)`
     );
     await click(".modal-footer button:text('Update')");
     await contains(".o_notification:text('You are no longer following this record.')");
-    await contains(".o-mail-Followers-counter:text('0')");
+    await contains(".w-mail-Followers-counter:text('0')");
 });
 
 test("internal subtypes are only listed for internal followers", async () => {
@@ -184,17 +184,17 @@ test("internal subtypes are only listed for internal followers", async () => {
     ]);
     await start();
     await openFormView("res.partner", threadId);
-    await click(".o-mail-Followers-button");
-    await click(".o-mail-Follower:has(:text('Employee')) [title='Edit Notification Preferences']");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype", { count: 3 });
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(1) label:text('Notes')");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(2) label:text('Activities')");
-    await click(".o-mail-FollowerSubtypeDialog button:text('Discard')");
-    await click(".o-mail-Followers-button");
-    await click(".o-mail-Follower:has(:text('Customer')) [title='Edit Notification Preferences']");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype", { count: 1 });
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
+    await click(".w-mail-Followers-button");
+    await click(".w-mail-Follower:has(:text('Employee')) [title='Edit Notification Preferences']");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype", { count: 3 });
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(1) label:text('Notes')");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(2) label:text('Activities')");
+    await click(".w-mail-FollowerSubtypeDialog button:text('Discard')");
+    await click(".w-mail-Followers-button");
+    await click(".w-mail-Follower:has(:text('Customer')) [title='Edit Notification Preferences']");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype", { count: 1 });
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
 });
 
 test("'All Notifications' checkbox toggles every subtype and reflects partial selection", async () => {
@@ -205,29 +205,29 @@ test("'All Notifications' checkbox toggles every subtype and reflects partial se
         res_model: "res.partner",
         res_id: serverState.partnerId,
     });
-    const all = ".o-mail-FollowerSubtypeDialog-allSubtypes input[type='checkbox']";
+    const all = ".w-mail-FollowerSubtypeDialog-allSubtypes input[type='checkbox']";
     const subtype = (index) =>
-        `.o-mail-FollowerSubtypeDialog-subtype:eq(${index}) input[type='checkbox']`;
+        `.w-mail-FollowerSubtypeDialog-subtype:eq(${index}) input[type='checkbox']`;
     await start();
     await openFormView("res.partner", serverState.partnerId);
-    await click(".o-mail-Followers-button");
+    await click(".w-mail-Followers-button");
     await click("[title='Edit Notification Preferences']");
     // internal follower of a res.partner: the 3 default subtypes, none followed
-    await contains(".o-mail-FollowerSubtypeDialog-subtype", { count: 3 });
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(1) label:text('Notes')");
-    await contains(".o-mail-FollowerSubtypeDialog-subtype:eq(2) label:text('Activities')");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype", { count: 3 });
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(0) label:text('Messages')");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(1) label:text('Notes')");
+    await contains(".w-mail-FollowerSubtypeDialog-subtype:eq(2) label:text('Activities')");
     await contains(`${all}:not(:checked):not(:indeterminate)`);
     // checking it selects every subtype
     await click(all);
     await contains(`${all}:checked:not(:indeterminate)`);
-    await contains(".o-mail-FollowerSubtypeDialog-subtype input[type='checkbox']:checked", {
+    await contains(".w-mail-FollowerSubtypeDialog-subtype input[type='checkbox']:checked", {
         count: 3,
     });
     // unchecking it unselects every subtype
     await click(all);
     await contains(`${all}:not(:checked):not(:indeterminate)`);
-    await contains(".o-mail-FollowerSubtypeDialog-subtype input[type='checkbox']:not(:checked)", {
+    await contains(".w-mail-FollowerSubtypeDialog-subtype input[type='checkbox']:not(:checked)", {
         count: 3,
     });
     // selecting only some subtypes shows the intermediate state

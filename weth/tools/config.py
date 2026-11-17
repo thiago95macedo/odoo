@@ -50,7 +50,7 @@ class _Empty:
 EMPTY = _Empty()  # noqa: E305
 
 
-class OdooOptionParser(optparse.OptionParser):
+class WethOptionParser(optparse.OptionParser):
     def _match_long_opt(self, opt):
         # --st is an "ambigous" prefix for --stop and --stop-after-init
         # which actually are the same option, make it return that single
@@ -66,7 +66,7 @@ class OdooOptionParser(optparse.OptionParser):
         return super()._match_long_opt(opt)
 
 
-class _OdooOption(optparse.Option):
+class _WethOption(optparse.Option):
     config: "configmanager"
 
     TYPES = ['int', 'float', 'string', 'choice', 'bool', 'path', 'comma',
@@ -133,7 +133,7 @@ class _OdooOption(optparse.Option):
                 self.config.optional_options[opt] = self
         if env_name is None and is_new_option and self.file_loadable and self.dest:
             # generate an env_name for file_loadable settings that are in the index
-            self.env_name = 'ODOO_' + self.dest.upper()
+            self.env_name = 'WETH_' + self.dest.upper()
         elif env_name and not is_new_option:
             raise ValueError(f"cannot set env_name to an option that is not indexed: {self}")
 
@@ -146,7 +146,7 @@ class _OdooOption(optparse.Option):
         return '/'.join(out)
 
 
-class _FileOnlyOption(_OdooOption):
+class _FileOnlyOption(_WethOption):
     def __init__(self, **attrs):
         super().__init__(**attrs, cli_loadable=False, help=optparse.SUPPRESS_HELP)
 
@@ -159,7 +159,7 @@ class _FileOnlyOption(_OdooOption):
         return
 
 
-class _PosixOnlyOption(_OdooOption):
+class _PosixOnlyOption(_WethOption):
     def __init__(self, *opts, **attrs):
         if os.name != 'posix':
             attrs['help'] = optparse.SUPPRESS_HELP
@@ -199,7 +199,7 @@ class configmanager:
             self._default_options,
         )
 
-        # dictionary mapping option destination (keys in self.options) to OdooOptions.
+        # dictionary mapping option destination (keys in self.options) to WethOptions.
         self.options_index = {}
 
         # list of nargs='?' options, indexed by short/long option (-x, --xx)
@@ -215,7 +215,7 @@ class configmanager:
             "import_image_timeout": "import_file_timeout",
         }
 
-        # file options of future Odoo versions, to mute the unknown warning
+        # file options of future WETH versions, to mute the unknown warning
         self.futures = frozenset((
             'with_test_data',
         ))
@@ -225,12 +225,12 @@ class configmanager:
         self._parse_config()
 
     def _build_cli(self):
-        OdooOption = type('OdooOption', (_OdooOption,), {'config': self})
-        FileOnlyOption = type('FileOnlyOption', (_FileOnlyOption, OdooOption), {})
-        PosixOnlyOption = type('PosixOnlyOption', (_PosixOnlyOption, OdooOption), {})
+        WethOption = type('WethOption', (_WethOption,), {'config': self})
+        FileOnlyOption = type('FileOnlyOption', (_FileOnlyOption, WethOption), {})
+        PosixOnlyOption = type('PosixOnlyOption', (_PosixOnlyOption, WethOption), {})
 
         version = "%s %s" % (release.description, release.version)
-        parser = OdooOptionParser(version=version, option_class=OdooOption)
+        parser = WethOptionParser(version=version, option_class=WethOption)
 
         parser.add_option(FileOnlyOption(dest='admin_passwd', my_default='admin'))
         parser.add_option(FileOnlyOption(dest='bin_path', type='path', my_default='', file_exportable=False))
@@ -438,7 +438,7 @@ class configmanager:
 
         # i18n Group
         group = optparse.OptionGroup(parser, "Internationalisation options",
-            "Use these options to translate Odoo to another language. "
+            "Use these options to translate WETH to another language. "
             "See i18n section of the user manual. Option '-d' is mandatory. "
             "Option '-l' is mandatory in case of importation"
             )
@@ -458,7 +458,7 @@ class configmanager:
 
         # Advanced options
         group = optparse.OptionGroup(parser, "Advanced options")
-        group.add_option('--dev', dest='dev_mode', type='comma', metavar="FEATURE,...", my_default=[], file_exportable=False, env_name='ODOO_DEV',
+        group.add_option('--dev', dest='dev_mode', type='comma', metavar="FEATURE,...", my_default=[], file_exportable=False, env_name='WETH_DEV',
                          # optparse uses a fixed 55 chars to print the help no matter the
                          # terminal size, abuse that to align the features
                          help="Enable developer features (comma-separated list, use   "
@@ -623,7 +623,7 @@ class configmanager:
             # (mostly once this warning is bumped to DeprecationWarning proper)
             if setup_logging is None:
                 warnings.warn(
-                    "As of WETH 20, it is strongly recommended to specify"
+                    "As of WETH, it is strongly recommended to specify"
                     " whether you want WETH to setup its own logging (or want"
                     " to handle it yourself)",
                     category=DeprecationWarning,
@@ -710,14 +710,14 @@ class configmanager:
             for handler in logging.getLogger().handlers
         )}
 
-        if color := os.getenv('ODOO_PY_COLORS'):
+        if color := os.getenv('WETH_PY_COLORS'):
             try:
                 value = color2bool[color]
             except KeyError:
                 try:
                     value = self._check_bool(..., ..., color)  # backward compat
                 except optparse.OptionValueError:
-                    e = f"environ['ODOO_PY_COLORS'] is not always/never/auto: {color!r}"
+                    e = f"environ['WETH_PY_COLORS'] is not always/never/auto: {color!r}"
                     raise optparse.OptionValueError(e) from None
 
             self.colors = dict.fromkeys(DEFAULT_COLOR_SPEC, value)
@@ -1159,9 +1159,9 @@ class configmanager:
 
     @property
     def max_http_threads(self):
-        mht = os.getenv('ODOO_MAX_HTTP_THREADS', str(2 * os.cpu_count() + 1))
+        mht = os.getenv('WETH_MAX_HTTP_THREADS', str(2 * os.cpu_count() + 1))
         if not (mht.isdecimal() and mht.isascii()):
-            e = f"ODOO_MAX_HTTP_THREADS={mht} but it is not a positive integer"
+            e = f"WETH_MAX_HTTP_THREADS={mht} but it is not a positive integer"
             raise ValueError(e)
         return int(mht)
 

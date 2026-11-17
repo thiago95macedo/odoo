@@ -23,17 +23,17 @@ made to finalize the payment.
 
 - `18.0`
   - The NVP/SOAP API that allowed for redirect payments is replaced by a combination of the
-    JavaScript SDK and the Standard Checkout API. odoo/odoo#167402
+    JavaScript SDK and the Standard Checkout API. weth/weth#167402
 - `17.0`
   - The support for customer fees is removed as it is no longer supported by the `payment` module.
-    odoo/odoo#132104
+    weth/weth#132104
 - `16.2`
-  - The "Merchant Account ID" and "Use IPN" fields are removed. odoo/odoo#104974
+  - The "Merchant Account ID" and "Use IPN" fields are removed. weth/weth#104974
 - `16.1`
-  - Customer fees are converted into the currency of the payment transaction. odoo/odoo#100156
+  - Customer fees are converted into the currency of the payment transaction. weth/weth#100156
 - `15.2`
   - An HTTP 404 "Forbidden" error is raised instead of a Validation error when the authenticity of
-    the webhook notification cannot be verified. odoo/odoo#81607
+    the webhook notification cannot be verified. weth/weth#81607
 
 ## Testing instructions
 

@@ -255,7 +255,7 @@ class TestController(HttpCase):
             self.assertEqual(200, invalid_page.status_code)
             self.assertTrue('"result": {}' in invalid_page.text)
 
-        # Attempt to retrieve metadata for path format `odoo/<model>/<record_id>`
+        # Attempt to retrieve metadata for path format `weth/<model>/<record_id>`
         response_model_record = self.url_open(
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({

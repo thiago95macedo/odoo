@@ -17,7 +17,7 @@ test("order details dialog shows clock and duration for table order", async () =
         editPayment: () => { },
         close: () => { },
     });
-    await waitFor(".o_dialog");
+    await waitFor(".w_dialog");
     expect(".modal-content [data-icon='schedule']").toHaveCount(1);
     expect(queryOne(".modal-content .position-absolute.start-50 span").textContent.trim()).toBe(
         "5'"

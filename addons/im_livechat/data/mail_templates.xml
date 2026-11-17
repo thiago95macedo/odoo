@@ -14,7 +14,7 @@
     <span t-out="channel.create_date.astimezone(tz).strftime('%I:%M %p')"/>.
 </div>
 <style>
-    .o-LivechatReport-bodyContent &gt; p {
+    .w-LivechatReport-bodyContent &gt; p {
         margin: 0;
         padding: 0;
     }

@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 
 
 def handle_message(message_type: str, communication_type: str, **kwargs: dict) -> dict:
-    """General handler for messages received from the Odoo server either
+    """General handler for messages received from the WETH server either
     via WebSocket or HTTP.
 
     :param message_type: The type of message received.
@@ -45,9 +45,9 @@ def handle_message(message_type: str, communication_type: str, **kwargs: dict) -
             system.update_conf({
                 'remote_server': kwargs['server_url']
             })
-            helpers.get_odoo_server_url.cache_clear()
-        case 'restart_odoo':
-            helpers.odoo_restart(2)
+            helpers.get_weth_server_url.cache_clear()
+        case 'restart_weth':
+            helpers.weth_restart(2)
             return {
                 **base_response,
                 'status': 'success',
@@ -67,7 +67,7 @@ def handle_message(message_type: str, communication_type: str, **kwargs: dict) -
         case "reset_password":
             if communication_type != "ws":
                 raise werkzeug.exceptions.Forbidden(
-                    "Password generation is disabled once linked to an Odoo server"
+                    "Password generation is disabled once linked to an WETH server"
                 )
             return {
                 **base_response,

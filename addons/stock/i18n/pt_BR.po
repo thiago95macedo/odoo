@@ -24,7 +24,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 19:00+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/stock/pt_BR/>\n"
+"weth-20/stock/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,13 +34,13 @@ msgstr ""
 "X-Generator: Weblate 2026.8.1\n"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid "\t--Empty--"
 msgstr "\t--Vazio--"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "\n"
@@ -95,7 +95,7 @@ msgstr ""
 "- Segundo: %(sec)s\n"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "\n"
@@ -105,7 +105,7 @@ msgstr ""
 "(%(serial_number)s) existe no local %(location)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "\n"
@@ -157,7 +157,7 @@ msgstr ""
 " * Cancelada: a transferência foi cancelada."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid " - Product: %(product)s, Lot/Serial Number: %(lot)s"
 msgstr " - Produto: %(product)s, Número de série/lote: %(lot)s"
@@ -178,61 +178,61 @@ msgid "# Returns"
 msgstr "Nº de devoluções"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s (copy)(%(id)s)"
 msgstr "%(name)s (cópia)(%(id)s)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence cross dock"
 msgstr "%(name)s Sequência - Cross dock"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence in"
 msgstr "%(name)s Sequência de entrada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence internal"
 msgstr "%(name)s Sequência interna"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence out"
 msgstr "%(name)s Sequência de saída"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence packing"
 msgstr "%(name)s Sequência de embalagem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence picking"
 msgstr "Separação de sequência %(name)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence quality control"
 msgstr "%(name)s Sequência de controle de qualidade"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(name)s Sequence storage"
 msgstr "%(name)s Sequência de armazenamento"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid ""
 "%(operations)s have default source or destination locations within warehouse "
@@ -242,25 +242,25 @@ msgstr ""
 "(warehouse)s, portanto, não é possível arquivá-lo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "%(picking_type)s : Detailed Moves"
 msgstr "%(picking_type)s : Movimentos detalhados"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "%(product)s: Insufficient Quantity To Scrap"
 msgstr "%(product)s: quantidade insuficiente para sucata"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "%(warehouse)s Sequence %(code)s"
 msgstr "%(warehouse)s Sequência %(code)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_replenishment_info.py:0
 msgid ""
 "%(warehouse)s can only provide %(free_qty)s %(uom)s, while the quantity to "
@@ -270,37 +270,37 @@ msgstr ""
 "solicitada é %(qty_to_order)s %(uom)s."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "%(warehouse)s: Supply Product from %(supplier)s"
 msgstr "%(warehouse)s: fornecimento de produto de %(supplier)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "%s (copy)"
 msgstr "%s (cópia)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "%s [reverted]"
 msgstr "%s [revertido]"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_replenishment_info.py:0
 msgid "%s days"
 msgstr "%s dias"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "%s was removed from the batch, no quantity processed"
 msgstr "%s foi removido do lote, nenhuma quantidade processada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "%s: Can't split: quantities done can't be above demand"
 msgstr ""
@@ -308,7 +308,7 @@ msgstr ""
 "da demanda"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "%s: Nothing to split, all demand is done. For split you need at least one "
@@ -318,7 +318,7 @@ msgstr ""
 "você precisa de pelo menos uma linha não preenchida totalmente"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "%s: Nothing to split. Fill the quantities you want in a new transfer in the "
@@ -357,7 +357,7 @@ msgstr ""
 "object.name)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid "(copy of) %s"
 msgstr "(cópia de) %s"
@@ -440,7 +440,7 @@ msgstr ""
 "empresas ou entre armazéns"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid "+ %d days"
 msgstr "+ %d dias"
@@ -508,7 +508,7 @@ msgstr ""
 "                Quer agilizar as operações?"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "<br>A need is created in <b>%s</b> and a rule will be triggered to fulfill "
@@ -518,7 +518,7 @@ msgstr ""
 "cumpri-la."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "<br>If the products are not available in <b>%s</b>, a rule will be triggered "
@@ -528,7 +528,7 @@ msgstr ""
 "acionada para trazer as quantidades em falta a este local."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "<br>The products will be moved towards <b>%(destination)s</b>, <br/> as "
@@ -1089,7 +1089,7 @@ msgid "A barcode can only be assigned to one package type!"
 msgstr "Um código de barras só pode ser atribuído a um tipo de embalagem."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid ""
 "A package can't have one of its contained packages as destination container."
@@ -1097,7 +1097,7 @@ msgstr ""
 "Um pacote não pode ter um dos pacotes que contém como contêiner de destino."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "A package cannot be moved multiple times within a single transfer or split "
@@ -1160,7 +1160,7 @@ msgid "Action"
 msgstr "Ação"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/fields/stock_action_field.js:0
 msgid "Action Name"
 msgstr "Nome da ação"
@@ -1234,7 +1234,7 @@ msgid "Activity view"
 msgstr "Visualização da atividade"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/wizard/stock_add_to_wave.py:0
 msgid "Add Operations"
@@ -1319,7 +1319,7 @@ msgstr ""
 "imediatamente (por exemplo, compartimentos específicos, racks)."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/fields/stock_move_line_x2_many_field.js:0
 msgid "Add line: %s"
 msgstr "Adicionar linha: %s"
@@ -1399,7 +1399,7 @@ msgid "Advanced: Apply Procurement Rules"
 msgstr "Avançado: aplicar regras de aquisições"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking__search_date_category__after
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -1444,7 +1444,7 @@ msgid "All Transfers"
 msgstr "Todas as transferências"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_report_search_panel.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.stock_location_route_form_view
 msgid "All Warehouses"
@@ -1470,7 +1470,7 @@ msgid "Allocation"
 msgstr "Alocação"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: model:ir.actions.client,name:stock.allocation_report_action
 msgid "Allocation Report"
@@ -1557,7 +1557,7 @@ msgstr ""
 "anual automático."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "Another parent/sub replenish location %s exists, if you wish to change it, "
@@ -1664,7 +1664,7 @@ msgstr ""
 "movimentações que não possuem demanda?"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "As other units of measure (ex : %(problem_uom)s) than %(uom)s have already "
@@ -1689,13 +1689,13 @@ msgid "Ask"
 msgstr "Perguntar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Assign"
 msgstr "Atribuir"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 msgid "Assign All"
 msgstr "Atribuir todos"
@@ -1711,7 +1711,7 @@ msgid "Assign to"
 msgstr "Atribuir a"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 msgid "Assigned"
 msgstr "Atribuído"
@@ -1732,7 +1732,7 @@ msgid "Assigned To"
 msgstr "Atribuído a"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Assigned to %s Responsible"
 msgstr "Atribuído ao responsável %s"
@@ -1871,8 +1871,8 @@ msgstr ""
 "quando possível."
 
 #. module: stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
@@ -2016,7 +2016,7 @@ msgid "Batch Properties"
 msgstr "Propriedades do lote"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 #: model:ir.actions.report,name:stock.action_report_picking_batch
 #: model:ir.model,name:stock.model_stock_picking_batch
@@ -2061,7 +2061,7 @@ msgid "Batch transfers"
 msgstr "Transferências em lote"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Batch transfers cannot be merged with wave transfers and vice versa."
 msgstr ""
@@ -2069,7 +2069,7 @@ msgstr ""
 "vice-versa."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Batch transfers have been merged into the following transfer"
 msgstr "Transferências em lote foram mescladas na seguinte transferência"
@@ -2085,7 +2085,7 @@ msgid "Batch, Wave & Cluster Transfers"
 msgstr "Transferências em lote, em onda e em cluster"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Batch/Wave transfers with different operation types cannot be merged."
 msgstr ""
@@ -2093,7 +2093,7 @@ msgstr ""
 "mescladas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Batch/Wave transfers with different states cannot be merged."
 msgstr ""
@@ -2105,7 +2105,7 @@ msgid "Batches"
 msgstr "Lotes"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking__search_date_category__before
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -2137,8 +2137,8 @@ msgstr "Peso bruto"
 
 #. module: stock
 #: model_terms:ir.actions.act_window,help:stock.ir_module_module_action_delivery_provider_modules
-msgid "Buy Odoo Enterprise now to get more providers."
-msgstr "Compre o Odoo Enterprise agora para obter mais provedores."
+msgid "Buy WETH Enterprise now to get more providers."
+msgstr "Compre o WETH Enterprise agora para obter mais provedores."
 
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__product_template__store_by__lot
@@ -2185,7 +2185,7 @@ msgstr ""
 "Ao desmarcar o campo 'ativo', você pode esconder o local sem excluí-lo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "COPY"
 msgstr "COPIAR"
@@ -2202,19 +2202,19 @@ msgid "Calendar View"
 msgstr "Visão de calendário"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Can't find any customer or supplier location."
 msgstr "Não é possível localizar qualquer local de cliente ou fornecedor."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Can't find any generic route %s."
 msgstr "Não foi possível encontrar nenhuma rota genérica %s."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid ""
 "Can't move a container having packages in another location (%"
@@ -2242,19 +2242,19 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_add_to_wave.py:0
 msgid "Cannot create wave transfers"
 msgstr "Não é possível criar transferências por onda"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "Cannot move an empty package"
 msgstr "Não é possível mover um pacote vazio"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "Cannot remove the location of a non empty package"
 msgstr "Não é possível remover o local de um pacote não vazio"
@@ -2318,7 +2318,7 @@ msgstr ""
 "em que o cliente está localizado."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "Changing the Lot/Serial number for move lines with different products is not "
@@ -2328,7 +2328,7 @@ msgstr ""
 "com produtos diferentes."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product_strategy.py:0
 #: code:addons/stock/models/stock_location.py:0
 #: code:addons/stock/models/stock_orderpoint.py:0
@@ -2342,13 +2342,13 @@ msgstr ""
 "lo e criar um novo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Changing the operation type of this record is forbidden at this point."
 msgstr "Alterar o tipo de operação deste registro é proibido neste ponto."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Changing the product is only allowed in 'Draft' state."
 msgstr "A mudança do produto só é permitida na situação 'Rascunho'."
@@ -2371,14 +2371,14 @@ msgstr ""
 "Marque essa caixa se quiser gerar uma etiqueta de remessa nessa operação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 #: code:addons/stock/wizard/stock_label_type.py:0
 msgid "Choose Labels Layout"
 msgstr "Selecionar layout das etiquetas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Choose Type of Labels To Print"
@@ -2390,7 +2390,7 @@ msgid "Choose a date to get the inventory at that date"
 msgstr "Escolha uma data para obter o inventário nessa data"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Choose destination location"
 msgstr "Escolha o local de destino"
@@ -2546,7 +2546,7 @@ msgid "Conflict in Inventory"
 msgstr "Conflito no inventário"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Conflict in Inventory Adjustment"
 msgstr "Conflito no ajuste de estoque"
@@ -2619,7 +2619,7 @@ msgid "Continue"
 msgstr "Continuar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 msgid "Control panel buttons"
 msgstr "Botões do painel de controle"
@@ -2696,7 +2696,7 @@ msgid "Create Backorder"
 msgstr "Criar pedido em espera"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Create Backorder?"
 msgstr "Criar pedido em espera?"
@@ -2873,7 +2873,7 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid ""
 "Creating a new warehouse will automatically activate the Storage Locations "
@@ -2894,7 +2894,7 @@ msgid "Creation date"
 msgstr "Data de criação"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Cross Dock"
 msgstr "Cross-dock"
@@ -2928,7 +2928,7 @@ msgstr ""
 "'interno'."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_report_search_panel.xml:0
 msgid "Current stock"
 msgstr "Estoque atual"
@@ -3004,7 +3004,7 @@ msgid "Danger Level"
 msgstr "Nível de perigo"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_report_stock_quantity__date
@@ -3160,7 +3160,7 @@ msgid "Deadline exceed or/and by the scheduled"
 msgstr "Prazo excedido e/ou pelo programado"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Deadline updated due to delay on %s"
 msgstr "Prazo atualizado devido ao atraso em %s"
@@ -3222,10 +3222,10 @@ msgstr "Rotas padrões através do armazém"
 #. module: stock
 #: model_terms:ir.actions.act_window,help:stock.action_orderpoint
 msgid ""
-"Define a minimum stock rule so that Odoo automatically creates requests for "
+"Define a minimum stock rule so that WETH automatically creates requests for "
 "quotations or confirmed manufacturing orders to resupply your stock."
 msgstr ""
-"Defina uma regra de estoque mínimo para que o Odoo crie automaticamente "
+"Defina uma regra de estoque mínimo para que o WETH crie automaticamente "
 "solicitações de cotações ou pedidos de fabricação confirmados para "
 "reabastecer seu estoque."
 
@@ -3238,14 +3238,14 @@ msgstr "Defina um novo armazém"
 #: model_terms:ir.actions.act_window,help:stock.action_location_form
 msgid ""
 "Define your locations to reflect your warehouse structure and\n"
-"            organization. Odoo is able to manage physical locations\n"
+"            organization. WETH is able to manage physical locations\n"
 "            (warehouses, shelves, bin, etc), partner locations (customers,\n"
 "            vendors) and virtual locations which are the counterpart of\n"
 "            the stock operations like the manufacturing orders\n"
 "            consumptions, inventories, etc."
 msgstr ""
 "Defina seus locais para refletir sua estrutura de armazém e\n"
-"organização. O Odoo é capaz de gerenciar locais físicos\n"
+"organização. O WETH é capaz de gerenciar locais físicos\n"
 "(armazéns, prateleiras, compartimento etc.), locais de parceiros (clientes,\n"
 "fornecedores) e locais virtuais que são a contrapartida\n"
 "das operações de estoque como pedidos de fabricação,\n"
@@ -3292,13 +3292,13 @@ msgid "Delay Alert Date"
 msgstr "Data do alerta de atraso"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid "Delay on %s"
 msgstr "Atrasos em %s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "Deleting product moves after the transfer is done?\n"
@@ -3322,19 +3322,19 @@ msgid "Deliver (1 step)"
 msgstr "Entrega (1 etapa)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Deliver in 1 step (ship)"
 msgstr "Entregar em 1 etapa (enviar)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Deliver in 2 steps (pick + ship)"
 msgstr "Entregar em 2 etapas (separar + enviar)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Deliver in 3 steps (pick + pack + ship)"
 msgstr "Entregar em 3 etapas (separar + embalar + enviar)"
@@ -3345,7 +3345,7 @@ msgid "Delivered"
 msgstr "Entregue"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Delivered Qty"
 msgstr "Quantidade entregue"
@@ -3370,7 +3370,7 @@ msgid "Delivery Address"
 msgstr "Endereço de entrega"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Delivery Date"
 msgstr "Data de entrega"
@@ -3381,13 +3381,13 @@ msgid "Delivery Methods"
 msgstr "Métodos de entrega"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "Delivery Note"
 msgstr "Nota de entrega"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:stock.picking.type,name:stock.picking_type_out
 msgid "Delivery Orders"
@@ -3405,7 +3405,7 @@ msgid "Delivery Slip"
 msgstr "Guia de entrega"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid "Delivery move lines of %s"
 msgstr "Linhas de movimento de entrega de %s"
@@ -3547,7 +3547,7 @@ msgid "Destination Country"
 msgstr "País de destino"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_dest_id
 #: model:ir.model.fields,field_description:stock.field_stock_package_history__location_dest_id
@@ -3617,7 +3617,7 @@ msgid "Detailed Moves"
 msgstr "Movimentações detalhadas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/models/stock_picking_batch.py:0
@@ -3653,7 +3653,7 @@ msgid "Dimensions"
 msgstr "Dimensões"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.stock_warn_insufficient_qty_scrap_form_view
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_replenishment_info
@@ -3844,19 +3844,19 @@ msgid "Duplicated Serial Number"
 msgstr "Número de série duplicado"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 msgid "Earliest Possible Arrival"
 msgstr "Chegada o mais cedo possível"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid "Edit Product"
 msgstr "Editar produto"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "Editing quantities in an Inventory Adjustment location is forbidden,those "
@@ -3914,13 +3914,13 @@ msgstr "Habilitar transferências em lote, por onda e por cluster"
 #. module: stock
 #: model_terms:digest.tip,tip_description:stock.digest_tip_stock_0
 msgid ""
-"Enjoy a quick-paced experience with the Odoo barcode app. It is blazing fast "
+"Enjoy a quick-paced experience with the WETH barcode app. It is blazing fast "
 "and works even without a stable internet connection. It supports all flows: "
 "inventory adjustments, batch picking, moving lots or pallets, low inventory "
 "checks, etc. Go to the \"Apps\" menu to activate the barcode interface."
 msgstr ""
 "Desfrute de uma experiência rápida com o aplicativo de código de barras "
-"Odoo. É extremamente rápido e funciona mesmo sem uma conexão de internet "
+"Weth. É extremamente rápido e funciona mesmo sem uma conexão de internet "
 "estável. Suporta todos os fluxos: ajustes de estoque, separação de lotes, "
 "movimentação de lotes ou paletes, verificação de estoque baixo, etc. Vá ao "
 "menu \"aplicativos\" para ativar a interface do código de barras."
@@ -3952,15 +3952,15 @@ msgstr ""
 #. module: stock
 #: model_terms:ir.actions.act_window,help:stock.action_location_form
 msgid ""
-"Every stock operation in Odoo moves the products from one\n"
+"Every stock operation in WETH moves the products from one\n"
 "            location to another one.  For instance, if you receive products\n"
-"            from a vendor, Odoo will move products from the Vendor\n"
+"            from a vendor, WETH will move products from the Vendor\n"
 "            location to the Stock location. Each report can be performed on\n"
 "            physical, partner or virtual locations."
 msgstr ""
-"Toda operação de estoque no Odoo movimenta os produtos de um\n"
+"Toda operação de estoque no WETH movimenta os produtos de um\n"
 "local para outro. Por exemplo, se você receber produtos\n"
-"de um fornecedor, o Odoo moverá produtos do local do fornecedor\n"
+"de um fornecedor, o WETH moverá produtos do local do fornecedor\n"
 "para o local de estoque. Cada relatório pode ser executado em\n"
 "local físico, parceiro ou virtual."
 
@@ -3980,19 +3980,19 @@ msgid "Exchange"
 msgstr "Trocar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/forecast_widget.xml:0
 msgid "Exp"
 msgstr "Exp."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Exp %s"
 msgstr "Prev %s"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 msgid "Expand"
 msgstr "Expandir"
@@ -4048,7 +4048,7 @@ msgid "First In First Out (FIFO)"
 msgstr "Primeiro a entrar, primeiro a sair (PEPS)"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "First Lot Number"
 msgstr "Número do primeiro lote"
@@ -4059,13 +4059,13 @@ msgid "First SN/Lot"
 msgstr "Primeiro nº de série/lote"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "First Serial Number"
 msgstr "Primeiro número de série"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 msgid "Fold"
 msgstr "Recolher"
@@ -4085,7 +4085,7 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (usuários)"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 msgid "For"
 msgstr "Para"
@@ -4138,14 +4138,14 @@ msgstr ""
 "estoque com tipo 'interno'."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.product_product_stock_tree
 msgid "Forecasted"
 msgstr "Previsto"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/json_widget.xml:0
 msgid "Forecasted Date"
 msgstr "Data prevista"
@@ -4161,7 +4161,7 @@ msgid "Forecasted Expected date"
 msgstr "Data esperada prevista"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Forecasted Inventory"
 msgstr "Estoque previsto"
@@ -4172,7 +4172,7 @@ msgid "Forecasted Location"
 msgstr "Local previsto"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 #: model:ir.model.fields,field_description:stock.field_product_product__virtual_available
 #: model:ir.model.fields,field_description:stock.field_product_replenish__forecasted_quantity
@@ -4186,7 +4186,7 @@ msgid "Forecasted Receipts"
 msgstr "Recebimentos previstos"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/stock_forecasted.js:0
 #: code:addons/stock/static/src/widgets/forecast_widget.xml:0
 #: model:ir.actions.client,name:stock.stock_forecasted_product_product_action
@@ -4223,7 +4223,7 @@ msgstr ""
 "entregue enquanto se aguarda a chegada."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Forecasted with Pending"
 msgstr "Previsão com pendência"
@@ -4239,13 +4239,13 @@ msgid "Free Qty"
 msgstr "Qtd. gratuita"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.js:0
 msgid "Free Stock"
 msgstr "Estoque livre"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Free Stock in Transit"
 msgstr "Estoque livre em trânsito"
@@ -4261,7 +4261,7 @@ msgid "Free to Use"
 msgstr "Livre para usar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__location_id
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
@@ -4295,25 +4295,25 @@ msgid "Future Activities"
 msgstr "Atividades futuras"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Future Deliveries"
 msgstr "Entregas futuras"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Future P&L"
 msgstr "Ganhos e perdas futuros"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Future Productions"
 msgstr "Produções futuras"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Future Receipts"
 msgstr "Recebimentos futuros"
@@ -4329,25 +4329,25 @@ msgid "General Source Location"
 msgstr "Local de origem geral"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/generate_serial.js:0
 msgid "Generate Lot numbers"
 msgstr "Gerar números de lote"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Generate Lots"
 msgstr "Gerar lote"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/generate_serial.js:0
 msgid "Generate Serial numbers"
 msgstr "Gerar números de série"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Generate Serials"
 msgstr "Gerar número de série"
@@ -4377,13 +4377,13 @@ msgid "Gives the sequence of this line when displaying the warehouses."
 msgstr "Fornece a sequência desta linha ao exibir os armazéns."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Go to Warehouses"
 msgstr "Ir para Armazéns"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "Goods Receipt Note"
 msgstr "Nota de recebimento de mercadorias"
@@ -4409,7 +4409,7 @@ msgid "Gujarat"
 msgstr "Guaraíta"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/multi_print.js:0
 msgid "HTML reports cannot be auto-printed, skipping report: %s"
 msgstr ""
@@ -4481,7 +4481,7 @@ msgid "Hide Reservation Method"
 msgstr "Ocultar o método de reserva"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 #: model_terms:ir.ui.view,arch_db:stock.product_product_stock_tree
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_editable
@@ -4490,7 +4490,7 @@ msgid "History"
 msgstr "Histórico"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_orderpoint_search_panel.xml:0
 msgid "Horizon"
 msgstr "Horizonte"
@@ -4645,7 +4645,7 @@ msgid "If set, the operations are packed into this package"
 msgstr "Se definido, as operações são embaladas para este pacote"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid ""
 "If the Automatic Batches feature is enabled, at least one 'Grouping by' "
@@ -4699,84 +4699,84 @@ msgstr "Se o usuário consegue ver a quantidade esperada ou não"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_delivery_slip
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the delivery slip "
+"If this checkbox is ticked, WETH will automatically print the delivery slip "
 "of a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "guia de entrega de uma separação quando ela for validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_lot_labels
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the lot/SN labels "
+"If this checkbox is ticked, WETH will automatically print the lot/SN labels "
 "of a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as etiquetas de lote/NS de uma separação quando ela for validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_package_label
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the package label "
+"If this checkbox is ticked, WETH will automatically print the package label "
 "when \"Put in Pack\" button is used."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "etiqueta da embalagem quando o botão \"Colocar em pacote\" for usado."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_packages
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the packages and "
+"If this checkbox is ticked, WETH will automatically print the packages and "
 "their contents of a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as embalagens e seus conteúdos de uma separação quando ela for validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_product_labels
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the product labels "
+"If this checkbox is ticked, WETH will automatically print the product labels "
 "of a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as etiquetas de produto de uma separação quando ela for validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_reception_report_labels
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the reception "
+"If this checkbox is ticked, WETH will automatically print the reception "
 "report labels of a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente "
 "as etiquetas do relatório de recebimento de uma separação quando ela for "
 "validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_reception_report
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the reception "
+"If this checkbox is ticked, WETH will automatically print the reception "
 "report of a picking when it is validated and has assigned moves."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente o "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente o "
 "relatório de recebimento de uma separação quando ela for validada e tiver "
 "movimentações atribuídas."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_return_slip
 msgid ""
-"If this checkbox is ticked, Odoo will automatically print the return slip of "
+"If this checkbox is ticked, WETH will automatically print the return slip of "
 "a picking when it is validated."
 msgstr ""
-"Se essa caixa de seleção estiver marcada, o Odoo imprimirá automaticamente a "
+"Se essa caixa de seleção estiver marcada, o WETH imprimirá automaticamente a "
 "guia de devolução de uma separação quando ela for validada."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_show_allocation_report
 msgid ""
-"If this checkbox is ticked, Odoo will automatically show the allocation "
+"If this checkbox is ticked, WETH will automatically show the allocation "
 "report (if there are moves to allocate to) when validating."
 msgstr ""
-"Se esta caixa de seleção estiver marcada, o Odoo mostrará automaticamente o "
+"Se esta caixa de seleção estiver marcada, o WETH mostrará automaticamente o "
 "relatório de alocação (se houver movimentações a alocar) ao validar."
 
 #. module: stock
@@ -4852,20 +4852,20 @@ msgid "Immediate Transfer"
 msgstr "Transferir imediatamente"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Import"
 msgstr "Importar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/generate_serial.js:0
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Import Lots"
 msgstr "Importar lotes"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/generate_serial.js:0
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Import Serials"
@@ -4920,7 +4920,7 @@ msgid "In progress"
 msgstr "Em andamento"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 #: model:ir.model.fields,field_description:stock.field_product_product__incoming_qty
 #: model_terms:ir.ui.view,arch_db:stock.stock_move_line_view_search
@@ -4934,7 +4934,7 @@ msgid "Incoming Date"
 msgstr "Data de entrada"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Incoming Draft Transfer"
 msgstr "Rascunho de transferência de entrada"
@@ -4950,7 +4950,7 @@ msgid "Incoming Shipments"
 msgstr "Remessas recebidas"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/multi_print.js:0
 msgid "Incorrect type of action submitted as a report, skipping action"
 msgstr "Tipo incorreto de ação enviada como um relatório, ignorando a ação"
@@ -4975,7 +4975,7 @@ msgid "Initial Demand"
 msgstr "Demanda inicial"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Input"
 msgstr "Entrada"
@@ -5001,7 +5001,7 @@ msgid "Instructions on the Stock Operations"
 msgstr "Instruções das operações de estoque"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/res_company.py:0
 msgid "Inter-warehouse transit"
 msgstr "Trânsito entre armazéns"
@@ -5027,7 +5027,7 @@ msgid "Internal Locations"
 msgstr "Locais internos"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "Internal Move"
 msgstr "Movimentação interna"
@@ -5043,7 +5043,7 @@ msgid "Internal Transfer"
 msgstr "Transferência interna"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:ir.actions.act_window,name:stock.action_picking_tree_internal
 #: model:stock.picking.type,name:stock.picking_type_internal
@@ -5075,7 +5075,7 @@ msgid "Internal locations among descendants"
 msgstr "Locais internos entre secundários"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid "Internal locations having stock can't be converted"
 msgstr "Locais internos com estoque não podem ser convertidos"
@@ -5090,7 +5090,7 @@ msgstr ""
 "fabricante"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "Invalid rule's configuration, the following rule causes an endless loop: %s"
@@ -5120,7 +5120,7 @@ msgid "Inventory"
 msgstr "Inventário"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 #: model:ir.model.fields,field_description:stock.field_product_product__property_stock_inventory
 #: model:ir.model.fields,field_description:stock.field_product_template__property_stock_inventory
@@ -5206,7 +5206,7 @@ msgid "Inventory Valuation"
 msgstr "Valoração de inventário"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_report_search_panel.xml:0
 msgid "Inventory at Date"
 msgstr "Inventário na data"
@@ -5297,7 +5297,7 @@ msgid "Is quantity done editable"
 msgstr "A quantidade concluída é editável"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "It is not possible to unreserve more products of %s than you have in stock."
@@ -5349,7 +5349,7 @@ msgid "Json Lead Days"
 msgstr "Dias de prazo JSON"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/json_widget.js:0
 msgid "Json Popup"
 msgstr "Popup JSON"
@@ -5385,7 +5385,7 @@ msgid "Keep Difference"
 msgstr "Manter diferença"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Keep current lines"
 msgstr "Manter linhas atuais"
@@ -5666,7 +5666,7 @@ msgid "Lead Time"
 msgstr "Prazo de entrega"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 msgid "Lead Time Information"
 msgstr "Informações sobre prazo de entrega"
@@ -5889,7 +5889,7 @@ msgid "Lot Properties"
 msgstr "Propriedades do lote"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Lot numbers"
 msgstr "Números de lote"
@@ -5911,7 +5911,7 @@ msgid "Lot/Serial"
 msgstr "Lote/série"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.report_stock_body_print
 msgid "Lot/Serial #"
@@ -5948,7 +5948,7 @@ msgid "Lot/Serial Number Name"
 msgstr "Nome de número de lote/série"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid "Lot/Serial Number Relocated"
 msgstr "Número de série/lote realocado"
@@ -6073,7 +6073,7 @@ msgid "Manual Operation"
 msgstr "Operação manual"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/product_replenish.py:0
 msgid "Manual Replenishment"
 msgstr "Reposição manual"
@@ -6326,7 +6326,7 @@ msgid "Move Lines Count"
 msgstr "Contagem de linhas de movimentação"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/picking_form/stock_move_one2many.xml:0
 msgid "Move a Pack"
 msgstr "Mover um pacote"
@@ -6381,7 +6381,7 @@ msgid "Multiple capacity rules for one product."
 msgstr "Várias regras de capacidade para um produto."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "Multiple destinations"
 msgstr "Vários destinos"
@@ -6476,7 +6476,7 @@ msgid "Never attribute Values"
 msgstr "Nunca atribuir valores"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_move__state__draft
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
@@ -6528,7 +6528,7 @@ msgid "Next Serial"
 msgstr "Próximo nº de série"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Next Transfers"
 msgstr "Próximas transferências"
@@ -6562,7 +6562,7 @@ msgid "No Backorder"
 msgstr "Nenhum pedido em espera"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/stock_package_m2m.js:0
 msgid "No Package"
 msgstr "Sem pacote"
@@ -6577,14 +6577,14 @@ msgstr ""
 "estoque atual de seus produtos."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/allocation_report/product_line/product_line.xml:0
 msgid "No allocation need found."
 msgstr "Não foi encontrada nenhuma necessidade de alocação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "No backorder has been planned for undelivered demanded quantities: %s"
 msgstr ""
@@ -6596,13 +6596,13 @@ msgid "No delivery to do!"
 msgstr "Não há entregas a fazer!"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "No negative quantities allowed"
 msgstr "Não é permitido quantidades negativas"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 msgid "No operation made on this lot."
 msgstr "Nenhuma operação feita neste lote."
@@ -6613,7 +6613,7 @@ msgid "No operations found. Let's create a transfer!"
 msgstr "Nenhuma operação encontrada. Vamos criar uma transferência!"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "No product found to generate Serials/Lots for."
 msgstr "Não foi encontrado nenhum produto para o qual gerar Nº de série/Lote."
@@ -6639,7 +6639,7 @@ msgid "No reordering rule found"
 msgstr "Nenhuma regra de reposição encontrada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "No rule has been found to replenish \"%(product)s\" in \"%(location)s\".\n"
@@ -6650,7 +6650,7 @@ msgstr ""
 "Verifique a configuração das rotas no produto."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid "No source location defined on stock rule: %s!"
 msgstr "Nenhum local de origem definido na regra do estoque: %s."
@@ -6687,8 +6687,8 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 #: code:addons/stock/static/src/widgets/forecast_widget.xml:0
@@ -6723,7 +6723,7 @@ msgid "Number of Actions"
 msgstr "Número de ações"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Number of SN"
 msgstr "Número de série"
@@ -6781,14 +6781,14 @@ msgstr "Outubro"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_type_form
 msgid ""
-"Odoo opens a PDF preview by default. If you (Enterprise users only) want to "
+"WETH opens a PDF preview by default. If you (Enterprise users only) want to "
 "print instantly,\n"
 "                                        install the IoT App on a computer "
 "that is on the same local network as the\n"
 "                                        barcode operator and configure the "
 "routing of the reports."
 msgstr ""
-"O Odoo abre uma visualização em PDF por padrão. Se você quiser imprimir "
+"O WETH abre uma visualização em PDF por padrão. Se você quiser imprimir "
 "instantaneamente (somente usuários Enterprise), instale o aplicativo IoT em "
 "um computador que esteja na mesma rede local que o operador do código de "
 "barras e configure o roteamento dos relatórios."
@@ -6799,7 +6799,7 @@ msgid "Office Chair"
 msgstr "Cadeira de escritório"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 #: model:ir.model.fields,field_description:stock.field_stock_quant__on_hand
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__qty_on_hand
@@ -6837,7 +6837,7 @@ msgid "One per unit"
 msgstr "Um por unidade"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "Only %(nbr_done)s %(uom)s of %(product)s delivered in contrast to the "
@@ -6857,7 +6857,7 @@ msgid "Open Button Style"
 msgstr "Estilo do botão de abertura"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Open: Stock Move"
 msgstr "Abrir: Movimentação de estoque"
@@ -6874,7 +6874,7 @@ msgid "Operation Quantities"
 msgstr "Quantidades da operação"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_move__picking_type_id
 #: model:ir.model.fields,field_description:stock.field_stock_picking__picking_type_id
@@ -6901,13 +6901,13 @@ msgid "Operation Types"
 msgstr "Tipos de operação"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/report/stock_allocation_report.py:0
 msgid "Operation not found"
 msgstr "Operação não encontrada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Operation not supported"
 msgstr "Operação não suportada"
@@ -6986,7 +6986,7 @@ msgid "Options"
 msgstr "Opções"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/stock_orderpoint_list_view.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.replenishment_option_warning_view
 #: model_terms:ir.ui.view,arch_db:stock.view_warehouse_orderpoint_tree_editable
@@ -6994,13 +6994,13 @@ msgid "Order"
 msgstr "Pedido"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Order signed"
 msgstr "Pedido assinado"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Order signed by %s"
 msgstr "Pedido assinado por %s"
@@ -7106,7 +7106,7 @@ msgid "Outermost Destination Container"
 msgstr "Contêiner de destino mais externo"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 #: model:ir.model.fields,field_description:stock.field_product_product__outgoing_qty
@@ -7116,7 +7116,7 @@ msgid "Outgoing"
 msgstr "Saída"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Outgoing Draft Transfer"
 msgstr "Rascunho de transferência de saída"
@@ -7132,7 +7132,7 @@ msgid "Outgoing Shipments"
 msgstr "Remessas enviadas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Output"
 msgstr "Saída"
@@ -7169,7 +7169,7 @@ msgid "Owner:"
 msgstr "Proprietário:"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "P&L Qty"
 msgstr "Quantidade de perdas e ganhos"
@@ -7180,7 +7180,7 @@ msgid "PDF"
 msgstr "PDF"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Pack"
 msgstr "Embalagem"
@@ -7331,7 +7331,7 @@ msgid "Package Type"
 msgstr "Tipo de embalagem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package_type.py:0
 msgid "Package Type Sequence %(code)s"
 msgstr "Sequência de tipos de pacotes %(code)s"
@@ -7354,7 +7354,7 @@ msgid "Package Use"
 msgstr "Uso da embalagem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "Package manually relocated"
 msgstr "Pacote realocado manualmente"
@@ -7365,7 +7365,7 @@ msgid "Package name is valid SSCC"
 msgstr "O nome da embalagem é um SSCC válido"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "Package size must be greater than zero and not exceed the initial quantity."
@@ -7379,7 +7379,7 @@ msgid "Package type"
 msgstr "Tipo de embalagem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/models/stock_picking_batch.py:0
 #: model:ir.actions.act_window,name:stock.action_package_view
@@ -7396,7 +7396,7 @@ msgid "Packages"
 msgstr "Embalagens"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid ""
 "Packages %(duplicate_names)s are moved to different locations while being in "
@@ -7460,7 +7460,7 @@ msgid "Packing Location"
 msgstr "Local de embalagem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Packing Zone"
 msgstr "Zona de embalagem"
@@ -7525,7 +7525,7 @@ msgid "Percent Factor"
 msgstr "Fator percentual"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 #: model:ir.actions.act_window,name:stock.action_stock_inventory_adjustement_name
 #: model:ir.ui.menu,name:stock.menu_action_inventory_tree
@@ -7533,7 +7533,7 @@ msgid "Physical Inventory"
 msgstr "Inventário físico"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_backorder_confirmation__pick_ids
 msgid "Pick"
@@ -7624,19 +7624,19 @@ msgid "Picking list"
 msgstr "Lista de separação"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/stock_rescheduling_popover.xml:0
 msgid "Planning Issue"
 msgstr "Problema de planejamento"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Please contact your administrator to configure your warehouse."
 msgstr "Entre em contato com o administrador para configurar o depósito."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Please create a warehouse for company %s."
 msgstr "Crie um armazém para a empresa %s."
@@ -7648,13 +7648,13 @@ msgstr ""
 "Por favor, coloque este documento dentro do seu pacote de devolução.<br/>"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Please select at least two batch/wave transfers to merge."
 msgstr "Selecione pelo menos duas transferências de lote/onda para mesclar."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/stock_rescheduling_popover.xml:0
 msgid "Preceding operations"
 msgstr "Operações anteriores"
@@ -7706,7 +7706,7 @@ msgid "Presence depends on the operation category."
 msgstr "A presença depende da categoria da operação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "Press the \"New\" button to define the quantity for a product in your stock "
@@ -7727,7 +7727,7 @@ msgid "Primary"
 msgstr "Primário"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_batch_form
@@ -7746,7 +7746,7 @@ msgid "Print GS1 Barcodes for Lots & Serial Numbers"
 msgstr "Imprimir códigos de barras GS1 para lotes e números de série"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/allocation_report/out_line/out_line.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_batch_form
@@ -7823,13 +7823,13 @@ msgid "Produce Line"
 msgstr "Linha de produção"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Produced Qty"
 msgstr "Qtd. produzida"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model,name:stock.model_product_template
 #: model:ir.model.fields,field_description:stock.field_product_replenish__product_id
@@ -7930,13 +7930,13 @@ msgid "Product Name"
 msgstr "Nome do produto"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Product Quantity Confirmed"
 msgstr "Quantidade de produtos confirmada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Product Quantity Updated"
 msgstr "Quantidade de produtos atualizada"
@@ -7947,7 +7947,7 @@ msgid "Product Relocated"
 msgstr "Produto realocado"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_buttons.js:0
 #: model:ir.model,name:stock.model_product_replenish
 msgid "Product Replenish"
@@ -8070,7 +8070,7 @@ msgstr ""
 "mais altas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Products: %(location)s"
 msgstr "Produtos: %(location)s"
@@ -8153,7 +8153,7 @@ msgid "Putaway Rule"
 msgstr "Regra de entrada em depósito"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 #: model:ir.actions.act_window,name:stock.action_putaway_tree
 #: model:ir.actions.act_window,name:stock.category_open_putaway
@@ -8180,7 +8180,7 @@ msgid "Quality"
 msgstr "Qualidade"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Quality Control"
 msgstr "Controle de qualidade"
@@ -8213,37 +8213,37 @@ msgid "Quant"
 msgstr "Quant"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quant's creation is restricted, you can't do this operation."
 msgstr "A criação de quants é restrita, você não pode fazer esta operação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quant's editing is restricted, you can't do this operation."
 msgstr "A edição de quants é restrita, você não pode fazer esta operação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quantities Already Set"
 msgstr "Quantidades já definidas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quantities To Reset"
 msgstr "Quantidades a serem redefinidas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "Quantities unpacked"
 msgstr "Quantidades desembaladas"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/allocation_report.xml:0
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_product_replenish__quantity
@@ -8286,13 +8286,13 @@ msgid "Quantity On Hand"
 msgstr "Quantidade em mãos"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Quantity Received"
 msgstr "Quantidade recebida"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quantity Relocated"
 msgstr "Quantidade realocada"
@@ -8303,7 +8303,7 @@ msgid "Quantity Reserved"
 msgstr "Quantidade reservada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_replenishment_info.py:0
 msgid "Quantity available too low"
 msgstr "Quantidade disponível muito baixa"
@@ -8391,13 +8391,13 @@ msgstr ""
 "do produto"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quantity or Reserved Quantity should be set."
 msgstr "A quantidade ou a quantidade reservada deve ser definida."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Quantity per Lot"
 msgstr "Quantidade por lote"
@@ -8426,7 +8426,7 @@ msgid "Quants"
 msgstr "Quants"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "Quants are auto-deleted when appropriate. If you must manually delete them, "
@@ -8437,7 +8437,7 @@ msgstr ""
 "isso."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Quants cannot be created for consumables or services."
 msgstr "Não é possível criar quantidades para consumíveis ou serviços."
@@ -8477,7 +8477,7 @@ msgid "Receipt Route"
 msgstr "Rota de recebimento"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:ir.actions.act_window,name:stock.action_picking_tree_incoming
 #: model:ir.model.fields,field_description:stock.field_digest_digest__kpi_stock_receipt_count
@@ -8498,19 +8498,19 @@ msgid "Receive and Store (1 step)"
 msgstr "Receber e armazenar (1 etapa)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Receive in 1 step (stock)"
 msgstr "Receber em 1 etapa (estoque)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Receive in 2 steps (input + stock)"
 msgstr "Receber em 2 etapas (entrada + estoque)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Receive in 3 steps (input + quality + stock)"
 msgstr "Receber em 3 etapas (entrada + qualidade + estoque)"
@@ -8526,7 +8526,7 @@ msgid "Receive, Quality Control, then Store (3 steps)"
 msgstr "Receber, controlar qualidade e depois armazenar (3 etapas)"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Received Qty"
 msgstr "Quantidade recebida"
@@ -8558,7 +8558,7 @@ msgstr ""
 "controle de qualidade etc."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_stock_move__reference
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__reference
@@ -8605,7 +8605,7 @@ msgid "References"
 msgstr "Referências"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/json_widget.xml:0
 msgid "Refresh"
 msgstr "Atualizar"
@@ -8646,7 +8646,7 @@ msgid "Removal Strategy"
 msgstr "Estratégia de remoção"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Removal strategy %s not implemented."
 msgstr "Estratégia de remoção %s não implementada."
@@ -8702,7 +8702,7 @@ msgid "Reordering Rules Search"
 msgstr "Busca de regras de reposição"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_buttons.xml:0
 #: model:ir.actions.server,name:stock.action_product_replenishment
 #: model:ir.actions.server,name:stock.action_product_template_replenishment
@@ -8715,7 +8715,7 @@ msgid "Replenish Frequency"
 msgstr "Frequência de reabastecimento"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__replenish_on_order
 #: model:stock.route,name:stock.route_warehouse0_mto
@@ -8723,7 +8723,7 @@ msgid "Replenish on Order (MTO)"
 msgstr "Reposição por pedido (sob demanda)"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/stock_orderpoint_list_view.xml:0
 msgid ""
 "Replenish products up to the Max Quantity                     set. If a "
@@ -8777,13 +8777,13 @@ msgid "Replenishment Information"
 msgstr "Informações de reposição"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid "Replenishment Information for %(product)s in %(warehouse)s"
 msgstr "Informações de reposição para %(product)s em %(warehouse)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid "Replenishment Report"
 msgstr "Relatório de reposição"
@@ -8794,7 +8794,7 @@ msgid "Replenishment Report Search"
 msgstr "Busca de relatório de reposição"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/json_widget.xml:0
 msgid "Replenishment Time ("
 msgstr "Tempo de reabastecimento ("
@@ -8815,7 +8815,7 @@ msgid "Report Action"
 msgstr "Ação de relatório"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/multi_print.js:0
 msgid "Report Printing Error"
 msgstr "Erro de impressão de relatório"
@@ -8848,7 +8848,7 @@ msgid "Reservation Method"
 msgstr "Método de reserva"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_batch_form
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
@@ -8889,7 +8889,7 @@ msgid "Reserve Partial Packagings"
 msgstr "Reservar embalagens parciais"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/out_line/out_line.js:0
 msgid "Reserved"
 msgstr "Reservado"
@@ -8900,7 +8900,7 @@ msgid "Reserved Quantity"
 msgstr "Quantidade reservada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Reserving a negative quantity is not allowed."
 msgstr "A reserva de uma quantidade negativa não é permitida."
@@ -8965,7 +8965,7 @@ msgid "Return of"
 msgstr "Devolução de"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Return of %(picking_name)s"
 msgstr "Devolução de %(picking_name)s"
@@ -8976,13 +8976,13 @@ msgid "Return slip"
 msgstr "Guia de devolução"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Returned Picking"
 msgstr "Separação devolvida"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_picking__return_ids
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
@@ -9021,7 +9021,7 @@ msgid "Revert"
 msgstr "Reverter"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Reverted Moves"
 msgstr "Movimentações revertidas"
@@ -9099,7 +9099,7 @@ msgstr ""
 "selecioná-las nos produtos e nas categorias de produtos"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
@@ -9180,7 +9180,7 @@ msgid "Same month last year"
 msgstr "Mesmo mês do ano passado"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "Sample data"
 msgstr "Amostra de dados"
@@ -9191,7 +9191,7 @@ msgid "Save"
 msgstr "Salvar"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Save the product form before updating the Quantity On Hand."
 msgstr "Salve o formulário do produto antes de atualizar a Quantidade em mãos."
@@ -9274,7 +9274,7 @@ msgid "Scrap"
 msgstr "Sucata"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid "Scrap %(lot_name)s"
 msgstr "Sucatear %(lot_name)s"
@@ -9287,7 +9287,7 @@ msgid "Scrap Location"
 msgstr "Local de sucata"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: model_terms:ir.ui.view,arch_db:stock.view_scrap_move_form
 msgid "Scrap Products"
@@ -9304,7 +9304,7 @@ msgid "Scrap Reason Tag"
 msgstr "Marcador do motivo da sucata"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Scrap of %s"
 msgstr "Sucata de %s"
@@ -9327,7 +9327,7 @@ msgid "Scraps"
 msgstr "Sucatas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid "Scraps of %s"
 msgstr "Sucatas de %s"
@@ -9348,7 +9348,7 @@ msgid "Search Reference"
 msgstr "Buscar referências"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Search not supported without a value."
 msgstr "Pesquisa não suportada sem um valor."
@@ -9360,8 +9360,8 @@ msgid "Secondary"
 msgstr "Secundário"
 
 #. module: stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 #: code:addons/stock/static/src/views/list/stock_add_package_list_view.js:0
 #: code:addons/stock/static/src/views/picking_form/stock_move_one2many.js:0
@@ -9384,7 +9384,7 @@ msgid "Select a Product..."
 msgstr "Selecione um produto..."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_report_search_panel.xml:0
 msgid "Select a date..."
 msgstr "Selecione uma data..."
@@ -9405,7 +9405,7 @@ msgid "Select the places where this route can be selected"
 msgstr "Selecione os locais onde estas rotas podem ser selecionadas"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product_strategy.py:0
 msgid ""
 "Selected storage category does not exist in the 'store to' location or any "
@@ -9415,7 +9415,7 @@ msgstr ""
 "nem em nenhum dos seus sublocais"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "Selection not supported."
 msgstr "Seleção não suportada."
@@ -9427,7 +9427,7 @@ msgstr ""
 "Vender e comprar produtos em diferentes unidades de medida ou embalagens"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Send Email"
 msgstr "Enviar e-mail"
@@ -9486,7 +9486,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid "Sequence %(code)s"
 msgstr "Sequência %(code)s"
@@ -9503,7 +9503,7 @@ msgid "Serial Numbers"
 msgstr "Números de série"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "Serial number (%(serial_number)s) already exists in location(s): %"
@@ -9513,7 +9513,7 @@ msgstr ""
 "(location_list)s. Corrija o número de série codificado."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "Serial number (%(serial_number)s) is not located in %(source_location)s, but "
@@ -9528,7 +9528,7 @@ msgstr ""
 "Corrija isso para evitar dados inconsistentes."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "Serial number (%(serial_number)s) is not located in %(source_location)s, but "
@@ -9544,7 +9544,7 @@ msgstr ""
 "(recommended_location)s"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Serial numbers"
 msgstr "Números de série"
@@ -9836,7 +9836,7 @@ msgid "Size: Length × Width × Height"
 msgstr "Tamanho: comprimento × largura × altura"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/stock_orderpoint_list_view.xml:0
 #: model:ir.actions.act_window,name:stock.action_orderpoint_snooze
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_orderpoint_snooze
@@ -9889,7 +9889,7 @@ msgid "Source Document"
 msgstr "Documento de origem"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_move__location_id
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_id
@@ -9935,13 +9935,13 @@ msgid "Split"
 msgstr "Dividir"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Split Backorder"
 msgstr "Dividir pedidos pendentes"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Split from %(original_picking_link)s."
 msgstr "Divisão de %(original_picking_link)s."
@@ -10012,7 +10012,7 @@ msgid "Status"
 msgstr "Status"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/fields/stock_picking_locked_statusbar_field.js:0
 msgid "Status bar with lock/unlock indicator for Pickings"
 msgstr "Barra de status com indicador de bloqueio/desbloqueio da separação"
@@ -10033,7 +10033,7 @@ msgstr ""
 "Planejado: atividades futuras."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 #: model:ir.actions.act_window,name:stock.action_product_stock_view
 #: model:ir.ui.menu,name:stock.menu_product_stock
@@ -10064,7 +10064,7 @@ msgid "Stock Confirmation Type"
 msgstr "Tipo de confirmação de estoque"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Stock In Transit"
 msgstr "Estoque em trânsito"
@@ -10197,7 +10197,7 @@ msgid "Stock Text Validation with stock move"
 msgstr "Validação de texto de estoque com movimentação de estoque"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Stock To Reserve:"
 msgstr "Estoque a reservar:"
@@ -10255,7 +10255,7 @@ msgid "Stock warehouse replenishment option"
 msgstr "Opção de reposição do armazém de estoque"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Storage"
 msgstr "Armazenamento"
@@ -10343,7 +10343,7 @@ msgid "Sublocation"
 msgstr "Sublocal"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/stock_orderpoint_list_view.xml:0
 msgid "Suggest"
 msgstr "Sugerir"
@@ -10457,7 +10457,7 @@ msgstr ""
 "Campo técnico usado para calcular se o botão \"Reservar\" deve ser exibido."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Template for Inventory Adjustments"
 msgstr "Modelo para ajustes de inventário"
@@ -10468,7 +10468,7 @@ msgid "Text Confirmation"
 msgstr "Confirmação do texto"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "The %s location is required by the Inventory app and cannot be deleted, but "
@@ -10489,13 +10489,13 @@ msgstr ""
 "original."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "The Lot/Serial number (%s) is linked to another product."
 msgstr "O número de lote/série (%s) está vinculado a outro produto."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "The Serial Number (%(serial_number)s) is already used in location(s): %"
@@ -10522,7 +10522,7 @@ msgid "The actual date when the transfer was processed."
 msgstr "A data real em que a transferência foi processada."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "The backorder %(backorder_picking_link)s has been created."
 msgstr "A lista de pedidos pendentes %(backorder_picking_link)s foi criada."
@@ -10546,7 +10546,7 @@ msgstr ""
 "expressamente acordada por escrito e com antecedência."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid ""
 "The combination of lot/serial number and product must be unique within a "
@@ -10567,7 +10567,7 @@ msgstr ""
 "usuário."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking__search_date_category__day_2
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -10575,7 +10575,7 @@ msgid "The day after tomorrow"
 msgstr "Depois de amanhã"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "The deadline has been automatically updated due to a delay on %s."
 msgstr "O prazo foi atualizado automaticamente devido a um atraso em %s."
@@ -10595,27 +10595,27 @@ msgid "The first in the sequence is the default one."
 msgstr "O primeiro na sequência é o padrão."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 #: code:addons/stock/wizard/stock_picking_to_batch.py:0
 msgid "The following batch transfer has been created"
 msgstr "A seguinte transferência em lote foi criada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 #: code:addons/stock/wizard/stock_picking_to_batch.py:0
 msgid "The following batch transfer has been updated"
 msgstr "A seguinte transferência em lote foi atualizada"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/product_replenish.py:0
 msgid "The following replenishment order have been generated"
 msgstr "O seguinte pedido de reposição foi gerado"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid ""
 "The following transfers cannot be added to batch transfer %(batch)s. Please "
@@ -10634,7 +10634,7 @@ msgid "The forecasted quantity of"
 msgstr "A quantidade prevista de"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid "The inter-warehouse transfers have been generated"
 msgstr "As transferências entre armazéns foram geradas"
@@ -10645,7 +10645,7 @@ msgid "The inventory frequency (days) for a location must be non-negative"
 msgstr "A frequência de inventário (dias) para um local não deve ser negativa"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid ""
 "The minimum quantity must be less than or equal to the maximum quantity."
@@ -10657,7 +10657,7 @@ msgid "The name of the warehouse must be unique per company!"
 msgstr "O nome do armazém deve ser único para cada empresa."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "The number of Serial Numbers to generate must be greater than zero."
 msgstr "O número de números de série a serem gerados deve ser maior que zero."
@@ -10733,7 +10733,7 @@ msgstr ""
 "comum."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "The quantity done for the product \"%(product)s\" doesn't respect the "
@@ -10746,13 +10746,13 @@ msgstr ""
 "medida."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "The quantity per lot should always be a positive value."
 msgstr "A quantidade por lote deve ser sempre um valor positivo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "The requested operation cannot be processed because of a programming error "
@@ -10763,7 +10763,7 @@ msgstr ""
 "'product_uom_qty'."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "The selected Inventory Frequency (Days) creates a date too far into the "
@@ -10773,32 +10773,32 @@ msgstr ""
 "no futuro."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_add_to_wave.py:0
 msgid "The selected operations should belong to a unique company."
 msgstr "As operações selecionadas devem pertencer a uma empresa única."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_picking_to_batch.py:0
 msgid "The selected pickings should belong to an unique company."
 msgstr "As separações selecionadas devem pertencer a uma empresa única."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_add_to_wave.py:0
 msgid "The selected transfers should belong to a unique company."
 msgstr "As transferências selecionadas devem pertencer a uma única empresa."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/wizard/stock_add_to_wave.py:0
 msgid "The selected transfers should belong to the same operation type"
 msgstr ""
 "As transferências selecionadas devem pertencer ao mesmo tipo de operação"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid ""
 "The sequence 'picking.batch' is misconfigured. Its prefix should end with a "
@@ -10808,7 +10808,7 @@ msgstr ""
 "terminar com um separador '/'."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "The serial number has already been assigned: \n"
@@ -10850,13 +10850,13 @@ msgid "The stock rule that created this stock move"
 msgstr "A regra de estoque que criou essa movimentação de estoque"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "There are no inventory adjustments to revert."
 msgstr "Não há ajustes de estoque a serem revertidos."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "There is nothing to reserve."
 msgstr "Não há nada a reservar."
@@ -10986,7 +10986,7 @@ msgstr ""
 "geradas por uma ordem de fabricação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "This location's usage cannot be changed to view as it contains products."
@@ -10994,7 +10994,7 @@ msgstr ""
 "O uso deste local não pode ser alterado para exibição pois contém produtos."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "This lot %(lot_name)s is incompatible with this product %(product_name)s"
@@ -11052,7 +11052,7 @@ msgstr ""
 "produto no armazém)."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_package.py:0
 msgid "This package is currently set to be sent in %(location_names_list)s."
 msgstr ""
@@ -11060,7 +11060,7 @@ msgstr ""
 "(location_names_list)s."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "This product has been used in at least one inventory movement. It is not "
@@ -11072,7 +11072,7 @@ msgstr ""
 "inconsistências. Uma solução melhor seria arquivar o produto e criar um novo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "This product's company cannot be changed as long as there are quantities of "
@@ -11082,7 +11082,7 @@ msgstr ""
 "dele pertencentes a outra empresa."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "This product's company cannot be changed as long as there are stock moves of "
@@ -11092,13 +11092,13 @@ msgstr ""
 "de estoque dele pertencentes a outra empresa."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/list/inventory_report_list_model.js:0
 msgid "This record already exists"
 msgstr "Este registro já existe"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/report/stock_allocation_report.py:0
 msgid ""
 "This report cannot be used for done and not done %(doc_type)s at the same "
@@ -11108,7 +11108,7 @@ msgstr ""
 "(doc_type)s ao mesmo tempo"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid ""
 "This sequence prefix is already being used by another operation type. It is "
@@ -11137,13 +11137,13 @@ msgid "This will discard all unapplied counts, do you want to proceed?"
 msgstr "Isso descartará todas as contagens não aplicadas. Deseja continuar?"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid "Time Horizon"
 msgstr "Horizonte de temp"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 msgid "Time to replenish:"
 msgstr "Tempo para reabastecer:"
@@ -11161,7 +11161,7 @@ msgid "Tip: Speed up inventory operations with barcodes"
 msgstr "Dica: acelere as operações de estoque com códigos de barras"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__location_dest_id
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
@@ -11250,8 +11250,8 @@ msgid "To Reorder"
 msgstr "A repor"
 
 #. module: stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_header.xml:0
 #: code:addons/stock/static/src/widgets/json_widget.xml:0
@@ -11269,7 +11269,7 @@ msgid "Today Activities"
 msgstr "Atividades de hoje"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking__search_date_category__day_1
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -11355,7 +11355,7 @@ msgid "Traceability"
 msgstr "Rastreabilidade"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.actions.client,name:stock.action_stock_report
 #: model:ir.model,name:stock.model_stock_traceability_report
@@ -11456,7 +11456,7 @@ msgid "Transfer to"
 msgstr "Transferir para"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "Transfer trouble alert! Validating a zero quantity transfer? You're not "
@@ -11483,13 +11483,13 @@ msgid "Transfered Packages"
 msgstr "Pacotes transferidos"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "Transferred by"
 msgstr "Transferido por"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.actions.act_window,name:stock.action_picking_tree_all
 #: model:ir.model.fields,field_description:stock.field_stock_lot__delivery_ids
@@ -11507,7 +11507,7 @@ msgid "Transfers"
 msgstr "Transferências"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Transfers %s: Please add some items to move."
 msgstr "Transferências %s: adicione alguns itens para movimentar."
@@ -11562,7 +11562,7 @@ msgid "Trigger replenishment suggestions for this location when required"
 msgstr "Acionar sugestões de reposição para este local quando necessário"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/stock_forecasted.js:0
 msgid "Try to add some incoming or outgoing transfers."
 msgstr "Tente adicionar algumas transferências de entrada ou saída."
@@ -11590,19 +11590,19 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Unassign"
 msgstr "Desatribuir"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Unassigned responsible from %s"
 msgstr "Responsável não atribuído de %s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "Unavailable Serial numbers. Please correct the serial numbers encoded: %"
@@ -11612,7 +11612,7 @@ msgstr ""
 "%(serial_numbers_to_locations)s"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 msgid "Unfold"
 msgstr "Desdobrar"
@@ -11679,7 +11679,7 @@ msgid "Unpack"
 msgstr "Desembalar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 #: model:ir.actions.server,name:stock.action_unreserve_batch_picking
 #: model:ir.actions.server,name:stock.action_unreserve_picking
@@ -11702,15 +11702,15 @@ msgid "Update Quantities"
 msgstr "Atualizar quantidades"
 
 #. module: stock
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/stock/models/product.py:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_buttons.xml:0
 msgid "Update Quantity"
 msgstr "Atualizar quantidade"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "Updating the location of this transfer will result in unreservation of the "
@@ -11760,7 +11760,7 @@ msgid "Use your own routes"
 msgstr "Usar suas próprias rotas"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "Used by"
 msgstr "Usado por"
@@ -11783,7 +11783,7 @@ msgid "User assigned to do product count."
 msgstr "Usuário atribuído para fazer a contagem de produtos."
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 #: model:ir.actions.server,name:stock.action_validate_picking
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_batch_form
@@ -11797,7 +11797,7 @@ msgid "Validate Button Style"
 msgstr "Estilo do botão Validar"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/xml/inventory_lines.xml:0
 msgid "Validate Inventory"
 msgstr "Validar inventário"
@@ -11840,7 +11840,7 @@ msgid "View Location"
 msgstr "Ver local"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/allocation_report/product_line/product_line.xml:0
 msgid "View more"
 msgstr "Ver mais"
@@ -11975,19 +11975,19 @@ msgid "Warehouse view location"
 msgstr "Ver local do armazém"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "Warehouse's Routes"
 msgstr "Rotas de armazém"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_warehouse_filter.xml:0
 msgid "Warehouse:"
 msgstr "Armazém:"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_report_search_panel.xml:0
 #: model:ir.actions.act_window,name:stock.action_warehouse_form
 #: model:ir.model.fields,field_description:stock.field_stock_route__warehouse_ids
@@ -12009,7 +12009,7 @@ msgid "Warn Insufficient Scrap Quantity"
 msgstr "Avisar quantidade insuficiente de sucata"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product_strategy.py:0
 #: code:addons/stock/models/stock_move.py:0
 #: code:addons/stock/models/stock_move_line.py:0
@@ -12024,13 +12024,13 @@ msgid "Warning Message"
 msgstr "Mensagem de alerta"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid "Warning!"
 msgstr "Aviso!"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "Warning: change source location"
 msgstr "Aviso: alterar local de origem"
@@ -12061,7 +12061,7 @@ msgid "Week"
 msgstr "Semana"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "Week %d"
 msgstr "Semana %d"
@@ -12148,7 +12148,7 @@ msgid "When product arrives in"
 msgstr "Quando o produto chega em"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "When products are needed in <b>%(destination)s</b>, <br> <b>%(operation)s</"
@@ -12160,7 +12160,7 @@ msgstr ""
 "(suffix)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_rule.py:0
 msgid ""
 "When products arrive in <b>%(source_location)s</b>, <br> <b>%(operation)s</"
@@ -12254,7 +12254,7 @@ msgid "Width must be positive"
 msgstr "A largura deve ser um número positivo"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "Write one lot/serial name per line, followed by the quantity."
 msgstr "Escreva um nome de lote/série por linha, seguido da quantidade."
@@ -12265,7 +12265,7 @@ msgid "X"
 msgstr "X"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking__search_date_category__yesterday
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -12299,7 +12299,7 @@ msgid "You are good, no replenishment to perform!"
 msgstr "Tudo ok, sem reposições para executar."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid ""
 "You are not allowed to change the product linked to a serial or lot number "
@@ -12311,7 +12311,7 @@ msgstr ""
 "número. Isso levaria a inconsistências em seu estoque."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid ""
 "You are not allowed to create a lot or serial number with this operation "
@@ -12353,7 +12353,7 @@ msgid "You can either :"
 msgstr "Você pode:"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid "You can not create a snoozed orderpoint that is not manually triggered."
 msgstr ""
@@ -12361,25 +12361,25 @@ msgstr ""
 "manualmente."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You can not delete moves linked to another operation"
 msgstr "Não é possível excluir movimentações vinculadas a outra operação"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "You can not enter negative quantities."
 msgstr "Não é possível inserir quantidades negativas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You can only enter positive quantities."
 msgstr "Só é possível inserir quantidades positivas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid ""
 "You can only move a lot/serial to a new location if it exists in a single "
@@ -12389,7 +12389,7 @@ msgstr ""
 "único local."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "You can only move positive quantities stored in locations used by a single "
@@ -12399,14 +12399,14 @@ msgstr ""
 "uma única empresa por realocação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid "You can only process 1.0 %s of products with unique serial number."
 msgstr ""
 "Só é possível processar 1,0 %s de produtos com número de série exclusivo."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_orderpoint.py:0
 msgid ""
 "You can only snooze manual orderpoints. You should rather archive 'auto-"
@@ -12416,7 +12416,7 @@ msgstr ""
 "de pedido de \"acionamento automático\" se não quiser que sejam acionados."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/res_config_settings.py:0
 msgid ""
 "You can't deactivate the multi-location feature if you have more than one "
@@ -12426,14 +12426,14 @@ msgstr ""
 "armazém por empresa"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid "You can't disable locations %s because they still contain products."
 msgstr ""
 "Não é possível desativar os locais %s porque eles ainda contêm produtos."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "You cannot archive location %(location)s because it is used by warehouse %"
@@ -12443,7 +12443,7 @@ msgstr ""
 "(warehouse)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid ""
 "You cannot cancel a stock move that has been set to 'Done'. Create a return "
@@ -12453,7 +12453,7 @@ msgstr ""
 "'concluída'. Crie uma devolução para reverter as movimentações que ocorreram."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You cannot change a cancelled stock move, create a new line instead."
 msgstr ""
@@ -12461,14 +12461,14 @@ msgstr ""
 "crie uma nova linha."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "You cannot change the Scheduled Date on a cancelled transfer."
 msgstr ""
 "Não é possível alterar a data programada em uma transferência cancelada."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You cannot change the UoM for a stock move that has been set to 'Done'."
 msgstr ""
@@ -12476,7 +12476,7 @@ msgstr ""
 "definida como 'concluída'."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_lot.py:0
 msgid ""
 "You cannot change the company of a lot/serial number currently in a location "
@@ -12486,7 +12486,7 @@ msgstr ""
 "local pertencente a outra empresa."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "You cannot change the ratio of this unit of measure as some products with "
@@ -12496,32 +12496,32 @@ msgstr ""
 "produtos com esta UM já foram movimentados ou estão reservados no momento."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "You cannot delete Done batch transfers."
 msgstr "Você não pode excluir transferências em lote Concluídas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "You cannot duplicate stock quants."
 msgstr "Não é possível duplicar os quants de ações."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "You cannot merge done or cancelled batch/wave transfers."
 msgstr ""
 "Você não pode mesclar transferências em lote/onda concluídas ou canceladas."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "You cannot modify inventory loss quantity"
 msgstr "Não é possível modificar a quantidade de perda de inventário"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "You cannot pack products into the same package when they are from different "
@@ -12531,7 +12531,7 @@ msgstr ""
 "transferências diferentes com tipos de operação diferentes"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_location.py:0
 msgid ""
 "You cannot set a location as a scrap location when it is assigned as a "
@@ -12541,7 +12541,7 @@ msgstr ""
 "atribuído como local de destino para uma operação do tipo fabricação."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You cannot split a draft move. It needs to be confirmed first."
 msgstr ""
@@ -12549,7 +12549,7 @@ msgstr ""
 "confirmada primeiro."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You cannot split a stock move that has been set to 'Done' or 'Cancel'."
 msgstr ""
@@ -12557,7 +12557,7 @@ msgstr ""
 "como 'Concluída' ou 'Cancelada'."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid ""
 "You cannot take products from or deliver products to a location of type "
@@ -12567,7 +12567,7 @@ msgstr ""
 "'visualização' (%s)."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You cannot unreserve a stock move that has been set to 'Done'."
 msgstr ""
@@ -12575,7 +12575,7 @@ msgstr ""
 "como 'concluída'."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "You cannot use the same serial number twice. Please correct the serial "
@@ -12585,7 +12585,7 @@ msgstr ""
 "de série codificados."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid ""
 "You can’t validate an empty transfer. Please add some products to move "
@@ -12600,7 +12600,7 @@ msgid "You have processed less products than the initial demand."
 msgstr "Você processou menos produtos do que a demanda inicial."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/res_config_settings.py:0
 msgid ""
 "You have product(s) in stock that have lot/serial number tracking enabled. \n"
@@ -12611,7 +12611,7 @@ msgstr ""
 "essa configuração."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/product.py:0
 msgid ""
 "You have product(s) in stock that have no lot/serial number. You can assign "
@@ -12621,25 +12621,25 @@ msgstr ""
 "de série/lote fazendo um ajuste de estoque."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_batch.py:0
 msgid "You have to set some pickings to batch."
 msgstr "Você precisa definir algumas separações para o lote."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You must select a lot/serial number."
 msgstr "Você deve selecionar um número de série/lote."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move.py:0
 msgid "You need a transfer to add these packages to."
 msgstr "Você precisa de uma transferência para adicionar esses pacotes."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking_type.py:0
 msgid ""
 "You need to activate storage locations to be able to do internal operation "
@@ -12649,7 +12649,7 @@ msgstr ""
 "de operação interna."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 msgid ""
 "You need to supply a Lot/Serial Number for product:\n"
@@ -12659,7 +12659,7 @@ msgstr ""
 "%(products)s"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 msgid "You need to supply a Lot/Serial number for products %s."
 msgstr "É necessário fornecer um número de série/lote para os produtos %s."
@@ -12670,7 +12670,7 @@ msgid "You should update this document to reflect your T&amp;C."
 msgstr "Você precisa atualizar esse documento para refletir seu T&amp;C."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid ""
 "You still have ongoing operations for operation types %(operations)s in "
@@ -12680,7 +12680,7 @@ msgstr ""
 "no armazém %(warehouse)s"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/list/inventory_report_list_model.js:0
 msgid ""
 "You tried to create a record that already exists. The existing record was "
@@ -12730,7 +12730,7 @@ msgstr ""
 "materiais)."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_quant.py:0
 msgid "Your stock is currently empty"
 msgstr "Seu estoque está vazio no momento"
@@ -12751,7 +12751,7 @@ msgid "Zero Demand Confirmation"
 msgstr "Confirmação de demanda zero"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_picking.py:0
 #: model_terms:ir.ui.view,arch_db:stock.view_zero_demand_confirmation
 msgid "Zero Demand Warning"
@@ -12885,7 +12885,7 @@ msgid "barcodelookup.com"
 msgstr "barcodelookup.com"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/report/stock_allocation_report.py:0
 msgid "batches"
 msgstr "lotes"
@@ -12896,7 +12896,7 @@ msgid "closest"
 msgstr "mais próximo"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/views/search/stock_orderpoint_search_panel.xml:0
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_replenishment_info
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_rule_form
@@ -12914,7 +12914,7 @@ msgid "days before/"
 msgstr "dias antes/"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/json_widget.xml:0
 msgid "days)"
 msgstr "dias."
@@ -12935,7 +12935,7 @@ msgid "e.g. Central Warehouse"
 msgstr "ex.: Armazém central"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/lots_dialog.xml:0
 msgid "e.g. LOT-PR-00012"
 msgstr "ex.: LOT-PR-00012"
@@ -12986,7 +12986,7 @@ msgid "e.g. Two-steps reception"
 msgstr "ex.: recebimento em duas etapas"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 msgid "expected on"
 msgstr "previsto em"
@@ -13002,7 +13002,7 @@ msgid "from location"
 msgstr "do local"
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/models/stock_move_line.py:0
 #: code:addons/stock/models/stock_warehouse.py:0
 msgid "id"
@@ -13039,7 +13039,7 @@ msgid "of"
 msgstr "de"
 
 #. module: stock
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/stock/static/src/widgets/stock_rescheduling_popover.xml:0
 msgid "planned on"
 msgstr "planejado em"
@@ -13104,7 +13104,7 @@ msgstr ""
 "houver)."
 
 #. module: stock
-#. odoo-python
+#. weth-python
 #: code:addons/stock/report/stock_allocation_report.py:0
 msgid "transfers"
 msgstr "transferências"
@@ -13370,10 +13370,10 @@ msgstr ""
 #~ msgstr "Entrega prevista:"
 
 #~ msgid ""
-#~ "If this checkbox is ticked, Odoo will automatically show the reception "
+#~ "If this checkbox is ticked, WETH will automatically show the reception "
 #~ "report (if there are moves to allocate to) when validating."
 #~ msgstr ""
-#~ "Se essa caixa de seleção estiver marcada, o Odoo mostrará automaticamente "
+#~ "Se essa caixa de seleção estiver marcada, o WETH mostrará automaticamente "
 #~ "o relatório de recepção (se houver movimentos a serem alocados) durante a "
 #~ "validação."
 

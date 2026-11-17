@@ -27,7 +27,7 @@ test("dropping a floating snippet moves it to the end of the container", async (
     await setupWebsiteBuilder("<section class='first-snippet'>First snippet</section>");
 
     const { moveTo, drop } = await contains(
-        ".o-website-builder_sidebar [data-snippet-group='intro'] .o_snippet_thumbnail"
+        ".w-website-builder_sidebar [data-snippet-group='intro'] .o_snippet_thumbnail"
     ).drag();
     // Drop the snippet in the first dropzone.
     await moveTo(":iframe .oe_drop_zone:first");

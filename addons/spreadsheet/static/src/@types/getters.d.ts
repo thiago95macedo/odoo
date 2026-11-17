@@ -1,11 +1,11 @@
 import { CorePlugin, Model, UID } from "@weth/o-spreadsheet";
-import { ChartOdooLinkPlugin, OdooChartCorePlugin, OdooChartCoreViewPlugin } from "@spreadsheet/chart";
+import { ChartWethLinkPlugin, WethChartCorePlugin, WethChartCoreViewPlugin } from "@spreadsheet/chart";
 import { CurrencyPlugin } from "@spreadsheet/currency/plugins/currency";
 import { AccountingPlugin } from "addons/spreadsheet_account/static/src/plugins/accounting_plugin";
 import { GlobalFiltersCorePlugin, GlobalFiltersCoreViewPlugin } from "@spreadsheet/global_filters";
 import { ListCorePlugin, ListCoreViewPlugin } from "@spreadsheet/list";
 import { IrMenuPlugin } from "@spreadsheet/ir_ui_menu/ir_ui_menu_plugin";
-import { PivotOdooCorePlugin } from "@spreadsheet/pivot";
+import { PivotWethCorePlugin } from "@spreadsheet/pivot";
 import { PivotCoreGlobalFilterPlugin } from "@spreadsheet/pivot/plugins/pivot_core_global_filter_plugin";
 
 type Getters = Model["getters"];
@@ -52,23 +52,23 @@ type PluginGetters<Plugin extends { new(...args: unknown[]): any; getters: reado
 
 declare module "@spreadsheet" {
     /**
-     * Add getters from custom plugins defined in odoo
+     * Add getters from custom plugins defined in weth
      */
 
-    interface OdooCoreGetters extends CoreGetters { }
-    interface OdooCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof ListCorePlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof OdooChartCorePlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof ChartOdooLinkPlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof IrMenuPlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof PivotOdooCorePlugin> { }
-    interface OdooCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> { }
+    interface WethCoreGetters extends CoreGetters { }
+    interface WethCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof ListCorePlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof WethChartCorePlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof ChartWethLinkPlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof IrMenuPlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof PivotWethCorePlugin> { }
+    interface WethCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> { }
 
-    interface OdooGetters extends Getters { }
-    interface OdooGetters extends OdooCoreGetters { }
-    interface OdooGetters extends PluginGetters<typeof GlobalFiltersCoreViewPlugin> { }
-    interface OdooGetters extends PluginGetters<typeof ListCoreViewPlugin> { }
-    interface OdooGetters extends PluginGetters<typeof OdooChartCoreViewPlugin> { }
-    interface OdooGetters extends PluginGetters<typeof CurrencyPlugin> { }
-    interface OdooGetters extends PluginGetters<typeof AccountingPlugin> { }
+    interface WethGetters extends Getters { }
+    interface WethGetters extends WethCoreGetters { }
+    interface WethGetters extends PluginGetters<typeof GlobalFiltersCoreViewPlugin> { }
+    interface WethGetters extends PluginGetters<typeof ListCoreViewPlugin> { }
+    interface WethGetters extends PluginGetters<typeof WethChartCoreViewPlugin> { }
+    interface WethGetters extends PluginGetters<typeof CurrencyPlugin> { }
+    interface WethGetters extends PluginGetters<typeof AccountingPlugin> { }
 }

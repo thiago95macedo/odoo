@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-""" Initialize the database for module management and Odoo installation. """
+""" Initialize the database for module management and WETH installation. """
 from __future__ import annotations
 
 import collections
@@ -43,7 +43,7 @@ if typing.TYPE_CHECKING:
 _logger = logging.getLogger(__name__)
 
 DB_NAME_RE = re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_.-]+$')
-RANDOM_SERIAL = any(map(os.getenv, ('ODOO_RUNBOT', 'ODOO_TEST')))
+RANDOM_SERIAL = any(map(os.getenv, ('WETH_RUNBOT', 'WETH_TEST')))
 
 
 def is_initialized(cr: Cursor) -> bool:
@@ -204,7 +204,7 @@ def has_unaccent(cr: BaseCursor) -> FunctionStatus:
     """ Test whether the database has function 'unaccent' and return its status.
 
     The unaccent is supposed to be provided by the PostgreSQL unaccent contrib
-    module but any similar function will be picked by OpenERP.
+    module but any similar function will be picked by WETH.
 
     :rtype: FunctionStatus
     """
@@ -254,7 +254,7 @@ def verify_db_management_enabled() -> None:
     """
     Verify that the database manager is enabled in the configuration. It
     verifies that ``--no-database-list`` is absent from the CLI and that
-    ``list_db=0`` is absent from the odoorc configuration file.
+    ``list_db=0`` is absent from the wethrc configuration file.
     """
     if not weth.tools.config['list_db']:
         e = "Database management functions blocked, admin disabled database listing."
@@ -263,7 +263,7 @@ def verify_db_management_enabled() -> None:
 
 def verify_admin_password(passwd: str) -> None:
     """
-    Verify that the admin password matches the one saved in the odoorc
+    Verify that the admin password matches the one saved in the wethrc
     configuration file. It raises an AccessDenied when the verification
     fails.
 
@@ -309,7 +309,7 @@ def country_timezones():
 
 
 def _check_faketime_mode(db_name: str) -> None:
-    if not os.getenv('ODOO_FAKETIME_TEST_MODE'):
+    if not os.getenv('WETH_FAKETIME_TEST_MODE'):
         return
     if db_name not in weth.tools.config['db_name']:
         return
@@ -379,7 +379,7 @@ def _create_empty_database(db_name: str) -> None:
                 # From PostgreSQL's point of view, making 'unaccent' immutable is incorrect
                 # because it depends on external data - see
                 # https://www.postgresql.org/message-id/flat/201012021544.oB2FiTn1041521@wwwmaster.postgresql.org#201012021544.oB2FiTn1041521@wwwmaster.postgresql.org
-                # But in the case of Odoo, we consider that those data don't
+                # But in the case of WETH, we consider that those data don't
                 # change in the lifetime of a database. If they do change, all
                 # indexes created with this function become corrupted!
                 cr.execute("ALTER FUNCTION unaccent(text) IMMUTABLE")
@@ -564,7 +564,7 @@ def _dump_db_manifest(cr: Cursor):
     cr.execute("SELECT name, latest_version FROM ir_module_module WHERE state = 'installed'")
     modules = dict(cr.fetchall())
     return {
-        'odoo_dump': '1',
+        'weth_dump': '1',
         'db_name': cr.dbname,
         'version': weth.release.version,
         'version_info': weth.release.version_info,
@@ -716,7 +716,7 @@ def list_dbs(*, force=False):
         verify_db_management_enabled()
 
     if not weth.tools.config['dbfilter'] and weth.tools.config['db_name']:
-        # In case --db-filter is not provided and --database is passed, Odoo will not
+        # In case --db-filter is not provided and --database is passed, WETH will not
         # fetch the list of databases available on the postgres server and instead will
         # use the value of --database as comma seperated list of exposed databases.
         return sorted(weth.tools.config['db_name'])

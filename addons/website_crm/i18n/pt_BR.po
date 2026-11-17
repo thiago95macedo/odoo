@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_crm/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -58,13 +58,13 @@ msgid "# Page Views"
 msgstr "Nº de visualizações da página"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.js:0
 msgid "Assign leads/opportunities to a sales team."
 msgstr "Atribua leads/oportunidades a uma equipe de vendas."
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.js:0
 msgid "Assign leads/opportunities to a salesperson."
 msgstr "Atribua leads/oportunidades a um vendedor."
@@ -150,25 +150,25 @@ msgid "Page views"
 msgstr "Visualizações da página"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Phone Number"
 msgstr "Número de telefone"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.js:0
 msgid "Sales Team"
 msgstr "Equipe de vendas"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.js:0
 msgid "Salesperson"
 msgstr "Vendedor"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Subject"
 msgstr "Assunto"
@@ -199,25 +199,25 @@ msgid "Website Visitor"
 msgstr "Visitante do site"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Your Company"
 msgstr "Sua Empresa"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Your Email"
 msgstr "Seu e-mail"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Your Name"
 msgstr "Seu nome"
 
 #. module: website_crm
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_crm/static/src/js/website_crm_editor.edit.js:0
 msgid "Your Question"
 msgstr "Sua pergunta"

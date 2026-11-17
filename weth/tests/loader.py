@@ -8,8 +8,8 @@ from unittest import case
 
 from .. import tools
 from .tag_selector import TagsSelector
-from .suite import OdooSuite
-from .result import OdooTestResult
+from .suite import WethSuite
+from .result import WethTestResult
 
 
 _logger = logging.getLogger(__name__)
@@ -105,10 +105,10 @@ def make_suite(module_names, position='at_install'):
         for t in get_module_test_cases(m)
         if position_tag.check(t) and config_tags.check(t)
     )
-    return OdooSuite(sorted(tests, key=lambda t: getattr(t, 'test_sequence', 0)))
+    return WethSuite(sorted(tests, key=lambda t: getattr(t, 'test_sequence', 0)))
 
 
 def run_suite(suite, global_report=None):
-    results = OdooTestResult(global_report=global_report)
+    results = WethTestResult(global_report=global_report)
     suite(results)
     return results

@@ -72,7 +72,7 @@ const strftimeToHumanFormat = memoize(function strftimeToHumanFormat(value) {
  * used in the different base_import components.
  *
  * When uploading a file some "preview data" is returned by the backend, this
- * data consist of the different columns of the file and the odoo fields which
+ * data consist of the different columns of the file and the weth fields which
  * these columns can be mapped to.
  *
  * Only a small selection of the lines are returned so the user can get an idea
@@ -885,7 +885,7 @@ export class BaseImportModel {
             date_format: {
                 label: _t("Date Format"),
                 help: _t(
-                    "Use YYYY to represent the year, MM for the month and DD for the day. Include separators such as a dot, forward slash or dash. You can use a custom format in addition to the suggestions provided. Leave empty to let Odoo guess the format (recommended)"
+                    "Use YYYY to represent the year, MM for the month and DD for the day. Include separators such as a dot, forward slash or dash. You can use a custom format in addition to the suggestions provided. Leave empty to let WETH guess the format (recommended)"
                 ),
                 type: "input",
                 value: "",
@@ -905,7 +905,7 @@ export class BaseImportModel {
             datetime_format: {
                 label: _t("Datetime Format"),
                 help: _t(
-                    "Use HH for hours in a 24h system, use II in conjonction with 'p' for a 12h system. You can use a custom format in addition to the suggestions provided. Leave empty to let Odoo guess the format (recommended)"
+                    "Use HH for hours in a 24h system, use II in conjonction with 'p' for a 12h system. You can use a custom format in addition to the suggestions provided. Leave empty to let WETH guess the format (recommended)"
                 ),
                 type: "input",
                 value: "",

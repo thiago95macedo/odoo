@@ -13,13 +13,13 @@ const { UuidGenerator, createEmptyExcelSheet, createEmptySheet, toXC } = helpers
  * @typedef {import("@spreadsheet").RelationalGlobalFilter} RelationalGlobalFilter
  */
 
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { WethUIPlugin } from "@spreadsheet/plugins";
 import {
     globalFieldMatchingRegistry,
     checkFilterAndValue,
 } from "@spreadsheet/global_filters/helpers";
 
-export class GlobalFiltersUIPlugin extends OdooUIPlugin {
+export class GlobalFiltersUIPlugin extends WethUIPlugin {
     static getters = /** @type {const} */ (["exportSheetWithActiveFilters"]);
 
     allowDispatch(cmd) {

@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/microsoft_account/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: microsoft_account
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_account/models/microsoft_service.py:0
 msgid "Method not supported [%s] not in [GET, POST, PUT, PATCH or DELETE]!"
 msgstr ""
@@ -78,7 +78,7 @@ msgid "Microsoft Users"
 msgstr "Usuários Microsoft"
 
 #. module: microsoft_account
-#. odoo-python
+#. weth-python
 #: code:addons/microsoft_account/models/microsoft_service.py:0
 msgid ""
 "Something went wrong during your token generation. Maybe your Authorization "

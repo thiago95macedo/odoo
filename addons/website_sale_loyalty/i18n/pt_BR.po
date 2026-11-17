@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 13:34+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_sale_loyalty/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -43,13 +43,13 @@ msgstr ""
 "aplicativo Site.\n"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/wizard/coupon_share.py:0
 msgid "A coupon is needed for coupon programs."
 msgstr "É necessário um cupom para os programas de cupons."
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/models/loyalty_rule.py:0
 msgid "A coupon with the same code was found."
 msgstr "Foi encontrado um cupom com o mesmo código."
@@ -60,7 +60,7 @@ msgid "All websites"
 msgstr "Todos os sites"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/models/sale_order.py:0
 #, fuzzy
 msgid "Applied rewards have changed. Please review your cart."
@@ -73,7 +73,7 @@ msgid "Available on Website"
 msgstr "Disponível no site"
 
 #. module: website_sale_loyalty
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_loyalty/static/src/js/portal_loyalty_card.xml:0
 #: model_terms:ir.ui.view,arch_db:website_sale_loyalty.modify_code_form
 msgid "Claim"
@@ -224,7 +224,7 @@ msgid "Loyalty Rule"
 msgstr "Regra de fidelidade"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/tests/test_shop_sale_coupon.py:0
 msgid "No reward to claim with this coupon"
 msgstr "Não há recompensa a ser resgatada com este cupom"
@@ -260,7 +260,7 @@ msgid "Promotions"
 msgstr "Promoções"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/wizard/coupon_share.py:0
 msgid "Provide either a coupon or a program."
 msgstr "Forneça um cupom ou um programa."
@@ -288,7 +288,7 @@ msgid "Sales Order Line"
 msgstr "Linha do pedido de venda"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/wizard/coupon_share.py:0
 #: model_terms:ir.ui.view,arch_db:website_sale_loyalty.loyalty_card_view_tree_inherit_website_sale_loyalty
 #: model_terms:ir.ui.view,arch_db:website_sale_loyalty.loyalty_program_view_tree_inherit_website_sale_loyalty
@@ -296,7 +296,7 @@ msgid "Share"
 msgstr "Compartilhar"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/wizard/coupon_share.py:0
 msgid "Share %s"
 msgstr "Compartilhar %s"
@@ -317,7 +317,7 @@ msgid "Show Non Published Product Warning"
 msgstr "Mostrar aviso de produto não publicado"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/controllers/main.py:0
 msgid ""
 "The coupon will be automatically applied when you add something in your cart."
@@ -331,13 +331,13 @@ msgid "The following promo code was applied on your order:"
 msgstr "O seguinte código promocional foi aplicado em seu pedido:"
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/models/loyalty_rule.py:0
 msgid "The promo code must be unique."
 msgstr "O código promocional deve ser exclusivo."
 
 #. module: website_sale_loyalty
-#. odoo-python
+#. weth-python
 #: code:addons/website_sale_loyalty/wizard/coupon_share.py:0
 msgid "The shared website should correspond to the website of the program."
 msgstr "O site compartilhado deve corresponder ao site do programa."
@@ -352,7 +352,7 @@ msgstr ""
 "estar publicados."
 
 #. module: website_sale_loyalty
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_sale_loyalty/static/src/js/portal_loyalty_card.xml:0
 msgid "Top Up"
 msgstr "Recarregar"

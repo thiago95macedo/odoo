@@ -18,22 +18,22 @@ beforeEach(() => {
 
 test("displays the loading indicator", async () => {
     await mountWithCleanup(LoadingIndicator, { noMainContainer: true });
-    expect(".o_loading_indicator").toHaveCount(0, {
+    expect(".w_loading_indicator").toHaveCount(0, {
         message: "the loading indicator should not be displayed",
     });
     rpcBus.trigger("RPC:REQUEST", payload(1));
     await runAllTimers();
     await animationFrame();
-    expect(".o_loading_indicator").toHaveCount(1, {
+    expect(".w_loading_indicator").toHaveCount(1, {
         message: "the loading indicator should be displayed",
     });
-    expect(".o_loading_indicator").toHaveText("Loading…", {
+    expect(".w_loading_indicator").toHaveText("Loading…", {
         message: "the loading indicator should display 'Loading'",
     });
     rpcBus.trigger("RPC:RESPONSE", payload(1));
     await runAllTimers();
     await animationFrame();
-    expect(".o_loading_indicator").toHaveCount(0, {
+    expect(".w_loading_indicator").toHaveCount(0, {
         message: "the loading indicator should not be displayed",
     });
 });
@@ -49,10 +49,10 @@ test("loading indicator is not displayed immediately", async () => {
     });
     rpcBus.trigger("RPC:REQUEST", payload(1));
     await animationFrame();
-    expect(".o_loading_indicator").toHaveCount(0);
+    expect(".w_loading_indicator").toHaveCount(0);
     await advanceTime(400);
-    expect(".o_loading_indicator").toHaveCount(1);
+    expect(".w_loading_indicator").toHaveCount(1);
     rpcBus.trigger("RPC:RESPONSE", payload(1));
     await animationFrame();
-    expect(".o_loading_indicator").toHaveCount(0);
+    expect(".w_loading_indicator").toHaveCount(0);
 });

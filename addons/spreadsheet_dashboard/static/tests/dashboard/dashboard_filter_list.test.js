@@ -6,7 +6,7 @@ import {
     makeTestApp,
     mountWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import { Model } from "@weth/o-spreadsheet";
 import { addGlobalFilter } from "@spreadsheet/../tests/helpers/commands";
 import { DashboardFilterList } from "@spreadsheet_dashboard/bundle/dashboard_action/dashboard_filter_list/dashboard_filter_list";
@@ -53,21 +53,21 @@ const relationalGlobalFilter = {
 
 beforeEach(async () => {
     await makeTestApp();
-    model = new Model({}, { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } });
+    model = new Model({}, { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } });
 });
 
 test("basic text filter", async function () {
     await addGlobalFilter(model, globalFilter);
     await mountDashboardFilterList({ model });
-    expect(".o-filter-values").toHaveCount(1);
+    expect(".w-filter-values").toHaveCount(1);
     expect("[data-icon='edit']").toHaveCount(0);
 });
 
 test("filter list with no active filters", async function () {
     await addGlobalFilter(model, globalFilter);
     await mountDashboardFilterList({ model });
-    expect(".o-filter-values .o-filter-item").toHaveCount(1);
-    expect(".o-filter-values .o-global-filter-text-value").toHaveText("");
+    expect(".w-filter-values .w-filter-item").toHaveCount(1);
+    expect(".w-filter-values .w-global-filter-text-value").toHaveText("");
 });
 
 test("filter list with active filters", async function () {
@@ -76,15 +76,15 @@ test("filter list with active filters", async function () {
         defaultValue: { operator: "ilike", strings: ["foo"] },
     });
     await mountDashboardFilterList({ model });
-    expect(".o-filter-values .o-filter-item").toHaveCount(1);
-    expect(".o-filter-values .o-global-filter-text-value").toHaveText("foo");
+    expect(".w-filter-values .w-filter-item").toHaveCount(1);
+    expect(".w-filter-values .w-global-filter-text-value").toHaveText("foo");
 });
 
 test("editing text filter triggers onFilterChange", async function () {
     await addGlobalFilter(model, globalFilter);
     await mountDashboardFilterList({ model });
-    await contains(".o-filter-values .o-filter-item .o-autocomplete input").edit("foo");
-    await contains(".o-filter-values .o-filter-item .o-autocomplete input").press("Enter");
+    await contains(".w-filter-values .w-filter-item .w-autocomplete input").edit("foo");
+    await contains(".w-filter-values .w-filter-item .w-autocomplete input").press("Enter");
     expect.verifySteps([
         `Filter changed to ${JSON.stringify({
             operator: "ilike",
@@ -96,7 +96,7 @@ test("editing text filter triggers onFilterChange", async function () {
 test("Changing operator triggers onFilterChange", async function () {
     await addGlobalFilter(model, globalFilter);
     await mountDashboardFilterList({ model });
-    await contains(".o-filter-values select").select("not ilike");
+    await contains(".w-filter-values select").select("not ilike");
     expect.verifySteps([
         `Filter changed to ${JSON.stringify({
             strings: [],
@@ -111,7 +111,7 @@ test("Clear button trigger onFilterChange with undefined value", async function 
         defaultValue: { operator: "ilike", strings: ["foo"] },
     });
     await mountDashboardFilterList({ model });
-    await contains(".o-filter-clear button").click();
+    await contains(".w-filter-clear button").click();
     expect.verifySteps([`Filter changed to undefined`]);
 });
 
@@ -150,7 +150,7 @@ test(`Relational global filter with "set" operator doesn't have a record selecto
         defaultValue: { operator: "set" },
     });
     await mountDashboardFilterList({ model });
-    expect(".o-filter-value input").toHaveCount(0);
+    expect(".w-filter-value input").toHaveCount(0);
 });
 
 test("relational global filter operator options", async function () {

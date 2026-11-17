@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_self_order_pine_labs/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgid "POS Self Order Pine Labs"
 msgstr "PDV Autoatendimento Pine Labs"
 
 #. module: pos_self_order_pine_labs
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_self_order_pine_labs/static/src/app/services/self_order_service.js:0
 msgid "Pine Labs Error: %(errorMessage)s"
 msgstr "Erro da Pine Labs: %(errorMessage)s"

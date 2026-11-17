@@ -3,7 +3,7 @@ from weth.addons.google_calendar.utils.google_api_resource import GoogleApiResou
 
 class GoogleCalendar(GoogleApiResource):
     """This helper class holds the values of a Google calendar.
-    Inspired by Odoo recordset, one instance can be a single Google calendar or a
+    Inspired by WETH recordset, one instance can be a single Google calendar or a
     (immutable) set of Google calendars.
     All usual set operations are supported (union, intersection, etc.).
 
@@ -18,8 +18,8 @@ class GoogleCalendar(GoogleApiResource):
         return env['calendar.calendar']
 
     def exists(self, env):
-        self.odoo_ids(env)  # Load matching Ids
-        return self.filter(lambda c: c._odoo_id)
+        self.weth_ids(env)  # Load matching Ids
+        return self.filter(lambda c: c._weth_id)
 
     def get_deleted(self):
         return self.filter(lambda c: c.deleted)

@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_worldline/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -195,13 +195,13 @@ msgid "PostFinance Pay"
 msgstr "PostFinance Pay"
 
 #. module: payment_worldline
-#. odoo-python
+#. weth-python
 #: code:addons/payment_worldline/models/payment_transaction.py:0
 msgid "Received data with missing payment state."
 msgstr "Dados recebidos sem estado de pagamento."
 
 #. module: payment_worldline
-#. odoo-python
+#. weth-python
 #: code:addons/payment_worldline/models/payment_transaction.py:0
 msgid ""
 "Received invalid transaction status %(status)s with error code %"
@@ -221,13 +221,13 @@ msgid "The technical code of this payment provider."
 msgstr "O código técnico deste provedor de pagamento."
 
 #. module: payment_worldline
-#. odoo-python
+#. weth-python
 #: code:addons/payment_worldline/models/payment_transaction.py:0
 msgid "Transaction cancelled with error code %(error_code)s."
 msgstr "Transação cancelada com código de erro %(error_code)s."
 
 #. module: payment_worldline
-#. odoo-python
+#. weth-python
 #: code:addons/payment_worldline/models/payment_transaction.py:0
 msgid "Transaction declined with error code %(error_code)s."
 msgstr "Transação recusada com código de erro %(error_code)s."

@@ -77,7 +77,7 @@
 </template>
 
 <!-- Channels home template -->
-<template id='courses_home' name="Odoo Courses Homepage">
+<template id='courses_home' name="WETH Courses Homepage">
     <t t-set="body_classname" t-value="'o_wslides_body'"/>
     <t t-set="has_side_column" t-value="not is_public_user"/>
     <t t-call="website.layout">
@@ -141,7 +141,7 @@
                                         type="button"
                                         data-bs-toggle="collapse"
                                         t-attf-aria-controls="o_wslides_offcanvas_cat_#{tag_group.id}"
-                                        t-att-data-bs-target="'.o_wslides_offcanvas_cat_%s' % tag_group.id"
+                                        t-att-data-bs-target="'.w_wslides_offcanvas_cat_%s' % tag_group.id"
                                         aria-expanded="false"
                                     >
                                         <t t-out="tag_group.name"/>

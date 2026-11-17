@@ -528,7 +528,7 @@ class PosOrder(models.Model):
 
     def _compute_combo_price(self, parent_line):
         """
-        This method is a python version of odoo/addons/point_of_sale/static/src/app/models/utils/compute_combo_items.js
+        This method is a python version of weth/addons/point_of_sale/static/src/app/models/utils/compute_combo_items.js
         It is used to compute the price of combo items on the server side when an order is received from
         the POS frontend. In an accounting perspective, isn't correct but we still waiting the combo
         computation from accounting side.

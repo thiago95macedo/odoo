@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-10-16 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/pos_hr/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr ""
 "login durante essa sessão."
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/closing_popup/closing_popup.xml:0
 msgid "Cash in/out"
 msgstr "Entrada/saída de caixa"
@@ -134,7 +134,7 @@ msgid "Cashier"
 msgstr "Caixa"
 
 #. module: pos_hr
-#. odoo-python
+#. weth-python
 #: code:addons/pos_hr/models/pos_order.py:0
 msgid "Cashier %s"
 msgstr "Caixa %s"
@@ -155,7 +155,7 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/closing_popup/closing_popup.xml:0
 msgid "Counted"
 msgstr "Contado"
@@ -166,13 +166,13 @@ msgid "Create a Customer"
 msgstr "Criar um cliente"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/closing_popup/closing_popup.xml:0
 msgid "Difference"
 msgstr "Diferença"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/screens/login_screen/login_screen.js:0
 msgid "Discard"
 msgstr "Descartar"
@@ -243,7 +243,7 @@ msgid "Employees with supervised level access"
 msgstr "Funcionários com acesso de nível supervisionado"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/screens/login_screen/login_screen.xml:0
 msgid "Enter your PIN"
 msgstr "Insira seu PIN"
@@ -286,7 +286,7 @@ msgid "Link module between Point of Sale and HR"
 msgstr "Módulo de link entre Ponto de Venda e RH"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/navbar/navbar.xml:0
 #: code:addons/pos_hr/static/src/app/components/popups/cashier_selection_popup/cashier_selection_popup.xml:0
 msgid "Lock"
@@ -305,19 +305,19 @@ msgid "Manager"
 msgstr "Gerente"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/cashier_selection_popup/cashier_selection_popup.xml:0
 msgid "More..."
 msgstr "Mais..."
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/services/pos_store.js:0
 msgid "No Cashiers"
 msgstr "Sem caixas"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/screens/login_screen/login_screen.js:0
 msgid ""
 "Only the cashier linked to the logged-in user (%s) can proceed to the "
@@ -327,31 +327,31 @@ msgstr ""
 "Backend."
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/screens/login_screen/login_screen.xml:0
 msgid "Open Register"
 msgstr "Abrir caixa registradora"
 
 #. module: pos_hr
-#. odoo-python
+#. weth-python
 #: code:addons/pos_hr/models/pos_session.py:0
 msgid "Opened register"
 msgstr "Caixa registradora aberta"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/closing_popup/closing_popup.xml:0
 msgid "Opening"
 msgstr "Abertura"
 
 #. module: pos_hr
-#. odoo-python
+#. weth-python
 #: code:addons/pos_hr/models/pos_session.py:0
 msgid "Others"
 msgstr "Outros"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/plugins/access_right_plugin.js:0
 #: code:addons/pos_hr/static/src/app/services/pos_store.js:0
 msgid "PIN not found"
@@ -363,13 +363,13 @@ msgid "POS - HR"
 msgstr "PDV - RH"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/plugins/access_right_plugin.js:0
 msgid "Password?"
 msgstr "Senha?"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/closing_popup/closing_popup.xml:0
 msgid "Payments"
 msgstr "Pagamentos"
@@ -421,7 +421,7 @@ msgid "Restrictive"
 msgstr "Restritivo"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/components/popups/cashier_selection_popup/cashier_selection_popup.xml:0
 msgid "Select Cashier"
 msgstr "Selecionar Caixa"
@@ -460,26 +460,26 @@ msgid "The employee who uses the cash register."
 msgstr "O funcionário que usa a caixa registradora."
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/services/pos_store.js:0
 msgid "There is no cashier available."
 msgstr "Não há caixa disponível."
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/screens/login_screen/login_screen.xml:0
 msgid "Unlock Register"
 msgstr "Destrancar caixa registradora"
 
 #. module: pos_hr
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_hr/static/src/app/plugins/access_right_plugin.js:0
 #: code:addons/pos_hr/static/src/app/services/pos_store.js:0
 msgid "Wrong PIN"
 msgstr "PIN incorreto"
 
 #. module: pos_hr
-#. odoo-python
+#. weth-python
 #: code:addons/pos_hr/models/hr_employee.py:0
 msgid ""
 "You cannot delete an employee that may be used in an active PoS session. "

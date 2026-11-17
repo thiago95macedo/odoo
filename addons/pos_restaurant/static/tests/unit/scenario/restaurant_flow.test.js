@@ -28,7 +28,7 @@ async function mountFloorScreen(store) {
 }
 
 function getVisibleTableNumbers() {
-    return queryAll(".o_fp_table .o_fp_table_number").map((el) => el.textContent.trim());
+    return queryAll(".w_fp_table .w_fp_table_number").map((el) => el.textContent.trim());
 }
 
 function addPreparationPrinterToConfig(store, fakePrint = true) {
@@ -1247,7 +1247,7 @@ test("Full flow: mount PosApp, return to the same floor, select table, add produ
     const store = await setupAndMountPosApp({ set_tip_after_payment: false });
 
     await contains(".floor-selector .button-floor:contains(Patio)").click();
-    await contains(".o_fp_table[data-table_id='14']").click();
+    await contains(".w_fp_table[data-table_id='14']").click();
     expect(store.router.currentScreen()).toBe("ProductScreen");
     expect(store.getOrder().table_id.id).toBe(14);
 
@@ -1255,7 +1255,7 @@ test("Full flow: mount PosApp, return to the same floor, select table, add produ
     expect(store.router.currentScreen()).toBe("FloorScreen");
     expect(queryOne(".floor-selector .button-floor.active").textContent.trim()).toBe("Patio");
 
-    await contains(".o_fp_table[data-table_id='14']").click();
+    await contains(".w_fp_table[data-table_id='14']").click();
     expect(store.router.currentScreen()).toBe("ProductScreen");
 
     await Utils.clickDisplayedProduct("TEST");

@@ -1640,7 +1640,7 @@ test("many2one field on record with falsy display_name", async () => {
     expect(getCurrentValue()).toBe("");
     expect(".dropdown-menu").toHaveCount(0);
 
-    await contains(".o-autocomplete--input").click();
+    await contains(".w-autocomplete--input").click();
 
     expect("a.dropdown-item:first").toHaveText("Unnamed", {
         message: "should have a Unnamed as fallback of many2one display_name",
@@ -1686,7 +1686,7 @@ test("many2one field and operator ilike/not ilike (edit)", async () => {
         },
     });
     expect(getCurrentOperator()).toBe(label("ilike"));
-    expect(".o-autocomplete--input").toHaveCount(0);
+    expect(".w-autocomplete--input").toHaveCount(0);
     expect(`${SELECTORS.valueEditor} .o_input`).toHaveCount(1);
     expect(getCurrentValue()).toBe("abc");
     expect.verifySteps([]);
@@ -1842,7 +1842,7 @@ test("many2many field: operator ilike/not ilike (edit)", async () => {
         },
     });
     expect(getCurrentOperator()).toBe(label("ilike"));
-    expect(".o-autocomplete--input").toHaveCount(0);
+    expect(".w-autocomplete--input").toHaveCount(0);
     expect(`${SELECTORS.valueEditor} .o_input`).toHaveCount(1);
     expect(getCurrentValue()).toBe("abc");
     expect.verifySteps([]);

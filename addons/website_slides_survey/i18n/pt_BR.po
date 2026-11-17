@@ -18,7 +18,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/website_slides_survey/pt_BR/>\n"
+"weth-20/website_slides_survey/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgid "# Certified Attendees"
 msgstr "Nº de participantes certificados"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/models/survey_survey.py:0
 msgid "- %(certification)s (Courses - %(courses)s)"
 msgstr "- %(certification)s (Cursos - %(courses)s)"
@@ -186,14 +186,14 @@ msgid "A slide of type certification cannot be previewed."
 msgstr "Um slide do tipo certificação não pode ser pré-visualizado."
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_dialog.js:0
 #: model_terms:ir.ui.view,arch_db:website_slides_survey.slide_channel_view_form
 msgid "Add Certification"
 msgstr "Adicionar certificação"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/xml/website_slides_fullscreen.xml:0
 msgid "Add Questions to this Survey"
 msgstr "Adicionar perguntas a esta pesquisa"
@@ -248,7 +248,7 @@ msgid "Beech"
 msgstr "Faia"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/xml/website_slides_fullscreen.xml:0
 #: model_terms:ir.ui.view,arch_db:website_slides_survey.slide_content_detailed
 msgid "Begin Certification"
@@ -265,7 +265,7 @@ msgid "Category"
 msgstr "Categoria"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_dialog.js:0
 #: model:ir.model.fields,field_description:website_slides_survey.field_slide_slide__survey_id
 #: model:ir.model.fields.selection,name:website_slides_survey.selection__slide_slide__slide_category__certification
@@ -321,7 +321,7 @@ msgid "Certification icon"
 msgstr "Ícone de certificação"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/controllers/slides.py:0
 msgid "Certification slides are completed when the survey is succeeded."
 msgstr ""
@@ -365,7 +365,7 @@ msgid "Channel / Partners (Members)"
 msgstr "Canal/usuários (membros)"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/xml/website_slides_fullscreen.xml:0
 #: model_terms:ir.ui.view,arch_db:website_slides_survey.slide_content_detailed
 msgid "Congratulations, you passed the Certification!"
@@ -382,7 +382,7 @@ msgid "Course Certifications"
 msgstr "Certificações"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/models/survey_survey.py:0
 #: model_terms:ir.ui.view,arch_db:website_slides_survey.survey_survey_view_form
 msgid "Courses"
@@ -419,7 +419,7 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/xml/website_slides_fullscreen.xml:0
 msgid "Download certification"
 msgstr "Baixar certificação"
@@ -441,7 +441,7 @@ msgid "Furniture Creation Certification"
 msgstr "Certificação em criação de móveis"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_dialog.xml:0
 msgid "How to upload a certification on your course?"
 msgstr "Como carregar uma certificação em seu curso?"
@@ -472,7 +472,7 @@ msgid "Mark To Do"
 msgstr "Marcar como “a fazer”"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/models/slide_channel.py:0
 msgid "No Attendee passed this course certification yet!"
 msgstr "Ainda não há participantes aprovados na certificação desse curso."
@@ -506,7 +506,7 @@ msgid "Oak"
 msgstr "Carvalho"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_category.xml:0
 msgid "Please select a certification."
 msgstr "Selecione uma certificação."
@@ -532,7 +532,7 @@ msgid "Search Attempts..."
 msgstr "Tentativas de busca..."
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_category.js:0
 msgid "Select a certification"
 msgstr "Selecione uma certificação"
@@ -543,7 +543,7 @@ msgid "Select all the furniture shown in the video"
 msgstr "Selecione todos os móveis mostrados no vídeo"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/js/public/components/slide_upload_dialog/slide_upload_dialog.xml:0
 msgid ""
 "Select an existing certification from the list. Creating or editing a "
@@ -627,7 +627,7 @@ msgid "Take Quiz"
 msgstr "Fazer o quiz"
 
 #. module: website_slides_survey
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_slides_survey/static/src/xml/website_slides_fullscreen.xml:0
 #: model_terms:ir.ui.view,arch_db:website_slides_survey.slide_content_detailed
 msgid "Test Certification"
@@ -681,7 +681,7 @@ msgid "Title"
 msgstr "Título"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/models/survey_survey.py:0
 msgid ""
 "Uh-oh! You can’t delete surveys used as a Course Certification! Otherwise, "
@@ -705,13 +705,13 @@ msgid "What type of wood is the best for furniture?"
 msgstr "Que tipo de madeira é a melhor para móveis?"
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/controllers/slides.py:0
 msgid "You are not allowed to create a survey."
 msgstr "Você não tem permissão para criar uma pesquisa."
 
 #. module: website_slides_survey
-#. odoo-python
+#. weth-python
 #: code:addons/website_slides_survey/controllers/slides.py:0
 msgid "You are not allowed to link a certification."
 msgstr "Você não tem permissão para vincular uma certificação."

@@ -33,7 +33,7 @@ test("show unread messages banner when there are unread messages", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
+    await contains(".w-mail-Message", { count: 30 });
     await contains("span:text('30 new messages Mark as Read')");
 });
 
@@ -51,7 +51,7 @@ test("mark thread as read from unread messages banner", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
+    await contains(".w-mail-Message", { count: 30 });
     await click("span:text('Mark as Read')", {
         parent: ["span:text('30 new messages Mark as Read')"],
     });
@@ -75,8 +75,8 @@ test("reset new message separator from unread messages banner", async () => {
     ]);
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Message:has(:text('message 0'))");
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Message:has(:text('message 0'))");
     await click("span:text('Mark as Read')", {
         parent: ["span:text('30 new messages Mark as Read')"],
     });
@@ -98,18 +98,18 @@ test("remove banner when scrolling to bottom", async () => {
     onRpc("/discuss/channel/mark_as_read", () => expect.step("mark_as_read"));
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 30 });
-    await contains(".o-mail-Composer.o-focused");
-    await focus(".o-mail-Thread");
-    await contains(".o-mail-Thread-banner:has(:text('50 new messages'))");
+    await contains(".w-mail-Message", { count: 30 });
+    await contains(".w-mail-Composer.w-focused");
+    await focus(".w-mail-Thread");
+    await contains(".w-mail-Thread-banner:has(:text('50 new messages'))");
     await tick(); // wait for the scroll to first unread to complete
-    await scroll(".o-mail-Thread", "bottom");
-    await contains(".o-mail-Message", { count: 50 });
+    await scroll(".w-mail-Thread", "bottom");
+    await contains(".w-mail-Message", { count: 50 });
     // Banner is still present as there are more messages to load so we did not
     // reach the actual bottom.
-    await contains(".o-mail-Thread-banner:has(:text('50 new messages'))");
-    await scroll(".o-mail-Thread", "bottom");
-    await contains(".o-mail-Thread-banner:has(:text('50 new messages'))", { count: 0 });
+    await contains(".w-mail-Thread-banner:has(:text('50 new messages'))");
+    await scroll(".w-mail-Thread", "bottom");
+    await contains(".w-mail-Thread-banner:has(:text('50 new messages'))", { count: 0 });
     await expect.waitForSteps(["mark_as_read"]);
 });
 
@@ -131,14 +131,14 @@ test("remove banner when opening thread at the bottom", async () => {
     pyEnv["discuss.channel.member"].write([selfMemberId], { new_message_separator: messageId + 1 });
     await start();
     await openDiscuss(channelId);
-    await click("[title='Expand']", { parent: [".o-mail-Message:has(:text('Hello World'))"] });
-    await click(".o-dropdown-item:contains('Mark as Unread')");
-    await contains(".o-mail-Thread-banner:has(:text('1 new message'))");
-    await click(".o-mail-NotificationItem:has(:text('sales'))");
-    await contains(".o-mail-DiscussContent-threadName[title='sales']");
-    await click(".o-mail-NotificationItem:has(:text('general'))");
-    await contains(".o-mail-DiscussContent-threadName[title='general']");
-    await contains(".o-mail-Thread-banner:has(:text('1 new message'))", { count: 0 });
+    await click("[title='Expand']", { parent: [".w-mail-Message:has(:text('Hello World'))"] });
+    await click(".w-dropdown-item:contains('Mark as Unread')");
+    await contains(".w-mail-Thread-banner:has(:text('1 new message'))");
+    await click(".w-mail-NotificationItem:has(:text('sales'))");
+    await contains(".w-mail-DiscussContent-threadName[title='sales']");
+    await click(".w-mail-NotificationItem:has(:text('general'))");
+    await contains(".w-mail-DiscussContent-threadName[title='general']");
+    await contains(".w-mail-Thread-banner:has(:text('1 new message'))", { count: 0 });
 });
 
 test("keep banner after mark as unread when scrolling to bottom", async () => {
@@ -155,10 +155,10 @@ test("keep banner after mark as unread when scrolling to bottom", async () => {
     }
     await start();
     await openDiscuss(channelId);
-    await click("[title='Expand']", { parent: [".o-mail-Message:has(:text('message 29'))"] });
-    await click(".o-dropdown-item:text('Mark as Unread')");
-    await scroll(".o-mail-Thread", "bottom");
-    await contains(".o-mail-Thread-banner:has(:text('30 new messages'))");
+    await click("[title='Expand']", { parent: [".w-mail-Message:has(:text('message 29'))"] });
+    await click(".w-dropdown-item:text('Mark as Unread')");
+    await scroll(".w-mail-Thread", "bottom");
+    await contains(".w-mail-Thread-banner:has(:text('30 new messages'))");
 });
 
 test("sidebar and banner counters display same value", async () => {
@@ -182,12 +182,12 @@ test("sidebar and banner counters display same value", async () => {
     }
     await start();
     await openDiscuss();
-    await contains(".o-discuss-badge:text('30')", {
-        parent: [".o-mail-MessagingMenuItem:has(:text('Bob'))"],
+    await contains(".w-discuss-badge:text('30')", {
+        parent: [".w-mail-MessagingMenuItem:has(:text('Bob'))"],
     });
-    await click(".o-mail-NotificationItem:has(:text('Bob'))");
-    await contains(".o-mail-Thread-banner:has(:text('30 new messages'))");
-    await contains(".o-discuss-badge:text('30')");
+    await click(".w-mail-NotificationItem:has(:text('Bob'))");
+    await contains(".w-mail-Thread-banner:has(:text('30 new messages'))");
+    await contains(".w-discuss-badge:text('30')");
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -199,9 +199,9 @@ test("sidebar and banner counters display same value", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-banner:has(:text('31 new messages'))");
-    await contains(".o-discuss-badge:text('31')", {
-        parent: [".o-mail-MessagingMenuItem:has(:text('Bob'))"],
+    await contains(".w-mail-Thread-banner:has(:text('31 new messages'))");
+    await contains(".w-discuss-badge:text('31')", {
+        parent: [".w-mail-MessagingMenuItem:has(:text('Bob'))"],
     });
 });
 
@@ -225,15 +225,15 @@ test("mobile: mark as read when opening chat", async () => {
     patchUiSize({ size: SIZES.SM });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenu-tab.active:has(:text('Chats')) .badge:text(1)");
+    await contains(".w-mail-MessagingMenu-tab.active:has(:text('Chats')) .badge:text(1)");
     await click("button:has(.badge:contains('1')):has(:text('Chats'))");
-    await contains(".o-mail-NotificationItem:has(.badge:contains(1)):has(:text('bob'))");
-    await click(".o-mail-NotificationItem:has(:text('bob'))");
-    await contains(".o-mail-Message");
-    await contains(".o-mail-Thread.o-focused");
-    await contains(".o-mail-Composer:not(.o-focused)");
-    await click(".o-mail-ChatWindow-header [title*='Close Chat Window']");
-    await contains(".o-mail-NotificationItem:has(.badge:contains(1)):has(:text('bob'))", {
+    await contains(".w-mail-NotificationItem:has(.badge:contains(1)):has(:text('bob'))");
+    await click(".w-mail-NotificationItem:has(:text('bob'))");
+    await contains(".w-mail-Message");
+    await contains(".w-mail-Thread.w-focused");
+    await contains(".w-mail-Composer:not(.w-focused)");
+    await click(".w-mail-ChatWindow-header [title*='Close Chat Window']");
+    await contains(".w-mail-NotificationItem:has(.badge:contains(1)):has(:text('bob'))", {
         count: 0,
     });
 });
@@ -260,11 +260,11 @@ test("show banner for new message after thread was read from another device", as
     }
     await start();
     await openDiscuss();
-    await click(".o-mail-MessagingMenu-tab[data-id='channel']");
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-mail-Thread-banner:has(:text('20 new messages'))");
-    await click(".o-mail-Thread-banner span:text('Mark as Read')");
-    await contains(".o-mail-Thread-banner", { count: 0 });
+    await click(".w-mail-MessagingMenu-tab[data-id='channel']");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-Thread-banner:has(:text('20 new messages'))");
+    await click(".w-mail-Thread-banner span:text('Mark as Read')");
+    await contains(".w-mail-Thread-banner", { count: 0 });
     // Simulate mark as read from another device.
     await rpc("/discuss/channel/mark_as_read", {
         channel_id: channelId,
@@ -281,7 +281,7 @@ test("show banner for new message after thread was read from another device", as
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-banner:has(:text('1 new message'))");
+    await contains(".w-mail-Thread-banner:has(:text('1 new message'))");
 });
 
 test.tags("focus required");
@@ -314,10 +314,10 @@ test("keep banner for messages received while scrolled up", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-Message", { count: 20 });
-    await contains(".o-mail-Composer.o-focused");
-    await contains(".o-mail-Thread", { scroll: "bottom" });
-    await scroll(".o-mail-Thread", 0);
+    await contains(".w-mail-Message", { count: 20 });
+    await contains(".w-mail-Composer.w-focused");
+    await contains(".w-mail-Thread", { scroll: "bottom" });
+    await scroll(".w-mail-Thread", 0);
     const store = getService("mail.store");
     const channel = store["discuss.channel"].get(channelId);
     await waitUntil(() => channel.scrollTop === 0);
@@ -332,7 +332,7 @@ test("keep banner for messages received while scrolled up", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-banner:has(:text('1 new message'))");
+    await contains(".w-mail-Thread-banner:has(:text('1 new message'))");
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -344,5 +344,5 @@ test("keep banner for messages received while scrolled up", async () => {
             thread_model: "discuss.channel",
         })
     );
-    await contains(".o-mail-Thread-banner:has(:text('2 new messages'))");
+    await contains(".w-mail-Thread-banner:has(:text('2 new messages'))");
 });

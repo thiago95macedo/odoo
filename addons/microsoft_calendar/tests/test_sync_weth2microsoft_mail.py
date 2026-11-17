@@ -14,7 +14,7 @@ from weth.addons.microsoft_calendar.tests.common import TestCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
-class TestSyncOdoo2MicrosoftMail(TestCommon, MailCase):
+class TestSyncWeth2MicrosoftMail(TestCommon, MailCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -87,14 +87,14 @@ class TestSyncOdoo2MicrosoftMail(TestCommon, MailCase):
                     for notified_partner in mail_notified_partners:
                         self.assertMailMail(notified_partner, 'sent', author=(organizer or create_user).partner_id)
 
-    def test_change_organizer_pure_odoo_event(self):
+    def test_change_organizer_pure_weth_event(self):
         """
-        Test that changing organizer on a pure Odoo event (not synced with Microsoft)
+        Test that changing organizer on a pure WETH event (not synced with Microsoft)
         does not archive the event.
         """
         self.organizer_user.microsoft_synchronization_stopped = True
         event = self.env["calendar.event"].with_user(self.organizer_user).create({
-            'name': "Pure Odoo Event",
+            'name': "Pure WETH Event",
             'start': datetime(2024, 1, 1, 10, 0),
             'stop': datetime(2024, 1, 1, 11, 0),
             'user_id': self.organizer_user.id,
@@ -108,5 +108,5 @@ class TestSyncOdoo2MicrosoftMail(TestCommon, MailCase):
             'user_id': self.attendee_user.id,
         })
 
-        self.assertTrue(event.active, "Pure Odoo event should not be archived when changing organizer")
+        self.assertTrue(event.active, "Pure WETH event should not be archived when changing organizer")
         self.assertEqual(event.user_id, self.attendee_user, "Organizer should be updated")

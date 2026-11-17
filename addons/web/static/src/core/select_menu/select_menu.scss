@@ -16,7 +16,7 @@
     }
 
     .o_select_menu_caret {
-        @include o-position-absolute($o-input-padding-y, $o-input-padding-x, $input-border-width);
+        @include o-position-absolute($w-input-padding-y, $w-input-padding-x, $input-border-width);
         visibility: hidden;
 
         &:after {
@@ -24,7 +24,8 @@
         }
     }
 
-    &:hover, &:focus-within {
+    &:hover,
+    &:focus-within {
         .o_select_menu_caret {
             visibility: visible;
         }
@@ -34,12 +35,14 @@
         right: 3px;
     }
 
-    .form-select + .o_select_menu_caret {
+    .form-select+.o_select_menu_caret {
         display: none;
     }
 
     .badge {
-        .o_badge_text, .o_tag_badge_text {
+
+        .o_badge_text,
+        .o_tag_badge_text {
             @include o-text-overflow(inline-block);
             max-width: var(--Tag-max-width, 200px);
         }
@@ -78,10 +81,11 @@
     .o_select_menu-choices {
         padding: var(--SelectMenu-padding, 0);
 
-        > *:first-child {
+        >*:first-child {
             margin-top: var(--SelectMenuItem-margin-y, 0.5rem);
         }
-        > *:last-child {
+
+        >*:last-child {
             margin-bottom: var(--SelectMenuItem-margin-y, 0.5rem);
         }
     }
@@ -89,7 +93,7 @@
     &:not(.o_bottom_sheet) {
         max-height: 300px;
 
-        .o-dropdown-item:before {
+        .w-dropdown-item:before {
             display: none;
         }
     }

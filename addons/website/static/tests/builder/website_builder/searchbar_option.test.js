@@ -65,35 +65,35 @@ beforeEach(() => {
 test("Available 'order by' options are updated after switching search type", async () => {
     await setupWebsiteBuilder(searchbarHTML("name asc"));
     await contains(":iframe .search-query").click();
-    expect("[data-label='Search within'] button.o-dropdown").toHaveText("Pages");
-    await contains("[data-label='Order by'] button.o-dropdown").click();
+    expect("[data-label='Search within'] button.w-dropdown").toHaveText("Pages");
+    await contains("[data-label='Order by'] button.w-dropdown").click();
     expect(".o_popover[role=menu] [data-action-id='setOrderBy']").toHaveCount(3);
-    await contains("[data-label='Search within'] button.o-dropdown").click();
+    await contains("[data-label='Search within'] button.w-dropdown").click();
     await click(".o_popover[role=menu] [data-action-value='/website/search']");
-    await contains("[data-label='Order by'] button.o-dropdown").click();
+    await contains("[data-label='Order by'] button.w-dropdown").click();
     expect(".o_popover[role=menu] [data-action-id='setOrderBy']").toHaveCount(2);
 });
 
 test("Switching search type resets 'order by' option to default", async () => {
     await setupWebsiteBuilder(searchbarHTML("write_date asc"));
     await contains(":iframe .search-query").click();
-    expect("[data-label='Search within'] button.o-dropdown").toHaveText("Pages");
-    expect("[data-label='Order by'] button.o-dropdown").toHaveText("Date (old to recent)");
-    await contains("[data-label='Search within'] button.o-dropdown").click();
+    expect("[data-label='Search within'] button.w-dropdown").toHaveText("Pages");
+    expect("[data-label='Order by'] button.w-dropdown").toHaveText("Date (old to recent)");
+    await contains("[data-label='Search within'] button.w-dropdown").click();
     await contains(".o_popover[role=menu] [data-action-value='/website/search']").click();
-    expect("[data-label='Search within'] button.o-dropdown").toHaveText("Everything");
-    expect("[data-label='Order by'] button.o-dropdown").toHaveText("Name (A-Z)");
+    expect("[data-label='Search within'] button.w-dropdown").toHaveText("Everything");
+    expect("[data-label='Order by'] button.w-dropdown").toHaveText("Name (A-Z)");
 });
 
 test("Switching search type keeps 'order by' option if it exists on both types", async () => {
     await setupWebsiteBuilder(searchbarHTML("something asc"));
     await contains(":iframe .search-query").click();
-    expect("[data-label='Search within'] button.o-dropdown").toHaveText("Pages");
-    expect("[data-label='Order by'] button.o-dropdown").toHaveText("something");
-    await contains("[data-label='Search within'] button.o-dropdown").click();
+    expect("[data-label='Search within'] button.w-dropdown").toHaveText("Pages");
+    expect("[data-label='Order by'] button.w-dropdown").toHaveText("something");
+    await contains("[data-label='Search within'] button.w-dropdown").click();
     await contains(".o_popover[role=menu] [data-action-value='/website/search']").click();
-    expect("[data-label='Search within'] button.o-dropdown").toHaveText("Everything");
-    expect("[data-label='Order by'] button.o-dropdown").toHaveText("something");
+    expect("[data-label='Search within'] button.w-dropdown").toHaveText("Everything");
+    expect("[data-label='Order by'] button.w-dropdown").toHaveText("something");
 });
 
 test("Input parent is not contenteditable, while all other children beside the input are", async () => {
@@ -111,7 +111,7 @@ test("Input parent is not contenteditable, while all other children beside the i
 test("saving the header bar stores its settings on the website", async () => {
     await setupWebsiteBuilder("", { headerContent: headerSearchbarHTML("name asc") });
     await contains(":iframe .o_header_searchbar .search-query").click();
-    await contains("[data-label='Search within'] button.o-dropdown").click();
+    await contains("[data-label='Search within'] button.w-dropdown").click();
     await contains(".o_popover[role=menu] [data-action-value='/website/search']").click();
 
     onRpc("ir.ui.view", "save", () => true);
@@ -126,6 +126,6 @@ test("saving the header bar stores its settings on the website", async () => {
         return true;
     });
 
-    await contains(".o-snippets-top-actions button[data-action='save']").click();
+    await contains(".w-snippets-top-actions button[data-action='save']").click();
     expect.verifySteps(["store the header search settings"]);
 });

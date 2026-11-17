@@ -33,16 +33,16 @@ test("Thread name unchanged when inviting new users", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-threadName[title='Visitor #20']");
+    await contains(".w-mail-DiscussContent-threadName[title='Visitor #20']");
     await click("button[title='Members']");
     await click("button[title='Add People']");
     await click("input", {
-        parent: [".o-discuss-ChannelInvitation-selectable", { text: "James" }],
+        parent: [".w-discuss-ChannelInvitation-selectable", { text: "James" }],
     });
     await click("button:enabled", { text: "Invite" });
-    await contains(".o-discuss-ChannelInvitation", { count: 0 });
-    await contains(".o-discuss-ChannelMember", { text: "James" });
-    await contains(".o-mail-DiscussContent-threadName[title='Visitor #20']");
+    await contains(".w-discuss-ChannelInvitation", { count: 0 });
+    await contains(".w-discuss-ChannelMember", { text: "James" });
+    await contains(".w-mail-DiscussContent-threadName[title='Visitor #20']");
 });
 
 test("Display livechat custom username if defined", async () => {
@@ -60,9 +60,9 @@ test("Display livechat custom username if defined", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "hello");
+    await insertText(".w-mail-Composer-input", "hello");
     await press("Enter");
-    await contains(".o-mail-Message-author", { text: "livechat custom username" });
+    await contains(".w-mail-Message-author", { text: "livechat custom username" });
 });
 
 test("Display livechat custom name in typing status", async () => {
@@ -88,7 +88,7 @@ test("Display livechat custom name in typing status", async () => {
             is_typing: true,
         })
     );
-    await contains(".o-discuss-Typing", { text: "livechat custom username is typing..." });
+    await contains(".w-discuss-Typing", { text: "livechat custom username is typing..." });
 });
 
 test("Display name changes according to member type", async () => {
@@ -124,9 +124,9 @@ test("Display name changes according to member type", async () => {
     ]);
     await start();
     await openDiscuss(chatAsNonMember);
-    await waitFor(".o-mail-DiscussContent-threadName[title=John]");
+    await waitFor(".w-mail-DiscussContent-threadName[title=John]");
     await openDiscuss(chatAsVisitor);
-    await waitFor(".o-mail-DiscussContent-threadName[title=Jane]");
+    await waitFor(".w-mail-DiscussContent-threadName[title=Jane]");
     await openDiscuss(chatAsAgent);
-    await waitFor(".o-mail-DiscussContent-threadName[title=John]");
+    await waitFor(".w-mail-DiscussContent-threadName[title=John]");
 });

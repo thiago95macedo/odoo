@@ -9,8 +9,9 @@
     }
 }
 
-.odoo-editor-editable {
+.weth-editor-editable {
     li {
+
         &[style*="color"],
         &[class*="text-"] {
             font[class*="bg-"]:not([class*="text-"]):not([style*="color"]) {
@@ -20,24 +21,32 @@
     }
 }
 
-#wrapwrap, // avoid duplicating in portal
-.o_mass_mailing_value, // avoid duplicating in mass_mailing
+#wrapwrap,
+// avoid duplicating in portal
+.o_mass_mailing_value,
+// avoid duplicating in mass_mailing
 .o_field_html {
-    .o-float-start-parent {
-        & ~ ul, & ~ ol {
+    .w-float-start-parent {
+
+        &~ul,
+        &~ol {
             display: flow-root;
         }
+
         .o_we_hint::after {
             display: none;
         }
     }
 
-    .o-float-end-parent {
-        & ~ ul, & ~ ol {
+    .w-float-end-parent {
+
+        &~ul,
+        &~ol {
             &[dir] {
                 display: flow-root;
             }
         }
+
         .o_we_hint::after {
             display: none;
         }
@@ -47,7 +56,8 @@
         float: unset !important;
     }
 
-    ul, ol {
+    ul,
+    ol {
         &[dir] li .float-end {
             float: unset !important;
         }

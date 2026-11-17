@@ -1,8 +1,8 @@
 .badge {
-    @for $size from 1 through length($o-colors) {
+    @for $size from 1 through length($w-colors) {
         &.o_badge_color_#{$size - 1} {
-            background-color: nth($o-colors-bg-subtle, $size) !important;
-            color: nth($o-colors-text-emphasis, $size) !important;
+            background-color: nth($w-colors-bg-subtle, $size) !important;
+            color: nth($w-colors-text-emphasis, $size) !important;
         }
     }
 }

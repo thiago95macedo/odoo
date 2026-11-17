@@ -21,7 +21,7 @@ describe("Table of content", () => {
             config: configWithEmbeddedTableOfContent,
         });
         execCommand(editor, "insertTableOfContent");
-        await waitFor(`.o-we-hint`);
+        await waitFor(`.w-we-hint`);
         await waitFor(`.o_embedded_toc_content`);
         expect(".o_embedded_toc_content").toHaveCount(1);
         await press(["Ctrl", "z"]);
@@ -53,6 +53,6 @@ describe("Table of content", () => {
             focusOffset: childNodeIndex(toc) + 1,
         });
         await delay(DELAY_TOOLBAR_OPEN);
-        await expectElementCount(".o-we-toolbar", 0);
+        await expectElementCount(".w-we-toolbar", 0);
     });
 });

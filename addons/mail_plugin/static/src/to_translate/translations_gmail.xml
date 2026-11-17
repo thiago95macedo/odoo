@@ -17,22 +17,22 @@
     <string>In this conversation</string>
     <string>Contact Details</string>
     <string>New Person</string>
-    <string>Add to Odoo</string>
-    <string>View in Odoo</string>
+    <string>Add to Weth</string>
+    <string>View in Weth</string>
     <string>Email already logged</string>
     <string>Email already logged on the contact</string>
-    <string>This contact does not exist in the Odoo database.</string>
+    <string>This contact does not exist in the WETH database.</string>
     <string>Can not save the contact</string>
     <string>Log email</string>
     <string>Could not connect to database. Try to log out and in.</string>
     <string>Something bad happened. Please, try again later.</string>
     <string>Invalid URL</string>
-    <string>Attachments could not be logged in Odoo because their total size exceeded the allowed maximum.</string>
-    <string>Odoo for Gmail</string>
+    <string>Attachments could not be logged in WETH because their total size exceeded the allowed maximum.</string>
+    <string>WETH for Gmail</string>
     <string>Show all</string>
     <string>Debug Zone</string>
     <string>Debug zone for development purpose.</string>
     <string>WETH Server URL</string>
-    <string>Odoo Access Token</string>
+    <string>WETH Access Token</string>
     <string>Clear Translations Cache</string>
 </resources>

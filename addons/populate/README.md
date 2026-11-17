@@ -1,6 +1,6 @@
 # Populate
 
-Generate synthetic data for an Odoo database following a predefined 
+Generate synthetic data for an WETH database following a predefined 
 **Blueprint**.
 
 Useful for performance testing, demos, and development environments.
@@ -205,7 +205,7 @@ attribute dictionaries – the same keys you would write as XML attributes
 
 | Attribute  | Required                | Description                                                                                                |
 |------------|-------------------------|------------------------------------------------------------------------------------------------------------|
-| `model`    | yes                     | Odoo model technical name (e.g. `res.partner`)                                                             |
+| `model`    | yes                     | WETH model technical name (e.g. `res.partner`)                                                             |
 | `name`     | for `function`          | Method name to call                                                                                        |
 | `count`    | for `create`            | Number of records to create                                                                                |
 | `id`       |                         | Reference tag - lets later blocks target these records                                                     |
@@ -409,7 +409,7 @@ from an allowed provider can be used directly:
 
 Method-specific keyword arguments (e.g. `nb_sentences`) are forwarded
 as-is. Requires `faker` - install from 
-`odoo/addons/populate/requirements.txt`.
+`weth/addons/populate/requirements.txt`.
 
 #### Allowed Faker Providers
 
@@ -709,7 +709,7 @@ recordset of each executable job or subjob.
 
 ## Blueprint Inheritance
 
-Blueprints support a simplified Odoo-style view inheritance via 
+Blueprints support a simplified Weth-style view inheritance via 
 `inherit_id`. A child blueprint applies XPath or positional specs 
 to its parent's XML definition:
 
@@ -766,7 +766,7 @@ Parallelism can be disabled per operation block with `parallel="False"` when
 the model's constraints require sequential writes.
 
 Platform controlled by the environment variable
-`ODOO_POPULATE_MULTIPROCESS_ENABLE` (defaults to `True`).
+`WETH_POPULATE_MULTIPROCESS_ENABLE` (defaults to `True`).
 
 ## Automatic Retry on Constraint Violations
 

@@ -11,11 +11,11 @@ export class QuickReorder extends Interaction {
 
     static selector = '#quick_reorder_sidebar';
     dynamicContent = {
-        '.o_wsale_quick_reorder_qty_input': {
+        '.w_wsale_quick_reorder_qty_input': {
             't-on-input': this.updateQuantityAndPrice,
             't-on-keydown': this.triggerReorderOnEnter,
         },
-        '.o_wsale_quick_reorder_product_button': {
+        '.w_wsale_quick_reorder_product_button': {
             't-on-click': this.locked(this.reorderProduct, true),
         },
     };
@@ -46,8 +46,8 @@ export class QuickReorder extends Interaction {
      * @return {void}
      */
     _updateAddButton(qtyInput, qty) {
-        const addButton = qtyInput.closest('.o_wsale_quick_reorder_line').querySelector(
-            '.o_wsale_quick_reorder_product_button'
+        const addButton = qtyInput.closest('.w_wsale_quick_reorder_line').querySelector(
+            '.w_wsale_quick_reorder_product_button'
         );
         const isDisabled = qty <= 0;
         addButton.classList.toggle('disabled', isDisabled);
@@ -67,8 +67,8 @@ export class QuickReorder extends Interaction {
      * @return {void}
      */
     _updateTotalPrice(qtyInput, qty, priceUnit, digits) {
-        const priceEl = qtyInput.closest('.o_wsale_quick_reorder_line').querySelector(
-            '.o_wsale_quick_reorder_product_price .oe_currency_value'
+        const priceEl = qtyInput.closest('.w_wsale_quick_reorder_line').querySelector(
+            '.w_wsale_quick_reorder_product_price .oe_currency_value'
         );
         if (priceEl) {
             const totalPrice = (qty * priceUnit).toFixed(digits);
@@ -85,8 +85,8 @@ export class QuickReorder extends Interaction {
     async triggerReorderOnEnter(ev) {
         if (ev.key !== 'Enter') return;
 
-        const addButton = ev.currentTarget.closest('.o_wsale_quick_reorder_line').querySelector(
-            '.o_wsale_quick_reorder_product_button'
+        const addButton = ev.currentTarget.closest('.w_wsale_quick_reorder_line').querySelector(
+            '.w_wsale_quick_reorder_product_button'
         );
         if (addButton && !addButton.classList.contains('disabled')) {
             addButton.click();
@@ -109,7 +109,7 @@ export class QuickReorder extends Interaction {
         const selectedComboItems = JSON.parse(addButtonDataset.selectedComboItems || '[]');
 
         // Capture the button index before DOM updates.
-        const allButtons = document.querySelectorAll('.o_wsale_quick_reorder_product_button');
+        const allButtons = document.querySelectorAll('.w_wsale_quick_reorder_product_button');
         const currentButtonIndex = Array.from(allButtons).indexOf(ev.currentTarget);
 
         // Process combo products if applicable.
@@ -157,7 +157,7 @@ export class QuickReorder extends Interaction {
 
         // Add the product to the cart and update the DOM.
         const cart = this.el.closest('#shop_cart');
-        const cartSummary = document.querySelector('.o_wsale_shorter_cart_summary');
+        const cartSummary = document.querySelector('.w_wsale_shorter_cart_summary');
         // `updateCartNavBar` regenerates the cart lines and `updateQuickReorderSidebar` regenerates
         // the quick reorder products, so we need to stop and start interactions to make sure the
         // regenerated cart lines and reorder products are properly handled.
@@ -185,7 +185,7 @@ export class QuickReorder extends Interaction {
      * @return {void}
      */
     _focusNextQuantityInput(buttonIndex) {
-        const allQuantityInputs = document.querySelectorAll('.o_wsale_quick_reorder_qty_input');
+        const allQuantityInputs = document.querySelectorAll('.w_wsale_quick_reorder_qty_input');
         const nextInput = allQuantityInputs[buttonIndex];
         if (nextInput) {
             nextInput.focus();

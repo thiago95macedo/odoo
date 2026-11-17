@@ -183,7 +183,7 @@ class KeyboardUSBDriver(Driver):
                 - variant (str): An optional key to represent the variant of the
                                  selected layout
         """
-        layout_conf = system.path_file('odoo-keyboard-layouts.conf')
+        layout_conf = system.path_file('weth-keyboard-layouts.conf')
         if layout_conf.exists():
             data = json.loads(layout_conf.read_text())
         else:
@@ -195,7 +195,7 @@ class KeyboardUSBDriver(Driver):
         """Read the layout from the saved filed and set it as current layout.
         If no file or no layout is found we use 'us' by default.
         """
-        layout_conf = system.path_file('odoo-keyboard-layouts.conf')
+        layout_conf = system.path_file('weth-keyboard-layouts.conf')
         if layout_conf.exists():
             data = json.loads(layout_conf.read_text())
             layout = data.get(self.device_identifier, {'layout': 'us'})
@@ -214,7 +214,7 @@ class KeyboardUSBDriver(Driver):
         scanner_name = ['barcode', 'scanner', 'reader']
         is_scanner = any(x in device_name for x in scanner_name) or self.dev.interface_protocol == '0'
 
-        file_path = system.path_file('odoo-keyboard-is-scanner.conf')
+        file_path = system.path_file('weth-keyboard-is-scanner.conf')
         if file_path.exists():
             data = json.loads(file_path.read_text())
             is_scanner = data.get(self.device_identifier, {}).get('is_scanner', is_scanner)
@@ -222,7 +222,7 @@ class KeyboardUSBDriver(Driver):
 
     def _keyboard_input(self, scancode):
         """Deal with a keyboard input. Send the character corresponding to the
-        pressed key represented by its scancode to the connected Odoo instance.
+        pressed key represented by its scancode to the connected WETH instance.
 
         Args:
             scancode (int): The scancode of the pressed key.
@@ -256,7 +256,7 @@ class KeyboardUSBDriver(Driver):
         We need that in order to keep the selected type of device after a reboot.
         """
         is_scanner = {'is_scanner': data.get('is_scanner')}
-        is_scanner_conf = system.path_file('odoo-keyboard-is-scanner.conf')
+        is_scanner_conf = system.path_file('weth-keyboard-is-scanner.conf')
         if is_scanner_conf.exists():
             data = json.loads(is_scanner_conf.read_text())
         else:

@@ -2251,7 +2251,7 @@ class TestBoM(TestMrpCommon):
         ]])
 
         # simulate resequence from UI (reverse C->D and C->E)
-        # (see odoo/addons/web/controllers/main.py:1352)
+        # (see weth/addons/web/controllers/main.py:1352)
         boms.invalidate_recordset()
         # hack warning: the sequence check depends on the prefetching order!
         for i, record in enumerate(boms.browse(boms.ids[i] for i in [0, 1, 3, 2, 4, 5])):

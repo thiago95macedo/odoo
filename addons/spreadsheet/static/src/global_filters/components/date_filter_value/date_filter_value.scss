@@ -1,12 +1,12 @@
-.o-date-filter-dropdown:hover .btn-previous,
-.o-date-filter-dropdown:hover .btn-next,
-.o-date-filter-dropdown.selected .btn-previous,
-.o-date-filter-dropdown.selected .btn-next {
-    color: $o-gray-600;
+.w-date-filter-dropdown:hover .btn-previous,
+.w-date-filter-dropdown:hover .btn-next,
+.w-date-filter-dropdown.selected .btn-previous,
+.w-date-filter-dropdown.selected .btn-next {
+    color: $w-gray-600;
 }
 
-.o-date-filter-dropdown {
-    .o-date-option-label {
+.w-date-filter-dropdown {
+    .w-date-option-label {
         min-width: 10ch;
         padding: 1px 0;
         border: var(--border-width) solid transparent;
@@ -14,11 +14,12 @@
         margin-right: 16px;
     }
 
-    .btn-previous, .btn-next {
+    .btn-previous,
+    .btn-next {
         background: inherit;
         border: var(--border-width) solid transparent;
         border-width: 0 0 var(--border-width) 0;
-        color: $o-gray-300;
+        color: $w-gray-300;
         padding: 1px 0;
         text-align: center;
         width: 20px;
@@ -28,10 +29,12 @@
         text-align: center;
         border-color: transparent;
         cursor: pointer;
+
         &:focus {
             outline: none;
         }
     }
+
     .o_datetime_input {
         width: 10ch;
         margin: 0 8px;
@@ -39,14 +42,16 @@
     }
 }
 
-.o-date-filter-input {
+.w-date-filter-input {
     cursor: pointer;
-    &:focus, &:hover {
+
+    &:focus,
+    &:hover {
         outline: none;
     }
 }
 
-.o_bottom_sheet .o-date-filter-dropdown  :last-child {
+.o_bottom_sheet .w-date-filter-dropdown :last-child {
     /* Make space for the check icon of the active item */
     margin-right: 12px;
 }

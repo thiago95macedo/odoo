@@ -19,7 +19,8 @@
         //     This prevents having, on popover open, a weird auto-focus style on the first button/link.
         outline: none;
     }
-    .o-mail-ActivityListPopoverItem > :first-child .btn-link {
+
+    .w-mail-ActivityListPopoverItem> :first-child .btn-link {
         // Adjust spacings to prevent buttons box-shadow from overflowing the item container
         width: 23px;
         margin: map-get($spacers, 1);
@@ -78,20 +79,23 @@
         }
     }
 
-    &.o_attendee_status_declined, &.o_event_striked {
+    &.o_attendee_status_declined,
+    &.o_event_striked {
         .fc-event-main {
             text-decoration: line-through;
         }
     }
 
     &.o_activity_event {
+
         // For the user activity events, use the user color with
         // a slight change so that activities can be spotted
         // more easily in the calendar view.
-        @for $i from 1 through length($o-colors-complete) {
-            $color: nth($o-colors-complete, $i);
+        @for $i from 1 through length($w-colors-complete) {
+            $color: nth($w-colors-complete, $i);
+
             &.o_calendar_color_#{$i - 1} {
-                --fc-event-bg-color: #{mix($o-white, $color, 80%)};
+                --fc-event-bg-color: #{mix($w-white, $color, 80%)};
             }
         }
     }
@@ -101,14 +105,15 @@
         @include o-position-absolute(0, 0, 0, 0);
         display: block;
         z-index: 3;
-        background-color: rgba($o-view-background-color, var(--o-overlay-opacity));
+        background-color: rgba($w-view-background-color, var(--o-overlay-opacity));
     }
 }
 
 // Color the attendee tags in the "Meet with" calendar filters to match their event color.
-@for $i from 1 through length($o-colors-complete) {
-    $color: nth($o-colors-complete, $i);
-    $color-subtle: mix($o-white, $color, 55%);
+@for $i from 1 through length($w-colors-complete) {
+    $color: nth($w-colors-complete, $i);
+    $color-subtle: mix($w-white, $color, 55%);
+
     .o_calendar_filter[data-name="partner_ids"] .o_tag_color_#{$i - 1} {
         color: color-contrast($color-subtle) !important;
         background-color: $color-subtle !important;

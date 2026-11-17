@@ -40,7 +40,7 @@ const prepareUpdateLockedEditables = new Set();
 export function prepareUpdate(...args) {
     const closestRoot =
         args.length &&
-        ancestors(args[0]).find((ancestor) => ancestor.classList.contains("odoo-editor-editable"));
+        ancestors(args[0]).find((ancestor) => ancestor.classList.contains("weth-editor-editable"));
     const isPrepareUpdateLocked = closestRoot && prepareUpdateLockedEditables.has(closestRoot);
     const hash = (Math.random() + 1).toString(36).substring(7);
     const options = {
@@ -52,10 +52,10 @@ export function prepareUpdate(...args) {
     if (options.debug) {
         console.log(
             "%cPreparing%c update: " +
-                options.label +
-                (options.label === hash ? "" : ` (${hash})`) +
-                "%c" +
-                (isPrepareUpdateLocked ? " LOCKED" : ""),
+            options.label +
+            (options.label === hash ? "" : ` (${hash})`) +
+            "%c" +
+            (isPrepareUpdateLocked ? " LOCKED" : ""),
             "color: cyan;",
             "color: white;",
             "color: red; font-weight: bold;"
@@ -66,9 +66,9 @@ export function prepareUpdate(...args) {
             if (options.debug) {
                 console.log(
                     "%cRestoring%c update: " +
-                        options.label +
-                        (options.label === hash ? "" : ` (${hash})`) +
-                        "%c LOCKED",
+                    options.label +
+                    (options.label === hash ? "" : ` (${hash})`) +
+                    "%c LOCKED",
                     "color: lightgreen;",
                     "color: white;",
                     "color: red; font-weight: bold;"
@@ -92,7 +92,7 @@ export function prepareUpdate(...args) {
         const left = getState(el, offset, DIRECTIONS.LEFT);
         const right = getState(el, offset, DIRECTIONS.RIGHT, left.cType);
         if (options.debug) {
-            const editable = el && closestElement(el, ".odoo-editor-editable");
+            const editable = el && closestElement(el, ".weth-editor-editable");
             const oldEditableHTML =
                 (editable && editable.innerHTML.replaceAll(" ", "_").replaceAll("\u200B", "ZWS")) ||
                 "";
@@ -108,8 +108,8 @@ export function prepareUpdate(...args) {
         if (options.debug) {
             console.log(
                 "%cRestoring%c update: " +
-                    options.label +
-                    (options.label === hash ? "" : ` (${hash})`),
+                options.label +
+                (options.label === hash ? "" : ` (${hash})`),
                 "color: lightgreen;",
                 "color: white;"
             );
@@ -216,8 +216,8 @@ export function getState(el, offset, direction, leftCType) {
                         : getState(...rightPos(node), DIRECTIONS.RIGHT).cType;
                     cType =
                         leftCType & CTYPES.CONTENT &&
-                        rct & (CTYPES.CONTENT | CTYPES.BR) &&
-                        !hasContentLeft
+                            rct & (CTYPES.CONTENT | CTYPES.BR) &&
+                            !hasContentLeft
                             ? CTYPES.SPACE
                             : rct;
                     break;
@@ -414,34 +414,34 @@ export function restoreState(prevStateData, debug = false) {
     const ruleHashCode = restoreStateRuleHashCode(direction, cType1, cType2);
     const rule = allRestoreStateRules.get(ruleHashCode);
     if (debug) {
-        const editable = closestElement(node, ".odoo-editor-editable");
+        const editable = closestElement(node, ".weth-editor-editable");
         console.log(
             "%c" +
-                node.textContent.replaceAll(" ", "_").replaceAll("\u200B", "ZWS") +
-                "\n" +
-                "%c" +
-                (direction === DIRECTIONS.LEFT ? "left" : "right") +
-                "\n" +
-                "%c" +
-                ctypeToString(cType1) +
-                "\n" +
-                "%c" +
-                ctypeToString(cType2) +
-                "\n" +
-                "%c" +
-                "BEFORE: " +
-                (oldEditableHTML || "(unavailable)") +
-                "\n" +
-                "%c" +
-                "AFTER:  " +
-                (editable
-                    ? editable.innerHTML.replaceAll(" ", "_").replaceAll("\u200B", "ZWS")
-                    : "(unavailable)") +
-                "\n",
+            node.textContent.replaceAll(" ", "_").replaceAll("\u200B", "ZWS") +
+            "\n" +
+            "%c" +
+            (direction === DIRECTIONS.LEFT ? "left" : "right") +
+            "\n" +
+            "%c" +
+            ctypeToString(cType1) +
+            "\n" +
+            "%c" +
+            ctypeToString(cType2) +
+            "\n" +
+            "%c" +
+            "BEFORE: " +
+            (oldEditableHTML || "(unavailable)") +
+            "\n" +
+            "%c" +
+            "AFTER:  " +
+            (editable
+                ? editable.innerHTML.replaceAll(" ", "_").replaceAll("\u200B", "ZWS")
+                : "(unavailable)") +
+            "\n",
             "color: white; display: block; width: 100%;",
             "color: " +
-                (direction === DIRECTIONS.LEFT ? "magenta" : "lightgreen") +
-                "; display: block; width: 100%;",
+            (direction === DIRECTIONS.LEFT ? "magenta" : "lightgreen") +
+            "; display: block; width: 100%;",
             "color: pink; display: block; width: 100%;",
             "color: lightblue; display: block; width: 100%;",
             "color: white; display: block; width: 100%;",

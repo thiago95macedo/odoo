@@ -47,10 +47,10 @@ RECV_SIZE = 16384
 # case it never grows bigger than MAX_INCOMPLETE_EVENT_SIZE + RECV_SIZE.
 MAX_INCOMPLETE_EVENT_SIZE = 16384
 
-# No need to conceal the server agent as Odoo MUST run behind a web
+# No need to conceal the server agent as WETH MUST run behind a web
 # server (apache/nginx/...), which is gonna replace it with its own.
 SERVER_SOFTWARE = ' '.join((
-    f'odoo/{weth.release.series}',
+    f'weth/{weth.release.series}',
     h11.PRODUCT_ID,
     sys_version,
 ))
@@ -62,7 +62,7 @@ def _verify_target(target: bytes):
     # 1. Clients MUST use origin-form when talking to origin servers.
     # 2. Proxies MUST convert absolute-form to origin-from + Host.
     # 3. Servers MUST convert absolute-form to origin-from + Host
-    # We ignore this third point as Odoo MUST be deployed behind a
+    # We ignore this third point as WETH MUST be deployed behind a
     # proxy and both the clients and proxies MUST NOT send
     # absolute-form request targets. If we receive an absolute-form
     # it likely is a rogue client.

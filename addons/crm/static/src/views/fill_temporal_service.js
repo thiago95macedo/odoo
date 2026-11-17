@@ -17,7 +17,7 @@ import {
  * 1 week          week    # there is no greater time period that takes an integer amount of weeks
  * 1 year          month
  * 1 year          quarter
- * 1 year          year    # we are not using a greater time period in Odoo (yet)
+ * 1 year          year    # we are not using a greater time period in WETH (yet)
  * @param {int} cyclePos function to get the position (index) in the cycle from a DateTime.
  *                       {1} is the first index. {+1} is used for properties which have an index
  *                       starting from 0, to standardize between granularities.
@@ -136,7 +136,7 @@ export class FillTemporalPeriod {
         //
         // (5) add minGroups!
         const fillTemporalPeriod = ((2 * cycle - ((this.minGroups - 1) % cycle) - cyclePos) % cycle) + this.minGroups;
-        this.end = this.start.plus({[`${this.granularity}s`]: fillTemporalPeriod});
+        this.end = this.start.plus({ [`${this.granularity}s`]: fillTemporalPeriod });
         this.computedEnd = true;
     }
     /**
@@ -198,9 +198,9 @@ export class FillTemporalPeriod {
             fillTemporal.fill_from = this._getFormattedServerDate(this.start);
         }
         if (forceFillingTo) {
-            // smallest time interval used in Odoo for the current date type
+            // smallest time interval used in WETH for the current date type
             const minGranularity = this.field.type === "date" ? "days" : "seconds";
-            fillTemporal.fill_to = this._getFormattedServerDate(this.end.minus({[minGranularity]: 1}));
+            fillTemporal.fill_to = this._getFormattedServerDate(this.end.minus({ [minGranularity]: 1 }));
         }
         context = { ...context, fill_temporal: fillTemporal };
         return context;
@@ -235,7 +235,7 @@ export class FillTemporalPeriod {
      * Adds one "granularity" period to [this.end], to expand the current fill_temporal period
      */
     expand() {
-        this.setEnd(this.end.plus({[`${this.granularity}s`]: 1}));
+        this.setEnd(this.end.plus({ [`${this.granularity}s`]: 1 }));
     }
 }
 

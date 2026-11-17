@@ -44,7 +44,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_simple_event_from_odoo_attendee_calendar(self, mock_delete):
+    def test_delete_simple_event_from_weth_attendee_calendar(self, mock_delete):
         event_id = self.simple_event.microsoft_id
 
         self.simple_event.with_user(self.attendee_user).unlink()
@@ -75,7 +75,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_archive_simple_event_from_odoo_attendee_calendar(self, mock_delete):
+    def test_archive_simple_event_from_weth_attendee_calendar(self, mock_delete):
         event_id = self.simple_event.microsoft_id
 
         self.simple_event.with_user(self.attendee_user).write({'active': False})
@@ -128,22 +128,22 @@ class TestDeleteEvents(TestCommon):
 
     def test_delete_simple_event_from_outlook_attendee_calendar(self):
         """
-        If an attendee deletes an event from its Outlook calendar, during the sync, Odoo will be notified that
+        If an attendee deletes an event from its Outlook calendar, during the sync, WETH will be notified that
         this event has been deleted BUT only with the attendees's calendar event id and not with the global one
-        (called iCalUId). That means, it's not possible to match this deleted event with an Odoo event.
+        (called iCalUId). That means, it's not possible to match this deleted event with an WETH event.
 
         LIMITATION:
 
         Unfortunately, there is no magic solution:
-            1) keep the list of calendar events ids linked to a unique iCalUId but all Odoo users may not have synced
-            their Odoo calendar, leading to missing ids in the list => bad solution.
+            1) keep the list of calendar events ids linked to a unique iCalUId but all WETH users may not have synced
+            their WETH calendar, leading to missing ids in the list => bad solution.
             2) call the microsoft API to get the iCalUId matching the received event id => as the event has already
             been deleted, this call may return an error.
         """
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_one_event_from_recurrence_from_odoo_calendar(self, mock_delete):
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+    def test_delete_one_event_from_recurrence_from_weth_calendar(self, mock_delete):
+        if not self.sync_weth_recurrences_with_outlook_feature():
             return
         # arrange
         idx = 2
@@ -163,8 +163,8 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_first_event_from_recurrence_from_odoo_calendar(self, mock_delete):
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+    def test_delete_first_event_from_recurrence_from_weth_calendar(self, mock_delete):
+        if not self.sync_weth_recurrences_with_outlook_feature():
             return
         # arrange
         idx = 0
@@ -235,7 +235,7 @@ class TestDeleteEvents(TestCommon):
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_delete_one_event_and_future_from_recurrence_from_outlook_calendar(self, mock_get_events):
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+        if not self.sync_weth_recurrences_with_outlook_feature():
             return
         # arrange
         idx = range(4, self.recurrent_events_count)
@@ -286,11 +286,11 @@ class TestDeleteEvents(TestCommon):
         """
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_single_event_from_recurrence_from_odoo_calendar(self, mock_delete):
+    def test_delete_single_event_from_recurrence_from_weth_calendar(self, mock_delete):
         """
         Deletes the base_event of a recurrence and checks if the event was archived and the recurrence was updated.
         """
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+        if not self.sync_weth_recurrences_with_outlook_feature():
             return
         # arrange
         idx = 0
@@ -319,7 +319,7 @@ class TestDeleteEvents(TestCommon):
         self.organizer_user.microsoft_synchronization_stopped = False
         self.organizer_user.pause_microsoft_synchronization()
 
-        # Try to delete a simple event in Odoo Calendar.
+        # Try to delete a simple event in WETH Calendar.
         self.simple_event.with_user(self.organizer_user).unlink()
         self.call_post_commit_hooks()
         self.simple_event.invalidate_recordset()
@@ -327,7 +327,7 @@ class TestDeleteEvents(TestCommon):
         # Ensure that synchronization is paused, delete wasn't called and record doesn't exist anymore.
         self.assertFalse(self.organizer_user.microsoft_synchronization_stopped)
         self.assertEqual(self.organizer_user._get_microsoft_sync_status(), "sync_paused")
-        self.assertFalse(self.simple_event.exists(), "Event must be deleted from Odoo even though sync configuration is off")
+        self.assertFalse(self.simple_event.exists(), "Event must be deleted from WETH even though sync configuration is off")
         mock_delete.assert_not_called()
 
     @patch.object(MicrosoftCalendarService, 'delete')

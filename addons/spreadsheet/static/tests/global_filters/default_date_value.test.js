@@ -67,7 +67,7 @@ test("All the options should be displayed", async function () {
         update: () => { },
     });
     await contains("input").click();
-    const options = fixture.querySelectorAll(".o-dropdown-item");
+    const options = fixture.querySelectorAll(".w-dropdown-item");
     expect(options.length).toBe(13);
     expect(options[0].textContent).toBe("Today");
     expect(options[1].textContent).toBe("Yesterday");
@@ -94,7 +94,7 @@ test("Can select a relative period", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-dropdown-item[data-id='last_30_days']").click();
+    await contains(".w-dropdown-item[data-id='last_30_days']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -108,7 +108,7 @@ test("Can select this month", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-dropdown-item[data-id='this_month']").click();
+    await contains(".w-dropdown-item[data-id='this_month']").click();
     expect.verifySteps(["update"]);
 });
 
@@ -123,7 +123,7 @@ test("Can select all time", async function () {
     });
     expect.verifySteps([]);
     await contains("input").click();
-    await contains(".o-dropdown-item:not([data-id])").click();
+    await contains(".w-dropdown-item:not([data-id])").click();
     expect.verifySteps(["update"]);
 });
 

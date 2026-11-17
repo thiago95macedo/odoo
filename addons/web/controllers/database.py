@@ -154,7 +154,7 @@ def verify_access(master_pwd):
     weth.modules.db.verify_db_management_enabled()
     insecure = weth.tools.config.verify_admin_password('admin')
     if insecure and master_pwd:
-        # if the .odoorc admin password is "admin", use the provided
+        # if the .wethrc admin password is "admin", use the provided
         # master_pwd as new password.
         weth.tools.config.set_admin_password(master_pwd)
         weth.tools.config.save(['admin_passwd'])

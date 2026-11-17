@@ -14,7 +14,7 @@ submission provided by the `payment` module.
 ## Module history
 
 - `18.3`
-  - Integration with redirection flow. odoo/odoo#187404
+  - Integration with redirection flow. weth/weth#187404
 
 ## Testing instructions
 

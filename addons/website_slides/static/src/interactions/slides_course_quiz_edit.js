@@ -7,23 +7,23 @@ import { _t } from "@web/core/l10n/translation";
 import { markup } from "@weth/owl";
 
 export class WebsiteSlidesQuizEdit extends Interaction {
-    static selector = ".o_wslides_js_lesson_quiz";
+    static selector = ".w_wslides_js_lesson_quiz";
     dynamicContent = {
-        ".o_wslides_js_quiz_add": { "t-on-click": this.onCreateQuestionClick },
-        ".o_wslides_js_quiz_edit_question": { "t-on-click": this.onEditQuestionClick },
-        ".o_wslides_js_quiz_delete_question": { "t-on-click": this.onDeleteQuestionClick },
-        ".o_wslides_js_quiz_add_quiz": {
+        ".w_wslides_js_quiz_add": { "t-on-click": this.onCreateQuestionClick },
+        ".w_wslides_js_quiz_edit_question": { "t-on-click": this.onEditQuestionClick },
+        ".w_wslides_js_quiz_delete_question": { "t-on-click": this.onDeleteQuestionClick },
+        ".w_wslides_js_quiz_add_quiz": {
             "t-att-class": () => ({
                 "d-none": !this.showAddButton || this.quiz.questionCount,
             }),
         },
-        ".o_wslides_js_quiz_add_question": {
+        ".w_wslides_js_quiz_add_question": {
             "t-att-class": () => ({
                 "d-none": !this.showAddButton || !this.quiz.questionCount,
             }),
         },
-        ".o_wslides_js_lesson_quiz_question .o_wslides_js_quiz_edit_del,\
-        .o_wslides_js_lesson_quiz_question .o_wslides_js_quiz_sequence_handler": {
+        ".w_wslides_js_lesson_quiz_question .w_wslides_js_quiz_edit_del,\
+        .w_wslides_js_lesson_quiz_question .w_wslides_js_quiz_sequence_handler": {
             "t-att-class": () => ({ "d-none": !this.showEditOptions }),
         },
     };
@@ -59,8 +59,8 @@ export class WebsiteSlidesQuizEdit extends Interaction {
         this.bindedSortable = this.sortable
             .create({
                 ref: () => this.el,
-                handle: ".o_wslides_js_quiz_sequence_handler",
-                elements: ".o_wslides_js_lesson_quiz_question",
+                handle: ".w_wslides_js_quiz_sequence_handler",
+                elements: ".w_wslides_js_lesson_quiz_question",
                 onDrop: this.reorderQuestions.bind(this),
                 clone: false,
                 placeholderClasses: [
@@ -83,7 +83,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      */
     getQuestionsIds() {
         const questionIds = [];
-        for (const el of this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question")) {
+        for (const el of this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question")) {
             questionIds.push(Number(el.dataset.questionId));
         }
         return questionIds;
@@ -96,11 +96,11 @@ export class WebsiteSlidesQuizEdit extends Interaction {
     modifyQuestionsSequence() {
         let index = 1;
         for (const sequenceEl of this.el.querySelectorAll(
-            "span.o_wslides_quiz_question_sequence"
+            "span.w_wslides_quiz_question_sequence"
         )) {
             if (
-                sequenceEl.closest(".o_wslides_js_lesson_quiz_question") ||
-                sequenceEl.closest(".o_wslides_js_lesson_quiz_new_question")
+                sequenceEl.closest(".w_wslides_js_lesson_quiz_question") ||
+                sequenceEl.closest(".w_wslides_js_lesson_quiz_new_question")
             ) {
                 // is inside an existing question or new one
                 sequenceEl.textContent = index;
@@ -144,9 +144,9 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      */
     extractQuestionsAndAnswers() {
         const questions = [];
-        for (const questionEl of this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question")) {
+        for (const questionEl of this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question")) {
             const answers = [];
-            for (const answerEl of questionEl.querySelectorAll(".o_wslides_quiz_answer")) {
+            for (const answerEl of questionEl.querySelectorAll(".w_wslides_quiz_answer")) {
                 const answerData = answerEl.dataset;
                 answers.push({
                     id: Number(answerData.answerId),
@@ -205,7 +205,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      * question.
      */
     onCreateQuestionClick() {
-        const containerEl = this.el.querySelector(".o_wslides_js_lesson_quiz_new_question");
+        const containerEl = this.el.querySelector(".w_wslides_js_lesson_quiz_new_question");
         this.showAddButton = false;
         const destroy = this.mountComponent(containerEl, WebsiteSlidesCourseQuizQuestionForm, {
             question: {
@@ -213,7 +213,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
             },
             update: false,
             onSave: (renderedQuestion) => {
-                const questionEls = this.el.querySelectorAll(".o_wslides_js_lesson_quiz_question");
+                const questionEls = this.el.querySelectorAll(".w_wslides_js_lesson_quiz_question");
                 const lastQuestionEl = questionEls[questionEls.length - 1];
                 if (lastQuestionEl) {
                     insertHtmlContent(this, renderedQuestion, lastQuestionEl, "afterend");
@@ -245,7 +245,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      */
     getQuestionDetails(el) {
         const answers = [];
-        for (const answerEl of el.querySelectorAll(".o_wslides_quiz_answer")) {
+        for (const answerEl of el.querySelectorAll(".w_wslides_quiz_answer")) {
             const data = answerEl.dataset;
             answers.push({
                 id: Number(data.answerId),
@@ -257,7 +257,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
         const data = el.dataset;
         return {
             id: Number(data.questionId),
-            sequence: parseInt(el.querySelector(".o_wslides_quiz_question_sequence").textContent),
+            sequence: parseInt(el.querySelector(".w_wslides_quiz_question_sequence").textContent),
             text: data.title,
             answers,
         };
@@ -269,7 +269,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      * question as input.
      */
     onEditQuestionClick(ev) {
-        const editedQuestionEl = ev.currentTarget.closest(".o_wslides_js_lesson_quiz_question");
+        const editedQuestionEl = ev.currentTarget.closest(".w_wslides_js_lesson_quiz_question");
         const question = this.getQuestionDetails(editedQuestionEl);
         const destroy = this.mountComponent(
             editedQuestionEl,
@@ -298,7 +298,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
      * delete the Question and triggers an event to delete it from the UI.
      */
     onDeleteQuestionClick(ev) {
-        const question = ev.currentTarget.closest(".o_wslides_js_lesson_quiz_question");
+        const question = ev.currentTarget.closest(".w_wslides_js_lesson_quiz_question");
         const questionId = parseInt(question.dataset.questionId);
         this.dialog.add(ConfirmationDialog, {
             title: _t("Delete Question"),
@@ -314,14 +314,14 @@ export class WebsiteSlidesQuizEdit extends Interaction {
                 await this.waitFor(this.orm.unlink("slide.question", [questionId]));
                 this.el
                     .querySelector(
-                        `.o_wslides_js_lesson_quiz_question[data-question-id="${questionId}"]`
+                        `.w_wslides_js_lesson_quiz_question[data-question-id="${questionId}"]`
                     )
                     .remove();
                 this.quiz.questionCount--;
                 this.reorderQuestions();
                 if (
                     this.quiz.questionCount === 0 &&
-                    !this.el.querySelector(".o_wsildes_quiz_question_input")
+                    !this.el.querySelector(".w_wsildes_quiz_question_input")
                 ) {
                     this.showValidationInfo = false;
                 }

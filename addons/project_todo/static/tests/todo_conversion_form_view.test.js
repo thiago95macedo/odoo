@@ -65,7 +65,7 @@ test("Check that todo_conversion_form view focuses on the focus on the first ele
     });
 
     await contains(`.o_cp_action_menus .dropdown-toggle`).click();
-    await contains(".o-dropdown-item:contains('Convert to Task')").click();
+    await contains(".w-dropdown-item:contains('Convert to Task')").click();
     await animationFrame();
     expect(queryAll("div.o_todo_conversion_form_view input")[0]).toBeFocused({
         message: "The first element should be focused",

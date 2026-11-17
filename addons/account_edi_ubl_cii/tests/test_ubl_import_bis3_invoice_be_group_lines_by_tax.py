@@ -77,7 +77,7 @@ class TestUblImportBis3InvoiceBEGroupLinesByTax(TestUblImportBis3InvoiceBE):
     def test_import_invoice_group_lines_correct_tax_amount(self):
         self.percent_tax(21.0, type_tax_use='purchase')  # Create 21 % tax to make sure the import will find it
 
-        # This invoice tax amount computation by odoo is 9.07 while in the XML, the amount is 9.06
+        # This invoice tax amount computation by weth is 9.07 while in the XML, the amount is 9.06
         # The _correct_invoice_tax_amount method will update the tax amount to match the XML data
         invoice = self._import_invoice_as_attachment_on(
             test_name='test_import_invoice_group_lines_correct_tax_amount',

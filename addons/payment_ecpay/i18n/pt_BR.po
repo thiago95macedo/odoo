@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_ecpay/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "A payment provider covering the Taiwanese market."
 msgstr "Um provedor de pagamento que atende ao mercado taiwanês."
 
 #. module: payment_ecpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_ecpay/models/payment_transaction.py:0
 msgid ""
 "An error occurred (return code %(return_code)s; return message %"
@@ -88,7 +88,7 @@ msgid "ECPay Secure Hash Key"
 msgstr "Chave de hash seguro ECPay"
 
 #. module: payment_ecpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_ecpay/models/payment_provider.py:0
 msgid "ECPay only supports TWD."
 msgstr "O ECPay só oferece suporte a TWD."
@@ -155,7 +155,7 @@ msgid "Payment Transaction"
 msgstr "Transação de pagamento"
 
 #. module: payment_ecpay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_ecpay/models/payment_transaction.py:0
 msgid "Received data with missing return code."
 msgstr "Dados recebidos sem código de retorno."

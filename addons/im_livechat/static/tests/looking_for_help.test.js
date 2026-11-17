@@ -46,27 +46,27 @@ test("Show looking for help in the sidebar", async () => {
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
     await click("button:text('Help Needed')");
-    await contains(".o-mail-MessagingMenuItem:has(:text(bob))");
+    await contains(".w-mail-MessagingMenuItem:has(:text(bob))");
     await waitForChannels(["im_livechat.looking_for_help"]);
     await rpc("/im_livechat/session/update_status", {
         channel_id: bobChannelId,
         livechat_status: "in_progress",
     });
-    await contains(".o-mail-MessagingMenuItem:has(:text(bob))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text(bob))", { count: 0 });
     await rpc("/im_livechat/session/update_status", {
         channel_id: bobChannelId,
         livechat_status: "need_help",
     });
-    await click(".o-mail-NotificationItem:has(:text(bob))");
-    await contains(".o-mail-NotificationItem.o-active:has(:text(bob))");
+    await click(".w-mail-NotificationItem:has(:text(bob))");
+    await contains(".w-mail-NotificationItem.w-active:has(:text(bob))");
     await waitForChannels([`discuss.channel_${bobChannelId}`]);
     await rpc("/im_livechat/session/update_status", {
         channel_id: bobChannelId,
         livechat_status: "in_progress",
     });
-    await contains(".o-livechat-LivechatStatusSelection .o-inProgress.active");
+    await contains(".w-livechat-LivechatStatusSelection .w-inProgress.active");
     await click("button:text('All')");
-    await contains(".o-mail-MessagingMenuItem:has(:text(bob))");
+    await contains(".w-mail-MessagingMenuItem:has(:text(bob))");
 });
 
 test("Show join button when help is required and self is not a member", async () => {
@@ -87,12 +87,12 @@ test("Show join button when help is required and self is not a member", async ()
     });
     await start();
     await openDiscuss(channel);
-    await contains(".o-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
+    await contains(".w-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
     await click("button[name='join-channel']");
-    await contains(".o-livechat-LivechatStatusSelection .active", { text: "In progress" });
+    await contains(".w-livechat-LivechatStatusSelection .active", { text: "In progress" });
     await contains("button[name='join-livechat-needing-help']", { count: 0 });
-    await click(".o-livechat-LivechatStatusSelection button", { text: "Looking for help" });
-    await contains(".o-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
+    await click(".w-livechat-LivechatStatusSelection button", { text: "Looking for help" });
+    await contains(".w-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
     // Now that we are members, the button is not shown, even if help is required.
     await contains("button[name='join-channel']", { count: 0 });
 });
@@ -116,7 +116,7 @@ test("Show notification when joining a channel that already received help", asyn
         add: (message, options) => expect.step(`${options.type} - ${message}`),
     });
     await openDiscuss(channel);
-    await contains(".o-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
+    await contains(".w-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
     await click("button[name='join-channel']");
     expect.waitForSteps(["warning - Someone has already joined this conversation"]);
     await click("[title='Chat Actions']");
@@ -146,7 +146,7 @@ test("Hide 'help already received' notification when channel is not visible", as
         add: (message, options) => expect.step(`${options.type} - ${message}`),
     });
     await openDiscuss(channel);
-    await contains(".o-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
+    await contains(".w-livechat-LivechatStatusSelection .active", { text: "Looking for help" });
     await click("button[name='join-channel']");
     await tick();
     expect.waitForSteps(["warning - Someone has already joined this conversation"]);
@@ -196,9 +196,9 @@ test("Expertise matching hint is shown in the sidebar when chat is looking for h
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.LIVECHAT);
     await click("button:text('Help needed')");
-    await waitFor(".o-mail-MessagingMenuItem:has(:text(bob)) [title='Relevant to your expertise']");
-    await waitFor(".o-mail-MessagingMenuItem:has(:text(jane))");
+    await waitFor(".w-mail-MessagingMenuItem:has(:text(bob)) [title='Relevant to your expertise']");
+    await waitFor(".w-mail-MessagingMenuItem:has(:text(jane))");
     await waitFor(
-        ".o-mail-MessagingMenuItem:has(:text(jane)):not(:has([title='Relevant to your expertise']))"
+        ".w-mail-MessagingMenuItem:has(:text(jane)):not(:has([title='Relevant to your expertise']))"
     );
 });

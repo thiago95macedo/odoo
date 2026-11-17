@@ -23,20 +23,20 @@ msgid ""
 "Menu Principal WETH\n"
 "===================\n"
 "\n"
-"Adiciona uma tela inicial moderna ao Odoo Community com grade de aplicativos\n"
+"Adiciona uma tela inicial moderna ao WETH Community com grade de aplicativos\n"
 "e saudação personalizada, integrada à paleta corporativa da WETH Tecnologia.\n"
 msgstr ""
 "\n"
 "Menu Principal WETH\n"
 "===================\n"
 "\n"
-"Adiciona uma tela inicial moderna ao Odoo Community com grade de aplicativos\n"
+"Adiciona uma tela inicial moderna ao WETH Community com grade de aplicativos\n"
 "e saudação personalizada, integrada à paleta corporativa da WETH Tecnologia.\n"
 
 #. module: web_main_menu
 #: model:ir.module.module,summary:base.module_web_main_menu
-msgid "Grade de aplicativos e tela inicial moderna para Odoo Community."
-msgstr "Grade de aplicativos e tela inicial moderna para Odoo Community."
+msgid "Grade de aplicativos e tela inicial moderna para WETH Community."
+msgstr "Grade de aplicativos e tela inicial moderna para WETH Community."
 
 #. module: web_main_menu
 #: model:ir.model.fields,field_description:web_main_menu.field_res_users_settings__display_name
@@ -44,25 +44,25 @@ msgid "Nome para Exibição"
 msgstr "Nome para Exibição"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
 msgid "Bom dia, %(name)s"
 msgstr "Bom dia, %(name)s"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
 msgid "Boa tarde, %(name)s"
 msgstr "Boa tarde, %(name)s"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/main_menu/main_menu.js:0
 msgid "Boa noite, %(name)s"
 msgstr "Boa noite, %(name)s"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/navbar/navbar.xml:0
 msgid "Menu Principal"
 msgstr "Menu Principal"
@@ -80,13 +80,13 @@ msgid "Layout do Menu Principal"
 msgstr "Layout do Menu Principal"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/main_menu/main_menu_layout.js:0
 msgid "Nova seção"
 msgstr "Nova seção"
 
 #. module: web_main_menu
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/web_main_menu/static/src/main_menu/main_menu.xml:0
 msgid "Outros aplicativos"
 msgstr "Outros aplicativos"

@@ -23,7 +23,7 @@ function reapplyCollapseTransition() {
     `);
 }
 
-const ONE_ROW_HEIGHT = 32; // $o-hb-row-min-height (28px) + the row's 4px padding-top.
+const ONE_ROW_HEIGHT = 32; // $w-hb-row-min-height (28px) + the row's 4px padding-top.
 
 describe.current.tags("desktop");
 
@@ -46,13 +46,13 @@ test("show row tooltip", async () => {
     await contains(":iframe .test-options-target").click();
     expect(".options-container").toBeVisible();
     expect(".hb-row .text-nowrap").toHaveText("my label");
-    expect(".o-tooltip").not.toHaveCount();
+    expect(".w-tooltip").not.toHaveCount();
     await hover(".hb-row .text-nowrap");
     await advanceTime(OPEN_DELAY);
-    await waitFor(".o-tooltip");
-    expect(".o-tooltip").toHaveText("my tooltip");
+    await waitFor(".w-tooltip");
+    expect(".w-tooltip").toHaveText("my tooltip");
     await contains(":iframe .test-options-target").hover();
-    expect(".o-tooltip").not.toHaveCount();
+    expect(".w-tooltip").not.toHaveCount();
 });
 test("hide empty row and display row with content", async () => {
     addBuilderOption({

@@ -102,7 +102,7 @@ def init_logger():
             # will fire unless they're forcefully enabled in the config file
             conf['disable_existing_loggers'] = False
         logging.config.dictConfig(conf)
-        if not conf.get('keep_odoo_default', False):
+        if not conf.get('keep_weth_default', False):
             return
 
     # Normal Handler on stderr
@@ -168,7 +168,7 @@ def init_logger():
         # temporarily restore normal to skip useless stracktrace
         with mock.patch.object(warnings, "showwarning", showwarning):
             warnings.warn_explicit(
-                "The --syslog option is deprecated since Odoo 20, "
+                "The --syslog option is deprecated since WETH, "
                 "switch to --log-config and configure a syslog handler.",
                 category=DeprecationWarning,
                 filename='<argv>',

@@ -42,7 +42,7 @@ test("save on hiding tab", async () => {
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect('.o_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
+    expect('.w_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
     await fieldInput("name").edit("Mathiew Brown");
     await hideTab();
     expect.verifySteps(["save"]);
@@ -93,7 +93,7 @@ test("hiding tab while the form is loading", async () => {
     await hideTab();
     onchangeDeferred.resolve();
     await mountProm;
-    expect(".o_form_view").toHaveCount(1);
+    expect(".w_form_view").toHaveCount(1);
     expect.verifySteps([]);
 });
 
@@ -107,7 +107,7 @@ test("save only once when hiding tab several times quickly", async () => {
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect('.o_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
+    expect('.w_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
     await fieldInput("name").edit("Mathiew Brown");
     await hideTab();
     await hideTab();
@@ -128,19 +128,19 @@ test("hiding tab multiple times (server error)", async () => {
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("Mathiew Brown");
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("Mathiew Brown");
 
     // simulate a tab switch
     await hideTab();
-    await waitFor(".o_dialog");
-    expect(".o_dialog .modal-body").toHaveText("Cannot save");
+    await waitFor(".w_dialog");
+    expect(".w_dialog .modal-body").toHaveText("Cannot save");
     expect.verifySteps(["save"]);
     expect.verifyErrors(["Cannot save"]);
 
     // simulate another tab switch => should not try to save again
     await hideTab();
-    await waitFor(".o_dialog");
+    await waitFor(".w_dialog");
     expect.verifySteps([]);
     expect.verifyErrors([]);
 });
@@ -157,29 +157,29 @@ test("hiding tab multiple times (server error) + make another change", async () 
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("Mathiew Brown");
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("Mathiew Brown");
 
     // simulate a tab switch
     await hideTab();
-    await waitFor(".o_dialog");
-    expect(".o_dialog .modal-body").toHaveText("Cannot save");
+    await waitFor(".w_dialog");
+    expect(".w_dialog .modal-body").toHaveText("Cannot save");
     expect.verifySteps(["save"]);
     expect.verifyErrors(["Cannot save"]);
 
     // close the dialog and simulate another tab switch
-    await contains(".o_dialog .btn-primary").click();
-    expect(".o_dialog").toHaveCount(0);
+    await contains(".w_dialog .btn-primary").click();
+    expect(".w_dialog").toHaveCount(0);
     await hideTab();
     await animationFrame();
     expect.verifySteps([]);
     expect.verifyErrors([]);
 
     // make change and simulate another tab switch
-    await contains(".o_field_widget[name=name] input").edit("Mathiew Brown 2");
+    await contains(".w_field_widget[name=name] input").edit("Mathiew Brown 2");
     await hideTab();
-    await waitFor(".o_dialog");
-    expect(".o_dialog .modal-body").toHaveText("Cannot save");
+    await waitFor(".w_dialog");
+    expect(".w_dialog .modal-body").toHaveText("Cannot save");
     expect.verifySteps(["save"]);
     expect.verifyErrors(["Cannot save"]);
 });
@@ -194,19 +194,19 @@ test("hiding tab multiple times (invalid fields)", async () => {
         arch: `<form><field name="name" required="1"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("");
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("");
 
     // simulate a tab switch
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 
     // simulate another tab switch => should not display the notification again
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 });
 
@@ -220,19 +220,19 @@ test("hiding tab multiple times (invalid fields, without bluring)", async () => 
         arch: `<form><field name="name" required="1"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("", { confirm: false });
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("", { confirm: false });
 
     // simulate a tab switch
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 
     // simulate another tab switch => should not display the notification again
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 });
 
@@ -246,17 +246,17 @@ test("hiding tab multiple times (invalid field) + make another change", async ()
         arch: `<form><field name="name" required="1"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("");
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("");
 
     // simulate a tab switch
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 
     // make change and simulate another tab switch
-    await contains(".o_field_widget[name=name] input").edit("Jean-Claude Dusse");
+    await contains(".w_field_widget[name=name] input").edit("Jean-Claude Dusse");
     await hideTab();
     await animationFrame();
     expect.verifySteps(["save"]);
@@ -272,17 +272,17 @@ test("hiding tab multiple times (invalid field) + make another change (no blur)"
         arch: `<form><field name="name" required="1"/></form>`,
         resId: 1,
     });
-    expect(".o_field_widget[name=name] input").toHaveValue("Xavier Lancer");
-    await contains(".o_field_widget[name=name] input").edit("");
+    expect(".w_field_widget[name=name] input").toHaveValue("Xavier Lancer");
+    await contains(".w_field_widget[name=name] input").edit("");
 
     // simulate a tab switch
     await hideTab();
     await animationFrame();
-    expect(".o_notification").toHaveCount(1);
+    expect(".w_notification").toHaveCount(1);
     expect.verifySteps([]);
 
     // make change and simulate another tab switch
-    await contains(".o_field_widget[name=name] input").edit("Jean-Claude", { confirm: false });
+    await contains(".w_field_widget[name=name] input").edit("Jean-Claude", { confirm: false });
     await hideTab();
     await animationFrame();
     expect.verifySteps(["save"]);
@@ -319,24 +319,24 @@ test(`save when page changed`, async () => {
     });
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nXavier Lancer");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nXavier Lancer");
 
-    await contains(`.o_field_widget[name='name'] input`).edit("aaa");
-    await contains(`.o_pager button.o_pager_next`).click();
+    await contains(`.w_field_widget[name='name'] input`).edit("aaa");
+    await contains(`.w_pager button.w_pager_next`).click();
     expect.verifySteps(["web_save"]);
-    expect(`.o_form_editable`).toHaveCount(1);
-    expect(`.o_breadcrumb`).toHaveText("Partner\nKeth MacBeat");
-    expect(`.o_field_widget[name="name"] input`).toHaveValue("Keth MacBeat");
+    expect(`.w_form_editable`).toHaveCount(1);
+    expect(`.w_breadcrumb`).toHaveText("Partner\nKeth MacBeat");
+    expect(`.w_field_widget[name="name"] input`).toHaveValue("Keth MacBeat");
 
-    await contains(`.o_form_button_cancel`, { visible: false }).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nKeth MacBeat");
-    expect(`.o_field_widget[name="name"] input`).toHaveValue("Keth MacBeat");
+    await contains(`.w_form_button_cancel`, { visible: false }).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nKeth MacBeat");
+    expect(`.w_field_widget[name="name"] input`).toHaveValue("Keth MacBeat");
 
-    await contains(`.o_pager button.o_pager_previous`).click();
-    expect(`.o_form_saved`).toHaveCount(1);
-    expect(`.o_breadcrumb`).toHaveText("Partner\naaa");
-    expect(`.o_field_widget[name="name"] input`).toHaveValue("aaa");
+    await contains(`.w_pager button.w_pager_previous`).click();
+    expect(`.w_form_saved`).toHaveCount(1);
+    expect(`.w_breadcrumb`).toHaveText("Partner\naaa");
+    expect(`.w_field_widget[name="name"] input`).toHaveValue("aaa");
 });
 
 test.tags("desktop");
@@ -371,21 +371,21 @@ test(`save when breadcrumb clicked`, async () => {
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(`.o_field_cell:eq(0)`).toHaveText("Xavier Lancer");
+    expect(`.w_field_cell:eq(0)`).toHaveText("Xavier Lancer");
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nXavier Lancer");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nXavier Lancer");
 
-    await contains(`.o_field_widget[name='name'] input`).edit("aaa");
-    await contains(`.breadcrumb-item.o_back_button`).click();
+    await contains(`.w_field_widget[name='name'] input`).edit("aaa");
+    await contains(`.breadcrumb-item.w_back_button`).click();
     expect.verifySteps(["web_save"]);
-    expect(`.o_breadcrumb`).toHaveText("Partner");
-    expect(`.o_field_cell:eq(0)`).toHaveText("aaa");
+    expect(`.w_breadcrumb`).toHaveText("Partner");
+    expect(`.w_field_cell:eq(0)`).toHaveText("aaa");
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_form_editable`).toHaveCount(1);
-    expect(`.o_breadcrumb`).toHaveText("Partner\naaa");
-    expect('.o_field_widget[name="name"] input').toHaveValue("aaa");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_form_editable`).toHaveCount(1);
+    expect(`.w_breadcrumb`).toHaveText("Partner\naaa");
+    expect('.w_field_widget[name="name"] input').toHaveValue("aaa");
 });
 
 test.tags("desktop");
@@ -420,16 +420,16 @@ test(`save unblured char field when alt+B (breadcrumb back) pressed`, async () =
 
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    expect(`.o_field_cell:eq(0)`).toHaveText("Xavier Lancer");
+    expect(`.w_field_cell:eq(0)`).toHaveText("Xavier Lancer");
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nXavier Lancer");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nXavier Lancer");
 
-    await contains(`.o_field_widget[name='name'] input`).edit("aaa", { confirm: false });
+    await contains(`.w_field_widget[name='name'] input`).edit("aaa", { confirm: false });
     await press(["alt", "b"]);
-    await waitFor(".o_list_view");
-    expect(`.o_breadcrumb`).toHaveText("Partner");
-    expect(`.o_field_cell:eq(0)`).toHaveText("aaa");
+    await waitFor(".w_list_view");
+    expect(`.w_breadcrumb`).toHaveText("Partner");
+    expect(`.w_field_cell:eq(0)`).toHaveText("aaa");
     expect.verifySteps(["web_save"]);
 });
 
@@ -464,13 +464,13 @@ test(`error on save when breadcrumb clicked`, async () => {
     });
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
-    await contains(`.o_data_row td.o_data_cell`).click();
+    await contains(`.w_data_row td.w_data_cell`).click();
 
-    await contains(`.o_field_widget[name='name'] input`).edit("aaa");
-    await contains(`.breadcrumb-item.o_back_button`).click();
+    await contains(`.w_field_widget[name='name'] input`).edit("aaa");
+    await contains(`.breadcrumb-item.w_back_button`).click();
     expect.verifySteps(["web_save"]);
     await animationFrame();
-    expect(`.o_form_error_dialog`).toHaveCount(1);
+    expect(`.w_form_error_dialog`).toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -519,20 +519,20 @@ test(`save when action changed`, async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nXavier Lancer");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nXavier Lancer");
 
-    await contains(`.o_field_widget[name='name'] input`).edit("aaa");
+    await contains(`.w_field_widget[name='name'] input`).edit("aaa");
     await getService("action").doAction(2, { clearBreadcrumbs: true });
     expect.verifySteps(["web_save"]);
 
-    expect(`.o_breadcrumb`).toHaveText("Other action");
+    expect(`.w_breadcrumb`).toHaveText("Other action");
     await getService("action").doAction(1, { clearBreadcrumbs: true });
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_form_editable`).toHaveCount(1);
-    expect(`.o_breadcrumb`).toHaveText("Partner\naaa");
-    expect('.o_field_widget[name="name"] input').toHaveValue("aaa");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_form_editable`).toHaveCount(1);
+    expect(`.w_breadcrumb`).toHaveText("Partner\naaa");
+    expect('.w_field_widget[name="name"] input').toHaveValue("aaa");
 });
 
 test("save on closing tab/browser", async () => {
@@ -562,8 +562,8 @@ test("save on closing tab/browser", async () => {
         resId: 1,
     });
 
-    expect(`.o_field_widget[name="name"] input`).not.toHaveValue("test");
-    await contains(`.o_field_widget[name="name"] input`).edit("test");
+    expect(`.w_field_widget[name="name"] input`).not.toHaveValue("test");
+    await contains(`.w_field_widget[name="name"] input`).edit("test");
 
     const [event] = await unload();
     await sendBeaconDeferred?.promise;
@@ -574,7 +574,7 @@ test("save on closing tab/browser", async () => {
     // While it typically doesn't matter when leaving a page, an urgent save may get triggered
     // by a user action that remains on the page, e.g. opening a VoIP client (see opw 4308954).
     await animationFrame();
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(0);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(0);
 });
 
 test("save on closing tab/browser (sendBeacon fails)", async () => {
@@ -596,17 +596,17 @@ test("save on closing tab/browser (sendBeacon fails)", async () => {
         resId: 1,
     });
 
-    expect(`.o_field_widget[name="name"] input`).not.toHaveValue("test");
-    await contains(`.o_field_widget[name="name"] input`).edit("test");
+    expect(`.w_field_widget[name="name"] input`).not.toHaveValue("test");
+    await contains(`.w_field_widget[name="name"] input`).edit("test");
 
     const [event] = await unload();
     await animationFrame();
     expect.verifySteps(["sendBeacon"]);
     expect(event.defaultPrevented).toBe(true);
-    expect(`.o_notification`).toHaveCount(1);
+    expect(`.w_notification`).toHaveCount(1);
 
-    await contains(`.o_form_button_save`).click();
-    expect(`.o_notification`).toHaveCount(0);
+    await contains(`.w_form_button_save`).click();
+    expect(`.w_notification`).toHaveCount(0);
 });
 
 test("save on closing tab/browser (invalid field)", async () => {
@@ -625,12 +625,12 @@ test("save on closing tab/browser (invalid field)", async () => {
         `,
         resId: 1,
     });
-    await contains(`.o_field_widget[name="name"] input`).edit("");
+    await contains(`.w_field_widget[name="name"] input`).edit("");
     const [event] = await unload();
     await animationFrame();
     expect.verifySteps([]);
     expect(event.defaultPrevented).toBe(true);
-    expect(`.o_notification`).toHaveCount(1);
+    expect(`.w_notification`).toHaveCount(1);
 });
 
 test("save on closing tab/browser (not dirty)", async () => {
@@ -693,7 +693,7 @@ test("save on closing tab/browser (not dirty but trailing spaces)", async () => 
         resId: 1,
     });
     expect.verifySteps(["get_views", "web_read"]);
-    expect(`.o_field_widget[name=expertise] input`).toHaveValue("name with trailing spaces   ");
+    expect(`.w_field_widget[name=expertise] input`).toHaveValue("name with trailing spaces   ");
 
     await unload();
     await animationFrame();
@@ -718,7 +718,7 @@ test("save on closing tab/browser (not dirty) with text field", async () => {
         `,
         resId: 1,
     });
-    expect(`.o_field_widget[name=information] textarea`).toHaveValue("");
+    expect(`.w_field_widget[name=information] textarea`).toHaveValue("");
 
     await unload();
     await animationFrame();
@@ -755,11 +755,11 @@ test(`save on closing tab/browser (detached form)`, async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction(1);
 
-    await contains(`.o_data_row td.o_data_cell`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner\nXavier Lancer");
+    await contains(`.w_data_row td.w_data_cell`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner\nXavier Lancer");
 
-    await contains(`.o_back_button`).click();
-    expect(`.o_breadcrumb`).toHaveText("Partner");
+    await contains(`.w_back_button`).click();
+    expect(`.w_breadcrumb`).toHaveText("Partner");
 
     await unload();
     await animationFrame();
@@ -803,7 +803,7 @@ test("save on closing tab/browser (onchanges)", async () => {
         resId: 1,
     });
 
-    await contains(`.o_field_widget[name="expertise"] input`).edit("test", { confirm: "blur" });
+    await contains(`.w_field_widget[name="expertise"] input`).edit("test", { confirm: "blur" });
     await unload();
     await animationFrame();
     await sendBeaconDeferred?.promise;
@@ -845,8 +845,8 @@ test("save on closing tab/browser (onchanges 2)", async () => {
         resId: 1,
     });
 
-    await contains(`.o_field_widget[name="expertise"] input`).edit("test1", { confirm: "blur" });
-    await contains(`.o_field_widget[name="name"] input`).edit("test2", { confirm: "blur" });
+    await contains(`.w_field_widget[name="expertise"] input`).edit("test1", { confirm: "blur" });
+    await contains(`.w_field_widget[name="name"] input`).edit("test2", { confirm: "blur" });
 
     await unload();
     await animationFrame();
@@ -879,7 +879,7 @@ test("save on closing tab/browser (pending change)", async () => {
 
     // edit 'expertise' but do not focusout -> the model isn't aware of the change
     // until the 'beforeunload' event is triggered
-    await contains(`.o_field_widget[name="expertise"] input`).edit("test", { confirm: false });
+    await contains(`.w_field_widget[name="expertise"] input`).edit("test", { confirm: false });
     await unload();
     await animationFrame();
     await sendBeaconDeferred?.promise;
@@ -929,17 +929,17 @@ test("save on closing tab/browser (onchanges + pending change)", async () => {
     expect.verifySteps(["get_views", "web_read"]);
 
     // edit 'unformatted_name' and simulate a focusout (trigger the 'change' event)
-    await contains(`.o_field_widget[name="unformatted_name"] input`).edit("John Doe ", {
+    await contains(`.w_field_widget[name="unformatted_name"] input`).edit("John Doe ", {
         confirm: "blur",
     });
     expect.verifySteps(["onchange"]);
 
     // edit 'name' and simulate a focusout (trigger the 'change' event)
-    await contains(`.o_field_widget[name="name"] input`).edit("john doe", { confirm: "blur" });
+    await contains(`.w_field_widget[name="name"] input`).edit("john doe", { confirm: "blur" });
 
     // edit 'expertise' but do not focusout -> the model isn't aware of the change
     // until the 'beforeunload' event is triggered
-    await contains(`.o_field_widget[name="expertise"] input`).edit("test", { confirm: false });
+    await contains(`.w_field_widget[name="expertise"] input`).edit("test", { confirm: false });
 
     // trigger the 'beforeunload' event -> notifies the model directly and saves
     await unload();
@@ -964,7 +964,7 @@ test("save on closing tab/browser (invalid pending change)", async () => {
 
     // edit 'expertise' but do not focusout -> the model isn't aware of the change
     // until the 'beforeunload' event is triggered
-    await contains(`.o_field_widget[name="age"] input`).edit("invalid value", { confirm: false });
+    await contains(`.w_field_widget[name="age"] input`).edit("invalid value", { confirm: false });
     await unload();
     await animationFrame();
     expect.verifySteps([]);
@@ -997,10 +997,10 @@ test("save on closing tab/browser (onchanges + invalid field)", async () => {
     });
     expect.verifySteps(["get_views", "web_read"]);
 
-    await contains(`.o_field_widget[name="expertise"] input`).edit("test", { confirm: "blur" });
+    await contains(`.w_field_widget[name="expertise"] input`).edit("test", { confirm: "blur" });
     expect.verifySteps(["onchange"]);
 
-    await contains(`.o_field_widget[name="name"] input`).edit("", { confirm: "blur" });
+    await contains(`.w_field_widget[name="name"] input`).edit("", { confirm: "blur" });
     await unload();
     await animationFrame();
     expect.verifySteps([]);
@@ -1015,18 +1015,18 @@ test("save when action button clicked", async () => {
         actionMenus: {},
         resId: 1,
     });
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("Sales");
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("Sales");
 
-    await contains(`.o_field_widget[name='expertise'] input`).edit("test");
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("test");
+    await contains(`.w_field_widget[name='expertise'] input`).edit("test");
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("test");
 
-    await contains(`.o_cp_action_menus button`).click();
-    await contains(`.o-dropdown--menu .dropdown-item`).click();
+    await contains(`.w_cp_action_menus button`).click();
+    await contains(`.w-dropdown--menu .dropdown-item`).click();
     expect.verifySteps(["save"]);
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("test");
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("test");
 
-    await contains(`.o_pager_previous`).click();
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("test");
+    await contains(`.w_pager_previous`).click();
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("test");
 });
 
 test.tags("desktop");
@@ -1039,15 +1039,15 @@ test(`save when action button clicked on desktop`, async () => {
         resId: 1,
     });
 
-    await contains(`.o_field_widget[name='expertise'] input`).edit("test");
-    expect(`.o_pager_counter`).toHaveText("1 / 1");
+    await contains(`.w_field_widget[name='expertise'] input`).edit("test");
+    expect(`.w_pager_counter`).toHaveText("1 / 1");
 
-    await contains(`.o_cp_action_menus button`).click();
-    await contains(`.o-dropdown--menu .dropdown-item`).click();
-    expect(`.o_pager_counter`).toHaveText("2 / 2");
+    await contains(`.w_cp_action_menus button`).click();
+    await contains(`.w-dropdown--menu .dropdown-item`).click();
+    expect(`.w_pager_counter`).toHaveText("2 / 2");
 
-    await contains(`.o_pager_previous`).click();
-    expect(`.o_pager_counter`).toHaveText("1 / 2");
+    await contains(`.w_pager_previous`).click();
+    expect(`.w_pager_counter`).toHaveText("1 / 2");
 });
 
 test("error on save when action button clicked", async () => {
@@ -1063,12 +1063,12 @@ test("error on save when action button clicked", async () => {
         resId: 1,
     });
 
-    await contains(`.o_field_widget[name='expertise'] input`).edit("test");
-    await contains(`.o_cp_action_menus button`).click();
-    await contains(`.o-dropdown--menu .dropdown-item`).click();
+    await contains(`.w_field_widget[name='expertise'] input`).edit("test");
+    await contains(`.w_cp_action_menus button`).click();
+    await contains(`.w-dropdown--menu .dropdown-item`).click();
     expect.verifySteps(["save"]);
     await animationFrame();
-    expect(`.o_form_error_dialog`).toHaveCount(1);
+    expect(`.w_form_error_dialog`).toHaveCount(1);
 });
 
 test.tags("desktop");
@@ -1080,13 +1080,13 @@ test(`save when create button clicked`, async () => {
         arch: `<form><field name="expertise"/></form>`,
         resId: 1,
     });
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("Sales");
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("Sales");
 
-    await contains(`.o_field_widget[name='expertise'] input`).edit("test");
-    await contains(`.o_control_panel_main_buttons .o_form_button_create`).click();
+    await contains(`.w_field_widget[name='expertise'] input`).edit("test");
+    await contains(`.w_control_panel_main_buttons .w_form_button_create`).click();
     expect.verifySteps(["save"]);
-    expect(`.o_field_widget[name='expertise'] input`).toHaveValue("Marketing");
-    expect(`.o_breadcrumb .active`).toHaveText("New");
+    expect(`.w_field_widget[name='expertise'] input`).toHaveValue("Marketing");
+    expect(`.w_breadcrumb .active`).toHaveText("New");
 });
 
 test("error on save when create button clicked", async () => {
@@ -1102,11 +1102,11 @@ test("error on save when create button clicked", async () => {
         resId: 1,
     });
 
-    await contains(`.o_field_widget[name='expertise'] input`).edit("test");
-    await contains(`.o_form_button_create`).click();
+    await contains(`.w_field_widget[name='expertise'] input`).edit("test");
+    await contains(`.w_form_button_create`).click();
     expect.verifySteps(["save"]);
     await animationFrame();
-    expect(`.o_form_error_dialog`).toHaveCount(1);
+    expect(`.w_form_error_dialog`).toHaveCount(1);
 });
 
 test("doesn't autosave when in dialog (visibility change)", async () => {
@@ -1119,7 +1119,7 @@ test("doesn't autosave when in dialog (visibility change)", async () => {
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect('.o_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
+    expect('.w_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
     await fieldInput("name").edit("Mathiew Brown");
     await hideTab();
     expect.verifySteps([]);
@@ -1133,7 +1133,7 @@ test("doesn't autosave when in dialog (beacon)", async () => {
         arch: `<form><field name="name"/></form>`,
         resId: 1,
     });
-    expect('.o_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
+    expect('.w_field_widget[name="name"] input').toHaveValue("Xavier Lancer");
     await fieldInput("name").edit("Mathiew Brown");
     await unload();
     await animationFrame();
@@ -1184,10 +1184,10 @@ test(`doesn't autosave when a many2one search more is open (visibility change)`,
             `,
         resId: 1,
     });
-    await contains(`.o_field_many2one_selection .o-autocomplete--input`).click();
-    await contains(`.o_m2o_dropdown_option_search_more`).click();
+    await contains(`.w_field_many2one_selection .w-autocomplete--input`).click();
+    await contains(`.w_m2o_dropdown_option_search_more`).click();
     expect(`.modal`).toHaveCount(1);
-    await contains(`.o_create_button`).click();
+    await contains(`.w_create_button`).click();
     expect(`.modal`).toHaveCount(2);
     await hideTab();
     expect.verifySteps([]);
@@ -1222,17 +1222,17 @@ test(`doesn't autosave when a x2many is in openned (visibility change)`, async (
         resId: 1,
     });
     await fieldInput("expertise").edit("HR");
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
 
-    await contains(`.o-kanban-button-new`).click();
+    await contains(`.w-kanban-button-new`).click();
     expect(`.modal`).toHaveCount(1);
     await fieldInput("name").edit("Test McTest");
 
     await hideTab();
     await animationFrame();
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
     expect.verifySteps([]); // should not call web_save
-    await contains(`.o_form_button_save`).click();
+    await contains(`.w_form_button_save`).click();
     expect.verifySteps(["web_save"]);
 });
 
@@ -1265,22 +1265,22 @@ test(`doesn't autosave when a x2many is in openned (visibility change) 2`, async
         resId: 1,
     });
     await fieldInput("expertise").edit("HR");
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
 
-    await contains(`.o-kanban-button-new`).click();
+    await contains(`.w-kanban-button-new`).click();
     expect(`.modal`).toHaveCount(1);
     await fieldInput("name").edit("Test McTest");
 
     await hideTab();
     await animationFrame();
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(1);
     expect.verifySteps([]); // should not call web_save
-    await contains(`.o_dialog .o_form_button_cancel`).click();
+    await contains(`.w_dialog .w_form_button_cancel`).click();
     expect.verifySteps([]); // should not call web_save
 
     await hideTab();
     await animationFrame();
-    expect(`.o_form_status_indicator_buttons:not(.invisible)`).toHaveCount(0);
+    expect(`.w_form_status_indicator_buttons:not(.invisible)`).toHaveCount(0);
     expect.verifySteps(["web_save"]);
 });
 
@@ -1317,13 +1317,13 @@ test(`urgent save without changes preserves subsequent save commands`, async () 
         `,
     });
     await fieldInput("expertise").edit("SomethingElse");
-    expect(`span.o_tag`).toHaveCount(2);
+    expect(`span.w_tag`).toHaveCount(2);
     await unload();
     await animationFrame();
     await contains(`.oi[data-icon="close_small"]`).click();
-    expect(`span.o_tag`).toHaveCount(1);
-    await contains(`.o_form_button_save`).click();
-    expect(`span.o_tag`).toHaveCount(1);
+    expect(`span.w_tag`).toHaveCount(1);
+    await contains(`.w_form_button_save`).click();
+    expect(`span.w_tag`).toHaveCount(1);
     expect.verifySteps(["web_save", "web_save"]);
 });
 
@@ -1347,17 +1347,17 @@ test(`doesn't autosave while a x2many list row is being edited (visibility chang
         `,
         resId: 1,
     });
-    await contains(`.o_data_cell:eq(0)`).click();
-    expect(`.o_selected_row`).toHaveCount(1);
-    await contains(`.o_data_cell .o_field_widget[name=name] input`).edit("abc");
+    await contains(`.w_data_cell:eq(0)`).click();
+    expect(`.w_selected_row`).toHaveCount(1);
+    await contains(`.w_data_cell .w_field_widget[name=name] input`).edit("abc");
 
     await hideTab();
     // should not save while the row is in edition, or its edition would be lost
     expect.verifySteps([]);
-    expect(`.o_selected_row`).toHaveCount(1);
+    expect(`.w_selected_row`).toHaveCount(1);
 
-    await contains(`.o_form_view`).click();
-    expect(`.o_selected_row`).toHaveCount(0);
+    await contains(`.w_form_view`).click();
+    expect(`.w_selected_row`).toHaveCount(0);
 
     await hideTab();
     expect.verifySteps(["web_save"]);

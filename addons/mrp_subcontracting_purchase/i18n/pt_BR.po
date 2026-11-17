@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mrp_subcontracting_purchase/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -36,20 +36,20 @@ msgstr ""
 "Subcontração\n"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/mrp_production.py:0
 #, fuzzy
 msgid "%(name)s - Subcontracting"
 msgstr "%(name)s - Subcontratação"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_move.py:0
 msgid "%(value)s for %(quantity)s %(unit)s from %(production)s"
 msgstr "%(value)s para %(quantity)s %(unit)s de %(production)s"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "+ %d days"
 msgstr "+ %d dias"
@@ -80,7 +80,7 @@ msgid "Count of Subcontracting Resupply for component"
 msgstr "Contagem de reposições por subcontratação para componente"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "Days to Supply Components"
 msgstr "Dias para fornecer componentes"
@@ -140,7 +140,7 @@ msgid "MO Overview Report"
 msgstr "Relatório geral de OP"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "Manufacturing Lead Time"
 msgstr "Prazo de entrega da fabricação"
@@ -166,7 +166,7 @@ msgid "Product Variant"
 msgstr "Variante do produto"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "Production Start Date"
 msgstr "Data de início da produção"
@@ -183,13 +183,13 @@ msgid "Purchase and Subcontracting Management"
 msgstr "Gestão de compras e subcontratação"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "Receipt Date"
 msgstr "Data de recebimento"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_picking.py:0
 msgid "Source PO of %s"
 msgstr "Pedido de compra de origem de %s"
@@ -216,7 +216,7 @@ msgid "Transfer"
 msgstr "Transferir"
 
 #. module: mrp_subcontracting_purchase
-#. odoo-python
+#. weth-python
 #: code:addons/mrp_subcontracting_purchase/models/stock_rule.py:0
 msgid "Vendor Lead Time"
 msgstr "Prazo de entrega do fornecedor"

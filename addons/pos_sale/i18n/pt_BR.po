@@ -20,7 +20,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/pos_sale/pt_BR/>\n"
+"weth-20/pos_sale/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,19 +44,19 @@ msgstr ""
 "venda com mais facilidade.\n"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/sale_order.py:0
 msgid "%(line_description)s (Cancelled)"
 msgstr "%(line_description)s (Cancelado)"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/account_move.py:0
 msgid "%(old_name)s (Cancelled)"
 msgstr "%(old_name)s (Cancelado)"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/components/orderline/orderline.xml:0
 msgid "(tax incl.)"
 msgstr "(com impostos)"
@@ -67,19 +67,19 @@ msgid "<strong>Sale Order: </strong>"
 msgstr "<strong>Pedido de Venda: </strong>"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "A new order has been created."
 msgstr "Um novo pedido foi criado."
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Apply a down payment (fixed amount)"
 msgstr "Aplicar um pagamento de entrada (valor fixo)"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Apply a down payment (percentage)"
 msgstr "Aplicar um pagamento de entrada (porcentagem)"
@@ -144,7 +144,7 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Down Payment"
 msgstr "Pagamento de entrada"
@@ -162,7 +162,7 @@ msgid "Down Payment Product"
 msgstr "Produto de pagamento de entrada"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/sale_order.py:0
 msgid ""
 "Down payment (ref: %(order_reference)s on \n"
@@ -172,7 +172,7 @@ msgstr ""
 " %(date)s)"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Due balance: %s"
 msgstr "Saldo devedor: %s"
@@ -221,7 +221,7 @@ msgid "Link module between Point of Sale and Sales"
 msgstr "Módulo de vinculação entre Ponto de Venda e Vendas"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/sale_order.py:0
 msgid "Linked POS Orders"
 msgstr "Pedidos de PDV vinculados"
@@ -232,7 +232,7 @@ msgid "Linked Sale Order"
 msgstr "Pedido de venda vinculado"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/pos_order.py:0
 msgid "Linked Sale Orders"
 msgstr "Pedidos de venda vinculados"
@@ -314,14 +314,14 @@ msgid "Product"
 msgstr "Produto"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/components/screens/product_screen/control_buttons/control_buttons.js:0
 #: code:addons/pos_sale/static/src/app/components/screens/product_screen/control_buttons/control_buttons.xml:0
 msgid "Quotation / Order"
 msgstr "Cotação/Pedido"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/components/orderline/orderline.xml:0
 msgid "SO"
 msgstr "PV"
@@ -371,7 +371,7 @@ msgid "Sales are reported to the following sales team"
 msgstr "As vendas são reportadas à seguinte equipe de vendas"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Settle the order"
 msgstr "Pagar o pedido"
@@ -394,7 +394,7 @@ msgid ""
 msgstr "A taxa da moeda para a moeda da taxa aplicável na data do pedido"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "There is nothing left to settle on this sale order."
 msgstr "Não há nada restante para liquidar neste pedido de venda."
@@ -463,26 +463,26 @@ msgstr ""
 "                            para o PDV"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "Warning for %s"
 msgstr "Aviso para %s"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/services/pos_store.js:0
 msgid "What do you want to do?"
 msgstr "O que você deseja fazer?"
 
 #. module: pos_sale
-#. odoo-python
+#. weth-python
 #: code:addons/pos_sale/models/pos_order.py:0
 #: code:addons/pos_sale/models/sale_order.py:0
 msgid "id"
 msgstr "id"
 
 #. module: pos_sale
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/pos_sale/static/src/app/components/orderline/orderline.xml:0
 msgid "x"
 msgstr "x"

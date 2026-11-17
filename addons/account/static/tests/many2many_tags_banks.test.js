@@ -69,21 +69,21 @@ describe("many2many_tags_banks widget", () => {
         });
 
         // Verify tags are rendered
-        expect(".o_tag").toHaveCount(2);
+        expect(".w_tag").toHaveCount(2);
 
         // First tag: Bank A (allow_out_payment = true)
-        expect(".o_tag[data-tooltip='Bank A']").toHaveCount(1);
-        expect(".o_tag[data-tooltip='Bank A'] .oi[data-icon='security'].text-success").toHaveCount(
+        expect(".w_tag[data-tooltip='Bank A']").toHaveCount(1);
+        expect(".w_tag[data-tooltip='Bank A'] .oi[data-icon='security'].text-success").toHaveCount(
             1
         );
         expect(
-            ".o_tag[data-tooltip='Bank A'] .oi[data-icon='security'].text-success"
+            ".w_tag[data-tooltip='Bank A'] .oi[data-icon='security'].text-success"
         ).toHaveAttribute("data-tooltip", "Trusted");
 
         // Second tag: Bank B (allow_out_payment = false)
-        expect(".o_tag[data-tooltip='Bank B']").toHaveCount(1);
-        expect(".o_tag[data-tooltip='Bank B'] .oi[data-icon='error'].text-danger").toHaveCount(1);
-        expect(".o_tag[data-tooltip='Bank B'] .oi[data-icon='error'].text-danger").toHaveAttribute(
+        expect(".w_tag[data-tooltip='Bank B']").toHaveCount(1);
+        expect(".w_tag[data-tooltip='Bank B'] .oi[data-icon='error'].text-danger").toHaveCount(1);
+        expect(".w_tag[data-tooltip='Bank B'] .oi[data-icon='error'].text-danger").toHaveAttribute(
             "data-tooltip",
             "Untrusted"
         );
@@ -110,15 +110,15 @@ describe("many2many_tags_banks widget", () => {
             mode: "edit",
         });
 
-        expect(".o_tag").toHaveCount(2);
+        expect(".w_tag").toHaveCount(2);
 
         // Click delete on Bank A (id: 10)
-        await click(".o_tag[data-tooltip='Bank A'] a.o_delete");
+        await click(".w_tag[data-tooltip='Bank A'] a.w_delete");
         await runAllTimers();
 
         // Verify tag is removed from the UI
-        expect(".o_tag").toHaveCount(1);
-        expect(".o_tag[data-tooltip='Bank A']").toHaveCount(0);
+        expect(".w_tag").toHaveCount(1);
+        expect(".w_tag[data-tooltip='Bank A']").toHaveCount(0);
 
         // Verify update was called on the bank record with active: false
         expect(updateCalled).toBe(true);
@@ -152,8 +152,8 @@ describe("many2many_tags_banks widget", () => {
             mode: "edit",
         });
 
-        expect(".o_external_button").toHaveCount(1);
-        await click(".o_external_button");
+        expect(".w_external_button").toHaveCount(1);
+        await click(".w_external_button");
 
         expect.verifySteps(["doAction"]);
     });

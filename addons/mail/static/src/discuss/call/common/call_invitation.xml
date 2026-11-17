@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
     <t t-name="discuss.CallInvitation">
-        <div class="o-discuss-CallInvitation align-self-center o-rounded-bubble overflow-hidden shadow-sm" t-att-class="{'o-preview-open': this.state.showCameraPreview, 'o-chat': this.props.channel.channel_type === 'chat', 'border border-light': !this.store.isOdooWhiteTheme}">
+        <div class="o-discuss-CallInvitation align-self-center o-rounded-bubble overflow-hidden shadow-sm" t-att-class="{'o-preview-open': this.state.showCameraPreview, 'o-chat': this.props.channel.channel_type === 'chat', 'border border-light': !this.store.isWethWhiteTheme}">
             <div class="d-flex flex-colum d-flex flex-column">
                 <div class="o-discuss-CallInvitation-main" t-ref="this.root">
                     <div class="ms-1 position-relative d-flex justify-content-between p-2">

@@ -403,7 +403,7 @@ export class EmbeddedActionsPanel extends Component {
         useSortable({
             enable: true,
             ref: this.root,
-            elements: ".o_draggable",
+            elements: ".w_draggable",
             cursor: "move",
             delay: 200,
             tolerance: 10,

@@ -11,17 +11,19 @@
             border-radius: calc(.5 * var(--field-spacing-unit));
             border: 1px solid var(--o-field-box-border-color);
             padding: var(--field-spacing-unit) calc(1.5 * var(--field-spacing-unit));
-            background-color: #{$o-view-background-color};
+            background-color: #{$w-view-background-color};
 
             &:has(.o_field_widget.o_readonly_modifier):not(:has(.o_field_widget:not(.o_readonly_modifier))) {
                 background-color: var(--body-bg);
             }
+
             &:has(.o_field_invalid):not(:has(:focus-within)) {
                 --o-field-box-border-color: #{o-text-color('danger')};
-                background-color: #{$o-input-invalid-bg};
+                background-color: #{$w-input-invalid-bg};
             }
+
             &:focus-within {
-                --o-field-box-border-color: #{$o-action};
+                --o-field-box-border-color: #{$w-action};
             }
 
             .o_input {
@@ -29,7 +31,12 @@
                 border-width: 0;
             }
 
-            h1, h2, h3, h4, h5, h6 {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 all: unset;
             }
         }
@@ -43,7 +50,7 @@
             margin-bottom: calc(-1 * var(--body-font-size)) !important;
 
             // Hide the border of the adjacent sibling box that is under the label
-            background: linear-gradient(0deg, transparent 0%, $o-view-background-color 45%, $o-view-background-color 55%, transparent 100%);
+            background: linear-gradient(0deg, transparent 0%, $w-view-background-color 45%, $w-view-background-color 55%, transparent 100%);
 
             font-size: $font-size-sm !important;
             font-weight: $font-weight-normal;
@@ -62,14 +69,14 @@
             }
 
             sup {
-                color: $o-action !important;
+                color: $w-action !important;
                 position: static;
             }
         }
 
         // Subtotals are already visually grouped by the footer itself, no box needed
         .o_inner_group:not(.oe_subtotal_footer) {
-            :is(.o_cell,.o_cell_custom):not(.o_wrap_label):not(.o_no_box):not(:has(.o_outlined)) {
+            :is(.o_cell, .o_cell_custom):not(.o_wrap_label):not(.o_no_box):not(:has(.o_outlined)) {
                 @extend %-o-field-box;
 
                 .o_external_button,
@@ -101,7 +108,7 @@
                 }
 
                 &:has(+ .o_cell:focus-within) .o_form_label {
-                    color: $o-action;
+                    color: $w-action;
                 }
 
                 // For o_readonly_modifier input label
@@ -130,7 +137,7 @@
                     }
 
                     &:has(+ *:focus-within) {
-                        color: $o-action;
+                        color: $w-action;
                     }
                 }
             }
@@ -146,7 +153,8 @@
                 margin-inline: 0;
             }
 
-            &:is(h1, h2, h3, h4, h5, h6), :is(h1, h2, h3, h4, h5, h6) {
+            &:is(h1, h2, h3, h4, h5, h6),
+            :is(h1, h2, h3, h4, h5, h6) {
                 font-size: inherit;
             }
 

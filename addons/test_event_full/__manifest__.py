@@ -4,7 +4,7 @@
     'name': 'Test Full Event Flow',
     'category': 'Hidden/Tests',
     'description': """
-This module will test the main event flows of Odoo, both frontend and backend.
+This module will test the main event flows of WETH, both frontend and backend.
 It installs sale capabilities, front-end flow, eCommerce, questions and
 automatic lead generation, full Online support, ...
 """,

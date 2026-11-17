@@ -19,8 +19,8 @@ export class SettingsApp extends Component {
             if (el) {
                 const force =
                     this.state.search.value &&
-                    !el.querySelector(".o_settings_container:not(.d-none)") &&
-                    !el.querySelector(".o_setting_box.o_searchable_setting");
+                    !el.querySelector(".w_settings_container:not(.d-none)") &&
+                    !el.querySelector(".w_setting_box.w_searchable_setting");
                 el.classList.toggle("d-none", force);
             }
         };

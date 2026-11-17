@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 13:33+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_mass_mailing_sms/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgid "Newsletter Subscribe SMS Template"
 msgstr "Modelo de SMS para assinatura de boletim informativo"
 
 #. module: website_mass_mailing_sms
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_mass_mailing_sms/static/src/website_builder/newsletter_layout_option.xml:0
 msgid "SMS Subscription"
 msgstr "Inscrição por SMS"

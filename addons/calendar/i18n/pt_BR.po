@@ -11,7 +11,7 @@
 # "Maitê Dietze (madi)" <madi@weth.com.br>, 2025, 2026.
 # "Malaz Siddig Elsayed Abuidris (msea)" <msea@weth.com.br>, 2025.
 # Weblate <noreply-mt-weblate@weblate.org>, 2025.
-# Odoo Translation Bot <c3p@weth.com.br>, 2026.
+# WETH Translation Bot <c3p@weth.com.br>, 2026.
 # OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
@@ -21,7 +21,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/calendar/pt_BR/>\n"
+"weth-20/calendar/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,7 +62,7 @@ msgid "# Meetings"
 msgstr "Nº de reuniões"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid ""
 "%(date_start)s at %(time_start)s To\n"
@@ -72,75 +72,75 @@ msgstr ""
 " %(date_end)s às %(time_end)s (%(timezone)s)"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 msgid "%(date_start)s, %(time_start)s - %(date_stop)s, %(time_stop)s"
 msgstr "%(date_start)s, %(time_start)s - %(date_stop)s, %(time_stop)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 msgid "%(date_start)s, %(time_start)s - %(time_stop)s"
 msgstr "%(date_start)s, %(time_start)s - %(time_stop)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "%(day)s at (%(start)s To %(end)s) (%(timezone)s)"
 msgstr "%(day)s às (%(start)s até %(end)s) (%(timezone)s)"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 msgid "%(time_start)s - %(date_stop)s, %(time_stop)s"
 msgstr "%(time_start)s - %(date_stop)s, %(time_stop)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 msgid "%(time_start)s - %(time_stop)s"
 msgstr "%(time_start)s - %(time_stop)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_attendee.py:0
 msgid "%s has accepted the invitation"
 msgstr "%s aceitou o convite"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_attendee.py:0
 msgid "%s has declined the invitation"
 msgstr "%s não aceitou o convite"
 
 #. module: calendar
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/calendar/models/mail_activity.py:0
 #: code:addons/calendar/static/src/core/web/activity_patch.js:0
 msgid "%s others"
 msgstr "%s outros"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_model.js:0
 msgid "%s pending activities"
 msgstr "%s atividades pendentes"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.js:0
 msgid "(No Title)"
 msgstr "(Sem título)"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_filter_section.js:0
 msgid "+ Add guests"
 msgstr "+ Adicionar convidados"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover.xml:0
 msgid "...and"
 msgstr "...e"
@@ -286,7 +286,7 @@ msgid ""
 "                    <a t-att-href=\"object.event_id.videocall_location\" "
 "target=\"_blank\" style=\"color: #008f8c;\">\n"
 "                        <t t-if=\"object.event_id.videocall_source == "
-"'discuss'\">Odoo Discuss</t>\n"
+"'discuss'\">WETH Discuss</t>\n"
 "                        <t t-else=\"\">Video meeting</t>\n"
 "                    </a>\n"
 "                </td>\n"
@@ -493,7 +493,7 @@ msgid ""
 "                    <a t-att-href=\"object.event_id.videocall_location\" "
 "target=\"_blank\" style=\"color: #008f8c;\">\n"
 "                        <t t-if=\"object.get_base_url() in "
-"object.event_id.videocall_location\">Odoo Discuss</t>\n"
+"object.event_id.videocall_location\">WETH Discuss</t>\n"
 "                        <t t-else=\"\">Video meeting</t>\n"
 "                    </a>\n"
 "                </td>\n"
@@ -668,7 +668,7 @@ msgid ""
 "                    <a t-att-href=\"object.videocall_location\" "
 "target=\"_blank\" style=\"color: #008f8c;\">\n"
 "                        <t t-if=\"object.videocall_source == "
-"'discuss'\">Odoo Discuss</t>\n"
+"'discuss'\">WETH Discuss</t>\n"
 "                        <t t-else=\"\">Video meeting</t>\n"
 "                    </a>\n"
 "                </td>\n"
@@ -859,7 +859,7 @@ msgid ""
 "                    <a t-att-href=\"object.event_id.videocall_location\" "
 "target=\"_blank\" style=\"color: #008f8c;\">\n"
 "                        <t t-if=\"object.get_base_url() in "
-"object.event_id.videocall_location\">Odoo Discuss</t>\n"
+"object.event_id.videocall_location\">WETH Discuss</t>\n"
 "                        <t t-else=\"\">Video meeting</t>\n"
 "                    </a>\n"
 "                </td>\n"
@@ -1251,7 +1251,7 @@ msgstr ""
 "<strong>Salve</strong> esta página e retorne aqui para configurar o recurso."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_calendar.py:0
 msgid "A primary calendar cannot be deleted."
 msgstr "Um calendário principal não pode ser excluído."
@@ -1315,7 +1315,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover.xml:0
 #: model:ir.model.fields,field_description:calendar.field_calendar_event__activity_ids
 msgid "Activities"
@@ -1393,7 +1393,7 @@ msgid ""
 msgstr "Mensagem adicional que seria enviada com a notificação para o lembrete"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/core/web/activity_menu_patch.xml:0
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_form
 msgid "All Day"
@@ -1405,13 +1405,13 @@ msgid "All Day Duration"
 msgstr "Duração de um dia inteiro"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "All Day, %(day)s"
 msgstr "O dia todo, %(day)s"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "All calendars"
 msgstr "Todos os calendários"
@@ -1422,7 +1422,7 @@ msgid "All day"
 msgstr "Dia inteiro"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/ask_recurrence_update_policy_dialog.js:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event__recurrence_update__all_events
 msgid "All events"
@@ -1440,13 +1440,13 @@ msgid "Archive"
 msgstr "Arquivo"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Archive event"
 msgstr "Arquivar evento"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Archive events"
 msgstr "Eventos arquivados"
@@ -1468,7 +1468,7 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Are you sure you want to unsubscribe from this calendar?"
 msgstr "Tem certeza de que quer cancelar a inscrição neste calendário?"
@@ -1542,7 +1542,7 @@ msgid "Body content is the same as the template"
 msgstr "O conteúdo do corpo do texto é igual ao do modelo"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_attendee__availability__busy
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event__show_as__busy
@@ -1557,7 +1557,7 @@ msgid "By day"
 msgstr "Por dia"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_calendar.py:0
 #: model:ir.model.fields,field_description:calendar.field_calendar_event__calendar_id
 #: model:ir.model.fields,field_description:calendar.field_calendar_recurrence__calendar_id
@@ -1747,7 +1747,7 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/ask_recurrence_update_policy_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_form
 msgid "Confirm"
@@ -1760,19 +1760,19 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Contact Attendees"
 msgstr "Contatar participantes"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Contact Details"
 msgstr "Informações de contato"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/res_partner.py:0
 msgid "Contact created through Calendar sync."
 msgstr "Contato criado por meio da sincronização do Calendário."
@@ -1788,7 +1788,7 @@ msgid "Count"
 msgstr "Total"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Create Calendar"
 msgstr "Criar calendário"
@@ -1916,13 +1916,13 @@ msgid "Delete"
 msgstr "Excluir"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Delete event"
 msgstr "Excluir evento"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Delete events"
 msgstr "Excluir eventos"
@@ -1934,7 +1934,7 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/js/services/calendar_notification_service.js:0
 msgid "Details"
 msgstr "Detalhes"
@@ -2032,19 +2032,19 @@ msgid "EMAIL"
 msgstr "E-MAIL"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Edit Calendar"
 msgstr "Editar Calendário"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/ask_recurrence_update_policy_dialog.xml:0
 msgid "Edit Recurrent event"
 msgstr "Editar Evento Recorrente"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.xml:0
 msgid "Edit filter"
 msgstr "Editar filtro"
@@ -2153,49 +2153,49 @@ msgid "Events"
 msgstr "Eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Days"
 msgstr "A cada %(interval)s dias"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Days for %(count)s events"
 msgstr "A cada %(interval)s dias para %(count)s eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Days until %(until)s"
 msgstr "A cada %(interval)s dias até %(until)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Months day %(day)s"
 msgstr "A cada %(interval)s meses até %(day)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Months day %(day)s for %(count)s events"
 msgstr "A cada %(interval)s dias do mês até %(day)s para %(count)s eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Months day %(day)s until %(until)s"
 msgstr "A cada %(interval)s dias do mes %(day)s até %(until)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Months on the %(position)s %(weekday)s"
 msgstr "A cada %(interval)s meses na %(position)s %(weekday)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid ""
 "Every %(interval)s Months on the %(position)s %(weekday)s for %(count)s "
@@ -2204,50 +2204,50 @@ msgstr ""
 "A cada %(interval)s meses na %(position)s %(weekday)s para %(count)s eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid ""
 "Every %(interval)s Months on the %(position)s %(weekday)s until %(until)s"
 msgstr "A cada %(interval)s meses na %(position)s %(weekday)s até %(until)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Weeks on %(days)s"
 msgstr "A cada %(interval)s semanas no %(days)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Weeks on %(days)s for %(count)s events"
 msgstr "A cada %(interval)s semanas no %(days)s para %(count)s eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Weeks on %(days)s until %(until)s"
 msgstr "A cada %(interval)s semanas no %(days)s até %(until)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Years"
 msgstr "A cada %(interval)s anos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Years for %(count)s events"
 msgstr "A cada %(interval)s anos para %(count)s eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "Every %(interval)s Years until %(until)s"
 msgstr "A cada %(interval)s anos até %(until)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/mail_activity.py:0
 msgid "Feedback: %s"
 msgstr "Feedback: %s"
@@ -2264,7 +2264,7 @@ msgid "First"
 msgstr "Primeiro"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "First you have to specify the date of the invitation."
 msgstr "Especifique primeiro a data do convite."
@@ -2324,7 +2324,7 @@ msgid "Going?"
 msgstr "Vai?"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Google"
 msgstr "Google"
@@ -2430,7 +2430,7 @@ msgstr ""
 "está disponível durante esse período de tempo."
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid ""
 "If you are the only person using this calendar, all of its events will be "
@@ -2520,13 +2520,13 @@ msgid "Is the Organizer Alone"
 msgstr "O organizador está sozinho?"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/core/web/activity_patch.xml:0
 msgid "Join Meeting"
 msgstr "Participar da reunião"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Keep this calendar"
 msgstr "Mantenha este calendário"
@@ -2629,7 +2629,7 @@ msgid "Material Symbols icon e.g. checklist"
 msgstr "Ícone de símbolos de material, por exemplo, lista de verificação"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/common/attendee_calendar_common_popover.xml:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_attendee__state__tentative
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_form
@@ -2679,7 +2679,7 @@ msgid "Meeting linked"
 msgstr "Reunião vinculada"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/res_partner.py:0
 #: model:ir.actions.act_window,name:calendar.action_calendar_event
 #: model:ir.model.fields,field_description:calendar.field_res_partner__meeting_ids
@@ -2745,13 +2745,13 @@ msgid "Months"
 msgstr "Meses"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/calendar_form/calendar_event_quick_create.xml:0
 msgid "More Options"
 msgstr "Mais opções"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_search
 msgid "My Activities"
@@ -2763,7 +2763,7 @@ msgid "My Activity Deadline"
 msgstr "Prazo da Minha Atividade"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_model.js:0
 msgid "My Calendars"
 msgstr "Meus calendários"
@@ -2788,13 +2788,13 @@ msgid "Needs Action"
 msgstr "Requer ação"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "New"
 msgstr "Novo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "New Calendar"
 msgstr "Novo Calendário"
@@ -2825,7 +2825,7 @@ msgid "Next Activity Type"
 msgstr "Tipo da Próxima Atividade"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/res_partner.py:0
 #: model:ir.model.fields,field_description:calendar.field_res_partner__meeting_next_date
 #: model:ir.model.fields,field_description:calendar.field_res_users__meeting_next_date
@@ -2833,13 +2833,13 @@ msgid "Next Meeting"
 msgstr "Próxima reunião"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover_item.xml:0
 msgid "Next Week"
 msgstr "Próxima semana"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/common/attendee_calendar_common_popover.xml:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_attendee__state__declined
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_form
@@ -2852,7 +2852,7 @@ msgid "No I'm not going."
 msgstr "Não irei."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/res_partner.py:0
 msgid "No Meetings"
 msgstr "Sem reuniões"
@@ -2863,7 +2863,7 @@ msgid "No calendar"
 msgstr "Sem calendário"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee.xml:0
 msgid "No email"
 msgstr "Sem e-mail"
@@ -2922,7 +2922,7 @@ msgstr ""
 "Notificações enviadas a todos os participantes para lembrar da reunião."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm.py:0
 #: model:ir.model.fields,field_description:calendar.field_calendar_alarm__notify_responsible
 msgid "Notify Responsible"
@@ -2960,14 +2960,14 @@ msgid "Number of repetitions"
 msgstr "Número de repetições"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/js/services/calendar_notification_service.js:0
 msgid "OK"
 msgstr "OK"
 
 #. module: calendar
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 #: code:addons/calendar/static/src/core/web/activity_patch.xml:0
 msgid "Online"
@@ -2990,7 +2990,7 @@ msgid "Only internal users"
 msgstr "Somente usuários internos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_calendar.py:0
 msgid "Only the calendar owner can modify these fields: %(fields)s"
 msgstr ""
@@ -3025,7 +3025,7 @@ msgid "Options"
 msgstr "Opções"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Organized by"
 msgstr "Organizado por"
@@ -3037,7 +3037,7 @@ msgid "Organizer"
 msgstr "Organizador"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Outlook"
 msgstr "Outlook"
@@ -3072,7 +3072,7 @@ msgstr "Participantes"
 #. module: calendar
 #: model:ir.model.fields,help:calendar.field_calendar_event__partner_id
 msgid "Partner-related data of the user"
-msgstr "Dados do usuário no Odoo"
+msgstr "Dados do usuário no Weth"
 
 #. module: calendar
 #: model:ir.model.fields,help:calendar.field_calendar_event__privacy
@@ -3237,7 +3237,7 @@ msgid "Requested Action"
 msgstr "Ação solicitada"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover_item.xml:0
 msgid "Reschedule"
 msgstr "Remarcar"
@@ -3291,7 +3291,7 @@ msgid "Schedule employees' meetings"
 msgstr "Agente reuniões dos funcionários"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/core/web/messaging_menu_model_patch.js:0
 msgid "Schedule for later"
 msgstr "Agendar para mais tarde"
@@ -3302,7 +3302,7 @@ msgid "Scheduled by"
 msgstr "Agendado por"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/wizard/mail_activity_schedule.py:0
 msgid ""
 "Scheduling an activity using the calendar is not possible on more than one "
@@ -3466,7 +3466,7 @@ msgid "Stop"
 msgstr "Parar"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Stop Sync"
 msgstr "Interromper sincronização"
@@ -3496,19 +3496,19 @@ msgid "Sunday"
 msgstr "Domingo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Sync is paused"
 msgstr "A sincronização está pausada"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Sync unsuccessful"
 msgstr "Sincronização malsucedida"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Sync with"
 msgstr "Sincronizar com"
@@ -3524,7 +3524,7 @@ msgid "Synchronize your calendar with Outlook"
 msgstr "Sincronize seu calendário com o Outlook"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Syncing"
 msgstr "Sincronização"
@@ -3564,7 +3564,7 @@ msgid "The"
 msgstr "O"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_alarm_manager.py:0
 msgid "The %s reminder was sent"
 msgstr "O lembrete \" %s \" foi enviado"
@@ -3587,7 +3587,7 @@ msgid "The day must be between 1 and 31"
 msgstr "O dia deve estar entre 1 e 31"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid ""
 "The ending date and time cannot be earlier than the starting date and time.\n"
@@ -3598,7 +3598,7 @@ msgstr ""
 "A reunião \"%(name)s\" inicia às %(start_time)s e termina às %(end_time)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid ""
 "The ending date cannot be earlier than the starting date.\n"
@@ -3608,25 +3608,25 @@ msgstr ""
 "Reunião “%(name)s” inicia em %(start_date)s e termina às %(end_date)s"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "The interval cannot be negative."
 msgstr "O intervalo não pode ser negativo."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "The number of repetitions cannot be negative."
 msgstr "O número de repetições não pode ser negativo."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "There are no attendees on these events"
 msgstr "Não há participantes nesses eventos"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_user.py:0
 msgid "These fields cannot be modified: %(fields)s"
 msgstr "Esses campos não podem ser modificados: %(fields)s"
@@ -3638,7 +3638,7 @@ msgid "Third"
 msgstr "Terceiro"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/ask_recurrence_update_policy_dialog.js:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event__recurrence_update__future_events
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event_archive_or_unlink_wizard__recurrence_choice__future_events
@@ -3646,7 +3646,7 @@ msgid "This and following events"
 msgstr "Este e os eventos seguintes"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/ask_recurrence_update_policy_dialog.js:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event__recurrence_update__self_only
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_event_archive_or_unlink_wizard__recurrence_choice__self_only
@@ -3686,7 +3686,7 @@ msgid "Timezone used for displaying time in the mail template"
 msgstr "Fuso horário usado para exibir a hora no modelo de e-mail"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/core/web/activity_patch.xml:0
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover_item.xml:0
 msgid "Today"
@@ -3698,7 +3698,7 @@ msgid "Today Activities"
 msgstr "Atividades de Hoje"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover_item.xml:0
 msgid "Tomorrow"
 msgstr "Amanhã"
@@ -3709,7 +3709,7 @@ msgid "Trigger"
 msgstr "Disparo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_controller.xml:0
 msgid "Try again"
 msgstr "Tentar novamente"
@@ -3738,13 +3738,13 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo da atividade de exceção registrada."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "Unable to save the recurrence with \"This Event\""
 msgstr "Não foi possível salvar a recorrência com \"Este evento\""
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee.xml:0
 msgid "Unavailable"
 msgstr "Indisponível"
@@ -3765,7 +3765,7 @@ msgid "Unit"
 msgstr "Unidade"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Unsubscribe from calendar"
 msgstr "Cancelar inscrição no Calendário"
@@ -3777,7 +3777,7 @@ msgid "Until"
 msgstr "Até"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/res_users.py:0
 msgid "Upcoming Meetings"
 msgstr "Próximas reuniões"
@@ -3810,7 +3810,7 @@ msgid "User Settings"
 msgstr "Configurações do usuário"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "User default"
 msgstr "Padrão do usuário"
@@ -3831,13 +3831,13 @@ msgid "Videocall Source"
 msgstr "Origem da chamada de vídeo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/core/web/activity_patch.xml:0
 msgid "View"
 msgstr "Visualização"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover_item.xml:0
 #: model_terms:ir.ui.view,arch_db:calendar.message_meeting_activity_done
 msgid "View Meeting"
@@ -3849,7 +3849,7 @@ msgid "Visibility"
 msgstr "Visibilidade"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Warning"
 msgstr "Aviso"
@@ -3944,7 +3944,7 @@ msgid "Years"
 msgstr "Anos"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/common/attendee_calendar_common_popover.xml:0
 #: model:ir.model.fields.selection,name:calendar.selection__calendar_attendee__state__accepted
 #: model_terms:ir.ui.view,arch_db:calendar.view_calendar_event_form
@@ -3957,19 +3957,19 @@ msgid "Yes I'm going."
 msgstr "Sim, vou."
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Yes, delete this calendar"
 msgstr "Sim, exclua este Calendário"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/filter_section/attendee_calendar_calendar_filter_section.js:0
 msgid "Yes, unsubscribe"
 msgstr "Sim, cancelar inscrição"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_calendar.py:0
 msgid ""
 "You are not allowed to change the default privacy of a calendar you do not "
@@ -3979,45 +3979,45 @@ msgstr ""
 "calendário que não seja de sua propriedade."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "You can't update a recurrence without base event."
 msgstr "Não é possível atualizar uma recorrência sem o evento base."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_attendee.py:0
 msgid "You cannot duplicate a calendar attendee."
 msgstr "Não é possível duplicar um participante do calendário."
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_recurrence.py:0
 msgid "You have to choose at least one day in the week"
 msgstr "É necessário escolher ao menos um dia da semana"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/common/attendee_calendar_common_renderer.xml:0
 msgid "You're alone in this meeting"
 msgstr "Você está sozinho nesta reunião"
 
 #. module: calendar
-#. odoo-python
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 msgid "[Draft]"
 msgstr "[Rascunho]"
 
 #. module: calendar
-#. odoo-javascript
-#. odoo-python
+#. weth-javascript
+#. weth-python
 #: code:addons/calendar/models/calendar_event.py:0
 #: code:addons/calendar/static/src/views/attendee_calendar/attendee_calendar_model.js:0
 msgid "[Draft] %s"
 msgstr "[Rascunho] %s"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee_expandable.xml:0
 msgid "accepted"
 msgstr "aceito"
@@ -4029,13 +4029,13 @@ msgid "archive"
 msgstr "arquivo"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee_expandable.xml:0
 msgid "attendees"
 msgstr "participantes"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee_expandable.xml:0
 msgid "declined"
 msgstr "recusado"
@@ -4087,19 +4087,19 @@ msgid "guests"
 msgstr "convidados"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/attendee_calendar/activity/attendee_calendar_activity_list_popover.xml:0
 msgid "more"
 msgstr "mais"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee.xml:0
 msgid "this.props.placeholder"
 msgstr "this.props.placeholder"
 
 #. module: calendar
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/calendar/static/src/views/fields/many2many_attendee_expandable.xml:0
 msgid "uncertain"
 msgstr "incerto"
@@ -4260,7 +4260,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\">\n"
 #~ "                        <t t-if=\"object.event_id.videocall_source == "
-#~ "'discuss'\">Odoo Discuss</t>\n"
+#~ "'discuss'\">WETH Discuss</t>\n"
 #~ "                        <t t-else=\"\">Video meeting</t>\n"
 #~ "                    </a>\n"
 #~ "                </td>\n"
@@ -4487,7 +4487,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\"> \n"
 #~ "                       <t t-if=\"object.event_id.videocall_source == "
-#~ "'discuss'\"> Odoo Mensagens</t>\n"
+#~ "'discuss'\"> WETH Mensagens</t>\n"
 #~ "                        <t t-else=\"\">Reunião por vídeo</t>\n"
 #~ "                    </a>\n"
 #~ "               </td>\n"
@@ -4694,7 +4694,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\">\n"
 #~ "                        <t t-if=\"object.get_base_url() in "
-#~ "object.event_id.videocall_location\">Odoo Discuss</t>\n"
+#~ "object.event_id.videocall_location\">WETH Discuss</t>\n"
 #~ "                        <t t-else=\"\">Video meeting</t>\n"
 #~ "                    </a>\n"
 #~ "                </td>\n"
@@ -4902,7 +4902,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\"> \n"
 #~ "                       <t t-if=\"object.get_base_url() in "
-#~ "object.event_id.videocall_location\"> Odoo Mensagens</t>\n"
+#~ "object.event_id.videocall_location\"> WETH Mensagens</t>\n"
 #~ "                        <t t-else=\"\">Videoconferência</t>\n"
 #~ "                    </a>\n"
 #~ "               </td>\n"
@@ -5080,7 +5080,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\">\n"
 #~ "                        <t t-if=\"object.videocall_source == "
-#~ "'discuss'\">Odoo Discuss</t>\n"
+#~ "'discuss'\">WETH Discuss</t>\n"
 #~ "                        <t t-else=\"\">Video meeting</t>\n"
 #~ "                    </a>\n"
 #~ "                </td>\n"
@@ -5253,7 +5253,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\"> \n"
 #~ "                       <t t-if=\"object.videocall_source == 'discuss'\"> "
-#~ "Odoo Mensagens</t>\n"
+#~ "WETH Mensagens</t>\n"
 #~ "                        <t t-else=\"\">Videoconferência</t>\n"
 #~ "                    </a>\n"
 #~ "               </td>\n"
@@ -5443,7 +5443,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\">\n"
 #~ "                        <t t-if=\"object.get_base_url() in "
-#~ "object.event_id.videocall_location\">Odoo Discuss</t>\n"
+#~ "object.event_id.videocall_location\">WETH Discuss</t>\n"
 #~ "                        <t t-else=\"\">Video meeting</t>\n"
 #~ "                    </a>\n"
 #~ "                </td>\n"
@@ -5635,7 +5635,7 @@ msgstr "{{object.name}}: atualização de evento"
 #~ "                    <a t-att-href=\"object.event_id.videocall_location\" "
 #~ "target=\"_blank\" style=\"color: #008f8c;\"> \n"
 #~ "                       <t t-if=\"object.get_base_url() in "
-#~ "object.event_id.videocall_location\"> Odoo Mensagens</t>\n"
+#~ "object.event_id.videocall_location\"> WETH Mensagens</t>\n"
 #~ "                        <t t-else=\"\">Videoconferência</t>\n"
 #~ "                    </a>\n"
 #~ "               </td>\n"

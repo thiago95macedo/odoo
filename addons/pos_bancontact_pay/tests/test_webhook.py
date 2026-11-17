@@ -92,7 +92,7 @@ class TestWebhook(TestBancontactPay):
         """The order/payment may not have synced to the server yet by the time a
         legitimate callback arrives, so finding a matching pos.payment can never be
         a hard requirement - only the payment_method/config binding is. A callback
-        for a paymentId not (yet) known to Odoo, but with a properly configured
+        for a paymentId not (yet) known to WETH, but with a properly configured
         payment_method_id, must still be relayed."""
         payload = self._make_payload("not_yet_synced_bancontact_id", "SUCCEEDED")
         with self.mock_verify_signature(), self._notify_patcher() as mock_notify:

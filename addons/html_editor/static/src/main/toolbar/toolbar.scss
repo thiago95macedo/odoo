@@ -1,31 +1,33 @@
-.o-toolbar-above-keyboard {
+.w-toolbar-above-keyboard {
     position: fixed;
     width: 100%;
     z-index: 2000;
     bottom: 0;
 
-  .o-we-toolbar .btn-group, .o-we-toolbar-dropdown {
-      .btn {
-          height: 37px;
-      }
-  }
+    .w-we-toolbar .btn-group,
+    .w-we-toolbar-dropdown {
+        .btn {
+            height: 37px;
+        }
+    }
 }
-:has(.o_app_menu_sidebar, .o_bottom_sheet, .popover:not(.o_font_type_selector_menu, .o_font_size_selector_menu), .o-FileViewer) .o-toolbar-above-keyboard {
+
+:has(.o_app_menu_sidebar, .o_bottom_sheet, .popover:not(.o_font_type_selector_menu, .o_font_size_selector_menu), .w-FileViewer) .w-toolbar-above-keyboard {
     display: none;
 }
 
-.o-we-toolbar {
+.w-we-toolbar {
     height: 40px;
     padding: 0 2px;
     border-bottom: 1px solid lightgrey;
     background-color: #fff;
-    
+
     .btn-group {
         padding: 0 2px;
         border-radius: 0;
     }
 
-    .o-we-toolbar-vertical-separator:not(:first-child) {
+    .w-we-toolbar-vertical-separator:not(:first-child) {
         margin: unset;
         padding: unset;
         height: 70%;
@@ -33,13 +35,14 @@
     }
 }
 
-.o-we-toolbar .btn-group > .btn {
+.w-we-toolbar .btn-group>.btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.o-we-toolbar .btn-group, .o-we-toolbar-dropdown {
+.w-we-toolbar .btn-group,
+.w-we-toolbar-dropdown {
     .btn {
         white-space: nowrap;
         padding-left: 4px;
@@ -51,7 +54,7 @@
             border-top-left-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
         }
-        
+
         &:not(:last-child) {
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
@@ -70,6 +73,7 @@
         &.disabled {
             pointer-events: auto;
             cursor: auto;
+
             &:active {
                 border-color: var(--btn-disabled-border-color);
                 background-color: var(--btn-disabled-bg);
@@ -79,7 +83,7 @@
     }
 }
 
-.o-we-toolbar-dropdown {
+.w-we-toolbar-dropdown {
     min-width: fit-content;
     padding: 2px;
 
@@ -88,7 +92,7 @@
         justify-content: space-evenly;
     }
 
-    .o-dropdown-item {
+    .w-dropdown-item {
         display: flex;
         justify-content: center;
         align-items: center;

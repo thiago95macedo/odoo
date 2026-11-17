@@ -3,7 +3,7 @@ from collections import defaultdict
 
 from weth import api, fields, models
 from weth.tools import format_date, pdf
-from weth.tools.pdf import DependencyError, OdooPdfFileReader, OdooPdfFileWriter, PdfReadError
+from weth.tools.pdf import DependencyError, WethPdfFileReader, WethPdfFileWriter, PdfReadError
 
 
 class IrActionsReport(models.Model):
@@ -42,8 +42,8 @@ class IrActionsReport(models.Model):
                 # Add the attachments to the report
                 stream_id = len(expenses) == 1 and expenses.id
                 stream_list = [res[stream_id]['stream']]
-                expense_report = OdooPdfFileReader(stream_list[0], strict=False)
-                output_pdf = OdooPdfFileWriter()
+                expense_report = WethPdfFileReader(stream_list[0], strict=False)
+                output_pdf = WethPdfFileWriter()
                 output_pdf.append_pages_from_reader(expense_report)
                 for expense in expenses:
                     # Get the attachment render streams and attach it as a new page to the report stream, grouped by expenses
@@ -61,7 +61,7 @@ class IrActionsReport(models.Model):
                                 res_ids=expense.ids,
                             )
                             attachment_stream = attachment_prep_stream[expense.id]['stream']
-                        attachment_reader = OdooPdfFileReader(attachment_stream, strict=False)
+                        attachment_reader = WethPdfFileReader(attachment_stream, strict=False)
                         try:
                             output_pdf.append_pages_from_reader(attachment_reader)
                         except (PdfReadError, DependencyError) as e:

@@ -86,12 +86,12 @@ class Manager(Thread):
 
     @helpers.require_db
     def _send_all_devices(self, server_url=None):
-        """This method send IoT Box and devices information to Odoo database
+        """This method send IoT Box and devices information to WETH database
 
         As the server can be down or not started yet (in case of local testing),
         we retry to send the data several times with a delay between each attempt.
 
-        :param server_url: URL of the Odoo server (provided by decorator).
+        :param server_url: URL of the WETH server (provided by decorator).
         """
         iot_box = {
             "identifier": self.identifier,
@@ -146,17 +146,17 @@ class Manager(Thread):
                     )
 
     def run(self):
-        """Thread that will load interfaces and drivers and contact the odoo server
+        """Thread that will load interfaces and drivers and contact the weth server
         with the updates. It will also reconnect to the Wi-Fi if the connection is lost.
         """
         helpers.init_sentry()
-        _logger.info("==== Starting Odoo IoT Box Service ====")
+        _logger.info("==== Starting WETH IoT Box Service ====")
 
         wifi.reconnect(system.get_conf("wifi_ssid"), system.get_conf("wifi_password"))
 
         if system.IS_WINDOWS and not system.get_conf("http_interface", "options"):
             system.update_conf({"http_interface": "0.0.0.0"}, "options")
-            helpers.odoo_restart()
+            helpers.weth_restart()
 
         system.start_nginx_server()
         _logger.info(
@@ -165,7 +165,7 @@ class Manager(Thread):
         if system.IS_WINDOWS:
             _logger.info("Windows version: %s", platform.platform())
 
-        if helpers.get_odoo_server_url():
+        if helpers.get_weth_server_url():
             system.generate_password()
 
         certificate.ensure_validity()
@@ -186,7 +186,7 @@ class Manager(Thread):
             system.update_conf,
             {"actions": None, "general": None, "longpolling": None}, "devtools"
         )
-        # Odoo weekly code update
+        # WETH weekly code update
         weekday = upgrade.get_update_day(self.identifier)
         _logger.info("Scheduled weekly code update on %s", weekday)
         every = schedule.every()

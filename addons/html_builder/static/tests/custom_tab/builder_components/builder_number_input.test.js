@@ -358,8 +358,8 @@ describe("operations", () => {
         await fill("2");
         expect.verifySteps(["customAction 102"]);
         expect(":iframe .test-options-target").toHaveInnerHTML("102");
-        expect(".o-snippets-top-actions [data-icon='undo']").not.toBeEnabled();
-        expect(".o-snippets-top-actions [data-icon='redo']").not.toBeEnabled();
+        expect(".w-snippets-top-actions [data-icon='undo']").not.toBeEnabled();
+        expect(".w-snippets-top-actions [data-icon='redo']").not.toBeEnabled();
     });
     test("should commit changes", async () => {
         addBuilderAction({
@@ -390,8 +390,8 @@ describe("operations", () => {
         await click(document.body);
         await animationFrame();
         expect.verifySteps(["customAction 102"]);
-        expect(".o-snippets-top-actions [data-icon='undo']").toBeEnabled();
-        expect(".o-snippets-top-actions [data-icon='redo']").not.toBeEnabled();
+        expect(".w-snippets-top-actions [data-icon='undo']").toBeEnabled();
+        expect(".w-snippets-top-actions [data-icon='redo']").not.toBeEnabled();
     });
     test("should commit changes after an undo", async () => {
         addBuilderAction({
@@ -420,7 +420,7 @@ describe("operations", () => {
         await click(document.body);
         expect.verifySteps(["customAction 102", "customAction 102"]);
         await animationFrame();
-        click(".o-snippets-top-actions [data-icon='undo']");
+        click(".w-snippets-top-actions [data-icon='undo']");
         await animationFrame();
         expect(":iframe .test-options-target").toHaveInnerHTML("10");
         await click(".options-container input");
@@ -800,39 +800,39 @@ describe("unit & saveUnit", () => {
         await contains(":iframe .test-options-target").click();
         expect(".options-container").toBeDisplayed();
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         // Clear the input. Placeholder is appearing, units are hidden (already during preview)
         await click(".options-container input");
         await clear();
         await animationFrame();
-        expect(".options-container .o-hb-input-field-number .o-hb-input-field-unit").toHaveCount(0);
+        expect(".options-container .w-hb-input-field-number .w-hb-input-field-unit").toHaveCount(0);
 
         // Press enter. Action apply is called, units remain hidden
         await press("Enter");
         await animationFrame();
         expect.verifySteps(["customAction empty"]);
-        expect(".options-container .o-hb-input-field-number .o-hb-input-field-unit").toHaveCount(0);
+        expect(".options-container .w-hb-input-field-number .w-hb-input-field-unit").toHaveCount(0);
 
         // Enter "0". Since it is a number, units are displayed (already during preview)
         await press("0");
         await animationFrame();
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         // Append "x". Since "0x" is not a number, units are hidden (already during preview)
         await press("x");
         await animationFrame();
-        expect(".options-container .o-hb-input-field-number .o-hb-input-field-unit").toHaveCount(0);
+        expect(".options-container .w-hb-input-field-number .w-hb-input-field-unit").toHaveCount(0);
 
         // Enter again a valid number, units are displayed (already during preview)
         await clear();
         await fill("3");
         await animationFrame();
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         // Press enter. Action apply is called, units remain visible
@@ -840,13 +840,13 @@ describe("unit & saveUnit", () => {
         await animationFrame();
         expect.verifySteps(["customAction 3px"]);
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         // Click the button, which replaces the value with empty string. Units are hidden
         await click(".options-container button[data-action-id='customActionButton']");
         await animationFrame();
-        expect(".options-container .o-hb-input-field-number .o-hb-input-field-unit").toHaveCount(0);
+        expect(".options-container .w-hb-input-field-number .w-hb-input-field-unit").toHaveCount(0);
     });
     test("should never hide unit when has no placeholder", async () => {
         addBuilderAction({
@@ -873,7 +873,7 @@ describe("unit & saveUnit", () => {
         await contains(":iframe .test-options-target").click();
         expect(".options-container").toBeDisplayed();
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         await click(".options-container input");
@@ -882,7 +882,7 @@ describe("unit & saveUnit", () => {
         await animationFrame();
         expect.verifySteps(["customAction 0px"]);
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
 
         await click(".options-container input");
@@ -891,7 +891,7 @@ describe("unit & saveUnit", () => {
         await animationFrame();
         expect.verifySteps(["customAction 3px"]);
         expect(
-            ".options-container .o-hb-input-field-number .o-hb-input-field-unit"
+            ".options-container .w-hb-input-field-number .w-hb-input-field-unit"
         ).toBeDisplayed();
     });
 });

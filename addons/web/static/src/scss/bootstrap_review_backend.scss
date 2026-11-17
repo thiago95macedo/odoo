@@ -11,7 +11,7 @@
 .btn {
     --#{$variable-prefix}btn-disabled-border-color: transparent;
     --#{$prefix}btn-focus-box-shadow: #{$focus-ring-box-shadow};
-    --#{$prefix}gradient: #{$o-gradient-btn};
+    --#{$prefix}gradient: #{$w-gradient-btn};
 
     // Disable the gradient on `.btn-light` (except on hover/focus).
     &.btn-light:not(:hover, :focus-visible) {
@@ -19,13 +19,13 @@
     }
 }
 
-// 1. Render buttons defined in '$o-btns-bs-override' and '$o-btns-bs-outline-override'
+// 1. Render buttons defined in '$w-btns-bs-override' and '$w-btns-bs-outline-override'
 //    maps.
-@each $-name, $-value in $o-btns-bs-override {
+@each $-name, $-value in $w-btns-bs-override {
+
     .btn-#{$-name},
-    .btn-group > .btn-#{$-name} ~ .btn.dropdown-toggle-split {
-        @include button-variant(
-            o-safe-get($-value, background),
+    .btn-group>.btn-#{$-name}~.btn.dropdown-toggle-split {
+        @include button-variant(o-safe-get($-value, background),
             o-safe-get($-value, border),
             o-safe-get($-value, color),
             o-safe-get($-value, hover-background),
@@ -36,16 +36,15 @@
             o-safe-get($-value, active-color),
             o-safe-get($-value, disabled-background),
             o-safe-get($-value, disabled-border),
-            o-safe-get($-value, disabled-color)
-        );
+            o-safe-get($-value, disabled-color));
     }
 }
 
-@each $-name, $-value in $o-btns-bs-outline-override {
+@each $-name, $-value in $w-btns-bs-outline-override {
+
     .btn-outline-#{$-name},
-    .btn-group > .btn-outline-#{$-name} ~ .btn.dropdown-toggle-split {
-        @include button-variant(
-            o-safe-get($-value, background),
+    .btn-group>.btn-outline-#{$-name}~.btn.dropdown-toggle-split {
+        @include button-variant(o-safe-get($-value, background),
             o-safe-get($-value, border),
             o-safe-get($-value, color),
             o-safe-get($-value, hover-background),
@@ -56,15 +55,13 @@
             o-safe-get($-value, active-color),
             o-safe-get($-value, disabled-background),
             o-safe-get($-value, disabled-border),
-            o-safe-get($-value, disabled-color)
-        );
+            o-safe-get($-value, disabled-color));
     }
 }
 
-@each $-name, $-value in $o-btns-bs-override {
+@each $-name, $-value in $w-btns-bs-override {
     .btn-fill-#{$-name} {
-        @include button-variant(
-            o-safe-get($-value, background),
+        @include button-variant(o-safe-get($-value, background),
             o-safe-get($-value, border),
             o-safe-get($-value, color),
             o-safe-get($-value, hover-background),
@@ -80,24 +77,28 @@
 // 2. Render '$theme-colors' buttons excluding the ones already generated
 //    using the custom maps.
 @each $-name, $-color in $theme-colors {
-    @if (not map-get($o-btns-bs-override, $-name)) {
+    @if (not map-get($w-btns-bs-override, $-name)) {
+
         .btn-#{$-name},
-        .btn-group > .btn-#{$-name} ~ .btn.dropdown-toggle-split {
+        .btn-group>.btn-#{$-name}~.btn.dropdown-toggle-split {
             @include button-variant($-color, $-color);
         }
     }
-    @if (not map-get($o-btns-bs-outline-override, $-name)) {
+
+    @if (not map-get($w-btns-bs-outline-override, $-name)) {
+
         .btn-outline-#{$-name},
-        .btn-group > .btn-outline-#{$-name} ~ .btn.dropdown-toggle-split {
+        .btn-group>.btn-outline-#{$-name}~.btn.dropdown-toggle-split {
             @include button-outline-variant($-color);
         }
     }
 }
 
 // 3. Render custom buttons.
-@each $-name, $-color in $o-btn-custom {
+@each $-name, $-color in $w-btn-custom {
+
     .btn-#{$-name},
-    .btn-group > .btn-#{$-name} ~ .btn.dropdown-toggle-split {
+    .btn-group>.btn-#{$-name}~.btn.dropdown-toggle-split {
         @include button-variant($-color, $-color);
     }
 }
@@ -119,8 +120,8 @@
 // 1. To comply with WCAG standards, we need to use text-colors that are
 //    different from the ones in the '$theme-colors' map. We achieve this by
 //    creating a temporary map that overrides uncompliant colors with
-//    '$o-theme-text-colors' ones.
-$-o-theme-text-colors: map-merge($theme-colors, $o-theme-text-colors);
+//    '$w-theme-text-colors' ones.
+$-o-theme-text-colors: map-merge($theme-colors, $w-theme-text-colors);
 
 // 2. Use different colors for links and buttons when in conjunction with
 //    'text-x' classes to keep consistency with previous versions of Bootstrap.
@@ -137,9 +138,11 @@ $-o-theme-text-colors: map-merge($theme-colors, $o-theme-text-colors);
 .btn-link {
     font-weight: $btn-font-weight;
 
-    @each $-name, $-color in $-o-theme-text-colors{
-        &.btn-#{$-name}, &.text-#{$-name} {
-            @include o-btn-link-variant($o-main-text-color!important, o-text-color($-name) or $-color!important);
+    @each $-name, $-color in $-o-theme-text-colors {
+
+        &.btn-#{$-name},
+        &.text-#{$-name} {
+            @include o-btn-link-variant($w-main-text-color !important, o-text-color($-name) or $-color !important);
         }
     }
 }
@@ -168,19 +171,19 @@ $-o-theme-text-colors: null;
 //    black. We'll then extend placeholder rather than classes to avoid
 //    performance issues during SCSS compilation.
 %-text-white {
-    @include o-print-color($o-white, color, text-opacity);
+    @include o-print-color($w-white, color, text-opacity);
 }
 
 %-text-black {
-    @include o-print-color($o-black, color, text-opacity);
+    @include o-print-color($w-black, color, text-opacity);
 }
 
 %-bg-white {
-    @include o-print-color($o-white, background-color, bg-opacity);
+    @include o-print-color($w-white, background-color, bg-opacity);
 }
 
 %-bg-black {
-    @include o-print-color($o-black, background-color, bg-opacity);
+    @include o-print-color($w-black, background-color, bg-opacity);
 }
 
 .text-white {
@@ -199,7 +202,7 @@ $-o-theme-text-colors: null;
     @extend %-bg-black;
 }
 
-.bg-transparent{
+.bg-transparent {
     --bg-opacity: 0;
     @extend %-bg-black;
 }
@@ -208,7 +211,8 @@ $-o-theme-text-colors: null;
 //    don't specifically assign colors here, we just extend placeholder
 //    selectors. To control opacity we act on the '--X-opacity' Bootstrap
 //    default CSS variables.
-$-o-grayscale-opacities: map-remove($o-opacities, 0, 100);
+$-o-grayscale-opacities: map-remove($w-opacities, 0, 100);
+
 @each $-name, $-value in $-o-grayscale-opacities {
     .bg-white-#{$-name} {
         --bg-opacity: #{$-value};
@@ -237,14 +241,14 @@ $-o-grayscale-opacities: map-remove($o-opacities, 0, 100);
 $-o-grayscale-opacities: null;
 
 
-// Odoo custom text/bg colors classes generation
+// WETH custom text/bg colors classes generation
 // ============================================================================
 
-// 1. Extend odoo's custom colors maps adding Bootstrap's grays.
+// 1. Extend weth's custom colors maps adding Bootstrap's grays.
 //    Note: the card-body rule below needs those grays utilities to be defined
 //    before, so that the related o-bg-color text-muted rules work.
-$-o-text-colors-custom: map-merge($o-text-colors-custom, $o-grays);
-$-o-bg-colors-custom: map-merge($o-bg-colors-custom, $o-grays);
+$-o-text-colors-custom: map-merge($w-text-colors-custom, $w-grays);
+$-o-bg-colors-custom: map-merge($w-bg-colors-custom, $w-grays);
 
 // 2. Generate custom 'text-x' contextual classes
 @each $-name, $-color in $-o-text-colors-custom {
@@ -252,8 +256,10 @@ $-o-bg-colors-custom: map-merge($o-bg-colors-custom, $o-grays);
 }
 
 // 3. Generate custom 'bg-x' and 'text-bg-x' contextual classes
-@each $-name, $-color in map-merge($-o-bg-colors-custom, $o-grays) {
-    .bg-#{$-name}, .text-bg-#{$-name}  {
+@each $-name, $-color in map-merge($-o-bg-colors-custom, $w-grays) {
+
+    .bg-#{$-name},
+    .text-bg-#{$-name} {
         @include o-print-color($-color, background-color, bg-opacity);
     }
 
@@ -270,11 +276,13 @@ $-o-bg-colors-custom: null;
 //    contextual classes (eg. text-action). 'muted' is set as default text color,
 //    while the contextual-class color will be used on ':hover'.
 //    Note: the same is done above for the '$theme-colors'. Here on the
-//    '$o-text-colors-custom' because we don't want it to apply on the '$o-grays'.
+//    '$w-text-colors-custom' because we don't want it to apply on the '$w-grays'.
 .btn-link {
-    @each $-name, $-color in $o-text-colors-custom{
-        &.btn-#{$-name}, &.text-#{$-name} {
-            @include o-btn-link-variant($o-main-text-color!important, o-text-color($-name) or $-color!important);
+    @each $-name, $-color in $w-text-colors-custom {
+
+        &.btn-#{$-name},
+        &.text-#{$-name} {
+            @include o-btn-link-variant($w-main-text-color !important, o-text-color($-name) or $-color !important);
         }
     }
 }
@@ -303,55 +311,66 @@ $-o-bg-colors-custom: null;
 }
 
 @keyframes check-grow {
-    from { background-size: 0 0; }
-    to { background-size: 100% 100%; }
+    from {
+        background-size: 0 0;
+    }
+
+    to {
+        background-size: 100% 100%;
+    }
 }
 
 // Switches
 // ============================================================================
 .form-switch {
     .form-check-input:checked {
-        background-color: $o-success;
-        border-color: $o-success;
+        background-color: $w-success;
+        border-color: $w-success;
         animation: none;
     }
 
     .form-check-input:focus {
-        border-color: $o-success;
+        border-color: $w-success;
     }
 
     &:hover .form-check-input:not(:disabled) {
-        border-color: $o-success;
+        border-color: $w-success;
     }
 
     // Creating a different styling for toggle switches with a purpose of switching
     // from A to B (eg. switching between month and year) rather than ON/OFF.
     // The 'o_switch_toggle' class should be use in addition to the default
     // 'form-switch' Bootstrap class.
-    &.o_switch_toggle {
-        .form-check-input, .form-check-input:checked {
-            border-color: $o-action;
-            background-color: $o-view-background-color;
-            
-            &, &:focus, &:checked {
-                background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$o-action}'/></svg>"));
+    &.w_switch_toggle {
+
+        .form-check-input,
+        .form-check-input:checked {
+            border-color: $w-action;
+            background-color: $w-view-background-color;
+
+            &,
+            &:focus,
+            &:checked {
+                background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$w-action}'/></svg>"));
             }
         }
-        
+
         &:hover .form-check-input:not(:disabled) {
-            border-color: $o-action;
+            border-color: $w-action;
         }
     }
 
-    &:disabled, &.disabled, &[disabled] {
-        opacity: $o-opacity-disabled;
+    &:disabled,
+    &.disabled,
+    &[disabled] {
+        opacity: $w-opacity-disabled;
     }
 }
 
 // Switches
 // ============================================================================
 .table {
-    > :not(caption) > * > * {
+    > :not(caption)>*>* {
         color: unset;
     }
 }

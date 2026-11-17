@@ -235,17 +235,17 @@ export class PeerToPeer extends EventTarget {
         [STREAM_TYPE.CAMERA]: null,
     });
     _loggingFunctions = {
-        [LOG_LEVEL.DEBUG]: () => {},
-        [LOG_LEVEL.INFO]: () => {},
-        [LOG_LEVEL.WARN]: () => {},
-        [LOG_LEVEL.ERROR]: () => {},
+        [LOG_LEVEL.DEBUG]: () => { },
+        [LOG_LEVEL.INFO]: () => { },
+        [LOG_LEVEL.WARN]: () => { },
+        [LOG_LEVEL.ERROR]: () => { },
     };
     get isActive() {
         return Boolean(this.selfId !== undefined && this.channelId !== undefined);
     }
     /**
      * @param {object} [options]
-     * @param {String} [options.notificationRoute] the route used to communicate with the odoo server
+     * @param {String} [options.notificationRoute] the route used to communicate with the weth server
      * @param {LOG_LEVEL[keyof LOG_LEVEL]} [options.logLevel=LOG_LEVEL.NONE]
      * @param {boolean} [options.antiGlare=true] whether or not to use the rollback feature to manage offer collisions,
      *        ids provided for peers should be comparable for this feature to work.
@@ -608,10 +608,10 @@ export class PeerToPeer extends EventTarget {
             this.dispatchEvent(new CustomEvent("log", { detail: { id, level, message } }));
         };
         this._loggingFunctions = {
-            [LOG_LEVEL.DEBUG]: () => {},
-            [LOG_LEVEL.INFO]: () => {},
-            [LOG_LEVEL.WARN]: () => {},
-            [LOG_LEVEL.ERROR]: () => {},
+            [LOG_LEVEL.DEBUG]: () => { },
+            [LOG_LEVEL.INFO]: () => { },
+            [LOG_LEVEL.WARN]: () => { },
+            [LOG_LEVEL.ERROR]: () => { },
         };
         switch (logLevel) {
             case LOG_LEVEL.DEBUG:

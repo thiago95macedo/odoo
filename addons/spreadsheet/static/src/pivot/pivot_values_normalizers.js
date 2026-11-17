@@ -10,7 +10,7 @@ const { toString, toNumber } = helpers;
 const STRING_IDS = ["account.root"];
 
 /**
- * Add pivot normalizaton functions to support odoo specific fields
+ * Add pivot normalizaton functions to support weth specific fields
  * in spreadsheet
  */
 

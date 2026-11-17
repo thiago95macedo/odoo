@@ -26,7 +26,7 @@ test("persisted session", async () => {
     await start({
         authenticateAs: { ...pyEnv["mail.guest"].read(guestId)[0], _name: "mail.guest" },
     });
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
 });
 
 test("rule received in init", async () => {
@@ -47,5 +47,5 @@ test("rule received in init", async () => {
         },
     });
     await start({ authenticateAs: false, waitUntilSubscribe: false });
-    await contains(".o-mail-ChatWindow");
+    await contains(".w-mail-ChatWindow");
 });

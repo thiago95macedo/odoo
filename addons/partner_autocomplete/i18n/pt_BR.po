@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-11 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/partner_autocomplete/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgid "Auto-complete partner companies' data"
 msgstr "Preencher automaticamente os dados das empresas parceiras"
 
 #. module: partner_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/partner_autocomplete/static/src/xml/partner_autocomplete.xml:0
 msgid "Buy"
 msgstr "Comprar"
@@ -86,7 +86,7 @@ msgid "Enrich Done"
 msgstr "Enriquecimento realizado"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/res_partner.py:0
 msgid "Enrich notification"
 msgstr "Notificação de enriquecimento"
@@ -106,7 +106,7 @@ msgid "Insufficient credit"
 msgstr "Créditos insuficientes"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/res_partner.py:0
 msgid ""
 "It seems that we didn't found some information for the following partners: %s"
@@ -115,25 +115,25 @@ msgstr ""
 "%s"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/iap_autocomplete_api.py:0
 msgid "No account token"
 msgstr "Nenhum token de conta"
 
 #. module: partner_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_core.js:0
 msgid "Not enough credits for Partner Autocomplete"
 msgstr "Não há créditos suficientes para o preenchimento automático do usuário"
 
 #. module: partner_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/partner_autocomplete/static/src/xml/partner_autocomplete.xml:0
 msgid "Search Worldwide 🌎"
 msgstr "Pesquisar no mundo todo 🌎"
 
 #. module: partner_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_additional_identifiers_list.js:0
 #: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_fieldchar.js:0
 #: code:addons/partner_autocomplete/static/src/js/partner_autocomplete_many2one.js:0
@@ -141,25 +141,25 @@ msgid "Searching Autocomplete..."
 msgstr "Buscando para o preenchimento automático..."
 
 #. module: partner_autocomplete
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/partner_autocomplete/static/src/xml/partner_autocomplete.xml:0
 msgid "Set Your Account Token"
 msgstr "Definir o token de sua conta"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/res_partner.py:0
 msgid "Some errors occurred during the enrich: %s"
 msgstr "Ocorreram alguns erros durante o enriquecimento: %s"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/iap_autocomplete_api.py:0
 msgid "Test mode"
 msgstr "Modo de teste"
 
 #. module: partner_autocomplete
-#. odoo-python
+#. weth-python
 #: code:addons/partner_autocomplete/models/res_partner.py:0
 msgid "Unable to enrich company (no credit was consumed)."
 msgstr "Não foi possível enriquecer empresa (nenhum crédito foi consumido)."

@@ -86,7 +86,7 @@ test("should change the font family of a few characters", async () => {
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Default font");
     await click(".btn[name='font_family']");
     await waitFor(".o_font_family_selector_menu");
-    await click(".o_font_family_selector_menu .o-dropdown-item:nth-child(2)");
+    await click(".o_font_family_selector_menu .w-dropdown-item:nth-child(2)");
     await animationFrame();
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Arial");
     expect(getContent(el)).toBe(
@@ -99,7 +99,7 @@ test("should undo and redo the font family changes", async () => {
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Default font");
     await click(".btn[name='font_family']");
     await waitFor(".o_font_family_selector_menu");
-    await click(".o_font_family_selector_menu .o-dropdown-item:nth-child(2)");
+    await click(".o_font_family_selector_menu .w-dropdown-item:nth-child(2)");
     await animationFrame();
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Arial");
     await undo(editor);
@@ -130,7 +130,7 @@ test("should remove font family on the selected content using Default font famil
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Arial");
     await click(".btn[name='font_family']");
     await waitFor(".o_font_family_selector_menu");
-    await click(".o_font_family_selector_menu .o-dropdown-item:first-child");
+    await click(".o_font_family_selector_menu .w-dropdown-item:first-child");
     await animationFrame();
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Default font");
     expect(getContent(el)).toBe("<p>ab[cde]fg</p>");
@@ -143,7 +143,7 @@ test("should contain the 5 available font + default", async () => {
     await click(".btn[name='font_family']");
     await animationFrame();
     await waitFor(".o_font_family_selector_menu");
-    const items = document.querySelectorAll(".o_font_family_selector_menu .o-dropdown-item");
+    const items = document.querySelectorAll(".o_font_family_selector_menu .w-dropdown-item");
     expect(items.length).toBe(6);
     for (let i = 0; i < items.length; i++) {
         expect(items[i].textContent).toBe(
@@ -164,7 +164,7 @@ test("font-family dropdown item should have corresponding font-family applied", 
     await expandToolbar();
     await click(".btn[name='font_family']");
     await expectElementCount(".o_font_family_selector_menu", 1);
-    const items = document.querySelectorAll(".o_font_family_selector_menu .o-dropdown-item");
+    const items = document.querySelectorAll(".o_font_family_selector_menu .w-dropdown-item");
     for (let i = 0; i < items.length; i++) {
         expect(items[i].style.fontFamily).toBe(
             [
@@ -186,7 +186,7 @@ test("font-family should be preserved when replacing HTML element text", async (
     await click(".btn[name='font_family']");
     await expectElementCount(".o_font_family_selector_menu", 1);
 
-    await click(".o_font_family_selector_menu .o-dropdown-item:nth-child(2)");
+    await click(".o_font_family_selector_menu .w-dropdown-item:nth-child(2)");
     await animationFrame();
     expect(el).toBeFocused();
     expect(getContent(el)).toBe(
@@ -206,7 +206,7 @@ test("should update toolbar font family when applying and removing it on a colla
 
     await click(".btn[name='font_family']");
     await expectElementCount(".o_font_family_selector_menu", 1);
-    await click(".o_font_family_selector_menu .o-dropdown-item:nth-child(2)");
+    await click(".o_font_family_selector_menu .w-dropdown-item:nth-child(2)");
     await animationFrame();
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Arial");
     expect(getContent(el)).toBe(
@@ -219,7 +219,7 @@ test("should update toolbar font family when applying and removing it on a colla
 
     await click(".btn[name='font_family']");
     await expectElementCount(".o_font_family_selector_menu", 1);
-    await click(".o_font_family_selector_menu .o-dropdown-item:nth-child(2)");
+    await click(".o_font_family_selector_menu .w-dropdown-item:nth-child(2)");
     await animationFrame();
     expect(queryOne(".btn[name='font_family']").textContent).toBe("Arial");
 

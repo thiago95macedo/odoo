@@ -57,7 +57,7 @@ export function expectProductCardQty(productName, qty) {
 
 export async function checkOrderTotal(amount) {
     await waitFor(
-        `.o_self_product_list_page .o_self_shadow_bottom .o-so-tabular-nums:contains('${amount}')`
+        `.o_self_product_list_page .o_self_shadow_bottom .w-so-tabular-nums:contains('${amount}')`
     );
 }
 

@@ -1,5 +1,5 @@
 {
-    "name": "odoo-js-config",
+    "name": "weth-js-config",
     "version": "1.0.0",
     "description": "JS Config for better DX in javascript",
     "scripts": {

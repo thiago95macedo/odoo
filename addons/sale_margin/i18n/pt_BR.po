@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:38+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_margin/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: sale_margin
-#. odoo-python
+#. weth-python
 #: code:addons/sale_margin/models/sale_order_line.py:0
 msgid "If the cost is not 0, it is not possible to set the margin to 100%"
 msgstr "Se o custo não for 0, não é possível definir a margem como 100%"
@@ -96,13 +96,13 @@ msgid "Invoiced Qty"
 msgstr "Quantidade faturada"
 
 #. module: sale_margin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_margin/static/src/js/labeled_field_short_labels.js:0
 msgid "M%:"
 msgstr "M%:"
 
 #. module: sale_margin
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_margin/static/src/js/labeled_field_short_labels.js:0
 msgid "M:"
 msgstr "M:"
@@ -115,7 +115,7 @@ msgid "Margin"
 msgstr "Margem"
 
 #. module: sale_margin
-#. odoo-python
+#. weth-python
 #: code:addons/sale_margin/models/sale_order.py:0
 msgid "Margin (%(percent).0f%%)"
 msgstr "Margem (%(percent).0f%%)"

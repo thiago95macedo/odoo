@@ -136,7 +136,7 @@ _logger = logging.getLogger(__name__)
 
 class ModuleNode:
     """
-    Loading and upgrade info for an Odoo module
+    Loading and upgrade info for an WETH module
     """
     def __init__(self, name: str, module_graph: ModuleGraph) -> None:
         # manifest data
@@ -205,7 +205,7 @@ class ModuleNode:
 
 class ModuleGraph:
     """
-    Sorted Odoo modules ordered by (module.phase, module.depth, module.name)
+    Sorted WETH modules ordered by (module.phase, module.depth, module.name)
     """
 
     def __init__(self, cr: BaseCursor, mode: Literal['load', 'update'] = 'load') -> None:

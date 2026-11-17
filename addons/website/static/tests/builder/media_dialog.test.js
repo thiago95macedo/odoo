@@ -40,14 +40,14 @@ describe("Icon styles", () => {
     test("Use the icon font selected in the theme options", async () => {
         mockIconFontCustomization();
         await setupWebsiteBuilder(`<i class="oi" data-icon="search"/>`);
-        await contains(".o-snippets-tabs button[data-name=theme]").click();
+        await contains(".w-snippets-tabs button[data-name=theme]").click();
         await contains(".o_theme_tab [data-action-param='icon-font-family'][data-action-value='Material Symbols Sharp']").click();
         await dblclick(":iframe .oi");
         await waitFor(".font-icons-icons [data-icon='favorite']");
         expect(".font-icons-icons [data-icon='favorite']").toHaveStyle({ fontFamily: /Material Symbols Sharp/ });
-        // Odoo custom icons have their own font, whatever the selected variant.
-        expect(".font-icons-icons [data-icon^='oi_']").toHaveCount(null, { message: "Odoo custom icons are listed" });
-        expect(".font-icons-icons [data-icon^='oi_']").toHaveStyle({ fontFamily: /odoo_ui_icons/ });
+        // WETH custom icons have their own font, whatever the selected variant.
+        expect(".font-icons-icons [data-icon^='oi_']").toHaveCount(null, { message: "WETH custom icons are listed" });
+        expect(".font-icons-icons [data-icon^='oi_']").toHaveStyle({ fontFamily: /weth_ui_icons/ });
     });
 
     test("Icons use the outlined font with the default theme options", async () => {
@@ -55,7 +55,7 @@ describe("Icon styles", () => {
         await dblclick(":iframe .oi");
         await waitFor(".font-icons-icons [data-icon='favorite']");
         expect(".font-icons-icons [data-icon='favorite']").toHaveStyle({ fontFamily: /Material Symbols Outlined/ });
-        expect(".font-icons-icons [data-icon^='oi_']").toHaveStyle({ fontFamily: /odoo_ui_icons/ });
+        expect(".font-icons-icons [data-icon^='oi_']").toHaveStyle({ fontFamily: /weth_ui_icons/ });
     });
 });
 

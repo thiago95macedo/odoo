@@ -37,13 +37,13 @@ class ResUsers(models.Model):
     can_edit_role = fields.Boolean(compute="_compute_can_edit_role")
     notification_type = fields.Selection([
         ('email', 'By Emails'),
-        ('inbox', 'In Odoo')],
+        ('inbox', 'In Weth')],
         'Notification', required=True, default='email',
         compute='_compute_notification_type', inverse='_inverse_notification_type', store=True,
         user_writeable=True,
         help="How notifications for document messages and system updates are delivered:\n"
              "- By email: Notifications are sent to your email address.\n"
-             "- In Odoo: Notifications appear in your Odoo inbox.")
+             "- In Weth: Notifications appear in your WETH inbox.")
     presence_ids = fields.One2many("mail.presence", "user_id", groups="base.group_system")
     # OOO management
     out_of_office_from = fields.Datetime(user_writeable=True)
@@ -88,7 +88,7 @@ class ResUsers(models.Model):
 
     _notification_type = models.Constraint(
         "CHECK (notification_type = 'email' OR NOT share)",
-        'Only internal user can receive notifications in Odoo',
+        'Only internal user can receive notifications in Weth',
     )
 
     @api.depends('share', 'all_group_ids')
@@ -449,10 +449,10 @@ class ResUsers(models.Model):
 
     def _store_init_global_fields(self, res: Store.FieldList):
         xmlid_to_res_id = self.env["ir.model.data"]._xmlid_to_res_id
-        # sudo: res.partner - exposing OdooBot data is considered acceptable
-        odoobot = self.env.ref("base.partner_root").sudo()
+        # sudo: res.partner - exposing WethBot data is considered acceptable
+        wethbot = self.env.ref("base.partner_root").sudo()
         if not self._is_public():
-            odoobot = odoobot.with_prefetch((odoobot + self.partner_id).ids)
+            wethbot = wethbot.with_prefetch((wethbot + self.partner_id).ids)
         res.attr("action_discuss_id", xmlid_to_res_id("mail.action_discuss"))
         res.attr("emailActivityTypeId", xmlid_to_res_id("mail.mail_activity_data_email"))
         res.attr("hasLinkPreviewFeature", self.env["mail.link.preview"]._is_link_preview_enabled())
@@ -460,7 +460,7 @@ class ResUsers(models.Model):
         res.attr("mt_comment", xmlid_to_res_id("mail.mt_comment"))
         res.attr("mt_important_notification", xmlid_to_res_id("mail.mt_important_notification"))
         res.attr("mt_note", xmlid_to_res_id("mail.mt_note"))
-        res.one("odoobot", "_store_partner_fields", value=odoobot)
+        res.one("wethbot", "_store_partner_fields", value=wethbot)
         if not self._is_public():
             res.one("self_user", "_store_init_fields", value=self)
         if guest := self.env["mail.guest"]._get_guest_from_context():

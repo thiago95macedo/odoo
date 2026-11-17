@@ -355,10 +355,10 @@ describe("inline code", () => {
     });
 
     test.tags("desktop");
-    test("should not open the odoo global command bar when pressing ctrl+k inside a inline code element", async () => {
+    test("should not open the weth global command bar when pressing ctrl+k inside a inline code element", async () => {
         await setupEditor(`<p><code class="o_inline_code">[test]</code></p>`);
 
-        // Pressing ctrl+k to open odoo global command bar
+        // Pressing ctrl+k to open weth global command bar
         await press(["ctrl", "k"]);
         await animationFrame();
         expect('.o_command span[title="Create link"]').toHaveCount(0);

@@ -26,7 +26,7 @@ class TestWebsocketController(HttpCase, BusCase):
         presence_notif, self_notif = self.make_jsonrpc_request(
             "/websocket/peek_notifications",
             {
-                "channels": [f"odoo-presence-res.users_{test_user.id}"],
+                "channels": [f"weth-presence-res.users_{test_user.id}"],
                 "last": initial_last_id,
                 "is_first_poll": True,
             },
@@ -55,7 +55,7 @@ class TestWebsocketController(HttpCase, BusCase):
     @freeze_time("2026-03-03", as_kwarg='clock')
     def test_do_not_rotate_session_when_updating_presence(self, clock):
         self.authenticate('admin', 'admin')
-        self.url_open('/odoo').raise_for_status()
+        self.url_open('/weth').raise_for_status()
         original_session = self.opener.cookies['session_id']
 
         clock.tick(SESSION_ROTATION_INTERVAL + 1)
@@ -71,6 +71,6 @@ class TestWebsocketController(HttpCase, BusCase):
             "Session rotation must not occur at the websocket routes "
             "that are re-exposed on HTTP for convenience.")
 
-        self.url_open('/odoo').raise_for_status()
+        self.url_open('/weth').raise_for_status()
         self.assertNotEqual(self.opener.cookies['session_id'], original_session,
             "Session rotation should occur with other URLs.")

@@ -31,7 +31,7 @@ _logger = logging.getLogger(__name__)
 
 VERSION_RE = re.compile(
     r"""^
-        # Optional prefix with Odoo version
+        # Optional prefix with WETH version
         ((
             6\.1|
 
@@ -48,7 +48,7 @@ VERSION_RE = re.compile(
             # FIXME handle version >= saas~100 (expected in year 2106)
             saas~(1[1-9]|[2-9]\d+)\.[1-9]
         )\.)?
-        # After Odoo version we allow precisely 2 or 3 parts
+        # After WETH version we allow precisely 2 or 3 parts
         # note this will also allow 0.0.0 which has a special meaning
         \d+\.\d+(\.\d+)?
     $""",
@@ -202,7 +202,7 @@ class MigrationManager:
             majorless_version = (version != full_version)
 
             if majorless_version:
-                # We should not re-execute major-less scripts when upgrading to new Odoo version
+                # We should not re-execute major-less scripts when upgrading to new WETH version
                 # a module in `9.0.2.0` should not re-execute a `2.0` script when upgrading to `10.0.2.0`.
                 # In which case we must compare just the module version
                 return parsed_installed_version[2:] < parse_version(full_version)[2:] <= current_version[2:]

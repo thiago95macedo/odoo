@@ -106,7 +106,7 @@ class PaymentTransaction(models.Model):
             self._try_post_process()
         elif tx_status in const.TRANSACTION_STATUS_MAPPING["refunded"]:
             # The payment has been refunded from Authorize.net side before we could refund it. We
-            # create a refund tx on Odoo to reflect the move of the funds.
+            # create a refund tx on WETH to reflect the move of the funds.
             self.with_context(
                 payment_safe_write=True  # The API call is idempotent
             )._set_done()

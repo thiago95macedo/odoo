@@ -102,15 +102,15 @@ describe("parseSearchQuery", () => {
 
 describe("stateToUrl", () => {
     test("encodes URI compatible strings", (assert) => {
-        expect(router.stateToUrl({})).toBe("/odoo");
-        expect(router.stateToUrl({ a: "11", b: "summer wine" })).toBe("/odoo?a=11&b=summer%20wine");
+        expect(router.stateToUrl({})).toBe("/weth");
+        expect(router.stateToUrl({ a: "11", b: "summer wine" })).toBe("/weth?a=11&b=summer%20wine");
         expect(router.stateToUrl({ b: "2", c: "", e: "kloug,gloubi" })).toBe(
-            "/odoo?b=2&c=&e=kloug%2Cgloubi"
+            "/weth?b=2&c=&e=kloug%2Cgloubi"
         );
     });
 
     test("backwards compatibility: no action stack, action encoded in path", (assert) => {
-        expect(router.stateToUrl({})).toBe("/odoo");
+        expect(router.stateToUrl({})).toBe("/weth");
         // action
         expect(router.stateToUrl({ action: "some-path" })).toBe("/weth/some-path");
         expect(router.stateToUrl({ active_id: 5, action: "some-path" })).toBe("/weth/5/some-path");
@@ -173,7 +173,7 @@ describe("stateToUrl", () => {
     });
 
     test("actionStack: one action", () => {
-        expect(router.stateToUrl({ actionStack: [] })).toBe("/odoo");
+        expect(router.stateToUrl({ actionStack: [] })).toBe("/weth");
         // action
         expect(router.stateToUrl({ actionStack: [{ action: "some-path" }] })).toBe(
             "/weth/some-path"
@@ -899,11 +899,11 @@ describe("stateToUrl", () => {
 
 describe("urlToState", () => {
     test("deserialize queryString", () => {
-        expect(_urlToState("/odoo?a=11&g=summer%20wine")).toEqual({
+        expect(_urlToState("/weth?a=11&g=summer%20wine")).toEqual({
             a: 11,
             g: "summer wine",
         });
-        expect(_urlToState("/odoo?g=2&c=&e=kloug%2Cgloubi")).toEqual({
+        expect(_urlToState("/weth?g=2&c=&e=kloug%2Cgloubi")).toEqual({
             g: 2,
             c: "",
             e: "kloug,gloubi",
@@ -949,7 +949,7 @@ describe("urlToState", () => {
 
     test("deserialize single action", () => {
         expect(_urlToState("")).toEqual({});
-        expect(_urlToState("/odoo")).toEqual({});
+        expect(_urlToState("/weth")).toEqual({});
         // action
         expect(_urlToState("/weth/some-path")).toEqual({
             action: "some-path",
@@ -1529,7 +1529,7 @@ describe("pushState", () => {
     });
 
     test("the cache key is locked (rpc cache disabling survives navigation)", async () => {
-        redirect("/odoo?cache=0");
+        redirect("/weth?cache=0");
         createRouter();
         expect(router.current).toEqual({ cache: 0 });
 
@@ -1552,7 +1552,7 @@ describe("pushState", () => {
     });
 
     test("undefined keys are not pushed", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         const onPushState = () => expect.step("pushed state");
         createRouter({ onPushState });
 
@@ -1645,10 +1645,10 @@ describe("pushState", () => {
         router.pushState({ k1: 2, k2: 3 });
         await tick();
         expect(router.current).toEqual({ k1: 2, k2: 3 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k2=3");
+        expect(location.href).toBe("https://www.hoot.test/weth?k2=3");
     });
     test("different order of keys shouldn't push a new state", async () => {
-        redirect("/odoo?k1=2");
+        redirect("/weth?k1=2");
         createRouter({
             onPushState: () => expect.step("pushState"),
         });
@@ -1660,13 +1660,13 @@ describe("pushState", () => {
         await tick();
         expect.verifySteps(["pushState"]);
         expect(router.current).toEqual({ a: 2, z: 1, k1: 2 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=2&z=1&a=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=2&z=1&a=2");
 
         router.pushState({ k1: 2 }, { replace: true });
         await tick();
         expect.verifySteps([]);
         expect(router.current).toEqual({ a: 2, z: 1, k1: 2 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=2&z=1&a=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=2&z=1&a=2");
     });
 });
 
@@ -1678,37 +1678,37 @@ describe("History", () => {
 
         router.pushState({ k1: 1 });
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=1");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=1");
 
         router.pushState({ k2: 2 });
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=1&k2=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=1&k2=2");
 
         router.pushState({ k3: 3 }, { replace: true });
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k3=3");
+        expect(location.href).toBe("https://www.hoot.test/weth?k3=3");
 
         browser.history.back(); // Click on back button
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=1&k2=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=1&k2=2");
 
         router.pushState({ k4: 3 }, { replace: true }); // Click on a link
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k4=3");
+        expect(location.href).toBe("https://www.hoot.test/weth?k4=3");
 
         browser.history.back(); // Click on back button
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k1=1&k2=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k1=1&k2=2");
 
         browser.history.forward(); // Click on forward button
         await tick();
-        expect(location.href).toBe("https://www.hoot.test/odoo?k4=3");
+        expect(location.href).toBe("https://www.hoot.test/weth?k4=3");
 
         expect.verifySteps(["ROUTE_CHANGE", "ROUTE_CHANGE", "ROUTE_CHANGE"]);
     });
 
     test("unserialized parts of action stack are preserved when going back/forward", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter();
         expect(router.current).toEqual({});
         router.pushState({
@@ -1750,24 +1750,24 @@ describe("History", () => {
         router.pushState({ k1: 1, k2: 2 });
         await tick();
         expect(router.current).toEqual({ k1: 1, k2: 2 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k2=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k2=2");
 
         router.pushState({ k3: 3 }, { replace: true }); // Click on a link
         await tick();
         expect(router.current).toEqual({ k3: 3 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k3=3");
+        expect(location.href).toBe("https://www.hoot.test/weth?k3=3");
 
         browser.history.back(); // Click on back button
         await tick();
         expect(router.current).toEqual({ k1: 1, k2: 2 });
-        expect(location.href).toBe("https://www.hoot.test/odoo?k2=2");
+        expect(location.href).toBe("https://www.hoot.test/weth?k2=2");
 
         expect.verifySteps(["ROUTE_CHANGE"]);
     });
 });
 
 describe("Scoped apps", () => {
-    test("url location is changed to /odoo if the client is not used in a standalone scoped app", async () => {
+    test("url location is changed to /weth if the client is not used in a standalone scoped app", async () => {
         Object.assign(location, { pathname: "/scoped_app/some-path" });
         createRouter();
         router.pushState({ app_name: "some_app", path: "scoped_app/some_path" });
@@ -1796,7 +1796,7 @@ describe("Retrocompatibility", () => {
         expect(location.search).toBe("?a=114&k=c.e&f=1&g=91");
         expect(location.hash).toBe("");
         expect(router.current).toEqual({ a: 114, k: "c.e", f: 1, g: 91 });
-        expect(location.pathname).toBe("/odoo");
+        expect(location.pathname).toBe("/weth");
     });
 
     test("parse an url with hash (key/values) and query string", async () => {
@@ -1807,34 +1807,34 @@ describe("Retrocompatibility", () => {
         expect(location.search).toBe("?a=114&t=c.e&f=1&g=91");
         expect(location.hash).toBe("");
         expect(router.current).toEqual({ a: 114, t: "c.e", f: 1, g: 91 });
-        expect(location.pathname).toBe("/odoo");
+        expect(location.pathname).toBe("/weth");
     });
 
     test("parse an url with hash (anchor link)", async () => {
-        redirect("/odoo#anchor");
+        redirect("/weth#anchor");
         location.hash = "#anchor";
         createRouter();
         expect(location.search).toBe("");
         expect(location.hash).toBe("#anchor");
-        expect(location.pathname).toBe("/odoo");
+        expect(location.pathname).toBe("/weth");
         expect(router.current).toEqual({});
     });
 
     test("parse an url with hash (anchor link) and query string", async () => {
-        redirect("/odoo?a=114&g=c.e&f=1#anchor");
+        redirect("/weth?a=114&g=c.e&f=1#anchor");
         location.hash = "#anchor";
         location.search = "?a=114&g=c.e&f=1";
         createRouter();
         expect(location.search).toBe("?a=114&g=c.e&f=1");
         expect(location.hash).toBe("#anchor");
         expect(router.current).toEqual({ a: 114, g: "c.e", f: 1 });
-        expect(location.pathname).toBe("/odoo");
+        expect(location.pathname).toBe("/weth");
     });
 });
 
 describe("internal links", () => {
     test("click on internal link does a loadState instead of a full reload", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({ onPushState: () => expect.step("pushState") });
         const fixture = getFixture();
         const link = document.createElement("a");
@@ -1869,7 +1869,7 @@ describe("internal links", () => {
     });
 
     test("click on internal link with children does a loadState instead of a full reload", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({ onPushState: () => expect.step("pushState") });
         const fixture = getFixture();
         const link = document.createElement("a");
@@ -1906,7 +1906,7 @@ describe("internal links", () => {
     });
 
     test("click on internal link with different protocol does a loadState", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({ onPushState: () => expect.step("pushState") });
         const fixture = getFixture();
         const link = document.createElement("a");
@@ -1945,7 +1945,7 @@ describe("internal links", () => {
     });
 
     test("click on internal link with hash (key/values)", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({
             onPushState: () => expect.step("pushState"),
             onReplaceState: () => expect.step("replaceState"),
@@ -1986,7 +1986,7 @@ describe("internal links", () => {
     });
 
     test("click on internal link with hash (anchor)", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({
             onPushState: (_data, _unused, url) => {
                 expect.step("pushState: " + url);
@@ -2032,7 +2032,7 @@ describe("internal links", () => {
     });
 
     test("click on internal link with target _blank doesn't do a loadState", async () => {
-        redirect("/odoo");
+        redirect("/weth");
         createRouter({ onPushState: () => expect.step("pushState") });
         const fixture = getFixture();
         const link = document.createElement("a");

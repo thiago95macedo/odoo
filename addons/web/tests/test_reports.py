@@ -16,7 +16,7 @@ from weth.addons.http_routing.tests.common import MockRequest
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestReports(weth.tests.HttpCase):
     def test_report_session_cookie(self):
-        """ Asserts wkhtmltopdf forwards the user session when requesting resources to Odoo, such as images,
+        """ Asserts wkhtmltopdf forwards the user session when requesting resources to WETH, such as images,
         and that the resource is correctly returned as expected.
         """
         partner_id = self.env.user.partner_id.id
@@ -129,7 +129,7 @@ class TestReports(weth.tests.HttpCase):
         page = PdfReader(io.BytesIO(pdf)).pages[0]
         fonts = page['/Resources'].get_object().get('/Font') or {}
         base_fonts = {str(font.get_object().get('/BaseFont')) for font in fonts.values()}
-        for font_name in ('MaterialSymbols', 'odoo_ui_icons'):
+        for font_name in ('MaterialSymbols', 'weth_ui_icons'):
             self.assertTrue(
                 any(font_name in base_font for base_font in base_fonts),
                 f"the {font_name} font is missing from the report, which embeds only {sorted(base_fonts)}: "

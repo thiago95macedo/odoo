@@ -904,7 +904,7 @@ class MockEmail(common.BaseCase, MockSmtplibCase):
             If empty, we will check that no email at all have been sent
         :param message_id:
             message-id associated with the email. Allows to identify emails originating
-            from the a specific message in odoo.
+            from the a specific message in weth.
         """
         mails = self._mails
         if message_id:

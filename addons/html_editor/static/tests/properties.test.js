@@ -87,17 +87,17 @@ test("properties: html", async () => {
                 <field name="properties"/>
             </form>`,
     });
-    expect(`[name="properties"] .odoo-editor-editable`).toHaveCount(1);
-    expect(`[name="properties"] .odoo-editor-editable .o-paragraph`).toHaveInnerHTML(
+    expect(`[name="properties"] .weth-editor-editable`).toHaveCount(1);
+    expect(`[name="properties"] .weth-editor-editable .w-paragraph`).toHaveInnerHTML(
         "<b> test </b>"
     );
 
     setSelection({
-        anchorNode: queryOne(`[name="properties"] .odoo-editor-editable .o-paragraph b`),
+        anchorNode: queryOne(`[name="properties"] .weth-editor-editable .w-paragraph b`),
         anchorOffset: 0,
     });
     await insertText(editor, " foo");
-    expect(`[name="properties"] .odoo-editor-editable .o-paragraph`).toHaveInnerHTML(
+    expect(`[name="properties"] .weth-editor-editable .w-paragraph`).toHaveInnerHTML(
         "<b> foo test </b>"
     );
 
@@ -105,7 +105,7 @@ test("properties: html", async () => {
     // Blur to show the save button.
     await contains(".o_field_property_label").click();
     await contains(".o_form_button_save").click();
-    expect(`[name="properties"] .odoo-editor-editable .o-paragraph`).toHaveInnerHTML(
+    expect(`[name="properties"] .weth-editor-editable .w-paragraph`).toHaveInnerHTML(
         "<b> foo test </b>"
     );
 });
@@ -130,8 +130,8 @@ test("properties: html migration", async () => {
                 <field name="properties"/>
             </form>`,
     });
-    expect(`[name="properties"] .odoo-editor-editable`).toHaveCount(1);
-    expect(`[name="properties"] .odoo-editor-editable a[href*="excalidraw.com"]`).toHaveCount(1);
+    expect(`[name="properties"] .weth-editor-editable`).toHaveCount(1);
+    expect(`[name="properties"] .weth-editor-editable a[href*="excalidraw.com"]`).toHaveCount(1);
     expect(component.editor.getContent()).toBe(
         `<p data-oe-version="${CURRENT_VERSION}">Hello World</p><p><a href="https://excalidraw.com">https://excalidraw.com</a></p>`
     );
@@ -149,7 +149,7 @@ test("properties: html readonly", async () => {
                 <field name="properties" readonly="1"/>
             </form>`,
     });
-    expect(".odoo-editor-editable").toHaveCount(0);
+    expect(".weth-editor-editable").toHaveCount(0);
     expect(`[name="properties"] .o_readonly`).toHaveCount(1);
     expect(`[name="properties"] iframe`).toHaveCount(1);
 });
@@ -167,7 +167,7 @@ test("properties: html in list view", async () => {
         `,
     });
     await contains(".o_optional_columns_dropdown_toggle").click();
-    await contains(".o-dropdown--menu input[type='checkbox']").click();
+    await contains(".w-dropdown--menu input[type='checkbox']").click();
     expect("div[name='properties.bd6404492c244cff_html']").toHaveCount(3);
     const elements = document.querySelectorAll("div[name='properties.bd6404492c244cff_html']");
     expect(elements[0]).toHaveText("test");

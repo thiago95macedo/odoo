@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:37+0000\n"
 "PO-Revision-Date: 2026-09-28 18:08+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/account_debit_note/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -151,7 +151,7 @@ msgid "Debit Note Date"
 msgstr "Data da nota de débito"
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/models/account_move.py:0
 #: code:addons/account_debit_note/wizard/account_debit_note.py:0
 #: model:ir.model.fields,field_description:account_debit_note.field_account_bank_statement_line__debit_note_ids
@@ -228,7 +228,7 @@ msgid "Invoice"
 msgstr "Fatura"
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/models/account_move.py:0
 msgid "Invoices"
 msgstr "Faturas"
@@ -316,13 +316,13 @@ msgid "Use Specific Journal"
 msgstr "Usar diário específico"
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/models/account_move.py:0
 msgid "Vendor Bills"
 msgstr "Contas de fornecedor"
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/wizard/account_debit_note.py:0
 msgid ""
 "You can make a debit note only for a Customer Invoice, a Customer Credit "
@@ -333,13 +333,13 @@ msgstr ""
 "de fornecedor."
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/wizard/account_debit_note.py:0
 msgid "You can only debit posted moves."
 msgstr "Só é possível debitar movimentações lançadas."
 
 #. module: account_debit_note
-#. odoo-python
+#. weth-python
 #: code:addons/account_debit_note/wizard/account_debit_note.py:0
 msgid ""
 "You can't make a debit note for an invoice that is already linked to a debit "

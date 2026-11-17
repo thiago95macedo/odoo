@@ -76,7 +76,7 @@ def require_db(function):
     @wraps(function)
     def wrapper(*args, **kwargs):
         fname = f"<function {function.__module__}.{function.__qualname__}>"
-        server_url = get_odoo_server_url()
+        server_url = get_weth_server_url()
         iot_box_ip = system.get_ip()
         if not iot_box_ip or iot_box_ip == "10.11.12.1" or not server_url:
             _logger.info('Ignoring the function %s without a connected database', fname)
@@ -107,14 +107,14 @@ def save_conf_server(url, token, db_uuid, enterprise_code, db_name=None):
         'enterprise_code': enterprise_code,
         'db_name': db_name,
     })
-    get_odoo_server_url.cache_clear()
+    get_weth_server_url.cache_clear()
 
 
 @cache
-def get_odoo_server_url():
-    """Get the URL of the linked Odoo database.
+def get_weth_server_url():
+    """Get the URL of the linked WETH database.
 
-    :return: The URL of the linked Odoo database.
+    :return: The URL of the linked WETH database.
     :rtype: str or None
     """
     return system.get_conf('remote_server')
@@ -128,11 +128,11 @@ def get_token():
 @toggleable
 @require_db
 def download_iot_handlers(server_url=None):
-    """Get the drivers from the configured Odoo server.
+    """Get the drivers from the configured WETH server.
     If drivers did not change on the server, download
     will be skipped.
 
-    :param server_url: The URL of the connected Odoo database (provided by decorator).
+    :param server_url: The URL of the connected WETH database (provided by decorator).
     """
     if not system.get_conf('custom_handlers'):
         return
@@ -167,9 +167,9 @@ def download_iot_handlers(server_url=None):
         _logger.exception('Bad IoT handlers response received: not a zip file')
         return
 
-    path = system.path_file('odoo', 'addons', 'iot_drivers', 'iot_handlers')
+    path = system.path_file('weth', 'addons', 'iot_drivers', 'iot_handlers')
     zip_file.extractall(path)
-    odoo_restart(2)  # Restart Odoo to load the new handlers
+    weth_restart(2)  # Restart WETH to load the new handlers
 
 
 def compute_iot_handlers_addon_name(handler_kind, handler_file_name):
@@ -193,8 +193,8 @@ def get_handlers_files_to_load(handler_path):
     return []
 
 
-def odoo_restart(delay: float = 0):
-    """Restart Odoo service
+def weth_restart(delay: float = 0):
+    """Restart WETH service
 
     :param delay: seconds to wait before restarting the service
     """
@@ -202,7 +202,7 @@ def odoo_restart(delay: float = 0):
         start = time.monotonic()
         while service.server.server is None:
             if time.monotonic() - start > 30:
-                _logger.warning("Odoo IoT Restart: server never initialized, giving up")
+                _logger.warning("WETH IoT Restart: server never initialized, giving up")
                 return
             time.sleep(0.5)
         service.server.restart()
@@ -252,7 +252,7 @@ def disconnect_from_server():
         'browser_url': '',
         'iot_handlers_etag': '',
     })
-    odoo_restart()
+    weth_restart()
 
 
 def save_browser_state(url=None, orientation=None):
@@ -330,7 +330,7 @@ def reset_log_level():
 
 
 def flash_leds():
-    """Create a file used by odoo-led-manager to flash the LEDs on Raspberry Pi"""
+    """Create a file used by weth-led-manager to flash the LEDs on Raspberry Pi"""
     if IS_RPI:
         open('/tmp_ram/led_manager_test', 'w', encoding="utf-8").close()
 
@@ -368,7 +368,7 @@ def toggle_custom_handlers(enable: bool):
         system.update_conf({'custom_handlers': False})
         # Reset to the default handlers and restart
         system.git("clean", "-dfx")  # remove only non-standard handlers
-        odoo_restart()
+        weth_restart()
 
 
 def _sentry_before_send(event, _hint):

@@ -10,7 +10,7 @@ export class WebsiteForumWysiwyg extends Wysiwyg {
         // Inlined from Wysiwyg (html_editor), which is not yet converted to
         // the owl3 props schema.
         config: t.object().optional(),
-        class: t.string().optional("odoo-editor"),
+        class: t.string().optional("weth-editor"),
         contentClass: t.string().optional("note-editable"), // on editable element
         style: t.string().optional(),
         iframe: t.boolean().optional(),
@@ -35,7 +35,7 @@ export class WebsiteForumWysiwyg extends Wysiwyg {
         const form = this.props.textareaEl.closest("form");
         // Prevent form submission behavior of buttons inside the form
         onMounted(() =>
-            form.querySelectorAll(".o-wysiwyg button").forEach((btn) => (btn.type = "button"))
+            form.querySelectorAll(".w-wysiwyg button").forEach((btn) => (btn.type = "button"))
         );
         this.submitButton = form.querySelector("button[type=submit]");
         useListener(this.submitButton, "click", this.onSubmitButtonClick.bind(this));

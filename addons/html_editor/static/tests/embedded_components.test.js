@@ -466,7 +466,7 @@ describe("Mount and Destroy embedded components", () => {
         const fixture = getFixture();
         expect(
             [...fixture.querySelectorAll("[data-embedded]")].filter(
-                (elem) => !elem.closest(".odoo-editor-editable")
+                (elem) => !elem.closest(".weth-editor-editable")
             )
         ).toEqual([]);
     });
@@ -495,7 +495,7 @@ describe("Mount and Destroy embedded components", () => {
         const fixture = getFixture();
         expect(
             [...fixture.querySelectorAll("[data-embedded]")].filter(
-                (elem) => !elem.closest(".odoo-editor-editable")
+                (elem) => !elem.closest(".weth-editor-editable")
             )
         ).toEqual([]);
     });
@@ -526,7 +526,7 @@ describe("Mount and Destroy embedded components", () => {
         const fixture = getFixture();
         expect(
             [...fixture.querySelectorAll("[data-embedded]")].filter(
-                (elem) => !elem.closest(".odoo-editor-editable")
+                (elem) => !elem.closest(".weth-editor-editable")
             )
         ).toEqual([]);
         expect(editor.editable.contains(parent)).toBe(false);
@@ -596,8 +596,8 @@ describe("Selection after embedded component insertion", () => {
         // Insertion triggers `selectionchange` and `commit` creates a selection
         // placeholder. `fixSelectionInsideEditableRoot` moves the selection
         // into it and triggers another `selectionchange` that removes the
-        // selection placeholder. So we must wait for the `.o-we-hint`.
-        await waitFor(".o-we-hint");
+        // selection placeholder. So we must wait for the `.w-we-hint`.
+        await waitFor(".w-we-hint");
         cleanHints(editor);
         expect(getContent(el)).toBe(
             unformat(`
@@ -615,8 +615,8 @@ describe("Selection after embedded component insertion", () => {
         // Insertion triggers `selectionchange` and `commit` creates a selection
         // placeholder. `fixSelectionInsideEditableRoot` moves the selection
         // into it and triggers another `selectionchange` that removes the
-        // selection placeholder. So we must wait for the `.o-we-hint`.
-        await waitFor(".o-we-hint");
+        // selection placeholder. So we must wait for the `.w-we-hint`.
+        await waitFor(".w-we-hint");
         cleanHints(editor);
         expect(getContent(el)).toBe(
             unformat(`
@@ -981,7 +981,7 @@ describe("In-editor manipulations", () => {
             }
         );
         await animationFrame();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
         expect(getContent(el)).toBe(
             `<p data-selection-placeholder=""><br></p><div><p>[a]</p><span data-embedded="counter" data-oe-protected="true" contenteditable="false"><span class="counter">Counter:0</span></span></div><p data-selection-placeholder=""><br></p>`
         );
@@ -993,7 +993,7 @@ describe("In-editor manipulations", () => {
         expect(getContent(el)).toBe(
             `<p data-selection-placeholder=""><br></p><div><p>a</p><span data-embedded="counter" data-oe-protected="true" contenteditable="false"><span class="counter">C[ou]nter:0</span></span></div><p data-selection-placeholder=""><br></p>`
         );
-        await expectElementCount(".o-we-toolbar", 0);
+        await expectElementCount(".w-we-toolbar", 0);
     });
 
     test("should remove embedded elements children during clean for save (on a clone)", async () => {

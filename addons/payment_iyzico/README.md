@@ -14,7 +14,7 @@ submission provided by the payment module.
 ## Module history
 
 - `19.0`
-  - The first version of the module is merged. odoo/odoo#210746
+  - The first version of the module is merged. weth/weth#210746
 
 ## Testing instructions
 

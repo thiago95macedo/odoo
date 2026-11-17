@@ -16,13 +16,13 @@ test("basic rendering", async () => {
             displayName: "User display name",
         },
     });
-    await contains(".o-mail-Avatar");
-    await contains(".o-mail-Avatar img");
-    await contains(".o-mail-Avatar img[data-src='/web/image/res.users/7/avatar_128']");
-    await contains(".o-mail-Avatar span");
-    await contains(".o-mail-Avatar span:text('User display name')");
+    await contains(".w-mail-Avatar");
+    await contains(".w-mail-Avatar img");
+    await contains(".w-mail-Avatar img[data-src='/web/image/res.users/7/avatar_128']");
+    await contains(".w-mail-Avatar span");
+    await contains(".w-mail-Avatar span:text('User display name')");
     await contains(".o_avatar_card", { count: 0 });
-    await click(".o-mail-Avatar img");
+    await click(".w-mail-Avatar img");
     await contains(".o_avatar_card");
 });
 
@@ -37,6 +37,6 @@ test("avatar with uniqueId props", async () => {
         },
     });
     await contains(
-        ".o-mail-Avatar img[data-src='/web/image/res.users/7/avatar_128?unique=123789']"
+        ".w-mail-Avatar img[data-src='/web/image/res.users/7/avatar_128?unique=123789']"
     );
 });

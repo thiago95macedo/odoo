@@ -3,7 +3,7 @@ Vendor unittest.TestSuite
 
 This is a modified version of python 3.8 unitest.TestSuite
 
-Odoo tests customisation combined with the need of a cross version compatibility
+WETH tests customisation combined with the need of a cross version compatibility
 started to make TestSuite and other unitest object more complicated than vendoring
 the part we need for WETH. This versions is simplified in order
 to minimise the code to maintain
@@ -39,7 +39,7 @@ class TestSuite(BaseTestSuite):
     """
 
     def run(self, result, debug=False):
-        default_tests_run_count = int(os.environ.get('ODOO_TEST_FAILURE_RETRIES', '0')) + 1
+        default_tests_run_count = int(os.environ.get('WETH_TEST_FAILURE_RETRIES', '0')) + 1
         for test in self:
             if result.shouldStop:
                 break
@@ -195,7 +195,7 @@ class _ErrorHolder(object):
         return 0
 
 
-class OdooSuite(TestSuite):
+class WethSuite(TestSuite):
     def _handleClassSetUp(self, test, result):
         previous_test_class = result._previousTestClass
         if not (

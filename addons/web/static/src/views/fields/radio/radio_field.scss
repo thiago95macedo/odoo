@@ -1,10 +1,14 @@
 .o_field_radio {
-    > span, > button {
+
+    >span,
+    >button {
         flex: 0 0 auto;
     }
+
     @include media-breakpoint-down(md) {
         display: inline-block;
     }
+
     .o_radio_input {
         outline: none;
     }
@@ -18,14 +22,15 @@
         flex-wrap: wrap;
 
         .o_radio_item {
-            margin-right: $o-form-spacing-unit * 2;
+            margin-right: $w-form-spacing-unit * 2;
         }
     }
 
     .o_vertical {
         flex-flow: column nowrap;
+
         .o_radio_item {
-            margin-bottom: $o-form-spacing-unit;
+            margin-bottom: $w-form-spacing-unit;
         }
     }
 }

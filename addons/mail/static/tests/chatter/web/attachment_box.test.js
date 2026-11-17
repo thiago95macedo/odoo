@@ -43,10 +43,10 @@ test("base non-empty rendering", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentBox");
+    await contains(".w-mail-AttachmentBox");
     await contains("button:text('Attach files')");
-    await contains(".o-mail-Chatter input[type='file']");
-    await contains(".o-mail-AttachmentList");
+    await contains(".w-mail-Chatter input[type='file']");
+    await contains(".w-mail-AttachmentList");
 });
 
 test("remove attachment should ask for confirmation", async () => {
@@ -66,7 +66,7 @@ test("remove attachment should ask for confirmation", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentCard");
+    await contains(".w-mail-AttachmentCard");
     await contains("button[title='Remove']");
     await click("button[title='Remove']");
     await contains(
@@ -74,7 +74,7 @@ test("remove attachment should ask for confirmation", async () => {
     );
     // Confirm the deletion
     await click(".modal-footer .btn-primary");
-    await contains(".o-mail-AttachmentImage", { count: 0 });
+    await contains(".w-mail-AttachmentImage", { count: 0 });
 });
 
 test("view attachments", async () => {
@@ -102,15 +102,15 @@ test("view attachments", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await click('.o-mail-AttachmentContainer[aria-label="Blah.txt"] .o-mail-AttachmentCard-image');
-    await contains(".o-FileViewer");
-    await contains(".o-FileViewer-header:has(:text('Blah.txt'))");
-    await contains(".o-FileViewer div[aria-label='Next']");
-    await click(".o-FileViewer div[aria-label='Next']");
-    await contains(".o-FileViewer-header:has(:text('Blu.txt'))");
-    await contains(".o-FileViewer div[aria-label='Next']");
-    await click(".o-FileViewer div[aria-label='Next']");
-    await contains(".o-FileViewer-header:has(:text('Blah.txt'))");
+    await click('.w-mail-AttachmentContainer[aria-label="Blah.txt"] .w-mail-AttachmentCard-image');
+    await contains(".w-FileViewer");
+    await contains(".w-FileViewer-header:has(:text('Blah.txt'))");
+    await contains(".w-FileViewer div[aria-label='Next']");
+    await click(".w-FileViewer div[aria-label='Next']");
+    await contains(".w-FileViewer-header:has(:text('Blu.txt'))");
+    await contains(".w-FileViewer div[aria-label='Next']");
+    await click(".w-FileViewer div[aria-label='Next']");
+    await contains(".w-FileViewer-header:has(:text('Blah.txt'))");
 });
 
 test("scroll to attachment box when toggling on", async () => {
@@ -132,12 +132,12 @@ test("scroll to attachment box when toggling on", async () => {
     });
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Message", { count: 30 });
-    await scroll(".o-mail-Chatter", "bottom");
+    await contains(".w-mail-Message", { count: 30 });
+    await scroll(".w-mail-Chatter", "bottom");
     await click("button[aria-label='Attach files']");
-    await contains(".o-mail-AttachmentBox");
-    await contains(".o-mail-Chatter", { scroll: 0 });
-    await contains(".o-mail-AttachmentBox", { visible: true });
+    await contains(".w-mail-AttachmentBox");
+    await contains(".w-mail-Chatter", { scroll: 0 });
+    await contains(".w-mail-AttachmentBox", { visible: true });
 });
 
 test("do not auto-scroll to attachment box when initially open", async () => {
@@ -163,7 +163,7 @@ test("do not auto-scroll to attachment box when initially open", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-Message");
+    await contains(".w-mail-Message");
     // weak test, no guarantee that we waited long enough for the potential scroll to happen
     await contains(".o_content", { scroll: 0 });
 });
@@ -179,11 +179,11 @@ test("attachment box should order attachments from newest to oldest", async () =
     ]);
     await start();
     await openFormView("res.partner", partnerId);
-    await contains(".o-mail-Chatter [aria-label='Attach files']:text('3')");
-    await click(".o-mail-Chatter [aria-label='Attach files']"); // open attachment box
-    await contains(".o-mail-AttachmentContainer:eq(0):has(:text('C.txt'))");
-    await contains(".o-mail-AttachmentContainer:eq(1):has(:text('B.txt'))");
-    await contains(".o-mail-AttachmentContainer:eq(2):has(:text('A.txt'))");
+    await contains(".w-mail-Chatter [aria-label='Attach files']:text('3')");
+    await click(".w-mail-Chatter [aria-label='Attach files']"); // open attachment box
+    await contains(".w-mail-AttachmentContainer:eq(0):has(:text('C.txt'))");
+    await contains(".w-mail-AttachmentContainer:eq(1):has(:text('B.txt'))");
+    await contains(".w-mail-AttachmentContainer:eq(2):has(:text('A.txt'))");
 });
 
 test("attachment box groups copies of the same file under a counter", async () => {
@@ -205,23 +205,23 @@ test("attachment box groups copies of the same file under a counter", async () =
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentContainer", { count: 2 });
-    await contains(".o-mail-AttachmentContainer[aria-label='contract.png']");
-    await contains(".o-mail-AttachmentContainer[aria-label='signature.png']");
-    await contains(".o-mail-Attachment-duplicateCounter", { count: 1 });
+    await contains(".w-mail-AttachmentContainer", { count: 2 });
+    await contains(".w-mail-AttachmentContainer[aria-label='contract.png']");
+    await contains(".w-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Attachment-duplicateCounter", { count: 1 });
     await click(
-        ".o-mail-AttachmentContainer[aria-label='signature.png'] .o-mail-Attachment-duplicateCounter",
+        ".w-mail-AttachmentContainer[aria-label='signature.png'] .w-mail-Attachment-duplicateCounter",
         { text: "3" }
     );
-    await contains(".o-mail-Attachment-duplicate", { count: 3 });
+    await contains(".w-mail-Attachment-duplicate", { count: 3 });
     await contains(
-        ".o-mail-Attachment-duplicate:eq(0):text('signature.png – 07/27/2026 10:00:00')"
+        ".w-mail-Attachment-duplicate:eq(0):text('signature.png – 07/27/2026 10:00:00')"
     );
     await contains(
-        ".o-mail-Attachment-duplicate:eq(1):text('signature.png – 07/26/2026 10:00:00')"
+        ".w-mail-Attachment-duplicate:eq(1):text('signature.png – 07/26/2026 10:00:00')"
     );
     await contains(
-        ".o-mail-Attachment-duplicate:eq(2):text('signature.png – 07/25/2026 10:00:00')"
+        ".w-mail-Attachment-duplicate:eq(2):text('signature.png – 07/25/2026 10:00:00')"
     );
 });
 
@@ -242,10 +242,10 @@ test("a group of copies keeps the place of its oldest copy", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentContainer", { count: 2 });
-    await contains(".o-mail-AttachmentContainer:eq(0):has(:text('contract.txt'))");
-    await contains(".o-mail-AttachmentContainer:eq(1):has(:text('signature.txt'))");
-    await contains(".o-mail-Attachment-duplicateCounter:text('2')");
+    await contains(".w-mail-AttachmentContainer", { count: 2 });
+    await contains(".w-mail-AttachmentContainer:eq(0):has(:text('contract.txt'))");
+    await contains(".w-mail-AttachmentContainer:eq(1):has(:text('signature.txt'))");
+    await contains(".w-mail-Attachment-duplicateCounter:text('2')");
 });
 
 test("removing a copy from the dropdown keeps the other copies", async () => {
@@ -265,15 +265,15 @@ test("removing a copy from the dropdown keeps the other copies", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await click(".o-mail-Attachment-duplicateCounter", { text: "3" });
-    await click(".o-mail-Attachment-duplicate:eq(0) [title='Remove']");
+    await click(".w-mail-Attachment-duplicateCounter", { text: "3" });
+    await click(".w-mail-Attachment-duplicate:eq(0) [title='Remove']");
     await contains(
         ".modal-body:text('Are you sure you want to delete \"signature.png\"? This action cannot be undone.')"
     );
     await click(".modal-footer .btn-primary");
-    await contains(".o-mail-AttachmentContainer[aria-label='signature.png']");
-    await contains(".o-mail-Attachment-duplicateCounter:text('2')");
-    await contains(".o-mail-Chatter [aria-label='Attach files']:text('2')");
+    await contains(".w-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Attachment-duplicateCounter:text('2')");
+    await contains(".w-mail-Chatter [aria-label='Attach files']:text('2')");
 });
 
 test("removing a group of copies asks confirmation and removes all of them at once", async () => {
@@ -296,13 +296,13 @@ test("removing a group of copies asks confirmation and removes all of them at on
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await click(".o-mail-AttachmentContainer[aria-label='signature.png'] [title='Remove']");
+    await click(".w-mail-AttachmentContainer[aria-label='signature.png'] [title='Remove']");
     await contains(
         ".modal-body:text('Are you sure you want to delete the 2 copies of \"signature.png\"? This action cannot be undone.')"
     );
     await click(".modal-footer button:text('Delete Attachment & Duplicates')");
-    await contains(".o-mail-AttachmentContainer", { count: 1 });
-    await contains(".o-mail-AttachmentContainer[aria-label='contract.png']");
+    await contains(".w-mail-AttachmentContainer", { count: 1 });
+    await contains(".w-mail-AttachmentContainer[aria-label='contract.png']");
     // both copies are removed by a single query
     await expect.waitForSteps(["delete 2"]);
 });
@@ -327,11 +327,11 @@ test("removing a group of copies can spare the attachment it stands for", async 
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await click(".o-mail-AttachmentContainer[aria-label='signature.png'] [title='Remove']");
+    await click(".w-mail-AttachmentContainer[aria-label='signature.png'] [title='Remove']");
     await click(".modal-footer button:text('Delete only Duplicates')");
-    await contains(".o-mail-AttachmentContainer", { count: 1 });
-    await contains(".o-mail-AttachmentContainer[aria-label='signature.png']");
-    await contains(".o-mail-Chatter [aria-label='Attach files']:text('1')");
+    await contains(".w-mail-AttachmentContainer", { count: 1 });
+    await contains(".w-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Chatter [aria-label='Attach files']:text('1')");
     // the 2 redundant copies are removed by a single query
     await expect.waitForSteps(["delete 2"]);
 });
@@ -359,13 +359,13 @@ test("removing a copy posted on a message only removes it from the list", async 
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-Message .o-mail-AttachmentContainer[aria-label='signature.png']");
-    await click(".o-mail-AttachmentBox .o-mail-AttachmentContainer [title='Remove']");
+    await contains(".w-mail-Message .w-mail-AttachmentContainer[aria-label='signature.png']");
+    await click(".w-mail-AttachmentBox .w-mail-AttachmentContainer [title='Remove']");
     await click(".modal-footer button:text('Delete only Duplicates')");
-    await contains(".o-mail-AttachmentBox .o-mail-AttachmentContainer", { count: 1 });
-    await contains(".o-mail-Chatter [aria-label='Attach files']:text('1')");
+    await contains(".w-mail-AttachmentBox .w-mail-AttachmentContainer", { count: 1 });
+    await contains(".w-mail-Chatter [aria-label='Attach files']:text('1')");
     // trimming the list is not meant to edit the message the copy was posted on
-    await contains(".o-mail-Message .o-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Message .w-mail-AttachmentContainer[aria-label='signature.png']");
 });
 
 test("selecting several files deletes their copies in one go", async () => {
@@ -390,27 +390,27 @@ test("selecting several files deletes their copies in one go", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentContainer", { count: 3 });
-    await click(".o-mail-Chatter-selectFiles");
-    await contains(".o-mail-Attachment-selectCheckbox", { count: 3 });
-    await contains(".o-mail-Chatter-deleteSelected.btn-secondary:disabled:text('Delete 0 files')");
-    await click(".o-mail-AttachmentContainer[aria-label='signature.png']");
-    await contains(".o-mail-Chatter-deleteSelected.btn-danger:text('Delete 1 file')");
-    await click(".o-mail-AttachmentContainer[aria-label='contract.png']");
-    await contains(".o-mail-Attachment-selectCheckbox:checked", { count: 2 });
-    await contains(".o-mail-Chatter-deleteSelected.btn-danger:text('Delete 2 files')");
-    await click(".o-mail-Chatter-deleteSelected");
+    await contains(".w-mail-AttachmentContainer", { count: 3 });
+    await click(".w-mail-Chatter-selectFiles");
+    await contains(".w-mail-Attachment-selectCheckbox", { count: 3 });
+    await contains(".w-mail-Chatter-deleteSelected.btn-secondary:disabled:text('Delete 0 files')");
+    await click(".w-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Chatter-deleteSelected.btn-danger:text('Delete 1 file')");
+    await click(".w-mail-AttachmentContainer[aria-label='contract.png']");
+    await contains(".w-mail-Attachment-selectCheckbox:checked", { count: 2 });
+    await contains(".w-mail-Chatter-deleteSelected.btn-danger:text('Delete 2 files')");
+    await click(".w-mail-Chatter-deleteSelected");
     await contains(
         ".modal-body:text('Are you sure you want to delete the 2 selected files and their copies? This action cannot be undone.')"
     );
     await click(".modal-footer button:text('Delete only Duplicates')");
-    await contains(".o-mail-AttachmentContainer", { count: 3 });
-    await contains(".o-mail-Attachment-duplicateCounter", { count: 0 });
-    await contains(".o-mail-Chatter [aria-label='Attach files']:text('3')");
+    await contains(".w-mail-AttachmentContainer", { count: 3 });
+    await contains(".w-mail-Attachment-duplicateCounter", { count: 0 });
+    await contains(".w-mail-Chatter [aria-label='Attach files']:text('3')");
     // the redundant copy of each selected file is removed by a single query
     await expect.waitForSteps(["delete 2"]);
     // deleting ends the selection
-    await contains(".o-mail-Chatter-selectFiles");
+    await contains(".w-mail-Chatter-selectFiles");
 });
 
 test("discarding the selection restores the attach files button", async () => {
@@ -429,12 +429,12 @@ test("discarding the selection restores the attach files button", async () => {
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await click(".o-mail-Chatter-selectFiles");
-    await click(".o-mail-AttachmentContainer[aria-label='signature.png']");
-    await contains(".o-mail-Attachment-selectCheckbox:checked", { count: 1 });
-    await click(".o-mail-Chatter-discardSelection");
-    await contains(".o-mail-Chatter-attachmentActions button:text('Attach files')");
-    await contains(".o-mail-Attachment-selectCheckbox", { count: 0 });
+    await click(".w-mail-Chatter-selectFiles");
+    await click(".w-mail-AttachmentContainer[aria-label='signature.png']");
+    await contains(".w-mail-Attachment-selectCheckbox:checked", { count: 1 });
+    await click(".w-mail-Chatter-discardSelection");
+    await contains(".w-mail-Chatter-attachmentActions button:text('Attach files')");
+    await contains(".w-mail-Attachment-selectCheckbox", { count: 0 });
 });
 
 test("attachment box auto-closed on switch to record wih no attachments", async () => {
@@ -460,9 +460,9 @@ test("attachment box auto-closed on switch to record wih no attachments", async 
             </form>`,
         resIds: [partnerId_1, partnerId_2],
     });
-    await contains(".o-mail-AttachmentBox");
+    await contains(".w-mail-AttachmentBox");
     await click(".o_pager_next");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-AttachmentBox", { count: 0 });
 });
 
 test("removing the last attachment should close the attachment box", async () => {
@@ -482,14 +482,14 @@ test("removing the last attachment should close the attachment box", async () =>
                 <chatter open_attachments="True"/>
             </form>`,
     });
-    await contains(".o-mail-AttachmentBox");
+    await contains(".w-mail-AttachmentBox");
     await click("button[title='Remove']");
     await contains(
         ".modal-body:text('Are you sure you want to delete \"Blah.txt\"? This action cannot be undone.')"
     );
     // Confirm the deletion
     await click(".modal-footer .btn-primary");
-    await contains(".o-mail-AttachmentBox", { count: 0 });
+    await contains(".w-mail-AttachmentBox", { count: 0 });
 });
 
 test("attachment should be uploaded on the correct record when using the pager navigation", async () => {
@@ -510,7 +510,7 @@ test("attachment should be uploaded on the correct record when using the pager n
     // First upload
     let uploadDeferred = Promise.withResolvers();
     onRpc("/mail/attachment/upload", () => uploadDeferred.promise);
-    await click(".o-mail-Chatter-attachFiles");
+    await click(".w-mail-Chatter-attachFiles");
     let uploadPromise = inputFiles(".o_input_file", [new File(["image"], "A.jpeg")]);
     await pagerNext();
     uploadDeferred.resolve();
@@ -518,7 +518,7 @@ test("attachment should be uploaded on the correct record when using the pager n
     await contains("button[aria-label='Attach files']:not(:has(sup))");
     await pagerPrevious();
     await click("button[aria-label='Attach files']", { text: "1" });
-    await contains(".o-mail-AttachmentCard", { text: "A.jpeg" });
+    await contains(".w-mail-AttachmentCard", { text: "A.jpeg" });
     // Second upload
     uploadDeferred = Promise.withResolvers();
     await click("button[aria-label='Attach files']");
@@ -530,6 +530,6 @@ test("attachment should be uploaded on the correct record when using the pager n
     await contains("button[aria-label='Attach files']:not(:has(sup))");
     await pagerPrevious();
     await click("button[aria-label='Attach files']", { text: "2" });
-    await contains(".o-mail-AttachmentCard", { text: "A.jpeg" });
-    await contains(".o-mail-AttachmentCard", { text: "B.jpeg" });
+    await contains(".w-mail-AttachmentCard", { text: "A.jpeg" });
+    await contains(".w-mail-AttachmentCard", { text: "B.jpeg" });
 });

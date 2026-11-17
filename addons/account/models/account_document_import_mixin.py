@@ -12,7 +12,7 @@ from weth import api, models, modules
 from weth.exceptions import RedirectWarning
 from weth.tools import BinaryBytes, BinaryValue, groupby
 from weth.tools.mimetypes import guess_mimetype
-from weth.tools.pdf import OdooPdfFileReader, PdfReadError
+from weth.tools.pdf import WethPdfFileReader, PdfReadError
 
 _logger = logging.getLogger(__name__)
 
@@ -110,7 +110,7 @@ def split_etree_on_tag(tree, tag):
 def extract_pdf_embedded_files(filename, content):
     with io.BytesIO(content) as buffer:
         try:
-            pdf_reader = OdooPdfFileReader(buffer, strict=False)
+            pdf_reader = WethPdfFileReader(buffer, strict=False)
         except Exception as e:  # noqa: BLE001
             # Malformed pdf
             _logger.info('Error when reading the pdf file "%s": %s', filename, e)

@@ -82,7 +82,7 @@ class TestWebsocketController(HttpCase, BusCase):
     @freeze_time("2026-03-03", as_kwarg='clock')
     def test_do_not_rotate_session(self, clock):
         self.authenticate('admin', 'admin')
-        self.url_open('/odoo').raise_for_status()
+        self.url_open('/weth').raise_for_status()
         original_session = self.opener.cookies['session_id']
         clock.tick(SESSION_ROTATION_INTERVAL + 1)
         self.make_jsonrpc_request('/websocket/peek_notifications', {
@@ -94,6 +94,6 @@ class TestWebsocketController(HttpCase, BusCase):
         self.assertEqual(self.opener.cookies['session_id'], original_session,
             "Session rotation must not occur at the websocket routes "
             "that are re-exposed on HTTP for convenience.")
-        self.url_open('/odoo').raise_for_status()
+        self.url_open('/weth').raise_for_status()
         self.assertNotEqual(self.opener.cookies['session_id'], original_session,
             "Session rotation should occur with other URLs.")

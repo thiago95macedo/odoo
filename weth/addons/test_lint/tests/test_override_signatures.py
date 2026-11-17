@@ -59,7 +59,7 @@ class HitMiss:
 counter = collections.defaultdict(HitMiss)
 
 
-def get_odoo_module_name(python_module_name):
+def get_weth_module_name(python_module_name):
     if python_module_name.startswith('weth.addons.'):
         return python_module_name.split('.')[2]
     if python_module_name == 'weth.models':
@@ -177,7 +177,7 @@ class TestLintOverrideSignatures(RegistryLintCase):
                 else:
                     raise LookupError(f"Unable to find callable {method_name!r} in mro of {model_name!r}")
 
-                parent_module = get_odoo_module_name(parent_class.__module__)
+                parent_module = get_weth_module_name(parent_class.__module__)
                 original_signature = inspect.signature(method)
                 original_decorators = get_decorators(method)
                 is_private = method_name.startswith('_')
@@ -194,7 +194,7 @@ class TestLintOverrideSignatures(RegistryLintCase):
                         continue
                     override = getattr(child_class, method_name)
 
-                    child_module = get_odoo_module_name(child_class.__module__)
+                    child_module = get_weth_module_name(child_class.__module__)
                     override_signature = inspect.signature(override)
                     override_decorators = get_decorators(override)
 
@@ -219,7 +219,7 @@ class TestLintOverrideSignatures(RegistryLintCase):
                             )
                             raise TypeError(msg) from None
 
-        #with open('/tmp/odoo-override-signatures.md', 'w') as f:
+        #with open('/tmp/weth-override-signatures.md', 'w') as f:
         #    f.write('method|hit|miss|ratio\n')
         #    f.write('------|---|----|-----\n')
         #    for method_name, hm in sorted(counter.items(), key=lambda x: x[1].miss):

@@ -3,7 +3,7 @@ import { rpc } from "@web/core/network/rpc";
 import { AutoCompleteWithPages } from "@website/components/autocomplete_with_pages/autocomplete_with_pages";
 
 // TODO: we probably don't need it anymore after merging html_builder
-// see: https://github.com/weth/odoo/pull/187091
+// see: https://github.com/weth/weth/pull/187091
 export class UrlAutoComplete extends Component {
     props = useProps({
         options: t.object(),

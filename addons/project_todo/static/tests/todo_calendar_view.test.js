@@ -42,10 +42,10 @@ test("test creation of todo from the calendar view", async () => {
     await contains(".fc-day-today").click();
     await animationFrame();
 
-    expect(".o-calendar-quick-create").toBeVisible();
+    expect(".w-calendar-quick-create").toBeVisible();
     click("[name=title]");
     edit("go running");
-    await contains(`.o-calendar-quick-create--create-btn`).click();
+    await contains(`.w-calendar-quick-create--create-btn`).click();
     await animationFrame();
 
     expect(".fc-daygrid-event").toHaveCount(3, {

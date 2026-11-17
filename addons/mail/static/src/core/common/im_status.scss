@@ -1,5 +1,4 @@
-
-.o-mail-ImStatus {
+.w-mail-ImStatus {
 
     i {
         &[data-icon="favorite"] {
@@ -7,21 +6,22 @@
         }
     }
 
-    &.o-sm i {
-        width: 0.65rem; // matches .o-xsmaller
+    &.w-sm i {
+        width: 0.65rem; // matches .w-xsmaller
         height: 0.65rem;
     }
 }
 
-.o-mail-ImStatus.oi, .o-mail-DiscussAvatar-imStatusMask {
+.w-mail-ImStatus.oi,
+.w-mail-DiscussAvatar-imStatusMask {
     line-height: 0.9rem;
     font-size: 0.78rem;
 }
 
-.o-mail-ImStatus-typingBg {
+.w-mail-ImStatus-typingBg {
     padding: 2px;
 }
 
-.o-mail-ImStatus-typingContainer {
+.w-mail-ImStatus-typingContainer {
     padding: 1px;
 }

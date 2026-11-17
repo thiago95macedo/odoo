@@ -15,7 +15,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-24 05:54+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/calendar_sms/pt_BR/>\n"
+"weth-20/calendar_sms/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgid "Event Alarm Manager"
 msgstr "Gerenciamento de alarme do evento"
 
 #. module: calendar_sms
-#. odoo-python
+#. weth-python
 #: code:addons/calendar_sms/models/calendar_event.py:0
 #: code:addons/calendar_sms/tests/test_calendar_sms.py:0
 msgid "Event reminder: %(name)s, %(time)s."
@@ -91,7 +91,7 @@ msgid "SMS Template"
 msgstr "Modelo de SMS"
 
 #. module: calendar_sms
-#. odoo-python
+#. weth-python
 #: code:addons/calendar_sms/models/calendar_event.py:0
 #: model_terms:ir.ui.view,arch_db:calendar_sms.view_calendar_event_tree_inherited
 msgid "Send SMS"
@@ -114,7 +114,7 @@ msgid "Template used to render SMS reminder content."
 msgstr "Modelo usado para renderizar o conteúdo do lembrete de SMS."
 
 #. module: calendar_sms
-#. odoo-python
+#. weth-python
 #: code:addons/calendar_sms/models/calendar_event.py:0
 msgid "There are no attendees on these events"
 msgstr "Não há participantes nesses eventos"

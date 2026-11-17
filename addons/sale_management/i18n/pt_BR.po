@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-25 17:37+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_management/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -93,25 +93,25 @@ msgstr ""
 "* Faturamento Mensal (Gráfico)\n"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template_line.py:0
 msgid "%(attribute)s: %(values)s"
 msgstr "%(attribute)s: %(values)s"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Acoustic ceiling"
 msgstr "Teto acústico"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Acoustic underlay"
 msgstr "Subcamada acústica"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Acoustic wall insulation"
 msgstr "Isolamento acústico de parede"
@@ -122,7 +122,7 @@ msgid "Active"
 msgstr "Ativo"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 msgid "Add Section"
 msgstr "Adicionar seção"
@@ -169,19 +169,19 @@ msgid "Attribute Values"
 msgstr "Valores de atributo"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/components/product_catalog/kanban_controller.js:0
 msgid "Back to Template"
 msgstr "Voltar para o modelo"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Brainstorm Whiteboard"
 msgstr "Quadro branco de brainstorming"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Camera\n"
@@ -218,7 +218,7 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Conference Room"
 msgstr "Sala de Conferências"
@@ -239,7 +239,7 @@ msgid "Confirmation Mail"
 msgstr "E-mail de confirmação"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Connectivity"
 msgstr "Conectividade"
@@ -272,7 +272,7 @@ msgid "Custom Values"
 msgstr "Valores personalizados"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 msgid "Delete"
 msgstr "Excluir"
@@ -299,7 +299,7 @@ msgid "Discount (%)"
 msgstr "Desconto"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Display / TV\n"
@@ -335,7 +335,7 @@ msgid "Extra Values"
 msgstr "Valores extras"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Flooring parquet"
 msgstr "Piso de parquet"
@@ -399,7 +399,7 @@ msgid ""
 msgstr "Se desmarcado, permitirá ocultar o modelo de pedido sem removê-lo."
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Individual Work Station"
 msgstr "Estação de trabalho individual"
@@ -453,7 +453,7 @@ msgid "Lines"
 msgstr "Linhas"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Microphone system\n"
@@ -469,19 +469,19 @@ msgstr ""
 "Unidade de medida obrigatória ausente na linha da cotação de venda faturável."
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/views/components/template_dropdown.xml:0
 msgid "New"
 msgstr "Novo"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/views/components/template_dropdown.xml:0
 msgid "New Quotation"
 msgstr "Nova cotação"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 msgid "New Section"
 msgstr "Nova seção"
@@ -517,7 +517,7 @@ msgstr ""
 "modelo de cotação."
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Open Space Renovation"
 msgstr "Reforma de espaço aberto"
@@ -534,7 +534,7 @@ msgid "Optional Line"
 msgstr "Linha opcional"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Options"
 msgstr "Opções"
@@ -550,7 +550,7 @@ msgid "Parent Section Line"
 msgstr "Linha da seção principal"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Parquet installation"
 msgstr "Instalação de parquet"
@@ -561,7 +561,7 @@ msgid "Prepayment"
 msgstr "Pagamento"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Prepayment percentage must be a valid percentage."
 msgstr "A porcentagem de pagamento adiantado deve ser uma porcentagem válida."
@@ -669,7 +669,7 @@ msgid "Sales Team"
 msgstr "Equipe de vendas"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 msgid "Save as Template"
 msgstr "Salvar como modelo"
@@ -707,13 +707,13 @@ msgid "Section Unit of Measure"
 msgstr "Unidade de medida da seção"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.js:0
 msgid "Section template %s created successfully"
 msgstr "Modelo de seção %s criado com sucesso"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.js:0
 msgid "Section template %s updated successfully"
 msgstr "O modelo da seção %s foi atualizado com sucesso"
@@ -736,7 +736,7 @@ msgid "Sequence"
 msgstr "Sequência"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 #: code:addons/sale_management/static/src/fields/sale_order_template_line_field/sale_order_template_line_field.xml:0
 msgid "Set Optional"
@@ -765,7 +765,7 @@ msgstr ""
 "dos pedidos de venda mais fácil e à prova de erros."
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Subfloor preparation"
 msgstr "Preparação do contrapiso"
@@ -787,7 +787,7 @@ msgid "Template"
 msgstr "Modelo"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order.py:0
 msgid "Template from %s"
 msgstr "Modelo de %s"
@@ -836,8 +836,8 @@ msgstr ""
 #. module: sale_management
 #: model:digest.tip,name:sale_management.digest_tip_sale1_management_0
 #: model_terms:digest.tip,tip_description:sale_management.digest_tip_sale1_management_0
-msgid "Tip: Odoo supports configurable products"
-msgstr "Dica: o Odoo oferece suporte a produtos configuráveis"
+msgid "Tip: WETH supports configurable products"
+msgstr "Dica: o WETH oferece suporte a produtos configuráveis"
 
 #. module: sale_management
 #: model:digest.tip,name:sale_management.digest_tip_sale_management_1
@@ -867,7 +867,7 @@ msgid "Unit Price"
 msgstr "Preço unitário"
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.xml:0
 #: code:addons/sale_management/static/src/fields/sale_order_template_line_field/sale_order_template_line_field.xml:0
 msgid "Unset Optional"
@@ -891,19 +891,19 @@ msgid "Visible to all"
 msgstr "Visível para todos"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Whiteboard"
 msgstr "Quadro branco"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid "Whiteboard Pen"
 msgstr "Caneta para quadro branco"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template_line.py:0
 msgid ""
 "You cannot change the type of a sale quote line. Instead you should delete "
@@ -913,13 +913,13 @@ msgstr ""
 "deve excluir a linha atual e criar uma nova linha do tipo adequado."
 
 #. module: sale_management
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_management/static/src/fields/sale_order_line_field/sale_order_line_field.js:0
 msgid "You cannot save a section with combo lines as a template"
 msgstr "Você não pode salvar uma seção com linhas combinadas como um modelo"
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Your template belongs to company %(template_company)s but contains products "
@@ -934,7 +934,7 @@ msgstr ""
 "Altere a empresa do seu modelo ou remova os produtos de outras empresas."
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Your template belongs to company %(template_company)s but contains products "
@@ -949,7 +949,7 @@ msgstr ""
 "Altere a empresa do seu modelo ou remova os produtos de outras empresas."
 
 #. module: sale_management
-#. odoo-python
+#. weth-python
 #: code:addons/sale_management/models/sale_order_template.py:0
 msgid ""
 "Your template cannot contain products from specific companies if it's shared "

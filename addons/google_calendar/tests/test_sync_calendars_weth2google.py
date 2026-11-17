@@ -9,7 +9,7 @@ from weth.tests.common import tagged
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')
 @tagged('at_install', '-post_install')
-class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
+class TestSyncCalendarsGoogle2Weth(TestSyncGoogle):
 
     @patch_api
     def test_o2g_skip_when_sync_not_active(self):
@@ -36,7 +36,7 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
         )
 
     @patch_api
-    def test_o2g_moving_calendar_in_odoo_moves_event_in_google(self):
+    def test_o2g_moving_calendar_in_weth_moves_event_in_google(self):
         # Create an event in the primary calendar
         google_id = '1'
         event = self.env['calendar.event'].with_user(self.organizer_user).create({
@@ -54,7 +54,7 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
 
     @patch_api
     @patch.object(ResUsers, '_sync_request')
-    def test_o2g_moving_calendar_in_odoo_when_paused_moves_event_in_google_after_unpause(self, mock_sync_request):
+    def test_o2g_moving_calendar_in_weth_when_paused_moves_event_in_google_after_unpause(self, mock_sync_request):
         google_id = '2'
         event = self.env['calendar.event'].with_user(self.organizer_user).create({
             'name': 'Hello world',
@@ -102,7 +102,7 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
             'description': event.description,
             'location': '',
             'guestsCanModify': True,
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
             'attendees': [{'email': 'o.o@example.com', 'responseStatus': 'accepted'}],
             'conferenceData': None,
@@ -140,7 +140,7 @@ class TestSyncCalendarsGoogle2Odoo(TestSyncGoogle):
             'description': event.description,
             'location': '',
             'guestsCanModify': True,
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_weth_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [{'method': 'popup', 'minutes': 15}], 'useDefault': False},
             'attendees': [{'email': 'o.o@example.com', 'responseStatus': 'accepted'}],
             'conferenceData': None,

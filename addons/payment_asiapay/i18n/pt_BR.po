@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:44+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/payment_asiapay/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "AsiaPay Secure Hash Secret"
 msgstr "AsiaPay – Segredo hash seguro"
 
 #. module: payment_asiapay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_asiapay/models/payment_provider.py:0
 msgid "AsiaPay does not support the following currencies: %(currencies)s."
 msgstr "O AsiaPay não é compatível com as seguintes moedas: %(currencies)s."
@@ -203,7 +203,7 @@ msgid "Octopus"
 msgstr "Octopus"
 
 #. module: payment_asiapay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_asiapay/models/payment_provider.py:0
 msgid "Only one currency can be selected by AsiaPay account."
 msgstr "Só é possível selecionar uma moeda por conta do AsiaPay."
@@ -259,7 +259,7 @@ msgid "PesoPay"
 msgstr "PesoPay"
 
 #. module: payment_asiapay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_asiapay/models/payment_transaction.py:0
 msgid "Received data with missing success code."
 msgstr "Dados recebidos sem o código de sucesso."
@@ -305,7 +305,7 @@ msgid "SiamPay"
 msgstr "SiamPay"
 
 #. module: payment_asiapay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_asiapay/models/payment_transaction.py:0
 msgid ""
 "Success code: %(success_code)s. Primary response code: %(response_code)s."
@@ -376,7 +376,7 @@ msgid "United Overseas Bank"
 msgstr "United Overseas Bank"
 
 #. module: payment_asiapay
-#. odoo-python
+#. weth-python
 #: code:addons/payment_asiapay/models/payment_transaction.py:0
 msgid "Unknown success code: %s"
 msgstr "Código de sucesso desconhecido: %s"

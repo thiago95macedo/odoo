@@ -121,7 +121,7 @@ export class Dropdown extends Component {
             getItems: () => {
                 if (this.state.isOpen && this.menuRef()) {
                     return this.menuRef().querySelectorAll(
-                        ":scope .o-navigable, :scope .o-dropdown"
+                        ":scope .w-navigable, :scope .w-dropdown"
                     );
                 } else {
                     return [];

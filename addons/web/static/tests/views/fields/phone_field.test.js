@@ -85,7 +85,7 @@ test("PhoneField delegates calls to an applicable phone call handler", async () 
         resId: 1,
     });
 
-    await click(".o_field_phone .o_phone_form_link");
+    await click(".w_field_phone .w_phone_form_link");
 
     expect.verifySteps(["applicable yop", "handled"]);
 });
@@ -105,10 +105,10 @@ test("PhoneField in form view on normal screens (readonly)", async () => {
             </form>`,
         resId: 1,
     });
-    expect(".o_field_phone .o_phone_form_link").toHaveCount(1);
-    expect(".o_field_phone span:first-child").toHaveText("yop");
-    await assertUrl(`.o_field_phone .o_phone_form_link`, "tel:yop");
-    expect(".o_field_phone span:first-child").toHaveClass("o_force_ltr");
+    expect(".w_field_phone .w_phone_form_link").toHaveCount(1);
+    expect(".w_field_phone span:first-child").toHaveText("yop");
+    await assertUrl(`.w_field_phone .w_phone_form_link`, "tel:yop");
+    expect(".w_field_phone span:first-child").toHaveClass("o_force_ltr");
 });
 
 test("PhoneField in form view on normal screens (edit)", async () => {
@@ -127,8 +127,8 @@ test("PhoneField in form view on normal screens (edit)", async () => {
     });
     expect(`input[type="tel"]`).toHaveCount(1);
     expect(`input[type="tel"]`).toHaveValue("yop");
-    expect(".o_field_phone a i[data-icon='phone']").toHaveCount(1);
-    await assertUrl(`.o_field_widget a.o_phone_form_link`, "tel:yop");
+    expect(".w_field_phone a i[data-icon='phone']").toHaveCount(1);
+    await assertUrl(`.w_field_widget a.w_phone_form_link`, "tel:yop");
 
     // change value in edit mode
     await click(`input[type="tel"]`);
@@ -150,8 +150,8 @@ test("PhoneField can hide action buttons", async () => {
         resId: 1,
     });
 
-    expect(".o_field_widget[name='foo'] input").toHaveValue("yop");
-    expect(".o_field_widget[name='foo'] .o_phone_form_link").toHaveCount(0);
+    expect(".w_field_widget[name='foo'] input").toHaveValue("yop");
+    expect(".w_field_widget[name='foo'] .w_phone_form_link").toHaveCount(0);
 });
 
 test("PhoneField in editable list view on normal screens", async () => {
@@ -161,26 +161,26 @@ test("PhoneField in editable list view on normal screens", async () => {
         resModel: "partner",
         arch: '<list editable="bottom"><field name="foo" widget="phone"/></list>',
     });
-    expect("tbody td:not(.o_list_record_selector).o_data_cell").toHaveCount(2);
-    expect("tbody td:not(.o_list_record_selector) span:first-child:eq(0)").toHaveText("yop");
-    expect(".o_field_widget .o_phone_form_link").toHaveCount(0);
+    expect("tbody td:not(.w_list_record_selector).w_data_cell").toHaveCount(2);
+    expect("tbody td:not(.w_list_record_selector) span:first-child:eq(0)").toHaveText("yop");
+    expect(".w_field_widget .w_phone_form_link").toHaveCount(0);
 
     // Edit a line and check the result
-    const cell = queryFirst("tbody td:not(.o_list_record_selector)");
+    const cell = queryFirst("tbody td:not(.w_list_record_selector)");
     await click(cell);
     await animationFrame();
     expect(cell.parentElement).toHaveClass("o_selected_row");
-    expect(`tbody td:not(.o_list_record_selector) input`).toHaveValue("yop");
+    expect(`tbody td:not(.w_list_record_selector) input`).toHaveValue("yop");
 
-    await click(`tbody td:not(.o_list_record_selector) input`);
+    await click(`tbody td:not(.w_list_record_selector) input`);
     await edit("new");
     await animationFrame();
-    await click(".o_control_panel_main_buttons .o_list_button_save");
+    await click(".w_control_panel_main_buttons .w_list_button_save");
     await animationFrame();
 
-    expect(".o_selected_row").toHaveCount(0);
-    expect("tbody td:not(.o_list_record_selector) span:first-child:eq(0)").toHaveText("new");
-    expect(".o_field_widget .o_phone_form_link").toHaveCount(0);
+    expect(".w_selected_row").toHaveCount(0);
+    expect("tbody td:not(.w_list_record_selector) span:first-child:eq(0)").toHaveText("new");
+    expect(".w_field_widget .w_phone_form_link").toHaveCount(0);
 });
 
 test("use TAB to navigate to a PhoneField", async () => {
@@ -198,9 +198,9 @@ test("use TAB to navigate to a PhoneField", async () => {
             </form>`,
     });
 
-    await pointerDown(".o_field_widget[name=name] input");
+    await pointerDown(".w_field_widget[name=name] input");
 
-    expect(".o_field_widget[name=name] input").toBeFocused();
+    expect(".w_field_widget[name=name] input").toBeFocused();
     expect(queryOne`[name="foo"] input:only`).toBe(getNextTabableElement());
 });
 
@@ -218,7 +218,7 @@ test("phone field with placeholder", async () => {
                 </sheet>
             </form>`,
     });
-    expect(".o_field_widget[name='foo'] input").toHaveProperty("placeholder", "Placeholder");
+    expect(".w_field_widget[name='foo'] input").toHaveProperty("placeholder", "Placeholder");
 });
 
 test("placeholder_field shows as placeholder", async () => {
@@ -233,7 +233,7 @@ test("placeholder_field shows as placeholder", async () => {
             <field name="char"/>
         </form>`,
     });
-    expect(`.o_field_phone input`).toHaveAttribute("placeholder", "My Placeholder");
+    expect(`.w_field_phone input`).toHaveAttribute("placeholder", "My Placeholder");
 });
 
 test("unset and readonly PhoneField", async () => {
@@ -251,7 +251,7 @@ test("unset and readonly PhoneField", async () => {
                 </sheet>
             </form>`,
     });
-    expect(".o_field_widget[name='foo'] a").toHaveCount(0);
+    expect(".w_field_widget[name='foo'] a").toHaveCount(0);
 });
 
 test("url is correctly called in readonly", async () => {
@@ -271,8 +271,8 @@ test("url is correctly called in readonly", async () => {
         resId: 1,
     });
 
-    expect(".o_field_phone span:first-child").toHaveText("+12 345 67 89 00");
-    await assertUrl(`.o_field_widget .o_phone_form_link`, "tel:+12345678900");
+    expect(".w_field_phone span:first-child").toHaveText("+12 345 67 89 00");
+    await assertUrl(`.w_field_widget .w_phone_form_link`, "tel:+12345678900");
 });
 
 test("url uses sanitized field while displaying formatted value in readonly", async () => {
@@ -296,8 +296,8 @@ test("url uses sanitized field while displaying formatted value in readonly", as
         resId: 1,
     });
 
-    expect(".o_field_phone span:first-child").toHaveText("+1 202-555-0124");
-    await assertUrl(`.o_field_widget .o_phone_form_link`, "tel:+12025550124");
+    expect(".w_field_phone span:first-child").toHaveText("+1 202-555-0124");
+    await assertUrl(`.w_field_widget .w_phone_form_link`, "tel:+12025550124");
 });
 
 test("New record, fill in phone field, then click on call icon and save", async () => {
@@ -315,18 +315,18 @@ test("New record, fill in phone field, then click on call icon and save", async 
             </form>`,
     });
 
-    await contains(".o_field_widget[name=name] input").edit("TEST");
-    await contains(".o_field_widget[name=foo] input").edit("+12345678900");
+    await contains(".w_field_widget[name=name] input").edit("TEST");
+    await contains(".w_field_widget[name=foo] input").edit("+12345678900");
 
     await click(`input[type="tel"]`);
 
-    expect(`.o_form_status_indicator_buttons`).not.toHaveClass("invisible");
+    expect(`.w_form_status_indicator_buttons`).not.toHaveClass("invisible");
 
     await clickSave();
 
-    expect(".o_field_widget[name=name] input").toHaveValue("TEST");
-    expect(".o_field_widget[name=foo] input").toHaveValue("+12345678900");
-    expect(`.o_form_status_indicator_buttons`).toHaveClass("invisible");
+    expect(".w_field_widget[name=name] input").toHaveValue("TEST");
+    expect(".w_field_widget[name=foo] input").toHaveValue("+12345678900");
+    expect(`.w_form_status_indicator_buttons`).toHaveClass("invisible");
 });
 
 test("action buttons are form-only: a list cell shows the number with no buttons", async () => {
@@ -337,7 +337,7 @@ test("action buttons are form-only: a list cell shows the number with no buttons
         arch: `<list><field name="foo" widget="phone"/></list>`,
     });
     // The (formatted) value is still rendered...
-    expect("tbody td:not(.o_list_record_selector) span:first-child:eq(0)").toHaveText("yop");
+    expect("tbody td:not(.w_list_record_selector) span:first-child:eq(0)").toHaveText("yop");
     // ...but no Call/SMS/WhatsApp button (form-only).
-    expect(".o_field_widget .o_phone_form_link").toHaveCount(0);
+    expect(".w_field_widget .w_phone_form_link").toHaveCount(0);
 });

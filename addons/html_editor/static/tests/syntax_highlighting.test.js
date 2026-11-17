@@ -28,7 +28,7 @@ const pressAndWait = async (...args) => {
 const insertPre = async (editor) => {
     await insertText(editor, "/code");
     await animationFrame();
-    expect(".active .o-we-command-name").toHaveText("Code");
+    expect(".active .w-we-command-name").toHaveText("Code");
     await pressAndWait("enter");
     await animationFrame();
 };
@@ -39,8 +39,8 @@ const changeLanguage = async (textarea, from, to) => {
     await waitFor(`.o_code_toolbar button[name='language'][title='${from}']`);
     await click(`.o_code_toolbar button[name='language'][title='${from}']`);
     // Language selector dropdown should open.
-    await waitFor(`.o_language_selector .o-dropdown-item[name='${to}']`);
-    await click(`.o_language_selector .o-dropdown-item[name='${to}']`);
+    await waitFor(`.o_language_selector .w-dropdown-item[name='${to}']`);
+    await click(`.o_language_selector .w-dropdown-item[name='${to}']`);
     // Code Toolbar should show the new language name.
     await waitFor(`.o_code_toolbar button[name='language'][title='${to}']`);
     await animationFrame(); // wait for effect
@@ -1257,8 +1257,8 @@ test("should keep textarea focused when changing code block language", async () 
     dropdownButton.focus();
     await click(dropdownButton);
     // Language selector dropdown should open.
-    await waitFor(`.o_language_selector .o-dropdown-item[name='${to}']`);
-    await click(`.o_language_selector .o-dropdown-item[name='${to}']`);
+    await waitFor(`.o_language_selector .w-dropdown-item[name='${to}']`);
+    await click(`.o_language_selector .w-dropdown-item[name='${to}']`);
     // Code Toolbar should show the new language name.
     await waitFor(`.o_code_toolbar button[name='language'][title='${to}']`);
     // Ensure focus is restored to the textarea after the dropdown closes
@@ -1382,7 +1382,7 @@ test("should toggle code wrapping via the code toolbar", async () => {
 });
 
 test.tags("desktop");
-test("should not open the odoo global command bar when pressing ctrl+k inside a syntax-highlighted code block", async () => {
+test("should not open the weth global command bar when pressing ctrl+k inside a syntax-highlighted code block", async () => {
     const { editor } = await setupEditor(`<p>a[]b</p><pre>xy</pre>`, {
         config: configWithEmbeddings,
     });
@@ -1402,7 +1402,7 @@ test("should not open the odoo global command bar when pressing ctrl+k inside a 
     await click(textarea);
     expect(editor.document.activeElement).toBe(textarea);
 
-    // Pressing ctrl+k to open odoo global command bar
+    // Pressing ctrl+k to open weth global command bar
     await press(["ctrl", "k"]);
     await animationFrame();
     expect('.o_command span[title="Create link"]').toHaveCount(0);
@@ -1418,8 +1418,8 @@ test("should convert selected text to heading", async () => {
         "Initial code block is highlighted",
         editor
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await contains(".o-we-toolbar [name='font'] .dropdown-toggle").click();
+    await expectElementCount(".w-we-toolbar", 1);
+    await contains(".w-we-toolbar [name='font'] .dropdown-toggle").click();
     await contains(".o_font_type_selector_menu .dropdown-item:contains('Header 2')").click();
     await animationFrame();
     expect(getContent(editor.editable)).toBe(`<h2>[a</h2><h2>b</h2><h2>c]</h2>`);
@@ -1435,8 +1435,8 @@ test("should convert selected text to syntax highlighting", async () => {
         "Initial code block is highlighted",
         editor
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await contains(".o-we-toolbar [name='font'] .dropdown-toggle").click();
+    await expectElementCount(".w-we-toolbar", 1);
+    await contains(".w-we-toolbar [name='font'] .dropdown-toggle").click();
     await contains(".o_font_type_selector_menu .dropdown-item:contains('Code')").click();
     await animationFrame();
     await compareHighlightedContent(
@@ -1462,8 +1462,8 @@ test("should convert selected text to quote", async () => {
         "Initial code block is highlighted",
         editor
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await contains(".o-we-toolbar [name='font'] .dropdown-toggle").click();
+    await expectElementCount(".w-we-toolbar", 1);
+    await contains(".w-we-toolbar [name='font'] .dropdown-toggle").click();
     await contains(".o_font_type_selector_menu .dropdown-item:contains('Quote')").click();
     await animationFrame();
 
@@ -1488,8 +1488,8 @@ test("should convert complex selected text to quote", async () => {
         "Initial code block is highlighted",
         editor
     );
-    await expectElementCount(".o-we-toolbar", 1);
-    await contains(".o-we-toolbar [name='font'] .dropdown-toggle").click();
+    await expectElementCount(".w-we-toolbar", 1);
+    await contains(".w-we-toolbar [name='font'] .dropdown-toggle").click();
     await contains(".o_font_type_selector_menu .dropdown-item:contains('Quote')").click();
     await animationFrame();
     expect(getContent(editor.editable)).toBe(

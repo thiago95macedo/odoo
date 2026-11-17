@@ -214,7 +214,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
     @mute_logger('weth.models.unlink')
     def test_mail_server_priorities(self):
         """ Test if we choose the right mail server to send an email. Simulates
-        simple Odoo DB so we have to spoof the FROM otherwise we cannot send
+        simple WETH DB so we have to spoof the FROM otherwise we cannot send
         any email. """
         for email_from, (expected_mail_server, expected_email_from) in zip(
             [

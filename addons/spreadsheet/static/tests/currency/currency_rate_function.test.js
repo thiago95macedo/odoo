@@ -23,7 +23,7 @@ test("Basic exchange formula", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD")`);
     expect(getCellValue(model, "A1")).toBe("Loading...");
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(0.9);
@@ -45,8 +45,8 @@ test("rate formula at a given date(time)", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD", "12-31-2020")`);
-    setCellContent(model, "A2", `=ODOO.CURRENCY.RATE("EUR","USD", "11-30-2020 00:00:00")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD", "12-31-2020")`);
+    setCellContent(model, "A2", `=WETH.CURRENCY.RATE("EUR","USD", "11-30-2020 00:00:00")`);
     await waitForDataLoaded(model);
     expect.verifySteps(["rate fetched"]);
 });
@@ -59,11 +59,11 @@ test("invalid date", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD", "hello")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD", "hello")`);
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe("#ERROR");
     expect(getEvaluatedCell(model, "A1").message).toBe(
-        "The function ODOO.CURRENCY.RATE expects a number value, but 'hello' is a string, and cannot be coerced to a number."
+        "The function WETH.CURRENCY.RATE expects a number value, but 'hello' is a string, and cannot be coerced to a number."
     );
 });
 
@@ -82,8 +82,8 @@ test("rate formula at a given company", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD",, 1)`);
-    setCellContent(model, "A2", `=ODOO.CURRENCY.RATE("EUR","USD",, 2)`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD",, 1)`);
+    setCellContent(model, "A2", `=WETH.CURRENCY.RATE("EUR","USD",, 2)`);
     await waitForDataLoaded(model);
     expect.verifySteps(["rate fetched"]);
     expect(getCellValue(model, "A1")).toBe(0.7);
@@ -98,7 +98,7 @@ test("invalid company id", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD",, 45)`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD",, 45)`);
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe("#ERROR");
     expect(getEvaluatedCell(model, "A1").message).toBe("Invalid company id.");
@@ -113,7 +113,7 @@ test("Currency rate throw with unknown currency", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("INVALID","USD")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("INVALID","USD")`);
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").message).toBe("Currency rate unavailable.");
 });
@@ -128,10 +128,10 @@ test("Currency rates are only loaded once", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD")`);
     await waitForDataLoaded(model);
     expect.verifySteps(["FETCH"]);
-    setCellContent(model, "A2", `=ODOO.CURRENCY.RATE("EUR","USD")`);
+    setCellContent(model, "A2", `=WETH.CURRENCY.RATE("EUR","USD")`);
     await waitForDataLoaded(model);
     expect.verifySteps([]);
 });
@@ -150,8 +150,8 @@ test("Currency rates are loaded once by clock", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD")`);
-    setCellContent(model, "A2", `=ODOO.CURRENCY.RATE("EUR","SEK")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD")`);
+    setCellContent(model, "A2", `=WETH.CURRENCY.RATE("EUR","SEK")`);
     await waitForDataLoaded(model);
     expect.verifySteps(["FETCH:2"]);
 });
@@ -166,7 +166,7 @@ test("Rate is updated when refreshing the data sources", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CURRENCY.RATE("EUR","USD")`);
+    setCellContent(model, "A1", `=WETH.CURRENCY.RATE("EUR","USD")`);
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(0.9);
 

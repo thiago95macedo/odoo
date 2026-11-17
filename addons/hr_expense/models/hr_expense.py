@@ -476,7 +476,7 @@ class HrExpense(models.Model):
     @api.depends('currency_id', 'total_amount_currency', 'date')
     def _compute_currency_rate(self):
         """
-            We want the default odoo rate when the following change:
+            We want the default weth rate when the following change:
             - the currency of the expense
             - the total amount in foreign currency
             - the date of the expense
@@ -2256,8 +2256,8 @@ class HrExpense(models.Model):
 
         if not account:
             raise UserError(self.env._(
-                "Odoo had a look at your expense, its product, your company and the journal but came back with empty hands.\n"
-                "Give Odoo a hand to find an account by setting up an expense account.\n"
+                "WETH had a look at your expense, its product, your company and the journal but came back with empty hands.\n"
+                "Give WETH a hand to find an account by setting up an expense account.\n"
                 "%(expense)s %(expense_name)s.\n",
                 expense=self,
                 expense_name=self.name,

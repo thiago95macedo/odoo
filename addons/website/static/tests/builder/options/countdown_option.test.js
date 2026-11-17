@@ -10,7 +10,7 @@ defineWebsiteModels();
 
 async function setLayout(layout, selectorAdd = "") {
     await waitFor("[data-label='At The End']");
-    await contains("[data-label='At The End'] button.o-dropdown").click();
+    await contains("[data-label='At The End'] button.w-dropdown").click();
     await contains(`.popover [data-action-value='${layout}']`).click();
     expect(`:iframe .s_countdown${selectorAdd}`).toHaveAttribute("data-end-action", layout);
 }

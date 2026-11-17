@@ -1,7 +1,7 @@
 import { CommandResult } from "../../o_spreadsheet/cancelled_reason";
 import { checkFilterFieldMatching } from "@spreadsheet/global_filters/helpers";
 import { deepCopy } from "@web/core/utils/objects";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { WethCorePlugin } from "@spreadsheet/plugins";
 
 /**
  * @typedef GFLocalList
@@ -10,7 +10,7 @@ import { OdooCorePlugin } from "@spreadsheet/plugins";
  *
  */
 
-export class ListCoreGlobalFilterPlugin extends OdooCorePlugin {
+export class ListCoreGlobalFilterPlugin extends WethCorePlugin {
     static getters = /** @type {const} */ (["getListFieldMatch", "getListFieldMatching"]);
     constructor(config) {
         super(config);
@@ -41,15 +41,15 @@ export class ListCoreGlobalFilterPlugin extends OdooCorePlugin {
      */
     handle(cmd) {
         switch (cmd.type) {
-            case "INSERT_ODOO_LIST": {
+            case "INSERT_WETH_LIST": {
                 this._addList(cmd.listId);
                 break;
             }
-            case "REMOVE_ODOO_LIST": {
+            case "REMOVE_WETH_LIST": {
                 this.history.update("fieldMatchings", cmd.listId, undefined);
                 break;
             }
-            case "DUPLICATE_ODOO_LIST": {
+            case "DUPLICATE_WETH_LIST": {
                 const { listId, newListId } = cmd;
                 const fieldMatch = deepCopy(this.fieldMatchings[listId]);
                 this._addList(newListId, fieldMatch);

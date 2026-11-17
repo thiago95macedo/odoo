@@ -836,7 +836,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
             # contains external people: partner_1 (follower) and asked outgoing email
             'X-Msg-To-Add': f'{additional_to},{self.partner_1.email_formatted}',
             'X-Msg-Cc-Add': '',
-            'X-Odoo-Objects': f'{test_record._name}-{test_record.id}',
+            'X-Weth-Objects': f'{test_record._name}-{test_record.id}',
         }
         with self.assertSinglePostNotifications(
                 [
@@ -1000,7 +1000,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
     @users('employee')
     @mute_logger('weth.models.unlink')
     def test_message_post_inactive_follower(self):
-        """ Test posting with inactive followers does not notify them (e.g. odoobot) """
+        """ Test posting with inactive followers does not notify them (e.g. wethbot) """
         test_record = self.env['mail.test.simple'].browse(self.test_record.ids)
         test_record._message_subscribe(self.user_employee_2.partner_id.ids)
         self.user_employee_2.write({'active': False})
@@ -1066,7 +1066,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                             'mail_mail_values': {
                                 'headers': {
                                     'Return-Path': f'{expected_alias_domain.bounce_alias}@{expected_alias_domain.name}',
-                                    'X-Odoo-Objects': f'{record._name}-{record.id}',
+                                    'X-Weth-Objects': f'{record._name}-{record.id}',
                                 },
                             },
                             'message_values': {

@@ -62,17 +62,17 @@ async function mountCardPopover(props = {}) {
 
 test("with default header, body and footer (no popoverNode)", async () => {
     await mountCardPopover();
-    expect(`.o_popover_header`).toHaveText("Jean Michel");
-    expect(`.o_popover_body .default-body`).toHaveCount(1);
-    expect(`.o_popover_footer .test-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_header`).toHaveText("Jean Michel");
+    expect(`.w_popover_body .default-body`).toHaveCount(1);
+    expect(`.w_popover_footer .test-footer-btn`).toHaveCount(1);
 });
 
 test("with popoverNode with card_id attribute", async () => {
     await mountCardPopover({
         popoverNode: parseXML(`<popover card_id="1"/>`),
     });
-    expect(`.o_popover_body .o_custom_card_body`).toHaveCount(1);
-    expect(`.o_popover_body`).toHaveText("jean@example.com");
+    expect(`.w_popover_body .w_custom_card_body`).toHaveCount(1);
+    expect(`.w_popover_body`).toHaveText("jean@example.com");
 });
 
 test("with popoverNode defining only the body", async () => {
@@ -88,10 +88,10 @@ test("with popoverNode defining only the body", async () => {
             </popover>
         `),
     });
-    expect(`.o_popover_header`).toHaveCount(0);
-    expect(`.o_popover_body .custom-body`).toHaveText("Custom Body");
-    expect(`.o_popover_body .email`).toHaveText("jean@example.com");
-    expect(`.o_popover_footer .test-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_header`).toHaveCount(0);
+    expect(`.w_popover_body .custom-body`).toHaveText("Custom Body");
+    expect(`.w_popover_body .email`).toHaveText("jean@example.com");
+    expect(`.w_popover_footer .test-footer-btn`).toHaveCount(1);
 });
 
 test("with popoverNode defining only the header", async () => {
@@ -106,9 +106,9 @@ test("with popoverNode defining only the header", async () => {
             </popover>
         `),
     });
-    expect(`.o_popover_header .custom-header`).toHaveText("Custom Header");
-    expect(`.o_popover_body .default-body`).toHaveCount(1);
-    expect(`.o_popover_footer .test-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_header .custom-header`).toHaveText("Custom Header");
+    expect(`.w_popover_body .default-body`).toHaveCount(1);
+    expect(`.w_popover_footer .test-footer-btn`).toHaveCount(1);
 });
 
 test("with popoverNode defining only the footer", async () => {
@@ -123,10 +123,10 @@ test("with popoverNode defining only the footer", async () => {
             </popover>
         `),
     });
-    expect(`.o_popover_header`).toHaveText("Jean Michel");
-    expect(`.o_popover_body .default-body`).toHaveCount(1);
-    expect(`.o_popover_footer .test-footer-btn`).toHaveCount(0);
-    expect(`.o_popover_footer .custom-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_header`).toHaveText("Jean Michel");
+    expect(`.w_popover_body .default-body`).toHaveCount(1);
+    expect(`.w_popover_footer .test-footer-btn`).toHaveCount(0);
+    expect(`.w_popover_footer .custom-footer-btn`).toHaveCount(1);
 });
 
 test(`with popoverNode defining a footer with replace="O"`, async () => {
@@ -141,13 +141,13 @@ test(`with popoverNode defining a footer with replace="O"`, async () => {
             </popover>
         `),
     });
-    expect(`.o_popover_footer .test-footer-btn`).toHaveCount(1);
-    expect(`.o_popover_footer .custom-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_footer .test-footer-btn`).toHaveCount(1);
+    expect(`.w_popover_footer .custom-footer-btn`).toHaveCount(1);
 });
 
 test("click on the close cross", async () => {
     await mountCardPopover({ close: () => expect.step("close") });
-    await click(`.o_card_popover_close`);
+    await click(`.w_card_popover_close`);
     expect.verifySteps(["close"]);
 });
 
@@ -188,9 +188,9 @@ test(`templates with t-if using a field declared out of the templates`, async ()
             </popover>
         `),
     });
-    expect(`.o_popover_header .o_custom_header`).toHaveCount(1);
-    expect(`.o_popover_body .o_custom_body`).toHaveCount(1);
-    expect(`.o_popover_footer .o_custom_footer_button`).toHaveCount(1);
+    expect(`.w_popover_header .w_custom_header`).toHaveCount(1);
+    expect(`.w_popover_body .w_custom_body`).toHaveCount(1);
+    expect(`.w_popover_footer .w_custom_footer_button`).toHaveCount(1);
     expect(`.not_displayed`).toHaveCount(0);
 });
 
@@ -208,7 +208,7 @@ test("template in arch get favors vs card_id attribute", async () => {
             </popover>
         `),
     });
-    expect(`.o_popover_body .o_inline_body`).toHaveCount(1);
-    expect(`.o_popover_body .o_custom_card_body`).toHaveCount(0);
-    expect(`.o_popover_body`).toHaveText("Jean Michel");
+    expect(`.w_popover_body .w_inline_body`).toHaveCount(1);
+    expect(`.w_popover_body .w_custom_card_body`).toHaveCount(0);
+    expect(`.w_popover_body`).toHaveText("Jean Michel");
 });

@@ -8,10 +8,10 @@ contact_links:
     about: "If you have an idea of the change to apply in the codebase, please open a pull request to speed up the process."
   - name: "Translation Change"
     url: https://explore.transifex.com/weth/
-    about: Please use the Transifex tool for Translations (see https://github.com/weth/odoo/wiki/Translations for more information).
-  - name: "Odoo Help Forums"
+    about: Please use the Transifex tool for Translations (see https://github.com/weth/weth/wiki/Translations for more information).
+  - name: "WETH Help Forums"
     url: https://www.weth.com.br/forum/help-1
-    about: "Please ask and answer questions about custom code, functional aspects or any Odoo-related topic here."
+    about: "Please ask and answer questions about custom code, functional aspects or any Weth-related topic here."
   - name: "Documentation Feedback"
     url: https://github.com/weth/documentation/issue
     about: "If your feedback is about the documentation, please post your issue in the dedicated repository."

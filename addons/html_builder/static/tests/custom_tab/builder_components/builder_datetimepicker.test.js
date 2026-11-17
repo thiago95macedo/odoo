@@ -47,11 +47,11 @@ test("defaults to now if undefined", async () => {
     await setupHTMLBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
 
-    let dateString = queryOne(".we-bg-options-container input.o-hb-input-base").value;
+    let dateString = queryOne(".we-bg-options-container input.w-hb-input-base").value;
     expect(isExpectedDateTime({ dateString })).toBe(true);
 
     await contains(".we-bg-options-container input.form-check-input").click();
-    dateString = queryOne(".we-bg-options-container input.o-hb-input-base").value;
+    dateString = queryOne(".we-bg-options-container input.w-hb-input-base").value;
     expect(isExpectedDateTime({ dateString })).toBe(true);
 });
 
@@ -198,7 +198,7 @@ test("toggles today as a relative date", async () => {
     });
     await setupHTMLBuilder(`<div class="test-options-target">b</div>`);
     await contains(":iframe .test-options-target").click();
-    const inputSelector = ".we-bg-options-container input.o-hb-input-base";
+    const inputSelector = ".we-bg-options-container input.w-hb-input-base";
     const todayButtonSelector = ".we-bg-options-container button:has([data-icon='today'])";
 
     await contains(inputSelector).edit("01/01/2025");

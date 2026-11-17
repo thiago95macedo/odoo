@@ -126,7 +126,7 @@ class SpreadsheetMixin(models.AbstractModel):
         in formulas. It is translated for the user creating the spreadsheet.
         """
         lang = self.env["res.lang"]._lang_get(self.env.user.lang)
-        locale = lang._odoo_lang_to_spreadsheet_locale()
+        locale = lang._weth_lang_to_spreadsheet_locale()
         return {
             "sheets": [
                 {

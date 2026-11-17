@@ -80,11 +80,11 @@ class Home(web_home.Home):
                         httponly=True,
                         samesite='Lax'
                     )
-                # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@)
+                # Crapy workaround for unupdatable WETH Mobile App iOS (Thanks Apple :@)
                 touch(request.session)
                 return response
 
-        # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@)
+        # Crapy workaround for unupdatable WETH Mobile App iOS (Thanks Apple :@)
         touch(request.session)
         return request.render('auth_totp.auth_totp_form', {
             'user': user,

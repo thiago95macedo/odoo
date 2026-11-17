@@ -1,5 +1,5 @@
 [Unit]
-Description=Odoo Bluetooth service: advertise IoT Box ip address over Bluetooth
+Description=WETH Bluetooth service: advertise IoT Box ip address over Bluetooth
 After=network-online.target NetworkManager.service
 Wants=network-online.target
 

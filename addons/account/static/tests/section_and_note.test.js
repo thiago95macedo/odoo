@@ -135,7 +135,7 @@ test("can add a line in a section", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -150,11 +150,11 @@ test("can add a line in a section", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(0) button").click();
-    await contains(".o-dropdown-item:contains(Add a line)").click();
+    await contains(".w_list_section_options:eq(0) button").click();
+    await contains(".w-dropdown-item:contains(Add a line)").click();
     await edit("A3");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -200,7 +200,7 @@ test("can add a line in a subsection", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -215,11 +215,11 @@ test("can add a line in a subsection", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:last button").click();
-    await contains(".o-dropdown-item:contains(Add a line)").click();
+    await contains(".w_list_section_options:last button").click();
+    await contains(".w-dropdown-item:contains(Add a line)").click();
     await edit("Ca3");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -265,7 +265,7 @@ test("can add a subsection in a section", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -280,11 +280,11 @@ test("can add a subsection in a section", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(0) button").click();
-    await contains(".o-dropdown-item:contains(Add a subsection)").click();
+    await contains(".w_list_section_options:eq(0) button").click();
+    await contains(".w-dropdown-item:contains(Add a subsection)").click();
     await edit("Aa");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -300,7 +300,7 @@ test("can add a subsection in a section", async () => {
         "C",
         "C1",
     ]);
-    expect(".o_is_line_subsection:contains(Aa)").toHaveCount(1);
+    expect(".w_is_line_subsection:contains(Aa)").toHaveCount(1);
 });
 
 test("can't add a subsection if value not in options", async () => {
@@ -343,8 +343,8 @@ test("can't add a subsection if value not in options", async () => {
             </form>
         `,
     });
-    await contains(".o_list_section_options:last button").click();
-    expect(".o-dropdown-item:contains(Add a subsection)").toHaveCount(0);
+    await contains(".w_list_section_options:last button").click();
+    expect(".w-dropdown-item:contains(Add a subsection)").toHaveCount(0);
 });
 
 test("can delete sections", async () => {
@@ -375,7 +375,7 @@ test("can delete sections", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -390,9 +390,9 @@ test("can delete sections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Delete)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual(["r1", "r2", "A", "A1", "A2", "C", "C1"]);
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Delete)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual(["r1", "r2", "A", "A1", "A2", "C", "C1"]);
 });
 
 test("can delete subsections", async () => {
@@ -423,7 +423,7 @@ test("can delete subsections", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -438,9 +438,9 @@ test("can delete subsections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_is_line_subsection .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Delete)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_is_line_subsection .w_list_section_options button").click();
+    await contains(".w-dropdown-item:contains(Delete)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -482,7 +482,7 @@ test("can duplicate sections", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -497,9 +497,9 @@ test("can duplicate sections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -550,7 +550,7 @@ test("can duplicate subsections", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -565,9 +565,9 @@ test("can duplicate subsections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_is_line_subsection .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_is_line_subsection .w_list_section_options button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -636,7 +636,7 @@ test("can resequence records inside sections", async () => {
         `,
     });
 
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -651,8 +651,8 @@ test("can resequence records inside sections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_data_row:eq(3) .o_row_handle").dragAndDrop(".o_data_row:eq(0)");
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_data_row:eq(3) .w_row_handle").dragAndDrop(".w_data_row:eq(0)");
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "A1",
         "r1",
         "r2",
@@ -667,8 +667,8 @@ test("can resequence records inside sections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_data_row:eq(4) .o_row_handle").dragAndDrop(".o_data_row:eq(10)");
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_data_row:eq(4) .w_row_handle").dragAndDrop(".w_data_row:eq(10)");
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "A1",
         "r1",
         "r2",
@@ -683,8 +683,8 @@ test("can resequence records inside sections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_data_row:last .o_row_handle").dragAndDrop(".o_data_row:eq(4)");
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_data_row:last .w_row_handle").dragAndDrop(".w_data_row:eq(4)");
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "A1",
         "r1",
         "r2",
@@ -732,7 +732,7 @@ test("resequence can be discarded", async () => {
         `,
     });
 
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -747,8 +747,8 @@ test("resequence can be discarded", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_data_row:eq(3) .o_row_handle").dragAndDrop(".o_data_row:eq(0)");
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_data_row:eq(3) .w_row_handle").dragAndDrop(".w_data_row:eq(0)");
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "A1",
         "r1",
         "r2",
@@ -763,8 +763,8 @@ test("resequence can be discarded", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_form_button_cancel").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_form_button_cancel").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -809,18 +809,18 @@ test("can resequence sections", async () => {
             </form>
         `,
     });
-    await contains(".o_data_row:eq(11) .o_row_handle", { visible: false }).dragAndDrop(
-        ".o_data_row:eq(0)"
+    await contains(".w_data_row:eq(11) .w_row_handle", { visible: false }).dragAndDrop(
+        ".w_data_row:eq(0)"
     );
-    expect(queryAllTexts(".o_data_row")).toEqual(
+    expect(queryAllTexts(".w_data_row")).toEqual(
         ["C", "r1", "r2", "A", "A1", "A2", "B", "B1", "B2", "Ba", "Ba1", "Ba2", "C1"],
         {
             message: "With C on top, B becomes the top section for all records starting from B1",
         }
     );
-    await contains(".o_list_section_options:eq(2) button").click();
-    await contains(".o-dropdown-item:contains(Delete)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual(["C", "r1", "r2", "A", "A1", "A2"], {
+    await contains(".w_list_section_options:eq(2) button").click();
+    await contains(".w-dropdown-item:contains(Delete)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual(["C", "r1", "r2", "A", "A1", "A2"], {
         message: "Deleting B will then remove all records starting from B1",
     });
 });
@@ -853,7 +853,7 @@ test("add a section", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -868,11 +868,11 @@ test("add a section", async () => {
         "C",
         "C1",
     ]);
-    expect(`.o_note_row`).toHaveCount(0);
-    await contains(".o_field_x2many_list_row_add button:eq(1)").click();
+    expect(`.w_note_row`).toHaveCount(0);
+    await contains(".w_field_x2many_list_row_add button:eq(1)").click();
     await edit("D");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -888,7 +888,7 @@ test("add a section", async () => {
         "C1",
         "D",
     ]);
-    expect(`.o_is_line_section`).toHaveCount(4);
+    expect(`.w_is_line_section`).toHaveCount(4);
 });
 
 test("add note", async () => {
@@ -919,7 +919,7 @@ test("add note", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -934,11 +934,11 @@ test("add note", async () => {
         "C",
         "C1",
     ]);
-    expect(`.o_note_row`).toHaveCount(0);
-    await contains(".o_field_x2many_list_row_add button:last").click();
+    expect(`.w_note_row`).toHaveCount(0);
+    await contains(".w_field_x2many_list_row_add button:last").click();
     await edit("this is a note");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -954,7 +954,7 @@ test("add note", async () => {
         "C1",
         "this is a note",
     ]);
-    expect(`.o_is_line_note`).toHaveCount(1);
+    expect(`.w_is_line_note`).toHaveCount(1);
 });
 
 test("multiline notes use the native text field", async () => {
@@ -987,11 +987,11 @@ test("multiline notes use the native text field", async () => {
             </form>
         `,
     });
-    await contains(".o_field_x2many_list_row_add button:last").click();
-    expect(".o_is_line_note textarea").toHaveCount(1);
+    await contains(".w_field_x2many_list_row_add button:last").click();
+    expect(".w_is_line_note textarea").toHaveCount(1);
     await edit("this is a note\non 2 lines");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toInclude("this is a note\non 2 lines");
+    expect(queryAllTexts(".w_data_row")).toInclude("this is a note\non 2 lines");
 });
 
 test("sections with required content field", async () => {
@@ -1022,32 +1022,32 @@ test("sections with required content field", async () => {
             </form>
         `,
     });
-    expect(".o_data_row").toHaveCount(13);
-    await contains(".o_list_section_options:eq(0) button").click();
-    await contains(".o-dropdown-item:contains(Add a subsection)").click();
-    expect(".o_data_row").toHaveCount(14);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Delete)").click();
-    expect(".o_data_row").toHaveCount(13);
-    await contains(".o_list_section_options:eq(0) button").click();
-    await contains(".o-dropdown-item:contains(Add a subsection)").click();
-    expect(".o_invalid_cell").toHaveCount(0);
-    await contains(".o_field_x2many_list_row_add button:contains(Add a section)").click();
+    expect(".w_data_row").toHaveCount(13);
+    await contains(".w_list_section_options:eq(0) button").click();
+    await contains(".w-dropdown-item:contains(Add a subsection)").click();
+    expect(".w_data_row").toHaveCount(14);
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Delete)").click();
+    expect(".w_data_row").toHaveCount(13);
+    await contains(".w_list_section_options:eq(0) button").click();
+    await contains(".w-dropdown-item:contains(Add a subsection)").click();
+    expect(".w_invalid_cell").toHaveCount(0);
+    await contains(".w_field_x2many_list_row_add button:contains(Add a section)").click();
     await animationFrame();
-    expect(".o_invalid_cell").toHaveCount(1);
-    expect(".o_data_row").toHaveCount(14);
-    await contains(".o_form_button_cancel").click();
-    expect(".o_data_row").toHaveCount(13);
-    await contains(".o_field_x2many_list_row_add button:eq(1)").click();
-    expect(".o_data_row").toHaveCount(14);
-    expect(".o_invalid_cell").toHaveCount(0);
-    await contains(".o_field_x2many_list_row_add button:contains(Add a section)").click();
+    expect(".w_invalid_cell").toHaveCount(1);
+    expect(".w_data_row").toHaveCount(14);
+    await contains(".w_form_button_cancel").click();
+    expect(".w_data_row").toHaveCount(13);
+    await contains(".w_field_x2many_list_row_add button:eq(1)").click();
+    expect(".w_data_row").toHaveCount(14);
+    expect(".w_invalid_cell").toHaveCount(0);
+    await contains(".w_field_x2many_list_row_add button:contains(Add a section)").click();
     await animationFrame();
-    expect(".o_invalid_cell").toHaveCount(1);
+    expect(".w_invalid_cell").toHaveCount(1);
     await edit("D");
-    await contains(".o_field_x2many_list_row_add button:contains(Add a section)").click();
+    await contains(".w_field_x2many_list_row_add button:contains(Add a section)").click();
     await animationFrame();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1096,7 +1096,7 @@ test("sections duplicate with many2many", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual(
+    expect(queryAllTexts(".w_data_row")).toEqual(
         [
             "r1\n \nValue 1\n 1",
             "r2\n \nValue 2\n 2",
@@ -1114,9 +1114,9 @@ test("sections duplicate with many2many", async () => {
         ],
         { message: "m2m values are not shown inside (sub-)section rows" }
     );
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual(
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual(
         [
             "r1\n \nValue 1\n 1",
             "r2\n \nValue 2\n 2",
@@ -1140,9 +1140,9 @@ test("sections duplicate with many2many", async () => {
         ],
         { message: "m2m values are copied as well" }
     );
-    await contains(".o_list_section_options:eq(2) button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual(
+    await contains(".w_list_section_options:eq(2) button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual(
         [
             "r1\n \nValue 1\n 1",
             "r2\n \nValue 2\n 2",
@@ -1199,7 +1199,7 @@ test("swap sections and subsections", async () => {
             </form>
         `,
     });
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1214,11 +1214,11 @@ test("swap sections and subsections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Add a subsection)").click();
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Add a subsection)").click();
     await edit("Bb");
     await contains(getFixture()).click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1234,18 +1234,18 @@ test("swap sections and subsections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(1) button").click();
-    expect(".o-dropdown-item:contains(Move Down)").toHaveCount(1);
-    expect(".o-dropdown-item:contains(Move Up)").toHaveCount(1);
-    await contains(".o_list_section_options:eq(0) button").click();
-    expect(".o-dropdown-item:contains(Move Down)").toHaveCount(1);
-    expect(".o-dropdown-item:contains(Move Up)").toHaveCount(0);
-    await contains(".o_list_section_options:eq(4) button").click();
-    expect(".o-dropdown-item:contains(Move Down)").toHaveCount(0);
-    expect(".o-dropdown-item:contains(Move Up)").toHaveCount(1);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Move Up)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_list_section_options:eq(1) button").click();
+    expect(".w-dropdown-item:contains(Move Down)").toHaveCount(1);
+    expect(".w-dropdown-item:contains(Move Up)").toHaveCount(1);
+    await contains(".w_list_section_options:eq(0) button").click();
+    expect(".w-dropdown-item:contains(Move Down)").toHaveCount(1);
+    expect(".w-dropdown-item:contains(Move Up)").toHaveCount(0);
+    await contains(".w_list_section_options:eq(4) button").click();
+    expect(".w-dropdown-item:contains(Move Down)").toHaveCount(0);
+    expect(".w-dropdown-item:contains(Move Up)").toHaveCount(1);
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Move Up)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "B",
@@ -1261,15 +1261,15 @@ test("swap sections and subsections", async () => {
         "C",
         "C1",
     ]);
-    await contains(".o_list_section_options:eq(1) button").click();
-    expect(".o-dropdown-item:contains(Move Down)").toHaveCount(1);
-    expect(".o-dropdown-item:contains(Move Up)").toHaveCount(0);
-    await contains(".o_list_section_options:eq(2) button").click();
-    expect(".o-dropdown-item:contains(Move Down)").toHaveCount(0);
-    expect(".o-dropdown-item:contains(Move Up)").toHaveCount(1);
-    await contains(".o_list_section_options:eq(1) button").click();
-    await contains(".o-dropdown-item:contains(Move Down)").click();
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    await contains(".w_list_section_options:eq(1) button").click();
+    expect(".w-dropdown-item:contains(Move Down)").toHaveCount(1);
+    expect(".w-dropdown-item:contains(Move Up)").toHaveCount(0);
+    await contains(".w_list_section_options:eq(2) button").click();
+    expect(".w-dropdown-item:contains(Move Down)").toHaveCount(0);
+    expect(".w-dropdown-item:contains(Move Up)").toHaveCount(1);
+    await contains(".w_list_section_options:eq(1) button").click();
+    await contains(".w-dropdown-item:contains(Move Down)").click();
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "B",
@@ -1371,7 +1371,7 @@ test("check collapse_ fields' muting logic for widget", async () => {
         `,
     });
 
-    expect(queryAllTexts(".o_data_row td[name=product_and_description]")).toEqual([
+    expect(queryAllTexts(".w_data_row td[name=product_and_description]")).toEqual([
         "sec1",
         "sec1-r1",
         "sec1-sub1",
@@ -1393,46 +1393,46 @@ test("check collapse_ fields' muting logic for widget", async () => {
         "sec3-sub2-r1",
     ]);
 
-    await contains(".o_list_section_options:first button").click();
-    expect(".o-dropdown-item:contains(Show Composition)").toHaveCount(1, {
+    await contains(".w_list_section_options:first button").click();
+    expect(".w-dropdown-item:contains(Show Composition)").toHaveCount(1, {
         message: "Sections should always show hide composition button",
     });
-    expect(".o-dropdown-item:contains(Hide Prices)").toHaveCount(1, {
+    expect(".w-dropdown-item:contains(Hide Prices)").toHaveCount(1, {
         message: "Sections should always show hide prices button",
     });
 
-    await contains(".o_data_row:contains(sec1-sub1) .o_list_section_options button").click();
-    expect(".o-dropdown-item:contains(Hide Composition)").toHaveClass("disabled", {
+    await contains(".w_data_row:contains(sec1-sub1) .w_list_section_options button").click();
+    expect(".w-dropdown-item:contains(Hide Composition)").toHaveClass("disabled", {
         message: "Subsection under hidden section should have disabled hide composition button",
     });
-    expect(".o-dropdown-item:contains(Hide Prices)").toHaveClass("disabled", {
+    expect(".w-dropdown-item:contains(Hide Prices)").toHaveClass("disabled", {
         message: "Subsection under hidden section should have disabled Hide Prices button",
     });
 
-    expect(".o_data_row:contains(sec1-r1)").toHaveClass("text-muted", {
+    expect(".w_data_row:contains(sec1-r1)").toHaveClass("text-muted", {
         message: "Line under hidden section should be muted",
     });
-    expect(".o_data_row:contains(sec1-sub1)").toHaveClass("text-muted", {
+    expect(".w_data_row:contains(sec1-sub1)").toHaveClass("text-muted", {
         message: "Subsection under hidden section should be muted",
     });
-    expect(".o_data_row:contains(sec1-sub1-r1)").toHaveClass("text-muted", {
+    expect(".w_data_row:contains(sec1-sub1-r1)").toHaveClass("text-muted", {
         message: "Line under subsection(which is under hidden section) should be muted",
     });
 
-    expect(".o_data_row:contains(sec2-r1) > td[name='aggregated_field']").toHaveClass(
+    expect(".w_data_row:contains(sec2-r1) > td[name='aggregated_field']").toHaveClass(
         "text-muted",
         {
             message: "Aggregated field column of Line under hidden prices section should be muted",
         }
     );
-    expect(".o_data_row:contains(sec2-sub1) > td[name='aggregated_field']").toHaveClass(
+    expect(".w_data_row:contains(sec2-sub1) > td[name='aggregated_field']").toHaveClass(
         "text-muted",
         {
             message:
                 "Aggregated field column of Subsection under hidden prices section should be muted",
         }
     );
-    expect(".o_data_row:contains(sec2-sub1-r1) > td[name='aggregated_field']").toHaveClass(
+    expect(".w_data_row:contains(sec2-sub1-r1) > td[name='aggregated_field']").toHaveClass(
         "text-muted",
         {
             message:
@@ -1440,14 +1440,14 @@ test("check collapse_ fields' muting logic for widget", async () => {
         }
     );
 
-    expect(".o_data_row:contains(sec3-sub1-r1) > td[name='aggregated_field']").toHaveClass(
+    expect(".w_data_row:contains(sec3-sub1-r1) > td[name='aggregated_field']").toHaveClass(
         "text-muted",
         {
             message:
                 "Aggregated field column of Line under hidden prices subsection should be muted",
         }
     );
-    expect(".o_data_row:contains(sec3-sub2-r1)").toHaveClass("text-muted", {
+    expect(".w_data_row:contains(sec3-sub2-r1)").toHaveClass("text-muted", {
         message: "Line under hidden subsection should be muted",
     });
 });
@@ -1486,7 +1486,7 @@ test("check collapse_ fields' duplicating logic", async () => {
         arch: LINE_COLLAPSE_ARCH,
     });
 
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1502,13 +1502,13 @@ test("check collapse_ fields' duplicating logic", async () => {
         "C1",
     ]);
 
-    await contains(".o_data_row:contains(A):first .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
+    await contains(".w_data_row:contains(A):first .w_list_section_options button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
 
-    await contains(".o_data_row:contains(B):first .o_list_section_options button").click();
-    await contains(".o-dropdown-item:contains(Duplicate)").click();
+    await contains(".w_data_row:contains(B):first .w_list_section_options button").click();
+    await contains(".w-dropdown-item:contains(Duplicate)").click();
 
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1560,7 +1560,7 @@ test("check subsections' collapse_ fields' drag and drop logic", async () => {
         arch: LINE_COLLAPSE_ARCH,
     });
 
-    expect(queryAllTexts(".o_data_row")).toEqual([
+    expect(queryAllTexts(".w_data_row")).toEqual([
         "r1",
         "r2",
         "A",
@@ -1576,8 +1576,8 @@ test("check subsections' collapse_ fields' drag and drop logic", async () => {
         "C1",
     ]);
 
-    await contains(".o_data_row:contains(Ba):first .o_row_handle").dragAndDrop(
-        ".o_data_row:contains(A1):first"
+    await contains(".w_data_row:contains(Ba):first .w_row_handle").dragAndDrop(
+        ".w_data_row:contains(A1):first"
     );
 
     await clickSave();

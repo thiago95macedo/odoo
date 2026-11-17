@@ -311,8 +311,8 @@ describe("Async operations", () => {
         await contains(":iframe .test-options-target").click();
 
         await contains(".we-bg-options-container .o_we_color_preview").click();
-        await contains(".o-overlay-item [data-color='#FF0000']").hover();
-        await contains(".o-overlay-item [data-color='#0000FF']").hover();
+        await contains(".w-overlay-item [data-color='#FF0000']").hover();
+        await contains(".w-overlay-item [data-color='#0000FF']").hover();
         await advanceTime(applyDelay + 50);
         expect(":iframe .test-options-target").toHaveClass("blue");
         expect(":iframe .test-options-target").not.toHaveClass("red");

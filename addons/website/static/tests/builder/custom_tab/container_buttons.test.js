@@ -147,8 +147,8 @@ test("Use the sidebar 'save snippet' buttons", async () => {
 
     // Check that there is no custom section.
     const customGroupSelector =
-        ".o-snippets-menu #snippet_groups .o_snippet[data-snippet-group='custom'] .o_snippet_thumbnail_area";
-    expect(".o-snippets-menu div:contains('Custom Inner Content')").toHaveCount(0);
+        ".w-snippets-menu #snippet_groups .o_snippet[data-snippet-group='custom'] .o_snippet_thumbnail_area";
+    expect(".w-snippets-menu div:contains('Custom Inner Content')").toHaveCount(0);
     expect(customGroupSelector).toHaveCount(0);
 
     await contains(":iframe .btn").click();
@@ -166,9 +166,9 @@ test("Use the sidebar 'save snippet' buttons", async () => {
     expect(".o_notification_manager .o_notification_content").toHaveCount(1);
 
     // Check that the custom sections appeared.
-    await contains(".o-website-builder_sidebar .o-snippets-tabs button:contains(Blocks)").click();
+    await contains(".w-website-builder_sidebar .w-snippets-tabs button:contains(Blocks)").click();
     expect(
-        ".o-snippets-menu div:contains('Custom Inner Content') div[name='Custom Button']"
+        ".w-snippets-menu div:contains('Custom Inner Content') div[name='Custom Button']"
     ).toHaveCount(1);
     expect(customGroupSelector).toHaveCount(1);
     await contains(customGroupSelector).click();
@@ -518,14 +518,14 @@ test("Custom snippet appears in block and inner content on save and is removed o
     await contains(":iframe section[data-snippet='s_map']").click();
     await contains(".oe_snippet_save").click();
     expect.verifySteps(["save snippet"]);
-    await contains(".o-snippets-tabs button:contains(Blocks)").click();
+    await contains(".w-snippets-tabs button:contains(Blocks)").click();
     expect(
-        ".o-snippets-menu div:contains('Custom Inner Content') div[name='Custom Map']"
+        ".w-snippets-menu div:contains('Custom Inner Content') div[name='Custom Map']"
     ).toHaveCount(1);
-    expect(".o-snippets-menu .o_snippet[data-snippet-group='custom']").toHaveCount(1);
+    expect(".w-snippets-menu .o_snippet[data-snippet-group='custom']").toHaveCount(1);
 
     // Delete the custom snippet and check that it is removed from the sidebar.
-    await click(".o-snippets-menu #snippet_groups .o_snippet_thumbnail .o_snippet_thumbnail_area");
+    await click(".w-snippets-menu #snippet_groups .o_snippet_thumbnail .o_snippet_thumbnail_area");
     await waitForSnippetDialog();
     await contains(
         ".o_add_snippet_dialog .o_add_snippet_iframe:iframe button:has([data-icon='delete'])"
@@ -533,7 +533,7 @@ test("Custom snippet appears in block and inner content on save and is removed o
     await contains(".o_dialog .btn:contains('Delete Block')").click();
     expect.verifySteps(["delete snippet"]);
     expect(
-        ".o-snippets-menu div:contains('Custom Inner Content') div[name='Custom Map']"
+        ".w-snippets-menu div:contains('Custom Inner Content') div[name='Custom Map']"
     ).toHaveCount(0);
-    expect(".o-snippets-menu .o_snippet[data-snippet-group='custom']").toHaveCount(0);
+    expect(".w-snippets-menu .o_snippet[data-snippet-group='custom']").toHaveCount(0);
 });

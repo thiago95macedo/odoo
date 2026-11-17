@@ -126,7 +126,7 @@ export const errorService = {
             if (isRedactedError) {
                 uncaughtError = new ThirdPartyScriptError();
                 uncaughtError.traceback =
-                    `An error whose details cannot be accessed by the Odoo framework has occurred.\n` +
+                    `An error whose details cannot be accessed by the WETH framework has occurred.\n` +
                     `The error probably originates from a JavaScript file served from a different origin.\n` +
                     `The full error is available in the browser console.`;
             } else {

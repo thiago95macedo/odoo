@@ -28,14 +28,14 @@ test("mark as read", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await contains(".o-mail-NotificationItem");
-    await triggerEvents(".o-mail-NotificationItem", ["mouseenter"], { text: "" });
-    await contains(".o-mail-NotificationItem [title='Mark As Read']");
-    await contains(".o-mail-NotificationItem-text", {
+    await contains(".w-mail-NotificationItem");
+    await triggerEvents(".w-mail-NotificationItem", ["mouseenter"], { text: "" });
+    await contains(".w-mail-NotificationItem [title='Mark As Read']");
+    await contains(".w-mail-NotificationItem-text", {
         text: "An error occurred when sending an SMS on “Mitchell Admin”",
     });
-    await click(".o-mail-NotificationItem [title='Mark As Read']");
-    await contains(".o-mail-NotificationItem", { count: 0 });
+    await click(".w-mail-NotificationItem [title='Mark As Read']");
+    await contains(".w-mail-NotificationItem", { count: 0 });
 });
 
 test("notifications grouped by notification_type", async () => {
@@ -77,19 +77,19 @@ test("notifications grouped by notification_type", async () => {
     ]);
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await contains(".o-mail-NotificationItem", { count: 2 });
-    await contains(":nth-child(1 of .o-mail-NotificationItem)", {
+    await contains(".w-mail-NotificationItem", { count: 2 });
+    await contains(":nth-child(1 of .w-mail-NotificationItem)", {
         contains: [
-            [".o-mail-NotificationItem-name", { text: "Email Failure: Contact" }],
-            [".o-mail-NotificationItem-counter", { text: "2" }],
-            [".o-mail-NotificationItem-text", { text: "An error occurred when sending an email" }],
+            [".w-mail-NotificationItem-name", { text: "Email Failure: Contact" }],
+            [".w-mail-NotificationItem-counter", { text: "2" }],
+            [".w-mail-NotificationItem-text", { text: "An error occurred when sending an email" }],
         ],
     });
-    await contains(":nth-child(2 of .o-mail-NotificationItem)", {
+    await contains(":nth-child(2 of .w-mail-NotificationItem)", {
         contains: [
-            [".o-mail-NotificationItem-name", { text: "SMS Failure: Contact" }],
-            [".o-mail-NotificationItem-counter", { text: "2" }],
-            [".o-mail-NotificationItem-text", { text: "An error occurred when sending an SMS" }],
+            [".w-mail-NotificationItem-name", { text: "SMS Failure: Contact" }],
+            [".w-mail-NotificationItem-counter", { text: "2" }],
+            [".w-mail-NotificationItem-text", { text: "An error occurred when sending an SMS" }],
         ],
     });
 });
@@ -139,7 +139,7 @@ test("grouped notifications by document model", async () => {
     });
     await start();
     await openMessagingMenu(MENU_ACTIVE_IDS.CHAT);
-    await click(".o-mail-NotificationItem", {
+    await click(".w-mail-NotificationItem", {
         text: "SMS Failure: Contact",
         contains: [".badge", { text: "2" }],
     });

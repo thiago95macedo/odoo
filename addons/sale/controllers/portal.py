@@ -170,7 +170,7 @@ class CustomerPortal(payment_portal.PaymentPortal):
             )
 
         # If the route is fetched from the link previewer avoid triggering that quotation is viewed.
-        is_link_preview = request.httprequest.headers.get("Odoo-Link-Preview")
+        is_link_preview = request.httprequest.headers.get("Weth-Link-Preview")
         if (
             self.env.user.share
             and access_token

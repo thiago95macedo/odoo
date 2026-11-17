@@ -92,12 +92,12 @@ class SixDriver(CtypesTerminalDriver):
                 )
             # Transaction failed
             elif result == 0:
-                # If cancelled by Odoo Pos
+                # If cancelled by WETH Pos
                 if error_code.value == self.cancelled_by_pos:
                     sleep(3)  # Wait a couple of seconds between cancel requests as per documentation
                     _logger.info("Transaction #%s cancelled by PoS user", transaction)
                     self.send_status(stage='Cancel', request_data=transaction)
-                    _logger.info("Transaction %s cancelled by Odoo PoS", transaction)
+                    _logger.info("Transaction %s cancelled by WETH PoS", transaction)
                 # If an error was encountered
                 else:
                     error_message = f"{error_code.value}: {error.value.decode()}"

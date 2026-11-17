@@ -5,8 +5,8 @@ from pathlib import Path
 from weth.tests import BaseCase, tagged
 from weth.tools import file_path
 from weth.tools.mimetypes import (
-    _odoo_guess_file_mimetype,
-    _odoo_guess_mimetype,
+    _weth_guess_file_mimetype,
+    _weth_guess_mimetype,
     fix_filename_extension,
     get_extension,
     guess_file_mimetype,
@@ -167,9 +167,9 @@ class MimeGuessingCases:
 
 
 @tagged('at_install', '-post_install')
-class TestMimeGuessingOdoo(BaseCase, MimeGuessingCases):
-    guess_mimetype = staticmethod(_odoo_guess_mimetype)
-    guess_file_mimetype = staticmethod(_odoo_guess_file_mimetype)
+class TestMimeGuessingWeth(BaseCase, MimeGuessingCases):
+    guess_mimetype = staticmethod(_weth_guess_mimetype)
+    guess_file_mimetype = staticmethod(_weth_guess_file_mimetype)
 
     def test_csv(self):
         self.assertEqual(
@@ -220,7 +220,7 @@ class TestMimeGuessingOdoo(BaseCase, MimeGuessingCases):
         ])
 
 
-@unittest.skipIf(guess_mimetype is _odoo_guess_mimetype, "python-magic not installed")
+@unittest.skipIf(guess_mimetype is _weth_guess_mimetype, "python-magic not installed")
 @tagged('at_install', '-post_install')
 class TestMimeGuessingMagic(BaseCase, MimeGuessingCases):
     guess_mimetype = staticmethod(guess_mimetype)

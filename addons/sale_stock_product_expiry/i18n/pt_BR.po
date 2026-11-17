@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:56+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_stock_product_expiry/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -28,13 +28,13 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: sale_stock_product_expiry
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_stock_product_expiry/static/src/widgets/qty_at_date_widget.js:0
 msgid "Fresh Available"
 msgstr "Disponíveis e frescos"
 
 #. module: sale_stock_product_expiry
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_stock_product_expiry/static/src/widgets/qty_at_date_widget.js:0
 msgid "Fresh Forecasted Stock"
 msgstr "Previsão atualizada de estoque"
@@ -71,7 +71,7 @@ msgid "Sales Order Line"
 msgstr "Linha do pedido de venda"
 
 #. module: sale_stock_product_expiry
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_stock_product_expiry/static/src/widgets/qty_at_date_widget.xml:0
 msgid "Today"
 msgstr "Hoje"

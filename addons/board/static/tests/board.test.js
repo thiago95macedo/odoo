@@ -127,8 +127,8 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-header").toHaveCount(1, { message: "should have rendered a header" });
-        expect("div.o-dashboard-layout-2-1").toHaveCount(1, {
+        expect(".w-dashboard-header").toHaveCount(1, { message: "should have rendered a header" });
+        expect("div.w-dashboard-layout-2-1").toHaveCount(1, {
             message: "should have rendered a div with layout",
         });
         expect("td.o_list_record_selector").toHaveCount(0, {
@@ -139,30 +139,30 @@ describe("board_desktop", () => {
         });
         expect("tr.o_data_row").toHaveCount(3, { message: "should have rendered 3 data rows" });
 
-        expect(".o-dashboard-action .o_list_view").toHaveCount(1);
+        expect(".w-dashboard-action .o_list_view").toHaveCount(1);
 
         await contains("h3 i[data-icon='minimize']").click();
 
-        expect(".o-dashboard-action .o_list_view").toHaveCount(0);
+        expect(".w-dashboard-action .o_list_view").toHaveCount(0);
 
         await contains("h3 i[data-icon='fullscreen']").click();
 
         // content is visible again
-        expect(".o-dashboard-action .o_list_view").toHaveCount(1);
+        expect(".w-dashboard-action .o_list_view").toHaveCount(1);
         expect.verifySteps(["load action", "edit custom", "edit custom"]);
 
         // header should have dropdown with correct image
         expect(
-            ".o-dashboard-header .dropdown img[data-src='/board/static/img/layout_2-1.png']"
+            ".w-dashboard-header .dropdown img[data-src='/board/static/img/layout_2-1.png']"
         ).toHaveCount(1);
 
         // change layout to 1-1
-        await contains(".o-dashboard-header .dropdown img").click();
+        await contains(".w-dashboard-header .dropdown img").click();
         await contains(".dropdown-item:nth-child(2)").click();
         expect(
-            ".o-dashboard-header .dropdown img[data-src='/board/static/img/layout_1-1.png']"
+            ".w-dashboard-header .dropdown img[data-src='/board/static/img/layout_1-1.png']"
         ).toHaveCount(1);
-        expect("div.o-dashboard-layout-1-1").toHaveCount(1, {
+        expect("div.w-dashboard-layout-1-1").toHaveCount(1, {
             message: "should have rendered a div with layout",
         });
 
@@ -190,8 +190,8 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-action .o_list_view").toHaveCount(1);
-        expect(".o-dashboard-action .o_control_panel").toHaveCount(0);
+        expect(".w-dashboard-action .o_list_view").toHaveCount(1);
+        expect(".w-dashboard-action .o_control_panel").toHaveCount(0);
     });
 
     test("can render an action without view_mode attribute", async () => {
@@ -223,7 +223,7 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-action .o_list_view").toHaveCount(1);
+        expect(".w-dashboard-action .o_list_view").toHaveCount(1);
     });
 
     test("can sort a sub list", async () => {
@@ -386,15 +386,15 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect('.o-dashboard-column[data-idx="0"] .o-dashboard-action').toHaveCount(1);
-        expect('.o-dashboard-column[data-idx="1"] .o-dashboard-action').toHaveCount(0);
+        expect('.w-dashboard-column[data-idx="0"] .w-dashboard-action').toHaveCount(1);
+        expect('.w-dashboard-column[data-idx="1"] .w-dashboard-action').toHaveCount(0);
 
-        await contains('.o-dashboard-column[data-idx="0"] .o-dashboard-action-header').dragAndDrop(
-            '.o-dashboard-column[data-idx="1"]'
+        await contains('.w-dashboard-column[data-idx="0"] .w-dashboard-action-header').dragAndDrop(
+            '.w-dashboard-column[data-idx="1"]'
         );
 
-        expect('.o-dashboard-column[data-idx="0"] .o-dashboard-action').toHaveCount(0);
-        expect('.o-dashboard-column[data-idx="1"] .o-dashboard-action').toHaveCount(1);
+        expect('.w-dashboard-column[data-idx="0"] .w-dashboard-action').toHaveCount(0);
+        expect('.w-dashboard-column[data-idx="1"] .w-dashboard-action').toHaveCount(1);
         expect.verifySteps(["edit custom"]);
     });
 
@@ -432,8 +432,8 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-action:eq(0) .o_list_view").toHaveCount(1);
-        expect(".o-dashboard-action:eq(1) .o_kanban_view").toHaveCount(1);
+        expect(".w-dashboard-action:eq(0) .o_list_view").toHaveCount(1);
+        expect(".w-dashboard-action:eq(1) .o_kanban_view").toHaveCount(1);
     });
 
     test("non-existing action in a dashboard", async () => {
@@ -457,7 +457,7 @@ describe("board_desktop", () => {
         });
 
         expect("h3 span:contains(ABC)").toHaveCount(1);
-        expect(".o-dashboard-action div:contains(Invalid action)").toHaveCount(1);
+        expect(".w-dashboard-action div:contains(Invalid action)").toHaveCount(1);
     });
 
     test("saved arch keeps the layout", async () => {
@@ -486,8 +486,8 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        await contains('.o-dashboard-column[data-idx="0"] .o-dashboard-action-header').dragAndDrop(
-            '.o-dashboard-column[data-idx="1"]'
+        await contains('.w-dashboard-column[data-idx="0"] .w-dashboard-action-header').dragAndDrop(
+            '.w-dashboard-column[data-idx="1"]'
         );
         expect.verifySteps(["2-1"]);
     });
@@ -509,7 +509,7 @@ describe("board_desktop", () => {
                     </board>
                 </form>`,
         });
-        expect("div.o-dashboard-layout-2-1").toHaveCount(1);
+        expect("div.w-dashboard-layout-2-1").toHaveCount(1);
     });
 
     test(`clicking on a kanban's button should trigger the action`, async () => {
@@ -681,8 +681,8 @@ describe("board_desktop", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-action .o_graph_renderer").toHaveCount(1);
-        expect(queryOne(".o-dashboard-action .o_graph_renderer canvas").offsetHeight).toBe(300);
+        expect(".w-dashboard-action .o_graph_renderer").toHaveCount(1);
+        expect(queryOne(".w-dashboard-action .o_graph_renderer canvas").offsetHeight).toBe(300);
     });
 
     test("pivot view with property in pivot_column_groupby", async function () {
@@ -756,14 +756,14 @@ describe("board_mobile", () => {
                 </form>`,
         });
 
-        expect(".o-dashboard-header").toHaveCount(0, {
+        expect(".w-dashboard-header").toHaveCount(0, {
             message: "Couldn't allow user to Change layout",
         });
-        expect(".o-dashboard-layout-1").toHaveCount(1, {
+        expect(".w-dashboard-layout-1").toHaveCount(1, {
             message: "The display layout is force to 1",
         });
-        expect(".o-dashboard-action .o_control_panel").not.toHaveCount();
-        expect(".o-dashboard-action-header .oi[data-icon='close']").toHaveCount(0, {
+        expect(".w-dashboard-action .o_control_panel").not.toHaveCount();
+        expect(".w-dashboard-action-header .oi[data-icon='close']").toHaveCount(0, {
             message: "Should not have a close action button",
         });
     });
@@ -790,13 +790,13 @@ describe("board_mobile", () => {
                     </board>
                 </form>`,
         });
-        expect(".o-dashboard-layout-1").toHaveCount(1, {
+        expect(".w-dashboard-layout-1").toHaveCount(1, {
             message: "The display layout is force to 1",
         });
-        expect(".o-dashboard-column").toHaveCount(1, {
+        expect(".w-dashboard-column").toHaveCount(1, {
             message: "The display layout is force to 1 column",
         });
-        expect(".o-dashboard-action").toHaveCount(2, {
+        expect(".w-dashboard-action").toHaveCount(2, {
             message: "The display should contains the 2 actions",
         });
     });

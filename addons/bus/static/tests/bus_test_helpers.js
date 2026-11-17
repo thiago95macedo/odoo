@@ -21,7 +21,7 @@ import { useListener } from "@weth/owl";
 
 /**
  * @typedef {[
- *  env?: OdooEnv,
+ *  env?: WethEnv,
  *  type: string,
  *  payload: NotificationPayload,
  *  options?: ExpectedNotificationOptions,
@@ -33,7 +33,7 @@ import { useListener } from "@weth/owl";
  *
  * @typedef {Record<string, any>} NotificationPayload
  *
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").WethEnv} WethEnv
  * @typedef {import("@bus/workers/websocket_worker").WorkerAction} WorkerAction
  */
 
@@ -117,9 +117,9 @@ class LockedWebSocket extends WebSocket {
     }
 }
 
-/** @type {Record<string, (env: OdooEnv, id: string, payload: any) => any>} */
+/** @type {Record<string, (env: WethEnv, id: string, payload: any) => any>} */
 const busMessageHandlers = {};
-/** @type {Map<OdooEnv, { id: number, type: string, payload: NotificationPayload }[]>} */
+/** @type {Map<WethEnv, { id: number, type: string, payload: NotificationPayload }[]>} */
 const busNotifications = new Map();
 
 const viewsRegistry = registry.category("bus.view.archs");
@@ -157,7 +157,7 @@ const TIMEOUT = 10000;
  * Useful to display debug information about bus events in tests.
  *
  * @param {string} type
- * @param {(env: OdooEnv, id: string, payload: any) => any} handler
+ * @param {(env: WethEnv, id: string, payload: any) => any} handler
  */
 export function addBusMessageHandler(type, handler) {
     busMessageHandlers[type] = handler;

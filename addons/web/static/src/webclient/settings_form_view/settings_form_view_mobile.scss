@@ -1,13 +1,13 @@
 @include media-breakpoint-down(md) {
 
-    .o_base_settings_view .o_form_renderer {
+    .w_base_settings_view .w_form_renderer {
         flex-flow: column nowrap;
 
-        > .o_control_panel {
+        >.w_control_panel {
             @include o-webclient-padding($top: 10px, $bottom: 10px);
         }
 
-        .o_setting_container {
+        .w_setting_container {
             flex-flow: column nowrap;
         }
 

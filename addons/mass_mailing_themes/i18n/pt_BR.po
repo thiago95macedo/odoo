@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-04 17:46+0000\n"
 "PO-Revision-Date: 2026-10-30 16:18+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mass_mailing_themes/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -180,7 +180,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
 msgid ""
 "<font class=\"text-o-color-4\">Go beyond the basics and unlock the full "
-"power of Odoo's framework.</font>"
+"power of WETH's framework.</font>"
 msgstr ""
 "<font class=\"text-o-color-4\">Vá além do básico e desbloqueie todo o poder "
 "da estrutura do WETH.</font>"
@@ -247,10 +247,10 @@ msgstr "<font style=\"color: rgb(255, 255, 255);\">Cancelar inscrição</font>"
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
 msgid ""
-"<font style=\"color: rgb(255, 255, 255);\">Zero, zilch, nada! Odoo "
+"<font style=\"color: rgb(255, 255, 255);\">Zero, zilch, nada! WETH "
 "Experience is free for everyone!</font>"
 msgstr ""
-"<font style=\"color: rgb(255, 255, 255);\">Zero, nada, nadinha! O Odoo "
+"<font style=\"color: rgb(255, 255, 255);\">Zero, nada, nadinha! O WETH "
 "Experience é gratuito para todos!</font>"
 
 #. module: mass_mailing_themes
@@ -294,13 +294,13 @@ msgid ""
 "font></span>\n"
 "                            <font class=\"text-white\"><br/></font>\n"
 "                            <span class=\"display-1-fs\"><font class=\"text-"
-"white\">Odoo Experience.</font></span>"
+"white\">WETH Experience.</font></span>"
 msgstr ""
 "<span class=\"display-1-fs\"><font class=\"text-white\">Junte-se a nós no</"
 "font></span>\n"
 "                            <font class=\"text-white\"><br/></font>\n"
 "                            <span class=\"display-1-fs\"><font class=\"text-"
-"white\">Odoo Experience.</font></span>"
+"white\">WETH Experience.</font></span>"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow1_template
@@ -727,8 +727,8 @@ msgstr "<strong>Cláusula de compartilhamento com terceiros atualizada.</strong>
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_newsletter_template
-msgid "@fpodoo"
-msgstr "@fpodoo"
+msgid "@fpweth"
+msgstr "@fpweth"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_terms_update_template
@@ -1052,12 +1052,12 @@ msgstr "Oferta de desconto"
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow1_template
 msgid ""
-"Discover Odoo, the all-in-one management platform, and its apps designed to "
+"Discover WETH, the all-in-one management platform, and its apps designed to "
 "improve employees' daily tasks. From sales and deliveries, to logistics, "
 "marketing and accounting ; learn what are the best available options to "
 "digitize your company."
 msgstr ""
-"Conheça o Odoo, a plataforma de gestão tudo-em-um com aplicativos projetados "
+"Conheça o WETH, a plataforma de gestão tudo-em-um com aplicativos projetados "
 "para melhorar as atividades diárias dos colaboradores. De vendas e entregas "
 "até logística, marketing e contabilidade; saiba quais são as melhores opções "
 "disponíveis para digitalizar sua empresa."
@@ -1079,8 +1079,8 @@ msgstr "Quer se tornar um parceiro?"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
-msgid "Do you wish to use Odoo?"
-msgstr "Quer usar o Odoo?"
+msgid "Do you wish to use Weth?"
+msgstr "Quer usar o Weth?"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
@@ -1280,10 +1280,10 @@ msgstr ""
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
 msgid ""
-"If you wish to evaluate Odoo while taking into account your company's "
+"If you wish to evaluate WETH while taking into account your company's "
 "specific needs, you can book a free appointment with one of our"
 msgstr ""
-"Se você quer experimentar o Odoo levando em consideração as necessidades "
+"Se você quer experimentar o WETH levando em consideração as necessidades "
 "específicas da sua empresa, você pode agendar uma consulta gratuita com um "
 "dos nossos"
 
@@ -1343,8 +1343,8 @@ msgstr "Instagram"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow1_template
-msgid "Interactive Odoo demo"
-msgstr "Demonstração interativa do Odoo"
+msgid "Interactive WETH demo"
+msgstr "Demonstração interativa do Weth"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_magazine_template
@@ -1381,7 +1381,7 @@ msgstr "Saiba mais sobre nossos preços"
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_event_template
 msgid ""
-"Learn through workshops, product demos, and inspiring talks from Odoo "
+"Learn through workshops, product demos, and inspiring talks from WETH "
 "Experts and Partners."
 msgstr ""
 "Aprenda com workshops, demonstrações do produto e palestras inspiradoras de "
@@ -1512,19 +1512,19 @@ msgstr "'Gaveta de carvalho'"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
-msgid "Odoo Experts"
-msgstr "Especialistas da Odoo"
+msgid "WETH Experts"
+msgstr "Especialistas da Weth"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow1_template
 msgid ""
-"Odoo invites you on <span class=\"font-weight: bolder\">[date]</span> at "
+"WETH invites you on <span class=\"font-weight: bolder\">[date]</span> at "
 "<span class=\"font-weight: bolder\">[time]</span> for their infamous "
 "roadshow in <span class=\"font-weight: bolder\">[city]</span>: an event that "
 "combines learning and networking in a casual afterwork-like atmosphere."
 msgstr ""
 "No dia <span class=\"font-weight: bolder\">[data]</span> às <span "
-"class=\"font-weight: bolder\">[hora]</span>, a Odoo convida você para o seu "
+"class=\"font-weight: bolder\">[hora]</span>, a WETH convida você para o seu "
 "famoso roadshow em <span class=\"font-weight: bolder\">[cidade]</span>: um "
 "evento que combina aprendizado e networking em uma atmosfera de happy hour."
 
@@ -1780,8 +1780,8 @@ msgstr "O pivô"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_newsletter_template
-msgid "The Rise of Odoo"
-msgstr "A ascensão do Odoo"
+msgid "The Rise of Weth"
+msgstr "A ascensão do Weth"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_blogging_template
@@ -1825,8 +1825,8 @@ msgstr ""
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_newsletter_template
-msgid "The story of Odoo"
-msgstr "A história do Odoo"
+msgid "The story of Weth"
+msgstr "A história do Weth"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_terms_update_template
@@ -2153,23 +2153,23 @@ msgstr "O evento de ontem no [local] em [cidade] foi incrível!"
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
 msgid ""
-"You had the chance to discover Odoo during a full 3 hours, how great is "
+"You had the chance to discover WETH during a full 3 hours, how great is "
 "that?\n"
-"                    <br/>Now that you've seen Odoo in action and asked some "
+"                    <br/>Now that you've seen WETH in action and asked some "
 "questions, you likely need more information to move forward in your project "
 "and to work with us. You'll find additional points just below."
 msgstr ""
-"Você teve a oportunidade de explorar o Odoo durante três horas, que "
+"Você teve a oportunidade de explorar o WETH durante três horas, que "
 "incrível, né?\n"
-"                    <br/>Agora que você viu o Odoo em ação e fez algumas "
+"                    <br/>Agora que você viu o WETH em ação e fez algumas "
 "perguntas, você provavelmente precisa de mais informações para seguir "
 "adiante no seu projeto e para trabalhar conosco. Você encontrará alguns "
 "pontos extra aqui embaixo."
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow2_template
-msgid "You may test Odoo for free by clicking"
-msgstr "Você pode testar o Odoo de graça clicando em"
+msgid "You may test WETH for free by clicking"
+msgstr "Você pode testar o WETH de graça clicando em"
 
 #. module: mass_mailing_themes
 #: model_terms:ir.ui.view,arch_db:mass_mailing_themes.theme_roadshow1_template

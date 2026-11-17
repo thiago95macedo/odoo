@@ -106,7 +106,7 @@ export class MessagingMenuTab extends Record {
     emptyState = { title: _t("Nothing here yet.") };
     /** Additional counter not tracked server-side (e.g. failures, push permission request). */
     extraCounter = this.computed(() => {
-        if (!this.eq(this.store.messagingMenu?.odooBotNotificationsTab)) {
+        if (!this.eq(this.store.messagingMenu?.wethBotNotificationsTab)) {
             return 0;
         }
         return (

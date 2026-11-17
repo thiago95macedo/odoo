@@ -1,35 +1,37 @@
-.o-hb-checkbox.form-switch {
+.w-hb-checkbox.form-switch {
     margin-bottom: 0;
 
     .form-check-input {
-        --form-switch-bg: #{escape-svg($o-hb-form-switch-bg-image)};
+        --form-switch-bg: #{escape-svg($w-hb-form-switch-bg-image)};
 
-        height: $o-hb-form-check-input-height;
-        margin-top: ($line-height-base - $o-hb-form-check-input-height) * .5;
-        border-color: $o-we-sidebar-content-field-border-color;
-        background-color: $o-we-sidebar-content-field-input-bg;
+        height: $w-hb-form-check-input-height;
+        margin-top: ($line-height-base - $w-hb-form-check-input-height) * .5;
+        border-color: $w-we-sidebar-content-field-border-color;
+        background-color: $w-we-sidebar-content-field-input-bg;
 
-        &:focus, &:hover {
-            --form-switch-bg: #{escape-svg($o-hb-form-switch-focus-bg-image)};
+        &:focus,
+        &:hover {
+            --form-switch-bg: #{escape-svg($w-hb-form-switch-focus-bg-image)};
         }
 
         &:checked {
-            --form-switch-bg: #{escape-svg($o-hb-form-switch-checked-bg-image)};
+            --form-switch-bg: #{escape-svg($w-hb-form-switch-checked-bg-image)};
 
-            background-color: var(--o-hb-form-switch-color-active, #{$o-hb-form-check-input-checked-bg-color});
-            border-color: var(--o-hb-form-switch-color-active, #{$o-hb-form-check-input-checked-border-color});
+            background-color: var(--o-hb-form-switch-color-active, #{$w-hb-form-check-input-checked-bg-color});
+            border-color: var(--o-hb-form-switch-color-active, #{$w-hb-form-check-input-checked-border-color});
         }
     }
 
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
         .form-check-input:not(:disabled) {
-            border-color: var(--o-hb-form-switch-color-active, #{$o-hb-form-check-input-checked-border-color});
+            border-color: var(--o-hb-form-switch-color-active, #{$w-hb-form-check-input-checked-border-color});
             box-shadow: none;
         }
     }
+
     .form-check-input:focus-visible:not(:disabled) {
-        box-shadow:
-            0 0 0 #{$o-we-border-width} #{$o-we-bg-light},
-            0 0 0 #{$o-we-border-width * 2} var(--o-hb-form-switch-color-active, #{$o-hb-form-check-input-checked-border-color});
+        box-shadow: 0 0 0 #{$w-we-border-width} #{$w-we-bg-light},
+        0 0 0 #{$w-we-border-width * 2} var(--o-hb-form-switch-color-active, #{$w-hb-form-check-input-checked-border-color});
     }
 }

@@ -5,7 +5,7 @@ import { _t } from "@web/core/l10n/translation";
 const { clickableCellRegistry } = registries;
 const { ClickableCellSortIcon } = components;
 
-readonlyAllowedCommands.add("UPDATE_ODOO_LIST");
+readonlyAllowedCommands.add("UPDATE_WETH_LIST");
 
 clickableCellRegistry.add("list", {
     condition: SEE_RECORD_LIST_VISIBLE,
@@ -28,7 +28,7 @@ function sortList(env, position, direction) {
                 { name: field.name, asc: direction === "asc" },
                 ...definition.orderBy.filter((orderBy) => orderBy.name !== field.name),
             ];
-    env.model.dispatch("UPDATE_ODOO_LIST", {
+    env.model.dispatch("UPDATE_WETH_LIST", {
         listId,
         list: {
             ...definition,

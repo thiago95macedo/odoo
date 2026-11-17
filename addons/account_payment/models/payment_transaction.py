@@ -113,7 +113,7 @@ class PaymentTransaction(models.Model):
 
             if tx.payment_id:
                 # The memo is also updated, since the payment was being created without the provider reference,
-                # which differed from Odoo's native process when the payment is made through a payment link.
+                # which differed from WETH's native process when the payment is made through a payment link.
                 if tx.provider_reference and tx.provider_reference not in (tx.payment_id.memo or ""):
                     reference = f"{tx.reference} - {tx.provider_reference}"
                     tx.payment_id.memo = reference

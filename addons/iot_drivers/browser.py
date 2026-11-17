@@ -87,8 +87,8 @@ class Browser:
 
     def close_browser(self):
         """close the browser"""
-        # Kill browser instance (can't `instance.pkill()` as we can't keep the instance after Odoo service restarts)
-        # We need to terminate it because Odoo will create a new instance each time it is restarted.
+        # Kill browser instance (can't `instance.pkill()` as we can't keep the instance after WETH service restarts)
+        # We need to terminate it because WETH will create a new instance each time it is restarted.
         subprocess.run(['pkill', self.browser], check=False)
 
     def xdotool_keystroke(self, keystroke):

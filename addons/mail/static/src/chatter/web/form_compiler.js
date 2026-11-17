@@ -54,7 +54,7 @@ registry.category("form_compilers").add("attachment_preview_compiler", {
 patch(FormCompiler.prototype, {
     compile(node, params) {
         const res = super.compile(node, params);
-        const chatterContainerHookXml = res.querySelector(".o-mail-Form-chatter");
+        const chatterContainerHookXml = res.querySelector(".w-mail-Form-chatter");
         if (!chatterContainerHookXml) {
             return res; // no chatter, keep the result as it is
         }
@@ -103,9 +103,8 @@ patch(FormCompiler.prototype, {
         });
         const { ["t-if"]: tIf } = extractAttributes(chatterContainerHookXml, ["t-if"]);
         setAttributes(chatterContainerHookXml, {
-            "t-if": `${
-                tIf ? tIf : "true"
-            } and (!["COMBO", "NONE"].includes(__comp__.mailLayout(${hasPreview})))`, // opposite of sheetBgChatterContainerHookXml
+            "t-if": `${tIf ? tIf : "true"
+                } and (!["COMBO", "NONE"].includes(__comp__.mailLayout(${hasPreview})))`, // opposite of sheetBgChatterContainerHookXml
             "t-attf-class": `{{ ["SIDE_CHATTER", "EXTERNAL_COMBO_XXL"].includes(__comp__.mailLayout(${hasPreview})) ? "o-aside w-print-100" : "mt-4 mt-md-0" }}`,
         });
         append(parentXml, chatterContainerHookXml);

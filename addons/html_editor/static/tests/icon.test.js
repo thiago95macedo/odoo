@@ -32,7 +32,7 @@ async function setupIcon(icon = "local_bar", extraClass = "") {
     expect(getContent(el)).toBe(
         `<p>\ufeff[<span ${attr} contenteditable="false">\u200b</span>]\ufeff</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     return { el, editor };
 }
 
@@ -58,7 +58,7 @@ test("icon toolbar is displayed (2)", async () => {
     expect(getContent(el)).toBe(
         `<p>abc\ufeff[<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>]\ufeffdef</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect(".btn-group[name='icon_size']").toHaveCount(1);
 });
 
@@ -69,19 +69,19 @@ test("icon toolbar is not displayed on rating stars", async () => {
         el,
         `<p>\u200B<span contenteditable="false" class="o_stars"><i class="oi" data-icon="star" contenteditable="false">\u200B</i><i class="oi" data-icon="star" contenteditable="false">\u200B</i>[<i class="oi" data-icon="star" contenteditable="false">\u200B</i></span>]\u200B</p>`
     );
-    await waitForNone(".o-we-toolbar .btn-group[name='icon_size']");
+    await waitForNone(".w-we-toolbar .btn-group[name='icon_size']");
     expect(".btn-group[name='icon_size']").toHaveCount(0);
 });
 
 test("toolbar should not be namespaced for icon", async () => {
     await setupEditor(`<p>a[bc<span class="oi" data-icon="local_bar"></span>]def</p>`);
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect(".btn-group[name='icon_size']").toHaveCount(0);
 });
 
 test("toolbar should not be namespaced for icon (2)", async () => {
     await setupEditor(`<p>abc[<span class="oi" data-icon="local_bar"></span>de]f</p>`);
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect(".btn-group[name='icon_size']").toHaveCount(0);
 });
 
@@ -135,12 +135,12 @@ test("Can spin an icon", async () => {
 test("Can set icon color", async () => {
     const { el } = await setupIcon("local_bar");
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-select-color-foreground");
+    await click(".w-select-color-foreground");
     await animationFrame();
     await waitFor(".o_color_button[data-color='#6BADDE']");
     await click(".o_color_button[data-color='#6BADDE']");
     await expectElementCount(".o_font_color_selector", 0); // selector closed
-    await waitFor(".o-we-toolbar .o-select-color-foreground [style*='rgb(107, 173, 222)']");
+    await waitFor(".w-we-toolbar .w-select-color-foreground [style*='rgb(107, 173, 222)']");
     expect(getContent(el)).toBe(
         `<p>[<font style="color: rgb(107, 173, 222);">\ufeff<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>\ufeff</font>]</p>`
     );
@@ -195,7 +195,7 @@ test("Should be able to replace a filled icon with the same unfilled version", a
     expect("span[data-icon='favorite']:not(.oi-filled)").toHaveCount(1);
 });
 
-test("Can replace a odoo icon", async () => {
+test("Can replace a weth icon", async () => {
     const { editor } = await setupIcon("add");
     execCommand(editor, "replaceIcon");
     await animationFrame();
@@ -255,7 +255,7 @@ test("Should be able to undo after adding spin effect to an icon", async () => {
     expect(getContent(el)).toBe(
         `<p>\ufeff[<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>]\ufeff</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     expect(".btn-group[name='icon_spin']").toHaveCount(1);
     expect(".btn-group[name='icon_spin']").not.toHaveClass("active");
     await click("button[name='icon_spin']");
@@ -331,9 +331,9 @@ test("should not allow to edit label if selection contain icon", async () => {
     await setupEditor(
         `<p>[ab<span class="oi" data-icon="local_bar" contenteditable="false"></span>]</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
-    await click('.o-we-toolbar button[name="link"]');
+    await click('.w-we-toolbar button[name="link"]');
     await waitFor('[name="o_linkpopover_url_img"]');
     expect('[name="o_linkpopover_url_img"]').toHaveCount(1);
 });
@@ -342,9 +342,9 @@ test("should not allow to edit label if selection contain oi icon", async () => 
     await setupEditor(
         `<p>[ab<span class="oi oi-pastafarianism" contenteditable="false"></span>]</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await expandToolbar();
-    await click('.o-we-toolbar button[name="link"]');
+    await click('.w-we-toolbar button[name="link"]');
     await waitFor('[name="o_linkpopover_url_img"]');
     expect('[name="o_linkpopover_url_img"]').toHaveCount(1);
 });
@@ -361,7 +361,7 @@ test("should be able to unlink an icon", async () => {
     await setupEditor(
         `<p><a href="/test" class="my_link o_link_in_selection">[<span class="oi" data-icon="local_bar" contenteditable="false"></span>]</a></p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
     await click('[name="unlink"]');
     expect(".my_link").toHaveCount(0);
 });
@@ -370,24 +370,24 @@ test("should hide title replace icon on popover for an icon link", async () => {
     const { el } = await setupEditor(
         `<p>[<span class="oi" data-icon="local_bar" contenteditable="false"></span>]</p>`
     );
-    await waitFor(".o-we-toolbar");
-    await click('.o-we-toolbar button[name="link"]');
-    await expectElementCount(".o-we-linkpopover", 1);
-    await contains(".o-we-linkpopover input.o_we_href_input_link").edit("http://test.com/");
+    await waitFor(".w-we-toolbar");
+    await click('.w-we-toolbar button[name="link"]');
+    await expectElementCount(".w-we-linkpopover", 1);
+    await contains(".w-we-linkpopover input.o_we_href_input_link").edit("http://test.com/");
     expect(getContent(el)).toBe(
         `<p>\ufeff<a href="http://test.com/" class="o_link_in_selection">\ufeff<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>\ufeff[]</a>\ufeff</p>`
     );
-    expect(".o-we-linkpopover .o_we_replace_title_btn").toHaveCount(0);
+    expect(".w-we-linkpopover .o_we_replace_title_btn").toHaveCount(0);
 });
 
 test("icon toolbar when only an icon is selected", async () => {
     await setupEditor(
         `<p>[<span class="oi" data-icon="local_bar" contenteditable="false"></span>]</p>`
     );
-    await waitFor(".o-we-toolbar");
+    await waitFor(".w-we-toolbar");
 
     // Check that the toolbar contains exactly these 5 groups
-    const toolbarGroups = queryAll(".o-we-toolbar .btn-group");
+    const toolbarGroups = queryAll(".w-we-toolbar .btn-group");
     expect(toolbarGroups).toHaveCount(5);
     expect(toolbarGroups.map((g) => g.getAttribute("name"))).toEqual([
         "icon_color",
@@ -398,37 +398,37 @@ test("icon toolbar when only an icon is selected", async () => {
     ]);
 
     // icon_color: exactly 2 buttons, one for font color and one for background color
-    expect(queryAll(".o-we-toolbar .btn-group[name='icon_color'] button")).toHaveCount(2);
+    expect(queryAll(".w-we-toolbar .btn-group[name='icon_color'] button")).toHaveCount(2);
     expect(
-        queryAll(".o-we-toolbar .btn-group[name='icon_color'] .o-select-color-foreground")
+        queryAll(".w-we-toolbar .btn-group[name='icon_color'] .w-select-color-foreground")
     ).toHaveCount(1);
     expect(
-        queryAll(".o-we-toolbar .btn-group[name='icon_color'] .o-select-color-background")
+        queryAll(".w-we-toolbar .btn-group[name='icon_color'] .w-select-color-background")
     ).toHaveCount(1);
 
     // icon_size: exactly 5 buttons to resize the icon from 1x to 5x
-    expect(queryAll(".o-we-toolbar .btn-group[name='icon_size'] button")).toHaveCount(5);
+    expect(queryAll(".w-we-toolbar .btn-group[name='icon_size'] button")).toHaveCount(5);
     for (const size of [1, 2, 3, 4, 5]) {
         expect(
-            queryAll(`.o-we-toolbar .btn-group[name='icon_size'] button[name='icon_size_${size}']`)
+            queryAll(`.w-we-toolbar .btn-group[name='icon_size'] button[name='icon_size_${size}']`)
         ).toHaveCount(1);
     }
 
     // icon_spin: exactly 1 button to toggle the icon spin animation
-    expect(queryAll(".o-we-toolbar .btn-group[name='icon_spin'] button")).toHaveCount(1);
+    expect(queryAll(".w-we-toolbar .btn-group[name='icon_spin'] button")).toHaveCount(1);
     expect(
-        queryAll(".o-we-toolbar .btn-group[name='icon_spin'] button[name='icon_spin']")
+        queryAll(".w-we-toolbar .btn-group[name='icon_spin'] button[name='icon_spin']")
     ).toHaveCount(1);
 
     // icon_replace: exactly 1 button to replace the icon
-    expect(queryAll(".o-we-toolbar .btn-group[name='icon_replace'] button")).toHaveCount(1);
+    expect(queryAll(".w-we-toolbar .btn-group[name='icon_replace'] button")).toHaveCount(1);
     expect(
-        queryAll(".o-we-toolbar .btn-group[name='icon_replace'] button[name='icon_replace']")
+        queryAll(".w-we-toolbar .btn-group[name='icon_replace'] button[name='icon_replace']")
     ).toHaveCount(1);
 
     // image_link: exactly 1 button to add a link to the icon
-    expect(queryAll(".o-we-toolbar .btn-group[name='image_link'] button")).toHaveCount(1);
-    expect(queryAll(".o-we-toolbar .btn-group[name='image_link'] button[name='link']")).toHaveCount(
+    expect(queryAll(".w-we-toolbar .btn-group[name='image_link'] button")).toHaveCount(1);
+    expect(queryAll(".w-we-toolbar .btn-group[name='image_link'] button[name='link']")).toHaveCount(
         1
     );
 });
@@ -438,8 +438,8 @@ test("should remove empty inline attribute when it contains visible content", as
         contentBefore: `<p><font style="color: rgb(255, 0, 0);">[abc]</font></p>`,
         stepFunction: async (editor) => {
             await insertText(editor, "/icon");
-            await expectElementCount(".o-we-powerbox", 1);
-            expect(".active .o-we-command-name").toHaveText("Media");
+            await expectElementCount(".w-we-powerbox", 1);
+            expect(".active .w-we-command-name").toHaveText("Media");
             await press("enter");
 
             await expectElementCount("main.modal-body", 1);

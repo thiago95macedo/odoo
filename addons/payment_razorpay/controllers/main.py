@@ -22,7 +22,7 @@ class RazorpayController(http.Controller):
     def razorpay_return_from_checkout(self, reference, **data):
         """Process the payment data sent by Razorpay after redirection from checkout.
 
-        The route is configured with save_session=False to prevent Odoo from creating a new session
+        The route is configured with save_session=False to prevent WETH from creating a new session
         when the user is redirected here via a POST request. Indeed, as the session cookie is
         created without a `SameSite` attribute, some browsers that don't implement the recommended
         default `SameSite=Lax` behavior will not include the cookie in the redirection request from

@@ -7,7 +7,7 @@ describe.current.tags("headless");
 
 test("a translated term carries its context", () => {
     allowTranslations();
-    patchWithCleanup(odoo, { debug: "translate" });
+    patchWithCleanup(weth, { debug: "translate" });
     const translation = appTranslateFn("Component", "web");
     expect(parseTranslatedText(String(translation))).toEqual([
         "Component",

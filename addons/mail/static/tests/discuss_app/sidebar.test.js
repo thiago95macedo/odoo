@@ -56,26 +56,26 @@ test("default thread rendering", async () => {
     });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Notifications'))");
-    await click(".o-mail-MessagingMenu-tab[data-id='notification']");
-    await contains(".o-mail-MessagingMenu-tab.active:has(:text('Notifications'))");
-    await contains(".o-mail-MessagingMenuEmpty:has(:text('You\\'re all caught up!'))");
-    await click(".o-mail-MessagingMenu-tab[data-id='channel']");
-    await click(".o-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Notifications'))");
+    await click(".w-mail-MessagingMenu-tab[data-id='notification']");
+    await contains(".w-mail-MessagingMenu-tab.active:has(:text('Notifications'))");
+    await contains(".w-mail-MessagingMenuEmpty:has(:text('You\\'re all caught up!'))");
+    await click(".w-mail-MessagingMenu-tab[data-id='channel']");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
     await contains(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem.o-active):has(:text('General'))"
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem.w-active):has(:text('General'))"
     );
-    await contains(".o-mail-Thread:has(:text('Welcome to #General!'))");
-    await click(".o-mail-MessagingMenu-tab[data-id='chat']");
-    await click(".o-mail-NotificationItem:has(:text('MyGroup'))");
+    await contains(".w-mail-Thread:has(:text('Welcome to #General!'))");
+    await click(".w-mail-MessagingMenu-tab[data-id='chat']");
+    await click(".w-mail-NotificationItem:has(:text('MyGroup'))");
     await contains(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem.o-active):has(:text('MyGroup'))"
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem.w-active):has(:text('MyGroup'))"
     );
-    await click(".o-mail-NotificationItem:has(:text('Demo'))");
+    await click(".w-mail-NotificationItem:has(:text('Demo'))");
     await contains(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem.o-active):has(:text('Demo'))"
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem.w-active):has(:text('Demo'))"
     );
-    await contains(".o-mail-Thread:has(:text('Demo'))");
+    await contains(".w-mail-Thread:has(:text('Demo'))");
 });
 
 test("sidebar: can open chat actions", async () => {
@@ -90,32 +90,32 @@ test("sidebar: can open chat actions", async () => {
     });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Demo'))");
-    await contains(".o-mail-MessagingMenuItem img[alt='Thread Image']");
+    await contains(".w-mail-MessagingMenuItem");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Demo'))");
+    await contains(".w-mail-MessagingMenuItem img[alt='Thread Image']");
     await click("[title='Chat Actions']");
-    await waitFor(".o-dropdown-item:count(8)", { timeout: 3000 });
-    await waitFor(".o-mail-ActionList-group:count(4)");
-    const group = range(0, 4).map((i) => `.o-mail-ActionList-group:eq(${i})`);
-    await waitFor(`${group[0]} .o-dropdown-item:count(2)`);
-    await waitFor(`${group[0]} .o-dropdown-item:eq(0):text('Start Video Call')`);
-    await waitFor(`${group[0]} .o-dropdown-item:eq(1):text('Start Call')`);
-    await waitFor(`${group[1]} .o-dropdown-item:count(2)`);
-    await waitFor(`${group[1]} .o-dropdown-item:eq(0):text('Invite People')`);
-    await waitFor(`${group[1]} .o-dropdown-item:eq(1):text('Add to Favorites')`);
-    await waitFor(`${group[2]} .o-dropdown-item:count(3)`);
-    await waitFor(`${group[2]} .o-dropdown-item:eq(0):text('Mute Conversation')`);
-    await waitFor(`${group[2]} .o-dropdown-item:eq(1):text('View Recordings')`);
-    await waitFor(`${group[2]} .o-dropdown-item:eq(2):text('Advanced Settings')`);
-    await waitFor(`${group[3]} .o-dropdown-item:count(1)`);
-    await waitFor(`${group[3]} .o-dropdown-item:text('Hide Until New Message')`);
-    await contains(".o-mail-MessagingMenuItem .badge", { count: 0 });
-    await click(".o-mail-DiscussApp-sidebar");
-    await contains(".o-dropdown-item", { count: 0 });
+    await waitFor(".w-dropdown-item:count(8)", { timeout: 3000 });
+    await waitFor(".w-mail-ActionList-group:count(4)");
+    const group = range(0, 4).map((i) => `.w-mail-ActionList-group:eq(${i})`);
+    await waitFor(`${group[0]} .w-dropdown-item:count(2)`);
+    await waitFor(`${group[0]} .w-dropdown-item:eq(0):text('Start Video Call')`);
+    await waitFor(`${group[0]} .w-dropdown-item:eq(1):text('Start Call')`);
+    await waitFor(`${group[1]} .w-dropdown-item:count(2)`);
+    await waitFor(`${group[1]} .w-dropdown-item:eq(0):text('Invite People')`);
+    await waitFor(`${group[1]} .w-dropdown-item:eq(1):text('Add to Favorites')`);
+    await waitFor(`${group[2]} .w-dropdown-item:count(3)`);
+    await waitFor(`${group[2]} .w-dropdown-item:eq(0):text('Mute Conversation')`);
+    await waitFor(`${group[2]} .w-dropdown-item:eq(1):text('View Recordings')`);
+    await waitFor(`${group[2]} .w-dropdown-item:eq(2):text('Advanced Settings')`);
+    await waitFor(`${group[3]} .w-dropdown-item:count(1)`);
+    await waitFor(`${group[3]} .w-dropdown-item:text('Hide Until New Message')`);
+    await contains(".w-mail-MessagingMenuItem .badge", { count: 0 });
+    await click(".w-mail-DiscussApp-sidebar");
+    await contains(".w-dropdown-item", { count: 0 });
     // Can also right-click to see messaging menu item actions
-    await rightClick(".o-mail-MessagingMenuItem");
-    await contains(".o-mail-MessagingMenuItem[data-right-clicking]");
-    await waitFor(".o-dropdown-item:count(8)");
+    await rightClick(".w-mail-MessagingMenuItem");
+    await contains(".w-mail-MessagingMenuItem[data-right-clicking]");
+    await waitFor(".w-dropdown-item:count(8)");
 });
 
 test("sidebar: dispatch recording action", async () => {
@@ -151,11 +151,11 @@ test("sidebar: dispatch recording action", async () => {
     await start();
     await openDiscuss();
     await click("[title='Chat Actions']");
-    const recordingGroup = ".o-mail-ActionList-group:eq(2)";
-    await waitFor(`${recordingGroup} .o-dropdown-item:eq(0):text('Mute Conversation')`);
-    await waitFor(`${recordingGroup} .o-dropdown-item:eq(1):text('View Recordings')`);
-    await waitFor(`${recordingGroup} .o-dropdown-item:eq(2):text('Advanced Settings')`);
-    await click(`${recordingGroup} .o-dropdown-item:eq(1)`);
+    const recordingGroup = ".w-mail-ActionList-group:eq(2)";
+    await waitFor(`${recordingGroup} .w-dropdown-item:eq(0):text('Mute Conversation')`);
+    await waitFor(`${recordingGroup} .w-dropdown-item:eq(1):text('View Recordings')`);
+    await waitFor(`${recordingGroup} .w-dropdown-item:eq(2):text('Advanced Settings')`);
+    await click(`${recordingGroup} .w-dropdown-item:eq(1)`);
     await expect.waitForSteps(["action_view_recordings", "doAction"]);
 });
 
@@ -164,9 +164,9 @@ test("sidebar: open pinned channel", async () => {
     pyEnv["discuss.channel"].create({ name: "General" });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-mail-Composer-input[placeholder='Message #General…']");
-    await contains(".o-mail-DiscussContent-threadName", { value: "General" });
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-Composer-input[placeholder='Message #General…']");
+    await contains(".w-mail-DiscussContent-threadName", { value: "General" });
 });
 
 test("sidebar: open channel and leave it", async () => {
@@ -179,14 +179,14 @@ test("sidebar: open channel and leave it", async () => {
     setupChatHub({ opened: [channelId] });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-mail-DiscussContent-threadName", { value: "General" });
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-DiscussContent-threadName", { value: "General" });
     await expect.waitForSteps([]);
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await click(".o_dialog button:text('Leave Conversation')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
-    await contains(".o-mail-DiscussContent:text(No conversation selected.)");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
+    await contains(".w-mail-DiscussContent:text(No conversation selected.)");
     await expect.waitForSteps(["action_unfollow"]);
 });
 
@@ -210,11 +210,11 @@ test("chat - channel should count unread message", async () => {
     });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenu-tab:has(:text('Chats')) .o-discuss-badge:text(1)");
-    await contains(".o-mail-NotificationItem:has(:text('Demo')) .o-discuss-badge:text(1)");
-    await click(".o-mail-NotificationItem:has(:text('Demo'))");
-    await contains(".o-mail-Message");
-    await contains(".o-discuss-badge", { count: 0 });
+    await contains(".w-mail-MessagingMenu-tab:has(:text('Chats')) .w-discuss-badge:text(1)");
+    await contains(".w-mail-NotificationItem:has(:text('Demo')) .w-discuss-badge:text(1)");
+    await click(".w-mail-NotificationItem:has(:text('Demo'))");
+    await contains(".w-mail-Message");
+    await contains(".w-discuss-badge", { count: 0 });
 });
 
 test.tags("focus required");
@@ -233,9 +233,9 @@ test("mark channel as seen on last message visible", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem.o-interest:has(:text(test))");
-    await contains(".o-mail-Message");
-    await contains(".o-mail-NotificationItem.o-interest:has(:text(test))", { count: 0 });
+    await click(".w-mail-NotificationItem.w-interest:has(:text(test))");
+    await contains(".w-mail-Message");
+    await contains(".w-mail-NotificationItem.w-interest:has(:text(test))", { count: 0 });
 });
 
 test("sidebar: public channel rendering", async () => {
@@ -247,7 +247,7 @@ test("sidebar: public channel rendering", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem:has(:text('channel1'))", {
+    await contains(".w-mail-MessagingMenuItem:has(:text('channel1'))", {
         contains: ["[data-icon='public']"],
     });
 });
@@ -260,7 +260,7 @@ test("channel - avatar: should have correct avatar", async () => {
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem img");
+    await contains(".w-mail-MessagingMenuItem img");
     await contains(
         `img[data-src='${getOrigin()}/web/image/discuss.channel/${channelId}/avatar_128?unique=notaDateCache']`
     );
@@ -304,7 +304,7 @@ test("chat - avatar: should have correct avatar", async () => {
     });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem img");
+    await contains(".w-mail-MessagingMenuItem img");
     await contains(
         `img[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
         }']`
@@ -339,15 +339,15 @@ test("chat should be sorted by last activity time", async () => {
     ]);
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem:has(:text('Yoshi'))", {
-        before: [".o-mail-MessagingMenuItem:has(:text('Demo'))"],
+    await contains(".w-mail-MessagingMenuItem:has(:text('Yoshi'))", {
+        before: [".w-mail-MessagingMenuItem:has(:text('Demo'))"],
     });
-    await click(".o-mail-NotificationItem:has(:text('Demo'))");
-    await insertText(".o-mail-Composer-input[placeholder='Message Demo…']", "Blabla");
+    await click(".w-mail-NotificationItem:has(:text('Demo'))");
+    await insertText(".w-mail-Composer-input[placeholder='Message Demo…']", "Blabla");
     await press("Enter");
-    await contains(".o-mail-Message:has(:text('Blabla'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Demo'))", {
-        before: [".o-mail-MessagingMenuItem:has(:text('Yoshi'))"],
+    await contains(".w-mail-Message:has(:text('Blabla'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Demo'))", {
+        before: [".w-mail-MessagingMenuItem:has(:text('Yoshi'))"],
     });
 });
 
@@ -356,10 +356,10 @@ test("Can unpin chat channel", async () => {
     pyEnv["discuss.channel"].create({ channel_type: "chat" });
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mitchell Admin'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mitchell Admin'))");
     await click("[title='Chat Actions']");
-    await click(".o-dropdown-item:text('Hide Until New Message')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mitchell Admin'))", { count: 0 });
+    await click(".w-dropdown-item:text('Hide Until New Message')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mitchell Admin'))", { count: 0 });
 });
 
 test("No 'Hide Until New Message' on conversation with self in call", async () => {
@@ -383,14 +383,14 @@ test("No 'Hide Until New Message' on conversation with self in call", async () =
     await start();
     await openDiscuss(channelId);
     await click("button[title='Join Call']");
-    await contains(".o-discuss-Call.o-selfInCall");
+    await contains(".w-discuss-Call.w-selfInCall");
     await click("[title='Chat Actions']");
-    await contains(".o-dropdown-item:text('Invite People')");
-    await contains(".o-dropdown-item:text('Hide Until New Message')", { count: 0 });
+    await contains(".w-dropdown-item:text('Invite People')");
+    await contains(".w-dropdown-item:text('Hide Until New Message')", { count: 0 });
     await click("button[title='Disconnect']");
-    await contains(".o-discuss-Call.o-selfInCall", { count: 0 });
+    await contains(".w-discuss-Call.w-selfInCall", { count: 0 });
     await click("[title='Chat Actions']");
-    await contains(".o-dropdown-item:text('Hide Until New Message')");
+    await contains(".w-dropdown-item:text('Hide Until New Message')");
 });
 
 test("opening a hidden channel re-pins it", async () => {
@@ -413,11 +413,11 @@ test("opening a hidden channel re-pins it", async () => {
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem:has(:text('InitialChannel'))");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('InitialChannel'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
     await triggerHotkey("control+k");
-    await click(".o-mail-DiscussCommand-nameContainer:text('General')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
+    await click(".w-mail-DiscussCommand-nameContainer:text('General')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
 });
 
 test("Can leave channel", async () => {
@@ -435,11 +435,11 @@ test("Can leave channel", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))");
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await click(".o_dialog button:text('Leave Conversation')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
 });
 
 test("Leaving channel does not open another conversation", async () => {
@@ -448,18 +448,18 @@ test("Leaving channel does not open another conversation", async () => {
     pyEnv["discuss.channel"].create({ name: "Sales" });
     await start();
     await openDiscuss(channelId);
-    await contains(".o-mail-DiscussContent-threadName", { value: "General" });
+    await contains(".w-mail-DiscussContent-threadName", { value: "General" });
     await contains(
-        ".o-mail-MessagingMenuItem:has(.o-mail-NotificationItem.o-active):has(:text('General'))"
+        ".w-mail-MessagingMenuItem:has(.w-mail-NotificationItem.w-active):has(:text('General'))"
     );
-    await contains(".o-mail-NotificationItem.o-active");
-    await click(".o-mail-MessagingMenuItem:has(:text('General')) [title='Channel Actions']");
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await contains(".w-mail-NotificationItem.w-active");
+    await click(".w-mail-MessagingMenuItem:has(:text('General')) [title='Channel Actions']");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await click(".o_dialog button:text('Leave Conversation')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Sales'))");
-    await contains(".o-mail-DiscussContent:text(No conversation selected.)");
-    await contains(".o-mail-NotificationItem.o-active", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('General'))", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Sales'))");
+    await contains(".w-mail-DiscussContent:text(No conversation selected.)");
+    await contains(".w-mail-NotificationItem.w-active", { count: 0 });
 });
 
 test("Do no channel_info after unpin", async () => {
@@ -479,7 +479,7 @@ test("Do no channel_info after unpin", async () => {
     await waitStoreFetch("discuss.channel");
     await openDiscuss(channelId);
     await click("[title='Chat Actions']");
-    await click(".o-dropdown-item:contains('Hide Until New Message')");
+    await click(".w-dropdown-item:contains('Hide Until New Message')");
     rpc("/mail/message/post", {
         thread_id: channelId,
         thread_model: "discuss.channel",
@@ -520,9 +520,9 @@ test("Tab unread counter up to date after mention is marked as seen", async () =
     ]);
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem .o-discuss-badge");
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-MessagingMenuItem .o-discuss-badge", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem .w-discuss-badge");
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-MessagingMenuItem .w-discuss-badge", { count: 0 });
 });
 
 test("Unpinning channel closes its chat window", async () => {
@@ -531,13 +531,13 @@ test("Unpinning channel closes its chat window", async () => {
     await start();
     await openFormView("discuss.channel");
     await openMessagingMenu(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem");
-    await contains(".o-mail-ChatWindow-displayName:text('Sales')");
+    await click(".w-mail-NotificationItem");
+    await contains(".w-mail-ChatWindow-displayName:text('Sales')");
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
     await click("[title='Channel Actions']");
-    await click(".o-dropdown-item:contains('Leave Conversation')");
+    await click(".w-dropdown-item:contains('Leave Conversation')");
     await openFormView("discuss.channel");
-    await contains(".o-mail-ChatWindow-displayName:text('Sales')", { count: 0 });
+    await contains(".w-mail-ChatWindow-displayName:text('Sales')", { count: 0 });
 });
 
 test.tags("focus required");
@@ -552,10 +552,10 @@ test("Update channel data via bus notification", async () => {
     const env2 = await start({ asTab: true, waitUntilSubscribe: false });
     await openDiscuss(channelId, { target: env1 });
     await openDiscuss(channelId, { target: env2 });
-    await contains(`${env1.selector} .o-mail-MessagingMenuItem:has(:text('Sales'))`);
-    await insertText(`${env1.selector} .o-mail-DiscussContent-threadName`, "test");
+    await contains(`${env1.selector} .w-mail-MessagingMenuItem:has(:text('Sales'))`);
+    await insertText(`${env1.selector} .w-mail-DiscussContent-threadName`, "test");
     await triggerHotkey("Enter");
-    await contains(`${env2.selector} .o-mail-MessagingMenuItem:has(:text('Salestest'))`);
+    await contains(`${env2.selector} .w-mail-MessagingMenuItem:has(:text('Salestest'))`);
 });
 
 test("Redirect to the thread containing the bookmark and highlight the message", async () => {
@@ -571,15 +571,15 @@ test("Redirect to the thread containing the bookmark and highlight the message",
     });
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await click(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-mail-Message");
-    await rightClick(".o-mail-Message");
-    await click(".o-dropdown-item:contains('Bookmark')");
-    await click(".o-mail-MessagingMenu-tab[data-id='bookmark']:has(.badge:text(1))");
-    await contains(".o-mail-MessagingMenu-tab.active:has(:text('Bookmarks'))");
-    await click(".o-mail-NotificationItem:has(:text('You: Hello there!!!'))");
-    await contains(".o-mail-NotificationItem:has(:text('General'))");
-    await contains(".o-mail-Message.o-highlighted:has(:text('Hello there!!!'))");
+    await click(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-Message");
+    await rightClick(".w-mail-Message");
+    await click(".w-dropdown-item:contains('Bookmark')");
+    await click(".w-mail-MessagingMenu-tab[data-id='bookmark']:has(.badge:text(1))");
+    await contains(".w-mail-MessagingMenu-tab.active:has(:text('Bookmarks'))");
+    await click(".w-mail-NotificationItem:has(:text('You: Hello there!!!'))");
+    await contains(".w-mail-NotificationItem:has(:text('General'))");
+    await contains(".w-mail-Message.w-highlighted:has(:text('Hello there!!!'))");
 });
 
 test("Sidebar channels show correct notification counter based on settings", async () => {
@@ -635,14 +635,14 @@ test("Sidebar channels show correct notification counter based on settings", asy
     ]);
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mentions')) .badge:text('2')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Regular')) .badge:text('1')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mentions')) .badge:text('2')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Regular')) .badge:text('1')");
     rpc("/discuss/settings/custom_notifications", { custom_notifications: false }); // default: @mention only
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mentions')) .badge:text('1')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Regular')) .badge.o-empty");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mentions')) .badge:text('1')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Regular')) .badge.w-empty");
     rpc("/discuss/settings/custom_notifications", { custom_notifications: "no_notif" });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Mentions')) .badge.o-empty");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Regular')) .badge.o-empty");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Mentions')) .badge.w-empty");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Regular')) .badge.w-empty");
 });
 
 test("add and remove channel from favorites updates sidebar", async () => {
@@ -654,15 +654,15 @@ test("add and remove channel from favorites updates sidebar", async () => {
     await start();
     await openDiscuss(MENU_ACTIVE_IDS.CHANNEL);
     await click(
-        ".o-mail-NotificationItem:has(:text('General')) .o-mail-MessagingMenu-actions button"
+        ".w-mail-NotificationItem:has(:text('General')) .w-mail-MessagingMenu-actions button"
     );
-    await click(".o-dropdown-item:contains('Add to Favorites')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General')) [data-icon='star']");
+    await click(".w-dropdown-item:contains('Add to Favorites')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General')) [data-icon='star']");
     await click(
-        ".o-mail-NotificationItem:has(:text('General')) .o-mail-MessagingMenu-actions button"
+        ".w-mail-NotificationItem:has(:text('General')) .w-mail-MessagingMenu-actions button"
     );
-    await click(".o-dropdown-item:contains('Remove from Favorites')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('General')) [data-icon='star']", {
+    await click(".w-dropdown-item:contains('Remove from Favorites')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('General')) [data-icon='star']", {
         count: 0,
     });
 });
@@ -718,10 +718,10 @@ test("Muted group chats show notification counter from mentions-only", async () 
     ]);
     await start();
     await openDiscuss();
-    await contains(".o-mail-MessagingMenuItem:has(:text('Sales Team')) .badge:text('1')");
-    await contains(".o-mail-MessagingMenuItem:has(:text('Development Team')) .badge:text('2')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Sales Team')) .badge:text('1')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Development Team')) .badge:text('2')");
     rpc("/discuss/settings/mute", { minutes: -1, channel_id: channelId_1 });
     rpc("/discuss/settings/mute", { minutes: -1, channel_id: channelId_2 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Sales Team')) .badge", { count: 0 });
-    await contains(".o-mail-MessagingMenuItem:has(:text('Development Team')) .badge:text('1')");
+    await contains(".w-mail-MessagingMenuItem:has(:text('Sales Team')) .badge", { count: 0 });
+    await contains(".w-mail-MessagingMenuItem:has(:text('Development Team')) .badge:text('1')");
 });

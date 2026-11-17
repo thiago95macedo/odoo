@@ -36,16 +36,16 @@ describe("NavbarLinkPopover", () => {
                 config: { includePlugins: [MenuDataPlugin, SavePlugin] },
             }
         );
-        await expectElementCount(".o-we-linkpopover", 0);
+        await expectElementCount(".w-we-linkpopover", 0);
         // selection inside a top menu link
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         // remove link button replaced with sitemap button
-        expect(".o-we-linkpopover:has(i[data-icon='link_off'])").toHaveCount(0);
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        expect(".w-we-linkpopover:has(i[data-icon='link_off'])").toHaveCount(0);
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
         // selection outside a top menu link
         setSelection({ anchorNode: el.querySelector("p"), anchorOffset: 0 });
-        await expectElementCount(".o-we-linkpopover", 0);
+        await expectElementCount(".w-we-linkpopover", 0);
     });
 
     test("should open a navbar popover when the selection is inside a top menu link and stay open if selection move in the same link", async () => {
@@ -61,15 +61,15 @@ describe("NavbarLinkPopover", () => {
                 config: { includePlugins: [MenuDataPlugin, SavePlugin] },
             }
         );
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
         // open navbar link popover
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        await waitFor(".w-we-linkpopover");
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
         // selection in the same link
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 1 });
-        await waitFor(".o-we-linkpopover");
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        await waitFor(".w-we-linkpopover");
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
     });
 
     test("should open a navbar popover when the selection is inside a top menu dropdown link", async () => {
@@ -95,11 +95,11 @@ describe("NavbarLinkPopover", () => {
                 config: { includePlugins: [MenuDataPlugin, SavePlugin] },
             }
         );
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
         // selection in dropdown menu
         setSelection({ anchorNode: el.querySelector(".dropdown-item > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        await waitFor(".w-we-linkpopover");
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
     });
 
     test("link redirection should be prefixed for links in the nav bar", async () => {
@@ -126,11 +126,11 @@ describe("NavbarLinkPopover", () => {
             }
         );
 
-        await expectElementCount(".o-we-linkpopover", 0);
+        await expectElementCount(".w-we-linkpopover", 0);
         // selection inside a top menu link
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
-        await click(".o-we-linkpopover a");
+        await waitFor(".w-we-linkpopover");
+        await click(".w-we-linkpopover a");
         expect.verifySteps(["website page url prefixed"]);
     });
 });
@@ -159,11 +159,11 @@ describe("MenuDialog", () => {
             matching_pages: [],
             others: [],
         }));
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
         // open navbar link popover
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        await waitFor(".w-we-linkpopover");
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
         // click the link edit button
         await click(".o_we_edit_link");
         // check that MenuDialog is open and that name and url have been passed correctly
@@ -245,11 +245,11 @@ describe("EditMenuDialog", () => {
             others: [],
         }));
 
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(0);
         // open navbar link popover
         setSelection({ anchorNode: el.querySelector(".nav-link > span"), anchorOffset: 0 });
-        await waitFor(".o-we-linkpopover");
-        expect(".o-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
+        await waitFor(".w-we-linkpopover");
+        expect(".w-we-linkpopover:has(button.js_edit_menu)").toHaveCount(1);
         // click on edit menu button
         await click(".js_edit_menu");
         // check that EditMenuDialog is open with correct values
@@ -287,7 +287,7 @@ describe("EditMenuDialog", () => {
             others: [],
         }));
 
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(".js_edit_menu");
         await waitFor(".o_website_dialog");
         expect.verifySteps(["get_tree"]);
@@ -337,7 +337,7 @@ describe("EditMenuDialog", () => {
         setSelection({ anchorNode: queryOne(":iframe .nav-link > span"), anchorOffset: 0 });
 
         // open menu editor and save
-        await waitFor(".o-we-linkpopover");
+        await waitFor(".w-we-linkpopover");
         await click(queryOne("button.js_edit_menu"));
         await waitFor("footer.modal-footer");
         await click(queryOne(".modal-footer > button.btn-primary"));

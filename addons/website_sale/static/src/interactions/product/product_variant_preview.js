@@ -89,18 +89,18 @@ export class ProductVariantPreview extends Interaction {
     }
 
     /**
-     * Triggered on the parent element of the '.o_wsale_attribute_previewer' elements to run the
+     * Triggered on the parent element of the '.w_wsale_attribute_previewer' elements to run the
      * interaction once instead of multiple times depending on how many elements or products exist
      * on the page.
      *
-     * Schedules and batches updates for all active '.o_wsale_attribute_previewer' elements
+     * Schedules and batches updates for all active '.w_wsale_attribute_previewer' elements
      * to refresh their variant previews efficiently.
      *
      * Uses `requestAnimationFrame` to ensure that updates occur in sync with the browser’s
      * rendering cycle, preventing redundant or frequent recalculations (trigger by offsetWidth).
      */
     updateVariantPreview() {
-        const attributePreviewers = this.el.querySelectorAll(".o_wsale_attribute_previewer");
+        const attributePreviewers = this.el.querySelectorAll(".w_wsale_attribute_previewer");
         const updateAllVariantPreview = this.protectSyncAfterAsync(() => {
             const attributePreviewerValues = new Map();
 
@@ -110,7 +110,7 @@ export class ProductVariantPreview extends Interaction {
             // ---- Phase 1a: all DOM writes (resetDisplay, textContent, classList) ----------------
             for (const attributePreviewer of attributePreviewers) {
                 this._resetDisplay(attributePreviewer);
-                const ptavs = attributePreviewer.querySelectorAll(".o_product_variant_preview");
+                const ptavs = attributePreviewer.querySelectorAll(".w_product_variant_preview");
                 // Set the hiddenCountSpan to the maximum number of ptavs there is to assume
                 // the worst case space it needs.
                 const hiddenCountSpan = attributePreviewer.querySelector(

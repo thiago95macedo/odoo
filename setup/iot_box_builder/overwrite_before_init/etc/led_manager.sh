@@ -58,7 +58,7 @@ while true; do
     fi
 
     if ! systemctl is-active --quiet weth.service; then
-        # Odoo service is not running: Red ON, Green OFF
+        # WETH service is not running: Red ON, Green OFF
         led_constant "$RED_LED"
         led_off "$GREEN_LED"
         continue

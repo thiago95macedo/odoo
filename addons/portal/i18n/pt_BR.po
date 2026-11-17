@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:40+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/portal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr ""
 "do cliente.\n"
 "\n"
 "Este módulo contém a maior parte do código proveniente do website_portal do "
-"odoo v10. O objetivo\n"
+"weth v10. O objetivo\n"
 "deste módulo é permitir a exibição de um portal do cliente sem ter\n"
 "uma dependência em relação a recursos de edição e personalização de site."
 
@@ -56,31 +56,31 @@ msgid "\" to validate your action."
 msgstr "” para validar sua ação."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "\"Authorization\": f\"bearer {mcp_key}\","
 msgstr "\"Authorization\": f\"bearer {mcp_key}\","
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "\"Content-Type\": \"application/json\","
 msgstr "\"Content-Type\": \"application/json\","
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "# Store the API key securely, not in the code."
 msgstr "# Armazene a chave de API de forma segura, não no código."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_share.py:0
 msgid "%(model_name)s shared with %(partner_names)s"
 msgstr "%(model_name)s compartilhado com %(partner_names)s"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/sidebar.js:0
 msgid "%s days overdue"
 msgstr "%s dias de atraso"
@@ -242,13 +242,13 @@ msgid "API Key Description"
 msgstr "Descrição da chave da API"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "API Key Ready"
 msgstr "Chave da API pronta"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/signature_form/signature_form.js:0
 msgid "Accept & Sign"
 msgstr "Aceitar e assinar"
@@ -266,7 +266,7 @@ msgid "Account Details"
 msgstr "Detalhe das contas"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "Account deleted!"
 msgstr "Conta excluída."
@@ -282,7 +282,7 @@ msgid "Add an address"
 msgstr "Adicionar um endereço"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Add attachment"
 msgstr "Adicionar anexo"
@@ -324,13 +324,13 @@ msgid "Already Registered"
 msgstr "Já registrado"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_share.py:0
 msgid "An email invitation has been sent to the selected users."
 msgstr "Um convite por e-mail foi enviado aos usuários selecionados."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_profile_editor.js:0
 msgid "An error occurred while saving your profile."
 msgstr "Ocorreu um erro ao salvar seu perfil."
@@ -346,7 +346,7 @@ msgid "Are you sure you want to do this?"
 msgstr "Tem certeza de que quer fazer isso?"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Avatar"
 msgstr "Avatar"
@@ -377,7 +377,7 @@ msgid "Change Password"
 msgstr "Alterar senha"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "Changing %(field_description)s is not allowed once document(s) have been "
@@ -388,7 +388,7 @@ msgstr ""
 "diretamente para essa operação."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "Changing country is not allowed once document(s) have been issued for your "
@@ -399,7 +399,7 @@ msgstr ""
 "diretamente para essa operação."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "Changing your country is not allowed once document(s) have been issued for "
@@ -409,7 +409,7 @@ msgstr ""
 "sua conta. Entre em contato conosco diretamente para esta operação."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "Check failed"
 msgstr "Falha na verificação"
@@ -425,13 +425,13 @@ msgid "City..."
 msgstr "cidade..."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/signature_form/signature_form.xml:0
 msgid "Click here to see your document."
 msgstr "Clique aqui para ver o documento."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 #: model_terms:ir.ui.view,arch_db:portal.portal_back_in_edit_mode
 #: model_terms:ir.ui.view,arch_db:portal.side_content
@@ -465,7 +465,7 @@ msgid "Configure your connection parameters"
 msgstr "Configure seus parâmetros de conexão"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "Confirm Password"
 msgstr "Confirmar senha"
@@ -495,13 +495,13 @@ msgid "Contacts"
 msgstr "Contatos"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "Copied to clipboard"
 msgstr "Copiado para a área de transferência"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_composer.js:0
 msgid "Could not save file %s"
 msgstr "Não foi possível salvar o arquivo %s"
@@ -518,7 +518,7 @@ msgid "Country..."
 msgstr "País…"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "Create Key"
 msgstr "Criar chave"
@@ -571,7 +571,7 @@ msgid "Dear"
 msgstr "Prezado"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Delete"
 msgstr "Excluir"
@@ -658,13 +658,13 @@ msgid "Display Name"
 msgstr "Nome exibido"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/sidebar.js:0
 msgid "Due in %s days"
 msgstr "Vence em %s dias"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/sidebar.js:0
 msgid "Due today"
 msgstr "Vence hoje"
@@ -696,13 +696,13 @@ msgid "Expiration Date"
 msgstr "Data de expiração"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "Expires"
 msgstr "Vencido"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "Forgot password?"
 msgstr "Esqueceu a senha?"
@@ -757,7 +757,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "If you are ordering for an external person, please place your order via the "
@@ -794,13 +794,13 @@ msgid "Invalid Email Address"
 msgstr "Endereço de e-mail inválido"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "Invalid Email! Please enter a valid email address."
 msgstr "E-mail inválido. Insira um endereço de e-mail válido."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "Invalid report type: %s"
 msgstr "Tipo de relatório inválido: %s"
@@ -811,7 +811,7 @@ msgid "Invitation Message"
 msgstr "Mensagem do convite"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_share.py:0
 msgid "Invitation to access %s"
 msgstr "Convite para acessar %s"
@@ -827,7 +827,7 @@ msgid "Is Portal"
 msgstr "É portal"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "Key Name — your only way to identify that key"
 msgstr "Nome da chave — sua única forma de identificar essa chave"
@@ -854,7 +854,7 @@ msgid "Latest Authentication"
 msgstr "Última autenticação"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Leave a comment"
 msgstr "Deixe um comentário"
@@ -880,7 +880,7 @@ msgid "Message"
 msgstr "Mensagem"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/models/mail_thread.py:0
 msgid ""
 "Model %(model_name)s does not support token signature, as it does not have %"
@@ -890,7 +890,7 @@ msgstr ""
 "%(field_name)s."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "Multi company reports are not supported."
 msgstr "Relatórios multiempresa não são suportados."
@@ -911,7 +911,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "New API Key"
@@ -923,7 +923,7 @@ msgid "New Password:"
 msgstr "Nova senha:"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Next"
 msgstr "Próximo"
@@ -935,17 +935,17 @@ msgstr "Nota"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_record_sidebar
-msgid "Odoo Logo"
-msgstr "Logo da Odoo"
+msgid "WETH Logo"
+msgstr "Logo da Weth"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/models/res_users_apikeys_description.py:0
 msgid "Only internal and portal users can create API keys"
 msgstr "Somente usuários internos e de portal podem criar chaves de API"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Oops! Something went wrong. Try to reload the page and log in."
 msgstr "Oops! Algo deu errado. Tente recarregar a página e fazer login."
@@ -981,13 +981,13 @@ msgid "Placeholder Count"
 msgstr "Contagem de marcadores de posição"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "Please enter your password to confirm you own this account"
 msgstr "Insira sua senha para confirmar que esta conta é sua"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 msgid "Portal Access Management"
@@ -1024,7 +1024,7 @@ msgid "Powered by"
 msgstr "Desenvolvido por"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Previous"
 msgstr "Anterior"
@@ -1093,7 +1093,7 @@ msgid "Save Address"
 msgstr "Salvar endereço"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Scope"
@@ -1110,7 +1110,7 @@ msgid "Security"
 msgstr "Segurança"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_security.js:0
 msgid "Security Control"
 msgstr "Controle de segurança"
@@ -1136,7 +1136,7 @@ msgstr ""
 "mail do contato diretamente na lista."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_composer.js:0
 #: model_terms:ir.ui.view,arch_db:portal.portal_share_wizard
 msgid "Send"
@@ -1149,7 +1149,7 @@ msgid "Share Document"
 msgstr "Compartilhar"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_share.py:0
 msgid "Shared successfully"
 msgstr "Compartilhado com sucesso"
@@ -1175,7 +1175,7 @@ msgid "Skip to Content"
 msgstr "Pular para o conteúdo"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/interactions/portal_composer.js:0
 msgid ""
 "Some fields are required. Please make sure to write a message or attach a "
@@ -1185,7 +1185,7 @@ msgstr ""
 "anexar um documento"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "Some required fields are empty."
 msgstr "Alguns campos obrigatórios estão vazios."
@@ -1216,19 +1216,19 @@ msgid "Target URL"
 msgstr "URL de Destino"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/signature_form/signature_form.xml:0
 msgid "Thank You!"
 msgstr "Obrigado!"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "The %(field_description)s is managed on your company account."
 msgstr "O(A) %(field_description)s é gerenciado(a) na conta da sua empresa."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "The %(field_description)s is managed on your main account address."
 msgstr ""
@@ -1236,13 +1236,13 @@ msgstr ""
 "principal."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "The attachment %s cannot be removed because it is linked to a message."
 msgstr "O anexo %s não pode ser removido porque está vinculado a uma mensagem."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "The attachment %s cannot be removed because it is not in a pending state."
@@ -1250,14 +1250,14 @@ msgstr ""
 "O anexo %s não pode ser removido porque não está em um estado pendente."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "The attachment does not exist or you do not have the rights to access it."
 msgstr "O anexo não existe ou você não tem direitos para acessá-lo."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "The company billing details can only be updated on the company account."
 msgstr ""
@@ -1265,7 +1265,7 @@ msgstr ""
 "empresa."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "The company name and VAT number can only be updated on your main account."
@@ -1274,25 +1274,25 @@ msgstr ""
 "principal."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "The contact \"%s\" does not have a valid email."
 msgstr "O contato “%s” não tem um e-mail válido."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "The contact \"%s\" has the same email as an existing user"
 msgstr "O contato “%s” tem o mesmo e-mail que um usuário existente"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "The new password and its confirmation must be identical."
 msgstr "A nova senha e a sua confirmação devem ser idênticas."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "The old password you provided is incorrect, your password was not changed."
@@ -1300,19 +1300,19 @@ msgstr ""
 "A senha atual que você digitou está incorreta. Sua senha não foi alterada."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "The partner \"%s\" already has the portal access."
 msgstr "O usuário “%s” já tem acesso ao portal."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "The partner \"%s\" has no portal access or is internal."
 msgstr "O usuário “%s” não tem acesso ao portal ou é usuário interno."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid ""
 "The template \"Portal: new user\" not found for sending email to the portal "
@@ -1322,7 +1322,7 @@ msgstr ""
 "usuário do portal."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "This document does not exist."
 msgstr "Este documento não existe."
@@ -1333,7 +1333,7 @@ msgid "This is a preview of the customer portal."
 msgstr "Esta é uma prévia do portal do cliente."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid ""
 "This key won't be shown again. Please copy it and store it securely. Treat "
@@ -1368,7 +1368,7 @@ msgid "Title of Card"
 msgstr "Título do cartão"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "To login, use the following parameters (Python):"
 msgstr "Para fazer login, use os seguintes parâmetros (Python):"
@@ -1379,7 +1379,7 @@ msgid "Toggle filters"
 msgstr "Alterar filtros"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid ""
 "Updating VAT number is not allowed once document(s) have been issued for "
@@ -1394,7 +1394,7 @@ msgid "User"
 msgstr "Usuário"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "User Dashboard"
 msgstr "Painel do usuário"
@@ -1405,7 +1405,7 @@ msgid "Users"
 msgstr "Usuários"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/models/res_country.py:0
 msgid "VAT"
 msgstr "CPF/CNPJ"
@@ -1436,19 +1436,19 @@ msgid "Wizard"
 msgstr "Assistente"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "Write a message..."
 msgstr "Escreva uma mensagem…"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/chatter/portal/composer_patch.js:0
 msgid "Write a message…"
 msgstr "Escreva uma mensagem…"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "Write down your key"
 msgstr "Anote a sua chave"
@@ -1459,25 +1459,25 @@ msgid "Wrong password."
 msgstr "Senha incorreta."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "You cannot archive your main address"
 msgstr "Você não pode arquivar seu endereço principal"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "You cannot edit another user's profile."
 msgstr "Você não pode editar o perfil de outro usuário."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/controllers/portal.py:0
 msgid "You cannot leave any password empty."
 msgstr "Você não pode deixar nenhuma senha em branco."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "You must be"
 msgstr "Você deve estar"
@@ -1488,13 +1488,13 @@ msgid "You should enter \""
 msgstr "Você deve inserir “"
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "You should first grant the portal access to the partner \"%s\"."
 msgstr "Primeiro, conceda acesso ao portal para o usuário “%s”."
 
 #. module: portal
-#. odoo-python
+#. weth-python
 #: code:addons/portal/wizard/portal_wizard.py:0
 msgid "Your Account"
 msgstr "Sua conta"
@@ -1510,10 +1510,10 @@ msgid "Zip Code"
 msgstr "Código postal"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
-msgid "e.g. \"Odoo MCP\""
-msgstr "ex: \"Odoo MCP\""
+msgid "e.g. \"WETH MCP\""
+msgstr "ex: \"WETH MCP\""
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_share_template
@@ -1521,33 +1521,33 @@ msgid "has invited you to access the following"
 msgstr "convidou você a acessar o seguinte"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "headers = {"
 msgstr "headers = {"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "import requests"
 msgstr "import requests"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "logged in"
 msgstr "conectado"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
-msgid "mcp_key = os.environ[\"ODOO_MCP_KEY\"]"
-msgstr "mcp_key = os.environ[\"ODOO_MCP_KEY\"]"
+msgid "mcp_key = os.environ[\"WETH_MCP_KEY\"]"
+msgstr "mcp_key = os.environ[\"WETH_MCP_KEY\"]"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_record_sidebar
-msgid "odoo"
-msgstr "odoo"
+msgid "weth"
+msgstr "weth"
 
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_entry__sequence
@@ -1555,13 +1555,13 @@ msgid "sequence"
 msgstr "sequência"
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 msgid "to post a comment."
 msgstr "para publicar um comentário."
 
 #. module: portal
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 msgid "url = \""
 msgstr "url = \""

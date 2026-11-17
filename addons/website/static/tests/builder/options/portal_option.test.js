@@ -59,6 +59,6 @@ test("reorder and toggle portal cards before saving", async () => {
     expect(":iframe .o_portal_index_card[data-id='3']").toHaveClass("d-none");
     expect.verifySteps([]);
 
-    await contains(".o-snippets-top-actions [data-action='save']").click();
+    await contains(".w-snippets-top-actions [data-action='save']").click();
     expect.verifySteps(["save portal cards"]);
 });

@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_expense/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -66,14 +66,14 @@ msgstr ""
 "partir do pedido de venda relacionado"
 
 #. module: sale_expense
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/sale_expense/static/src/views/attachment_selector.js:0
 #: model:ir.model,name:sale_expense.model_expense_attachment_selection_wizard
 msgid "Attachment Selection"
 msgstr "Seleção de anexo"
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/models/sale_order.py:0
 msgid "Attachments Selection"
 msgstr "Seleção de anexos"
@@ -131,14 +131,14 @@ msgid "Expenses"
 msgstr "Despesas"
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/models/product_template.py:0
 msgid "Expenses of this product may not be added to a Sales Order."
 msgstr ""
 "As despesas deste produto não podem ser adicionadas a um Pedido de Venda."
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/models/product_template.py:0
 msgid ""
 "Expenses will be added to the Sales Order at their actual cost when posted."
@@ -147,7 +147,7 @@ msgstr ""
 "forem lançadas."
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/models/product_template.py:0
 msgid ""
 "Expenses will be added to the Sales Order at their sales price (product "
@@ -218,13 +218,13 @@ msgid "Last Updated on"
 msgstr "Última atualização em"
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/models/sale_order.py:0
 msgid "No attachment found to import from linked expense(s)"
 msgstr "Nenhum anexo encontrado para importar das despesas vinculadas"
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/wizard/expense_attachment_selection_wizard.py:0
 msgid "Please select at least one attachment to import."
 msgstr "Selecione pelo menos um anexo para importar."
@@ -277,7 +277,7 @@ msgid "Selected Attachments"
 msgstr "Anexos selecionados"
 
 #. module: sale_expense
-#. odoo-python
+#. weth-python
 #: code:addons/sale_expense/wizard/expense_attachment_selection_wizard.py:0
 msgid "The following expense receipts were attached from reinvoiced expenses."
 msgstr ""

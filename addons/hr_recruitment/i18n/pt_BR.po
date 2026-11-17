@@ -17,7 +17,7 @@ msgstr ""
 "PO-Revision-Date: 2026-10-01 01:34+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/"
-"odoo-20/hr_recruitment/pt_BR/>\n"
+"weth-20/hr_recruitment/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,25 +32,25 @@ msgid "# Talents"
 msgstr "Nº de talentos"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "%s (copy)"
 msgstr "%s (cópia)"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "1 Meeting"
 msgstr "1 reunião"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "<b>Click to view</b> the application."
 msgstr "<b>Clique para visualizar</b> a candidatura."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "<b>Did you apply by sending an email?</b> Check incoming applications."
 msgstr ""
@@ -58,7 +58,7 @@ msgstr ""
 "recebidas."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "<b>Drag this card</b>, to qualify him for a first interview."
 msgstr ""
@@ -348,7 +348,7 @@ msgid ""
 msgstr ""
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid ""
 "<div><b>Try to send an email</b> to the applicant.</div><div><i>Tips: All "
@@ -592,7 +592,7 @@ msgid "Add a new tag"
 msgstr "Adicionar um novo marcador"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Add applicant(s) to the pool"
 msgstr "Adicionar candidato(s) ao banco"
@@ -636,7 +636,7 @@ msgid "Add/Remove Followers"
 msgstr "Adicionar/Remover seguidores"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/talent_pool_add_applicants.py:0
 msgid "Added the following talents to %(talent_pools)s: %(talent_names)s."
 msgstr ""
@@ -713,7 +713,7 @@ msgid "Analysis"
 msgstr "Análise"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_employee.py:0
 #: model:ir.actions.act_window,name:hr_recruitment.action_hr_applicant_new
 #: model:ir.model,name:hr_recruitment.model_hr_applicant
@@ -803,7 +803,7 @@ msgstr ""
 "e assim você poderá facilmente buscar informações em seus conteúdos."
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.view_hr_job_kanban
 msgid "Application"
@@ -826,7 +826,7 @@ msgid "Application email"
 msgstr "E-mail de candidatura"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: model:ir.actions.act_window,name:hr_recruitment.action_hr_job_applications
 #: model:ir.actions.act_window,name:hr_recruitment.crm_case_categ0_act_job
@@ -871,7 +871,7 @@ msgid "Apply for a Job"
 msgstr "Candidatar-se a uma vaga"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: model:ir.actions.server,name:hr_recruitment.action_job_add_applicants
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.crm_case_tree_view_job
@@ -880,7 +880,7 @@ msgid "Apply to Jobs"
 msgstr "Candidatar-se a vagas"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_form_controller.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_kanban_view.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_list_controller.js:0
@@ -891,7 +891,7 @@ msgid "Archive"
 msgstr "Arquivar"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_form_controller.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_kanban_view.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_list_controller.js:0
@@ -907,7 +907,7 @@ msgid "Archived"
 msgstr "Arquivado"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_form_controller.js:0
 msgid "Are you sure that you want to archive this job position?"
 msgstr "Tem certeza de que quer arquivar esta vaga?"
@@ -918,7 +918,7 @@ msgid "Assigned"
 msgstr "Atribuído"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/applicant_refuse_reason.py:0
 msgid ""
 "At least one applicant doesn't have a email; you can't use send email option."
@@ -1044,7 +1044,7 @@ msgid "Category of applicant"
 msgstr "Categoria de candidato"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Choose an application email."
 msgstr "Escolha um e-mail de candidatura."
@@ -1127,7 +1127,7 @@ msgid "Contract Signed"
 msgstr "Contrato assinado"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Copy this email address, to paste it in your email composer, to apply."
 msgstr ""
@@ -1135,7 +1135,7 @@ msgstr ""
 "candidatar."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/fields/recruitment_copy_clipboard_char_field/recruitment_copy_clipboard_char_field.js:0
 msgid "Copy to Clipboard"
 msgstr "Copiar para área de transferência"
@@ -1156,7 +1156,7 @@ msgid "Create Employee"
 msgstr "Criar funcionário"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_talent_pool.py:0
 msgid "Create Talent"
 msgstr "Criar Talento"
@@ -1185,13 +1185,13 @@ msgstr ""
 "específicos."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Create your first Job Position."
 msgstr "Crie sua primeira vaga."
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/job_add_applicants.py:0
 msgid "Created %(amount)s new applications for: %(names)s"
 msgstr "%(amount)s novas candidaturas foram criadas para: %(names)s"
@@ -1475,7 +1475,7 @@ msgid "Document Count"
 msgstr "Total de documentos"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: code:addons/hr_recruitment/models/hr_job.py:0
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_job__document_ids
@@ -1572,8 +1572,8 @@ msgstr ""
 
 #. module: hr_recruitment
 #: model:ir.model.fields,help:hr_recruitment.field_hr_job__alias_domain
-msgid "Email domain e.g. 'example.com' in 'odoo@example.com'"
-msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'odoo@exemplo.com'"
+msgid "Email domain e.g. 'example.com' in 'weth@example.com'"
+msgstr "Domínio de e-mail, por exemplo, 'exemplo.com' em 'weth@exemplo.com'"
 
 #. module: hr_recruitment
 #: model:ir.actions.act_window,name:hr_recruitment.action_hr_job_platforms
@@ -1582,7 +1582,7 @@ msgid "Emails"
 msgstr "E-mails"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: model:ir.model,name:hr_recruitment.model_hr_employee
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__employee_id
@@ -1907,7 +1907,7 @@ msgstr ""
 "não receberá mais SMS de envio em massa, de lista alguma"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_list_controller.js:0
 msgid ""
 "If you archive these job positions, all their applicants will be archived "
@@ -1917,7 +1917,7 @@ msgstr ""
 "arquivados. Tem certeza?"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_form_controller.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_kanban_view.js:0
 #: code:addons/hr_recruitment/static/src/views/recruitment_list_controller.js:0
@@ -2150,7 +2150,7 @@ msgid "Language"
 msgstr "Idioma"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Last Meeting"
 msgstr "Última reunião"
@@ -2211,13 +2211,13 @@ msgid "Let's create a job position"
 msgstr "Vamos criar um cargo de trabalho"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_helper_view.xml:0
 msgid "Let's create a job position."
 msgstr "Vamos criar uma oportunidade de emprego."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid ""
 "Let's create the position. An email will be setup for applications, and a "
@@ -2227,7 +2227,7 @@ msgstr ""
 "descrição pública da vaga se você usar o aplicativo de Site."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Let's have a look at how to <b>improve</b> your <b>hiring process</b>."
 msgstr ""
@@ -2235,13 +2235,13 @@ msgstr ""
 "b>."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Let’s create this new employee now."
 msgstr "Agora, vamos criar este novo funcionário."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Let’s go back to the dashboard."
 msgstr "Vamos voltar ao painel."
@@ -2257,7 +2257,7 @@ msgid "Load demo data"
 msgstr "Carregar dados de demonstração"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_helper_view.xml:0
 msgid "Load sample data"
 msgstr "Carregar amostras de dados"
@@ -2278,7 +2278,7 @@ msgid ""
 "Manage Recruitment and Job applications\n"
 "---------------------------------------\n"
 "\n"
-"Publish, promote and organize your job offers with the Odoo\n"
+"Publish, promote and organize your job offers with the Weth\n"
 "<a href=\"https://www.weth.com.br/app/recruitment\">Open Source Recruitment "
 "Application</a>.\n"
 "\n"
@@ -2373,7 +2373,7 @@ msgid "Master Degree"
 msgstr "Mestrado"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_job.py:0
 msgid "Matching Talents"
 msgstr "Talentos compatíveis"
@@ -2551,7 +2551,7 @@ msgid "Next Activity Type"
 msgstr "Tipo da próxima atividade"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Next Meeting"
 msgstr "Próxima reunião"
@@ -2562,7 +2562,7 @@ msgid "No"
 msgstr "Não"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "No Meeting"
 msgstr "Sem reuniões"
@@ -2573,7 +2573,7 @@ msgid "No Talents in the pool yet"
 msgstr "Ainda não há talentos no banco"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "No applications found."
 msgstr "Nenhuma candidatura encontrada."
@@ -2697,11 +2697,11 @@ msgstr "Número de mensagens com erro de entrega"
 #: model_terms:ir.actions.act_window,help:hr_recruitment.action_hr_job_applications
 #: model_terms:ir.actions.act_window,help:hr_recruitment.crm_case_categ0_act_job
 msgid ""
-"Odoo helps you track applicants in the recruitment\n"
+"WETH helps you track applicants in the recruitment\n"
 "                process and follow up all operations: meetings, interviews, "
 "etc."
 msgstr ""
-"O Odoo ajuda você a monitorar candidatos no processo \n"
+"O WETH ajuda você a monitorar candidatos no processo \n"
 "de recrutamento e a acompanhar todas as operações: reuniões, entrevistas etc."
 
 #. module: hr_recruitment
@@ -2762,7 +2762,7 @@ msgstr ""
 "apropriado, por exemplo, {{ object.partner_id.lang }}."
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Or talk about this applicant privately with your colleagues."
 msgstr "Ou converse sobre esse candidato em particular com seus colegas."
@@ -2809,7 +2809,7 @@ msgid "Phone Number"
 msgstr "Número de telefone"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Please provide an applicant name."
 msgstr "Forneça o nome do candidato."
@@ -2893,7 +2893,7 @@ msgid "Ready for Next Stage"
 msgstr "Pronto para o próximo estágio"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_helper_view.xml:0
 #: model_terms:ir.actions.act_window,help:hr_recruitment.action_hr_job_config
 msgid "Ready to recruit more efficiently?"
@@ -3003,7 +3003,7 @@ msgid "Refuse Duplicate Applications"
 msgstr "Recusar solicitações duplicadas"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 #: model:ir.actions.act_window,name:hr_recruitment.applicant_get_refuse_reason_action
 #: model:ir.model.fields,field_description:hr_recruitment.field_applicant_get_refuse_reason__refuse_reason_id
@@ -3043,7 +3043,7 @@ msgid "Refused"
 msgstr "Recusado"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/applicant_refuse_reason.py:0
 msgid ""
 "Refused automatically because this application has been identified as a "
@@ -3074,7 +3074,7 @@ msgid "Related Document Model"
 msgstr "Modelo do documento relacionado"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_job.py:0
 msgid "Related Employees"
 msgstr "Funcionários relacionados"
@@ -3191,7 +3191,7 @@ msgid "Sanitized Phone Number"
 msgstr "Número de telefone uniformizado"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Save it!"
 msgstr "Não esqueça de salvar!"
@@ -3302,7 +3302,7 @@ msgstr ""
 "de recrutamento"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Send applications to"
 msgstr "Enviar candidaturas para"
@@ -3313,7 +3313,7 @@ msgid "Send texts to your contacts"
 msgstr "Envie mensagens de texto para seus contatos"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "Send your email. Followers will get a copy of the communication."
 msgstr "Envie seu e-mail. Seguidores receberão uma cópia da comunicação."
@@ -3537,13 +3537,13 @@ msgid "Talent Pools"
 msgstr "Bancos de talentos"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Talent created"
 msgstr "Talent criado"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "Talent must belong to at least one Talent Pool."
 msgstr "O talento deve pertencer a pelo menos um Pool de Talentos."
@@ -3557,7 +3557,7 @@ msgid "Talents"
 msgstr "Talentos"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/talent_pool_add_applicants.py:0
 msgid "Talents Added To Talent Pool(s)"
 msgstr "Talentos adicionados ao(s) pool(s) de talentos"
@@ -3595,7 +3595,7 @@ msgstr ""
 "recrutador é automaticamente adicionado a todas as reuniões com o candidato."
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/utm_campaign.py:0
 msgid ""
 "The UTM campaign '%s' cannot be deleted as it is used in the recruitment "
@@ -3622,11 +3622,11 @@ msgstr ""
 #. module: hr_recruitment
 #: model:ir.model.fields,help:hr_recruitment.field_hr_job__alias_model_id
 msgid ""
-"The model (Odoo Document Kind) to which this alias corresponds. Any incoming "
+"The model (WETH Document Kind) to which this alias corresponds. Any incoming "
 "email that does not reply to an existing record will cause the creation of a "
 "new record of this model (e.g. a Project Task)"
 msgstr ""
-"O modelo (tipo de documento do Odoo) ao qual esse alias corresponde. "
+"O modelo (tipo de documento do Weth) ao qual esse alias corresponde. "
 "Qualquer e-mail recebido que não responda a um registro existente causará a "
 "criação de um novo registro desse modelo (ex.: uma tarefa de projeto)"
 
@@ -3782,7 +3782,7 @@ msgid "UTMs"
 msgstr "UTMs"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/applicant_refuse_reason.py:0
 msgid "Unable to post message, please configure the sender's email address."
 msgstr ""
@@ -3868,7 +3868,7 @@ msgid "What are the requirements to move an applicant to this stage?"
 msgstr "Quais são os requisitos para que um candidato passe para esta etapa?"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 msgid "What do you want to recruit today? Choose a job title..."
 msgstr "O que você deseja recrutar hoje? Escolha um título de cargo..."
@@ -3896,13 +3896,13 @@ msgid "Year"
 msgstr "Ano"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "You are not allowed to perform this action."
 msgstr "Você não tem permissão para realizar esta ação."
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/wizard/applicant_refuse_reason.py:0
 msgid ""
 "You can't select Send email option.\n"
@@ -3914,7 +3914,7 @@ msgstr ""
 "endereço de e-mail:"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/utm_source.py:0
 msgid ""
 "You cannot delete these UTM Sources as they are linked to the following "
@@ -3926,25 +3926,25 @@ msgstr ""
 "%(recruitment_sources)s"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "You cannot duplicate the talent(s)."
 msgstr "Não é possível duplicar o(s) talento(s)."
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "You have been assigned as an interviewer for %s"
 msgstr "Você foi designado como entrevistador de %s"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "You have been assigned as an interviewer for the Applicant %s"
 msgstr "Você foi designado como entrevistador do candidato %s"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "You must define a Contact Name for this applicant."
 msgstr "É necessário definir um nome de contato para este candidato."
@@ -4043,7 +4043,7 @@ msgid "e.g. sales-manager"
 msgstr "ex: Gerente de Vendas"
 
 #. module: hr_recruitment
-#. odoo-python
+#. weth-python
 #: code:addons/hr_recruitment/models/hr_applicant.py:0
 msgid "id"
 msgstr "id"
@@ -4059,7 +4059,7 @@ msgid "new<br/><span class=\"text-nowrap\">applications</span>"
 msgstr "novas<br/><span class=\"text-nowrap\">candidaturas</span>"
 
 #. module: hr_recruitment
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/hr_recruitment/static/src/views/recruitment_helper_view.xml:0
 msgid "or"
 msgstr "ou"

@@ -2511,7 +2511,7 @@ class AccountMoveLine(models.Model):
             * rate:     The rate applied regarding the company's currency.
         """
 
-        def get_odoo_rate(aml, other_aml, currency):
+        def get_weth_rate(aml, other_aml, currency):
             if forced_rate := self.env.context.get('forced_rate_from_register_payment'):
                 return forced_rate
             if other_aml and not self.is_payment(aml) and self.is_payment(other_aml):
@@ -2556,7 +2556,7 @@ class AccountMoveLine(models.Model):
             and is_rec_pay_account \
             and not has_zero_residual \
             and counterpart_currency != company_currency:
-            rate = get_odoo_rate(aml, other_aml, counterpart_currency)
+            rate = get_weth_rate(aml, other_aml, counterpart_currency)
             residual_in_foreign_curr = counterpart_currency.round(remaining_amount * rate)
             if not counterpart_currency.is_zero(residual_in_foreign_curr):
                 available_residual_per_currency[counterpart_currency] = {

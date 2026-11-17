@@ -1,13 +1,13 @@
-.o_account_kanban .o_kanban_renderer {
-    --Card-padding-v: #{$o-kanban-dashboard-vpadding};
-    --Card-padding-h: #{$o-kanban-dashboard-hpadding};
+.w_account_kanban .w_kanban_renderer {
+    --Card-padding-v: #{$w-kanban-dashboard-vpadding};
+    --Card-padding-h: #{$w-kanban-dashboard-hpadding};
 
     overflow-x: auto;
 
-    .o_kanban_record {
+    .w_kanban_record {
         container: account-journal-card / inline-size;
 
-        &:not(.o_kanban_ghost) {
+        &:not(.w_kanban_ghost) {
             min-height: 150px;
         }
 
@@ -17,11 +17,12 @@
             }
         }
 
-        .o_dashboard_star {
+        .w_dashboard_star {
             font-size: 12px;
 
             &[data-icon="star"] {
-                color: $o-main-color-muted;
+                color: $w-main-color-muted;
+
                 &:hover {
                     color: gold;
                 }
@@ -32,15 +33,15 @@
             }
         }
 
-        .o_dashboard_graph {
+        .w_dashboard_graph {
             margin-bottom: -#{map-get($spacers, 2)};
         }
 
-        .o_graph_barchart {
+        .w_graph_barchart {
             margin-bottom: -#{map-get($spacers, 1)};
         }
 
-        .o_field_widget.o_field_kanban_vat_activity {
+        .w_field_widget.w_field_kanban_vat_activity {
             display: block;
         }
 
@@ -51,24 +52,25 @@
         }
     }
 
-    &.o_kanban_ungrouped {
-        --KanbanRecord-width: calc(50% - #{$o-kanban-record-margin * 2});
+    &.w_kanban_ungrouped {
+        --KanbanRecord-width: calc(50% - #{$w-kanban-record-margin * 2});
 
-        > .o_kanban_record {
+        >.w_kanban_record {
             flex-basis: var(--KanbanRecord-width);
         }
 
-        > .o_kanban_record:not(.o_kanban_ghost) {
+        >.w_kanban_record:not(.w_kanban_ghost) {
             min-width: Min(360px, 100%);
         }
 
         @include media-breakpoint-up(sm) {
-            > .o_kanban_record {
+            >.w_kanban_record {
                 margin: var(--KanbanRecord-margin-v) var(--KanbanRecord-margin-h);
             }
         }
 
-        &:has(> .o_kanban_record:nth-child(12)) {
+        &:has(> .w_kanban_record:nth-child(12)) {
+
             // 3 cards per row for large screens if there are more than 5 cards (+ 6 ghost cards)
             @include media-breakpoint-up(xxl) {
                 --KanbanRecord-width: 31vw;
@@ -76,15 +78,15 @@
         }
     }
 
-    .o_kanban_group {
-        &:not(.o_column_folded) {
+    .w_kanban_group {
+        &:not(.w_column_folded) {
             --KanbanGroup-width: 500px;
         }
     }
 }
 
 @container account-journal-card (max-width: 25rem) {
-    [name="kanban_primary_left"] .o_widget_account_file_uploader {
+    [name="kanban_primary_left"] .w_widget_account_file_uploader {
         .d-sm-none {
             display: block !important;
         }
@@ -96,17 +98,19 @@
 }
 
 // Style for the widget "dashboard_graph"
-.o_dashboard_graph {
+.w_dashboard_graph {
     position: relative;
-    margin: $spacer (-$spacer);
+    margin: $spacer (
+        -$spacer
+    );
 
-    canvas {
-        height: 150px;
-    }
+canvas {
+    height: 150px;
+}
 
 }
 
-.o_sample_data .o_dashboard_graph.o_graph_linechart > svg g.nv-linesWrap g.nv-group.nv-series-0 {
+.w_sample_data .w_dashboard_graph.w_graph_linechart>svg g.nv-linesWrap g.nv-group.nv-series-0 {
     fill: gray !important;
     opacity: 0.1;
 }

@@ -23,12 +23,14 @@
             margin: 0; // Reset boostrap.
         }
 
-        button.o-default-button:not(:only-child) {
+        button.w-default-button:not(:only-child) {
             display: none;
         }
 
         @include media-breakpoint-down(md) {
-            .btn, .o_file_input {
+
+            .btn,
+            .o_file_input {
                 width: 100%;
             }
 
@@ -53,7 +55,7 @@
         --modal-header-padding-x: var(--modal-padding);
         --modal-header-padding-y: var(--modal-padding);
         --modal-header-padding: var(--modal-padding) var(--modal-padding) #{$_halfPadding};
-        
+
         &.o_modal_no_body_padding .modal-body {
             padding: 0;
 
@@ -103,12 +105,16 @@
 
             overflow: visible;
 
-            .modal-dialog, .modal-content, .modal-body {
+            .modal-dialog,
+            .modal-content,
+            .modal-body {
                 height: 100%;
             }
 
             .modal-header {
-                button[data-icon="arrow_back"], .o_expand_button {
+
+                button[data-icon="arrow_back"],
+                .o_expand_button {
                     // Use BS default btn-close padding logic
                     padding: calc(var(--#{$prefix}modal-header-padding-y) * .5) calc(var(--#{$prefix}modal-header-padding-x) * .5);
                 }
@@ -130,7 +136,7 @@
 
             @media (prefers-reduced-motion: no-preference) {
                 .modal-content {
-                    animation: modal-in-sm $o-modal-animation-duration $o-easing-enter;
+                    animation: modal-in-sm $w-modal-animation-duration $w-easing-enter;
                 }
             }
         }
@@ -141,7 +147,7 @@
     z-index: $zindex-modal-backdrop - 1;
 }
 
-.o_dialog > .modal {
+.o_dialog>.modal {
     display: block;
     overflow: hidden;
 }

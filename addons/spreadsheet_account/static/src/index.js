@@ -9,7 +9,7 @@ const { cellMenuRegistry, evaluationPluginRegistry } = spreadsheet.registries;
 const { astToFormula } = spreadsheet;
 const { isEvaluationError, toString, toBoolean } = spreadsheet.helpers;
 
-evaluationPluginRegistry.add("odooAccountingAggregates", AccountingPlugin);
+evaluationPluginRegistry.add("wethAccountingAggregates", AccountingPlugin);
 
 cellMenuRegistry.add("move_lines_see_records", {
     name: _t("See records"),
@@ -29,9 +29,9 @@ cellMenuRegistry.add("move_lines_see_records", {
         const parsed_args = func.args
             .map(astToFormula)
             .map((arg) => env.model.getters.evaluateFormulaResult(sheetId, arg));
-        if (func.functionName === "ODOO.PARTNER.BALANCE") {
+        if (func.functionName === "WETH.PARTNER.BALANCE") {
             [partner_ids, codes, date_range, offset, companyId, includeUnposted] = parsed_args;
-        } else if (func.functionName === "ODOO.BALANCE.TAG") {
+        } else if (func.functionName === "WETH.BALANCE.TAG") {
             [account_tag_ids, date_range, offset, companyId, includeUnposted] = parsed_args;
         } else {
             [codes, date_range, offset, companyId, includeUnposted] = parsed_args;
@@ -49,7 +49,7 @@ cellMenuRegistry.add("move_lines_see_records", {
             dateRange = parseAccountingDate(date_range, locale);
         } else {
             if (
-                ["ODOO.PARTNER.BALANCE", "ODOO.RESIDUAL", "ODOO.BALANCE.TAG"].includes(
+                ["WETH.PARTNER.BALANCE", "WETH.RESIDUAL", "WETH.BALANCE.TAG"].includes(
                     func.functionName
                 )
             ) {
@@ -66,7 +66,7 @@ cellMenuRegistry.add("move_lines_see_records", {
         }
 
         let partnerIds, accountTagIds;
-        if (func.functionName === "ODOO.BALANCE.TAG") {
+        if (func.functionName === "WETH.BALANCE.TAG") {
             accountTagIds = toString(account_tag_ids)
                 .split(",")
                 .map((tag) => tag.trim());
@@ -77,9 +77,9 @@ cellMenuRegistry.add("move_lines_see_records", {
         }
 
         let param;
-        if (func.functionName === "ODOO.BALANCE.TAG") {
+        if (func.functionName === "WETH.BALANCE.TAG") {
             param = [camelToSnakeObject({ accountTagIds, dateRange, companyId, includeUnposted })];
-        } else if (func.functionName === "ODOO.PARTNER.BALANCE") {
+        } else if (func.functionName === "WETH.PARTNER.BALANCE") {
             param = [
                 camelToSnakeObject({ dateRange, companyId, codes, includeUnposted, partnerIds }),
             ];

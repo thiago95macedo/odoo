@@ -1,45 +1,45 @@
-$o-call-menu-item-border-radius: 10px;
-$o-call-menu-item-padding: 9px 12px;
+$w-call-menu-item-border-radius: 10px;
+$w-call-menu-item-padding: 9px 12px;
 
-.o-discuss-CallActionList.o-inMeetingView {
-    --#{$prefix}border-radius-lg: #{$o-call-button-border-radius};
+.w-discuss-CallActionList.w-inMeetingView {
+    --#{$prefix}border-radius-lg: #{$w-call-button-border-radius};
 
-    .o-mail-ActionList-button {
+    .w-mail-ActionList-button {
         --o-btn-circle-height: 52px;
         font-size: 1.2em;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: $o-call-button-size;
+        min-height: $w-call-button-size;
     }
 
-    .o-mail-ActionList-button:not(.rounded-circle):not(:has(i.o-xsmaller)) {
-        min-width: $o-call-button-size;
+    .w-mail-ActionList-button:not(.rounded-circle):not(:has(i.w-xsmaller)) {
+        min-width: $w-call-button-size;
     }
 
-    .o-mail-ActionList-button:has(i.o-xsmaller) {
+    .w-mail-ActionList-button:has(i.w-xsmaller) {
         min-width: 2.1rem; // 1.75rem × 1.2
     }
 
-    .o-mail-ActionList-group + span {
+    .w-mail-ActionList-group+span {
         margin-left: map-get($spacers, 2) !important;
         margin-right: map-get($spacers, 2) !important;
     }
 }
 
-.o-discuss-CallActionList-menu {
+.w-discuss-CallActionList-menu {
     min-width: 246px;
     padding: 7px;
     border-radius: 15px;
 
     .btn {
-        padding: $o-call-menu-item-padding !important;
-        border-radius: $o-call-menu-item-border-radius !important;
+        padding: $w-call-menu-item-padding !important;
+        border-radius: $w-call-menu-item-border-radius !important;
         font-size: 15px;
         font-weight: $font-weight-semibold;
     }
 
-    hr.o-discuss-separator {
+    hr.w-discuss-separator {
         margin: 5px map-get($spacers, 2) !important;
     }
 
@@ -58,7 +58,7 @@ $o-call-menu-item-padding: 9px 12px;
         font-size: 17px !important;
     }
 
-    &.o-discuss-CallActionList-callLayout .o-mail-ActionList-button {
+    &.w-discuss-CallActionList-callLayout .w-mail-ActionList-button {
         gap: 13px;
 
         i {
@@ -67,45 +67,47 @@ $o-call-menu-item-padding: 9px 12px;
     }
 }
 
-.o-discuss-CallActionList-submenu .dropdown-item {
-    padding: $o-call-menu-item-padding !important;
-    border-radius: $o-call-menu-item-border-radius;
+.w-discuss-CallActionList-submenu .dropdown-item {
+    padding: $w-call-menu-item-padding !important;
+    border-radius: $w-call-menu-item-border-radius;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
 }
 
-.o-discuss-CallActionList-callLayout {
-    .o-mail-ActionList-actionLabel {
+.w-discuss-CallActionList-callLayout {
+    .w-mail-ActionList-actionLabel {
         font-weight: $font-weight-bold;
     }
 
-    .o-mail-ActionList-button {
+    .w-mail-ActionList-button {
         padding-top: map-get($spacers, 2);
         padding-bottom: map-get($spacers, 2);
     }
 }
 
-.o-discuss-quickVoiceSettings:has(.o-discuss-TalkingAudioBars) {
-    .o-discuss-TalkingAudioBars {
+.w-discuss-quickVoiceSettings:has(.w-discuss-TalkingAudioBars) {
+    .w-discuss-TalkingAudioBars {
         position: absolute;
         inset: 0;
         height: auto;
         pointer-events: none;
     }
 
-    .o-discuss-TalkingAudioBars-audioBar {
+    .w-discuss-TalkingAudioBars-audioBar {
         background-color: currentColor !important;
     }
 
-    .o-discuss-quickVoiceSettings-chevron {
+    .w-discuss-quickVoiceSettings-chevron {
         opacity: 0;
     }
 
-    &:hover, &.show {
-        .o-discuss-quickVoiceSettings-chevron {
+    &:hover,
+    &.show {
+        .w-discuss-quickVoiceSettings-chevron {
             opacity: 1;
         }
-        .o-discuss-TalkingAudioBars {
+
+        .w-discuss-TalkingAudioBars {
             opacity: 0;
         }
     }

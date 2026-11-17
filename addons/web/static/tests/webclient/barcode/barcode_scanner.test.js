@@ -17,7 +17,7 @@ import { WebClient } from "@web/webclient/webclient";
 test("Barcode scanner crop overlay", async () => {
     await mountWithCleanup(WebClient);
 
-    const firstBarcodeValue = "Odoo";
+    const firstBarcodeValue = "Weth";
     const secondBarcodeValue = "OCDTEST";
 
     let barcodeToGenerate = firstBarcodeValue;
@@ -76,7 +76,7 @@ test("Barcode scanner crop overlay", async () => {
     const firstBarcodeFound = scanBarcode(getMockEnv());
     await videoReady.promise;
     await animationFrame();
-    await contains(".o_crop_icon").dragAndDrop(".o_crop_container", {
+    await contains(".w_crop_icon").dragAndDrop(".w_crop_container", {
         relative: true,
         position: {
             x: 0,
@@ -157,17 +157,17 @@ test("Closing barcode scanner before camera loads should not throw an error", as
     scanBarcode(getMockEnv());
 
     await animationFrame();
-    expect(".o-barcode-modal").toHaveCount(1);
+    expect(".w-barcode-modal").toHaveCount(1);
 
     await press("escape");
 
     await animationFrame();
-    expect(".o-barcode-modal").toHaveCount(0);
+    expect(".w-barcode-modal").toHaveCount(0);
 
     cameraReady.resolve();
 
     await animationFrame();
-    expect(".o_error_dialog").toHaveCount(0);
+    expect(".w_error_dialog").toHaveCount(0);
 });
 
 test("Closing barcode scanner while video is loading should not cause errors", async () => {
@@ -185,13 +185,13 @@ test("Closing barcode scanner while video is loading should not cause errors", a
     scanBarcode(getMockEnv());
 
     await animationFrame();
-    expect(".o-barcode-modal").toHaveCount(1);
+    expect(".w-barcode-modal").toHaveCount(1);
 
     await press("escape");
 
     await animationFrame();
-    expect(".o-barcode-modal").toHaveCount(0);
+    expect(".w-barcode-modal").toHaveCount(0);
 
     await animationFrame();
-    expect(".o_error_dialog").toHaveCount(0);
+    expect(".w_error_dialog").toHaveCount(0);
 });

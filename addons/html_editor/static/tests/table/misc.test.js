@@ -104,13 +104,13 @@ test("can color cells", async () => {
 
     await expandToolbar();
     expect(".o_font_color_selector").toHaveCount(0);
-    await click(".o-select-color-background");
+    await click(".w-select-color-background");
     await animationFrame();
     expect(".o_font_color_selector").toHaveCount(1);
 
     await click(".o_color_button[data-color='#6BADDE']");
     await animationFrame();
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     expect(".o_font_color_selector").toHaveCount(0); // selector closed
 
     // Collapse selection to deselect cells
@@ -266,7 +266,7 @@ describe("selected cell color in toolbar", () => {
         await animationFrame();
 
         // set a timeout for the deplayed toolbar update
-        await waitFor(".o-we-toolbar", { timeout: 1500 });
+        await waitFor(".w-we-toolbar", { timeout: 1500 });
         await expandToolbar();
         expect("[data-icon='colors']").toHaveCount(1);
         expect("[data-icon='colors']").toHaveStyle({
@@ -307,7 +307,7 @@ describe("selected cell color in toolbar", () => {
         await animationFrame();
 
         // set a timeout for the deplayed toolbar update
-        await waitFor(".o-we-toolbar", { timeout: 1500 });
+        await waitFor(".w-we-toolbar", { timeout: 1500 });
         await expandToolbar();
         expect("[data-icon='colors']").toHaveCount(1);
         expect("[data-icon='colors']").toHaveStyle({

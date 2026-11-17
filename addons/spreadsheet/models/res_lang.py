@@ -17,17 +17,17 @@ class ResLang(models.Model):
         """Return the list of locales available for a spreadsheet."""
         langs = self.with_context(active_test=False).search([])
 
-        spreadsheet_locales = [lang._odoo_lang_to_spreadsheet_locale() for lang in langs]
+        spreadsheet_locales = [lang._weth_lang_to_spreadsheet_locale() for lang in langs]
         return spreadsheet_locales
 
     @api.model
     def _get_user_spreadsheet_locale(self):
-        """Convert the odoo lang to a spreadsheet locale."""
+        """Convert the weth lang to a spreadsheet locale."""
         lang = self._lang_get(self.env.user.lang or 'en_US')
-        return lang._odoo_lang_to_spreadsheet_locale()
+        return lang._weth_lang_to_spreadsheet_locale()
 
-    def _odoo_lang_to_spreadsheet_locale(self):
-        """Convert an odoo lang to a spreadsheet locale."""
+    def _weth_lang_to_spreadsheet_locale(self):
+        """Convert an weth lang to a spreadsheet locale."""
         return {
             "name": self.name,
             "code": self.code,

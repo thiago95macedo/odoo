@@ -35,10 +35,10 @@ test("activity menu widget: upcoming meetings", async () => {
     await start();
     await contains(".o_menu_systray i[aria-label='Activities']");
     await click(".o_menu_systray i[aria-label='Activities']");
-    await contains(".o-mail-ActivityGroup div[name='activityTitle']", { text: "Upcoming Meetings" });
-    await contains(".o-mail-ActivityGroup .o-calendar-meeting", { count: 2 });
-    await contains(".o-calendar-meeting:eq(0) span", { text: "meeting1" });
-    await contains(".o-calendar-meeting:eq(1) span", { text: "meeting2" });
-    await click(".o-mail-ActivityGroup div[name='activityTitle']", { text: "Upcoming Meetings" });
+    await contains(".w-mail-ActivityGroup div[name='activityTitle']", { text: "Upcoming Meetings" });
+    await contains(".w-mail-ActivityGroup .w-calendar-meeting", { count: 2 });
+    await contains(".w-calendar-meeting:eq(0) span", { text: "meeting1" });
+    await contains(".w-calendar-meeting:eq(1) span", { text: "meeting2" });
+    await click(".w-mail-ActivityGroup div[name='activityTitle']", { text: "Upcoming Meetings" });
     await expect.waitForSteps(["calendar.action_calendar_event"]);
 });

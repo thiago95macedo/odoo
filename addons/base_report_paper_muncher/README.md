@@ -1,7 +1,7 @@
 # Paper Muncher
 
-This module is the implementation of the odoo's
-in house rendering engine called [Paper Muncher](https://odoo.github.io/paper-muncher/).
+This module is the implementation of the weth's
+in house rendering engine called [Paper Muncher](https://weth.github.io/paper-muncher/).
 
 ## Supported Versions
 

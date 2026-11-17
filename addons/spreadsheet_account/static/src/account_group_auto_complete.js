@@ -33,7 +33,7 @@ registries.autoCompleteProviders.add("account_group_types", {
     getProposals(tokenAtCursor) {
         const functionContext = tokenAtCursor.functionContext;
         if (
-            functionContext?.parent.toUpperCase() === "ODOO.ACCOUNT.GROUP" &&
+            functionContext?.parent.toUpperCase() === "WETH.ACCOUNT.GROUP" &&
             functionContext.argPosition === 0
         ) {
             return ACCOUNT_TYPES.map(([technicalName, displayName]) => {

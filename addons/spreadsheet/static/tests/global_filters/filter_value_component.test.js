@@ -22,7 +22,7 @@ import { toRangeData } from "@spreadsheet/../tests/helpers/zones";
 import { FilterValue } from "@spreadsheet/global_filters/components/filter_value/filter_value";
 import { user } from "@web/core/user";
 
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { WethDataProvider } from "@spreadsheet/data_sources/weth_data_provider";
 import { Component, onWillUnmount, t, useProps, xml } from "@weth/owl";
 
 describe.current.tags("headless");
@@ -80,7 +80,7 @@ test("basic text filter", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -88,8 +88,8 @@ test("basic text filter", async function () {
         label: "Text Filter",
     });
     await mountFilterValueComponent({ model, filter: model.getters.getGlobalFilter("42") });
-    await contains(".o-autocomplete input").edit("foo");
-    await contains(".o-autocomplete input").press("Enter");
+    await contains(".w-autocomplete input").edit("foo");
+    await contains(".w-autocomplete input").press("Enter");
     expect(model.getters.getGlobalFilterValue("42")).toEqual(
         { operator: "ilike", strings: ["foo"] },
         { message: "value is set" }
@@ -100,7 +100,7 @@ test("can clear a text filter value", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -126,7 +126,7 @@ test("text filter with range", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     const sheetId = model.getters.getActiveSheetId();
     await addGlobalFilter(model, {
@@ -140,7 +140,7 @@ test("text filter with range", async function () {
     setCellFormat(model, "A2", "0.00");
     await mountFilterValueComponent({ model, filter: model.getters.getGlobalFilter("42") });
     expect(".o_tag").toHaveCount(0, { message: "no value is selected" });
-    await click(".o-autocomplete input");
+    await click(".w-autocomplete input");
     await animationFrame();
 
     expect(queryAllTexts(".dropdown-item")).toEqual(["foo", "0.00"], {
@@ -152,7 +152,7 @@ test("text filter with range", async function () {
     expect(model.getters.getGlobalFilterValue("42").strings).toEqual(["0"]);
 
     // select a second value
-    await click(".o-autocomplete input");
+    await click(".w-autocomplete input");
     await animationFrame();
 
     await click(".dropdown-item:last");
@@ -165,7 +165,7 @@ test("cannot edit text filter input with range", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     const sheetId = model.getters.getActiveSheetId();
     setCellContent(model, "A1", "foo");
@@ -176,23 +176,23 @@ test("cannot edit text filter input with range", async function () {
     };
     await addGlobalFilter(model, filter);
     await mountFilterValueComponent({ model, filter: model.getters.getGlobalFilter("42") });
-    expect(".o-autocomplete input").not.toHaveAttribute("maxlength");
+    expect(".w-autocomplete input").not.toHaveAttribute("maxlength");
     editGlobalFilter(model, {
         ...filter,
         rangesOfAllowedValues: [toRangeData(sheetId, "A1")],
     });
     await animationFrame();
-    expect(".o-autocomplete input").toHaveAttribute("maxlength", "0");
+    expect(".w-autocomplete input").toHaveAttribute("maxlength", "0");
     editGlobalFilter(model, filter);
     await animationFrame();
-    expect(".o-autocomplete input").not.toHaveAttribute("maxlength");
+    expect(".w-autocomplete input").not.toHaveAttribute("maxlength");
 });
 
 test("text filter cannot have the same value twice", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -200,10 +200,10 @@ test("text filter cannot have the same value twice", async function () {
         label: "Text Filter",
     });
     await mountFilterValueComponent({ model, filter: model.getters.getGlobalFilter("42") });
-    await contains(".o-autocomplete input").edit("foo");
-    await contains(".o-autocomplete input").press("Enter");
-    await contains(".o-autocomplete input").edit("foo");
-    await contains(".o-autocomplete input").press("Enter");
+    await contains(".w-autocomplete input").edit("foo");
+    await contains(".w-autocomplete input").press("Enter");
+    await contains(".w-autocomplete input").edit("foo");
+    await contains(".w-autocomplete input").press("Enter");
     expect(model.getters.getGlobalFilterValue("42")).toEqual({
         operator: "ilike",
         strings: ["foo"],
@@ -214,7 +214,7 @@ test("text filter have a placeholder", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -222,10 +222,10 @@ test("text filter have a placeholder", async function () {
         label: "Text Filter",
     });
     await mountFilterValueComponent({ model, filter: model.getters.getGlobalFilter("42") });
-    expect(".o-autocomplete--input").toHaveAttribute("placeholder", "Enter one or several values");
-    await contains(".o-autocomplete--input").edit("foo");
-    await contains(".o-autocomplete--input").press("Enter");
-    expect(".o-autocomplete--input").toHaveAttribute("placeholder", "");
+    expect(".w-autocomplete--input").toHaveAttribute("placeholder", "Enter one or several values");
+    await contains(".w-autocomplete--input").edit("foo");
+    await contains(".w-autocomplete--input").press("Enter");
+    expect(".w-autocomplete--input").toHaveAttribute("placeholder", "");
 });
 
 test("relational filter with domain", async function () {
@@ -236,7 +236,7 @@ test("relational filter with domain", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -255,7 +255,7 @@ test("Filter with showClear should display the clear icon", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -275,7 +275,7 @@ test("Filter without showClear should not display the clear icon", async functio
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -303,7 +303,7 @@ test("relational filter with a contextual domain", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -322,7 +322,7 @@ test("selection filter", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",
@@ -344,7 +344,7 @@ test("numeric filter", async function () {
     await makeTestApp();
     const model = new Model(
         {},
-        { custom: { odooDataProvider: new OdooDataProvider(getMockEnv()) } }
+        { custom: { wethDataProvider: new WethDataProvider(getMockEnv()) } }
     );
     await addGlobalFilter(model, {
         id: "42",

@@ -14,7 +14,7 @@ from weth.addons.iot_drivers.tools.system import (
     NGINX_PATH,
 )
 from weth.addons.iot_drivers.tools.helpers import (
-    odoo_restart,
+    weth_restart,
     require_db,
 )
 
@@ -28,7 +28,7 @@ def ensure_validity():
 
     This method also sends the certificate end date to the database.
     """
-    inform_database(get_certificate_end_date() or download_odoo_certificate())
+    inform_database(get_certificate_end_date() or download_weth_certificate())
 
 
 def get_certificate_end_date():
@@ -54,7 +54,7 @@ def get_certificate_end_date():
 
     cert_end_date = cert.not_valid_after_utc.replace(tzinfo=None)
     if (
-        common_name == 'OdooTempIoTBoxCertificate'
+        common_name == 'WethTempIoTBoxCertificate'
         or datetime.datetime.now() > cert_end_date - datetime.timedelta(days=10)
     ):
         _logger.debug("SSL certificate '%s' must be updated.", common_name)
@@ -64,8 +64,8 @@ def get_certificate_end_date():
     return str(cert_end_date)
 
 
-def download_odoo_certificate(retry=0):
-    """Send a request to Odoo with customer db_uuid and enterprise_code
+def download_weth_certificate(retry=0):
+    """Send a request to WETH with customer db_uuid and enterprise_code
     to get a true certificate
     """
     if IS_TEST:
@@ -77,7 +77,7 @@ def download_odoo_certificate(retry=0):
         return None
     try:
         response = requests.post(
-            'https://www.weth.com.br/odoo-enterprise/iot/x509',
+            'https://www.weth.com.br/weth-enterprise/iot/x509',
             json={'params': {'db_uuid': db_uuid, 'enterprise_code': enterprise_code}},
             timeout=95,  # let's encrypt library timeout
         )
@@ -86,7 +86,7 @@ def download_odoo_certificate(retry=0):
     except (requests.exceptions.RequestException, ValueError) as e:
         _logger.warning("An error occurred while trying to reach weth.com.br to get a new certificate: %s", e)
         if retry < 5:
-            return download_odoo_certificate(retry=retry + 1)
+            return download_weth_certificate(retry=retry + 1)
         return _logger.exception("Maximum attempt to download the weth.com.br certificate reached")
 
     server_error = response_body.get('error')
@@ -118,7 +118,7 @@ def download_odoo_certificate(retry=0):
     else:
         Path(NGINX_PATH, 'conf', 'nginx-cert.crt').write_text(certificate, encoding='utf-8')
         Path(NGINX_PATH, 'conf', 'nginx-cert.key').write_text(private_key, encoding='utf-8')
-        odoo_restart(3)
+        weth_restart(3)
         return None
 
 
@@ -129,7 +129,7 @@ def inform_database(ssl_certificate_end_date, server_url=None):
     If end date is ``None``, we avoid sending a useless request.
 
     :param str ssl_certificate_end_date: End date of the SSL certificate
-    :param str server_url: URL of the Odoo server (provided by decorator).
+    :param str server_url: URL of the WETH server (provided by decorator).
     """
     if not ssl_certificate_end_date:
         return

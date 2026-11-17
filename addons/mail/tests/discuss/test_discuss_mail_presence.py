@@ -25,7 +25,7 @@ class TestMailPresence(WebsocketCase, MailCommon):
             self.authenticate(None, None)
             auth_cookie = f"{requested_by._cookie_name}={requested_by._format_auth_cookie()};"
         websocket = self.websocket_connect(cookie=auth_cookie)
-        channel_parts = ["odoo-presence", f"{target._name}_{target.id}"]
+        channel_parts = ["weth-presence", f"{target._name}_{target.id}"]
         if has_token:
             channel_parts.append(target._get_im_status_access_token())
         self.subscribe(websocket, ["-".join(channel_parts)], self.env["bus.bus"]._bus_last_id())

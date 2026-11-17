@@ -21,6 +21,6 @@ test("on scroll animation changes based on scroll", async () => {
         </div>
     `);
     expect(core.interactions).toHaveLength(1);
-    const scrollEl = queryOne(".o_wslide_fs_article_content");
+    const scrollEl = queryOne(".w_wslide_fs_article_content");
     expect(core.interactions[0].interaction.scrollingElement).toBe(scrollEl);
 });

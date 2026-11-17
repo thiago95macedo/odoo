@@ -5,7 +5,7 @@ import { registry } from "@web/core/registry";
 
 export class DiscussCoreWeb {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     constructor(env, services) {
@@ -45,7 +45,7 @@ export class DiscussCoreWeb {
 export const discussCoreWeb = {
     dependencies: ["bus_service", "mail.store", "notification", "ui", "multi_tab"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").WethEnv} env
      * @param {import("services").ServiceFactories} services
      */
     start(env, services) {

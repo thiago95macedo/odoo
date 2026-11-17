@@ -45,7 +45,7 @@ class TestLinkTracker(TransactionCase):
 
         # Current website matches the company's website.
         link_1 = self.env['link.tracker'].with_context(website_id=self.website_1.id).create({
-            'url': 'https://www.1odoo.com',
+            'url': 'https://www.1weth.com.br',
         })
         self.assertTrue(link_1.short_url.startswith(self.website_1.domain),
             "Short URL uses the current website's domain")
@@ -53,14 +53,14 @@ class TestLinkTracker(TransactionCase):
         # Current website differs from the company's website.
         self.env.user.company_id = self.company_2
         link_2 = self.env['link.tracker'].with_context(website_id=self.website_1.id).create({
-            'url': 'https://www.2odoooo.com',
+            'url': 'https://www.2weth.com.br',
         })
         self.assertTrue(link_2.short_url.startswith(self.website_2.domain),
             "Short URL uses the company's website domain when it differs from the current website")
 
         # No website resolvable from context.
         link_3 = self.env['link.tracker'].create({
-            'url': 'https://www.3ooddoooo.com',
+            'url': 'https://www.3weth.com.br',
         })
         self.assertTrue(link_3.short_url.startswith(base_url),
             "Short URL uses web.base.url when no website is resolvable from context")
@@ -78,7 +78,7 @@ class TestLinkTracker(TransactionCase):
             "The company points at another of its websites")
 
         link = self.env['link.tracker'].with_context(website_id=website_3.id).create({
-            'url': 'https://www.4odoo.com',
+            'url': 'https://www.4weth.com.br',
         })
         self.assertTrue(link.short_url.startswith(website_3.domain),
             "Short URL uses the current website's domain, not another website of the same company")

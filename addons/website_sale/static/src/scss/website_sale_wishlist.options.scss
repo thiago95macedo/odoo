@@ -2,15 +2,17 @@
 
 // By default, hide `o_add_wishlist` buttons when inside a product
 // entry. Show them when `o_wsale_products_opt_has_wishlist` is applied.
-:where(.oe_product_cart) .o_add_wishlist {
+:where(.oe_product_cart) .w_add_wishlist {
     display: var(--o-wsale-wishlist-btn-display, none);
 }
 
-.o_wsale_products_opt_has_wishlist {
+.w_wsale_products_opt_has_wishlist {
     --o-wsale-wishlist-btn-display: inline-flex;
 
-    .o_add_wishlist {
-        &:hover [data-icon="favorite"]:before, &[disabled] .oi:before {
+    .w_add_wishlist {
+
+        &:hover [data-icon="favorite"]:before,
+        &[disabled] .oi:before {
             content: "favorite_f";
 
             color: var(--addWishlist-color-active);
@@ -22,32 +24,33 @@
     }
 }
 
-.o_wsale_products_opt_wishlist_fixed.o_wsale_products_opt_wishlist_fixed_onhover:where(:not(.o_wsale_products_opt_design_bento)) {
+.w_wsale_products_opt_wishlist_fixed.w_wsale_products_opt_wishlist_fixed_onhover:where(:not(.w_wsale_products_opt_design_bento)) {
     .oe_product_cart:where(:not(:hover):not(:focus-visible):not(:focus-within)) {
-        .o_add_wishlist:where(:not([disabled])) {
+        .w_add_wishlist:where(:not([disabled])) {
             opacity: 0;
         }
     }
 }
 
-.o_wsale_products_opt_actions_subtle, .o_wsale_products_opt_actions_promote {
-    .o_wsale_product_btn .o_add_wishlist {
+.w_wsale_products_opt_actions_subtle,
+.w_wsale_products_opt_actions_promote {
+    .w_wsale_product_btn .w_add_wishlist {
         // Hardcoded because cause `$danger` may differ from the desired "red"
         $_wish_red: #ff3d3a;
         --addWishlist-color-active: #{$_wish_red};
     }
 }
 
-.o_wsale_products_opt_wishlist_fixed {
-    &:where(:not(.o_wsale_products_opt_design_showcase):not(.o_wsale_products_opt_design_bento)) {
+.w_wsale_products_opt_wishlist_fixed {
+    &:where(:not(.w_wsale_products_opt_design_showcase):not(.w_wsale_products_opt_design_bento)) {
         --o-wsale-card-info-position: none;
     }
 
-    &:where(.o_wsale_products_opt_has_wishlist) {
+    &:where(.w_wsale_products_opt_has_wishlist) {
         --o-wsale-wishlist-btn-display: flex;
     }
 
-    &:where(:not(.o_wsale_products_opt_design_bento)) .o_wsale_product_btn .o_add_wishlist {
+    &:where(:not(.w_wsale_products_opt_design_bento)) .w_wsale_product_btn .w_add_wishlist {
         width: 38px;
         height: 38px;
         --btn-bg: transparent;
@@ -62,10 +65,7 @@
         --o-wsale-wishlist-btn-offset-top-default: calc(var(--o-wsale-card-border-radius, 0px) * 0.1);
         --o-wsale-wishlist-btn-offset-end-default: calc(var(--o-wsale-card-border-radius, 0px) * 0.2);
 
-        @include o-position-absolute(
-            var(--o-wsale-card-offset-top, var(--o-wsale-wishlist-btn-offset-top-default)),
-            var(--o-wsale-card-offset-x, var(--o-wsale-wishlist-btn-offset-end-default))
-        );
+        @include o-position-absolute(var(--o-wsale-card-offset-top, var(--o-wsale-wishlist-btn-offset-top-default)),
+            var(--o-wsale-card-offset-x, var(--o-wsale-wishlist-btn-offset-end-default)));
     }
 }
-

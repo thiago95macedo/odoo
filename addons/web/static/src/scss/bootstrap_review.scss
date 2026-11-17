@@ -1,6 +1,6 @@
 ///
 /// This file regroups the CSS rules made to fix/extend bootstrap in all places
-/// where it is used in Odoo (backend / frontend / reports / ...)
+/// where it is used in WETH (backend / frontend / reports / ...)
 ///
 
 .alert {
@@ -10,8 +10,10 @@
 }
 
 .accordion {
-    .collapsing, .collapse.show {
-        > .card-body:first-child {
+
+    .collapsing,
+    .collapse.show {
+        >.card-body:first-child {
             // Above background color would overflow on the card-header border
             // without this
             margin-top: $card-border-width;
@@ -27,18 +29,22 @@
 // mobile).
 // TODO: should be replaced by .modal-dialog-scrollable class
 @include media-breakpoint-up(sm) {
-    :not(.s_popup) > .modal {
+    :not(.s_popup)>.modal {
         .modal-dialog {
             height: 100%;
             padding: $modal-dialog-margin-y-sm-up 0;
             margin: 0 auto;
         }
+
         .modal-content {
             max-height: 100%;
         }
-        .modal-header, .modal-footer {
+
+        .modal-header,
+        .modal-footer {
             flex: 0 0 auto;
         }
+
         .modal-body {
             overflow: auto;
             min-height: 0;
@@ -57,6 +63,7 @@
 .modal-backdrop {
     display: none;
 }
+
 .modal:not([data-bs-backdrop="false"]) {
     background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
 }
@@ -73,6 +80,7 @@
 
 // Disable RTL for the dropdown position
 .dropdown-menu {
+
     &[x-placement^="top"],
     &[x-placement^="right"],
     &[x-placement^="bottom"],
@@ -88,9 +96,19 @@
 }
 
 // Review $link-decoration behavior
-@if $link-decoration and $link-decoration != none {
-    .btn:not(.btn-link), .nav-link, .dropdown-item, .page-link, .breadcrumb-item > a, .badge, .oi {
-        &, &:hover, &:focus {
+@if $link-decoration and $link-decoration !=none {
+
+    .btn:not(.btn-link),
+    .nav-link,
+    .dropdown-item,
+    .page-link,
+    .breadcrumb-item>a,
+    .badge,
+    .oi {
+
+        &,
+        &:hover,
+        &:focus {
             text-decoration: none;
         }
     }
@@ -107,21 +125,23 @@
 // Solve a BS 5.3 issue causing progress bar's animation to flicker when
 // the component's height is modified using CSS variables.
 @keyframes progress-bar-stripes {
-    0% { background-position-x: var(--progress-height, #{$progress-height}); }
+    0% {
+        background-position-x: var(--progress-height, #{$progress-height});
+    }
 }
 
 
 // Calendar
 
-$o-calendar-today-background-color: $o-danger;
-$o-calendar-today-color: color-contrast($o-calendar-today-background-color);
+$w-calendar-today-background-color: $w-danger;
+$w-calendar-today-color: color-contrast($w-calendar-today-background-color);
 
 // We need to compute the width to avoid decimals pixels (to avoid flickerin on hover).
 // To do so, we know that we have 7 or 8 columns (week number or not) and we multiply
 // by 5. This ratio has been chosen to have enough space for different language (e.g. Vietnamese)
 // Finally, we have to take into account the gaps.
-$o-datetime-picker-width: calc(5px * 7 * 8 + (2 * #{map-get($spacers, 2)}));
-$o-datetime-picker-reduced-width: calc(5px * 7 * 7 + (2 * #{map-get($spacers, 2)}));
+$w-datetime-picker-width: calc(5px * 7 * 8 + (2 * #{map-get($spacers, 2)}));
+$w-datetime-picker-reduced-width: calc(5px * 7 * 7 + (2 * #{map-get($spacers, 2)}));
 
 
 // Buttons
@@ -142,6 +162,7 @@ $o-datetime-picker-reduced-width: calc(5px * 7 * 7 + (2 * #{map-get($spacers, 2)
         --#{$prefix}btn-border-width: 0;
         display: inline;
         vertical-align: baseline;
-        font-weight: var(--#{$prefix}btn-font-weight); /* TODO: remove when the crappy overrides in bootstrap_review_backend are gone */
+        font-weight: var(--#{$prefix}btn-font-weight);
+        /* TODO: remove when the crappy overrides in bootstrap_review_backend are gone */
     }
 }

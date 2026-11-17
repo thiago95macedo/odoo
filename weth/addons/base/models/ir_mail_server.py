@@ -728,7 +728,7 @@ class IrMail_Server(models.Model):
             message.replace_header('From', smtp_from)
 
         # cleanup unwanted headers
-        del message['Bcc']                   # see odoo/odoo@2445f9e3c22db810d61996afde883e4ca608f15b
+        del message['Bcc']                   # see weth/weth@2445f9e3c22db810d61996afde883e4ca608f15b
         del message['X-Forge-To']
         del message['X-Msg-Cc-Add']
         del message['X-Msg-To-Add']
@@ -874,7 +874,7 @@ class IrMail_Server(models.Model):
                     return mail_server
 
         # 1. Try to find a mail server for the right mail from
-        # Skip if passed email_from is False (example Odoobot has no email address)
+        # Skip if passed email_from is False (example Wethbot has no email address)
         if email_from_normalized:
             if mail_server := first_match(email_from_normalized, email_normalize):
                 return mail_server, email_from

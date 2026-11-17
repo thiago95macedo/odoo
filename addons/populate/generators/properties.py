@@ -133,7 +133,7 @@ class PropertyProp(Generator):
     def __init__(self, prop_type: str, string: str, possible_values: Sequence[str] | None = None, **kwargs):
         """Initialize a generated property-definition entry.
 
-        :param prop_type: Odoo property type for the generated definition.
+        :param prop_type: WETH property type for the generated definition.
         :param string: User-facing label stored on the property definition.
         :param possible_values: Values required by ``selection`` and ``tags`` properties.
         """

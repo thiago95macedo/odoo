@@ -10,15 +10,15 @@ import { isSmall } from "./ui_test_helpers";
 const ensureSearchView = async () => {
     if (
         isSmall() &&
-        queryAll`.o_control_panel_navigation`.length &&
-        !queryAll`.o_searchview`.length
+        queryAll`.w_control_panel_navigation`.length &&
+        !queryAll`.w_searchview`.length
     ) {
-        await contains(`.o_control_panel_navigation [data-icon="search"]`).click();
+        await contains(`.w_control_panel_navigation [data-icon="search"]`).click();
     }
 };
 
 const ensureSearchBarMenu = async () => {
-    if (!queryAll`.o_search_bar_menu`.length) {
+    if (!queryAll`.w_search_bar_menu`.length) {
         await toggleSearchBarMenu();
     }
 };
@@ -78,14 +78,14 @@ export async function mountWithSearch(componentConstructor, searchProps = {}, co
  * @param {string} label
  */
 export async function toggleMenu(label) {
-    await contains(`button.o-dropdown:text(${label})`).click();
+    await contains(`button.w-dropdown:text(${label})`).click();
 }
 
 /**
  * @param {string} label
  */
 export async function toggleMenuItem(label) {
-    const target = queryOne`.o_menu_item:text(${label})`;
+    const target = queryOne`.w_menu_item:text(${label})`;
     if (target.classList.contains("dropdown-toggle")) {
         await contains(target).hover();
     } else {
@@ -98,8 +98,8 @@ export async function toggleMenuItem(label) {
  * @param {string} optionLabel
  */
 export async function toggleMenuItemOption(itemLabel, optionLabel) {
-    const { parentElement: root } = queryOne`.o_menu_item:text(${itemLabel})`;
-    const target = queryOne(`.o_item_option:text(${optionLabel})`, { root });
+    const { parentElement: root } = queryOne`.w_menu_item:text(${itemLabel})`;
+    const target = queryOne(`.w_item_option:text(${optionLabel})`, { root });
     if (target.classList.contains("dropdown-toggle")) {
         await contains(target).hover();
     } else {
@@ -111,7 +111,7 @@ export async function toggleMenuItemOption(itemLabel, optionLabel) {
  * @param {string} label
  */
 export function isItemSelected(label) {
-    return queryOne`.o_menu_item:text(${label})`.classList.contains("selected");
+    return queryOne`.w_menu_item:text(${label})`.classList.contains("selected");
 }
 
 /**
@@ -119,20 +119,20 @@ export function isItemSelected(label) {
  * @param {string} optionLabel
  */
 export function isOptionSelected(itemLabel, optionLabel) {
-    const { parentElement: root } = queryOne`.o_menu_item:text(${itemLabel})`;
-    return queryOne(`.o_item_option:text(${optionLabel})`, { root }).classList.contains("selected");
+    const { parentElement: root } = queryOne`.w_menu_item:text(${itemLabel})`;
+    return queryOne(`.w_item_option:text(${optionLabel})`, { root }).classList.contains("selected");
 }
 
 export function getMenuItemTexts() {
-    return queryAllTexts`.dropdown-menu .o_menu_item`;
+    return queryAllTexts`.dropdown-menu .w_menu_item`;
 }
 
 export function getButtons() {
-    return queryAll`.o_control_panel_breadcrumbs button`;
+    return queryAll`.w_control_panel_breadcrumbs button`;
 }
 
 export function getVisibleButtons() {
-    return queryAll`.o_control_panel_breadcrumbs button:visible, .o_control_panel_actions button:visible`;
+    return queryAll`.w_control_panel_breadcrumbs button:visible, .w_control_panel_actions button:visible`;
 }
 
 //-----------------------------------------------------------------------------
@@ -141,12 +141,12 @@ export function getVisibleButtons() {
 
 export async function toggleFilterMenu() {
     await ensureSearchBarMenu();
-    await contains(`.o_filter_menu button.dropdown-toggle`).click();
+    await contains(`.w_filter_menu button.dropdown-toggle`).click();
 }
 
 export async function openAddCustomFilterDialog() {
     await ensureSearchBarMenu();
-    await contains(`.o_filter_menu .o_menu_item.o_add_custom_filter`).click();
+    await contains(`.w_filter_menu .w_menu_item.w_add_custom_filter`).click();
 }
 
 //-----------------------------------------------------------------------------
@@ -155,7 +155,7 @@ export async function openAddCustomFilterDialog() {
 
 export async function toggleGroupByMenu() {
     await ensureSearchBarMenu();
-    await contains(`.o_group_by_menu .dropdown-toggle`).click();
+    await contains(`.w_group_by_menu .dropdown-toggle`).click();
 }
 
 /**
@@ -163,7 +163,7 @@ export async function toggleGroupByMenu() {
  */
 export async function selectGroup(fieldName) {
     await ensureSearchBarMenu();
-    await contains(`.o_add_custom_group_menu`).select(fieldName);
+    await contains(`.w_add_custom_group_menu`).select(fieldName);
 }
 
 //-----------------------------------------------------------------------------
@@ -172,7 +172,7 @@ export async function selectGroup(fieldName) {
 
 export async function toggleFavoriteMenu() {
     await ensureSearchBarMenu();
-    await contains(`.o_favorite_menu .dropdown-toggle`).click();
+    await contains(`.w_favorite_menu .dropdown-toggle`).click();
 }
 
 /**
@@ -180,14 +180,14 @@ export async function toggleFavoriteMenu() {
  */
 export async function editFavorite(text) {
     await ensureSearchBarMenu();
-    await contains(`.o_favorite_menu .o_menu_item:text(${text}) i[data-icon="edit"]`, {
+    await contains(`.w_favorite_menu .w_menu_item:text(${text}) i[data-icon="edit"]`, {
         visible: false,
     }).click();
 }
 
 export async function toggleSaveFavorite() {
     await ensureSearchBarMenu();
-    await contains(`.o_favorite_menu .o_add_favorite`).click();
+    await contains(`.w_favorite_menu .w_add_favorite`).click();
 }
 
 /**
@@ -196,18 +196,18 @@ export async function toggleSaveFavorite() {
 export async function editFavoriteName(name) {
     await ensureSearchBarMenu();
     await contains(
-        `.o_favorite_menu .o_add_favorite + .o_accordion_values input[type="text"]`
+        `.w_favorite_menu .w_add_favorite + .w_accordion_values input[type="text"]`
     ).edit(name, { confirm: false });
 }
 
 export async function saveFavorite() {
     await ensureSearchBarMenu();
-    await contains(`.o_favorite_menu .o_save_favorite`).click();
+    await contains(`.w_favorite_menu .w_save_favorite`).click();
 }
 
 export async function saveAndEditFavorite() {
     await ensureSearchBarMenu();
-    await contains(`.o_favorite_menu .o_edit_favorite`).click();
+    await contains(`.w_favorite_menu .w_edit_favorite`).click();
 }
 
 //-----------------------------------------------------------------------------
@@ -215,7 +215,7 @@ export async function saveAndEditFavorite() {
 //-----------------------------------------------------------------------------
 
 export function getFacetTexts() {
-    return queryAllTexts(`.o_searchview_facet`);
+    return queryAllTexts(`.w_searchview_facet`);
 }
 
 /**
@@ -223,7 +223,7 @@ export function getFacetTexts() {
  */
 export async function removeFacet(label) {
     await ensureSearchView();
-    await contains(`.o_searchview_facet:text(${label}) .o_facet_remove`).click();
+    await contains(`.w_searchview_facet:text(${label}) .w_facet_remove`).click();
 }
 
 /**
@@ -231,12 +231,12 @@ export async function removeFacet(label) {
  */
 export async function editSearch(value) {
     await ensureSearchView();
-    await contains(`.o_searchview input`).edit(value, { confirm: false });
+    await contains(`.w_searchview input`).edit(value, { confirm: false });
 }
 
 export async function validateSearch() {
     await ensureSearchView();
-    await contains(`.o_searchview input`).press("Enter");
+    await contains(`.w_searchview input`).press("Enter");
 }
 
 //-----------------------------------------------------------------------------
@@ -248,10 +248,10 @@ export async function validateSearch() {
  */
 export async function switchView(viewType) {
     if (isSmall()) {
-        await contains(".o_cp_switch_buttons .dropdown-toggle").click();
+        await contains(".w_cp_switch_buttons .dropdown-toggle").click();
         await contains(`.dropdown-item:contains(${viewType.toUpperCase()})`).click();
     } else {
-        await contains(`button.o_switch_view.o_${viewType}`).click();
+        await contains(`button.w_switch_view.w_${viewType}`).click();
     }
 }
 
@@ -263,7 +263,7 @@ export async function switchView(viewType) {
  * @param {HTMLElement} root
  */
 export function getPagerValue(root) {
-    return queryText(".o_pager .o_pager_value", { root })
+    return queryText(".w_pager .w_pager_value", { root })
         .split(/\s*-\s*/)
         .map(Number);
 }
@@ -272,28 +272,28 @@ export function getPagerValue(root) {
  * @param {HTMLElement} root
  */
 export function getPagerLimit(root) {
-    return parseInt(queryText(".o_pager .o_pager_limit", { root }), 10);
+    return parseInt(queryText(".w_pager .w_pager_limit", { root }), 10);
 }
 
 /**
  * @param {HTMLElement} root
  */
 export async function pagerNext(root) {
-    await contains(".o_pager button.o_pager_next", { root }).click();
+    await contains(".w_pager button.w_pager_next", { root }).click();
 }
 
 /**
  * @param {HTMLElement} root
  */
 export async function pagerPrevious(root) {
-    await contains(".o_pager button.o_pager_previous", { root }).click();
+    await contains(".w_pager button.w_pager_previous", { root }).click();
 }
 
 /**
  * @param {string} value
  */
 export async function editPager(value) {
-    await contains(`.o_pager .o_pager_limit`).edit(value);
+    await contains(`.w_pager .w_pager_limit`).edit(value);
 }
 
 //-----------------------------------------------------------------------------
@@ -306,7 +306,7 @@ export async function editPager(value) {
  * @returns {Promise}
  */
 export async function toggleActionMenu() {
-    await contains(".o_cp_action_menus .dropdown-toggle").click();
+    await contains(".w_cp_action_menus .dropdown-toggle").click();
 }
 
 //-----------------------------------------------------------------------------
@@ -315,5 +315,5 @@ export async function toggleActionMenu() {
 
 export async function toggleSearchBarMenu() {
     await ensureSearchView();
-    await contains(`.o_searchview_dropdown_toggler`).click();
+    await contains(`.w_searchview_dropdown_toggler`).click();
 }

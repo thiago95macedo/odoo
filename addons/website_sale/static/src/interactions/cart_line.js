@@ -7,7 +7,7 @@ import { redirect } from '@web/core/utils/urls';
 import wSaleUtils from '@website_sale/js/website_sale_utils';
 
 export class CartLine extends Interaction {
-    static selector = '.o_cart_product';
+    static selector = '.w_cart_product';
     dynamicContent = {
         '.css_quantity > input.js_quantity': {
             't-on-change': this.locked(this.debounced(this.changeQuantity, 500)),
@@ -47,7 +47,7 @@ export class CartLine extends Interaction {
      * @param {Event} ev
      */
     async deleteProduct(ev) {
-        const input = ev.currentTarget.closest('.o_cart_product')
+        const input = ev.currentTarget.closest('.w_cart_product')
             .querySelector('.css_quantity > input.js_quantity');
         input.value = 0;
         await this._changeQuantity(input);

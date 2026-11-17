@@ -1,6 +1,6 @@
 import * as spreadsheet from "@weth/o-spreadsheet";
 import { _t, appTranslateFn } from "@web/core/l10n/translation";
-import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
+import { WethEvaluationPlugin } from "@spreadsheet/plugins";
 
 const { arg, toString } = spreadsheet.helpers;
 const { functionRegistry, NonSquishableFunctionRegistry, evaluationPluginRegistry } =
@@ -16,7 +16,7 @@ export function dynamicSpreadsheetTranslate(translationNamespace, term) {
     return appTranslateFn(term, translationNamespace);
 }
 
-class TranslationNamespace extends OdooEvaluationPlugin {
+class TranslationNamespace extends WethEvaluationPlugin {
     static getters = /** @type {const} */ (["dynamicTranslate"]);
 
     constructor(config) {

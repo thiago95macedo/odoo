@@ -280,15 +280,15 @@ test("Use the 'remove' overlay buttons: closes the link popover if it is open du
     await contains(":iframe .g-height-14").click();
     const p = queryOne(":iframe .g-height-14 p");
     setSelection({ anchorNode: p, anchorOffset: 0, focusNode: p, focusOffset: 1 });
-    await waitFor(".o-we-toolbar");
-    await contains('.o-we-toolbar button[name="link"]').click();
-    expect(".o-we-linkpopover").toHaveCount(1);
+    await waitFor(".w-we-toolbar");
+    await contains('.w-we-toolbar button[name="link"]').click();
+    expect(".w-we-linkpopover").toHaveCount(1);
     expect(".overlay .o_overlay_options").toHaveCount(1);
     expect(".overlay .oe_snippet_remove").toHaveCount(1);
 
     // Check that the link popover is closed and the element has been removed.
     await contains(".overlay .oe_snippet_remove").click();
-    expect(".o-we-linkpopover").toHaveCount(0);
+    expect(".w-we-linkpopover").toHaveCount(0);
     expect(":iframe .g-height-14").toHaveCount(0);
     expect(".overlay .oe_snippet_remove").toHaveCount(1);
 });
@@ -492,7 +492,7 @@ test("The overlay buttons should be hidden when the toolbar is open", async () =
     const editor = getEditor();
     // Check that the overlay buttons are not hidden.
     await contains(":iframe .test-options-target").click();
-    expect(".o-we-toolbar.o_overlay_options:not(.d-none)").toHaveCount(1);
+    expect(".w-we-toolbar.o_overlay_options:not(.d-none)").toHaveCount(1);
     const text = editor.editable.querySelector(".test-options-target");
     const selection = {
         anchorNode: text.childNodes[0],
@@ -503,11 +503,11 @@ test("The overlay buttons should be hidden when the toolbar is open", async () =
     setSelection(selection);
     await animationFrame();
     // Check that the toolbar buttons are shown.
-    await waitFor(".o-we-toolbar:not(.o_overlay_options)");
-    expect(".o-we-toolbar:not(.o_overlay_options)").toHaveCount(1);
+    await waitFor(".w-we-toolbar:not(.o_overlay_options)");
+    expect(".w-we-toolbar:not(.o_overlay_options)").toHaveCount(1);
     // Check that the overlay buttons are hidden.
     await advanceTime(550); // wait for the toolbar hide delay
-    expect(".o-we-toolbar.o_overlay_options.d-none").toHaveCount(1);
+    expect(".w-we-toolbar.o_overlay_options.d-none").toHaveCount(1);
 });
 
 test("Should hide 'move up' button when previous sibling is 'o_we_no_overlay'", async () => {

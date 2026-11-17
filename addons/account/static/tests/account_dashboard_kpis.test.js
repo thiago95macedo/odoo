@@ -46,11 +46,11 @@ test("account dashboard KPIs are loaded, rendered, and clickable", async () => {
 
     await expect.waitForSteps(["load kpis"]);
 
-    expect(".o_account_dashboard_kpi_card").toHaveCount(2);
-    expect('[data-kpi-id="invoices"] .o_account_dashboard_kpi_name').toHaveText("Invoices");
-    expect('[data-kpi-id="invoices"] .o_account_dashboard_kpi_value').toHaveText("$ 100.00");
-    expect('[data-kpi-id="cash"] .o_account_dashboard_kpi_name').toHaveText("Cash");
-    expect('[data-kpi-id="cash"] .o_account_dashboard_kpi_value').toHaveText("$ 60.00");
+    expect(".w_account_dashboard_kpi_card").toHaveCount(2);
+    expect('[data-kpi-id="invoices"] .w_account_dashboard_kpi_name').toHaveText("Invoices");
+    expect('[data-kpi-id="invoices"] .w_account_dashboard_kpi_value').toHaveText("$ 100.00");
+    expect('[data-kpi-id="cash"] .w_account_dashboard_kpi_name').toHaveText("Cash");
+    expect('[data-kpi-id="cash"] .w_account_dashboard_kpi_value').toHaveText("$ 60.00");
 
     await contains('[data-kpi-id="invoices"]').click();
     await contains('[data-kpi-id="cash"]').click();

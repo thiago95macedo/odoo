@@ -24,8 +24,8 @@ import {
     makeSpreadsheetMockEnv,
 } from "@spreadsheet/../tests/helpers/model";
 import { createSpreadsheetWithPivot } from "@spreadsheet/../tests/helpers/pivot";
-import { freezeOdooData, waitForDataLoaded } from "@spreadsheet/helpers/model";
-import { OdooPivot, OdooPivotRuntimeDefinition } from "@spreadsheet/pivot/odoo_pivot";
+import { freezeWethData, waitForDataLoaded } from "@spreadsheet/helpers/model";
+import { WethPivot, WethPivotRuntimeDefinition } from "@spreadsheet/pivot/weth_pivot";
 import { assignTestEnv, getMockEnv } from "@web/../tests/web_test_helpers";
 
 const { pivotRegistry } = registries;
@@ -38,7 +38,7 @@ import { createSpreadsheetWithList } from "../helpers/list";
 describe.current.tags("headless");
 defineSpreadsheetModels();
 
-test("odoo pivot functions are replaced with their value", async function () {
+test("weth pivot functions are replaced with their value", async function () {
     const { model } = await createSpreadsheetWithPivot({ pivotType: "static" });
     expect(getCell(model, "A3").compiledFormula.toFormulaString(model.getters)).toBe(
         '=PIVOT.HEADER(1,"bar",FALSE)'
@@ -48,18 +48,18 @@ test("odoo pivot functions are replaced with their value", async function () {
     );
     expect(getEvaluatedCell(model, "A3").value).toBe("No");
     expect(getEvaluatedCell(model, "C3").value).toBe(15);
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A3).toBe("No", { message: "the content is replaced with the value" });
     expect(cells.C3).toBe("15", { message: "the content is replaced with the value" });
     expect(data.formats[data.sheets[0].formats.C3]).toBe("#,##0.00");
 });
 
-test("Pivot with a type different of ODOO is not converted", async function () {
-    // Add a pivot with a type different of ODOO
+test("Pivot with a type different of WETH is not converted", async function () {
+    // Add a pivot with a type different of WETH
     pivotRegistry.add("NEW_KIND_OF_PIVOT", {
-        ui: OdooPivot,
-        definition: OdooPivotRuntimeDefinition,
+        ui: WethPivot,
+        definition: WethPivotRuntimeDefinition,
         externalData: true,
         onIterationEndEvaluation: () => { },
         granularities: [],
@@ -82,7 +82,7 @@ test("Pivot with a type different of ODOO is not converted", async function () {
     const { model } = await createModelWithDataSource({ spreadsheetData });
     setCellContent(model, "A1", `=PIVOT.VALUE(1, "probability:avg")`);
     setCellContent(model, "A2", `=PIVOT.HEADER(1, "measure", "probability:avg")`);
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1).toBe(`=PIVOT.VALUE(1,"probability:avg")`, {
         message: "the content is not replaced with the value",
@@ -106,7 +106,7 @@ test("values are not exported formatted", async function () {
     expect(getEvaluatedCell(model, "C3").formattedValue).toBe("January 1900");
     expect(getEvaluatedCell(model, "C4").value).toBe(46);
     expect(getEvaluatedCell(model, "C4").formattedValue).toBe("February 1900");
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const { model: sharedModel } = await createModelWithDataSource({ spreadsheetData: data });
     expect(getEvaluatedCell(sharedModel, "C3").value).toBe(15);
     expect(getEvaluatedCell(sharedModel, "C3").formattedValue).toBe("January 1900");
@@ -118,17 +118,17 @@ test("invalid expression with pivot function", async function () {
     const { model } = await createSpreadsheetWithPivot();
     setCellContent(model, "A1", "=PIVOT.VALUE(1)+"); // invalid expression
     expect(getEvaluatedCell(model, "A1").value).toBe("#BAD_EXPR");
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1).toBe("=PIVOT.VALUE(1)+", {
         message: "the content is left as is when the expression is invalid",
     });
 });
 
-test("odoo pivot functions detection is not case sensitive", async function () {
+test("weth pivot functions detection is not case sensitive", async function () {
     const { model } = await createSpreadsheetWithPivot();
     setCellContent(model, "A1", '=pivot.value(1,"probability:avg")');
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const A1 = data.sheets[0].cells.A1;
     expect(A1).toBe("131", { message: "the content is replaced with the value" });
 });
@@ -145,7 +145,7 @@ test("computed format is exported", async function () {
     await animationFrame();
     expect(getCell(model, "A1").format).toBe(undefined);
     expect(getEvaluatedCell(model, "A1").format).toBe("#,##0.00[$€]");
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const formatId = data.sheets[0].formats.A1;
     const format = data.formats[formatId];
     expect(format).toBe("#,##0.00[$€]");
@@ -153,9 +153,9 @@ test("computed format is exported", async function () {
     expect(getCell(sharedModel, "A1").format).toBe("#,##0.00[$€]");
 });
 
-test("odoo charts are replaced with an image", async function () {
+test("weth charts are replaced with an image", async function () {
     const { model } = await createSpreadsheetWithChart({ type: "bar" });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.sheets[0].figures.length).toBe(1);
     expect(data.sheets[0].figures[0].tag).toBe("image");
 });
@@ -181,19 +181,19 @@ test("geo charts are replaced with an image", async function () {
         },
     });
 
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.sheets[0].figures.length).toBe(1);
     expect(data.sheets[0].figures[0].tag).toBe("image");
 });
 
-test("Carousels figure with odoo data is converted to an image", async function () {
+test("Carousels figure with weth data is converted to an image", async function () {
     const { model } = await createSpreadsheetWithChart({ type: "bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartFigureId = model.getters.getFigures(sheetId)[0].id;
     createCarousel(model, { items: [] }, "carouselId");
     addChartFigureToCarousel(model, "carouselId", chartFigureId);
 
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.sheets[0].figures.length).toBe(1);
     expect(data.sheets[0].figures[0].tag).toBe("image");
 });
@@ -204,7 +204,7 @@ test("translation function are replaced with their value", async function () {
     setCellContent(model, "A2", `=CONCATENATE("for",_t(" example"))`);
     expect(getEvaluatedCell(model, "A1").value).toBe("example");
     expect(getEvaluatedCell(model, "A2").value).toBe("for example");
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1).toBe("example", {
         message: "the content is replaced with the value",
@@ -217,7 +217,7 @@ test("translation function are replaced with their value", async function () {
 test("a new sheet is added for global filters", async function () {
     const { model } = await createModelWithDataSource();
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER);
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.sheets.length).toBe(2);
     expect(data.sheets[1].name).toBe("Active Filters");
     expect(data.sheets[1].cells.A2).toBe("This Year");
@@ -227,7 +227,7 @@ test("global filters and their display value are exported", async function () {
     const { model } = await createModelWithDataSource();
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER);
     const year = new Date().getFullYear().toString();
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.globalFilters.length).toBe(1);
     expect(data.globalFilters[0].label).toBe("This Year");
     expect(data.globalFilters[0].value).toBe(`1/1/${year}, 12/31/${year}`);
@@ -248,7 +248,7 @@ test("from/to global filters are exported", async function () {
             to: "2021-01-01",
         },
     });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const filterSheet = data.sheets[1];
     expect(filterSheet.cells.B2).toBe("43831");
     expect(filterSheet.cells.C2).toBe("44197");
@@ -267,7 +267,7 @@ test("from/to global filter without value is exported", async function () {
         type: "date",
         label: "Date Filter",
     });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const filterSheet = data.sheets[1];
     expect(filterSheet.cells.A2).toBe("Date Filter");
     expect(filterSheet.cells.B2).toBe("");
@@ -280,18 +280,18 @@ test("from/to global filter without value is exported", async function () {
     expect(data.globalFilters[0].value).toBe("");
 });
 
-test("Empty ODOO.LIST result is frozen to an empty string", async function () {
+test("Empty WETH.LIST result is frozen to an empty string", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", '=ODOO.LIST.VALUE(1, 9999,"probability")'); // has no record
+    setCellContent(model, "A1", '=WETH.LIST.VALUE(1, 9999,"probability")'); // has no record
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").value).toBe("");
-    const frozenData = await freezeOdooData(model);
+    const frozenData = await freezeWethData(model);
     expect(frozenData.sheets[0].cells.A1).toBe('=""');
 });
 
-test("odoo links are replaced with their label", async function () {
+test("weth links are replaced with their label", async function () {
     const view = {
-        name: "an odoo view",
+        name: "an weth view",
         viewType: "list",
         action: {
             modelName: "partner",
@@ -302,9 +302,9 @@ test("odoo links are replaced with their label", async function () {
         sheets: [
             {
                 cells: {
-                    A1: "[menu_xml](odoo://ir_menu_xml_id/test_menu)",
-                    A2: "[menu_id](odoo://ir_menu_id/12)",
-                    A3: `[odoo_view](odoo://view/${JSON.stringify(view)})`,
+                    A1: "[menu_xml](weth://ir_menu_xml_id/test_menu)",
+                    A2: "[menu_id](weth://ir_menu_id/12)",
+                    A3: `[weth_view](weth://view/${JSON.stringify(view)})`,
                     A4: "[external_link](https://weth.com.br)",
                     A5: "[internal_link](o-spreadsheet://Sheet1)",
                 },
@@ -316,10 +316,10 @@ test("odoo links are replaced with their label", async function () {
         spreadsheetData: data,
         serverData: getMenuServerData(),
     });
-    const frozenData = await freezeOdooData(model);
+    const frozenData = await freezeWethData(model);
     expect(frozenData.sheets[0].cells.A1).toBe("[menu_xml](neutralized:link)");
     expect(frozenData.sheets[0].cells.A2).toBe("[menu_id](neutralized:link)");
-    expect(frozenData.sheets[0].cells.A3).toBe("[odoo_view](neutralized:link)");
+    expect(frozenData.sheets[0].cells.A3).toBe("[weth_view](neutralized:link)");
     expect(frozenData.sheets[0].cells.A4).toBe("[external_link](https://weth.com.br)");
     expect(frozenData.sheets[0].cells.A5).toBe("[internal_link](o-spreadsheet://Sheet1)");
 });
@@ -334,7 +334,7 @@ test("spilled pivot table", async function () {
     });
     setCellContent(model, "A10", "=PIVOT(1)");
     setCellStyle(model, "B12", { bold: true });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const sheet = data.sheets[0];
     const cells = sheet.cells;
     expect(cells.A10).toBe("Partner Pivot");
@@ -351,7 +351,7 @@ test("spilled pivot table", async function () {
     );
 });
 
-test("Dynamic table of an array odoo formula is frozen", async function () {
+test("Dynamic table of an array weth formula is frozen", async function () {
     const { model } = await createSpreadsheetWithPivot({
         arch: /* xml */ `
           <pivot>
@@ -372,7 +372,7 @@ test("Dynamic table of an array odoo formula is frozen", async function () {
     });
     expect(getComputedStyle(model, "A10")).toMatchObject({ fillColor: "#6C4E65" }); // Table style
     setCellStyle(model, "B12", { bold: true });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
 
     const importedModel = new Model(data);
     expect(importedModel.getters.getTables(sheetId)).toHaveLength(0);
@@ -397,7 +397,7 @@ test("Pivot table style is frozen", async function () {
     setCellContent(model, "A10", "=PIVOT(1)");
     expect(getComputedStyle(model, "A10")).toMatchObject({ fillColor: "#6C4E65" }); // Pivot table style
     setCellStyle(model, "B12", { bold: true });
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
 
     const importedModel = new Model(data);
     for (let row = 9; row <= 12; row++) {
@@ -413,14 +413,14 @@ test('empty string computed measure is exported as =""', async function () {
     const { model } = await createSpreadsheetWithPivot();
     setCellContent(model, "A10", "=PIVOT(1)");
     expect(getEvaluatedCell(model, "B12").value).toBe(""); // empty value
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     const cells = data.sheets[0].cells;
     expect(cells.B12).toBe('=""');
 });
 
 test("Lists are purged from the frozen data", async function () {
     const { model } = await createSpreadsheetWithList();
-    const data = await freezeOdooData(model);
+    const data = await freezeWethData(model);
     expect(data.lists).toEqual({});
 });
 

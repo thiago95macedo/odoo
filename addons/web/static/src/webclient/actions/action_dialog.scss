@@ -1,9 +1,9 @@
-.modal.o_technical_modal {
+.modal.w_technical_modal {
     .modal-content {
-        .modal-body.o_act_window {
+        .modal-body.w_act_window {
 
             @include media-breakpoint-down(md) {
-                .o_action {
+                .w_action {
                     display: flex;
                     flex-direction: column;
                     height: 100%;

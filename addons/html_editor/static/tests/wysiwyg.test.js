@@ -10,16 +10,16 @@ import { markup } from "@weth/owl";
 describe("Wysiwyg Component", () => {
     test("Wysiwyg component can be instantiated", async () => {
         const { el } = await setupWysiwyg();
-        expect(".o-wysiwyg").toHaveCount(1);
-        expect(".odoo-editor-editable").toHaveCount(1);
-        await expectElementCount(".o-we-toolbar", 0);
+        expect(".w-wysiwyg").toHaveCount(1);
+        expect(".weth-editor-editable").toHaveCount(1);
+        await expectElementCount(".w-we-toolbar", 0);
 
         // set the selection to a range, and check that the toolbar
         // is opened
         expect(getContent(el)).toBe("");
         setContent(el, "hello [hoot]");
         await animationFrame();
-        await expectElementCount(".o-we-toolbar", 1);
+        await expectElementCount(".w-we-toolbar", 1);
     });
 
     test("Wysiwyg component can be instantiated with initial content", async () => {
@@ -34,7 +34,7 @@ describe("Wysiwyg Component", () => {
             iframe: true,
             contentClass: "test ",
         });
-        expect(":iframe .test.odoo-editor-editable").toHaveCount(1);
+        expect(":iframe .test.weth-editor-editable").toHaveCount(1);
     });
 
     test.tags("desktop");
@@ -60,7 +60,7 @@ describe("Wysiwyg Component", () => {
         // Select a paragraph's content to display the toolbar.
         const p = el.childNodes[5];
         setSelection({ anchorNode: p, anchorOffset: 0, focusNode: p, focusOffset: 1 });
-        const toolbar = await waitFor(".o-we-toolbar");
+        const toolbar = await waitFor(".w-we-toolbar");
 
         // Check that toolbar is on top of and close to the selected paragraph.
         const pTop = p.getBoundingClientRect().top + iframeOffset;

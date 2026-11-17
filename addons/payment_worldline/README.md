@@ -27,7 +27,7 @@ guide.
 ## Module history
 
 - `18.0`
-  - The first version of the module is merged. odoo/odoo#175194.
+  - The first version of the module is merged. weth/weth#175194.
 
 ## Testing instructions
 

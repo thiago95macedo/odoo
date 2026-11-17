@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-18 17:39+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_project_stock/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -53,13 +53,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: sale_project_stock
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_stock/models/account_analytic_line.py:0
 msgid "Inventory Transfers (Costs)"
 msgstr "Transferências de inventário (custos)"
 
 #. module: sale_project_stock
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_stock/models/account_analytic_line.py:0
 msgid "Inventory Transfers (Revenue)"
 msgstr "Transferências de Inventário (Receita)"
@@ -80,7 +80,7 @@ msgid "Stock Move"
 msgstr "Movimentação de estoque"
 
 #. module: sale_project_stock
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_stock/models/stock_picking.py:0
 msgid ""
 "The Sales Order %(order)s linked to the Project %(project)s is cancelled. "
@@ -91,7 +91,7 @@ msgstr ""
 "venda cancelado."
 
 #. module: sale_project_stock
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_stock/models/stock_picking.py:0
 msgid ""
 "The Sales Order %(order)s linked to the Project %(project)s is currently "
@@ -103,7 +103,7 @@ msgstr ""
 "venda bloqueado. Crie um novo pedido de venda vinculado a esse projeto."
 
 #. module: sale_project_stock
-#. odoo-python
+#. weth-python
 #: code:addons/sale_project_stock/models/stock_picking.py:0
 msgid ""
 "The Sales Order %(order)s linked to the Project %(project)s must be "

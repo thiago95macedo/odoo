@@ -59,7 +59,7 @@ class TestMultiCalendar(TestCommon, MailCase):
         synced event onto a secondary calendar should delete it from Outlook and
         clear its Microsoft ids (rather than patch/update it there).
         """
-        # arrange - Create an event in Odoo and ensure that it was inserted to outlook
+        # arrange - Create an event in WETH and ensure that it was inserted to outlook
         event_id = "123"
         event_iCalUId = "456"
         mock_insert.return_value = (event_id, event_iCalUId)
@@ -83,7 +83,7 @@ class TestMultiCalendar(TestCommon, MailCase):
         self.assertFalse(event.microsoft_id)
         self.assertFalse(event.ms_universal_event_id)
 
-        # Ensure that a subsequent sync does not delete the event from Odoo, and it doesn't reinsert it in Outlook.
+        # Ensure that a subsequent sync does not delete the event from WETH, and it doesn't reinsert it in Outlook.
         mock_get_events.return_value = (
             MicrosoftEvent([{
                 "id": event_id,

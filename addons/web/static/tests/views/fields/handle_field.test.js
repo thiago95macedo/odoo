@@ -53,14 +53,14 @@ test("HandleField in x2m", async () => {
             </form>`,
     });
 
-    expect("td span.o_row_handle").toHaveText("", {
+    expect("td span.w_row_handle").toHaveText("", {
         message: "handle should not have any content",
     });
-    expect(queryFirst("td span.o_row_handle")).toBeVisible({
+    expect(queryFirst("td span.w_row_handle")).toBeVisible({
         message: "handle should be invisible",
     });
 
-    expect("span.o_row_handle").toHaveCount(2, { message: "should have 2 handles" });
+    expect("span.w_row_handle").toHaveCount(2, { message: "should have 2 handles" });
 
     expect(queryFirst("td")).toHaveClass("o_handle_cell", {
         message: "column widget should be displayed in css class",
@@ -68,7 +68,7 @@ test("HandleField in x2m", async () => {
     await click("td:eq(1)");
     await animationFrame();
 
-    expect("td:eq(0) span.o_row_handle").toHaveCount(1, {
+    expect("td:eq(0) span.w_row_handle").toHaveCount(1, {
         message: "content of the cell should have been replaced",
     });
 });
@@ -85,7 +85,7 @@ test("HandleField with falsy values", async () => {
             </list>`,
     });
 
-    expect(".o_row_handle:visible").toHaveCount(MockServer.env["partner"].length, {
+    expect(".w_row_handle:visible").toHaveCount(MockServer.env["partner"].length, {
         message: "there should be a visible handle for each record",
     });
 });
@@ -108,7 +108,7 @@ test("HandleField in a readonly one2many", async () => {
         resId: 1,
     });
 
-    expect(".o_row_handle.o_disabled").toHaveCount(3, {
+    expect(".w_row_handle.w_disabled").toHaveCount(3, {
         message: "there should be 3 handles but they should be disabled from readonly",
     });
 });
@@ -136,16 +136,16 @@ test("Sorting + discarding works when having more records than limit", async () 
                 </field>
             </form>`,
     });
-    expect("span.o_row_handle").toHaveCount(2, { message: "should have 2 handles" });
-    expect(".o_x2m_control_panel .o_pager_value").toHaveText("1-2");
-    expect(".o_x2m_control_panel .o_pager_limit").toHaveText("3");
+    expect("span.w_row_handle").toHaveCount(2, { message: "should have 2 handles" });
+    expect(".w_x2m_control_panel .w_pager_value").toHaveText("1-2");
+    expect(".w_x2m_control_panel .w_pager_limit").toHaveText("3");
     expect("tbody tr:eq(0) td:eq(1)").toHaveText("aaa");
     expect("tbody tr:eq(1) td:eq(1)").toHaveText("bbb");
-    await contains(`tbody tr:eq(1) .o_row_handle`).dragAndDrop(`tbody tr:eq(0)`);
+    await contains(`tbody tr:eq(1) .w_row_handle`).dragAndDrop(`tbody tr:eq(0)`);
     expect("tbody tr:eq(0) td:eq(1)").toHaveText("bbb");
     expect("tbody tr:eq(1) td:eq(1)").toHaveText("aaa");
     await animationFrame();
-    await click("button.o_form_button_cancel");
+    await click("button.w_form_button_cancel");
     await animationFrame();
     expect("tbody tr:eq(0) td:eq(1)").toHaveText("aaa");
     expect("tbody tr:eq(1) td:eq(1)").toHaveText("bbb");

@@ -20,7 +20,7 @@ test("selection should be were clicked, even when clicking away from popover", a
         focusNode: hereEl,
         focusOffset: 1,
     });
-    await contains(".o-select-color-foreground").click();
+    await contains(".w-select-color-foreground").click();
     await contains(".custom-tab").click();
     expect(".o_color_pick_area").toBeVisible();
     await contains(".o_color_pick_area").click();

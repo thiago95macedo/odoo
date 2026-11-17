@@ -75,7 +75,7 @@ function notifyComparisonListeners(bus) {
 function enableAddToComparisonButtons(productIds) {
     for (const productId of productIds) {
         const productCompareButton = document.querySelector(
-            `.o_add_compare[data-product-id="${productId}"], .o_add_compare_dyn[data-product-id="${productId}"]`
+            `.w_add_compare[data-product-id="${productId}"], .w_add_compare_dyn[data-product-id="${productId}"]`
         );
         if (productCompareButton) {
             productCompareButton.disabled = false;

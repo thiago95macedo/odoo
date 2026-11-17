@@ -2110,8 +2110,8 @@ class AccountEdiUBL(models.AbstractModel):
 
     def _import_ubl_invoice_add_customer_values(self, collected_values):
         customer_values = collected_values['customer_values'] = {}
-        odoo_document_type = collected_values['odoo_document_type']
-        party_tag = "AccountingCustomerParty" if odoo_document_type == 'sale' else "AccountingSupplierParty"
+        weth_document_type = collected_values['weth_document_type']
+        party_tag = "AccountingCustomerParty" if weth_document_type == 'sale' else "AccountingSupplierParty"
         tree = collected_values['tree']
         party_node = tree.find(f"./{{*}}{party_tag}/{{*}}Party")
         if party_node is None:
@@ -2211,9 +2211,9 @@ class AccountEdiUBL(models.AbstractModel):
 
     def _import_ubl_invoice_add_ref(self, collected_values):
         tree = collected_values['tree']
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
         if ref := tree.findtext('./{*}ID'):
-            if odoo_document_type == 'sale' and collected_values['invoice'].quick_edit_mode:
+            if weth_document_type == 'sale' and collected_values['invoice'].quick_edit_mode:
                 collected_values['to_write']['name'] = ref
             else:
                 collected_values['to_write']['ref'] = ref
@@ -2298,7 +2298,7 @@ class AccountEdiUBL(models.AbstractModel):
 
     def _import_ubl_invoice_add_tax_total_values(self, collected_values):
         file_document_sign = collected_values['file_document_sign']
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
         currency = collected_values['currency_values']['currency']
 
         taxes_values = collected_values['tax_total_values'] = {}
@@ -2329,7 +2329,7 @@ class AccountEdiUBL(models.AbstractModel):
             })
             tax_values = taxes_values.setdefault(tax_key, {
                 'amount_type': 'percent',
-                'type_tax_use': odoo_document_type,
+                'type_tax_use': weth_document_type,
                 'amount': percentage,
                 'ubl_cii_tax_category_code': category_code,
                 'tax_amount_currency': 0.0,
@@ -2339,7 +2339,7 @@ class AccountEdiUBL(models.AbstractModel):
 
     def _import_ubl_invoice_add_allowances_charges_values(self, collected_values):
         tree = collected_values['tree']
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
         allowances = collected_values['allowances'] = []
         charges = collected_values['charges'] = []
         taxes_values = collected_values['taxes_values'] = []
@@ -2396,7 +2396,7 @@ class AccountEdiUBL(models.AbstractModel):
             })
             allowance_charge_values['attempt_tax_values'] = tax_values = {
                 'amount_type': 'percent',
-                'type_tax_use': odoo_document_type,
+                'type_tax_use': weth_document_type,
                 'ubl_cii_tax_category_code': category_code,
                 'amount': percentage,
                 '_tax_key': tax_key,
@@ -2782,12 +2782,12 @@ class AccountEdiUBL(models.AbstractModel):
         ):
             return
 
-        odoo_document_type = collected_values['odoo_document_type']
+        weth_document_type = collected_values['weth_document_type']
         fixed_tax_amount = charge['amount'] / collected_values['to_write']['quantity']
         charge['attempt_tax_values'] = tax_values = {
             'name': charge['reason'],
             'amount_type': 'fixed',
-            'type_tax_use': odoo_document_type,
+            'type_tax_use': weth_document_type,
             'amount': fixed_tax_amount,
             'tax_amount_currency': fixed_tax_amount,
         }
@@ -3008,11 +3008,11 @@ class AccountEdiUBL(models.AbstractModel):
         ):
             return additional_docs
         try:
-            invoices_by_odoo_xmlid = 'account_edi_ubl_cii.action_report_account_invoices_generated_by_odoo'
-            if not self.env.ref(invoices_by_odoo_xmlid, raise_if_not_found=False):
+            invoices_by_weth_xmlid = 'account_edi_ubl_cii.action_report_account_invoices_generated_by_weth'
+            if not self.env.ref(invoices_by_weth_xmlid, raise_if_not_found=False):
                 _logger.warning("Missing template while generating substitute PDF attachment for invoice %s", invoice.id)
                 return additional_docs
-            report_xmlid = invoices_by_odoo_xmlid
+            report_xmlid = invoices_by_weth_xmlid
 
             pdf_raw, pdf_extension = self.env['ir.actions.report'] \
                         ._render_qweb_pdf(report_xmlid, res_ids=[invoice.id])
@@ -3021,7 +3021,7 @@ class AccountEdiUBL(models.AbstractModel):
                 return additional_docs
 
             invoice_name = invoice.display_name.replace(_('Draft'), '')
-            pdf_filename = _('%(invoice_name)s - Generated by Odoo', invoice_name=invoice_name)
+            pdf_filename = _('%(invoice_name)s - Generated by Weth', invoice_name=invoice_name)
 
             attachment = self.env['ir.attachment'].create({
                 'name': pdf_filename + '.pdf',

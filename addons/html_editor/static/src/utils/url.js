@@ -1,6 +1,6 @@
 import { session } from "@web/session";
 
-const ODOO_DOMAIN_REGEX = new RegExp(`^https?://${session.db}\\.odoo\\.com(/.*)?$`);
+const WETH_DOMAIN_REGEX = new RegExp(`^https?://${session.db}\\.weth\\.com(/.*)?$`);
 
 /**
  * Checks if the given URL contains the specified hostname and returns a reconstructed URL if it does.
@@ -57,11 +57,11 @@ export function isAbsoluteURLInCurrentDomain(url, env = null) {
     return (
         urlObj.origin === window.location.origin ||
         // Chosen heuristic to detect someone trying to enter a link using
-        // its Odoo instance domain. We just suppose it should be a relative
-        // URL (if unexpected behavior, the user can just not enter its Odoo
+        // its WETH instance domain. We just suppose it should be a relative
+        // URL (if unexpected behavior, the user can just not enter its Weth
         // instance domain but its real domain, or opt-out from the domain
         // stripping). Mentioning an .weth.com.br domain, especially its own
         // one, is always a bad practice anyway.
-        ODOO_DOMAIN_REGEX.test(urlObj.origin)
+        WETH_DOMAIN_REGEX.test(urlObj.origin)
     );
 }

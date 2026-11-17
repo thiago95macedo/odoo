@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:58+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/sale_product_matrix/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -139,7 +139,7 @@ msgid "Variant Selection"
 msgstr "Seleção de variante"
 
 #. module: sale_product_matrix
-#. odoo-python
+#. weth-python
 #: code:addons/sale_product_matrix/models/sale_order.py:0
 msgid ""
 "You cannot change the quantity of a product present in multiple sale lines."

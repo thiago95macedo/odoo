@@ -8,8 +8,8 @@ from weth.exceptions import UserError
 
 
 # ir.asset resolves this URL to the attachment containing the custom bundle.
-SFU_CLIENT_SOURCE_URL = "/_custom/mail/static/lib/odoo_sfu/odoo_sfu.js"
-SFU_CLIENT_TARGET = "/mail/static/lib/odoo_sfu/odoo_sfu.js"
+SFU_CLIENT_SOURCE_URL = "/_custom/mail/static/lib/weth_sfu/weth_sfu.js"
+SFU_CLIENT_TARGET = "/mail/static/lib/weth_sfu/weth_sfu.js"
 
 
 class ResConfigSettings(models.TransientModel):
@@ -24,7 +24,7 @@ class ResConfigSettings(models.TransientModel):
     alias_domain_id = fields.Many2one(
         'mail.alias.domain', 'Alias Domain',
         readonly=False, related='company_id.alias_domain_id',
-        help="If you have setup a catch-all email domain redirected to the Odoo server, enter the domain name here.")
+        help="If you have setup a catch-all email domain redirected to the WETH server, enter the domain name here.")
     module_google_gmail = fields.Boolean('Support Gmail Authentication')
     module_microsoft_outlook = fields.Boolean('Support Outlook Authentication')
     restrict_template_rendering = fields.Boolean(
@@ -101,7 +101,7 @@ class ResConfigSettings(models.TransientModel):
     def _get_sfu_client_asset(self):
         return self.env["ir.asset"].with_context(active_test=False, website_id=False).search(
             [
-                ("bundle", "=", "mail.assets_odoo_sfu"),
+                ("bundle", "=", "mail.assets_weth_sfu"),
                 ("directive", "=", "replace"),
                 ("path", "=", SFU_CLIENT_SOURCE_URL),
                 ("target", "=", SFU_CLIENT_TARGET),
@@ -142,7 +142,7 @@ class ResConfigSettings(models.TransientModel):
         elif client_asset_active:
             Asset.create({
                 "name": "Alternative SFU client",
-                "bundle": "mail.assets_odoo_sfu",
+                "bundle": "mail.assets_weth_sfu",
                 "directive": "replace",
                 "path": SFU_CLIENT_SOURCE_URL,
                 "target": SFU_CLIENT_TARGET,

@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:42+0000\n"
 "PO-Revision-Date: 2026-10-29 18:59+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/mass_mailing_crm/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "LEADS"
 msgstr "LEADS"
@@ -73,20 +73,20 @@ msgid "Lead"
 msgstr "Lead"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "Lead Recall"
 msgstr "Lead Recall"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 #: model:ir.model.fields.selection,name:mass_mailing_crm.selection__utm_campaign__ab_testing_winner_selection__crm_lead_count
 msgid "Leads"
 msgstr "Leads"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "Leads Analysis"
 msgstr "Análise de leads"
@@ -97,13 +97,13 @@ msgid "Leads/Opportunities Count"
 msgstr "Total de leads/oportunidades"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "Learn More"
 msgstr "Saiba mais"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid ""
 "Looking to turn your mailings into leads? Use your sales team's email as the "
@@ -123,23 +123,23 @@ msgid "Mass mailing on lead / opportunities"
 msgstr "Envio em massa de leads / oportunidades"
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "No %s yet!"
 msgstr "Sem %s ainda."
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid ""
-"Note that Odoo cannot track replies if they are sent towards email addresses "
+"Note that WETH cannot track replies if they are sent towards email addresses "
 "to this database."
 msgstr ""
-"Observe que o Odoo não pode rastrear respostas se elas forem enviadas para "
+"Observe que o WETH não pode rastrear respostas se elas forem enviadas para "
 "endereços de e-mail dessa base de dados."
 
 #. module: mass_mailing_crm
-#. odoo-python
+#. weth-python
 #: code:addons/mass_mailing_crm/models/mailing_mailing.py:0
 msgid "Opportunities"
 msgstr "Oportunidades"

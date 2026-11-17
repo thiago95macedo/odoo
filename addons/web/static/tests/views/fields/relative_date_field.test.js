@@ -55,7 +55,7 @@ test("RelativeDateField on a date field in list view", async () => {
         arch: /* xml */ `<list><field name="date" widget="relative_date" /></list>`,
     });
 
-    const cells = queryAll(".o_data_cell");
+    const cells = queryAll(".w_data_cell");
     expect(cells[0]).toHaveText("Today");
     expect(cells[1]).toHaveText("Tomorrow");
     expect(cells[2]).toHaveText("Yesterday");
@@ -79,56 +79,56 @@ test("RelativeDateField on a date field in list view", async () => {
     expect(cells[20]).toHaveText("In 3 years");
     expect(cells[21]).toHaveText("3 years ago");
 
-    expect(queryOne(".o_field_widget > div", { root: cells[0] })).toHaveAttribute(
+    expect(queryOne(".w_field_widget > div", { root: cells[0] })).toHaveAttribute(
         "title",
         "10/08/2017"
     );
-    expect(queryOne(".o_field_widget > div", { root: cells[0] })).toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[0] })).toHaveClass([
         "fw-bold",
         "text-warning",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[1] })).not.toHaveClass([
-        "fw-bold",
-        "text-warning",
-        "text-danger",
-    ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[2] })).toHaveClass([
-        "fw-bold",
-        "text-danger",
-    ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[3] })).not.toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[1] })).not.toHaveClass([
         "fw-bold",
         "text-warning",
         "text-danger",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[4] })).toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[2] })).toHaveClass([
         "fw-bold",
         "text-danger",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[5] })).not.toHaveClass([
-        "fw-bold",
-        "text-warning",
-        "text-danger",
-    ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[6] })).toHaveClass([
-        "fw-bold",
-        "text-danger",
-    ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[8] })).not.toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[3] })).not.toHaveClass([
         "fw-bold",
         "text-warning",
         "text-danger",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[9] })).not.toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[4] })).toHaveClass([
+        "fw-bold",
+        "text-danger",
+    ]);
+    expect(queryOne(".w_field_widget > div", { root: cells[5] })).not.toHaveClass([
         "fw-bold",
         "text-warning",
         "text-danger",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[10] })).toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[6] })).toHaveClass([
         "fw-bold",
         "text-danger",
     ]);
-    expect(queryOne(".o_field_widget > div", { root: cells[11] })).toHaveClass([
+    expect(queryOne(".w_field_widget > div", { root: cells[8] })).not.toHaveClass([
+        "fw-bold",
+        "text-warning",
+        "text-danger",
+    ]);
+    expect(queryOne(".w_field_widget > div", { root: cells[9] })).not.toHaveClass([
+        "fw-bold",
+        "text-warning",
+        "text-danger",
+    ]);
+    expect(queryOne(".w_field_widget > div", { root: cells[10] })).toHaveClass([
+        "fw-bold",
+        "text-danger",
+    ]);
+    expect(queryOne(".w_field_widget > div", { root: cells[11] })).toHaveClass([
         "fw-bold",
         "text-danger",
     ]);
@@ -150,32 +150,32 @@ test("RelativeDateField on a date field in multi edit list view", async () => {
         arch: /* xml */ `<list multi_edit="1"><field name="date" widget="relative_date" /></list>`,
     });
 
-    expect(queryAllTexts(".o_data_cell").slice(0, 2)).toEqual(["Today", "Tomorrow"]);
+    expect(queryAllTexts(".w_data_cell").slice(0, 2)).toEqual(["Today", "Tomorrow"]);
 
     // select two records and edit them
-    await click(".o_data_row:eq(0) .o_list_record_selector input:first");
+    await click(".w_data_row:eq(0) .w_list_record_selector input:first");
     await animationFrame();
-    await click(".o_data_row:eq(1) .o_list_record_selector input:first");
-    await animationFrame();
-
-    await click(".o_data_row:eq(0) .o_data_cell:first");
+    await click(".w_data_row:eq(1) .w_list_record_selector input:first");
     await animationFrame();
 
-    expect(".o_field_relative_date button").toHaveCount(1);
+    await click(".w_data_row:eq(0) .w_data_cell:first");
+    await animationFrame();
 
-    await contains(".o_field_relative_date button").click();
+    expect(".w_field_relative_date button").toHaveCount(1);
+
+    await contains(".w_field_relative_date button").click();
     await edit("10/10/2017", { confirm: "enter" });
     await waitFor(".modal");
-    expect(".modal .o_field_widget").toHaveText("In 2 days", {
+    expect(".modal .w_field_widget").toHaveText("In 2 days", {
         message: "should have 'In 2 days' value to change",
     });
     await click(".modal:only .modal-footer .btn-primary");
     await animationFrame();
 
-    expect(".o_data_row:eq(0) .o_data_cell:first").toHaveText("In 2 days", {
+    expect(".w_data_row:eq(0) .w_data_cell:first").toHaveText("In 2 days", {
         message: "should have 'In 2 days' as date field value",
     });
-    expect(".o_data_row:eq(1) .o_data_cell:first").toHaveText("In 2 days", {
+    expect(".w_data_row:eq(1) .w_data_cell:first").toHaveText("In 2 days", {
         message: "should have 'In 2 days' as date field value",
     });
 });
@@ -195,24 +195,24 @@ test("RelativeDateField, enter wrong value manually in multi edit list view", as
         arch: /* xml */ `<list multi_edit="1"><field name="date" widget="relative_date" /></list>`,
     });
 
-    const cells = queryAll(".o_data_cell");
-    const rows = queryAll(".o_data_row");
+    const cells = queryAll(".w_data_cell");
+    const rows = queryAll(".w_data_row");
 
     expect(cells[0]).toHaveText("Today");
     expect(cells[1]).toHaveText("Tomorrow");
 
     // select two records and edit them
-    await click(".o_list_record_selector input", { root: rows[0] });
+    await click(".w_list_record_selector input", { root: rows[0] });
     await animationFrame();
-    await click(".o_list_record_selector input", { root: rows[1] });
-    await animationFrame();
-
-    await click(".o_data_cell", { root: rows[0] });
+    await click(".w_list_record_selector input", { root: rows[1] });
     await animationFrame();
 
-    expect(".o_field_relative_date button").toHaveCount(1);
+    await click(".w_data_cell", { root: rows[0] });
+    await animationFrame();
 
-    await contains(".o_field_relative_date button").click();
+    expect(".w_field_relative_date button").toHaveCount(1);
+
+    await contains(".w_field_relative_date button").click();
     await edit("blabla", { confirm: "enter" });
     await animationFrame();
     expect(".modal").toHaveCount(0);
@@ -233,20 +233,20 @@ test("RelativeDateField on a date field in form view", async () => {
         arch: /* xml */ `<form><field name="date" widget="relative_date" /></form>`,
     });
 
-    expect(".o_field_widget button").toHaveValue("10/08/2017");
+    expect(".w_field_widget button").toHaveValue("10/08/2017");
 
-    expect(".o_form_editable").toHaveCount(1);
-    expect("div.o_field_widget[name='date'] button").toHaveCount(1);
+    expect(".w_form_editable").toHaveCount(1);
+    expect("div.w_field_widget[name='date'] button").toHaveCount(1);
 
-    await contains(".o_field_relative_date button").click();
+    await contains(".w_field_relative_date button").click();
     await animationFrame();
-    expect(".o_datetime_picker").toHaveCount(1, { message: "datepicker should be opened" });
+    expect(".w_datetime_picker").toHaveCount(1, { message: "datepicker should be opened" });
 
     await click(getPickerCell("9"));
     await animationFrame();
-    await click(".o_form_button_save");
+    await click(".w_form_button_save");
     await animationFrame();
-    expect(".o_field_widget button").toHaveValue("10/09/2017");
+    expect(".w_field_widget button").toHaveValue("10/09/2017");
 });
 
 test("RelativeDateField on a date field on a new record in form", async () => {
@@ -259,10 +259,10 @@ test("RelativeDateField on a date field on a new record in form", async () => {
                 </form>`,
     });
 
-    expect(".o_form_editable .o_field_widget[name='date'] input").toHaveCount(1);
-    await click(".o_field_widget[name='date'] input");
+    expect(".w_form_editable .w_field_widget[name='date'] input").toHaveCount(1);
+    await click(".w_field_widget[name='date'] input");
     await animationFrame();
-    expect(".o_datetime_picker").toHaveCount(1);
+    expect(".w_datetime_picker").toHaveCount(1);
 });
 
 test("RelativeDateField in form view (readonly)", async () => {
@@ -282,10 +282,10 @@ test("RelativeDateField in form view (readonly)", async () => {
                 </form>`,
     });
 
-    expect(".o_field_widget[name='date']").toHaveText("Today");
-    expect(".o_field_widget[name='date'] > div ").toHaveClass(["fw-bold", "text-warning"]);
-    expect(".o_field_widget[name='datetime']").toHaveText("Today");
-    expect(".o_field_widget[name='datetime'] > div ").toHaveClass(["fw-bold", "text-warning"]);
+    expect(".w_field_widget[name='date']").toHaveText("Today");
+    expect(".w_field_widget[name='date'] > div ").toHaveClass(["fw-bold", "text-warning"]);
+    expect(".w_field_widget[name='datetime']").toHaveText("Today");
+    expect(".w_field_widget[name='datetime'] > div ").toHaveClass(["fw-bold", "text-warning"]);
 });
 
 test("RelativeDateField on a datetime field in form view", async () => {
@@ -300,22 +300,22 @@ test("RelativeDateField on a datetime field in form view", async () => {
         resId: 1,
         arch: /* xml */ `<form><field name="datetime" widget="relative_date" /></form>`,
     });
-    expect(".o_field_widget button").toHaveValue("10/08/2017 11:00:00");
-    expect("div.o_field_widget[name='datetime'] button").toHaveCount(1);
+    expect(".w_field_widget button").toHaveValue("10/08/2017 11:00:00");
+    expect("div.w_field_widget[name='datetime'] button").toHaveCount(1);
 
-    await contains(".o_field_widget button").click();
+    await contains(".w_field_widget button").click();
     await animationFrame();
-    expect(".o_datetime_picker").toHaveCount(1, { message: "datepicker should be opened" });
+    expect(".w_datetime_picker").toHaveCount(1, { message: "datepicker should be opened" });
 
     await click(getPickerCell("9"));
 
     if (isSmall()) {
-        await click(".o_bottom_sheet_backdrop");
+        await click(".w_bottom_sheet_backdrop");
     }
     await animationFrame();
-    await click(".o_form_button_save");
+    await click(".w_form_button_save");
     await animationFrame();
-    expect(".o_field_widget button").toHaveValue("10/09/2017 11:00:00");
+    expect(".w_field_widget button").toHaveValue("10/09/2017 11:00:00");
 });
 
 test("RelativeDateField on a datetime field in list view in UTC", async () => {
@@ -337,7 +337,7 @@ test("RelativeDateField on a datetime field in list view in UTC", async () => {
         arch: /* xml */ `<list><field name="datetime" widget="relative_date" /></list>`,
     });
 
-    expect(queryAllTexts(".o_data_cell")).toEqual([
+    expect(queryAllTexts(".w_data_cell")).toEqual([
         "Today",
         "Tomorrow",
         "Yesterday",
@@ -348,9 +348,9 @@ test("RelativeDateField on a datetime field in list view in UTC", async () => {
         "",
     ]);
 
-    expect(".o_data_cell .o_field_widget div:first").toHaveAttribute("title", "10/08/2017");
+    expect(".w_data_cell .w_field_widget div:first").toHaveAttribute("title", "10/08/2017");
 
-    const cells = queryAll(".o_data_cell div div");
+    const cells = queryAll(".w_data_cell div div");
     expect(cells[0]).toHaveClass(["fw-bold", "text-warning"]);
     expect(cells[1]).not.toHaveClass(["fw-bold", "text-warning", "text-danger"]);
     expect(cells[2]).toHaveClass(["fw-bold", "text-danger"]);
@@ -377,14 +377,14 @@ test("RelativeDateField on a datetime field in list view in UTC+6", async () => 
         arch: /* xml */ `<list><field name="datetime" widget="relative_date" /></list>`,
     });
 
-    expect(queryAllTexts(".o_data_cell")).toEqual([
+    expect(queryAllTexts(".w_data_cell")).toEqual([
         "Tomorrow",
         "Tomorrow",
         "Today",
         "Yesterday",
         "In 2 days",
     ]);
-    expect(".o_data_cell .o_field_widget div:first").toHaveAttribute("title", "10/09/2017");
+    expect(".w_data_cell .w_field_widget div:first").toHaveAttribute("title", "10/09/2017");
 });
 
 test("RelativeDateField on a date field in list view in UTC-6", async () => {
@@ -403,14 +403,14 @@ test("RelativeDateField on a date field in list view in UTC-6", async () => {
         resModel: "partner",
         arch: /* xml */ `<list><field name="date" widget="relative_date" /></list>`,
     });
-    expect(queryAllTexts(".o_data_cell")).toEqual([
+    expect(queryAllTexts(".w_data_cell")).toEqual([
         "Today",
         "Tomorrow",
         "Yesterday",
         "In 2 days",
         "3 days ago",
     ]);
-    expect(".o_data_cell .o_field_widget div:first").toHaveAttribute("title", "10/08/2017");
+    expect(".w_data_cell .w_field_widget div:first").toHaveAttribute("title", "10/08/2017");
 });
 
 test("RelativeDateField on a datetime field in list view in UTC-8", async () => {
@@ -430,7 +430,7 @@ test("RelativeDateField on a datetime field in list view in UTC-8", async () => 
         arch: /* xml */ `<list><field name="datetime" widget="relative_date" /></list>`,
     });
 
-    expect(queryAllTexts(".o_data_cell")).toEqual([
+    expect(queryAllTexts(".w_data_cell")).toEqual([
         "Today",
         "Today",
         "Tomorrow",
@@ -474,7 +474,7 @@ test("RelativeDateField with custom decoration classes", async () => {
                 </list>`,
     });
 
-    const cells = queryAll(".o_data_cell div div");
+    const cells = queryAll(".w_data_cell div div");
     expect(cells[0]).toHaveClass("text-success");
     expect(cells[1]).not.toHaveAttribute("class");
     expect(cells[2]).toHaveClass("text-danger");

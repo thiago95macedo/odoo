@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:41+0000\n"
 "PO-Revision-Date: 2026-09-12 15:32+0000\n"
 "Last-Translator: \"Maitê Dietze (madi)\" <madi@weth.com.br>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "master/account_edi/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -48,31 +48,31 @@ msgstr ""
 "órgãos governamentais, etc.)\n"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid "%(count)s Electronic invoicing error(s)"
 msgstr "%(count)s erro(s) de faturamento eletrônico"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid "%(count)s Electronic invoicing info(s)"
 msgstr "%(count)s informações sobre faturamento eletrônico"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid "%(count)s Electronic invoicing warning(s)"
 msgstr "%(count)s aviso(s) de faturamento eletrônico"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid "A cancellation of the EDI has been requested."
 msgstr "Um cancelamento da EDI foi solicitado."
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid "A request for cancellation of the EDI has been called off."
 msgstr "Um pedido de cancelamento da EDI foi anulado."
@@ -128,7 +128,7 @@ msgid "Cancelled"
 msgstr "Cancelado"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_journal.py:0
 msgid ""
 "Cannot deactivate (%s) on this journal because not all documents are "
@@ -324,7 +324,7 @@ msgid "Info"
 msgstr "Info"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid ""
 "Invalid invoice configuration:\n"
@@ -435,7 +435,7 @@ msgstr ""
 "documento é processado)."
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/wizard/account_resequence.py:0
 msgid ""
 "The following documents have already been sent and cannot be resequenced: %s"
@@ -460,13 +460,13 @@ msgid "This code already exists"
 msgstr "Este código já existe"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_edi_document.py:0
 msgid "This document is being sent by another process already. "
 msgstr "Este documento já está sendo enviado por outro processo. "
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid ""
 "This invoice was canceled while the EDIs %s still had a pending cancellation "
@@ -494,7 +494,7 @@ msgid "Warning"
 msgstr "Aviso"
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/account_move.py:0
 msgid ""
 "You can't edit the following journal entry %s because an electronic document "
@@ -506,7 +506,7 @@ msgstr ""
 "cancelamento de EDI\"."
 
 #. module: account_edi
-#. odoo-python
+#. weth-python
 #: code:addons/account_edi/models/ir_attachment.py:0
 msgid ""
 "You can't unlink an attachment being an EDI document sent to the government."

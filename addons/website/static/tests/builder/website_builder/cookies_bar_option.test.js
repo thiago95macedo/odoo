@@ -121,7 +121,7 @@ describe("Cookies bar popup options", () => {
         await contains(".o_we_invisible_el_panel .o_we_invisible_entry").click();
         await waitFor(".options-container");
         await contains("[data-label='Close Button Color'] .o_we_color_preview").click();
-        await contains(".o-overlay-item [data-color='#FF0000']").click();
+        await contains(".w-overlay-item [data-color='#FF0000']").click();
         expect(":iframe .o_cookies_bar_close").toHaveStyle({ color: "rgb(255, 0, 0)" });
     });
 });

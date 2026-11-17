@@ -62,7 +62,7 @@ export async function clickCancelOrder() {
 
 export async function checkProductInCart(name, price, quantity = "1") {
     await waitFor(
-        `.product-cart-item:has(div:contains("${name}")):has(div:contains("${quantity}")):has(div .o-so-tabular-nums:contains("${price}"))`
+        `.product-cart-item:has(div:contains("${name}")):has(div:contains("${quantity}")):has(div .w-so-tabular-nums:contains("${price}"))`
     );
 }
 
@@ -93,7 +93,7 @@ export async function checkTotalPrice(price) {
 export async function hasCartItem({ productName, qty, price, attributes, combos }) {
     let selector = `.product-cart-item:has(div:contains(${productName}))`;
     if (qty) {
-        selector += `:has(.btn-group .o-so-tabular-nums:contains(${qty}))`;
+        selector += `:has(.btn-group .w-so-tabular-nums:contains(${qty}))`;
     }
     if (price) {
         selector += `:has(.line-price:contains(${price}))`;
@@ -132,7 +132,7 @@ export async function clickMissingRequireds() {
 }
 
 export async function selectFirstAddressDropdown() {
-    await contains(".o-autocomplete--dropdown-menu .dropdown-item").click();
+    await contains(".w-autocomplete--dropdown-menu .dropdown-item").click();
     await animationFrame();
 }
 

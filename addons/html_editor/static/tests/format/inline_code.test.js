@@ -78,15 +78,15 @@ test("should paste external block html as plain text inside inline code", async 
     });
 });
 
-test("should paste Odoo editor html as plain text inside inline code", async () => {
+test("should paste WETH editor html as plain text inside inline code", async () => {
     await testEditor({
         contentBefore: `<p>ab<code class="o_inline_code">Inline[]Code</code>cd</p>`,
         stepFunction: async (editor) => {
             const clipboardData = new DataTransfer();
-            clipboardData.setData("text/plain", "Hello Odoo self.env.cr._enable_logging()");
+            clipboardData.setData("text/plain", "Hello WETH self.env.cr._enable_logging()");
             clipboardData.setData(
-                "application/vnd.odoo.odoo-editor",
-                `<p class="o_paragraph">Hello <strong>Odoo </strong><a href="http://self.env.cr">self.env.cr</a>._enable_logging()</p>`
+                "application/vnd.weth.weth-editor",
+                `<p class="o_paragraph">Hello <strong>WETH </strong><a href="http://self.env.cr">self.env.cr</a>._enable_logging()</p>`
             );
             const pasteEvent = new ClipboardEvent("paste", {
                 clipboardData,
@@ -94,20 +94,20 @@ test("should paste Odoo editor html as plain text inside inline code", async () 
             });
             editor.editable.dispatchEvent(pasteEvent);
         },
-        contentAfter: `<p>ab<code class="o_inline_code">InlineHello Odoo self.env.cr._enable_logging()[]Code</code>cd</p>`,
+        contentAfter: `<p>ab<code class="o_inline_code">InlineHello WETH self.env.cr._enable_logging()[]Code</code>cd</p>`,
     });
 });
 
 test("should not open powerbox inside inline code", async () => {
     const { editor } = await setupEditor(`<p>abc<code class="o_inline_code">tes[]t</code>def</p>`);
     await insertText(editor, "/");
-    await expectElementCount(".o-we-powerbox", 0);
+    await expectElementCount(".w-we-powerbox", 0);
 });
 
 test.tags("desktop");
 test("should not open toolbar when selection is inside inline code", async () => {
     await setupEditor(`<p>abc<code class="o_inline_code">t[es]t</code>def</p>`);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test("should not open toolbar when selection is around inline code", async () => {
@@ -115,25 +115,25 @@ test("should not open toolbar when selection is around inline code", async () =>
         `<p>abc[\ufeff<code class="o_inline_code">\ufefftest\ufeff</code>\ufeff]def</p>`
     );
     await delay(DELAY_TOOLBAR_OPEN);
-    await expectElementCount(".o-we-toolbar", 0);
+    await expectElementCount(".w-we-toolbar", 0);
 });
 
 test("should open toolbar for mixed selection and apply formatting outside inline code", async () => {
     const { el } = await setupEditor(`<p>abc<code class="o_inline_code">t[est</code>de]f</p>`);
 
     // Toolbar should be visible as selection is not fully inside inline code.
-    await expectElementCount(".o-we-toolbar", 1);
+    await expectElementCount(".w-we-toolbar", 1);
     await expandToolbar();
 
     // Apply bold should affect only the part outside inline code ("de").
-    await click(".o-we-toolbar button[name='bold']");
+    await click(".w-we-toolbar button[name='bold']");
     await animationFrame();
     expect(getContent(el)).toBe(
         `<p>abc\ufeff<code class="o_inline_code">\ufefft[est\ufeff</code>\ufeff<strong>de]</strong>f</p>`
     );
 
     // Apply text color should still affect only the non-inline-code portion.
-    await click(".o-we-toolbar .o-select-color-foreground");
+    await click(".w-we-toolbar .w-select-color-foreground");
     await expectElementCount(".o_font_color_selector", 1);
     await contains(".btn:contains('Solid')").click();
     await contains(".o_color_button[data-color='#0000FF']").click();
@@ -141,7 +141,7 @@ test("should open toolbar for mixed selection and apply formatting outside inlin
         `<p>abc\ufeff<code class="o_inline_code">\ufefft[est\ufeff</code>\ufeff<font style="color: rgb(0, 0, 255);"><strong>de]</strong></font>f</p>`
     );
     // Apply font size formatting should wrap only the external text.
-    await contains(".o-we-toolbar [name='font_size'].dropdown-toggle").click();
+    await contains(".w-we-toolbar [name='font_size'].dropdown-toggle").click();
     await contains(`.o_font_size_selector_menu .dropdown-item:contains('80')`).click();
     expect(getContent(el)).toBe(
         `<p>abc\ufeff<code class="o_inline_code">\ufefft[est\ufeff</code>\ufeff<span class="display-1-fs"><font style="color: rgb(0, 0, 255);"><strong>de]</strong></font></span>f</p>`

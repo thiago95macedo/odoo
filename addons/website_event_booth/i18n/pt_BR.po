@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2026-08-28 17:43+0000\n"
 "PO-Revision-Date: 2026-10-29 18:57+0000\n"
 "Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/odoo-"
+"Language-Team: Portuguese (Brazil) <https://translate.weth.com.br/projects/weth-"
 "20/website_event_booth/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr ""
 "                            <span> *</span>"
 
 #. module: website_event_booth
-#. odoo-python
+#. weth-python
 #: code:addons/website_event_booth/models/event_event.py:0
 msgid "Become exhibitor"
 msgstr "Torne-se expositor"
@@ -130,13 +130,13 @@ msgid "Booth Register"
 msgstr "Inscrição do estande"
 
 #. module: website_event_booth
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_booth/static/src/xml/event_booth_registration_templates.xml:0
 msgid "Booth Registration completed!"
 msgstr "Inscrição do estande finalizada!"
 
 #. module: website_event_booth
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_booth/static/src/interactions/booth_registration.js:0
 msgid "Booth registration failed."
 msgstr "A inscrição do estande falhou."
@@ -242,7 +242,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_event_booth
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_booth/static/src/interactions/booth_registration.js:0
 msgid "It looks like your email is already in our system."
 msgstr "Parece que seu e-mail já está em nosso sistema."
@@ -278,7 +278,7 @@ msgid "Please Sign In or Create an Account."
 msgstr "Faça login ou crie uma conta."
 
 #. module: website_event_booth
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_booth/static/src/interactions/booth_registration.js:0
 msgid "Please fill out the form correctly."
 msgstr "Preencha o formulário corretamente."
@@ -294,7 +294,7 @@ msgid "Sorry, all the booths are sold out."
 msgstr "Sentimos muito, todos os estandes estão esgotados."
 
 #. module: website_event_booth
-#. odoo-javascript
+#. weth-javascript
 #: code:addons/website_event_booth/static/src/interactions/booth_registration.js:0
 msgid "The booth category doesn't exist."
 msgstr "A categoria de estande não existe."

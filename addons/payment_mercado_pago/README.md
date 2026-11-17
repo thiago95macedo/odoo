@@ -32,10 +32,10 @@ payments from the merchant's website.
 ## Module history
 
 - `19.0`
-  - OAuth support is added in addition to the credentials-based authentication. odoo/odoo#194998
-  - Support for tokenization is added. odoo/odoo#194998
+  - OAuth support is added in addition to the credentials-based authentication. weth/weth#194998
+  - Support for tokenization is added. weth/weth#194998
 - `16.0`
-  - The first version of the module is merged. odoo/odoo#83957
+  - The first version of the module is merged. weth/weth#83957
 
 ## Testing instructions
 
