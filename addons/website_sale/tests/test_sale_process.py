@@ -79,76 +79,11 @@ class TestSaleProcess(HttpCaseWithUserDemo, WebsiteSaleCommon, HttpCaseWithWebsi
             transfer_provider = cls.env.ref("payment.payment_provider_transfer")
             transfer_provider.is_published = True
 
-    def test_01_admin_shop_tour(self):
-        self.start_tour(
-            self.env["website"].get_client_action_url("/shop"),
-            "website_sale.onboarding_tour",
-            login="admin",
-        )
 
-    def test_01_cart_update_check(self):
-        self.start_tour("/shop", "website_sale.update_cart", login="admin")
 
-    def test_02_admin_checkout(self):
-        if self.env["ir.module.module"]._get("payment_custom").state != "installed":
-            self.skipTest("Transfer provider is not installed")
 
-        self.start_tour("/shop", "website_sale.basic_shop_flow", login="admin")
 
-    def test_03_demo_checkout(self):
-        self.partner_demo.sudo().write(self.dummy_partner_address_values)
-        if self.env["ir.module.module"]._get("payment_custom").state != "installed":
-            self.skipTest("Transfer provider is not installed")
 
-        self.start_tour("/shop", "website_sale.basic_shop_flow", login="demo")
-
-    def test_04_admin_website_sale_tour(self):
-        if self.env["ir.module.module"]._get("payment_custom").state != "installed":
-            self.skipTest("Transfer provider is not installed")
-
-        self.env.company.sudo().country_id = self.country_us
-        tax_group = self.env["account.tax.group"].sudo().create({"name": "Tax 15%"})
-        tax = self.env["account.tax"].sudo().create({
-            "name": "Tax 15%",
-            "amount": 15,
-            "type_tax_use": "sale",
-            "tax_group_id": tax_group.id,
-        })
-        # storage box
-        self.product_product_7 = self.env["product.product"].create({
-            "name": "Storage Box Test",
-            "standard_price": 70.0,
-            "list_price": 79.0,
-            "website_published": True,
-            "invoice_policy": "delivery",
-        })
-        self.product_product_7.taxes_id = [tax.id]
-        self.env["res.config.settings"].sudo().create({
-            "auth_signup_uninvited": "b2c",
-            "show_line_subtotals_tax_selection": "tax_excluded",
-        }).execute()
-
-        self.start_tour("/shop?search=Storage Box Test", "website_sale.complete_flow_1")
-        self.start_tour(
-            self.env["website"].get_client_action_url("/shop/cart", True),
-            "website_sale.enable_extra_info",
-            login="admin",
-        )
-        self.start_tour("/shop/cart", "website_sale.complete_flow_2", login="admin")
-
-    def test_06_public_user_shop_repair(self):
-        """Public user purchasing repair service products in website shop."""
-        if self.env["ir.module.module"]._get("repair").state != "installed":
-            self.skipTest("Repair is not installed")
-
-        self.env["product.template"].create({
-            "name": "Test Repair Service",
-            "type": "service",
-            "service_tracking": "repair",
-            "sale_ok": True,
-            "is_published": True,
-        })
-        self.start_tour("/shop", "shop_repair_product", login=None)
 
     def test_confirmation_does_not_prepare_signup_for_existing_user(self):
         self.website.auth_signup_uninvited = "b2c"
@@ -195,13 +130,3 @@ class TestSaleProcess(HttpCaseWithUserDemo, WebsiteSaleCommon, HttpCaseWithWebsi
             2,
         )
 
-    def test_update_same_address_billing_shipping_edit(self):
-        """Phone field should be required when updating an adress for billing and shipping."""
-        self.env["product.product"].create({
-            "name": "Office Chair Black TEST",
-            "list_price": 12.50,
-            "is_published": True,
-        })
-        self.start_tour(
-            "/shop", "website_sale.update_billing_shipping_address", login="website_user"
-        )

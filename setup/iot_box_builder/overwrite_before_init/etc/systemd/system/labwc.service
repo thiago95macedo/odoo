@@ -4,10 +4,10 @@ Documentation=man:labwc(1)
 After=graphical.target systemd-user-sessions.service
 
 [Service]
-User=odoo
+User=weth
 ExecStart=/usr/bin/labwc
-Environment="XDG_RUNTIME_DIR=/run/odoo"
-Environment="XDG_CACHE_HOME=/run/odoo"
+Environment="XDG_RUNTIME_DIR=/run/weth"
+Environment="XDG_CACHE_HOME=/run/weth"
 Environment="WLR_LIBINPUT_NO_DEVICES=1"
 Restart=always
 Type=simple

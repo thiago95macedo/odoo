@@ -1,5 +1,5 @@
 import { Component, onMounted, onPatched, signal, usePlugin } from "@weth/owl";
-import { OdooLogo } from "@point_of_sale/app/components/odoo_logo/odoo_logo";
+import { WethLogo } from "@point_of_sale/app/components/weth_logo/weth_logo";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { session } from "@web/session";
 import { useService } from "@web/core/utils/hooks";
@@ -10,7 +10,7 @@ import { FeedbackPaymentSummary } from "@point_of_sale/app/components/feedback_p
 
 export class CustomerDisplay extends Component {
     static template = "point_of_sale.CustomerDisplay";
-    static components = { OdooLogo, MainComponentsContainer, BadgeTag, FeedbackPaymentSummary };
+    static components = { WethLogo, MainComponentsContainer, BadgeTag, FeedbackPaymentSummary };
 
     scrollableRef = signal.ref();
     customerDisplay = usePlugin(CustomerDisplayPlugin);

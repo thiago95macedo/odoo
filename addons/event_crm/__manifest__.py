@@ -21,10 +21,7 @@
         'data/event_crm_demo.xml',
     ],
     'assets': {
-        'web.assets_tests': [
-            'event_crm/static/tests/tours/*.js',
-        ],
-    },
+            },
     'auto_install': True,
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',

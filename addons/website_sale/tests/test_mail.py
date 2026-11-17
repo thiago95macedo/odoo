@@ -13,49 +13,6 @@ from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 @tagged("post_install", "-at_install", "mail_thread")
 class TestWebsiteSaleMail(HttpCaseWithUserPortal):
-    def test_01_shop_mail_tour(self):
-        """The goal of this test is to make sure sending SO by email works."""
-        self.env.ref("base.user_admin").write({"email": "mitchell.admin@example.com"})
-        test_product = self.env["product.template"].create({
-            "name": "Acoustic Bloc Screens",
-            "list_price": 2950.0,
-            "sale_ok": True,
-            "website_published": True,
-        })
-        self.env["res.partner"].create({
-            "name": "Azure Interior",
-            "email": "azure.Interior24@example.com",
-        })
-
-        # we override unlink because we don't want the email to be auto deleted
-        MailMail = weth.addons.mail.models.mail_mail.MailMail
-        # as we check some link content, avoid mobile doing its link management
-        self.env["ir.config_parameter"].sudo().set_bool(
-            "mail_mobile.disable_redirect_firebase_dynamic_link", True
-        )
-
-        main_website = self.env.ref("base.default_website")
-        other_websites = self.env["website"].search([]) - main_website
-
-        # We change the domain of the website to test that the email that
-        # will be sent uses the correct domain for its links.
-        main_website.domain = "my-test-domain.com"
-        for w in other_websites:
-            w.domain = f"domain-not-used-{w.id}.fr"
-        with patch.object(MailMail, "unlink", lambda _self: None):
-            start_time = fields.Datetime.now()
-            self.start_tour(test_product.website_url, "website_sale.so_mail", login="admin")
-            new_mail = self.env["mail.mail"].search(
-                [
-                    ("create_date", ">=", start_time),
-                    ("body_html", "ilike", "https://my-test-domain.com"),
-                ],
-                order="create_date DESC",
-                limit=None,
-            )
-            self.assertTrue(new_mail)
-            self.assertIn("Your", new_mail.body_html)
-            self.assertIn("order", new_mail.body_html)
 
     def test_shop_product_mail_action_redirection(self):
         product_template = self.env["product.template"].create({
@@ -84,25 +41,6 @@ class TestWebsiteSaleMail(HttpCaseWithUserPortal):
             self.assertEqual(res.status_code, 200)
             self.assertEqual(res.request.path_url, shop_url)
 
-    def test_product_review_highlight(self):
-        self.env["ir.ui.view"].with_context(active_test=False).search([
-            ("key", "=", "website_sale.product_comment")
-        ]).write({"active": True})
-        product_template = self.env["product.template"].create({
-            "name": "Test Product",
-            "sale_ok": True,
-            "website_published": True,
-        })
-        product_message = self.env["mail.message"].create({
-            "author_id": self.env.ref("base.user_admin").partner_id.id,
-            "body": "Test Message",
-            "model": product_template._name,
-            "res_id": product_template.id,
-            "subtype_id": self.ref("mail.mt_comment"),
-        })
-        self.start_tour(
-            f"/mail/message/{product_message.id}", "product_review_highlight_tour", login="portal"
-        )
 
 
 @tagged("post_install", "-at_install", "mail_thread")

@@ -11,7 +11,7 @@
                 <i class="oi oi-lg" data-icon="close_small" role="presentation"/>
             </a>
 
-            <div class="o_website_loader_odoo_logo mb-5" style="height: 31px; width: 78px;"/>
+            <div class="o_website_loader_weth_logo mb-5" style="height: 31px; width: 78px;"/>
 
             <div t-out="this.state.currentLoadingStep?.title || this.state.title" class="h4-fs text-muted mb-3"/>
             <div class="mt-3"/>

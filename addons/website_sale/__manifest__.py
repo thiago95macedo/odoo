@@ -97,7 +97,6 @@
         "web.assets_frontend": [
             "website_sale/static/src/interactions/**/*",
             "website_sale/static/src/snippets/**/*.js",
-            "website_sale/static/src/js/tours/tour_utils.js",
             "website_sale/static/src/scss/product_tile.scss",
             "website_sale/static/src/scss/website_sale.scss",
             "website_sale/static/src/scss/website_sale_frontend.scss",
@@ -153,7 +152,6 @@
         "web._assets_primary_variables": ["website_sale/static/src/scss/primary_variables.scss"],
         "web.assets_backend": [
             "website_sale/static/src/js/client_actions/**/*",
-            "website_sale/static/src/js/tours/tour_utils.js",
             "website_sale/static/src/js/website_sale_video_field_preview.js",
             "website_sale/static/src/scss/website_sale_backend.scss",
             "website_sale/static/src/js/product_image/**/*",
@@ -182,12 +180,7 @@
         'website.assets_inside_builder_iframe_tests': [
             'website_sale/static/src/website_builder/**/*.edit.xml',
         ],
-        "web.assets_tests": [
-            "website_sale/static/tests/tours/**/*",
-            "website_sale/static/src/js/tours/product_configurator_tour_utils.js",
-            "website_sale/static/src/js/tours/wishlist_tour_utils.js",
-        ],
-        "web.assets_unit_tests": [
+                "web.assets_unit_tests": [
             "website_sale/static/tests/interactions/**/*",
             "website_sale/static/tests/builder/**/*",
         ],

@@ -16,10 +16,7 @@ Manage the inventory of your Kit products and display their availability status 
         'web.assets_frontend': [
             'website_sale_mrp/static/src/interactions/**/*',
         ],
-        'web.assets_tests': [
-            'website_sale_mrp/static/tests/tours/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

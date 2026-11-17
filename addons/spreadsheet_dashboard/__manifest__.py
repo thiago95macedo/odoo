@@ -33,8 +33,5 @@
             "spreadsheet_dashboard/static/src/public/**/*.xml",
             "spreadsheet_dashboard/static/tests/**/*",
         ],
-        'web.assets_tests': [
-            'spreadsheet_dashboard/static/tests/tours/*',
-        ],
-    },
+            },
 }

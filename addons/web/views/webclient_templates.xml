@@ -87,16 +87,16 @@
     </template>
 
     <template id="brand_promotion_message" name="Brand Promotion Message">
-        <t t-set="odoo_logo">
+        <t t-set="weth_logo">
             <strong>
                 <a target="_blank"
                     t-attf-href="http://www.weth.com.br?utm_source=db&amp;utm_medium=#{_utm_medium}">
-                    Odoo
+                    WETH
                 </a>
             </strong>
         </t>
         <t t-set="final_message">Powered by %s%s</t>
-        <t t-out="final_message % (odoo_logo, _message and ('- ' + _message) or '')"/>
+        <t t-out="final_message % (weth_logo, _message and ('- ' + _message) or '')"/>
     </template>
     <template id="brand_promotion" name="Brand Promotion">
         <div class="o_brand_promotion">
@@ -279,7 +279,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
             <meta name="theme-color" content="#05285b"/>
             <link rel="manifest" href="/web/manifest.webmanifest" crossorigin="use-credentials"/>
-            <link rel="apple-touch-icon" href="/web/static/img/odoo-icon-ios.png"/>
+            <link rel="apple-touch-icon" href="/web/static/img/weth-icon-ios.png"/>
             <script type="text/javascript">
                 // Block to avoid leaking variables in the script scope
                 {
@@ -365,7 +365,7 @@
             title.translate="Offline"
             head="head">
             <div class="card">
-                <img t-attf-src="data:image/png;base64,{{odoo_icon.to_base64()}}" alt="Odoo logo"/>
+                <img t-attf-src="data:image/png;base64,{{weth_icon.to_base64()}}" alt="WETH logo"/>
                 <h1>You are offline</h1>
                 <p>Check your network connection and come back here. Odoo will load as soon as you're back online.</p>
                 <button onclick="location.reload()">Check again</button>

@@ -66,9 +66,9 @@ class TestPyLint(LintCase):
             '--load-plugins=' + ','.join([
                 "_pylint_path_setup",
                 "pylint.extensions.bad_builtin",
-                "_odoo_checker_sql_injection",
-                "_odoo_checker_gettext",
-                "_odoo_checker_unlink_override",
+                "_weth_checker_sql_injection",
+                "_weth_checker_gettext",
+                "_weth_checker_unlink_override",
             ]),
             '--bad-functions=input',
             '--deprecated-modules=' + ','.join([

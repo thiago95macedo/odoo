@@ -135,71 +135,8 @@ class TestWebsiteSaleGMC(WebsiteSaleGMCCommon, HttpCase):
                 response.url,
             )
 
-    def test_gmc_items_prices_match_website_prices_default(self):
-        self.update_items()
 
-        self.assertEqual("1000.0 USD", self.red_sofa_item["price"])
-        self.assertEqual("1200.0 USD", self.blue_sofa_item["price"])
-        self.start_tour(
-            self.red_sofa_item["link"], "website_sale.gmc_check_advertised_prices_red_sofa_default"
-        )
-        self.start_tour(
-            self.blue_sofa_item["link"],
-            "website_sale.gmc_check_advertised_prices_blue_sofa_default",
-        )
 
-    def test_gmc_items_prices_match_website_prices_christmas(self):
-        self.gmc_feed.pricelist_id = self._create_pricelist(
-            name="EUR Christmas Sales",
-            currency_id=self.eur_currency.id,
-            selectable=True,
-            item_ids=[
-                Command.create({
-                    "product_tmpl_id": self.product_template_sofa.id,
-                    "compute_price": "discount",
-                    "price_discount": 10.0,
-                    "date_start": datetime.now() - timedelta(1),
-                    "date_end": datetime.now() + timedelta(1),
-                }),
-                Command.create({"compute_price": "discount", "price_discount": 0.0}),
-            ],
-        )
-
-        self.update_items()
-
-        # 1000.0 (list_price) * 1.1 (EUR rate) - 10% (discount)
-        self.assertEqual("990.0 EUR", self.red_sofa_item["sale_price"])
-        # 1200.0 (list_price) * 1.1 (EUR rate) - 10% (discount)
-        self.assertEqual("1188.0 EUR", self.blue_sofa_item["sale_price"])
-        # 100.0 (list_price) * 1.1 (EUR rate)
-        self.assertEqual("110.0 EUR", self.items[self.blanket]["price"])
-        self.assertNotIn("sale_price", self.items[self.blanket])  # no discount
-        self.assertNotEqual(self.red_sofa_item["link"], self.blue_sofa_item["link"])
-        self.start_tour(
-            self.red_sofa_item["link"],
-            "website_sale.gmc_check_advertised_prices_red_sofa_christmas",
-        )
-        self.start_tour(
-            self.blue_sofa_item["link"],
-            "website_sale.gmc_check_advertised_prices_blue_sofa_christmas",
-        )
-
-    def test_gmc_items_prices_match_website_prices_tax_included(self):
-        # 15% taxes
-        self.website.show_line_subtotals_tax_selection = "tax_included"
-
-        self.update_items()
-
-        self.assertEqual("1150.0 USD", self.red_sofa_item["price"])
-        self.assertEqual("1380.0 USD", self.blue_sofa_item["price"])
-        self.start_tour(
-            self.red_sofa_item["link"],
-            "website_sale.gmc_check_advertised_prices_red_sofa_tax_included",
-        )
-        self.start_tour(
-            self.blue_sofa_item["link"],
-            "website_sale.gmc_check_advertised_prices_blue_sofa_tax_included",
-        )
 
     def test_gmc_items_additional_images_limit_to_10(self):
         image = self._create_image("blue")

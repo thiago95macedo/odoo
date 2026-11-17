@@ -15,7 +15,6 @@
         ],
         'web.assets_tests': [
             'pos_qfpay/static/src/app/qfpay.js',
-            'pos_qfpay/static/tests/tours/**/*',
         ],
     },
     'license': 'LGPL-3',

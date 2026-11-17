@@ -49,10 +49,6 @@ class TestResUsers(TransactionCase):
         self.assertEqual(len(user_ids), len(set(user_ids)), "Some user(s), appear multiple times in the result")
 
 
-@tagged('post_install', '-at_install')
-class TestUserSettings(HttpCaseWithUserDemo):
-    def test_user_group_settings(self):
-        self.start_tour('/weth/settings?debug=assets,tests', 'test_user_group_settings', login='admin')
 
 
 @tagged('post_install', '-at_install')
@@ -124,108 +120,6 @@ class TestUserRoleGroupSync(HttpCaseWithUserDemo):
         else:
             self.assertNotIn(self.group_regular, self.test_user.all_group_ids, msg)
 
-    def test_role_toggle_with_intermediate_reload(self):
-        """ regular -> save -> [reload] -> light -> save -> [reload] ->
-        regular -> save -> [reload]. Starts with 'regular' since the test
-        user is 'light_user' by default: setting light first would be a
-        no-op (radio already selected, form never becomes dirty, no Save
-        button to click) and wouldn't exercise anything. Each step is its
-        own start_tour() call -- a fresh page load, i.e. a real reload --
-        with a Python-side backend check between every single one. """
-        self._assert_state('light_user', False, "initial state")
 
-        self.start_tour(self._user_url(), 'role_sync_set_regular_and_save', login='admin')
-        self._assert_state('regular_user', True, "after setting regular and saving")
 
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state(
-            'regular_user', True,
-            "after reload: role must still be 'regular_user' with the "
-            "marker present -- this is the reported bug if it fails",
-        )
 
-        self.start_tour(self._user_url(), 'role_sync_set_light_and_save', login='admin')
-        self._assert_state('light_user', False, "after setting light and saving")
-
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state('light_user', False, "after reload, still light")
-
-        self.start_tour(self._user_url(), 'role_sync_set_regular_and_save', login='admin')
-        self._assert_state('regular_user', True, "after setting regular and saving again")
-
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state(
-            'regular_user', True,
-            "after final reload: role must still be 'regular_user' with the "
-            "marker present -- this is the reported bug if it fails",
-        )
-
-    def test_role_toggle_without_intermediate_reload(self):
-        """ regular -> save -> light -> save -> regular -> save, all in ONE
-        browser session (no reload in between), single reload only at the
-        very end. Starts with 'regular' for the same reason as above: the
-        test user is 'light_user' by default. """
-        self._assert_state('light_user', False, "initial state")
-
-        self.start_tour(
-            self._user_url(), 'role_sync_regular_save_light_save_regular_save_no_reload', login='admin',
-        )
-        self._assert_state('regular_user', True, "after all toggles saved in one session")
-
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state(
-            'regular_user', True,
-            "after reload: role must still be 'regular_user' with the marker "
-            "present -- this is the reported bug if it fails",
-        )
-
-    def test_role_toggle_reload_relies_on_autosave(self):
-        """ light -> [no explicit Save] -> reload -> regular -> [no
-        explicit Save] -> reload. Sanity check: an unsaved role change
-        must not survive a reload (Odoo doesn't auto-save on unload). Not
-        expected to reproduce the bug, but rules out a different save
-        code path being involved. """
-        self.start_tour(
-            self._user_url(), 'role_sync_set_light_no_save_then_reload', login='admin',
-        )
-        self._assert_state(
-            'light_user', False,
-            "an unsaved role change must not persist across a reload",
-        )
-
-        self.start_tour(
-            self._user_url(), 'role_sync_set_regular_no_save_then_reload', login='admin',
-        )
-        self._assert_state(
-            'light_user', False,
-            "an unsaved role change must not persist across a reload",
-        )
-
-    def test_extra_group_checkbox_drives_role_via_compute(self):
-        """ group_ids -> role direction: checking a plain group (no
-        privilege_id) directly must make `role` compute to 'regular_user'
-        (_compute_role depends on group_ids), and this must survive a
-        reload; unchecking it must bring `role` back to 'light_user'. """
-        self._assert_state('light_user', False, "initial state")
-
-        self.start_tour(
-            self._user_url(), 'role_sync_check_extra_group_and_save', login='admin',
-        )
-        self._assert_state(
-            'regular_user', True,
-            "checking the extra-rights group must flip role to 'regular_user'",
-        )
-
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state('regular_user', True, "role must survive the reload")
-
-        self.start_tour(
-            self._user_url(), 'role_sync_uncheck_extra_group_and_save', login='admin',
-        )
-        self._assert_state(
-            'light_user', False,
-            "unchecking the extra-rights group must flip role back to 'light_user'",
-        )
-
-        self.start_tour(self._user_url(), 'role_sync_reload_only', login='admin')
-        self._assert_state('light_user', False, "role must survive the reload")

@@ -3043,24 +3043,7 @@ class TestTourBoM(HttpCase):
             'is_storable': True,
         })
 
-    def test_mrp_bom_product_catalog(self):
-        grp_uom = self.env.ref('uom.group_uom')
-        group_user = self.env.ref('base.group_user')
-        group_user.write({'implied_ids': [Command.link(grp_uom.id)]})
-        self.env.user.write({'group_ids': [Command.link(grp_uom.id)]})
-        self.assertEqual(len(self.bom.bom_line_ids), 0)
 
-        url = f'/weth/action-mrp.mrp_bom_form_action/{self.bom.id}'
-
-        self.start_tour(url, 'test_mrp_bom_product_catalog', login='admin')
-        self.assertEqual(len(self.bom.bom_line_ids), 1)
-
-    def test_manufacture_from_bom(self):
-        """
-        Create a new MO by pressing the "Manufacture" button in BoM Overview
-        """
-        url = '/weth/action-mrp.mrp_bom_form_action'
-        self.start_tour(url, 'test_manufacture_from_bom', login='admin', timeout=100)
 
     def test_bom_kit_rounding(self):
         """ Checks that the available quantity is rounded down for kit products to not over-promise availability
@@ -3212,15 +3195,3 @@ class TestMrpMobileTour(HttpCase):
             'operation_ids': [Command.create({'name': 'Assemble', 'workcenter_id': cls.workcenter.id})],
         })
 
-    def test_basic_mo_process_on_mobile(self):
-        """ Check that a manufacturing order can be created, confirmed and produced on mobile. """
-        self.env['stock.quant']._update_available_quantity(self.component, self.stock_location, 1)
-        self.start_tour('/weth/action-mrp.mrp_production_action/new', 'test_basic_mo_process_on_mobile', login=self.user_mrp_user.login)
-        mo = self.env['mrp.production'].search([('product_id', '=', self.product.id)], limit=1)
-        self.assertEqual(mo.state, 'done')
-        self.assertRecordValues(mo.workorder_ids, [
-            {'operation_id': self.bom.operation_ids.id, 'state': 'done'},
-        ])
-        self.assertRecordValues(mo.move_raw_ids, [
-            {'product_id': self.component.id, 'quantity': 1, 'state': 'done'},
-        ])

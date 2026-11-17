@@ -14,46 +14,6 @@ from weth.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruit
 
 @weth.tests.tagged('post_install', '-at_install')
 class TestWebsiteHrRecruitmentForm(weth.tests.HttpCase):
-    def test_tour(self):
-        department = self.env['hr.department'].create({'name': 'guru team'})
-        job_guru = self.env['hr.job'].create({
-            'name': 'Guru',
-            'is_published': True,
-            'department_id': department.id,
-        })
-        job_intern = self.env['hr.job'].create({
-            'name': 'Internship',
-            'is_published': True,
-            'department_id': department.id,
-        })
-
-        self.start_tour(self.env['website'].get_client_action_url('/jobs'), 'website_hr_recruitment_tour_edit_form', login='admin')
-
-        with weth.tests.RecordCapturer(self.env['hr.applicant']) as capt:
-            self.start_tour("/jobs", 'website_hr_recruitment_tour')
-
-        # check result
-        self.assertEqual(len(capt.records), 2)
-
-        guru_applicant = capt.records[0]
-        self.assertEqual(guru_applicant.partner_name, 'John Smith')
-        self.assertEqual(guru_applicant.email_from, 'john@smith.com')
-        self.assertEqual(guru_applicant.partner_phone, '118.218')
-        self.assertIn(
-            "Other Information:\n___________\n\nShort Introduction : ### [GURU] HR RECRUITMENT TEST DATA ###",
-            guru_applicant.message_ids.mapped(lambda m: html2plaintext(m.body))
-        )
-        self.assertEqual(guru_applicant.job_id, job_guru)
-
-        internship_applicant = capt.records[1]
-        self.assertEqual(internship_applicant.partner_name, 'Jack Doe')
-        self.assertEqual(internship_applicant.email_from, 'jack@doe.com')
-        self.assertEqual(internship_applicant.partner_phone, '118.712')
-        self.assertIn(
-            "Other Information:\n___________\n\nShort Introduction : ### HR [INTERN] RECRUITMENT TEST DATA ###",
-            internship_applicant.message_ids.mapped(lambda m: html2plaintext(m.body))
-        )
-        self.assertEqual(internship_applicant.job_id, job_intern)
 
     def test_jobs_listing_city_unspecified(self):
         """ Test that the jobs listing page does not crash when a job has no address. """

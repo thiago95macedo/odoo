@@ -10,10 +10,7 @@
         'sale_product_matrix',
     ],
     'assets': {
-        'web.assets_tests': [
-            'test_sale_product_configurators/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

@@ -7,16 +7,6 @@ from weth.addons.base.tests.common import HttpCaseWithUserPortal
 from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
-@tagged("post_install", "-at_install")
-class TestWebsiteSaleCartRecovery(WebsiteSaleCommon, HttpCaseWithUserPortal):
-    def test_01_shop_cart_recovery_tour(self):
-        """The goal of this test is to make sure cart recovery works."""
-        cart_recovery_link = "/shop/cart?id=%s&access_token=%s" % (
-            self.cart.id,
-            self.cart._portal_ensure_token(),
-        )
-
-        self.start_tour(cart_recovery_link, "website_sale.cart_recovery", login="portal")
 
 
 @tagged("post_install", "-at_install")

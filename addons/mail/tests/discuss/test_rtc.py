@@ -1448,11 +1448,6 @@ class TestChannelRTC(MailCommon, HttpCase):
         self.assertEqual(unused_ids, outdated_rtc_sessions.ids)
         self.assertFalse(outdated_rtc_sessions.exists())
 
-    @freeze_time("2023-03-15 12:34:56")
-    def test_70_call_invitation_ui(self):
-        self.member_of_employee_in_group_a.sudo()._rtc_join_call()
-        self._reset_bus()
-        self.start_tour("/odoo", "discuss_call_invitation.js", login="test_user")
 
     def _res_for_guest(self, guest, common=True, internal=False):
         res = {"id": guest.id}

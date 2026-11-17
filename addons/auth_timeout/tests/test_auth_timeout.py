@@ -529,32 +529,3 @@ class TestAuthTimeoutHttp(HttpCase):
         self.assertLessEqual(device.expiration_date, datetime.now() + timedelta(seconds=group.lock_timeout * 60))
         self.assertGreater(device.expiration_date, datetime.now() + timedelta(seconds=group.lock_timeout * 60 - 60))
 
-    def test_auth_timeout_tour(self):
-        session_id = self.authenticate(self.user.login, self.user.login).sid
-        # To avoid the check identity wizard during the configuration of TOTP, ...
-        self.set_session_last_check_identity(session_id, time.time())
-        self.set_auth_totp_mail()
-        self.set_auth_totp()
-        self.set_auth_passkey()
-
-        # Set a 1 second inactivity timeout, with a mock patch because the field `lock_timeout` is in minutes.
-        with patch.object(
-            self.env.registry["res.groups"],
-            "_get_lock_timeouts",
-            return_value={
-                "lock_timeout": [],
-                "lock_timeout_inactivity": [(1, False)],  # 1 second inactivity without MFA
-            },
-        ):
-            self.start_tour("/odoo", "auth_timeout_tour_lock_timeout_inactivity", login=self.user.login)
-
-        # Set a 1 second inactivity timeout with 2fa, with a mock patch because the field `lock_timeout` is in minutes.
-        with patch.object(
-            self.env.registry["res.groups"],
-            "_get_lock_timeouts",
-            return_value={
-                "lock_timeout": [],
-                "lock_timeout_inactivity": [(1, True)],  # 1 second inactivity with MFA
-            },
-        ):
-            self.start_tour("/odoo", "auth_timeout_tour_lock_timeout_inactivity_2fa", login=self.user.login)

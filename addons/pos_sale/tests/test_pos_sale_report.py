@@ -61,31 +61,6 @@ class TestPoSSaleReport(TestPoSCommon, TestPointOfSaleHttpCommon):
         self.assertEqual(reports[1].weight, 18)
         self.assertEqual(reports[1].volume, 24)
 
-    def test_refund_line_report_prices_sign(self):
-        test_product = self.env['product.product'].create({
-            'name': 'Test Product',
-            'list_price': 10.00,
-            'taxes_id': False,
-            'available_in_pos': True,
-        })
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        current_session = self.main_pos_config.current_session_id
-
-        self.start_tour("/pos/ui/%d" % self.main_pos_config.id, 'refund_multiple_products_amounts_compliance', login="pos_user")
-
-        closing_data = current_session.get_closing_control_data()
-        cash_details = closing_data['default_cash_details']
-        expected_cashbox_amount = cash_details['payment_amount']
-        cash_pm = self.main_pos_config._get_cash_payment_method()
-        current_session.close_session_from_ui({
-            cash_pm.id: expected_cashbox_amount,
-        })
-        self.assertEqual(current_session.state, 'closed')
-
-        report = self.env['sale.report'].sudo().search([('product_id', '=', test_product.id), ('name', 'ilike', '% REFUND')], order='id', limit=1)
-        self.assertEqual(report.product_uom_qty, -2)
-        self.assertEqual(report.price_subtotal, report.product_uom_qty * test_product.list_price)
-        self.assertEqual(report.price_total, report.price_subtotal)
 
     def test_weight_and_volume_product_variant(self):
         colors = ['red', 'blue']

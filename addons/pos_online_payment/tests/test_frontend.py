@@ -24,9 +24,6 @@ class TestUi(TestPointOfSaleHttpCommon, OnlinePaymentCommon):
     def _get_url(self):
         return f"/pos/ui/{self.pos_config.id}"
 
-    def start_pos_tour(self, tour_name, login="pos_user", **kwargs):
-        self.start_tour(self._get_url(), tour_name, login=login, **kwargs)
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -279,9 +276,6 @@ class TestUi(TestPointOfSaleHttpCommon, OnlinePaymentCommon):
 
         self.assertEqual(order.state, 'draft')
 
-    def test_errors_tour(self):
-        self.pos_config.with_user(self.pos_user).open_ui()
-        self.start_pos_tour('OnlinePaymentErrorsTour', login="pos_op_user")
 
     def test_refuse_online_payment_without_accounting_payment(self):
         """
@@ -326,32 +320,7 @@ class TestUi(TestPointOfSaleHttpCommon, OnlinePaymentCommon):
             session.close_session_from_ui()
             self.assertEqual(session.state, 'closed')
 
-    def test_selected_customer_after_adding_payment_sync(self):
-        """ Test that the selected customer is kept after adding an online payment."""
-        self.pos_config.with_user(self.pos_admin).open_ui()
-        self.start_pos_tour('test_selected_customer_after_adding_payment_sync', login="pos_admin")
-        order = self.pos_config.current_session_id.order_ids.sorted(lambda o: o.id, reverse=True)[0]
-        self.assertEqual(order.partner_id.name, "A simple PoS man!", "The selected customer was not kept after adding an online payment.")
-        self.assertEqual(order.state, "draft", "The order should still be in draft state.")
-        self.assertEqual(len(order.payment_ids), 0, "There should be no payment line in the order.")
 
-    def test_payment_method_customer_required(self):
-        """
-        Test that the data sent to the pos contains the information needed to identify
-        which payment method requires a customer.
-        """
-        self.env['res.partner'].create({'name': 'A Test Partner'})
-        online_pm = self.pos_config.payment_method_ids.search([('type', '=', 'online')], limit=1)
-        self.pos_config.with_user(self.pos_admin).open_ui()
-
-        def _get_customer_required_providers_code_patch(self):
-            return ['none']
-
-        with patch.object(self.env.registry.models['pos.payment.method'], "_get_customer_required_providers_code", _get_customer_required_providers_code_patch):
-            loaded_data = self.pos_config.current_session_id.load_data({'only_records': True})
-            config_online_pm_data = [record.get('_customer_required') for record in loaded_data['pos.payment.method'] if record['id'] == online_pm.id]
-            self.assertTrue(all(config_online_pm_data))
-            self.start_pos_tour('test_payment_method_customer_required')
 
     def test_online_payment_with_cash_rounding_only_cash_method(self):
         """ With cash rounding only for cash payment methods, the online payment

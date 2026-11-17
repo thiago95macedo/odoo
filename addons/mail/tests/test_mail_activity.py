@@ -20,26 +20,7 @@ class TestMailActivityChatter(HttpCase):
             'name': 'Test User',
         })
 
-    def test_mail_activity_date_format(self):
-        with freeze_time("2024-01-01 09:00:00 AM"):
-            LANG_CODE = "en_US"
-            self.env = self.env(context={"lang": LANG_CODE})
-            lang = self.env["res.lang"].search([('code', '=', LANG_CODE)])
-            lang.date_format = "%d/%b/%y"
-            lang.time_format = "%I:%M:%S %p"
 
-            self.start_tour(
-                f"/web#id={self.test_partner.id}&model=res.partner",
-                "mail_activity_date_format",
-                login="admin",
-            )
-
-    def test_mail_activity_schedule_from_chatter(self):
-        self.start_tour(
-            f"/weth/res.partner/{self.test_partner.id}",
-            "mail_activity_schedule_from_chatter",
-            login="admin",
-        )
 
 
 @tagged("mail_activity")

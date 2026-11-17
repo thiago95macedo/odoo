@@ -128,7 +128,7 @@ test("enterprise: replaces the dropdown with a home-menu link showing the app ic
     expect(".o_navbar_apps_menu").toHaveCount(0);
     expect("a.o_menu_toggle").toHaveCount(1);
     expect("a.o_menu_toggle").toHaveClass("hasImage");
-    expect(".o_menu_brand_icon").toHaveAttribute("data-src", "/mysubscription/static/src/img/odoo_o.svg");
+    expect(".o_menu_brand_icon").toHaveAttribute("data-src", "/mysubscription/static/src/img/weth_logo.svg");
     expect(".o_menu_brand").toHaveCount(1);
     expect("a.o_menu_toggle .o_menu_brand").toHaveCount(1);
 });

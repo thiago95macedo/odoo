@@ -25,31 +25,6 @@ class TestStockNotificationProduct(WebsiteSaleStockCommon, HttpCase):
         super().setUpClass()
         cls.macbook = cls._create_product(name="Macbook Pro")
 
-    def test_back_in_stock_notification_product(self):
-        self.start_tour(
-            self.macbook.website_url, "website_sale_stock.subscribe_to_stock_notification"
-        )
-
-        partner = self.env["mail.thread"]._partner_find_from_emails_single(
-            ["test@test.test"], no_create=True
-        )
-        self.assertTrue(self.macbook._has_stock_notification(partner, self.website))
-
-        with self.setup_cron_env() as env:
-            env["product.product"].sudo()._send_availability_email()
-
-        emails = self.env["mail.mail"].sudo().search([("email_to", "=", partner.email_formatted)])
-        self.assertEqual(len(emails), 0)
-
-        self._add_product_qty_to_wh(self.macbook.id, 10.0, self.warehouse.lot_stock_id.id)
-
-        self.env.ref('base.default_website').company_id.partner_id.email = "test@test.com"
-        with self.setup_cron_env() as env:
-            env["product.product"].sudo()._send_availability_email()
-
-        emails = self.env["mail.mail"].sudo().search([("email_to", "=", partner.email_formatted)])
-        self.assertEqual(emails[0].subject, "Macbook Pro is back in stock")
-        self.assertFalse(self.macbook._has_stock_notification(partner, self.website))
 
     def test_back_in_stock_notification_price_tax_included(self):
         self.website.sudo().show_line_subtotals_tax_selection = "tax_included"

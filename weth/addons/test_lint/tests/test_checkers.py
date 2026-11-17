@@ -72,7 +72,7 @@ class TestPylintChecks(LintCase):
 @unittest.skipUnless(pylint and pylint_bin, "testing lints requires pylint")
 class TestGetTextLint(TestPylintChecks):
     def check(self, testtext):
-        return super().check(testtext, "_odoo_checker_gettext", "gettext-placeholders")
+        return super().check(testtext, "_weth_checker_gettext", "gettext-placeholders")
 
     def test_gettext_env(self):
         # check that _ and self.env._ are checked in the same way
@@ -412,7 +412,7 @@ class TestSqlLint(LintCase):
 class TestI18nChecks(TestPylintChecks):
     def check(self, test_content):
         return super().check(
-            test_content, "_odoo_checker_gettext", "missing-gettext,gettext-variable,gettext-placeholders,gettext-repr"
+            test_content, "_weth_checker_gettext", "missing-gettext,gettext-variable,gettext-placeholders,gettext-repr"
         )
 
     def test_gettext_variable(self):

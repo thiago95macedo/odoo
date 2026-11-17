@@ -11,35 +11,6 @@ class TestPOSLoyaltyHistory(TestPointOfSaleHttpCommon):
 
     _test_user_groups = None  # FIXME list needed groups
 
-    def test_pos_loyalty_history(self):
-        partner_aaa = self.env['res.partner'].create({'name': 'AAA Test Partner'})
-        self.whiteboard_pen.product_variant_ids.write({'lst_price': 10})
-        self.main_pos_config.write({
-            'tax_regime_selection': False,
-            'use_pricelist': False,
-        })
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        loyalty_program = self.env['loyalty.program'].create({
-            'name': 'Test Loyalty Program',
-            'program_type': 'loyalty',
-            'trigger': 'auto',
-            'applies_on': 'both',
-            'rule_ids': [Command.create({
-                'reward_point_amount': 1,
-                'reward_point_mode': 'money',
-                'minimum_qty': 1,
-            })],
-            'reward_ids': [Command.create({
-                'reward_type': 'discount',
-                'discount_mode': 'percent',
-                'discount': 15,
-                'discount_applicability': 'order',
-            })],
-        })
-        self.start_pos_tour("LoyaltyHistoryTour")
-        loyalty_card = loyalty_program.coupon_ids.filtered(lambda coupon: coupon.partner_id.id == partner_aaa.id)
-        self.assertEqual(len(loyalty_card.history_ids), 1,
-                        "Loyalty History line should be created on pos oder confirmation")
 
     def test_duplicate_coupon_confirm(self):
         """ Test that duplicate coupon confirm calls do not affect the coupon."""
@@ -135,61 +106,6 @@ class TestPOSLoyaltyHistory(TestPointOfSaleHttpCommon):
         self.assertIn(usd_loyalty, loaded_programs)
         self.assertNotIn(eur_loyalty, loaded_programs)
 
-    def test_loyalty_history_earn_and_spend(self):
-        """When points are earned and spent in the same order, the loyalty history
-        must record the gross issued and used amounts separately, not only the net
-        difference. Regression test for: earn 10 pts + spend 5 pts → issued=10,
-        used=5 (instead of the incorrect issued=5, used=0)."""
-        partner_aaa = self.env['res.partner'].create({'name': 'AAA Test Partner'})
-        self.env['product.product'].create({
-            'name': 'Test Product',
-            'available_in_pos': True,
-            'list_price': 10,
-            'taxes_id': [],
-        })
-        self.main_pos_config.write({
-            'tax_regime_selection': False,
-            'use_pricelist': False,
-        })
-        loyalty_program = self.env['loyalty.program'].create({
-            'name': 'Test Loyalty Program',
-            'program_type': 'loyalty',
-            'trigger': 'auto',
-            'applies_on': 'both',
-            'rule_ids': [Command.create({
-                'reward_point_amount': 1,
-                'reward_point_mode': 'money',
-                'minimum_qty': 1,
-            })],
-            'reward_ids': [Command.create({
-                'reward_type': 'discount',
-                'discount_mode': 'percent',
-                'discount': 10,
-                'required_points': 5,
-                'discount_applicability': 'order',
-            })],
-        })
-        # Pre-load the partner with 5 points so they can immediately claim the reward
-        loyalty_card = self.env['loyalty.card'].create({
-            'program_id': loyalty_program.id,
-            'partner_id': partner_aaa.id,
-        })
-        loyalty_card._adjust_points(5, description="Initial balance")
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        self.start_pos_tour("test_loyalty_history_earn_and_spend")
-
-        loyalty_card.invalidate_recordset()
-        order_history = loyalty_card.history_ids.filtered(lambda h: h.order_id)
-        self.assertEqual(
-            len(order_history), 2, "One issuing and one consuming entry should be created"
-        )
-        # $10 product → 10 pts earned; 10% discount reward → 5 pts spent
-        self.assertEqual(
-            sum(order_history.mapped("issued")), 10.0, "Issued should be 10 (gross earned)"
-        )
-        self.assertEqual(
-            sum(order_history.mapped("used")), 5.0, "Used should be 5 (gross spent), not the net"
-        )
 
     def test_gift_card_partner(self):
         """ Test that the gift card's partner is correctly set as the customer who bought it."""

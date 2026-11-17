@@ -27,10 +27,7 @@
             'project_todo/static/src/core/web/**/*',
             'project_todo/static/src/webclient/**/*',
         ],
-        'web.assets_tests': [
-            'project_todo/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'project_todo/static/tests/**/*',
         ],
     },

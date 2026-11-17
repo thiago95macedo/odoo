@@ -23,10 +23,7 @@
         "website_slides",
     ],
     "assets": {
-        "web.assets_tests": [
-            "test_discuss_full/static/tests/tours/**/*",
-        ],
-        'im_livechat.embed_assets_unit_tests_setup': [
+                'im_livechat.embed_assets_unit_tests_setup': [
             "test_discuss_full/static/tests/test_discuss_full_test_helpers.js",
         ],
         "im_livechat.embed_assets_unit_tests": [

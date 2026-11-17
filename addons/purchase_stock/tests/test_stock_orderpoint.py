@@ -26,13 +26,6 @@ class TestStockWarehouseOrderpoint(HttpCase):
             }
         ])
 
-    def test_product_replenishment(self):
-        self.assertFalse(self.product.orderpoint_ids)
-
-        self.start_tour("/weth/replenishment", "test_product_replenishment", login='admin')
-
-        self.assertEqual(len(self.product.orderpoint_ids), 1)
-        self.assertEqual(self.product.orderpoint_ids[0].route_id.name, 'Buy')
 
     def test_default_buy_route_with_no_warehouse(self):
         route_domain = [

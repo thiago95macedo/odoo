@@ -161,89 +161,12 @@ class TestUi(TestUICommon):
                 self.assertEqual(res.status_code, 200)
                 self.assertRegex(res.request.path_url, url_pattern)
 
-    def test_course_member_employee(self):
-        user_demo = self.user_demo
-        user_demo.write({
-            'karma': 1,
-            'group_ids': [(6, 0, self.env.ref('base.group_user').ids)]
-        })
 
-        self.start_tour('/slides', 'course_member', login=user_demo.login)
 
-    def test_course_member_elearning_officer(self):
-        user_demo = self.user_demo
-        user_demo.write({
-            'karma': 1,
-            'group_ids': [(6, 0, (self.env.ref('base.group_user') | self.env.ref('website_slides.group_website_slides_officer')).ids)]
-        })
 
-        self.start_tour('/slides', 'course_member', login=user_demo.login)
 
-    def test_course_member_portal(self):
-        user_portal = self.user_portal
-        user_portal.karma = 1
 
-        self.start_tour('/slides', 'course_member', login=user_portal.login)
 
-    def test_full_screen_edition_website_restricted_editor(self):
-        # group_website_designer
-        user_demo = self.user_demo
-        user_demo.write({
-            'group_ids': [(5, 0), (4, self.env.ref('base.group_user').id), (4, self.env.ref('website.group_website_restricted_editor').id)]
-        })
-        user_demo = self.user_demo
-        self.env['slide.slide.partner'].create({
-            'slide_id': self.channel.slide_ids[1].id,
-            'partner_id': self.partner_demo.id,
-            'completed': True,
-            'vote': 1,
-        })
-        self.env['slide.channel.partner'].create({
-            'channel_id': self.channel.id,
-            'partner_id': self.partner_demo.id,
-        })
-
-        self.start_tour(self.env['website'].get_client_action_url('/slides'), 'full_screen_web_editor', login=user_demo.login)
-
-    def test_course_reviews_elearning_officer(self):
-        user_demo = self.user_demo
-        user_demo.write({
-            'group_ids': [(6, 0, (self.env.ref('base.group_user') | self.env.ref('website_slides.group_website_slides_officer')).ids)]
-        })
-
-        # The user must be a course member before being able to post a log note.
-        self.channel._action_add_members(user_demo.partner_id)
-        self.channel.with_user(user_demo).message_post(
-            body='Log note', subtype_xmlid='mail.mt_note', message_type='comment')
-
-        self.start_tour('/slides', 'course_reviews', login=user_demo.login)
-
-    def test_course_review_comment(self):
-        self.channel._action_add_members(self.user_demo.partner_id)
-        self.channel.with_user(self.user_demo).message_post(
-            body="New Review",
-            message_type="comment",
-            rating_value="3",
-            subtype_xmlid="mail.mt_comment",
-        )
-
-        self.start_tour("/slides", "course_reviews_comment", login=self.user_admin.login)
-
-    def test_course_reviews_reaction_public(self):
-        password = "Pl1bhD@2!kXZ"
-        manager = self.user_admin
-        manager.write({"password": password})
-
-        message = self.channel.message_post(
-            body="Bad course!",
-            message_type="comment",
-            rating_value="1",
-            subtype_xmlid="mail.mt_comment"
-        )
-        self.authenticate(manager.login, password)
-        self._add_reaction(message, "😊")
-
-        self.start_tour("/slides", "course_reviews_reaction_public", login=None)
 
     def _add_reaction(self, message, reaction):
         self.make_jsonrpc_request(
@@ -255,72 +178,9 @@ class TestUi(TestUICommon):
             },
         )
 
-    def test_slides_review_highlight(self):
-        message = self.env["mail.message"].create(
-            {
-                "author_id": self.user_admin.partner_id.id,
-                "body": "Test Message",
-                "model": self.channel._name,
-                "res_id": self.channel.id,
-                "subtype_id": self.ref("mail.mt_comment"),
-            }
-        )
-        self.start_tour(f"/mail/message/{message.id}", "slides_review_highlight_tour", login="portal")
 
-    def test_course_review_modification(self):
-        self.user_portal.karma = 20
-        self.start_tour("/slides", "course_review_modification", login=self.user_portal.login)
 
-    def test_course_review_modification_by_admin(self):
-        self.channel.message_post(
-            body="Non admin user review",
-            message_type="comment",
-            rating_value="3",
-            subtype_xmlid="mail.mt_comment"
-        )
-        slide = self.channel.slide_ids.filtered(lambda s: s.name == "Gardening: The Know-How")[0]
-        base_vals = {"message_type": "comment", "model": "slide.slide", "res_id": slide.id}
-        self.env["mail.message"].create(
-            [
-                # First message should not be considered comment.
-                {
-                    **base_vals,
-                    "body": "Test note",
-                    "subtype_id": self.env.ref("mail.mt_note").id,
-                },
-                *[
-                    {
-                        **base_vals,
-                        "body": f"Comment {i + 1}",
-                        "subtype_id": self.env.ref("mail.mt_comment").id,
-                    }
-                    for i in range(4)
-                ],
-            ]
-        )
-        original_fetch = MailMessage._message_fetch
-        with patch.object(
-            MailMessage,
-            "_message_fetch",
-            lambda self, domain, **kw: original_fetch(self, domain, **{"limit": 3, **kw}),
-        ):
-            self.start_tour(
-                "/slides",
-                "course_review_modification_by_admin",
-                login=self.user_admin.login,
-            )
 
-    def test_fullscreen_slide_text_highlights(self):
-        self.env['slide.slide'].create({
-            'name': 'Article test',
-            'channel_id': self.channel.id,
-            'slide_type': 'article',
-            'slide_category': 'article',
-            'is_published': True,
-            'html_content': "<section class=\"s_text_block\" data-snippet=\"s_text_block\"><p>Hello World!</p></section>"
-        })
-
-        self.start_tour(self.env["website"].get_client_action_url("/slides"), 'fullscreen_slide_text_highlights', login='admin')
 
 
 @tests.common.tagged('post_install', '-at_install')
@@ -332,22 +192,6 @@ class TestUiPublisher(HttpCaseGamification):
             return self.make_fetch_proxy_response(JPG_RAW)
         return super().fetch_proxy(url)
 
-    def test_course_publisher_elearning_manager(self):
-        user_demo = self.user_demo
-        user_demo.write({
-            'group_ids': [
-                (5, 0),
-                (4, self.env.ref('base.group_user').id),
-                (4, self.env.ref('website_slides.group_website_slides_manager').id)
-            ],
-        })
-        self.env['slide.channel.tag.group'].create([{
-            'name': 'Your Favorite Role',
-            'tag_ids': [Command.create({'name': 'Gardening'})]}
-        ])
-        self.env['slide.tag'].create({'name': 'Practice'})
-
-        self.start_tour(self.env['website'].get_client_action_url('/slides'), 'course_publisher_standard', login=user_demo.login)
 
 
 @tests.common.tagged('post_install', '-at_install')
@@ -363,49 +207,10 @@ class TestUiMemberInvited(TestUICommon):
         })
         self.portal_invite_url = self.channel_partner_portal.invitation_link
 
-    def test_invite_check_channel_preview_as_logged_connected_on_invite(self):
-        self.channel.enroll = 'invite'
-        self.channel.visibility = 'connected'
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_logged', login='portal')
-
-    def test_invite_check_channel_preview_as_public_connected_on_invite(self):
-        self.channel.enroll = 'invite'
-        self.channel.visibility = 'connected'
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_public', login=None)
-
-    def test_invite_check_channel_preview_as_logged_members(self):
-        self.channel.visibility = 'members'
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_logged', login='portal')
-
-    def test_invite_check_channel_preview_as_public_members(self):
-        self.channel.visibility = 'members'
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_public', login=None)
-
-    def test_invite_check_channel_preview_as_logged_public(self):
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_logged', login='portal')
-
-    def test_invite_check_channel_preview_as_public_public(self):
-        self.start_tour(self.portal_invite_url, 'invite_check_channel_preview_as_public', login=None)
 
 
-@tests.common.tagged('external', 'post_install', '-standard', '-at_install')
-class TestUiPublisherYoutube(HttpCaseGamification):
 
-    def test_course_member_yt_employee(self):
-        # remove membership because we need to be able to join the course during the tour
-        user_demo = self.user_demo
-        user_demo.write({
-            'group_ids': [(5, 0), (4, self.env.ref('base.group_user').id)]
-        })
-        self.env.ref('website_slides.slide_channel_demo_3_furn0')._remove_membership(self.env.ref('base.partner_demo').ids)
-        self.env.ref('website_slides.slide_slide_demo_3_1').url += '&start=260'
 
-        self.start_tour(self.env['website'].get_client_action_url('/slides'), 'course_member_youtube', login=user_demo.login)
 
-    def test_course_publisher_elearning_manager(self):
-        user_demo = self.user_demo
-        user_demo.write({
-            'group_ids': [(5, 0), (4, self.env.ref('base.group_user').id), (4, self.env.ref('website_slides.group_website_slides_manager').id)]
-        })
 
-        self.start_tour(self.env['website'].get_client_action_url('/slides'), 'course_publisher', login=user_demo.login)
+

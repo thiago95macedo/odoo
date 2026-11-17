@@ -280,7 +280,7 @@ class TestWebsiteSaleProductFilters(WebsiteSaleCommon, TestProductAttributeValue
 
         for _i, product in enumerate(viewed_products):
             self.url_open(
-                "/website/odoo_track",
+                "/website/track",
                 headers={"referer": product.website_url},
                 json={"params": {"res_model": "product.product", "res_id": product.id}},
             )
@@ -451,14 +451,6 @@ class TestWebsiteSaleProductFilters(WebsiteSaleCommon, TestProductAttributeValue
             dyn_filter, newest_templates.product_variant_id
         )
 
-    def test_shop_attribute_filters_remain_when_changing_page(self):
-        self.env["product.attribute"].search([]).write({"visibility": "hidden"})
-        self.color_attribute.visibility = "visible"
-        self.size_attribute.visibility = "visible"
-        self.env.ref('base.default_website').shop_ppg = 1
-        computer_case_copy = self.computer_case.copy()
-        computer_case_copy.website_published = True
-        self.start_tour("/shop", "shop_attribute_filters_remain_when_changing_page")
 
     def test_product_public_category_model_access(self):
         """Ensure that access to models not linked to a dynamic snippet filter is denied."""

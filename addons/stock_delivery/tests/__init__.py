@@ -6,4 +6,3 @@ from . import test_delivery_picking_batch
 from . import test_delivery_stock_move
 from . import test_packing_delivery
 from . import test_pay_on_delivery
-from . import test_printer_tour

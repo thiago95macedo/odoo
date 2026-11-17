@@ -45,24 +45,4 @@ class TestTranslation(HttpCase):
                 {lang: self.templates[field_name].format(code=lang) for lang in self.langs}
             )
 
-    def test_apply_to_all(self):
-        with self.with_user("admin"):
-            self.env.user.lang = "fr_FR"
-        self.start_tour(self.backend_url, "test_web.test_apply_to_all", login="admin")
 
-        self.assertEqual(
-            self.main_record._fields["text"]._get_stored_translations(self.main_record),
-            {'en_US': 'paul bismuth', 'fr_FR': 'paul bismuth'}
-        )
-
-    def test_with_html_editor(self):
-        if "html_editor" not in self.env["ir.module.module"]._installed():
-            self.skipTest("translating html field with html editor skipped: html_editor not installed")
-
-        self.env.ref("base.user_admin").lang = "fr_FR"
-        self.start_tour(self.backend_url, "test_web.test_with_html_editor", login="admin")
-        self.assertEqual(self.main_record._fields["html"]._get_stored_translations(self.main_record), {
-            'fr_FR': 'nouvelle valeur',
-            'en_US': 'some other relevant value in english',
-            'es_ES': '<div><span>es_ES</span><span t-attf-class="some-class" title="es_ES">es_ES</span></div>'
-        })

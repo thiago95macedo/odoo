@@ -17,10 +17,7 @@ by choosing product variants quantity through a Grid Entry.
         'web.assets_backend': [
             'purchase_product_matrix/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'purchase_product_matrix/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

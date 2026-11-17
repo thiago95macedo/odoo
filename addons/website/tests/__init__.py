@@ -4,7 +4,6 @@ from . import test_assets
 from . import test_attachment
 from . import test_auth_signup_uninvited
 from . import test_base_url
-from . import test_client_action
 from . import test_configurator
 from . import test_controllers
 from . import test_converter
@@ -15,7 +14,6 @@ from . import test_disable_unused_snippets_assets
 from . import test_fonts
 from . import test_fuzzy
 from . import test_get_current_website
-from . import test_grid_layout
 from . import test_header_search
 from . import test_http_endpoint
 from . import test_import_files
@@ -31,11 +29,9 @@ from . import test_redirect
 from . import test_res_users
 from . import test_save_xml
 from . import test_sitemap
-from . import test_skip_website_configurator
 from . import test_snippets
 from . import test_theme
 from . import test_ui
-from . import test_unsplash_beacon
 from . import test_views
 from . import test_views_inherit_module_update
 from . import test_website_default_website

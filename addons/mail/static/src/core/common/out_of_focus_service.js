@@ -55,7 +55,7 @@ export class OutOfFocusService {
         }
         const author = message.author;
         let notificationTitle;
-        let icon = "/mail/static/src/img/odoobot_transparent.webp";
+        let icon = "/mail/static/src/img/wethbot_transparent.webp";
         if (!author) {
             notificationTitle = _t("New message");
         } else {

@@ -50,7 +50,7 @@ __all__ = [
     "get_modules",
     "get_resource_from_path",
     "initialize_sys_path",
-    "load_openerp_module",
+    "load_weth_module",
 ]
 
 MODULE_NAME_RE = re.compile(r'^\w{1,256}$')
@@ -524,8 +524,8 @@ def get_manifest(module: str, mod_path: str | None = None) -> Mapping[str, typin
     return mod if mod is not None else {}
 
 
-def load_openerp_module(module_name: str) -> None:
-    """ Load an OpenERP module, if not already loaded.
+def load_weth_module(module_name: str) -> None:
+    """ Load a WETH module, if not already loaded.
 
     This loads the module and register all of its models, thanks to either
     the MetaModel metaclass, or the explicit instantiation of the model.

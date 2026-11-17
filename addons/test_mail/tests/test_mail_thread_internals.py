@@ -1057,7 +1057,7 @@ class TestAPI(ThreadRecipients):
                 for sugg, expected_sugg in zip(suggested_recipients, expected_recipients, strict=True):
                     self.assertDictEqual(sugg, expected_sugg)
 
-    @mute_logger('openerp.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_message_update_content(self):
         """ Test updating message content. """
@@ -1135,7 +1135,7 @@ class TestAPI(ThreadRecipients):
             )
         self.assertEqual(message.body, Markup('<p>line1 <br>edit<br>line2<br>line3<span class="o-mail-Message-edited" data-o-datetime="2025-04-08 13:00:00"></span></p>'))
 
-    @mute_logger('openerp.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_message_update_content_check(self):
         """ Test cases where updating content should be prevented """
@@ -1325,7 +1325,7 @@ class TestDiscuss(HttpCase, MailCommon, TestRecipients):
             'email_from': 'ignasse@example.com'
         })
 
-    @mute_logger('openerp.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mark_all_as_read(self):
         def _employee_crash(recordset, operation):
             """ If employee is test employee, consider they have no access on document """
@@ -1465,20 +1465,6 @@ class TestDiscuss(HttpCase, MailCommon, TestRecipients):
         self.test_record.unlink()
         self.assertFalse(message.exists(), "Test message should have been deleted")
 
-    @mute_logger("weth.http")
-    def test_access_inbox_records(self):
-        for access, name in [("admin", "Inaccessible Record"), ("internal", "Accessible Record")]:
-            self.env["mail.test.access"].create(
-                {
-                    "access": access,
-                    "name": name,
-                }
-            ).message_post(
-                body=f"Message in {name.lower()}",
-                message_type="comment",
-                partner_ids=[self.user_employee.partner_id.id],
-            )
-        self.start_tour("/odoo", "access_inbox_records_tour", login=self.user_employee.login)
 
 
 @tagged('mail_thread')

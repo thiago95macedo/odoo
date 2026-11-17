@@ -24,10 +24,7 @@ This module Auto complete the address data.
         'web._assets_core': [
             'google_address_autocomplete/static/src/address_autocomplete/google_address_autocomplete.scss',
         ],
-        'web.assets_tests': [
-            'google_address_autocomplete/static/tests/tours/*.js'
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'google_address_autocomplete/static/tests/**/*.test.js',
         ]
     },

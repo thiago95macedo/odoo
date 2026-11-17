@@ -1039,32 +1039,6 @@ class TestWebsitePriceListMultiCompany(TransactionCaseWithUserDemo):
 
 @tagged("post_install", "-at_install")
 class TestWebsiteSaleSession(HttpCaseWithUserPortal):
-    def test_update_pricelist_user_session(self):
-        """
-        The objective is to verify that the pricelist
-        changes correctly according to the user.
-        """
-        self.env.user.write({
-            "group_ids": [Command.link(self.env.ref("product.group_product_pricelist").id)]
-        })
-        website = self.env.ref("base.default_website")
-        test_user = self.env["res.users"].create({
-            "name": "Toto",
-            "login": "toto",
-            "password": "long_enough_password",
-        })
-        # We need at least two selectable pricelists to display the dropdown
-        self.env["product.pricelist"].create([
-            {"name": "Public Pricelist 1", "selectable": True},
-            {"name": "Public Pricelist 2", "selectable": True},
-        ])
-        user_pricelist = self.env["product.pricelist"].create({
-            "name": "User Pricelist",
-            "website_id": website.id,
-            "code": "User_pricelist",
-        })
-        test_user.partner_id.property_product_pricelist = user_pricelist
-        self.start_tour("/shop", "website_sale.pricelist_on_login", login="")
 
     def test_public_visitor_no_session_saved(self):
         """

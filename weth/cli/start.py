@@ -12,7 +12,7 @@ from .server import main
 
 
 class Start(Command):
-    """ Quickly start the odoo server with default options """
+    """ Quickly start the WETH server with default options """
 
     def get_module_list(self, path):
         mods = itertools.chain.from_iterable(

@@ -23,10 +23,7 @@
             'pos_online_payment/static/src/app/**/*',
             'pos_online_payment/static/src/overrides/pos_overrides/**/*',
         ],
-        'web.assets_tests': [
-            'pos_online_payment/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_online_payment/static/tests/unit/**/*',
         ],
     },

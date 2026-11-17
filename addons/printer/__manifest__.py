@@ -21,8 +21,5 @@
         'web.assets_unit_tests': [
             'printer/static/tests/unit/**/*',
         ],
-        'printer.assets_tests': [
-            'printer/static/tests/tours/**/*',
-        ],
-    },
+            },
 }

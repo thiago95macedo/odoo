@@ -48,12 +48,8 @@
         ],
         'web.assets_unit_tests': [
             'website_livechat/static/tests/**/*',
-            ('remove', 'website_livechat/static/tests/tours/**/*'),
         ],
-        'web.assets_tests': [
-            'website_livechat/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

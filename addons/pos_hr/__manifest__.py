@@ -28,10 +28,7 @@ The actual till still requires one user but an unlimited number of employees can
         'point_of_sale._assets_pos': [
             'pos_hr/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'pos_hr/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_hr/static/tests/unit/**/*',
         ],
     },

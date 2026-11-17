@@ -32,10 +32,6 @@
         ],
         'web.assets_unit_tests': [
             'crm_livechat/static/tests/**/*',
-            ("remove", "crm_livechat/static/tests/tours/**/*"),
-        ],
-        "im_livechat.assets_livechat_support_tours": [
-            "crm_livechat/static/tests/tours/support/*",
         ],
         'im_livechat.embed_assets_unit_tests_setup': [
             ('remove', 'crm_livechat/static/src/core/web/**/*'),

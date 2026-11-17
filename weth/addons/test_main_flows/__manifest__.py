@@ -12,7 +12,6 @@ It will install some main apps and will try to execute the most important action
     'assets': {
         'web.assets_tests': [
             # inside .
-            'test_main_flows/static/tests/tours/*.js',
         ],
     },
     'author': 'WETH Tecnologia',

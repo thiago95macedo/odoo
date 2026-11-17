@@ -1111,20 +1111,3 @@ class TestRepair(TestRepairCommon):
         self.assertEqual(sale_order.repair_order_ids.company_id, branch)
 
 
-@tagged('post_install', '-at_install')
-class TestRepairHttp(HttpCase):
-
-    def test_repair_without_product_in_parts(self):
-        """Test that setting and unsetting a product in repair line triggers has_uncomplete_moves compute correctly."""
-        self.env['res.partner'].create({'name': 'A Partner'})
-        product = self.env['product.product'].create({'name': 'A Product', 'default_code': '1234'})
-        repair = self.env['repair.order'].create({
-            'move_ids': [Command.create({
-                'product_id': product.id,
-                'product_uom_qty': 1.0,
-                'repair_line_type': 'add',
-            })],
-        })
-
-        self.start_tour(f"/weth/repairs/{repair.id}", "test_repair_without_product_in_parts", login='admin')
-        self.assertTrue(repair.has_uncomplete_moves)

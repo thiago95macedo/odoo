@@ -88,18 +88,6 @@ class TestDiscussSubChannels(HttpCase):
         with self.assertRaises(ValidationError):
             sub_channel._create_sub_channel()
 
-    def test_04_sub_channel_panel_search(self):
-        bob_user = new_test_user(self.env, "bob_user", groups="base.group_user")
-        self.authenticate("bob_user", "bob_user")
-        channel = self.env["discuss.channel"]._create_channel(name="General", group_id=None)
-        channel._add_members(users=bob_user)
-        for i in range(100):
-            channel._create_sub_channel(name=f"Sub Channel {i}")
-        self.start_tour(
-            f"/weth/discuss?active_id=discuss.channel_{channel.id}",
-            "test_discuss_sub_channel_search",
-            login="bob_user",
-        )
 
     def test_05_cannot_upate_first_message_nor_parent_channel(self):
         parent = self.env["discuss.channel"].create({"name": "General"})

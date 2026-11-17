@@ -72,7 +72,7 @@ class TestMicrosoftEvent(TestCommon):
         })
         uid_events = uid_recurrence.calendar_event_ids
 
-        event_model.sudo()._sync_microsoft2odoo(MicrosoftEvent([{
+        event_model.sudo()._sync_microsoft2weth(MicrosoftEvent([{
             'id': self.recurrence.microsoft_id,
             '@removed': {'reason': 'deleted'},
         }, {
@@ -446,7 +446,7 @@ class TestMicrosoftEvent(TestCommon):
             'end': {'dateTime': '2021-09-01T10:30:00.0000000', 'timeZone': 'UTC'},
             'location': {'displayName': ''},
         }]
-        self.env['calendar.event']._sync_microsoft2odoo(MicrosoftEvent(single))
+        self.env['calendar.event']._sync_microsoft2weth(MicrosoftEvent(single))
         odoo_single = self.env['calendar.event'].search([
             ('microsoft_id', '=', master_id),
             ('ms_universal_event_id', '=', master_uid),
@@ -467,7 +467,7 @@ class TestMicrosoftEvent(TestCommon):
             microsoft_delete_calls.append((args, kwargs))
 
         with patch.object(MicrosoftCalendarSync, '_microsoft_delete', track_microsoft_delete):
-            self.env['calendar.event']._sync_microsoft2odoo(MicrosoftEvent(recurrent))
+            self.env['calendar.event']._sync_microsoft2weth(MicrosoftEvent(recurrent))
 
         # assert
         self.assertFalse(microsoft_delete_calls, "It should not delete the event from Outlook")

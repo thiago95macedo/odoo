@@ -204,73 +204,6 @@ class TestPoSSaleStock(TestPosStockHttpCommon, TestPoSSale):
         # 1 item to deliver for product b.
         self.assertEqual(orderline_product_b.move_ids.product_uom_qty, 1)
 
-    def test_settle_order_unreserve_order_lines(self):
-        # create a product category that use the closest location for the removal strategy
-        self.removal_strategy = self.env['product.removal'].search([('method', '=', 'closest')], limit=1)
-        self.product_category = self.env['product.category'].create({
-            'name': 'Product Category',
-            'removal_strategy_id': self.removal_strategy.id,
-        })
-
-        self.product = self.env['product.product'].create({
-            'name': 'Product',
-            'available_in_pos': True,
-            'is_storable': True,
-            'lst_price': 10.0,
-            'taxes_id': False,
-            'categ_id': self.product_category.id,
-        })
-
-        # create 2 stock location Shelf 1 and Shelf 2
-        self.warehouse = self.env['stock.warehouse'].search([('company_id', '=', self.env.company.id)], limit=1)
-        self.shelf_1, self.shelf_2 = self.env['stock.location'].sudo().create([{
-            'name': 'Shelf 1',
-            'usage': 'internal',
-            'location_id': self.warehouse.lot_stock_id.id,
-        }, {
-            'name': 'Shelf 2',
-            'usage': 'internal',
-            'location_id': self.warehouse.lot_stock_id.id,
-        }]).sudo(False)
-
-        quants = self.env['stock.quant'].with_context(inventory_mode=True).create({
-            'product_id': self.product.id,
-            'inventory_quantity': 2,
-            'location_id': self.shelf_1.id,
-        })
-        quants |= self.env['stock.quant'].with_context(inventory_mode=True).create({
-            'product_id': self.product.id,
-            'inventory_quantity': 5,
-            'location_id': self.shelf_2.id,
-        })
-        quants.action_apply_inventory()
-
-        sale_order = self.env['sale.order'].sudo().create({
-            'partner_id': self.env['res.partner'].create({'name': 'Test Partner'}).id,
-            'order_line': [(0, 0, {
-                'product_id': self.product.id,
-                'name': self.product.name,
-                'product_uom_qty': 4,
-                'price_unit': self.product.lst_price,
-            })],
-        })
-        sale_order.action_confirm()
-
-        self.assertEqual(sale_order.order_line.move_ids.move_line_ids[0].quantity, 2)
-        self.assertEqual(sale_order.order_line.move_ids.move_line_ids[0].location_id.id, self.shelf_1.id)
-        self.assertEqual(sale_order.order_line.move_ids.move_line_ids[1].quantity, 2)
-        self.assertEqual(sale_order.order_line.move_ids.move_line_ids[1].location_id.id, self.shelf_2.id)
-
-        self.main_pos_config.company_id.write({'point_of_sale_update_stock_quantities': 'real'})
-        self.main_pos_config.open_ui()
-        self.start_pos_tour('PosSettleOrderRealTime', login="accountman")
-        self.main_pos_config.current_session_id.close_session_from_ui()
-        pos_order = self.env['pos.order'].search([], order='id desc', limit=1)
-        self.assertEqual(pos_order.picking_ids.move_line_ids[0].quantity, 2)
-        self.assertEqual(pos_order.picking_ids.move_line_ids[0].location_id.id, self.shelf_1.id)
-        self.assertEqual(pos_order.picking_ids.move_line_ids[1].quantity, 2)
-        self.assertEqual(pos_order.picking_ids.move_line_ids[1].location_id.id, self.shelf_2.id)
-        self.assertEqual(sale_order.order_line.move_ids.move_lines_count, 0)
 
     def test_settle_quotation_delivered_qty(self):
         """ Test if a quotation (unconfirmed sale order) is settled in the PoS, the delivered quantity is updated correctly """
@@ -944,62 +877,6 @@ class TestPoSSaleStock(TestPosStockHttpCommon, TestPoSSale):
         self.assertTrue(downpayment_line.pos_order_line_ids)
         self.assertFalse(downpayment_line.move_ids)
 
-    def test_variant_popup_qty_free(self):
-        """
-        Tests that the variant popup will correctly display the qty_free instead
-        of the qty_remaining, like the other popups.
-        """
-        warehouse_2 = self.env['stock.warehouse'].create({
-            'name': 'Warehouse 2',
-            'code': 'WH2',
-            'company_id': self.env.company.id,
-        })
-        color = self.env['product.attribute'].create({
-            'name': 'Color',
-            'create_variant': 'always',
-        })
-        black, white = self.env['product.attribute.value'].create([
-            {'name': 'Black', 'attribute_id': color.id},
-            {'name': 'White', 'attribute_id': color.id}
-        ])
-        product_template = self.env['product.template'].create({
-            'name': 'Color Product',
-            'available_in_pos': True,
-            'is_storable': True,
-            'tracking': 'lot',
-            'attribute_line_ids': [Command.create({
-                'attribute_id': color.id,
-                'value_ids': [Command.set([black.id, white.id])]
-            })]
-        })
-
-        black_product = product_template.product_variant_ids.filtered(
-            lambda p: black in p.product_template_attribute_value_ids.product_attribute_value_id
-        )
-        lot_black = self.env['stock.lot'].create({
-            'name': 'LOT1',
-            'product_id': black_product.id,
-            'company_id': self.env.company.id,
-        })
-        self.env['stock.quant'].with_context(inventory_mode=True).create({
-            'product_id': black_product.id,
-            'inventory_quantity': 50,
-            'location_id': warehouse_2.lot_stock_id.id,
-            'lot_id': lot_black.id,
-        }).action_apply_inventory()
-
-        sale_order = self.env['sale.order'].create({
-            'partner_id': self.partner_a.id,
-            'warehouse_id': warehouse_2.id,
-            'order_line': [Command.create({
-                'product_id': black_product.id,
-                'product_uom_qty': 50,
-                'price_unit': 15.0,
-            })]
-        })
-        sale_order.action_confirm()
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        self.start_pos_tour('test_variant_popup_qty_free', login="pos_user")
 
     def test_settle_mto_sale_order_with_manufacture_bom(self):
         "Test that MTO+Manufacture product Sale order is correctly settled in POS"

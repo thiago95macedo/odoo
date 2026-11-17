@@ -86,10 +86,7 @@ This addon provides an extensible, maintainable editor.
         "web.assets_web_dark": [
             'html_editor/static/src/**/*.dark.scss',
         ],
-        'web.assets_tests': [
-            'html_editor/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'html_editor/static/tests/**/*',
         ],
         'web.assets_unit_tests_setup': [

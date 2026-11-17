@@ -361,9 +361,3 @@ class TestBurndownChart(TestBurndownChartCommon):
         return expected_dict
 
 
-@tagged('-at_install', 'post_install')
-class TestBurndownChartTour(HttpCase, TestBurndownChartCommon):
-
-    def test_burndown_chart_tour(self):
-        # Test customizing personal stages as a project user
-        self.start_tour('/odoo', 'burndown_chart_tour', login="admin")

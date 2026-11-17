@@ -92,10 +92,7 @@
             'crm/static/src/views/forecast_graph/**',
             'crm/static/src/views/forecast_pivot/**',
         ],
-        'web.assets_tests': [
-            'crm/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'crm/static/tests/mock_server/**/*',
             'crm/static/tests/crm_test_helpers.js',
             'crm/static/tests/**/*.test.js',

@@ -53,7 +53,7 @@ class Console(code.InteractiveConsole):
 
 
 class Shell(Command):
-    """Start odoo in an interactive shell"""
+    """Start WETH in an interactive shell"""
     supported_shells = ['ipython', 'ptpython', 'bpython', 'python']
 
     def init(self, args):

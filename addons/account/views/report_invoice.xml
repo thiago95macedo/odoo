@@ -448,8 +448,8 @@
                                         <t t-set="qr_code_url" t-value="o._generate_qr_code(silent_errors=True)"/>
                                         <p t-if="qr_code_url" class="position-relative mb-0">
                                             <img t-att-src="qr_code_url"/>
-                                            <img src="/account/static/src/img/Odoo_logo_O.svg"
-                                                 id="qrcode_odoo_logo"
+                                            <img src="/account/static/src/img/weth_logo.svg"
+                                                 id="qrcode_weth_logo"
                                                  class="top-50 start-50 position-absolute bg-white border border-3 rounded-circle"
                                             />
                                         </p>
@@ -465,8 +465,8 @@
                                         <a t-att-href="o._get_portal_payment_link()" target="_blank" class="top-0 start-0 position-absolute w-100 h-100 z-1" />
                                         <p class="position-relative mb-0">
                                             <img t-att-src="portal_qr_code"/>
-                                            <img src="/account/static/src/img/Odoo_logo_O.svg"
-                                                 id="qrcode_odoo_logo"
+                                            <img src="/account/static/src/img/weth_logo.svg"
+                                                 id="qrcode_weth_logo"
                                                  class="top-50 start-50 position-absolute bg-white border border-3 rounded-circle"
                                             />
                                         </p>

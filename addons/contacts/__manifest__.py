@@ -24,8 +24,5 @@ You can track your vendors, customers and other contacts.
         'web.assets_backend': [
             'contacts/static/src/views/contacts_hierarchy/contacts_hierarchy_card.scss',
         ],
-        'web.assets_tests': [
-            'contacts/static/tests/tours/**/*',
-        ],
-    }
+            }
 }

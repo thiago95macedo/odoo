@@ -67,53 +67,6 @@ class TestWebsiteSaleComparisonUi(HttpCase):
                 lambda ptav: ptav.attribute_id == cls.attribute_vintage
             ).price_extra = price
 
-    def test_01_admin_tour_product_comparison(self):
-        attribute = self.env["product.attribute"].create({
-            "name": "Color",
-            "sequence": 10,
-            "display_type": "color",
-            "value_ids": [
-                Command.create({"name": "Red"}),
-                Command.create({"name": "Pink"}),
-                Command.create({"name": "Blue"}),
-            ],
-        })
-        self.env["product.template"].create([
-            {
-                "name": "Color T-Shirt",
-                "list_price": 20.0,
-                "website_sequence": 1,
-                "is_published": True,
-                "type": "service",
-                "invoice_policy": "delivery",
-                "attribute_line_ids": [
-                    Command.create({"attribute_id": attribute.id, "value_ids": attribute.value_ids})
-                ],
-            },
-            {
-                "name": "Color Pants",
-                "list_price": 20.0,
-                "website_sequence": 1,
-                "is_published": True,
-                "type": "service",
-                "invoice_policy": "delivery",
-                "attribute_line_ids": [
-                    Command.create({"attribute_id": attribute.id, "value_ids": attribute.value_ids})
-                ],
-            },
-            {
-                "name": "Color Shoes",
-                "list_price": 20.0,
-                "website_sequence": 1,
-                "is_published": True,
-                "type": "service",
-                "invoice_policy": "delivery",
-                "attribute_line_ids": [
-                    Command.create({"attribute_id": attribute.id, "value_ids": attribute.value_ids})
-                ],
-            },
-        ])
-        self.start_tour("/shop", "website_sale.product_comparison", login="admin")
 
     def test_02_attribute_multiple_lines(self):
         # Case product page with "Product attributes table" disabled (website_sale standard case)

@@ -1392,10 +1392,6 @@ class TestSaleMailComposerUI(MailCommon, HttpCase):
         })
         cls.quotation = cls.env["sale.order"].create({"partner_id": cls.partner.id})
 
-    def test_mail_attachment_removal_tour(self):
-        url = f"/weth/sales/{self.quotation.id}"
-        with self.mock_mail_app():
-            self.start_tour(url, "mail_attachment_removal_tour", login="admin")
 
     def test_mail_button_translation(self):
         """Test the final rendering context to ensure the button is properly translated

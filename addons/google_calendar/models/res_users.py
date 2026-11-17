@@ -84,12 +84,12 @@ class ResUsers(models.Model):
         # Google -> Odoo
         new_calendars = False
         if google_calendar_values := self._sync_calendars_request(calendar_service):
-            new_calendars = self.env['calendar.calendar']._sync_calendars_google2odoo(google_calendar_values)
+            new_calendars = self.env['calendar.calendar']._sync_calendars_google2weth(google_calendar_values)
 
         # Odoo -> Google
         # Local calendars, which have not yet been synchronized with Google or need to be updated
         calendars_to_sync = self.calendar_ids.filtered(lambda c: c.google_sync_enabled and (c.need_sync or not c.google_id))
-        calendars_to_sync._sync_calendars_odoo2google(calendar_service)
+        calendars_to_sync._sync_calendars_weth2google(calendar_service)
         return new_calendars
 
     def _sync_google_events(self, calendar_service: GoogleCalendarService):
@@ -156,8 +156,8 @@ class ResUsers(models.Model):
             recurrences_write_dates = {r.id: r.write_date for r in odoo_recurrences}
             events_write_dates = {e.id: e.write_date for e in odoo_events}
 
-            synced_recurrences |= self.env['calendar.recurrence']._sync_google2odoo(recurrences_to_sync, calendar, recurrences_write_dates)
-            synced_events |= self.env['calendar.event']._sync_google2odoo(events_to_sync, calendar, events_write_dates, default_reminders=default_reminders)
+            synced_recurrences |= self.env['calendar.recurrence']._sync_google2weth(recurrences_to_sync, calendar, recurrences_write_dates)
+            synced_events |= self.env['calendar.event']._sync_google2weth(events_to_sync, calendar, events_write_dates, default_reminders=default_reminders)
 
         need_refresh = bool(synced_recurrences or synced_events)
         if not self._check_pending_odoo_records():
@@ -171,11 +171,11 @@ class ResUsers(models.Model):
             send_updates = not full_sync
             recurrences = self.env['calendar.recurrence']._get_records_to_sync(calendar, full_sync=full_sync)
             recurrences -= synced_recurrences
-            recurrences.with_context(send_updates=send_updates)._sync_odoo2google(calendar_service)
+            recurrences.with_context(send_updates=send_updates)._sync_weth2google(calendar_service)
             synced_events |= recurrences.calendar_event_ids - recurrences._get_outliers()
             synced_events |= synced_recurrences.calendar_event_ids - synced_recurrences._get_outliers()
             events = self.env['calendar.event']._get_records_to_sync(calendar, full_sync=full_sync)
-            (events - synced_events).with_context(send_updates=send_updates)._sync_odoo2google(calendar_service)
+            (events - synced_events).with_context(send_updates=send_updates)._sync_weth2google(calendar_service)
 
         return need_refresh
 

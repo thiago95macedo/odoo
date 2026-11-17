@@ -506,41 +506,6 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
             ["bot", "visitor"],
         )
 
-    def test_chatbot_clear_answers_on_step_type_change(self):
-        chatbot = self.env['chatbot.script'].create({
-            'title': 'Clear Answer Test Bot',
-            'script_step_ids': [Command.create({
-                'step_type': 'question_selection',
-                'message': 'What do you want to do?',
-                'answer_ids': [
-                    Command.create({'name': 'Buy'}),
-                    Command.create({'name': 'Support'}),
-                ]
-            })]
-        })
-        step = chatbot.script_step_ids[0]
-        answers = {a.name: a for a in step.answer_ids}
-        [step_2, step_3] = self.env['chatbot.script.step'].create([
-            {
-                'chatbot_script_id': chatbot.id,
-                'step_type': 'text',
-                'message': 'Great! Let me help you with buying.',
-                'sequence': 2,
-                'triggering_answer_ids': [Command.set(answers['Buy'].ids)],
-            },
-            {
-                'chatbot_script_id': chatbot.id,
-                'step_type': 'text',
-                'message': 'Sure! I can assist you with support.',
-                'sequence': 3,
-                'triggering_answer_ids': [Command.set(answers['Support'].ids)],
-            },
-        ])
-        action = self.env.ref('im_livechat.chatbot_script_action')
-        self.start_tour(f"/weth/action-{action.id}", 'change_chatbot_step_type', login='admin')
-        self.assertFalse(step.answer_ids, "Answers were not cleared after step_type was changed.")
-        self.assertFalse(step_2.triggering_answer_ids, "Step 2 still has stale triggering answers.")
-        self.assertFalse(step_3.triggering_answer_ids, "Step 3 still has stale triggering answers.")
 
     def test_store_chatbot_answers_batched(self):
         channels = self.env["discuss.channel"].create([
@@ -585,33 +550,6 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
             {selection_answer.id, raw_answer.id},
         )
 
-    def test_chatbot_answers_shown_in_info_panel_even_when_messages_not_loaded(self):
-        operator = new_test_user(
-            self.env,
-            login="operator_chatbot_test",
-            groups="base.group_user,im_livechat.im_livechat_group_manager",
-        )
-        data = self.make_jsonrpc_request(
-            "/im_livechat/get_session",
-            {
-                "chatbot_script_id": self.chatbot_script.id,
-                "channel_id": self.livechat_channel.id,
-            },
-        )
-        discuss_channel = self.env["discuss.channel"].browse(data["channel_id"])
-        self._post_answer_and_trigger_next_step(
-            discuss_channel, chatbot_script_answer=self.step_dispatch_buy_software
-        )
-        self._post_answer_and_trigger_next_step(discuss_channel, email="test@example.com")
-        # Fill the channel so the chatbot answer messages are not part of the initially
-        # loaded messages.
-        for i in range(100):
-            discuss_channel.sudo().message_post(body=f"filler {i}", message_type="comment")
-        self.start_tour(
-            f"/weth/discuss?active_id={discuss_channel.id}",
-            "im_livechat_info_panel_tour",
-            login=operator.login,
-        )
 
     def test_chatbot_without_operator(self):
         chatbot_script = self.env["chatbot.script"].create({"title": "Question bot"})

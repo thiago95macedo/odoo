@@ -247,10 +247,10 @@ class configmanager:
 
         # Server startup config
         group = optparse.OptionGroup(parser, "Common options")
-        group.add_option("-c", "--config", dest="config", type='path', file_loadable=False, env_name='ODOO_RC',
+        group.add_option("-c", "--config", dest="config", type='path', file_loadable=False, env_name='WETH_RC',
                          help="specify alternate config file")
         group.add_option("--save", action="store_true", dest="save", my_default=False, file_loadable=False,
-                         help="save configuration to ~/.odoorc (or to ~/.openerp_serverrc if it exists)")
+                         help="save configuration to ~/.wethrc")
         group.add_option("-i", "--init", dest="init", type='comma', metavar="MODULE,...", my_default=[], file_loadable=False,
                          help="install one or more modules (comma-separated list, use \"all\" for all modules), requires -d")
         group.add_option("-u", "--update", dest="update", type='comma', metavar="MODULE,...", my_default=[], file_loadable=False,
@@ -277,7 +277,7 @@ class configmanager:
         group.add_option("--load", dest="server_wide_modules", type='comma', metavar='MODULE,...', my_default=DEFAULT_SERVER_WIDE_MODULES,
                          help="Comma-separated list of server-wide modules.")
         group.add_option("-D", "--data-dir", dest="data_dir", type='path',  # sensitive default set in _load_default_options
-                         help="Directory where to store Odoo data")
+                         help="Directory where to store WETH data")
         group.add_option("--unsafe-policy", dest='unsafe_policy', type='choice', my_default='log',
                          choices=['disable', 'log', 'raise', 'terminate'],
                          help="Policy if an unsafe object is detected during          "
@@ -345,7 +345,7 @@ class configmanager:
         group.add_option("--screencasts", dest="screencasts", type='path', my_default='',
                          metavar='DIR',
                          help="Screencasts will go in DIR/{db_name}/screencasts.")
-        temp_tests_dir = os.path.join(tempfile.gettempdir(), 'odoo_tests')
+        temp_tests_dir = os.path.join(tempfile.gettempdir(), 'weth_tests')
         group.add_option("--screenshots", dest="screenshots", type='path', my_default=temp_tests_dir,
                          metavar='DIR',
                          help="Screenshots will go in DIR/{db_name}/screenshots. Defaults to %s." % temp_tests_dir)
@@ -424,7 +424,7 @@ class configmanager:
         group.add_option("--db_sslmode", dest="db_sslmode", type="choice", my_default='prefer', env_name='PGSSLMODE',
                          choices=['disable', 'allow', 'prefer', 'require', 'verify-ca', 'verify-full'],
                          help="specify the database ssl connection mode (see PostgreSQL documentation)")
-        group.add_option("--db_app_name", dest="db_app_name", my_default="odoo-{pid}", env_name='PGAPPNAME',
+        group.add_option("--db_app_name", dest="db_app_name", my_default="weth-{pid}", env_name='PGAPPNAME',
                          help="specify the application name in the database, {pid} is substituted by the process pid")
         group.add_option("--db_maxconn", dest="db_maxconn", type='int', my_default=64,
                          help="specify the maximum number of physical connections to PostgreSQL")
@@ -567,10 +567,9 @@ class configmanager:
             rcfilepath = default_config_file
         elif os.name == 'nt':
             rcfilepath = os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), 'weth.conf')
-        elif os.path.isfile(rcfilepath := os.path.expanduser('~/.odoorc')):
+        elif os.path.isfile(rcfilepath := os.path.expanduser('~/.wethrc')):
             pass
-        elif os.path.isfile(rcfilepath := os.path.expanduser('~/.openerp_serverrc')):
-            self._warn("Since ages ago, the ~/.openerp_serverrc file has been replaced by ~/.odoorc", DeprecationWarning)
+
         else:
             rcfilepath = default_config_file
         self._default_options['config'] = self._normalize(rcfilepath)
@@ -604,7 +603,7 @@ class configmanager:
         """ Parse the configuration file (if any) and the command-line
         arguments.
 
-        This method initializes weth.tools.config and openerp.conf (the
+        This method initializes weth.tools.config and weth.conf (the
         former should be removed in the future) with library-wide
         configuration values.
 
@@ -624,8 +623,8 @@ class configmanager:
             # (mostly once this warning is bumped to DeprecationWarning proper)
             if setup_logging is None:
                 warnings.warn(
-                    "As of Odoo 20, it is strongly recommended to specify"
-                    " whether you want Odoo to setup its own logging (or want"
+                    "As of WETH 20, it is strongly recommended to specify"
+                    " whether you want WETH to setup its own logging (or want"
                     " to handle it yourself)",
                     category=DeprecationWarning,
                     stacklevel=2,
@@ -672,8 +671,6 @@ class configmanager:
             env_name = option.env_name
             if env_name and env_name in environ:
                 self._env_options[option_name] = self.parse(option_name, environ[env_name])
-        if environ.get('OPENERP_SERVER'):
-            self._warn("Since ages ago, the OPENERP_SERVER environment variable has been replaced by ODOO_RC", DeprecationWarning)
 
     def _load_cli_options(self, opt):
         # weth.cli.command.main parses the config twice, the second time

@@ -120,8 +120,8 @@ if hasattr(NameObject, 'renumber_table'):
 class BrandedFileWriter(PdfWriter):
     def write_stream(self, *args, **kwargs):
         self.add_metadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "WETH",
+            '/Producer': "WETH",
         })
         super().write_stream(*args, **kwargs)
 
@@ -233,9 +233,9 @@ def add_banner(pdf_stream: io.BytesIO, text: str, logo: bool = False, thickness:
     packet = io.BytesIO()
     can = canvas.Canvas(packet)
     with file_open('base/static/img/main_partner-image.png', mode='rb') as f:
-        odoo_logo_file = io.BytesIO(f.read())
-    odoo_logo = Image.open(odoo_logo_file)
-    odoo_color = colors.Color(113 / 255, 75 / 255, 103 / 255, 0.8)
+        weth_logo_file = io.BytesIO(f.read())
+    weth_logo = Image.open(weth_logo_file)
+    weth_color = colors.Color(5 / 255, 40 / 255, 91 / 255, 0.8)
 
     for page in old_pdf.pages:
         width = float(abs(page.mediabox.width))
@@ -251,7 +251,7 @@ def add_banner(pdf_stream: io.BytesIO, text: str, logo: bool = False, thickness:
         path.lineTo(-width, -2 * thickness)
         path.lineTo(width, -2 * thickness)
         path.lineTo(width, -thickness)
-        can.setFillColor(odoo_color)
+        can.setFillColor(weth_color)
         can.drawPath(path, fill=1, stroke=False)
 
         # Insert text (and logo) inside the banner
@@ -259,7 +259,7 @@ def add_banner(pdf_stream: io.BytesIO, text: str, logo: bool = False, thickness:
         can.setFillColor(colors.white)
         can.drawRightString(0.75 * thickness, -1.45 * thickness, text)
         logo and can.drawImage(
-            ImageReader(odoo_logo), 0.25 * thickness, -2.05 * thickness, 40, 40, mask='auto', preserveAspectRatio=True)
+            ImageReader(weth_logo), 0.25 * thickness, -2.05 * thickness, 40, 40, mask='auto', preserveAspectRatio=True)
 
         can.showPage()
 
@@ -451,7 +451,7 @@ class OdooPdfFileWriter(PdfFileWriter):
             })
     addAttachment = add_attachment
 
-    def embed_odoo_attachment(self, attachment, subtype=None, afrelationship='/Data'):
+    def embed_weth_attachment(self, attachment, subtype=None, afrelationship='/Data'):
         assert attachment, "embed_odoo_attachment cannot be called without attachment."
         self.add_attachment(attachment.name, attachment.raw, subtype=subtype or attachment.mimetype, afrelationship=afrelationship)
 
@@ -611,10 +611,10 @@ class OdooPdfFileWriter(PdfFileWriter):
         struct_tree_root = DictionaryObject({NameObject("/Type"): NameObject("/StructTreeRoot")})
         self._root_object[NameObject("/StructTreeRoot")] = struct_tree_root
 
-        # Set odoo as producer
+        # Set WETH as producer
         self.add_metadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "WETH",
+            '/Producer': "WETH",
         })
         self.is_pdfa = True
 

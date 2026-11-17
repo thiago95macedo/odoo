@@ -26,7 +26,7 @@ export class RecentlyViewedProducts extends Interaction {
         if (this.el.querySelector('.js_product.css_not_available')) {
             return; // Product not available.
         }
-        await this.waitFor(rpc('/website/odoo_track', {
+        await this.waitFor(rpc('/website/track', {
             res_model: 'product.product',
             res_id: productId,
         }));

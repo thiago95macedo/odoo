@@ -24,10 +24,7 @@ discount to a customer.
         'point_of_sale._assets_pos': [
             'pos_discount/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'pos_discount/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_discount/static/tests/unit/**/*'
         ],
     },

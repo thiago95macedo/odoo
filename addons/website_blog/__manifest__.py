@@ -32,10 +32,7 @@
         'data/website_blog_demo.xml'
     ],
     'assets': {
-        'web.assets_tests': [
-            'website_blog/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'website_blog/static/tests/interactions/**/*',
             'website_blog/static/tests/website_builder/**/*',
         ],

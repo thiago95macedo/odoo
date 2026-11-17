@@ -23,8 +23,8 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-mkdir -p /var/run/odoo
-chown odoo:odoo /var/run/odoo
+mkdir -p /var/run/weth
+chown weth:weth /var/run/weth
 
 # For compatibility between new IoT Box images and old Odoo code on it (it will not start Odoo on boot without this)
 start_wifi=/home/pi/weth/addons/point_of_sale/tools/posbox/configuration/wireless_ap.sh
@@ -34,13 +34,13 @@ fi
 
 # Update current branch
 cd /home/pi/odoo
-localbranch=$(sudo -u odoo git symbolic-ref -q --short HEAD)
-localremote=$(sudo -u odoo git config branch.$localbranch.remote)
+localbranch=$(sudo -u weth git symbolic-ref -q --short HEAD)
+localremote=$(sudo -u weth git config branch.$localbranch.remote)
 
-sudo -u odoo rm -f /home/pi/weth/.git/shallow.lock
-sudo -u odoo git remote set-url "${localremote}" "https://github.com/weth/odoo.git"
+sudo -u weth rm -f /home/pi/weth/.git/shallow.lock
+sudo -u weth git remote set-url "${localremote}" "https://github.com/weth/odoo.git"
 
-sudo -u odoo GIT_SSL_NO_VERIFY=1 git fetch "${localremote}" "${localbranch}" --depth=1
-sudo -u odoo git reset --hard FETCH_HEAD
+sudo -u weth GIT_SSL_NO_VERIFY=1 git fetch "${localremote}" "${localbranch}" --depth=1
+sudo -u weth git reset --hard FETCH_HEAD
 
 exit 0

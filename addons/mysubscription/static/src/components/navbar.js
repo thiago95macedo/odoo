@@ -26,7 +26,7 @@ export class MySubscriptionNavBar extends NavBar {
             name: _t("My Subscription"),
             appID: "mysubscription_app",
             actionID: "mysubscription.action_mysubscription_dashboard",
-            webIconData: "/mysubscription/static/src/img/odoo_o.svg",
+            webIconData: "/mysubscription/static/src/img/weth_logo.svg",
         };
     }
 

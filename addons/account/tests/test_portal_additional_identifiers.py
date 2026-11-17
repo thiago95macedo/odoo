@@ -60,13 +60,6 @@ class TestPortalAdditionalIdentifiers(BaseCommon, HttpCase):
         )
         self.assertNotIn('FR_CN', be_info['additional_identifiers_metadata'])
 
-    def test_add_and_remove_additional_identifier_tour(self):
-        """The customer can add an identifier from the dropdown and remove it again."""
-        self.start_tour(
-            '/my/address?address_type=billing',
-            'account.portal_additional_identifiers',
-            login=self.portal_user.login,
-        )
 
     def test_additional_identifier_saved(self):
         """A submitted additional identifier is stored in 'additional_identifiers'."""

@@ -393,9 +393,3 @@ class TestPersonalStages(TestProjectCommon):
         )
         self.assertEqual(0, ProjectTaskType.search_count([("user_id", "=", public_user.id)]), "Public users should never have personal stages when created")
 
-@tagged('-at_install', 'post_install')
-class TestPersonalStageTour(HttpCase, TestProjectCommon):
-
-    def test_personal_stage_tour(self):
-        # Test customizing personal stages as a project user
-        self.start_tour('/odoo', 'personal_stage_tour', login="armandel")

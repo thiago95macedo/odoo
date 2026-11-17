@@ -100,10 +100,7 @@ Featuring
         'website.assets_editor': [
             'website_slides/static/src/js/systray_items/*.js',
         ],
-        'web.assets_tests': [
-            'website_slides/static/tests/tours/*.js',
-        ],
-        'website_slides.slide_embed_assets': [
+                'website_slides.slide_embed_assets': [
             ('include', 'web._assets_helpers'),
             ('include', 'web._assets_frontend_helpers'),
 
@@ -123,7 +120,7 @@ Featuring
             'web/static/lib/owl/owl.js',
             'web/static/src/owl2/owl3_compatibility_layer.js',
             'web/static/src/owl2/utils.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/weth_module.js',
 
             'web/static/src/core/utils/transitions.scss',  # included early because used by other files
             'web/static/src/core/**/*',
@@ -139,7 +136,6 @@ Featuring
         ],
         'web.assets_unit_tests': [
             'website_slides/static/tests/**/*',
-            ('remove', 'website_slides/static/tests/tours/**/*'),
         ],
         'web.assets_unit_tests_setup': [
             'website_slides/static/src/interactions/**/*',

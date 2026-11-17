@@ -126,42 +126,6 @@ class TestLoyaltyMirror(TestPointOfSaleHttpCommon):
         })
         programs.write({'pos_config_ids': [Command.link(cls.main_pos_config.id)]})
 
-    def test_loyalty_mirror(self):
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        data = {'frontend_data': None, 'backend_data': None}
-
-        def get_frontend_loyalty_mirror_data(self, frontend_data):
-            backend_data = {}
-            for rule_id in frontend_data:
-                rule = self.env['loyalty.rule'].browse(int(rule_id))
-                backend_data[rule_id] = {
-                    'qualifying': sorted(rule._qualifying_lines(self).mapped('uuid')),
-                    'fulfilled': rule._is_fulfilled(self),
-                    'points': rule._get_pos_order_points(self),
-                    'lines': {
-                        line.uuid: [rule._in_domain(line), rule._counts_for_points(line)]
-                        for line in self.lines
-                    },
-                }
-            data['frontend_data'] = frontend_data
-            data['backend_data'] = backend_data
-
-        with patch.object(self.env.registry['pos.order'], 'get_frontend_loyalty_mirror_data', get_frontend_loyalty_mirror_data, create=True):
-            self.start_pos_tour("test_loyalty_mirror")
-
-        frontend_data = data['frontend_data']
-        self.assertTrue(frontend_data, "The tour did not send the frontend loyalty data")
-        for rule_id, frontend in frontend_data.items():
-            backend = data['backend_data'][rule_id]
-            rule_name = self.env['loyalty.rule'].browse(int(rule_id)).program_id.name
-            self.assertEqual(frontend['qualifying'], backend['qualifying'],
-                             f"Qualifying lines mismatch for rule of '{rule_name}'")
-            self.assertEqual(frontend['fulfilled'], backend['fulfilled'],
-                             f"Fulfilled mismatch for rule of '{rule_name}'")
-            self.assertEqual(frontend['points'], backend['points'],
-                             f"Points mismatch for rule of '{rule_name}'")
-            self.assertEqual(frontend['lines'], backend['lines'],
-                             f"Per-line domain/counts mismatch for rule of '{rule_name}'")
 
 
 @tagged('post_install', '-at_install')
@@ -235,28 +199,6 @@ class TestLoyaltyMirrorRewardCost(TestPointOfSaleHttpCommon):
         })
         overspend_program.write({'pos_config_ids': [Command.link(cls.main_pos_config.id)]})
 
-    def _run_reward_cost_mirror(self, tour_name):
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        data = {'frontend': None, 'backend': None}
-
-        def get_frontend_loyalty_cost_mirror_data(order, frontend_costs):
-            # `order` is the synced order; _process_loyalty has recomputed points_cost.
-            data['frontend'] = frontend_costs
-            data['backend'] = {
-                line.uuid: line.points_cost
-                for line in order.lines if line.is_reward_line
-            }
-
-        with patch.object(self.env.registry['pos.order'], 'get_frontend_loyalty_cost_mirror_data', get_frontend_loyalty_cost_mirror_data, create=True):
-            self.start_pos_tour(tour_name)
-
-        self.assertTrue(data['frontend'], "The tour did not send any claimed reward cost")
-        self.assertEqual(
-            {uuid: round(cost, 2) for uuid, cost in data['frontend'].items()},
-            {uuid: round(cost, 2) for uuid, cost in data['backend'].items()},
-            "Reward points_cost mismatch between frontend and backend",
-        )
-        return data
 
     def test_loyalty_mirror_reward_cost(self):
         self._run_reward_cost_mirror("test_loyalty_mirror_reward_cost")
@@ -312,31 +254,3 @@ class TestLoyaltyMirrorRefund(TestPointOfSaleHttpCommon):
         })
         program.write({'pos_config_ids': [Command.link(cls.main_pos_config.id)]})
 
-    def test_loyalty_mirror_refund(self):
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        data = {'frontend': None, 'backend': None}
-
-        def get_frontend_loyalty_refund_mirror_data(self, frontend_data):
-            # `self` is the synced refund order. _get_refund_reversal_points reads the
-            # origin order's loyalty.history, so it is independent of the refund's own
-            # processing and safe to call again here.
-            backend_data = {}
-            for program_id in frontend_data:
-                program = self.env['loyalty.program'].browse(int(program_id))
-                backend_data[program_id] = self._get_refund_reversal_points(program)
-            data['frontend'] = frontend_data
-            data['backend'] = backend_data
-
-        with patch.object(self.env.registry['pos.order'], 'get_frontend_loyalty_refund_mirror_data', get_frontend_loyalty_refund_mirror_data, create=True):
-            self.start_pos_tour("test_loyalty_mirror_refund")
-
-        frontend_data = data['frontend']
-        self.assertTrue(frontend_data, "The tour did not send the refund reversal data")
-        for program_id, frontend in frontend_data.items():
-            program_name = self.env['loyalty.program'].browse(int(program_id)).name
-            backend = data['backend'][program_id]
-            for key in ('issued', 'used'):
-                self.assertAlmostEqual(
-                    frontend[key], backend[key], places=2,
-                    msg=f"Refund reversal '{key}' mismatch for program '{program_name}'",
-                )

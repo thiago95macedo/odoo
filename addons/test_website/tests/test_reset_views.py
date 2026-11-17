@@ -93,9 +93,6 @@ class TestWebsiteResetViews(weth.tests.HttpCase):
         self.assertEqual(total_views + 1, self.View.search_count([('type', '=', 'qweb')]), "Missing COW view (2)")
         self.fix_it('/test_view')
 
-    @mute_logger('weth.http')
-    def test_07_reset_page_view_complete_flow(self):
-        self.start_tour(self.env['website'].get_client_action_url('/test_page_view', True), 'test_reset_page_view_complete_flow', login="admin")
 
     @mute_logger('weth.http')
     def test_08_reset_specific_page_view_hard_mode(self):

@@ -1,6 +1,6 @@
 import { HtmlField } from "@html_editor/fields/html_field";
 import { MediaDialog } from "@html_editor/main/media/media_dialog/media_dialog";
-import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_odoo_plugin";
+import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_weth_plugin";
 import {
     getEditableDescendants,
     getEmbeddedProps,

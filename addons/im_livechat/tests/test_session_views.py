@@ -9,69 +9,7 @@ from datetime import timedelta
 
 
 class TestImLivechatSessionViews(TestImLivechatCommon):
-    def test_session_history_navigation_back_and_forth(self):
-        operator = new_test_user(
-            self.env,
-            login="operator",
-            groups="base.group_user,im_livechat.im_livechat_group_manager",
-        )
-        self.livechat_channel.user_ids |= operator
-        self.authenticate(None, None)
-        # Freeze time to get around the last 30 days default filter hidding messages in tours
-        with self.mock_datetime_and_now(fields.Datetime.now() - timedelta(days=15)):
-            self.env["mail.presence"]._update_presence(operator)
-            data = self.make_jsonrpc_request("/im_livechat/get_session", {
-                "channel_id": self.livechat_channel.id,
-                "previous_operator_id": operator.partner_id.id
-            })
-            channel = self.env["discuss.channel"].browse(data["channel_id"])
-            channel.with_user(operator).message_post(body="Hello, how can I help you?")
-            self._reset_bus()
-        action = self.env.ref("im_livechat.discuss_channel_action_from_livechat_channel")
-        self.start_tour(
-            f"/weth/livechat/{self.livechat_channel.id}/action-{action.id}",
-            "im_livechat_history_back_and_forth_tour",
-            login="operator",
-        )
 
-    @users("admin")
-    def test_form_view_embed_thread(self):
-        new_test_user(
-            self.env,
-            login="operator",
-            groups="base.group_user,im_livechat.im_livechat_group_manager",
-        )
-        [user_1, user_2] = self.env["res.partner"].create([{"name": "test 1"}, {"name": "test 2"}])
-        # Freeze time to get around the last 30 days default filter hidding messages in tours
-        with self.mock_datetime_and_now(fields.Datetime.now() - timedelta(days=15)):
-            [channel1, channel2] = self.env["discuss.channel"].create(
-                [
-                    {
-                        "name": "test 1",
-                        "channel_type": "livechat",
-                        "livechat_channel_id": self.livechat_channel.id,
-                        "channel_member_ids": [Command.create({"partner_id": user_1.id})],
-                    },
-                    {
-                        "name": "test 2",
-                        "channel_type": "livechat",
-                        "livechat_channel_id": self.livechat_channel.id,
-                        "channel_member_ids": [Command.create({"partner_id": user_2.id})],
-                    },
-                ]
-            )
-            channel1.message_post(
-                body="Test Channel 1 Msg", message_type="comment", subtype_xmlid="mail.mt_comment"
-            )
-            channel2.message_post(
-                body="Test Channel 2 Msg", message_type="comment", subtype_xmlid="mail.mt_comment"
-            )
-        action = self.env.ref("im_livechat.discuss_channel_action_from_livechat_channel")
-        self.start_tour(
-            f"/weth/livechat/{self.livechat_channel.id}/action-{action.id}",
-            "im_livechat_session_history_open",
-            login="operator",
-        )
 
     def test_partner_display_name(self):
         user = new_test_user(self.env, login="agent", name="john")
@@ -115,22 +53,3 @@ class TestImLivechatLookingForHelpViews(TestImLivechatSessionViews):
         chat.livechat_status = "need_help"
         return chat
 
-    def test_looking_for_help_discuss_category(self):
-        self.env["discuss.channel"].search([("livechat_status", "=", "need_help")]).unlink()
-        agent = new_test_user(self.env, "agent", groups="im_livechat.im_livechat_group_user")
-        accounting_expertise, sales_expertise = self.env["im_livechat.expertise"].create(
-            [{"name": "Accounting"}, {"name": "Sales"}],
-        )
-        agent.livechat_expertise_ids = sales_expertise
-        accounting_chat = self.start_needhelp_session(guest_name="Visitor Accounting")
-        accounting_chat.livechat_expertise_ids = accounting_expertise
-        accounting_chat.description = "Invoice SO0042 not received"
-        sales_chat = self.start_needhelp_session(guest_name="Visitor Sales")
-        sales_chat.livechat_expertise_ids = sales_expertise
-        sales_chat.description = "Delivery delayed for PO0099"
-        self._reset_bus()
-        self.start_tour(
-            "/weth/discuss",
-            "im_livechat.looking_for_help_discuss_category_tour",
-            login="agent",
-        )

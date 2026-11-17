@@ -96,13 +96,11 @@
         #
         # Files in /static/src/backend will be loaded in the backend
         # Files in /static/src/app will be loaded in the PoS UI
-        # Files in /static/tests/tours will be loaded in the backend in test mode
         # Files in /static/tests/unit will be loaded in the unit tests
 
         # web assets
         'web.assets_backend': [
             'point_of_sale/static/src/scss/pos_dashboard.scss',
-            'point_of_sale/static/src/backend/tours/point_of_sale.js',
             'point_of_sale/static/src/backend/pos_kanban_view/*',
             'point_of_sale/static/src/backend/lna_checklist/*',
             'point_of_sale/static/src/backend/pos_payment_provider_cards/*',
@@ -124,7 +122,6 @@
             'point_of_sale/static/src/backend/pos_kanban_view/pos_kanban_view.dark.scss',
         ],
         'web.assets_tests': [
-            'point_of_sale/static/tests/pos/tours/**/*',
             'point_of_sale/static/tests/generic_helpers/**/*',
             'point_of_sale/static/src/utils.js',
         ],
@@ -191,7 +188,7 @@
             'web/static/lib/owl/owl.js',
             'web/static/src/owl2/owl3_compatibility_layer.js',
             'web/static/src/owl2/utils.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/weth_module.js',
             'web/static/lib/zxing-library/zxing-library.js',
 
 
@@ -245,8 +242,7 @@
             'point_of_sale/static/src/backend/pos_res_partner_view/*',
             'iot_webserial/static/src/web_serial_*.js',
         ],
-        'point_of_sale.base_tests': [],
-        # Bundle that starts the pos, loaded on /pos/ui
+                # Bundle that starts the pos, loaded on /pos/ui
         'point_of_sale.assets_prod': [
             ('include', 'point_of_sale._assets_pos'),
             'point_of_sale/static/src/app/main.js',
@@ -256,7 +252,7 @@
         ],
         'point_of_sale.customer_display_assets': [
             ('include', 'point_of_sale.base_app'),
-            "point_of_sale/static/src/app/components/odoo_logo/*",
+            "point_of_sale/static/src/app/components/weth_logo/*",
             "point_of_sale/static/src/app/utils/use_timed_press.js",
             "point_of_sale/static/src/utils.js",
             "point_of_sale/static/src/scss/pos_variables_extra.scss",
@@ -274,13 +270,11 @@
         ],
         'point_of_sale.customer_display_assets_test': [
             ('include', 'point_of_sale.base_tests'),
-            "point_of_sale/static/tests/pos/tours/utils/common.js",
             "point_of_sale/static/tests/generic_helpers/utils.js",
         ],
         'point_of_sale.assets_debug': [
             ('include', 'point_of_sale.base_tests'),
             'point_of_sale/static/tests/generic_helpers/**/*',
-            'point_of_sale/static/tests/pos/tours/**/*',
         ],
     },
     'author': 'WETH Tecnologia',

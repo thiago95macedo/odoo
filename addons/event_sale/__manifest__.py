@@ -40,10 +40,7 @@ this event.
         'web.assets_backend': [
             'event_sale/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'event_sale/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

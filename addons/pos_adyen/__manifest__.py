@@ -17,10 +17,7 @@
             'pos_adyen/static/src/app/utils/payment/payment_adyen.js',
             'pos_adyen/static/src/app/models/pos_payment.js',
         ],
-        'web.assets_tests': [
-            'pos_adyen/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_adyen/static/tests/unit/data/**/*'
         ],
     },

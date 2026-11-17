@@ -138,7 +138,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
     def _create_from_microsoft(self, microsoft_event, vals_list):
         return self.with_context(dont_notify=True, skip_contact_description=True, microsoft_calendar_from_sync=True).create(vals_list)
 
-    def _sync_odoo2microsoft(self):
+    def _sync_weth2microsoft(self):
         if not self:
             return
         if self._active_name:
@@ -302,7 +302,7 @@ class MicrosoftCalendarSync(models.AbstractModel):
         return update_events
 
     @api.model
-    def _sync_microsoft2odoo(self, microsoft_events: MicrosoftEvent):
+    def _sync_microsoft2weth(self, microsoft_events: MicrosoftEvent):
         """
         Synchronize Microsoft recurrences in WETH.
         Creates new recurrences, updates existing ones.

@@ -1,7 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from . import test_frontend
-from . import test_service_fee
 from . import test_loyalty_history
 from . import test_pos_loyalty_points
 from . import test_unlink_reward

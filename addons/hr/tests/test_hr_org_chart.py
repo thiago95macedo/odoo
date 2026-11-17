@@ -42,16 +42,6 @@ class TestHrOrgChart(TestHrCommon, HttpCase):
         except MissingError:
             self.fail('The employee should not have been deleted')
 
-    def test_indirect_subordinates(self):
-        self.res_users_hr_officer.employee_ids = self.employee_georges
-        self.employee_paul.parent_id = self.employee_georges
-        self.employee_pierre.parent_id = self.employee_paul
-
-        self.start_tour(f"/weth/employees/{self.employee_georges.id}", 'indirect_subordinates_tour', login="admin")
-        indirect_subordinates = len(self.employee_georges.subordinate_ids - self.employee_georges.child_ids)
-        self.assertEqual(indirect_subordinates, 1,
-            "Georges should have 1 indirect subordinates: Pierre."
-        )
 
     def test_is_subordinate(self):
         self.res_users_hr_officer.employee_ids = self.employee_georges

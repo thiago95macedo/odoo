@@ -37,10 +37,7 @@
         'web.assets_backend': [
             'mass_mailing_sms/static/src/**',
         ],
-        'web.assets_tests': [
-            'mass_mailing_sms/static/tests/tours/**/*',
-        ],
-    },
+            },
     'application': True,
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',

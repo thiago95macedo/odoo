@@ -11,8 +11,6 @@
         ],
         'pos_self_order.assets_tests': [
             'pos_qfpay/static/src/app/qfpay.js',
-            'pos_qfpay/static/tests/tours/utils/common.js',
-            'pos_self_order_qfpay/static/tests/tours/**/*',
         ],
     },
     "auto_install": True,

@@ -184,13 +184,9 @@
         'mass_mailing.assets_mail_themes': [
             'mass_mailing/static/src/scss/themes/**/*',
         ],
-        'web.assets_tests': [
-            'mass_mailing/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             ('include', 'mass_mailing.assets_builder'),
             'mass_mailing/static/tests/**/*',
-            ('remove', 'mass_mailing/static/tests/tours/**/*'),
         ],
     },
     'post_init_hook': '_update_demo_data',

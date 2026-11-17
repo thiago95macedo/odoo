@@ -2496,7 +2496,7 @@ test_external_xpath = [
         "modules": ["web"],
         "content": """
 <templates id="template" xml:space="preserve">
-    <t t-name="account_accountant.AttachmentPreviewListView" t-inherit="web_tour.ListView">
+    <t t-name="account_accountant.AttachmentPreviewListView" t-inherit="web.ListView">
         <xpath expr="//div[@t-ref='root']" position="attributes" type="add">
             <attribute name="class" add="o_move_line_list_view" separator=" "/>
         </xpath>
@@ -2516,7 +2516,7 @@ test_external_xpath = [
         """,
         "expected": """
 <templates id="template" xml:space="preserve">
-    <t t-name="account_accountant.AttachmentPreviewListView" t-inherit="web_tour.ListView">
+    <t t-name="account_accountant.AttachmentPreviewListView" t-inherit="web.ListView">
         <xpath expr="//div[@t-ref='root']" position="attributes" type="add">
             <attribute name="class" add="o_move_line_list_view" separator=" "/>
         </xpath>

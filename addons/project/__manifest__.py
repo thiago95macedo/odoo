@@ -104,10 +104,7 @@
             'project/static/tests/project_models.js',
             'project/static/tests/**/*.test.js',
         ],
-        'web.assets_tests': [
-            'project/static/tests/tours/**/*',
-        ],
-        'project.webclient': [
+                'project.webclient': [
             ('include', 'web._assets_helpers'),
             ('include', 'web._assets_backend_helpers'),
 
@@ -131,7 +128,7 @@
             'web/static/lib/owl/owl.js',
             'web/static/src/owl2/owl3_compatibility_layer.js',
             'web/static/src/owl2/utils.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/weth_module.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',
             'web/static/lib/bootstrap/js/dist/dom/data.js',

@@ -34,11 +34,7 @@ Then it can be made specific at the product level.
             "website_sale_stock/static/src/js/location_selector/**/*",
             "website_sale_stock/static/src/js/pickup_location_many2one/**/*",
         ],
-        "web.assets_tests": [
-            "website_sale_stock/static/tests/tours/*",
-            "website_sale_stock/static/src/js/tours/*",
-        ],
-    },
+            },
     "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

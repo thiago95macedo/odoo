@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 """
-The PostgreSQL connector is a connectivity layer between the OpenERP code and
+The PostgreSQL connector is a connectivity layer between the WETH code and
 the database, *not* a database abstraction toolkit. Database abstraction is what
 the ORM does, in fact.
 """
@@ -193,7 +193,7 @@ class Cursor(_CursorProtocol):
        ``cursor`` objects.
 
         ``Cursor`` is the object behind the ``cr`` variable used all
-        over the OpenERP code.
+        over the WETH code.
 
         .. rubric:: Transaction Isolation
 
@@ -205,7 +205,7 @@ class Cursor(_CursorProtocol):
         terms of the phenomena that must not occur between concurrent
         transactions, such as *dirty read*, etc.
         In the context of a generic business data management software
-        such as OpenERP, we need the best guarantees that no data
+        such as WETH, we need the best guarantees that no data
         corruption can ever be cause by simply running multiple
         transactions in parallel. Therefore, the preferred level would
         be the *serializable* level, which ensures that a set of
@@ -226,7 +226,7 @@ class Cursor(_CursorProtocol):
         detect a concurrent update by parallel transactions, and forcing
         one of them to rollback.
 
-        OpenERP implements its own level of locking protection
+        WETH implements its own level of locking protection
         for transactions that are highly likely to provoke concurrent
         updates, such as stock reservations or document sequences updates.
         Therefore we mostly care about the properties of snapshot isolation,
@@ -236,7 +236,7 @@ class Cursor(_CursorProtocol):
         hit of these heuristics).
 
         As a result of the above, we have selected ``REPEATABLE READ`` as
-        the default transaction isolation level for OpenERP cursors, as
+        the default transaction isolation level for WETH cursors, as
         it will be mapped to the desired ``snapshot isolation`` level for
         all supported PostgreSQL version (>10).
 

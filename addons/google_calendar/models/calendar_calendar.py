@@ -84,7 +84,7 @@ class CalendarCalendar(models.Model):
         return records
 
     @api.model
-    def _sync_calendars_google2odoo(self, google_calendars: GoogleCalendar):
+    def _sync_calendars_google2weth(self, google_calendars: GoogleCalendar):
         existing = google_calendars.exists(self.env)
         primary = google_calendars.get_primary()
         deleted = google_calendars.get_deleted()
@@ -122,7 +122,7 @@ class CalendarCalendar(models.Model):
 
         return bool(new)
 
-    def _sync_calendars_odoo2google(self, calendar_service):
+    def _sync_calendars_weth2google(self, calendar_service):
         if not self or self.env.user._get_google_sync_status() != "sync_active":
             return
 

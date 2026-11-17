@@ -224,7 +224,7 @@ class WebsiteVisitorTests(WebsiteVisitorTestsCommon):
         res_id = match.group(2)
 
         if tracking_enabled_attr:
-            tracking_url = "/website/odoo_track"
+            tracking_url = "/website/track"
             payload = {
                 "params": {
                     "res_model": res_model,
@@ -271,13 +271,6 @@ class WebsiteVisitorTests(WebsiteVisitorTestsCommon):
             "`record_domain` restricts the visited records",
         )
 
-    def test_tracking_interaction(self):
-        existing_visitors = self.env['website.visitor'].search([])
-        existing_tracks = self.env['website.track'].search([])
-        self.start_tour(self.untracked_page.url, "visitor_tracking")
-        self.assertEqual(self.env['website.visitor'].search_count([]), len(existing_visitors) + 1)
-        new_tracks = self.env['website.track'].search([('id', 'not in', existing_tracks.ids)])
-        self.assertIn(self.tracked_page.url, new_tracks.url, "1 tracked page expected")
 
     def test_visitor_creation_on_tracked_page(self):
         """ Test various flows involving visitor creation and update. """

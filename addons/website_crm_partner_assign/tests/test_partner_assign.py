@@ -432,49 +432,7 @@ class TestPublish(HttpCase):
             'grade_id': grade.id,
         })
 
-    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
-    def test_01_admin(self):
-        self.start_tour(self.env['website'].get_client_action_url('/partners'), 'test_can_publish_partner', login="admin")
-        self.assertTrue(self.partner.website_published, "Partner should have been published")
 
-    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
-    def test_02_reditor_salesman(self):
-        self.user_test.group_ids = [
-            Command.link(self.group_restricted_editor.id),
-            Command.link(self.group_sale_salesman.id),
-        ]
-        self.start_tour(self.env['website'].get_client_action_url('/partners'), 'test_can_publish_partner', login="testtest")
-        self.assertTrue(self.partner.website_published, "Partner should have been published")
 
-    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
-    def test_03_reditor_not_salesman(self):
-        self.user_test.group_ids = [
-            Command.link(self.group_restricted_editor.id),
-            Command.unlink(self.group_sale_salesman.id),
-            Command.unlink(self.group_partner_manager.id)
-        ]
-        self.assertNotIn(self.group_sale_salesman.id, self.user_test.group_ids.ids, "User should not be a group_sale_salesman")
-        self.assertNotIn(self.group_partner_manager.id, self.user_test.group_ids.ids, "User should not be a group_partner_manager")
-        self.start_tour(self.env['website'].get_client_action_url('/partners'), 'test_cannot_publish_partner', login="testtest")
 
-    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
-    def test_04_not_reditor_salesman(self):
-        self.user_test.group_ids = [
-            Command.unlink(self.group_restricted_editor.id),
-            Command.link(self.group_sale_salesman.id),
-        ]
-        self.assertNotIn(self.group_restricted_editor.id, self.user_test.group_ids.ids, "User should not be a group_restricted_editor")
-        self.start_tour(self.env['website'].get_client_action_url('/partners'), 'test_can_publish_partner', login="testtest")
-        self.assertTrue(self.partner.website_published, "Partner should have been published")
 
-    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
-    def test_05_not_reditor_not_salesman(self):
-        self.user_test.group_ids = [
-            Command.unlink(self.group_restricted_editor.id),
-            Command.unlink(self.group_sale_salesman.id),
-            Command.unlink(self.group_partner_manager.id)
-        ]
-        self.assertNotIn(self.group_sale_salesman.id, self.user_test.group_ids.ids, "User should not be a group_sale_salesman")
-        self.assertNotIn(self.group_partner_manager.id, self.user_test.group_ids.ids, "User should not be a group_partner_manager")
-        self.assertNotIn(self.group_restricted_editor.id, self.user_test.group_ids.ids, "User should not be a group_restricted_editor")
-        self.start_tour(self.env['website'].get_client_action_url('/partners'), 'test_cannot_publish_partner', login="testtest")

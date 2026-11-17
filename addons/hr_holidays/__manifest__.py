@@ -129,12 +129,8 @@ A synchronization with an internal agenda (Meetings of the CRM module) is also p
         ],
         'web.assets_unit_tests': [
             'hr_holidays/static/tests/**/*',
-            ('remove', 'hr_holidays/static/tests/tours/**/*'),
         ],
-        'web.assets_tests': [
-            '/hr_holidays/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

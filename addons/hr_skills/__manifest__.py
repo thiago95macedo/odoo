@@ -68,12 +68,8 @@ This module introduces skills and resume management for employees.
         ],
         'web.assets_unit_tests': [
             'hr_skills/static/tests/**/*',
-            ('remove', 'hr_skills/static/tests/tours/**/*'),
         ],
-        'web.assets_tests': [
-            'hr_skills/static/tests/tours/**/*',
-        ],
-        'web.report_assets_pdf': [
+                'web.report_assets_pdf': [
             '/hr_skills/static/src/scss/report_employee_cv.scss',
         ],
     },

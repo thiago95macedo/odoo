@@ -20,7 +20,7 @@ class TestConfigManager(TransactionCase):
 
     def setUp(self):
         super().setUp()
-        patcher = patch.dict('os.environ', {'ODOO_RC': EMPTY_CONFIG_PATH}, clear=True)
+        patcher = patch.dict('os.environ', {'WETH_RC': EMPTY_CONFIG_PATH}, clear=True)
         patcher.start()
         self.addCleanup(patcher.stop)
         self.config = configmanager()

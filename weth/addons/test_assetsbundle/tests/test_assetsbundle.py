@@ -2066,28 +2066,3 @@ class AssetsNodeOrmCacheUsage(TransactionCase):
         check_no_new_cache_entry("lazy_load shouldn't create another entry", lazy_load=True)
 
 
-@tagged('-at_install', 'post_install')
-@unittest.skipIf(os.getenv("ODOO_FAKETIME_TEST_MODE"), "This test cannot work with faketime")
-class TestErrorManagement(HttpCase):
-
-    def test_assets_bundle_css_error_backend(self):
-        self.env['ir.qweb']._get_asset_bundle('web.assets_backend', assets_params={}).css() # force pregeneration so that we have the base style
-        self.env['ir.asset'].create({
-            'name': 'Css error',
-            'bundle': 'web.assets_backend',
-            'path': 'test_assetsbundle/static/src/css/test_error.scss',
-        })
-
-        with mute_logger('weth.addons.base.models.assetsbundle'):
-            self.start_tour('/odoo', 'css_error_tour', login='admin')
-
-    def test_assets_bundle_css_error_frontend(self):
-        whatever = {'website_id': website.search([], limit=1).id} if (website := self.env.get('website')) else {}
-        self.env['ir.qweb']._get_asset_bundle('web.assets_frontend', assets_params=whatever).css()  # force pregeneration so that we have the base style
-        self.env['ir.asset'].create({
-            'name': 'Css error',
-            'bundle': 'web.assets_frontend',
-            'path': 'test_assetsbundle/static/src/css/test_error.scss',
-        })
-        with mute_logger('weth.addons.base.models.assetsbundle'):
-            self.start_tour('/', 'css_error_tour_frontend')

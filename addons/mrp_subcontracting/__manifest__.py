@@ -28,10 +28,7 @@
         'data/mrp_subcontracting_demo.xml',
     ],
     'assets': {
-        'web.assets_tests': [
-            'mrp_subcontracting/static/tests/tours/subcontracting_portal_tour.js',
-        ],
-        'web.assets_backend': [
+                'web.assets_backend': [
             'mrp_subcontracting/static/src/components/**/*',
             'mrp_subcontracting/static/src/subcontracting_portal/move_list_view.js',
         ],
@@ -61,7 +58,7 @@
             'web/static/lib/owl/owl.js',
             'web/static/src/owl2/owl3_compatibility_layer.js',
             'web/static/src/owl2/utils.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/weth_module.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',
             'web/static/lib/bootstrap/js/dist/dom/data.js',

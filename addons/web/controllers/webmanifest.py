@@ -52,7 +52,7 @@ class WebManifest(http.Controller):
         }
         icon_sizes = ['192x192', '512x512']
         manifest['icons'] = [{
-            'src': '/web/static/img/odoo-icon-%s.png' % size,
+            'src': '/web/static/img/weth-icon-%s.png' % size,
             'sizes': size,
             'type': 'image/png',
         } for size in icon_sizes]
@@ -103,7 +103,7 @@ class WebManifest(http.Controller):
             return body
 
     def _icon_path(self):
-        return 'web/static/img/odoo-icon-192x192.png'
+        return 'web/static/img/weth-icon-192x192.png'
 
     @http.route('/weth/offline', type='http', auth='public', methods=['GET'], readonly=True)
     def offline(self):
@@ -111,7 +111,7 @@ class WebManifest(http.Controller):
         with file_open(self._icon_path(), 'rb') as f:
             icon = BinaryBytes(f.read())
         return request.render('web.webclient_offline', {
-            'odoo_icon': icon,
+            'weth_icon': icon,
         })
 
     @http.route('/scoped_app', type='http', auth='public', methods=['GET'])
@@ -121,7 +121,7 @@ class WebManifest(http.Controller):
         path = f"/{unquote(path)}"
         scoped_app_values = {
             'app_id': app_id,
-            'apple_touch_icon': '/web/static/img/odoo-icon-ios.png',
+            'apple_touch_icon': '/web/static/img/weth-icon-ios.png',
             'app_name': app_name,
             'path': path,
             'safe_manifest_url': "/web/manifest.scoped_app_manifest?" + urlencode({
@@ -160,7 +160,7 @@ class WebManifest(http.Controller):
     @http.route('/web/manifest.scoped_app_manifest', type='http', auth='public', methods=['GET'])
     def scoped_app_manifest(self, app_id, path, app_name=''):
         """ Returns a WebManifest dedicated to the scope of the given app. A custom scope and start
-            url are set to make sure no other installed PWA can overlap the scope (e.g. /odoo)
+            url are set to make sure no other installed PWA can overlap the scope (e.g. /weth)
         """
         path = unquote(path)
         app_name = unquote(app_name) if app_name else self._get_scoped_app_name(app_id)

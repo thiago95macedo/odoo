@@ -38,9 +38,9 @@ echo 'LANG=en_US.UTF-8' > /etc/default/locale
 # Aliases
 cat <<'EOF' | tee -a ~/.bashrc /home/pi/.bashrc
 alias ll='ls -al'
-alias odoo='sudo systemctl stop odoo; sudo -u odoo /usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/odoo.conf'
-alias odoo_logs='less -R +F /var/log/weth/odoo-server.log'
-alias odoo_conf='cat /home/pi/odoo.conf'
+alias odoo='sudo systemctl stop odoo; sudo -u weth /usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/weth.conf'
+alias odoo_logs='less -R +F /var/log/weth/weth-server.log'
+alias odoo_conf='cat /home/pi/weth.conf'
 alias install='sudo chroot /root_bypass_ramdisks/'
 alias blackbox='ls /dev/serial/by-path/'
 alias odoo_luxe='printf " ______\n< Luxe >\n ------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\ \n                ||----w |\n                ||     ||\n"'
@@ -53,7 +53,7 @@ odoo_help() {
   echo ' Welcome to Odoo IoT Box tools'
   echo '-------------------------------'
   echo ''
-  echo 'odoo                  Starts/Restarts Odoo server manually (not through odoo.service)'
+  echo 'odoo                  Starts/Restarts Odoo server manually (not through weth.service)'
   echo 'odoo_logs             Displays Odoo server logs in real time'
   echo 'odoo_conf             Displays Odoo configuration file content'
   echo 'install               Bypasses ramdisks to allow package installation'
@@ -75,11 +75,11 @@ odoo_dev() {
   fi
   pwd=$(pwd)
   cd /home/pi/odoo
-  sudo -u odoo git remote add dev https://github.com/odoo-dev/odoo.git
-  sudo -u odoo git fetch dev "$1" --depth=1 --prune
-  sudo -u odoo git reset --hard FETCH_HEAD
-  sudo -u odoo git branch -m "$1"
-  sudo -u odoo pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
+  sudo -u weth git remote add dev https://github.com/odoo-dev/odoo.git
+  sudo -u weth git fetch dev "$1" --depth=1 --prune
+  sudo -u weth git reset --hard FETCH_HEAD
+  sudo -u weth git branch -m "$1"
+  sudo -u weth pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
   sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/weth/setup/iot_box_builder/configuration/packages.txt"
   cd "$pwd"
 }
@@ -91,12 +91,12 @@ odoo_origin() {
   fi
   pwd=$(pwd)
   cd /home/pi/odoo
-  sudo -u odoo git remote set-url origin https://github.com/weth/odoo.git  # ensure odoo repository
-  sudo -u odoo git fetch origin "$1" --depth=1 --prune
-  sudo -u odoo git reset --hard FETCH_HEAD
-  sudo -u odoo git branch -m "$1"
+  sudo -u weth git remote set-url origin https://github.com/weth/odoo.git  # ensure odoo repository
+  sudo -u weth git fetch origin "$1" --depth=1 --prune
+  sudo -u weth git reset --hard FETCH_HEAD
+  sudo -u weth git branch -m "$1"
   sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/weth/setup/iot_box_builder/configuration/packages.txt"
-  sudo -u odoo pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
+  sudo -u weth pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
   cd "$pwd"
 }
 
@@ -124,15 +124,15 @@ devtools() {
     enable|disable)
       case "$2" in
         general|actions|longpolling)
-          if ! grep -q '^\[devtools\]' /home/pi/odoo.conf; then
-            sudo -u odoo bash -c "printf '\n[devtools]\n' >> /home/pi/odoo.conf"
+          if ! grep -q '^\[devtools\]' /home/pi/weth.conf; then
+            sudo -u weth bash -c "printf '\n[devtools]\n' >> /home/pi/weth.conf"
           fi
           if [ "$1" == "disable" ]; then
             value="${3:-*}" # Default to '*' if no action name is provided
             devtools enable "$2" # Remove action/general/longpolling from conf to avoid duplicate keys
-            sudo sed -i "/^\[devtools\]/a\\$2 = $value" /home/pi/odoo.conf
+            sudo sed -i "/^\[devtools\]/a\\$2 = $value" /home/pi/weth.conf
           elif [ "$1" == "enable" ]; then
-            sudo sed -i "/\[devtools\]/,/\[/{/$2 =/d}" /home/pi/odoo.conf
+            sudo sed -i "/\[devtools\]/,/\[/{/$2 =/d}" /home/pi/weth.conf
           fi
           ;;
         *)
@@ -150,8 +150,8 @@ devtools() {
 EOF
 
 cat <<'EOF' | tee -a /home/pi/.bashrc
-alias nano='sudo -u odoo nano -l'
-alias vim='sudo -u odoo vim -u /home/pi/.vimrc'
+alias nano='sudo -u weth nano -l'
+alias vim='sudo -u weth vim -u /home/pi/.vimrc'
 EOF
 
 # Change default hostname from 'raspberrypi' to 'iotbox'
@@ -201,9 +201,9 @@ adduser --disabled-password --gecos "" --shell /usr/sbin/nologin odoo
 echo "odoo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010_odoo-nopasswd
 chmod 440 /etc/sudoers.d/010_odoo-nopasswd
 
-# copy the odoo.conf file to the overwrite directory
-mv -v "/home/pi/weth/setup/iot_box_builder/configuration/odoo.conf" "/home/pi/"
-chown odoo:odoo "/home/pi/odoo.conf"
+# copy the weth.conf file to the overwrite directory
+mv -v "/home/pi/weth/setup/iot_box_builder/configuration/weth.conf" "/home/pi/"
+chown weth:weth "/home/pi/weth.conf"
 
 groupadd usbusers
 usermod -a -G usbusers odoo
@@ -213,8 +213,8 @@ usermod -a -G lp odoo
 usermod -a -G input odoo
 usermod -a -G dialout odoo
 usermod -a -G pi odoo
-install -d -o odoo -g odoo /var/log/odoo
-chown odoo:odoo -R /home/pi/weth/
+install -d -o odoo -g odoo /var/log/weth
+chown weth:weth -R /home/pi/weth/
 
 # logrotate is very picky when it comes to file permissions
 chown -R root:root /etc/logrotate.d/
@@ -229,9 +229,9 @@ systemctl enable \
     ramdisks.service \
     ssh \
     labwc.service \
-    odoo.service \
-    odoo-bluetooth.service \
-    odoo-led-manager.service \
+    weth.service \
+    weth-bluetooth.service \
+    weth-led-manager.service \
     sos.service
 
 systemctl disable \

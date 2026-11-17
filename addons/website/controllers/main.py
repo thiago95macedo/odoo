@@ -330,7 +330,7 @@ class Website(Home):
     # Tracking
     # ------------------------------------------------------
 
-    @http.route('/website/odoo_track', type='jsonrpc', auth='public', methods=['POST'], website=True, csrf=True)
+    @http.route('/website/track', type='jsonrpc', auth='public', methods=['POST'], website=True, csrf=True)
     def track(self, res_model, res_id, **kwargs):
         if request.env['ir.http'].is_a_bot():
             return {}

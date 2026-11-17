@@ -66,7 +66,7 @@ def condition_values(model, field_name, domain):
 
 
 class IrAttachment(models.Model):
-    """Attachments are used to link binary files or url to any openerp document.
+    """Attachments are used to link binary files or url to any WETH document.
 
     External attachment storage
     ---------------------------

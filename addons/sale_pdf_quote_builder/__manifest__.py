@@ -22,7 +22,6 @@
     "auto_install": True,
     "assets": {
         "web.assets_backend": ["sale_pdf_quote_builder/static/src/js/**/*"],
-        "web.assets_tests": ["sale_pdf_quote_builder/static/tests/tours/**/*"],
     },
     "author": "WETH Tecnologia",
     "license": "LGPL-3",

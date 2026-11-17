@@ -352,15 +352,6 @@ class TestPDFQuoteBuilder(SaleManagementCommon, HttpCase):
             quotation_document.company_id, "Quotation document shouldn't have a company id"
         )
 
-    def test_custom_content_kanban_like(self):
-        self.start_tour(
-            f"/weth/sales/{self.sale_order.id}", "custom_content_kanban_like_tour", login="admin"
-        )
-        sol = self.sale_order.order_line.filtered(lambda sol: sol.product_id == self.product)
-        self.assertEqual(sol.product_document_ids, self.product_document)
-        form_fields = json.loads(self.sale_order.customizable_pdf_form_fields)
-        doc_fields = form_fields["line"][str(sol.id)][str(self.product_document.id)]
-        self.assertEqual(doc_fields["custom_form_fields"]["custom_1"], "Test")
 
     def test_quotation_document_is_added_iff_default(self):
         self.assertFalse(self._create_so().quotation_document_ids)

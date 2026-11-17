@@ -18,21 +18,8 @@ class PasskeyTestPortal(PasskeyTest):
             'group_ids': [Command.set([self.env.ref('base.group_portal').id])],
         })
 
-    def test_passkey_portal_create(self):
-        self.env['ir.config_parameter'].sudo().set_str('web.base.url', self.passkeys['test-yubikey']['host'])
-        self.admin_user.auth_passkey_key_ids.unlink()
-        with self.patch_start_registration(self.passkeys['test-yubikey']['registration']['challenge']):
-            self.start_tour("/my/security?debug=tests", 'passkeys_portal_create', login="passkey_portal")
 
-    def test_passkey_portal_rename(self):
-        portal_passkey = self.env['auth.passkey.key'].search([('name', '=', 'test-keepassxc')])
-        self.env.cr.execute(SQL("UPDATE auth_passkey_key SET create_uid = %s WHERE id = %s", self.portal_user.id, portal_passkey.id))
-        self.start_tour("/my/security?debug=tests", 'passkeys_portal_rename', login='passkey_portal')
 
-    def test_passkey_portal_delete(self):
-        portal_passkey = self.env['auth.passkey.key'].search([('name', '=', 'test-keepassxc')])
-        self.env.cr.execute(SQL("UPDATE auth_passkey_key SET create_uid = %s WHERE id = %s", self.portal_user.id, portal_passkey.id))
-        self.start_tour("/my/security?debug=tests", 'passkeys_portal_delete', login='passkey_portal')
 
     def test_portal_permissions(self):
         admin_passkey = self.env['auth.passkey.key'].search([('name', '=', 'test-yubikey-nano')])

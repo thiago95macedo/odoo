@@ -100,12 +100,8 @@ Help your customers with this chat, and analyse their feedback.
         'web.assets_unit_tests': [
             'im_livechat/static/tests/**/*',
             ('remove', 'im_livechat/static/tests/embed/**/*'),
-            ('remove', 'im_livechat/static/tests/tours/**/*'),
         ],
-        'web.assets_tests': [
-            'im_livechat/static/tests/tours/**/*',
-        ],
-        'im_livechat.assets_embed_core': [
+                'im_livechat.assets_embed_core': [
             'im_livechat/static/src/core/common/**/*',
             'im_livechat/static/src/embed/common/**/*',
         ],
@@ -121,10 +117,6 @@ Help your customers with this chat, and analyse their feedback.
             ('remove', 'im_livechat/static/src/embed/external/boot.js'),
             'im_livechat/static/tests/livechat_test_helpers.js',
             'im_livechat/static/tests/mock_server/**/*',
-        ],
-        "im_livechat.assets_livechat_support_tours": [
-            "im_livechat/static/tests/tours/livechat_tour_utils.js",
-            "im_livechat/static/tests/tours/support/*",
         ],
         'im_livechat.embed_assets_unit_tests': [
             'web/static/tests/_framework/**/*',

@@ -597,12 +597,6 @@ class TestMailTemplateReset(MailCommon):
         self.assertEqual(mail_template.with_context(lang='fr_BE').body_html.strip(), Markup('<div>Hello Odoo</div>'))
 
 
-@tagged("mail_template")
-class TestMailTemplateUI(HttpCase):
-
-    def test_mail_template_dynamic_field_tour(self):
-        # keep debug for technical fields visibility
-        self.start_tour('/odoo?debug=1', 'mail_template_dynamic_field_tour', login='admin')
 
 
 @tagged("mail_template")

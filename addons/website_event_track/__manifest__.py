@@ -52,10 +52,7 @@
             'website_event_track/static/src/xml/website_event_track_email_reminder.xml',
             'website_event_track/static/src/interactions/*',
         ],
-        'web.assets_tests': [
-            'website_event_track/static/tests/tours/*.js',
-        ],
-        'website.website_builder_assets': [
+                'website.website_builder_assets': [
             'website_event_track/static/src/website_builder/**/*',
         ],
     },

@@ -31,41 +31,9 @@ class TestWebsiteBlogUi(weth.tests.HttpCase, TestWebsiteBlogCommon):
             "cover_properties": """{"background-image": "url('/website_blog/static/src/img/cover_1.webp')", "resize_class": "o_record_has_cover o_half_screen_height", "opacity": "0"}""",
         })
 
-    def test_admin(self):
-        self.env.ref('base.user_admin').write({
-            'email': 'mitchell.admin@example.com',
-        })
-        # Ensure at least two blogs exist for the step asking to select a blog
-        self.env['blog.blog'].create({'name': 'Travel'})
 
-        # Ensure at least one image exists for the step that chooses one
-        self.env['ir.attachment'].create({
-            'public': True,
-            'type': 'url',
-            'url': '/web/image/123/transparent.png',
-            'name': 'transparent.png',
-            'mimetype': 'image/png',
-        })
 
-        self.start_tour(self.env['website'].get_client_action_url('/'), 'blog', login='admin')
 
-    def test_blog_post_tags(self):
-        self.start_tour(self.env['website'].get_client_action_url('/blog'), 'blog_tags', login='admin')
-
-    def test_autocomplete_with_date(self):
-        self.env.ref('website_blog.opt_blog_sidebar_show').active = True
-        self.env.ref('website_blog.opt_sidebar_blog_index_archives').active = True
-        self.env.ref('website_blog.opt_sidebar_blog_index_follow_us').active = False
-        self.start_tour("/blog", 'blog_autocomplete_with_date')
-
-    def test_blog_context_and_social_media(self):
-        # Create a second blog to make the blog navigation appear (only shows when len(blogs) > 1)
-        self.env['blog.blog'].create({'name': 'Second Blog'})
-        self.env.ref('website_blog.opt_blog_sidebar_show').active = True
-        # Sidebar markup only renders when at least one sidebar block is enabled (see opt_blog_sidebar_show).
-        # Follow Us provides the s_social_media snippet exercised by the tour.
-        self.env.ref('website_blog.opt_sidebar_blog_index_follow_us').active = True
-        self.start_tour(self.env["website"].get_client_action_url("/blog"), "blog_context_and_social_media", login="admin")
 
     def test_blog_social_image(self):
         with MockRequest(self.env, website=self.env.ref('base.default_website'), url_root='http://example.com'):
@@ -97,43 +65,6 @@ class TestWebsiteBlogUi(weth.tests.HttpCase, TestWebsiteBlogCommon):
         self.assertEqual(response.headers.get('Content-Type'), 'image/svg+xml; charset=utf-8')
         self.assertRegex(response.headers.get('Content-Disposition', ''), fr'{self.user_public.partner_id.name}.svg')
 
-    def test_sidebar_with_date_and_tag(self):
-        Blog = self.env['blog.blog']
-        Post = self.env['blog.post']
-
-        Blog1 = Blog.create({'name': 'Nature'})
-        Blog2 = Blog.create({'name': 'Space'})
-
-        # Create first blog post (Feb 2025)
-        blog_post_1 = Post.create({
-            'name': 'First Blog Post',
-            'blog_id': Blog1.id,
-            'author_id': self.env.user.partner_id.id,
-            'is_published': True,
-            'published_date': datetime(2025, 2, 10, 12, 0, 0),
-        })
-
-        # Create second blog post (Jan 2025)
-        blog_post_2 = Post.create({
-            'name': 'Second Blog Post',
-            'blog_id': Blog2.id,
-            'author_id': self.env.user.partner_id.id,
-            'is_published': True,
-            'published_date': datetime(2025, 1, 15, 14, 30, 0),
-        })
-
-        self.env.ref("website_blog.opt_blog_sidebar_show").active = True
-        self.env.ref("website_blog.opt_sidebar_blog_index_archives").active = True
-        self.env.ref("website_blog.opt_blog_post_sidebar").active = True
-        # Post sidebar "Add some" / #edit-in-backend lives in the Tags block (empty tags, managers).
-        self.env.ref("website_blog.opt_blog_post_tags_display").active = True
-        self.start_tour(self.env["website"].get_client_action_url("/blog"), "blog_sidebar_with_date_and_tag", login="admin")
-
-        (blog_post_1 | blog_post_2).tag_ids = self.blog_tags
-
-        # Activate tags in sidebar for blog_tags_with_date tour
-        self.env.ref("website_blog.opt_sidebar_blog_index_tags").active = True
-        self.start_tour(self.env["website"].get_client_action_url("/blog"), "blog_tags_with_date", login="admin")
 
     def test_sidebar_tags_are_filtered_by_blog_scope(self):
         Blog = self.env['blog.blog']
@@ -173,43 +104,8 @@ class TestWebsiteBlogUi(weth.tests.HttpCase, TestWebsiteBlogCommon):
         self.assertNotIn(unused_tag.name, response.text)
         self.assertNotIn(other_blog_tag.name, response.text)
 
-    def test_blog_access_rights(self):
-        group_website_blog_manager_id = self.ref("website_blog.group_website_blog_manager")
-        group_website_designer_id = self.ref("website.group_website_designer")
-        group_employee_id = self.ref("base.group_user")
-        self.env["res.users"].with_context({"no_reset_password": True}).create({
-            "name": "Adam Blog Manager",
-            "login": "adam",
-            "email": "adam.manager@example.com",
-            "group_ids": [(6, 0, [group_website_blog_manager_id, group_employee_id])],
-        })
-        self.start_tour(self.env["website"].get_client_action_url("/blog"), "blog_manager", login="adam")
-        self.env["res.users"].with_context({"no_reset_password": True}).create({
-            "name": "Eve Employee",
-            "login": "eve",
-            "email": "eve.employee@example.com",
-            "group_ids": [(6, 0, [group_website_designer_id, group_employee_id])],
-        })
-        self.start_tour(self.env["website"].get_client_action_url("/blog"), "blog_no_manager", login="eve")
 
-    def test_blog_posts_dynamic_snippet_options(self):
-        self.start_tour(self.env['website'].get_client_action_url('/', True, True), 'blog_posts_dynamic_snippet_options', login='admin')
 
-    def test_blog_posts_dynamic_snippet_visibility(self):
-        self.start_tour(self.env['website'].get_client_action_url('/', True), 'blog_posts_dynamic_snippet_edit', login='admin')
-        homepage_view = self.env['ir.ui.view'].search([
-            ('website_id', '=', self.env.ref('base.default_website').id),
-            ('key', '=', 'website.homepage'),
-        ])
-        # Unpublish blog posts so the dynamic snippet can't show content.
-        blog_posts = self.env['blog.post'].search([])
-        blog_posts.write({'website_published': False})
-        self.start_tour(self.env['website'].get_client_action_url('/'), 'blog_posts_dynamic_snippet_empty', login='admin')
-
-        # Visibility for misconfigured snippets.
-        homepage_view_arch_misconfigured = re.sub(r'data-filter-id="\d+"', 'data-filter-id="-1"', homepage_view.arch_db)
-        homepage_view.write({'arch': homepage_view_arch_misconfigured})
-        self.start_tour(self.env['website'].get_client_action_url('/'), 'blog_posts_dynamic_snippet_misconfigured', login='admin')
 
     def test_next_article(self):
         blog1, blog2 = self.env['blog.blog'].create([

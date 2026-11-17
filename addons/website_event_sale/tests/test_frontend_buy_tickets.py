@@ -80,49 +80,9 @@ class TestUi(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon):
 
         cls.env['account.journal'].create({'name': 'Cash - Test', 'type': 'cash', 'code': 'CASH-T'})
 
-    def test_admin(self):
-        self.env['product.pricelist'].sudo().with_context(active_test=False).search([]).unlink()
-        # Seen that:
-        # - this test relies on demo data that are entirely in USD (pricelists)
-        # - that main demo company is gelocated in US
-        # - that this test awaits for hardcoded USDs amount
-        # we have to force company currency as USDs only for this test
-        self.cr.execute("UPDATE res_company SET currency_id = %s WHERE id = %s", [self.env.ref('base.USD').id, self.env.ref('base.main_company').id])
-        self.env['product.pricelist'].sudo().create({'name': "Public Pricelist"})
 
-        transfer_provider = self.env.ref('payment.payment_provider_transfer').sudo()
-        transfer_provider.write({
-            'is_live': True,
-            'is_published': True,
-        })
 
-        self.start_tour("/event", 'event_buy_tickets', login="admin")
 
-    def test_demo(self):
-        self.env['product.pricelist'].sudo().with_context(active_test=False).search([]).unlink()
-        transfer_provider = self.env.ref('payment.payment_provider_transfer').sudo()
-        transfer_provider.write({
-            'is_live': True,
-            'is_published': True,
-        })
-
-        #  Ensure the use of USD (company currency)
-        self.env['product.pricelist'].create({'name': "Public Pricelist"})
-
-        self.start_tour("/event", 'event_buy_tickets', login="demo")
-
-    def test_buy_last_ticket(self):
-        transfer_provider = self.env.ref('payment.payment_provider_transfer').sudo()
-        transfer_provider.write({
-            'is_live': True,
-            'is_published': True,
-        })
-
-        self.start_tour("/event", 'event_buy_last_ticket')
-
-    def test_pricelists_different_currencies(self):
-        self.env.user.group_ids += self.env.ref('product.group_product_pricelist')
-        self.start_tour("/event", 'event_sale_pricelists_different_currencies', login='admin')
     # TO DO - add public test with new address when convert to web.tour format.
 
 

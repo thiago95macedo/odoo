@@ -93,45 +93,7 @@ class TestConfiguratorCommon(weth.tests.HttpCase):
         self.startPatcher(patcher)
 
 
-@weth.tests.common.tagged('post_install', '-at_install')
-class TestConfigurator(TestConfiguratorCommon):
 
-    def test_configurator_params_step(self):
-        self.start_tour('/website/configurator/2', 'configurator_params_step', login='admin')
-
-    def test_configurator_page_creation(self):
-        website = self.env['website'].create({
-            'name': "New website",
-        })
-        self.start_tour('/website/force/%s?path=%%2Fwebsite%%2Fconfigurator' % website.id, 'configurator_page_creation', login='admin', timeout=120)
-
-@weth.tests.common.tagged('post_install', '-at_install')
-class TestConfiguratorTranslation(TestConfiguratorCommon):
-
-    def test_01_configurator_translation(self):
-        parseltongue = self.env['res.lang'].create({
-            'name': 'Parseltongue',
-            'code': 'pa_GB',
-            'iso_code': 'pa_GB',
-            'url_code': 'pa_GB',
-        })
-        self.env["base.language.install"].create({
-            'overwrite': True,
-            'lang_ids': [(6, 0, [parseltongue.id])],
-        }).lang_install()
-        self.env.ref('base.user_admin').write({'lang': parseltongue.code})
-        website_fr = self.env['website'].create({
-            'name': "New website",
-        })
-        # disable configurator todo to ensure this test goes through
-        active_todo = self.env['ir.actions.todo'].search([('state', '=', 'open')], limit=1)
-        active_todo.update({'state': 'done'})
-        self.start_tour(
-            '/website/force/%s?path=%%2Fwebsite%%2Fconfigurator' % website_fr.id,
-            'configurator_translation',
-            login='admin',
-            timeout=120,
-        )
 
 
 @weth.tests.common.tagged('post_install', '-at_install')

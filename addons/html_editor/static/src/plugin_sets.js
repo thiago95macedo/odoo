@@ -33,7 +33,7 @@ import { HintPlugin } from "./main/hint_plugin";
 import { InlineCodePlugin } from "./main/inline_code";
 import { LinkPastePlugin } from "./main/link/link_paste_plugin";
 import { LinkPlugin } from "./main/link/link_plugin";
-import { OdooLinkSelectionPlugin } from "./main/link/link_selection_odoo_plugin";
+import { WethLinkSelectionPlugin } from "./main/link/link_selection_weth_plugin";
 import { LinkSelectionPlugin } from "./main/link/link_selection_plugin";
 import { ListPlugin } from "./main/list/list_plugin";
 import { LocalOverlayPlugin } from "./main/local_overlay_plugin";
@@ -59,7 +59,7 @@ import { TextDirectionPlugin } from "./main/text_direction_plugin";
 import { ToolbarPlugin } from "./main/toolbar/toolbar_plugin";
 import { VideoPlugin } from "./main/media/video/video_plugin";
 import { PlaceholderPlugin } from "./main/placeholder_plugin";
-import { CollaborationOdooPlugin } from "./others/collaboration/collaboration_odoo_plugin";
+import { CollaborationWethPlugin } from "./others/collaboration/collaboration_weth_plugin";
 import { CollaborationPlugin } from "./others/collaboration/collaboration_plugin";
 import { CollaborationSelectionAvatarPlugin } from "./others/collaboration/collaboration_selection_avatar_plugin";
 import { CollaborationSelectionPlugin } from "./others/collaboration/collaboration_selection_plugin";
@@ -149,7 +149,7 @@ export const MAIN_PLUGINS = [
     LinkPastePlugin,
     FeffPlugin,
     LinkSelectionPlugin,
-    OdooLinkSelectionPlugin,
+    WethLinkSelectionPlugin,
     PowerButtonsPlugin,
     MoveNodePlugin,
     LocalOverlayPlugin,
@@ -165,7 +165,7 @@ export const MAIN_PLUGINS = [
 
 export const COLLABORATION_PLUGINS = [
     CollaborationPlugin,
-    CollaborationOdooPlugin,
+    CollaborationWethPlugin,
     CollaborationSelectionPlugin,
     CollaborationSelectionAvatarPlugin,
 ];

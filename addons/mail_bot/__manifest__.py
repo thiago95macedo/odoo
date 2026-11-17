@@ -14,7 +14,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'mail_bot/static/src/scss/odoobot_style.scss',
+            'mail_bot/static/src/scss/wethbot_style.scss',
         ],
     },
     'author': 'WETH Tecnologia',

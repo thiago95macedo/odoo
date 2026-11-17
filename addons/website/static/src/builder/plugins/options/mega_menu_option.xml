@@ -23,10 +23,10 @@
             <BuilderSelectItem
                 title.translate="Odoo Menu"
                 actionParam="{
-                    view: 'website.s_mega_menu_odoo_menu',
-                    templateClass: 's_mega_menu_odoo_menu',
+                    view: 'website.s_mega_menu_weth_menu',
+                    templateClass: 's_mega_menu_weth_menu',
                 }">
-                <Image class="'w-75 m-auto'" src="'/website/static/src/img/snippets_thumbs/s_mega_menu_odoo_menu.svg'"/>
+                <Image class="'w-75 m-auto'" src="'/website/static/src/img/snippets_thumbs/s_mega_menu_weth_menu.svg'"/>
             </BuilderSelectItem>
             <BuilderSelectItem
                 title.translate="Little Icons"

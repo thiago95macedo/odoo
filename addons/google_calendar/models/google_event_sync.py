@@ -83,7 +83,7 @@ class GoogleEventSync(models.AbstractModel):
             # Since we cannot delete such record (see method comment), we archive it.
             # Notice that archiving the record will delete the associated record on Google.
             # (archive calls write() which sets need sync to true when the active field changes)
-            # Then, since it has been deleted on Google, the record is also deleted on Odoo DB (_sync_google2odoo).
+            # Then, since it has been deleted on Google, the record is also deleted on Odoo DB (_sync_google2weth).
             self.action_archive()
             return True
         return super().unlink()
@@ -154,7 +154,7 @@ class GoogleEventSync(models.AbstractModel):
         }
         return writeable_values
 
-    def _sync_odoo2google(self, google_service: GoogleCalendarService):
+    def _sync_weth2google(self, google_service: GoogleCalendarService):
         if not self:
             return
         if self._active_name:
@@ -192,7 +192,7 @@ class GoogleEventSync(models.AbstractModel):
         self.unlink()
 
     @api.model
-    def _sync_google2odoo(self, google_events: GoogleEvent, calendar, write_dates=None, default_reminders=()):
+    def _sync_google2weth(self, google_events: GoogleEvent, calendar, write_dates=None, default_reminders=()):
         """Synchronize Google recurrences in WETH. Creates new recurrences, updates
         existing ones.
 

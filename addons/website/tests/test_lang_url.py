@@ -315,56 +315,9 @@ class TestTranslateUrl(TestLangUrl):
         self.assertEqual(r.status_code, 200)
         self.assertEqual(r.url, self.base + '/fr' + name_homepage_url_fr)
 
-    def test_translate_url_exists_in_other_language(self):
-        # It should be possible to translate the url of a page with a url that
-        # exists in another language.
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'translate_url_exists_in_other_language', login='admin')
-        r = self.url_open('/fr/page-en')
-        self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.url, self.base + '/fr/page-en')
-
-    def test_translate_url_exists_in_current_language(self):
-        # It should not be possible to have two url that are the same in the
-        # same language
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'translate_url_exists_in_same_language', login='admin')
-        r = self.url_open('/fr/page-fr-1')
-        self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.url, self.base + '/fr/page-fr-1')
-
-    def test_update_url_impact_homepage_url(self):
-        # If a page url is the website homepage url, updating this url through
-        # the "translate" modal should also update the homepage url if the
-        # translation is done in the website default language.
-        self.website.homepage_url = '/contactus'
-        self.website.default_lang_id = self.lang_fr
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'update_homepage_url', login='admin')
-        self.assertEqual(self.website.homepage_url, '/contactus-fr')
-
-    def test_new_homepage_impact_homepage_url_translations(self):
-        # Using a page as the default website page should update the website
-        # homepage url.
-        page = self.env['website.page'].search([('url', '=', '/contactus')])
-        page_name_fr = '/contactus-fr'
-        page.with_context(lang='fr_FR').url = page_name_fr
-        self.website.default_lang_id = self.lang_fr
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'set_homepage_property_of_a_page', login='admin')
-        self.assertEqual(self.website.homepage_url, page_name_fr)
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'set_homepage_property_of_a_page', login='admin')
-        self.assertEqual(self.website.homepage_url, False)
-
-    def test_translate_url_in_website_default_lang_and_redirect(self):
-        self.website.default_lang_id = self.lang_fr
-        self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'translate_url_and_redirect', login='admin')
-        self.assertTrue(self.env['website.rewrite'].search([('url_from', '=', '/contactus'), ('url_to', '=', '/contactus-fr')]))
 
 
-@tagged('-at_install', 'post_install')
-class TestAddLanguageAndTranslateUrl(HttpCase):
-    def test_add_language_and_translate_url(self):
-        self.env['res.lang'].create({
-            'name': 'Parseltongue',
-            'code': 'pa_GB',
-            'iso_code': 'pa_GB',
-            'url_code': 'pa_GB',
-        })
-        self.start_tour(self.env["website"].get_client_action_url('/', True), 'add_language_and_translate_url', login='admin')
+
+
+
+

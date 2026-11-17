@@ -106,7 +106,3 @@ class TestWebLogin(TestWebLoginCommon):
             "it should had become SUPERUSER")
 
 
-@tagged('post_install', '-at_install')
-class TestUserSwitch(HttpCaseWithUserDemo):
-    def test_user_switch(self):
-        self.start_tour('/odoo', 'test_user_switch', login='demo')

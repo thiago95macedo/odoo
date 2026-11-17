@@ -57,10 +57,7 @@
         'web.assets_backend': [
             'mrp/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'mrp/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'mrp/static/tests/**/*',
         ],
         'web.report_assets_common': [

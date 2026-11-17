@@ -26,7 +26,7 @@ def transpile_javascript(url, content):
     :return: The transpiled source code
     """
     module_path = url_to_module_path(url)
-    legacy_odoo_define = get_aliased_odoo_define_content(module_path, content)
+    legacy_weth_define = get_aliased_weth_define_content(module_path, content)
     dependencies = OrderedSet()
     # The order of the operations does sometimes matter.
     steps = [
@@ -46,13 +46,13 @@ def transpile_javascript(url, content):
         convert_variable_export,
         convert_object_export,
         convert_default_export,
-        partial(wrap_with_odoo_define, module_path, dependencies),
+        partial(wrap_with_weth_define, module_path, dependencies),
         partial(convert_t, url)
     ]
     for s in steps:
         content = s(content)
-    if legacy_odoo_define:
-        content += legacy_odoo_define
+    if legacy_weth_define:
+        content += legacy_weth_define
     return content
 
 
@@ -95,7 +95,7 @@ def url_to_module_path(url):
     else:
         raise ValueError("The js file %r must be in the folder '/static/src' or '/static/lib' or '/static/test'" % url)
 
-def wrap_with_odoo_define(module_path, dependencies, content):
+def wrap_with_weth_define(module_path, dependencies, content):
     """
     Wraps the current content (source code) with the weth.define call.
     It adds as a second argument the list of dependencies.
@@ -688,7 +688,7 @@ def relative_path_to_module_path(url, path_rel):
     return url_to_module_path(result)
 
 
-ODOO_MODULE_RE = re.compile(r"""
+WETH_MODULE_RE = re.compile(r"""
     \s*                                # starting white space
     \/(\*|\/)                          # /* or //
     .*                                 # any comment in between (optional)
@@ -699,7 +699,7 @@ ODOO_MODULE_RE = re.compile(r"""
 """, re.VERBOSE)
 
 
-def is_odoo_module(url, content):
+def is_weth_module(url, content):
     """
     Detect if the file is a native odoo module.
     We look for a comment containing @weth-module.
@@ -708,7 +708,7 @@ def is_odoo_module(url, content):
     :param content: source code
     :return: is this a odoo module that need transpilation ?
     """
-    result = ODOO_MODULE_RE.match(content)
+    result = WETH_MODULE_RE.match(content)
     if result and result['ignore']:
         return False
     addon = url.split('/')[1]
@@ -717,7 +717,7 @@ def is_odoo_module(url, content):
     return bool(result)
 
 
-def get_aliased_odoo_define_content(module_path, content):
+def get_aliased_weth_define_content(module_path, content):
     """
     To allow smooth transition between the new system and the legacy one, we have the possibility to
     defined an alternative module name (an alias) that will act as proxy between legacy require calls and
@@ -754,7 +754,7 @@ def get_aliased_odoo_define_content(module_path, content):
 
     :return: the alias content to append to the source code.
     """
-    matchobj = ODOO_MODULE_RE.match(content)
+    matchobj = WETH_MODULE_RE.match(content)
     if matchobj:
         alias = matchobj['alias']
         if alias:

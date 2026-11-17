@@ -44,12 +44,8 @@ have real delivered quantities in sales orders.
         'web.assets_backend': [
             'sale_timesheet/static/src/components/**/*',
         ],
-        'web.assets_tests': [
-            'sale_timesheet/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'sale_timesheet/static/tests/**/*',
-            ('remove', 'sale_timesheet/static/tests/tours/**/*'),
         ],
         'project.webclient': [
             'sale_timesheet/static/src/components/so_line_field/*',

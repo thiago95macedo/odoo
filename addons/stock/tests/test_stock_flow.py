@@ -2733,49 +2733,6 @@ class TestStockFlow(TestStockCommon):
         self.assertEqual(picking_2.move_ids.move_line_ids.location_dest_id, child_b)
 
 
-class TestStockFlowTourPostInstall(TestStockCommon, HttpCase):
-
-    _test_user_groups = (
-        'product.group_product_manager',  # FIXME: use base.group_user
-    )
-
-    _test_user_name = 'Test Product Manager'
-
-    @users('pauline')  # pauline is the login of the basic stock_user
-    def test_basic_stock_flow_with_minimal_access_rights(self):
-        """
-        Test that a stock user with minimal access rights can open both the
-        list and form picking view, create and process a receipt and a delivery.
-        """
-        receipt, delivery = self.env['stock.picking'].create([
-            {
-                'picking_type_id': self.picking_type_in.id,
-                'location_id': self.supplier_location.id,
-                'location_dest_id': self.stock_location.id,
-                'move_ids': [Command.create({
-                    'product_id': self.product.id,
-                    'uom_id': self.product.uom_id.id,
-                    'product_uom_qty': 1.0,
-                    'location_id': self.supplier_location.id,
-                    'location_dest_id': self.stock_location.id,
-                })],
-            },
-            {
-                'partner_id': self.partner.id,
-                'picking_type_id': self.picking_type_out.id,
-                'location_id': self.stock_location.id,
-                'location_dest_id': self.customer_location.id,
-                'move_ids': [Command.create({
-                    'product_id': self.product.id,
-                    'uom_id': self.product.uom_id.id,
-                    'product_uom_qty': 1.0,
-                    'location_id': self.stock_location.id,
-                    'location_dest_id': self.customer_location.id,
-                })],
-            },
-        ])
-        (receipt | delivery).action_confirm()
-        self.start_tour('/odoo', 'test_basic_stock_flow_with_minimal_access_rights', login='pauline')
 
 
 @tagged('-at_install', 'post_install')

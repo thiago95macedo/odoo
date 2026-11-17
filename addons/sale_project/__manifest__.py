@@ -36,10 +36,7 @@ This module allows to generate a project/task from sales orders.
             'sale_project/static/src/core/**/*',
             'sale_project/static/src/views/**/*',
         ],
-        'web.assets_tests': [
-            'sale_project/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'sale_project/static/tests/*',
         ],
     },

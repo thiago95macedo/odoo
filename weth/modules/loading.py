@@ -21,7 +21,7 @@ from weth.tools.convert import convert_file, IdRef, ConvertMode as LoadMode
 
 from . import db as modules_db
 from .migration import MigrationManager
-from .module import adapt_version, initialize_sys_path, load_openerp_module
+from .module import adapt_version, initialize_sys_path, load_weth_module
 from .module_graph import ModuleGraph
 from .registry import Registry
 
@@ -170,7 +170,7 @@ def load_module_graph(
             if package.name != 'base':
                 env.flush_all()
 
-        load_openerp_module(package.name)
+        load_weth_module(package.name)
 
         if update_operation == 'install':
             py_module = sys.modules['weth.addons.%s' % (module_name,)]

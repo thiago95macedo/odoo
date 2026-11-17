@@ -17,10 +17,7 @@ When a user logs in with a Passkey, MFA will not be required.
         'web.assets_frontend': [
             'auth_passkey_portal/static/src/**',
         ],
-        'web.assets_tests': [
-            'auth_passkey_portal/static/tests/tours/*.js',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'auto_install': True,

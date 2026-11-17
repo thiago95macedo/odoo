@@ -117,10 +117,7 @@
         'web.assets_frontend': [
             'stock/static/src/scss/stock_traceability_report.scss',
         ],
-        'web.assets_tests': [
-            'stock/static/tests/tours/*.js',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'stock/static/tests/*.test.js',
         ],
     },

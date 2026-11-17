@@ -13,10 +13,7 @@
         "web.assets_frontend": [
             "auth_timeout/static/src/services/check_identity/*",
         ],
-        "web.assets_tests": [
-            "auth_timeout/static/tests/tours/**/*",
-        ],
-    },
+            },
     "author": "WETH Tecnologia",
     "license": "LGPL-3",
 }

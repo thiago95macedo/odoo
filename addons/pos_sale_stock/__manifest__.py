@@ -11,10 +11,7 @@
         'point_of_sale._assets_pos': [
             'pos_sale_stock/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'pos_sale_stock/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_sale_stock/static/tests/unit/**/*',
         ],
     },

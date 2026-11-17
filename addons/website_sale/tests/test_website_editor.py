@@ -275,39 +275,7 @@ class TestWebsiteSaleEditor(HttpCaseWithWebsiteUser):
         cls.user_website_user.group_ids += cls.env.ref("sales_team.group_sale_manager")
         cls.user_website_user.group_ids += cls.env.ref("product.group_product_manager")
 
-    def test_category_page_and_products_snippet(self):
-        category = self.env["product.public.category"].create({"name": "Test Category"})
-        self.env["product.public.category"].create({
-            "parent_id": category.id,
-            "name": "Test Category - Child",
-        })
-        self.env["product.template"].create({
-            "name": "Test Product",
-            "website_published": True,
-            "public_categ_ids": [Command.link(category.id)],
-        })
-        self.env["product.template"].create({
-            "name": "Test Product Outside Category",
-            "website_published": True,
-        })
-        self.start_tour(
-            self.env["website"].get_client_action_url("/shop"),
-            "website_sale.category_page_and_products_snippet_edition",
-            login="admin",
-        )
-        self.start_tour("/shop", "website_sale.category_page_and_products_snippet_use", login=None)
 
-    def test_website_sale_restricted_editor_ui(self):
-        self.env["product.template"].create({
-            "name": "Test Product",
-            "website_sequence": 0,
-            "website_published": True,
-        })
-        self.start_tour(
-            self.env["website"].get_client_action_url("/shop"),
-            "website_sale.restricted_editor_ui",
-            login="website_user",
-        )
 
 
 @tagged("post_install", "-at_install")

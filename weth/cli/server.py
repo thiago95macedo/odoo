@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 """
-OpenERP - Server
-OpenERP is an ERP+CRM program for small and medium businesses.
+WETH - Server
+WETH is an enterprise management platform for small and medium businesses.
 
 The whole source code is distributed under the terms of the
 GNU Public Licence.
@@ -120,7 +120,7 @@ def main(args):
 
 
 class Server(Command):
-    """Start the odoo server (default command)"""
+    """Start the WETH server (default command)"""
 
     def run(self, args):
         config.parser.prog = self.prog

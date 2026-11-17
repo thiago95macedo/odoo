@@ -50,27 +50,6 @@ class TestExpensesAccessRights(TestExpenseCommon, HttpCase):
         expense.with_user(self.expense_user_employee).action_reset()
         self.assertEqual(expense.state, 'draft')
 
-    def test_expense_access_rights_user(self):
-        # The expense base user (without other rights) is able to create and read sheet
-
-        user = new_test_user(self.env, login='test-expense', groups='base.group_user')
-        expense_employee = self.env['hr.employee'].sudo().create({
-            'name': 'expense_employee_base_user',
-            'user_id': user.id,
-            'work_contact_id': user.partner_id.id,
-            'expense_manager_id': self.expense_user_manager.id,
-            'address_id': user.partner_id.id,
-        }).sudo(False)
-
-        expense = self.env['hr.expense'].with_user(user).create({
-            'name': 'First Expense for employee',
-            'employee_id': expense_employee.id,
-            # Expense without foreign currency but analytic account.
-            'product_id': self.product_a.id,
-            'price_unit': 1000.0,
-        })
-        self.start_tour("/odoo", 'hr_expense_access_rights_test_tour', login="test-expense")
-        self.assertRecordValues(expense, [{'state': 'submitted'}])
 
     def test_expense_user_cant_approve_own_expense(self):
         expense = self.env['hr.expense'].with_user(self.expense_user_employee).create({

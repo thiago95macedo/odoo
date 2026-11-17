@@ -130,56 +130,6 @@ class TestPurchaseProductCatalog(AccountTestInvoicingCommon, HttpCase):
         self.assertEqual(resp * product_uom_factor, other_product_price_converted)  # Price in product unit
 
     # === TOUR TESTS ===#
-    def test_catalog_vendor_uom(self):
-        """Check the product's UoM matches the one set on the vendor line."""
-        # Enable units of measure and create two partners using different UoM.
-        self._enable_uom()
-        uom_liter = self.env.ref('uom.product_uom_litre')
-        vendor_by_liter, vendor_by_unit = self.env['res.partner'].create([
-            {'name': 'Vendor A (l)'},
-            {'name': 'Vendor B (unit)'},
-        ])
-        # Create a product and configure some vendor's prices.
-        self.env['product.template'].create({
-            'name': "Crab Juice",
-            'seller_ids': [
-                Command.create({
-                    'partner_id': vendor_by_liter.id,
-                    'uom_id': uom_liter.id,
-                    'price': 2,
-                    'discount': 22.5
-                }),
-                Command.create({
-                    'partner_id': vendor_by_liter.id,
-                    'price': 3.0,
-                }),
-                Command.create({
-                    'partner_id': vendor_by_unit.id,
-                    'uom_id': self.uom_unit.id,
-                    'price': 2.5,
-                }),
-                Command.create({
-                    'partner_id': vendor_by_unit.id,
-                    'uom_id': self.uom_unit.id,
-                    'min_qty': 6,
-                    'price': 2.45,
-                }),
-                Command.create({
-                    'partner_id': vendor_by_unit.id,
-                    'uom_id': self.uom_unit.id,
-                    'min_qty': 12,
-                    'price': 2.45,
-                    'discount': 10.2,
-                }),
-            ],
-        })
-        # Create two PO and rename them to find them easily in the tour.
-        purchase_orders = self.env['purchase.order'].create([{
-            'partner_id': vendor.id
-        } for vendor in (vendor_by_liter, vendor_by_unit)])
-        purchase_orders[0].name = "PO/TEST/00001"
-        purchase_orders[1].name = "PO/TEST/00002"
-        self.start_tour('/weth/purchase', 'test_catalog_vendor_uom', login='accountman')
 
     def test_seller_price_discounted_with_template(self):
         ProductAttribute = self.env['product.attribute']

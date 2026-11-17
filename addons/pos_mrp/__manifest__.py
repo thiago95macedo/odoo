@@ -14,10 +14,7 @@ This is a link module between Point of Sale and Mrp.
         'security/ir.access.csv',
     ],
     'assets': {
-        'web.assets_tests': [
-            'pos_mrp/static/tests/tours/**/*',
-        ],
-    },
+            },
     'auto_install': True,
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',

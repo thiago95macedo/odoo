@@ -38,7 +38,7 @@ class PaypalOnboardingController(Controller):
             "capabilities": "paypal_wallet_vaulting_advanced",
             "features": "payment,refund,access_merchant_information,billing_agreement,vault",
             "integrationType": "FO",
-            "partnerLogoUrl": f"{base_url}/web/static/img/odoo_logo.svg",
+            "partnerLogoUrl": f"{base_url}/web/static/img/weth_logo.svg",
             "returnToPartnerUrl": f"{base_url}{redirect_url}",
             "displayMode": "minibrowser",
             "sellerNonce": provider.paypal_seller_nonce,

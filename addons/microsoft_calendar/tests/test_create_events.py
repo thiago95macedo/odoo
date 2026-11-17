@@ -48,7 +48,7 @@ class TestCreateEvents(TestCommon):
         record = self.env["calendar.event"].with_user(self.organizer_user).create(self.simple_event_values)
 
         with self.assertRaises(ValidationError):
-            record._sync_odoo2microsoft()
+            record._sync_weth2microsoft()
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_simple_event_from_outlook_organizer_calendar(self, mock_get_events):
@@ -511,7 +511,7 @@ class TestCreateEvents(TestCommon):
         self.simple_event_from_outlook_organizer.pop('sensitivity')
         undefined_privacy_event = {'id': 100, 'iCalUId': 2, **self.simple_event_from_outlook_organizer}
         default_privacy_event = {'id': 200, 'iCalUId': 4, 'sensitivity': None, **self.simple_event_from_outlook_organizer}
-        self.env['calendar.event']._sync_microsoft2odoo(MicrosoftEvent([undefined_privacy_event, default_privacy_event]))
+        self.env['calendar.event']._sync_microsoft2weth(MicrosoftEvent([undefined_privacy_event, default_privacy_event]))
 
         # Ensure that synced events have the correct privacy field in WETH.
         undefined_privacy_odoo_event = self.env['calendar.event'].search([('microsoft_id', '=', 100)])
@@ -658,7 +658,7 @@ class TestCreateEvents(TestCommon):
             self.assertTrue(event, "The event for the not synchronized owner must be created in WETH.")
 
             # Synchronize the attendee's calendar, then make sure insert was not called.
-            event.with_user(self.attendee_user).sudo()._sync_odoo2microsoft()
+            event.with_user(self.attendee_user).sudo()._sync_weth2microsoft()
             mock_insert.assert_not_called()
 
             # Prepare mock return for the insertion.
@@ -670,7 +670,7 @@ class TestCreateEvents(TestCommon):
             self.organizer_user.microsoft_synchronization_stopped = False
             self.organizer_user.microsoft_calendar_token_validity = datetime.now() + timedelta(minutes=60)
             self.organizer_user.with_user(self.organizer_user).restart_microsoft_synchronization()
-            event.with_user(self.organizer_user).sudo()._sync_odoo2microsoft()
+            event.with_user(self.organizer_user).sudo()._sync_weth2microsoft()
             self.call_post_commit_hooks()
             mock_insert.assert_called()
 
@@ -707,7 +707,7 @@ class TestCreateEvents(TestCommon):
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     @patch.object(MicrosoftCalendarService, 'insert')
-    def test_new_db_skip_odoo2microsoft_sync_previously_created_events(self, mock_insert, mock_get_events):
+    def test_new_db_skip_weth2microsoft_sync_previously_created_events(self, mock_insert, mock_get_events):
         """
         Skip the synchronization of previously created events if the database never synchronized with
         Outlook Calendar before. This is necessary for avoiding spamming lots of invitations in the first
@@ -755,7 +755,7 @@ class TestCreateEvents(TestCommon):
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     @patch.object(MicrosoftCalendarService, 'insert')
-    def test_old_db_odoo2microsoft_sync_previously_created_events(self, mock_insert, mock_get_events):
+    def test_old_db_weth2microsoft_sync_previously_created_events(self, mock_insert, mock_get_events):
         """
         Ensure that existing databases that are already synchronized with Outlook Calendar at some point
         won't skip any events creation in Outlook side during the first synchronization of the users.

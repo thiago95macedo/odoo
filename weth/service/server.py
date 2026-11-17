@@ -1419,16 +1419,16 @@ server_phoenix = False
 
 
 def load_server_wide_modules():
-    from weth.modules.module import load_openerp_module  # noqa: PLC0415
+    from weth.modules.module import load_weth_module  # noqa: PLC0415
     with gc.disabling_gc():
         for m in config['server_wide_modules']:
             try:
-                load_openerp_module(m)
+                load_weth_module(m)
             except Exception:
                 msg = ''
                 if m == 'web':
                     msg = """
-    The `web` module is provided by the addons found in the `openerp-web` project.
+    The `web` module is provided by the addons found in the `addons` directory.
     Maybe you forgot to add those addons in your addons_path configuration."""
                 _logger.exception('Failed to load server-wide module `%s`.%s', m, msg)
 
@@ -1437,7 +1437,7 @@ _RELOAD_EXIT_CODE = 75  # EX_TEMPFAIL from sysexits.h: child asks supervisor to 
 
 
 def _reexec(updated_modules=None):
-    """reexecute openerp-server process with (nearly) the same arguments.
+    """reexecute weth-bin process with (nearly) the same arguments.
 
     Uses `os.execve` by default for pycharm environments. For debugpy
     environments, use a supervisor/subprocess design to respawn the server

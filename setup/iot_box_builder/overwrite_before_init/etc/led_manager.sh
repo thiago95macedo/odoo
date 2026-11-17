@@ -57,14 +57,14 @@ while true; do
         continue
     fi
 
-    if ! systemctl is-active --quiet odoo.service; then
+    if ! systemctl is-active --quiet weth.service; then
         # Odoo service is not running: Red ON, Green OFF
         led_constant "$RED_LED"
         led_off "$GREEN_LED"
         continue
     fi
 
-    if grep -q "remote_server" /home/pi/odoo.conf 2>/dev/null; then
+    if grep -q "remote_server" /home/pi/weth.conf 2>/dev/null; then
         # Paired with database: Green ON, Red OFF
         led_constant "$GREEN_LED"
         led_off "$RED_LED"

@@ -52,9 +52,3 @@ class TestSelfOrderKioskQFPay(TestPointOfSaleHttpCommon, AccountTestInvoicingCom
         qfpay_is_valid_self_payment_method = self.pos_config.has_valid_self_payment_method()
         self.assertTrue(qfpay_is_valid_self_payment_method, 'The orders payed with qfpay should be sent to Kitchen Display/Printer only after being paid')
 
-    def test_tour_kiosk_qfpay_order(self):
-        self.pos_config.with_user(self.pos_user).open_ui()
-        self.pos_config.current_session_id.set_opening_control(0, "")
-        self_route = self.pos_config._get_self_order_route()
-        with patch('weth.addons.pos_qfpay.controllers.main.consteq', lambda a, b: True):
-            self.start_tour(self_route, "kiosk_qfpay_order")

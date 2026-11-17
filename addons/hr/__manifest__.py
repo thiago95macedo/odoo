@@ -88,13 +88,9 @@
         ],
         'web.assets_unit_tests': [
             'hr/static/tests/**/*',
-            ('remove', 'hr/static/tests/tours/**/*'),
             ('remove', 'hr/static/tests/legacy/**/*'),
         ],
-        'web.assets_tests': [
-            'hr/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',

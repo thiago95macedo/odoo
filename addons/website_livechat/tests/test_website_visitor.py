@@ -80,7 +80,7 @@ class WebsiteVisitorTestsLivechat(WebsiteVisitorTestsCommon):
         new_channel = self.env["discuss.channel"].browse(new_channel_id)
         self.assertFalse(new_channel.livechat_visitor_id)
         self.make_jsonrpc_request(
-            route="/website/odoo_track",
+            route="/website/track",
             params={
                 "res_model": self.tracked_page._name,
                 "res_id": self.tracked_page.id,
@@ -114,7 +114,7 @@ class WebsiteVisitorTestsLivechat(WebsiteVisitorTestsCommon):
         )
 
         self.make_jsonrpc_request(
-            route="/website/odoo_track",
+            route="/website/track",
             params={
                 "res_model": self.tracked_page._name,
                 "res_id": self.tracked_page.id,

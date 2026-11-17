@@ -29,7 +29,7 @@ class TestDeleteEvents(TestCommon):
         self.create_events_for_tests()
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_delete_simple_event_from_odoo_organizer_calendar(self, mock_delete):
+    def test_delete_simple_event_from_weth_organizer_calendar(self, mock_delete):
         event_id = self.simple_event.microsoft_id
 
         self.simple_event.with_user(self.organizer_user).unlink()
@@ -59,7 +59,7 @@ class TestDeleteEvents(TestCommon):
         )
 
     @patch.object(MicrosoftCalendarService, 'delete')
-    def test_archive_simple_event_from_odoo_organizer_calendar(self, mock_delete):
+    def test_archive_simple_event_from_weth_organizer_calendar(self, mock_delete):
         event_id = self.simple_event.microsoft_id
 
         self.simple_event.with_user(self.organizer_user).write({'active': False})

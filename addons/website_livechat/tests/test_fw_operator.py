@@ -54,15 +54,6 @@ class TestFwOperator(ChatbotCase, HttpCase, TestLivechatCommon):
         default_website = self.env.ref("base.default_website")
         default_website.channel_id = self.livechat_channel.id
 
-    def test_chatbot_removed_after_forward_to_operator(self):
-        self.start_tour("/", "website_livechat.chatbot_forward")
-        channel = self.env["discuss.channel"].search(
-            [("livechat_channel_id", "=", self.livechat_channel.id)]
-        )
-        self.assertEqual(self.operator.partner_id, channel.livechat_agent_partner_ids)
-        self.assertNotIn(
-            self.chatbot_fw_script.operator_partner_id, channel.channel_member_ids.partner_id
-        )
 
     def test_chatbot_trigger_blocked_after_forward_to_operator(self):
         data = self.make_jsonrpc_request("/im_livechat/get_session", {

@@ -29,10 +29,7 @@
         'website.assets_inside_builder_iframe': [
             'website_profile/static/src/**/*.edit.js',
         ],
-        'web.assets_tests': [
-            'website_profile/static/tests/tours/tour_website_profile_description.js',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

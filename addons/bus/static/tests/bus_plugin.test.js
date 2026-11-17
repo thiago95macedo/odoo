@@ -219,7 +219,7 @@ test("websocket disconnects when user logs out", async () => {
         ["BUS:RECONNECT", () => expect.step("BUS:CONNECT")],
         ["BUS:DISCONNECT", () => expect.step("BUS:DISCONNECT")]
     );
-    patchWithCleanup(session, { user_id: null, db: "openerp" });
+    patchWithCleanup(session, { user_id: null, db: "weth" });
     patchWithCleanup(user, { userId: 1 });
     await makeTestApp({ forceNew: true });
     await startBusService();

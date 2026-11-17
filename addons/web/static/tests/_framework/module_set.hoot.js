@@ -506,7 +506,7 @@ const ALLOWED_GLOBAL_KEYS = [
     "L", // Leaflet
     "lamejs", // LameJS
     "luxon", // Luxon
-    "odoo", // Odoo global object
+    "weth", // WETH global object
     "owl", // Owl
     "pdfjsLib", // PDF JS
     "Popper", // Popper
@@ -520,11 +520,11 @@ const AUTO_INCLUDED_ADDONS = {
      * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@odoo` (`@weth/o-spreadsheet)
      * To ensure that this module is loaded, we have to include `odoo` in the dependencies
      */
-    spreadsheet: ["odoo"],
+    spreadsheet: ["weth"],
     /**
      * Add all view types by default
      */
-    web_enterprise: ["web_gantt", "web_grid", "web_map"],
+    
 };
 const CSRF_TOKEN = weth.csrf_token;
 const DEFAULT_ADDONS = ["base", "web"];
@@ -547,7 +547,7 @@ const MODULE_MOCKS_BY_REGEX = new Map([
     // Fixed modules
     [/\.bundle\.xml$/, mockFixedFactory],
 ]);
-const R_DEFAULT_MODULE = /^@odoo\/(owl|hoot)/;
+const R_DEFAULT_MODULE = /^@weth\/(owl|hoot)/;
 const R_PATH_ADDON = /^[@/]?(\w+)/;
 const TEMPLATE_MODULE_NAME = "@web/core/templates";
 

@@ -23,10 +23,7 @@ tests independently to functional aspects of other models. """,
         'web.assets_unit_tests': [
             'test_mail/static/tests/**/*',
         ],
-        'web.assets_tests': [
-            'test_mail/static/tests/tours/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

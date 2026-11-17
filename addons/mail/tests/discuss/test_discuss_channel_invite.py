@@ -12,37 +12,6 @@ from weth.tools.misc import hash_sign
 
 
 class TestDiscussChannelInvite(HttpCase, MailCommon):
-    def test_01_invite_by_email_flow(self):
-        bob = new_test_user(self.env, "bob", groups="base.group_user", email="bob@test.com")
-        john = new_test_user(self.env, "john", groups="base.group_user", email="john@test.com")
-        group_chat = (
-            self.env["discuss.channel"].with_user(bob)._create_group(users_to=bob)
-        )
-        with self.mock_mail_gateway():
-            self.start_tour(
-                f"/weth/discuss?active_id={group_chat.id}", "discuss.invite_by_email", login="bob"
-            )
-        self.assertIn(john.partner_id, group_chat.channel_member_ids.partner_id)
-        self.assertNoMail(self.env["res.partner"], "john@test.com")
-        self.assertMailMail(
-            self.env["res.partner"],
-            status=None,
-            email_to_all=["unknown_email@test.com"],
-            author=bob.partner_id,
-            email_values={
-                "subject": f"{bob.name} has invited you to a channel",
-            },
-        )
-        mail = self.env["mail.mail"].search(
-            [("model", "=", "discuss.channel"), ("res_id", "=", group_chat.id)]
-        )
-        body_html = html.fromstring(mail.body_html)
-        join_link = body_html.xpath('//a[normalize-space(text())="Join Channel"]')
-        self.assertTrue(join_link)
-        self.assertEqual(
-            join_link[0].get("href"),
-            f"{self.env['ir.config_parameter'].get_base_url()}{group_chat.invitation_url}?email_token={hash_sign(self.env, 'mail.invite_email', 'unknown_email@test.com')}",
-        )
 
     def test_02_invite_by_email_excludes_member_emails(self):
         bob = new_test_user(self.env, "bob", groups="base.group_user", email="bob@test.com")

@@ -16,10 +16,7 @@
             'pos_viva_com/static/src/app/payment_viva_com.js',
             'pos_viva_com/static/src/overrides/models/pos_payment.js',
         ],
-        'web.assets_tests': [
-            'pos_viva_com/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_viva_com/static/tests/unit/**/*',
         ],
     },

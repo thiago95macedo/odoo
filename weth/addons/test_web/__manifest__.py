@@ -10,10 +10,7 @@
     'data': ['ir.access.csv'],
 
     'assets': {
-        'web.assets_tests': [
-            'test_web/static/tests/tours/*.js',
-        ],
-    },
+            },
 
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',

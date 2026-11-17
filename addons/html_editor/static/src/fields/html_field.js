@@ -5,7 +5,7 @@ import { isHtmlContentSupported } from "@html_editor/core/selection_plugin";
 import { stripVersion } from "@html_editor/html_migrations/html_migrations_utils";
 import { HtmlUpgradeManager } from "@html_editor/html_migrations/html_upgrade_manager";
 import { extractUnmappedAttachmentsIds } from "@html_editor/main/media/media_plugin";
-import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_odoo_plugin";
+import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_weth_plugin";
 import {
     MAIN_EMBEDDINGS,
     READONLY_MAIN_EMBEDDINGS,

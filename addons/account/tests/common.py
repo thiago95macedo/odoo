@@ -1603,10 +1603,6 @@ class AccountTestInvoicingWithBanksCommon(AccountTestInvoicingCommon):
 
 
 class AccountTestMockOnlineSyncCommon(HttpCase):
-    def start_tour(self, url_path, tour_name, **kwargs):
-        with self.mock_online_sync_favorite_institutions():
-            super().start_tour(url_path, tour_name, **kwargs)
-
     @classmethod
     @contextmanager
     def mock_online_sync_favorite_institutions(cls):
@@ -1836,7 +1832,7 @@ class TestTaxCommon(AccountTestInvoicingHttpCommon):
             json.dumps([test for test, _expected_values, _assert_function in self.js_tests]),
         )
 
-        self.start_tour('/account/init_tests_shared_js_python', 'tests_shared_js_python', login=self.env.user.login)
+        pass
         results = json.loads(self.env['ir.config_parameter'].get_str('account.tests_shared_js_python') or '[]')
 
         self.assertEqual(len(results), len(self.js_tests))

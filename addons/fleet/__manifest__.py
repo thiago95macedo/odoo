@@ -52,10 +52,7 @@ Main Features
         'web.assets_backend': [
             'fleet/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'fleet/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

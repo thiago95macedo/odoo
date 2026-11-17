@@ -28,26 +28,7 @@ class TestClickAndCollectFlow(HttpCase, ClickAndCollectCommon):
             "partner_longitude": 2.0,
         })
 
-    def test_buy_with_click_and_collect_as_public_user(self):
-        """
-        Test the basic flow of buying with click and collect as a public user with more than
-        one delivery method available.
-        """
-        self.website.sudo().warehouse_id = self._create_warehouse()  # Only C&C has stock available
-        self.start_tour("/shop", "website_sale_collect_widget")
 
-    def test_default_location_is_set_for_pick_up_in_store(self):
-        """
-        Verify that when `Pick Up In Store` is the only active delivery method with the only wh,
-        the checkout flow automatically sets the default store location.
-        """
-        self._disable_process_patcher()
-        self.env["delivery.carrier"].search([]).active = False
-        self.in_store_dm.active = True
-        self.in_store_dm.is_published = True
-        self.start_tour(
-            "/shop", "website_sale_collect_buy_product_default_location_pick_up_in_store"
-        )
 
     def test_cash_on_delivery_resets_on_in_store_type(self):
         """

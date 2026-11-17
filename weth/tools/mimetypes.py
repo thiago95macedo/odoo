@@ -33,7 +33,7 @@ class _Signature(typing.NamedTuple):
     offset: int = 0
 
 
-def _odoo_guess_mimetype(bin_data: Buffer, default: str = 'application/octet-stream') -> str:
+def _weth_guess_mimetype(bin_data: Buffer, default: str = 'application/octet-stream') -> str:
     bin_data = bytes(bin_data)
     for supported_mimetype in SUPPORTED_MIMETYPES:
         if supported_mimetype.match(bin_data):
@@ -75,10 +75,10 @@ def guess_mimetype(bin_data: Buffer, default: str = 'application/octet-stream') 
     if magic:
         return _magic_guess_mimetype(bin_data)
 
-    return _odoo_guess_mimetype(bin_data, default)
+    return _weth_guess_mimetype(bin_data, default)
 
 
-def _odoo_guess_file_mimetype(path, default='application/octet-stream'):
+def _weth_guess_file_mimetype(path, default='application/octet-stream'):
     with open(path, 'rb') as file:
         data = file.read(MIMETYPE_HEAD_SIZE)
 
@@ -86,7 +86,7 @@ def _odoo_guess_file_mimetype(path, default='application/octet-stream'):
             file.seek(0)
             data = file.read()
 
-        mimetype = _odoo_guess_mimetype(data)
+        mimetype = _weth_guess_mimetype(data)
 
     return mimetype or default
 
@@ -95,7 +95,7 @@ def guess_file_mimetype(path, default='application/octet-stream'):
     if magic:
         return magic.from_file(path, mime=True)
 
-    return _odoo_guess_file_mimetype(path, default)
+    return _weth_guess_file_mimetype(path, default)
 
 
 def _match_magic_number(bin_data: bytes, *, match_all=(), match_any=()):

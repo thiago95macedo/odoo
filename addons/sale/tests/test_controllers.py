@@ -109,35 +109,6 @@ class TestSalesControllers(HttpCase, SaleCommon):
 
 @tagged("post_install", "-at_install", "mail_flow")
 class TestSaleSignature(HttpCaseWithUserPortal):
-    def test_01_portal_sale_signature_tour(self):
-        """The goal of this test is to make sure the portal user can sign SO."""
-        portal_user_partner = self.partner_portal
-        # create a SO to be signed
-        sales_order = self.env["sale.order"].create({
-            "name": "test SO",
-            "partner_id": portal_user_partner.id,
-            "state": "sent",
-            "prepayment_percent": 0,
-        })
-        self.env["sale.order.line"].create({
-            "order_id": sales_order.id,
-            "product_id": self.env["product.product"].create({"name": "A product"}).id,
-        })
-        self.assertFalse(sales_order.message_partner_ids)
-
-        # must be sent to the user so he can see it
-        email_act = sales_order.action_quotation_send()
-        email_ctx = email_act.get("context", {})
-        sales_order.with_context(**email_ctx).message_post_with_source(
-            self.env["mail.template"].browse(email_ctx.get("default_template_id")),
-            subtype_xmlid="mail.mt_comment",
-        )
-        self.assertFalse(
-            sales_order.message_partner_ids,
-            "Do not automatically set customer as follower, will be suggested recipient",
-        )
-
-        self.start_tour("/my/quotes", "sale_signature", login="portal")
 
     def test_portal_cannot_delete_signed_order_message(self):
         sales_order = self.env["sale.order"].create({

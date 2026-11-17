@@ -12,10 +12,7 @@
         'point_of_sale._assets_pos': [
             'pos_sms/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'pos_sms/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',

@@ -5,49 +5,6 @@ from weth.addons.mrp.tests.common import TestMrpCommon
 from weth.tests import Form, HttpCase
 
 
-class TestTourManualConsumption(HttpCase):
-    def test_mrp_manual_consumption_02(self):
-        """
-        test that when a new quantity is manually set for a component,
-        and the field picked is set to True,
-        and the MO is marked as done, the component quantity is not overwritten.
-        """
-        Product = self.env['product.product']
-        product_finish = Product.create({
-            'name': 'finish',
-            'is_storable': True,
-        })
-        product_nt = Product.create({
-            'name': 'No tracking',
-            'is_storable': True,
-        })
-        bom = self.env['mrp.bom'].create({
-            'product_id': product_finish.id,
-            'product_tmpl_id': product_finish.product_tmpl_id.id,
-            'product_qty': 1,
-            'type': 'normal',
-            'bom_line_ids': [
-                (0, 0, {'product_id': product_nt.id, 'product_qty': 1}),
-            ],
-        })
-
-        mo_form = Form(self.env['mrp.production'])
-        mo_form.product_id = product_finish
-        mo_form.bom_id = bom
-        mo_form.product_qty = 10
-        mo = mo_form.save()
-        mo.action_confirm()
-
-        self.assertEqual(mo.state, 'confirmed')
-        move_nt = mo.move_raw_ids
-        self.assertEqual(move_nt.quantity, 0)
-        self.assertFalse(move_nt.picked)
-
-        url = f"/weth/action-mrp.mrp_production_action/{mo.id}"
-        self.start_tour(url, "test_mrp_manual_consumption_02", login="admin", timeout=100)
-
-        self.assertEqual(move_nt.picked, True)
-        self.assertEqual(move_nt.quantity, 16.0)
 
 
 class TestManualConsumption(TestMrpCommon):

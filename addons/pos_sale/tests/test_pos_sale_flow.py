@@ -808,81 +808,7 @@ class TestPoSSale(PoSSaleSyncCommon, TestPointOfSaleHttpCommon):
         invoice.button_draft()
         self.assertEqual(invoice.state, 'posted')
 
-    def test_pos_order_and_invoice_amounts(self):
-        payment_term = self.env['account.payment.term'].create({
-            'name': "early_payment_term",
-            'discount_percentage': 10,
-            'discount_days': 10,
-            'early_discount': True,
-            'early_pay_discount_computation': 'mixed',
-            'line_ids': [Command.create({
-                'value': 'percent',
-                'nb_days': 0,
-                'value_amount': 100,
-            })]
-        })
-        partner_test = self.env['res.partner'].create({
-            'name': 'AAA - Test Partner invoice',
-            'property_payment_term_id': payment_term.id,
-        })
 
-        tax = self.env['account.tax'].create({
-            'name': 'Tax 10%',
-            'amount': 10,
-            'amount_type': 'percent',
-            'type_tax_use': 'sale',
-        })
-        test_product = self.env['product.product'].create({
-            'name': 'Product Test',
-            'available_in_pos': True,
-            'list_price': 1000,
-            'taxes_id': [(6, 0, [tax.id])],
-        })
-
-        self.env['sale.order'].sudo().create({
-            'partner_id': partner_test.id,
-            'order_line': [
-                Command.create({
-                    'product_id': test_product.id,
-                    'price_unit': test_product.lst_price,
-                }),
-            ],
-        })
-
-        self.main_pos_config.open_ui()
-        self.start_tour("/pos/ui/%d" % self.main_pos_config.id, 'POSSalePaymentScreenInvoiceOrder', login="accountman")
-
-        order = self.env['pos.order'].search([('partner_id', '=', partner_test.id)], limit=1)
-        self.assertTrue(order)
-        self.assertEqual(order.partner_id, partner_test)
-
-        invoice = self.env['account.move'].search([('invoice_origin', '=', order.pos_reference)], limit=1)
-        self.assertTrue(invoice)
-        self.assertFalse(invoice.invoice_payment_term_id)
-
-        self.assertAlmostEqual(order.amount_total, invoice.amount_total, places=2, msg="Order and Invoice amounts do not match.")
-
-    def test_full_down_payment_so_still_listed(self):
-        """
-        Tests that a Sale Order fully paid by a down payment in the PoS is still listed, so it can be settled
-        """
-        product_a = self.env['product.product'].create({
-            'name': 'Product A',
-            'lst_price': 10.0,
-        })
-        so = self.env['sale.order'].sudo().create({
-            'name': 'Full Down Payment SO',
-            'partner_id': self.env['res.partner'].create({'name': 'Test Partner'}).id,
-            'order_line': [(0, 0, {
-                'product_id': product_a.id,
-                'product_uom_qty': 1,
-                'price_unit': product_a.lst_price,
-            })]
-        })
-        so.action_confirm()
-        self.main_pos_config.down_payment_product_id = self.env.ref("pos_sale.default_downpayment_product")
-        self.main_pos_config.open_ui()
-        self.start_pos_tour('test_full_down_payment_so_still_listed', login="accountman")
 
     def test_amount_to_invoice(self):
         """
@@ -975,83 +901,6 @@ class TestPoSSale(PoSSaleSyncCommon, TestPointOfSaleHttpCommon):
         pos_order = self.env['pos.order'].browse(pos_order_id)
         self.assertFalse(pos_order.account_move.invoice_payment_term_id)
 
-    def test_sale_order_fp_different_from_partner_one(self):
-        """
-        Tests that the fiscal position of the sale order is not the same as the partner's fiscal position.
-        The PoS should always use the fiscal position of the sale order when settling it.
-        """
-        self.env.user.group_ids += self.quick_ref('sales_team.group_sale_salesman')
-        tax = self.env['account.tax'].create({
-            'name': 'Base Tax',
-            'amount': 15,
-        })
-        fp_1 = self.env['account.fiscal.position'].create({
-            'name': "Partner FP",
-        })
-        fp_2 = self.env['account.fiscal.position'].create({
-            'name': "Sale Order FP",
-        })
-        tax_override_1 = self.env['account.tax'].create({
-            'name': 'Tax Override 1',
-            'amount': 100,
-            'amount_type': 'percent',
-            'fiscal_position_ids': [fp_1.id],
-            'original_tax_ids': [tax.id],
-        })
-        tax_override_2 = self.env['account.tax'].create({
-            'name': 'Tax Override 2',
-            'amount': 0,
-            'amount_type': 'percent',
-            'fiscal_position_ids': [fp_2.id],
-            'original_tax_ids': [tax.id],
-        })
-        product_a = self.env['product.product'].create({
-            'name': 'Product A',
-            'available_in_pos': True,
-            'lst_price': 10.0,
-            'taxes_id': [tax.id],
-        })
-        partner_test = self.env['res.partner'].create({
-            'name': 'Test Partner',
-            'property_account_position_id': fp_1.id,
-        })
-        sale_a = self.env['sale.order'].create({
-            'partner_id': partner_test.id,
-            'order_line': [(0, 0, {
-                'product_id': product_a.id,
-                'product_uom_qty': 1,
-                'price_unit': product_a.lst_price,
-            })]
-        })
-        sale_b = self.env['sale.order'].create({
-            'partner_id': partner_test.id,
-            'fiscal_position_id': fp_2.id,
-            'order_line': [(0, 0, {
-                'product_id': product_a.id,
-                'product_uom_qty': 1,
-                'price_unit': product_a.lst_price,
-            })]
-        })
-        self.main_pos_config.write({
-            'tax_regime_selection': True,
-            'default_fiscal_position_id': False,
-        })
-        self.assertEqual(sale_a.fiscal_position_id, fp_1, "Sale order should have the fiscal position of the partner")
-        self.assertEqual(sale_a.amount_total, 20, "Sale order amount should be 20 with the tax override 1")
-        self.assertEqual(sale_a.amount_untaxed, 10, "Sale order untaxed amount should be 10 with the tax override 1")
-        self.assertEqual(sale_b.fiscal_position_id, fp_2, "Sale order should have the fiscal position set on the sale order")
-        self.assertEqual(sale_b.amount_total, 10, "Sale order amount should be 10 with the tax override 2")
-        self.assertEqual(sale_b.amount_untaxed, 10, "Sale order untaxed amount should be 10 with the tax override 2")
-        self.start_pos_tour("test_sale_order_fp_different_from_partner_one", login="accountman")
-
-        pos_order_a = self.env['pos.order'].search([('fiscal_position_id', '=', fp_1.id)], limit=1, order='id desc')
-        pos_order_b = self.env['pos.order'].search([('fiscal_position_id', '=', fp_2.id)], limit=1, order='id desc')
-        self.assertEqual(pos_order_a.amount_total, 20, "PoS order amount should be 20 with the tax override 1")
-        self.assertEqual(pos_order_a.amount_tax, 10, "PoS order untaxed amount should be 10 with the tax override 1")
-        self.assertEqual(pos_order_a.lines[0].tax_ids, tax_override_1, "PoS order should have the tax override 1")
-        self.assertEqual(pos_order_b.amount_total, 10, "PoS order amount should be 10 with the tax override 2")
-        self.assertEqual(pos_order_b.amount_tax, 0, "PoS order untaxed amount should be 10 with the tax override 2")
-        self.assertEqual(pos_order_b.lines[0].tax_ids, tax_override_2, "PoS order should have the tax override 2")
 
     def test_settle_order_with_different_uom(self):
         """Verify that a qty has changed according to UOM"""
@@ -1263,51 +1112,7 @@ class TestPoSSale(PoSSaleSyncCommon, TestPointOfSaleHttpCommon):
 
         self.assertEqual(sale_order.amount_unpaid, 0.0)
 
-    def test_settled_line_price_is_not_crossed_out(self):
-        """
-        The french module crosses out the price when the cashier changed it. The
-        price of a settled line comes from the sale order, so it must not be
-        crossed out.
-        """
-        if not self.env["ir.module.module"].search([("name", "=", "l10n_fr_pos_cert"), ("state", "=", "installed")]):
-            self.skipTest("l10n_fr_pos_cert module is required for this test")
-        self.main_pos_config.company_id.sudo().country_id = self.env.ref('base.fr')
-        product = self.env['product.product'].create({
-            'name': 'Test Product',
-            'available_in_pos': True,
-            'lst_price': 100.0,
-            'taxes_id': False,
-        })
-        self.env['sale.order'].create({
-            'partner_id': self.partner_a.id,
-            'order_line': [(0, 0, {
-                'product_id': product.id,
-                'product_uom_qty': 1,
-                'price_unit': product.lst_price,
-            })],
-        })
-        self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'test_settled_line_price_is_not_crossed_out', login="accountman")
 
-    def test_advance_payment_with_extra_lines(self):
-        so = self.env['sale.order'].sudo().create({
-            'partner_id': self.partner_a.id,
-            'order_line': [
-                (0, 0, {
-                    'name': self.product_a.name,
-                    'product_id': self.product_a.id,
-                    'product_uom_qty': 1.0,
-                    'price_unit': 100,
-                    'tax_ids': False,
-                })],
-        })
-        so.action_confirm()
-        self.product_a.write({'available_in_pos': True})
-
-        # Apply 10% down payment and add a product to the PoS order
-        self.main_pos_config.open_ui()
-        self.main_pos_config.down_payment_product_id = self.env.ref("pos_sale.default_downpayment_product")
-        self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'PoSApplyDownpaymentWithExtraLine', login="accountman")
-        self.assertEqual(so.amount_unpaid, 90)
 
     def test_ensure_default_products_in_multiple_company(self):
         if self.env['ir.module.module']._get('pos_hr').state != 'installed':

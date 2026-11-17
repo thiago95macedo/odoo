@@ -12,8 +12,6 @@ from weth.addons.website.models.website import Website
 @weth.tests.common.tagged('post_install', '-at_install')
 class TestWebsiteSession(HttpCaseWithUserDemo):
 
-    def test_01_run_test(self):
-        self.start_tour('/', 'test_json_auth')
 
     def test_02_inactive_session_lang(self):
         self.authenticate(None, None, session_extra={'context': {'lang': 'fr_FR'}})

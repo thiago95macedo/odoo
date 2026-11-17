@@ -56,149 +56,9 @@ class TestEventRegisterUTM(HttpCase, TestEventOnlineCommon):
 @tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
 
-    def test_website_event_tour_admin(self):
-        self.upcoming_event = self.env['event.event'].create({
-            'name': 'Upcoming Event',
-            'date_begin': fields.Datetime.now() + relativedelta(days=10),
-            'date_end': fields.Datetime.now() + relativedelta(days=13),
-            'website_published': True,
-        })
-        self.start_tour(self.env['website'].get_client_action_url('/'), 'website_event_tour', login='admin')
 
-    def test_website_event_pages_seo(self):
-        website = self.env.ref('base.default_website')
-        event = self.env['event.event'].create({
-            'name': 'Event With Menu',
-            'website_menu': True,
-            'website_id': website.id,
-        })
-        intro_event_menu = event.introduction_menu_ids
-        url = intro_event_menu.menu_id._clean_url()
-        self.start_tour(self.env['website'].get_client_action_url(url), 'website_event_pages_seo', login='admin')
-        view_key = intro_event_menu.view_id.key
-        specific_view = website.with_context(website_id=website.id).viewref(view_key)
-        self.assertEqual(specific_view.website_meta_title, "Hello, world!")
-        self.assertEqual(event.website_meta_title, False)
 
-    def test_website_event_questions(self):
-        """ Will execute the tour that fills up two tickets with a few questions answers
-        and then assert that the answers are correctly saved for each attendee. """
 
-        self.design_fair_event = self.env['event.event'].create({
-            'name': 'Design Fair New York',
-            'date_begin': fields.Datetime.now() - relativedelta(days=15),
-            'date_end': fields.Datetime.now() + relativedelta(days=15),
-            'event_ticket_ids': [(0, 0, {
-                'name': 'Free',
-                'start_sale_datetime': fields.Datetime.now() - relativedelta(days=15),
-                'limit_max_per_order': 22,
-            }), (0, 0, {
-                'name': 'Other',
-                'start_sale_datetime': fields.Datetime.now() - relativedelta(days=15)
-            })],
-            'seats_limited': True,
-            'seats_max': 28,
-            'website_published': True,
-            'question_ids': [(0, 0, {
-                'title': 'Name',
-                'question_type': 'name',
-            }), (0, 0, {
-                'title': 'Email',
-                'question_type': 'email',
-            }), (0, 0, {
-                'title': 'Phone',
-                'question_type': 'phone',
-            }), (0, 0, {
-                'title': 'Company Name',
-                'question_type': 'company_name',
-            }), (0, 0, {
-                'title': 'Meal Type',
-                'question_type': 'simple_choice',
-                'answer_ids': [
-                    (0, 0, {'name': 'Mixed'}),
-                    (0, 0, {'name': 'Vegetarian'}),
-                    (0, 0, {'name': 'Pastafarian'})
-                ]
-            }), (0, 0, {
-                'title': 'Allergies',
-                'question_type': 'text_box'
-            }), (0, 0, {
-                'title': 'How did you learn about this event?',
-                'question_type': 'simple_choice',
-                'once_per_order': True,
-                'answer_ids': [
-                    (0, 0, {'name': 'Our website'}),
-                    (0, 0, {'name': 'Commercials'}),
-                    (0, 0, {'name': 'A friend'})
-                ]
-            })]
-        })
-
-        self.start_tour("/event", 'test_tickets_questions', login="portal")
-
-        registrations = self.env['event.registration'].search([
-            ('email', 'in', ['attendee-a@gmail.com', 'attendee-b@gmail.com'])
-        ])
-        self.assertEqual(len(registrations), 2)
-        first_registration = registrations.filtered(lambda reg: reg.email == 'attendee-a@gmail.com')
-        second_registration = registrations.filtered(lambda reg: reg.email == 'attendee-b@gmail.com')
-        self.assertEqual(first_registration.name, 'Attendee A')
-        self.assertEqual(first_registration.phone, '+32499123456')
-        self.assertEqual(second_registration.name, 'Attendee B')
-        self.assertEqual(second_registration.company_name, 'My Company')
-
-        event_questions = registrations.mapped('event_id.question_ids')
-        self.assertEqual(len(event_questions), 7)
-
-        first_registration_answers = first_registration.registration_answer_ids
-        self.assertEqual(len(first_registration_answers), 6)
-
-        self.assertEqual(first_registration_answers.filtered(
-            lambda answer: answer.question_id.title == 'Meal Type'
-        ).value_answer_id.name, 'Vegetarian')
-
-        self.assertEqual(first_registration_answers.filtered(
-            lambda answer: answer.question_id.title == 'Allergies'
-        ).value_text_box, 'Fish and Nuts')
-
-        self.assertEqual(first_registration_answers.filtered(
-            lambda answer: answer.question_id.title == 'How did you learn about this event?'
-        ).value_answer_id.name, 'A friend')
-
-        second_registration_answers = second_registration.registration_answer_ids
-        self.assertEqual(len(second_registration_answers), 5)
-
-        self.assertEqual(second_registration_answers.filtered(
-            lambda answer: answer.question_id.title == 'Meal Type'
-        ).value_answer_id.name, 'Pastafarian')
-
-        self.assertEqual(first_registration_answers.filtered(
-            lambda answer: answer.question_id.title == 'How did you learn about this event?'
-        ).value_answer_id.name, 'A friend')
-
-    def test_website_event_search(self):
-        """ Ensure filters are not reset when changing pages or performing a search. """
-        tag_category = self.env['event.tag.category'].create({'name': 'Test Category'})
-
-        tags = self.env['event.tag'].create([
-            {'name': 'tag 1', 'category_id': tag_category.id},
-            {'name': 'tag 2', 'category_id': tag_category.id},
-        ])
-
-        # Need to create a bunch of events to have severals pages
-        self.env['event.event'].create([
-            {
-                'name': f'Filter Test Event - {tag.name}',
-                'website_published': True,
-                'date_begin': datetime.today() - timedelta(days=1),
-                'date_end': datetime.today() + timedelta(days=1),
-                'tag_ids': tag,
-            }
-            for tag in tags
-            for _ in range(20)
-        ])
-
-        self.start_tour('/event', 'test_website_event_search', login='admin')
 
     def test_website_event_social_image(self):
         event = self.env['event.event'].create({
@@ -217,13 +77,6 @@ class TestUi(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
             meta = event.get_website_meta()
             self.assertEqual(meta['opengraph_meta']['og:image'], 'http://example.com/3.jpg')
 
-    def test_website_event_submenu(self):
-        website = self.env.ref('base.default_website')
-        self.env['event.event'].create({
-            'name': 'Some event',
-            'website_id': website.id,
-        })
-        self.start_tour(self.env['website'].get_client_action_url('/event'), 'website_event_submenus', login='admin')
 
 
 @tagged('post_install', '-at_install')

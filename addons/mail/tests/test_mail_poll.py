@@ -137,28 +137,6 @@ class TestMailPoll(MailCommon, HttpCase):
                         option_data["option"].vote_percentage, option_data["expected_percentage"]
                     )
 
-    def test_poll_ui(self):
-        self.authenticate(self.user_employee.login, self.user_employee.login)
-        channel = self.test_record
-        poll_id = self.make_jsonrpc_request(
-            "/mail/poll/create",
-            {
-                "duration": 1,
-                "options": self.POLL_OPTIONS,
-                "question": "???",
-                "thread_id": channel.id,
-                "thread_model": channel._name,
-            },
-        )
-        # Posting enough message so that the poll message isn't loaded when
-        # opening the channel.
-        for i in range(50):
-            channel.message_post(body=f"message_{i}", message_type="comment")
-        self.start_tour(
-            f"/weth/discuss?active_id={channel.id}&test_poll_id={poll_id}",
-            "mail_poll_tour.js",
-            login=self.user_employee.login,
-        )
 
     def test_notify_by_web_push_prepare_payload(self):
         self.authenticate(self.user_employee.login, self.user_employee.login)

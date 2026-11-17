@@ -62,10 +62,10 @@ __all__ = [
 
 _logger = logging.getLogger(__name__)
 
-PYTHON_TRANSLATION_COMMENT = 'odoo-python'
+PYTHON_TRANSLATION_COMMENT = 'weth-python'
 
 # translation used for javascript code in web client
-JAVASCRIPT_TRANSLATION_COMMENT = 'odoo-javascript'
+JAVASCRIPT_TRANSLATION_COMMENT = 'weth-javascript'
 
 SKIPPED_ELEMENTS = ('script', 'style', 'title')
 

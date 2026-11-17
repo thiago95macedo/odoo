@@ -33,10 +33,7 @@
         'point_of_sale.customer_display_assets': [
             'pos_loyalty/static/src/customer_display/**/*',
         ],
-        'web.assets_tests': [
-            'pos_loyalty/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests_setup': [
+                'web.assets_unit_tests_setup': [
             'pos_loyalty/static/src/customer_display/**/*',
         ],
         'web.assets_unit_tests': [

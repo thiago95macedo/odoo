@@ -41,10 +41,7 @@ models which only purpose is to run tests.""",
         'website.website_builder_assets': [
             'test_website/static/src/website_builder/**/*',
         ],
-        'web.assets_tests': [
-            'test_website/static/tests/tours/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'test_website/static/tests/builder/*',
         ],
     },

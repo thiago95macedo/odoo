@@ -24,15 +24,11 @@ automatic lead generation, full Online support, ...
         'website_event_track_quiz',
     ],
     'data': [
-        # 'data/event_type_data.xml',  # uncomment to reproduce test tour
         'data/ir_actions_report_data.xml',
         'views/event_registration_templates_reports.xml',
     ],
     'assets': {
-        'web.assets_tests': [
-            'test_event_full/static/src/js/tours/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'test_event_full/static/src/js/tests/*',
         ],
     },

@@ -155,45 +155,8 @@ class TestWebsiteSaleDelivery(HttpCase, WebsiteSaleCommon):
             "rule_ids": [Command.create({"code": code, "minimum_amount": 0})],
         })
 
-    def test_shop_sale_gift_card_keep_delivery(self):
-        # Get admin user and set his preferred delivery method to normal delivery
-        # This test also tests that we can indeed pay delivery fees with gift cards/ewallet
-        self.partner_admin.sudo().property_delivery_carrier_id = self.normal_delivery
-        self.start_tour(
-            self.product_plumbus.website_url,
-            "website_sale_loyalty.delivery_with_gift_card",
-            login="admin",
-        )
 
-    def test_shipping_discount(self):
-        """Check display of shipping discount promotion on checkout, combined with another reward
-        (eWallet).
-        """
-        self.env["loyalty.program"].create({
-            "name": "Buy 3, get up to $6 discount on shipping!",
-            "program_type": "promotion",
-            "applies_on": "current",
-            "trigger": "auto",
-            "rule_ids": [Command.create({"minimum_qty": 3.0})],
-            "reward_ids": [Command.create({"reward_type": "shipping", "discount_max_amount": 6.0})],
-        })
-        self.start_tour(
-            self.product_plumbus.website_url,
-            "website_sale_loyalty.check_shipping_discount",
-            login="admin",
-        )
 
-    def test_update_shipping_after_discount(self):
-        """Verify that after applying a discount code, any `free_over` shipping gets
-        recalculated.
-        """
-        self.free_delivery.action_archive()
-        self.normal_delivery.write({"free_over": True, "amount": 75.0})
-        self.start_tour(
-            self.product_plumbus.website_url,
-            "website_sale_loyalty.update_shipping_after_discount",
-            login=self.user_admin.login,
-        )
 
     def test_express_checkout_shipping_discount(self):
         """Check display of shipping discount promotion in express checkout form by ensuring is

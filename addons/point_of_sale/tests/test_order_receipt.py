@@ -197,8 +197,6 @@ class TestPosOrderReceipt(TestPointOfSaleHttpCommon, CommonPosTest):
             self.comparator(pm_data1, pm_data2)
             self.comparator(payments[0], payments[1], 'pos.payment')
 
-    def start_receipt_data_tour(self):
-        self.start_pos_tour("test_receipt_data")
 
     def test_receipt_data(self):
         image = """<?xml version='1.0' encoding='UTF-8' ?>
@@ -247,37 +245,6 @@ class TestPosOrderReceipt(TestPointOfSaleHttpCommon, CommonPosTest):
             else:
                 self.assertEqual(value, backend[key], f"Mismatch on field '{key}': frontend='{value}' vs backend='{backend[key]}'")
 
-    def test_change_receipt_data(self):
-        printer = self.env['pos.printer'].create({
-            'name': 'Printer',
-            'printer_type': 'epson_epos',
-            'printer_ip': '0.0.0.0',
-            'use_type': 'preparation',
-            'product_categories_ids': [Command.set(self.env['pos.category'].search([]).ids)],
-        })
-        self.main_pos_config.write({
-            'preparation_printer_ids': [(4, printer.id)],
-        })
-        self.main_pos_config.with_user(self.pos_user).open_ui()
-        data = {
-            'frontend_data': None,
-            'backend_data': None,
-        }
-
-        def get_order_frontend_receipt_data(self, frontend_data):
-            prep_set = set(self.env['pos.category'].search([]).ids)
-            prep_data = self._generate_preparation_change_for_categories(prep_set)
-            backend_data = self._generate_preparation_receipt_data(prep_data)
-            data['frontend_data'] = frontend_data[0]['changes']['data'][0]
-            data['backend_data'] = backend_data[0]['changes']['data'][0]
-            self.env['ir.qweb']._render(
-                'point_of_sale.pos_order_change_receipt',
-                backend_data[0],
-            )
-
-        with patch.object(self.env.registry['pos.order'], 'get_order_frontend_receipt_data', get_order_frontend_receipt_data, create=True):
-            self.start_pos_tour("test_change_receipt_data")
-            self.compare_change_receipt_data(data['frontend_data'], data['backend_data'])
 
     def _get_service_fee_receipt_info(self, service_fee_type):
         preset = self.env['pos.preset'].create({

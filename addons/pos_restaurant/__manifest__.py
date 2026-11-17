@@ -49,16 +49,10 @@ This module adds several features to the Point of Sale that are specific to rest
         'web.assets_backend': [
             'point_of_sale/static/src/scss/pos_dashboard.scss',
         ],
-        'web.assets_tests': [
-            'pos_restaurant/static/tests/tours/**/*',
-        ],
-        'web.assets_unit_tests': [
+                'web.assets_unit_tests': [
             'pos_restaurant/static/tests/unit/**/*'
         ],
-        'point_of_sale.assets_debug': [
-            'pos_restaurant/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
     'uninstall_hook': 'uninstall_hook',

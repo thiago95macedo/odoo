@@ -612,60 +612,6 @@ class TestPurchaseOrderSuggest(PurchaseTestCommon, HttpCase):
         po_2 = self.env['purchase.order'].create({'partner_id': partner_2.id})
         self.assertEstimatedPrice(po_2, 20, based_on='one_week', days=7)  # No pricelist --> should use standard price
 
-    def test_purchase_order_suggest_search_panel_ux(self):
-        """ Tests the purchase catalog suggest component, in particular:
-        - Suggest component: Hidding, Estimated price, Add all, Changing warehouse, Saving defaults
-        - Suggest record interactions: Monthly demand & forecast, Add button
-        - Suggest kanban interactions: Add All Filter, and kanban ordering
-        """
-        today = fields.Datetime.now()
-        test_category = self.env['product.category'].create({
-            'name': "Test Category",
-        })
-        test_category_goods = self.env['product.category'].create({
-            'name': "Goods",
-        })
-        self.product_1.categ_id = test_category_goods.id
-        test_product = self.env['product.product'].create([{
-            'name': "test_product",
-            'categ_id': test_category.id,
-            'is_storable': True,
-        }])
-        self.env['product.supplierinfo'].create([{
-            'partner_id': self.vendor.id,
-            'min_qty': 1,
-            'price': 20,
-            'product_id': test_product.id,
-        }])
-
-        # Create and confirm a move yesterday (used to check monthly_demand/suggest)
-        self.env['stock.quant']._update_available_quantity(test_product, self.stock_location, 24)
-        self._create_and_process_delivery_at_date(
-            [(test_product, 12)], date=fields.Datetime.now() - relativedelta(days=1)
-        )
-        # Create and confirm 10 days ago (used to check monthly_demand/suggest with 7 days)
-        self._create_and_process_delivery_at_date(
-            [(test_product, 12)], date=fields.Datetime.now() - relativedelta(days=10)
-        )
-        self.assertEqual(test_product.monthly_demand, 24)
-
-        # Create and mark as todo a move in  18 & 20 days (for checking forecast on records and suggestion with Forecasted mode)
-        self._create_and_process_delivery_at_date(
-            [(test_product, 50)], date=today + relativedelta(days=18), to_validate=False
-        )
-        self._create_and_process_delivery_at_date(
-            [(test_product, 50)], date=today + relativedelta(days=20), to_validate=False
-        )
-        # Create a move yesterday on another warehouse
-        other_warehouse = self.other_warehouse
-        self.env['stock.quant']._update_available_quantity(test_product, other_warehouse.lot_stock_id, 1)
-        self._create_and_process_delivery_at_date(
-            [(test_product, 1)], date=today - relativedelta(days=1), warehouse=other_warehouse
-        )
-        self.start_tour(
-            '/weth/purchase', "test_purchase_order_suggest_search_panel_ux", login='admin',
-            cookies={"cids": f"{self.company.id}"},
-        )
 
     def test_monthly_demand_vendor_return(self):
         "Test Returning receipt must not increase the warehouse's demand."

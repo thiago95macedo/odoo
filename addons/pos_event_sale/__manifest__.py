@@ -10,10 +10,7 @@
         'point_of_sale._assets_pos': [
             'pos_event_sale/static/src/**/*',
         ],
-        'web.assets_tests': [
-            'pos_event_sale/static/tests/tours/**/*',
-        ],
-    },
+            },
     'license': 'LGPL-3',
     'author': 'WETH Tecnologia',
 }

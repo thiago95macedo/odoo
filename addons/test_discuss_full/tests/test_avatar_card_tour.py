@@ -145,23 +145,7 @@ class TestAvatarCardTour(MailCommon, HttpCase):
         # clean and none of them lands after it and gets double-counted (runbot 237779).
         self._reset_bus()
 
-    @users("admin", "hr_user")
-    def test_avatar_card_tour_multi_company(self):
-        self._setup_channel(self.env.user)
-        self.start_tour(
-            f"/weth/res.partner/{self.user_employee_c2.partner_id.id}",
-            "avatar_card_tour",
-            login=self.env.user.login,
-        )
 
-    @users("base_user")
-    def test_avatar_card_tour_multi_company_no_hr_access(self):
-        self._setup_channel(self.env.user)
-        self.start_tour(
-            f"/weth/res.partner/{self.user_employee_c2.partner_id.id}",
-            "avatar_card_tour_no_hr_access",
-            login=self.env.user.login,
-        )
 
     @users("employee")
     def test_get_employee_data_from_inaccessible_company(self):

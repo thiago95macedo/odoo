@@ -43,7 +43,7 @@ class MailBot(models.AbstractModel):
             "new_line": Markup("<br>"),
             "bold_start": Markup("<b>"),
             "bold_end": Markup("</b>"),
-            "command_start": Markup("<span class='o_odoobot_command'>"),
+            "command_start": Markup("<span class='o_wethbot_command'>"),
             "command_end": Markup("</span>"),
             "document_link_start": Markup("<a href='https://www.weth.com.br/documentation' target='_blank'>"),
             "document_link_end": Markup("</a>"),

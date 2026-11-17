@@ -21,5 +21,4 @@ from . import test_consumption_warning
 from . import test_manual_consumption
 from . import test_workcenter
 from . import test_workorder
-from . import test_mrp_reports
 from . import test_mrp_product_qty

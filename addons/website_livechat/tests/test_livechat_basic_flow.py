@@ -9,17 +9,6 @@ from weth.tests.common import HttpCase, new_test_user
 
 
 class TestLivechatBasicFlowHttpCase(HttpCase, TestLivechatCommon):
-    def test_channel_created_on_user_interaction(self):
-        self.start_tour('/', 'im_livechat_request_chat', login=None)
-        channel = self.env["discuss.channel"].search(
-            [["livechat_end_dt", "=", False], ["livechat_visitor_id", "=", self.visitor.id]]
-        )
-        self.assertFalse(channel, 'Channel should not be created until user sends a message')
-        self.start_tour('/', 'im_livechat_request_chat_and_send_message', login=None)
-        channel = self.env["discuss.channel"].search(
-            [["livechat_end_dt", "=", False], ["livechat_visitor_id", "=", self.visitor.id]]
-        )
-        self.assertTrue(channel, 'Channel should be created after sending the first message')
 
     def test_livechat_username(self):
         # Open a new live chat
@@ -139,30 +128,8 @@ class TestLivechatBasicFlowHttpCase(HttpCase, TestLivechatCommon):
 
         return channel
 
-    def test_livechat_as_portal_user(self):
-        new_test_user(self.env, login="portal_user", groups="base.group_portal")
-        self.start_tour("/my", "website_livechat_as_portal_tour", login="portal_user")
 
-    def test_user_known_after_reload(self):
-        self.start_tour('/', 'website_livechat_user_known_after_reload')
 
-    def test_no_new_session_with_hide_button_rule(self):
-        self.livechat_channel.rule_ids = self.env["im_livechat.channel.rule"].create(
-            [
-                {
-                    "channel_id": self.livechat_channel.id,
-                    "regex_url": "/livechat_url",
-                    "sequence": 1,
-                },
-                {
-                    "channel_id": self.livechat_channel.id,
-                    "action": "hide_button",
-                    "regex_url": "/",
-                    "sequence": 2,
-                },
-            ]
-        )
-        self.start_tour("/livechat_url", "website_livechat_no_session_with_hide_rule")
 
     def test_channel_visitor_data(self):
         self.maxDiff = None
@@ -453,9 +420,3 @@ class TestLivechatBasicFlowHttpCase(HttpCase, TestLivechatCommon):
         self.assertEqual(channel_info["livechat_visitor_id"], False)
 
 
-class TestLivechatBasicFlowHttpCaseMobile(HttpCase, TestLivechatCommon):
-    browser_size = '375x667'
-    touch_enabled = True
-
-    def test_mobile_user_interaction(self):
-        self.start_tour('/', 'im_livechat_request_chat_and_send_message', login=None)

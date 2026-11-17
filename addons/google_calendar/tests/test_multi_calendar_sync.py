@@ -90,13 +90,13 @@ class TestMultiCalendarSync(TestSyncGoogle):
 
         # Calendar was shared on Google, all users now sync it to odoo with their respective access roles
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'owner', 'dataOwner': 'o.o@example.com'}])
-        owner_user.calendar_ids.with_user(owner_user)._sync_calendars_google2odoo(google_calendars)
+        owner_user.calendar_ids.with_user(owner_user)._sync_calendars_google2weth(google_calendars)
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'writer'}])
-        writer_user.calendar_ids.with_user(writer_user)._sync_calendars_google2odoo(google_calendars)
+        writer_user.calendar_ids.with_user(writer_user)._sync_calendars_google2weth(google_calendars)
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'reader'}])
-        reader_user.calendar_ids.with_user(reader_user)._sync_calendars_google2odoo(google_calendars)
+        reader_user.calendar_ids.with_user(reader_user)._sync_calendars_google2weth(google_calendars)
         google_calendars = GoogleCalendar([{'id': 'gid1', 'summary': 'Shared calendar', 'accessRole': 'writerWithoutPrivateAccess'}])
-        writer_without_private_access_user.calendar_ids.with_user(writer_without_private_access_user)._sync_calendars_google2odoo(google_calendars)
+        writer_without_private_access_user.calendar_ids.with_user(writer_without_private_access_user)._sync_calendars_google2weth(google_calendars)
 
         # Check that the calendar was created with the correct membership records
         shared_calendar = self.env['calendar.calendar'].search([('google_id', '=', 'gid1')])

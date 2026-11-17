@@ -31,12 +31,8 @@ real applications. """,
     'assets': {
         'web.assets_unit_tests': [
             'test_mail_full/static/tests/**/*',
-            ('remove', 'test_mail_full/static/tests/tours/**/*'),
         ],
-        'web.assets_tests': [
-            'test_mail_full/static/tests/tours/**/*',
-        ],
-    },
+            },
     'author': 'WETH Tecnologia',
     'license': 'LGPL-3',
 }

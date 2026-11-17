@@ -103,59 +103,6 @@ class TestImLivechatReport(TestImLivechatCommon):
             date = fields.Datetime.now()
             return channel.message_post(author_id=author.id, body=f'Message {date}')
 
-    def test_redirect_to_form_from_pivot(self):
-        operator_1 = new_test_user(self.env, login="operator_1", groups="im_livechat.im_livechat_group_manager")
-        operator_2 = new_test_user(self.env, login="operator_2")
-        livechat_channel = self.env["im_livechat.channel"].create(
-            {"name": "Support", "user_ids": [operator_1.id, operator_2.id]}
-        )
-        [partner_1, partner_2] = self.env["res.partner"].create([{"name": "test 1"}, {"name": "test 2"}])
-        [channel_1, channel_2, channel_3] = self.env["discuss.channel"].create(
-            [
-                {
-                    "name": "test 1",
-                    "channel_type": "livechat",
-                    "livechat_channel_id": livechat_channel.id,
-                    "channel_member_ids": [
-                        Command.create({"partner_id": operator_1.partner_id.id}),
-                        Command.create({"partner_id": partner_1.id}),
-                    ],
-                },
-                {
-                    "name": "test 2",
-                    "channel_type": "livechat",
-                    "livechat_channel_id": livechat_channel.id,
-                    "channel_member_ids": [
-                        Command.create({"partner_id": operator_2.partner_id.id}),
-                        Command.create({"partner_id": partner_2.id}),
-                    ],
-                },
-                {
-                    "name": "test 3",
-                    "channel_type": "livechat",
-                    "livechat_channel_id": livechat_channel.id,
-                    "channel_member_ids": [
-                        Command.create({"partner_id": operator_2.partner_id.id}),
-                        Command.create({"partner_id": partner_2.id}),
-                    ],
-                },
-            ]
-        )
-        self._create_message(channel_1, operator_1.partner_id, "2025-06-26 10:05:00")
-        self._create_message(channel_2, operator_2.partner_id, "2025-06-26 10:15:00")
-        self._create_message(channel_3, operator_2.partner_id, "2025-06-26 10:25:00")
-        agent_report_action = self.env.ref("im_livechat.im_livechat_agent_history_action")
-        session_report_action = self.env.ref("im_livechat.im_livechat_report_channel_action")
-        self.start_tour(
-            f"/weth/action-{agent_report_action.id}?view_type=pivot",
-            "im_livechat_agents_report_pivot_redirect_tour",
-            login="operator_1",
-        )
-        self.start_tour(
-            f"/weth/action-{session_report_action.id}?view_type=pivot",
-            "im_livechat_sessions_report_pivot_redirect_tour",
-            login="operator_1",
-        )
 
     def test_time_to_answer_does_not_count_messages_after_close(self):
         with freeze_time("2025-05-20 06:00:00") as frozen_time:

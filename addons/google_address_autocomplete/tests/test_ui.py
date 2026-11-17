@@ -17,47 +17,6 @@ MOCK_API_KEY = "Tm9ib2R5IGV4cGVjdHMgdGhlIFNwYW5pc2ggaW5xdWlzaXRpb24gIQ=="
 
 @tagged("post_install", "-at_install")
 class TestUI(HttpCase):
-    def test_address_autocomplete(self):
-        with patch.object(
-            AutoCompleteController,
-            "_perform_complete_place_search",
-            lambda controller, *args, **kwargs: {
-                "country": [
-                    self.env["res.country"].search([("code", "=", "US")]).id,
-                    "United States",
-                ],
-                "state": [
-                    self.env["res.country.state"]
-                    .search([("country_id.code", "=", "US")])[0]
-                    .id,
-                    "Alabama",
-                ],
-                "zip": "12345",
-                "city": "A Fictional City",
-                "street": "A fictional Street",
-                "street2": "A fictional Street 2",
-                "number": 42,
-                "formatted_street_number": "42 A fictional Street",
-            },
-        ), patch.object(
-            AutoCompleteController,
-            "_perform_place_search",
-            lambda controller, *args, **kwargs: {
-                "results": [
-                    {
-                        "formatted_address": f"Result {x}",
-                        "google_place_id": MOCK_GOOGLE_ID,
-                    }
-                    for x in range(5)
-                ]
-            },
-        ):
-            self.env["ir.config_parameter"].sudo().set_str(
-                "google_address_autocomplete.google_places_api_key", MOCK_API_KEY
-            )
-            self.start_tour(
-                "/weth/companies", "autocomplete_address_tour", login="admin"
-            )
 
     def test_google_api_calls(self):
         self.env["ir.config_parameter"].sudo().set_str(

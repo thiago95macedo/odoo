@@ -113,7 +113,6 @@ You could use this simplified accounting in case you work with an (external) acc
             'account/static/src/components/**/*',
             'account/static/src/services/*.js',
             'account/static/src/views/**/*',
-            'account/static/src/js/tours/tour_utils.js',
             'account/static/src/js/search/search_bar/search_bar.js',
             'account/static/src/helpers/*.js',
             'account/static/src/webclient/**/*',
@@ -125,17 +124,13 @@ You could use this simplified accounting in case you work with an (external) acc
         # Unit test files
         'web.assets_unit_tests': [
             'account/static/tests/**/*',
-            ('remove', 'account/static/tests/tours/**/*'),
         ],
         'web.assets_frontend': [
             'account/static/src/interactions/**/*',
             'account/static/src/components/tests_shared_js_python/*',
             'account/static/src/helpers/*.js',
         ],
-        'web.assets_tests': [
-            'account/static/tests/tours/**/*',
-        ],
-        'web.report_assets_common': [
+                'web.report_assets_common': [
             'account/static/src/css/report_invoice.css',
         ],
         'web.report_assets_pdf': [
