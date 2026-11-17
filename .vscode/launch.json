@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "WETH Server (Host .venv Python 3.14)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/weth-bin",
+            "args": [
+                "server",
+                "-c",
+                "${workspaceFolder}/weth.conf"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "WETH Shell (Host .venv)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/weth-bin",
+            "args": [
+                "shell",
+                "-c",
+                "${workspaceFolder}/weth.conf",
+                "-d",
+                "weth"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

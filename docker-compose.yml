@@ -1,27 +1,29 @@
 # ==============================================================================
-# WETH DEV ENVIRONMENT — Odoo 20 Development Environment
+# WETH DEV ENVIRONMENT — WETH Development Environment
 # ==============================================================================
-# Implantação local com Python 3.12 / Odoo 20 integrada ao proxy Caddy (weth_proxy_net).
-# Upstream esperado no Caddy: odoo-app:8069
-# Domínio local: https://odoo.test
+# Implantação local com Python 3.12 / WETH integrada ao proxy Caddy (weth_proxy_net).
+# Upstream esperado no Caddy: weth-app:8069
+# Domínio local: https://weth.test
 # ==============================================================================
 
 services:
   db:
     image: postgres:17-alpine
-    container_name: odoo-db
+    container_name: weth-db
     restart: "no"
     environment:
       POSTGRES_USER: weth
       POSTGRES_PASSWORD: "1q2w3e4r"
       POSTGRES_DB: postgres
+    ports:
+      - "127.0.0.1:5432:5432"
     volumes:
       - /home/arcanus/Workspace/dados/odoo/postgres:/var/lib/postgresql/data
     networks:
       backend_net:
         aliases:
-          - odoo-db
           - weth-db
+          - odoo-db
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U weth" ]
       interval: 5s
@@ -30,26 +32,24 @@ services:
 
   app:
     build: .
-    image: weth/odoo:20.0
-    container_name: odoo-app
+    image: weth/weth:20.0
+    container_name: weth-app
     restart: "no"
     depends_on:
       db:
         condition: service_healthy
     volumes:
       - .:/opt/weth
-      - .:/opt/odoo
       - /home/arcanus/Workspace/dados/odoo/data:/var/lib/weth
-      - /home/arcanus/Workspace/dados/odoo/data:/var/lib/odoo
     environment:
-      HOST: odoo-db
+      HOST: weth-db
       PORT: 5432
       USER: weth
       PASSWORD: "1q2w3e4r"
     networks:
       weth_proxy_net:
         aliases:
-          - odoo-app
+          - weth-app
       backend_net:
     command: [ "/opt/weth/weth-bin", "-c", "/opt/weth/weth.conf" ]
 
@@ -57,5 +57,5 @@ networks:
   weth_proxy_net:
     external: true
   backend_net:
-    name: odoo_backend_net
+    name: weth_backend_net
     driver: bridge

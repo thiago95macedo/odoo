@@ -4,10 +4,10 @@
     'name': 'Web',
     'category': 'Hidden',
     'description': """
-Odoo Web core module.
+WETH Web core module.
 ========================
 
-This module provides the core of the Odoo Web Client.
+This module provides the core of the WETH Web Client.
 """,
     'depends': ['base'],
     'auto_install': True,
@@ -524,7 +524,7 @@ This module provides the core of the Odoo Web Client.
             '/web/static/lib/fullcalendar/timegrid/index.global.js',
             '/web/static/lib/fullcalendar/list/index.global.js',
         ],
-        # Icons bundles: material_symbols, odoo_ui_icons and both combined. Only the
+        # Icons bundles: material_symbols, weth_ui_icons and both combined. Only the
         # combination should probably be used. But it is split to allow MS
         # preload on the frontend.
         'web.material_symbols_outlined': [
@@ -543,11 +543,14 @@ This module provides the core of the Odoo Web Client.
             '/web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2',
             '/web/static/lib/odoo_ui_icons/odoo_ui_icons.css',
         ],
+        'web.weth_ui_icons': [
+            ('include', 'web.odoo_ui_icons'),
+        ],
         'web.icons_fonts': [
             ('include', 'web.material_symbols_outlined'),
             ('include', 'web.material_symbols_rounded'),
             ('include', 'web.material_symbols_sharp'),
-            ('include', 'web.odoo_ui_icons'),
+            ('include', 'web.weth_ui_icons'),
             'web/static/src/webclient/icons_mappings/**',
             'web/static/src/webclient/icons.scss',
         ],

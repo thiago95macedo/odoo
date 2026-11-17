@@ -10,6 +10,8 @@ _build/
 !.weblate.json
 !.agents/
 !.agents/**
+!.vscode/
+!.vscode/**
 !.dockerignore
 # compiled python files
 *.py[co]
@@ -21,10 +23,10 @@ __pycache__/
 # hg stuff
 *.orig
 status
-# odoo filestore
-odoo/filestore
+# weth filestore
+weth/filestore
 # maintenance migration scripts
-odoo/addons/base/maintenance
+weth/addons/base/maintenance
 
 # js tooling
 node_modules
